@@ -1,6 +1,6 @@
 {
   "baseline_guard": "PASS",
-  "changed_files_scanned": 2,
+  "changed_files_scanned": 11,
   "excluded_generated_directories": [
     ".mypy_cache",
     ".pytest_cache",
@@ -14,20 +14,83 @@
   "files": [
     {
       "logical_bytes": 69218,
-      "logical_sha256": "c1af8fcf286f51fd78328a23ecc3598940ece6747c7ff94c41a9f7509fc75f1e",
+      "logical_sha256": "57063306b6921d141d7d1ff055f6ef117ab5bbd65dc92bcd2f447c61417ce514",
       "path": "data/reports/robustness_research/continuation_full_tests.log",
       "stored_bytes": 69218,
-      "stored_sha256": "c1af8fcf286f51fd78328a23ecc3598940ece6747c7ff94c41a9f7509fc75f1e"
+      "stored_sha256": "57063306b6921d141d7d1ff055f6ef117ab5bbd65dc92bcd2f447c61417ce514"
     },
     {
-      "logical_bytes": 7911,
-      "logical_sha256": "e02a75d257ad60faf33a227597d2fb841dd167cd174c892a7d89beaafe1129bb",
+      "logical_bytes": 7921,
+      "logical_sha256": "83121f8191dea953a32dfef74a18e7cc60bbf3c121c9c69967d137eeaf14158f",
       "path": "data/reports/robustness_research/continuation_stage_checks.json",
-      "stored_bytes": 7911,
-      "stored_sha256": "e02a75d257ad60faf33a227597d2fb841dd167cd174c892a7d89beaafe1129bb"
+      "stored_bytes": 7921,
+      "stored_sha256": "83121f8191dea953a32dfef74a18e7cc60bbf3c121c9c69967d137eeaf14158f"
+    },
+    {
+      "logical_bytes": 3462,
+      "logical_sha256": "bbc56184d369daf6eac37c4bc8c7a41f375b1ed730c86221cbdb8154686b146e",
+      "path": "data/reports/robustness_research/exit_management/bybit_60_15/HOLDOUT_SEGMENT_00/artifact_hashes.json",
+      "stored_bytes": 3462,
+      "stored_sha256": "bbc56184d369daf6eac37c4bc8c7a41f375b1ed730c86221cbdb8154686b146e"
+    },
+    {
+      "logical_bytes": 65,
+      "logical_sha256": "a3121de0c5035664cc4daaad188d68ae8e294d8045a3eba3b41a9dcc1ca313d0",
+      "path": "data/reports/robustness_research/exit_management/bybit_60_15/HOLDOUT_SEGMENT_00/fingerprint.sha256",
+      "stored_bytes": 65,
+      "stored_sha256": "a3121de0c5035664cc4daaad188d68ae8e294d8045a3eba3b41a9dcc1ca313d0"
+    },
+    {
+      "logical_bytes": 748,
+      "logical_sha256": "dc41674ed19f5790facaa419454247524b75a4b78e49d08c202df2e01de36ed5",
+      "path": "data/reports/robustness_research/exit_management/bybit_60_15/HOLDOUT_SEGMENT_00/source_context.json",
+      "stored_bytes": 748,
+      "stored_sha256": "dc41674ed19f5790facaa419454247524b75a4b78e49d08c202df2e01de36ed5"
+    },
+    {
+      "logical_bytes": 3462,
+      "logical_sha256": "acc8f91407de4bd32843a899089d75a9fe5229a0c03124d6198f5ac2e8b1036e",
+      "path": "data/reports/robustness_research/exit_management/bybit_60_15/REFERENCE_SEGMENT_00/artifact_hashes.json",
+      "stored_bytes": 3462,
+      "stored_sha256": "acc8f91407de4bd32843a899089d75a9fe5229a0c03124d6198f5ac2e8b1036e"
+    },
+    {
+      "logical_bytes": 65,
+      "logical_sha256": "f8ce1dabec5002c8b3955f36f4e38f89d221ad0c41ebbdb22711d16635c429de",
+      "path": "data/reports/robustness_research/exit_management/bybit_60_15/REFERENCE_SEGMENT_00/fingerprint.sha256",
+      "stored_bytes": 65,
+      "stored_sha256": "f8ce1dabec5002c8b3955f36f4e38f89d221ad0c41ebbdb22711d16635c429de"
+    },
+    {
+      "logical_bytes": 748,
+      "logical_sha256": "de4a67f08e3ed7816237fa3b6c88d6ff8cf4884e71d51855a6f17714d3cc316d",
+      "path": "data/reports/robustness_research/exit_management/bybit_60_15/REFERENCE_SEGMENT_00/source_context.json",
+      "stored_bytes": 748,
+      "stored_sha256": "de4a67f08e3ed7816237fa3b6c88d6ff8cf4884e71d51855a6f17714d3cc316d"
+    },
+    {
+      "logical_bytes": 3462,
+      "logical_sha256": "dc46da55f4ffbea26161df63e5c0f4e5fc07692487dcd3588f4c715ed4f4db1b",
+      "path": "data/reports/robustness_research/exit_management/bybit_60_15/VALIDATION_SEGMENT_00/artifact_hashes.json",
+      "stored_bytes": 3462,
+      "stored_sha256": "dc46da55f4ffbea26161df63e5c0f4e5fc07692487dcd3588f4c715ed4f4db1b"
+    },
+    {
+      "logical_bytes": 65,
+      "logical_sha256": "4394443c3f5aa34cfb85fee4d3d2295ea9548c80f07dbe421cf9ac3866335b1a",
+      "path": "data/reports/robustness_research/exit_management/bybit_60_15/VALIDATION_SEGMENT_00/fingerprint.sha256",
+      "stored_bytes": 65,
+      "stored_sha256": "4394443c3f5aa34cfb85fee4d3d2295ea9548c80f07dbe421cf9ac3866335b1a"
+    },
+    {
+      "logical_bytes": 748,
+      "logical_sha256": "a49d65778ba2641da2646bf5b088f8772423180134fe940677279540987e3dc1",
+      "path": "data/reports/robustness_research/exit_management/bybit_60_15/VALIDATION_SEGMENT_00/source_context.json",
+      "stored_bytes": 748,
+      "stored_sha256": "a49d65778ba2641da2646bf5b088f8772423180134fe940677279540987e3dc1"
     }
   ],
-  "logical_bytes_covered": 77129,
+  "logical_bytes_covered": 89964,
   "patterns": [
     "private_key",
     "github_token",
@@ -41,6 +104,6 @@
   "secret_matches": 0,
   "sha_identical_file_reuse": 0,
   "trade_entry_allowed": false,
-  "unique_logical_bytes_scanned": 77129,
-  "unique_stored_sha256": 2
+  "unique_logical_bytes_scanned": 89964,
+  "unique_stored_sha256": 11
 }

@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-10-09T03:55:08.205823+05:00",
-  "phase": "Complete registered POI OTE and midpoint sensitivity",
+  "timestamp": "2026-10-09T03:55:28.152617+05:00",
+  "phase": "Complete paired exit allocation and BE sensitivity bybit_60_15",
   "tests": 439,
   "tests_status": "PASS",
   "lint_status": "PASS",
