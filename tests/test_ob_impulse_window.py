@@ -64,6 +64,22 @@ class ObImpulseWindowTests(unittest.TestCase):
         case['ltf_report']=replace(case['ltf_report'],levels=case['ltf_report'].levels[1:])
         self.assertEqual(derive_automatic_levels(**case).blocked_reasons,('IMPULSE_ORIGIN_REFERENCE_NOT_FOUND',))
 
+    def test_bos_candle_is_formation_not_preavailability_ob_retest(self):
+        case=valid_case()
+        move_bos(case,21)
+        case['ltf_candles'][21]=replace(case['ltf_candles'][21],low=98)
+        result=derive_automatic_levels(**case)
+        self.assertEqual(result.status,'READY',result.blocked_reasons)
+        # The zone becomes a qualified OB only at this BOS close. Its earlier
+        # and same-close prices cannot consume a future first-test entitlement.
+        candle=case['ltf_candles'][22]
+        case['ltf_candles'][22]=replace(candle,low=99)
+        report=case['ltf_report']
+        correction=replace(report.levels[4],price=99)
+        case['ltf_report']=replace(report,levels=(*report.levels[:4],correction))
+        case['opportunity']=replace(case['opportunity'],entry_correction_price=99)
+        self.assertIn('OB_FIRST_TEST_ALREADY_CONSUMED',derive_automatic_levels(**case).blocked_reasons)
+
 
 if __name__=='__main__':
     unittest.main()

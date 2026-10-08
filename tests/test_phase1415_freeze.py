@@ -13,7 +13,7 @@ class Phase1415FreezeTests(unittest.TestCase):
         self.assertEqual(crypto_bot.__version__, "0.4.20")
         with open("config/source_rules.json", encoding="utf-8") as fh:
             payload = json.load(fh)
-        self.assertEqual(payload["registry_version"], "phase1.4.16-0.4.16")
+        self.assertEqual(payload["registry_version"], "phase1.4.21-0.4.21")
         by_id = {row["rule_id"]: row for row in payload["rules"]}
         self.assertEqual(by_id["PHASE1415_CROSS_ASSET_GATE_FREEZE_001"]["kind"], "TECHNICAL_NORMALIZATION")
         self.assertEqual(by_id["PHASE1415_RANGE_BOUNDARY_NO_REACTIVATION_001"]["kind"], "TECHNICAL_NORMALIZATION")

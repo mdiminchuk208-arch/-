@@ -2,6 +2,7 @@ import unittest
 
 from crypto_bot.strategy.range_engine import (
     RangeBoundaryClarityReview,
+    RangeDetectionParams,
     analyze_ranges,
     range_review_key,
 )
@@ -14,9 +15,9 @@ class Phase1418BoundaryClarityTests(unittest.TestCase):
         base = base_report(candles, bullish_range_events())
         return candles, base
 
-    def test_default_review_is_unreviewed(self):
+    def test_legacy_manual_audit_review_is_unreviewed(self):
         candles, base = self._fixture()
-        report = analyze_ranges(candles, base)
+        report = analyze_ranges(candles, base, params=RangeDetectionParams(automatic_boundary_clarity=False))
         self.assertEqual(len(report.ranges), 1)
         self.assertEqual(
             report.ranges[0].boundary_clarity_review,
@@ -55,7 +56,7 @@ class Phase1418BoundaryClarityTests(unittest.TestCase):
         candles, base = self._fixture()
         candles[7] = c(7, 106, 112, 104, 109)
         candles[8] = c(8, 108, 109, 103, 106)
-        report = analyze_ranges(candles, base)
+        report = analyze_ranges(candles, base, params=RangeDetectionParams(automatic_boundary_clarity=False))
         self.assertEqual(
             report.ranges[0].boundary_clarity_review,
             RangeBoundaryClarityReview.UNREVIEWED,

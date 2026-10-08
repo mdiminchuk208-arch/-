@@ -9,7 +9,7 @@ class Phase1416RangeGeometryTests(unittest.TestCase):
     def test_version_and_registry(self):
         self.assertEqual(crypto_bot.__version__, "0.4.20")
         payload = json.loads(Path("config/source_rules.json").read_text(encoding="utf-8"))
-        self.assertEqual(payload["registry_version"], "phase1.4.16-0.4.16")
+        self.assertEqual(payload["registry_version"], "phase1.4.21-0.4.21")
         ids = [r["rule_id"] for r in payload["rules"]]
         self.assertIn("RANGE_DIRECTIONAL_GEOMETRY_001", ids)
         self.assertEqual(len(ids), len(set(ids)))

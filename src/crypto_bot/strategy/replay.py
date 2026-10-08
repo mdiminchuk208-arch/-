@@ -20,7 +20,7 @@ from crypto_bot.strategy.range_engine import RangeAnalysisReport, augment_market
 from crypto_bot.strategy.trade_plan import PriceZone, rr_ratio
 
 
-STRATEGY_VERSION = "0.4.21-ob-window.1"
+STRATEGY_VERSION = "0.4.21-range-wiring.2"
 
 
 class EngineMode(str, Enum):
@@ -110,7 +110,7 @@ def evaluate_snapshot(
 
     Both timeframes must be internally contiguous. Missing bars fail closed rather
     than interpreting separated candles as adjacent confirmations. Range clarity
-    defaults to UNREVIEWED; this interface cannot silently approve past ranges.
+    uses causal automatic boundary proof; this interface accepts no manual reviews.
     """
     mode = EngineMode(mode)  # LIVE/PAPER and arbitrary mode strings are rejected.
     if auto_level_policy is not None and not isinstance(auto_level_policy, AutoLevelPolicy):

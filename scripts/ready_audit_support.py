@@ -89,7 +89,8 @@ class GateInspector:
             late_supporting = [s for s in self.seeds if s.direction==opp.expected_direction
                               and a.open_time<s.known_at<=as_of and _overlap(a.low,a.high,s.zone)]
             fresh_support = [s for s in supporting if fresh(s,a.open_time)]
-            first_touch = next((d.close_time for d in ltf[index+2:] if d.low<=a.high and d.high>=a.low), None)
+            ob_known_at = max(c.close_time, opp.ltf_bos_event_time)
+            first_touch = next((d.close_time for d in ltf[index+2:] if d.close_time>ob_known_at and d.low<=a.high and d.high>=a.low), None)
             stop = a.low if long else a.high
             truth = dict(
                 AGGRESSION=body/(b.high-b.low)>=policy.min_body_fraction and body>=policy.min_engulf_body_ratio*first_body,
@@ -105,7 +106,7 @@ class GateInspector:
             if first_failure:
                 failures.add(first_failure)
             candidates.append(dict(
-                b_index=index, known_at=c.close_time, a_open=a.open_time,
+                b_index=index, known_at=ob_known_at, a_open=a.open_time,
                 bars=[asdict(d) for d in (a,b,c)], ob_zone=dict(low=a.low,high=a.high), stop=stop,
                 body_fraction=body/(b.high-b.low), body_ratio=body/first_body,
                 ote_intersection=_overlap(a.low,a.high,zone), inside_impulse=all(lo<=d.low and d.high<=hi for d in (a,b,c)),

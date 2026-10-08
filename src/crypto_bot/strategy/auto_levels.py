@@ -8,6 +8,7 @@ source certification and never grants permission for exchange execution.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from bisect import bisect_right
 from datetime import datetime
 from math import isfinite
 from typing import Sequence
@@ -175,10 +176,85 @@ def ob_impulse_window(report: MarketAnalysisReport, opportunity: MtfOpportunity,
 def _fresh(seed: _PoiSeed, histories: tuple[Sequence[Candle], ...], cutoff: datetime) -> bool:
     # Strictly after formation: the seed's own third candle touches its near edge.
     # A bar straddling availability is treated conservatively as a potential touch.
-    return not any(
-        seed.known_at < candle.close_time <= cutoff and _overlap(candle.low, candle.high, seed.zone)
-        for history in histories for candle in history
-    )
+    for history in histories:
+        begin = bisect_right(history, seed.known_at, key=lambda c:c.close_time)
+        end = bisect_right(history, cutoff, key=lambda c:c.close_time)
+        if any(_overlap(history[i].low, history[i].high, seed.zone) for i in range(begin, end)):
+            return False
+    return True
+
+
+class _TouchIndex:
+    """Interval tree; each query reads aggregates fully contained in its cutoff.
+
+    An offline index can contain a future suffix, but a partially covered node's
+    aggregate is NEVER used. Its children are visited only inside the query.
+    Thus future prices cannot even participate in a past freshness predicate.
+    """
+    def __init__(self, candles: Sequence[Candle]):
+        self.candles = tuple(candles)
+        self.closes = tuple(c.close_time for c in candles)
+        capacity = 1
+        while capacity < len(candles):
+            capacity *= 2
+        self.capacity = capacity
+        self.lows = [float('inf')] * (2 * capacity)
+        self.highs = [float('-inf')] * (2 * capacity)
+        for i,candle in enumerate(candles, capacity):
+            self.lows[i], self.highs[i] = candle.low, candle.high
+        for i in range(capacity - 1, 0, -1):
+            self.lows[i] = min(self.lows[2*i], self.lows[2*i+1])
+            self.highs[i] = max(self.highs[2*i], self.highs[2*i+1])
+
+    def first_touch(self, zone: PriceZone, after: datetime, cutoff: datetime) -> datetime | None:
+        begin, end = bisect_right(self.closes, after), bisect_right(self.closes, cutoff)
+        def find(node, left, right):
+            if right <= begin or end <= left:
+                return None
+            if begin <= left and right <= end:
+                if self.lows[node] > zone.high or self.highs[node] < zone.low:
+                    return None
+            if right - left == 1:
+                candle = self.candles[left]
+                return candle.close_time if _overlap(candle.low, candle.high, zone) else None
+            middle = (left + right) // 2
+            first = find(2*node, left, middle)
+            return first if first is not None else find(2*node+1, middle, right)
+        return find(1, 0, self.capacity) if begin < end else None
+
+
+class FreshnessIndex:
+    """Exact first-touch queries, shared by a validated offline candle history."""
+    def __init__(self, histories: tuple[Sequence[Candle], ...]):
+        self.minutes = tuple(_prefix(history, history[-1].close_time)[1] if history else 0
+                             for history in histories)
+        self.indices = tuple(_TouchIndex(history) for history in histories)
+
+    def prefix(self, history: Sequence[Candle], as_of: datetime, position: int) -> tuple[tuple[Candle, ...], int]:
+        index = self.indices[position]
+        supplied = tuple(history)
+        length = bisect_right(index.closes, as_of)
+        # Candles are frozen and were fully validated once when the index was
+        # created. Exact identity/value binding permits reuse of that validation.
+        if len(supplied) < length or supplied != index.candles[:len(supplied)]:
+            raise ValueError('freshness index does not match the available OHLC prefix')
+        return index.candles[:length], self.minutes[position]
+
+    def validate_prefixes(self, histories: tuple[Sequence[Candle], ...], as_of: datetime) -> None:
+        if len(histories) != len(self.indices):
+            raise ValueError('freshness index timeframe count mismatch')
+        for history,index in zip(histories, self.indices):
+            length = bisect_right(index.closes, as_of)
+            if tuple(history) != index.candles[:length]:
+                raise ValueError('freshness index does not match the available OHLC prefix')
+
+    def first_touch(self, zone: PriceZone, after: datetime, cutoff: datetime) -> datetime | None:
+        touches = [touch for index in self.indices
+                   if (touch := index.first_touch(zone, after, cutoff)) is not None]
+        return min(touches) if touches else None
+
+    def is_fresh(self, seed: _PoiSeed, cutoff: datetime) -> bool:
+        return self.first_touch(seed.zone, seed.known_at, cutoff) is None
 
 
 def _seed_evidence(seed: _PoiSeed, minutes: int, kind: str) -> LevelEvidence:
@@ -195,6 +271,7 @@ def derive_automatic_levels(
     htf_candles: Sequence[Candle], ltf_candles: Sequence[Candle],
     htf_report: MarketAnalysisReport, ltf_report: MarketAnalysisReport,
     opportunity: MtfOpportunity, *, as_of: datetime, policy: AutoLevelPolicy,
+    freshness_index: FreshnessIndex | None = None,
 ) -> AutomaticLevelResult:
     """Return experimental causal virtual references or explicit blocking causes.
 
@@ -207,8 +284,12 @@ def derive_automatic_levels(
         raise ValueError("timezone-aware as_of and AutoLevelPolicy are required")
     if opportunity.expected_direction not in (Direction.LONG, Direction.SHORT):
         raise ValueError("opportunity direction must be LONG or SHORT")
-    htf, htf_minutes = _prefix(htf_candles, as_of)
-    ltf, ltf_minutes = _prefix(ltf_candles, as_of)
+    if freshness_index is None:
+        htf, htf_minutes = _prefix(htf_candles, as_of)
+        ltf, ltf_minutes = _prefix(ltf_candles, as_of)
+    else:
+        htf, htf_minutes = freshness_index.prefix(htf_candles, as_of, 0)
+        ltf, ltf_minutes = freshness_index.prefix(ltf_candles, as_of, 1)
     _validate_report(htf_report, htf, as_of)
     _validate_report(ltf_report, ltf, as_of)
     if not htf or not ltf:
@@ -271,6 +352,7 @@ def derive_automatic_levels(
     impulse_low, impulse_high = sorted((context.impulse_start_price, context.impulse_end_price))
     seeds = _seeds(htf)
     histories = (htf, ltf)
+    fresh = freshness_index.is_fresh if freshness_index is not None else lambda seed,cutoff:_fresh(seed, histories, cutoff)
     expected_sweep = MarketEventKind.LOW_LIQUIDITY_TAKEN if direction == Direction.LONG else MarketEventKind.HIGH_LIQUIDITY_TAKEN
     failures: set[str] = set()
     valid = []
@@ -313,7 +395,7 @@ def derive_automatic_levels(
             continue
         supporting = [seed for seed in seeds if seed.direction == direction
                       and seed.known_at <= first.open_time and _overlap(first.low, first.high, seed.zone)
-                      and _fresh(seed, histories, first.open_time)]
+                      and fresh(seed, first.open_time)]
         if not supporting:
             failures.add("FRESH_PREEXISTING_HTF_POI_NOT_FOUND")
             continue
@@ -328,7 +410,8 @@ def derive_automatic_levels(
         if not assessment.trade_eligible:
             failures.add("ORDER_BLOCK_ASSESSMENT_BLOCKED")
             continue
-        if any(c.close_time > third.close_time and _overlap(c.low, c.high, ob_zone) for c in ltf):
+        ob_known_at = max(third.close_time, opportunity.ltf_bos_event_time)
+        if any(c.close_time > ob_known_at and _overlap(c.low, c.high, ob_zone) for c in ltf):
             failures.add("OB_FIRST_TEST_ALREADY_CONSUMED")
             continue
         stop = first.low if direction == Direction.LONG else first.high
@@ -370,8 +453,9 @@ def derive_automatic_levels(
     if not valid:
         return _blocked(*(failures or {"NO_OB_PATTERN_IN_STRUCTURAL_IMPULSE"}))
     known_at, _, stop, evidence = min(valid, key=lambda candidate: (candidate[0], candidate[1], candidate[2]))
-    opposing = [seed for seed in seeds if seed.direction != direction and _fresh(seed, histories, as_of)
-                and (seed.zone.low > zone.high if direction == Direction.LONG else seed.zone.high < zone.low)]
+    opposing = [seed for seed in seeds if seed.direction != direction
+                and (seed.zone.low > zone.high if direction == Direction.LONG else seed.zone.high < zone.low)
+                and fresh(seed, as_of)]
     opposing.sort(key=lambda seed: (seed.zone.low, seed.zone.high, seed.known_at) if direction == Direction.LONG
                   else (-seed.zone.high, -seed.zone.low, seed.known_at))
     selected: list[_PoiSeed] = []

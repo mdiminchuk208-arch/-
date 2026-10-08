@@ -1,9 +1,10 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, replace
-from bisect import bisect_right
+from bisect import bisect_left, bisect_right
 from datetime import datetime
 from enum import Enum
+from math import isfinite
 from typing import Sequence
 
 from crypto_bot.common.models import Candle
@@ -33,6 +34,9 @@ class RangeBoundaryClarityReview(str, Enum):
     UNREVIEWED = "UNREVIEWED"
     PASS = "PASS"
     FAIL = "FAIL"
+    AUTO_PASS = "AUTO_PASS"
+    AUTO_PENDING = "AUTO_PENDING"
+    AUTO_FAIL = "AUTO_FAIL"
 
 
 @dataclass(frozen=True)
@@ -59,10 +63,13 @@ class RangeDetectionParams:
 
     midpoint_tolerance_fraction: float = 0.08
     require_clean_internal_structure: bool = True
+    automatic_boundary_clarity: bool = True
 
     def __post_init__(self) -> None:
         if not (0.0 <= self.midpoint_tolerance_fraction <= 0.5):
             raise ValueError("midpoint_tolerance_fraction must be within [0, 0.5]")
+        if type(self.automatic_boundary_clarity) is not bool:
+            raise ValueError("automatic_boundary_clarity must be boolean")
 
 
 @dataclass(frozen=True)
@@ -94,6 +101,8 @@ class RangeInstance:
     lower_boundary_state: RangeBoundaryState = RangeBoundaryState.ACTIVE
     recovery_transition_ids: tuple[int, ...] = ()
     invalidating_recovery_transition_ids: tuple[int, ...] = ()
+    boundary_clarity_reason: str = "NO_CAUSAL_REVIEW"
+    boundary_clarity_known_at: datetime | None = None
 
     @property
     def ever_validated(self) -> bool:
@@ -109,6 +118,38 @@ def range_review_key(item: RangeInstance) -> tuple[str, datetime, float, datetim
         item.second_boundary_time,
         item.second_boundary_price,
     )
+
+
+def automatic_boundary_clarity(item: RangeInstance) -> tuple[RangeBoundaryClarityReview, str, datetime]:
+    """Use the existing source confirmations, rather than a missing manual reviewer.
+
+    This detector constructs explicit ordered swing boundaries, not a smeared
+    discretionary channel. A confirmed midpoint reaction and clean structure
+    provide its causal price-area proof. No new numeric clarity threshold is
+    invented. Later retirement/internal BOS cannot revoke earlier clarity.
+    Explicit manual FAIL/UNREVIEWED overrides remain possible for audit callers.
+    """
+    up = item.impulse_direction == RangeImpulseDirection.UP
+    geometry = (all(isfinite(p) for p in (item.lower, item.upper, item.midpoint))
+                and 0 < item.lower < item.upper
+                and item.impulse_bos_time < item.first_boundary_time < item.second_boundary_time
+                and item.first_boundary_kind == ('high' if up else 'low')
+                and item.second_boundary_kind == ('low' if up else 'high')
+                and item.first_boundary_price == (item.upper if up else item.lower)
+                and item.second_boundary_price == (item.lower if up else item.upper))
+    if not geometry or item.status == RangeStatus.REJECTED_INTERNAL_STRUCTURE:
+        return RangeBoundaryClarityReview.AUTO_FAIL, 'BOUNDARIES_OR_PREVALIDATION_STRUCTURE_CONTRADICT_SOURCE', item.status_time
+    if item.midpoint_reaction_time is None:
+        return RangeBoundaryClarityReview.AUTO_PENDING, 'WAITING_FOR_CAUSAL_MIDPOINT_REACTION', item.second_boundary_time
+    if (item.midpoint_reaction_time <= item.second_boundary_time
+            or item.internal_bos_count and item.status != RangeStatus.INVALIDATED_INTERNAL_STRUCTURE):
+        return RangeBoundaryClarityReview.AUTO_FAIL, 'MIDPOINT_ORDER_OR_INTERNAL_STRUCTURE_CONTRADICT_SOURCE', item.midpoint_reaction_time
+    return (RangeBoundaryClarityReview.AUTO_PASS,
+            'ORDERED_CONFIRMED_SWING_BOUNDARIES_MIDPOINT_REACTION_CLEAN_STRUCTURE', item.midpoint_reaction_time)
+
+
+def _clarity_passed(review: RangeBoundaryClarityReview) -> bool:
+    return review in (RangeBoundaryClarityReview.PASS, RangeBoundaryClarityReview.AUTO_PASS)
 
 
 @dataclass(frozen=True)
@@ -435,11 +476,11 @@ def _scan_range_boundary_sfps(
         internal_by_time = _internal_bos_by_close_time(report, item)
         internal_count = item.internal_bos_count
 
-        for i, candle in enumerate(candles):
+        first_available = bisect_left(candles, validation_time, key=lambda c:c.open_time)
+        for i in range(first_available, len(candles)):
+            candle = candles[i]
             # Validation is only known at its event timestamp. Candles that opened before that
             # timestamp cannot be retroactively used as post-validation boundary sweeps.
-            if candle.open_time < validation_time:
-                continue
 
             # At the new candle OPEN, resolve only the prior sweep using this candle's open.
             if pending is not None and i == pending[1] + 1:
@@ -453,7 +494,7 @@ def _scan_range_boundary_sfps(
                     episodes[ep_idx],
                     status=(
                         "SFP_FORMED"
-                        if result.valid and item.boundary_clarity_review == RangeBoundaryClarityReview.PASS
+                        if result.valid and _clarity_passed(item.boundary_clarity_review)
                         else "CLARITY_REVIEW_BLOCKED"
                         if result.valid
                         else "CONSUMED_NO_SFP"
@@ -461,11 +502,11 @@ def _scan_range_boundary_sfps(
                     resolved_index=i,
                     sfp_event_time=(
                         candle.open_time
-                        if result.valid and item.boundary_clarity_review == RangeBoundaryClarityReview.PASS
+                        if result.valid and _clarity_passed(item.boundary_clarity_review)
                         else None
                     ),
                 )
-                if result.valid and item.boundary_clarity_review == RangeBoundaryClarityReview.PASS:
+                if result.valid and _clarity_passed(item.boundary_clarity_review):
                     kind = (
                         MarketEventKind.BEARISH_SFP_FORMATION_CONFIRMED
                         if side == "high"
@@ -543,6 +584,8 @@ def _scan_range_boundary_sfps(
                 active_sfps.pop(episode_id, None)
 
             if not range_active:
+                if not active_sfps and pending is None:
+                    break
                 continue
 
             # Conservative source-consistency: after validation, internal BOS also stops
@@ -657,10 +700,20 @@ def analyze_ranges(
     candidates = _make_range_candidates(base_report)
     candidates = _validate_candidates(candles, base_report, candidates, params)
     reviews = boundary_clarity_reviews or {}
-    candidates = [
-        replace(item, boundary_clarity_review=reviews.get(range_review_key(item), RangeBoundaryClarityReview.UNREVIEWED))
-        for item in candidates
-    ]
+    reviewed = []
+    for item in candidates:
+        manual = reviews.get(range_review_key(item))
+        if manual is not None:
+            if not isinstance(manual, RangeBoundaryClarityReview):
+                raise RangeAnalysisError('invalid boundary clarity review')
+            review, reason, known_at = manual, 'EXPLICIT_CALLER_REVIEW', item.second_boundary_time
+        elif params.automatic_boundary_clarity:
+            review, reason, known_at = automatic_boundary_clarity(item)
+        else:
+            review, reason, known_at = RangeBoundaryClarityReview.UNREVIEWED, 'LEGACY_MANUAL_AUDIT_POLICY', item.second_boundary_time
+        reviewed.append(replace(item, boundary_clarity_review=review,
+                                boundary_clarity_reason=reason, boundary_clarity_known_at=known_at))
+    candidates = reviewed
     ranges, episodes, events = _scan_range_boundary_sfps(candles, base_report, candidates, params)
 
     return RangeAnalysisReport(
@@ -697,7 +750,7 @@ def analyze_ranges(
             "SOURCE NUANCE: the general methodology says a range may lack perfectly crisp boundaries as long as "
             "price trades in a defined area, while the dedicated range module recommends skipping examples whose "
             "boundaries are smeared enough that future price movement becomes difficult to determine. No objective "
-            "machine threshold is given, so Phase 1.4.18 uses explicit manual UNREVIEWED/PASS/FAIL boundary-clarity review; only PASS may emit a usable range-boundary SFP, while lifecycle diagnostics continue for all review states."
+            "additional numeric threshold is given. The automatic detector now proves its defined price area from ordered confirmed swing boundaries, causal midpoint reaction and clean prevalidation structure. AUTO_PASS may emit SFP; pending/contradictory proofs cannot. Explicit caller review overrides remain auditable, and UNREVIEWED is confined to the optional legacy manual audit policy."
         ),
     )
 

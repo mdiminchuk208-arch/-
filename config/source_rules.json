@@ -1,5 +1,5 @@
 {
-  "registry_version": "phase1.4.16-0.4.16",
+  "registry_version": "phase1.4.21-0.4.21",
   "rules": [
     {
       "rule_id": "MS_SWING_HIGH_001",
@@ -424,7 +424,9 @@
       "rule_id": "RANGE_BOUNDARY_CLARITY_GATE_001",
       "kind": "TECHNICAL_NORMALIZATION",
       "name": "Boundary-clarity threshold remains a manual validation gate",
-      "statement": "SOURCE NUANCE: the general methodology allows a range to lack perfectly crisp boundaries if price still trades in a defined area, while the dedicated range module recommends skipping boundaries that are smeared enough to make future movement difficult to determine. Neither source supplies an objective machine threshold. Phase 1.4.7 therefore exports manual audit windows and blocks Entry Engine rather than inventing a threshold."
+      "statement": "SOURCE NUANCE: the general methodology allows a range to lack perfectly crisp boundaries if price still trades in a defined area, while the dedicated range module recommends skipping boundaries that are smeared enough to make future movement difficult to determine. Neither source supplies an objective machine threshold. Phase 1.4.7 therefore exports manual audit windows and blocks Entry Engine rather than inventing a threshold.",
+      "status": "SUPERSEDED",
+      "superseded_by": "RANGE_AUTOMATIC_BOUNDARY_PROOF_001"
     },
     {
       "rule_id": "RANGE_LIFECYCLE_PENDING_001",
@@ -600,6 +602,30 @@
       "kind": "TECHNICAL_NORMALIZATION",
       "name": "Consumed original range-boundary liquidity never reactivates on re-entry",
       "statement": "Phase 1.4.15 freezes the existing conservative lifecycle normalization: the first strict raid of an established original range boundary changes that boundary from ACTIVE to CONSUMED. Returning inside the prior range does not restore the same original boundary liquidity and later raids cannot reuse it for another range-boundary SFP. Already formed SFP context keeps its separate invalidation lifecycle. This resolves boundary-liquidity reactivation only; permanent range retirement/redraw remains an explicit unresolved gate."
+    },
+    {
+      "rule_id": "OB_IMPULSE_CAUSAL_WINDOW_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "OB causally confirmed in its structural impulse",
+      "statement": "OB_CORE_001 requires liquidity sweep, engulfing impulse and BOS confirmation; BOS is confirmation, not a requirement that A starts after it. Search from the frozen pre-BOS structural extreme through the selected impulse anchor, including an engulfing anchor candle. Entry remains unavailable until BOS, IMB and source geometry are known."
+    },
+    {
+      "rule_id": "OB_FORMATION_AVAILABILITY_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "OB first-test clock starts at complete formation",
+      "statement": "A source-qualified OB requires BOS as well as A/B/C. Its availability is max(C close, exact BOS close); candles before or at that availability belong to formation and cannot consume a future first test. Later wick touches, including boundary equality, consume eligibility."
+    },
+    {
+      "rule_id": "RANGE_AUTOMATIC_BOUNDARY_PROOF_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Automatic proof of a defined range price area",
+      "statement": "The existing detector represents explicit ordered confirmed swing boundaries, not a discretionary smeared channel. Directional geometry, causal midpoint reaction and clean prevalidation structure determine AUTO_PASS/AUTO_PENDING/AUTO_FAIL. No additional numeric clarity threshold is invented. Later invalidation/retirement cannot alter earlier confirmation. Explicit manual overrides and an optional legacy UNREVIEWED audit policy remain separate from automatic BACKTEST/SHADOW."
+    },
+    {
+      "rule_id": "FRESHNESS_CAUSAL_INTERVAL_INDEX_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Exact bounded touch indexing for offline histories",
+      "statement": "Freshness remains the absence of inclusive wick overlap strictly after POI availability and through the cutoff close. A validated immutable OHLC index answers only cutoff-contained intervals; future aggregates do not participate. Re-evaluation watches schedule their own fact-availability time, never early qualification."
     }
   ]
 }

@@ -64,8 +64,8 @@ def job(args):
     first_experiment=set()
     training_end=execution_start+timedelta(days=60)
 
-    def detector(htf, ltf, hr, lr, opp, *, as_of, policy):
-        result=original_detector(htf,ltf,hr,lr,opp,as_of=as_of,policy=policy)
+    def detector(htf, ltf, hr, lr, opp, *, as_of, policy, freshness_index=None):
+        result=original_detector(htf,ltf,hr,lr,opp,as_of=as_of,policy=policy,freshness_index=freshness_index)
         diag=inspector.inspect(htf,ltf,hr,lr,opp,as_of=as_of,policy=policy)
         if tuple(diag['predicted_reasons']) != result.blocked_reasons or diag['predicted_ready'] != (result.status=='READY'):
             raise AssertionError(('DIAGNOSTIC_MODEL_DIVERGED',symbol,opp.ltf_bos_event_time,result,diag))

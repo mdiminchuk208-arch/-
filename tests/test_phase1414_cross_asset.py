@@ -8,7 +8,7 @@ class Phase1414CrossAssetTests(unittest.TestCase):
     def test_registry_contains_cross_asset_harness_policy(self):
         with open('config/source_rules.json', encoding='utf-8') as fh:
             payload = json.load(fh)
-        self.assertEqual(payload['registry_version'], 'phase1.4.16-0.4.16')
+        self.assertEqual(payload['registry_version'], 'phase1.4.21-0.4.21')
         by_id = {row['rule_id']: row for row in payload['rules']}
         self.assertEqual(by_id['PHASE1414_CROSS_ASSET_BASKET_POLICY_001']['kind'], 'TECHNICAL_NORMALIZATION')
         self.assertEqual(by_id['PHASE1414_CROSS_ASSET_INVARIANT_GATE_001']['kind'], 'TECHNICAL_NORMALIZATION')

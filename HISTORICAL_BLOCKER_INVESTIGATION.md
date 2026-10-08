@@ -63,8 +63,36 @@ supporting POI, один дошёл до targets. Эти перекрывающ�
 отклонён прокси: `Tunnel connection failed: 403 Forbidden`. Расширенная история
 пока не получена; сохранён полный non-secret результат попытки.
 
-Следующие этапы: детерминированная boundary clarity, Range wiring, точная общая
-воронка после исправлений и реальные LONG/SHORT virtual lifecycles.
+## Этап 2: Range, доступность OB и точная freshness
+
+Автоматическая ясность проверяет уже определённые правилами ordered confirmed
+swing boundaries, midpoint reaction и отсутствие внутреннего BOS до validation.
+Ручной `UNREVIEWED` больше не является обязательной заглушкой автоматического
+pipeline. Явные manual overrides сохранены для аудита. Исторический индекс теперь
+подключает Range SFP так же, как независимый prefix snapshot.
+
+Те же 7 667 episodes дают 3 393 `SFP_FORMED`, 4 260 `CONSUMED_NO_SFP` и
+14 ambiguous; `CLARITY_REVIEW_BLOCKED=0`. Все episodes и 214 подробных traces
+сохранены в `data/reports/historical_blocker_investigation/stage2`.
+
+Первый тест OB считается строго после полной доступности `max(C close, BOS close)`.
+Сам BOS и более ранние свечи формирования не являются последующим касанием.
+Freshness POI сохраняет inclusive wick overlap, исключение forming candle и
+closed-candle cutoff. Интервальный индекс сравнен с независимым линейным сканированием;
+будущие узлы не участвуют в запросе прошлого. Он сокращает время, не меняя правило.
+
+Полная история 60m/5m: 6 367 setups, **5 READY**, 0 virtual entries.
+Полная история 15m/5m: 12 656 setups, **25 READY**, 0 virtual entries.
+LONG и SHORT найдены на реальных свечах. Повтор каждого запуска совпал побайтно
+по всем logical reports. Full suite **394 PASS**, lint PASS, mypy PASS (51 files),
+prefix/reference/future-mutation regressions PASS. Большие новые reports сохранены
+без потерь в gzip с SHA исходного содержимого; старые artifacts не удалялись.
+
+Этап ещё не доказывает работающий virtual lifecycle: следующий выявленный дефект —
+портфель рассматривает только следующий OPEN, хотя исходное правило описывает
+limit в POI. Внутрисвечное первое касание игнорируется, а на CLOSE уже отзывает OB.
+Следующий этап завершает это исполнение с консервативной OHLC chronology,
+проверяет точную воронку и реальные LONG/SHORT exits/accounting.
 
 ## Safety
 

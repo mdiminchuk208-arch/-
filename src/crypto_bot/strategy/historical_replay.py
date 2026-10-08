@@ -3,8 +3,8 @@
 Structural events are append-only products of analyze_market. Their *knowledge*
 time is the close of their indexed candle, including SFP events labelled OPEN.
 Only resolved transitions and confirmed levels are exposed to signal construction.
-Range clarity is UNREVIEWED: that policy emits no range SFPs. Range diagnostics
-remain in the reference snapshot API; this index never accepts manual reviews.
+Range events use the same causal automatic boundary proof as reference snapshots.
+This index never accepts manual reviews or promotes future range outcomes.
 """
 from __future__ import annotations
 
@@ -14,11 +14,13 @@ from dataclasses import replace
 from heapq import heappush, heappop
 
 from crypto_bot.common.models import Direction
-from crypto_bot.strategy.auto_levels import AutoLevelPolicy, derive_automatic_levels, ob_impulse_window
+from crypto_bot.strategy.auto_levels import AutoLevelPolicy, FreshnessIndex, derive_automatic_levels, ob_impulse_window
 from crypto_bot.strategy.market_analysis import analyze_market, MarketEventKind, TrendState, LiquidityState
 from crypto_bot.strategy.mtf_sfp import (link_sfp_formations_to_ltf_bos,
     MtfSfpStatus, cluster_entry_search_opportunities, _attach_entry_geometry)
 from crypto_bot.strategy.replay import EngineMode, opportunity_key, signals_from_opportunities
+from crypto_bot.strategy.range_engine import augment_market_report_with_range_sfps
+from crypto_bot.strategy.trade_plan import PriceZone
 
 
 def _validate_series(candles, minutes):
@@ -50,6 +52,8 @@ future information. Tests compare every close with independent prefix analysis.
         raise ValueError('both historical timeframes are required')
     lr = analyze_market(ltf, timeframe_minutes=ltf_minutes)
     hr = analyze_market(htf, timeframe_minutes=htf_minutes)
+    lr, lrange = augment_market_report_with_range_sfps(ltf, lr)
+    hr, hrange = augment_market_report_with_range_sfps(htf, hr)
     mtf = link_sfp_formations_to_ltf_bos(hr, lr, htf_minutes=htf_minutes,
         ltf_minutes=ltf_minutes, ltf_observation_start=ltf[0].open_time,
         ltf_observation_end=ltf[-1].close_time)
@@ -67,6 +71,7 @@ future information. Tests compare every close with independent prefix analysis.
     bos_events = {(e.candle_index, e.event_time): e for e in lr.events if e.kind in (
         MarketEventKind.BULLISH_STRUCTURE_BROKEN_BOS, MarketEventKind.BEARISH_STRUCTURE_BROKEN_BOS)}
     ltf_closes, htf_closes = [c.close_time for c in ltf], [c.close_time for c in htf]
+    freshness = FreshnessIndex((htf, ltf)) if auto_level_policy is not None else None
     # Every schedule entry represents a fact observed at that close, not an entry.
     queue, scheduled, counter, current_time = [], set(), 0, None
     def schedule(when, key):
@@ -156,19 +161,31 @@ future information. Tests compare every close with independent prefix analysis.
                         continue
                     # A broad watch is conservative: a false-positive watch only
                     # recalculates unchanged blockers; it never admits a position.
+                    known_at = max(c.close_time, opp.ltf_bos_event_time)
                     touch = next((d.close_time for d in ltf[index+2:]
-                                  if d.low <= a.high and d.high >= a.low), None)
+                                  if d.close_time > known_at and d.low <= a.high and d.high >= a.low), None)
                     if touch is not None:
                         touched.append(touch)
                         schedule(touch, key)
                 watches[key] = touched
             if key not in cached_auto or as_of in watches[key] or cached_auto[key].evidence:
                 cached_auto[key] = derive_automatic_levels(htf[:nh], ltf[:n], htf_report,
-                    prefix_report, opp, as_of=as_of, policy=auto_level_policy)
+                    prefix_report, opp, as_of=as_of, policy=auto_level_policy, freshness_index=freshness)
                 automatic_evaluations += 1
             result_map[ident] = cached_auto[key]
-            if cached_auto[key].evidence and n < len(ltf):
-                schedule(ltf[n].close_time, key)
+            if cached_auto[key].evidence:
+                # A missing target cannot become fresh on an unchanged history.
+                # Reconsider newly CLOSED HTF seeds, OB first touches (above),
+                # and the selected targets' first future touches. A watch only
+                # schedules observation at its own close; it never admits early.
+                if nh < len(htf):
+                    schedule(htf[nh].close_time, key)
+                if freshness is not None:
+                    for evidence in cached_auto[key].evidence:
+                        if evidence.kind.startswith('TARGET_POI_'):
+                            touch = freshness.first_touch(PriceZone(*evidence.prices), as_of, ltf[-1].close_time)
+                            if touch is not None:
+                                schedule(touch, key)
         signals = signals_from_opportunities(opportunities, {c.candidate_id:c for c in candidates},
             htf_report, prefix_report, htf[:nh], ltf[:n], symbol=symbol, as_of=as_of,
             htf_minutes=htf_minutes, ltf_minutes=ltf_minutes, mode=mode,
@@ -182,5 +199,9 @@ future information. Tests compare every close with independent prefix analysis.
     metadata = dict(structure_events={str(ltf_minutes):dict(Counter(e.kind.value for e in lr.events)),
                                      str(htf_minutes):dict(Counter(e.kind.value for e in hr.events))},
                     sfp_bos_links=len(confirmed), automatic_evaluations=automatic_evaluations,
-                    index_policy='CANDLE_CLOSE_KNOWLEDGE_GATES_UNREVIEWED_RANGE_NO_SIGNALS')
+                    range_episodes={str(ltf_minutes):dict(Counter(e.status for e in lrange.sweep_episodes)),
+                                    str(htf_minutes):dict(Counter(e.status for e in hrange.sweep_episodes))},
+                    range_sfp_events={str(ltf_minutes):lrange.sfp_formation_count,
+                                      str(htf_minutes):hrange.sfp_formation_count},
+                    index_policy='CANDLE_CLOSE_KNOWLEDGE_GATES_CAUSAL_AUTOMATIC_RANGE')
     return tuple(updates), metadata
