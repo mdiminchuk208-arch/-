@@ -445,6 +445,6 @@ test_sfp_requires_immediate_next_candle (test_work_regressions.WorkRegressions.t
 test_unknown_direction_is_not_silently_treated_as_short (test_work_regressions.WorkRegressions.test_unknown_direction_is_not_silently_treated_as_short) ... ok
 
 ----------------------------------------------------------------------
-Ran 439 tests in 12.839s
+Ran 439 tests in 12.680s
 
 OK

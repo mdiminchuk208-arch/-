@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-10-09T03:38:06.252862+05:00",
-  "phase": "Complete frozen canonical binance 15/5 windows and segments",
+  "timestamp": "2026-10-09T03:45:07.338216+05:00",
+  "phase": "Complete frozen canonical binance 60/5 windows and segments",
   "tests": 439,
   "tests_status": "PASS",
   "lint_status": "PASS",
