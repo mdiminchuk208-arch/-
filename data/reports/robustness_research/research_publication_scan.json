@@ -14,83 +14,83 @@
   "files": [
     {
       "logical_bytes": 69218,
-      "logical_sha256": "57063306b6921d141d7d1ff055f6ef117ab5bbd65dc92bcd2f447c61417ce514",
+      "logical_sha256": "8899d981fbe2af70fd5d59159faae46cd65b97d47ab72f46920613ee552a9a92",
       "path": "data/reports/robustness_research/continuation_full_tests.log",
       "stored_bytes": 69218,
-      "stored_sha256": "57063306b6921d141d7d1ff055f6ef117ab5bbd65dc92bcd2f447c61417ce514"
+      "stored_sha256": "8899d981fbe2af70fd5d59159faae46cd65b97d47ab72f46920613ee552a9a92"
     },
     {
-      "logical_bytes": 7921,
-      "logical_sha256": "83121f8191dea953a32dfef74a18e7cc60bbf3c121c9c69967d137eeaf14158f",
+      "logical_bytes": 7922,
+      "logical_sha256": "2cb5665724b3b1cdac54c906b41fb6f114cc30ae01842eaa6593098d1b74bc4b",
       "path": "data/reports/robustness_research/continuation_stage_checks.json",
-      "stored_bytes": 7921,
-      "stored_sha256": "83121f8191dea953a32dfef74a18e7cc60bbf3c121c9c69967d137eeaf14158f"
+      "stored_bytes": 7922,
+      "stored_sha256": "2cb5665724b3b1cdac54c906b41fb6f114cc30ae01842eaa6593098d1b74bc4b"
     },
     {
       "logical_bytes": 3462,
-      "logical_sha256": "bbc56184d369daf6eac37c4bc8c7a41f375b1ed730c86221cbdb8154686b146e",
-      "path": "data/reports/robustness_research/exit_management/bybit_60_15/HOLDOUT_SEGMENT_00/artifact_hashes.json",
+      "logical_sha256": "c95a0d6b94d9b08c73d7656dfa9fd86c46cfb875a022aff0e89bbbdb17db3d6e",
+      "path": "data/reports/robustness_research/exit_management/bybit_240_15/HOLDOUT_SEGMENT_00/artifact_hashes.json",
       "stored_bytes": 3462,
-      "stored_sha256": "bbc56184d369daf6eac37c4bc8c7a41f375b1ed730c86221cbdb8154686b146e"
+      "stored_sha256": "c95a0d6b94d9b08c73d7656dfa9fd86c46cfb875a022aff0e89bbbdb17db3d6e"
     },
     {
       "logical_bytes": 65,
-      "logical_sha256": "a3121de0c5035664cc4daaad188d68ae8e294d8045a3eba3b41a9dcc1ca313d0",
-      "path": "data/reports/robustness_research/exit_management/bybit_60_15/HOLDOUT_SEGMENT_00/fingerprint.sha256",
+      "logical_sha256": "f09bd114f69e4cb879c53d93dd8a103ab015bfade0489afbeb2490f26e871721",
+      "path": "data/reports/robustness_research/exit_management/bybit_240_15/HOLDOUT_SEGMENT_00/fingerprint.sha256",
       "stored_bytes": 65,
-      "stored_sha256": "a3121de0c5035664cc4daaad188d68ae8e294d8045a3eba3b41a9dcc1ca313d0"
+      "stored_sha256": "f09bd114f69e4cb879c53d93dd8a103ab015bfade0489afbeb2490f26e871721"
     },
     {
-      "logical_bytes": 748,
-      "logical_sha256": "dc41674ed19f5790facaa419454247524b75a4b78e49d08c202df2e01de36ed5",
-      "path": "data/reports/robustness_research/exit_management/bybit_60_15/HOLDOUT_SEGMENT_00/source_context.json",
-      "stored_bytes": 748,
-      "stored_sha256": "dc41674ed19f5790facaa419454247524b75a4b78e49d08c202df2e01de36ed5"
+      "logical_bytes": 750,
+      "logical_sha256": "148e055a67b58c4d3eba4481264fb178f119df4cc3157eb6ce13fad213562ff3",
+      "path": "data/reports/robustness_research/exit_management/bybit_240_15/HOLDOUT_SEGMENT_00/source_context.json",
+      "stored_bytes": 750,
+      "stored_sha256": "148e055a67b58c4d3eba4481264fb178f119df4cc3157eb6ce13fad213562ff3"
     },
     {
       "logical_bytes": 3462,
-      "logical_sha256": "acc8f91407de4bd32843a899089d75a9fe5229a0c03124d6198f5ac2e8b1036e",
-      "path": "data/reports/robustness_research/exit_management/bybit_60_15/REFERENCE_SEGMENT_00/artifact_hashes.json",
+      "logical_sha256": "7b2182620aeba1b8f402da988f6245e4c80cbe6d5445a01f572232d6af67ff7c",
+      "path": "data/reports/robustness_research/exit_management/bybit_240_15/REFERENCE_SEGMENT_00/artifact_hashes.json",
       "stored_bytes": 3462,
-      "stored_sha256": "acc8f91407de4bd32843a899089d75a9fe5229a0c03124d6198f5ac2e8b1036e"
+      "stored_sha256": "7b2182620aeba1b8f402da988f6245e4c80cbe6d5445a01f572232d6af67ff7c"
     },
     {
       "logical_bytes": 65,
-      "logical_sha256": "f8ce1dabec5002c8b3955f36f4e38f89d221ad0c41ebbdb22711d16635c429de",
-      "path": "data/reports/robustness_research/exit_management/bybit_60_15/REFERENCE_SEGMENT_00/fingerprint.sha256",
+      "logical_sha256": "0c98a591d3e9a8b9bad0fc0595be4c265e1a038110e26d82097b6eb038cc9164",
+      "path": "data/reports/robustness_research/exit_management/bybit_240_15/REFERENCE_SEGMENT_00/fingerprint.sha256",
       "stored_bytes": 65,
-      "stored_sha256": "f8ce1dabec5002c8b3955f36f4e38f89d221ad0c41ebbdb22711d16635c429de"
+      "stored_sha256": "0c98a591d3e9a8b9bad0fc0595be4c265e1a038110e26d82097b6eb038cc9164"
     },
     {
-      "logical_bytes": 748,
-      "logical_sha256": "de4a67f08e3ed7816237fa3b6c88d6ff8cf4884e71d51855a6f17714d3cc316d",
-      "path": "data/reports/robustness_research/exit_management/bybit_60_15/REFERENCE_SEGMENT_00/source_context.json",
-      "stored_bytes": 748,
-      "stored_sha256": "de4a67f08e3ed7816237fa3b6c88d6ff8cf4884e71d51855a6f17714d3cc316d"
+      "logical_bytes": 750,
+      "logical_sha256": "57003456835ba138828f0cf0dc3b2cdf7bab50d43c05f08ca6940ff310719072",
+      "path": "data/reports/robustness_research/exit_management/bybit_240_15/REFERENCE_SEGMENT_00/source_context.json",
+      "stored_bytes": 750,
+      "stored_sha256": "57003456835ba138828f0cf0dc3b2cdf7bab50d43c05f08ca6940ff310719072"
     },
     {
       "logical_bytes": 3462,
-      "logical_sha256": "dc46da55f4ffbea26161df63e5c0f4e5fc07692487dcd3588f4c715ed4f4db1b",
-      "path": "data/reports/robustness_research/exit_management/bybit_60_15/VALIDATION_SEGMENT_00/artifact_hashes.json",
+      "logical_sha256": "da3e7b9020910817ab74b2eb25d40f5e81b04c8887a6ad3e98f241d847617183",
+      "path": "data/reports/robustness_research/exit_management/bybit_240_15/VALIDATION_SEGMENT_00/artifact_hashes.json",
       "stored_bytes": 3462,
-      "stored_sha256": "dc46da55f4ffbea26161df63e5c0f4e5fc07692487dcd3588f4c715ed4f4db1b"
+      "stored_sha256": "da3e7b9020910817ab74b2eb25d40f5e81b04c8887a6ad3e98f241d847617183"
     },
     {
       "logical_bytes": 65,
-      "logical_sha256": "4394443c3f5aa34cfb85fee4d3d2295ea9548c80f07dbe421cf9ac3866335b1a",
-      "path": "data/reports/robustness_research/exit_management/bybit_60_15/VALIDATION_SEGMENT_00/fingerprint.sha256",
+      "logical_sha256": "5f801ea5a1a9ce6a0b55498a8e1e74f67bd5dd8908d09b5d84855f2765b0e588",
+      "path": "data/reports/robustness_research/exit_management/bybit_240_15/VALIDATION_SEGMENT_00/fingerprint.sha256",
       "stored_bytes": 65,
-      "stored_sha256": "4394443c3f5aa34cfb85fee4d3d2295ea9548c80f07dbe421cf9ac3866335b1a"
+      "stored_sha256": "5f801ea5a1a9ce6a0b55498a8e1e74f67bd5dd8908d09b5d84855f2765b0e588"
     },
     {
-      "logical_bytes": 748,
-      "logical_sha256": "a49d65778ba2641da2646bf5b088f8772423180134fe940677279540987e3dc1",
-      "path": "data/reports/robustness_research/exit_management/bybit_60_15/VALIDATION_SEGMENT_00/source_context.json",
-      "stored_bytes": 748,
-      "stored_sha256": "a49d65778ba2641da2646bf5b088f8772423180134fe940677279540987e3dc1"
+      "logical_bytes": 750,
+      "logical_sha256": "3591d6e9dcdd1051197503df293f84ba6041c4dbaa22ef75bf567f98150435dd",
+      "path": "data/reports/robustness_research/exit_management/bybit_240_15/VALIDATION_SEGMENT_00/source_context.json",
+      "stored_bytes": 750,
+      "stored_sha256": "3591d6e9dcdd1051197503df293f84ba6041c4dbaa22ef75bf567f98150435dd"
     }
   ],
-  "logical_bytes_covered": 89964,
+  "logical_bytes_covered": 89971,
   "patterns": [
     "private_key",
     "github_token",
@@ -104,6 +104,6 @@
   "secret_matches": 0,
   "sha_identical_file_reuse": 0,
   "trade_entry_allowed": false,
-  "unique_logical_bytes_scanned": 89964,
+  "unique_logical_bytes_scanned": 89971,
   "unique_stored_sha256": 11
 }
