@@ -3,9 +3,29 @@ from __future__ import annotations
 
 from datetime import datetime, timedelta
 from hashlib import sha256
+import gzip
 import json
+import shutil
+from tempfile import TemporaryDirectory
+from pathlib import Path
 
 from run_historical_portfolio import canonical
+
+
+def save_artifact_hashes(folder, recursive=False):
+    paths=folder.rglob('*') if recursive else folder.iterdir()
+    hashes={path.relative_to(folder).as_posix():sha256(path.read_bytes()).hexdigest()
+            for path in paths if path.is_file() and path.name not in ('artifact_hashes.json','fingerprint.sha256')}
+    (folder/'artifact_hashes.json').write_text(canonical(hashes)+'\n')
+    fingerprint=sha256(canonical(hashes).encode()).hexdigest()
+    (folder/'fingerprint.sha256').write_text(fingerprint+'\n')
+    return fingerprint
+
+
+def verify_source_inputs(repo, source):
+    for name,digest in source['input_hashes'].items():
+        path=repo/'data/history/bybit'/name if 'execution_start' in source else repo/name
+        assert sha256(path.read_bytes()).hexdigest()==digest,path
 
 
 def verify_expected_fingerprint(folder, expected):
@@ -17,6 +37,50 @@ def verify_expected_fingerprint(folder, expected):
     if actual!=expected:
         raise ValueError(f'Recovery fingerprint mismatch: {folder}; expected={expected}; actual={actual}')
     return actual
+
+
+def restore_checkpoint_schema(folder, expected, diagnostics):
+    """Recover the historical audit schema only when it reproduces the old hash.
+
+    Some original workers predated the diagnostic bos_level_price field. All
+    execution artifacts must remain byte-identical. Keep the expanded audit and
+    transformation receipt separately, outside the historical artifact set.
+    """
+    try:
+        return verify_expected_fingerprint(folder,expected)
+    except ValueError:
+        pass
+    name='target_availability_qualification_only.jsonl.gz'
+    hashes=json.loads((folder/'artifact_hashes.json').read_text())
+    if name not in hashes:
+        return verify_expected_fingerprint(folder,expected)
+    with gzip.open(folder/name,'rt') as reader:
+        rows=[json.loads(line) for line in reader]
+    if not rows or not all('bos_level_price' in row for row in rows):
+        return verify_expected_fingerprint(folder,expected)
+    for row in rows:
+        row.pop('bos_level_price')
+    diagnostics.mkdir(parents=True,exist_ok=True)
+    with TemporaryDirectory(dir=diagnostics) as directory:
+        candidate=Path(directory)/name
+        with candidate.open('wb') as raw, gzip.GzipFile(fileobj=raw,mode='wb',filename='',mtime=0) as writer:
+            for row in rows:
+                writer.write((canonical(row)+'\n').encode())
+        recovered=dict(hashes)
+        recovered[name]=sha256(candidate.read_bytes()).hexdigest()
+        if sha256(canonical(recovered).encode()).hexdigest()!=expected:
+            return verify_expected_fingerprint(folder,expected)
+        shutil.copyfile(folder/name,diagnostics/'target_availability_qualification_only.v2.jsonl.gz')
+        receipt=dict(expected_fingerprint=expected,expanded_fingerprint=sha256(canonical(hashes).encode()).hexdigest(),
+                     historical_schema='PRE_BOS_LEVEL_PRICE_DIAGNOSTIC',restored_audit_rows=len(rows),
+                     expanded_audit_sha256=hashes[name],restored_audit_sha256=recovered[name],
+                     unchanged_artifact_hashes={k:v for k,v in hashes.items() if k!=name},
+                     source_config_inputs_and_execution_unchanged=True,trade_entry_allowed=False)
+        (diagnostics/'schema_restoration.json').write_text(canonical(receipt)+'\n')
+        candidate.replace(folder/name)
+        (folder/'artifact_hashes.json').write_text(canonical(recovered)+'\n')
+        (folder/'fingerprint.sha256').write_text(expected+'\n')
+    return verify_expected_fingerprint(folder,expected)
 
 
 def reusable_case(folder,context):

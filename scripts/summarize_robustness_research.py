@@ -33,7 +33,7 @@ def json_rows(path):
 def write_csv(path,rows):
     keys=list(dict.fromkeys(k for row in rows for k in row))
     with path.open('w',newline='') as handle:
-        writer=csv.DictWriter(handle,fieldnames=keys);writer.writeheader()
+        writer=csv.DictWriter(handle,fieldnames=keys,lineterminator='\n');writer.writeheader()
         for row in rows:
             writer.writerow({k:canonical(v) if isinstance(v,(dict,list,tuple)) else v for k,v in row.items()})
 

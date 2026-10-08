@@ -9,7 +9,8 @@
 
 - Python 3.12.14; изолированное окружение `/workspace/venvs/crypto-bot`.
 - Установлены точные версии из `requirements-dev.txt` и `requirements-research.txt`.
-- Full tests: **437 PASS**; lint E9/F и mypy проходят.
+- Full tests последнего проверенного этапа: **438 PASS**; lint E9/F и mypy проходят.
+  Последующие checkpoints записывают актуальный count и exit status отдельно.
 - Все **57** canonical source/config SHA сохранены.
 - Все **34** публичные серии проверены по stored SHA и распакованному CSV SHA:
   [receipt](data/reports/robustness_research/continuation_input_validation.json).
@@ -33,12 +34,19 @@ frozen baseline и параметрами, требуя совпадения п�
 
 Первый `canonical/binance_15_5/REFERENCE_SEGMENT_00` восстановлен точно:
 `2d27f51566bc0a87028052173bc6ba14eb8c068e2947e66ba0c7da646d0286ae`.
-Девять `binance_15_5/REFERENCE_SEGMENT_00..08` восстановлены с точным совпадением.
-На `binance_60_5/REFERENCE_SEGMENT_00` проверка обнаружила расхождение и остановила
-восстановление: expected `2795678d54357bfbfafa042407581dcda42f7d184512337af6fc49a333593b51`,
-actual `2c26c63f7945a5fda37426b878f15aca278889cdd0af1c72ca2bd8266751747a`.
-Этот случай не засчитывается восстановленным. Выполняется диагностический повтор
-с исходным research adapter из `b86fd7de`; исходный checkpoint не изменён.
+Все **21** исходных сегмента восстановлены с точным совпадением fingerprints:
+9 `binance_15_5/REFERENCE_SEGMENT_00..08`, 11 `binance_60_5/REFERENCE_SEGMENT_00..10`
+и `binance_60_5/VALIDATION_SEGMENT_10`.
+Расхождение первого 60/5 случая диагностировано и устранено: исходные workers
+предшествовали добавлению `bos_level_price` в diagnostic POI audit (изменение
+research tools в `a646301`). Повтор с исходным adapter из `b86fd7de` дал тот же
+expanded fingerprint `2c26c63f7945a5fda37426b878f15aca278889cdd0af1c72ca2bd8266751747a`.
+Восстановление прежней схемы только audit-файла дало точное исходное значение
+`2795678d54357bfbfafa042407581dcda42f7d184512337af6fc49a333593b51`.
+Все остальные шесть artifact SHA сохранились; source/config/inputs/исполнение
+не изменились. Expanded audit и [schema receipt](data/reports/robustness_research/restoration_diagnostics/canonical/binance_60_5/REFERENCE_SEGMENT_00/schema_restoration.json)
+сохранены отдельно. Преобразование разрешено helper только если оно даёт **точный
+исходный fingerprint**; любой иной mismatch останавливает восстановление.
 Статус последней полностью законченной группы находится в
 [restoration receipt](data/reports/robustness_research/checkpoint_restoration_receipt.json).
 До статуса `complete=true` весь checkpoint не считается восстановленным.
@@ -96,7 +104,9 @@ TP allocation, timing и censored paired outcomes доступны в
 После точного восстановления 21 сегмента продолжить только незавершённые studies
 из [inventory](data/reports/robustness_research/research_completion_inventory.json):
 canonical Binance 15/5, 60/5, 240/5, 240/15; соответствующие execution/exit studies;
-оставшиеся OTE/midpoint variants. OTE 0.710 уже запущен отдельно.
+оставшиеся OTE/midpoint variants. Все 11 зарегистрированных structural variants
+уже рассчитаны и проверяются на completeness; midpoint даёт 0 entries в VALIDATION
+против 1 у BASE. Альтернативы не выбираются по этому sample.
 Выполнить зарегистрированные VALIDATION/HOLDOUT/walk windows, costs/risk,
 TP allocation, BE timing и POI sensitivity, не отбирать лучший параметр.
 
@@ -104,3 +114,16 @@ TP allocation, BE timing и POI sensitivity, не отбирать лучший 
 baseline/hash validation, commit/push в `main`, архив точного commit и final hash.
 Малая выборка должна завершаться честным `INSUFFICIENT SAMPLE`, а не изменением
 canonical ради положительного результата.
+
+Для автоматического продолжения зарегистрированных studies:
+
+```bash
+PYTHONPATH=src python scripts/continue_robustness_research.py --workers 4
+```
+
+При явно разрешённой пользователем публикации `--checkpoint-main` включает full
+tests, lint/mypy, staged content scan, commit и non-force push каждого стабильного
+этапа в `main`. Уже завершённые canonical/structural studies пропускаются по
+complete inventory и fingerprints. Execution/exit cases повторно используются
+только после проверки source/input SHA и artifact hashes. Новые per-case manifests
+и source context сохраняются для последующего возобновления.

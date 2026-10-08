@@ -3,6 +3,9 @@ import json
 from pathlib import Path
 import sys
 import unittest
+from hashlib import sha256
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
 
 from crypto_bot.common.models import Direction
 from crypto_bot.strategy.virtual_portfolio import VirtualPortfolio
@@ -11,7 +14,7 @@ from test_virtual_portfolio import bar, signal
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 from research_exit_management import ExitResearchPortfolio, EXIT_VARIANTS
 from run_historical_portfolio import canonical
-from run_exit_research import paired_replays, verify_exit_future
+from run_exit_research import paired_replays, verify_exit_future, run_case as research_run_case
 from crypto_bot.strategy.virtual_portfolio import SimulationPolicy
 
 
@@ -22,6 +25,38 @@ def run_case(portfolio,bars,direction=Direction.LONG):
 
 
 class ExitResearchTests(unittest.TestCase):
+    def test_completed_exit_reuse_skips_simulation_but_rejects_corruption_or_changed_source(self):
+        repo=Path(__file__).resolve().parents[1]
+        with TemporaryDirectory() as directory:
+            source=Path(directory)/'source';source.mkdir();output=Path(directory)/'output';output.mkdir()
+            source_summary=dict(input_hashes={'pyproject.toml':sha256((repo/'pyproject.toml').read_bytes()).hexdigest()})
+            (source/'summary.json').write_text(canonical(source_summary))
+            (source/'signals.jsonl').write_text('frozen signals\n')
+            receipts=[]
+            for name in ('trades.jsonl','decisions.jsonl','equity_curve.jsonl'):
+                (source/name).write_text('{}\n')
+            for variant in EXIT_VARIANTS:
+                dest=output/variant;dest.mkdir()
+                receipt=dict(variant=variant,role='EXTERNAL',trade_entry_allowed=False,
+                             source_signal_sha256=sha256((source/'signals.jsonl').read_bytes()).hexdigest())
+                receipts.append(receipt);(dest/'summary.json').write_text(canonical(receipt))
+                for name in ('trades.jsonl','decisions.jsonl','equity_curve.jsonl'):
+                    (dest/name).write_text('{"trade_id":"one"}\n' if name=='trades.jsonl' else '{}\n')
+            (source/'trades.jsonl').write_text('{"trade_id":"one"}\n')
+            (output/'results.json').write_text(canonical(receipts))
+            for name in ('paired_actual_entries.json','post_be_follow.json','exit_real_causality.json'):
+                (output/name).write_text('[]')
+            with patch('run_exit_research.simulate',side_effect=AssertionError('Completed study must not rerun')) as simulate:
+                research_run_case(source,output,'EXTERNAL',resume_existing=True)
+                research_run_case(source,output,'EXTERNAL',resume_existing=True)
+                simulate.assert_not_called()
+            (output/'B_30_30_40_BE_TP1/trades.jsonl').write_text('corrupted execution\n')
+            with self.assertRaises(AssertionError):
+                research_run_case(source,output,'EXTERNAL',resume_existing=True)
+            (source/'signals.jsonl').write_text('changed frozen signals\n')
+            with self.assertRaises(ValueError):
+                research_run_case(source,output,'EXTERNAL',resume_existing=True)
+
     def test_paired_fills_preserve_original_entry_and_future_exit_invariance(self):
         rows=[bar(0),bar(1),bar(2,108,111,107,110),bar(3,101,103,99,100),bar(4)]
         original=VirtualPortfolio();run_case(original,rows)

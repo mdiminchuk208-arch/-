@@ -38,10 +38,10 @@ test_real_detector_to_virtual_tp_lifecycle_both_directions_and_modes (test_auto_
 test_withdrawn_pending_setup_cannot_enter_on_later_bar (test_auto_replay.AutoReplayTests.test_withdrawn_pending_setup_cannot_enter_on_later_bar) ... ok
 test_backtest_shadow_long_short_full_automatic_lifecycle_and_restart (test_automatic_lifecycle.AutomaticLifecycleTests.test_backtest_shadow_long_short_full_automatic_lifecycle_and_restart) ... ok
 test_cli_keeps_causal_ltf_tail_after_last_closed_htf (test_automatic_lifecycle.AutomaticLifecycleTests.test_cli_keeps_causal_ltf_tail_after_last_closed_htf) ... Indexed E2E: 3 signal changes; 2 level evaluations
-BACKTEST: $1170.00 -> equity $1309.77; 1 setups; 1 entries; trade_entry_allowed=false; fingerprint=fae366d43b2fe4c7d465648c640d2f20c3565de83ec7ff6fbf46c21a0c388e6f
+BACKTEST: $1170.00 -> equity $1309.77; 1 setups; 1 entries; trade_entry_allowed=false; fingerprint=157a199e47951a69e83e7113632f7890929427792da5211a590474ba7cf09234
 ok
 test_cli_resume_rejects_changed_history_and_mode_without_touching_checkpoint (test_automatic_lifecycle.AutomaticLifecycleTests.test_cli_resume_rejects_changed_history_and_mode_without_touching_checkpoint) ... Indexed E2E: 3 signal changes; 2 level evaluations
-SHADOW: $1170.00 -> equity $1252.52; 1 setups; 1 entries; trade_entry_allowed=false; fingerprint=129a279a4ce019a2aa62a715bae0ad2b98813e95e2c1cb3ed4f957454ae757cd
+SHADOW: $1170.00 -> equity $1252.52; 1 setups; 1 entries; trade_entry_allowed=false; fingerprint=9017be327aad90aaf8cfffa1ee2ece3f515ae27860867377ad6774e5c9d5101d
 ok
 test_every_prefix_and_future_mutation_preserves_automatic_ready (test_automatic_lifecycle.AutomaticLifecycleTests.test_every_prefix_and_future_mutation_preserves_automatic_ready) ... ok
 test_fetch_does_not_stop_when_limit_one_first_row_is_unfinished (test_bybit_data.BybitDataTests.test_fetch_does_not_stop_when_limit_one_first_row_is_unfinished) ... ok
@@ -317,6 +317,9 @@ test_duplicates_and_disaggregation_are_rejected (test_research_data_import.Resea
 test_gap_or_partial_bin_is_never_interpolated (test_research_data_import.ResearchDataImportTests.test_gap_or_partial_bin_is_never_interpolated) ... ok
 test_gzip_is_reproducible_and_records_logical_sha (test_research_data_import.ResearchDataImportTests.test_gzip_is_reproducible_and_records_logical_sha) ... ok
 test_a_bit_for_bit_baseline_both_sides_partial_costs_and_collision (test_research_exit_management.ExitResearchTests.test_a_bit_for_bit_baseline_both_sides_partial_costs_and_collision) ... ok
+test_completed_exit_reuse_skips_simulation_but_rejects_corruption_or_changed_source (test_research_exit_management.ExitResearchTests.test_completed_exit_reuse_skips_simulation_but_rejects_corruption_or_changed_source) ... source verified complete exit case reused
+source verified complete exit case reused
+ok
 test_each_allocation_closes_entire_quantity_and_conserves_fees (test_research_exit_management.ExitResearchTests.test_each_allocation_closes_entire_quantity_and_conserves_fees) ... ok
 test_exit_shadow_matches_backtest_same_frozen_inputs (test_research_exit_management.ExitResearchTests.test_exit_shadow_matches_backtest_same_frozen_inputs) ... ok
 test_later_close_cannot_retroactively_stop_on_transfer_bar (test_research_exit_management.ExitResearchTests.test_later_close_cannot_retroactively_stop_on_transfer_bar) ... ok
@@ -337,6 +340,7 @@ test_structure_cache_does_not_reuse_attached_geometry_across_ote_variants (test_
 test_touch_variants_distinguish_boundary_and_body_with_causal_cutoff (test_research_variants.ResearchVariantTests.test_touch_variants_distinguish_boundary_and_body_with_causal_cutoff) ... ok
 test_validated_prefix_reuse_is_exact_and_rejects_changed_interior (test_research_variants.ResearchVariantTests.test_validated_prefix_reuse_is_exact_and_rejects_changed_interior) ... ok
 test_every_symbol_gap_partitions_shared_execution_clock (test_research_windows.ResearchWindowTests.test_every_symbol_gap_partitions_shared_execution_clock) ... ok
+test_legacy_audit_recovery_requires_original_hash_and_keeps_modern_diagnostic (test_research_windows.ResearchWindowTests.test_legacy_audit_recovery_requires_original_hash_and_keeps_modern_diagnostic) ... ok
 test_resume_requires_exact_inputs_and_every_original_artifact_hash (test_research_windows.ResearchWindowTests.test_resume_requires_exact_inputs_and_every_original_artifact_hash) ... ok
 test_slicing_excludes_candle_not_closed_at_cutoff (test_research_windows.ResearchWindowTests.test_slicing_excludes_candle_not_closed_at_cutoff) ... ok
 test_targeted_recovery_preserves_other_windows_and_segments (test_research_windows.ResearchWindowTests.test_targeted_recovery_preserves_other_windows_and_segments) ... ok
@@ -441,6 +445,6 @@ test_sfp_requires_immediate_next_candle (test_work_regressions.WorkRegressions.t
 test_unknown_direction_is_not_silently_treated_as_short (test_work_regressions.WorkRegressions.test_unknown_direction_is_not_silently_treated_as_short) ... ok
 
 ----------------------------------------------------------------------
-Ran 437 tests in 21.438s
+Ran 439 tests in 12.758s
 
 OK

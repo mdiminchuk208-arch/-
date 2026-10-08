@@ -18,6 +18,7 @@ from crypto_bot.strategy.virtual_portfolio import SimulationPolicy, VirtualPortf
 from research_support import check_baseline, performance, read_compressed
 from run_historical_portfolio import canonical, simulate
 from run_robustness_research import slice_bars, write_rows
+from research_inventory import reusable_case, save_artifact_hashes, verify_source_inputs
 
 
 def restore_signal(row):
@@ -45,7 +46,7 @@ def restore_signal(row):
     return StrategySignal(**row)
 
 
-def scenarios(source,output):
+def scenarios(source,output,resume_existing=False):
     repo=Path(__file__).resolve().parents[1]
     check_baseline(repo)
     folders=sorted(source.glob('*/summary.json'))
@@ -62,11 +63,25 @@ def scenarios(source,output):
         summary=json.loads(summary_path.read_text())
         if summary['window']['name']=='REFERENCE':
             continue
+        verify_source_inputs(repo,summary)
         start,end=(datetime.fromisoformat(summary[k]) for k in ('start','end'))
         execution={s:slice_bars(cs,start,end) for s,cs in data.items()}
         with gzip.open(summary_path.parent/'signals.jsonl.gz','rt') as reader:
             updates=[restore_signal(json.loads(line)) for line in reader]
         for name,policy in policies.items():
+            target=output/name/summary_path.parent.name
+            context=dict(cohort=cohort,htf=summary['htf'],ltf=ltf,window=summary['window'],segment=summary['segment'],
+                         start=start,end=end,scenario=name,policy=asdict(policy),
+                         baseline_commit=summary['baseline_commit'],
+                         source_signal_sha256=sha256((summary_path.parent/'signals.jsonl.gz').read_bytes()).hexdigest(),
+                         source_input_hashes=summary['input_hashes'])
+            if resume_existing:
+                previous=reusable_case(target,context)
+                if previous is not None:
+                    results.append(dict(scenario=name,window=summary['window']['name'],segment=summary['segment'],performance=previous['performance']))
+                    (output/'results.json').write_text(canonical(results)+'\n')
+                    print(source.name,summary_path.parent.name,name,'verified artifacts reused',flush=True)
+                    continue
             p,observed=simulate(execution,updates,portfolio=VirtualPortfolio(equity=1170,policy=policy),initial_capital=1170)
             if name=='BASE_VERIFY':
                 expected_trades=(summary_path.parent/'trades.jsonl').read_text()
@@ -75,7 +90,6 @@ def scenarios(source,output):
                     assert reader.read()==''.join(canonical(asdict(d))+'\n' for d in p.journal),summary_path
                 with gzip.open(summary_path.parent/'equity_curve.jsonl.gz','rt') as reader:
                     assert reader.read()==''.join(canonical(t)+'\n' for t in p.equity_curve),summary_path
-            target=output/name/summary_path.parent.name
             target.mkdir(parents=True,exist_ok=True)
             payload=dict(cohort=cohort,htf=summary['htf'],ltf=ltf,window=summary['window'],segment=summary['segment'],
                 start=start,end=end,scenario=name,policy=asdict(policy),
@@ -88,8 +102,10 @@ def scenarios(source,output):
             write_rows(target/'trades.jsonl',p.trades.values())
             write_rows(target/'decisions.jsonl.gz',(asdict(d) for d in p.journal))
             write_rows(target/'equity_curve.jsonl.gz',p.equity_curve)
+            save_artifact_hashes(target)
             results.append(dict(scenario=name,window=summary['window']['name'],segment=summary['segment'],
                                 performance=payload['performance']))
+            (output/'results.json').write_text(canonical(results)+'\n')
             print(source.name,summary_path.parent.name,name,len(p.trades),'entries',flush=True)
     (output/'results.json').write_text(canonical(results)+'\n')
     check_baseline(repo)
@@ -99,8 +115,9 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source',type=Path,required=True)
     parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--resume-existing',action='store_true',help='Reuse only complete, hash-verified identical-input scenario cases.')
     args=parser.parse_args()
-    scenarios(args.source,args.output)
+    scenarios(args.source,args.output,args.resume_existing)
 
 
 if __name__=='__main__':

@@ -9,8 +9,8 @@ import json
 from crypto_bot.common.models import Candle
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from run_robustness_research import common_segments, slice_bars, retained_results
-from research_inventory import reusable_case, verify_expected_fingerprint
+from run_robustness_research import common_segments, slice_bars, retained_results, write_rows
+from research_inventory import reusable_case, verify_expected_fingerprint, restore_checkpoint_schema
 from run_historical_portfolio import canonical
 
 START = datetime(2020, 1, 1, tzinfo=timezone.utc)
@@ -22,6 +22,29 @@ def bar(index):
 
 
 class ResearchWindowTests(unittest.TestCase):
+    def test_legacy_audit_recovery_requires_original_hash_and_keeps_modern_diagnostic(self):
+        with TemporaryDirectory() as directory:
+            folder=Path(directory)/'case';folder.mkdir()
+            name='target_availability_qualification_only.jsonl.gz'
+            rows=[dict(symbol='BTCUSDT',bos_level_price=100,qualified_ob=True)]
+            write_rows(folder/name,[{k:v for k,v in rows[0].items() if k!='bos_level_price'}])
+            (folder/'trades.jsonl').write_text('unchanged execution evidence\n')
+            old={n:sha256((folder/n).read_bytes()).hexdigest() for n in (name,'trades.jsonl')}
+            expected=sha256(canonical(old).encode()).hexdigest()
+            write_rows(folder/name,rows)
+            expanded={n:sha256((folder/n).read_bytes()).hexdigest() for n in old}
+            (folder/'artifact_hashes.json').write_text(canonical(expanded))
+            (folder/'fingerprint.sha256').write_text(sha256(canonical(expanded).encode()).hexdigest())
+            diagnostics=Path(directory)/'diagnostics'
+            before={p.name:p.read_bytes() for p in folder.iterdir()}
+            with self.assertRaises(ValueError):
+                restore_checkpoint_schema(folder,'unrelated checkpoint',diagnostics)
+            self.assertEqual(before,{p.name:p.read_bytes() for p in folder.iterdir()})
+            self.assertEqual(restore_checkpoint_schema(folder,expected,diagnostics),expected)
+            self.assertEqual(sha256((folder/'trades.jsonl').read_bytes()).hexdigest(),old['trades.jsonl'])
+            self.assertEqual(sha256((diagnostics/'target_availability_qualification_only.v2.jsonl.gz').read_bytes()).hexdigest(),expanded[name])
+            self.assertEqual(verify_expected_fingerprint(folder,expected),expected)
+
     def test_targeted_recovery_preserves_other_windows_and_segments(self):
         rows=[dict(window='REFERENCE',segment=0),dict(window='REFERENCE',segment=1),
               dict(window='VALIDATION',segment=0)]

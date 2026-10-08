@@ -19,6 +19,7 @@ from run_historical_portfolio import canonical, simulate
 from run_research_execution_scenarios import restore_signal
 from run_robustness_research import slice_bars, write_rows
 from research_support import read_compressed
+from research_inventory import save_artifact_hashes, verify_expected_fingerprint, verify_source_inputs
 
 
 def rows(path):
@@ -160,9 +161,52 @@ def verify_exit_future(expected,signals,history,policy):
         full_prefix_future_mutation=True,mutation_is_verification_only=True,trade_entry_allowed=False)
 
 
-def run_case(folder,output,role,verify_only=False):
+def exit_case_context(folder,role):
+    source=json.loads((folder/'summary.json').read_text())
+    return dict(source_summary_sha256=sha256((folder/'summary.json').read_bytes()).hexdigest(),
+                source_signal_sha256=sha256(artifact(folder,'signals.jsonl').read_bytes()).hexdigest(),
+                input_hashes=source['input_hashes'],role=role)
+
+
+def reusable_exit_case(folder,output,role):
+    """Verify saved complete cases, including legacy cases without hash manifests."""
+    required=('results.json','paired_actual_entries.json','post_be_follow.json','exit_real_causality.json')
+    if not all((output/name).exists() for name in required):
+        return False
+    context=exit_case_context(folder,role)
+    context_path=output/'source_context.json'
+    if context_path.exists() and json.loads(context_path.read_text())!=context:
+        raise ValueError('Existing exit case has different frozen source or role: '+str(output))
+    receipts=json.loads((output/'results.json').read_text())
+    if {row['variant'] for row in receipts}!=set(EXIT_VARIANTS) or len(receipts)!=len(EXIT_VARIANTS):
+        raise ValueError('Incomplete or duplicated exit variants: '+str(output))
+    for row in receipts:
+        assert row['source_signal_sha256']==context['source_signal_sha256'],output
+        assert row['role']==role and not row['trade_entry_allowed'],output
+        assert json.loads((output/row['variant']/'summary.json').read_text())==row,output
+    if (output/'fingerprint.sha256').exists():
+        verify_expected_fingerprint(output,(output/'fingerprint.sha256').read_text().strip())
+    else:
+        # Original complete cases have no byte manifests. Validate A against the
+        # immutable source before registering hashes; never rerun their research.
+        baseline=output/'A_40_30_30_BE_TP1'
+        for name in ('trades.jsonl','decisions.jsonl','equity_curve.jsonl'):
+            actual,expected=rows(artifact(baseline,name)),rows(artifact(folder,name))
+            if name=='trades.jsonl':
+                actual=sorted(actual,key=lambda t:t['trade_id']);expected=sorted(expected,key=lambda t:t['trade_id'])
+            assert canonical(actual)==canonical(expected),(output,name)
+        context_path.write_text(canonical(context)+'\n')
+        save_artifact_hashes(output,recursive=True)
+    return True
+
+
+def run_case(folder,output,role,verify_only=False,resume_existing=False):
     repo=Path(__file__).resolve().parents[1];check_baseline(repo)
     source=json.loads((folder/'summary.json').read_text())
+    verify_source_inputs(repo,source)
+    if resume_existing and not verify_only and reusable_exit_case(folder,output,role):
+        print(folder.name,'verified complete exit case reused',flush=True)
+        return
     old='execution_start' in source
     start=datetime.fromisoformat(source['execution_start'] if old else source['start'])
     end=datetime.fromisoformat(source['execution_end'] if old else source['end'])
@@ -181,6 +225,8 @@ def run_case(folder,output,role,verify_only=False):
     if verify_only:
         assert (output/'results.json').exists() and (output/'paired_actual_entries.json').exists(),output
         (output/'exit_real_causality.json').write_text(canonical(verify_exit_future(expected,signals,history,policy))+'\n')
+        if (output/'artifact_hashes.json').exists():
+            save_artifact_hashes(output,recursive=True)
         check_baseline(repo)
         return
     capital=source['initial_capital'] if old else 1170
@@ -218,6 +264,8 @@ def run_case(folder,output,role,verify_only=False):
     (output/'paired_actual_entries.json').write_text(canonical(paired_replays(expected,signals,history,policy,end))+'\n')
     (output/'exit_real_causality.json').write_text(canonical(verify_exit_future(expected,signals,history,policy))+'\n')
     (output/'results.json').write_text(canonical(results)+'\n')
+    (output/'source_context.json').write_text(canonical(exit_case_context(folder,role))+'\n')
+    save_artifact_hashes(output,recursive=True)
     check_baseline(repo)
 
 
@@ -227,11 +275,12 @@ def main():
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--role',choices=['DEVELOPMENT','EXTERNAL','EXIT_UNTOUCHED_RESERVE'],required=True)
     parser.add_argument('--verify-only',action='store_true',help='Add real exit causal checks to already completed identical-entry experiments.')
+    parser.add_argument('--resume-existing',action='store_true',help='Verify and reuse complete identical-source exit cases.')
     args=parser.parse_args();source=args.source.resolve()
     folders=[source] if (source/'summary.json').exists() else [p.parent for p in sorted(source.glob('*/summary.json'))
         if json.loads(p.read_text())['window']['name'] in ('REFERENCE','VALIDATION','HOLDOUT','EXIT_HOLDOUT')]
     for folder in folders:
-        run_case(folder,args.output/folder.name,args.role,args.verify_only)
+        run_case(folder,args.output/folder.name,args.role,args.verify_only,args.resume_existing)
 
 
 if __name__=='__main__':

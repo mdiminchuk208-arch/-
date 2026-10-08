@@ -1,68 +1,83 @@
 {
-  "timestamp": "2026-10-09T01:25:57.978787+05:00",
-  "phase": "RECOVERY_FINGERPRINT_MISMATCH_UNDER_DIAGNOSIS",
-  "tests": 437,
+  "timestamp": "2026-10-09T01:59:01.629854+05:00",
+  "phase": "Recover all 21 original replay fingerprints with historical audit schema",
+  "tests": 439,
   "tests_status": "PASS",
-  "tests_log": "continuation_full_tests.log",
   "lint_status": "PASS",
   "mypy_status": "PASS",
-  "verified_dataset_series": 34,
-  "verified_exit_cases": 38,
-  "verified_exit_variants": 266,
-  "protected_source_config_hashes": 57,
-  "restored_checkpoint_cases": [
-    {
-      "case": "canonical/binance_15_5/REFERENCE_SEGMENT_00",
-      "fingerprint": "2d27f51566bc0a87028052173bc6ba14eb8c068e2947e66ba0c7da646d0286ae"
-    },
-    {
-      "case": "canonical/binance_15_5/REFERENCE_SEGMENT_01",
-      "fingerprint": "e21dd01a2846fe0294a8153d8326710d456617dca41db066473918f02bd79eaf"
-    },
-    {
-      "case": "canonical/binance_15_5/REFERENCE_SEGMENT_02",
-      "fingerprint": "4a303e8bb5bbdd1b9c9fe6543c240d5f623d9b0f50c45f8794b7feb3ceb788d3"
-    },
-    {
-      "case": "canonical/binance_15_5/REFERENCE_SEGMENT_03",
-      "fingerprint": "79fc9a39cad0f3f9b747ec666b54ef70ee7b3ea1b563ecc0b5e2f17fb7bca35f"
-    },
-    {
-      "case": "canonical/binance_15_5/REFERENCE_SEGMENT_04",
-      "fingerprint": "031d60eeeacff31227cddb0ea746ae8c011fdcdd57b93e9c329e2f716d131c79"
-    },
-    {
-      "case": "canonical/binance_15_5/REFERENCE_SEGMENT_05",
-      "fingerprint": "8e43a166ef847280ac63ac16ffcc5c4a432c722c32b8b176c08f371ade59e4f4"
-    },
-    {
-      "case": "canonical/binance_15_5/REFERENCE_SEGMENT_06",
-      "fingerprint": "f3ecb215e835d6a4c6bbc163c34eaf6cc423a68f957261c22ee4837943894010"
-    },
-    {
-      "case": "canonical/binance_15_5/REFERENCE_SEGMENT_07",
-      "fingerprint": "e19386f39d0ea260bd7c24ddbe28dce12e3acf468e136f2ae0436575f2ea0229"
-    },
-    {
-      "case": "canonical/binance_15_5/REFERENCE_SEGMENT_08",
-      "fingerprint": "3d20dcaeaa28b7e6dc4a1b41dc8c81fba23bb117527e8f663bce15451959982c"
-    }
-  ],
-  "total_checkpoint_cases": 21,
-  "all_checkpoint_restored": false,
-  "canonical_changed": false,
-  "trade_entry_allowed": false,
-  "research_helper_hashes": {
-    "scripts/restore_research_checkpoint.py": "b622c00ca9b1e559600ea9e971066d588485a664a4bc48d1aeb262e67ac0988d",
-    "scripts/research_inventory.py": "49ef4175335920785eb98bac7c9830f09f882e2bd255c580c7334e4d7cd5510d",
-    "scripts/research_structure_cache.py": "6efc4ea4709752a77b3ed6c3f6253d4ea128c4728f5433e95ee353d708c214fb",
-    "scripts/run_robustness_research.py": "8c6b9fe6957b8c7044c649581e8a44b1c08f0ba2c7739e4bf72568f5a7857618",
-    "scripts/summarize_robustness_research.py": "c220ecfdb1437ede5b1cc3d0b2df2cccd8cf828abb0fed87457eb812b02e5003"
+  "protected_source_config_hashes": {
+    "config/source_rules.json": "215e021e26c6050f95d8d9bc1d9f5fb1f7fc99b229184da99c5af55e3058d1a3",
+    "pyproject.toml": "9c437b58851399bd9e95d6c480e0043814ace02fe2638b712cfc089beb963b6e",
+    "scripts/analyze_bybit_history.py": "042a76f78b735c307b3993a0c30080254aa98e93c9b0c4251d3bc02fbde24309",
+    "scripts/analyze_cross_asset_robustness.py": "bad7f16c4a25b442c64f0b1ff10cfe87db85111bc3729bb2e71999da88426bbb",
+    "scripts/analyze_mtf_sfp.py": "8ad14a2faeb0bbaee39fc38f4da587e88da8192a16762de0b7c3b78c0094a1e3",
+    "scripts/analyze_recovery_ablation.py": "d9d1e91ea21f96e7be2e84790dff2e876fa64bb1cac382a5f625e668d70a583e",
+    "scripts/audit_current_history.py": "3ed98760b291d8a4c61c7d02ca4c10348e9839d6c53b99871c6e556f99c36fe6",
+    "scripts/audit_entry_deferrals.py": "ae27a6489602e3c8407f3323d7ecbd59cdd287ccf3544880d794771c42748123",
+    "scripts/audit_historical_blockers.py": "8dce25e8af6169086b750f423697e05af5c9937a98d6e29c9b57ba802584ba90",
+    "scripts/audit_range_episodes.py": "7eb1b912dce52467e48df28eed2819642d973da82b8e6f169558eaa5fd01a44e",
+    "scripts/audit_ready_root_cause.py": "ff7d8d9ec165ce095a372f27b07c206bdbb8f036db23960b24463af03b304561",
+    "scripts/audit_structure_lifecycle.py": "0681d38ecebe2f312944cace3488099ebdd9dbc7c104e2e3bc8da66f6a8ab3c0",
+    "scripts/compare_v0_4_11_fingerprint.py": "bb16d27fd5bb1c7ebd9c69721ab71d26c43b90a7e8f30d953152763853e778f7",
+    "scripts/fetch_bybit_history.py": "3616b810edb78f9e55d763af2d814ba2df4eb563beb6852837da38475abf06f0",
+    "scripts/fetch_bybit_mtf_history.py": "b6f844a4423df2299615be711c31cdb55aac74b899ac529caad4c3e15ceeb1fc",
+    "scripts/ready_audit_support.py": "53108eb8181f599baed157758ebf16d0a98c81b0adb0b3b3cb95db497ea571c7",
+    "scripts/render_ready_audit.py": "77cd87ab35bfc34943364fc50e8e145972fd29df11b178a90ec930a8df0419a0",
+    "scripts/run_historical_portfolio.py": "2978f9b0de010ca58811eccd7350fe8d301c4066a207be052240de9ba991a48e",
+    "scripts/run_strategy_replay.py": "edecff0147371681c30dbc686fcef82ddaa0f5ed9098a1ffafa6aef4f5caaf88",
+    "scripts/summarize_ready_evidence.py": "a4a01a8d0f9a0375c146e2a06c6c49d183c8288f15a91a083b96abbc52790a7a",
+    "scripts/verify_historical_causality.py": "770d368b0137d92574267101ac277c8b1105b4a6fd632bea4823cd9bcbaa1076",
+    "scripts/verify_historical_lifecycles.py": "9429a3f26d9e14d0005eceeff0221e8501455b1e9d9926ca2ce337fb7540fe29",
+    "src/crypto_bot/__init__.py": "cf0a729c2f0ba8b6ee202ec9ffb99c55d4b07189686f56fe1bab7a3d55e1be9f",
+    "src/crypto_bot/analysis_report.py": "13ed43af79c46fa536c7f3d2c121b18188d4406cad86c0023b0743cddbfc56c5",
+    "src/crypto_bot/common/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/crypto_bot/common/models.py": "47f00db0e85f782752ce02b46564f1c65cb4fc36202f839f0f12dffc2435740b",
+    "src/crypto_bot/data/__init__.py": "81044e0b45ceed266f9f495a75f888d1767d3d357a5d515c8f0a7baafcfa2a90",
+    "src/crypto_bot/data/bybit.py": "28b58fde1abe1f3048a7aae25a5f65cf2225cb1b16eeb103378e05a515aba527",
+    "src/crypto_bot/data/coverage.py": "c2ea924b6adb202d04c4b6af10c52a2c2c1a6740b247435fcd85f73b0f00f174",
+    "src/crypto_bot/data/models.py": "6d455d47d76ebd0d9bfb9bb123376779d30f66b51c97b29bda106f32387eac54",
+    "src/crypto_bot/data/qa.py": "2d7c45b069296e7a47337b2b9fc4fc276c8023659e67dcb2dd78069b3183c234",
+    "src/crypto_bot/data/storage.py": "813da025d1f12156e431e6ca6556697f8eef7a1919bcc1fcc2b4a9a3b1740df5",
+    "src/crypto_bot/global_report.py": "f3aec8e586ead8ec84a9b46876f0b755d31dfef92706d812a618f165123d8ef8",
+    "src/crypto_bot/mtf_report.py": "c60c231c5556014ecb48e584c3b690dc25a1a787d6ef86b5cf69155e0e2328d9",
+    "src/crypto_bot/range_report.py": "73ba7f799eb98cd67dc138d34d0cd52eea4f146b6744e88704bc46c41cd196ea",
+    "src/crypto_bot/range_validation_report.py": "847561b930bbdb8304afa11e8c48ad083f17ac2f9cf037171006199385cb01d4",
+    "src/crypto_bot/strategy/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/crypto_bot/strategy/auto_levels.py": "21db8d431a1b85d18c6e2743e9ea520b768f4de6ab34db628cfdf7fb5c67305a",
+    "src/crypto_bot/strategy/checkpoint.py": "6d9c9e1b4eba28f6d496321bc006321ff5cd07db4d6c09c8738a3abe05ff85cc",
+    "src/crypto_bot/strategy/cross_asset_validation.py": "f03e870b66dca6617a8914ca6adfa2fca9e487e664ed81d74dbed83a447235b7",
+    "src/crypto_bot/strategy/global_opportunity.py": "0d3d0b3f05fbff3f4739e53010b287912291a9a581040fc7824f59c40b736b2f",
+    "src/crypto_bot/strategy/historical_replay.py": "765de7bb5d9f9350d74806d9554c6c5efa08675de21c3d1edebc241b232686d3",
+    "src/crypto_bot/strategy/market_analysis.py": "a742f4d56b7343d3554ac3617d1fee7c3e8de43489dfb0f014f0cd29b3605c99",
+    "src/crypto_bot/strategy/mtf_diagnostics.py": "2b78eb4c66a80cf9635fa3c397bd4b7e9929f4de9c950e1d1d0b76976ed65938",
+    "src/crypto_bot/strategy/mtf_sfp.py": "4e7be12a5e44fcd77321cd33be60f8d7ca454583712540d62f0b26b9354cb7f5",
+    "src/crypto_bot/strategy/order_block.py": "845fd2c777639d660de2fd3b52a710897d3a9e2c5b9baf4535e45af3bd8747d2",
+    "src/crypto_bot/strategy/portfolio_statistics.py": "e1835756273fbadbee71e2efbaabf7d8402e4a252c4b1a1efa79761ee41b077d",
+    "src/crypto_bot/strategy/range_engine.py": "0434d70b4115cfce7ac0a82df11fdb91dd3b4ffe78b984eb962e14a0d1746b4f",
+    "src/crypto_bot/strategy/range_validation.py": "c827e97e30ac83684b2676f322053c61b7b81524492bda3a4a2d6140df7a5f29",
+    "src/crypto_bot/strategy/recovery_ablation.py": "d65e30457e73c604f17271f5b607c2cfc584123aee80aa3ef00e0b8260c07214",
+    "src/crypto_bot/strategy/replay.py": "c0f4786b93f99f098704f44b46f89b99cfc17b9bd41c26e3196cc1a97ac96a9e",
+    "src/crypto_bot/strategy/risk.py": "04a1d8a38f13116529c6833b297f2fa4b21e0c690f8737161d3d63f20fdc6c4d",
+    "src/crypto_bot/strategy/sfp.py": "98690d684f3137028891f501b7304e8f8277187da86e4719491cbd86ee5ca472",
+    "src/crypto_bot/strategy/structure.py": "39c17370f9f3fc8746a456c6663de4e43f80d357af03bc2b63aa367f990e98a7",
+    "src/crypto_bot/strategy/structure_stability.py": "ec5d3c2b242564b97f9eee38c128265a7160d5c19cbd0f8897eaf7d1b4d1979e",
+    "src/crypto_bot/strategy/trade_plan.py": "4f4f479754d1c7b3043d26427b317f9dbe42f810b59805f1c96bec2f21d602f6",
+    "src/crypto_bot/strategy/virtual_portfolio.py": "c55f0a73b4c2f1f47680bde14a1e1319efd81351461753b87400b89097db22a3"
   },
-  "fingerprint_mismatch": {
-    "case": "canonical/binance_60_5/REFERENCE_SEGMENT_00",
-    "expected": "2795678d54357bfbfafa042407581dcda42f7d184512337af6fc49a333593b51",
-    "actual": "2c26c63f7945a5fda37426b878f15aca278889cdd0af1c72ca2bd8266751747a",
-    "counted_as_restored": false
-  }
+  "canonical_changed": false,
+  "research_helper_hashes": {
+    "scripts/research_inventory.py": "1c013044f38c171b3d84e04725d9fe1575679978c158c375873b3c0f66846fd7",
+    "scripts/research_structure_cache.py": "6efc4ea4709752a77b3ed6c3f6253d4ea128c4728f5433e95ee353d708c214fb",
+    "scripts/run_robustness_research.py": "9c5eb20ea3192ce2dddbd2b3947187084ff023fb892c06d977f67395d7fce590",
+    "scripts/restore_research_checkpoint.py": "67bb47fb98e435c129a5bcd7113af1a107485fa9f10b3dc8c10e7600be671f0e",
+    "scripts/run_exit_research.py": "e9d76936920b0d5e1af9b1d195d458cd7b7a5cda42239232262aedba6beff0b4",
+    "scripts/run_research_execution_scenarios.py": "0845db12b124e2f4c9aa4b94ff635f567929e03e5286f8b65d3b13fb3d2d7181",
+    "scripts/summarize_robustness_research.py": "3104631171399c2fb5da11a61ce6808d49d633fd6525e39f7f43a7dbca2f0402",
+    "scripts/continue_robustness_research.py": "a0d2a71d01eb063ec4912126b94e125e3cc6e092b202c987ad73c2febfe8e1dd",
+    "tests/test_research_windows.py": "f899956f2be195ea2cfb3aaa37b75112c3fc8a2a36cb138bc4775819a3887044",
+    "tests/test_research_variants.py": "e2a332b3603c2391fee3b1bf60925f3e076f2a0d12b882849cab3deb80ec279b",
+    "tests/test_research_exit_management.py": "ef60bf98a797ee8382aad74a7d0c743c41428973e51562c50645dcf71633f833"
+  },
+  "all_checkpoint_restored": true,
+  "trade_entry_allowed": false
 }

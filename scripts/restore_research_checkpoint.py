@@ -8,7 +8,7 @@ from hashlib import sha256
 import json
 from pathlib import Path
 
-from research_inventory import verify_expected_fingerprint
+from research_inventory import restore_checkpoint_schema
 from research_support import check_baseline
 from run_historical_portfolio import canonical
 from run_robustness_research import study
@@ -34,7 +34,7 @@ def restore(workers):
         for name,digest in expected.items():
             folder=report/name
             if (folder/'artifact_hashes.json').exists():
-                actual=verify_expected_fingerprint(folder,digest)
+                actual=restore_checkpoint_schema(folder,digest,report/'restoration_diagnostics'/name)
                 source=json.loads((folder/'summary.json').read_text())
                 for path,input_digest in source['input_hashes'].items():
                     assert sha256((repo/path).read_bytes()).hexdigest()==input_digest,path

@@ -22,7 +22,7 @@ from research_support import check_baseline, performance, read_compressed, regim
 from run_historical_portfolio import canonical, simulate
 from research_variants import STRUCTURAL_VARIANTS, isolated_variant
 from research_structure_cache import structure_cache, validated_prefix_reuse
-from research_inventory import reusable_case, verify_expected_fingerprint
+from research_inventory import reusable_case, restore_checkpoint_schema
 
 
 def index_job(job):
@@ -201,7 +201,8 @@ def study(cohort,root,split,htf,ltf,output,mode='BACKTEST',cost_factor=1.0,risk=
                 previous=reusable_case(folder,context)
                 if previous is not None:
                     if expected_fingerprints is not None:
-                        verify_expected_fingerprint(folder,expected_fingerprints[folder.relative_to(repo/'data/reports/robustness_research').as_posix()])
+                        name=folder.relative_to(repo/'data/reports/robustness_research').as_posix()
+                        restore_checkpoint_schema(folder,expected_fingerprints[name],repo/'data/reports/robustness_research/restoration_diagnostics'/name)
                     results.append(dict(window=window['name'],segment=number,status='REPLAY_COMPLETE',path=str(folder),
                         start=actual_start,end=actual_end,performance=previous['performance']))
                     (output/'results.json').write_text(canonical(results)+'\n')
@@ -254,7 +255,8 @@ def study(cohort,root,split,htf,ltf,output,mode='BACKTEST',cost_factor=1.0,risk=
             (folder/'artifact_hashes.json').write_text(canonical(hashes)+'\n')
             (folder/'fingerprint.sha256').write_text(sha256(canonical(hashes).encode()).hexdigest()+'\n')
             if expected_fingerprints is not None:
-                verify_expected_fingerprint(folder,expected_fingerprints[folder.relative_to(repo/'data/reports/robustness_research').as_posix()])
+                name=folder.relative_to(repo/'data/reports/robustness_research').as_posix()
+                restore_checkpoint_schema(folder,expected_fingerprints[name],repo/'data/reports/robustness_research/restoration_diagnostics'/name)
                 print(label,'checkpoint fingerprint MATCH',flush=True)
             results.append(dict(window=window['name'],segment=number,status='REPLAY_COMPLETE',path=str(folder),
                                 start=actual_start,end=actual_end,performance=measurements))
