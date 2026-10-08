@@ -1,0 +1,17 @@
+test_first_blocker_ignores_unreached_ob_before_geometry (test_ready_diagnostics.ReadyDiagnosticsTests.test_first_blocker_ignores_unreached_ob_before_geometry) ... FAIL
+
+======================================================================
+FAIL: test_first_blocker_ignores_unreached_ob_before_geometry (test_ready_diagnostics.ReadyDiagnosticsTests.test_first_blocker_ignores_unreached_ob_before_geometry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/crypto_bot_work/crypto_bot_phase1_4_18/tests/test_ready_diagnostics.py", line 121, in test_first_blocker_ignores_unreached_ob_before_geometry
+    self.assertEqual(first['reason'],'AGGRESSIVE_IMPULSE_THRESHOLD_NOT_MET')
+AssertionError: 'NO_POST_BOS_OB_PATTERN' != 'AGGRESSIVE_IMPULSE_THRESHOLD_NOT_MET'
+- NO_POST_BOS_OB_PATTERN
++ AGGRESSIVE_IMPULSE_THRESHOLD_NOT_MET
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.003s
+
+FAILED (failures=1)

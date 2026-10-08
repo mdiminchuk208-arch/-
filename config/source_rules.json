@@ -1,0 +1,605 @@
+{
+  "registry_version": "phase1.4.16-0.4.16",
+  "rules": [
+    {
+      "rule_id": "MS_SWING_HIGH_001",
+      "kind": "SOURCE_RULE",
+      "name": "Swing High uses three consecutive candles",
+      "statement": "The center candle has a higher high than both adjacent candles.",
+      "source": "[SW.BAND]5. Рыночная структура (Advanced).pdf",
+      "page": 2
+    },
+    {
+      "rule_id": "MS_SWING_LOW_001",
+      "kind": "SOURCE_RULE",
+      "name": "Swing Low uses three consecutive candles",
+      "statement": "The center candle has a lower low than both adjacent candles.",
+      "source": "[SW.BAND]5. Рыночная структура (Advanced).pdf",
+      "page": 2
+    },
+    {
+      "rule_id": "MS_BOS_001",
+      "kind": "SOURCE_RULE",
+      "name": "BOS requires break and candle-body acceptance beyond the key level",
+      "statement": "A bullish/bearish structure becomes invalid when the key structural level is broken and the candle body closes beyond it.",
+      "source": "[SW.BAND]5. Рыночная структура (Advanced).pdf",
+      "page": 4
+    },
+    {
+      "rule_id": "SFP_FORMATION_001",
+      "kind": "SOURCE_RULE",
+      "name": "SFP formation",
+      "statement": "External liquidity is swept; the sweep candle closes back inside the liquidity level; the next candle opens back inside. LTF BOS is sought only after SFP has formed. The source text explicitly describes the upper-side example; lower-side implementation is mirrored as a technical normalization.",
+      "source": "[SW.BAND]8. Торговые инструменты (Base).pdf",
+      "page": 5
+    },
+    {
+      "rule_id": "OB_CORE_001",
+      "kind": "SOURCE_RULE",
+      "name": "Order Block core formation",
+      "statement": "Liquidity sweep, aggressive engulfing impulse, BOS confirmation, and location in a higher-timeframe POI are required source elements. The source says the signal is most accurate when IMB appears, while a later section warns not to ignore IMB; Phase 1 therefore keeps IMB hard-vs-soft validity unresolved rather than silently treating it as either mandatory or optional.",
+      "source": "SW_BAND9_Торговые_инструменты_Advanced.pdf",
+      "page": 2
+    },
+    {
+      "rule_id": "OB_FIRST_TEST_001",
+      "kind": "SOURCE_RULE",
+      "name": "Order Block first test priority",
+      "statement": "The source says the first OB test is used in about 90% of cases; a repeated entry may be considered after reaction on a lower timeframe.",
+      "source": "SW_BAND9_Торговые_инструменты_Advanced.pdf",
+      "page": 3
+    },
+    {
+      "rule_id": "OB_LTF_ENTRY_001",
+      "kind": "SOURCE_RULE",
+      "name": "Conservative HTF OB to LTF POI entry",
+      "statement": "For HTF OBs, move to 1-15m, wait for reaction, LTF BOS and a newly formed POI, then place a limit order on the new POI.",
+      "source": "SW_BAND9_Торговые_инструменты_Advanced.pdf",
+      "pages": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "rule_id": "RISK_SOURCE_001",
+      "kind": "SOURCE_RULE",
+      "name": "Source-aligned percentage risk",
+      "statement": "The specialized risk-management material recommends a percentage stop not exceeding about 0.25%-2% of the trading account per trade.",
+      "source": "[SW.BAND]11. Риск-менеджмент.pdf",
+      "page": 4
+    },
+    {
+      "rule_id": "SWING_CONFIRM_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Swing confirmation timing",
+      "statement": "A center-candle swing is emitted only after the right-hand candle is closed so the detector does not use unavailable future information."
+    },
+    {
+      "rule_id": "OB_AGGRESSIVE_THRESHOLD_001",
+      "kind": "BACKTEST_PARAMETER",
+      "name": "Numeric aggressive-impulse threshold for OB",
+      "statement": "The source requires an aggressive impulse but does not numerically define it; body/ATR/displacement thresholds must be tested rather than silently invented."
+    },
+    {
+      "rule_id": "SFP_BULLISH_MIRROR_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Bullish SFP mirrored implementation",
+      "statement": "The lower-side SFP is implemented as the exact directional mirror of the explicitly worded upper-side pattern; this mirror is not presented as a separate verbatim source rule."
+    },
+    {
+      "rule_id": "OB_REPEAT_ENTRY_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Repeated OB test eligibility",
+      "statement": "A repeated OB test does not invalidate the OB formation itself. For Phase 1 it becomes trade-eligible only after a separately confirmed LTF reaction, matching the source exception for repeated entries."
+    },
+    {
+      "rule_id": "RISK_PHASE1_GUARD_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Phase-1 source-risk guard",
+      "statement": "The Phase-1 simple position-sizing helper rejects risk fractions outside the source-aligned 0.25%-2% range by default; experimental 3%-5% risk belongs to later controlled experiments."
+    },
+    {
+      "rule_id": "MS_TREND_001",
+      "kind": "SOURCE_RULE",
+      "name": "Bullish and bearish structural trend",
+      "statement": "Bullish trend has highs and lows above the previous ones; bearish trend has lows and highs below the previous ones.",
+      "source": "[SW.BAND]4. Рыночная структура (Base).pdf",
+      "page": 3
+    },
+    {
+      "rule_id": "MS_BOS_CONTEXT_001",
+      "kind": "SOURCE_RULE",
+      "name": "BOS breaks the protected point of the current trend",
+      "statement": "For bullish structure, BOS is the break of the key minimum/Higher Low; for bearish structure, BOS is the break of the key maximum/Lower High, with candle-body acceptance beyond the level.",
+      "source": "[SW.BAND]5. Рыночная структура (Advanced).pdf",
+      "pages": [
+        4,
+        5
+      ]
+    },
+    {
+      "rule_id": "MS_CONF_001",
+      "kind": "SOURCE_RULE",
+      "name": "CONF updates the key extreme of the new structure after BOS",
+      "statement": "After BOS, CONF is the update of the key minimum/maximum of the new structure; the source presents entry after CONF as the conservative approach.",
+      "source": "[SW.BAND]5. Рыночная структура (Advanced).pdf",
+      "page": 6
+    },
+    {
+      "rule_id": "LIQ_STRUCTURAL_001",
+      "kind": "SOURCE_RULE",
+      "name": "Structural highs and lows are external liquidity locations",
+      "statement": "External liquidity is located beyond range boundaries and at structural highs and lows of the corresponding timeframe.",
+      "source": "[SW.BAND]6. Ликвидность.pdf",
+      "page": 12
+    },
+    {
+      "rule_id": "MS_PHASE13_PROTECTED_POINT_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Phase-1.3 protected HL/LH selection",
+      "statement": "Confirmed 3-candle swings are classified causally. A new HH with a higher preceding swing low protects that HL; a new LL with a lower preceding swing high protects that LH. This machine-selection rule operationalizes the source concept of a key structural minimum/maximum and remains subject to conformance review."
+    },
+    {
+      "rule_id": "MS_PHASE13_POST_BOS_CONF_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Legacy post-BOS CONF construction (superseded in Phase 1.4.8)",
+      "statement": "Legacy Phase 1.3-1.4.7 normalization required a post-BOS extreme + correction + later CONF close before restoring the opposite trend. Phase 1.4.8 supersedes this because it could leave the detector indefinitely BROKEN and suppress later BOS events.",
+      "status": "SUPERSEDED",
+      "superseded_by": "MS_PHASE148_STRUCTURE_LIFECYCLE_001"
+    },
+    {
+      "rule_id": "LIQ_PHASE13_STRICT_TAKE_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Strict structural-liquidity take",
+      "statement": "Phase 1.3 marks structural liquidity taken only when a later wick strictly penetrates the level (high > high-level or low < low-level). No EQH/EQL numerical tolerance is assumed."
+    },
+    {
+      "rule_id": "OB_PHASE13_AUTOVALIDATION_GATE_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Real-market OB autovalidation remains blocked",
+      "statement": "Phase 1.3 does not auto-label a real-market Order Block as valid/tradeable until HTF POI, structural impulse/trend alignment, and a separately tested numeric aggressive-impulse normalization are implemented."
+    },
+    {
+      "rule_id": "SFP_TIMEFRAME_PREFERENCE_001",
+      "kind": "SOURCE_RULE",
+      "name": "SFP timeframe applicability and preference",
+      "statement": "SFP can form on structural highs/lows of any timeframe, while H1 and above are explicitly described as the preferred timeframes for searching for SFP. A completed SFP is followed by moving to a lower timeframe and waiting for BOS before seeking an entry.",
+      "source": "[SW.BAND]8. Торговые инструменты (Base).pdf",
+      "pages": [
+        5,
+        6
+      ]
+    },
+    {
+      "rule_id": "LIQ_SWEEP_LIFECYCLE_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Structural liquidity lifecycle",
+      "statement": "Phase 1.3.2 tracks each confirmed structural-liquidity level as ACTIVE -> SWEPT -> CONSUMED. SWEPT means the first strict wick penetration has occurred and the next candle is not yet known; CONSUMED means the next candle has resolved whether that sweep completed an SFP. The source defines liquidity removal, but not this software state machine."
+    },
+    {
+      "rule_id": "LIQ_SWEEP_EPISODE_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Same-candle same-side sweep episode grouping",
+      "statement": "All structural liquidity levels first swept by the same candle on the same side are grouped into one sweep episode for SFP resolution. Raw per-level sweep events remain recorded. No price-distance clustering tolerance is introduced because the source does not define one."
+    },
+    {
+      "rule_id": "SFP_EPISODE_DEDUP_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "One SFP formation per sweep episode",
+      "statement": "At most one directional SFP formation event is emitted per same-candle/same-side sweep episode. If several member levels independently satisfy the source SFP conditions, the outermost valid level is used as representative: highest for high-side sweeps and lowest for low-side sweeps. This prevents duplicate software signals without changing the underlying raw liquidity map."
+    },
+    {
+      "rule_id": "SFP_LTF_BOS_002",
+      "kind": "SOURCE_RULE",
+      "name": "Completed SFP requires lower-timeframe BOS before entry search",
+      "statement": "After SFP formation is completed, move to a lower timeframe and wait for a break of structure. Only after the LTF structure break may an entry point be searched for.",
+      "source": "[SW.BAND]8. Торговые инструменты (Base).pdf",
+      "page": 5
+    },
+    {
+      "rule_id": "MTF_PAIR_MAPPING_001",
+      "kind": "BACKTEST_PARAMETER",
+      "name": "HTF-to-LTF mapping",
+      "statement": "The source requires moving to a lower timeframe but does not specify an exact mapping. H1->M5 and H4->M15 are Phase-1.4 convenience defaults only and must be tested, not treated as source rules."
+    },
+    {
+      "rule_id": "MTF_WAIT_WINDOW_001",
+      "kind": "BACKTEST_PARAMETER",
+      "name": "Maximum wait for post-SFP LTF BOS",
+      "statement": "The source does not define an expiry window between completed SFP and LTF BOS. Any maximum number of LTF bars is therefore a backtest parameter. None means observationally unbounded within the available dataset."
+    },
+    {
+      "rule_id": "MTF_ENTRY_GATE_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Phase-1.4 entry gate",
+      "statement": "A causally later expected-direction LTF BOS unlocks entry-search eligibility only. Phase 1.4.5 does not place a trade and keeps actual entry blocked until entry-zone, invalidation/SL, target/FTA and RR rules are implemented."
+    },
+    {
+      "rule_id": "MTF_EVALUATION_WARMUP_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Separate warm-up context from evaluation window",
+      "statement": "Phase 1.4.1 may load candles earlier than the scored evaluation window so structure/liquidity state is not forced to start cold at the test boundary. The warm-up duration is not a source rule; evaluation-days and loaded history are explicit test configuration."
+    },
+    {
+      "rule_id": "MTF_RIGHT_CENSOR_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Right-censor truncated post-SFP observation",
+      "statement": "When a finite experimental BOS wait window is configured but the available LTF history ends before that deadline, the candidate is labeled right-censored rather than expired. This is data-integrity/statistical handling, not a trading rule from the source."
+    },
+    {
+      "rule_id": "MTF_SHARED_BOS_LINK_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Shared LTF BOS links are context links, not trades",
+      "statement": "A later LTF BOS can observationally follow more than one prior HTF SFP context. Phase 1.4.1 reports confirmed links, unique BOS events, and shared extra links separately; it does not count shared links as separate trades. Opportunity de-duplication remains a later layer."
+    },
+    {
+      "rule_id": "SFP_INVALIDATION_CLOSE_001",
+      "kind": "SOURCE_RULE",
+      "name": "SFP becomes irrelevant after candle-body close beyond pattern extreme",
+      "statement": "The indicators material says the SFP pattern is no longer relevant if any candle closes below the pattern minimum for the long/bullish case, or above the pattern maximum for the short/bearish case.",
+      "source": "[SW.BAND]12. Индикаторы.pdf",
+      "page": 13
+    },
+    {
+      "rule_id": "SFP_EXTREME_MACHINE_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Causal machine representation of SFP minimum/maximum",
+      "statement": "Phase 1.4.3 represents the SFP invalidation extreme using the already-completed sweep candle low for bullish SFP and high for bearish SFP. This value is known at SFP formation time and avoids using future H/L/C of the confirmation candle."
+    },
+    {
+      "rule_id": "MTF_INVALIDATION_PRECEDENCE_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Invalidation blocks later or same-timestamp BOS confirmation",
+      "statement": "A candidate cannot be linked to an LTF BOS occurring after SFP invalidation. If BOS and HTF invalidation have the same timestamp, invalidation wins conservatively because ordering inside that timestamp is not observable from candle data."
+    },
+    {
+      "rule_id": "MTF_OPPORTUNITY_CLUSTER_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Shared LTF BOS links collapse to one entry-search opportunity",
+      "statement": "Within one HTF/LTF report, confirmed SFP contexts sharing the same expected-direction LTF BOS are grouped into one pair-local ENTRY_SEARCH_CANDIDATE opportunity. Phase 1.4.4 then applies a separate global cross-pair de-duplication layer while retaining all local context references. No actual trade is created."
+    },
+    {
+      "rule_id": "MTF_CANDIDATE_AUDIT_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Candidate quality audit output",
+      "statement": "Phase 1.4.4 exports SFP time/level/extreme, invalidation time, LTF BOS time, bars/minutes waited, experimental deadline and opportunity IDs so confirmed and rejected examples can be manually reviewed before Entry Engine implementation."
+    },
+    {
+      "rule_id": "SFP_DUAL_SIDE_SWEEP_AMBIGUITY_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Dual-sided first sweep is not auto-resolved into opposite SFPs",
+      "statement": "If one candle first sweeps active structural liquidity on both the high and low side, Phase 1.4.4 preserves both raw sweep episodes but does not automatically emit bullish and bearish SFP formations from the same candle. The source does not define this edge case, so the implementation blocks directional resolution conservatively."
+    },
+    {
+      "rule_id": "SFP_IMPLEMENTATION_SCOPE_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Current SFP liquidity-source coverage includes validated range boundaries",
+      "statement": "The source permits SFP after external liquidity from a range boundary or a structural swing. Phase 1.4.5 implements both structural-swing SFP and range-boundary SFP. Range detection uses an explicit conservative BOS impulse proxy and midpoint-reaction parameter, so implementation exists but its machine normalization remains pending chart/backtest validation."
+    },
+    {
+      "rule_id": "DATA_COVERAGE_BOUNDARY_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Requested-window boundary shortfall is separated from internal data gaps",
+      "statement": "Coverage auditing classifies missing expected candle slots as leading-boundary, internal, or trailing-boundary. Internally continuous rows may be QA healthy while requested-window coverage is below 100%; this must be reported, not silently treated as an internal gap."
+    },
+    {
+      "rule_id": "MTF_WAIT_REALTIME_001",
+      "kind": "BACKTEST_PARAMETER",
+      "name": "Equal real-time SFP-to-BOS wait budget",
+      "statement": "In addition to LTF-bar-count experiments, Phase 1.4.4 can test a fixed wait budget in minutes so different HTF/LTF mappings can be compared on equal elapsed time. The source defines no expiry duration; the minute budget is not a source rule."
+    },
+    {
+      "rule_id": "MTF_GLOBAL_CLUSTER_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Cross-pair entry-search opportunity de-duplication",
+      "statement": "Pair-local ENTRY_SEARCH opportunities for the same symbol and direction are globally clustered after all requested HTF/LTF reports are produced. Exact-time clustering merges identical confirmation timestamps without inventing a tolerance; all local opportunity references remain auditable. This does not create a trade."
+    },
+    {
+      "rule_id": "MTF_GLOBAL_CLUSTER_WINDOW_001",
+      "kind": "BACKTEST_PARAMETER",
+      "name": "Cross-pair near-time cluster window",
+      "statement": "A positive cross-pair cluster window in minutes may merge same-direction pair-local confirmations occurring near each other. The source does not specify this tolerance. Phase 1.4.13 freezes the production policy at 0 minutes (exact timestamp only); positive windows remain BACKTEST_PARAMETER experiments and are not source rules."
+    },
+    {
+      "rule_id": "MTF_ZERO_BOS_DIAGNOSTIC_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Zero-confirmation BOS diagnostic is audit-only",
+      "statement": "When a HTF/LTF mapping yields zero or few valid confirmations, the QA layer records LTF BOS inventory and first later expected/opposite BOS timestamps for each SFP. Later BOS events observed after invalidation/expiry are diagnostic only and never retroactively validate a candidate."
+    },
+    {
+      "rule_id": "RANGE_AFTER_IMPULSE_001",
+      "kind": "SOURCE_RULE",
+      "name": "Range forms after a strong directional impulse",
+      "statement": "A range is identified after a strong directional move/impulse in either direction.",
+      "source": "[SW.BAND]10. Боковое движение.pdf",
+      "page": 1
+    },
+    {
+      "rule_id": "RANGE_BOUNDARIES_001",
+      "kind": "SOURCE_RULE",
+      "name": "Range boundaries are impulse end then correction end",
+      "statement": "The end of the impulse is the first range boundary and the end of the correction is the second. After an upward impulse the first boundary is the high and the later second boundary is the low; after a downward impulse the order is low then later high.",
+      "source": "[SW.BAND]10. Боковое движение.pdf",
+      "page": 2
+    },
+    {
+      "rule_id": "RANGE_MIDPOINT_REACTION_001",
+      "kind": "SOURCE_RULE",
+      "name": "Reaction from 0.5 validates range boundaries",
+      "statement": "A good reaction from the 0.5 level is an additional confirmation that the range boundaries are drawn correctly.",
+      "source": "[SW.BAND]10. Боковое движение.pdf",
+      "page": 3
+    },
+    {
+      "rule_id": "RANGE_DEVIATION_001",
+      "kind": "SOURCE_RULE",
+      "name": "Deviation takes external liquidity beyond range boundaries",
+      "statement": "Deviation is a price movement directed at taking external liquidity outside the boundaries of a formed range.",
+      "source": "[SW.BAND]10. Боковое движение.pdf",
+      "page": 4
+    },
+    {
+      "rule_id": "RANGE_NO_INTERNAL_STRUCTURE_001",
+      "kind": "SOURCE_RULE",
+      "name": "Structure should be absent inside the range",
+      "statement": "The general methodology states that structure should be absent inside a range and warns that CHOCH inside the range may not deliver the expected follow-through.",
+      "source": "Методичка.docx",
+      "page": "RANGE section"
+    },
+    {
+      "rule_id": "SFP_RANGE_BOUNDARY_001",
+      "kind": "SOURCE_RULE",
+      "name": "SFP may sweep external liquidity from a range boundary",
+      "statement": "One valid SFP liquidity source is external liquidity at a range boundary; the same pattern then requires the sweep candle to close back across the swept level and the next candle to open back inside before moving to LTF BOS confirmation.",
+      "source": "[SW.BAND]8. Торговые инструменты (Base).pdf",
+      "page": 5
+    },
+    {
+      "rule_id": "RANGE_IMPULSE_BOS_PROXY_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Structural BOS is conservative machine proxy for strong impulse",
+      "statement": "The source calls for a strong directional impulse but gives no numeric strength threshold. Phase 1.4.7 therefore uses a causally confirmed structural BOS as a conservative impulse proxy instead of inventing an ATR or percentage threshold. This may under-detect ranges and requires chart/backtest validation."
+    },
+    {
+      "rule_id": "RANGE_DIRECTIONAL_GEOMETRY_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Range boundary prices must preserve impulse/correction geometry",
+      "statement": "For an UP impulse, boundary #1 is the impulse-end swing high and boundary #2 is the later correction swing low, so boundary #2 must be strictly below boundary #1. For a DOWN impulse, boundary #1 is the impulse-end swing low and boundary #2 is the later correction swing high, so boundary #2 must be strictly above boundary #1. Inverted or equal-price pairs are rejected before lower/upper normalization so min/max cannot silently swap source-defined boundary roles. This is a structural consistency guard, not a numeric trading threshold."
+    },
+    {
+      "rule_id": "RANGE_MIDPOINT_TOLERANCE_001",
+      "kind": "BACKTEST_PARAMETER",
+      "name": "Numeric tolerance for the qualitative 0.5 reaction",
+      "statement": "The source does not numerically define a good reaction from 0.5. Phase 1.4.7 represents it as a confirmed three-candle swing within midpoint_tolerance_fraction times range width from the midpoint. The default 0.08 is diagnostic only and must be tested/frozen."
+    },
+    {
+      "rule_id": "RANGE_INTERNAL_BOS_PROXY_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "In-range BOS is machine proxy for forbidden internal structure",
+      "statement": "To operationalize the source statement that structure should be absent inside a range, Phase 1.4.7 treats a BOS whose close remains strictly inside completed range boundaries as internal structure. In source-aligned mode it rejects a pre-validation candidate or invalidates a validated range for new boundary sweeps."
+    },
+    {
+      "rule_id": "RANGE_BOUNDARY_FIRST_SWEEP_CONSUMES_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "First strict range-boundary raid consumes original boundary liquidity",
+      "statement": "TECHNICAL_NORMALIZATION: once a range boundary is causally established, its first strict price raid consumes that original boundary liquidity for SFP purposes. If the sweep/return-inside SFP conditions do not complete, no SFP is emitted. The whole range is not hard-invalidated solely by an outside close, because source material explicitly defines deviations beyond range boundaries.",
+      "notes": "Pre-validation raids after boundary #2 is known are not retroactively converted into SFPs after midpoint validation; they still consume the original boundary liquidity."
+    },
+    {
+      "rule_id": "RANGE_SFP_PROVENANCE_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Range-boundary SFP provenance remains auditable",
+      "statement": "Range-boundary SFP events use collision-free negative level/episode IDs and explicit RANGE_BOUNDARY/range_id provenance. Structural and range SFP contexts may coexist and are later de-duplicated only at the shared expected-direction LTF BOS opportunity layer."
+    },
+    {
+      "rule_id": "RANGE_UNCLEAR_BOUNDARIES_SKIP_001",
+      "kind": "SOURCE_RULE",
+      "name": "Dedicated range module skips materially smeared/ambiguous boundaries",
+      "statement": "The dedicated range module says that when range boundaries become smeared enough that future price movement is difficult to determine, the example is not a good range and such situations should be skipped.",
+      "source": "[SW.BAND]10. Боковое движение.pdf",
+      "page": 3
+    },
+    {
+      "rule_id": "RANGE_BOUNDARIES_MAY_BE_NONCRISP_001",
+      "kind": "SOURCE_RULE",
+      "name": "General methodology allows non-crisp range boundaries",
+      "statement": "The general methodology says a range may lack perfectly clear boundaries; the important condition is that the instrument trades within a defined price area.",
+      "source": "Методичка.docx",
+      "page": "RANGE section"
+    },
+    {
+      "rule_id": "RANGE_TOLERANCE_GRID_001",
+      "kind": "BACKTEST_PARAMETER",
+      "name": "Midpoint reaction tolerance validation grid",
+      "statement": "Phase 1.4.7 evaluates multiple numeric midpoint-tolerance fractions because the source only says there should be a good reaction from 0.5 and does not define a numerical distance. The grid is experimental and cannot be promoted to a source rule."
+    },
+    {
+      "rule_id": "RANGE_VALIDATION_FUNNEL_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Range validation funnel is audit accounting, not a trading rule",
+      "statement": "Phase 1.4.7 reports range candidates, validated ranges, unique ranges with boundary sweeps/SFP, and downstream MTF outcomes separately. Episode/context counts are not silently interpreted as trade counts and origin opportunity counts are not additive when mixed-origin contexts share one opportunity."
+    },
+    {
+      "rule_id": "RANGE_BOUNDARY_CLARITY_GATE_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Boundary-clarity threshold remains a manual validation gate",
+      "statement": "SOURCE NUANCE: the general methodology allows a range to lack perfectly crisp boundaries if price still trades in a defined area, while the dedicated range module recommends skipping boundaries that are smeared enough to make future movement difficult to determine. Neither source supplies an objective machine threshold. Phase 1.4.7 therefore exports manual audit windows and blocks Entry Engine rather than inventing a threshold."
+    },
+    {
+      "rule_id": "RANGE_LIFECYCLE_PENDING_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Range exit/re-entry lifecycle remains unresolved before Entry Engine",
+      "statement": "The source defines deviations beyond boundaries and conservative return/acceptance logic but does not provide a complete machine state transition for when a range is permanently retired, redrawn, or allowed to regain boundary liquidity after exits/re-entry. Phase 1.4.7 keeps this as an explicit blocker instead of silently inventing lifecycle rules.",
+      "status": "PARTIALLY_SUPERSEDED",
+      "superseded_by": "PHASE1415_RANGE_BOUNDARY_NO_REACTIVATION_001",
+      "notes": "Boundary-liquidity reactivation is now frozen as prohibited. Permanent range retirement/redraw remains unresolved and continues to block Entry Engine."
+    },
+    {
+      "rule_id": "MS_POST_BOS_OPPOSITE_STRUCTURE_001",
+      "kind": "SOURCE_RULE",
+      "name": "Opposite structure should form after BOS",
+      "statement": "After a bullish structure breaks, the methodology expects a bearish structure to form with LL and LH. After a bearish structure breaks, it expects a bullish structure to form with HL and HH.",
+      "source": "Методичка.docx",
+      "page": "8-9"
+    },
+    {
+      "rule_id": "MS_BOS_TREND_CHANGE_001",
+      "kind": "SOURCE_RULE",
+      "name": "Breaking the original structure changes market priority",
+      "statement": "The advanced market-structure source states that once the original structure is interrupted, the trend changes to the opposite direction; BOS precedes that change, while CONF is the later confirmation/update of the new structure.",
+      "source": "[SW.BAND]5. Рыночная структура (Advanced).pdf",
+      "page": "4-6"
+    },
+    {
+      "rule_id": "MS_PHASE148_STRUCTURE_LIFECYCLE_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Post-BOS structure existence is separated from CONF",
+      "statement": "Phase 1.4.8 kept BROKEN only as the causal interval after BOS while the opposite structure was forming. It required a strictly post-BOS LL+LH / HH+HL relative to the broken structure's protected point and key extreme to establish the new live structure, with CONF recorded separately later. This separation from CONF fixed the v0.4.7 long-history lock, but the strict swing_index > BOS_index anchor condition is superseded in Phase 1.4.9 because it can discard the BOS-leg extreme.",
+      "superseded_by": "MS_PHASE149_BOS_LEG_ANCHOR_001"
+    },
+    {
+      "rule_id": "MS_PHASE148_BROKEN_AUDIT_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Structure state lifecycle is audit-visible",
+      "statement": "Phase 1.4.8 exports compressed UNKNOWN/BULLISH/BEARISH/BROKEN state segments and the longest BROKEN run so long-history lockups can be detected instead of silently suppressing BOS events."
+    },
+    {
+      "rule_id": "MS_HISTORY_SUFFIX_REGRESSION_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Older history must not suppress a recoverable recent BOS cycle",
+      "statement": "A regression test prepends valid older structure history to a recent sequence containing BOS -> opposite structure -> second BOS and requires the recent second BOS to remain observable. This is a QA causality/stability test, not a trading rule."
+    },
+    {
+      "rule_id": "MS_PHASE149_BOS_LEG_ANCHOR_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "BOS-leg extreme may seed the opposite structure after causal swing confirmation",
+      "statement": "The first LL/HH of the opposite structure may be centered on the BOS candle/leg itself when that center is confirmed as a three-candle swing only on a later candle. Pre-BOS swings remain forbidden. This preserves causality while avoiding the Phase 1.4.8 over-restriction that required swing_index > BOS index and could discard the structurally relevant extreme of the breaking impulse.",
+      "source_refs": [
+        "Market Structure Advanced pp.4-6",
+        "Методичка pp.8-9"
+      ],
+      "notes": "The source shows/defines the new opposite LL+LH / HL+HH after BOS but does not specify software indexing; allowing the BOS-leg extreme after later swing confirmation is a causal implementation choice."
+    },
+    {
+      "rule_id": "MS_PHASE1410_BROKEN_TRANSITION_FALLBACK_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "BROKEN is transitional; strictly post-BOS local structure can resolve a failed expected transition",
+      "statement": "The source expects the opposite LL+LH / HL+HH structure after BOS, so that path remains priority. Because BROKEN is a software state rather than a source market regime, Phase 1.4.10 also allows a fully post-BOS HH+HL or LL+LH sequence to re-establish the live structure when the expected fast path never completes. This may resolve to the expected reversal or to same-direction recovery. No time-based timeout is invented and pre-BOS swings are excluded.",
+      "source_refs": [
+        "Методичка — market structure/BOS section",
+        "[SW.BAND]5. Рыночная структура (Advanced).pdf pp.4-6"
+      ],
+      "notes": "Same-direction recovery is not stated as a dedicated source rule; it is a lifecycle normalization derived from the general source definitions of bullish HH+HL and bearish LL+LH structure."
+    },
+    {
+      "rule_id": "MS_PHASE1410_TRANSITION_DIAGNOSTIC_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Every BOS transition is audit-visible with explicit resolution/rejection reasons",
+      "statement": "Phase 1.4.10 records BOS source state, expected trend, protected/extreme references, confirmed post-BOS swing IDs, selected anchor/correction, rejection reasons, resolution mode and BROKEN duration. This is QA observability, not a trading rule."
+    },
+    {
+      "rule_id": "MS_PHASE1410_SUFFIX_STABILITY_QA_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Full-history versus recent-suffix BOS comparison is diagnostic only",
+      "statement": "A dedicated structure lifecycle audit compares BOS signatures on the same stabilized recent window when analyzed from full loaded history versus an isolated recent suffix. A left-edge stabilization guard is explicit and no pass/fail similarity threshold is hard-coded because older context can legitimately affect the suffix boundary."
+    },
+    {
+      "rule_id": "MS_PHASE1411_INTERLEAVED_SWING_ORDER_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "HH/HL and LL/LH machine sequences require chronological alternation",
+      "statement": "The source defines market structure as a sequence of highs and lows and bullish HH/HL / bearish LL/LH. Phase 1.4.11 therefore prevents two same-side highs and two same-side lows from being paired when their swing order is non-interleaved. Bullish machine order is previous low -> previous high -> protected HL -> key HH; bearish order is previous high -> previous low -> protected LH -> key LL. This ordering is a causal software normalization, not an extra numeric trading rule.",
+      "source_refs": [
+        "Методичка — market structure section",
+        "[SW.BAND]5. Рыночная структура (Advanced).pdf pp.2-3"
+      ]
+    },
+    {
+      "rule_id": "MS_PHASE1411_TRANSITION_AUDIT_CAUSAL_IDS_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "post_bos diagnostic swing IDs contain only causally post-BOS centers",
+      "statement": "Transition diagnostic fields named post_bos_high_level_ids/post_bos_low_level_ids exclude swing centers before BOS and levels not confirmed after BOS. Pre-BOS-centered swings confirmed on the BOS close may still cause explicit rejection reasons in logic but are not mislabeled as post-BOS diagnostic structure."
+    },
+    {
+      "rule_id": "MS_PHASE1411_LOCAL_EXPECTED_CONF_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Expected-opposite local fallback keeps later CONF semantics",
+      "statement": "If the generic strictly post-BOS local-structure fallback resolves in the source-expected opposite direction, its key extreme and protected correction remain eligible for the later source CONF update. Same-direction technical recovery does not silently create a source-labeled CONF.",
+      "source_refs": [
+        "[SW.BAND]5. Рыночная структура (Advanced).pdf p.6"
+      ]
+    },
+    {
+      "rule_id": "MS_PHASE1411_LIVE_KEY_UPDATE_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Live structure updates reference the current key extreme and protected point",
+      "statement": "While bullish structure is live, a new key HH must exceed the current key HH and the intervening correction low must stay above the current protected HL; while bearish structure is live, a new key LL must be below the current key LL and the intervening correction high must stay below the current protected LH. Internal lower highs/higher lows cannot silently replace the live key comparison reference. This operationalizes the source emphasis on key highs/lows that update prior structure.",
+      "source_refs": [
+        "Методичка — market structure section (only highs/lows that update previous are structurally relevant)",
+        "[SW.BAND]5. Рыночная структура (Advanced).pdf pp.2-5"
+      ]
+    },
+    {
+      "rule_id": "MS_PHASE1412_RECOVERY_ABLATION_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Isolate same-direction recovery",
+      "statement": "SOURCE_CONSERVATIVE disables same-direction recovery only; both modes retain expected-opposite fast/local paths and existing causal structure normalizations. TECHNICAL_RECOVERY preserves v0.4.11 detection for counterfactual diagnostics. Phase 1.4.13 freezes SOURCE_CONSERVATIVE as the production/default analysis mode; TECHNICAL_RECOVERY is diagnostic-only and cannot unlock source entry search."
+    },
+    {
+      "rule_id": "MS_PHASE1412_RECOVERY_LINEAGE_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Causal recovery ancestry is separate from counterfactual ablation",
+      "statement": "Recovery transition IDs propagate through subsequent structural confirmations and structural SFP events, range creation/invalidation, Range SFP and MTF/global context. Mode-specific state segments remain separate files; their causal transition IDs are available in the transition/event records. Ancestry is retained across expected reversals without an invented reset. It is not proof that each descendant disappears in SOURCE_CONSERVATIVE; independent event-set comparison measures that. Recovery-bearing confirmations are diagnostic and cannot unlock source entry search. Actual trades remain disabled."
+    },
+    {
+      "rule_id": "MS_PHASE1412_ABLATION_ACCOUNTING_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Compare independent causal runs",
+      "statement": "Ablation compares stable semantic signatures rather than run-local sequential IDs, reports common/source-only/technical-only and changed objects, and separates loaded counts from evaluation counts. Offline set differences never alter causal event eligibility. No profitability or event-count threshold is invented."
+    },
+    {
+      "rule_id": "MS_PHASE1413_PRODUCTION_MODE_FREEZE_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Production analysis mode is source-conservative",
+      "statement": "After the v0.4.12 two-mode causal ablation, Phase 1.4.13 freezes SOURCE_CONSERVATIVE as the production/default structure-analysis policy. TECHNICAL_RECOVERY remains available only for diagnostics/counterfactual QA and is not allowed to grant source entry-search eligibility."
+    },
+    {
+      "rule_id": "MTF_PHASE1413_GLOBAL_CLUSTER_FREEZE_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Production cross-pair clustering is exact-time only",
+      "statement": "Phase 1.4.13 freezes the production cross-pair de-duplication window at 0 minutes, merging only same-symbol same-direction opportunities with identical confirmation timestamps across different HTF/LTF pairs. Positive near-time windows remain BACKTEST_PARAMETER experiments."
+    },
+    {
+      "rule_id": "PHASE1413_CROSS_ASSET_ROBUSTNESS_GATE_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Cross-asset robustness remains a pre-entry QA gate",
+      "statement": "The v0.4.12 real-data evidence covers BTCUSDT and ETHUSDT. Before Entry Engine is considered validation-frozen, Phase 1.4.13 requires robustness checks on a broader liquid-symbol basket. This is a project QA gate, not a source trading rule, and no event-count/profitability threshold is inferred from it.",
+      "status": "CLOSED",
+      "superseded_by": "PHASE1415_CROSS_ASSET_GATE_FREEZE_001"
+    },
+    {
+      "rule_id": "PHASE1414_CROSS_ASSET_BASKET_POLICY_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Cross-asset pre-entry basket is a project QA policy",
+      "statement": "Phase 1.4.14 defines a default ten-symbol liquid USDT-perpetual robustness basket (BTCUSDT, ETHUSDT, SOLUSDT, XRPUSDT, BNBUSDT, DOGEUSDT, ADAUSDT, LINKUSDT, AVAXUSDT, LTCUSDT). The basket is a project QA policy, not a source trading rule and not evidence of profitability."
+    },
+    {
+      "rule_id": "PHASE1414_CROSS_ASSET_INVARIANT_GATE_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Cross-asset gate uses causal and safety invariants only",
+      "statement": "The cross-asset robustness gate may close only when the complete required basket has healthy 5m/15m/60m/240m input coverage, SOURCE_CONSERVATIVE contains no technical-recovery ancestry, stabilized suffix BOS is exactly reproducible, structural SFP->LTF BOS linkage runs without errors, and no candidate/opportunity allows trade entry. BOS/SFP/opportunity counts are diagnostic only and are never pass/fail or profitability thresholds. Range-specific normalization gates remain separate."
+    },
+    {
+      "rule_id": "PHASE1415_CROSS_ASSET_GATE_FREEZE_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Ten-symbol cross-asset invariant gate is validation-frozen",
+      "statement": "Phase 1.4.15 closes the project CROSS_ASSET_ROBUSTNESS_NOT_VALIDATED gate from retained real-data evidence on BTCUSDT, ETHUSDT, SOLUSDT, XRPUSDT, BNBUSDT, DOGEUSDT, ADAUSDT, LINKUSDT, AVAXUSDT and LTCUSDT. The frozen audit uses SOURCE_CONSERVATIVE, 240 evaluation days, 60 suffix days, 30 stabilization days and 0 analysis warm-up days. Every required symbol passed data QA, source-provenance, exact suffix-stability, MTF runtime and trade-entry-safety invariants. This is QA evidence only and is not a profitability claim."
+    },
+    {
+      "rule_id": "PHASE1415_RANGE_BOUNDARY_NO_REACTIVATION_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Consumed original range-boundary liquidity never reactivates on re-entry",
+      "statement": "Phase 1.4.15 freezes the existing conservative lifecycle normalization: the first strict raid of an established original range boundary changes that boundary from ACTIVE to CONSUMED. Returning inside the prior range does not restore the same original boundary liquidity and later raids cannot reuse it for another range-boundary SFP. Already formed SFP context keeps its separate invalidation lifecycle. This resolves boundary-liquidity reactivation only; permanent range retirement/redraw remains an explicit unresolved gate."
+    }
+  ]
+}

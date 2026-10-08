@@ -1,0 +1,10 @@
+{
+  "180": {
+    "source_sha256": "393cbfc6e84a5f73194fdf3f818598b68eb6dcc2f1705f579ead87f2395be2a2",
+    "csv_sha256": "d3612b770806749b9de2c8380b9af572bc29478563c04f135a50def656ad743c"
+  },
+  "max": {
+    "source_sha256": "0bfec5f824e872f991cd8471248a27fe082a76d902ed8f76bb41ec4d92ee7652",
+    "csv_sha256": "29fcd3911af9392210c41019dbecdfdd53dd7152ff72f3782ad9e1010a82c17f"
+  }
+}

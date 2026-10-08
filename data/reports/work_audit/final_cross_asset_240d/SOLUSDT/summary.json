@@ -1,0 +1,141 @@
+{
+  "checks": {
+    "symbol": "SOLUSDT",
+    "data_qa_passed": true,
+    "evaluation_span_passed": true,
+    "source_recovery_free": true,
+    "suffix_stability_exact": true,
+    "trade_entry_safety_passed": true,
+    "mtf_runtime_passed": true
+  },
+  "passed": true,
+  "timeframes": {
+    "5": {
+      "bos_count_evaluation": 2601,
+      "structural_sfp_count_evaluation": 9908,
+      "state_candle_counts": {
+        "UNKNOWN": 14,
+        "BULLISH": 20513,
+        "BEARISH": 23347,
+        "BROKEN": 25206
+      },
+      "longest_broken_run": 143,
+      "transition_resolution_modes": {
+        "EXPECTED_OPPOSITE_FAST_PATH": 2317,
+        "EXPECTED_OPPOSITE_LOCAL_STRUCTURE": 284
+      },
+      "suffix_stability": {
+        "compare_start": "2026-08-23T08:00:00+00:00",
+        "full_count": 329,
+        "suffix_count": 329,
+        "exact_overlap_count": 329,
+        "full_only_count": 0,
+        "suffix_only_count": 0,
+        "exact_jaccard": 1.0
+      },
+      "suffix_exact": true
+    },
+    "15": {
+      "bos_count_evaluation": 921,
+      "structural_sfp_count_evaluation": 3841,
+      "state_candle_counts": {
+        "UNKNOWN": 12,
+        "BULLISH": 7068,
+        "BEARISH": 7502,
+        "BROKEN": 8444
+      },
+      "longest_broken_run": 108,
+      "transition_resolution_modes": {
+        "EXPECTED_OPPOSITE_FAST_PATH": 815,
+        "EXPECTED_OPPOSITE_LOCAL_STRUCTURE": 105,
+        "UNRESOLVED_END_OF_DATA": 1
+      },
+      "suffix_stability": {
+        "compare_start": "2026-08-23T08:00:00+00:00",
+        "full_count": 105,
+        "suffix_count": 105,
+        "exact_overlap_count": 105,
+        "full_only_count": 0,
+        "suffix_only_count": 0,
+        "exact_jaccard": 1.0
+      },
+      "suffix_exact": true
+    },
+    "60": {
+      "bos_count_evaluation": 225,
+      "structural_sfp_count_evaluation": 1024,
+      "state_candle_counts": {
+        "UNKNOWN": 14,
+        "BULLISH": 2238,
+        "BEARISH": 1829,
+        "BROKEN": 1675
+      },
+      "longest_broken_run": 42,
+      "transition_resolution_modes": {
+        "EXPECTED_OPPOSITE_FAST_PATH": 202,
+        "EXPECTED_OPPOSITE_LOCAL_STRUCTURE": 22,
+        "UNRESOLVED_END_OF_DATA": 1
+      },
+      "suffix_stability": {
+        "compare_start": "2026-08-23T08:00:00+00:00",
+        "full_count": 24,
+        "suffix_count": 24,
+        "exact_overlap_count": 24,
+        "full_only_count": 0,
+        "suffix_only_count": 0,
+        "exact_jaccard": 1.0
+      },
+      "suffix_exact": true
+    },
+    "240": {
+      "bos_count_evaluation": 67,
+      "structural_sfp_count_evaluation": 237,
+      "state_candle_counts": {
+        "UNKNOWN": 15,
+        "BULLISH": 348,
+        "BEARISH": 586,
+        "BROKEN": 490
+      },
+      "longest_broken_run": 39,
+      "transition_resolution_modes": {
+        "EXPECTED_OPPOSITE_FAST_PATH": 60,
+        "EXPECTED_OPPOSITE_LOCAL_STRUCTURE": 6,
+        "UNRESOLVED_END_OF_DATA": 1
+      },
+      "suffix_stability": {
+        "compare_start": "2026-08-23T08:00:00+00:00",
+        "full_count": 11,
+        "suffix_count": 11,
+        "exact_overlap_count": 11,
+        "full_only_count": 0,
+        "suffix_only_count": 0,
+        "exact_jaccard": 1.0
+      },
+      "suffix_exact": true
+    }
+  },
+  "mtf": {
+    "60_to_5": {
+      "candidate_count": 1024,
+      "confirmed_context_count": 705,
+      "unique_ltf_bos_count": 638,
+      "opportunity_count": 638,
+      "trade_entry_safety_passed": true,
+      "validation_scope": "STRUCTURAL_SWING_SFP_ONLY_RANGE_GATES_SEPARATE",
+      "entry_engine_blocking_reasons": [
+        "SOURCE_OB_POI_AUTOMATION_NOT_IMPLEMENTED"
+      ]
+    },
+    "240_to_15": {
+      "candidate_count": 237,
+      "confirmed_context_count": 169,
+      "unique_ltf_bos_count": 161,
+      "opportunity_count": 161,
+      "trade_entry_safety_passed": true,
+      "validation_scope": "STRUCTURAL_SWING_SFP_ONLY_RANGE_GATES_SEPARATE",
+      "entry_engine_blocking_reasons": [
+        "SOURCE_OB_POI_AUTOMATION_NOT_IMPLEMENTED"
+      ]
+    }
+  }
+}

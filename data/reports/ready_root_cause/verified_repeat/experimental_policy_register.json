@@ -1,0 +1,142 @@
+[
+  {
+    "count_policy": "Overlapping ever-blocker count unless explanation says conditional; null means not separately attributable",
+    "current_value": 0.6,
+    "observed_unique_setup_blocker_count": 454,
+    "parameter": "min_body_fraction",
+    "sensitivity": "0.5/0.7, first 60 days",
+    "source": "AGGRESSION_POLICY / AUTO_LEVELS.md",
+    "status": "EXPERIMENTAL_NOT_SOURCE_CERTIFIED",
+    "why": "Numeric aggressive impulse normalization"
+  },
+  {
+    "count_policy": "Overlapping ever-blocker count unless explanation says conditional; null means not separately attributable",
+    "current_value": 1.0,
+    "observed_unique_setup_blocker_count": 0,
+    "parameter": "min_engulf_body_ratio",
+    "sensitivity": "1.25/1.5, first 60 days",
+    "source": "AGGRESSION_POLICY / AUTO_LEVELS.md",
+    "status": "EXPERIMENTAL_NOT_SOURCE_CERTIFIED",
+    "why": "Full body engulf already requires strict ratio > 1; default numeric ratio adds no further rejection"
+  },
+  {
+    "count_policy": "Overlapping ever-blocker count unless explanation says conditional; null means not separately attributable",
+    "current_value": true,
+    "observed_unique_setup_blocker_count": 473,
+    "parameter": "full_body_engulf",
+    "sensitivity": "Conservative machine definition; alternative requires source chart evidence",
+    "source": "OB_FULL_BODY_ENGULF_WITH_IMBALANCE_CONSERVATIVE_NORMALIZATION",
+    "status": "EXPERIMENTAL_NOT_SOURCE_CERTIFIED",
+    "why": "Machine engulf definition; source requires aggressive engulf but not these exact OHLC inequalities"
+  },
+  {
+    "count_policy": "Overlapping ever-blocker count unless explanation says conditional; null means not separately attributable",
+    "current_value": "A.open >= BOS.close; B.index < anchor.swing_index",
+    "observed_unique_setup_blocker_count": 3346,
+    "parameter": "formation_window",
+    "sensitivity": "Geometry alternative unspecified; not invented",
+    "source": "auto_levels.py post-BOS loop",
+    "status": "EXPERIMENTAL_NOT_SOURCE_CERTIFIED",
+    "why": "Closed post-BOS candidate formation inside selected impulse"
+  },
+  {
+    "count_policy": "Overlapping ever-blocker count unless explanation says conditional; null means not separately attributable",
+    "current_value": true,
+    "observed_unique_setup_blocker_count": 574,
+    "parameter": "hard_imbalance",
+    "sensitivity": "Independent first-60-day one-policy ablation",
+    "source": "OB_CORE_001 unresolved; AUTO_LEVELS.md",
+    "status": "EXPERIMENTAL_NOT_SOURCE_CERTIFIED",
+    "why": "Conservative implementation of unresolved hard-vs-soft IMB"
+  },
+  {
+    "count_policy": "Overlapping ever-blocker count unless explanation says conditional; null means not separately attributable",
+    "current_value": true,
+    "observed_unique_setup_blocker_count": 399,
+    "parameter": "all_abc_inside_impulse",
+    "sensitivity": "Only containment relaxed in first-60-day diagnostic; OTE overlap retained",
+    "source": "auto_levels.py machine normalization",
+    "status": "EXPERIMENTAL_NOT_SOURCE_CERTIFIED",
+    "why": "Reject candles outside the frozen selected structural impulse"
+  },
+  {
+    "count_policy": "Overlapping ever-blocker count unless explanation says conditional; null means not separately attributable",
+    "current_value": true,
+    "observed_unique_setup_blocker_count": 62,
+    "parameter": "exact_raw_structural_sweep_by_A",
+    "sensitivity": "First-60-day diagnostic; source liquidity requirement never replaced in baseline",
+    "source": "STRICT_STRUCTURAL_LIQUIDITY_TAKE_NORMALIZATION",
+    "status": "EXPERIMENTAL_NOT_SOURCE_CERTIFIED",
+    "why": "Specific machine proxy for liquidity sweep required by OB_CORE_001"
+  },
+  {
+    "count_policy": "Overlapping ever-blocker count unless explanation says conditional; null means not separately attributable",
+    "current_value": "HTF three-candle gap",
+    "observed_unique_setup_blocker_count": null,
+    "parameter": "supporting_poi_detector",
+    "sensitivity": "Alternative geometric detector not specified; late/overlap/stale evidence exported",
+    "source": "POI_POLICY",
+    "status": "EXPERIMENTAL_NOT_SOURCE_CERTIFIED",
+    "why": "Source-approved POI geometric detector absent"
+  },
+  {
+    "count_policy": "Overlapping ever-blocker count unless explanation says conditional; null means not separately attributable",
+    "current_value": true,
+    "observed_unique_setup_blocker_count": 9,
+    "parameter": "supporting_poi_fresh_before_A",
+    "sensitivity": "Five full-period candidates fail only this OB gate and have independent targets; first-60-day ablation stays zero",
+    "source": "_fresh and POI_POLICY",
+    "status": "EXPERIMENTAL_NOT_SOURCE_CERTIFIED",
+    "why": "Conservative strict-first-reaction gap normalization"
+  },
+  {
+    "count_policy": "Overlapping ever-blocker count unless explanation says conditional; null means not separately attributable",
+    "current_value": true,
+    "observed_unique_setup_blocker_count": null,
+    "parameter": "ob_fresh_after_C",
+    "sensitivity": "Independent counts plus first-60-day one-policy ablation",
+    "source": "OB_FIRST_TEST_001 / conservative hard policy",
+    "status": "EXPERIMENTAL_NOT_SOURCE_CERTIFIED",
+    "why": "Source emphasizes first test but permits conditional repeated-entry cases; hard exclusion is experimental"
+  },
+  {
+    "count_policy": "Overlapping ever-blocker count unless explanation says conditional; null means not separately attributable",
+    "current_value": "Three distinct fresh nonoverlapping opposing gap-POI near edges",
+    "observed_unique_setup_blocker_count": 0,
+    "parameter": "target_policy",
+    "sensitivity": "Unreached production stage; no replacement allocation invented",
+    "source": "TARGET_POLICY",
+    "status": "EXPERIMENTAL_NOT_SOURCE_CERTIFIED",
+    "why": "Experimental mapping of FTA and fixed 40/30/30 management"
+  },
+  {
+    "count_policy": "Overlapping ever-blocker count unless explanation says conditional; null means not separately attributable",
+    "current_value": "65 SFP+BOS / 85 +geometry / 100 +levels",
+    "observed_unique_setup_blocker_count": 0,
+    "parameter": "score_policy",
+    "sensitivity": "No READY threshold to optimize",
+    "source": "StrategySignal.score_policy",
+    "status": "EXPERIMENTAL_NOT_SOURCE_CERTIFIED",
+    "why": "Synthetic evidence score; not READY threshold"
+  },
+  {
+    "count_policy": "Overlapping ever-blocker count unless explanation says conditional; null means not separately attributable",
+    "current_value": true,
+    "observed_unique_setup_blocker_count": 0,
+    "parameter": "entry_midpoint",
+    "sensitivity": "Not a READY blocker; unchanged",
+    "source": "StrategySignal.entry_policy",
+    "status": "EXPERIMENTAL_NOT_SOURCE_CERTIFIED",
+    "why": "Offline reference entry in OTE; actual fills use next OPEN inside zone"
+  },
+  {
+    "count_policy": "Overlapping ever-blocker count unless explanation says conditional; null means not separately attributable",
+    "current_value": "broken pre-BOS structural extreme -> selected post-BOS anchor",
+    "observed_unique_setup_blocker_count": null,
+    "parameter": "geometry_anchor_policy",
+    "sensitivity": "53 actionable directional-geometry rejections; no alternative anchor invented",
+    "source": "trade_plan.py technical normalization",
+    "status": "EXPERIMENTAL_NOT_SOURCE_CERTIFIED",
+    "why": "Deterministic causal impulse selection, not source-certified visual specification"
+  }
+]

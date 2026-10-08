@@ -1,0 +1,23 @@
+{
+  "baseline_tests": 344,
+  "browser_screenshot": "NOT_RUN_BROWSER_EXECUTABLE_UNAVAILABLE",
+  "byte_identical_diagnostic_files": 63,
+  "causality_reference_prefix_future_mutation_tests": "PASS",
+  "compile": "PASS",
+  "engine_and_baseline_byte_identity": "PASS",
+  "final_tests": 353,
+  "frozen_existing_files": 100,
+  "full_suite": "PASS",
+  "historical_baseline_signal_equivalence": "PASS",
+  "javascript_syntax_and_50_dom_simulated_selections": "PASS",
+  "new_audit_regression_after": "PASS",
+  "new_audit_regression_before": "FAIL_AS_EXPECTED",
+  "objective_ready_engine_bugs_found": 0,
+  "offline_shadow_parity_tests": "PASS",
+  "setup_ids": 6357,
+  "signal_state_changes": 17752,
+  "strategy_rules_changed": false,
+  "trade_entry_allowed": false,
+  "two_full_diagnostic_replays": "PASS",
+  "verdict": "ZERO READY IS EXPECTED UNDER CURRENT RULES"
+}

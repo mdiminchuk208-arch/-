@@ -1,0 +1,178 @@
+{
+  "analysis_mode": "SOURCE_CONSERVATIVE",
+  "bars_per_symbol": 48,
+  "decision_count": 134,
+  "final_equity": 10000.0,
+  "htf_minutes": 60,
+  "input_hashes": {
+    "BTCUSDT/5.csv": "5035989c9d85cecb05980946931daed7bc3fcf1e7d4e8cc0cd36498e25550e16",
+    "BTCUSDT/60.csv": "711bc9aebbb618f450ac186f1a0a9d06309941c64e3489a5060292cabb502d54"
+  },
+  "limitations": [
+    "SL_AND_THREE_TARGETS_REQUIRE_CALLER_SOURCE_QUALIFICATION",
+    "SCORE_AND_MIDPOINT_ENTRY_ARE_BACKTEST_PARAMETERS",
+    "CLOSED_HTF_OBSERVATION_CAN_DELAY_NEXT_OPEN_SFP",
+    "FUNDING_AND_LIQUIDATION_NOT_MODELLED",
+    "NO_LIVE_FEED_OR_EXECUTION_ADAPTER"
+  ],
+  "ltf_minutes": 5,
+  "mode": "BACKTEST",
+  "open_virtual_positions": [],
+  "pending_virtual_setups": 0,
+  "policy": {
+    "daily_loss_limit": 0.04,
+    "fee_fraction": 0.0006,
+    "leverage": 3.0,
+    "margin_mode": "Isolated",
+    "max_total_risk": 0.06,
+    "reentry_min_score": 75,
+    "risk_fraction": 0.02,
+    "slippage_fraction": 0.0002
+  },
+  "qualified_level_inputs": {},
+  "signal_updates": [
+    {
+      "analysis_mode": "SOURCE_CONSERVATIVE",
+      "bos_time": "2026-09-21T06:45:00+00:00",
+      "direction": "SHORT",
+      "entry_geometry_ready_time": "2026-09-21T06:55:00+00:00",
+      "entry_policy": "MIDPOINT_OF_OTE_BACKTEST_PARAMETER",
+      "entry_zone": {
+        "high": 81678.63799999999,
+        "low": 81643.601
+      },
+      "event_time": "2026-09-22T07:05:00+00:00",
+      "htf_minutes": 60,
+      "invalidation_reasons": [
+        "ALL_HTF_SFP_CONTEXTS_INVALIDATED"
+      ],
+      "levels_known_at": null,
+      "ltf_minutes": 5,
+      "mode": "BACKTEST",
+      "optimal_entry": 81661.1195,
+      "reasons": [
+        "HTF_SFP_FORMED",
+        "LTF_BOS_STRICTLY_AFTER_SFP",
+        "EXPECTED_OPPOSITE_STRUCTURE_AND_OTE_READY"
+      ],
+      "score": 85,
+      "score_policy": "EVIDENCE_35_SFP_30_BOS_20_OTE_15_LEVELS_BACKTEST_PARAMETER",
+      "sfp_time": "2026-09-21T06:00:00+00:00",
+      "signal_id": "cb06f494e185cd4d613dbb68",
+      "status": "INVALIDATED",
+      "stop_loss": null,
+      "strategy_version": "0.4.20-replay.1",
+      "symbol": "BTCUSDT",
+      "targets": [],
+      "trade_entry_allowed": false
+    },
+    {
+      "analysis_mode": "SOURCE_CONSERVATIVE",
+      "bos_time": "2026-09-22T02:30:00+00:00",
+      "direction": "LONG",
+      "entry_geometry_ready_time": "2026-09-22T02:40:00+00:00",
+      "entry_policy": "MIDPOINT_OF_OTE_BACKTEST_PARAMETER",
+      "entry_zone": {
+        "high": 85499.49500000001,
+        "low": 85458.61
+      },
+      "event_time": "2026-09-22T07:05:00+00:00",
+      "htf_minutes": 60,
+      "invalidation_reasons": [
+        "ALL_HTF_SFP_CONTEXTS_INVALIDATED"
+      ],
+      "levels_known_at": null,
+      "ltf_minutes": 5,
+      "mode": "BACKTEST",
+      "optimal_entry": 85479.0525,
+      "reasons": [
+        "HTF_SFP_FORMED",
+        "LTF_BOS_STRICTLY_AFTER_SFP",
+        "EXPECTED_OPPOSITE_STRUCTURE_AND_OTE_READY"
+      ],
+      "score": 85,
+      "score_policy": "EVIDENCE_35_SFP_30_BOS_20_OTE_15_LEVELS_BACKTEST_PARAMETER",
+      "sfp_time": "2026-09-22T02:00:00+00:00",
+      "signal_id": "0763b4e4b7c50a339310d2f9",
+      "status": "INVALIDATED",
+      "stop_loss": null,
+      "strategy_version": "0.4.20-replay.1",
+      "symbol": "BTCUSDT",
+      "targets": [],
+      "trade_entry_allowed": false
+    },
+    {
+      "analysis_mode": "SOURCE_CONSERVATIVE",
+      "bos_time": "2026-09-22T07:55:00+00:00",
+      "direction": "LONG",
+      "entry_geometry_ready_time": null,
+      "entry_policy": "MIDPOINT_OF_OTE_BACKTEST_PARAMETER",
+      "entry_zone": null,
+      "event_time": "2026-09-22T07:55:00+00:00",
+      "htf_minutes": 60,
+      "invalidation_reasons": [],
+      "levels_known_at": null,
+      "ltf_minutes": 5,
+      "mode": "BACKTEST",
+      "optimal_entry": null,
+      "reasons": [
+        "HTF_SFP_FORMED",
+        "LTF_BOS_STRICTLY_AFTER_SFP"
+      ],
+      "score": 65,
+      "score_policy": "EVIDENCE_35_SFP_30_BOS_20_OTE_15_LEVELS_BACKTEST_PARAMETER",
+      "sfp_time": "2026-09-22T06:00:00+00:00",
+      "signal_id": "318b7017fe85ba54491389fc",
+      "status": "WAITING_FOR_ENTRY_GEOMETRY",
+      "stop_loss": null,
+      "strategy_version": "0.4.20-replay.1",
+      "symbol": "BTCUSDT",
+      "targets": [],
+      "trade_entry_allowed": false
+    },
+    {
+      "analysis_mode": "SOURCE_CONSERVATIVE",
+      "bos_time": "2026-09-22T07:55:00+00:00",
+      "direction": "LONG",
+      "entry_geometry_ready_time": "2026-09-22T08:40:00+00:00",
+      "entry_policy": "MIDPOINT_OF_OTE_BACKTEST_PARAMETER",
+      "entry_zone": {
+        "high": 85286.2305,
+        "low": 85249.859
+      },
+      "event_time": "2026-09-22T08:40:00+00:00",
+      "htf_minutes": 60,
+      "invalidation_reasons": [],
+      "levels_known_at": null,
+      "ltf_minutes": 5,
+      "mode": "BACKTEST",
+      "optimal_entry": 85268.04475,
+      "reasons": [
+        "HTF_SFP_FORMED",
+        "LTF_BOS_STRICTLY_AFTER_SFP",
+        "EXPECTED_OPPOSITE_STRUCTURE_AND_OTE_READY"
+      ],
+      "score": 85,
+      "score_policy": "EVIDENCE_35_SFP_30_BOS_20_OTE_15_LEVELS_BACKTEST_PARAMETER",
+      "sfp_time": "2026-09-22T06:00:00+00:00",
+      "signal_id": "318b7017fe85ba54491389fc",
+      "status": "WAITING_FOR_SOURCE_LEVELS",
+      "stop_loss": null,
+      "strategy_version": "0.4.20-replay.1",
+      "symbol": "BTCUSDT",
+      "targets": [],
+      "trade_entry_allowed": false
+    }
+  ],
+  "snapshots_per_symbol": {
+    "BTCUSDT": 48
+  },
+  "strategy_version": "0.4.20-replay.1",
+  "symbols": [
+    "BTCUSDT"
+  ],
+  "trade_entry_allowed": false,
+  "unique_signal_count": 3,
+  "virtual_entry_count": 0,
+  "warmup_bars": 576
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "category": "C. EXPERIMENTAL BACKTEST PARAMETER",
+    "gate": "OB",
+    "percentage": 73.38367154318074,
+    "reason": "NO_POST_BOS_OB_PATTERN",
+    "setups": 4665
+  },
+  {
+    "category": "A. REAL STRATEGY RULE",
+    "gate": "ENTRY GEOMETRY",
+    "percentage": 7.094541450369671,
+    "reason": "ALL_HTF_SFP_CONTEXTS_INVALIDATED",
+    "setups": 451
+  },
+  {
+    "category": "C. EXPERIMENTAL BACKTEST PARAMETER",
+    "gate": "OB",
+    "percentage": 7.094541450369671,
+    "reason": "DIRECTIONAL_IMBALANCE_NOT_CONFIRMED",
+    "setups": 451
+  },
+  {
+    "category": "C. EXPERIMENTAL BACKTEST PARAMETER",
+    "gate": "OB",
+    "percentage": 6.087777253421425,
+    "reason": "OB_OUTSIDE_OTE_OR_STRUCTURAL_IMPULSE",
+    "setups": 387
+  },
+  {
+    "category": "C. EXPERIMENTAL BACKTEST PARAMETER",
+    "gate": "OB",
+    "percentage": 4.38886267107126,
+    "reason": "AGGRESSIVE_IMPULSE_THRESHOLD_NOT_MET",
+    "setups": 279
+  },
+  {
+    "category": "C. EXPERIMENTAL BACKTEST PARAMETER",
+    "gate": "OB",
+    "percentage": 0.9753028157936133,
+    "reason": "RAW_STRUCTURAL_LIQUIDITY_SWEEP_NOT_FOUND",
+    "setups": 62
+  },
+  {
+    "category": "B. SAFETY / CAUSALITY RULE",
+    "gate": "ENTRY GEOMETRY",
+    "percentage": 0.8337266005977663,
+    "reason": "REJECTED_ENTRY_GEOMETRY",
+    "setups": 53
+  },
+  {
+    "category": "C. EXPERIMENTAL BACKTEST PARAMETER",
+    "gate": "POI",
+    "percentage": 0.1415762151958471,
+    "reason": "FRESH_PREEXISTING_HTF_POI_NOT_FOUND",
+    "setups": 9
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "artifact_hashes.json": "546cc03aa547c0a19b9d715a3aad34955a9c24270948ed9da37af3f112f3d176",
+  "decisions.jsonl": "ee1c74eee3f60181cf3305964cdf10b4dafa821767a4c66eda0871e6156d208f",
+  "equity_curve.csv": "29fcd3911af9392210c41019dbecdfdd53dd7152ff72f3782ad9e1010a82c17f",
+  "equity_curve.jsonl": "0bfec5f824e872f991cd8471248a27fe082a76d902ed8f76bb41ec4d92ee7652",
+  "fingerprint.sha256": "2a813fde90c0ec22b60176cbbf2a435b864e666de78307bdf610815e037c70f8",
+  "signals.jsonl": "aebb9f72e98a686145083dee3f53e50cb49e552a41838ca7b70b13460dbce091",
+  "summary.json": "97d69a302b049c6726e5cd1cc1dd762424ae7e0b1fc028eac68f6ae21a3baf9c",
+  "trades.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

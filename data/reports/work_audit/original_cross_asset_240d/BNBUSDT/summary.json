@@ -1,0 +1,124 @@
+{
+  "checks": {
+    "symbol": "BNBUSDT",
+    "data_qa_passed": true,
+    "evaluation_span_passed": true,
+    "source_recovery_free": true,
+    "suffix_stability_exact": true,
+    "trade_entry_safety_passed": true,
+    "mtf_runtime_passed": false
+  },
+  "passed": false,
+  "timeframes": {
+    "5": {
+      "bos_count_evaluation": 2313,
+      "structural_sfp_count_evaluation": 7073,
+      "state_candle_counts": {
+        "UNKNOWN": 22,
+        "BULLISH": 19816,
+        "BEARISH": 20075,
+        "BROKEN": 29167
+      },
+      "longest_broken_run": 228,
+      "transition_resolution_modes": {
+        "EXPECTED_OPPOSITE_FAST_PATH": 1997,
+        "EXPECTED_OPPOSITE_LOCAL_STRUCTURE": 316
+      },
+      "suffix_stability": {
+        "compare_start": "2026-08-23T08:00:00+00:00",
+        "full_count": 278,
+        "suffix_count": 278,
+        "exact_overlap_count": 278,
+        "full_only_count": 0,
+        "suffix_only_count": 0,
+        "exact_jaccard": 1.0
+      },
+      "suffix_exact": true
+    },
+    "15": {
+      "bos_count_evaluation": 838,
+      "structural_sfp_count_evaluation": 3183,
+      "state_candle_counts": {
+        "UNKNOWN": 8,
+        "BULLISH": 7962,
+        "BEARISH": 7096,
+        "BROKEN": 7956
+      },
+      "longest_broken_run": 77,
+      "transition_resolution_modes": {
+        "EXPECTED_OPPOSITE_FAST_PATH": 752,
+        "EXPECTED_OPPOSITE_LOCAL_STRUCTURE": 86
+      },
+      "suffix_stability": {
+        "compare_start": "2026-08-23T08:00:00+00:00",
+        "full_count": 92,
+        "suffix_count": 92,
+        "exact_overlap_count": 92,
+        "full_only_count": 0,
+        "suffix_only_count": 0,
+        "exact_jaccard": 1.0
+      },
+      "suffix_exact": true
+    },
+    "60": {
+      "bos_count_evaluation": 227,
+      "structural_sfp_count_evaluation": 910,
+      "state_candle_counts": {
+        "UNKNOWN": 14,
+        "BULLISH": 2121,
+        "BEARISH": 1527,
+        "BROKEN": 2094
+      },
+      "longest_broken_run": 82,
+      "transition_resolution_modes": {
+        "EXPECTED_OPPOSITE_FAST_PATH": 197,
+        "EXPECTED_OPPOSITE_LOCAL_STRUCTURE": 29,
+        "UNRESOLVED_END_OF_DATA": 1
+      },
+      "suffix_stability": {
+        "compare_start": "2026-08-23T08:00:00+00:00",
+        "full_count": 24,
+        "suffix_count": 24,
+        "exact_overlap_count": 24,
+        "full_only_count": 0,
+        "suffix_only_count": 0,
+        "exact_jaccard": 1.0
+      },
+      "suffix_exact": true
+    },
+    "240": {
+      "bos_count_evaluation": 65,
+      "structural_sfp_count_evaluation": 267,
+      "state_candle_counts": {
+        "UNKNOWN": 11,
+        "BULLISH": 393,
+        "BEARISH": 507,
+        "BROKEN": 528
+      },
+      "longest_broken_run": 29,
+      "transition_resolution_modes": {
+        "EXPECTED_OPPOSITE_FAST_PATH": 56,
+        "EXPECTED_OPPOSITE_LOCAL_STRUCTURE": 8,
+        "UNRESOLVED_END_OF_DATA": 1
+      },
+      "suffix_stability": {
+        "compare_start": "2026-08-23T08:00:00+00:00",
+        "full_count": 11,
+        "suffix_count": 11,
+        "exact_overlap_count": 11,
+        "full_only_count": 0,
+        "suffix_only_count": 0,
+        "exact_jaccard": 1.0
+      },
+      "suffix_exact": true
+    }
+  },
+  "mtf": {
+    "60_to_5": {
+      "runtime_error": "TradePlanGeometryError: LONG OTE requires an upward impulse"
+    },
+    "240_to_15": {
+      "runtime_error": "TradePlanGeometryError: LONG OTE requires an upward impulse"
+    }
+  }
+}

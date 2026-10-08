@@ -1,0 +1,140 @@
+{
+  "checks": {
+    "symbol": "ETHUSDT",
+    "data_qa_passed": true,
+    "evaluation_span_passed": true,
+    "source_recovery_free": true,
+    "suffix_stability_exact": true,
+    "trade_entry_safety_passed": true,
+    "mtf_runtime_passed": true
+  },
+  "passed": true,
+  "timeframes": {
+    "5": {
+      "bos_count_evaluation": 2753,
+      "structural_sfp_count_evaluation": 12352,
+      "state_candle_counts": {
+        "UNKNOWN": 14,
+        "BULLISH": 22763,
+        "BEARISH": 23951,
+        "BROKEN": 22352
+      },
+      "longest_broken_run": 99,
+      "transition_resolution_modes": {
+        "EXPECTED_OPPOSITE_FAST_PATH": 2468,
+        "EXPECTED_OPPOSITE_LOCAL_STRUCTURE": 285
+      },
+      "suffix_stability": {
+        "compare_start": "2026-08-23T08:00:00+00:00",
+        "full_count": 345,
+        "suffix_count": 345,
+        "exact_overlap_count": 345,
+        "full_only_count": 0,
+        "suffix_only_count": 0,
+        "exact_jaccard": 1.0
+      },
+      "suffix_exact": true
+    },
+    "15": {
+      "bos_count_evaluation": 932,
+      "structural_sfp_count_evaluation": 4181,
+      "state_candle_counts": {
+        "UNKNOWN": 16,
+        "BULLISH": 7855,
+        "BEARISH": 7614,
+        "BROKEN": 7537
+      },
+      "longest_broken_run": 65,
+      "transition_resolution_modes": {
+        "EXPECTED_OPPOSITE_FAST_PATH": 834,
+        "EXPECTED_OPPOSITE_LOCAL_STRUCTURE": 98
+      },
+      "suffix_stability": {
+        "compare_start": "2026-08-23T08:00:00+00:00",
+        "full_count": 101,
+        "suffix_count": 101,
+        "exact_overlap_count": 101,
+        "full_only_count": 0,
+        "suffix_only_count": 0,
+        "exact_jaccard": 1.0
+      },
+      "suffix_exact": true
+    },
+    "60": {
+      "bos_count_evaluation": 247,
+      "structural_sfp_count_evaluation": 1056,
+      "state_candle_counts": {
+        "UNKNOWN": 14,
+        "BULLISH": 1791,
+        "BEARISH": 1967,
+        "BROKEN": 1984
+      },
+      "longest_broken_run": 100,
+      "transition_resolution_modes": {
+        "EXPECTED_OPPOSITE_FAST_PATH": 221,
+        "EXPECTED_OPPOSITE_LOCAL_STRUCTURE": 25,
+        "UNRESOLVED_END_OF_DATA": 1
+      },
+      "suffix_stability": {
+        "compare_start": "2026-08-23T08:00:00+00:00",
+        "full_count": 28,
+        "suffix_count": 28,
+        "exact_overlap_count": 28,
+        "full_only_count": 0,
+        "suffix_only_count": 0,
+        "exact_jaccard": 1.0
+      },
+      "suffix_exact": true
+    },
+    "240": {
+      "bos_count_evaluation": 52,
+      "structural_sfp_count_evaluation": 242,
+      "state_candle_counts": {
+        "UNKNOWN": 15,
+        "BULLISH": 442,
+        "BEARISH": 545,
+        "BROKEN": 437
+      },
+      "longest_broken_run": 71,
+      "transition_resolution_modes": {
+        "EXPECTED_OPPOSITE_LOCAL_STRUCTURE": 7,
+        "EXPECTED_OPPOSITE_FAST_PATH": 44,
+        "UNRESOLVED_END_OF_DATA": 1
+      },
+      "suffix_stability": {
+        "compare_start": "2026-08-23T08:00:00+00:00",
+        "full_count": 8,
+        "suffix_count": 8,
+        "exact_overlap_count": 8,
+        "full_only_count": 0,
+        "suffix_only_count": 0,
+        "exact_jaccard": 1.0
+      },
+      "suffix_exact": true
+    }
+  },
+  "mtf": {
+    "60_to_5": {
+      "candidate_count": 1056,
+      "confirmed_context_count": 762,
+      "unique_ltf_bos_count": 674,
+      "opportunity_count": 674,
+      "trade_entry_safety_passed": true,
+      "validation_scope": "STRUCTURAL_SWING_SFP_ONLY_RANGE_GATES_SEPARATE",
+      "entry_engine_blocking_reasons": [
+        "SOURCE_OB_POI_AUTOMATION_NOT_IMPLEMENTED"
+      ]
+    },
+    "240_to_15": {
+      "candidate_count": 242,
+      "confirmed_context_count": 178,
+      "unique_ltf_bos_count": 170,
+      "opportunity_count": 170,
+      "trade_entry_safety_passed": true,
+      "validation_scope": "STRUCTURAL_SWING_SFP_ONLY_RANGE_GATES_SEPARATE",
+      "entry_engine_blocking_reasons": [
+        "SOURCE_OB_POI_AUTOMATION_NOT_IMPLEMENTED"
+      ]
+    }
+  }
+}

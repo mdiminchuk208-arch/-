@@ -1,0 +1,122 @@
+{
+  "checks": {
+    "symbol": "XRPUSDT",
+    "data_qa_passed": true,
+    "evaluation_span_passed": true,
+    "source_recovery_free": true,
+    "suffix_stability_exact": true,
+    "trade_entry_safety_passed": true,
+    "mtf_runtime_passed": false
+  },
+  "passed": false,
+  "timeframes": {
+    "5": {
+      "bos_count_evaluation": 2662,
+      "structural_sfp_count_evaluation": 10080,
+      "state_candle_counts": {
+        "UNKNOWN": 16,
+        "BULLISH": 19471,
+        "BEARISH": 23001,
+        "BROKEN": 26592
+      },
+      "longest_broken_run": 114,
+      "transition_resolution_modes": {
+        "EXPECTED_OPPOSITE_LOCAL_STRUCTURE": 330,
+        "EXPECTED_OPPOSITE_FAST_PATH": 2332
+      },
+      "suffix_stability": {
+        "compare_start": "2026-08-23T08:00:00+00:00",
+        "full_count": 365,
+        "suffix_count": 365,
+        "exact_overlap_count": 365,
+        "full_only_count": 0,
+        "suffix_only_count": 0,
+        "exact_jaccard": 1.0
+      },
+      "suffix_exact": true
+    },
+    "15": {
+      "bos_count_evaluation": 887,
+      "structural_sfp_count_evaluation": 3847,
+      "state_candle_counts": {
+        "UNKNOWN": 20,
+        "BULLISH": 7058,
+        "BEARISH": 7568,
+        "BROKEN": 8380
+      },
+      "longest_broken_run": 152,
+      "transition_resolution_modes": {
+        "EXPECTED_OPPOSITE_FAST_PATH": 779,
+        "EXPECTED_OPPOSITE_LOCAL_STRUCTURE": 108
+      },
+      "suffix_stability": {
+        "compare_start": "2026-08-23T08:00:00+00:00",
+        "full_count": 103,
+        "suffix_count": 103,
+        "exact_overlap_count": 103,
+        "full_only_count": 0,
+        "suffix_only_count": 0,
+        "exact_jaccard": 1.0
+      },
+      "suffix_exact": true
+    },
+    "60": {
+      "bos_count_evaluation": 234,
+      "structural_sfp_count_evaluation": 1078,
+      "state_candle_counts": {
+        "UNKNOWN": 14,
+        "BULLISH": 1797,
+        "BEARISH": 1956,
+        "BROKEN": 1989
+      },
+      "longest_broken_run": 90,
+      "transition_resolution_modes": {
+        "EXPECTED_OPPOSITE_FAST_PATH": 199,
+        "EXPECTED_OPPOSITE_LOCAL_STRUCTURE": 35
+      },
+      "suffix_stability": {
+        "compare_start": "2026-08-23T08:00:00+00:00",
+        "full_count": 20,
+        "suffix_count": 20,
+        "exact_overlap_count": 20,
+        "full_only_count": 0,
+        "suffix_only_count": 0,
+        "exact_jaccard": 1.0
+      },
+      "suffix_exact": true
+    },
+    "240": {
+      "bos_count_evaluation": 59,
+      "structural_sfp_count_evaluation": 238,
+      "state_candle_counts": {
+        "UNKNOWN": 13,
+        "BULLISH": 400,
+        "BEARISH": 485,
+        "BROKEN": 541
+      },
+      "longest_broken_run": 42,
+      "transition_resolution_modes": {
+        "EXPECTED_OPPOSITE_FAST_PATH": 51,
+        "EXPECTED_OPPOSITE_LOCAL_STRUCTURE": 8
+      },
+      "suffix_stability": {
+        "compare_start": "2026-08-23T08:00:00+00:00",
+        "full_count": 8,
+        "suffix_count": 8,
+        "exact_overlap_count": 8,
+        "full_only_count": 0,
+        "suffix_only_count": 0,
+        "exact_jaccard": 1.0
+      },
+      "suffix_exact": true
+    }
+  },
+  "mtf": {
+    "60_to_5": {
+      "runtime_error": "TradePlanGeometryError: LONG OTE requires an upward impulse"
+    },
+    "240_to_15": {
+      "runtime_error": "TradePlanGeometryError: LONG OTE requires an upward impulse"
+    }
+  }
+}

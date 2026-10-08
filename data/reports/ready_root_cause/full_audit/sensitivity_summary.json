@@ -1,0 +1,74 @@
+{
+  "period": "FIRST_60_EXECUTION_DAYS_ONLY",
+  "results": [
+    {
+      "baseline_ready": 0,
+      "blocker_counts": {
+        "AGGRESSIVE_IMPULSE_THRESHOLD_NOT_MET": 80,
+        "DIRECTIONAL_IMBALANCE_NOT_CONFIRMED": 149,
+        "FRESH_PREEXISTING_HTF_POI_NOT_FOUND": 1,
+        "NO_ELIGIBLE_POST_BOS_OB": 273,
+        "NO_POST_BOS_OB_PATTERN": 1259,
+        "OB_OUTSIDE_OTE_OR_STRUCTURAL_IMPULSE": 91,
+        "RAW_STRUCTURAL_LIQUIDITY_SWEEP_NOT_FOUND": 14
+      },
+      "changed_blocker_sets": 37,
+      "experimental_ready": 0,
+      "parameter": "min_body_fraction",
+      "setups": 1532,
+      "value": 0.5
+    },
+    {
+      "baseline_ready": 0,
+      "blocker_counts": {
+        "AGGRESSIVE_IMPULSE_THRESHOLD_NOT_MET": 169,
+        "DIRECTIONAL_IMBALANCE_NOT_CONFIRMED": 80,
+        "FRESH_PREEXISTING_HTF_POI_NOT_FOUND": 1,
+        "NO_ELIGIBLE_POST_BOS_OB": 273,
+        "NO_POST_BOS_OB_PATTERN": 1259,
+        "OB_OUTSIDE_OTE_OR_STRUCTURAL_IMPULSE": 73,
+        "RAW_STRUCTURAL_LIQUIDITY_SWEEP_NOT_FOUND": 10
+      },
+      "changed_blocker_sets": 63,
+      "experimental_ready": 0,
+      "parameter": "min_body_fraction",
+      "setups": 1532,
+      "value": 0.7
+    },
+    {
+      "baseline_ready": 0,
+      "blocker_counts": {
+        "AGGRESSIVE_IMPULSE_THRESHOLD_NOT_MET": 130,
+        "DIRECTIONAL_IMBALANCE_NOT_CONFIRMED": 105,
+        "FRESH_PREEXISTING_HTF_POI_NOT_FOUND": 1,
+        "NO_ELIGIBLE_POST_BOS_OB": 273,
+        "NO_POST_BOS_OB_PATTERN": 1259,
+        "OB_OUTSIDE_OTE_OR_STRUCTURAL_IMPULSE": 88,
+        "RAW_STRUCTURAL_LIQUIDITY_SWEEP_NOT_FOUND": 13
+      },
+      "changed_blocker_sets": 21,
+      "experimental_ready": 0,
+      "parameter": "min_engulf_body_ratio",
+      "setups": 1532,
+      "value": 1.25
+    },
+    {
+      "baseline_ready": 0,
+      "blocker_counts": {
+        "AGGRESSIVE_IMPULSE_THRESHOLD_NOT_MET": 149,
+        "DIRECTIONAL_IMBALANCE_NOT_CONFIRMED": 91,
+        "FRESH_PREEXISTING_HTF_POI_NOT_FOUND": 1,
+        "NO_ELIGIBLE_POST_BOS_OB": 273,
+        "NO_POST_BOS_OB_PATTERN": 1259,
+        "OB_OUTSIDE_OTE_OR_STRUCTURAL_IMPULSE": 85,
+        "RAW_STRUCTURAL_LIQUIDITY_SWEEP_NOT_FOUND": 13
+      },
+      "changed_blocker_sets": 43,
+      "experimental_ready": 0,
+      "parameter": "min_engulf_body_ratio",
+      "setups": 1532,
+      "value": 1.5
+    }
+  ],
+  "status": "PREDECLARED_DIAGNOSTIC_EXPERIMENTS_NO_OPTIMIZATION_NO_HOLDOUT_CLAIM"
+}

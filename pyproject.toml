@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crypto-bot-core"
+version = "0.4.20"
+description = "Phase 1.4.15 cross-asset freeze and range lifecycle scope"
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+where = ["src"]

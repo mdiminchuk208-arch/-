@@ -1,0 +1,11 @@
+{
+  "entry_fee_and_unrealized": {
+    "old_equity": 1170,
+    "correct_marked_equity": 1169.6368734324817,
+    "difference": 0.3631265675182931
+  },
+  "exit_equity_peak": {
+    "old_trade_max_equity": 1244.8799999999999,
+    "equity_at_close": 1258.92
+  }
+}

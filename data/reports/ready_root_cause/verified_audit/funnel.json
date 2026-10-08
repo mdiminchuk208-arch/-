@@ -1,0 +1,132 @@
+[
+  {
+    "entered_count": 6357,
+    "failed_count": 0,
+    "invalidated_count": 0,
+    "passed_count": 6357,
+    "percentage_of_all_setups": 100.0,
+    "percentage_of_previous_stage": 100.0,
+    "stage": "SETUP",
+    "waiting_count": 0
+  },
+  {
+    "entered_count": 6357,
+    "failed_count": 0,
+    "invalidated_count": 0,
+    "passed_count": 6357,
+    "percentage_of_all_setups": 100.0,
+    "percentage_of_previous_stage": 100.0,
+    "stage": "SFP",
+    "waiting_count": 0
+  },
+  {
+    "entered_count": 6357,
+    "failed_count": 0,
+    "invalidated_count": 0,
+    "passed_count": 6357,
+    "percentage_of_all_setups": 100.0,
+    "percentage_of_previous_stage": 100.0,
+    "stage": "POST-SFP BOS",
+    "waiting_count": 0
+  },
+  {
+    "entered_count": 6357,
+    "failed_count": 53,
+    "invalidated_count": 451,
+    "passed_count": 5853,
+    "percentage_of_all_setups": 92.07173194903257,
+    "percentage_of_previous_stage": 92.07173194903257,
+    "stage": "ENTRY GEOMETRY",
+    "waiting_count": 0
+  },
+  {
+    "entered_count": 5853,
+    "failed_count": 0,
+    "invalidated_count": 0,
+    "passed_count": 5853,
+    "percentage_of_all_setups": 92.07173194903257,
+    "percentage_of_previous_stage": 100.0,
+    "stage": "OTE",
+    "waiting_count": 0
+  },
+  {
+    "entered_count": 5853,
+    "failed_count": 0,
+    "invalidated_count": 0,
+    "passed_count": 5853,
+    "percentage_of_all_setups": 92.07173194903257,
+    "percentage_of_previous_stage": 100.0,
+    "stage": "SOURCE CONTEXT",
+    "waiting_count": 0
+  },
+  {
+    "entered_count": 5853,
+    "failed_count": 0,
+    "invalidated_count": 0,
+    "passed_count": 5853,
+    "percentage_of_all_setups": 92.07173194903257,
+    "percentage_of_previous_stage": 100.0,
+    "stage": "AUTO LEVELS",
+    "waiting_count": 0
+  },
+  {
+    "entered_count": 5853,
+    "failed_count": 5844,
+    "invalidated_count": 0,
+    "passed_count": 9,
+    "percentage_of_all_setups": 0.1415762151958471,
+    "percentage_of_previous_stage": 0.15376729882111737,
+    "stage": "OB",
+    "waiting_count": 0
+  },
+  {
+    "entered_count": 9,
+    "failed_count": 9,
+    "invalidated_count": 0,
+    "passed_count": 0,
+    "percentage_of_all_setups": 0.0,
+    "percentage_of_previous_stage": 0.0,
+    "stage": "POI",
+    "waiting_count": 0
+  },
+  {
+    "entered_count": 0,
+    "failed_count": 0,
+    "invalidated_count": 0,
+    "passed_count": 0,
+    "percentage_of_all_setups": 0.0,
+    "percentage_of_previous_stage": null,
+    "stage": "3 TARGETS",
+    "waiting_count": 0
+  },
+  {
+    "entered_count": 0,
+    "failed_count": 0,
+    "invalidated_count": 0,
+    "passed_count": 0,
+    "percentage_of_all_setups": 0.0,
+    "percentage_of_previous_stage": null,
+    "stage": "RANGE REVIEW",
+    "waiting_count": 0
+  },
+  {
+    "entered_count": 0,
+    "failed_count": 0,
+    "invalidated_count": 0,
+    "passed_count": 0,
+    "percentage_of_all_setups": 0.0,
+    "percentage_of_previous_stage": null,
+    "stage": "SCORE",
+    "waiting_count": 0
+  },
+  {
+    "entered_count": 0,
+    "failed_count": 0,
+    "invalidated_count": 0,
+    "passed_count": 0,
+    "percentage_of_all_setups": 0.0,
+    "percentage_of_previous_stage": null,
+    "stage": "READY",
+    "waiting_count": 0
+  }
+]
