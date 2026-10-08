@@ -1,3 +1,26 @@
+# Strategy Engine: завершённое зарегистрированное исследование
+
+Все зарегистрированные historical, VALIDATION, retrospective HOLDOUT, walk-forward, execution, POI и exit sensitivity studies завершены. Полный inventory и итоговые таблицы имеют `complete=true`.
+
+Все 21 исходных fingerprints восстановлены точно; 57 canonical source/config SHA неизменны. Canonical TP 40/30/30, inclusive wick-touch и `trade_entry_allowed=false` сохранены. Варианты не выбраны для canonical.
+
+Full tests: **439 PASS**, lint E9/F и mypy PASS. Результаты и необходимые для продолжения артефакты сохранены в Git.
+
+Итоговые выводы и ограничения: [robustness report](ROBUSTNESS_RESEARCH_REPORT.md) и [exit management report](EXIT_MANAGEMENT_RESEARCH_REPORT.md). Отдельные chronological holdout portfolios не объединены в один account; это retrospective validation, не prospective OOS.
+
+## Завершённая точка передачи
+
+Для проверки и повторного использования сохранённых результатов:
+
+```bash
+PYTHONPATH=src python scripts/restore_research_checkpoint.py --workers 4
+PYTHONPATH=src python scripts/continue_robustness_research.py --workers 4
+```
+
+Без `--checkpoint-main` команды не публикуют commits. Сохранённые случаи повторно используются после SHA/fingerprint validation. Историческая диагностика восстановления приведена ниже; её промежуточные counts/status не описывают финальный inventory.
+
+<details><summary>История восстановления и промежуточной проверки</summary>
+
 # Strategy Engine: восстановление исследования
 
 Это промежуточная точка продолжения, а не итоговый robustness verdict.
@@ -134,3 +157,5 @@ inventory и итогового проверенного этапа, повто�
 fingerprints, публикует актуальную точку передачи и создаёт ZIP точного commit
 в `/workspace/artifacts` с CRC-проверкой, SHA256 и `latest_final.json`.
 Незавершённый inventory блокирует финальную доставку.
+
+</details>

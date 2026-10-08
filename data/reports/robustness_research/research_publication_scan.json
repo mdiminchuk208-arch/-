@@ -1,6 +1,6 @@
 {
   "baseline_guard": "PASS",
-  "changed_files_scanned": 41,
+  "changed_files_scanned": 3,
   "excluded_generated_directories": [
     ".mypy_cache",
     ".pytest_cache",
@@ -13,294 +13,28 @@
   ],
   "files": [
     {
-      "logical_bytes": 28214,
-      "logical_sha256": "1c7be9a683b9c65752b420e8654c8ae3a7c7eb2b98710e9ef4f2037966bc1427",
-      "path": "EXIT_MANAGEMENT_RESEARCH_REPORT.md",
-      "stored_bytes": 28214,
-      "stored_sha256": "1c7be9a683b9c65752b420e8654c8ae3a7c7eb2b98710e9ef4f2037966bc1427"
-    },
-    {
-      "logical_bytes": 23563,
-      "logical_sha256": "aac84218ca5ce8f63a172133b7dab37cbf9377acbd81b6e09eee1acb14005464",
-      "path": "ROBUSTNESS_RESEARCH_REPORT.md",
-      "stored_bytes": 23563,
-      "stored_sha256": "aac84218ca5ce8f63a172133b7dab37cbf9377acbd81b6e09eee1acb14005464"
-    },
-    {
-      "logical_bytes": 139477,
-      "logical_sha256": "1b5f2b2e73367d2f0281b97a376648c47b97216a3a2aa5a25b6c84f82311f9ef",
-      "path": "data/reports/robustness_research/canonical_window_metrics.csv",
-      "stored_bytes": 139477,
-      "stored_sha256": "1b5f2b2e73367d2f0281b97a376648c47b97216a3a2aa5a25b6c84f82311f9ef"
+      "logical_bytes": 12870,
+      "logical_sha256": "0788674ddb16390a0f6c396e094bac2a082f2555fe203df60ccb79160bba9043",
+      "path": "CONTINUATION_STATUS.md",
+      "stored_bytes": 12870,
+      "stored_sha256": "0788674ddb16390a0f6c396e094bac2a082f2555fe203df60ccb79160bba9043"
     },
     {
       "logical_bytes": 69218,
-      "logical_sha256": "37f5f91c1db17b215ed55a4add04fdf7599e4b1ceaea40b28266dcb34cbb6c78",
+      "logical_sha256": "f3073ca0cb8b6c6dd64bf2d0a1c8b0c9931ee98e730cda8734f623dded456c93",
       "path": "data/reports/robustness_research/continuation_full_tests.log",
       "stored_bytes": 69218,
-      "stored_sha256": "37f5f91c1db17b215ed55a4add04fdf7599e4b1ceaea40b28266dcb34cbb6c78"
+      "stored_sha256": "f3073ca0cb8b6c6dd64bf2d0a1c8b0c9931ee98e730cda8734f623dded456c93"
     },
     {
-      "logical_bytes": 7914,
-      "logical_sha256": "c55cd139bf8af7c5e0ed318adfe8029e2a1679115599d3b6bd94cab9c907f092",
+      "logical_bytes": 7912,
+      "logical_sha256": "816c20eeb8ee92a59eb6fc7d501280fd6093bfaabf7c1262636f8aaa761f697a",
       "path": "data/reports/robustness_research/continuation_stage_checks.json",
-      "stored_bytes": 7914,
-      "stored_sha256": "c55cd139bf8af7c5e0ed318adfe8029e2a1679115599d3b6bd94cab9c907f092"
-    },
-    {
-      "logical_bytes": 3462,
-      "logical_sha256": "645a090d138abce26862b1ceba669493fc8a222df57d584720649641fbe4ef03",
-      "path": "data/reports/robustness_research/exit_management/development_15_5/limit_15_5/artifact_hashes.json",
-      "stored_bytes": 3462,
-      "stored_sha256": "645a090d138abce26862b1ceba669493fc8a222df57d584720649641fbe4ef03"
-    },
-    {
-      "logical_bytes": 65,
-      "logical_sha256": "527bce96f1105d9d527d59ab0f4aa8530eb1cc0766f1995d3fbd64a58877bc33",
-      "path": "data/reports/robustness_research/exit_management/development_15_5/limit_15_5/fingerprint.sha256",
-      "stored_bytes": 65,
-      "stored_sha256": "527bce96f1105d9d527d59ab0f4aa8530eb1cc0766f1995d3fbd64a58877bc33"
-    },
-    {
-      "logical_bytes": 1943,
-      "logical_sha256": "24257a17de6f4d29c7819b4452fb921822684e8c8fbd4a515bebfc3e3fc757e0",
-      "path": "data/reports/robustness_research/exit_management/development_15_5/limit_15_5/source_context.json",
-      "stored_bytes": 1943,
-      "stored_sha256": "24257a17de6f4d29c7819b4452fb921822684e8c8fbd4a515bebfc3e3fc757e0"
-    },
-    {
-      "logical_bytes": 3462,
-      "logical_sha256": "7a28519d3a6e568f9179175a234b76605f2cbc187987a6afd3fac54493b6300a",
-      "path": "data/reports/robustness_research/exit_management/development_240_15/final_240_15/artifact_hashes.json",
-      "stored_bytes": 3462,
-      "stored_sha256": "7a28519d3a6e568f9179175a234b76605f2cbc187987a6afd3fac54493b6300a"
-    },
-    {
-      "logical_bytes": 65,
-      "logical_sha256": "525ea2b3965d020c55cbca04f47ab64af22b8e27ad4bb09911018a0d87d914d1",
-      "path": "data/reports/robustness_research/exit_management/development_240_15/final_240_15/fingerprint.sha256",
-      "stored_bytes": 65,
-      "stored_sha256": "525ea2b3965d020c55cbca04f47ab64af22b8e27ad4bb09911018a0d87d914d1"
-    },
-    {
-      "logical_bytes": 1963,
-      "logical_sha256": "c0329e6fba92db93c811e4e425513eaebf95c17e8abb0c9a1b07a28ea217ba84",
-      "path": "data/reports/robustness_research/exit_management/development_240_15/final_240_15/source_context.json",
-      "stored_bytes": 1963,
-      "stored_sha256": "c0329e6fba92db93c811e4e425513eaebf95c17e8abb0c9a1b07a28ea217ba84"
-    },
-    {
-      "logical_bytes": 3462,
-      "logical_sha256": "b0cfeed5293986871f087505f82f984b964315263549de169ae654ba6e4eacd2",
-      "path": "data/reports/robustness_research/exit_management/development_240_5/final_240_5/artifact_hashes.json",
-      "stored_bytes": 3462,
-      "stored_sha256": "b0cfeed5293986871f087505f82f984b964315263549de169ae654ba6e4eacd2"
-    },
-    {
-      "logical_bytes": 65,
-      "logical_sha256": "5b324cc178cbcbc45f9567ab7a3531c04e8da4e77268e1a81feed63ee11025bc",
-      "path": "data/reports/robustness_research/exit_management/development_240_5/final_240_5/fingerprint.sha256",
-      "stored_bytes": 65,
-      "stored_sha256": "5b324cc178cbcbc45f9567ab7a3531c04e8da4e77268e1a81feed63ee11025bc"
-    },
-    {
-      "logical_bytes": 1953,
-      "logical_sha256": "c172b26a601370ecccce7fd1ef38b7e787d199ef20c2366a8f53b95180f9d855",
-      "path": "data/reports/robustness_research/exit_management/development_240_5/final_240_5/source_context.json",
-      "stored_bytes": 1953,
-      "stored_sha256": "c172b26a601370ecccce7fd1ef38b7e787d199ef20c2366a8f53b95180f9d855"
-    },
-    {
-      "logical_bytes": 3462,
-      "logical_sha256": "34f109c0f2d493cabb7ed00765905f61213eb630de34869aedcd948b104566a7",
-      "path": "data/reports/robustness_research/exit_management/development_240_60/final_240_60/artifact_hashes.json",
-      "stored_bytes": 3462,
-      "stored_sha256": "34f109c0f2d493cabb7ed00765905f61213eb630de34869aedcd948b104566a7"
-    },
-    {
-      "logical_bytes": 65,
-      "logical_sha256": "3c47cf12e7704915eb570a0bfaf8fe97abb6fac90b49c81ff94065927032c69f",
-      "path": "data/reports/robustness_research/exit_management/development_240_60/final_240_60/fingerprint.sha256",
-      "stored_bytes": 65,
-      "stored_sha256": "3c47cf12e7704915eb570a0bfaf8fe97abb6fac90b49c81ff94065927032c69f"
-    },
-    {
-      "logical_bytes": 1963,
-      "logical_sha256": "59a44a50774dc727f32674d8c57dfe337334dbd29c0c0cdaa58a9b21d3e493c1",
-      "path": "data/reports/robustness_research/exit_management/development_240_60/final_240_60/source_context.json",
-      "stored_bytes": 1963,
-      "stored_sha256": "59a44a50774dc727f32674d8c57dfe337334dbd29c0c0cdaa58a9b21d3e493c1"
-    },
-    {
-      "logical_bytes": 3462,
-      "logical_sha256": "3d69bfee9704de81d9ddb7e82a0b235949346976e7bff2697e9be741091f42c9",
-      "path": "data/reports/robustness_research/exit_management/development_60_15/final_60_15/artifact_hashes.json",
-      "stored_bytes": 3462,
-      "stored_sha256": "3d69bfee9704de81d9ddb7e82a0b235949346976e7bff2697e9be741091f42c9"
-    },
-    {
-      "logical_bytes": 65,
-      "logical_sha256": "cdf53c30cec69c26e2508ab21ddaeb1df00c75b8b7a8a6f35a7faa868aacf6cd",
-      "path": "data/reports/robustness_research/exit_management/development_60_15/final_60_15/fingerprint.sha256",
-      "stored_bytes": 65,
-      "stored_sha256": "cdf53c30cec69c26e2508ab21ddaeb1df00c75b8b7a8a6f35a7faa868aacf6cd"
-    },
-    {
-      "logical_bytes": 1953,
-      "logical_sha256": "1a763cc7983952a74e360e33b964ed0dfe663bc72c0b5d89587c3a598a2c5345",
-      "path": "data/reports/robustness_research/exit_management/development_60_15/final_60_15/source_context.json",
-      "stored_bytes": 1953,
-      "stored_sha256": "1a763cc7983952a74e360e33b964ed0dfe663bc72c0b5d89587c3a598a2c5345"
-    },
-    {
-      "logical_bytes": 3462,
-      "logical_sha256": "b2e0c8b0928f9a09aeb3f0a7968d557e238d1f04f7222d9c48d18532a6ebbe75",
-      "path": "data/reports/robustness_research/exit_management/development_60_5/limit_60_5/artifact_hashes.json",
-      "stored_bytes": 3462,
-      "stored_sha256": "b2e0c8b0928f9a09aeb3f0a7968d557e238d1f04f7222d9c48d18532a6ebbe75"
-    },
-    {
-      "logical_bytes": 65,
-      "logical_sha256": "0cda60a793d7d6313000d5673d42c06e86433886fddefea95f96655a0213c372",
-      "path": "data/reports/robustness_research/exit_management/development_60_5/limit_60_5/fingerprint.sha256",
-      "stored_bytes": 65,
-      "stored_sha256": "0cda60a793d7d6313000d5673d42c06e86433886fddefea95f96655a0213c372"
-    },
-    {
-      "logical_bytes": 1943,
-      "logical_sha256": "403b773e72d49214a31f6aaa64002766273b89482bc62a64367c60f1256e2bcd",
-      "path": "data/reports/robustness_research/exit_management/development_60_5/limit_60_5/source_context.json",
-      "stored_bytes": 1943,
-      "stored_sha256": "403b773e72d49214a31f6aaa64002766273b89482bc62a64367c60f1256e2bcd"
-    },
-    {
-      "logical_bytes": 3462,
-      "logical_sha256": "bc35e3479f0e44b988b972ccb343c4b5aad9c547dc2c7cf1f5204e684fe78919",
-      "path": "data/reports/robustness_research/exit_management/exit_untouched_btc_2019/EXIT_HOLDOUT_SEGMENT_17/artifact_hashes.json",
-      "stored_bytes": 3462,
-      "stored_sha256": "bc35e3479f0e44b988b972ccb343c4b5aad9c547dc2c7cf1f5204e684fe78919"
-    },
-    {
-      "logical_bytes": 65,
-      "logical_sha256": "42d065b67a795d0240829f252fdf701ab604f70f4af802c37ae5a86ae20b735f",
-      "path": "data/reports/robustness_research/exit_management/exit_untouched_btc_2019/EXIT_HOLDOUT_SEGMENT_17/fingerprint.sha256",
-      "stored_bytes": 65,
-      "stored_sha256": "42d065b67a795d0240829f252fdf701ab604f70f4af802c37ae5a86ae20b735f"
-    },
-    {
-      "logical_bytes": 503,
-      "logical_sha256": "79d16adc15a1c928a820719ffa877a7876ec05c2e3b6eeec8258dc018005197e",
-      "path": "data/reports/robustness_research/exit_management/exit_untouched_btc_2019/EXIT_HOLDOUT_SEGMENT_17/source_context.json",
-      "stored_bytes": 503,
-      "stored_sha256": "79d16adc15a1c928a820719ffa877a7876ec05c2e3b6eeec8258dc018005197e"
-    },
-    {
-      "logical_bytes": 3462,
-      "logical_sha256": "806e91675c941a1c62448c8e96c8424402c7e2bccd0d2f5a4928caff803d7cc5",
-      "path": "data/reports/robustness_research/exit_management/exit_untouched_btc_2019/EXIT_HOLDOUT_SEGMENT_19/artifact_hashes.json",
-      "stored_bytes": 3462,
-      "stored_sha256": "806e91675c941a1c62448c8e96c8424402c7e2bccd0d2f5a4928caff803d7cc5"
-    },
-    {
-      "logical_bytes": 65,
-      "logical_sha256": "7c154d88bbba582f4e68cea72ff1655007c2bc975f6a97c689a42d6dceb4221d",
-      "path": "data/reports/robustness_research/exit_management/exit_untouched_btc_2019/EXIT_HOLDOUT_SEGMENT_19/fingerprint.sha256",
-      "stored_bytes": 65,
-      "stored_sha256": "7c154d88bbba582f4e68cea72ff1655007c2bc975f6a97c689a42d6dceb4221d"
-    },
-    {
-      "logical_bytes": 503,
-      "logical_sha256": "51c8cab04bc7dd8e7ba2f2cf92424c180111fc477a0b5c24729657bd4ee8f3aa",
-      "path": "data/reports/robustness_research/exit_management/exit_untouched_btc_2019/EXIT_HOLDOUT_SEGMENT_19/source_context.json",
-      "stored_bytes": 503,
-      "stored_sha256": "51c8cab04bc7dd8e7ba2f2cf92424c180111fc477a0b5c24729657bd4ee8f3aa"
-    },
-    {
-      "logical_bytes": 3462,
-      "logical_sha256": "5bf86a9c6bc6626fcc5094f0541188b624d0e76453a214b3d78bf863cfd56d6e",
-      "path": "data/reports/robustness_research/exit_management/exit_untouched_btc_2019/EXIT_HOLDOUT_SEGMENT_20/artifact_hashes.json",
-      "stored_bytes": 3462,
-      "stored_sha256": "5bf86a9c6bc6626fcc5094f0541188b624d0e76453a214b3d78bf863cfd56d6e"
-    },
-    {
-      "logical_bytes": 65,
-      "logical_sha256": "eaa8d9df65ee234eff170e32caf5d6d2ba81b363a7a475cbf2a33dd265c7a2d8",
-      "path": "data/reports/robustness_research/exit_management/exit_untouched_btc_2019/EXIT_HOLDOUT_SEGMENT_20/fingerprint.sha256",
-      "stored_bytes": 65,
-      "stored_sha256": "eaa8d9df65ee234eff170e32caf5d6d2ba81b363a7a475cbf2a33dd265c7a2d8"
-    },
-    {
-      "logical_bytes": 503,
-      "logical_sha256": "31c4c91755cf7ac33a031a54357dcde9c11d872dbdd0d91d3566e738fdc4cff1",
-      "path": "data/reports/robustness_research/exit_management/exit_untouched_btc_2019/EXIT_HOLDOUT_SEGMENT_20/source_context.json",
-      "stored_bytes": 503,
-      "stored_sha256": "31c4c91755cf7ac33a031a54357dcde9c11d872dbdd0d91d3566e738fdc4cff1"
-    },
-    {
-      "logical_bytes": 412164,
-      "logical_sha256": "d95a5a91f223235b681716fad1c1f6f09c7da681e849b99cdffcb37fca8ac1be",
-      "path": "data/reports/robustness_research/exit_management_metrics.csv",
-      "stored_bytes": 412164,
-      "stored_sha256": "d95a5a91f223235b681716fad1c1f6f09c7da681e849b99cdffcb37fca8ac1be"
-    },
-    {
-      "logical_bytes": 33395,
-      "logical_sha256": "070ab9d7f82c48c3bb0593765f19a43e1673b42c0e16132baf0d4285e76d010f",
-      "path": "data/reports/robustness_research/external_execution_audit.json",
-      "stored_bytes": 33395,
-      "stored_sha256": "070ab9d7f82c48c3bb0593765f19a43e1673b42c0e16132baf0d4285e76d010f"
-    },
-    {
-      "logical_bytes": 371060,
-      "logical_sha256": "f4e0998870a2d86de6e3eff95082262d225be4d0cc628a29031faae501297d05",
-      "path": "data/reports/robustness_research/fill_frequency_groups.csv",
-      "stored_bytes": 371060,
-      "stored_sha256": "f4e0998870a2d86de6e3eff95082262d225be4d0cc628a29031faae501297d05"
-    },
-    {
-      "logical_bytes": 1951,
-      "logical_sha256": "6e44e239b3987b2e0dafd1392307f70b242bbe37d1d866167a005a41eccb3bd8",
-      "path": "data/reports/robustness_research/monte_carlo_sample_gate.json",
-      "stored_bytes": 1951,
-      "stored_sha256": "6e44e239b3987b2e0dafd1392307f70b242bbe37d1d866167a005a41eccb3bd8"
-    },
-    {
-      "logical_bytes": 268320,
-      "logical_sha256": "8c288bc58a3c41772e462028dd5beb00aae36904a178ea83bce3cebb259ad36c",
-      "path": "data/reports/robustness_research/paired_exit_actual_entries.csv",
-      "stored_bytes": 268320,
-      "stored_sha256": "8c288bc58a3c41772e462028dd5beb00aae36904a178ea83bce3cebb259ad36c"
-    },
-    {
-      "logical_bytes": 875595,
-      "logical_sha256": "81fb0141453e54384dee04ff9f762da814d0b77690b3c62993ffad1debd83e4b",
-      "path": "data/reports/robustness_research/performance_groups.csv",
-      "stored_bytes": 875595,
-      "stored_sha256": "81fb0141453e54384dee04ff9f762da814d0b77690b3c62993ffad1debd83e4b"
-    },
-    {
-      "logical_bytes": 1175,
-      "logical_sha256": "8f6a83c0afbc26646ca721dae1ddf39ac57cd51360ec912203b95c38463018b5",
-      "path": "data/reports/robustness_research/post_be_follow.csv",
-      "stored_bytes": 1175,
-      "stored_sha256": "8f6a83c0afbc26646ca721dae1ddf39ac57cd51360ec912203b95c38463018b5"
-    },
-    {
-      "logical_bytes": 683313,
-      "logical_sha256": "e49ee07aa915ff33e2f01fc142b682d564818ea73fcdcb6d8c00c44447d42bdb",
-      "path": "data/reports/robustness_research/registered_sensitivity_metrics.csv",
-      "stored_bytes": 683313,
-      "stored_sha256": "e49ee07aa915ff33e2f01fc142b682d564818ea73fcdcb6d8c00c44447d42bdb"
-    },
-    {
-      "logical_bytes": 278,
-      "logical_sha256": "eae5f37efba8eb04777876a522662dbb6c6c49493edeea68143d0409f47ef88b",
-      "path": "data/reports/robustness_research/table_generation_receipt.json",
-      "stored_bytes": 278,
-      "stored_sha256": "eae5f37efba8eb04777876a522662dbb6c6c49493edeea68143d0409f47ef88b"
+      "stored_bytes": 7912,
+      "stored_sha256": "816c20eeb8ee92a59eb6fc7d501280fd6093bfaabf7c1262636f8aaa761f697a"
     }
   ],
-  "logical_bytes_covered": 2960607,
+  "logical_bytes_covered": 90000,
   "patterns": [
     "private_key",
     "github_token",
@@ -314,6 +48,6 @@
   "secret_matches": 0,
   "sha_identical_file_reuse": 0,
   "trade_entry_allowed": false,
-  "unique_logical_bytes_scanned": 2960607,
-  "unique_stored_sha256": 41
+  "unique_logical_bytes_scanned": 90000,
+  "unique_stored_sha256": 3
 }
