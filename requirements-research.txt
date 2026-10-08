@@ -1,0 +1,2 @@
+# Optional public Parquet importer; canonical Strategy Engine stays stdlib-only.
+pyarrow==25.0.1

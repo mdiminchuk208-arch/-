@@ -1,0 +1,34 @@
+[
+  {
+    "url": "https://api.bybit.com/v5/market/kline?category=linear&symbol=BTCUSDT&interval=5&limit=1",
+    "error": "URLError",
+    "detail": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "url": "https://public.bybit.com/trading/BTCUSDT/",
+    "error": "URLError",
+    "detail": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "url": "https://data.binance.vision/?prefix=data/spot/monthly/klines/BTCUSDT/5m/",
+    "error": "URLError",
+    "detail": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "url": "https://www.cryptodatadownload.com/cdd/Binance_BTCUSDT_2024_minute.csv",
+    "error": "URLError",
+    "detail": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "url": "https://github.com/search?q=binance+historical+data+csv&type=repositories",
+    "status": 200,
+    "bytes_read": 267911,
+    "saved": "/workspace/continuation_runs/robustness/discovery_4.html"
+  },
+  {
+    "url": "https://github.com/search?q=cryptocurrency+historical+ohlc+dataset&type=repositories",
+    "status": 200,
+    "bytes_read": 205462,
+    "saved": "/workspace/continuation_runs/robustness/discovery_5.html"
+  }
+]

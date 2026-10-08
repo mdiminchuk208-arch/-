@@ -1,0 +1,127 @@
+[
+  {
+    "query": "crypto dataset 5m",
+    "url": "https://github.com/search?q=crypto+dataset+5m&type=repositories",
+    "results": [
+      {
+        "repository": "felixdoteth/polymarket-crypto-5m-dataset",
+        "description": "",
+        "stars": 2
+      }
+    ]
+  },
+  {
+    "query": "binance dataset 1 minute",
+    "url": "https://github.com/search?q=binance+dataset+1+minute&type=repositories",
+    "results": [
+      {
+        "repository": "alessiostomeo/btc-cycle-data",
+        "description": "Historical BTC/USD (Bitstamp) and BTC/USDT (Binance) OHLCV datasets at 1-minute, hourly, and daily resolution, 2012\u20132026.",
+        "stars": 3
+      }
+    ]
+  },
+  {
+    "query": "bybit historical dataset",
+    "url": "https://github.com/search?q=bybit+historical+dataset&type=repositories",
+    "results": [
+      {
+        "repository": "victorl2/bybit-dataset-download",
+        "description": "Download historical candlestick data from Bybit exchange",
+        "stars": 0
+      }
+    ]
+  },
+  {
+    "query": "cryptodatadownload",
+    "url": "https://github.com/search?q=cryptodatadownload&type=repositories",
+    "results": [
+      {
+        "repository": "obnhamo/CryptoDataDownloader",
+        "description": "",
+        "stars": 0
+      },
+      {
+        "repository": "clusin/CryptoDataDownloader",
+        "description": "Download tick data from trustworthy exchanges (as seen on https://www.bitcointradevolume.com/)",
+        "stars": 0
+      },
+      {
+        "repository": "DomoKB/CryptoDataDownloader",
+        "description": "Cryptocurrency data downloader",
+        "stars": 0
+      },
+      {
+        "repository": "yllvar/Kucoin_CryptoDataDownload",
+        "description": "This Python script offers a streamlined solution for fetching historical data for cryptocurrencies traded on the KuCoin exchange, making \u2026",
+        "stars": 0
+      },
+      {
+        "repository": "Cole-Godfrey/Keel",
+        "description": "Reproducible BTC/USD research: MIT code, noncommercial CryptoDataDownload data",
+        "stars": 0
+      },
+      {
+        "repository": "0mhz/crypto-investment-analysis",
+        "description": "Quick and dirty Python script for downloading historical data on cryptocurrencies via cryptodatadownload.com - Calculates returns, mean v\u2026",
+        "stars": 0
+      }
+    ]
+  },
+  {
+    "query": "binance historical data dataset",
+    "url": "https://github.com/search?q=binance+historical+data+dataset&type=repositories",
+    "results": [
+      {
+        "repository": "alessiostomeo/btc-cycle-data",
+        "description": "Historical BTC/USD (Bitstamp) and BTC/USDT (Binance) OHLCV datasets at 1-minute, hourly, and daily resolution, 2012\u20132026.",
+        "stars": 3
+      },
+      {
+        "repository": "James09777/binance-binance-public-data",
+        "description": "Public dataset examples and utilities for accessing Binance historical data.",
+        "stars": 0
+      },
+      {
+        "repository": "attiliosbrana/Binance-VWAP-Dataset",
+        "description": "The Binance Portfolio Forecasting Hourly VWAP Dataset provides historical cryptocurrency price data from Binance, preprocessed to calcula\u2026",
+        "stars": 1
+      },
+      {
+        "repository": "jedinyp/binance-vision",
+        "description": "Python package for fetching, storing, and loading historical cryptocurrency data from https://data.binance.vision/. Supports configurable\u2026",
+        "stars": 1
+      },
+      {
+        "repository": "Aanbhi/trade_data_analysis",
+        "description": "Objective: Analyze the dataset to calculate financial metrics for each account, rank them, and provide a top 20 list. Dataset Information\u2026",
+        "stars": 1
+      },
+      {
+        "repository": "abhijeettalole75/Statistical-Analysis-And-Forecasting-of-Crypto-Tickers-for-Crypto-Treading",
+        "description": " The dataset Consist the historical data values of any any crypto-pair such as Open/Close/High/Low prices of any interval such as 15-minu\u2026",
+        "stars": 7
+      },
+      {
+        "repository": "adityarj5689/Data-Analytics-Minor-Project",
+        "description": "This repository contains a fully cleaned, structured, and analysis-ready historical dataset for Binance Coin (BNB). The goal of this proj\u2026",
+        "stars": 0
+      },
+      {
+        "repository": "Mobina-Omid/Bitcoin-Price-Prediction-Using-LSTM",
+        "description": "This project predicts Bitcoin prices using historical data and an LSTM neural network. The model is trained on price data from Binance an\u2026",
+        "stars": 0
+      },
+      {
+        "repository": "pkpraveen007/Waste-Bin-Level-Prediction-using-Machine-Learning-",
+        "description": " The inefficient management of waste bins, resulting in overflowing containers, poses a critical challenge leading to sanitation issues a\u2026",
+        "stars": 0
+      },
+      {
+        "repository": "jlira5418/sqlalchemy-challenge",
+        "description": "... . Using historical data in the dataset find out what the temperature has previously looked like. * The starter notebook contains a fu\u2026",
+        "stars": 1
+      }
+    ]
+  }
+]

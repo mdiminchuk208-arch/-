@@ -1,0 +1,22 @@
+[
+  {
+    "symbol": "BTCUSDT",
+    "rows": 199828,
+    "first": 1585132200000,
+    "last": 1764976500000,
+    "interval_differences": {
+      "900000": 199827
+    },
+    "source_sha256": "a6de302cdc447e646bc3332c1cab61d0f04391fac9860f9e316a4c749f3d9265"
+  },
+  {
+    "symbol": "ETHUSDT",
+    "rows": 165790,
+    "first": 1615766400000,
+    "last": 1764976500000,
+    "interval_differences": {
+      "900000": 165789
+    },
+    "source_sha256": "850cdacc79b97ac4d23bdad719a1bb89952711dd9e583d7a7da9c842e479b8db"
+  }
+]

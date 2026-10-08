@@ -1,0 +1,179 @@
+{
+  "kind": "bybit",
+  "series": [
+    {
+      "candles": 199828,
+      "csv_sha256": "2eeac5e42afe2ef57ddc0116622ab6c1f5017f170f6a906a774faf664dd65608",
+      "end_exclusive": "2025-12-05T23:30:00+00:00",
+      "exchange": "BYBIT",
+      "gap_interpolation": false,
+      "gaps": {},
+      "incomplete_aggregate_bars_excluded": [],
+      "path": "data/history/public_research/bybit_mirror/BTCUSDT/15.csv.gz",
+      "provenance": {
+        "commit": "9ca04178df06ce649f00779a49e11094fe5b1c70",
+        "exchange": "BYBIT",
+        "instrument": "USDT_LINEAR_PERPETUAL",
+        "repository": "mestoness/btc-eth-candles-history",
+        "source_sha256": "a6de302cdc447e646bc3332c1cab61d0f04391fac9860f9e316a4c749f3d9265",
+        "source_url": "https://github.com/mestoness/btc-eth-candles-history/blob/9ca04178df06ce649f00779a49e11094fe5b1c70/BTCUSDT_15.csv"
+      },
+      "sha256": "5d3fe4a4eb1d147c5f5516944bdbc45a21fb483d0bc667b5a92ed206aa8a6fc9",
+      "start": "2020-03-25T10:30:00+00:00",
+      "stored_bytes": 5308105,
+      "symbol": "BTCUSDT",
+      "timeframe_minutes": 15
+    },
+    {
+      "candles": 49956,
+      "csv_sha256": "9ab630422a6cedba9f6a23655882db38f0b32c66c420c6362df4405143ea84b8",
+      "end_exclusive": "2025-12-05T23:00:00+00:00",
+      "exchange": "BYBIT",
+      "gap_interpolation": false,
+      "gaps": {},
+      "incomplete_aggregate_bars_excluded": [
+        {
+          "expected": 4,
+          "open_time_ms": 1585130400000,
+          "source_rows": 2
+        },
+        {
+          "expected": 4,
+          "open_time_ms": 1764975600000,
+          "source_rows": 2
+        }
+      ],
+      "path": "data/history/public_research/bybit_mirror/BTCUSDT/60.csv.gz",
+      "provenance": {
+        "commit": "9ca04178df06ce649f00779a49e11094fe5b1c70",
+        "exchange": "BYBIT",
+        "instrument": "USDT_LINEAR_PERPETUAL",
+        "repository": "mestoness/btc-eth-candles-history",
+        "source_sha256": "a6de302cdc447e646bc3332c1cab61d0f04391fac9860f9e316a4c749f3d9265",
+        "source_url": "https://github.com/mestoness/btc-eth-candles-history/blob/9ca04178df06ce649f00779a49e11094fe5b1c70/BTCUSDT_15.csv"
+      },
+      "sha256": "b9ca9cbb33b6e9f72ab03d2d037159bef928ce6c01edcfe41890d2b9704e8cc4",
+      "start": "2020-03-25T11:00:00+00:00",
+      "stored_bytes": 1427545,
+      "symbol": "BTCUSDT",
+      "timeframe_minutes": 60
+    },
+    {
+      "candles": 12488,
+      "csv_sha256": "d6e42b55a7e6d2e0a38d5d74fa33a7b752fd8520ffa1c2b0c1597db69b2754b7",
+      "end_exclusive": "2025-12-05T20:00:00+00:00",
+      "exchange": "BYBIT",
+      "gap_interpolation": false,
+      "gaps": {},
+      "incomplete_aggregate_bars_excluded": [
+        {
+          "expected": 16,
+          "open_time_ms": 1585123200000,
+          "source_rows": 6
+        },
+        {
+          "expected": 16,
+          "open_time_ms": 1764964800000,
+          "source_rows": 14
+        }
+      ],
+      "path": "data/history/public_research/bybit_mirror/BTCUSDT/240.csv.gz",
+      "provenance": {
+        "commit": "9ca04178df06ce649f00779a49e11094fe5b1c70",
+        "exchange": "BYBIT",
+        "instrument": "USDT_LINEAR_PERPETUAL",
+        "repository": "mestoness/btc-eth-candles-history",
+        "source_sha256": "a6de302cdc447e646bc3332c1cab61d0f04391fac9860f9e316a4c749f3d9265",
+        "source_url": "https://github.com/mestoness/btc-eth-candles-history/blob/9ca04178df06ce649f00779a49e11094fe5b1c70/BTCUSDT_15.csv"
+      },
+      "sha256": "e564bd0d869911a0e566623592a2fcbdc2852527098546dad94980ec55a5df47",
+      "start": "2020-03-25T12:00:00+00:00",
+      "stored_bytes": 372245,
+      "symbol": "BTCUSDT",
+      "timeframe_minutes": 240
+    },
+    {
+      "candles": 165790,
+      "csv_sha256": "4c6414f23bf9d5b4700e400e3e7ef9ae16fc91c353ca2ae4b8f23dc2d4a0d3ae",
+      "end_exclusive": "2025-12-05T23:30:00+00:00",
+      "exchange": "BYBIT",
+      "gap_interpolation": false,
+      "gaps": {},
+      "incomplete_aggregate_bars_excluded": [],
+      "path": "data/history/public_research/bybit_mirror/ETHUSDT/15.csv.gz",
+      "provenance": {
+        "commit": "9ca04178df06ce649f00779a49e11094fe5b1c70",
+        "exchange": "BYBIT",
+        "instrument": "USDT_LINEAR_PERPETUAL",
+        "repository": "mestoness/btc-eth-candles-history",
+        "source_sha256": "850cdacc79b97ac4d23bdad719a1bb89952711dd9e583d7a7da9c842e479b8db",
+        "source_url": "https://github.com/mestoness/btc-eth-candles-history/blob/9ca04178df06ce649f00779a49e11094fe5b1c70/ETHUSDT_15.csv"
+      },
+      "sha256": "94c8f3f414ae3bbbe08bc5180f3da88d72c699f8ff88fd8093062078260449f8",
+      "start": "2021-03-15T00:00:00+00:00",
+      "stored_bytes": 4339159,
+      "symbol": "ETHUSDT",
+      "timeframe_minutes": 15
+    },
+    {
+      "candles": 41447,
+      "csv_sha256": "08d447cc7372d328f26636dac9867062c239ae90703d173ff3e4f98ddd6df7ed",
+      "end_exclusive": "2025-12-05T23:00:00+00:00",
+      "exchange": "BYBIT",
+      "gap_interpolation": false,
+      "gaps": {},
+      "incomplete_aggregate_bars_excluded": [
+        {
+          "expected": 4,
+          "open_time_ms": 1764975600000,
+          "source_rows": 2
+        }
+      ],
+      "path": "data/history/public_research/bybit_mirror/ETHUSDT/60.csv.gz",
+      "provenance": {
+        "commit": "9ca04178df06ce649f00779a49e11094fe5b1c70",
+        "exchange": "BYBIT",
+        "instrument": "USDT_LINEAR_PERPETUAL",
+        "repository": "mestoness/btc-eth-candles-history",
+        "source_sha256": "850cdacc79b97ac4d23bdad719a1bb89952711dd9e583d7a7da9c842e479b8db",
+        "source_url": "https://github.com/mestoness/btc-eth-candles-history/blob/9ca04178df06ce649f00779a49e11094fe5b1c70/ETHUSDT_15.csv"
+      },
+      "sha256": "1f89f9e0c5bec92772222fb098dceb85ebb3197fbc7921d5c3bbc0032e4771dd",
+      "start": "2021-03-15T00:00:00+00:00",
+      "stored_bytes": 1166035,
+      "symbol": "ETHUSDT",
+      "timeframe_minutes": 60
+    },
+    {
+      "candles": 10361,
+      "csv_sha256": "21b947c5c2ded78b1d0c48a673c03543c445704608c11728df8a3b873c5eff2a",
+      "end_exclusive": "2025-12-05T20:00:00+00:00",
+      "exchange": "BYBIT",
+      "gap_interpolation": false,
+      "gaps": {},
+      "incomplete_aggregate_bars_excluded": [
+        {
+          "expected": 16,
+          "open_time_ms": 1764964800000,
+          "source_rows": 14
+        }
+      ],
+      "path": "data/history/public_research/bybit_mirror/ETHUSDT/240.csv.gz",
+      "provenance": {
+        "commit": "9ca04178df06ce649f00779a49e11094fe5b1c70",
+        "exchange": "BYBIT",
+        "instrument": "USDT_LINEAR_PERPETUAL",
+        "repository": "mestoness/btc-eth-candles-history",
+        "source_sha256": "850cdacc79b97ac4d23bdad719a1bb89952711dd9e583d7a7da9c842e479b8db",
+        "source_url": "https://github.com/mestoness/btc-eth-candles-history/blob/9ca04178df06ce649f00779a49e11094fe5b1c70/ETHUSDT_15.csv"
+      },
+      "sha256": "a69e1afa98f66e56e9a126840f226533598b4853148f988dd8b89865cae8d98e",
+      "start": "2021-03-15T00:00:00+00:00",
+      "stored_bytes": 304602,
+      "symbol": "ETHUSDT",
+      "timeframe_minutes": 240
+    }
+  ],
+  "synthetic_data": false,
+  "trade_entry_allowed": false
+}

@@ -12,6 +12,7 @@ __pycache__/
 .tox/
 .nox/
 .cache/
+.research_cache/
 node_modules/
 build/
 dist/

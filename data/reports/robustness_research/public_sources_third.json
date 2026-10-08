@@ -1,0 +1,1086 @@
+[
+  {
+    "url": "https://github.com/Speirsy11/crypto-dataset",
+    "trees": [
+      {
+        "route": "codeViewRepoRoute",
+        "ref": {
+          "name": "main",
+          "listCacheKey": "v0:1779267185.0",
+          "canEdit": false,
+          "refType": "branch",
+          "currentOid": "f1a95659f3cdd655b3ce7cbb1300e8fc944723bb"
+        },
+        "tree": {
+          "items": [
+            {
+              "name": "data",
+              "path": "data",
+              "contentType": "directory"
+            },
+            {
+              "name": "metadata",
+              "path": "metadata",
+              "contentType": "directory"
+            },
+            {
+              "name": "scripts",
+              "path": "scripts",
+              "contentType": "directory"
+            },
+            {
+              "name": ".gitattributes",
+              "path": ".gitattributes",
+              "contentType": "file"
+            },
+            {
+              "name": ".gitignore",
+              "path": ".gitignore",
+              "contentType": "file"
+            },
+            {
+              "name": "DATA_LICENSE",
+              "path": "DATA_LICENSE",
+              "contentType": "file"
+            },
+            {
+              "name": "LICENSE",
+              "path": "LICENSE",
+              "contentType": "file"
+            },
+            {
+              "name": "README.md",
+              "path": "README.md",
+              "contentType": "file"
+            },
+            {
+              "name": "requirements.txt",
+              "path": "requirements.txt",
+              "contentType": "file"
+            }
+          ],
+          "totalCount": 9,
+          "templateDirectorySuggestionUrl": null,
+          "readme": null,
+          "showBranchInfobar": false
+        }
+      }
+    ],
+    "readme": "  Crypto Dataset        \n A public, research-friendly OHLCV crypto candle dataset built from Binance public 1-minute market data. \n  Symbols        \n  BTCUSDT ,  ETHUSDT ,  SOLUSDT ,  BNBUSDT ,  XRPUSDT ,  TRXUSDT ,  DOGEUSDT ,  ZECUSDT ,  ADAUSDT ,  BCHUSDT  \n  Intervals        \n  1m ,  5m ,  15m ,  1h ,  4h ,  1d ,  1w ,  1mo  \n All candles use  UTC  boundaries. The weekly interval starts on Monday UTC. Monthly candles use calendar months UTC. \n  Layout        \n   data/\n  interval_id=1m/\n    symbol_id=BTCUSDT/\n      year=2026/\n        month=05/\n          BTCUSDT-1m-2026-05.parquet\nmetadata/\n  manifest.json\n   \n Parquet files are partitioned by interval, symbol, year, and month. Aggregated candles include a  source_rows  column showing how many 1-minute rows were used. \n  Columns        \n \n  symbol  \n  interval  \n  timestamp  \u2014 candle open time in UTC \n  open  \n  high  \n  low  \n  close  \n  volume  \n  source_rows  \u2014  1  for 1m rows; number of 1m candles rolled up for higher intervals \n \n  Reading the data        \n Install dependencies: \n  python -m pip install pyarrow pandas  \n Read one Parquet file: \n   import   pandas   as   pd \n\n path   =   \"data/interval_id=1h/symbol_id=BTCUSDT/year=2026/month=05/BTCUSDT-1h-2026-05.parquet\" \n df   =   pd . read_parquet ( path )\n print ( df . head ())  \n Read a full symbol/interval directory: \n   import   pyarrow . dataset   as   ds \n\n candles   =   ds . dataset ( \"data/interval_id=1h/symbol_id=BTCUSDT\" ,  format  =  \"parquet\" ,  partitioning  =  \"hive\" )\n df   =   candles . to_table (). to_pandas (). sort_values ( \"timestamp\" )\n print ( df . tail ())  \n Export back to CSV: \n   df . to_csv ( \"BTCUSDT-1h.csv\" ,  index  =  False )  \n  Updating        \n The dataset is generated, not hand-written. Use: \n  python scripts/build_dataset.py --publish-latest-day  \n That command detects the latest complete UTC day available in Signal Harvester, regenerates the affected partitions, updates  metadata/manifest.json , commits, and pushes if there are changes. \n For a full rebuild: \n  python scripts/build_dataset.py --full --cutoff-utc 2026-05-20T00:00:00Z  \n  Licensing        \n \n Code/scripts: MIT ( LICENSE ) \n Data: CC0/public domain dedication ( DATA_LICENSE ) \n \n Source data comes from Binance public market-data endpoints. This repository is not affiliated with Binance. \n News and macro sentiment data now lives separately in\n crypto-news-dataset . \n\n  Dataset Stats        \n  Auto-generated on each publish \u2014 do not edit manually.  \n  Last generated:  2026-10-07T23:33:04.922279Z\n Latest complete UTC day:  2026-10-06\n Coverage:  2017-08-17 \u2192 2026-10-06 \n  \n \n \n Metric \n Value \n \n \n \n \n Symbols \n 10 \n \n \n Intervals \n 8 \n \n \n Parquet files \n 7,780 \n \n \n Total 1m candles \n 42,053,983 \n \n \n  \n  Per-symbol 1m candle counts:  \n  \n \n \n Symbol \n Candles \n Earliest \n \n \n \n \n BTCUSDT \n 4,788,967 \n 2017-08-17 \n \n \n ETHUSDT \n 4,788,971 \n 2017-08-17 \n \n \n SOLUSDT \n 3,226,442 \n 2020-08-11 \n \n \n BNBUSDT \n 4,672,603 \n 2017-11-06 \n \n \n XRPUSDT \n 4,416,888 \n 2018-05-04 \n \n \n TRXUSDT \n 4,361,968 \n 2018-06-11 \n \n \n DOGEUSDT \n 3,804,586 \n 2019-07-05 \n \n \n ZECUSDT \n 3,956,812 \n 2019-03-21 \n \n \n ADAUSDT \n 4,441,775 \n 2018-04-17 \n \n \n BCHUSDT \n 3,594,971 \n 2019-11-28 \n \n \n  \n  Latest day (2026-10-06):  \n  \n \n \n Metric \n Value \n \n \n \n \n 1m candles \n 14,400 \n \n \n Files updated \n 10 \n \n \n  \n\n",
+    "payload_keys": [
+      "codeViewRepoRoute",
+      "codeViewLayoutRoute",
+      "sidebarAbout",
+      "csrf_tokens"
+    ]
+  },
+  {
+    "url": "https://github.com/mestoness/btc-eth-candles-history",
+    "trees": [
+      {
+        "route": "codeViewRepoRoute",
+        "ref": {
+          "name": "master",
+          "listCacheKey": "v0:1767708360.0",
+          "canEdit": false,
+          "refType": "branch",
+          "currentOid": "9ca04178df06ce649f00779a49e11094fe5b1c70"
+        },
+        "tree": {
+          "items": [
+            {
+              "name": "BTCUSDT_15.csv",
+              "path": "BTCUSDT_15.csv",
+              "contentType": "file"
+            },
+            {
+              "name": "BTCUSDT_240.csv",
+              "path": "BTCUSDT_240.csv",
+              "contentType": "file"
+            },
+            {
+              "name": "BTCUSDT_30.csv",
+              "path": "BTCUSDT_30.csv",
+              "contentType": "file"
+            },
+            {
+              "name": "BTCUSDT_60.csv",
+              "path": "BTCUSDT_60.csv",
+              "contentType": "file"
+            },
+            {
+              "name": "BTCUSDT_D.csv",
+              "path": "BTCUSDT_D.csv",
+              "contentType": "file"
+            },
+            {
+              "name": "BTCUSDT_M.csv",
+              "path": "BTCUSDT_M.csv",
+              "contentType": "file"
+            },
+            {
+              "name": "BTCUSDT_W.csv",
+              "path": "BTCUSDT_W.csv",
+              "contentType": "file"
+            },
+            {
+              "name": "ETHUSDT_15.csv",
+              "path": "ETHUSDT_15.csv",
+              "contentType": "file"
+            },
+            {
+              "name": "ETHUSDT_240.csv",
+              "path": "ETHUSDT_240.csv",
+              "contentType": "file"
+            },
+            {
+              "name": "ETHUSDT_30.csv",
+              "path": "ETHUSDT_30.csv",
+              "contentType": "file"
+            },
+            {
+              "name": "ETHUSDT_60.csv",
+              "path": "ETHUSDT_60.csv",
+              "contentType": "file"
+            },
+            {
+              "name": "ETHUSDT_D.csv",
+              "path": "ETHUSDT_D.csv",
+              "contentType": "file"
+            },
+            {
+              "name": "ETHUSDT_M.csv",
+              "path": "ETHUSDT_M.csv",
+              "contentType": "file"
+            },
+            {
+              "name": "ETHUSDT_W.csv",
+              "path": "ETHUSDT_W.csv",
+              "contentType": "file"
+            },
+            {
+              "name": "README.md",
+              "path": "README.md",
+              "contentType": "file"
+            }
+          ],
+          "totalCount": 15,
+          "templateDirectorySuggestionUrl": null,
+          "readme": null,
+          "showBranchInfobar": false
+        }
+      }
+    ],
+    "readme": "  BTC & ETH Perpetual Futures OHLCV Data (Bybit)        \n This repository contains  historical OHLCV data  for  BTCUSDT  and  ETHUSDT \n Perpetual Futures (PERP)  markets, fetched directly from  Bybit . \n The dataset is suitable for: \n \n Algorithmic trading \n Strategy backtesting \n Quantitative research \n Market structure analysis \n Machine learning & time-series modeling \n \n \n  \ud83d\udcca Included Markets        \n \n  BTCUSDT Perpetual  \n  ETHUSDT Perpetual  \n \n  Exchange:  Bybit \n Market Type:  USDT-M Perpetual Futures \n \n  \u23f1 Timeframe Mapping        \n  \n \n \n File Suffix \n Timeframe \n \n \n \n \n  15  \n 15 Minutes \n \n \n  30  \n 30 Minutes \n \n \n  60  \n 1 Hour \n \n \n  240  \n 4 Hours \n \n \n  D  \n 1 Day \n \n \n  W  \n 1 Week \n \n \n  M  \n 1 Month \n \n \n  \n \n  \ud83d\udcca Data Fields        \n Each CSV file contains the following columns: \n  \n \n \n Field \n Description \n \n \n \n \n  timestamp  \n Candle open time (UTC, milliseconds) \n \n \n  open  \n Open price \n \n \n  high  \n High price \n \n \n  low  \n Low price \n \n \n  close  \n Close price \n \n \n  volume  \n Traded volume (base asset) \n \n \n  turnover  \n Traded value (USDT) \n \n \n  \n \n",
+    "payload_keys": [
+      "codeViewRepoRoute",
+      "codeViewLayoutRoute",
+      "sidebarAbout",
+      "csrf_tokens"
+    ]
+  },
+  {
+    "url": "https://github.com/alessiostomeo/btc-cycle-data/tree/b57f460fab1afb82705eb813cee2ef4afb1f6848/binance/1min",
+    "trees": [
+      {
+        "route": "codeViewTreeRoute",
+        "ref": {
+          "name": "b57f460fab1afb82705eb813cee2ef4afb1f6848",
+          "listCacheKey": "v0:1788603369.0",
+          "canEdit": false,
+          "refType": "tree",
+          "currentOid": "b57f460fab1afb82705eb813cee2ef4afb1f6848"
+        },
+        "tree": {
+          "items": [
+            {
+              "name": "BTCUSDT_binance_1min_2018.csv.gz",
+              "path": "binance/1min/BTCUSDT_binance_1min_2018.csv.gz",
+              "contentType": "file"
+            },
+            {
+              "name": "BTCUSDT_binance_1min_2019.csv.gz",
+              "path": "binance/1min/BTCUSDT_binance_1min_2019.csv.gz",
+              "contentType": "file"
+            },
+            {
+              "name": "BTCUSDT_binance_1min_2020.csv.gz",
+              "path": "binance/1min/BTCUSDT_binance_1min_2020.csv.gz",
+              "contentType": "file"
+            },
+            {
+              "name": "BTCUSDT_binance_1min_2021.csv.gz",
+              "path": "binance/1min/BTCUSDT_binance_1min_2021.csv.gz",
+              "contentType": "file"
+            },
+            {
+              "name": "BTCUSDT_binance_1min_2022.csv.gz",
+              "path": "binance/1min/BTCUSDT_binance_1min_2022.csv.gz",
+              "contentType": "file"
+            },
+            {
+              "name": "BTCUSDT_binance_1min_2023.csv.gz",
+              "path": "binance/1min/BTCUSDT_binance_1min_2023.csv.gz",
+              "contentType": "file"
+            },
+            {
+              "name": "BTCUSDT_binance_1min_2024.csv.gz",
+              "path": "binance/1min/BTCUSDT_binance_1min_2024.csv.gz",
+              "contentType": "file"
+            },
+            {
+              "name": "BTCUSDT_binance_1min_2025.csv.gz",
+              "path": "binance/1min/BTCUSDT_binance_1min_2025.csv.gz",
+              "contentType": "file"
+            },
+            {
+              "name": "BTCUSDT_binance_1min_2026.csv.gz",
+              "path": "binance/1min/BTCUSDT_binance_1min_2026.csv.gz",
+              "contentType": "file"
+            },
+            {
+              "name": "index.js",
+              "path": "binance/1min/index.js",
+              "contentType": "file"
+            }
+          ],
+          "totalCount": 10,
+          "templateDirectorySuggestionUrl": null,
+          "readme": null,
+          "showBranchInfobar": false
+        }
+      }
+    ],
+    "readme": "",
+    "payload_keys": [
+      "codeViewTreeRoute",
+      "codeViewLayoutRoute",
+      "codeViewFileTreeLayoutRoute",
+      "csrf_tokens"
+    ]
+  },
+  {
+    "url": "https://gitlab.com/api/v4/projects/tuangeek%2Fcryptocurrency-historical-data/repository/tree?path=data&per_page=100",
+    "result": [
+      {
+        "id": "7e80fccf38e0aeb270418b41aea27e4dd5f3779e",
+        "name": "aaabbb.csv",
+        "type": "blob",
+        "path": "data/aaabbb.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "1d34c0ac7794dbe0634b229f59205843b62c95f1",
+        "name": "aaabbb.csv.gz",
+        "type": "blob",
+        "path": "data/aaabbb.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "5cfeb6087f539c7765bdd06c67ccf2a67d58cab9",
+        "name": "aaabbb.csv.gzip",
+        "type": "blob",
+        "path": "data/aaabbb.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "f6e3d605f453fa1ada8e89fbb2645ad5c6e463ae",
+        "name": "absusd.csv",
+        "type": "blob",
+        "path": "data/absusd.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "5a54e1286ae30d5180c6c310f959502078fb4908",
+        "name": "absusd.csv.gz",
+        "type": "blob",
+        "path": "data/absusd.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "ef63a9b3a2837d08d102b50792f4a61723bb3437",
+        "name": "absusd.csv.gzip",
+        "type": "blob",
+        "path": "data/absusd.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "3492f0f0be8a423f1369dba69619d9f982153d6f",
+        "name": "adabtc.csv",
+        "type": "blob",
+        "path": "data/adabtc.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "08c56947ce0fa06e94147b6948489f21fb560622",
+        "name": "adabtc.csv.gz",
+        "type": "blob",
+        "path": "data/adabtc.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "d962eb3c03a46a52e152131343c29c4a2d9036db",
+        "name": "adabtc.csv.gzip",
+        "type": "blob",
+        "path": "data/adabtc.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "eedfb034bd457bbd3bf101c4548fe3be1cb613e3",
+        "name": "adausd.csv",
+        "type": "blob",
+        "path": "data/adausd.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "1c9ee1132f7e2d32e24180ab9174af6e4d296da7",
+        "name": "adausd.csv.gz",
+        "type": "blob",
+        "path": "data/adausd.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "d67c5448c4c3c25f91134fcbdb413420e5c40c38",
+        "name": "adausd.csv.gz.gz",
+        "type": "blob",
+        "path": "data/adausd.csv.gz.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "f5b4b5afd43bfd149757544b170308e4817784cb",
+        "name": "adausd.csv.gzip",
+        "type": "blob",
+        "path": "data/adausd.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "eadca970190e838516e3b1794d018903233d0b5e",
+        "name": "adaust.csv",
+        "type": "blob",
+        "path": "data/adaust.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "33163aadfd30caefca393afa9a2879a3a170561a",
+        "name": "adaust.csv.gz",
+        "type": "blob",
+        "path": "data/adaust.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "cea2bdef232a9bfed1cc9fd46e7a46e15ade43e4",
+        "name": "adaust.csv.gzip",
+        "type": "blob",
+        "path": "data/adaust.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "4d2e678435c9c80a4d6a8e66229a9696d05fec14",
+        "name": "agiusd.csv",
+        "type": "blob",
+        "path": "data/agiusd.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "14a9395f4eb2bf41b0d67e538715b380236f4301",
+        "name": "agiusd.csv.gz",
+        "type": "blob",
+        "path": "data/agiusd.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "e678987516d08e2391f7d49a78a03e85ba29e355",
+        "name": "agiusd.csv.gzip",
+        "type": "blob",
+        "path": "data/agiusd.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "f3d0c12b37891de024c41be1f0dc77c3ae296046",
+        "name": "aiousd.csv",
+        "type": "blob",
+        "path": "data/aiousd.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "b80e5c8bfd9b8b5bb09e9a16a7e1959116e48470",
+        "name": "aiousd.csv.gz",
+        "type": "blob",
+        "path": "data/aiousd.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "b2bbc72c66483c770b45191f577fe0b3609645f8",
+        "name": "aiousd.csv.gzip",
+        "type": "blob",
+        "path": "data/aiousd.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "42ed1a0498d0cf8937f1e25b0694c1b8ef2ccbcd",
+        "name": "algbtc.csv",
+        "type": "blob",
+        "path": "data/algbtc.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "0c0278cdd3717d6d8c50a63e4fe182411a523838",
+        "name": "algbtc.csv.gz",
+        "type": "blob",
+        "path": "data/algbtc.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "71adbfdfecfda77ba47906084f68622777214008",
+        "name": "algbtc.csv.gzip",
+        "type": "blob",
+        "path": "data/algbtc.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "2ec53ef268ec42fa4e767754279a375c99f6ea90",
+        "name": "algusd.csv",
+        "type": "blob",
+        "path": "data/algusd.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "6498b2cd5ded10fb4e410792107bbc0a234bffd6",
+        "name": "algusd.csv.gz",
+        "type": "blob",
+        "path": "data/algusd.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "094152b88d4d43eb2985389257844e317c070554",
+        "name": "algusd.csv.gzip",
+        "type": "blob",
+        "path": "data/algusd.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "70a08beb05fe7f006d540252488d53cdf2c573a9",
+        "name": "algust.csv",
+        "type": "blob",
+        "path": "data/algust.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "c5c00b6333ddf4e3b23913b5df1122d0dfdb7e46",
+        "name": "algust.csv.gz",
+        "type": "blob",
+        "path": "data/algust.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "acb22b49587b717d797dd6f3c364eeab2c23a095",
+        "name": "algust.csv.gzip",
+        "type": "blob",
+        "path": "data/algust.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "64d1b3485f016df88f3bd74326a0f8ffbe304e3d",
+        "name": "ampbtc.csv",
+        "type": "blob",
+        "path": "data/ampbtc.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "c27d8a937736710388896940a4cfd490be8ea38f",
+        "name": "ampbtc.csv.gz",
+        "type": "blob",
+        "path": "data/ampbtc.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "b971066f5ab21cb21e3153b1badb00e7a5650258",
+        "name": "ampbtc.csv.gzip",
+        "type": "blob",
+        "path": "data/ampbtc.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "6f93569b757bc73d0a40e8d7501bee9d09e48cd9",
+        "name": "ampf0ustf0.csv",
+        "type": "blob",
+        "path": "data/ampf0ustf0.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "7a8a31f80b404ad13d194ec52e92e6fea514460f",
+        "name": "ampf0ustf0.csv.gz",
+        "type": "blob",
+        "path": "data/ampf0ustf0.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "14f2285b068a151bfc4fba103fbbe0895728a621",
+        "name": "ampf0ustf0.csv.gzip",
+        "type": "blob",
+        "path": "data/ampf0ustf0.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "0223b2e66df837445f1567f0b3342abc85f19309",
+        "name": "ampusd.csv",
+        "type": "blob",
+        "path": "data/ampusd.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "cd98433045ca9992ec7bb77fb54ad2a626563341",
+        "name": "ampusd.csv.gz",
+        "type": "blob",
+        "path": "data/ampusd.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "fbf7b92316d3cf858ed56762baa9fa2c1e1d3e62",
+        "name": "ampusd.csv.gzip",
+        "type": "blob",
+        "path": "data/ampusd.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "ac3ffa0d7f62258bf4a1ef7ff7ca120bb2a696ba",
+        "name": "ampust.csv",
+        "type": "blob",
+        "path": "data/ampust.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "9358d026715d03ae5c0036d25e69fc4be96c73f2",
+        "name": "ampust.csv.gz",
+        "type": "blob",
+        "path": "data/ampust.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "5ad0972cae27a75e397ee7df01cc70bc4d19da0b",
+        "name": "ampust.csv.gzip",
+        "type": "blob",
+        "path": "data/ampust.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "083e3945daaa7175c5e57f9bc6fc4a639d1ce737",
+        "name": "antbtc.csv",
+        "type": "blob",
+        "path": "data/antbtc.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "ee28853dcb957f87627b51e0509e2539e191ecb6",
+        "name": "antbtc.csv.gz",
+        "type": "blob",
+        "path": "data/antbtc.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "af61b091e885c998b45b31e56eebbc00ca3ff0c7",
+        "name": "antbtc.csv.gzip",
+        "type": "blob",
+        "path": "data/antbtc.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "e47d9185cf1f39a74b0ac99a21b4db0cecb2a0d5",
+        "name": "anteth.csv",
+        "type": "blob",
+        "path": "data/anteth.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "a5da30ffe79d8f28ad6934df701cafd6e6e37a84",
+        "name": "anteth.csv.gz",
+        "type": "blob",
+        "path": "data/anteth.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "a36b3a637817d49a296f35f80cdc9671cd0f92aa",
+        "name": "anteth.csv.gzip",
+        "type": "blob",
+        "path": "data/anteth.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "0eedbe5496b9d19b7e7377a0c522b9bb74ebe0f8",
+        "name": "antusd.csv",
+        "type": "blob",
+        "path": "data/antusd.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "50388c348c8c4095c4a882118a7e00305b0a8b0e",
+        "name": "antusd.csv.gz",
+        "type": "blob",
+        "path": "data/antusd.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "edf7b296531ac6f99c648bcd118ac9f417c6e144",
+        "name": "antusd.csv.gzip",
+        "type": "blob",
+        "path": "data/antusd.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "05625bc32396e3341eb82ec793678de3523f29f0",
+        "name": "astusd.csv",
+        "type": "blob",
+        "path": "data/astusd.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "26a81aefd3990aef61722a25685706cb05f5e6fc",
+        "name": "astusd.csv.gz",
+        "type": "blob",
+        "path": "data/astusd.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "359e971ed6356b4f22f967368984099f6c8451ca",
+        "name": "astusd.csv.gzip",
+        "type": "blob",
+        "path": "data/astusd.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "81fe7ab33f7c74f369450cd96b1e5fb098f92948",
+        "name": "atobtc.csv",
+        "type": "blob",
+        "path": "data/atobtc.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "c2d1a3cad46a7e4325c2f050ba7425a22b38f68a",
+        "name": "atobtc.csv.gz",
+        "type": "blob",
+        "path": "data/atobtc.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "1df28897776d6c15f08aca453b3742d2a022a77f",
+        "name": "atobtc.csv.gzip",
+        "type": "blob",
+        "path": "data/atobtc.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "ebe28557263f3c680e7fe8d4f62fabdfbf53dab0",
+        "name": "atoeth.csv",
+        "type": "blob",
+        "path": "data/atoeth.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "6e71e4861422b9a12f4d479bcc8f07521fbf4f32",
+        "name": "atoeth.csv.gz",
+        "type": "blob",
+        "path": "data/atoeth.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "2b880dccc439afafd819288986bedd8c2e221bdd",
+        "name": "atoeth.csv.gzip",
+        "type": "blob",
+        "path": "data/atoeth.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "14b5c015aa8aac08ff0e2056fa90fee0aa10079d",
+        "name": "atousd.csv",
+        "type": "blob",
+        "path": "data/atousd.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "8482e24630d5180ee3f42f28c6774e0d657bb236",
+        "name": "atousd.csv.gz",
+        "type": "blob",
+        "path": "data/atousd.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "0837ea835ffac3ddc3f676b90c2cc025b8045254",
+        "name": "atousd.csv.gzip",
+        "type": "blob",
+        "path": "data/atousd.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "aa9f8f45a2a389d455d1c36b9b49f9f30ae4220d",
+        "name": "aucusd.csv",
+        "type": "blob",
+        "path": "data/aucusd.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "41ce4f85801575f5351d8e45844156ea0ad3c677",
+        "name": "aucusd.csv.gz",
+        "type": "blob",
+        "path": "data/aucusd.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "71e50017cf71621ede9e30de698f228dcb0a5e92",
+        "name": "aucusd.csv.gzip",
+        "type": "blob",
+        "path": "data/aucusd.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "22d707164773d83d5ad1556483f481bd819ecc75",
+        "name": "avaxusd.csv",
+        "type": "blob",
+        "path": "data/avaxusd.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "667193888522af801db0aeacbf26b11784c495ca",
+        "name": "avaxusd.csv.gz",
+        "type": "blob",
+        "path": "data/avaxusd.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "0a2402c66b87942dca829199efafc7f0f0636943",
+        "name": "avaxusd.csv.gzip",
+        "type": "blob",
+        "path": "data/avaxusd.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "4d2578412cb9bc1cb512929fcddf5090d8ced649",
+        "name": "avaxust.csv",
+        "type": "blob",
+        "path": "data/avaxust.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "87291ebf6bb39ade9123e5e91b078f1d302ef82e",
+        "name": "avaxust.csv.gz",
+        "type": "blob",
+        "path": "data/avaxust.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "be674a3f1f935a4cc413e7cf7f53ed8cba600136",
+        "name": "avaxust.csv.gzip",
+        "type": "blob",
+        "path": "data/avaxust.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "9eb924841f49b073eacaee911c7db96e0f2e2b9e",
+        "name": "avtusd.csv",
+        "type": "blob",
+        "path": "data/avtusd.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "20165e943656ac372d1eb28407e1f28aea85de00",
+        "name": "avtusd.csv.gz",
+        "type": "blob",
+        "path": "data/avtusd.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "b322708df26338f48b0538de8c2cb66d58dc34b9",
+        "name": "avtusd.csv.gzip",
+        "type": "blob",
+        "path": "data/avtusd.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "7949ed0390ce56c6a90df35a2c3c6c8c4a205e25",
+        "name": "balusd.csv",
+        "type": "blob",
+        "path": "data/balusd.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "2d8bea81e42bb8b035ec82e86f32990585e224ad",
+        "name": "balusd.csv.gz",
+        "type": "blob",
+        "path": "data/balusd.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "38775fdccc551a9b773422c871543b48b12f60e1",
+        "name": "balusd.csv.gzip",
+        "type": "blob",
+        "path": "data/balusd.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "5e40de43576022d108beddf9f9305a536f3c4519",
+        "name": "balust.csv",
+        "type": "blob",
+        "path": "data/balust.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "3567ff5be2bcc26954cfc83f4074005ae54f4240",
+        "name": "balust.csv.gz",
+        "type": "blob",
+        "path": "data/balust.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "ee2be7fb18b2da3b51e0d7891a22589be8b51652",
+        "name": "balust.csv.gzip",
+        "type": "blob",
+        "path": "data/balust.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "f9d262b11362f434f92faaf33a38fa526a96add0",
+        "name": "bandusd.csv",
+        "type": "blob",
+        "path": "data/bandusd.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "b80801ae0144ea66a8542f02ca1dffdc34e008d7",
+        "name": "bandusd.csv.gz",
+        "type": "blob",
+        "path": "data/bandusd.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "bf424b0bd3e706c1051589f5bc53a1b7f0349624",
+        "name": "bandusd.csv.gzip",
+        "type": "blob",
+        "path": "data/bandusd.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "3243bcdf679e4af1b3f640512af919c9d29b8922",
+        "name": "bandust.csv",
+        "type": "blob",
+        "path": "data/bandust.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "32e2f64a96d1209cb63241061d59a7c75041a42e",
+        "name": "bandust.csv.gz",
+        "type": "blob",
+        "path": "data/bandust.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "5a462a0ac9d0aca9c8fdef7bd63c161c7d31f80b",
+        "name": "bandust.csv.gzip",
+        "type": "blob",
+        "path": "data/bandust.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "092c7625ccee3f32f9bc259414ae00507e217acd",
+        "name": "batbtc.csv",
+        "type": "blob",
+        "path": "data/batbtc.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "b618507b327e20842f562cbf24a59154aed8fc30",
+        "name": "batbtc.csv.gz",
+        "type": "blob",
+        "path": "data/batbtc.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "9e3718e69bc161776c27942f53fb891244b653ee",
+        "name": "batbtc.csv.gzip",
+        "type": "blob",
+        "path": "data/batbtc.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "16cbc40385c62c4522f98c1c44523a85a7740915",
+        "name": "bateth.csv",
+        "type": "blob",
+        "path": "data/bateth.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "2cbfaad909f923f13457d1420024738a632f1bb4",
+        "name": "bateth.csv.gz",
+        "type": "blob",
+        "path": "data/bateth.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "8579d5cc5a44d2215941f672ef19c97a67a24df8",
+        "name": "bateth.csv.gzip",
+        "type": "blob",
+        "path": "data/bateth.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "784f21f30e3afb1472c8a4f0b32bbc8d7f613cc1",
+        "name": "batusd.csv",
+        "type": "blob",
+        "path": "data/batusd.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "160b43aed41e2be8883c62393a8931b4367379fa",
+        "name": "batusd.csv.gz",
+        "type": "blob",
+        "path": "data/batusd.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "72812432735951486119b82884954b14fd9f8b9e",
+        "name": "batusd.csv.gzip",
+        "type": "blob",
+        "path": "data/batusd.csv.gzip",
+        "mode": "100644"
+      },
+      {
+        "id": "6242fdfff764c7a4f47b193875fc3a7c28546e35",
+        "name": "bchabcusd.csv",
+        "type": "blob",
+        "path": "data/bchabcusd.csv",
+        "mode": "100644"
+      },
+      {
+        "id": "bff3800caae7c8c21707575ecf6a678e3ba16116",
+        "name": "bchabcusd.csv.gz",
+        "type": "blob",
+        "path": "data/bchabcusd.csv.gz",
+        "mode": "100644"
+      },
+      {
+        "id": "bbd1a9c21b716a6bf27014cef8c30cb5c280f959",
+        "name": "bchabcusd.csv.gzip",
+        "type": "blob",
+        "path": "data/bchabcusd.csv.gzip",
+        "mode": "100644"
+      }
+    ]
+  },
+  {
+    "url": "https://gitlab.com/api/v4/projects/tuangeek%2Fcryptocurrency-historical-data/repository/files/README.md/raw?ref=master",
+    "result": "# cryptocurrency historical data (Open, High, Low, Close)\n\nThis dataset contains the historical trading data (OHLC) of more than 400 trading pairs at 1 minute resolution reaching back until the year 2013.\n\n# Features\n- historical trading data (OHLC)\n- 400+ trading pairs (btcusd , ethusd, btceth, ...)\n- 1 minute resolution\n- Data 2013 - Present\n- CSV files\n- bitfinex api\n\n## Installation\n\n### Requirements\n\npython3+\n\n### Install Dependencies\n\n```sh\npip install requests pip install aiohttp[speedups] pandas\n```\n\nOr via requirements.txt:\n```sh\npip install -r requirements.txt\n```\n\n## Quickstart\n\n### Running the scraper\n\nThis will get the last timestamp of each row of each pair.\n\n```sh\npython get_data.py\n```\n\n# Direct Link\n\nThe data is also cloned and can be downloaded directly from _https://data.quantcoin.io/data/{coin_pair}.csv.gz\n\n### Examples Of Direct Link\n\nBTCUSD\n\n[btcusd.csv](https://data.quantcoin.io/data/btcusd.csv.gz) the link will be `https://data.quantcoin.io/data/btcusd.csv.gz`\n\nETHUSD\n\n[ethusd.csv](https://data.quantcoin.io/data/ethusd.csv.gz) the link will be `https://data.quantcoin.io/data/ethusd.csv.gz`\n\nETHBTC\n\n[ethbtc.csv](https://data.quantcoin.io/data/ethbtc.csv.gz) the link will be `https://data.quantcoin.io/data/ethbtc.csv.gz`\n\nETHUSDT\n\n[ethust.csv](https://data.quantcoin.io/data/ethust.csv.gz) the link will be `https://data.quantcoin.io/data/ethust.csv.gz`\n\n# Data Format\n\nEach csv is name in pairs. So `btcusd.csv` is *BTC* value relative to *USD*\n\n### btcusd.csv\n\nBTC:USD\n\nhead\n\n```sh\n                open   close    high     low     volume\ntime                                                    \n1364774820000   93.25   93.30   93.30   93.25  93.300000\n1364774880000  100.00  100.00  100.00  100.00  93.300000\n1364774940000   93.30   93.30   93.30   93.30  33.676862\n1364775060000   93.35   93.47   93.47   93.35  20.000000\n1364775120000   93.47   93.47   93.47   93.47   2.021627\n```\ntail\n\n```sh\n                       open         close     high         low      volume\ntime                                                                      \n1606559820000  17225.000000  17264.000000  17283.0  17225.0000  102.395898\n1606559880000  17263.000000  17236.000000  17263.0  17234.0000    4.957733\n1606559940000  17234.984877  17258.000000  17258.0  17233.0000    0.567398\n1606560000000  17258.266880  17259.870749  17272.0  17248.6576    1.379061\n1606560060000  17261.305137  17270.000000  17270.0  17261.0000    1.056032\n```\n\n### ethbtc.csv\n\nETH:BTC\n\nhead\n\n```sh\n                  open    close     high      low  volume\ntime                                                     \n1457539800000  0.02594  0.02594  0.02594  0.02594   0.100\n1457547300000  0.02577  0.02577  0.02577  0.02577   0.010\n1457550240000  0.02550  0.02530  0.02550  0.02520   3.264\n1457554620000  0.02570  0.02570  0.02570  0.02570   0.010\n1457561700000  0.02690  0.02790  0.02790  0.02630  20.000\n```\n\ntail\n\n```sh\n                   open     close      high       low     volume\ntime                                                            \n1606559280000  0.030193  0.030116  0.030193  0.030116   0.650000\n1606559760000  0.030101  0.030052  0.030101  0.030052  11.273705\n1606559820000  0.030049  0.030039  0.030049  0.030039   1.930000\n1606559880000  0.030017  0.029988  0.030017  0.029988   3.752337\n1606559940000  0.029989  0.029989  0.029989  0.029989   0.008823\n```\n\n## Contributing\n\n1. Fork it ( https://gitlab.com/tuangeek/cryptocurrency-historical-data )\n2. Create your feature branch (`git checkout -b my-new-feature`)\n3. Commit your changes (`git commit -am 'Add some feature'`)\n4. Push to the branch (`git push origin my-new-feature`)\n5. Create a new Pull Request\n\n## Credits\n\nOriginal script/idea from [akcarsten/bitfinex_api] (https://github.com/akcarsten/bitfinex_api)\n\n\n## Warning\n\n### Past Performance Is No Guarantee of Future Results\n"
+  },
+  {
+    "url": "https://github.com/wugool/huobi-historical-data",
+    "trees": [
+      {
+        "route": "codeViewRepoRoute",
+        "ref": {
+          "name": "Classfy-Master",
+          "listCacheKey": "v0:1588320925.0",
+          "canEdit": false,
+          "refType": "branch",
+          "currentOid": "9333352229b80ff4cca220bd18b8326150d9d88c"
+        },
+        "tree": {
+          "items": [
+            {
+              "name": "bch",
+              "path": "bch",
+              "contentType": "directory"
+            },
+            {
+              "name": "bsv",
+              "path": "bsv",
+              "contentType": "directory"
+            },
+            {
+              "name": "btc",
+              "path": "btc",
+              "contentType": "directory"
+            },
+            {
+              "name": "eos",
+              "path": "eos",
+              "contentType": "directory"
+            },
+            {
+              "name": "etc",
+              "path": "etc",
+              "contentType": "directory"
+            },
+            {
+              "name": "eth",
+              "path": "eth",
+              "contentType": "directory"
+            },
+            {
+              "name": "ht",
+              "path": "ht",
+              "contentType": "directory"
+            },
+            {
+              "name": "link",
+              "path": "link",
+              "contentType": "directory"
+            },
+            {
+              "name": "ltc",
+              "path": "ltc",
+              "contentType": "directory"
+            },
+            {
+              "name": "xrp",
+              "path": "xrp",
+              "contentType": "directory"
+            },
+            {
+              "name": ".gitignore",
+              "path": ".gitignore",
+              "contentType": "file"
+            },
+            {
+              "name": "HuobiEx_Collection_Historic.ipynb",
+              "path": "HuobiEx_Collection_Historic.ipynb",
+              "contentType": "file"
+            },
+            {
+              "name": "HuobiEx_Colllecting_TryAgain.ipynb",
+              "path": "HuobiEx_Colllecting_TryAgain.ipynb",
+              "contentType": "file"
+            },
+            {
+              "name": "Huobi_Candle_Currently.ipynb",
+              "path": "Huobi_Candle_Currently.ipynb",
+              "contentType": "file"
+            },
+            {
+              "name": "LICENSE",
+              "path": "LICENSE",
+              "contentType": "file"
+            },
+            {
+              "name": "README.md",
+              "path": "README.md",
+              "contentType": "file"
+            },
+            {
+              "name": "README_CN.md",
+              "path": "README_CN.md",
+              "contentType": "file"
+            }
+          ],
+          "totalCount": 17,
+          "templateDirectorySuggestionUrl": null,
+          "readme": null,
+          "showBranchInfobar": false
+        }
+      }
+    ],
+    "readme": "  huobi-historical-data        \n  \u4e2d\u6587  \n 1min intervals historical-data (OHLCV) from 2017/10/20 for  Encrypted Digital Currency on the exchange Huobi.\ninclude coins: btc\u3001 eth\u3001 etc\u3001 ht\u3001 xrp\u3001 ltc\u3001 bch\u3001 bsv\u3001 eos\u3001 link etc. \n include currency pairs \uff1a btcusdt \n ethusdt htusdt xrpusdt ltcusdt bchusdt eosusdt etcusdt bsvusdt \n ethbtc htbtc xrpbtc ltcbtc bchbtc eosbtc etcbtc bsvbtc \n  Summary        \n  kaggle  collect bitcoin history-data (OHLCV) on exchage  bitstamp  , but the data is no longer updated. \n On the one hand, view researches on kaggle, on the other hand, try to finding some interesting appearances in the field of encryption digital currency with strong randomness. \n Coins: btc\u3001 eth\u3001 etc\u3001 ht\u3001 xrp\u3001 ltc\u3001 bch\u3001 bsv\u3001 eos\u3001 link etc. \n These data sources will be updated incrementally once a month. \n  DataSource        \n  huobi  \n  huobi sdk  \n  Data Format        \n  \n \n \n id \n open \n high \n low \n close \n vol \n count \n amount \n \n \n \n \n id\uff08seconds\uff09 \n open price \n highest price \n lowest price \n close price \n volume \n count num \n amount: sum(price*count) \n \n \n  \n  Relate Project        \n  BitcoinPriceHistoryInChina  Huobi Historical data (daily price for btc and ltc) before october 2017 \n  cctx  \n  kaggle  historical bitcoin market data at 1-min intervals\n coinbaseUSD1-mindata2014-12-01to_2019-01-09.csv  and  bitstampUSD1-mindata2012-01-01to_2019-08-12.csv  , CSV files for select bitcoin + bitstamp exchanges for the time period of Jan 2012 to August 2019 \n  Bitfinex-historical-data  \n  BTC/USD (2013-2019) \n  ETH/USD (2016-2019) \n  EOS/USD (2017-2019) \n  LTC/USD (2013-2019) \n  XRP/USD (2017-2019) \n  IOT/USD (2017-2019) \n  NEO/USD (2017-2019) \n",
+    "payload_keys": [
+      "codeViewRepoRoute",
+      "codeViewLayoutRoute",
+      "sidebarAbout",
+      "csrf_tokens"
+    ]
+  }
+]
