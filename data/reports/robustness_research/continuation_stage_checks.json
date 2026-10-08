@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-10-09T04:23:20.965891+05:00",
-  "phase": "Complete paired exit allocation and BE sensitivity binance_240_15",
+  "timestamp": "2026-10-09T04:23:42.681492+05:00",
+  "phase": "Complete paired exit allocation and BE sensitivity binance_240_60",
   "tests": 439,
   "tests_status": "PASS",
   "lint_status": "PASS",
