@@ -1,0 +1,68 @@
+{
+  "timestamp": "2026-10-09T01:25:57.978787+05:00",
+  "phase": "RECOVERY_FINGERPRINT_MISMATCH_UNDER_DIAGNOSIS",
+  "tests": 437,
+  "tests_status": "PASS",
+  "tests_log": "continuation_full_tests.log",
+  "lint_status": "PASS",
+  "mypy_status": "PASS",
+  "verified_dataset_series": 34,
+  "verified_exit_cases": 38,
+  "verified_exit_variants": 266,
+  "protected_source_config_hashes": 57,
+  "restored_checkpoint_cases": [
+    {
+      "case": "canonical/binance_15_5/REFERENCE_SEGMENT_00",
+      "fingerprint": "2d27f51566bc0a87028052173bc6ba14eb8c068e2947e66ba0c7da646d0286ae"
+    },
+    {
+      "case": "canonical/binance_15_5/REFERENCE_SEGMENT_01",
+      "fingerprint": "e21dd01a2846fe0294a8153d8326710d456617dca41db066473918f02bd79eaf"
+    },
+    {
+      "case": "canonical/binance_15_5/REFERENCE_SEGMENT_02",
+      "fingerprint": "4a303e8bb5bbdd1b9c9fe6543c240d5f623d9b0f50c45f8794b7feb3ceb788d3"
+    },
+    {
+      "case": "canonical/binance_15_5/REFERENCE_SEGMENT_03",
+      "fingerprint": "79fc9a39cad0f3f9b747ec666b54ef70ee7b3ea1b563ecc0b5e2f17fb7bca35f"
+    },
+    {
+      "case": "canonical/binance_15_5/REFERENCE_SEGMENT_04",
+      "fingerprint": "031d60eeeacff31227cddb0ea746ae8c011fdcdd57b93e9c329e2f716d131c79"
+    },
+    {
+      "case": "canonical/binance_15_5/REFERENCE_SEGMENT_05",
+      "fingerprint": "8e43a166ef847280ac63ac16ffcc5c4a432c722c32b8b176c08f371ade59e4f4"
+    },
+    {
+      "case": "canonical/binance_15_5/REFERENCE_SEGMENT_06",
+      "fingerprint": "f3ecb215e835d6a4c6bbc163c34eaf6cc423a68f957261c22ee4837943894010"
+    },
+    {
+      "case": "canonical/binance_15_5/REFERENCE_SEGMENT_07",
+      "fingerprint": "e19386f39d0ea260bd7c24ddbe28dce12e3acf468e136f2ae0436575f2ea0229"
+    },
+    {
+      "case": "canonical/binance_15_5/REFERENCE_SEGMENT_08",
+      "fingerprint": "3d20dcaeaa28b7e6dc4a1b41dc8c81fba23bb117527e8f663bce15451959982c"
+    }
+  ],
+  "total_checkpoint_cases": 21,
+  "all_checkpoint_restored": false,
+  "canonical_changed": false,
+  "trade_entry_allowed": false,
+  "research_helper_hashes": {
+    "scripts/restore_research_checkpoint.py": "b622c00ca9b1e559600ea9e971066d588485a664a4bc48d1aeb262e67ac0988d",
+    "scripts/research_inventory.py": "49ef4175335920785eb98bac7c9830f09f882e2bd255c580c7334e4d7cd5510d",
+    "scripts/research_structure_cache.py": "6efc4ea4709752a77b3ed6c3f6253d4ea128c4728f5433e95ee353d708c214fb",
+    "scripts/run_robustness_research.py": "8c6b9fe6957b8c7044c649581e8a44b1c08f0ba2c7739e4bf72568f5a7857618",
+    "scripts/summarize_robustness_research.py": "c220ecfdb1437ede5b1cc3d0b2df2cccd8cf828abb0fed87457eb812b02e5003"
+  },
+  "fingerprint_mismatch": {
+    "case": "canonical/binance_60_5/REFERENCE_SEGMENT_00",
+    "expected": "2795678d54357bfbfafa042407581dcda42f7d184512337af6fc49a333593b51",
+    "actual": "2c26c63f7945a5fda37426b878f15aca278889cdd0af1c72ca2bd8266751747a",
+    "counted_as_restored": false
+  }
+}

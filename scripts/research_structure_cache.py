@@ -20,29 +20,45 @@ def validated_prefix_reuse(histories):
     checked on every supplied prefix; a changed/interior foreign candle falls
     back to the original validator. Only closed bars at/before as_of are returned.
     This removes repeated Python validation, not any evidence/knowledge gate.
+    Gap seeds are also retained once per immutable series and sliced by their
+    confirmation close. This preserves the original prefix seed order and never
+    exposes a seed formed by a future candle.
     """
     original=auto_levels._prefix
+    original_seeds=auto_levels._seeds
     known={}
     for candles in histories.values():
         source=tuple(candles)
         if source:
             checked,minutes=original(source,source[-1].close_time)
             assert checked==source
-            known[id(source[0])]=(source,tuple(c.close_time for c in source),minutes)
+            seeds=original_seeds(source)
+            known[id(source[0])]=(source,tuple(c.close_time for c in source),minutes,
+                                  seeds,tuple(seed.known_at for seed in seeds))
     def prefix(candles,as_of):
         record=known.get(id(candles[0])) if candles else None
         if record is not None:
-            source,closes,minutes=record
+            source,closes,minutes,_,_=record
             supplied=tuple(candles)
             if supplied==source[:len(supplied)]:
                 count=min(len(supplied),bisect_right(closes,as_of))
                 return (source[:count],minutes) if count else ((),0)
         return original(candles,as_of)
+    def seeds(candles):
+        record=known.get(id(candles[0])) if candles else None
+        if record is not None:
+            source,_,_,saved,times=record
+            supplied=tuple(candles)
+            if supplied==source[:len(supplied)]:
+                return saved[:bisect_right(times,supplied[-1].close_time)]
+        return original_seeds(candles)
     try:
         auto_levels._prefix=prefix
+        auto_levels._seeds=seeds
         yield
     finally:
         auto_levels._prefix=original
+        auto_levels._seeds=original_seeds
 
 
 @contextmanager

@@ -22,6 +22,17 @@ START = datetime(2020, 1, 1, tzinfo=timezone.utc)
 
 
 class ResearchVariantTests(unittest.TestCase):
+    def test_seed_cache_excludes_future_and_falls_back_for_changed_history(self):
+        series=tuple(Candle(START+timedelta(minutes=5*i),START+timedelta(minutes=5*(i+1)),
+                           100+3*i,102+3*i,99+3*i,101+3*i,True) for i in range(12))
+        original=auto_levels._seeds
+        with validated_prefix_reuse({5:series}):
+            for size in range(1,len(series)+1):
+                self.assertEqual(auto_levels._seeds(series[:size]),original(series[:size]))
+            changed=list(series[:6]);changed[3]=replace(changed[3],low=100)
+            self.assertEqual(auto_levels._seeds(changed),original(changed))
+        self.assertIs(auto_levels._seeds,original)
+
     def test_validated_prefix_reuse_is_exact_and_rejects_changed_interior(self):
         data=histories()
         kwargs=dict(symbol='TEST',htf_minutes=5,ltf_minutes=1,auto_level_policy=auto_levels.AutoLevelPolicy())

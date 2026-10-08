@@ -200,7 +200,12 @@ def summarize(partial=False):
             trades=list(sample_groups[(cohort,htf,ltf)].values());n=len(trades)
             record=dict(cohort=cohort,htf=htf,ltf=ltf,unique_comparable_closed=n,
                         excluded_overlapping_walk_replays=True,independent_cohorts_never_pooled=True)
-            if n<50:
+            split=json.loads((report/f'{cohort}_temporal_split.json').read_text())
+            study_complete,_=complete_study(report/'canonical'/f'{cohort}_{htf}_{ltf}',split,verify_files=False)
+            if not study_complete:
+                record.update(unique_comparable_closed=None,available_closed_records=n,
+                              status='UNAVAILABLE_INCOMPLETE_STUDY')
+            elif n<50:
                 record['status']='WITHHELD_BELOW_50_COMPARABLE_CLOSED_TRADES'
             else:
                 rng=Random(20261008);rr=[t['result_R'] for t in sorted(trades,key=lambda t:t['exit_time'])]

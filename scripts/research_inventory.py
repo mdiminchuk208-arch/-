@@ -8,6 +8,17 @@ import json
 from run_historical_portfolio import canonical
 
 
+def verify_expected_fingerprint(folder, expected):
+    """Require the recovered bytes to match the checkpoint, not just a new hash."""
+    hashes=json.loads((folder/'artifact_hashes.json').read_text())
+    assert all(sha256((folder/name).read_bytes()).hexdigest()==digest for name,digest in hashes.items()),folder
+    actual=sha256(canonical(hashes).encode()).hexdigest()
+    assert actual==(folder/'fingerprint.sha256').read_text().strip(),folder
+    if actual!=expected:
+        raise ValueError(f'Recovery fingerprint mismatch: {folder}; expected={expected}; actual={actual}')
+    return actual
+
+
 def reusable_case(folder,context):
     """Resume only complete artifacts with identical frozen inputs/parameters."""
     required=('summary.json','artifact_hashes.json','fingerprint.sha256')

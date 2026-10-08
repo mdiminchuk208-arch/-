@@ -1,0 +1,177 @@
+{
+  "status": "PASS",
+  "series": [
+    {
+      "path": "data/history/public_research/bybit_mirror/BTCUSDT/15.csv.gz",
+      "stored_sha256": "5d3fe4a4eb1d147c5f5516944bdbc45a21fb483d0bc667b5a92ed206aa8a6fc9",
+      "csv_sha256": "2eeac5e42afe2ef57ddc0116622ab6c1f5017f170f6a906a774faf664dd65608"
+    },
+    {
+      "path": "data/history/public_research/bybit_mirror/BTCUSDT/60.csv.gz",
+      "stored_sha256": "b9ca9cbb33b6e9f72ab03d2d037159bef928ce6c01edcfe41890d2b9704e8cc4",
+      "csv_sha256": "9ab630422a6cedba9f6a23655882db38f0b32c66c420c6362df4405143ea84b8"
+    },
+    {
+      "path": "data/history/public_research/bybit_mirror/BTCUSDT/240.csv.gz",
+      "stored_sha256": "e564bd0d869911a0e566623592a2fcbdc2852527098546dad94980ec55a5df47",
+      "csv_sha256": "d6e42b55a7e6d2e0a38d5d74fa33a7b752fd8520ffa1c2b0c1597db69b2754b7"
+    },
+    {
+      "path": "data/history/public_research/bybit_mirror/ETHUSDT/15.csv.gz",
+      "stored_sha256": "94c8f3f414ae3bbbe08bc5180f3da88d72c699f8ff88fd8093062078260449f8",
+      "csv_sha256": "4c6414f23bf9d5b4700e400e3e7ef9ae16fc91c353ca2ae4b8f23dc2d4a0d3ae"
+    },
+    {
+      "path": "data/history/public_research/bybit_mirror/ETHUSDT/60.csv.gz",
+      "stored_sha256": "1f89f9e0c5bec92772222fb098dceb85ebb3197fbc7921d5c3bbc0032e4771dd",
+      "csv_sha256": "08d447cc7372d328f26636dac9867062c239ae90703d173ff3e4f98ddd6df7ed"
+    },
+    {
+      "path": "data/history/public_research/bybit_mirror/ETHUSDT/240.csv.gz",
+      "stored_sha256": "a69e1afa98f66e56e9a126840f226533598b4853148f988dd8b89865cae8d98e",
+      "csv_sha256": "21b947c5c2ded78b1d0c48a673c03543c445704608c11728df8a3b873c5eff2a"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/ADAUSDT/5.csv.gz",
+      "stored_sha256": "36f46ac2caec3fdf0f0e1b8903da7b4e5cb99e8e2cabad33515fa8c65806a140",
+      "csv_sha256": "44fa1482b5c7ddd6ccdb4a231cf318fc6b293b700a5b31bbcc848eddce625566"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/ADAUSDT/15.csv.gz",
+      "stored_sha256": "f23e3619e50a9d02a4c74a8e0bb9d9e6e8278fba4c9f8839f684be404866ebc1",
+      "csv_sha256": "16182414713afa1696d6a4c1a8d2ff1911d1f0ecc6d6ae1d3902e9af794e4885"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/ADAUSDT/60.csv.gz",
+      "stored_sha256": "341a852d8b7969cfa50f1b77d2b22c69a8917895b896db48e9ca15defcb3d5c2",
+      "csv_sha256": "8afd01c839b015cbd2a69c66c998c77cff4b103d28e3f95b4fce03baf51f3286"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/ADAUSDT/240.csv.gz",
+      "stored_sha256": "baa499bce6487b46ed4b79c2664a252da91228be884c77c3d44db7e2405f886f",
+      "csv_sha256": "0393c095e9cdf0cbbe5f82281b75ac8433dfa2d11fdc2af3c8cb4cfe6a3f8d35"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/BNBUSDT/5.csv.gz",
+      "stored_sha256": "92746b965bec3c9edc325bc7eac581a398d50b31d2a4e6c1739999d4964445ae",
+      "csv_sha256": "0ad11f7caae752752582d2766a95513512748c39c96f33f49850c664a6e203c0"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/BNBUSDT/15.csv.gz",
+      "stored_sha256": "b485e4507cfa75c4f4631dcffc481ca341bda1c7d2c9433298337bb9186e8bd6",
+      "csv_sha256": "936db2c5d817c731657277f13ae8feecf01941a2cbf7d1b19260c9f895921e67"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/BNBUSDT/60.csv.gz",
+      "stored_sha256": "2d56538e1f9b0822e5974e47ab2a2be1b7b1f296ad7a3857267ed6a5795774e2",
+      "csv_sha256": "5d3094a01060a817ac0ca98ff5056bfe7b98cc2b64976d5100ef3800cf8e81ad"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/BNBUSDT/240.csv.gz",
+      "stored_sha256": "f9af6db868b8dc70241eee277200f04a078cbc8fb2f39ccbb089d636ae07ab9f",
+      "csv_sha256": "45e391257bcf026876fde106abf423755398b0c390d0c52623f0e20049d80b6a"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/BTCUSDT/5.csv.gz",
+      "stored_sha256": "c38108e7c9b6e7373eeb0215fb8f6931ec5680b292a32f849860f3ecbccfc684",
+      "csv_sha256": "b1f8ee7236bfe355cb4d4e6c097315b2b07a923f796d21b6dff2925907332692"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/BTCUSDT/15.csv.gz",
+      "stored_sha256": "4b0cdd201871bdf017db0f98bd9ffc65fc6f0259ea918ed67046e990005010f6",
+      "csv_sha256": "6f1157444ae20e2e234b2d5ce7d0215bc0956f70149034926c9dbdb7defa6b93"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/BTCUSDT/60.csv.gz",
+      "stored_sha256": "076258bcb69bca42589fbf457ee03b851295541467aec2bf98b873a39746b897",
+      "csv_sha256": "0fc68244b925d9ea604dd7eeedbf586923cf9168b6db3a22d94f69dda80bdf02"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/BTCUSDT/240.csv.gz",
+      "stored_sha256": "7bc3534f0d6c5c12383c9d25b6a5e3d8e55a7e9744f8f647f8d92a76e923a2c4",
+      "csv_sha256": "834ee35409ea45f6df1a97956aaad19e323e50e894843227800c94ace04bb76d"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/DOGEUSDT/5.csv.gz",
+      "stored_sha256": "95c27dc5edfa987507c9c2f93580626a3bdb5d25a256f8a69e9f17e16badac13",
+      "csv_sha256": "eab1718b4bc61942786c7578952cf2c5187ecf3d79f0fdf4652e33345069d440"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/DOGEUSDT/15.csv.gz",
+      "stored_sha256": "44d5e9bdc2891f8fc6e5cf8401ea0b3d1056b9218a510e94ec5ebb009ef815be",
+      "csv_sha256": "0a3db280ae49022f57d09acb68dcdb4caf98c0ca4a93b948bfd1ff800dab71e4"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/DOGEUSDT/60.csv.gz",
+      "stored_sha256": "2ef45f810d7cc4da1425ce09a4370509fc5cb341dd545b2d6a3c65737bd48b89",
+      "csv_sha256": "f174bb6047711a136722d49ea75fee5e9bc0178149a88aa5f3860421d999ed09"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/DOGEUSDT/240.csv.gz",
+      "stored_sha256": "c768f884435c3208a038f5e19323e30b72e114885d41c7f0a1c161ee8ccf3ce9",
+      "csv_sha256": "c2216305d8a258e31d93d225dbc62fa12fb62e3726c132509d7cd0fb045c9644"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/ETHUSDT/5.csv.gz",
+      "stored_sha256": "cc72df1e0f08ba4ac8ab1c1c8c04145269cad1db40f320690a91dc1b7d956d84",
+      "csv_sha256": "6e14afb74ab0d94ed3a37117bfd1d169f0347375f0e776b5af6f3464ed201173"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/ETHUSDT/15.csv.gz",
+      "stored_sha256": "a2be8bd9ceedb61e11e3b162157e6783dc8c801917fb4c95eb580554fcd68b65",
+      "csv_sha256": "c9651552332785ba979ffa380d6cc9ff0a80f2c9e252349afac9c6243ad69d8a"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/ETHUSDT/60.csv.gz",
+      "stored_sha256": "440918b3463cbd3662176b8d45ec407f1ede160762efa29f8bae0f7cd2162ec0",
+      "csv_sha256": "704adac0edec05d48e3d99d5ac388b74ccfa54ffbdc8f41c721e69f47d6f5e80"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/ETHUSDT/240.csv.gz",
+      "stored_sha256": "aa6ffc48492a61005156417f77edc3b1983a3c2980558042273e1123d0fded05",
+      "csv_sha256": "43960240a9060d3ab26fa0c255b6d2b7cf8b9777391999b72da482e696fe2231"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/SOLUSDT/5.csv.gz",
+      "stored_sha256": "5bb949fd4dd0d8d3cefd33ecdf9c4d4ab2e3416537780d4a301cb65ac27d62c4",
+      "csv_sha256": "122cc77bd9abaf4dca68b50b0379f2a5efb6f3632769ce3949e492d2a38dfd42"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/SOLUSDT/15.csv.gz",
+      "stored_sha256": "c5eea456844626d282249f163e1b2b7c44187fa307f701fea28713bc4a667a3a",
+      "csv_sha256": "f58e45bdd621001ecaa5a6895aad6375ba4bf0fbe59000bae6cb44d9da26894b"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/SOLUSDT/60.csv.gz",
+      "stored_sha256": "1d914af8428e996da307099777f5f41fb31e8b40157c82a2cf43f814883a2b3b",
+      "csv_sha256": "e023137d96816980f7dce3798524e410d8be8eb33fcab0be4a194061f45b4717"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/SOLUSDT/240.csv.gz",
+      "stored_sha256": "ca9a857c611968e7f656ae2137c7da1639130918980f4f62a7e4813e326aa756",
+      "csv_sha256": "25a0d052c3ff8993b15c5144db422cb2dc4fd61a051a035fe0b997600fa7c5e7"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/XRPUSDT/5.csv.gz",
+      "stored_sha256": "9125797c90f5c82dec43a95df45229c9b8781f3bd27a118738f2e22a59f54cec",
+      "csv_sha256": "556dd957369e942abd614385d29e83889e57d329c437bd2425d5d437886a74b7"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/XRPUSDT/15.csv.gz",
+      "stored_sha256": "9b02abc8cab0cb5417c516a497870b25d58bdf970a14938d5723421557765480",
+      "csv_sha256": "0a8f87bc0048c82287d2ce368877ea78d5508b34190604479d223fb0240a58d4"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/XRPUSDT/60.csv.gz",
+      "stored_sha256": "57d4f00210a737903b73dfa9274ce92d522880061b5e8472652b8ff7050f978c",
+      "csv_sha256": "2f2042682695ba4003b02946c18428d05ce6ca232d2a78909a257cdaa96a2cb5"
+    },
+    {
+      "path": "data/history/public_research/binance_mirror/XRPUSDT/240.csv.gz",
+      "stored_sha256": "fa5f73e0133570181837638d48648f742d90900985103e76d0eb91e0bffd9d01",
+      "csv_sha256": "0415ef7d4cbe0626db2beadeae99f4015f70c8d48311c36e3f189ac283e52eb0"
+    }
+  ],
+  "verified_series": 34,
+  "trade_entry_allowed": false
+}

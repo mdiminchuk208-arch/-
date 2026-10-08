@@ -22,7 +22,7 @@ from research_support import check_baseline, performance, read_compressed, regim
 from run_historical_portfolio import canonical, simulate
 from research_variants import STRUCTURAL_VARIANTS, isolated_variant
 from research_structure_cache import structure_cache, validated_prefix_reuse
-from research_inventory import reusable_case
+from research_inventory import reusable_case, verify_expected_fingerprint
 
 
 def index_job(job):
@@ -117,8 +117,18 @@ def ready_audit(observed, portfolio, daily):
     return rows,[dict(dimension=k[0],value=k[1],**v,fill_rate=v['filled']/v['ready']) for k,v in sorted(groups.items())]
 
 
+def retained_results(output, windows, segment_numbers):
+    """A targeted recovery must not erase the ledger for other saved cases."""
+    path=output/'results.json'
+    if not path.exists() or segment_numbers is None:
+        return []
+    return [row for row in json.loads(path.read_text())
+            if (windows is not None and row['window'] not in windows)
+            or row['segment'] not in segment_numbers]
+
+
 def study(cohort,root,split,htf,ltf,output,mode='BACKTEST',cost_factor=1.0,risk=.02,workers=2,windows=None,
-          variant='BASE',score=75,resume_existing=False):
+          variant='BASE',score=75,resume_existing=False,segment_numbers=None,expected_fingerprints=None):
     repo = Path(__file__).resolve().parents[1]
     lock = check_baseline(repo)
     symbols = split['symbols']
@@ -153,7 +163,7 @@ def study(cohort,root,split,htf,ltf,output,mode='BACKTEST',cost_factor=1.0,risk=
     output.mkdir(parents=True,exist_ok=True)
     (output/'coverage_segments.json').write_text(canonical(dict(segments=segments,gaps=gaps,
         gaps_never_interpolated=True,all_independent_portfolios=True))+'\n')
-    results=[]
+    results=retained_results(output,windows,segment_numbers)
     policy = SimulationPolicy(risk_fraction=risk,fee_fraction=.0006*cost_factor,slippage_fraction=.0002*cost_factor,
                               reentry_min_score=score)
     for window in [*periods,*walk]:
@@ -162,6 +172,8 @@ def study(cohort,root,split,htf,ltf,output,mode='BACKTEST',cost_factor=1.0,risk=
         requested_start=datetime.fromisoformat(window['start'])
         requested_end=datetime.fromisoformat(window['end'])
         for number,(segment_start,segment_end) in enumerate(segments):
+            if segment_numbers is not None and number not in segment_numbers:
+                continue
             begin=max(requested_start,segment_start+timedelta(minutes=576*ltf))
             end=min(requested_end,segment_end)
             if max(requested_start,segment_start)>=min(requested_end,segment_end):
@@ -188,6 +200,8 @@ def study(cohort,root,split,htf,ltf,output,mode='BACKTEST',cost_factor=1.0,risk=
                     mode=mode,policy=asdict(policy),variant=variant)
                 previous=reusable_case(folder,context)
                 if previous is not None:
+                    if expected_fingerprints is not None:
+                        verify_expected_fingerprint(folder,expected_fingerprints[folder.relative_to(repo/'data/reports/robustness_research').as_posix()])
                     results.append(dict(window=window['name'],segment=number,status='REPLAY_COMPLETE',path=str(folder),
                         start=actual_start,end=actual_end,performance=previous['performance']))
                     (output/'results.json').write_text(canonical(results)+'\n')
@@ -239,6 +253,9 @@ def study(cohort,root,split,htf,ltf,output,mode='BACKTEST',cost_factor=1.0,risk=
             hashes={f.name:sha256(f.read_bytes()).hexdigest() for f in folder.iterdir() if f.name not in ('artifact_hashes.json','fingerprint.sha256')}
             (folder/'artifact_hashes.json').write_text(canonical(hashes)+'\n')
             (folder/'fingerprint.sha256').write_text(sha256(canonical(hashes).encode()).hexdigest()+'\n')
+            if expected_fingerprints is not None:
+                verify_expected_fingerprint(folder,expected_fingerprints[folder.relative_to(repo/'data/reports/robustness_research').as_posix()])
+                print(label,'checkpoint fingerprint MATCH',flush=True)
             results.append(dict(window=window['name'],segment=number,status='REPLAY_COMPLETE',path=str(folder),
                                 start=actual_start,end=actual_end,performance=measurements))
             (output/'results.json').write_text(canonical(results)+'\n')
@@ -261,6 +278,8 @@ def main():
     parser.add_argument('--variant',choices=list(STRUCTURAL_VARIANTS),default='BASE')
     parser.add_argument('--reentry-score',type=int,choices=[75,80],default=75)
     parser.add_argument('--resume-existing',action='store_true',help='Verify and retain completed identical-input cases without replaying them.')
+    parser.add_argument('--segments',nargs='+',type=int,help='Recover only these original coverage segment numbers; retain unrelated ledger rows.')
+    parser.add_argument('--expected-fingerprints',type=Path,help='Require each selected case to reproduce its saved checkpoint fingerprint.')
     args=parser.parse_args()
     repo=Path(__file__).resolve().parents[1]
     split=json.loads((repo/f'data/reports/robustness_research/{args.cohort}_temporal_split.json').read_text())
@@ -269,7 +288,8 @@ def main():
     if args.variant!='BASE' and (args.cohort!='binance' or (args.htf,args.ltf)!=(60,5) or args.windows!=['VALIDATION']):
         parser.error('Structural variants are registered only for Binance 60/5 VALIDATION')
     study(args.cohort,repo/f'data/history/public_research/{args.cohort}_mirror',split,
-          args.htf,args.ltf,args.output,args.mode,args.cost_factor,args.risk,args.workers,args.windows,args.variant,args.reentry_score,args.resume_existing)
+          args.htf,args.ltf,args.output,args.mode,args.cost_factor,args.risk,args.workers,args.windows,args.variant,args.reentry_score,args.resume_existing,args.segments,
+          json.loads(args.expected_fingerprints.read_text()) if args.expected_fingerprints else None)
 
 
 if __name__=='__main__':
