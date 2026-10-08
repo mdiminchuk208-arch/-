@@ -96,19 +96,11 @@ def paired_replays(expected,signals,history,policy,end):
         assert signal.stop_loss==original['stop'] and list(signal.targets)==original['targets']
         observation=next(c for c in history[symbol] if c.close_time==signal.event_time)
         VirtualPortfolio._validate_signal(signal,signal.event_time,{symbol:observation},signal.mode)
-        execution=[c for c in history[symbol] if c.open_time>=begin and c.close_time<=end]
         pair=[]
         for variant in EXIT_VARIANTS:
             outputs=[]
             for mode in ('BACKTEST','SHADOW'):
-                p=ExitResearchPortfolio(variant=variant,equity=original['initial_equity'],policy=policy,
-                    history=history,frame_cache=cache,mode=mode)
-                # This is the actual earlier observed state, already validated above.
-                p.pending[sid]=replace(signal,mode=mode)
-                for candle in execution:
-                    p.step({symbol:candle})
-                    if not p.positions:
-                        break
+                p=execute_pair(signal,original,variant,history,policy,end,mode,cache)
                 assert sid in p.trades and len(p.trades)==1,(sid,variant,'actual fill not reproduced')
                 trade=p.trades[sid]
                 for key in ('entry_time','entry_interval_start','entry_interval_end','actual_entry_after_slippage',
@@ -132,7 +124,43 @@ def paired_replays(expected,signals,history,policy,end):
     return results
 
 
-def run_case(folder,output,role):
+def execute_pair(signal,original,variant,history,policy,end,mode='BACKTEST',cache=None):
+    symbol=original['symbol'];begin=datetime.fromisoformat(original['entry_interval_start'])
+    p=ExitResearchPortfolio(variant=variant,equity=original['initial_equity'],policy=policy,
+        history=history,frame_cache=cache,mode=mode)
+    # Actual earlier observed and validated state; inherited admission still runs.
+    p.pending[signal.signal_id]=replace(signal,mode=mode)
+    for candle in history[symbol]:
+        if candle.open_time<begin or candle.close_time>end:
+            continue
+        p.step({symbol:candle})
+        if not p.positions:
+            break
+    return p
+
+
+def verify_exit_future(expected,signals,history,policy):
+    eligible=[t for t in expected if t['status']=='CLOSED' and any(f['reason']=='TP1' for f in t['fills'])]
+    if not eligible:
+        return dict(status='NO_CANONICAL_TP1_EVENT_FOR_NONVACUOUS_EXIT_CAUSALITY',trade_entry_allowed=False)
+    original=min(eligible,key=lambda t:t['entry_time']);sid=original['signal_id'];symbol=original['symbol']
+    begin=datetime.fromisoformat(original['entry_interval_start']);cutoff=datetime.fromisoformat(original['exit_time'])
+    signal=max((s for s in signals if s.signal_id==sid and s.event_time<=begin and s.status=='READY_FOR_VIRTUAL_ENTRY'),key=lambda s:s.event_time)
+    full={symbol:history[symbol]}
+    prefix={symbol:[c for c in history[symbol] if c.close_time<=cutoff]}
+    future={symbol:[replace(c,open=c.open*1.7,high=c.high*1.7,low=c.low*1.7,close=c.close*1.7)
+                    if c.close_time>cutoff else c for c in history[symbol]]}
+    for variant in EXIT_VARIANTS:
+        signatures=[]
+        for data in (full,prefix,future):
+            p=execute_pair(signal,original,variant,data,policy,cutoff)
+            signatures.append(canonical(dict(trades=p.trades,journal=[asdict(d) for d in p.journal],equity=p.equity_curve)))
+        assert len(set(signatures))==1,(sid,variant,'past exit changed with future prices')
+    return dict(status='PASS',actual_tp1_trade=sid,cutoff=cutoff,variants=list(EXIT_VARIANTS),
+        full_prefix_future_mutation=True,mutation_is_verification_only=True,trade_entry_allowed=False)
+
+
+def run_case(folder,output,role,verify_only=False):
     repo=Path(__file__).resolve().parents[1];check_baseline(repo)
     source=json.loads((folder/'summary.json').read_text())
     old='execution_start' in source
@@ -150,6 +178,11 @@ def run_case(folder,output,role):
     execution={s:slice_bars(cs,start,end) for s,cs in history.items()}
     signals=[restore_signal(row) for row in rows(artifact(folder,'signals.jsonl'))]
     expected=rows(artifact(folder,'trades.jsonl'));policy=SimulationPolicy(**source['policy'])
+    if verify_only:
+        assert (output/'results.json').exists() and (output/'paired_actual_entries.json').exists(),output
+        (output/'exit_real_causality.json').write_text(canonical(verify_exit_future(expected,signals,history,policy))+'\n')
+        check_baseline(repo)
+        return
     capital=source['initial_capital'] if old else 1170
     results=[];base=None;cache={}
     for variant,(allocation,timing) in EXIT_VARIANTS.items():
@@ -183,6 +216,7 @@ def run_case(folder,output,role):
     follow=[row for t in base.trades.values() if (row:=be_follow(t,history[t['symbol']],end)) is not None]
     (output/'post_be_follow.json').write_text(canonical(follow)+'\n')
     (output/'paired_actual_entries.json').write_text(canonical(paired_replays(expected,signals,history,policy,end))+'\n')
+    (output/'exit_real_causality.json').write_text(canonical(verify_exit_future(expected,signals,history,policy))+'\n')
     (output/'results.json').write_text(canonical(results)+'\n')
     check_baseline(repo)
 
@@ -192,11 +226,12 @@ def main():
     parser.add_argument('--source',type=Path,required=True)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--role',choices=['DEVELOPMENT','EXTERNAL','EXIT_UNTOUCHED_RESERVE'],required=True)
+    parser.add_argument('--verify-only',action='store_true',help='Add real exit causal checks to already completed identical-entry experiments.')
     args=parser.parse_args();source=args.source.resolve()
     folders=[source] if (source/'summary.json').exists() else [p.parent for p in sorted(source.glob('*/summary.json'))
         if json.loads(p.read_text())['window']['name'] in ('REFERENCE','VALIDATION','HOLDOUT','EXIT_HOLDOUT')]
     for folder in folders:
-        run_case(folder,args.output/folder.name,args.role)
+        run_case(folder,args.output/folder.name,args.role,args.verify_only)
 
 
 if __name__=='__main__':

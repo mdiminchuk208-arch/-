@@ -1,4 +1,5 @@
 from dataclasses import asdict, replace
+import json
 from pathlib import Path
 import sys
 import unittest
@@ -10,6 +11,8 @@ from test_virtual_portfolio import bar, signal
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 from research_exit_management import ExitResearchPortfolio, EXIT_VARIANTS
 from run_historical_portfolio import canonical
+from run_exit_research import paired_replays, verify_exit_future
+from crypto_bot.strategy.virtual_portfolio import SimulationPolicy
 
 
 def run_case(portfolio,bars,direction=Direction.LONG):
@@ -19,6 +22,17 @@ def run_case(portfolio,bars,direction=Direction.LONG):
 
 
 class ExitResearchTests(unittest.TestCase):
+    def test_paired_fills_preserve_original_entry_and_future_exit_invariance(self):
+        rows=[bar(0),bar(1),bar(2,108,111,107,110),bar(3,101,103,99,100),bar(4)]
+        original=VirtualPortfolio();run_case(original,rows)
+        trades=json.loads(canonical(list(original.trades.values())))
+        self.assertEqual(trades[0]['status'],'CLOSED')
+        pairs=paired_replays(trades,[signal()],{'TEST':rows},SimulationPolicy(),rows[-1].close_time)
+        self.assertEqual(len(pairs[0]['variants']),7)
+        self.assertTrue(all(p['baseline_entry_reproduced'] and p['backtest_shadow_trade_nav_match'] for p in pairs[0]['variants']))
+        proof=verify_exit_future(trades,[signal()],{'TEST':rows},SimulationPolicy())
+        self.assertEqual(proof['status'],'PASS')
+
     def test_a_bit_for_bit_baseline_both_sides_partial_costs_and_collision(self):
         cases=[(Direction.LONG,[bar(0),bar(1),bar(2,108,111,107,110),bar(3,115,121,114,120),bar(4,125,131,124,130)]),
                (Direction.SHORT,[bar(0),bar(1),bar(2,92,93,89,90),bar(3,85,86,79,80),bar(4,75,76,69,70)]),

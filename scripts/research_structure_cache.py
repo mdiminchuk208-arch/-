@@ -2,13 +2,47 @@
 from __future__ import annotations
 
 from contextlib import contextmanager
+from bisect import bisect_right
 import gzip
 from hashlib import sha256
 import pickle
 from os import getpid
 
-from crypto_bot.strategy import historical_replay, trade_plan
+from crypto_bot.strategy import auto_levels, historical_replay, trade_plan
 from run_historical_portfolio import canonical
+
+
+@contextmanager
+def validated_prefix_reuse(histories):
+    """Reuse full-series validation only for exact immutable source prefixes.
+
+    The frozen index already validates its entire offline series. Equality is
+    checked on every supplied prefix; a changed/interior foreign candle falls
+    back to the original validator. Only closed bars at/before as_of are returned.
+    This removes repeated Python validation, not any evidence/knowledge gate.
+    """
+    original=auto_levels._prefix
+    known={}
+    for candles in histories.values():
+        source=tuple(candles)
+        if source:
+            checked,minutes=original(source,source[-1].close_time)
+            assert checked==source
+            known[id(source[0])]=(source,tuple(c.close_time for c in source),minutes)
+    def prefix(candles,as_of):
+        record=known.get(id(candles[0])) if candles else None
+        if record is not None:
+            source,closes,minutes=record
+            supplied=tuple(candles)
+            if supplied==source[:len(supplied)]:
+                count=min(len(supplied),bisect_right(closes,as_of))
+                return (source[:count],minutes) if count else ((),0)
+        return original(candles,as_of)
+    try:
+        auto_levels._prefix=prefix
+        yield
+    finally:
+        auto_levels._prefix=original
 
 
 @contextmanager

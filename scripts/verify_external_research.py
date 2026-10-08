@@ -2,12 +2,14 @@
 from __future__ import annotations
 
 import argparse
+from contextlib import ExitStack
 from dataclasses import asdict, replace
 from datetime import datetime, timedelta
 import gzip
 from hashlib import sha256
 import json
 from pathlib import Path
+from tempfile import TemporaryDirectory
 
 from crypto_bot.strategy.auto_levels import AutoLevelPolicy
 from crypto_bot.strategy.historical_replay import indexed_signal_updates
@@ -16,6 +18,7 @@ from research_support import check_baseline, read_compressed
 from run_historical_portfolio import canonical, simulate
 from run_research_execution_scenarios import restore_signal
 from run_robustness_research import slice_bars
+from research_structure_cache import structure_cache, validated_prefix_reuse
 
 
 def verify(source,output):
@@ -45,9 +48,17 @@ def verify(source,output):
                     if c.close_time>cutoff else c for c in cs] for tf,cs in sample.items()}
     results=[]
     for name,histories,mode in [('full',sample,'BACKTEST'),('prefix',prefix,'BACKTEST'),
-                              ('future_mutation',future,'BACKTEST'),('repeat',sample,'BACKTEST'),('shadow',sample,'SHADOW')]:
-        signals,meta=indexed_signal_updates(histories,symbol=s,htf_minutes=htf,ltf_minutes=ltf,
-                                             mode=mode,auto_level_policy=AutoLevelPolicy())
+                              ('future_mutation',future,'BACKTEST'),('repeat',sample,'BACKTEST'),('shadow',sample,'SHADOW'),
+                              ('accelerated',sample,'BACKTEST'),('accelerated_prefix',prefix,'BACKTEST'),
+                              ('accelerated_future',future,'BACKTEST')]:
+        with ExitStack() as stack:
+            if name.startswith('accelerated'):
+                cache=Path(stack.enter_context(TemporaryDirectory()))
+                source_hashes={tf:sha256(canonical([asdict(c) for c in cs]).encode()).hexdigest() for tf,cs in histories.items()}
+                stack.enter_context(structure_cache(cache,source_hashes,summary['baseline_commit']))
+                stack.enter_context(validated_prefix_reuse(histories))
+            signals,meta=indexed_signal_updates(histories,symbol=s,htf_minutes=htf,ltf_minutes=ltf,
+                                                 mode=mode,auto_level_policy=AutoLevelPolicy())
         normalized=[replace(sig,mode=EngineMode.BACKTEST) for sig in signals if sig.event_time<=cutoff]
         assert normalized, 'Causal evidence must be non-vacuous'
         digest=sha256(canonical([asdict(sig) for sig in normalized]).encode()).hexdigest()

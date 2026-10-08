@@ -21,7 +21,7 @@ from crypto_bot.data.models import MarketCandle
 from research_support import check_baseline, performance, read_compressed, regime
 from run_historical_portfolio import canonical, simulate
 from research_variants import STRUCTURAL_VARIANTS, isolated_variant
-from research_structure_cache import structure_cache
+from research_structure_cache import structure_cache, validated_prefix_reuse
 
 
 def index_job(job):
@@ -29,7 +29,7 @@ def index_job(job):
     audit=[]
     cache=Path(__file__).resolve().parents[1]/'.research_cache'
     print('Indexing asset',s,htf,ltf,variant,len(sample[ltf]),'LTF candles',flush=True)
-    with structure_cache(cache,source_hashes,baseline), isolated_variant(variant,audit) as policy:
+    with structure_cache(cache,source_hashes,baseline), validated_prefix_reuse(sample), isolated_variant(variant,audit) as policy:
         signals,metadata=indexed_signal_updates(sample,symbol=s,htf_minutes=htf,ltf_minutes=ltf,
                                                mode=mode,auto_level_policy=policy)
     return signals,metadata,[dict(symbol=s,**row) for row in audit]

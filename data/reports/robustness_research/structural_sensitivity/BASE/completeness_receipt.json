@@ -1,0 +1,1 @@
+{"every_registered_segment_accounted_for": true, "expected_window_segments": 1, "ledger": [{"fingerprint": "74e628ac6e0a853d9ab4e82d6913f385e8d1dc5f90972201c6d9b86342276edc", "segment": 10, "status": "REPLAY_COMPLETE", "window": "VALIDATION"}], "registered_windows": 1, "retained_skipped_segments": 0}

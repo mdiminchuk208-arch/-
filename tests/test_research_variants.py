@@ -12,16 +12,31 @@ from research_variants import isolated_variant, touch_variant
 from run_research_execution_scenarios import restore_signal
 from run_historical_portfolio import canonical
 from crypto_bot.strategy.replay import StrategySignal
-from dataclasses import asdict
+from dataclasses import asdict, replace
 import json
 from tempfile import TemporaryDirectory
-from research_structure_cache import structure_cache
+from research_structure_cache import structure_cache, validated_prefix_reuse
 from test_replay import histories
 
 START = datetime(2020, 1, 1, tzinfo=timezone.utc)
 
 
 class ResearchVariantTests(unittest.TestCase):
+    def test_validated_prefix_reuse_is_exact_and_rejects_changed_interior(self):
+        data=histories()
+        kwargs=dict(symbol='TEST',htf_minutes=5,ltf_minutes=1,auto_level_policy=auto_levels.AutoLevelPolicy())
+        expected=historical_replay.indexed_signal_updates(data,**kwargs)
+        original=auto_levels._prefix
+        with validated_prefix_reuse(data):
+            self.assertEqual(historical_replay.indexed_signal_updates(data,**kwargs),expected)
+            series=tuple(data[1]);cutoff=series[5].close_time
+            self.assertEqual(auto_levels._prefix(series,cutoff),original(series,cutoff))
+            corrupted=list(series)
+            corrupted[3]=replace(corrupted[3],low=-1)
+            with self.assertRaises(ValueError):
+                auto_levels._prefix(corrupted,cutoff)
+        self.assertIs(auto_levels._prefix,original)
+
     def test_cached_structural_reports_equal_uncached_frozen_outputs(self):
         data=histories()
         kwargs=dict(symbol='TEST',htf_minutes=5,ltf_minutes=1,auto_level_policy=auto_levels.AutoLevelPolicy())

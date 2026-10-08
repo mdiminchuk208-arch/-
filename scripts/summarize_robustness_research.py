@@ -88,7 +88,7 @@ def record_inventory(report,partial):
         ok=bool(cases) and {p.name for p in cases}==expected
         for case in cases:
             ok=ok and {r['variant'] for r in json.loads((case/'results.json').read_text())}==set(EXIT_VARIANTS)
-            ok=ok and (case/'paired_actual_entries.json').exists() and (case/'post_be_follow.json').exists()
+            ok=ok and (case/'paired_actual_entries.json').exists() and (case/'post_be_follow.json').exists() and (case/'exit_real_causality.json').exists()
         if not ok:missing.append('exit_'+study)
         inventory.append(dict(study='exit_'+study,complete=ok,expected_cases=len(expected),saved_cases=len(cases)))
     (report/'research_completion_inventory.json').write_text(canonical(dict(complete=not missing,missing=missing,studies=inventory))+'\n')
@@ -179,6 +179,21 @@ def summarize(partial=False):
     write_csv(report/'exit_management_metrics.csv',exit_rows)
     write_csv(report/'post_be_follow.csv',follow)
     write_csv(report/'paired_exit_actual_entries.csv',paired)
+    regime_coverage=[]
+    for cohort in MAPPINGS:
+        split=json.loads((report/f'{cohort}_temporal_split.json').read_text())
+        for symbol in split['symbols']:
+            key=(cohort,symbol)
+            if key not in daily:daily[key]=daily_history(*key)
+            for period in split['periods']:
+                begin,end=(datetime.fromisoformat(period[k]) for k in ('start','end'))
+                labels=Counter(regime(daily[key],c.close_time) for c in daily[key] if begin<c.close_time<=end)
+                for market in ('BULL','BEAR','SIDEWAYS','UNKNOWN'):
+                    for volatility in ('LOW','MEDIUM','HIGH','UNKNOWN'):
+                        regime_coverage.append(dict(cohort=cohort,symbol=symbol,period=period['name'],
+                            regime=market,volatility=volatility,complete_daily_observations=labels[(market,volatility)],
+                            calendar_coverage_not_a_strategy_signal_count=True))
+    write_csv(report/'causal_regime_calendar_coverage.csv',regime_coverage)
     mc=[]
     for cohort,mappings in MAPPINGS.items():
         for htf,ltf in mappings:
