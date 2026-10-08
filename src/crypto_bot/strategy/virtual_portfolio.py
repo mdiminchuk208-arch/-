@@ -1,12 +1,14 @@
 """Deterministic isolated-margin simulation; no exchange or order integration.
 
-Entry is at a later candle OPEN inside the entry zone. Closed OHLC bars have
-unknown intrabar order: an old stop wins ties, then TP1/BE wins over higher TPs.
+An already available limit can fill at a later OPEN or actual wick touch.
+Closed OHLC bars have unknown intrabar order: an old stop wins ties, then
+TP1/BE wins over higher TPs. On an intrabar entry only the subsequent CLOSE
+proves favourable movement; the whole bar HIGH/LOW cannot establish a profit.
 Fees and slippage apply to every partial exit. Funding/liquidation are not modelled.
 """
 from __future__ import annotations
 
-from dataclasses import dataclass, field, asdict
+from dataclasses import dataclass, field, asdict, replace
 from datetime import datetime, timedelta, timezone
 from math import isfinite
 from typing import Mapping, Sequence
@@ -26,6 +28,7 @@ class SimulationPolicy:
     fee_fraction: float = 0.0006
     slippage_fraction: float = 0.0002
     reentry_min_score: int = 75
+    resting_limit_entries: bool = True
 
     def __post_init__(self):
         values = (self.risk_fraction, self.max_total_risk, self.daily_loss_limit,
@@ -42,6 +45,8 @@ class SimulationPolicy:
             raise ValueError("invalid fees/slippage")
         if not isinstance(self.reentry_min_score, int) or not 75 <= self.reentry_min_score <= 100:
             raise ValueError("reentry score must be at least 75")
+        if type(self.resting_limit_entries) is not bool:
+            raise ValueError("resting_limit_entries must be boolean")
 
 
 @dataclass(frozen=True)
@@ -263,7 +268,21 @@ class VirtualPortfolio:
             self._day, self._day_start_equity, self._daily_blocked = day, self.equity, False
             self._day_start_balance = self.balance
 
-    def _admit(self, signal, candle):
+    def _admit(self, signal, candle, *, intrabar=False):
+        sign = 1 if signal.direction == Direction.LONG else -1
+        reference, when = candle.open, candle.open_time
+        if intrabar:
+            # A resting buy approaches its quote from above; a sell from below.
+            # Gap-through opens outside the approved zone cannot be reinterpreted
+            # as a fill from the opposite side. No signal from this close is used.
+            if not (sign * (candle.open - signal.optimal_entry) > 0
+                    and candle.low <= signal.optimal_entry <= candle.high):
+                return False
+            reference, when = signal.optimal_entry, candle.close_time
+        elif not (signal.entry_zone.low <= candle.open <= signal.entry_zone.high
+                  and (not self.policy.resting_limit_entries or sign * (candle.open - signal.optimal_entry) <= 0)):
+            self._log(when, signal, 'VIRTUAL_ENTRY_DEFERRED', 'NEXT_OPEN_OUTSIDE_ENTRY_ZONE_OR_LIMIT')
+            return False
         reason = None
         if signal.symbol in self.positions:
             reason = "PREVIOUS_POSITION_STILL_OPEN"
@@ -274,17 +293,13 @@ class VirtualPortfolio:
         elif self.status != 'ACTIVE' or self.equity <= 0:
             reason = "EQUITY_EXHAUSTED"
         if reason:
-            self._log(candle.open_time, signal, "VIRTUAL_ENTRY_BLOCKED", reason)
+            self._log(when, signal, "VIRTUAL_ENTRY_BLOCKED", reason)
             self.consumed_ids.add(signal.signal_id)
             return True
-        if not signal.entry_zone.low <= candle.open <= signal.entry_zone.high:
-            self._log(candle.open_time, signal, 'VIRTUAL_ENTRY_DEFERRED', 'NEXT_OPEN_OUTSIDE_ENTRY_ZONE')
-            return False
-        sign = 1 if signal.direction == Direction.LONG else -1
-        entry = candle.open * (1 + sign * self.policy.slippage_fraction)
+        entry = reference * (1 + sign * self.policy.slippage_fraction)
         # Costs must not shift the fill across the stop or first target.
         if not (sign * (entry - signal.stop_loss) > 0 and sign * (signal.targets[0] - entry) > 0):
-            self._log(candle.open_time, signal, "VIRTUAL_ENTRY_BLOCKED", "COST_ADJUSTED_FILL_GEOMETRY")
+            self._log(when, signal, "VIRTUAL_ENTRY_BLOCKED", "COST_ADJUSTED_FILL_GEOMETRY")
             self.consumed_ids.add(signal.signal_id)
             return True
         target_exit = self._exit_price(signal.targets[0], signal.direction)
@@ -292,40 +307,45 @@ class VirtualPortfolio:
         if first_target_net <= 0:
             # Otherwise the calculated BE stop lies beyond TP1 and could be
             # falsely filled at a price outside the bar after TP1 is hit.
-            self._log(candle.open_time, signal, "VIRTUAL_ENTRY_BLOCKED", "TP1_NOT_POSITIVE_AFTER_COSTS")
+            self._log(when, signal, "VIRTUAL_ENTRY_BLOCKED", "TP1_NOT_POSITIVE_AFTER_COSTS")
             self.consumed_ids.add(signal.signal_id)
             return True
         risk = self.equity * self.policy.risk_fraction
         quantity = risk / self._loss_per_unit(entry, signal.stop_loss, signal.direction)
         if not isfinite(quantity) or quantity <= 0:
-            self._log(candle.open_time, signal, 'VIRTUAL_ENTRY_BLOCKED', 'INVALID_QUANTITY')
+            self._log(when, signal, 'VIRTUAL_ENTRY_BLOCKED', 'INVALID_QUANTITY')
             self.consumed_ids.add(signal.signal_id)
             return True
         existing_risk, margin = self.aggregate_stop_risk, self.allocated_margin
         entry_fee = quantity * entry * self.policy.fee_fraction
-        entry_slip = quantity * abs(entry - candle.open)
+        entry_slip = quantity * abs(entry - reference)
         equity_after_cost = self.equity - entry_fee - entry_slip
         if existing_risk + risk > equity_after_cost * self.policy.max_total_risk + 1e-9:
             reason = "TOTAL_RISK_CAP_6_PERCENT"
         elif margin + quantity * entry / self.policy.leverage > equity_after_cost:
             reason = "ISOLATED_MARGIN_BUDGET"
         if reason:
-            self._log(candle.open_time, signal, "VIRTUAL_ENTRY_BLOCKED", reason)
+            self._log(when, signal, "VIRTUAL_ENTRY_BLOCKED", reason)
         else:
             initial_equity = self.equity
-            self.positions[signal.symbol] = VirtualPosition(signal, candle.open_time, entry, quantity, 1.0, signal.stop_loss,
+            self.positions[signal.symbol] = VirtualPosition(signal, when, entry, quantity, 1.0, signal.stop_loss,
                                                           entry_fee=entry_fee)
             self.balance -= entry_fee
             self.fees_paid += entry_fee
             self.slippage_cost += entry_slip
-            self._mark({})
+            # The pre-entry OPEN is not a post-entry mark and cannot create
+            # imaginary profits for the next symbol's risk budget.
+            self._mark({signal.symbol: reference})
             self._check_daily_loss()
             self.trades[signal.signal_id] = dict(
                 trade_id=signal.signal_id, signal_id=signal.signal_id, symbol=signal.symbol,
                 direction=signal.direction.name, htf=signal.htf_minutes, ltf=signal.ltf_minutes,
                 setup=signal.level_policy, score=signal.score, signal_time=signal.event_time,
                 ready_time=max(signal.entry_geometry_ready_time, signal.levels_known_at),
-                entry_time=candle.open_time, theoretical_entry=candle.open,
+                entry_time=when, theoretical_entry=reference,
+                fill_model='RESTING_LIMIT_TOUCH' if intrabar else 'NEXT_OPEN',
+                entry_time_precision='BAR_INTERVAL_KNOWN_AT_CLOSE' if intrabar else 'EXACT_OPEN',
+                entry_interval_start=candle.open_time, entry_interval_end=candle.close_time,
                 actual_entry_after_slippage=entry, entry_zone=asdict(signal.entry_zone),
                 stop=signal.stop_loss, targets=list(signal.targets), initial_equity=initial_equity,
                 risk_percent=self.policy.risk_fraction, risk_amount=risk,
@@ -336,11 +356,13 @@ class VirtualPortfolio:
                 aggregate_risk_fraction_after=self.aggregate_stop_risk/self.equity,
                 entry_fee=entry_fee, fees_total=entry_fee, slippage_total=entry_slip,
                 gross_pnl=0.0, net_pnl=0.0, fills=[], new_breakeven=None, status='OPEN',
-                result_R=None, MFE=0.0, MAE=0.0, excursion_policy='FULL_CLOSED_BAR_ENVELOPE_ORDER_UNKNOWN',
+                result_R=None, MFE=0.0, MAE=0.0,
+                excursion_policy=('ENTRY_BAR_CLOSE_ONLY_FAVOURABLE_FULL_ADVERSE_ENVELOPE' if intrabar
+                                  else 'FULL_CLOSED_BAR_ENVELOPE_ORDER_UNKNOWN'),
                 max_equity_during_trade=self.equity, adverse_gap=False,
             )
-            self._log(candle.open_time, signal, "VIRTUAL_ENTRY", "NEXT_OPEN_INSIDE_ENTRY_ZONE", quantity, entry,
-                      -entry_fee, reference_price=candle.open, slippage_cost=entry_slip, balance_change=-entry_fee)
+            self._log(when, signal, "VIRTUAL_ENTRY", "RESTING_LIMIT_ACTUAL_TOUCH" if intrabar else "NEXT_OPEN_INSIDE_ENTRY_ZONE", quantity, entry,
+                      -entry_fee, reference_price=reference, slippage_cost=entry_slip, balance_change=-entry_fee)
         self.consumed_ids.add(signal.signal_id)
         return True
 
@@ -409,12 +431,29 @@ class VirtualPortfolio:
         signals = tuple(unique.values())
         self._mark({symbol: c.open for symbol, c in bars.items()})
         self._roll_day(first.open_time)
-        # All entries use only PnL known before this batch's OPEN.
+        # All admissions precede every same-bar exit. No foreign symbol's future
+        # close profit funds risk. OPEN fills precede interval-ambiguous touches.
         for key, signal in sorted(tuple(self.pending.items()), key=lambda item: (item[1].symbol, item[0])):
             if signal.symbol in bars and self._admit(signal, bars[signal.symbol]):
                 self.pending.pop(key)
+        intrabar_ids = set()
+        if self.policy.resting_limit_entries:
+            for key, signal in sorted(tuple(self.pending.items()), key=lambda item: (item[1].symbol, item[0])):
+                if signal.symbol in bars and self._admit(signal, bars[signal.symbol], intrabar=True):
+                    self.pending.pop(key)
+                    if key in self.trades:
+                        intrabar_ids.add(key)
         for symbol in sorted(tuple(self.positions)):
             position, candle = self.positions[symbol], bars[symbol]
+            if position.signal.signal_id in intrabar_ids:
+                # This is a conservative management envelope, not invented market
+                # data. CLOSE is provably after the touch; profitable extremes
+                # may have preceded it. An adverse crossing after a proper-side
+                # approach remains possible and wins all ambiguous outcomes.
+                long = position.signal.direction == Direction.LONG
+                candle = replace(candle, open=position.entry_price,
+                    high=max(position.entry_price, candle.close) if long else max(candle.high, position.entry_price),
+                    low=min(candle.low, position.entry_price) if long else min(position.entry_price, candle.close))
             trade = self.trades[position.signal.signal_id]
             sign = 1 if position.signal.direction == Direction.LONG else -1
             trade['MFE'] = max(trade['MFE'], sign * ((candle.high if sign == 1 else candle.low) - position.entry_price))

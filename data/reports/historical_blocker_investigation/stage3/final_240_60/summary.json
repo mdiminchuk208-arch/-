@@ -1,0 +1,1719 @@
+{
+  "analysis_mode": "SOURCE_CONSERVATIVE",
+  "automatic_level_policy": {
+    "min_body_fraction": 0.6,
+    "min_engulf_body_ratio": 1.0
+  },
+  "common_available_end": "2026-09-22T11:00:00+00:00",
+  "common_available_start": "2026-01-25T12:00:00+00:00",
+  "coverage_365_days": false,
+  "days": 215.95833333333334,
+  "execution_end": "2026-09-22T11:00:00+00:00",
+  "execution_start": "2026-02-18T12:00:00+00:00",
+  "funnel": {
+    "admission_blocks": {
+      "COST_ADJUSTED_FILL_GEOMETRY": 0,
+      "DAILY_LOSS_LIMIT_LATCHED": 0,
+      "EQUITY_EXHAUSTED": 0,
+      "INVALID_QUANTITY": 0,
+      "ISOLATED_MARGIN_BUDGET": 0,
+      "PREVIOUS_POSITION_STILL_OPEN": 0,
+      "REENTRY_SCORE_BELOW_75": 0,
+      "TOTAL_RISK_CAP_6_PERCENT": 0,
+      "TP1_NOT_POSITIVE_AFTER_COSTS": 0
+    },
+    "blocker_categories_unique_setups": {
+      "OTE_mismatch": 175,
+      "missing_HTF_POI": 28,
+      "missing_OB": 892,
+      "missing_three_targets": 0,
+      "stale_evidence": 1
+    },
+    "completed_trades": 2,
+    "entries": 2,
+    "ever_auto_blocker_unique_setup_counts": {
+      "AGGRESSIVE_IMPULSE_THRESHOLD_NOT_MET": 508,
+      "DIRECTIONAL_IMBALANCE_NOT_CONFIRMED": 344,
+      "FRESH_PREEXISTING_HTF_POI_NOT_FOUND": 28,
+      "NO_ELIGIBLE_IMPULSE_OB": 731,
+      "NO_OB_PATTERN_IN_STRUCTURAL_IMPULSE": 161,
+      "OB_FIRST_TEST_ALREADY_CONSUMED": 1,
+      "OB_OUTSIDE_OTE_OR_STRUCTURAL_IMPULSE": 175,
+      "RAW_STRUCTURAL_LIQUIDITY_SWEEP_NOT_FOUND": 114
+    },
+    "ever_status_unique_setup_counts": {
+      "INVALIDATED": 903,
+      "READY_FOR_VIRTUAL_ENTRY": 2,
+      "REJECTED_ENTRY_GEOMETRY": 6,
+      "SOURCE_CONTEXT_BLOCKED": 0,
+      "WAITING_FOR_AUTO_LEVELS": 892,
+      "WAITING_FOR_ENTRY_GEOMETRY": 929,
+      "WAITING_FOR_SOURCE_LEVELS": 0
+    },
+    "latest_status_counts": {
+      "INVALIDATED": 903,
+      "READY_FOR_VIRTUAL_ENTRY": 0,
+      "REJECTED_ENTRY_GEOMETRY": 1,
+      "SOURCE_CONTEXT_BLOCKED": 0,
+      "WAITING_FOR_AUTO_LEVELS": 97,
+      "WAITING_FOR_ENTRY_GEOMETRY": 2,
+      "WAITING_FOR_SOURCE_LEVELS": 0
+    },
+    "market_bars": 51830,
+    "raw_structure_events_including_warmup": {
+      "ADAUSDT": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 15,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 121,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 111,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 29,
+          "BEARISH_STRUCTURE_CONFIRMED": 67,
+          "BULLISH_CONF_CONFIRMED": 11,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 118,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 110,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 29,
+          "BULLISH_STRUCTURE_CONFIRMED": 46,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 198,
+          "HIGH_LIQUIDITY_TAKEN": 310,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 217,
+          "LOW_LIQUIDITY_TAKEN": 311,
+          "SWING_HIGH_CONFIRMED": 320,
+          "SWING_LOW_CONFIRMED": 331
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 59,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 448,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 437,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 112,
+          "BEARISH_STRUCTURE_CONFIRMED": 235,
+          "BULLISH_CONF_CONFIRMED": 54,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 508,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 493,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 112,
+          "BULLISH_STRUCTURE_CONFIRMED": 224,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 750,
+          "HIGH_LIQUIDITY_TAKEN": 1187,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 803,
+          "LOW_LIQUIDITY_TAKEN": 1234,
+          "SWING_HIGH_CONFIRMED": 1215,
+          "SWING_LOW_CONFIRMED": 1280
+        }
+      },
+      "AVAXUSDT": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 13,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 136,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 136,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 24,
+          "BEARISH_STRUCTURE_CONFIRMED": 53,
+          "BULLISH_CONF_CONFIRMED": 12,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 120,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 110,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 23,
+          "BULLISH_STRUCTURE_CONFIRMED": 47,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 206,
+          "HIGH_LIQUIDITY_TAKEN": 331,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 198,
+          "LOW_LIQUIDITY_TAKEN": 309,
+          "SWING_HIGH_CONFIRMED": 335,
+          "SWING_LOW_CONFIRMED": 328
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 56,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 510,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 507,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 108,
+          "BEARISH_STRUCTURE_CONFIRMED": 231,
+          "BULLISH_CONF_CONFIRMED": 54,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 544,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 526,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 109,
+          "BULLISH_STRUCTURE_CONFIRMED": 220,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 805,
+          "HIGH_LIQUIDITY_TAKEN": 1300,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 852,
+          "LOW_LIQUIDITY_TAKEN": 1313,
+          "SWING_HIGH_CONFIRMED": 1310,
+          "SWING_LOW_CONFIRMED": 1348
+        }
+      },
+      "BNBUSDT": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 17,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 136,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 136,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 32,
+          "BEARISH_STRUCTURE_CONFIRMED": 64,
+          "BULLISH_CONF_CONFIRMED": 14,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 138,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 123,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 33,
+          "BULLISH_STRUCTURE_CONFIRMED": 58,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 228,
+          "HIGH_LIQUIDITY_TAKEN": 328,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 205,
+          "LOW_LIQUIDITY_TAKEN": 312,
+          "SWING_HIGH_CONFIRMED": 335,
+          "SWING_LOW_CONFIRMED": 337
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 46,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 479,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 476,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 113,
+          "BEARISH_STRUCTURE_CONFIRMED": 188,
+          "BULLISH_CONF_CONFIRMED": 57,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 468,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 446,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 114,
+          "BULLISH_STRUCTURE_CONFIRMED": 249,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 829,
+          "HIGH_LIQUIDITY_TAKEN": 1225,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 789,
+          "LOW_LIQUIDITY_TAKEN": 1221,
+          "SWING_HIGH_CONFIRMED": 1237,
+          "SWING_LOW_CONFIRMED": 1283
+        }
+      },
+      "BTCUSDT": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 15,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 118,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 118,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 28,
+          "BEARISH_STRUCTURE_CONFIRMED": 57,
+          "BULLISH_CONF_CONFIRMED": 10,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 128,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 116,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 29,
+          "BULLISH_STRUCTURE_CONFIRMED": 52,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 226,
+          "HIGH_LIQUIDITY_TAKEN": 354,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 207,
+          "LOW_LIQUIDITY_TAKEN": 316,
+          "SWING_HIGH_CONFIRMED": 357,
+          "SWING_LOW_CONFIRMED": 340
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 50,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 514,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 512,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 116,
+          "BEARISH_STRUCTURE_CONFIRMED": 230,
+          "BULLISH_CONF_CONFIRMED": 55,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 523,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 498,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 116,
+          "BULLISH_STRUCTURE_CONFIRMED": 231,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 824,
+          "HIGH_LIQUIDITY_TAKEN": 1359,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 833,
+          "LOW_LIQUIDITY_TAKEN": 1326,
+          "SWING_HIGH_CONFIRMED": 1365,
+          "SWING_LOW_CONFIRMED": 1375
+        }
+      },
+      "DOGEUSDT": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 19,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 116,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 109,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 30,
+          "BEARISH_STRUCTURE_CONFIRMED": 70,
+          "BULLISH_CONF_CONFIRMED": 11,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 147,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 139,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 30,
+          "BULLISH_STRUCTURE_CONFIRMED": 49,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 192,
+          "HIGH_LIQUIDITY_TAKEN": 327,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 216,
+          "LOW_LIQUIDITY_TAKEN": 333,
+          "SWING_HIGH_CONFIRMED": 336,
+          "SWING_LOW_CONFIRMED": 344
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 52,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 507,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 499,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 117,
+          "BEARISH_STRUCTURE_CONFIRMED": 227,
+          "BULLISH_CONF_CONFIRMED": 55,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 589,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 571,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 118,
+          "BULLISH_STRUCTURE_CONFIRMED": 218,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 802,
+          "HIGH_LIQUIDITY_TAKEN": 1292,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 840,
+          "LOW_LIQUIDITY_TAKEN": 1336,
+          "SWING_HIGH_CONFIRMED": 1309,
+          "SWING_LOW_CONFIRMED": 1368
+        }
+      },
+      "ETHUSDT": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 11,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 123,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 123,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 26,
+          "BEARISH_STRUCTURE_CONFIRMED": 48,
+          "BULLISH_CONF_CONFIRMED": 17,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 126,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 109,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 26,
+          "BULLISH_STRUCTURE_CONFIRMED": 53,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 194,
+          "HIGH_LIQUIDITY_TAKEN": 332,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 192,
+          "LOW_LIQUIDITY_TAKEN": 309,
+          "SWING_HIGH_CONFIRMED": 337,
+          "SWING_LOW_CONFIRMED": 340
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 58,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 564,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 559,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 123,
+          "BEARISH_STRUCTURE_CONFIRMED": 231,
+          "BULLISH_CONF_CONFIRMED": 58,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 530,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 489,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 124,
+          "BULLISH_STRUCTURE_CONFIRMED": 235,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 832,
+          "HIGH_LIQUIDITY_TAKEN": 1379,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 817,
+          "LOW_LIQUIDITY_TAKEN": 1344,
+          "SWING_HIGH_CONFIRMED": 1389,
+          "SWING_LOW_CONFIRMED": 1408
+        }
+      },
+      "LINKUSDT": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 16,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 141,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 140,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 28,
+          "BEARISH_STRUCTURE_CONFIRMED": 54,
+          "BULLISH_CONF_CONFIRMED": 18,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 119,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 106,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 28,
+          "BULLISH_STRUCTURE_CONFIRMED": 54,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 222,
+          "HIGH_LIQUIDITY_TAKEN": 337,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 190,
+          "LOW_LIQUIDITY_TAKEN": 301,
+          "SWING_HIGH_CONFIRMED": 339,
+          "SWING_LOW_CONFIRMED": 333
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 62,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 517,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 515,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 113,
+          "BEARISH_STRUCTURE_CONFIRMED": 222,
+          "BULLISH_CONF_CONFIRMED": 61,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 550,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 527,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 113,
+          "BULLISH_STRUCTURE_CONFIRMED": 244,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 845,
+          "HIGH_LIQUIDITY_TAKEN": 1317,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 833,
+          "LOW_LIQUIDITY_TAKEN": 1264,
+          "SWING_HIGH_CONFIRMED": 1323,
+          "SWING_LOW_CONFIRMED": 1333
+        }
+      },
+      "LTCUSDT": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 15,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 126,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 124,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 25,
+          "BEARISH_STRUCTURE_CONFIRMED": 51,
+          "BULLISH_CONF_CONFIRMED": 14,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 131,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 122,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 25,
+          "BULLISH_STRUCTURE_CONFIRMED": 51,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 199,
+          "HIGH_LIQUIDITY_TAKEN": 306,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 203,
+          "LOW_LIQUIDITY_TAKEN": 297,
+          "SWING_HIGH_CONFIRMED": 312,
+          "SWING_LOW_CONFIRMED": 320
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 44,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 525,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 520,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 108,
+          "BEARISH_STRUCTURE_CONFIRMED": 218,
+          "BULLISH_CONF_CONFIRMED": 55,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 511,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 502,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 108,
+          "BULLISH_STRUCTURE_CONFIRMED": 227,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 854,
+          "HIGH_LIQUIDITY_TAKEN": 1257,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 818,
+          "LOW_LIQUIDITY_TAKEN": 1265,
+          "SWING_HIGH_CONFIRMED": 1272,
+          "SWING_LOW_CONFIRMED": 1317
+        }
+      },
+      "SOLUSDT": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 15,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 126,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 124,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 33,
+          "BEARISH_STRUCTURE_CONFIRMED": 56,
+          "BULLISH_CONF_CONFIRMED": 12,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 114,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 105,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 34,
+          "BULLISH_STRUCTURE_CONFIRMED": 59,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 212,
+          "HIGH_LIQUIDITY_TAKEN": 330,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 210,
+          "LOW_LIQUIDITY_TAKEN": 312,
+          "SWING_HIGH_CONFIRMED": 332,
+          "SWING_LOW_CONFIRMED": 338
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 55,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 541,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 540,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 112,
+          "BEARISH_STRUCTURE_CONFIRMED": 238,
+          "BULLISH_CONF_CONFIRMED": 60,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 522,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 500,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 113,
+          "BULLISH_STRUCTURE_CONFIRMED": 254,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 836,
+          "HIGH_LIQUIDITY_TAKEN": 1322,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 838,
+          "LOW_LIQUIDITY_TAKEN": 1297,
+          "SWING_HIGH_CONFIRMED": 1331,
+          "SWING_LOW_CONFIRMED": 1362
+        }
+      },
+      "XRPUSDT": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 13,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 115,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 110,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 30,
+          "BEARISH_STRUCTURE_CONFIRMED": 53,
+          "BULLISH_CONF_CONFIRMED": 16,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 131,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 128,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 29,
+          "BULLISH_STRUCTURE_CONFIRMED": 52,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 195,
+          "HIGH_LIQUIDITY_TAKEN": 326,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 207,
+          "LOW_LIQUIDITY_TAKEN": 314,
+          "SWING_HIGH_CONFIRMED": 333,
+          "SWING_LOW_CONFIRMED": 322
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 60,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 545,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 535,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 117,
+          "BEARISH_STRUCTURE_CONFIRMED": 251,
+          "BULLISH_CONF_CONFIRMED": 46,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 557,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 549,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 117,
+          "BULLISH_STRUCTURE_CONFIRMED": 214,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 842,
+          "HIGH_LIQUIDITY_TAKEN": 1328,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 867,
+          "LOW_LIQUIDITY_TAKEN": 1345,
+          "SWING_HIGH_CONFIRMED": 1344,
+          "SWING_LOW_CONFIRMED": 1372
+        }
+      }
+    },
+    "setup_outcomes": {
+      "passed": 2,
+      "policy": "PASSED_IF_EVER_READY_WAITING_AT_DATA_END_IS_RIGHT_CENSORED",
+      "rejected": 1001,
+      "total_setups": 1003
+    },
+    "sfp_bos_links_including_warmup": 1303,
+    "signal_state_changes": 2869,
+    "status_count_policy": "EVER_COUNTS_OVERLAP_LATEST_COUNTS_DO_NOT",
+    "unique_setups": 1003
+  },
+  "htf_minutes": 240,
+  "index_metadata": {
+    "ADAUSDT": {
+      "automatic_evaluations": 154,
+      "index_policy": "CANDLE_CLOSE_KNOWLEDGE_GATES_CAUSAL_AUTOMATIC_RANGE",
+      "range_episodes": {
+        "240": {
+          "CONSUMED_NO_SFP": 8,
+          "SFP_FORMED": 7
+        },
+        "60": {
+          "CONSUMED_NO_SFP": 31,
+          "SFP_FORMED": 23
+        }
+      },
+      "range_sfp_events": {
+        "240": 7,
+        "60": 23
+      },
+      "sfp_bos_links": 123,
+      "structure_events": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 15,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 121,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 111,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 29,
+          "BEARISH_STRUCTURE_CONFIRMED": 67,
+          "BULLISH_CONF_CONFIRMED": 11,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 118,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 110,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 29,
+          "BULLISH_STRUCTURE_CONFIRMED": 46,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 198,
+          "HIGH_LIQUIDITY_TAKEN": 310,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 217,
+          "LOW_LIQUIDITY_TAKEN": 311,
+          "SWING_HIGH_CONFIRMED": 320,
+          "SWING_LOW_CONFIRMED": 331
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 59,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 448,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 437,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 112,
+          "BEARISH_STRUCTURE_CONFIRMED": 235,
+          "BULLISH_CONF_CONFIRMED": 54,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 508,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 493,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 112,
+          "BULLISH_STRUCTURE_CONFIRMED": 224,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 750,
+          "HIGH_LIQUIDITY_TAKEN": 1187,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 803,
+          "LOW_LIQUIDITY_TAKEN": 1234,
+          "SWING_HIGH_CONFIRMED": 1215,
+          "SWING_LOW_CONFIRMED": 1280
+        }
+      }
+    },
+    "AVAXUSDT": {
+      "automatic_evaluations": 167,
+      "index_policy": "CANDLE_CLOSE_KNOWLEDGE_GATES_CAUSAL_AUTOMATIC_RANGE",
+      "range_episodes": {
+        "240": {
+          "CONSUMED_NO_SFP": 6,
+          "SFP_FORMED": 6
+        },
+        "60": {
+          "CONSUMED_NO_SFP": 34,
+          "SFP_FORMED": 37
+        }
+      },
+      "range_sfp_events": {
+        "240": 6,
+        "60": 37
+      },
+      "sfp_bos_links": 138,
+      "structure_events": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 13,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 136,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 136,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 24,
+          "BEARISH_STRUCTURE_CONFIRMED": 53,
+          "BULLISH_CONF_CONFIRMED": 12,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 120,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 110,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 23,
+          "BULLISH_STRUCTURE_CONFIRMED": 47,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 206,
+          "HIGH_LIQUIDITY_TAKEN": 331,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 198,
+          "LOW_LIQUIDITY_TAKEN": 309,
+          "SWING_HIGH_CONFIRMED": 335,
+          "SWING_LOW_CONFIRMED": 328
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 56,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 510,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 507,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 108,
+          "BEARISH_STRUCTURE_CONFIRMED": 231,
+          "BULLISH_CONF_CONFIRMED": 54,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 544,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 526,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 109,
+          "BULLISH_STRUCTURE_CONFIRMED": 220,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 805,
+          "HIGH_LIQUIDITY_TAKEN": 1300,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 852,
+          "LOW_LIQUIDITY_TAKEN": 1313,
+          "SWING_HIGH_CONFIRMED": 1310,
+          "SWING_LOW_CONFIRMED": 1348
+        }
+      }
+    },
+    "BNBUSDT": {
+      "automatic_evaluations": 167,
+      "index_policy": "CANDLE_CLOSE_KNOWLEDGE_GATES_CAUSAL_AUTOMATIC_RANGE",
+      "range_episodes": {
+        "240": {
+          "CONSUMED_NO_SFP": 7,
+          "SFP_FORMED": 7
+        },
+        "60": {
+          "AMBIGUOUS_DUAL_SIDE_SWEEP": 2,
+          "CONSUMED_NO_SFP": 27,
+          "SFP_FORMED": 36
+        }
+      },
+      "range_sfp_events": {
+        "240": 7,
+        "60": 36
+      },
+      "sfp_bos_links": 143,
+      "structure_events": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 17,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 136,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 136,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 32,
+          "BEARISH_STRUCTURE_CONFIRMED": 64,
+          "BULLISH_CONF_CONFIRMED": 14,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 138,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 123,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 33,
+          "BULLISH_STRUCTURE_CONFIRMED": 58,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 228,
+          "HIGH_LIQUIDITY_TAKEN": 328,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 205,
+          "LOW_LIQUIDITY_TAKEN": 312,
+          "SWING_HIGH_CONFIRMED": 335,
+          "SWING_LOW_CONFIRMED": 337
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 46,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 479,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 476,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 113,
+          "BEARISH_STRUCTURE_CONFIRMED": 188,
+          "BULLISH_CONF_CONFIRMED": 57,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 468,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 446,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 114,
+          "BULLISH_STRUCTURE_CONFIRMED": 249,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 829,
+          "HIGH_LIQUIDITY_TAKEN": 1225,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 789,
+          "LOW_LIQUIDITY_TAKEN": 1221,
+          "SWING_HIGH_CONFIRMED": 1237,
+          "SWING_LOW_CONFIRMED": 1283
+        }
+      }
+    },
+    "BTCUSDT": {
+      "automatic_evaluations": 153,
+      "index_policy": "CANDLE_CLOSE_KNOWLEDGE_GATES_CAUSAL_AUTOMATIC_RANGE",
+      "range_episodes": {
+        "240": {
+          "CONSUMED_NO_SFP": 8,
+          "SFP_FORMED": 7
+        },
+        "60": {
+          "CONSUMED_NO_SFP": 40,
+          "SFP_FORMED": 28
+        }
+      },
+      "range_sfp_events": {
+        "240": 7,
+        "60": 28
+      },
+      "sfp_bos_links": 125,
+      "structure_events": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 15,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 118,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 118,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 28,
+          "BEARISH_STRUCTURE_CONFIRMED": 57,
+          "BULLISH_CONF_CONFIRMED": 10,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 128,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 116,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 29,
+          "BULLISH_STRUCTURE_CONFIRMED": 52,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 226,
+          "HIGH_LIQUIDITY_TAKEN": 354,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 207,
+          "LOW_LIQUIDITY_TAKEN": 316,
+          "SWING_HIGH_CONFIRMED": 357,
+          "SWING_LOW_CONFIRMED": 340
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 50,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 514,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 512,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 116,
+          "BEARISH_STRUCTURE_CONFIRMED": 230,
+          "BULLISH_CONF_CONFIRMED": 55,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 523,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 498,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 116,
+          "BULLISH_STRUCTURE_CONFIRMED": 231,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 824,
+          "HIGH_LIQUIDITY_TAKEN": 1359,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 833,
+          "LOW_LIQUIDITY_TAKEN": 1326,
+          "SWING_HIGH_CONFIRMED": 1365,
+          "SWING_LOW_CONFIRMED": 1375
+        }
+      }
+    },
+    "DOGEUSDT": {
+      "automatic_evaluations": 166,
+      "index_policy": "CANDLE_CLOSE_KNOWLEDGE_GATES_CAUSAL_AUTOMATIC_RANGE",
+      "range_episodes": {
+        "240": {
+          "CONSUMED_NO_SFP": 6,
+          "SFP_FORMED": 14
+        },
+        "60": {
+          "CONSUMED_NO_SFP": 22,
+          "SFP_FORMED": 37
+        }
+      },
+      "range_sfp_events": {
+        "240": 14,
+        "60": 37
+      },
+      "sfp_bos_links": 142,
+      "structure_events": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 19,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 116,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 109,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 30,
+          "BEARISH_STRUCTURE_CONFIRMED": 70,
+          "BULLISH_CONF_CONFIRMED": 11,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 147,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 139,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 30,
+          "BULLISH_STRUCTURE_CONFIRMED": 49,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 192,
+          "HIGH_LIQUIDITY_TAKEN": 327,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 216,
+          "LOW_LIQUIDITY_TAKEN": 333,
+          "SWING_HIGH_CONFIRMED": 336,
+          "SWING_LOW_CONFIRMED": 344
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 52,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 507,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 499,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 117,
+          "BEARISH_STRUCTURE_CONFIRMED": 227,
+          "BULLISH_CONF_CONFIRMED": 55,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 589,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 571,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 118,
+          "BULLISH_STRUCTURE_CONFIRMED": 218,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 802,
+          "HIGH_LIQUIDITY_TAKEN": 1292,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 840,
+          "LOW_LIQUIDITY_TAKEN": 1336,
+          "SWING_HIGH_CONFIRMED": 1309,
+          "SWING_LOW_CONFIRMED": 1368
+        }
+      }
+    },
+    "ETHUSDT": {
+      "automatic_evaluations": 174,
+      "index_policy": "CANDLE_CLOSE_KNOWLEDGE_GATES_CAUSAL_AUTOMATIC_RANGE",
+      "range_episodes": {
+        "240": {
+          "CONSUMED_NO_SFP": 8,
+          "SFP_FORMED": 7
+        },
+        "60": {
+          "CONSUMED_NO_SFP": 36,
+          "SFP_FORMED": 38
+        }
+      },
+      "range_sfp_events": {
+        "240": 7,
+        "60": 38
+      },
+      "sfp_bos_links": 140,
+      "structure_events": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 11,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 123,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 123,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 26,
+          "BEARISH_STRUCTURE_CONFIRMED": 48,
+          "BULLISH_CONF_CONFIRMED": 17,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 126,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 109,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 26,
+          "BULLISH_STRUCTURE_CONFIRMED": 53,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 194,
+          "HIGH_LIQUIDITY_TAKEN": 332,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 192,
+          "LOW_LIQUIDITY_TAKEN": 309,
+          "SWING_HIGH_CONFIRMED": 337,
+          "SWING_LOW_CONFIRMED": 340
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 58,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 564,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 559,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 123,
+          "BEARISH_STRUCTURE_CONFIRMED": 231,
+          "BULLISH_CONF_CONFIRMED": 58,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 530,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 489,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 124,
+          "BULLISH_STRUCTURE_CONFIRMED": 235,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 832,
+          "HIGH_LIQUIDITY_TAKEN": 1379,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 817,
+          "LOW_LIQUIDITY_TAKEN": 1344,
+          "SWING_HIGH_CONFIRMED": 1389,
+          "SWING_LOW_CONFIRMED": 1408
+        }
+      }
+    },
+    "LINKUSDT": {
+      "automatic_evaluations": 165,
+      "index_policy": "CANDLE_CLOSE_KNOWLEDGE_GATES_CAUSAL_AUTOMATIC_RANGE",
+      "range_episodes": {
+        "240": {
+          "CONSUMED_NO_SFP": 8,
+          "SFP_FORMED": 9
+        },
+        "60": {
+          "CONSUMED_NO_SFP": 32,
+          "SFP_FORMED": 38
+        }
+      },
+      "range_sfp_events": {
+        "240": 9,
+        "60": 38
+      },
+      "sfp_bos_links": 129,
+      "structure_events": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 16,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 141,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 140,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 28,
+          "BEARISH_STRUCTURE_CONFIRMED": 54,
+          "BULLISH_CONF_CONFIRMED": 18,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 119,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 106,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 28,
+          "BULLISH_STRUCTURE_CONFIRMED": 54,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 222,
+          "HIGH_LIQUIDITY_TAKEN": 337,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 190,
+          "LOW_LIQUIDITY_TAKEN": 301,
+          "SWING_HIGH_CONFIRMED": 339,
+          "SWING_LOW_CONFIRMED": 333
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 62,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 517,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 515,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 113,
+          "BEARISH_STRUCTURE_CONFIRMED": 222,
+          "BULLISH_CONF_CONFIRMED": 61,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 550,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 527,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 113,
+          "BULLISH_STRUCTURE_CONFIRMED": 244,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 845,
+          "HIGH_LIQUIDITY_TAKEN": 1317,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 833,
+          "LOW_LIQUIDITY_TAKEN": 1264,
+          "SWING_HIGH_CONFIRMED": 1323,
+          "SWING_LOW_CONFIRMED": 1333
+        }
+      }
+    },
+    "LTCUSDT": {
+      "automatic_evaluations": 147,
+      "index_policy": "CANDLE_CLOSE_KNOWLEDGE_GATES_CAUSAL_AUTOMATIC_RANGE",
+      "range_episodes": {
+        "240": {
+          "CONSUMED_NO_SFP": 7,
+          "SFP_FORMED": 3
+        },
+        "60": {
+          "CONSUMED_NO_SFP": 29,
+          "SFP_FORMED": 28
+        }
+      },
+      "range_sfp_events": {
+        "240": 3,
+        "60": 28
+      },
+      "sfp_bos_links": 127,
+      "structure_events": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 15,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 126,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 124,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 25,
+          "BEARISH_STRUCTURE_CONFIRMED": 51,
+          "BULLISH_CONF_CONFIRMED": 14,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 131,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 122,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 25,
+          "BULLISH_STRUCTURE_CONFIRMED": 51,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 199,
+          "HIGH_LIQUIDITY_TAKEN": 306,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 203,
+          "LOW_LIQUIDITY_TAKEN": 297,
+          "SWING_HIGH_CONFIRMED": 312,
+          "SWING_LOW_CONFIRMED": 320
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 44,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 525,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 520,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 108,
+          "BEARISH_STRUCTURE_CONFIRMED": 218,
+          "BULLISH_CONF_CONFIRMED": 55,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 511,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 502,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 108,
+          "BULLISH_STRUCTURE_CONFIRMED": 227,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 854,
+          "HIGH_LIQUIDITY_TAKEN": 1257,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 818,
+          "LOW_LIQUIDITY_TAKEN": 1265,
+          "SWING_HIGH_CONFIRMED": 1272,
+          "SWING_LOW_CONFIRMED": 1317
+        }
+      }
+    },
+    "SOLUSDT": {
+      "automatic_evaluations": 128,
+      "index_policy": "CANDLE_CLOSE_KNOWLEDGE_GATES_CAUSAL_AUTOMATIC_RANGE",
+      "range_episodes": {
+        "240": {
+          "CONSUMED_NO_SFP": 10,
+          "SFP_FORMED": 3
+        },
+        "60": {
+          "CONSUMED_NO_SFP": 26,
+          "SFP_FORMED": 39
+        }
+      },
+      "range_sfp_events": {
+        "240": 3,
+        "60": 39
+      },
+      "sfp_bos_links": 119,
+      "structure_events": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 15,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 126,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 124,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 33,
+          "BEARISH_STRUCTURE_CONFIRMED": 56,
+          "BULLISH_CONF_CONFIRMED": 12,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 114,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 105,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 34,
+          "BULLISH_STRUCTURE_CONFIRMED": 59,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 212,
+          "HIGH_LIQUIDITY_TAKEN": 330,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 210,
+          "LOW_LIQUIDITY_TAKEN": 312,
+          "SWING_HIGH_CONFIRMED": 332,
+          "SWING_LOW_CONFIRMED": 338
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 55,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 541,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 540,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 112,
+          "BEARISH_STRUCTURE_CONFIRMED": 238,
+          "BULLISH_CONF_CONFIRMED": 60,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 522,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 500,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 113,
+          "BULLISH_STRUCTURE_CONFIRMED": 254,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 836,
+          "HIGH_LIQUIDITY_TAKEN": 1322,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 838,
+          "LOW_LIQUIDITY_TAKEN": 1297,
+          "SWING_HIGH_CONFIRMED": 1331,
+          "SWING_LOW_CONFIRMED": 1362
+        }
+      }
+    },
+    "XRPUSDT": {
+      "automatic_evaluations": 146,
+      "index_policy": "CANDLE_CLOSE_KNOWLEDGE_GATES_CAUSAL_AUTOMATIC_RANGE",
+      "range_episodes": {
+        "240": {
+          "CONSUMED_NO_SFP": 7,
+          "SFP_FORMED": 8
+        },
+        "60": {
+          "AMBIGUOUS_DUAL_SIDE_SWEEP": 2,
+          "CONSUMED_NO_SFP": 25,
+          "SFP_FORMED": 24
+        }
+      },
+      "range_sfp_events": {
+        "240": 8,
+        "60": 24
+      },
+      "sfp_bos_links": 117,
+      "structure_events": {
+        "240": {
+          "BEARISH_CONF_CONFIRMED": 13,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 115,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 110,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 30,
+          "BEARISH_STRUCTURE_CONFIRMED": 53,
+          "BULLISH_CONF_CONFIRMED": 16,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 131,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 128,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 29,
+          "BULLISH_STRUCTURE_CONFIRMED": 52,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 195,
+          "HIGH_LIQUIDITY_TAKEN": 326,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 207,
+          "LOW_LIQUIDITY_TAKEN": 314,
+          "SWING_HIGH_CONFIRMED": 333,
+          "SWING_LOW_CONFIRMED": 322
+        },
+        "60": {
+          "BEARISH_CONF_CONFIRMED": 60,
+          "BEARISH_SFP_FORMATION_CONFIRMED": 545,
+          "BEARISH_SFP_INVALIDATED_CLOSE": 535,
+          "BEARISH_STRUCTURE_BROKEN_BOS": 117,
+          "BEARISH_STRUCTURE_CONFIRMED": 251,
+          "BULLISH_CONF_CONFIRMED": 46,
+          "BULLISH_SFP_FORMATION_CONFIRMED": 557,
+          "BULLISH_SFP_INVALIDATED_CLOSE": 549,
+          "BULLISH_STRUCTURE_BROKEN_BOS": 117,
+          "BULLISH_STRUCTURE_CONFIRMED": 214,
+          "HIGH_LIQUIDITY_SWEEP_EPISODE": 842,
+          "HIGH_LIQUIDITY_TAKEN": 1328,
+          "LOW_LIQUIDITY_SWEEP_EPISODE": 867,
+          "LOW_LIQUIDITY_TAKEN": 1345,
+          "SWING_HIGH_CONFIRMED": 1344,
+          "SWING_LOW_CONFIRMED": 1372
+        }
+      }
+    }
+  },
+  "initial_capital": 1170.0,
+  "input_code_hashes": {
+    "config/source_rules.json": "215e021e26c6050f95d8d9bc1d9f5fb1f7fc99b229184da99c5af55e3058d1a3",
+    "pyproject.toml": "9c437b58851399bd9e95d6c480e0043814ace02fe2638b712cfc089beb963b6e",
+    "scripts/analyze_bybit_history.py": "042a76f78b735c307b3993a0c30080254aa98e93c9b0c4251d3bc02fbde24309",
+    "scripts/analyze_cross_asset_robustness.py": "bad7f16c4a25b442c64f0b1ff10cfe87db85111bc3729bb2e71999da88426bbb",
+    "scripts/analyze_mtf_sfp.py": "8ad14a2faeb0bbaee39fc38f4da587e88da8192a16762de0b7c3b78c0094a1e3",
+    "scripts/analyze_recovery_ablation.py": "d9d1e91ea21f96e7be2e84790dff2e876fa64bb1cac382a5f625e668d70a583e",
+    "scripts/audit_current_history.py": "3ed98760b291d8a4c61c7d02ca4c10348e9839d6c53b99871c6e556f99c36fe6",
+    "scripts/audit_historical_blockers.py": "8dce25e8af6169086b750f423697e05af5c9937a98d6e29c9b57ba802584ba90",
+    "scripts/audit_range_episodes.py": "7eb1b912dce52467e48df28eed2819642d973da82b8e6f169558eaa5fd01a44e",
+    "scripts/audit_ready_root_cause.py": "ff7d8d9ec165ce095a372f27b07c206bdbb8f036db23960b24463af03b304561",
+    "scripts/audit_structure_lifecycle.py": "0681d38ecebe2f312944cace3488099ebdd9dbc7c104e2e3bc8da66f6a8ab3c0",
+    "scripts/compare_v0_4_11_fingerprint.py": "bb16d27fd5bb1c7ebd9c69721ab71d26c43b90a7e8f30d953152763853e778f7",
+    "scripts/fetch_bybit_history.py": "3616b810edb78f9e55d763af2d814ba2df4eb563beb6852837da38475abf06f0",
+    "scripts/fetch_bybit_mtf_history.py": "b6f844a4423df2299615be711c31cdb55aac74b899ac529caad4c3e15ceeb1fc",
+    "scripts/ready_audit_support.py": "53108eb8181f599baed157758ebf16d0a98c81b0adb0b3b3cb95db497ea571c7",
+    "scripts/render_ready_audit.py": "77cd87ab35bfc34943364fc50e8e145972fd29df11b178a90ec930a8df0419a0",
+    "scripts/run_historical_portfolio.py": "2978f9b0de010ca58811eccd7350fe8d301c4066a207be052240de9ba991a48e",
+    "scripts/run_strategy_replay.py": "edecff0147371681c30dbc686fcef82ddaa0f5ed9098a1ffafa6aef4f5caaf88",
+    "scripts/summarize_ready_evidence.py": "a4a01a8d0f9a0375c146e2a06c6c49d183c8288f15a91a083b96abbc52790a7a",
+    "scripts/verify_historical_lifecycles.py": "9429a3f26d9e14d0005eceeff0221e8501455b1e9d9926ca2ce337fb7540fe29",
+    "src/crypto_bot/__init__.py": "cf0a729c2f0ba8b6ee202ec9ffb99c55d4b07189686f56fe1bab7a3d55e1be9f",
+    "src/crypto_bot/analysis_report.py": "13ed43af79c46fa536c7f3d2c121b18188d4406cad86c0023b0743cddbfc56c5",
+    "src/crypto_bot/common/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/crypto_bot/common/models.py": "47f00db0e85f782752ce02b46564f1c65cb4fc36202f839f0f12dffc2435740b",
+    "src/crypto_bot/data/__init__.py": "81044e0b45ceed266f9f495a75f888d1767d3d357a5d515c8f0a7baafcfa2a90",
+    "src/crypto_bot/data/bybit.py": "28b58fde1abe1f3048a7aae25a5f65cf2225cb1b16eeb103378e05a515aba527",
+    "src/crypto_bot/data/coverage.py": "c2ea924b6adb202d04c4b6af10c52a2c2c1a6740b247435fcd85f73b0f00f174",
+    "src/crypto_bot/data/models.py": "6d455d47d76ebd0d9bfb9bb123376779d30f66b51c97b29bda106f32387eac54",
+    "src/crypto_bot/data/qa.py": "2d7c45b069296e7a47337b2b9fc4fc276c8023659e67dcb2dd78069b3183c234",
+    "src/crypto_bot/data/storage.py": "813da025d1f12156e431e6ca6556697f8eef7a1919bcc1fcc2b4a9a3b1740df5",
+    "src/crypto_bot/global_report.py": "f3aec8e586ead8ec84a9b46876f0b755d31dfef92706d812a618f165123d8ef8",
+    "src/crypto_bot/mtf_report.py": "c60c231c5556014ecb48e584c3b690dc25a1a787d6ef86b5cf69155e0e2328d9",
+    "src/crypto_bot/range_report.py": "73ba7f799eb98cd67dc138d34d0cd52eea4f146b6744e88704bc46c41cd196ea",
+    "src/crypto_bot/range_validation_report.py": "847561b930bbdb8304afa11e8c48ad083f17ac2f9cf037171006199385cb01d4",
+    "src/crypto_bot/strategy/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/crypto_bot/strategy/auto_levels.py": "21db8d431a1b85d18c6e2743e9ea520b768f4de6ab34db628cfdf7fb5c67305a",
+    "src/crypto_bot/strategy/checkpoint.py": "6d9c9e1b4eba28f6d496321bc006321ff5cd07db4d6c09c8738a3abe05ff85cc",
+    "src/crypto_bot/strategy/cross_asset_validation.py": "f03e870b66dca6617a8914ca6adfa2fca9e487e664ed81d74dbed83a447235b7",
+    "src/crypto_bot/strategy/global_opportunity.py": "0d3d0b3f05fbff3f4739e53010b287912291a9a581040fc7824f59c40b736b2f",
+    "src/crypto_bot/strategy/historical_replay.py": "765de7bb5d9f9350d74806d9554c6c5efa08675de21c3d1edebc241b232686d3",
+    "src/crypto_bot/strategy/market_analysis.py": "a742f4d56b7343d3554ac3617d1fee7c3e8de43489dfb0f014f0cd29b3605c99",
+    "src/crypto_bot/strategy/mtf_diagnostics.py": "2b78eb4c66a80cf9635fa3c397bd4b7e9929f4de9c950e1d1d0b76976ed65938",
+    "src/crypto_bot/strategy/mtf_sfp.py": "4e7be12a5e44fcd77321cd33be60f8d7ca454583712540d62f0b26b9354cb7f5",
+    "src/crypto_bot/strategy/order_block.py": "845fd2c777639d660de2fd3b52a710897d3a9e2c5b9baf4535e45af3bd8747d2",
+    "src/crypto_bot/strategy/portfolio_statistics.py": "e1835756273fbadbee71e2efbaabf7d8402e4a252c4b1a1efa79761ee41b077d",
+    "src/crypto_bot/strategy/range_engine.py": "0434d70b4115cfce7ac0a82df11fdb91dd3b4ffe78b984eb962e14a0d1746b4f",
+    "src/crypto_bot/strategy/range_validation.py": "c827e97e30ac83684b2676f322053c61b7b81524492bda3a4a2d6140df7a5f29",
+    "src/crypto_bot/strategy/recovery_ablation.py": "d65e30457e73c604f17271f5b607c2cfc584123aee80aa3ef00e0b8260c07214",
+    "src/crypto_bot/strategy/replay.py": "c0f4786b93f99f098704f44b46f89b99cfc17b9bd41c26e3196cc1a97ac96a9e",
+    "src/crypto_bot/strategy/risk.py": "04a1d8a38f13116529c6833b297f2fa4b21e0c690f8737161d3d63f20fdc6c4d",
+    "src/crypto_bot/strategy/sfp.py": "98690d684f3137028891f501b7304e8f8277187da86e4719491cbd86ee5ca472",
+    "src/crypto_bot/strategy/structure.py": "39c17370f9f3fc8746a456c6663de4e43f80d357af03bc2b63aa367f990e98a7",
+    "src/crypto_bot/strategy/structure_stability.py": "ec5d3c2b242564b97f9eee38c128265a7160d5c19cbd0f8897eaf7d1b4d1979e",
+    "src/crypto_bot/strategy/trade_plan.py": "4f4f479754d1c7b3043d26427b317f9dbe42f810b59805f1c96bec2f21d602f6",
+    "src/crypto_bot/strategy/virtual_portfolio.py": "c55f0a73b4c2f1f47680bde14a1e1319efd81351461753b87400b89097db22a3"
+  },
+  "input_hashes": {
+    "ADAUSDT/240.csv": "939333c98892c91ff92cbf7bf09419bf05e0cc887e0a1de8abfe65dfe6818c14",
+    "ADAUSDT/60.csv": "d27de20a0b7c39c4fde21a2f7b66861c1aee3e5aecaa9b026b8ffc1013899bf5",
+    "AVAXUSDT/240.csv": "f8237dd5549d4061556b38b69f279aca828134c63310018b2224b321bc84b162",
+    "AVAXUSDT/60.csv": "ecb3abbddbc2d644c5f33ebac80b141bae7d068e2efe96fab231805e27245d5e",
+    "BNBUSDT/240.csv": "68ac140426f226c5a53e0c268dad9c8c5f518b3b80fd84f2212c2a5bc0f6c722",
+    "BNBUSDT/60.csv": "e58b16ecb30024a5d95adfefd238371f14e61837d7d0618a0e711118753d5246",
+    "BTCUSDT/240.csv": "017a82769092847de9409bd71f8c0de2935f932661f1f202549b54453a501f7c",
+    "BTCUSDT/60.csv": "711bc9aebbb618f450ac186f1a0a9d06309941c64e3489a5060292cabb502d54",
+    "DOGEUSDT/240.csv": "686d4d1655f4e98f591ba88f49698c356015d63940d700e84dbaa7b2ed47278c",
+    "DOGEUSDT/60.csv": "d3588b39bf4ba2870ba7d8171f42c9a78074414080f1dcfe4b011d41f1853b3e",
+    "ETHUSDT/240.csv": "219ecec093e68589ca35ec90c5543fed8cee7a058266978c1d92898c6286d178",
+    "ETHUSDT/60.csv": "6a68584ba89b7b56c5e1cd09c423c2e48eeb4823ef8c673de10ab457b4e447dc",
+    "LINKUSDT/240.csv": "c1c9d5febf3bbb253f30cd6ce2f9ff570bb3f3c8902e13b9e28ccd391c9940c6",
+    "LINKUSDT/60.csv": "71e75f38b4622d5417f86bfa1511a6fd056fe53b647e4cfd4778b87a659c3868",
+    "LTCUSDT/240.csv": "093b55606ced0dc4d7f427990473f970305217e5e4f727ce05aed96f7c44cd63",
+    "LTCUSDT/60.csv": "354ceaf165a19fad08ee2b2f94404841d31a7721dc556917c166487a9621ed31",
+    "SOLUSDT/240.csv": "522080db3e29661dc78648d90e304224b9a521ff17e2c191239e787b346d8b2c",
+    "SOLUSDT/60.csv": "db51eaadcf3ad68a2aa64df138dd7b0b63f3d0f046b8addeb377c47236e08bb9",
+    "XRPUSDT/240.csv": "e49b9039cb3fcec87c725b97a79a4055f5d4aeb496e32931d2f914d82bb34f75",
+    "XRPUSDT/60.csv": "fd086ca3baf8a2d1b6668d0fc1075e3b76393007411087d3a53b6fc4edf902bd"
+  },
+  "input_quality": {
+    "ADAUSDT/240.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T08:00:00+00:00",
+      "rows": 1439
+    },
+    "ADAUSDT/60.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T11:00:00+00:00",
+      "rows": 5759
+    },
+    "AVAXUSDT/240.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T08:00:00+00:00",
+      "rows": 1439
+    },
+    "AVAXUSDT/60.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T11:00:00+00:00",
+      "rows": 5759
+    },
+    "BNBUSDT/240.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T08:00:00+00:00",
+      "rows": 1439
+    },
+    "BNBUSDT/60.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T11:00:00+00:00",
+      "rows": 5759
+    },
+    "BTCUSDT/240.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T08:00:00+00:00",
+      "rows": 1439
+    },
+    "BTCUSDT/60.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T11:00:00+00:00",
+      "rows": 5759
+    },
+    "DOGEUSDT/240.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T08:00:00+00:00",
+      "rows": 1439
+    },
+    "DOGEUSDT/60.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T11:00:00+00:00",
+      "rows": 5759
+    },
+    "ETHUSDT/240.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T08:00:00+00:00",
+      "rows": 1439
+    },
+    "ETHUSDT/60.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T11:00:00+00:00",
+      "rows": 5759
+    },
+    "LINKUSDT/240.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T08:00:00+00:00",
+      "rows": 1439
+    },
+    "LINKUSDT/60.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T11:00:00+00:00",
+      "rows": 5759
+    },
+    "LTCUSDT/240.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T08:00:00+00:00",
+      "rows": 1439
+    },
+    "LTCUSDT/60.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T11:00:00+00:00",
+      "rows": 5759
+    },
+    "SOLUSDT/240.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T08:00:00+00:00",
+      "rows": 1439
+    },
+    "SOLUSDT/60.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T11:00:00+00:00",
+      "rows": 5759
+    },
+    "XRPUSDT/240.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T08:00:00+00:00",
+      "rows": 1439
+    },
+    "XRPUSDT/60.csv": {
+      "first_open": "2026-01-25T12:00:00+00:00",
+      "healthy": true,
+      "last_close": "2026-09-22T11:00:00+00:00",
+      "rows": 5759
+    }
+  },
+  "limitations": [
+    "AUTO_LEVELS_EXPLICIT_NUMERIC_NORMALIZATIONS_NOT_INDEPENDENT_RAW_SOURCE_CERTIFICATION",
+    "FRACTIONAL_LINEAR_COIN_QUANTITY_NO_HISTORICAL_EXCHANGE_LOT_FILTERS",
+    "FUNDING_LIQUIDATION_NOT_MODELLED",
+    "OHLC_ORDER_CONSERVATIVE",
+    "INTRABAR_LIMIT_TIME_IS_INTERVAL_KNOWN_AT_CLOSE",
+    "LIMIT_ENTRY_BAR_PROFIT_REQUIRES_POST_TOUCH_CLOSE_ADVERSE_ENVELOPE_WINS",
+    "MFE_MAE_FULL_BAR_ENVELOPE_CAN_INCLUDE_POST_EXIT_EXTREMES",
+    "EQUITY_CURVE_AND_DRAWDOWN_SAMPLED_AT_BAR_CLOSE",
+    "OPEN_POSITIONS_MARKED_NOT_FORCED_CLOSED_AT_END",
+    "NO_PUBLIC_LIVE_OR_EXECUTION"
+  ],
+  "ltf_minutes": 60,
+  "mode": "BACKTEST",
+  "pending_setups": 0,
+  "policy": {
+    "daily_loss_limit": 0.04,
+    "fee_fraction": 0.0006,
+    "leverage": 3.0,
+    "margin_mode": "Isolated",
+    "max_total_risk": 0.06,
+    "reentry_min_score": 75,
+    "resting_limit_entries": true,
+    "risk_fraction": 0.02,
+    "slippage_fraction": 0.0002
+  },
+  "portfolio": {
+    "admission_blocks": {},
+    "average_R": -0.2614131268571165,
+    "average_risk_percent": 0.02,
+    "balance": 1157.5425483498254,
+    "best_worst": {
+      "by_direction": {
+        "best": "SHORT",
+        "worst": "SHORT"
+      },
+      "by_symbol": {
+        "best": "BTCUSDT",
+        "worst": "AVAXUSDT"
+      },
+      "score_buckets": {
+        "best": "95-100",
+        "worst": "95-100"
+      }
+    },
+    "breakeven_rate": 0.0,
+    "breakevens": 0,
+    "by_direction": {
+      "LONG": {
+        "average_R": null,
+        "breakeven_rate": null,
+        "breakevens": 0,
+        "completed_trades": 0,
+        "expectancy": null,
+        "gross_loss": 0,
+        "gross_profit": 0,
+        "longest_loss_streak": 0,
+        "longest_win_streak": 0,
+        "loss_rate": null,
+        "losses": 0,
+        "median_R": null,
+        "net_pnl": 0,
+        "profit_factor": null,
+        "realized_contribution_drawdown_usdt": 0.0,
+        "undefined_ratio_policy": "NULL_WHEN_NO_TRADES_OR_NO_LOSSES",
+        "win_rate": null,
+        "wins": 0
+      },
+      "SHORT": {
+        "average_R": -0.2614131268571165,
+        "breakeven_rate": 0.0,
+        "breakevens": 0,
+        "completed_trades": 2,
+        "expectancy": -6.228725825087395,
+        "gross_loss": 23.623317313261737,
+        "gross_profit": 11.165865663086947,
+        "longest_loss_streak": 1,
+        "longest_win_streak": 1,
+        "loss_rate": 0.5,
+        "losses": 1,
+        "median_R": -0.2614131268571165,
+        "net_pnl": -12.45745165017479,
+        "profit_factor": 0.47266289975365217,
+        "realized_contribution_drawdown_usdt": 23.623317313261737,
+        "undefined_ratio_policy": "NULL_WHEN_NO_TRADES_OR_NO_LOSSES",
+        "win_rate": 0.5,
+        "wins": 1
+      }
+    },
+    "by_symbol": {
+      "ADAUSDT": {
+        "average_R": null,
+        "breakeven_rate": null,
+        "breakevens": 0,
+        "completed_trades": 0,
+        "entries": 0,
+        "expectancy": null,
+        "gross_loss": 0,
+        "gross_profit": 0,
+        "longest_loss_streak": 0,
+        "longest_win_streak": 0,
+        "loss_rate": null,
+        "losses": 0,
+        "median_R": null,
+        "net_pnl": 0,
+        "profit_factor": null,
+        "realized_contribution_drawdown_usdt": 0.0,
+        "setups": 97,
+        "undefined_ratio_policy": "NULL_WHEN_NO_TRADES_OR_NO_LOSSES",
+        "win_rate": null,
+        "wins": 0
+      },
+      "AVAXUSDT": {
+        "average_R": -0.9999999999999999,
+        "breakeven_rate": 0.0,
+        "breakevens": 0,
+        "completed_trades": 1,
+        "entries": 1,
+        "expectancy": -23.623317313261737,
+        "gross_loss": 23.623317313261737,
+        "gross_profit": 0,
+        "longest_loss_streak": 1,
+        "longest_win_streak": 0,
+        "loss_rate": 1.0,
+        "losses": 1,
+        "median_R": -0.9999999999999999,
+        "net_pnl": -23.623317313261737,
+        "profit_factor": 0.0,
+        "realized_contribution_drawdown_usdt": 23.623317313261737,
+        "setups": 99,
+        "undefined_ratio_policy": "NULL_WHEN_NO_TRADES_OR_NO_LOSSES",
+        "win_rate": 0.0,
+        "wins": 0
+      },
+      "BNBUSDT": {
+        "average_R": null,
+        "breakeven_rate": null,
+        "breakevens": 0,
+        "completed_trades": 0,
+        "entries": 0,
+        "expectancy": null,
+        "gross_loss": 0,
+        "gross_profit": 0,
+        "longest_loss_streak": 0,
+        "longest_win_streak": 0,
+        "loss_rate": null,
+        "losses": 0,
+        "median_R": null,
+        "net_pnl": 0,
+        "profit_factor": null,
+        "realized_contribution_drawdown_usdt": 0.0,
+        "setups": 110,
+        "undefined_ratio_policy": "NULL_WHEN_NO_TRADES_OR_NO_LOSSES",
+        "win_rate": null,
+        "wins": 0
+      },
+      "BTCUSDT": {
+        "average_R": 0.4771737462857669,
+        "breakeven_rate": 0.0,
+        "breakevens": 0,
+        "completed_trades": 1,
+        "entries": 1,
+        "expectancy": 11.165865663086947,
+        "gross_loss": 0,
+        "gross_profit": 11.165865663086947,
+        "longest_loss_streak": 0,
+        "longest_win_streak": 1,
+        "loss_rate": 0.0,
+        "losses": 0,
+        "median_R": 0.4771737462857669,
+        "net_pnl": 11.165865663086947,
+        "profit_factor": null,
+        "realized_contribution_drawdown_usdt": 0.0,
+        "setups": 93,
+        "undefined_ratio_policy": "NULL_WHEN_NO_TRADES_OR_NO_LOSSES",
+        "win_rate": 1.0,
+        "wins": 1
+      },
+      "DOGEUSDT": {
+        "average_R": null,
+        "breakeven_rate": null,
+        "breakevens": 0,
+        "completed_trades": 0,
+        "entries": 0,
+        "expectancy": null,
+        "gross_loss": 0,
+        "gross_profit": 0,
+        "longest_loss_streak": 0,
+        "longest_win_streak": 0,
+        "loss_rate": null,
+        "losses": 0,
+        "median_R": null,
+        "net_pnl": 0,
+        "profit_factor": null,
+        "realized_contribution_drawdown_usdt": 0.0,
+        "setups": 103,
+        "undefined_ratio_policy": "NULL_WHEN_NO_TRADES_OR_NO_LOSSES",
+        "win_rate": null,
+        "wins": 0
+      },
+      "ETHUSDT": {
+        "average_R": null,
+        "breakeven_rate": null,
+        "breakevens": 0,
+        "completed_trades": 0,
+        "entries": 0,
+        "expectancy": null,
+        "gross_loss": 0,
+        "gross_profit": 0,
+        "longest_loss_streak": 0,
+        "longest_win_streak": 0,
+        "loss_rate": null,
+        "losses": 0,
+        "median_R": null,
+        "net_pnl": 0,
+        "profit_factor": null,
+        "realized_contribution_drawdown_usdt": 0.0,
+        "setups": 112,
+        "undefined_ratio_policy": "NULL_WHEN_NO_TRADES_OR_NO_LOSSES",
+        "win_rate": null,
+        "wins": 0
+      },
+      "LINKUSDT": {
+        "average_R": null,
+        "breakeven_rate": null,
+        "breakevens": 0,
+        "completed_trades": 0,
+        "entries": 0,
+        "expectancy": null,
+        "gross_loss": 0,
+        "gross_profit": 0,
+        "longest_loss_streak": 0,
+        "longest_win_streak": 0,
+        "loss_rate": null,
+        "losses": 0,
+        "median_R": null,
+        "net_pnl": 0,
+        "profit_factor": null,
+        "realized_contribution_drawdown_usdt": 0.0,
+        "setups": 108,
+        "undefined_ratio_policy": "NULL_WHEN_NO_TRADES_OR_NO_LOSSES",
+        "win_rate": null,
+        "wins": 0
+      },
+      "LTCUSDT": {
+        "average_R": null,
+        "breakeven_rate": null,
+        "breakevens": 0,
+        "completed_trades": 0,
+        "entries": 0,
+        "expectancy": null,
+        "gross_loss": 0,
+        "gross_profit": 0,
+        "longest_loss_streak": 0,
+        "longest_win_streak": 0,
+        "loss_rate": null,
+        "losses": 0,
+        "median_R": null,
+        "net_pnl": 0,
+        "profit_factor": null,
+        "realized_contribution_drawdown_usdt": 0.0,
+        "setups": 98,
+        "undefined_ratio_policy": "NULL_WHEN_NO_TRADES_OR_NO_LOSSES",
+        "win_rate": null,
+        "wins": 0
+      },
+      "SOLUSDT": {
+        "average_R": null,
+        "breakeven_rate": null,
+        "breakevens": 0,
+        "completed_trades": 0,
+        "entries": 0,
+        "expectancy": null,
+        "gross_loss": 0,
+        "gross_profit": 0,
+        "longest_loss_streak": 0,
+        "longest_win_streak": 0,
+        "loss_rate": null,
+        "losses": 0,
+        "median_R": null,
+        "net_pnl": 0,
+        "profit_factor": null,
+        "realized_contribution_drawdown_usdt": 0.0,
+        "setups": 92,
+        "undefined_ratio_policy": "NULL_WHEN_NO_TRADES_OR_NO_LOSSES",
+        "win_rate": null,
+        "wins": 0
+      },
+      "XRPUSDT": {
+        "average_R": null,
+        "breakeven_rate": null,
+        "breakevens": 0,
+        "completed_trades": 0,
+        "entries": 0,
+        "expectancy": null,
+        "gross_loss": 0,
+        "gross_profit": 0,
+        "longest_loss_streak": 0,
+        "longest_win_streak": 0,
+        "loss_rate": null,
+        "losses": 0,
+        "median_R": null,
+        "net_pnl": 0,
+        "profit_factor": null,
+        "realized_contribution_drawdown_usdt": 0.0,
+        "setups": 91,
+        "undefined_ratio_policy": "NULL_WHEN_NO_TRADES_OR_NO_LOSSES",
+        "win_rate": null,
+        "wins": 0
+      }
+    },
+    "completed_trades": 2,
+    "entries": 2,
+    "equity_peak": 1229.9423172949955,
+    "expectancy": -6.228725825087395,
+    "fees_paid": 4.108051483055993,
+    "final_equity": 1157.5425483498254,
+    "gross_loss": 23.623317313261737,
+    "gross_profit": 11.165865663086947,
+    "longest_loss_streak": 1,
+    "longest_win_streak": 1,
+    "loss_rate": 0.5,
+    "losses": 1,
+    "lowest_equity": 1157.5425483498254,
+    "max_aggregate_risk_amount": 23.62331731326174,
+    "max_aggregate_risk_fraction": 0.02003900903929877,
+    "max_drawdown": 0.05886436130142952,
+    "max_single_trade_risk_amount": 23.62331731326174,
+    "median_R": -0.2614131268571165,
+    "net_equity_pnl": -12.457451650174562,
+    "net_pnl": -12.45745165017479,
+    "next_open_deferrals": 40,
+    "open_trades": 0,
+    "profit_factor": 0.47266289975365217,
+    "realized_contribution_drawdown_usdt": 23.623317313261737,
+    "realized_pnl": -12.457451650174562,
+    "return_percent": -1.064739457279873,
+    "score_buckets": {
+      "75-79": {
+        "average_R": null,
+        "breakeven_rate": null,
+        "breakevens": 0,
+        "completed_trades": 0,
+        "expectancy": null,
+        "gross_loss": 0,
+        "gross_profit": 0,
+        "longest_loss_streak": 0,
+        "longest_win_streak": 0,
+        "loss_rate": null,
+        "losses": 0,
+        "median_R": null,
+        "net_pnl": 0,
+        "profit_factor": null,
+        "realized_contribution_drawdown_usdt": 0.0,
+        "undefined_ratio_policy": "NULL_WHEN_NO_TRADES_OR_NO_LOSSES",
+        "win_rate": null,
+        "wins": 0
+      },
+      "80-84": {
+        "average_R": null,
+        "breakeven_rate": null,
+        "breakevens": 0,
+        "completed_trades": 0,
+        "expectancy": null,
+        "gross_loss": 0,
+        "gross_profit": 0,
+        "longest_loss_streak": 0,
+        "longest_win_streak": 0,
+        "loss_rate": null,
+        "losses": 0,
+        "median_R": null,
+        "net_pnl": 0,
+        "profit_factor": null,
+        "realized_contribution_drawdown_usdt": 0.0,
+        "undefined_ratio_policy": "NULL_WHEN_NO_TRADES_OR_NO_LOSSES",
+        "win_rate": null,
+        "wins": 0
+      },
+      "85-89": {
+        "average_R": null,
+        "breakeven_rate": null,
+        "breakevens": 0,
+        "completed_trades": 0,
+        "expectancy": null,
+        "gross_loss": 0,
+        "gross_profit": 0,
+        "longest_loss_streak": 0,
+        "longest_win_streak": 0,
+        "loss_rate": null,
+        "losses": 0,
+        "median_R": null,
+        "net_pnl": 0,
+        "profit_factor": null,
+        "realized_contribution_drawdown_usdt": 0.0,
+        "undefined_ratio_policy": "NULL_WHEN_NO_TRADES_OR_NO_LOSSES",
+        "win_rate": null,
+        "wins": 0
+      },
+      "90-94": {
+        "average_R": null,
+        "breakeven_rate": null,
+        "breakevens": 0,
+        "completed_trades": 0,
+        "expectancy": null,
+        "gross_loss": 0,
+        "gross_profit": 0,
+        "longest_loss_streak": 0,
+        "longest_win_streak": 0,
+        "loss_rate": null,
+        "losses": 0,
+        "median_R": null,
+        "net_pnl": 0,
+        "profit_factor": null,
+        "realized_contribution_drawdown_usdt": 0.0,
+        "undefined_ratio_policy": "NULL_WHEN_NO_TRADES_OR_NO_LOSSES",
+        "win_rate": null,
+        "wins": 0
+      },
+      "95-100": {
+        "average_R": -0.2614131268571165,
+        "breakeven_rate": 0.0,
+        "breakevens": 0,
+        "completed_trades": 2,
+        "expectancy": -6.228725825087395,
+        "gross_loss": 23.623317313261737,
+        "gross_profit": 11.165865663086947,
+        "longest_loss_streak": 1,
+        "longest_win_streak": 1,
+        "loss_rate": 0.5,
+        "losses": 1,
+        "median_R": -0.2614131268571165,
+        "net_pnl": -12.45745165017479,
+        "profit_factor": 0.47266289975365217,
+        "realized_contribution_drawdown_usdt": 23.623317313261737,
+        "undefined_ratio_policy": "NULL_WHEN_NO_TRADES_OR_NO_LOSSES",
+        "win_rate": 0.5,
+        "wins": 1
+      },
+      "<75": {
+        "average_R": null,
+        "breakeven_rate": null,
+        "breakevens": 0,
+        "completed_trades": 0,
+        "expectancy": null,
+        "gross_loss": 0,
+        "gross_profit": 0,
+        "longest_loss_streak": 0,
+        "longest_win_streak": 0,
+        "loss_rate": null,
+        "losses": 0,
+        "median_R": null,
+        "net_pnl": 0,
+        "profit_factor": null,
+        "realized_contribution_drawdown_usdt": 0.0,
+        "undefined_ratio_policy": "NULL_WHEN_NO_TRADES_OR_NO_LOSSES",
+        "win_rate": null,
+        "wins": 0
+      }
+    },
+    "slippage_cost": 1.3693502151499246,
+    "starting_balance": 1170.0,
+    "status": "ACTIVE",
+    "trade_entry_allowed": false,
+    "undefined_ratio_policy": "NULL_WHEN_NO_TRADES_OR_NO_LOSSES",
+    "unrealized_pnl": 0,
+    "win_rate": 0.5,
+    "wins": 1
+  },
+  "requested_execution_end": "2026-09-22T11:00:00+00:00",
+  "run_complete": true,
+  "strategy_version": "0.4.21-causal-limit.3",
+  "symbols": [
+    "ADAUSDT",
+    "AVAXUSDT",
+    "BNBUSDT",
+    "BTCUSDT",
+    "DOGEUSDT",
+    "ETHUSDT",
+    "LINKUSDT",
+    "LTCUSDT",
+    "SOLUSDT",
+    "XRPUSDT"
+  ],
+  "trade_entry_allowed": false,
+  "warmup_bars": 576,
+  "warmup_start": "2026-01-25T12:00:00+00:00"
+}

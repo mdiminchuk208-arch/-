@@ -26,6 +26,7 @@ POI_POLICY = "HTF_THREE_CANDLE_GAP_POI_BACKTEST_PARAMETER"
 TARGET_POLICY = "THREE_DISTINCT_OPPOSING_POI_NEAR_EDGES_BACKTEST_PARAMETER"
 STOP_POLICY = "SOURCE_OB_EXTREME"
 AGGRESSION_POLICY = "BODY_FRACTION_AND_ENGULF_RATIO_BACKTEST_PARAMETER"
+ENTRY_POLICY = "SOURCE_OB_NEAR_EDGE_WITHIN_OTE_INTERSECTION"
 
 
 @dataclass(frozen=True)
@@ -69,6 +70,9 @@ class AutomaticLevelResult:
     target_policy: str = TARGET_POLICY
     evidence: tuple[LevelEvidence, ...] = ()
     blocked_reasons: tuple[str, ...] = ()
+    entry_reference: float | None = None
+    execution_zone: PriceZone | None = None
+    entry_policy: str = ENTRY_POLICY
 
 
 @dataclass(frozen=True)
@@ -423,7 +427,7 @@ def derive_automatic_levels(
         seed = supporting[-1]
         sweep = min(sweeps, key=lambda event: (event.level_price, event.level_id))
         known_at = max(ready, third.close_time, seed.known_at)
-        evidence = (
+        evidence: tuple[LevelEvidence, ...] = (
             _seed_evidence(seed, htf_minutes, "SUPPORTING_HTF_POI"),
             LevelEvidence("LTF_OB", ltf_minutes, max(third.close_time, opportunity.ltf_bos_event_time),
                           (first.close_time, engulfing.close_time, third.close_time),
@@ -449,10 +453,14 @@ def derive_automatic_levels(
                           (("transition_id", str(context.transition_id)),)),
             LevelEvidence("STOP", ltf_minutes, known_at, (first.close_time,), (stop,), STOP_POLICY),
         )
-        valid.append((known_at, first.open_time, stop, evidence))
+        execution_zone = PriceZone(max(ob_zone.low, zone.low), min(ob_zone.high, zone.high))
+        entry = execution_zone.high if direction == Direction.LONG else execution_zone.low
+        evidence = (*evidence, LevelEvidence("ENTRY_REFERENCE", ltf_minutes, known_at,
+                    (first.close_time, ready), (execution_zone.low, execution_zone.high, entry), ENTRY_POLICY))
+        valid.append((known_at, first.open_time, stop, evidence, execution_zone, entry))
     if not valid:
         return _blocked(*(failures or {"NO_OB_PATTERN_IN_STRUCTURAL_IMPULSE"}))
-    known_at, _, stop, evidence = min(valid, key=lambda candidate: (candidate[0], candidate[1], candidate[2]))
+    known_at, _, stop, evidence, execution_zone, entry = min(valid, key=lambda candidate: (candidate[0], candidate[1], candidate[2]))
     opposing = [seed for seed in seeds if seed.direction != direction
                 and (seed.zone.low > zone.high if direction == Direction.LONG else seed.zone.high < zone.low)
                 and fresh(seed, as_of)]
@@ -474,4 +482,5 @@ def derive_automatic_levels(
     allocation = LevelEvidence("TARGET_SELECTION", htf_minutes, known_at,
                                tuple(seed.known_at for seed in selected), targets, TARGET_POLICY)
     return AutomaticLevelResult("READY", known_at, stop, targets, STOP_POLICY, TARGET_POLICY,
-                                (*evidence, *target_evidence, allocation))
+                                (*evidence, *target_evidence, allocation), entry_reference=entry,
+                                execution_zone=execution_zone)

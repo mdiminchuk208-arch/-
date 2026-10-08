@@ -626,6 +626,12 @@
       "kind": "TECHNICAL_NORMALIZATION",
       "name": "Exact bounded touch indexing for offline histories",
       "statement": "Freshness remains the absence of inclusive wick overlap strictly after POI availability and through the cutoff close. A validated immutable OHLC index answers only cutoff-contained intervals; future aggregates do not participate. Re-evaluation watches schedule their own fact-availability time, never early qualification."
+    },
+    {
+      "rule_id": "VIRTUAL_SOURCE_OB_LIMIT_EXECUTION_001",
+      "kind": "TECHNICAL_NORMALIZATION",
+      "name": "Resting source POI limit with conservative OHLC chronology",
+      "statement": "OB_LTF_ENTRY_001 describes waiting for BOS and placing a limit in the new POI. Automatic entry retains the OB/OTE intersection and quotes its near edge (LONG high, SHORT low), rather than an unrelated OTE midpoint. An already available virtual limit needs an actual later OPEN or proper-side wick crossing; a signal-close cannot fill retrospectively. Intrabar time is an interval known at CLOSE. Favourable entry-bar movement is proven only by CLOSE; adverse extremes win ambiguities. All admissions use pre-exit capital; unchanged fees/slippage are conservative paper friction, not exchange fill promises. Explicit legacy OPEN-only mode remains available."
     }
   ]
 }

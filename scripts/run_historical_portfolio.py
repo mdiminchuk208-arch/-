@@ -103,7 +103,7 @@ def setup_outcomes(observed,portfolio):
             reasons.append(blocks[key])
         elif key in portfolio.pending:
             execution='ENTRY_PENDING_AT_DATA_END'
-            reasons.append('DATA_END_BEFORE_ELIGIBLE_NEXT_OPEN')
+            reasons.append('DATA_END_BEFORE_ELIGIBLE_PRICE_FILL')
         else:
             execution='NO_VIRTUAL_ENTRY'
         if not passed and s.status.startswith('WAITING_'):
@@ -239,7 +239,8 @@ def main(argv=None):
         funnel['latest_status_counts'].setdefault(status,0)
     funnel['blocker_categories_unique_setups']={label:len(set().union(*(blockers[reason] for reason in reasons)))
         for label,reasons in {
-            'missing_OB':('NO_POST_BOS_OB_PATTERN','NO_ELIGIBLE_POST_BOS_OB','RAW_STRUCTURAL_LIQUIDITY_SWEEP_NOT_FOUND'),
+            'missing_OB':('NO_OB_PATTERN_IN_STRUCTURAL_IMPULSE','NO_ELIGIBLE_IMPULSE_OB',
+                          'IMPULSE_ORIGIN_REFERENCE_NOT_FOUND','RAW_STRUCTURAL_LIQUIDITY_SWEEP_NOT_FOUND'),
             'missing_HTF_POI':('FRESH_PREEXISTING_HTF_POI_NOT_FOUND',),
             'missing_three_targets':('THREE_DISTINCT_FRESH_OPPOSING_POIS_NOT_FOUND',),
             'OTE_mismatch':('OB_OUTSIDE_OTE_OR_STRUCTURAL_IMPULSE','OB_STOP_DOES_NOT_PROTECT_ENTIRE_OTE'),
@@ -261,9 +262,11 @@ def main(argv=None):
         initial_capital=args.initial_capital,policy=asdict(p.policy),automatic_level_policy=asdict(AutoLevelPolicy()),
         funnel=funnel,portfolio=portfolio_statistics(p,observed,symbols),
         pending_setups=len(p.pending),index_metadata=metadata,
-        limitations=['AUTO_LEVELS_EXPERIMENTAL_NOT_SOURCE_CERTIFIED','RANGE_BOUNDARIES_UNREVIEWED',
+        limitations=['AUTO_LEVELS_EXPLICIT_NUMERIC_NORMALIZATIONS_NOT_INDEPENDENT_RAW_SOURCE_CERTIFICATION',
             'FRACTIONAL_LINEAR_COIN_QUANTITY_NO_HISTORICAL_EXCHANGE_LOT_FILTERS',
             'FUNDING_LIQUIDATION_NOT_MODELLED','OHLC_ORDER_CONSERVATIVE',
+            'INTRABAR_LIMIT_TIME_IS_INTERVAL_KNOWN_AT_CLOSE',
+            'LIMIT_ENTRY_BAR_PROFIT_REQUIRES_POST_TOUCH_CLOSE_ADVERSE_ENVELOPE_WINS',
             'MFE_MAE_FULL_BAR_ENVELOPE_CAN_INCLUDE_POST_EXIT_EXTREMES',
             'EQUITY_CURVE_AND_DRAWDOWN_SAMPLED_AT_BAR_CLOSE',
             'OPEN_POSITIONS_MARKED_NOT_FORCED_CLOSED_AT_END','NO_PUBLIC_LIVE_OR_EXECUTION'])

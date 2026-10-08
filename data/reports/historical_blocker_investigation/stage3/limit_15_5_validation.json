@@ -1,0 +1,49 @@
+[
+  {
+    "accounting": "PASS",
+    "checks": [
+      {
+        "actual_ohlc": [
+          1.4283,
+          1.4362,
+          1.4256,
+          1.4257
+        ],
+        "direction": "SHORT",
+        "entry_interval_start": "2026-09-19T05:25:00+00:00",
+        "entry_time": "2026-09-19T05:30:00+00:00",
+        "exact_source_ohlc_touch": true,
+        "exit_reason": "STOP_FIRST_CONSERVATIVE",
+        "fills": [
+          "TP1",
+          "STOP_FIRST_CONSERVATIVE"
+        ],
+        "net_pnl": 9.862165541341218,
+        "ready_time": "2026-09-19T04:30:00+00:00",
+        "reference": 1.4353,
+        "risk_and_accounting": "PASS",
+        "signal_id": "7f9ef0e73c09c10eac6a738f",
+        "status": "CLOSED",
+        "symbol": "XRPUSDT"
+      }
+    ],
+    "closed": 1,
+    "directions": {
+      "SHORT": 1
+    },
+    "entries": 1,
+    "exit_reasons": {
+      "STOP_FIRST_CONSERVATIVE": 1
+    },
+    "fill_reasons": {
+      "STOP_FIRST_CONSERVATIVE": 1,
+      "TP1": 1
+    },
+    "htf": 15,
+    "ltf": 5,
+    "ready": 25,
+    "real_ohlc_entry_validation": "PASS",
+    "run": "/workspace/continuation_runs/source_investigation/limit_15_5",
+    "trade_entry_allowed": false
+  }
+]

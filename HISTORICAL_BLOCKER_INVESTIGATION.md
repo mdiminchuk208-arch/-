@@ -98,3 +98,53 @@ limit в POI. Внутрисвечное первое касание игнор�
 
 `trade_entry_allowed=false`. EngineMode содержит только BACKTEST/SHADOW.
 Private API, exchange credentials и real orders отсутствуют.
+
+## Этап 3: сохранение source OB в сигнале и resting limit
+
+Цена и execution zone теперь берутся из пересечения квалифицированного OB и OTE;
+прежняя середина OTE больше не подменяет автоматически выбранный POI. Это
+исправление wiring; SL защищает исходную OTE как прежде, три targets и все
+threshold/risk/Score значения сохранены.
+
+На текущей реальной истории шести независимых конфигураций: **27 974 setups,
+40 READY, 7 virtual fills, 7 CLOSED**. Это сумма setup instances разных mappings,
+не семь гарантированно независимых рыночных событий и не объединённый PnL.
+15m/5m: 25 READY/1 entry; 60m/5m: 5/1; 60m/15m: 6/1;
+240m/5m: 1/1; 240m/15m: 1/1; 240m/60m: 2/2.
+
+Реальные LONG: AVAXUSDT 60m/15m, BNBUSDT 240m/5m и 240m/15m.
+Реальные SHORT: XRPUSDT 15m/5m и 60m/5m, BTCUSDT и AVAXUSDT 240m/60m.
+Каждый fill сверяется с исходной CSV-свечой; fees, slippage, quantity, 2% risk,
+margin/cap и денежные partial fills независимо пересчитаны. Стратегия получила
+как SL, так и TP1; результаты не улучшаются принудительными закрытиями.
+
+На intrabar limit неизвестен точный момент исполнения. Сохраняется бар-интервал
+и knowledge time CLOSE. HIGH/LOW до touch не дают прибыль: на свече входа её
+подтверждает только последующий CLOSE, adverse envelope и stop имеют приоритет.
+Входы не используют same-bar profits других symbols; pre-entry OPEN не создаёт
+фиктивный unrealized gain. Отзыв OB на CLOSE не стирает допустимый ранее touch.
+
+Full **409 PASS**, lint PASS, mypy PASS (55 files). Реальные положительные LONG
+AVAX 60m/15m и SHORT XRP 60m/5m совпали с independent snapshot, prefix и future
+mutation; real pending/filled checkpoint resume совпал с complete run.
+240m/60m repeat workers=2/1 совпал по всем report bytes; BACKTEST/SHADOW trades,
+decisions, equity и outcomes побайтно совпали, все сигналы различаются только mode.
+В 302 362 полных HTF агрегациях исходной 5m истории **0 OHLC mismatch** и
+**0 misaligned bars**. Dataset содержит 40 series, 993 575 candles, все SHA сохранены.
+
+Первая точная текущая funnel 60m/5m объясняет каждый из 6 367 setups:
+5 850 имеют geometry, 4 828 OB pattern, 288 valid OB, 262 HTF/preexisting POI,
+9 fresh/supporting POI, 6 first-test/SL, 5 targets/RR/Score/READY, 1 entry.
+Три READY потеряли first-test eligibility без касания quoted price, один
+получил `ISOLATED_MARGIN_BUDGET`; поздняя HTF invalidation не подменяет эти
+первые entry outcomes. По всем остальным mappings завершается такой же полный
+read-only audit. Его hooks должны совпасть с каждым реально emitted signal.
+
+Source alignment вынесен в `SOURCE_ALIGNMENT_CURRENT.md`: сохранённые описания
+и pages отделены от numeric parameters, gap subset и software guards.
+Оригиналы PDF/DOCX отсутствуют; независимая raw-source certification не заявляется.
+Две дополнительные фактические попытки PUBLIC Bybit (API и публичный архив)
+дали proxy 403. Новая история не подменяется synthetic OHLC.
+
+Все logical reports этапа и их SHA сохранены в `stage3`; большие добавленные
+reports сжаты gzip без потерь. Первичные исходные файлы и прежние artifacts сохранены.

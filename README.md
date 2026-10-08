@@ -1,6 +1,6 @@
 # Crypto Bot / Strategy Engine
 
-Core version: **0.4.20**. Offline replay policy: **0.4.20-replay.3**.
+Package version: **0.4.20**. Offline Strategy Engine policy: **0.4.21-causal-limit.3**.
 The directory/archive name retains `phase1_4_18` for compatibility.
 
 The current project analyzes market structure, structural/range SFPs, causal
@@ -17,8 +17,8 @@ integration is added.
 - `strategy/market_analysis.py`, `structure.py`, `sfp.py`: causal closed-candle
   market structure, liquidity episodes and SFP formation/invalidation.
 - `strategy/range_engine.py`: range creation, midpoint validation, consumed
-  boundaries, retirement and range SFPs. Clarity review defaults to UNREVIEWED;
-  only explicit review PASS qualifies a range SFP.
+  boundaries, retirement and range SFPs. Automatic clarity proves ordered swing
+  boundaries, midpoint reaction and clean structure; explicit audit overrides remain.
 - `strategy/mtf_sfp.py`, `global_opportunity.py`: strictly post-SFP BOS linking,
   invalidation precedence, provenance and opportunity deduplication.
 - `strategy/trade_plan.py`, `order_block.py`: OTE and qualified reference
@@ -26,12 +26,12 @@ integration is added.
 - `strategy/auto_levels.py`: opt-in experimental closed-candle OB/HTF-gap
   selection with one stop, three opposing POIs, freshness checks and evidence.
 - `strategy/replay.py`: immutable as-of snapshots and explained signals.
-- `strategy/virtual_portfolio.py`: simulated next-open entries, risk guards,
+- `strategy/virtual_portfolio.py`: simulated resting-limit OPEN/touch entries, risk guards,
   TP1/TP2/TP3 (40/30/30) and fee/slippage-adjusted breakeven.
 - `scripts/run_strategy_replay.py`: reproducible offline CSV replay, input
   hashes, JSON signal updates, JSONL decisions and output fingerprint.
 - `strategy/historical_replay.py`: knowledge-gated index of causal structural
-  facts, checked against independent prefix snapshots. Range remains UNREVIEWED.
+  facts, checked against independent prefix snapshots, including causal Range SFP.
 - `scripts/run_historical_portfolio.py`: one $1170 portfolio over a large common
   history period, compounding, trade journal, equity curve, funnel and statistics.
 
@@ -41,7 +41,9 @@ See [STRATEGY_REPLAY.md](STRATEGY_REPLAY.md) for contracts and limitations, and
 baseline, corrections and verification evidence.
 The current automatic-level change and its measured evidence are recorded in
 [AUTO_LEVELS_WORK_REPORT.md](AUTO_LEVELS_WORK_REPORT.md).
-The current historical research is in [HISTORICAL_PORTFOLIO_REPORT.md](HISTORICAL_PORTFOLIO_REPORT.md).
+Current blocker investigation and preserved before/after evidence:
+[HISTORICAL_BLOCKER_INVESTIGATION.md](HISTORICAL_BLOCKER_INVESTIGATION.md).
+Earlier historical research remains in [HISTORICAL_PORTFOLIO_REPORT.md](HISTORICAL_PORTFOLIO_REPORT.md).
 
 ## Tests
 
@@ -109,13 +111,14 @@ marked BANKRUPT and new admissions remain blocked.
 
 Historical PHASE documents describe earlier stages. Their claims are not a
 substitute for current logs and reports under `data/reports/work_audit/`.
-## READY root-cause audit
+## Preserved initial READY root-cause audit
 
 Historical zero-READY diagnosis: see `READY_AUDIT_REPORT.md` and
 `data/reports/ready_root_cause/verified_audit/near_ready_charts.html`.
-The existing strategy engine and financial baseline are unchanged. The full
-suite now has 353 passing tests, including nine diagnostic tests. The original
-344-test historical release is preserved in its historical reports.
+That historical audit used the earlier engine with 353 passing tests, including
+nine diagnostic tests. Its original 344-test release and frozen evidence remain
+preserved. Subsequent implementation fixes and current results are recorded in
+the blocker investigation; current full suite has 409 passing tests.
 
 `RUN_READY_AUDIT.cmd` runs tests and a fresh read-only audit on Windows. It
 refuses to overwrite an existing output directory. Source CSV history and the

@@ -1,0 +1,32 @@
+[
+  {
+    "actual_ready_signal_match": "PASS",
+    "cutoff": "2026-05-12T12:45:00+00:00",
+    "direction": "LONG",
+    "future_mutation": "PASS",
+    "htf": 60,
+    "independent_snapshot": "PASS",
+    "ltf": 15,
+    "past_states": 534,
+    "prefix": "PASS",
+    "real_pending_and_filled_checkpoint_resume": "PASS",
+    "signal_id": "75d2c61990233a3077fe2349",
+    "symbol": "AVAXUSDT",
+    "trade_entry_allowed": false
+  },
+  {
+    "actual_ready_signal_match": "PASS",
+    "cutoff": "2026-04-29T08:00:00+00:00",
+    "direction": "SHORT",
+    "future_mutation": "PASS",
+    "htf": 240,
+    "independent_snapshot": "PASS",
+    "ltf": 60,
+    "past_states": 95,
+    "prefix": "PASS",
+    "real_pending_and_filled_checkpoint_resume": "PASS",
+    "signal_id": "562f49bbf510d68fc4d4c67c",
+    "symbol": "BTCUSDT",
+    "trade_entry_allowed": false
+  }
+]

@@ -48,11 +48,12 @@ positions keep their original signal levels and continue to be managed.
 
 ## Explicit BACKTEST parameters
 
-The source defines an OTE zone, not a unique optimal price. New `optimal_entry`
-is the midpoint, labelled MIDPOINT_OF_OTE_BACKTEST_PARAMETER; the core geometry's
-original single-price field stays unset. Virtual fills follow a distinct next-open
-policy: a subsequent bar must open inside the zone, with directional slippage.
-The midpoint is a reference, not a claim of optimal trading performance.
+The source defines an OTE zone, not a unique optimal price. Caller-qualified
+levels retain the explicitly labelled midpoint reference. Automatic OB signals
+retain the OB/OTE intersection as their execution zone and quote its near edge,
+LONG high / SHORT low. The source-geometry single-price field stays unset.
+An already available virtual limit fills only at a later allowed OPEN or actual
+proper-side wick crossing; directional slippage is conservative paper friction.
 
 Score measures evidence completeness: SFP 35, causal BOS 30, ready structure/OTE
 20, qualified levels 15. This experimental 0–100 score is not a profitability
@@ -69,7 +70,11 @@ policy independently implements the user's 2–5% range.
 `VirtualPortfolio.step` receives a synchronized batch of closed execution bars
 for every open-position symbol. Incoming signals are observed at that batch's
 close and queued for a subsequent candle; the signal candle cannot fill them.
-All next-open admissions occur before any same-batch close PnL is booked.
+OPEN admissions precede intrabar-touch admissions; both occur before any
+same-batch exit PnL is booked. Pre-entry OPEN prices cannot mark a new intrabar
+position into fictional profits. An interval-ambiguous fill is recorded with
+its original bar bounds and knowledge time CLOSE. Only the subsequent CLOSE
+proves favourable entry-bar movement; adverse extremes win unknown ordering.
 Symbol ordering is deterministic when portfolio risk is scarce.
 
 The historical CLI defaults to one $1170 portfolio for all ten symbols. Entry
@@ -99,8 +104,9 @@ It exposes append-only structure facts only at the close of their indexed candle
 including SFP events whose display timestamp is the open. Future invalidations,
 context arrivals, transition resolution, OB consumption and POI freshness each
 wait for their observation time. Only completed transitions and confirmed price
-references reach shared signal construction. UNREVIEWED Range emits no usable
-Range SFP, so indexing cannot enable Range entries or accept manual review inputs.
+references reach shared signal construction. The same causal automatic Range
+boundary proof is used in both index and snapshots; the index accepts no manual
+review inputs. Missing midpoint or contradictory structure cannot pass clarity.
 The event queue cannot rewind when an old touch is discovered during later
 geometry resolution. State-change journaling omits repeated unchanged WAITING
 messages; the portfolio and fills follow the same rules in both offline modes.
@@ -137,8 +143,9 @@ stop risk and available isolated margin.
 5. Funding, liquidation, exchange fills, contract minimums and price/quantity
    rounding are not modeled. Modeled stop risk does not guarantee a limit on gap
    losses. Results do not establish profitability.
-6. Range clarity remains manually reviewed. The structural cross-asset audit does
-   not close all Range normalization gates.
+6. Automatic Range clarity proves the detector's explicit price area from its
+   confirmed geometry and structure. This is a named software normalization,
+   not independent certification of discretionary chart boundaries.
 
 LIVE is rejected. Trade-entry permission stays false for snapshots, signals and
 the virtual portfolio. This work adds no private API, real order adapter or

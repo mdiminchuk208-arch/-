@@ -30,7 +30,7 @@ class GateInspector:
         self.htf_length = 0
         self.touch_cache = {}
 
-    def inspect(self, htf, ltf, htf_report, ltf_report, opportunity, *, as_of, policy):
+    def inspect(self, htf, ltf, htf_report, ltf_report, opportunity, *, as_of, policy, freshness_index=None):
         # Input is always a closed-candle prefix. Cache contains no future facts.
         if any(c.close_time>as_of or not c.is_closed for c in (*htf,*ltf)):
             raise ValueError('diagnostics require a closed causal prefix')
@@ -41,6 +41,8 @@ class GateInspector:
         hcloses = [c.close_time for c in htf]
 
         def fresh(seed, cutoff):
+            if freshness_index is not None:
+                return freshness_index.is_fresh(seed, cutoff)
             key = (seed.known_at, seed.zone.low, seed.zone.high)
             cached = self.touch_cache.get(key)
             if cached is not None and cached <= cutoff:
@@ -90,7 +92,9 @@ class GateInspector:
                               and a.open_time<s.known_at<=as_of and _overlap(a.low,a.high,s.zone)]
             fresh_support = [s for s in supporting if fresh(s,a.open_time)]
             ob_known_at = max(c.close_time, opp.ltf_bos_event_time)
-            first_touch = next((d.close_time for d in ltf[index+2:] if d.close_time>ob_known_at and d.low<=a.high and d.high>=a.low), None)
+            first_touch = (freshness_index.indices[1].first_touch(PriceZone(a.low,a.high),ob_known_at,as_of)
+                           if freshness_index is not None else
+                           next((d.close_time for d in ltf[index+2:] if d.close_time>ob_known_at and d.low<=a.high and d.high>=a.low), None))
             stop = a.low if long else a.high
             truth = dict(
                 AGGRESSION=body/(b.high-b.low)>=policy.min_body_fraction and body>=policy.min_engulf_body_ratio*first_body,

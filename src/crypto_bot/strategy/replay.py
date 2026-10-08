@@ -20,7 +20,7 @@ from crypto_bot.strategy.range_engine import RangeAnalysisReport, augment_market
 from crypto_bot.strategy.trade_plan import PriceZone, rr_ratio
 
 
-STRATEGY_VERSION = "0.4.21-range-wiring.2"
+STRATEGY_VERSION = "0.4.21-causal-limit.3"
 
 
 class EngineMode(str, Enum):
@@ -170,6 +170,7 @@ def signals_from_opportunities(opportunities, by_id, htf_report, ltf_report,
         reasons = ["HTF_SFP_FORMED", "LTF_BOS_STRICTLY_AFTER_SFP"]
         score, zone, entry, stop, targets, levels_time = 65, None, None, None, (), None
         rr_minimum = rr_maximum = rr_optimal = None
+        entry_policy = "MIDPOINT_OF_OTE_BACKTEST_PARAMETER"
         level_policy = ("AUTO_NORMALIZED_EVIDENCE_PENDING_SOURCE_REVIEW" if auto_level_policy is not None
                         else "EXPLICIT_QUALIFIED_LEVELS_ONLY")
         level_evidence, blocking_reasons = (), ()
@@ -195,6 +196,11 @@ def signals_from_opportunities(opportunities, by_id, htf_report, ltf_report,
                 if automatic.status == "READY":
                     levels = QualifiedLevels(automatic.known_at, automatic.stop_loss, automatic.targets,
                                              automatic.stop_policy, automatic.target_policy)
+                    if automatic.entry_reference is not None:
+                        if automatic.execution_zone is None:
+                            raise ValueError("automatic entry requires its OB/OTE execution zone")
+                        zone, entry = automatic.execution_zone, automatic.entry_reference
+                        entry_policy = automatic.entry_policy
                 else:
                     status = "WAITING_FOR_AUTO_LEVELS"
                     reasons.extend(blocking_reasons)
@@ -211,7 +217,10 @@ def signals_from_opportunities(opportunities, by_id, htf_report, ltf_report,
                         rr_ratio(direction=opp.expected_direction, entry_price=edge,
                                  stop_loss_price=qualified.stop_loss_price, target_price=target)
                 stop, targets = qualified.stop_loss_price, levels.targets
-                rr_minimum, rr_maximum = qualified.rr_minimum, qualified.rr_maximum
+                edge_rr = [rr_ratio(direction=opp.expected_direction, entry_price=edge,
+                                   stop_loss_price=stop, target_price=targets[0])
+                           for edge in (zone.low, zone.high)]
+                rr_minimum, rr_maximum = min(edge_rr), max(edge_rr)
                 rr_optimal = rr_ratio(direction=opp.expected_direction, entry_price=entry,
                                       stop_loss_price=stop, target_price=targets[0])
                 levels_time = levels.known_at
@@ -229,6 +238,7 @@ def signals_from_opportunities(opportunities, by_id, htf_report, ltf_report,
             entry_geometry_ready_time=opp.entry_geometry_ready_time, levels_known_at=levels_time,
             level_policy=level_policy, level_evidence=level_evidence,
             level_blocking_reasons=blocking_reasons,
+            entry_policy=entry_policy,
             rr_minimum=rr_minimum, rr_maximum=rr_maximum, rr_at_optimal_entry=rr_optimal,
         ))
     return tuple(signals)

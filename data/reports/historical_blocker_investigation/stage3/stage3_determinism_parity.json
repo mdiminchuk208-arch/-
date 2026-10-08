@@ -1,0 +1,6 @@
+{
+  "determinism": "all files byte-identical across workers 2 and 1",
+  "backtest_shadow_parity": "all trades, decisions, equity, outcomes byte-identical; all signal fields identical apart from mode",
+  "fingerprint": "c3e2640ab7615432075520f0e47fbbfd17638bdc0a5bfd0593b100b77631de15",
+  "trade_entry_allowed": false
+}
