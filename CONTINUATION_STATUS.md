@@ -9,7 +9,7 @@
 
 - Python 3.12.14; изолированное окружение `/workspace/venvs/crypto-bot`.
 - Установлены точные версии из `requirements-dev.txt` и `requirements-research.txt`.
-- Full tests последнего проверенного этапа: **438 PASS**; lint E9/F и mypy проходят.
+- Full tests последнего проверенного этапа: **439 PASS**; lint E9/F и mypy проходят.
   Последующие checkpoints записывают актуальный count и exit status отдельно.
 - Все **57** canonical source/config SHA сохранены.
 - Все **34** публичные серии проверены по stored SHA и распакованному CSV SHA:
@@ -103,8 +103,8 @@ TP allocation, timing и censored paired outcomes доступны в
 
 После точного восстановления 21 сегмента продолжить только незавершённые studies
 из [inventory](data/reports/robustness_research/research_completion_inventory.json):
-canonical Binance 15/5, 60/5, 240/5, 240/15; соответствующие execution/exit studies;
-оставшиеся OTE/midpoint variants. Все 11 зарегистрированных structural variants
+canonical Binance 15/5, 60/5, 240/5, 240/15 и соответствующие execution/exit studies.
+Все 11 зарегистрированных structural variants
 уже рассчитаны и проверяются на completeness; midpoint даёт 0 entries в VALIDATION
 против 1 у BASE. Альтернативы не выбираются по этому sample.
 Выполнить зарегистрированные VALIDATION/HOLDOUT/walk windows, costs/risk,
@@ -127,3 +127,10 @@ tests, lint/mypy, staged content scan, commit и non-force push каждого �
 complete inventory и fingerprints. Execution/exit cases повторно используются
 только после проверки source/input SHA и artifact hashes. Новые per-case manifests
 и source context сохраняются для последующего возобновления.
+
+После завершения pipeline финальная доставка выполняется командой
+`PYTHONPATH=src python scripts/finalize_research_delivery.py`. Она требует полного
+inventory и итогового проверенного этапа, повторно сверяет все 21 исходных
+fingerprints, публикует актуальную точку передачи и создаёт ZIP точного commit
+в `/workspace/artifacts` с CRC-проверкой, SHA256 и `latest_final.json`.
+Незавершённый inventory блокирует финальную доставку.

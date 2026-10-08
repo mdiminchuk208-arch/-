@@ -153,7 +153,8 @@ def write():
         'Мало закрытых сделок и post-TP1 episodes: нельзя отделить устойчивый edge от случайности, '
         'выбрать profitable symbol/параметр или менять baseline по этим данным. '
         'Практическая жизнеспособность не доказана; LIVE запрещён.\n',
-        '## TESTS / GIT\n\nКоманды и результаты '+link('stable_stage_checks.json')+'. '
+        '## TESTS / GIT\n\nАктуальные tests/lint/mypy и protected SHA — '+link('continuation_stage_checks.json')+
+        '; полный test log — '+link('continuation_full_tests.log')+'. '
         'Frozen rollback tag `research-baseline-2026-10-08` → starting canonical commit. '
         'Repository `mdiminchuk208-arch/-`, branch `main`; commits опубликованы обычным push без force. '
         'Итоговый commit и content-equivalence ZIP receipt сообщаются после публикации, чтобы не создавать self-referential commit hash.\n']
@@ -229,7 +230,7 @@ def write_exit(timestamp):
         'и подтверждением costs/causality. До этого baseline40/30/30 остаётся неизменным.\n',
         '## Safety and publication\n\ntrade_entry_allowed=false; LIVE/private API/credentials/real orders отключены. '
         'No entry rule changes; no optimization or candidate selection. Canonical rollback остаётся доступен. '
-        'Полные tests/lint/mypy/guards — '+link('stable_stage_checks.json')+'. '
+        'Актуальные tests/lint/mypy/guards — '+link('continuation_stage_checks.json')+'. '
         'Reports/scripts/diagnostics/history сохраняются в GitHub main; ZIP content correspondence проверяется после final push.\n']
     (ROOT/'EXIT_MANAGEMENT_RESEARCH_REPORT.md').write_text('\n'.join(text))
 
