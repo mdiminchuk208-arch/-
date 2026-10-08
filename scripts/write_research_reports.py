@@ -97,6 +97,7 @@ def write():
     text += ['Полные costs, gross edge, payoff, drawdown duration, losing streak, union exposure, holding time, monthly frequency, '
              'unrealized/realized account PnL — в CSV. Gross profit/loss в trade_statistics означает положительные/отрицательные **net** исходы; '
              'gross_edge_before_fees выделен отдельно. Fees as % gross edge не определён при неположительном gross edge. '
+             'Gross PnL использует уже проскользнувшие fill prices; slippage_total показан отдельно и не вычитается повторно из net PnL. '
              'Exposure от начала entry bar является upper bound, holding от известного entry close — lower bound для intrabar fills. '
              'В конце окна/gap open trades цензурируются, не закрываются искусственно.\n',
         '## LONG/SHORT / SYMBOL / REGIME\n\n'+link('performance_groups.csv')+' содержит каждый symbol, оба направления и causal entry regime/volatility buckets, '
@@ -121,6 +122,8 @@ def write():
         'Structural one-at-a-time: только фиксированный Binance60/5 VALIDATION. Costs/risk/reentry: все 9 доступных cohort/mappings, '
         'VALIDATION/HOLDOUT и walk windows. Base fee .0006/slippage .0002, stress1.5x/2x. '
         'Initial READY Score=100; 75→80 — reentry-only, не новый фильтр source setup. '
+        'Costs/risk могут изменить quantity, margin eligibility и следующие admissions; сравнивается полный portfolio, '
+        'а не искусственно одинаковый closed-trade список. '
         'Свежесть BODY/exclusive wick относится только к POI, original OB touch semantics неизменны. '
         'Все результаты '+link('registered_sensitivity_metrics.csv')+'. Никакого best-value selection.\n']
     structural=[r for r in read_csv('registered_sensitivity_metrics.csv') if r['category']=='structural_sensitivity']

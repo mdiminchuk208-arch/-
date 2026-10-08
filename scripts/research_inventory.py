@@ -8,6 +8,21 @@ import json
 from run_historical_portfolio import canonical
 
 
+def reusable_case(folder,context):
+    """Resume only complete artifacts with identical frozen inputs/parameters."""
+    required=('summary.json','artifact_hashes.json','fingerprint.sha256')
+    if not all((folder/name).exists() for name in required):
+        return None
+    source=json.loads((folder/'summary.json').read_text())
+    if any(canonical(source.get(key))!=canonical(value) for key,value in context.items()):
+        raise ValueError('Existing case has different inputs or parameters: '+str(folder))
+    hashes=json.loads((folder/'artifact_hashes.json').read_text())
+    assert 'summary.json' in hashes,folder
+    assert all(sha256((folder/name).read_bytes()).hexdigest()==digest for name,digest in hashes.items()),folder
+    assert (folder/'fingerprint.sha256').read_text().strip()==sha256(canonical(hashes).encode()).hexdigest(),folder
+    return source
+
+
 def registered_windows(split):
     windows=list(split['periods'])
     begin=datetime.fromisoformat(windows[0]['start'])+timedelta(days=90)

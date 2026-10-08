@@ -22,6 +22,7 @@ from research_support import check_baseline, performance, read_compressed, regim
 from run_historical_portfolio import canonical, simulate
 from research_variants import STRUCTURAL_VARIANTS, isolated_variant
 from research_structure_cache import structure_cache, validated_prefix_reuse
+from research_inventory import reusable_case
 
 
 def index_job(job):
@@ -117,7 +118,7 @@ def ready_audit(observed, portfolio, daily):
 
 
 def study(cohort,root,split,htf,ltf,output,mode='BACKTEST',cost_factor=1.0,risk=.02,workers=2,windows=None,
-          variant='BASE',score=75):
+          variant='BASE',score=75,resume_existing=False):
     repo = Path(__file__).resolve().parents[1]
     lock = check_baseline(repo)
     symbols = split['symbols']
@@ -180,6 +181,18 @@ def study(cohort,root,split,htf,ltf,output,mode='BACKTEST',cost_factor=1.0,risk=
             actual_start=max(cs[0].open_time for cs in execution.values())
             actual_end=min(cs[-1].close_time for cs in execution.values())
             execution={s:[c for c in cs if actual_start<=c.open_time and c.close_time<=actual_end] for s,cs in execution.items()}
+            if resume_existing:
+                folder=output/label
+                context=dict(cohort=cohort,htf=htf,ltf=ltf,window=window,segment=number,start=actual_start,end=actual_end,
+                    analysis_start=prefix,baseline_commit=lock['baseline_commit'],input_hashes=input_hashes,
+                    mode=mode,policy=asdict(policy),variant=variant)
+                previous=reusable_case(folder,context)
+                if previous is not None:
+                    results.append(dict(window=window['name'],segment=number,status='REPLAY_COMPLETE',path=str(folder),
+                        start=actual_start,end=actual_end,performance=previous['performance']))
+                    (output/'results.json').write_text(canonical(results)+'\n')
+                    print(label,'verified original artifacts reused',flush=True)
+                    continue
             updates=[]
             print(cohort,htf,ltf,label,actual_start.isoformat(),actual_end.isoformat(),'indexing',flush=True)
             cache_key=sha256(canonical(dict(input_hashes=input_hashes,prefix=prefix,end=end,htf=htf,ltf=ltf,
@@ -247,6 +260,7 @@ def main():
     parser.add_argument('--windows',nargs='+',help='Explicit registered windows; omitted means every window')
     parser.add_argument('--variant',choices=list(STRUCTURAL_VARIANTS),default='BASE')
     parser.add_argument('--reentry-score',type=int,choices=[75,80],default=75)
+    parser.add_argument('--resume-existing',action='store_true',help='Verify and retain completed identical-input cases without replaying them.')
     args=parser.parse_args()
     repo=Path(__file__).resolve().parents[1]
     split=json.loads((repo/f'data/reports/robustness_research/{args.cohort}_temporal_split.json').read_text())
@@ -255,7 +269,7 @@ def main():
     if args.variant!='BASE' and (args.cohort!='binance' or (args.htf,args.ltf)!=(60,5) or args.windows!=['VALIDATION']):
         parser.error('Structural variants are registered only for Binance 60/5 VALIDATION')
     study(args.cohort,repo/f'data/history/public_research/{args.cohort}_mirror',split,
-          args.htf,args.ltf,args.output,args.mode,args.cost_factor,args.risk,args.workers,args.windows,args.variant,args.reentry_score)
+          args.htf,args.ltf,args.output,args.mode,args.cost_factor,args.risk,args.workers,args.windows,args.variant,args.reentry_score,args.resume_existing)
 
 
 if __name__=='__main__':
