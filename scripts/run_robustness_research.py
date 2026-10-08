@@ -4,8 +4,9 @@ from __future__ import annotations
 import argparse
 from bisect import bisect_left
 from collections import Counter, defaultdict
+import csv
 from dataclasses import asdict
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from concurrent.futures import ProcessPoolExecutor
 import gzip
 from hashlib import sha256
@@ -20,12 +21,15 @@ from crypto_bot.data.models import MarketCandle
 from research_support import check_baseline, performance, read_compressed, regime
 from run_historical_portfolio import canonical, simulate
 from research_variants import STRUCTURAL_VARIANTS, isolated_variant
+from research_structure_cache import structure_cache
 
 
 def index_job(job):
-    sample,s,htf,ltf,mode,variant=job
+    sample,s,htf,ltf,mode,variant,source_hashes,baseline=job
     audit=[]
-    with isolated_variant(variant,audit) as policy:
+    cache=Path(__file__).resolve().parents[1]/'.research_cache'
+    print('Indexing asset',s,htf,ltf,variant,len(sample[ltf]),'LTF candles',flush=True)
+    with structure_cache(cache,source_hashes,baseline), isolated_variant(variant,audit) as policy:
         signals,metadata=indexed_signal_updates(sample,symbol=s,htf_minutes=htf,ltf_minutes=ltf,
                                                mode=mode,auto_level_policy=policy)
     return signals,metadata,[dict(symbol=s,**row) for row in audit]
@@ -121,7 +125,15 @@ def study(cohort,root,split,htf,ltf,output,mode='BACKTEST',cost_factor=1.0,risk=
     input_hashes={str(p.relative_to(repo)):sha256(p.read_bytes()).hexdigest()
                   for s in symbols for tf in sorted({base_tf,htf,ltf})
                   for p in [root/s/f'{tf}.csv.gz']}
-    data = {symbol:{tf:read_compressed(root/symbol/f'{tf}.csv.gz',tf) for tf in sorted({base_tf,htf,ltf})} for symbol in symbols}
+    first_opens=[]
+    for s in symbols:
+        with gzip.open(root/s/f'{base_tf}.csv.gz','rt',newline='') as handle:
+            row=next(csv.DictReader(handle))
+            first_opens.append(datetime.fromtimestamp(int(row['open_time_ms'])/1000,tz=timezone.utc))
+    # Earlier solitary-symbol years remain stored but cannot enter a fixed
+    # basket before its latest member exists. Retain its EXACT common coverage.
+    read_begin=min(max(first_opens),datetime.fromisoformat(split['periods'][0]['start'])-timedelta(days=90))
+    data = {symbol:{tf:read_compressed(root/symbol/f'{tf}.csv.gz',tf,begin=read_begin) for tf in sorted({base_tf,htf,ltf})} for symbol in symbols}
     segments,gaps = common_segments({s:data[s][base_tf] for s in symbols})
     daily = {}
     for s in symbols:
@@ -171,7 +183,7 @@ def study(cohort,root,split,htf,ltf,output,mode='BACKTEST',cost_factor=1.0,risk=
             updates=[]
             print(cohort,htf,ltf,label,actual_start.isoformat(),actual_end.isoformat(),'indexing',flush=True)
             cache_key=sha256(canonical(dict(input_hashes=input_hashes,prefix=prefix,end=end,htf=htf,ltf=ltf,
-                            baseline=lock['code_hashes'],mode=mode,variant=variant,index_adapter_version=1)).encode()).hexdigest()
+                            baseline=lock['code_hashes'],mode=mode,variant=variant,index_adapter_version=2)).encode()).hexdigest()
             cache=repo/'.research_cache'/(cache_key+'.pickle.gz')
             # Only this adapter's own trusted local, hash-bound objects are read;
             # no pickle is downloaded from a mirror or published as source data.
@@ -179,7 +191,9 @@ def study(cohort,root,split,htf,ltf,output,mode='BACKTEST',cost_factor=1.0,risk=
                 with gzip.open(cache,'rb') as handle:
                     indexed=pickle.load(handle)
             else:
-                jobs=[(sample[s],s,htf,ltf,mode,variant) for s in symbols]
+                jobs=[(sample[s],s,htf,ltf,mode,variant,
+                       {tf:input_hashes[str((root/s/f'{tf}.csv.gz').relative_to(repo))] for tf in (htf,ltf)},
+                       lock['baseline_commit']) for s in symbols]
                 with ProcessPoolExecutor(max_workers=workers) as pool:
                     indexed=list(pool.map(index_job,jobs))
                 cache.parent.mkdir(exist_ok=True)

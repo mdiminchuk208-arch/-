@@ -14,11 +14,27 @@ from run_historical_portfolio import canonical
 from crypto_bot.strategy.replay import StrategySignal
 from dataclasses import asdict
 import json
+from tempfile import TemporaryDirectory
+from research_structure_cache import structure_cache
+from test_replay import histories
 
 START = datetime(2020, 1, 1, tzinfo=timezone.utc)
 
 
 class ResearchVariantTests(unittest.TestCase):
+    def test_cached_structural_reports_equal_uncached_frozen_outputs(self):
+        data=histories()
+        kwargs=dict(symbol='TEST',htf_minutes=5,ltf_minutes=1,auto_level_policy=auto_levels.AutoLevelPolicy())
+        expected=historical_replay.indexed_signal_updates(data,**kwargs)
+        with TemporaryDirectory() as directory:
+            with structure_cache(Path(directory),{5:'fixture-5',1:'fixture-1'},'frozen-test'):
+                first=historical_replay.indexed_signal_updates(data,**kwargs)
+            with structure_cache(Path(directory),{5:'fixture-5',1:'fixture-1'},'frozen-test'):
+                second=historical_replay.indexed_signal_updates(data,**kwargs)
+            self.assertEqual(first,expected)
+            self.assertEqual(second,expected)
+            self.assertEqual(len(list(Path(directory).glob('*.structural.pickle.gz'))),5)
+
     def test_saved_frozen_signal_restores_exact_geometry_and_knowledge_times(self):
         from crypto_bot.common.models import Direction
         signal=StrategySignal('id','BTCUSDT',60,5,Direction.LONG,START,START,START,
@@ -47,6 +63,23 @@ class ResearchVariantTests(unittest.TestCase):
         after=(trade_plan.OTE_SHALLOW,trade_plan.OTE_DEEP,auto_levels._TouchIndex.first_touch,
                historical_replay.derive_automatic_levels)
         self.assertEqual(before,after)
+
+    def test_structure_cache_does_not_reuse_attached_geometry_across_ote_variants(self):
+        data=histories()
+        kwargs=dict(symbol='TEST',htf_minutes=5,ltf_minutes=1)
+        with TemporaryDirectory() as directory:
+            all_outputs=[]
+            for variant in ('BASE','OTE_SHALLOW_0710'):
+                with isolated_variant(variant) as policy:
+                    expected=historical_replay.indexed_signal_updates(data,auto_level_policy=policy,**kwargs)
+                with structure_cache(Path(directory),{5:'fixture-5',1:'fixture-1'},'frozen-test'):
+                    with isolated_variant(variant) as policy:
+                        cached=historical_replay.indexed_signal_updates(data,auto_level_policy=policy,**kwargs)
+                self.assertEqual(cached,expected)
+                all_outputs.append(expected)
+            # Two inputs each for market and Range, plus two OTE-bound MTF links.
+            self.assertEqual(len(list(Path(directory).glob('*.structural.pickle.gz'))),6)
+            self.assertNotEqual(all_outputs[0],all_outputs[1])
 
 
 if __name__ == '__main__':

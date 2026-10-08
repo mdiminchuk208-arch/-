@@ -75,13 +75,16 @@ def isolated_variant(name, target_audit=None):
                     for seed in seeds:
                         if not any(auto_levels._overlap(seed.zone.low,seed.zone.high,s.zone) for s in selected):
                             selected.append(seed)
-                    target_audit.append(dict(bos_time=opp.ltf_bos_event_time,direction=direction.name,
+                    target_audit.append(dict(bos_time=opp.ltf_bos_event_time,bos_level_price=opp.ltf_bos_level_price,direction=direction.name,
                         as_of=kwargs['as_of'],qualified_ob=True,distinct_fresh_opposing_pois=len(selected),
                         source_result=result.status,qualification_only=True))
                 if variant.get('midpoint') and result.status=='READY':
                     z=result.execution_zone
-                    result=replace(result,entry_reference=(z.low+z.high)/2,
-                                   entry_policy='RESEARCH_ONLY_OB_OTE_INTERIOR_MIDPOINT')
+                    midpoint=(z.low+z.high)/2
+                    policy='RESEARCH_ONLY_OB_OTE_INTERIOR_MIDPOINT'
+                    evidence=tuple(replace(e,prices=(z.low,z.high,midpoint),policy=policy)
+                                   if e.kind=='ENTRY_REFERENCE' else e for e in result.evidence)
+                    result=replace(result,entry_reference=midpoint,entry_policy=policy,evidence=evidence)
                 return result
             historical_replay.derive_automatic_levels=derive
         yield AutoLevelPolicy(**{k:variant[k] for k in ('min_body_fraction','min_engulf_body_ratio') if k in variant})

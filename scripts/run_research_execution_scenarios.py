@@ -23,7 +23,7 @@ from run_robustness_research import slice_bars, write_rows
 def restore_signal(row):
     row=dict(row)
     row.pop('trade_entry_allowed',None)
-    row['direction']=Direction(row['direction'])
+    row['direction']=Direction(row['direction'].lower())
     row['mode']=EngineMode(row['mode'])
     row['analysis_mode']=StructureAnalysisMode(row['analysis_mode'])
     for name in ('event_time','sfp_time','bos_time','entry_geometry_ready_time','levels_known_at'):

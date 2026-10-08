@@ -27,13 +27,21 @@ def check_baseline(repo):
     return lock
 
 
-def read_compressed(path, minutes):
+def read_compressed(path, minutes, *, begin=None, end=None):
+    begin_ms=int(begin.timestamp()*1000) if begin is not None else None
+    end_ms=int(end.timestamp()*1000) if end is not None else None
+    result=[]
     with gzip.open(path, 'rt', newline='') as handle:
-        return [MarketCandle(row['exchange'], row['symbol'], row['interval'], int(row['open_time_ms']),
+        for row in csv.DictReader(handle):
+            stamp=int(row['open_time_ms'])
+            if (begin_ms is not None and stamp<begin_ms) or (end_ms is not None and stamp+minutes*60000>end_ms):
+                continue
+            result.append(MarketCandle(row['exchange'], row['symbol'], row['interval'], stamp,
             *[float(row[k]) for k in ('open', 'high', 'low', 'close')],
             float(row['volume_base']) if row['volume_base'] else None,
             float(row['turnover_quote']) if row['turnover_quote'] else None,
-            row['is_closed'] == '1').to_strategy_candle(minutes * 60000) for row in csv.DictReader(handle)]
+            row['is_closed'] == '1').to_strategy_candle(minutes * 60000))
+    return result
 
 
 def regime(daily, when):

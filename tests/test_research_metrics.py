@@ -1,6 +1,9 @@
 from datetime import datetime, timedelta, timezone
 from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
+import csv
+import gzip
+from tempfile import TemporaryDirectory
 import unittest
 
 from crypto_bot.common.models import Candle
@@ -14,6 +17,21 @@ START = datetime(2020, 1, 1, tzinfo=timezone.utc)
 
 
 class ResearchMetricsTests(unittest.TestCase):
+    def test_compressed_reader_keeps_complete_bars_in_exact_interval(self):
+        with TemporaryDirectory() as directory:
+            path=Path(directory)/'bars.csv.gz'
+            with gzip.open(path,'wt',newline='') as handle:
+                writer=csv.writer(handle)
+                writer.writerow(['exchange','symbol','interval','open_time_ms','open','high','low','close','volume_base','turnover_quote','is_closed'])
+                for i in range(6):
+                    writer.writerow(['BYBIT','TEST','5',int((START+timedelta(minutes=5*i)).timestamp()*1000),100,101,99,100,'','','1'])
+            full=module.read_compressed(path,5)
+            begin=START+timedelta(minutes=5);end=START+timedelta(minutes=21)
+            expected=[c for c in full if c.open_time>=begin and c.close_time<=end]
+            self.assertEqual(module.read_compressed(path,5,begin=begin,end=end),expected)
+            self.assertEqual(len(expected),3)
+            self.assertEqual(expected[-1].close_time,START+timedelta(minutes=20))
+
     def test_regime_cannot_read_future_or_incomplete_day(self):
         days = [Candle(START+timedelta(days=i), START+timedelta(days=i+1),
                        100+i, 102+i, 99+i, 101+i, True) for i in range(50)]
