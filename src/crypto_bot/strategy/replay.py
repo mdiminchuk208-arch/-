@@ -20,7 +20,7 @@ from crypto_bot.strategy.range_engine import RangeAnalysisReport, augment_market
 from crypto_bot.strategy.trade_plan import PriceZone, rr_ratio
 
 
-STRATEGY_VERSION = "0.4.20-replay.3"
+STRATEGY_VERSION = "0.4.20-replay.4"
 
 
 class EngineMode(str, Enum):
@@ -74,6 +74,9 @@ class StrategySignal:
     level_policy: str = "EXPLICIT_QUALIFIED_LEVELS_ONLY"
     level_evidence: tuple[LevelEvidence, ...] = ()
     level_blocking_reasons: tuple[str, ...] = ()
+    rr_minimum: float | None = None
+    rr_maximum: float | None = None
+    rr_at_optimal_entry: float | None = None
     trade_entry_allowed: bool = field(default=False, init=False)
 
 
@@ -140,11 +143,10 @@ def evaluate_snapshot(
         counts.append((minutes, len(candles)))
         prefixes[minutes] = candles
     ltf = prefixes[ltf_minutes]
-    coverage = {}
-    if ltf:
-        coverage = dict(ltf_observation_start=ltf[0].open_time, ltf_observation_end=ltf[-1].close_time)
     mtf = link_sfp_formations_to_ltf_bos(reports[htf_minutes], reports[ltf_minutes],
-                                      htf_minutes=htf_minutes, ltf_minutes=ltf_minutes, **coverage)
+        htf_minutes=htf_minutes, ltf_minutes=ltf_minutes,
+        ltf_observation_start=ltf[0].open_time if ltf else None,
+        ltf_observation_end=ltf[-1].close_time if ltf else None)
     by_id = {c.candidate_id: c for c in mtf.candidates}
     signals = signals_from_opportunities(
         mtf.opportunities, by_id, reports[htf_minutes], reports[ltf_minutes],
@@ -167,6 +169,7 @@ def signals_from_opportunities(opportunities, by_id, htf_report, ltf_report,
         invalid = all(c.sfp_invalidation_event_time is not None and c.sfp_invalidation_event_time <= as_of for c in contexts)
         reasons = ["HTF_SFP_FORMED", "LTF_BOS_STRICTLY_AFTER_SFP"]
         score, zone, entry, stop, targets, levels_time = 65, None, None, None, (), None
+        rr_minimum = rr_maximum = rr_optimal = None
         level_policy = ("AUTO_NORMALIZED_EVIDENCE_PENDING_SOURCE_REVIEW" if auto_level_policy is not None
                         else "EXPLICIT_QUALIFIED_LEVELS_ONLY")
         level_evidence, blocking_reasons = (), ()
@@ -208,6 +211,9 @@ def signals_from_opportunities(opportunities, by_id, htf_report, ltf_report,
                         rr_ratio(direction=opp.expected_direction, entry_price=edge,
                                  stop_loss_price=qualified.stop_loss_price, target_price=target)
                 stop, targets = qualified.stop_loss_price, levels.targets
+                rr_minimum, rr_maximum = qualified.rr_minimum, qualified.rr_maximum
+                rr_optimal = rr_ratio(direction=opp.expected_direction, entry_price=entry,
+                                      stop_loss_price=stop, target_price=targets[0])
                 levels_time = levels.known_at
                 score += 15
                 reasons.extend((levels.stop_policy, levels.target_policy))
@@ -223,5 +229,6 @@ def signals_from_opportunities(opportunities, by_id, htf_report, ltf_report,
             entry_geometry_ready_time=opp.entry_geometry_ready_time, levels_known_at=levels_time,
             level_policy=level_policy, level_evidence=level_evidence,
             level_blocking_reasons=blocking_reasons,
+            rr_minimum=rr_minimum, rr_maximum=rr_maximum, rr_at_optimal_entry=rr_optimal,
         ))
     return tuple(signals)

@@ -271,6 +271,9 @@ def derive_structural_impulse_context(
         raise TradePlanGeometryError("exact BOS identity matched multiple structure transitions")
 
     transition = matches[0]
+    if (transition.selected_anchor_level_id is None or transition.selected_correction_level_id is None
+            or transition.broken_extreme_price is None or transition.resolved_time is None):
+        return None
     levels_by_id = {level.level_id: level for level in ltf_report.levels}
     anchor = levels_by_id.get(transition.selected_anchor_level_id)
     correction = levels_by_id.get(transition.selected_correction_level_id)

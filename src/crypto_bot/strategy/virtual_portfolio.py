@@ -7,7 +7,7 @@ Fees and slippage apply to every partial exit. Funding/liquidation are not model
 from __future__ import annotations
 
 from dataclasses import dataclass, field, asdict
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from math import isfinite
 from typing import Mapping, Sequence
 
@@ -104,7 +104,7 @@ class VirtualPortfolio:
         self.terminal_ids: set[str] = set()
         self._journal: list[Decision] = []
         self._last_close: datetime | None = None
-        self._bar_duration = None
+        self._bar_duration: timedelta | None = None
         self._day = None
         self._day_start_equity = equity
         self._day_start_balance = equity
@@ -400,7 +400,7 @@ class VirtualPortfolio:
             raise ValueError("every open position requires a bar in each batch")
         for signal in signals:
             self._validate_signal(signal, first.close_time, bars, self.mode)
-        unique = {}
+        unique: dict[str, StrategySignal] = {}
         for signal in signals:
             if signal.signal_id in unique and unique[signal.signal_id] != signal:
                 raise ValueError('conflicting signal states in one execution batch')

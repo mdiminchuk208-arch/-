@@ -245,11 +245,11 @@ def main() -> int:
             "timeframes": tf_summary,
             "mtf": pair_summary,
         }
-        for tf, row in tf_summary.items():
+        for tf_label, row in tf_summary.items():
             matrix_rows.append(
                 {
                     "symbol": symbol,
-                    "timeframe": tf,
+                    "timeframe": tf_label,
                     "bos_count_evaluation": row["bos_count_evaluation"],
                     "structural_sfp_count_evaluation": row["structural_sfp_count_evaluation"],
                     "longest_broken_run": row["longest_broken_run"],

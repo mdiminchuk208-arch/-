@@ -406,6 +406,7 @@ def _scan_range_boundary_sfps(
             continue
 
         item = original
+        validation_time = original.midpoint_reaction_time
         # Pre-validation boundary raids were already observed causally by _validate_candidates.
         # Do not resurrect consumed external liquidity when the range becomes validated.
         upper_state = item.upper_boundary_state
@@ -419,7 +420,7 @@ def _scan_range_boundary_sfps(
         for i, candle in enumerate(candles):
             # Validation is only known at its event timestamp. Candles that opened before that
             # timestamp cannot be retroactively used as post-validation boundary sweeps.
-            if candle.open_time < item.midpoint_reaction_time:
+            if candle.open_time < validation_time:
                 continue
 
             # At the new candle OPEN, resolve only the prior sweep using this candle's open.

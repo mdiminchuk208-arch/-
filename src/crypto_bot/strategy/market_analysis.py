@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass, replace
 from datetime import datetime
 from enum import Enum
-from typing import Sequence
+from typing import Sequence, TypedDict
 
 from crypto_bot.common.models import Candle
 from crypto_bot.strategy.sfp import detect_sfp
@@ -20,6 +20,22 @@ class TrendState(str, Enum):
     BULLISH = "BULLISH"
     BEARISH = "BEARISH"
     BROKEN = "BROKEN"
+
+
+class _ActiveTransition(TypedDict):
+    transition_id: int
+    bos_kind: str
+    bos_index: int
+    bos_time: datetime
+    from_trend: TrendState
+    expected_trend: TrendState
+    broken_protected_price: float
+    broken_extreme_price: float | None
+    post_bos_high_level_ids: list[int]
+    post_bos_low_level_ids: list[int]
+    selected_anchor_level_id: int | None
+    selected_correction_level_id: int | None
+    rejection_reasons: list[str]
 
 
 @dataclass(frozen=True)
@@ -502,6 +518,9 @@ def analyze_market(candles: Sequence[Candle], *, timeframe_minutes: int | None =
     # liquidity levels that can still be swept.  It is an insertion-ordered dict,
     # so iterating it preserves the exact event/member ordering of the full list.
     levels_by_id: dict[int, StructuralLevel] = {}
+    def get_level(level_id: int | None) -> StructuralLevel | None:
+        return levels_by_id.get(level_id) if level_id is not None else None
+
     level_indices: dict[int, int] = {}
     active_levels: dict[int, StructuralLevel] = {}
 
@@ -559,7 +578,7 @@ def analyze_market(candles: Sequence[Candle], *, timeframe_minutes: int | None =
     # resolved (or why it remained unresolved at end-of-data).
     transition_diagnostics: list[StructureTransitionDiagnostic] = []
     next_transition_id = 1
-    active_transition: dict[str, object] | None = None
+    active_transition: _ActiveTransition | None = None
 
     def _start_transition(
         *,
@@ -606,8 +625,8 @@ def analyze_market(candles: Sequence[Candle], *, timeframe_minutes: int | None =
         # rejection diagnostic, but it is not a post-BOS structural point.
         if level.swing_index < bos_index or level.confirmed_index <= bos_index:
             return
-        key = "post_bos_high_level_ids" if level.side == "high" else "post_bos_low_level_ids"
-        values = active_transition[key]
+        values = (active_transition["post_bos_high_level_ids"] if level.side == "high"
+                  else active_transition["post_bos_low_level_ids"])
         assert isinstance(values, list)
         if level.level_id not in values:
             values.append(level.level_id)
@@ -701,8 +720,8 @@ def analyze_market(candles: Sequence[Candle], *, timeframe_minutes: int | None =
                 # liquidity is not resolved into two opposite SFP formations automatically.
                 # The source materials do not define this dual-sided edge case, so Phase 1.4.5
                 # preserves the raw sweeps but conservatively blocks directional SFP formation.
-                member_ids = set(episode.member_level_ids)
-                for level_id in member_ids:
+                resolved_member_ids = set(episode.member_level_ids)
+                for level_id in resolved_member_ids:
                     level = levels_by_id[level_id]
                     _store_level(replace(level, liquidity_state=LiquidityState.CONSUMED, liquidity_resolved_index=i))
                 sweep_episodes[ep_index] = replace(episode, resolved_index=i)
@@ -718,8 +737,8 @@ def analyze_market(candles: Sequence[Candle], *, timeframe_minutes: int | None =
             # Once the next candle is known, the swept liquidity is no longer active regardless
             # of whether the SFP pattern completed. This is a lifecycle normalization, not a
             # new trading rule.
-            member_ids = set(episode.member_level_ids)
-            for level_id in member_ids:
+            resolved_member_ids = set(episode.member_level_ids)
+            for level_id in resolved_member_ids:
                 level = levels_by_id[level_id]
                 _store_level(replace(level, liquidity_state=LiquidityState.CONSUMED, liquidity_resolved_index=i))
 
@@ -781,12 +800,12 @@ def analyze_market(candles: Sequence[Candle], *, timeframe_minutes: int | None =
         # does not depend on future intrabar data.
         invalidated_episode_ids: list[int] = []
         for episode_id, sfp_event in active_sfps.items():
-            extreme = sfp_event.sfp_pattern_extreme_price
-            if extreme is None or candle.close_time <= sfp_event.event_time:
+            pattern_extreme = sfp_event.sfp_pattern_extreme_price
+            if pattern_extreme is None or candle.close_time <= sfp_event.event_time:
                 continue
             if (
                 sfp_event.kind == MarketEventKind.BULLISH_SFP_FORMATION_CONFIRMED
-                and candle.close < extreme
+                and candle.close < pattern_extreme
             ):
                 events.append(
                     MarketEvent(
@@ -795,10 +814,10 @@ def analyze_market(candles: Sequence[Candle], *, timeframe_minutes: int | None =
                         event_time=candle.close_time,
                         price=candle.close,
                         level_id=sfp_event.level_id,
-                        level_price=extreme,
+                        level_price=pattern_extreme,
                         episode_id=episode_id,
                         member_level_ids=sfp_event.member_level_ids,
-                        sfp_pattern_extreme_price=extreme,
+                        sfp_pattern_extreme_price=pattern_extreme,
                         liquidity_origin=sfp_event.liquidity_origin,
                         range_id=sfp_event.range_id,
                         recovery_transition_ids=sfp_event.recovery_transition_ids,
@@ -811,7 +830,7 @@ def analyze_market(candles: Sequence[Candle], *, timeframe_minutes: int | None =
                 invalidated_episode_ids.append(episode_id)
             elif (
                 sfp_event.kind == MarketEventKind.BEARISH_SFP_FORMATION_CONFIRMED
-                and candle.close > extreme
+                and candle.close > pattern_extreme
             ):
                 events.append(
                     MarketEvent(
@@ -820,10 +839,10 @@ def analyze_market(candles: Sequence[Candle], *, timeframe_minutes: int | None =
                         event_time=candle.close_time,
                         price=candle.close,
                         level_id=sfp_event.level_id,
-                        level_price=extreme,
+                        level_price=pattern_extreme,
                         episode_id=episode_id,
                         member_level_ids=sfp_event.member_level_ids,
-                        sfp_pattern_extreme_price=extreme,
+                        sfp_pattern_extreme_price=pattern_extreme,
                         liquidity_origin=sfp_event.liquidity_origin,
                         range_id=sfp_event.range_id,
                         recovery_transition_ids=sfp_event.recovery_transition_ids,
@@ -957,9 +976,9 @@ def analyze_market(candles: Sequence[Candle], *, timeframe_minutes: int | None =
         # Phase 1.4.8 freezes the broken structure's actual key HH/LL and protected HL/LH.
         # This avoids using an arbitrary latest swing as the post-BOS comparison reference.
         if protected_level_id is not None and trend in {TrendState.BULLISH, TrendState.BEARISH}:
-            protected = levels_by_id.get(protected_level_id)
+            protected = get_level(protected_level_id)
             if protected is not None:
-                extreme = levels_by_id.get(trend_extreme_level_id)
+                extreme = get_level(trend_extreme_level_id)
                 if trend == TrendState.BULLISH and candle.close < protected.price:
                     _store_level(replace(protected, bos_broken_index=i))
                     events.append(
@@ -1033,8 +1052,8 @@ def analyze_market(candles: Sequence[Candle], *, timeframe_minutes: int | None =
         # new structure to exist. It is checked before confirming a new swing on this
         # candle so the close cannot use a swing that is only confirmed by the same close.
         if pending_conf_trend is not None:
-            anchor = levels_by_id.get(pending_conf_anchor_level_id)
-            correction = levels_by_id.get(pending_conf_correction_level_id)
+            anchor = get_level(pending_conf_anchor_level_id)
+            correction = get_level(pending_conf_correction_level_id)
             if anchor is not None and correction is not None and i > correction.confirmed_index:
                 if pending_conf_trend == TrendState.BEARISH and candle.close < anchor.price:
                     events.append(
@@ -1164,13 +1183,13 @@ def analyze_market(candles: Sequence[Candle], *, timeframe_minutes: int | None =
                     elif new_low.price >= broken_structure_protected_price:
                         _transition_reject("BEARISH_ANCHOR_NOT_LL_VS_BROKEN_HL")
                     elif transition_correction_level_id is None:
-                        current_anchor = levels_by_id.get(transition_anchor_level_id)
+                        current_anchor = get_level(transition_anchor_level_id)
                         if current_anchor is None or new_low.price < current_anchor.price:
                             transition_anchor_level_id = new_low.level_id
                             if active_transition is not None:
                                 active_transition["selected_anchor_level_id"] = new_low.level_id
 
-                anchor = levels_by_id.get(transition_anchor_level_id)
+                anchor = get_level(transition_anchor_level_id)
                 if new_high is not None and anchor is not None:
                     if new_high.swing_index <= anchor.swing_index:
                         _transition_reject("BEARISH_CORRECTION_NOT_AFTER_LL_ANCHOR")
@@ -1227,13 +1246,13 @@ def analyze_market(candles: Sequence[Candle], *, timeframe_minutes: int | None =
                     elif new_high.price <= broken_structure_protected_price:
                         _transition_reject("BULLISH_ANCHOR_NOT_HH_VS_BROKEN_LH")
                     elif transition_correction_level_id is None:
-                        current_anchor = levels_by_id.get(transition_anchor_level_id)
+                        current_anchor = get_level(transition_anchor_level_id)
                         if current_anchor is None or new_high.price > current_anchor.price:
                             transition_anchor_level_id = new_high.level_id
                             if active_transition is not None:
                                 active_transition["selected_anchor_level_id"] = new_high.level_id
 
-                anchor = levels_by_id.get(transition_anchor_level_id)
+                anchor = get_level(transition_anchor_level_id)
                 if new_low is not None and anchor is not None:
                     if new_low.swing_index <= anchor.swing_index:
                         _transition_reject("BULLISH_CORRECTION_NOT_AFTER_HH_ANCHOR")
@@ -1421,8 +1440,8 @@ def analyze_market(candles: Sequence[Candle], *, timeframe_minutes: int | None =
                 bullish_structure = _bullish_live_update(
                     levels,
                     new_high=new_high,
-                    protected_hl=levels_by_id.get(protected_level_id),
-                    key_hh=levels_by_id.get(trend_extreme_level_id),
+                    protected_hl=get_level(protected_level_id),
+                    key_hh=get_level(trend_extreme_level_id),
                 )
             if bullish_structure is not None:
                 candidate_low, key_high = bullish_structure
@@ -1452,8 +1471,8 @@ def analyze_market(candles: Sequence[Candle], *, timeframe_minutes: int | None =
                 bearish_structure = _bearish_live_update(
                     levels,
                     new_low=new_low,
-                    protected_lh=levels_by_id.get(protected_level_id),
-                    key_ll=levels_by_id.get(trend_extreme_level_id),
+                    protected_lh=get_level(protected_level_id),
+                    key_ll=get_level(trend_extreme_level_id),
                 )
             if bearish_structure is not None:
                 candidate_high, key_low = bearish_structure

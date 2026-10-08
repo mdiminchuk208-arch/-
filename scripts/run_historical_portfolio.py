@@ -165,7 +165,9 @@ def main(argv=None):
             hashes[f'{symbol}/{tf}.csv']=sha256(path.read_bytes()).hexdigest()
             quality[f'{symbol}/{tf}.csv']=dict(rows=len(rows),first_open=data[symbol][tf][0].open_time,
                 last_close=data[symbol][tf][-1].close_time,healthy=True)
-    available_end=min(cs[-1].close_time for ds in data.values() for cs in ds.values())
+    # A final partial HTF interval still has usable closed LTF bars. Requiring a
+    # future HTF close here discarded valid geometry, admissions and exits.
+    available_end=min(ds[args.ltf][-1].close_time for ds in data.values())
     available_start=max(cs[0].open_time for ds in data.values() for cs in ds.values())
     end=explicit_end or available_end
     start=explicit_start or (end-timedelta(days=days) if days is not None else
@@ -173,6 +175,8 @@ def main(argv=None):
     warmup_start=start-timedelta(minutes=args.warmup_bars*args.ltf)
     if end>available_end or warmup_start<available_start or start>=end:
         raise ValueError('requested period/warmup exceeds common available coverage; no data was substituted')
+    if any(end>=ds[args.htf][-1].close_time+timedelta(minutes=args.htf) for ds in data.values()):
+        raise ValueError('stale HTF history: a required completed interval is missing')
     if any(int(t.timestamp()*1000)%(args.ltf*60000) for t in (start,end)):
         raise ValueError('execution start/end must align to LTF')
     execution={}

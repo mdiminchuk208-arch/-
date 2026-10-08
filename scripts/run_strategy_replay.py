@@ -4,7 +4,7 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 from dataclasses import asdict
-from datetime import datetime
+from datetime import datetime, timedelta
 from hashlib import sha256
 import json
 from pathlib import Path
@@ -69,7 +69,10 @@ def main():
                 raise ValueError(f'missing/incorrect CSV series identity: {path}')
             data[symbol][tf] = [r.to_strategy_candle(tf * 60000) for r in rows]
             hashes[f'{symbol}/{tf}.csv'] = sha256(path.read_bytes()).hexdigest()
-    end = min(cs[-1].close_time for series in data.values() for cs in series.values())
+    end = min(series[args.ltf][-1].close_time for series in data.values())
+    if any(end >= series[args.htf][-1].close_time + timedelta(minutes=args.htf)
+           for series in data.values()):
+        raise ValueError('stale HTF history: a required completed interval is missing')
     execution = {}
     for symbol in symbols:
         cs = [c for c in data[symbol][args.ltf] if c.close_time <= end]

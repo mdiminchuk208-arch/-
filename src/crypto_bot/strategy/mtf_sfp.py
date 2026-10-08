@@ -4,6 +4,7 @@ from dataclasses import dataclass, replace
 from datetime import datetime, timedelta
 from enum import Enum
 from itertools import groupby
+from typing import TypedDict
 
 from crypto_bot.common.models import Direction
 from crypto_bot.strategy.market_analysis import MarketAnalysisReport, MarketEvent, MarketEventKind, StructureAnalysisMode
@@ -21,6 +22,31 @@ class MtfSfpStatus(str, Enum):
 
 class MtfOpportunityStatus(str, Enum):
     ENTRY_SEARCH_CANDIDATE = "ENTRY_SEARCH_CANDIDATE"
+
+
+class _CandidateCommon(TypedDict):
+    candidate_id: int
+    htf_minutes: int
+    ltf_minutes: int
+    htf_sfp_kind: MarketEventKind
+    htf_sfp_event_time: datetime
+    htf_sfp_candle_index: int
+    htf_episode_id: int | None
+    htf_level_id: int
+    htf_level_price: float
+    htf_liquidity_origin: str | None
+    htf_range_id: int | None
+    htf_recovery_transition_ids: tuple[int, ...]
+    expected_direction: Direction
+    expected_ltf_bos_kind: MarketEventKind
+    max_wait_ltf_bars: int | None
+    max_wait_minutes: int | None
+    sfp_invalidation_price: float | None
+    sfp_invalidation_event_time: datetime | None
+    sfp_invalidation_candle_index: int | None
+    sfp_invalidation_close_price: float | None
+    deadline_event_time: datetime | None
+    trade_entry_allowed: bool
 
 
 @dataclass(frozen=True)
@@ -421,7 +447,7 @@ def link_sfp_formations_to_ltf_bos(
             deadline = eligible_from + timedelta(minutes=ltf_minutes * max_wait_ltf_bars)
         invalidation = _matching_invalidation(sfp, htf_report)
 
-        common = dict(
+        common: _CandidateCommon = dict(
             candidate_id=candidate_id,
             htf_minutes=htf_minutes,
             ltf_minutes=ltf_minutes,
@@ -598,10 +624,11 @@ def attach_source_qualified_trade_levels(opportunity: MtfOpportunity, *, stop_lo
     """Attach caller-supplied source-qualified SL/target and derive RR; never unlock trading."""
     if not stop_loss_policy.strip() or not target_policy.strip():
         raise ValueError("SL and target policies must be explicit")
-    required=(opportunity.impulse_start_price, opportunity.impulse_end_price, opportunity.entry_zone_low, opportunity.entry_zone_high)
-    if any(v is None for v in required):
+    start,end,low,high=(opportunity.impulse_start_price, opportunity.impulse_end_price,
+                        opportunity.entry_zone_low, opportunity.entry_zone_high)
+    if start is None or end is None or low is None or high is None:
         raise ValueError("entry geometry must be ready before attaching SL/target")
-    plan=build_trade_plan_geometry(direction=opportunity.expected_direction, impulse_start_price=opportunity.impulse_start_price, impulse_end_price=opportunity.impulse_end_price, stop_loss_price=stop_loss_price, target_price=target_price)
-    if abs(plan.entry_zone.low-opportunity.entry_zone_low)>1e-12 or abs(plan.entry_zone.high-opportunity.entry_zone_high)>1e-12:
+    plan=build_trade_plan_geometry(direction=opportunity.expected_direction, impulse_start_price=start, impulse_end_price=end, stop_loss_price=stop_loss_price, target_price=target_price)
+    if abs(plan.entry_zone.low-low)>1e-12 or abs(plan.entry_zone.high-high)>1e-12:
         raise ValueError("stored entry geometry does not match the trade-plan geometry")
     return replace(opportunity, stop_loss_price=plan.stop_loss_price, target_price=plan.target_price, stop_loss_policy=stop_loss_policy, target_policy=target_policy, rr_minimum=plan.rr.minimum, rr_maximum=plan.rr.maximum, entry_plan_status="RR_READY_SOURCE_LEVELS", trade_entry_allowed=False)

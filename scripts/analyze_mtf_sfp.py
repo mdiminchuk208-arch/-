@@ -371,7 +371,7 @@ def main() -> int:
             for scenario in scenarios:
                 if scenario.mode == "unbounded":
                     print("\n  [WAIT unbounded] observational only; source defines no expiry.")
-                    link_kwargs = {"max_wait_ltf_bars": None, "max_wait_minutes": None}
+                    link_kwargs: dict[str, int | None] = {"max_wait_ltf_bars": None, "max_wait_minutes": None}
                     effective_minutes = None
                 elif scenario.mode == "bars":
                     effective_minutes = scenario.value * ltf_min  # type: ignore[operator]
@@ -535,7 +535,7 @@ def main() -> int:
                         continue
                 for scenario in scenarios:
                     if scenario.mode == "unbounded":
-                        sweep_kwargs = {"max_wait_ltf_bars": None, "max_wait_minutes": None}
+                        sweep_kwargs: dict[str, int | None] = {"max_wait_ltf_bars": None, "max_wait_minutes": None}
                         effective_minutes = None
                     elif scenario.mode == "bars":
                         sweep_kwargs = {"max_wait_ltf_bars": scenario.value, "max_wait_minutes": None}

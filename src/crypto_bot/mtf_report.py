@@ -233,7 +233,7 @@ def write_candidate_quality_audit_csv(report: MtfSfpReport, path: str | Path) ->
                     "elapsed_minutes": c.elapsed_minutes if c.elapsed_minutes is not None else "",
                     "deadline": c.deadline_event_time.isoformat() if c.deadline_event_time else "",
                     "opportunity_id": c.opportunity_id if c.opportunity_id is not None else "",
-                    "shared_opportunity_context_count": opportunity_context_count.get(c.opportunity_id, ""),
+                    "shared_opportunity_context_count": opportunity_context_count.get(c.opportunity_id, "") if c.opportunity_id is not None else "",
                     "note": c.note,
                     "htf_recovery_transition_ids": ";".join(map(str, c.htf_recovery_transition_ids)),
                     "ltf_recovery_transition_ids": ";".join(map(str, c.ltf_recovery_transition_ids)),

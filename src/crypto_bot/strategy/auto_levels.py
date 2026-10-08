@@ -348,7 +348,7 @@ def derive_automatic_levels(
                 and (seed.zone.low > zone.high if direction == Direction.LONG else seed.zone.high < zone.low)]
     opposing.sort(key=lambda seed: (seed.zone.low, seed.zone.high, seed.known_at) if direction == Direction.LONG
                   else (-seed.zone.high, -seed.zone.low, seed.known_at))
-    selected = []
+    selected: list[_PoiSeed] = []
     for seed in opposing:
         if any(_overlap(seed.zone.low, seed.zone.high, existing.zone) for existing in selected):
             continue
