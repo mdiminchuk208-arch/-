@@ -149,6 +149,29 @@ def _overlap(low: float, high: float, zone: PriceZone) -> bool:
     return low <= zone.high and high >= zone.low
 
 
+def ob_impulse_window(report: MarketAnalysisReport, opportunity: MtfOpportunity,
+                      candle_count: int) -> range | None:
+    """B-candle indexes in the actual source structural impulse, inclusive of its end.
+
+    BOS confirms a displacement; it does not require the engulfed candle to open
+    after that confirmation. The old BOS+2 lower bound discarded the very OB
+    causing the break. The previous structural extreme fixes the causal origin;
+    the selected anchor fixes the end. C may confirm an IMB just after that end.
+    No arbitrary lookback, future extreme or price-distance tolerance is used.
+    """
+    adverse = "low" if opportunity.expected_direction == Direction.LONG else "high"
+    origins = [level for level in report.levels
+               if level.side == adverse and level.price == opportunity.impulse_start_price
+               and level.swing_index <= opportunity.ltf_bos_candle_index
+               and level.confirmed_time <= opportunity.ltf_bos_event_time]
+    anchor = next((level for level in report.levels
+                   if level.level_id == opportunity.entry_anchor_level_id), None)
+    if not origins or anchor is None:
+        return None
+    origin = max(origins, key=lambda level:(level.swing_index, level.confirmed_index, level.level_id))
+    return range(origin.swing_index + 1, min(anchor.swing_index + 1, candle_count - 1))
+
+
 def _fresh(seed: _PoiSeed, histories: tuple[Sequence[Candle], ...], cutoff: datetime) -> bool:
     # Strictly after formation: the seed's own third candle touches its near edge.
     # A bar straddling availability is treated conservatively as a potential touch.
@@ -251,12 +274,11 @@ def derive_automatic_levels(
     expected_sweep = MarketEventKind.LOW_LIQUIDITY_TAKEN if direction == Direction.LONG else MarketEventKind.HIGH_LIQUIDITY_TAKEN
     failures: set[str] = set()
     valid = []
-    # A must open at/after the BOS close; on this contiguous series its first
-    # possible index is bos_index + 1, and B is the following index.
-    for index in range(opportunity.ltf_bos_candle_index + 2, min(anchor.swing_index, len(ltf) - 1)):
+    window = ob_impulse_window(ltf_report, opportunity, len(ltf))
+    if window is None:
+        return _blocked("IMPULSE_ORIGIN_REFERENCE_NOT_FOUND")
+    for index in window:
         first, engulfing, third = ltf[index - 1:index + 2]
-        if first.open_time < opportunity.ltf_bos_event_time:
-            continue
         first_body = abs(first.close - first.open)
         body = abs(engulfing.close - engulfing.open)
         colors_match = (first.close < first.open and engulfing.close > engulfing.open) if direction == Direction.LONG else (first.close > first.open and engulfing.close < engulfing.open)
@@ -266,7 +288,7 @@ def derive_automatic_levels(
                 and max(engulfing.open, engulfing.close) >= max(first.open, first.close)
                 and body > first_body):
             continue
-        failures.add("NO_ELIGIBLE_POST_BOS_OB")
+        failures.add("NO_ELIGIBLE_IMPULSE_OB")
         if body / (engulfing.high - engulfing.low) < policy.min_body_fraction or body < policy.min_engulf_body_ratio * first_body:
             failures.add("AGGRESSIVE_IMPULSE_THRESHOLD_NOT_MET")
             continue
@@ -320,9 +342,13 @@ def derive_automatic_levels(
         known_at = max(ready, third.close_time, seed.known_at)
         evidence = (
             _seed_evidence(seed, htf_minutes, "SUPPORTING_HTF_POI"),
-            LevelEvidence("LTF_OB", ltf_minutes, third.close_time,
+            LevelEvidence("LTF_OB", ltf_minutes, max(third.close_time, opportunity.ltf_bos_event_time),
                           (first.close_time, engulfing.close_time, third.close_time),
-                          (first.low, first.high, stop), "OB_FULL_BODY_ENGULF_WITH_IMBALANCE_CONSERVATIVE_NORMALIZATION"),
+                          (first.low, first.high, stop), "OB_BODY_ENGULF_IMBALANCE_IN_SOURCE_STRUCTURAL_IMPULSE",
+                          (("bos_relation", "BEFORE_OR_AT_BOS" if engulfing.close_time <= opportunity.ltf_bos_event_time
+                            else "AFTER_BOS_IN_SAME_IMPULSE"),
+                           ("window_start_b_index", str(window.start)),
+                           ("window_end_b_index_exclusive", str(window.stop)))),
             LevelEvidence("AGGRESSIVE_IMPULSE", ltf_minutes, engulfing.close_time,
                           (first.close_time, engulfing.close_time), (), AGGRESSION_POLICY,
                           (("body_fraction", format(body / (engulfing.high - engulfing.low), ".17g")),
@@ -342,7 +368,7 @@ def derive_automatic_levels(
         )
         valid.append((known_at, first.open_time, stop, evidence))
     if not valid:
-        return _blocked(*(failures or {"NO_POST_BOS_OB_PATTERN"}))
+        return _blocked(*(failures or {"NO_OB_PATTERN_IN_STRUCTURAL_IMPULSE"}))
     known_at, _, stop, evidence = min(valid, key=lambda candidate: (candidate[0], candidate[1], candidate[2]))
     opposing = [seed for seed in seeds if seed.direction != direction and _fresh(seed, histories, as_of)
                 and (seed.zone.low > zone.high if direction == Direction.LONG else seed.zone.high < zone.low)]

@@ -216,12 +216,12 @@ class AutomaticLevelTests(unittest.TestCase):
     def test_body_engulf_requires_both_previous_body_edges(self):
         case = valid_case()
         case['ltf_candles'][19] = replace(case['ltf_candles'][19], open=97.5)
-        self.assertBlocked(case, 'NO_POST_BOS_OB_PATTERN')
+        self.assertBlocked(case, 'NO_OB_PATTERN_IN_STRUCTURAL_IMPULSE')
 
     def test_opposite_candle_color_required(self):
         case = valid_case()
         case['ltf_candles'][18] = replace(case['ltf_candles'][18], close=98.9)
-        self.assertBlocked(case, 'NO_POST_BOS_OB_PATTERN')
+        self.assertBlocked(case, 'NO_OB_PATTERN_IN_STRUCTURAL_IMPULSE')
 
     def test_only_two_distinct_opposing_zones_cannot_pad_three_targets(self):
         case = valid_case()

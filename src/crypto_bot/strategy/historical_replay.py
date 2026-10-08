@@ -14,7 +14,7 @@ from dataclasses import replace
 from heapq import heappush, heappop
 
 from crypto_bot.common.models import Direction
-from crypto_bot.strategy.auto_levels import AutoLevelPolicy, derive_automatic_levels
+from crypto_bot.strategy.auto_levels import AutoLevelPolicy, derive_automatic_levels, ob_impulse_window
 from crypto_bot.strategy.market_analysis import analyze_market, MarketEventKind, TrendState, LiquidityState
 from crypto_bot.strategy.mtf_sfp import (link_sfp_formations_to_ltf_bos,
     MtfSfpStatus, cluster_entry_search_opportunities, _attach_entry_geometry)
@@ -117,7 +117,14 @@ future information. Tests compare every close with independent prefix analysis.
                                      visible_transition.selected_correction_level_id) if x is not None)
             anchor = levels.get(visible_transition.selected_anchor_level_id)
             if anchor is not None:
-                for index in range(bos_index+1, anchor.swing_index):
+                adverse = 'low' if available[0].expected_direction == Direction.LONG else 'high'
+                origins = [level for level in lr.levels if level.side == adverse
+                           and level.price == visible_transition.broken_extreme_price
+                           and level.swing_index <= bos_index and level.confirmed_index <= bos_index]
+                origin = max(origins, key=lambda level:(level.swing_index,level.confirmed_index,level.level_id)) if origins else None
+                if origin is not None:
+                    needed.add(origin.level_id)
+                for index in range(origin.swing_index if origin is not None else bos_index+1, anchor.swing_index+1):
                     visible_events.extend(raw_by_index[index])
                 needed.update(e.level_id for e in visible_events)
         # Only fields read by the shared geometry/detector are included. Lifecycle
@@ -139,9 +146,8 @@ future information. Tests compare every close with independent prefix analysis.
         result_map = {}
         if auto_level_policy is not None and opp.entry_search_allowed and opp.entry_geometry_ready_time is not None and not invalid:
             if key not in watches:
-                anchor = levels[opp.entry_anchor_level_id]
                 touched = []
-                for index in range(bos_index+2, min(anchor.swing_index, len(ltf)-1)):
+                for index in ob_impulse_window(prefix_report, opp, n) or ():
                     a, b, c = ltf[index-1:index+2]
                     colors = ((a.close < a.open and b.close > b.open) if opp.expected_direction == Direction.LONG
                               else (a.close > a.open and b.close < b.open))

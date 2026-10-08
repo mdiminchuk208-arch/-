@@ -20,7 +20,7 @@ from crypto_bot.strategy.range_engine import RangeAnalysisReport, augment_market
 from crypto_bot.strategy.trade_plan import PriceZone, rr_ratio
 
 
-STRATEGY_VERSION = "0.4.20-replay.4"
+STRATEGY_VERSION = "0.4.21-ob-window.1"
 
 
 class EngineMode(str, Enum):

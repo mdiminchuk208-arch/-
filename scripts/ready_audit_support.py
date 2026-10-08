@@ -8,7 +8,7 @@ from bisect import bisect_right
 from dataclasses import asdict
 
 from crypto_bot.common.models import Direction
-from crypto_bot.strategy.auto_levels import _seeds, _overlap
+from crypto_bot.strategy.auto_levels import _seeds, _overlap, ob_impulse_window
 from crypto_bot.strategy.market_analysis import MarketEventKind, TrendState
 
 
@@ -69,14 +69,15 @@ class GateInspector:
                 sweep_events.setdefault(event.candle_index, []).append(event)
         candidates, failures = [], set()
         color_pair_count, scanned_triples = 0, 0
-        for index in range(opp.ltf_bos_candle_index + 2, min(anchor.swing_index, len(ltf) - 1)):
+        window = ob_impulse_window(ltf_report, opp, len(ltf))
+        for index in window or ():
             scanned_triples += 1
             a, b, c = ltf[index - 1:index + 2]
             first_body, body = abs(a.close-a.open), abs(b.close-b.open)
             colors = (a.close<a.open and b.close>b.open) if long else (a.close>a.open and b.close<b.open)
             engulf = min(b.open,b.close)<=min(a.open,a.close) and max(b.open,b.close)>=max(a.open,a.close) and body>first_body
             color_pair_count += int(colors)
-            if a.open_time < opp.ltf_bos_event_time or not (colors and engulf):
+            if not (colors and engulf):
                 continue
             sweeps = [e for e in sweep_events.get(index-1, ()) if e.event_time==a.close_time
                       and e.level_id in levels and levels[e.level_id].confirmed_time<=a.open_time
@@ -100,7 +101,7 @@ class GateInspector:
                 STOP_GEOMETRY=stop<zone.low if long else stop>zone.high,
             )
             first_failure = next((reason for gate,reason in CANDIDATE_GATES if not truth[gate]),None)
-            failures.add('NO_ELIGIBLE_POST_BOS_OB')
+            failures.add('NO_ELIGIBLE_IMPULSE_OB')
             if first_failure:
                 failures.add(first_failure)
             candidates.append(dict(
@@ -127,10 +128,10 @@ class GateInspector:
                 selected.append(seed)
             if len(selected)==3:
                 break
-        reasons = (() if len(selected)==3 else ('THREE_DISTINCT_FRESH_OPPOSING_POIS_NOT_FOUND',)) if valid else tuple(sorted(failures or {'NO_POST_BOS_OB_PATTERN'}))
+        reasons = (() if len(selected)==3 else ('THREE_DISTINCT_FRESH_OPPOSING_POIS_NOT_FOUND',)) if valid else tuple(sorted(failures or {'NO_OB_PATTERN_IN_STRUCTURAL_IMPULSE'}))
         return dict(candidates=candidates, qualified_ob_count=len(valid),
                     scanned_triples=scanned_triples, color_pair_count=color_pair_count,
-                    candidate_scan_start=opp.ltf_bos_candle_index+2, candidate_scan_end_exclusive=min(anchor.swing_index,len(ltf)-1),
+                    candidate_scan_start=window.start if window else 0, candidate_scan_end_exclusive=window.stop if window else 0,
                     anchor_swing_time=anchor.swing_time, anchor_confirmed_time=anchor.confirmed_time,
                     impulse_low=lo,impulse_high=hi, predicted_reasons=reasons,
                     predicted_ready=bool(valid) and len(selected)==3,

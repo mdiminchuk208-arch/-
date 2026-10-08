@@ -1,0 +1,7 @@
+{
+  "source": "https://api.bybit.com/v5/market/kline?category=linear&symbol=BTCUSDT&interval=5&limit=1",
+  "attempted_at_utc": "2026-10-08T06:33:47.763580+00:00",
+  "public_only": true,
+  "api_keys_used": false,
+  "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+}
