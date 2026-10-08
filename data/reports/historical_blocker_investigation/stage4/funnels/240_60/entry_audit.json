@@ -1,0 +1,78 @@
+{
+  "counts": {
+    "VIRTUAL_TRADE_CLOSED": 2
+  },
+  "entries": 2,
+  "ready": 2,
+  "records": [
+    {
+      "deferrals": 39,
+      "direction": "SHORT",
+      "entry_zone": {
+        "high": 77878.496,
+        "low": 77730.39199999999
+      },
+      "first_deferral": {
+        "action": "VIRTUAL_ENTRY_DEFERRED",
+        "balance_change": 0.0,
+        "entry_fee_allocation": 0.0,
+        "exit_fee": 0.0,
+        "gross_pnl": 0.0,
+        "net_pnl": 0.0,
+        "price": null,
+        "quantity": 0.0,
+        "reason": "NEXT_OPEN_OUTSIDE_ENTRY_ZONE_OR_LIMIT",
+        "reference_price": null,
+        "sequence": 977,
+        "signal_id": "562f49bbf510d68fc4d4c67c",
+        "slippage_cost": 0.0,
+        "symbol": "BTCUSDT",
+        "time": "2026-04-27T19:00:00+00:00",
+        "trade_entry_allowed": false
+      },
+      "first_terminal": null,
+      "latest_ready_time": "2026-04-29T08:00:00+00:00",
+      "limit_price": 77730.39199999999,
+      "ready_time": "2026-04-27T19:00:00+00:00",
+      "ready_updates": 2,
+      "signal_id": "562f49bbf510d68fc4d4c67c",
+      "symbol": "BTCUSDT",
+      "terminal_reason": "VIRTUAL_TRADE_CLOSED"
+    },
+    {
+      "deferrals": 1,
+      "direction": "SHORT",
+      "entry_zone": {
+        "high": 10.52442,
+        "low": 10.40559
+      },
+      "first_deferral": {
+        "action": "VIRTUAL_ENTRY_DEFERRED",
+        "balance_change": 0.0,
+        "entry_fee_allocation": 0.0,
+        "exit_fee": 0.0,
+        "gross_pnl": 0.0,
+        "net_pnl": 0.0,
+        "price": null,
+        "quantity": 0.0,
+        "reason": "NEXT_OPEN_OUTSIDE_ENTRY_ZONE_OR_LIMIT",
+        "reference_price": null,
+        "sequence": 2878,
+        "signal_id": "d0220592f1743192e87311f9",
+        "slippage_cost": 0.0,
+        "symbol": "AVAXUSDT",
+        "time": "2026-09-20T11:00:00+00:00",
+        "trade_entry_allowed": false
+      },
+      "first_terminal": null,
+      "latest_ready_time": "2026-09-20T11:00:00+00:00",
+      "limit_price": 10.40559,
+      "ready_time": "2026-09-20T11:00:00+00:00",
+      "ready_updates": 1,
+      "signal_id": "d0220592f1743192e87311f9",
+      "symbol": "AVAXUSDT",
+      "terminal_reason": "VIRTUAL_TRADE_CLOSED"
+    }
+  ],
+  "trade_entry_allowed": false
+}

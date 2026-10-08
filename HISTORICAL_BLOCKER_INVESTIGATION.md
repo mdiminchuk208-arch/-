@@ -1,6 +1,7 @@
 # Исследование реального historical pipeline
 
-Это журнал продолжающейся разработки, а не итоговое подтверждение исторической готовности.
+Это журнал отдельных этапов разработки. Итоговые результаты и ограничения текущей
+автоматической политики приведены в [HISTORICAL_PIPELINE_FINAL_REPORT.md](HISTORICAL_PIPELINE_FINAL_REPORT.md).
 
 ## Сохранённая база
 
@@ -137,8 +138,8 @@ decisions, equity и outcomes побайтно совпали, все сигна
 9 fresh/supporting POI, 6 first-test/SL, 5 targets/RR/Score/READY, 1 entry.
 Три READY потеряли first-test eligibility без касания quoted price, один
 получил `ISOLATED_MARGIN_BUDGET`; поздняя HTF invalidation не подменяет эти
-первые entry outcomes. По всем остальным mappings завершается такой же полный
-read-only audit. Его hooks должны совпасть с каждым реально emitted signal.
+первые entry outcomes. По всем шести mappings завершён такой же полный read-only
+audit: совпали все 80 752 emitted signal states, объяснены все 27 974 setups.
 
 Source alignment вынесен в `SOURCE_ALIGNMENT_CURRENT.md`: сохранённые описания
 и pages отделены от numeric parameters, gap subset и software guards.
@@ -148,3 +149,31 @@ Source alignment вынесен в `SOURCE_ALIGNMENT_CURRENT.md`: сохранё
 
 Все logical reports этапа и их SHA сохранены в `stage3`; большие добавленные
 reports сжаты gzip без потерь. Первичные исходные файлы и прежние artifacts сохранены.
+
+## Этап 4: полная взаимоисключающая воронка и публикация
+
+Все шесть конфигураций дают 40 READY, семь реальных virtual entries и семь CLOSED.
+После READY: 17 не достигли quoted price до первого теста OB, 11 заблокированы
+неизменённой маржой, четыре потеряли третий свежий target, один не исполнен до
+конца данных. Для четырёх отзывов targets сохранены восемь точных before/after
+traces. Повторная READY-квалификация имеет отдельные first/last timestamps;
+поздняя HTF invalidation не подменяет первый pending-order отказ.
+
+Независимо проверены исходные цены семи entries и девяти exits; две реальные
+SHORT последовательности TP1 → cost-adjusted breakeven → stop подтверждены.
+Реальные LONG закрылись на SL; исторические TP2/TP3 не заявляются.
+
+После исправления только diagnostic metadata: **410 tests PASS**, lint PASS,
+mypy PASS (55 source files). Новый 240/60 workers=2/1 repeat совпал по всем
+восьми logical reports; его 57 code/config SHA соответствуют текущим файлам.
+BACKTEST/SHADOW совпали по economic reports для реального LONG 60/15 и SHORT 240/60.
+
+Полные per-candidate traces, 27 974 строки first rejection, сводная воронка,
+все entry outcomes, dataset SHA, тестовые логи и independent receipts сохранены
+в `data/reports/historical_blocker_investigation/stage4` с lossless gzip и SHA.
+Это завершение технического real-history pipeline для сохранённой явно
+параметризованной политики. Отсутствующие первичные PDF/DOCX и заблокированная
+Bybit proxy новая загрузка остаются явно указанными пределами доказательства.
+
+GitHub подтвердил новое canonical имя `mdiminchuk208-arch/-`; старое `Zsfhjl-`
+перенаправляется. Исходный `b059844` остаётся rollback point; история не переписывается.

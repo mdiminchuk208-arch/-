@@ -14,10 +14,19 @@ from pathlib import Path
 
 def audit(root):
     signals=[json.loads(line) for line in (root/'signals.jsonl').read_text().splitlines()]
-    ready={s['signal_id']:s for s in signals if s['status']=='READY_FOR_VIRTUAL_ENTRY'}
+    ready={}
+    latest_ready={}
+    ready_updates=Counter()
+    for signal in signals:
+        if signal['status']=='READY_FOR_VIRTUAL_ENTRY':
+            key=signal['signal_id']
+            ready.setdefault(key,signal)
+            latest_ready[key]=signal
+            ready_updates[key]+=1
     trades={t['signal_id']:t for line in (root/'trades.jsonl').read_text().splitlines() if (t:=json.loads(line))}
     records={key:dict(signal_id=key,symbol=s['symbol'],direction=s['direction'],
         entry_zone=s['entry_zone'],limit_price=s['optimal_entry'],ready_time=s['event_time'],
+        latest_ready_time=latest_ready[key]['event_time'],ready_updates=ready_updates[key],
         deferrals=0,first_deferral=None,first_terminal=None,terminal_reason=None) for key,s in ready.items()}
     pending=set()
     for line in (root/'decisions.jsonl').read_text().splitlines():

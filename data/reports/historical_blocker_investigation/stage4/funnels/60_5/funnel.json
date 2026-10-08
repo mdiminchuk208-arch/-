@@ -1,0 +1,121 @@
+[
+  {
+    "input": 6367,
+    "pass_rate": 1.0,
+    "passed": 6367,
+    "reject": 0,
+    "stage": "SETUP"
+  },
+  {
+    "input": 6367,
+    "pass_rate": 1.0,
+    "passed": 6367,
+    "reject": 0,
+    "stage": "STRUCTURE"
+  },
+  {
+    "input": 6367,
+    "pass_rate": 1.0,
+    "passed": 6367,
+    "reject": 0,
+    "stage": "BOS"
+  },
+  {
+    "input": 6367,
+    "pass_rate": 0.9188000628239359,
+    "passed": 5850,
+    "reject": 517,
+    "stage": "ENTRY GEOMETRY"
+  },
+  {
+    "input": 5850,
+    "pass_rate": 0.8252991452991453,
+    "passed": 4828,
+    "reject": 1022,
+    "stage": "OB candidate"
+  },
+  {
+    "input": 4828,
+    "pass_rate": 0.05965202982601491,
+    "passed": 288,
+    "reject": 4540,
+    "stage": "valid OB"
+  },
+  {
+    "input": 288,
+    "pass_rate": 0.9097222222222222,
+    "passed": 262,
+    "reject": 26,
+    "stage": "HTF POI"
+  },
+  {
+    "input": 262,
+    "pass_rate": 1.0,
+    "passed": 262,
+    "reject": 0,
+    "stage": "preexisting POI"
+  },
+  {
+    "input": 262,
+    "pass_rate": 0.03435114503816794,
+    "passed": 9,
+    "reject": 253,
+    "stage": "fresh POI"
+  },
+  {
+    "input": 9,
+    "pass_rate": 1.0,
+    "passed": 9,
+    "reject": 0,
+    "stage": "supporting POI"
+  },
+  {
+    "input": 9,
+    "pass_rate": 0.6666666666666666,
+    "passed": 6,
+    "reject": 3,
+    "stage": "OB first test"
+  },
+  {
+    "input": 6,
+    "pass_rate": 1.0,
+    "passed": 6,
+    "reject": 0,
+    "stage": "SL"
+  },
+  {
+    "input": 6,
+    "pass_rate": 0.8333333333333334,
+    "passed": 5,
+    "reject": 1,
+    "stage": "targets"
+  },
+  {
+    "input": 5,
+    "pass_rate": 1.0,
+    "passed": 5,
+    "reject": 0,
+    "stage": "R:R"
+  },
+  {
+    "input": 5,
+    "pass_rate": 1.0,
+    "passed": 5,
+    "reject": 0,
+    "stage": "Score"
+  },
+  {
+    "input": 5,
+    "pass_rate": 1.0,
+    "passed": 5,
+    "reject": 0,
+    "stage": "READY"
+  },
+  {
+    "input": 5,
+    "pass_rate": 0.2,
+    "passed": 1,
+    "reject": 4,
+    "stage": "virtual entry"
+  }
+]

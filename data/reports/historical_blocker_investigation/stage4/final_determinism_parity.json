@@ -1,0 +1,48 @@
+{
+  "backtest_fingerprint": "609871836b657ccf015e83b7cfc5fc48c9197037e46e33eff0cbb3b563d97cc7",
+  "current_code_sha_match": true,
+  "full_byte_identical_reports": [
+    "artifact_hashes.json",
+    "decisions.jsonl",
+    "equity_curve.jsonl",
+    "fingerprint.sha256",
+    "setup_outcomes.jsonl",
+    "signals.jsonl",
+    "summary.json",
+    "trades.jsonl"
+  ],
+  "input_code_files": 57,
+  "real_backtest_shadow": [
+    {
+      "backtest": "final_repeat_240_60_a",
+      "economic_reports": "BYTE_IDENTICAL",
+      "economic_sha256": {
+        "decisions.jsonl": "9bfa6264683d28470af5628be434d6d6db957538ef83f0da6c889ee75333236c",
+        "equity_curve.jsonl": "717422cf7ecd51444eeef99cb82bdf4edd7c670a03039892b9d0742f77e844e1",
+        "setup_outcomes.jsonl": "e7a3e17549c00ab633cff6bbba832f4b91f6d3a90505e55994816eafd96044c3",
+        "trades.jsonl": "8516abe9e13a8e4ea84f7ef99ace763faeb404afaa42723e582fe11c8d0643e9"
+      },
+      "full_fingerprint_modes_differ_as_expected": true,
+      "shadow": "final_repeat_240_60_shadow",
+      "signals_equal_except_mode": 2869
+    },
+    {
+      "backtest": "final_60_15",
+      "economic_reports": "BYTE_IDENTICAL",
+      "economic_sha256": {
+        "decisions.jsonl": "16de23ebc59053842f8bb629f8ed2c7025f2d45abcd3d7c0ee9257fe48274bb4",
+        "equity_curve.jsonl": "f8058b587af316023e8cfa559f77c07948f96f6b34d3d6183c0a3ba0d5cb5965",
+        "setup_outcomes.jsonl": "99eb9675138ffc38eb2865b528e12a05bfaa82cf4c4821ef3d7a3643c111a553",
+        "trades.jsonl": "16bdc88f0473dd3cb3c00e1e2f1dae968525454e1881847f7348fef64328902a"
+      },
+      "full_fingerprint_modes_differ_as_expected": true,
+      "shadow": "shadow_60_15",
+      "signals_equal_except_mode": 12329
+    }
+  ],
+  "trade_entry_allowed": false,
+  "workers": [
+    2,
+    1
+  ]
+}

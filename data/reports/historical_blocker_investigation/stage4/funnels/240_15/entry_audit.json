@@ -1,0 +1,44 @@
+{
+  "counts": {
+    "VIRTUAL_TRADE_CLOSED": 1
+  },
+  "entries": 1,
+  "ready": 1,
+  "records": [
+    {
+      "deferrals": 546,
+      "direction": "LONG",
+      "entry_zone": {
+        "high": 711.7824999999999,
+        "low": 710.635
+      },
+      "first_deferral": {
+        "action": "VIRTUAL_ENTRY_DEFERRED",
+        "balance_change": 0.0,
+        "entry_fee_allocation": 0.0,
+        "exit_fee": 0.0,
+        "gross_pnl": 0.0,
+        "net_pnl": 0.0,
+        "price": null,
+        "quantity": 0.0,
+        "reason": "NEXT_OPEN_OUTSIDE_ENTRY_ZONE_OR_LIMIT",
+        "reference_price": null,
+        "sequence": 4088,
+        "signal_id": "b15c3672f5c912a686373246",
+        "slippage_cost": 0.0,
+        "symbol": "BNBUSDT",
+        "time": "2026-09-04T20:15:00+00:00",
+        "trade_entry_allowed": false
+      },
+      "first_terminal": null,
+      "latest_ready_time": "2026-09-10T04:00:00+00:00",
+      "limit_price": 711.7824999999999,
+      "ready_time": "2026-09-04T20:15:00+00:00",
+      "ready_updates": 10,
+      "signal_id": "b15c3672f5c912a686373246",
+      "symbol": "BNBUSDT",
+      "terminal_reason": "VIRTUAL_TRADE_CLOSED"
+    }
+  ],
+  "trade_entry_allowed": false
+}

@@ -43,6 +43,11 @@ The current automatic-level change and its measured evidence are recorded in
 [AUTO_LEVELS_WORK_REPORT.md](AUTO_LEVELS_WORK_REPORT.md).
 Current blocker investigation and preserved before/after evidence:
 [HISTORICAL_BLOCKER_INVESTIGATION.md](HISTORICAL_BLOCKER_INVESTIGATION.md).
+Completed real-history pipeline evidence: **40 READY, 7 virtual entries, 7 closed**
+across six independently replayed timeframe mappings, with actual LONG/SHORT,
+complete rejection funnels and accounting checks. See
+[HISTORICAL_PIPELINE_FINAL_REPORT.md](HISTORICAL_PIPELINE_FINAL_REPORT.md) for
+the measured results, source-policy qualifications and blocked public-data download.
 Earlier historical research remains in [HISTORICAL_PORTFOLIO_REPORT.md](HISTORICAL_PORTFOLIO_REPORT.md).
 
 ## Tests

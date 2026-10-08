@@ -1,0 +1,14 @@
+{
+  "public_only": true,
+  "credentials_used": false,
+  "results": [
+    {
+      "url": "https://public.bybit.com/trading/BTCUSDT/",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "url": "https://api.bybit.com/v5/market/kline?category=linear&symbol=BTCUSDT&interval=5&limit=1",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+[
+  {
+    "input": 27974,
+    "pass_rate": 1.0,
+    "passed": 27974,
+    "reject": 0,
+    "stage": "SETUP"
+  },
+  {
+    "input": 27974,
+    "pass_rate": 1.0,
+    "passed": 27974,
+    "reject": 0,
+    "stage": "STRUCTURE"
+  },
+  {
+    "input": 27974,
+    "pass_rate": 1.0,
+    "passed": 27974,
+    "reject": 0,
+    "stage": "BOS"
+  },
+  {
+    "input": 27974,
+    "pass_rate": 0.8993350968756703,
+    "passed": 25158,
+    "reject": 2816,
+    "stage": "ENTRY GEOMETRY"
+  },
+  {
+    "input": 25158,
+    "pass_rate": 0.8193417600763176,
+    "passed": 20613,
+    "reject": 4545,
+    "stage": "OB candidate"
+  },
+  {
+    "input": 20613,
+    "pass_rate": 0.06360064037258041,
+    "passed": 1311,
+    "reject": 19302,
+    "stage": "valid OB"
+  },
+  {
+    "input": 1311,
+    "pass_rate": 0.927536231884058,
+    "passed": 1216,
+    "reject": 95,
+    "stage": "HTF POI"
+  },
+  {
+    "input": 1216,
+    "pass_rate": 0.9983552631578947,
+    "passed": 1214,
+    "reject": 2,
+    "stage": "preexisting POI"
+  },
+  {
+    "input": 1214,
+    "pass_rate": 0.06177924217462932,
+    "passed": 75,
+    "reject": 1139,
+    "stage": "fresh POI"
+  },
+  {
+    "input": 75,
+    "pass_rate": 1.0,
+    "passed": 75,
+    "reject": 0,
+    "stage": "supporting POI"
+  },
+  {
+    "input": 75,
+    "pass_rate": 0.6666666666666666,
+    "passed": 50,
+    "reject": 25,
+    "stage": "OB first test"
+  },
+  {
+    "input": 50,
+    "pass_rate": 0.94,
+    "passed": 47,
+    "reject": 3,
+    "stage": "SL"
+  },
+  {
+    "input": 47,
+    "pass_rate": 0.851063829787234,
+    "passed": 40,
+    "reject": 7,
+    "stage": "targets"
+  },
+  {
+    "input": 40,
+    "pass_rate": 1.0,
+    "passed": 40,
+    "reject": 0,
+    "stage": "R:R"
+  },
+  {
+    "input": 40,
+    "pass_rate": 1.0,
+    "passed": 40,
+    "reject": 0,
+    "stage": "Score"
+  },
+  {
+    "input": 40,
+    "pass_rate": 1.0,
+    "passed": 40,
+    "reject": 0,
+    "stage": "READY"
+  },
+  {
+    "input": 40,
+    "pass_rate": 0.175,
+    "passed": 7,
+    "reject": 33,
+    "stage": "virtual entry"
+  }
+]
