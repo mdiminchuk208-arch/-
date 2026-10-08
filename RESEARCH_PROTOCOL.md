@@ -22,6 +22,9 @@ last 20% retrospective external holdout, rounded to UTC calendar days. This is
 unseen data under already frozen rules, not a claim of prospective performance:
 historical periods preceding 2026 development must be labelled retrospective.
 New observations after freeze would be required for prospective OOS evidence.
+The primary external study excludes calendar 2026 entirely: its latest permitted
+execution close is 2026-01-01T00:00:00Z. This prevents the 2026 development market
+dates being treated as untouched merely because the exchange is different.
 Symbols are selected by this fixed priority, never by profit: BTCUSDT, ETHUSDT,
 SOLUSDT, XRPUSDT, BNBUSDT, DOGEUSDT, ADAUSDT, LINKUSDT, AVAXUSDT, LTCUSDT.
 Data availability determines cohorts; missing assets remain explicitly missing.

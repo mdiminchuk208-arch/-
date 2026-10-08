@@ -1,0 +1,8 @@
+{
+  "effective_protocol_sha256": "800ee2d2ab972dcb80901538111f37107398357cfd63027225b3f3a3a52afe8d",
+  "original_protocol_commit": "87495e6",
+  "original_protocol_sha256": "996780e748d9c37c87a00c42ff872007e4b135d60592078f42023b370b64e901",
+  "reason": "Explicitly exclude all 2026 development market dates from external holdout across venues",
+  "registered_before_any_external_strategy_outcome": true,
+  "trade_entry_allowed": false
+}
