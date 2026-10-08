@@ -1,0 +1,28 @@
+{
+  "baseline_commit": "3a9632606f79b4454509a60674eeac3877f77bbf",
+  "exit_variants_not_yet_run": true,
+  "part_of_canonical_holdout_already_inspected": true,
+  "protocol_sha256": "047973f062a659395a74005b9bb48d9a831dd293b184f710145ecedb30201126",
+  "registered_at_utc": "2026-10-08T16:32:39.875907+00:00",
+  "trade_entry_allowed": false,
+  "untouched_exit_reserve": {
+    "cohort": "BINANCE_BTC_ONLY_2019_Q4",
+    "mappings": [
+      [
+        60,
+        5
+      ]
+    ],
+    "periods": [
+      {
+        "end": "2020-01-01T00:00:00+00:00",
+        "name": "EXIT_HOLDOUT",
+        "start": "2019-10-01T00:00:00+00:00"
+      }
+    ],
+    "symbols": [
+      "BTCUSDT"
+    ],
+    "warmup_bars": 576
+  }
+}
