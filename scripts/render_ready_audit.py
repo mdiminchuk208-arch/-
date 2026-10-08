@@ -4,7 +4,6 @@ from dataclasses import asdict
 from datetime import datetime
 from pathlib import Path
 import argparse
-import html
 import json
 
 from audit_ready_root_cause import write_json, encode

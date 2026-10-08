@@ -1,6 +1,5 @@
 import csv
 from dataclasses import replace
-import importlib.util
 import json
 from pathlib import Path
 import tempfile
@@ -12,7 +11,6 @@ from test_range_engine import c as rc, base_report, bullish_range_events, ev
 from crypto_bot.analysis_report import write_event_csv
 from crypto_bot.global_report import write_global_opportunities_csv
 from crypto_bot.mtf_report import write_mtf_candidates_csv, write_mtf_opportunities_csv
-from crypto_bot.range_report import write_ranges_csv
 from crypto_bot.strategy.global_opportunity import cluster_cross_pair_opportunities
 from crypto_bot.strategy.market_analysis import analyze_market, StructureAnalysisMode as Mode, MarketEventKind as K, TrendState
 from crypto_bot.strategy.mtf_sfp import (
@@ -25,7 +23,7 @@ from crypto_bot.strategy.mtf_sfp import (
 from crypto_bot.common.models import Direction
 from crypto_bot.strategy.range_engine import RangeStatus
 from range_test_support import analyze_ranges, augment_market_report_with_range_sfps
-from crypto_bot.strategy.recovery_ablation import comparison, range_key, bos_records, market_fingerprint, mtf_records, sfp_records
+from crypto_bot.strategy.recovery_ablation import comparison, range_key, sfp_records
 
 
 def recovery_fixture(mirror=False):

@@ -5,7 +5,7 @@ from datetime import datetime
 from enum import Enum
 from typing import Sequence
 
-from crypto_bot.common.models import Candle, Direction
+from crypto_bot.common.models import Candle
 from crypto_bot.strategy.sfp import detect_sfp
 from crypto_bot.strategy.structure import is_swing_high, is_swing_low
 
@@ -191,7 +191,13 @@ class MarketAnalysisError(ValueError):
     pass
 
 
-def _validate_candles(candles: Sequence[Candle]) -> None:
+def _validate_candles(candles: Sequence[Candle], timeframe_minutes: int | None = None) -> None:
+    if timeframe_minutes is not None and (type(timeframe_minutes) is not int or timeframe_minutes<=0):
+        raise MarketAnalysisError('timeframe must be positive whole minutes')
+    duration = candles[0].close_time-candles[0].open_time if candles else None
+    if duration is not None and (duration.total_seconds()%60 or
+            (timeframe_minutes is not None and duration.total_seconds()!=timeframe_minutes*60)):
+        raise MarketAnalysisError('candle duration must match the declared whole-minute timeframe')
     previous_open: datetime | None = None
     previous_close: datetime | None = None
     for index, candle in enumerate(candles):
@@ -199,8 +205,10 @@ def _validate_candles(candles: Sequence[Candle]) -> None:
             raise MarketAnalysisError(f"unfinished candle at index {index}")
         if previous_open is not None and candle.open_time <= previous_open:
             raise MarketAnalysisError("candles must be strictly chronological")
-        if previous_close is not None and candle.open_time < previous_close:
-            raise MarketAnalysisError("candles must not overlap")
+        if duration is not None and candle.close_time-candle.open_time!=duration:
+            raise MarketAnalysisError('candle duration cannot change within one analysis')
+        if previous_close is not None and candle.open_time != previous_close:
+            raise MarketAnalysisError("candles must be contiguous without gaps or overlaps")
         previous_open = candle.open_time
         previous_close = candle.close_time
 
@@ -483,7 +491,7 @@ def analyze_market(candles: Sequence[Candle], *, timeframe_minutes: int | None =
     technical normalization and remains subject to manual chart conformance review.
     """
     analysis_mode = StructureAnalysisMode(analysis_mode)
-    _validate_candles(candles)
+    _validate_candles(candles, timeframe_minutes)
     # Causal ancestry, not a claim that every descendant disappears in ablation.
     # Never clear ancestry merely because a later transition is source-expected.
     recovery_transition_ids: tuple[int, ...] = ()

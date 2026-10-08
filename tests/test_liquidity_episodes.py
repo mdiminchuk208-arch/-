@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import unittest
+from dataclasses import replace
 from datetime import datetime, timedelta, timezone
 
 from crypto_bot.common.models import Candle
@@ -39,6 +40,12 @@ def two_highs_one_sweep(*, include_next: bool = True) -> list[Candle]:
     if include_next:
         candles.append(c(7, 12.5, 12.7, 11.0, 11.8)) # opens below both -> SFP formation
     return candles
+
+
+def hourly(candles: list[Candle]) -> list[Candle]:
+    return [replace(candle, open_time=BASE + (candle.open_time - BASE) * 60,
+                    close_time=BASE + (candle.close_time - BASE) * 60)
+            for candle in candles]
 
 
 class LiquidityEpisodeTests(unittest.TestCase):
@@ -84,7 +91,7 @@ class LiquidityEpisodeTests(unittest.TestCase):
         self.assertEqual(report.sfp_timeframe_preference, "SOURCE_VALID_BELOW_PREFERRED_H1")
 
     def test_h1_sfp_is_in_source_preferred_search_timeframe(self):
-        report = analyze_market(two_highs_one_sweep(), timeframe_minutes=60)
+        report = analyze_market(hourly(two_highs_one_sweep()), timeframe_minutes=60)
         self.assertEqual(report.sfp_timeframe_preference, "SOURCE_PREFERRED_H1_PLUS")
 
 
@@ -102,7 +109,7 @@ class DualSideLiquidityEpisodeTests(unittest.TestCase):
             c(5, 11.0, 14.0, 7.0, 10.5),   # first-sweeps both sides
             c(6, 10.5, 11.5, 9.0, 10.0),
         ]
-        report = analyze_market(candles, timeframe_minutes=60)
+        report = analyze_market(hourly(candles), timeframe_minutes=60)
         self.assertEqual(len(report.sweep_episodes), 2)
         self.assertTrue(
             all(ep.status == SweepEpisodeStatus.AMBIGUOUS_DUAL_SIDE_SWEEP for ep in report.sweep_episodes)

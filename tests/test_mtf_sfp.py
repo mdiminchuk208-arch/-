@@ -14,7 +14,6 @@ from crypto_bot.strategy.market_analysis import (
 from crypto_bot.strategy.mtf_sfp import (
     MtfSfpError,
     MtfSfpStatus,
-    cluster_entry_search_opportunities,
     link_sfp_formations_to_ltf_bos,
 )
 

@@ -417,7 +417,7 @@ def main() -> int:
                 print(f"    unique LTF BOS events:          {mtf.unique_ltf_bos_count}")
                 print(f"    shared BOS extra links:         {mtf.shared_bos_link_count} (NOT extra trades)")
                 print(f"    pair-local ENTRY_SEARCH opps:   {mtf.opportunity_count}")
-                print(f"    actual trade entries:           0 (intentionally blocked)")
+                print("    actual trade entries:           0 (intentionally blocked)")
                 print(f"    pair-local de-dup scope:         {mtf.opportunity_dedup_scope}")
                 print("    Entry Engine blockers:           " + "; ".join(mtf.entry_engine_blocking_reasons))
                 structural_funnel = build_origin_mtf_funnel(mtf, "STRUCTURAL_SWING")

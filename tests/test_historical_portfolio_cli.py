@@ -21,6 +21,32 @@ spec.loader.exec_module(cli)
 
 
 class HistoricalPortfolioCliTests(unittest.TestCase):
+    def test_resumed_pending_and_open_partial_fills_match_full_replay(self):
+        execution={'TEST':[bar(0),bar(1),bar(2,108,111,107,110),
+            bar(3,115,121,114,120),bar(4,125,131,124,130)]}
+        updates=[signal()]
+        full,all_signals=cli.simulate(execution,updates)
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/'state.json'
+            for cut in (1,2,3,4,5):
+                partial,_=cli.simulate(execution,updates,checkpoint_path=path,stop_after_bars=cut)
+                from crypto_bot.strategy.virtual_portfolio import VirtualPortfolio
+                restored=VirtualPortfolio.load_checkpoint(path)
+                final,observed=cli.simulate(execution,updates,portfolio=restored)
+                self.assertEqual(final.snapshot(),full.snapshot())
+                self.assertEqual(observed,all_signals)
+
+    def test_every_setup_has_exactly_one_terminal_report_outcome(self):
+        updates=[signal(),replace(signal(2,ident='two'),status='WAITING_FOR_AUTO_LEVELS',
+                                  level_blocking_reasons=('FRESH_PREEXISTING_HTF_POI_NOT_FOUND',))]
+        p,observed=cli.simulate({'TEST':[bar(i) for i in range(4)]},updates)
+        outcomes,partition=cli.setup_outcomes(observed,p)
+        self.assertEqual(partition['total_setups'],partition['passed']+partition['rejected'])
+        self.assertEqual(len(outcomes),2)
+        waiting=next(o for o in outcomes if o['signal_id']=='two')
+        self.assertIn('DATA_END_WITH_UNRESOLVED_SETUP',waiting['reasons'])
+        self.assertIn('FRESH_PREEXISTING_HTF_POI_NOT_FOUND',waiting['reasons'])
+
     def test_repeated_backtest_shadow_and_workers_match(self):
         data=histories()
         with tempfile.TemporaryDirectory() as directory:

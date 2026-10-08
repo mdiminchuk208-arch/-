@@ -109,10 +109,28 @@ class VirtualPortfolio:
         self._day_start_equity = equity
         self._day_start_balance = equity
         self._daily_blocked = False
+        self.replay_context: dict = {}
 
     @property
     def trade_entry_allowed(self):
         return False
+
+    def snapshot(self):
+        from crypto_bot.strategy.checkpoint import snapshot
+        return snapshot(self)
+
+    @property
+    def last_close(self):
+        return self._last_close
+
+    def save_checkpoint(self, path):
+        from crypto_bot.strategy.checkpoint import save_checkpoint
+        save_checkpoint(self, path)
+
+    @classmethod
+    def load_checkpoint(cls, path):
+        from crypto_bot.strategy.checkpoint import load_checkpoint
+        return load_checkpoint(path)
 
     @property
     def equity(self):
@@ -328,6 +346,10 @@ class VirtualPortfolio:
 
     @staticmethod
     def _validate_signal(signal, close_time, bars, mode):
+        if signal.status not in {'WAITING_FOR_ENTRY_GEOMETRY','REJECTED_ENTRY_GEOMETRY',
+                'SOURCE_CONTEXT_BLOCKED','WAITING_FOR_SOURCE_LEVELS','WAITING_FOR_AUTO_LEVELS',
+                'READY_FOR_VIRTUAL_ENTRY','INVALIDATED'}:
+            raise ValueError('invalid signal state')
         if signal.event_time.utcoffset() is None or signal.sfp_time.utcoffset() is None or signal.bos_time.utcoffset() is None:
             raise ValueError("signal timestamps must be timezone-aware")
         if not signal.sfp_time < signal.bos_time <= signal.event_time or signal.event_time != close_time:
@@ -348,6 +370,9 @@ class VirtualPortfolio:
                 raise ValueError("ready signal requires geometry and level availability timestamps")
             if signal.entry_geometry_ready_time < signal.bos_time:
                 raise ValueError("entry geometry cannot precede BOS")
+            if (signal.optimal_entry is None or not isfinite(signal.optimal_entry) or
+                    not signal.entry_zone.low <= signal.optimal_entry <= signal.entry_zone.high):
+                raise ValueError('optimal entry must lie inside the entry zone')
             prices = (signal.stop_loss, *signal.targets)
             if not all(isfinite(v) and v > 0 for v in prices):
                 raise ValueError("ready prices must be finite and positive")
@@ -367,12 +392,21 @@ class VirtualPortfolio:
         if self._last_close is not None and first.open_time != self._last_close:
             raise ValueError("execution batches must be contiguous and cannot be replayed")
         duration = first.close_time - first.open_time
+        if duration.total_seconds()%60:
+            raise ValueError('execution requires a whole-minute timeframe')
         if self._bar_duration is not None and duration != self._bar_duration:
             raise ValueError("execution timeframe cannot change within a replay")
         if set(self.positions) - set(bars):
             raise ValueError("every open position requires a bar in each batch")
         for signal in signals:
             self._validate_signal(signal, first.close_time, bars, self.mode)
+        unique = {}
+        for signal in signals:
+            if signal.signal_id in unique and unique[signal.signal_id] != signal:
+                raise ValueError('conflicting signal states in one execution batch')
+            unique[signal.signal_id] = signal
+        duplicates = len(signals) - len(unique)
+        signals = tuple(unique.values())
         self._mark({symbol: c.open for symbol, c in bars.items()})
         self._roll_day(first.open_time)
         # All entries use only PnL known before this batch's OPEN.
@@ -410,6 +444,8 @@ class VirtualPortfolio:
                 self._log(first.close_time, signal, action,
                           '|'.join(signal.invalidation_reasons) or '|'.join(signal.reasons))
             elif signal.signal_id in self.terminal_ids or signal.signal_id in self.consumed_ids:
+                self._log(first.close_time, signal, 'SETUP_IGNORED',
+                          'TERMINAL_SETUP_ID' if signal.signal_id in self.terminal_ids else 'CONSUMED_SETUP_ID')
                 continue
             elif signal.status == "READY_FOR_VIRTUAL_ENTRY":
                 self.pending[signal.signal_id] = signal
@@ -420,6 +456,10 @@ class VirtualPortfolio:
                 self.pending.pop(signal.signal_id, None)
                 reason = '|'.join((signal.status, *signal.level_blocking_reasons))
                 self._log(first.close_time, signal, "SETUP_WAITING", reason)
+        if duplicates:
+            # Exact duplicates have one state transition and an explicit receipt.
+            for signal in signals:
+                self._log(first.close_time, signal, 'BATCH_DEDUPLICATED', f'{duplicates}_IDENTICAL_UPDATES_REMOVED')
         self._last_close = first.close_time
         self._bar_duration = duration
         return self.journal

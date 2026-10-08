@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 from crypto_bot.common.models import Direction
 from crypto_bot.strategy.market_analysis import StructureAnalysisMode
-from crypto_bot.strategy.mtf_sfp import MtfOpportunity, MtfSfpReport
+from crypto_bot.strategy.mtf_sfp import MtfSfpReport
 
 
 PRODUCTION_GLOBAL_CLUSTER_WINDOW_MINUTES = 0

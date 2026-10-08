@@ -547,9 +547,6 @@ def link_sfp_formations_to_ltf_bos(
 
     updated_candidates, opportunities = cluster_entry_search_opportunities(candidates)
     opportunities = _attach_entry_geometry(opportunities, ltf_report)
-    range_boundary_implemented = htf_report.sfp_liquidity_scope.startswith(
-        "STRUCTURAL_SWING_AND_RANGE_BOUNDARY"
-    )
     blockers = [
         "SOURCE_OB_POI_AUTOMATION_NOT_IMPLEMENTED",
     ]

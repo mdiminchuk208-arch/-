@@ -620,13 +620,16 @@ def analyze_ranges(
         raise RangeAnalysisError("candles/base_report candle count mismatch")
     previous: datetime | None = None
     previous_close: datetime | None = None
+    duration = candles[0].close_time-candles[0].open_time if candles else None
     for i, candle in enumerate(candles):
         if not candle.is_closed:
             raise RangeAnalysisError(f"unfinished candle at index {i}")
         if previous is not None and candle.open_time <= previous:
             raise RangeAnalysisError("candles must be strictly chronological")
-        if previous_close is not None and candle.open_time < previous_close:
-            raise RangeAnalysisError("candles must not overlap")
+        if candle.close_time-candle.open_time!=duration or duration.total_seconds()%60:
+            raise RangeAnalysisError('range candles require a constant whole-minute timeframe')
+        if previous_close is not None and candle.open_time != previous_close:
+            raise RangeAnalysisError("candles must be contiguous without gaps or overlaps")
         previous = candle.open_time
         previous_close = candle.close_time
     if candles and any(event.event_time > candles[-1].close_time for event in base_report.events):

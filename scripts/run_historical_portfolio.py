@@ -38,8 +38,11 @@ def _index_job(job):
     return symbol,updates,metadata
 
 
-def simulate(execution,updates,*,initial_capital=1170.0,mode='BACKTEST'):
+def simulate(execution,updates,*,initial_capital=1170.0,mode='BACKTEST', portfolio=None,
+             checkpoint_path=None, checkpoint_every=0, stop_after_bars=None):
     """One portfolio across all symbols; updates are observed at their own close."""
+    if not execution:
+        raise ValueError('execution dataset cannot be empty')
     symbols=sorted(execution)
     clock=[c.close_time for c in execution[symbols[0]]]
     if not clock or any([c.close_time for c in execution[s]]!=clock for s in symbols):
@@ -55,13 +58,62 @@ def simulate(execution,updates,*,initial_capital=1170.0,mode='BACKTEST'):
         elif signal.event_time<=clock[-1]:
             by_time[signal.event_time].append(signal)
     by_time[first_close].extend(warmup.values())
-    p=VirtualPortfolio(equity=initial_capital,mode=mode,policy=SimulationPolicy())
+    p=portfolio or VirtualPortfolio(equity=initial_capital,mode=mode,policy=SimulationPolicy())
+    if p.mode != EngineMode(mode) or p.starting_balance != initial_capital:
+        raise ValueError('resume mode and initial capital must match')
+    if p.last_close is not None and p.last_close not in clock:
+        raise ValueError('checkpoint clock is outside the execution dataset')
     observed=[]
+    processed=0
     for i,when in enumerate(clock):
         signals=sorted(by_time[when],key=lambda s:(s.symbol,s.bos_time,s.direction.value,s.signal_id))
+        if p.last_close is not None and when<=p.last_close:
+            observed.extend(signals)
+            continue
         p.step({s:execution[s][i] for s in symbols},signals)
         observed.extend(signals)
+        processed+=1
+        if checkpoint_path and checkpoint_every and processed%checkpoint_every==0:
+            p.save_checkpoint(checkpoint_path)
+        if stop_after_bars is not None and processed>=stop_after_bars:
+            break
+    if checkpoint_path:
+        p.save_checkpoint(checkpoint_path)
     return p,observed
+
+
+def setup_outcomes(observed,portfolio):
+    """One exhaustive result per setup; waiting at the boundary is censored.
+
+    Passing means the signal stage reached READY, irrespective of later risk
+    admission or market outcome. Censoring closes this report, not the strategy.
+    """
+    latest={s.signal_id:s for s in observed}
+    ready={s.signal_id for s in observed if s.status=='READY_FOR_VIRTUAL_ENTRY'}
+    blocks={d.signal_id:d.reason for d in portfolio.journal if d.action=='VIRTUAL_ENTRY_BLOCKED'}
+    outcomes=[]
+    for key,s in sorted(latest.items()):
+        passed=key in ready
+        trade=portfolio.trades.get(key)
+        reasons=list(s.invalidation_reasons or s.level_blocking_reasons or s.reasons)
+        if trade:
+            execution='VIRTUAL_TRADE_'+trade['status']
+        elif key in blocks:
+            execution='RISK_REJECTED'
+            reasons.append(blocks[key])
+        elif key in portfolio.pending:
+            execution='ENTRY_PENDING_AT_DATA_END'
+            reasons.append('DATA_END_BEFORE_ELIGIBLE_NEXT_OPEN')
+        else:
+            execution='NO_VIRTUAL_ENTRY'
+        if not passed and s.status.startswith('WAITING_'):
+            reasons.append('DATA_END_WITH_UNRESOLVED_SETUP')
+        outcomes.append(dict(signal_id=key,symbol=s.symbol,signal_stage='PASSED' if passed else 'REJECTED',
+            final_signal_status=s.status,execution_outcome=execution,reasons=list(dict.fromkeys(reasons))))
+    partition=dict(total_setups=len(latest),passed=len(ready),rejected=len(latest)-len(ready),
+                   policy='PASSED_IF_EVER_READY_WAITING_AT_DATA_END_IS_RIGHT_CENSORED')
+    assert partition['total_setups']==partition['passed']+partition['rejected']
+    return outcomes,partition
 
 
 def main(argv=None):
@@ -78,10 +130,16 @@ def main(argv=None):
     parser.add_argument('--initial-capital',type=float,default=1170.0)
     parser.add_argument('--mode',choices=[m.value for m in EngineMode],default='BACKTEST')
     parser.add_argument('--workers',type=int,default=1)
+    parser.add_argument('--checkpoint',type=Path,help='atomic virtual state JSON; no credentials')
+    parser.add_argument('--checkpoint-every',type=int,default=5000)
+    parser.add_argument('--resume',action='store_true',help='resume the exact same input and strategy')
+    parser.add_argument('--stop-after-bars',type=int,help='stop after this many new batches and save state')
     args=parser.parse_args(argv)
     symbols=sorted(s.strip().upper() for s in args.symbols)
     if (not symbols or len(set(symbols))!=len(symbols) or not all(symbols) or
-        not 0<args.ltf<args.htf or args.warmup_bars<0 or not 1<=args.workers<=4):
+        not 0<args.ltf<args.htf or args.warmup_bars<0 or not 1<=args.workers<=4 or
+        args.checkpoint_every<=0 or (args.resume and not args.checkpoint) or
+        (args.stop_after_bars is not None and (args.stop_after_bars<=0 or not args.checkpoint))):
         parser.error('unique symbols, valid timeframes, nonnegative warmup and 1-4 workers required')
     try:
         VirtualPortfolio(equity=args.initial_capital)
@@ -125,6 +183,19 @@ def main(argv=None):
         data[symbol]={tf:[c for c in cs if c.open_time>=warmup_start and c.close_time<=end]
                       for tf,cs in data[symbol].items()}
     jobs=[(s,data[s],args.htf,args.ltf,args.mode) for s in symbols]
+    root=Path(__file__).resolve().parent.parent
+    files=[*sorted((root/'src').rglob('*.py')),*sorted((root/'scripts').glob('*.py')),
+           root/'config/source_rules.json',root/'pyproject.toml']
+    code_hashes={f.relative_to(root).as_posix():sha256(f.read_bytes()).hexdigest() for f in files}
+    context=json.loads(canonical(dict(input_hashes=hashes,input_code_hashes=code_hashes,
+        symbols=symbols,htf=args.htf,ltf=args.ltf,mode=args.mode,start=start,end=end,
+        warmup_start=warmup_start,initial_capital=args.initial_capital,
+        policy=asdict(SimulationPolicy()),automatic_level_policy=asdict(AutoLevelPolicy()))))
+    portfolio=VirtualPortfolio.load_checkpoint(args.checkpoint) if args.resume else VirtualPortfolio(
+        equity=args.initial_capital,mode=args.mode)
+    if args.resume and portfolio.replay_context!=context:
+        raise ValueError('checkpoint inputs, strategy or execution parameters changed')
+    portfolio.replay_context=context
     metadata,updates={},[]
     if args.workers>1:
         with ProcessPoolExecutor(max_workers=args.workers) as executor:
@@ -138,7 +209,10 @@ def main(argv=None):
             metadata[symbol]=meta
             updates.extend(signals)
             print(f'Indexed {symbol}: {len(signals)} signal changes; {meta["automatic_evaluations"]} level evaluations',flush=True)
-    p,observed=simulate(execution,updates,initial_capital=args.initial_capital,mode=args.mode)
+    p,observed=simulate(execution,updates,initial_capital=args.initial_capital,mode=args.mode,
+        portfolio=portfolio,checkpoint_path=args.checkpoint,checkpoint_every=args.checkpoint_every,
+        stop_after_bars=args.stop_after_bars)
+    outcomes,partition=setup_outcomes(observed,p)
     latest={s.signal_id:s for s in observed}
     ever=defaultdict(set)
     blockers=defaultdict(set)
@@ -146,10 +220,10 @@ def main(argv=None):
         ever[s.status].add(s.signal_id)
         for reason in s.level_blocking_reasons:
             blockers[reason].add(s.signal_id)
-    funnel=dict(market_bars=sum(len(cs) for cs in execution.values()),
+    funnel=dict(market_bars=len(p.equity_curve)*len(symbols),
         raw_structure_events_including_warmup={s:metadata[s]['structure_events'] for s in symbols},
         sfp_bos_links_including_warmup=sum(m['sfp_bos_links'] for m in metadata.values()),
-        unique_setups=len(latest),signal_state_changes=len(observed),
+        unique_setups=len(latest),signal_state_changes=len(observed),setup_outcomes=partition,
         latest_status_counts=dict(Counter(s.status for s in latest.values())),
         ever_status_unique_setup_counts={k:len(v) for k,v in sorted(ever.items())},
         ever_auto_blocker_unique_setup_counts={k:len(v) for k,v in sorted(blockers.items())},
@@ -172,13 +246,10 @@ def main(argv=None):
         'TP1_NOT_POSITIVE_AFTER_COSTS','ISOLATED_MARGIN_BUDGET','TOTAL_RISK_CAP_6_PERCENT',
         'DAILY_LOSS_LIMIT_LATCHED','REENTRY_SCORE_BELOW_75','PREVIOUS_POSITION_STILL_OPEN',
         'COST_ADJUSTED_FILL_GEOMETRY','INVALID_QUANTITY','EQUITY_EXHAUSTED')}
-    root=Path(__file__).resolve().parent.parent
-    files=[*sorted((root/'src').rglob('*.py')),*sorted((root/'scripts').glob('*.py')),
-           root/'config/source_rules.json',root/'pyproject.toml']
-    code_hashes={f.relative_to(root).as_posix():sha256(f.read_bytes()).hexdigest() for f in files}
     payload=dict(strategy_version=STRATEGY_VERSION,mode=args.mode,trade_entry_allowed=False,
         analysis_mode='SOURCE_CONSERVATIVE',symbols=symbols,htf_minutes=args.htf,ltf_minutes=args.ltf,
-        execution_start=start,execution_end=end,days=(end-start).total_seconds()/86400,
+        execution_start=start,execution_end=p.last_close,requested_execution_end=end,
+        run_complete=p.last_close==end,days=(p.last_close-start).total_seconds()/86400,
         warmup_start=warmup_start,warmup_bars=args.warmup_bars,
         common_available_start=available_start,common_available_end=available_end,
         coverage_365_days=False if (available_end-available_start).days<365 else True,
@@ -194,6 +265,7 @@ def main(argv=None):
             'OPEN_POSITIONS_MARKED_NOT_FORCED_CLOSED_AT_END','NO_PUBLIC_LIVE_OR_EXECUTION'])
     args.report_root.mkdir(parents=True,exist_ok=True)
     outputs={'summary.json':json.dumps(payload,sort_keys=True,indent=2,default=encode,allow_nan=False)+'\n',
+        'setup_outcomes.jsonl':''.join(canonical(row)+'\n' for row in outcomes),
         'signals.jsonl':''.join(canonical({**asdict(s),'direction':s.direction.name})+'\n' for s in observed),
         'decisions.jsonl':''.join(canonical(asdict(d))+'\n' for d in p.journal),
         'trades.jsonl':''.join(canonical(t)+'\n' for _,t in sorted(p.trades.items())),

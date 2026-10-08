@@ -1,6 +1,10 @@
 from dataclasses import dataclass
 from datetime import datetime
 from math import isfinite
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from crypto_bot.strategy.market_analysis import MarketAnalysisReport, MarketEventKind
 
 from crypto_bot.common.models import Direction
 

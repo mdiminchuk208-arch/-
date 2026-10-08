@@ -11,7 +11,6 @@ from __future__ import annotations
 from bisect import bisect_right
 from collections import defaultdict, Counter
 from dataclasses import replace
-from datetime import datetime
 from heapq import heappush, heappop
 
 from crypto_bot.common.models import Direction
