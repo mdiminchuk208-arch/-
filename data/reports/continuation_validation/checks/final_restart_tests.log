@@ -1,0 +1,18 @@
+test_corruption_and_live_mode_never_restore (test_portfolio_checkpoint.PortfolioCheckpointTests.test_corruption_and_live_mode_never_restore) ... ok
+test_daily_loss_and_consumed_identity_survive_restart (test_portfolio_checkpoint.PortfolioCheckpointTests.test_daily_loss_and_consumed_identity_survive_restart) ... ok
+test_failed_atomic_replace_keeps_previous_complete_state (test_portfolio_checkpoint.PortfolioCheckpointTests.test_failed_atomic_replace_keeps_previous_complete_state) ... ok
+test_json_restart_pending_and_partial_position_is_identical (test_portfolio_checkpoint.PortfolioCheckpointTests.test_json_restart_pending_and_partial_position_is_identical) ... ok
+test_valid_digest_cannot_enable_live_mode_or_real_entry_flag (test_portfolio_checkpoint.PortfolioCheckpointTests.test_valid_digest_cannot_enable_live_mode_or_real_entry_flag) ... ok
+test_backtest_shadow_long_short_full_automatic_lifecycle_and_restart (test_automatic_lifecycle.AutomaticLifecycleTests.test_backtest_shadow_long_short_full_automatic_lifecycle_and_restart) ... ok
+test_cli_keeps_causal_ltf_tail_after_last_closed_htf (test_automatic_lifecycle.AutomaticLifecycleTests.test_cli_keeps_causal_ltf_tail_after_last_closed_htf) ... Indexed E2E: 3 signal changes; 2 level evaluations
+BACKTEST: $1170.00 -> equity $1309.77; 1 setups; 1 entries; trade_entry_allowed=false; fingerprint=c70b82328b1801f9247c147bf0477dbbd872fdf4e9b391ba4b86c904c22315a8
+ok
+test_cli_resume_rejects_changed_history_and_mode_without_touching_checkpoint (test_automatic_lifecycle.AutomaticLifecycleTests.test_cli_resume_rejects_changed_history_and_mode_without_touching_checkpoint) ... Indexed E2E: 3 signal changes; 2 level evaluations
+SHADOW: $1170.00 -> equity $1252.52; 1 setups; 1 entries; trade_entry_allowed=false; fingerprint=276ffbb3355a73186c0f77f17221715f7b0a5d4ba7c22c2d731ee3e8841c502d
+ok
+test_every_prefix_and_future_mutation_preserves_automatic_ready (test_automatic_lifecycle.AutomaticLifecycleTests.test_every_prefix_and_future_mutation_preserves_automatic_ready) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 2.004s
+
+OK

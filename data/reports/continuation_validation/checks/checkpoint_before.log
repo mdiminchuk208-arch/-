@@ -1,0 +1,35 @@
+test_corruption_and_live_mode_never_restore (test_portfolio_checkpoint.PortfolioCheckpointTests.test_corruption_and_live_mode_never_restore) ... ERROR
+test_daily_loss_and_consumed_identity_survive_restart (test_portfolio_checkpoint.PortfolioCheckpointTests.test_daily_loss_and_consumed_identity_survive_restart) ... ERROR
+test_json_restart_pending_and_partial_position_is_identical (test_portfolio_checkpoint.PortfolioCheckpointTests.test_json_restart_pending_and_partial_position_is_identical) ... ERROR
+
+======================================================================
+ERROR: test_corruption_and_live_mode_never_restore (test_portfolio_checkpoint.PortfolioCheckpointTests.test_corruption_and_live_mode_never_restore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/Zsfhjl-/tests/test_portfolio_checkpoint.py", line 54, in test_corruption_and_live_mode_never_restore
+    path=Path(temp)/'state.json';p.save_checkpoint(path)
+                                 ^^^^^^^^^^^^^^^^^
+AttributeError: 'VirtualPortfolio' object has no attribute 'save_checkpoint'
+
+======================================================================
+ERROR: test_daily_loss_and_consumed_identity_survive_restart (test_portfolio_checkpoint.PortfolioCheckpointTests.test_daily_loss_and_consumed_identity_survive_restart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/Zsfhjl-/tests/test_portfolio_checkpoint.py", line 41, in test_daily_loss_and_consumed_identity_survive_restart
+    path=Path(temp)/'state.json';p.save_checkpoint(path)
+                                 ^^^^^^^^^^^^^^^^^
+AttributeError: 'VirtualPortfolio' object has no attribute 'save_checkpoint'
+
+======================================================================
+ERROR: test_json_restart_pending_and_partial_position_is_identical (test_portfolio_checkpoint.PortfolioCheckpointTests.test_json_restart_pending_and_partial_position_is_identical)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/Zsfhjl-/tests/test_portfolio_checkpoint.py", line 19, in test_json_restart_pending_and_partial_position_is_identical
+    p.save_checkpoint(path)
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'VirtualPortfolio' object has no attribute 'save_checkpoint'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.005s
+
+FAILED (errors=3)

@@ -1,0 +1,10 @@
+test_fractional_minute_execution_clock_is_rejected_atomically (test_pipeline_integrity.PipelineIntegrityTests.test_fractional_minute_execution_clock_is_rejected_atomically) ... ok
+test_market_declared_timeframe_must_match_real_duration (test_pipeline_integrity.PipelineIntegrityTests.test_market_declared_timeframe_must_match_real_duration) ... ok
+test_market_gap_cannot_be_treated_as_next_confirmation_candle (test_pipeline_integrity.PipelineIntegrityTests.test_market_gap_cannot_be_treated_as_next_confirmation_candle) ... ok
+test_range_gap_cannot_resolve_a_sweep (test_pipeline_integrity.PipelineIntegrityTests.test_range_gap_cannot_resolve_a_sweep) ... ok
+test_unknown_signal_state_is_rejected_atomically (test_pipeline_integrity.PipelineIntegrityTests.test_unknown_signal_state_is_rejected_atomically) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK

@@ -1,0 +1,8 @@
+test_cli_resume_rejects_changed_history_and_mode_without_touching_checkpoint (test_automatic_lifecycle.AutomaticLifecycleTests.test_cli_resume_rejects_changed_history_and_mode_without_touching_checkpoint) ... Indexed E2E: 3 signal changes; 2 level evaluations
+SHADOW: $1170.00 -> equity $1252.52; 1 setups; 1 entries; trade_entry_allowed=false; fingerprint=276ffbb3355a73186c0f77f17221715f7b0a5d4ba7c22c2d731ee3e8841c502d
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.155s
+
+OK

@@ -1,0 +1,280 @@
+F541 [*] f-string without any placeholders
+   --> scripts/analyze_mtf_sfp.py:420:23
+    |
+418 |                 print(f"    shared BOS extra links:         {mtf.shared_bos_link_count} (NOT extra trades)")
+419 |                 print(f"    pair-local ENTRY_SEARCH opps:   {mtf.opportunity_count}")
+420 |                 print(f"    actual trade entries:           0 (intentionally blocked)")
+    |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+421 |                 print(f"    pair-local de-dup scope:         {mtf.opportunity_dedup_scope}")
+422 |                 print("    Entry Engine blockers:           " + "; ".join(mtf.entry_engine_blocking_reasons))
+    |
+help: Remove extraneous `f` prefix
+    |
+419 |                 print(f"    pair-local ENTRY_SEARCH opps:   {mtf.opportunity_count}")
+    -                 print(f"    actual trade entries:           0 (intentionally blocked)")
+420 +                 print("    actual trade entries:           0 (intentionally blocked)")
+421 |                 print(f"    pair-local de-dup scope:         {mtf.opportunity_dedup_scope}")
+    |
+
+F401 [*] `datetime.datetime` imported but unused
+ --> scripts/analyze_recovery_ablation.py:7:22
+  |
+5 | from collections import Counter
+6 | from dataclasses import asdict, replace
+7 | from datetime import datetime, timedelta
+  |                      ^^^^^^^^
+8 | import hashlib
+9 | import importlib.util
+  |
+help: Remove unused import: `datetime.datetime`
+  |
+6 | from dataclasses import asdict, replace
+  - from datetime import datetime, timedelta
+7 + from datetime import timedelta
+8 | import hashlib
+  |
+
+F401 [*] `time` imported but unused
+ --> scripts/fetch_bybit_history.py:6:8
+  |
+4 | import os
+5 | import sys
+6 | import time
+  |        ^^^^
+7 | from datetime import datetime, timezone
+8 | from pathlib import Path
+  |
+help: Remove unused import: `time`
+  |
+5 | import sys
+  - import time
+6 | from datetime import datetime, timezone
+  |
+
+F401 [*] `html` imported but unused
+ --> scripts/render_ready_audit.py:7:8
+  |
+5 | from pathlib import Path
+6 | import argparse
+7 | import html
+  |        ^^^^
+8 | import json
+  |
+help: Remove unused import: `html`
+  |
+6 | import argparse
+  - import html
+7 | import json
+  |
+
+F401 [*] `crypto_bot.strategy.mtf_sfp.MtfOpportunity` imported but unused
+ --> src/crypto_bot/strategy/global_opportunity.py:8:41
+  |
+6 | from crypto_bot.common.models import Direction
+7 | from crypto_bot.strategy.market_analysis import StructureAnalysisMode
+8 | from crypto_bot.strategy.mtf_sfp import MtfOpportunity, MtfSfpReport
+  |                                         ^^^^^^^^^^^^^^
+help: Remove unused import: `crypto_bot.strategy.mtf_sfp.MtfOpportunity`
+  |
+7 | from crypto_bot.strategy.market_analysis import StructureAnalysisMode
+  - from crypto_bot.strategy.mtf_sfp import MtfOpportunity, MtfSfpReport
+8 + from crypto_bot.strategy.mtf_sfp import MtfSfpReport
+9 |
+  |
+
+F401 [*] `datetime.datetime` imported but unused
+  --> src/crypto_bot/strategy/historical_replay.py:14:22
+   |
+12 | from collections import defaultdict, Counter
+13 | from dataclasses import replace
+14 | from datetime import datetime
+   |                      ^^^^^^^^
+15 | from heapq import heappush, heappop
+   |
+help: Remove unused import: `datetime.datetime`
+   |
+13 | from dataclasses import replace
+   - from datetime import datetime
+14 | from heapq import heappush, heappop
+   |
+
+F401 [*] `crypto_bot.common.models.Direction` imported but unused
+  --> src/crypto_bot/strategy/market_analysis.py:8:46
+   |
+ 6 | from typing import Sequence
+ 7 |
+ 8 | from crypto_bot.common.models import Candle, Direction
+   |                                              ^^^^^^^^^
+ 9 | from crypto_bot.strategy.sfp import detect_sfp
+10 | from crypto_bot.strategy.structure import is_swing_high, is_swing_low
+   |
+help: Remove unused import: `crypto_bot.common.models.Direction`
+  |
+7 |
+  - from crypto_bot.common.models import Candle, Direction
+8 + from crypto_bot.common.models import Candle
+9 | from crypto_bot.strategy.sfp import detect_sfp
+  |
+
+F841 Local variable `range_boundary_implemented` is assigned to but never used
+   --> src/crypto_bot/strategy/mtf_sfp.py:550:5
+    |
+548 |     updated_candidates, opportunities = cluster_entry_search_opportunities(candidates)
+549 |     opportunities = _attach_entry_geometry(opportunities, ltf_report)
+550 |     range_boundary_implemented = htf_report.sfp_liquidity_scope.startswith(
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+551 |         "STRUCTURAL_SWING_AND_RANGE_BOUNDARY"
+552 |     )
+    |
+help: Remove assignment to unused variable `range_boundary_implemented`
+
+F821 Undefined name `MarketAnalysisReport`
+   --> src/crypto_bot/strategy/trade_plan.py:231:18
+    |
+229 |     *,
+230 |     direction: Direction,
+231 |     ltf_report: "MarketAnalysisReport",
+    |                  ^^^^^^^^^^^^^^^^^^^^
+232 |     bos_kind: "MarketEventKind",
+233 |     bos_index: int,
+    |
+
+F821 Undefined name `MarketEventKind`
+   --> src/crypto_bot/strategy/trade_plan.py:232:16
+    |
+230 |     direction: Direction,
+231 |     ltf_report: "MarketAnalysisReport",
+232 |     bos_kind: "MarketEventKind",
+    |                ^^^^^^^^^^^^^^^
+233 |     bos_index: int,
+234 |     bos_time: datetime,
+    |
+
+F401 [*] `datetime.timedelta` imported but unused
+ --> tests/test_historical_replay.py:2:22
+  |
+1 | from dataclasses import replace
+2 | from datetime import timedelta
+  |                      ^^^^^^^^^
+3 | from datetime import datetime
+4 | from pathlib import Path
+  |
+help: Remove unused import: `datetime.timedelta`
+  |
+1 | from dataclasses import replace
+  - from datetime import timedelta
+2 | from datetime import datetime
+  |
+
+F401 [*] `crypto_bot.strategy.mtf_sfp.cluster_entry_search_opportunities` imported but unused
+  --> tests/test_mtf_sfp.py:17:5
+   |
+15 |     MtfSfpError,
+16 |     MtfSfpStatus,
+17 |     cluster_entry_search_opportunities,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+18 |     link_sfp_formations_to_ltf_bos,
+19 | )
+   |
+help: Remove unused import: `crypto_bot.strategy.mtf_sfp.cluster_entry_search_opportunities`
+   |
+16 |     MtfSfpStatus,
+   -     cluster_entry_search_opportunities,
+17 |     link_sfp_formations_to_ltf_bos,
+   |
+
+F401 [*] `dataclasses.replace` imported but unused
+ --> tests/test_portfolio_checkpoint.py:1:25
+  |
+1 | from dataclasses import replace
+  |                         ^^^^^^^
+2 | from pathlib import Path
+3 | import tempfile
+  |
+help: Remove unused import: `dataclasses.replace`
+  |
+  - from dataclasses import replace
+1 | from pathlib import Path
+  |
+
+F401 [*] `importlib.util` imported but unused
+ --> tests/test_recovery_ablation.py:3:8
+  |
+1 | import csv
+2 | from dataclasses import replace
+3 | import importlib.util
+  |        ^^^^^^^^^^^^^^
+4 | import json
+5 | from pathlib import Path
+  |
+help: Remove unused import: `importlib.util`
+  |
+2 | from dataclasses import replace
+  - import importlib.util
+3 | import json
+  |
+
+F401 [*] `crypto_bot.range_report.write_ranges_csv` imported but unused
+  --> tests/test_recovery_ablation.py:15:37
+   |
+13 | from crypto_bot.global_report import write_global_opportunities_csv
+14 | from crypto_bot.mtf_report import write_mtf_candidates_csv, write_mtf_opportunities_csv
+15 | from crypto_bot.range_report import write_ranges_csv
+   |                                     ^^^^^^^^^^^^^^^^
+16 | from crypto_bot.strategy.global_opportunity import cluster_cross_pair_opportunities
+17 | from crypto_bot.strategy.market_analysis import analyze_market, StructureAnalysisMode as Mode, MarketEventKind as K, TrendState
+   |
+help: Remove unused import: `crypto_bot.range_report.write_ranges_csv`
+   |
+14 | from crypto_bot.mtf_report import write_mtf_candidates_csv, write_mtf_opportunities_csv
+   - from crypto_bot.range_report import write_ranges_csv
+15 | from crypto_bot.strategy.global_opportunity import cluster_cross_pair_opportunities
+   |
+
+F401 [*] `crypto_bot.strategy.recovery_ablation.bos_records` imported but unused
+  --> tests/test_recovery_ablation.py:28:74
+   |
+26 | from crypto_bot.strategy.range_engine import RangeStatus
+27 | from range_test_support import analyze_ranges, augment_market_report_with_range_sfps
+28 | from crypto_bot.strategy.recovery_ablation import comparison, range_key, bos_records, market_fingerprint, mtf_records, sfp_records
+   |                                                                          ^^^^^^^^^^^
+help: Remove unused import
+   |
+27 | from range_test_support import analyze_ranges, augment_market_report_with_range_sfps
+   - from crypto_bot.strategy.recovery_ablation import comparison, range_key, bos_records, market_fingerprint, mtf_records, sfp_records
+28 + from crypto_bot.strategy.recovery_ablation import comparison, range_key, sfp_records
+29 |
+   |
+
+F401 [*] `crypto_bot.strategy.recovery_ablation.market_fingerprint` imported but unused
+  --> tests/test_recovery_ablation.py:28:87
+   |
+26 | from crypto_bot.strategy.range_engine import RangeStatus
+27 | from range_test_support import analyze_ranges, augment_market_report_with_range_sfps
+28 | from crypto_bot.strategy.recovery_ablation import comparison, range_key, bos_records, market_fingerprint, mtf_records, sfp_records
+   |                                                                                       ^^^^^^^^^^^^^^^^^^
+help: Remove unused import
+   |
+27 | from range_test_support import analyze_ranges, augment_market_report_with_range_sfps
+   - from crypto_bot.strategy.recovery_ablation import comparison, range_key, bos_records, market_fingerprint, mtf_records, sfp_records
+28 + from crypto_bot.strategy.recovery_ablation import comparison, range_key, sfp_records
+29 |
+   |
+
+F401 [*] `crypto_bot.strategy.recovery_ablation.mtf_records` imported but unused
+  --> tests/test_recovery_ablation.py:28:107
+   |
+26 | from crypto_bot.strategy.range_engine import RangeStatus
+27 | from range_test_support import analyze_ranges, augment_market_report_with_range_sfps
+28 | from crypto_bot.strategy.recovery_ablation import comparison, range_key, bos_records, market_fingerprint, mtf_records, sfp_records
+   |                                                                                                           ^^^^^^^^^^^
+help: Remove unused import
+   |
+27 | from range_test_support import analyze_ranges, augment_market_report_with_range_sfps
+   - from crypto_bot.strategy.recovery_ablation import comparison, range_key, bos_records, market_fingerprint, mtf_records, sfp_records
+28 + from crypto_bot.strategy.recovery_ablation import comparison, range_key, sfp_records
+29 |
+   |
+
+Found 18 errors.
+[*] 15 fixable with the `--fix` option (1 hidden fix can be enabled with the `--unsafe-fixes` option).

@@ -1,0 +1,55 @@
+test_fractional_minute_execution_clock_is_rejected_atomically (test_pipeline_integrity.PipelineIntegrityTests.test_fractional_minute_execution_clock_is_rejected_atomically) ... FAIL
+test_market_declared_timeframe_must_match_real_duration (test_pipeline_integrity.PipelineIntegrityTests.test_market_declared_timeframe_must_match_real_duration) ... FAIL
+test_market_gap_cannot_be_treated_as_next_confirmation_candle (test_pipeline_integrity.PipelineIntegrityTests.test_market_gap_cannot_be_treated_as_next_confirmation_candle) ... FAIL
+test_range_gap_cannot_resolve_a_sweep (test_pipeline_integrity.PipelineIntegrityTests.test_range_gap_cannot_resolve_a_sweep) ... FAIL
+test_unknown_signal_state_is_rejected_atomically (test_pipeline_integrity.PipelineIntegrityTests.test_unknown_signal_state_is_rejected_atomically) ... FAIL
+
+======================================================================
+FAIL: test_fractional_minute_execution_clock_is_rejected_atomically (test_pipeline_integrity.PipelineIntegrityTests.test_fractional_minute_execution_clock_is_rejected_atomically)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/Zsfhjl-/tests/test_pipeline_integrity.py", line 29, in test_fractional_minute_execution_clock_is_rejected_atomically
+    with self.assertRaises(ValueError):p.step({'TEST':candle})
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_market_declared_timeframe_must_match_real_duration (test_pipeline_integrity.PipelineIntegrityTests.test_market_declared_timeframe_must_match_real_duration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/Zsfhjl-/tests/test_pipeline_integrity.py", line 18, in test_market_declared_timeframe_must_match_real_duration
+    with self.assertRaises(MarketAnalysisError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: MarketAnalysisError not raised
+
+======================================================================
+FAIL: test_market_gap_cannot_be_treated_as_next_confirmation_candle (test_pipeline_integrity.PipelineIntegrityTests.test_market_gap_cannot_be_treated_as_next_confirmation_candle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/Zsfhjl-/tests/test_pipeline_integrity.py", line 14, in test_market_gap_cannot_be_treated_as_next_confirmation_candle
+    with self.assertRaises(MarketAnalysisError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: MarketAnalysisError not raised
+
+======================================================================
+FAIL: test_range_gap_cannot_resolve_a_sweep (test_pipeline_integrity.PipelineIntegrityTests.test_range_gap_cannot_resolve_a_sweep)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/Zsfhjl-/tests/test_pipeline_integrity.py", line 23, in test_range_gap_cannot_resolve_a_sweep
+    with self.assertRaises(RangeAnalysisError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RangeAnalysisError not raised
+
+======================================================================
+FAIL: test_unknown_signal_state_is_rejected_atomically (test_pipeline_integrity.PipelineIntegrityTests.test_unknown_signal_state_is_rejected_atomically)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/Zsfhjl-/tests/test_pipeline_integrity.py", line 34, in test_unknown_signal_state_is_rejected_atomically
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+FAILED (failures=5)

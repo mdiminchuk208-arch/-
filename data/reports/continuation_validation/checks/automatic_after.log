@@ -1,0 +1,10 @@
+test_backtest_shadow_long_short_full_automatic_lifecycle_and_restart (test_automatic_lifecycle.AutomaticLifecycleTests.test_backtest_shadow_long_short_full_automatic_lifecycle_and_restart) ... ok
+test_cli_keeps_causal_ltf_tail_after_last_closed_htf (test_automatic_lifecycle.AutomaticLifecycleTests.test_cli_keeps_causal_ltf_tail_after_last_closed_htf) ... Indexed E2E: 3 signal changes; 2 level evaluations
+BACKTEST: $1170.00 -> equity $1309.77; 1 setups; 1 entries; trade_entry_allowed=false; fingerprint=0bce6a64510e70b9c46605292760b8710d94bfb3c25ca33e465d424979d8a100
+ok
+test_every_prefix_and_future_mutation_preserves_automatic_ready (test_automatic_lifecycle.AutomaticLifecycleTests.test_every_prefix_and_future_mutation_preserves_automatic_ready) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.306s
+
+OK

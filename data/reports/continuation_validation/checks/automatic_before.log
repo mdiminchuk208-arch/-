@@ -1,0 +1,23 @@
+test_backtest_shadow_long_short_full_automatic_lifecycle_and_restart (test_automatic_lifecycle.AutomaticLifecycleTests.test_backtest_shadow_long_short_full_automatic_lifecycle_and_restart) ... ok
+test_cli_keeps_causal_ltf_tail_after_last_closed_htf (test_automatic_lifecycle.AutomaticLifecycleTests.test_cli_keeps_causal_ltf_tail_after_last_closed_htf) ... Indexed E2E: 1 signal changes; 0 level evaluations
+BACKTEST: $1170.00 -> equity $1170.00; 1 setups; 0 entries; trade_entry_allowed=false; fingerprint=d0277766cdec7c50ee50956c2d7015c561e5abbc9bc0fb237638b4c4b3445ddf
+FAIL
+test_every_prefix_and_future_mutation_preserves_automatic_ready (test_automatic_lifecycle.AutomaticLifecycleTests.test_every_prefix_and_future_mutation_preserves_automatic_ready) ... ok
+
+======================================================================
+FAIL: test_cli_keeps_causal_ltf_tail_after_last_closed_htf (test_automatic_lifecycle.AutomaticLifecycleTests.test_cli_keeps_causal_ltf_tail_after_last_closed_htf)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/Zsfhjl-/tests/test_automatic_lifecycle.py", line 111, in test_cli_keeps_causal_ltf_tail_after_last_closed_htf
+    self.assertEqual(summary['execution_end'],data[5][-1].close_time.isoformat())
+AssertionError: '2026-01-01T15:00:00+00:00' != '2026-01-01T15:50:00+00:00'
+- 2026-01-01T15:00:00+00:00
+?               ^
++ 2026-01-01T15:50:00+00:00
+?               ^
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.298s
+
+FAILED (failures=1)

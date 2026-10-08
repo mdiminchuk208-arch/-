@@ -1,0 +1,10 @@
+{
+  "real_backtest_shadow_parity": {
+    "decisions.jsonl": true,
+    "trades.jsonl": true,
+    "equity_curve.jsonl": true,
+    "setup_outcomes.jsonl": true
+  },
+  "baseline_prefix_signal_states": 17752,
+  "baseline_prefix_unchanged": true
+}
