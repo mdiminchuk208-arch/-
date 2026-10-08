@@ -1,6 +1,6 @@
 {
   "baseline_guard": "PASS",
-  "changed_files_scanned": 3,
+  "changed_files_scanned": 30,
   "excluded_generated_directories": [
     ".mypy_cache",
     ".pytest_cache",
@@ -13,28 +13,217 @@
   ],
   "files": [
     {
-      "logical_bytes": 10858,
-      "logical_sha256": "24e6715c7ca2612988855e79745ebb57ef142dd575f0d29be14c5091d745affb",
-      "path": "CONTINUATION_STATUS.md",
-      "stored_bytes": 10858,
-      "stored_sha256": "24e6715c7ca2612988855e79745ebb57ef142dd575f0d29be14c5091d745affb"
+      "logical_bytes": 651,
+      "logical_sha256": "dac26b52d0756f74517171b81fa14b086acf985656c9af119a7815843997f427",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/REFERENCE_SEGMENT_09/artifact_hashes.json",
+      "stored_bytes": 651,
+      "stored_sha256": "dac26b52d0756f74517171b81fa14b086acf985656c9af119a7815843997f427"
     },
     {
-      "logical_bytes": 5600,
-      "logical_sha256": "2b6dccc1741d9a8301155275cb50a94d10aabe7966689a602b4b2452190a40f3",
-      "path": "scripts/finalize_research_delivery.py",
-      "stored_bytes": 5600,
-      "stored_sha256": "2b6dccc1741d9a8301155275cb50a94d10aabe7966689a602b4b2452190a40f3"
+      "logical_bytes": 24990502,
+      "logical_sha256": "f3c703f4174dbac5b063c18256ce21baa2367bacd0cf5cd8bd5e2cb8c3cc6cc4",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/REFERENCE_SEGMENT_09/decisions.jsonl.gz",
+      "stored_bytes": 964271,
+      "stored_sha256": "eda06ab2ab58a905d5a4a1640225cde4ececf9077f629a2d7260bafb5527771f"
     },
     {
-      "logical_bytes": 26287,
-      "logical_sha256": "82f9219655382c3632a0626231f588b52d556c689d5fd3cd097dcf9ebcc7a5d0",
-      "path": "scripts/write_research_reports.py",
-      "stored_bytes": 26287,
-      "stored_sha256": "82f9219655382c3632a0626231f588b52d556c689d5fd3cd097dcf9ebcc7a5d0"
+      "logical_bytes": 83632082,
+      "logical_sha256": "025159b6d92230580a4858f06ef45c41aab2aaf2d3687a41f52596db99db49d7",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/REFERENCE_SEGMENT_09/equity_curve.jsonl.gz",
+      "stored_bytes": 733496,
+      "stored_sha256": "a742b28f1c071ee108019b9a9854ebc6e253a8c7afae6baffbfb413fa31a9bab"
+    },
+    {
+      "logical_bytes": 65,
+      "logical_sha256": "e497a20fb71f453886ed0e710829e81195eff08f5645956aeed479ced0c0cdfd",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/REFERENCE_SEGMENT_09/fingerprint.sha256",
+      "stored_bytes": 65,
+      "stored_sha256": "e497a20fb71f453886ed0e710829e81195eff08f5645956aeed479ced0c0cdfd"
+    },
+    {
+      "logical_bytes": 13486,
+      "logical_sha256": "5ce607eb4b1ff66949fa50879ba7b2113410220d21bfafc6cf84ad18bc5b9e3f",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/REFERENCE_SEGMENT_09/ready_outcomes.jsonl",
+      "stored_bytes": 13486,
+      "stored_sha256": "5ce607eb4b1ff66949fa50879ba7b2113410220d21bfafc6cf84ad18bc5b9e3f"
+    },
+    {
+      "logical_bytes": 62087997,
+      "logical_sha256": "4133354fbe36720f3b201a47172691c5b40fe2ab9e1757fcaf0312c5f77d9666",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/REFERENCE_SEGMENT_09/signals.jsonl.gz",
+      "stored_bytes": 2295520,
+      "stored_sha256": "c88e7e4b2bf877f4125e878664c12141b496d17d3af118799527bb735dac8030"
+    },
+    {
+      "logical_bytes": 10462,
+      "logical_sha256": "89ca450d36923324fafad08c4b0a32e948ae72c297e9eaaf6b080df85bbf0fa6",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/REFERENCE_SEGMENT_09/summary.json",
+      "stored_bytes": 10462,
+      "stored_sha256": "89ca450d36923324fafad08c4b0a32e948ae72c297e9eaaf6b080df85bbf0fa6"
+    },
+    {
+      "logical_bytes": 567078,
+      "logical_sha256": "818cbc02f8a1400cb05be11e31738df6c02742af94b61cd954585d3bc795b2ec",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/REFERENCE_SEGMENT_09/target_availability_qualification_only.jsonl.gz",
+      "stored_bytes": 8910,
+      "stored_sha256": "f627125dd5f8010f6530700d6aff24c0e25d89af30cc2ce59c0a2587c62b5dd9"
+    },
+    {
+      "logical_bytes": 14727,
+      "logical_sha256": "222144df6d370386825738d0b6c115fbd7600d3e46fee927c57db4a7f57f217f",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/REFERENCE_SEGMENT_09/trades.jsonl",
+      "stored_bytes": 14727,
+      "stored_sha256": "222144df6d370386825738d0b6c115fbd7600d3e46fee927c57db4a7f57f217f"
+    },
+    {
+      "logical_bytes": 651,
+      "logical_sha256": "d058eab9ae3e2f9ad1075e8cd42a447293d7dadd0907952efe640759d26854bb",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/REFERENCE_SEGMENT_10/artifact_hashes.json",
+      "stored_bytes": 651,
+      "stored_sha256": "d058eab9ae3e2f9ad1075e8cd42a447293d7dadd0907952efe640759d26854bb"
+    },
+    {
+      "logical_bytes": 8045755,
+      "logical_sha256": "ab5515c6181cc33eed03ae3eef567ec527ad7251c47cea6824505396cf411799",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/REFERENCE_SEGMENT_10/decisions.jsonl.gz",
+      "stored_bytes": 321247,
+      "stored_sha256": "0fe5d19e945691c507551883ad94b154d0e83e298512ab526595952638ecbd6f"
+    },
+    {
+      "logical_bytes": 27897960,
+      "logical_sha256": "ba5e413474134bd2c4c3bd28af30997988aa29a86a0cd51e49324638a1ca01c5",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/REFERENCE_SEGMENT_10/equity_curve.jsonl.gz",
+      "stored_bytes": 240603,
+      "stored_sha256": "81cb304997b6d720ffc553b29334b22ba977e96a88990e8c5bc3c99d05d69774"
+    },
+    {
+      "logical_bytes": 65,
+      "logical_sha256": "9b1bdaaa85bdd86ccd17adb8e2c2d11d8514844e255fb3091571dc577eeb2020",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/REFERENCE_SEGMENT_10/fingerprint.sha256",
+      "stored_bytes": 65,
+      "stored_sha256": "9b1bdaaa85bdd86ccd17adb8e2c2d11d8514844e255fb3091571dc577eeb2020"
+    },
+    {
+      "logical_bytes": 3247,
+      "logical_sha256": "28461d0af97cb55c2a1cff8b7b7dabe8d9fb40d4353cbfa149d618ee431d12ef",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/REFERENCE_SEGMENT_10/ready_outcomes.jsonl",
+      "stored_bytes": 3247,
+      "stored_sha256": "28461d0af97cb55c2a1cff8b7b7dabe8d9fb40d4353cbfa149d618ee431d12ef"
+    },
+    {
+      "logical_bytes": 21055012,
+      "logical_sha256": "e7d252cc4cb2f1cb54eea59b4d33f9fba585df8ab463fb3c2d279b041331955f",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/REFERENCE_SEGMENT_10/signals.jsonl.gz",
+      "stored_bytes": 779609,
+      "stored_sha256": "bfee6365a6dc77f4fe19604b7ed71da792af2555b1fe1a5b99ba50adb9cc43f1"
+    },
+    {
+      "logical_bytes": 8906,
+      "logical_sha256": "728684c49670833009eebc54a886e4e8c3d953994ed18627560c98cc91037c1e",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/REFERENCE_SEGMENT_10/summary.json",
+      "stored_bytes": 8906,
+      "stored_sha256": "728684c49670833009eebc54a886e4e8c3d953994ed18627560c98cc91037c1e"
+    },
+    {
+      "logical_bytes": 74459,
+      "logical_sha256": "c0e8941c83f01e8411c84341c82fe8f29d41a99fa0a391d06d4f6aacb8c7bca9",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/REFERENCE_SEGMENT_10/target_availability_qualification_only.jsonl.gz",
+      "stored_bytes": 1511,
+      "stored_sha256": "e18e511735ee393c4bd70d8b08ff92c83e0c1e3beab928a09465c3c520e06183"
+    },
+    {
+      "logical_bytes": 0,
+      "logical_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/REFERENCE_SEGMENT_10/trades.jsonl",
+      "stored_bytes": 0,
+      "stored_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "logical_bytes": 651,
+      "logical_sha256": "0da612786ba8b8f1787d429868073a552cbde2fc882e7e47d74c433375555b21",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/VALIDATION_SEGMENT_10/artifact_hashes.json",
+      "stored_bytes": 651,
+      "stored_sha256": "0da612786ba8b8f1787d429868073a552cbde2fc882e7e47d74c433375555b21"
+    },
+    {
+      "logical_bytes": 22634930,
+      "logical_sha256": "6c5839f85dcd33c440430784a4091e15db30188fa2b03c8802ba61758310a50b",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/VALIDATION_SEGMENT_10/decisions.jsonl.gz",
+      "stored_bytes": 828867,
+      "stored_sha256": "94344b1852b504b72139ee9209c2335fc6e302758f90a32de384be98b46cc73e"
+    },
+    {
+      "logical_bytes": 50379936,
+      "logical_sha256": "d3990d22726dc4e8c8a2ec6ef4d09c6cba912292f92621b33fbecd98e9efe09e",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/VALIDATION_SEGMENT_10/equity_curve.jsonl.gz",
+      "stored_bytes": 440024,
+      "stored_sha256": "2c84bd187eabba039eaebfce202fbf3f1ba28b66e6bbcfc79f209b22a8a5482c"
+    },
+    {
+      "logical_bytes": 65,
+      "logical_sha256": "7025af23d5cd54abfd1b949bbca0a32baec840db707923a0af7731c8caab2de7",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/VALIDATION_SEGMENT_10/fingerprint.sha256",
+      "stored_bytes": 65,
+      "stored_sha256": "7025af23d5cd54abfd1b949bbca0a32baec840db707923a0af7731c8caab2de7"
+    },
+    {
+      "logical_bytes": 16758,
+      "logical_sha256": "6622d31dbebc63cad0ce8d2e19c22f0efa5ef1de5f40aa938317b19e73b6ab70",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/VALIDATION_SEGMENT_10/ready_outcomes.jsonl",
+      "stored_bytes": 16758,
+      "stored_sha256": "6622d31dbebc63cad0ce8d2e19c22f0efa5ef1de5f40aa938317b19e73b6ab70"
+    },
+    {
+      "logical_bytes": 50513292,
+      "logical_sha256": "ae6183a1a846ebf8118e07f6b2bd5f3eee1661d45aafe078cd729b42acfdb014",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/VALIDATION_SEGMENT_10/signals.jsonl.gz",
+      "stored_bytes": 1893953,
+      "stored_sha256": "6f10bf233a320bc91f99fd8898f2379d09f8845ae98bdf73756a5df1355018ec"
+    },
+    {
+      "logical_bytes": 10200,
+      "logical_sha256": "b43238c5de6fc6e1c3e87d2caf4f33f13a4149e17e3d991c18da081b6ca96090",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/VALIDATION_SEGMENT_10/summary.json",
+      "stored_bytes": 10200,
+      "stored_sha256": "b43238c5de6fc6e1c3e87d2caf4f33f13a4149e17e3d991c18da081b6ca96090"
+    },
+    {
+      "logical_bytes": 1412581,
+      "logical_sha256": "4691d86c5c4da3df0157d1d0794ad5573d88f3b1a8d291882ae9b2c3123faa38",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/VALIDATION_SEGMENT_10/target_availability_qualification_only.jsonl.gz",
+      "stored_bytes": 21249,
+      "stored_sha256": "058b7a0545208efa766091d69550608945be6a8ad2d87864e9dfe55c042f6d71"
+    },
+    {
+      "logical_bytes": 9572,
+      "logical_sha256": "2ee45992e2d43333ad09eb2658ca4da40e5dfaa5028ff763761652ac2cb8dab7",
+      "path": "data/reports/robustness_research/canonical/binance_15_5/VALIDATION_SEGMENT_10/trades.jsonl",
+      "stored_bytes": 9572,
+      "stored_sha256": "2ee45992e2d43333ad09eb2658ca4da40e5dfaa5028ff763761652ac2cb8dab7"
+    },
+    {
+      "logical_bytes": 69218,
+      "logical_sha256": "8c9a7b39b3ca0a744c33a1f99348c40d6469ab8c226fc0be11e09a2af4c1183e",
+      "path": "data/reports/robustness_research/continuation_full_tests.log",
+      "stored_bytes": 69218,
+      "stored_sha256": "8c9a7b39b3ca0a744c33a1f99348c40d6469ab8c226fc0be11e09a2af4c1183e"
+    },
+    {
+      "logical_bytes": 7917,
+      "logical_sha256": "44bbd0378a8958670fa0d3b84bf4c7c67abe4d5a15a53fe14ea12cd7cd369c0d",
+      "path": "data/reports/robustness_research/continuation_stage_checks.json",
+      "stored_bytes": 7917,
+      "stored_sha256": "44bbd0378a8958670fa0d3b84bf4c7c67abe4d5a15a53fe14ea12cd7cd369c0d"
+    },
+    {
+      "logical_bytes": 30655,
+      "logical_sha256": "6cb010acbebca477b5273ecd43b3e2337bcd3d53b35cabef25d23ffa69964132",
+      "path": "data/reports/robustness_research/research_completion_inventory.json",
+      "stored_bytes": 30655,
+      "stored_sha256": "6cb010acbebca477b5273ecd43b3e2337bcd3d53b35cabef25d23ffa69964132"
     }
   ],
-  "logical_bytes_covered": 42745,
+  "logical_bytes_covered": 353488880,
   "patterns": [
     "private_key",
     "github_token",
@@ -48,6 +237,6 @@
   "secret_matches": 0,
   "sha_identical_file_reuse": 0,
   "trade_entry_allowed": false,
-  "unique_logical_bytes_scanned": 42745,
-  "unique_stored_sha256": 3
+  "unique_logical_bytes_scanned": 353488880,
+  "unique_stored_sha256": 30
 }

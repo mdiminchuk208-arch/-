@@ -38,10 +38,10 @@ test_real_detector_to_virtual_tp_lifecycle_both_directions_and_modes (test_auto_
 test_withdrawn_pending_setup_cannot_enter_on_later_bar (test_auto_replay.AutoReplayTests.test_withdrawn_pending_setup_cannot_enter_on_later_bar) ... ok
 test_backtest_shadow_long_short_full_automatic_lifecycle_and_restart (test_automatic_lifecycle.AutomaticLifecycleTests.test_backtest_shadow_long_short_full_automatic_lifecycle_and_restart) ... ok
 test_cli_keeps_causal_ltf_tail_after_last_closed_htf (test_automatic_lifecycle.AutomaticLifecycleTests.test_cli_keeps_causal_ltf_tail_after_last_closed_htf) ... Indexed E2E: 3 signal changes; 2 level evaluations
-BACKTEST: $1170.00 -> equity $1309.77; 1 setups; 1 entries; trade_entry_allowed=false; fingerprint=157a199e47951a69e83e7113632f7890929427792da5211a590474ba7cf09234
+BACKTEST: $1170.00 -> equity $1309.77; 1 setups; 1 entries; trade_entry_allowed=false; fingerprint=f4aff51ea116ce0b8311c1d91271a859925ec664eac31c076f1d5d758146e905
 ok
 test_cli_resume_rejects_changed_history_and_mode_without_touching_checkpoint (test_automatic_lifecycle.AutomaticLifecycleTests.test_cli_resume_rejects_changed_history_and_mode_without_touching_checkpoint) ... Indexed E2E: 3 signal changes; 2 level evaluations
-SHADOW: $1170.00 -> equity $1252.52; 1 setups; 1 entries; trade_entry_allowed=false; fingerprint=9017be327aad90aaf8cfffa1ee2ece3f515ae27860867377ad6774e5c9d5101d
+SHADOW: $1170.00 -> equity $1252.52; 1 setups; 1 entries; trade_entry_allowed=false; fingerprint=179e97734c9f0a8e30e5135cdd700e453c4848d9e3e6215d034ff9820edc4c78
 ok
 test_every_prefix_and_future_mutation_preserves_automatic_ready (test_automatic_lifecycle.AutomaticLifecycleTests.test_every_prefix_and_future_mutation_preserves_automatic_ready) ... ok
 test_fetch_does_not_stop_when_limit_one_first_row_is_unfinished (test_bybit_data.BybitDataTests.test_fetch_does_not_stop_when_limit_one_first_row_is_unfinished) ... ok
@@ -445,6 +445,6 @@ test_sfp_requires_immediate_next_candle (test_work_regressions.WorkRegressions.t
 test_unknown_direction_is_not_silently_treated_as_short (test_work_regressions.WorkRegressions.test_unknown_direction_is_not_silently_treated_as_short) ... ok
 
 ----------------------------------------------------------------------
-Ran 439 tests in 12.758s
+Ran 439 tests in 16.896s
 
 OK
