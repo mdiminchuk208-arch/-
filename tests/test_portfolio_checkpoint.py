@@ -1,6 +1,7 @@
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from crypto_bot.common.models import Direction
 from crypto_bot.strategy.virtual_portfolio import VirtualPortfolio
@@ -56,6 +57,35 @@ class PortfolioCheckpointTests(unittest.TestCase):
             with self.assertRaises(ValueError):VirtualPortfolio.load_checkpoint(path)
             path.write_text('{malformed')
             with self.assertRaises(ValueError):VirtualPortfolio.load_checkpoint(path)
+
+    def test_failed_atomic_replace_keeps_previous_complete_state(self):
+        p=VirtualPortfolio()
+        with tempfile.TemporaryDirectory() as temp:
+            path=Path(temp)/'state.json';p.save_checkpoint(path)
+            previous=path.read_bytes()
+            p.step({'TEST':bar(0)},[signal()])
+            with patch('crypto_bot.strategy.checkpoint.os.replace',side_effect=OSError('disk failure')):
+                with self.assertRaises(OSError):p.save_checkpoint(path)
+            self.assertEqual(path.read_bytes(),previous)
+            self.assertEqual(VirtualPortfolio.load_checkpoint(path).positions,{})
+            self.assertEqual(list(Path(temp).iterdir()),[path])
+
+    def test_valid_digest_cannot_enable_live_mode_or_real_entry_flag(self):
+        import json
+        from hashlib import sha256
+        from crypto_bot.strategy.checkpoint import _canonical
+        p=VirtualPortfolio()
+        with tempfile.TemporaryDirectory() as temp:
+            path=Path(temp)/'state.json';p.save_checkpoint(path)
+            original=path.read_text()
+            for change in ('LIVE','real_flag'):
+                payload=json.loads(original);payload.pop('sha256')
+                if change=='LIVE':payload['state']['mode']='LIVE'
+                else:payload['trade_entry_allowed']=True
+                payload['sha256']=sha256(_canonical(payload).encode()).hexdigest()
+                path.write_text(json.dumps(payload))
+                with self.subTest(change=change),self.assertRaises(ValueError):
+                    VirtualPortfolio.load_checkpoint(path)
 
 
 if __name__=='__main__':unittest.main()

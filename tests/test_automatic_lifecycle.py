@@ -17,7 +17,7 @@ import os
 
 from crypto_bot.common.models import Candle, Direction
 from crypto_bot.data.models import MarketCandle
-from crypto_bot.data.storage import write_klines_csv
+from crypto_bot.data.storage import read_klines_csv, write_klines_csv
 from crypto_bot.strategy.auto_levels import AutoLevelPolicy
 from crypto_bot.strategy.historical_replay import indexed_signal_updates
 from crypto_bot.strategy.replay import evaluate_snapshot
@@ -39,6 +39,33 @@ def histories(direction=Direction.LONG):
 
 
 class AutomaticLifecycleTests(unittest.TestCase):
+    def test_cli_resume_rejects_changed_history_and_mode_without_touching_checkpoint(self):
+        data=histories()
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp)
+            for tf,cs in data.items():
+                rows=[MarketCandle('BYBIT','E2E',str(tf),int(c.open_time.timestamp()*1000),
+                                  c.open,c.high,c.low,c.close) for c in cs]
+                write_klines_csv(rows,root/'history/E2E'/f'{tf}.csv')
+            common=['--data-root',str(root/'history'),'--report-root',str(root/'report'),
+                    '--symbols','E2E','--days','max','--warmup-bars','0',
+                    '--checkpoint',str(root/'state.json')]
+            cli.main([*common,'--mode','SHADOW','--stop-after-bars','188'])
+            previous=(root/'state.json').read_bytes()
+            restored=VirtualPortfolio.load_checkpoint(root/'state.json')
+            self.assertEqual(restored.positions['E2E'].tp_stage,1)
+            self.assertFalse(json.loads((root/'report/summary.json').read_text())['run_complete'])
+            with self.assertRaisesRegex(ValueError,'parameters changed'):
+                cli.main([*common,'--resume','--mode','BACKTEST'])
+            path=root/'history/E2E/5.csv'
+            # A volume change leaves OHLC and clocks valid but changes identity.
+            rows=read_klines_csv(path)
+            rows[-1]=replace(rows[-1],volume_base=1.0)
+            write_klines_csv(rows,path)
+            with self.assertRaisesRegex(ValueError,'parameters changed'):
+                cli.main([*common,'--resume','--mode','SHADOW'])
+            self.assertEqual((root/'state.json').read_bytes(),previous)
+
     def test_backtest_shadow_long_short_full_automatic_lifecycle_and_restart(self):
         results=[]
         for direction in Direction:
@@ -126,4 +153,3 @@ class AutomaticLifecycleTests(unittest.TestCase):
             snapshot=json.loads((root/'snapshot/summary.json').read_text())
             self.assertEqual(snapshot['virtual_entry_count'],1)
             self.assertAlmostEqual(snapshot['final_equity'],summary['portfolio']['final_equity'])
-

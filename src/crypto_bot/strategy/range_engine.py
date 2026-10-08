@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, replace
+from bisect import bisect_right
 from datetime import datetime
 from enum import Enum
 from typing import Sequence
@@ -275,18 +276,39 @@ def _validate_candidates(
 ) -> list[RangeInstance]:
     swings = _swings(report)
     bos = _bos_events(report)
+    swing_times = [e.event_time for e in swings]
+    bos_times = [e.event_time for e in bos]
     out: list[RangeInstance] = []
 
     for item in candidates:
+        # The first midpoint validation or clean-structure rejection ends this
+        # phase. Its later prices cannot affect prevalidation boundary states.
+        # Keep the original same-time priority: internal BOS, raids, midpoint.
+        swing_start = bisect_right(swing_times, item.second_boundary_time)
+        bos_start = bisect_right(bos_times, item.second_boundary_time)
+        midpoint = next((event for event in swings[swing_start:]
+                         if _swing_near_midpoint(event, item, params)), None)
+        horizon = midpoint.event_time if midpoint is not None else None
+        if params.require_clean_internal_structure:
+            for event in bos[bos_start:]:
+                if horizon is not None and event.event_time > horizon:
+                    break
+                if item.lower < event.price < item.upper:
+                    horizon = event.event_time
+                    break
+        candle_start = bisect_right(candles, item.second_boundary_time, key=lambda c: c.close_time)
+        candle_end = (bisect_right(candles, horizon, key=lambda c: c.close_time)
+                      if horizon is not None else len(candles))
+        bos_end = bisect_right(bos_times, horizon) if horizon is not None else len(bos)
+        swing_end = bisect_right(swing_times, horizon) if horizon is not None else len(swings)
         # Before the qualitative 0.5 validation is known, boundary raids are not used
         # retroactively as SFPs. They do consume that original boundary liquidity for the
         # later range-boundary SFP layer. This preserves causality and the source concept
         # that deviations can move beyond a range boundary without declaring the whole
         # range invalid solely because of an outside close.
         timeline: dict[datetime, dict[str, list]] = {}
-        for i, candle in enumerate(candles):
-            if candle.close_time <= item.second_boundary_time:
-                continue
+        for i in range(candle_start, candle_end):
+            candle = candles[i]
             high_sweep = candle.high > item.upper
             low_sweep = candle.low < item.lower
             if high_sweep or low_sweep:
@@ -294,15 +316,11 @@ def _validate_candidates(
                     (i, high_sweep, low_sweep)
                 )
 
-        for event in bos:
-            if event.event_time <= item.second_boundary_time:
-                continue
+        for event in bos[bos_start:bos_end]:
             if item.lower < event.price < item.upper:
                 timeline.setdefault(event.event_time, {}).setdefault("internal", []).append(event)
 
-        for event in swings:
-            if event.event_time <= item.second_boundary_time:
-                continue
+        for event in swings[swing_start:swing_end]:
             if _swing_near_midpoint(event, item, params):
                 timeline.setdefault(event.event_time, {}).setdefault("midpoint", []).append(event)
 
