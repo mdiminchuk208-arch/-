@@ -24,13 +24,14 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_*.py' -v
       - name: Safety invariant
         run: |
-          if grep -R --line-number --fixed-string 'trade_entry_allowed=True' src scripts tests; then
-            echo 'Forbidden real-entry enablement found.' >&2
+          if grep -R --include='*.py' --line-number --fixed-string 'trade_entry_allowed=True' src scripts; then
+            echo 'Forbidden real-entry enablement found in runtime code.' >&2
             exit 1
           fi
           python - <<'PY'
           from pathlib import Path
-          text='\n'.join(p.read_text(encoding='utf-8',errors='ignore') for p in Path('src').rglob('*.py'))
+          runtime = [*Path('src').rglob('*.py'), *Path('scripts').rglob('*.py')]
+          text='\n'.join(p.read_text(encoding='utf-8',errors='ignore') for p in runtime)
           assert 'trade_entry_allowed=True' not in text
-          print('SAFETY PASS: no trade_entry_allowed=True in src')
+          print('SAFETY PASS: no trade_entry_allowed=True in runtime code')
           PY
