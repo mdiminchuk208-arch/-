@@ -65,7 +65,9 @@ class ResearchVariantTests(unittest.TestCase):
         from crypto_bot.common.models import Direction
         signal=StrategySignal('id','BTCUSDT',60,5,Direction.LONG,START,START,START,
             'READY_FOR_VIRTUAL_ENTRY',100,('evidence',),entry_zone=PriceZone(100,102),
-            optimal_entry=102,stop_loss=98,targets=(110,115,120))
+            optimal_entry=102,stop_loss=98,targets=(110,115,120),
+            source_qualification_known_at=START,source_poi_kind='ORDER_BLOCK',
+            source_entry_path='DIRECT_OB',source_qualification_evidence=('ROUNDTRIP_SOURCE_CONTEXT',))
         self.assertEqual(restore_signal(json.loads(canonical(asdict(signal)))),signal)
 
     def test_touch_variants_distinguish_boundary_and_body_with_causal_cutoff(self):
@@ -103,7 +105,6 @@ class ResearchVariantTests(unittest.TestCase):
                         cached=historical_replay.indexed_signal_updates(data,auto_level_policy=policy,**kwargs)
                 self.assertEqual(cached,expected)
                 all_outputs.append(expected)
-            # Two inputs each for market and Range, plus two OTE-bound MTF links.
             self.assertEqual(len(list(Path(directory).glob('*.structural.pickle.gz'))),6)
             self.assertNotEqual(all_outputs[0],all_outputs[1])
 
