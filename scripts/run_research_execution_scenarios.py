@@ -27,13 +27,16 @@ def restore_signal(row):
     row['direction']=Direction(row['direction'].lower())
     row['mode']=EngineMode(row['mode'])
     row['analysis_mode']=StructureAnalysisMode(row['analysis_mode'])
-    for name in ('event_time','sfp_time','bos_time','entry_geometry_ready_time','levels_known_at'):
-        if row[name] is not None:
+    for name in ('event_time','sfp_time','bos_time','entry_geometry_ready_time','levels_known_at',
+                 'source_qualification_known_at'):
+        if row.get(name) is not None:
             row[name]=datetime.fromisoformat(row[name])
     if row['entry_zone'] is not None:
         row['entry_zone']=PriceZone(**row['entry_zone'])
-    for name in ('reasons','invalidation_reasons','targets','level_blocking_reasons'):
-        row[name]=tuple(row[name])
+    for name in ('reasons','invalidation_reasons','targets','level_blocking_reasons',
+                 'source_qualification_evidence'):
+        if name in row:
+            row[name]=tuple(row[name])
     evidence=[]
     for item in row['level_evidence']:
         item=dict(item)
