@@ -158,6 +158,7 @@ class SourceSeries:
         self.sfps: list[Raid] = []
         self.zones: list[Zone] = []
         self.zone_registry: dict[str, Zone] = {}
+        self.context_watches: dict[str, Zone] = {}
         self.origins: set[tuple[str, int]] = set()
         self.broken_obs: list[tuple[int, Zone]] = []
         self.pending: list[Zone] = []
@@ -210,7 +211,9 @@ class SourceSeries:
         self._day_pools(c)
         touched = []
         broken = []
-        for z in self.zones:
+        watched = {z.zone_id: z for z in self.zones}
+        watched.update(self.context_watches)
+        for z in watched.values():
             if z.invalidated_at is not None or z.known_at >= now:
                 continue
             overlap = c.low <= z.high and c.high >= z.low
@@ -446,6 +449,10 @@ class SourceEngine:
 
     def advance(self, tf: int, index: int) -> None:
         series = self.series[tf]
+        # Target pruning cannot stop lifecycle observation of an active context.
+        # Watch shared zones once even when several mappings use the same POI.
+        series.context_watches = {s.poi.zone_id: s.poi for s in self.active_setups
+                                 if s.htf == tf and s.invalidated_at is None}
         touched, events = series.advance(index)
         now = series.candles[index].close_time
         for z in touched:
@@ -471,6 +478,15 @@ class SourceEngine:
             if z.invalidated_at is not None and z.invalidated_at <= now:
                 self._cancel(setup, now, 'HTF_POI_BODY_INVALIDATION')
                 continue
+            if z.test_count > 1 and z.kind in ('DEMAND', 'SUPPLY'):
+                self._cancel(setup, now, 'DEMAND_SUPPLY_SECOND_VISIT_NOT_FRESH')
+                continue
+            if z.test_count > 1 and z.kind == 'ORDER_BLOCK':
+                # The registered primary sample is first-test only. The separate
+                # Zone.test_allowed contract exposes the secondary repeat-OB
+                # exception without extending it to D/S or certifying missing SW9.
+                self._cancel(setup, now, 'PRIMARY_FIRST_TEST_OB_REPEAT_SECONDARY_ONLY')
+                continue
             if tf == setup.htf and z.raid is not None:
                 c = series.candles[index]
                 if sign(z.direction) * (c.close - z.raid.extreme) < 0:
@@ -481,6 +497,9 @@ class SourceEngine:
                 self._cancel(setup, now, 'HTF_FLOW_DIRECTION_CHANGED')
                 continue
             if setup.ready_id is not None:
+                if tf == setup.ltf and series.trend != expected:
+                    self._cancel(setup, now, 'CONFIRMED_LTF_STRUCTURE_BROKEN')
+                    continue
                 if tf == setup.htf and h.trend != expected and z.kind != 'RANGE_POI':
                     self._cancel(setup, now, 'ACTIVE_HTF_STRUCTURE_BROKEN')
                     continue

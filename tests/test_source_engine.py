@@ -71,6 +71,24 @@ class SourceGeometryTests(unittest.TestCase):
 
 
 class SourceCausalityTests(unittest.TestCase):
+    def test_tested_demand_context_still_observes_retest_and_body_invalidation(self):
+        cs = [candle(0, 100, 101, 98, 100), candle(1, 105, 106, 104, 105),
+              candle(2, 104, 105, 99, 100), candle(3, 99, 100, 94, 95)]
+        series = SourceSeries('BTCUSDT', 5, cs, analyze_market(cs))
+        raid = Raid('LONG', START, 96, 94, 0, ('SSL',))
+        z = Zone('demand', 'DEMAND', 'LONG', 96, 101, START, START, 0, raid, 94, 110)
+        series.zones = [z]
+        series.zone_registry[z.zone_id] = z
+        series.advance(0)
+        self.assertEqual(z.test_count, 1)
+        self.assertNotIn(z, series.zones)
+        series.context_watches[z.zone_id] = z
+        series.advance(1)
+        series.advance(2)
+        self.assertEqual(z.test_count, 2)
+        series.advance(3)
+        self.assertEqual(z.invalidated_at, cs[3].close_time)
+
     def test_ob_requires_origin_candle_raid_not_only_later_impulse_raid(self):
         for origin_raids, expected in ((True, 'ORDER_BLOCK'), (False, 'DEMAND')):
             cs = [candle(0, 105, 106, 102, 104),
