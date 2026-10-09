@@ -4,7 +4,7 @@ from dataclasses import replace
 from datetime import datetime, timedelta, timezone
 
 from crypto_bot.common.models import Candle, Direction
-from crypto_bot.strategy.replay import EngineMode, QualifiedLevels, evaluate_snapshot
+from crypto_bot.strategy.replay import EngineMode, QualifiedLevels, SourceQualification, evaluate_snapshot
 
 
 BASE = datetime(2026, 1, 1, tzinfo=timezone.utc)
@@ -70,26 +70,93 @@ class ReplayTests(unittest.TestCase):
             self.assertFalse(signal.trade_entry_allowed)
             self.assertNotEqual(signal.status, 'READY_FOR_VIRTUAL_ENTRY')
 
-    def levels_for(self, signal, known_at):
+    def qualification_for(self, known_at, **changes):
+        values = dict(
+            known_at=known_at,
+            poi_kind='ORDER_BLOCK',
+            entry_path='DIRECT_OB',
+            poi_source='TEST_MANUAL_SOURCE_ASSERTION',
+            structure_path_confirmed=True,
+            order_flow_aligned=True,
+            opposing_liquidity_cleared=True,
+            premium_discount_valid=True,
+            fresh_untested=True,
+            evidence=('TEST_SOURCE_POI', 'TEST_ORDER_FLOW', 'TEST_LIQUIDITY_MAP'),
+        )
+        values.update(changes)
+        return SourceQualification(**values)
+
+    def levels_for(self, signal, known_at, *, qualification=True):
         zone = signal.entry_zone
         if signal.direction == Direction.LONG:
             stop, targets = zone.low - 2, (zone.high + 5, zone.high + 10, zone.high + 15)
         else:
             stop, targets = zone.high + 2, (zone.low - 5, zone.low - 10, zone.low - 15)
-        return QualifiedLevels(known_at, stop, targets, 'SOURCE_OB_EXTREME', 'CALLER_QUALIFIED_OPPOSING_POIS')
+        source = self.qualification_for(known_at) if qualification else None
+        return QualifiedLevels(known_at, stop, targets, 'SOURCE_OB_EXTREME',
+                               'CALLER_QUALIFIED_OPPOSING_POIS', source)
+
+    def test_levels_without_source_context_cannot_unlock_ready(self):
+        waiting = next(s for s in self.snapshot().signals if s.status == 'WAITING_FOR_SOURCE_LEVELS')
+        result = self.snapshot(qualified_levels={waiting.signal_id: self.levels_for(waiting, self.end, qualification=False)})
+        signal = next(s for s in result.signals if s.signal_id == waiting.signal_id)
+        self.assertEqual(signal.status, 'WAITING_FOR_SOURCE_QUALIFICATION')
+        self.assertEqual(signal.level_blocking_reasons, ('SOURCE_QUALIFICATION_MISSING',))
+        self.assertIsNone(signal.stop_loss)
+        self.assertEqual(signal.targets, ())
+
+    def test_each_source_context_gate_fails_closed(self):
+        waiting = next(s for s in self.snapshot().signals if s.status == 'WAITING_FOR_SOURCE_LEVELS')
+        cases = {
+            'structure_path_confirmed': 'SOURCE_STRUCTURE_PATH_NOT_CONFIRMED',
+            'order_flow_aligned': 'SOURCE_ORDER_FLOW_NOT_ALIGNED',
+            'opposing_liquidity_cleared': 'LIQUIDITY_AGAINST_SETUP',
+            'premium_discount_valid': 'SOURCE_PREMIUM_DISCOUNT_NOT_VALID',
+            'fresh_untested': 'SOURCE_POI_NOT_FRESH',
+        }
+        for field, blocker in cases.items():
+            with self.subTest(field=field):
+                levels = self.levels_for(waiting, self.end)
+                levels = replace(levels, qualification=replace(levels.qualification, **{field: False}))
+                result = self.snapshot(qualified_levels={waiting.signal_id: levels})
+                signal = next(s for s in result.signals if s.signal_id == waiting.signal_id)
+                self.assertEqual(signal.status, 'WAITING_FOR_SOURCE_QUALIFICATION')
+                self.assertEqual(signal.level_blocking_reasons, (blocker,))
 
     def test_source_levels_unlock_only_virtual_signal_after_availability(self):
         waiting = next(s for s in self.snapshot().signals if s.status == 'WAITING_FOR_SOURCE_LEVELS')
         future = self.levels_for(waiting, self.end + timedelta(minutes=1))
         unavailable = self.snapshot(qualified_levels={waiting.signal_id: future})
         self.assertEqual(next(s for s in unavailable.signals if s.signal_id == waiting.signal_id).status, 'WAITING_FOR_SOURCE_LEVELS')
-        levels = replace(future, known_at=self.end)
+        levels = replace(future, known_at=self.end,
+                         qualification=replace(future.qualification, known_at=self.end))
         available = self.snapshot(qualified_levels={waiting.signal_id: levels})
         signal = next(s for s in available.signals if s.signal_id == waiting.signal_id)
         self.assertEqual(signal.status, 'READY_FOR_VIRTUAL_ENTRY')
         self.assertEqual(signal.score, 100)
         self.assertEqual(signal.targets, levels.targets)
+        self.assertEqual(signal.source_poi_kind, 'ORDER_BLOCK')
+        self.assertEqual(signal.source_entry_path, 'DIRECT_OB')
+        self.assertEqual(signal.source_qualification_known_at, self.end)
+        self.assertGreater(len(signal.source_qualification_evidence), 0)
         self.assertFalse(signal.trade_entry_allowed)
+
+    def test_demand_supply_direction_and_conservative_tf_are_enforced(self):
+        waiting = next(s for s in self.snapshot().signals if s.status == 'WAITING_FOR_SOURCE_LEVELS')
+        wrong_kind = 'SUPPLY' if waiting.direction == Direction.LONG else 'DEMAND'
+        levels = self.levels_for(waiting, self.end)
+        levels = replace(levels, qualification=replace(levels.qualification, poi_kind=wrong_kind))
+        result = self.snapshot(qualified_levels={waiting.signal_id: levels})
+        signal = next(s for s in result.signals if s.signal_id == waiting.signal_id)
+        expected = 'SUPPLY_REQUIRES_SHORT' if waiting.direction == Direction.LONG else 'DEMAND_REQUIRES_LONG'
+        self.assertEqual(signal.level_blocking_reasons, (expected,))
+
+        levels = self.levels_for(waiting, self.end)
+        levels = replace(levels, qualification=replace(levels.qualification, entry_path='CONSERVATIVE_HTF_LTF'))
+        result = self.snapshot(qualified_levels={waiting.signal_id: levels})
+        signal = next(s for s in result.signals if s.signal_id == waiting.signal_id)
+        self.assertEqual(signal.level_blocking_reasons,
+                         ('CONSERVATIVE_HTF_LTF_TIMEFRAME_OUT_OF_SOURCE_RANGE',))
 
     def test_invalidated_context_cannot_be_enabled_by_qualified_levels(self):
         dead = next(s for s in self.snapshot().signals if s.status == 'INVALIDATED' and s.entry_zone)
@@ -153,8 +220,15 @@ class ReplayTests(unittest.TestCase):
     def test_empty_history_is_safe(self):
         self.assertEqual(self.snapshot({1: [], 5: []}).signals, ())
 
-    def test_qualified_input_validates_timestamp_and_prices(self):
+    def test_qualified_input_validates_timestamp_prices_and_context(self):
         with self.assertRaises(ValueError):
             QualifiedLevels(datetime(2026, 1, 1), 95, (110, 120, 130), 'stop', 'targets')
         with self.assertRaises(ValueError):
             QualifiedLevels(self.end, float('nan'), (110, 120, 130), 'stop', 'targets')
+        with self.assertRaises(ValueError):
+            self.qualification_for(self.end, poi_kind='UNKNOWN')
+        with self.assertRaises(ValueError):
+            self.qualification_for(self.end, evidence=())
+        future_context = self.qualification_for(self.end + timedelta(minutes=1))
+        with self.assertRaises(ValueError):
+            QualifiedLevels(self.end, 95, (110, 120, 130), 'stop', 'targets', future_context)
