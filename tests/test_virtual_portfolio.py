@@ -23,7 +23,10 @@ def signal(i=0, symbol='TEST', ident='one', direction=Direction.LONG, score=100,
                           entry_zone=PriceZone(99, 101), optimal_entry=100,
                           stop_loss=95 if direction == Direction.LONG else 105,
                           targets=(110, 120, 130) if direction == Direction.LONG else (90, 80, 70), mode=mode,
-                          entry_geometry_ready_time=BASE, levels_known_at=t)
+                          entry_geometry_ready_time=BASE, levels_known_at=t,
+                          source_qualification_known_at=BASE,
+                          source_poi_kind='ORDER_BLOCK', source_entry_path='DIRECT_OB',
+                          source_qualification_evidence=('TEST_SOURCE_CONTEXT',))
 
 
 class VirtualPortfolioTests(unittest.TestCase):
@@ -182,7 +185,6 @@ class VirtualPortfolioTests(unittest.TestCase):
         p.step({'A': bar(3), 'B': bar(3)}, [signal(3, symbol='A', ident='a2')])
         p.step({'A': bar(4), 'B': bar(4)})
         self.assertTrue(any(d.reason == 'DAILY_LOSS_LIMIT_LATCHED' for d in p.journal))
-        # Day rollover is driven by timestamps, never wall-clock time.
         for i in range(5, 288):
             p.step({'A': bar(i), 'B': bar(i)})
         p.step({'A': bar(288), 'B': bar(288)}, [signal(288, symbol='A', ident='a3')])
