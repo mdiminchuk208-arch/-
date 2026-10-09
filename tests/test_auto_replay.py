@@ -47,7 +47,8 @@ class AutoReplayTests(unittest.TestCase):
 
     def ready_result(self, *args, **kwargs):
         # The detector has its own OHLC/evidence tests. This fixture isolates the
-        # conversion into the shared signal and virtual-management contracts.
+        # conversion into the shared signal contract. READY here means the research
+        # detector completed its proxy gates, not that the source methodology did.
         opportunity = args[4]
         low, high = opportunity.entry_zone_low, opportunity.entry_zone_high
         if opportunity.expected_direction.value == 'long':
@@ -58,16 +59,22 @@ class AutoReplayTests(unittest.TestCase):
                                     targets=targets, stop_policy='SOURCE_OB_EXTREME',
                                     target_policy='THREE_OPPOSING_POIS_BACKTEST_PARAMETER')
 
-    def test_ready_experiment_keeps_provenance_and_safety(self):
+    def test_ready_experiment_stays_research_only_and_fail_closed(self):
         with patch('crypto_bot.strategy.replay.derive_automatic_levels', side_effect=self.ready_result):
             snapshot = self.snapshot(auto_level_policy=AutoLevelPolicy())
-        ready = [s for s in snapshot.signals if s.status == 'READY_FOR_VIRTUAL_ENTRY']
-        self.assertGreater(len(ready), 0)
-        self.assertTrue(all(s.score == 100 and len(s.targets) == 3 for s in ready))
-        self.assertTrue(all(s.levels_known_at == self.end for s in ready))
-        self.assertTrue(all(s.level_policy == 'AUTO_NORMALIZED_EVIDENCE_PENDING_SOURCE_REVIEW' for s in ready))
+        research_ready = [s for s in snapshot.signals
+                          if 'AUTO_RESEARCH_PROXY_READY_NOT_SOURCE_QUALIFIED' in s.reasons]
+        self.assertGreater(len(research_ready), 0)
+        self.assertTrue(all(s.status == 'WAITING_FOR_SOURCE_LEVELS' for s in research_ready))
+        self.assertTrue(all(s.score == 85 for s in research_ready))
+        self.assertTrue(all(s.stop_loss is None and s.targets == () for s in research_ready))
+        self.assertTrue(all(s.levels_known_at is None for s in research_ready))
+        self.assertTrue(all(s.level_policy == 'AUTO_RESEARCH_PROXY_PENDING_SOURCE_QUALIFICATION'
+                            for s in research_ready))
+        self.assertTrue(all(s.level_blocking_reasons == ('AUTO_RESEARCH_PROXY_NOT_SOURCE_QUALIFIED',)
+                            for s in research_ready))
+        self.assertTrue(all(s.status != 'READY_FOR_VIRTUAL_ENTRY' for s in snapshot.signals))
         self.assertTrue(all(not s.trade_entry_allowed for s in snapshot.signals))
-        self.assertTrue(all(s.stop_loss is None for s in snapshot.signals if s.status == 'INVALIDATED'))
 
     def test_future_detector_references_cannot_unlock_entry(self):
         def future(*args, **kwargs):
@@ -100,41 +107,36 @@ class AutoReplayTests(unittest.TestCase):
         self.assertEqual(portfolio.positions, {})
         self.assertFalse(any(d.action == 'VIRTUAL_ENTRY' for d in portfolio.journal))
 
-    def test_real_detector_to_virtual_tp_lifecycle_both_directions_and_modes(self):
+    def test_research_proxy_cannot_be_manually_promoted_to_canonical_ready(self):
         from test_auto_levels import valid_case
 
         for direction in Direction:
-            journals = []
-            for mode in ('BACKTEST', 'SHADOW'):
-                with self.subTest(direction=direction, mode=mode):
-                    case = valid_case(direction)
-                    levels = derive_automatic_levels(**case)
-                    self.assertEqual(levels.status, 'READY', levels.blocked_reasons)
-                    opp, end = case['opportunity'], case['as_of']
-                    zone = PriceZone(opp.entry_zone_low, opp.entry_zone_high)
-                    entry = (zone.low + zone.high) / 2
-                    ready = StrategySignal(
+            with self.subTest(direction=direction):
+                case = valid_case(direction)
+                levels = derive_automatic_levels(**case)
+                self.assertEqual(levels.status, 'READY', levels.blocked_reasons)
+                opp, end = case['opportunity'], case['as_of']
+                zone = PriceZone(opp.entry_zone_low, opp.entry_zone_high)
+                entry = (zone.low + zone.high) / 2
+                with self.assertRaisesRegex(ValueError, 'explicitly source-qualified levels'):
+                    StrategySignal(
                         opportunity_key('TEST', 60, 5, opp), 'TEST', 60, 5, direction, end,
                         opp.latest_sfp_time, opp.ltf_bos_event_time, 'READY_FOR_VIRTUAL_ENTRY', 100,
-                        ('AUTO_NORMALIZED_EVIDENCE_PENDING_SOURCE_REVIEW', levels.target_policy),
+                        ('AUTO_RESEARCH_PROXY_PENDING_SOURCE_QUALIFICATION', levels.target_policy),
                         entry_zone=zone, optimal_entry=entry, stop_loss=levels.stop_loss,
-                        targets=levels.targets, mode=mode, entry_geometry_ready_time=opp.entry_geometry_ready_time,
+                        targets=levels.targets, entry_geometry_ready_time=opp.entry_geometry_ready_time,
                         levels_known_at=levels.known_at,
-                        level_policy='AUTO_NORMALIZED_EVIDENCE_PENDING_SOURCE_REVIEW',
+                        level_policy='AUTO_RESEARCH_PROXY_PENDING_SOURCE_QUALIFICATION',
                         level_evidence=levels.evidence,
                     )
-                    portfolio = VirtualPortfolio(mode=mode)
-                    portfolio.step({'TEST': case['ltf_candles'][-1]}, [ready])
-                    self.assertEqual(portfolio.positions, {})
-                    duration = timedelta(minutes=5)
-                    portfolio.step({'TEST': Candle(end, end + duration, entry, entry + .1, entry - .1, entry)})
-                    self.assertIn('TEST', portfolio.positions)
-                    for i, target in enumerate(levels.targets, start=1):
-                        t = end + duration * i
-                        portfolio.step({'TEST': Candle(t, t + duration, target, target + .1, target - .1, target)})
-                    self.assertEqual(portfolio.positions, {})
-                    self.assertEqual([d.reason for d in portfolio.journal if d.action == 'VIRTUAL_EXIT'],
-                                     ['TP1', 'TP2', 'TP3'])
-                    self.assertTrue(all(not d.trade_entry_allowed for d in portfolio.journal))
-                    journals.append(portfolio.journal)
-            self.assertEqual(journals[0], journals[1])
+
+    def test_research_proxy_does_not_create_virtual_position(self):
+        with patch('crypto_bot.strategy.replay.derive_automatic_levels', side_effect=self.ready_result):
+            snapshot = self.snapshot(auto_level_policy=AutoLevelPolicy())
+        research = next(s for s in snapshot.signals
+                        if 'AUTO_RESEARCH_PROXY_READY_NOT_SOURCE_QUALIFIED' in s.reasons)
+        portfolio = VirtualPortfolio()
+        portfolio.step({'TEST': self.data[1][-1]}, [research])
+        self.assertEqual(portfolio.positions, {})
+        self.assertEqual(portfolio.pending, {})
+        self.assertFalse(any(d.action == 'VIRTUAL_ENTRY' for d in portfolio.journal))
