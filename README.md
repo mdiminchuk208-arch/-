@@ -130,3 +130,35 @@ refuses to overwrite an existing output directory. Source CSV history and the
 frozen `historical_portfolio_audit/backtest_max` report are required. No network,
 manual review approval or exchange execution is performed.
 
+## Primary PDF source trade cases (2026-10-09)
+
+The actual SW5, SW9, SW11, SW12 and SW22 PDFs are retained with complete text,
+page counts and hashes under `data/source_materials/primary_pdf_2026_10_09`.
+All 54 pages and diagrams were read. See `SOURCE_PDF_PROTOCOL.md` for primary
+SOURCE_RULE citations and choices registered before outcomes. The isolated
+`source_pdf` policy supersedes the missing-PDF source experiment for this study;
+the frozen canonical strategy and all prior scripts/artifacts remain retained.
+
+The full native Bybit dataset is 40 series / 993575 candles. Independent
+SOURCE_TRADE_CASE_VALIDATION cases use fixed reference risk and chronological
+deduplication; separate portfolio and ANY_TF diagnostics are not primary cases.
+Only BACKTEST/SHADOW with `trade_entry_allowed=false` is permitted.
+
+```bash
+python scripts/run_source_pdf_native_bybit.py --output data/reports/source_pdf_native_bybit_2026_10_09 --resume-existing --workers 4
+python scripts/verify_primary_pdfs.py
+python scripts/verify_source_pdf_native_evidence.py --input data/reports/source_pdf_native_bybit_2026_10_09 --output /tmp/source_pdf_evidence.json
+python scripts/audit_source_pdf_native_execution.py --input data/reports/source_pdf_native_bybit_2026_10_09 --output /tmp/source_pdf_execution.json
+python scripts/report_source_pdf_bybit.py --input data/reports/source_pdf_native_bybit_2026_10_09 --output /tmp/source_pdf_report.md
+```
+
+`--resume-existing` verifies exact source/config/code/input/artifact hashes and
+does not replay a COMPLETE result. Changed policy or incomplete/corrupt outputs
+fail closed and require a fresh retained output root. Historical versions need
+their original source context, never replacement expected hashes. Final results,
+all trades and comparison with fc61f35/74a6f8d are in
+`SOURCE_ALIGNED_BYBIT_50_TRADE_REPORT.md`; current QA is under
+`data/reports/source_pdf_qa_2026_10_09`. This already inspected 2026 dataset is
+DEVELOPMENT; the registered machine maximum is not an exhaustive discretionary
+source maximum or an edge/LIVE-readiness verdict.
+

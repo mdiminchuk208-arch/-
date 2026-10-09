@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "unchanged_74a6f8d_git_blobs": 14929,
+  "by_directory": {
+    "config": 3,
+    "data": 14767,
+    "scripts": 49,
+    "src": 39,
+    "tests": 71
+  },
+  "baseline_registered_git_hashes_verified": 57,
+  "baseline_commit": "3a9632606f79b4454509a60674eeac3877f77bbf",
+  "old_reports_byte_exact": true,
+  "trade_entry_allowed": false
+}

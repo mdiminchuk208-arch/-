@@ -1,7 +1,3 @@
-# Native observation timing correction — current primary PDF policy v2
-
-See [SOURCE_PDF_NATIVE_PROTOCOL.md](SOURCE_PDF_NATIVE_PROTOCOL.md): observe an already known HTF POI on CLOSED native 5m bars, before waiting for HTF close; preserve native structure clocks and block FTA already passed at READY. The initial PDF replay (9 READY /0 FILLED/0 CLOSED) and exact source context are preserved in `data/reports/source_pdf_closed_htf_intermediate`. All entry/SL/exit/cost/source choices below remain unchanged. This timing correction is registered after seeing that initial result, before the new full replay outcomes.
-
 # Primary PDF reconstruction — supersedes missing-PDF interpretation
 
 SW5, SW9, SW11, SW12 and SW22 are now primary SOURCE_RULE: all 54 actual pages, text and diagrams read. See [SOURCE_PDF_PROTOCOL.md](SOURCE_PDF_PROTOCOL.md) for the complete page-cited matrix and pre-outcome choices. Original PDFs and full text: `data/source_materials/primary_pdf_2026_10_09`. The previous 74a6f8d matrix and report are preserved byte-for-byte in `data/reports/source_cases_74a6f8d_intermediate`. Previous interpretations below are historical and superseded where the PDF protocol differs.

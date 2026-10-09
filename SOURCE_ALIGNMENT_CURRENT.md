@@ -1,3 +1,9 @@
+# Current primary-PDF source reconstruction
+
+The actual SW5, SW9, SW11, SW12 and SW22 PDFs are now preserved and fully read (54 pages, text and diagrams). The current additive source policy is `source-primary-pdf-native-2`; see [SOURCE_PDF_NATIVE_PROTOCOL.md](SOURCE_PDF_NATIVE_PROTOCOL.md) and [SOURCE_PDF_PROTOCOL.md](SOURCE_PDF_PROTOCOL.md) for page-cited SOURCE_RULE and explicit machine choices, and [SOURCE_ALIGNED_BYBIT_50_TRADE_REPORT.md](SOURCE_ALIGNED_BYBIT_50_TRADE_REPORT.md) for results and QA. Canonical remains frozen; the retained table below describes the historical canonical/summary-based implementation, not the new primary-PDF branch. Prior source reports and policies are preserved.
+
+## Historical retained-source table
+
 # Source alignment: retained materials
 
 Original PDF/DOCX files are absent. This table compares the retained primary descriptions and cited pages in `config/source_rules.json`; it does not claim independent rereading of those files. Numeric/backtest choices remain separately labelled. Real LONG/SHORT evidence uses the source chapter entry TFs 5m/15m; 60m entry is a separate requested research configuration.

@@ -1,0 +1,16 @@
+{
+  "status": "COMPLETE_INTERMEDIATE_PDF_RUN_SUPERSEDED_TIMING_FIX",
+  "all40series_complete": true,
+  "candles": 993575,
+  "READY": 9,
+  "FILLED": 0,
+  "CLOSED": 0,
+  "tests": 499,
+  "source_ready_native_prefix_future_mutation": "PASS_91323_CANDLES_2READY",
+  "hashed_core_artifacts": 93,
+  "verified_resume_files_unchanged": 104,
+  "all9pending_limits_independently_audited": "PASS",
+  "trade_entry_allowed": false,
+  "not_final_strategy_evaluation": true,
+  "superseding_protocol": "SOURCE_PDF_NATIVE_PROTOCOL.md"
+}

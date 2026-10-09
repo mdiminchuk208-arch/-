@@ -1,0 +1,42 @@
+{
+  "artifacts": {
+    "cancellations.jsonl.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "flow_history.jsonl.gz": "7d605bf89b5d071ed202aa86446530b95d4db590adc16770636f9d166701f3f4",
+    "intermediate_audit.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "old_loss_audit.json": "33d1f349d3bf97d062727864361af048295a5768fd59d559b941e0ff438a5ee5",
+    "range_audit.jsonl.gz": "0f105c1b7395daecba5263fe1c1ff57e0e25a5c409044cfb62f08518ea6d4971",
+    "setup_outcomes.jsonl.gz": "7103909d73ca1b667f732bf73f8396138733d9f0043f99aba505082e8f053e72",
+    "signals.jsonl.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "summary.json": "1ecbe15d322c2ef3e5ce0751e6c67751aa2de1fe283386b50c6bb68ce10bf420"
+  },
+  "code_hash": "d93f07848704255e123795fece5a0a9b813287419a1e5c832551eac797a02a13",
+  "fingerprint": "8568d29d7a2eaa3b43f0a8e848dfcc3e1b23ed2a8edea9175f57729f9f3600e4",
+  "inputs": {
+    "15": {
+      "candles": 23039,
+      "gaps": 0,
+      "path": "data/history/bybit/BNBUSDT/15.csv",
+      "sha256": "916374fc697cea7d4b567ae2356fd332c63153d1532120bd5939f82b9c985f48"
+    },
+    "240": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/BNBUSDT/240.csv",
+      "sha256": "68ac140426f226c5a53e0c268dad9c8c5f518b3b80fd84f2212c2a5bc0f6c722"
+    },
+    "5": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/BNBUSDT/5.csv",
+      "sha256": "c76a359d661f7cb02b84a246a637efe519c10e93405c29962d57757ad843ec58"
+    },
+    "60": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/BNBUSDT/60.csv",
+      "sha256": "e58b16ecb30024a5d95adfefd238371f14e61837d7d0618a0e711118753d5246"
+    }
+  },
+  "status": "COMPLETE",
+  "trade_entry_allowed": false
+}

@@ -1,0 +1,620 @@
+[
+  {
+    "classification": "FALSE_POSITIVE_REGISTERED_SOURCE_IMPLEMENTATION",
+    "hard_source_reasons": [
+      "RANGE_WITHOUT_REQUIRED_CAUSAL_EXTERNAL_POI",
+      "NO_CAUSALLY_ACTIVE_GLOBAL_ORDER_FLOW_AT_OLD_READY"
+    ],
+    "old_trade": {
+      "balance_after": 995.3927364206894,
+      "direction": "LONG",
+      "entry": 45.229043999999995,
+      "entry_interval_end": "2026-06-17T18:05:00+00:00",
+      "entry_interval_start": "2026-06-17T18:00:00+00:00",
+      "entry_reference": 45.22,
+      "entry_time": "2026-06-17T18:05:00+00:00",
+      "entry_time_precision": "BAR_INTERVAL_KNOWN_AT_CLOSE",
+      "evidence": {
+        "bos": {
+          "direction": "LONG",
+          "extreme": 45.79,
+          "kind": "BEARISH_STRUCTURE_BROKEN_BOS",
+          "known_at": "2026-06-17T04:45:00+00:00",
+          "level_id": 5634,
+          "protected": 45.68
+        },
+        "classification": "SOURCE_RULES_WITH_DECLARED_INTERPRETATIONS",
+        "conf": {
+          "direction": "LONG",
+          "extreme": 45.52,
+          "kind": "BULLISH_CONF_CONFIRMED",
+          "known_at": "2026-06-17T15:45:00+00:00",
+          "level_id": 5648,
+          "new_structure": {
+            "direction": "LONG",
+            "extreme": 45.44,
+            "kind": "BULLISH_STRUCTURE_CONFIRMED",
+            "known_at": "2026-06-17T14:15:00+00:00",
+            "level_id": 5648,
+            "protected": 45.01
+          },
+          "protected": 45.01
+        },
+        "exit_policy": "RANGE_80_INSIDE_20_EXTERNAL_FTA",
+        "fta": {
+          "aliases": [
+            "MANIPULATION"
+          ],
+          "direction": "SHORT",
+          "first_test": null,
+          "formed_at": "2026-06-04T19:45:00+00:00",
+          "high": 46.63,
+          "invalidated_at": null,
+          "kind": "BTS",
+          "known_at": "2026-06-04T20:30:00+00:00",
+          "last_test": null,
+          "leg_high": 46.63,
+          "leg_low": 45.94,
+          "low": 46.41,
+          "origin_index": 12508,
+          "raid": {
+            "candle_index": 12508,
+            "direction": "SHORT",
+            "extreme": 46.63,
+            "known_at": "2026-06-04T18:45:00+00:00",
+            "liquidity_ids": [
+              "SWING:5132"
+            ],
+            "price": 46.54,
+            "sfp": false
+          },
+          "range_id": null,
+          "stop_extreme": null,
+          "structural_proof": {
+            "direction": "SHORT",
+            "extreme": 45.94,
+            "kind": "BEARISH_STRUCTURE_CONFIRMED",
+            "known_at": "2026-06-04T20:30:00+00:00",
+            "level_id": 5139,
+            "protected": 46.59
+          },
+          "test_count": 0,
+          "zone_id": "c4b250faf894b8ff35b7a1e4"
+        },
+        "htf_poi": {
+          "aliases": [],
+          "direction": "LONG",
+          "first_test": "2026-06-16T16:00:00+00:00",
+          "formed_at": "2026-06-16T16:00:00+00:00",
+          "high": 46.13,
+          "invalidated_at": null,
+          "kind": "RANGE_POI",
+          "known_at": "2026-06-16T16:00:00+00:00",
+          "last_test": "2026-06-17T17:00:00+00:00",
+          "leg_high": 46.13,
+          "leg_low": 44.73,
+          "low": 44.73,
+          "origin_index": 3410,
+          "raid": {
+            "candle_index": 3410,
+            "direction": "LONG",
+            "extreme": 44.39,
+            "known_at": "2026-06-16T16:00:00+00:00",
+            "liquidity_ids": [
+              "RANGE:cfca35499ad614f411bc0b23"
+            ],
+            "price": 44.73,
+            "sfp": true
+          },
+          "range_id": "cfca35499ad614f411bc0b23",
+          "stop_extreme": null,
+          "structural_proof": {
+            "kind": "IMPULSE_BOUNDARIES_MIDPOINT_DEVIATION_RECLAIM",
+            "known_at": "2026-06-15T17:00:00+00:00"
+          },
+          "test_count": 1,
+          "zone_id": "0e056fb7506a809523d1df19"
+        },
+        "liquidity_sweep": {
+          "candle_index": 13699,
+          "direction": "LONG",
+          "extreme": 45.54,
+          "known_at": "2026-06-17T04:30:00+00:00",
+          "liquidity_ids": [
+            "SWING:5633"
+          ],
+          "price": 45.58,
+          "sfp": false
+        },
+        "ltf_poi": {
+          "aliases": [],
+          "direction": "LONG",
+          "first_test": null,
+          "formed_at": "2026-06-17T15:30:00+00:00",
+          "high": 45.22,
+          "invalidated_at": null,
+          "kind": "DEMAND",
+          "known_at": "2026-06-17T15:45:00+00:00",
+          "last_test": null,
+          "leg_high": 45.55,
+          "leg_low": 44.86,
+          "low": 44.86,
+          "origin_index": 13741,
+          "raid": {
+            "candle_index": 13741,
+            "direction": "LONG",
+            "extreme": 44.86,
+            "known_at": "2026-06-17T15:00:00+00:00",
+            "liquidity_ids": [
+              "SWING:5648"
+            ],
+            "price": 45.01,
+            "sfp": false
+          },
+          "range_id": null,
+          "stop_extreme": null,
+          "structural_proof": {
+            "direction": "LONG",
+            "extreme": 45.52,
+            "kind": "BULLISH_CONF_CONFIRMED",
+            "known_at": "2026-06-17T15:45:00+00:00",
+            "level_id": 5648,
+            "new_structure": {
+              "direction": "LONG",
+              "extreme": 45.44,
+              "kind": "BULLISH_STRUCTURE_CONFIRMED",
+              "known_at": "2026-06-17T14:15:00+00:00",
+              "level_id": 5648,
+              "protected": 45.01
+            },
+            "protected": 45.01
+          },
+          "test_count": 0,
+          "zone_id": "85339d06cfa8d2379421136b"
+        },
+        "ltf_scope": "SECONDARY_CONSERVATIVE_1_TO_15",
+        "meaningful_liquidity_against": [],
+        "new_structure": {
+          "direction": "LONG",
+          "extreme": 45.44,
+          "kind": "BULLISH_STRUCTURE_CONFIRMED",
+          "known_at": "2026-06-17T14:15:00+00:00",
+          "level_id": 5648,
+          "protected": 45.01
+        },
+        "order_flow": {
+          "destination_poi_id": "c4b250faf894b8ff35b7a1e4",
+          "direction": "LONG",
+          "invalid_on": [
+            "STRUCTURE_BREAK",
+            "RAID_BODY_VIOLATION",
+            "DESTINATION_TEST"
+          ],
+          "known_at": "2026-06-17T17:30:00+00:00",
+          "raid": {
+            "candle_index": 3410,
+            "direction": "LONG",
+            "extreme": 44.39,
+            "known_at": "2026-06-16T16:00:00+00:00",
+            "liquidity_ids": [
+              "RANGE:cfca35499ad614f411bc0b23"
+            ],
+            "price": 44.73,
+            "sfp": true
+          },
+          "structure": {
+            "direction": "LONG",
+            "extreme": 45.44,
+            "kind": "BULLISH_STRUCTURE_CONFIRMED",
+            "known_at": "2026-06-17T14:15:00+00:00",
+            "level_id": 5648,
+            "protected": 45.01
+          }
+        },
+        "premium_discount": {
+          "high": 46.13,
+          "low": 44.73,
+          "ote_confluence": false,
+          "retracement": 0.65
+        },
+        "stop_policy": "BEHIND_LOCAL_POI_AND_REACTION_RAID_NO_AUTOMATIC_BE"
+      },
+      "exit_policy": "RANGE_80_INSIDE_20_EXTERNAL_FTA",
+      "exit_price": 44.851028,
+      "exit_reason": "ORIGINAL_SL_STOP_FIRST",
+      "exit_time": "2026-06-17T19:30:00+00:00",
+      "fees": 2.5411496218212712,
+      "fills": [
+        {
+          "exit_fee": 1.26524291455379,
+          "gross_pnl": -17.772987856151982,
+          "known_at": "2026-06-17T19:30:00+00:00",
+          "price": 44.851028,
+          "quantity": 47.01649627569258,
+          "reason": "ORIGINAL_SL_STOP_FIRST",
+          "reference": 44.86,
+          "slippage": 0.4218320045855129,
+          "trade_entry_allowed": false
+        }
+      ],
+      "fractions": [
+        0.8,
+        0.2
+      ],
+      "gross_pnl": -17.772987856151982,
+      "holding_seconds": 5400.0,
+      "htf": 60,
+      "initial_equity": 1015.7068738986627,
+      "ltf": 15,
+      "net_pnl": -20.314137477973254,
+      "next_target": 0,
+      "poi_type": "RANGE_POI",
+      "quantity": 47.01649627569258,
+      "quote_gross_pnl": -16.925938659249304,
+      "ready_time": "2026-06-17T17:30:00+00:00",
+      "remaining": 0.0,
+      "result": "LOSS",
+      "result_R": -1.0,
+      "risk_amount": 20.314137477973254,
+      "setup_type": "RANGE_DEVIATION",
+      "signal_id": "d5cd448d6c02f037d76c9d35",
+      "slippage": 0.8470491969026808,
+      "status": "CLOSED",
+      "stop": 44.86,
+      "symbol": "LTCUSDT",
+      "targets": [
+        46.129999999999995,
+        46.41
+      ],
+      "trade_entry_allowed": false,
+      "trade_id": "d5cd448d6c02f037d76c9d35"
+    },
+    "reasons": [
+      "RANGE_WITHOUT_REQUIRED_CAUSAL_EXTERNAL_POI",
+      "NO_CAUSALLY_ACTIVE_GLOBAL_ORDER_FLOW_AT_OLD_READY",
+      "OLD_UNIVERSAL_ENTRY_DIFFERS_FROM_REGISTERED_POI_POLICY"
+    ],
+    "remaining_in_corrected_sample": false,
+    "snapshots": {
+      "entry_interval_start": {
+        "flow": {
+          "body_break_at": "2026-06-16T19:00:00+00:00",
+          "broken_key": {
+            "known_at": "2026-06-15T06:00:00+00:00",
+            "level_id": 1528,
+            "price": 45.5
+          },
+          "conf": {
+            "direction": "LONG",
+            "extreme": 46.05,
+            "kind": "BULLISH_STRUCTURE_CONFIRMED",
+            "known_at": "2026-06-17T01:00:00+00:00",
+            "level_id": 1550,
+            "protected": 45.59
+          },
+          "destination_poi": {
+            "aliases": [
+              "MANIPULATION"
+            ],
+            "confluence": {
+              "full_absorption_at": "2026-06-02T15:00:00+00:00",
+              "move_start_key": {
+                "known_at": "2026-06-02T09:00:00+00:00",
+                "level_id": 1385,
+                "origin_index": 3067,
+                "price": 49.09,
+                "side": "low"
+              },
+              "source": "SW22 p2–4"
+            },
+            "direction": "SHORT",
+            "external_poi": null,
+            "first_test": null,
+            "formed_at": "2026-06-02T15:00:00+00:00",
+            "high": 49.62,
+            "invalidated_at": null,
+            "kind": "BTS",
+            "known_at": "2026-06-02T17:00:00+00:00",
+            "last_test": null,
+            "leg_high": 49.62,
+            "leg_low": 47.43,
+            "low": 49.09,
+            "move_end_index": 3070,
+            "origin_index": 3067,
+            "raid": {
+              "candle_index": 3070,
+              "direction": "SHORT",
+              "extreme": 49.62,
+              "known_at": "2026-06-02T11:00:00+00:00",
+              "liquidity_ids": [
+                "SWING:1384"
+              ],
+              "price": 49.61,
+              "sfp": false
+            },
+            "range_id": null,
+            "range_reclaim_at": null,
+            "range_retest_at": null,
+            "stop_extreme": null,
+            "structural_proof": {
+              "direction": "SHORT",
+              "extreme": 47.43,
+              "kind": "BEARISH_STRUCTURE_CONFIRMED",
+              "known_at": "2026-06-02T17:00:00+00:00",
+              "level_id": 1389,
+              "protected": 49.55
+            },
+            "test_count": 0,
+            "visit_started_at": null,
+            "zone_id": "a9d10b58026125c6735fa635"
+          },
+          "direction": "LONG",
+          "flow_id": "eddbc31eb69b4b8ec1d56a37",
+          "invalidated_at": "2026-06-17T07:00:00+00:00",
+          "invalidation_reason": "PROTECTED_STRUCTURE_BROKEN_OR_DIRECTION_CHANGED",
+          "key_test": {
+            "known_at": "2026-06-16T15:00:00+00:00",
+            "price": 44.73,
+            "reclaimed": true
+          },
+          "known_at": "2026-06-17T01:00:00+00:00",
+          "liquidity_work": {
+            "candle_index": 3410,
+            "direction": "LONG",
+            "extreme": 44.39,
+            "known_at": "2026-06-16T15:00:00+00:00",
+            "liquidity_ids": [
+              "SWING:1531",
+              "PDlow:2026-06-15"
+            ],
+            "price": 44.73,
+            "sfp": false
+          },
+          "sequence": {
+            "highs": [
+              {
+                "known_at": "2026-06-16T20:00:00+00:00",
+                "level_id": 1547,
+                "origin_index": 3414,
+                "price": 45.78,
+                "side": "high"
+              },
+              {
+                "known_at": "2026-06-17T00:00:00+00:00",
+                "level_id": 1549,
+                "origin_index": 3418,
+                "price": 46.05,
+                "side": "high"
+              }
+            ],
+            "lows": [
+              {
+                "known_at": "2026-06-16T21:00:00+00:00",
+                "level_id": 1548,
+                "origin_index": 3415,
+                "price": 45.23,
+                "side": "low"
+              },
+              {
+                "known_at": "2026-06-17T01:00:00+00:00",
+                "level_id": 1550,
+                "origin_index": 3419,
+                "price": 45.59,
+                "side": "low"
+              }
+            ],
+            "structural_keys": [
+              {
+                "direction": "LONG",
+                "extreme": 45.5,
+                "kind": "BULLISH_CONF_CONFIRMED",
+                "known_at": "2026-06-15T06:00:00+00:00",
+                "level_id": 1528,
+                "new_structure": {
+                  "direction": "LONG",
+                  "extreme": 45.43,
+                  "kind": "BULLISH_STRUCTURE_CONFIRMED",
+                  "known_at": "2026-06-15T03:00:00+00:00",
+                  "level_id": 1528,
+                  "protected": 44.96
+                },
+                "protected": 44.96
+              },
+              {
+                "direction": "LONG",
+                "extreme": 46.05,
+                "kind": "BULLISH_STRUCTURE_CONFIRMED",
+                "known_at": "2026-06-17T01:00:00+00:00",
+                "level_id": 1550,
+                "protected": 45.59
+              }
+            ]
+          },
+          "structure": {
+            "direction": "LONG",
+            "extreme": 46.05,
+            "kind": "BULLISH_STRUCTURE_CONFIRMED",
+            "known_at": "2026-06-17T01:00:00+00:00",
+            "level_id": 1550,
+            "protected": 45.59
+          }
+        },
+        "htf_trend": "BROKEN",
+        "known_at": "2026-06-17T18:00:00+00:00",
+        "ltf_trend": "BULLISH",
+        "matching_corrected_ready": [],
+        "range_external_poi_candidates": []
+      },
+      "ready_time": {
+        "flow": {
+          "body_break_at": "2026-06-16T19:00:00+00:00",
+          "broken_key": {
+            "known_at": "2026-06-15T06:00:00+00:00",
+            "level_id": 1528,
+            "price": 45.5
+          },
+          "conf": {
+            "direction": "LONG",
+            "extreme": 46.05,
+            "kind": "BULLISH_STRUCTURE_CONFIRMED",
+            "known_at": "2026-06-17T01:00:00+00:00",
+            "level_id": 1550,
+            "protected": 45.59
+          },
+          "destination_poi": {
+            "aliases": [
+              "MANIPULATION"
+            ],
+            "confluence": {
+              "full_absorption_at": "2026-06-02T15:00:00+00:00",
+              "move_start_key": {
+                "known_at": "2026-06-02T09:00:00+00:00",
+                "level_id": 1385,
+                "origin_index": 3067,
+                "price": 49.09,
+                "side": "low"
+              },
+              "source": "SW22 p2–4"
+            },
+            "direction": "SHORT",
+            "external_poi": null,
+            "first_test": null,
+            "formed_at": "2026-06-02T15:00:00+00:00",
+            "high": 49.62,
+            "invalidated_at": null,
+            "kind": "BTS",
+            "known_at": "2026-06-02T17:00:00+00:00",
+            "last_test": null,
+            "leg_high": 49.62,
+            "leg_low": 47.43,
+            "low": 49.09,
+            "move_end_index": 3070,
+            "origin_index": 3067,
+            "raid": {
+              "candle_index": 3070,
+              "direction": "SHORT",
+              "extreme": 49.62,
+              "known_at": "2026-06-02T11:00:00+00:00",
+              "liquidity_ids": [
+                "SWING:1384"
+              ],
+              "price": 49.61,
+              "sfp": false
+            },
+            "range_id": null,
+            "range_reclaim_at": null,
+            "range_retest_at": null,
+            "stop_extreme": null,
+            "structural_proof": {
+              "direction": "SHORT",
+              "extreme": 47.43,
+              "kind": "BEARISH_STRUCTURE_CONFIRMED",
+              "known_at": "2026-06-02T17:00:00+00:00",
+              "level_id": 1389,
+              "protected": 49.55
+            },
+            "test_count": 0,
+            "visit_started_at": null,
+            "zone_id": "a9d10b58026125c6735fa635"
+          },
+          "direction": "LONG",
+          "flow_id": "eddbc31eb69b4b8ec1d56a37",
+          "invalidated_at": "2026-06-17T07:00:00+00:00",
+          "invalidation_reason": "PROTECTED_STRUCTURE_BROKEN_OR_DIRECTION_CHANGED",
+          "key_test": {
+            "known_at": "2026-06-16T15:00:00+00:00",
+            "price": 44.73,
+            "reclaimed": true
+          },
+          "known_at": "2026-06-17T01:00:00+00:00",
+          "liquidity_work": {
+            "candle_index": 3410,
+            "direction": "LONG",
+            "extreme": 44.39,
+            "known_at": "2026-06-16T15:00:00+00:00",
+            "liquidity_ids": [
+              "SWING:1531",
+              "PDlow:2026-06-15"
+            ],
+            "price": 44.73,
+            "sfp": false
+          },
+          "sequence": {
+            "highs": [
+              {
+                "known_at": "2026-06-16T20:00:00+00:00",
+                "level_id": 1547,
+                "origin_index": 3414,
+                "price": 45.78,
+                "side": "high"
+              },
+              {
+                "known_at": "2026-06-17T00:00:00+00:00",
+                "level_id": 1549,
+                "origin_index": 3418,
+                "price": 46.05,
+                "side": "high"
+              }
+            ],
+            "lows": [
+              {
+                "known_at": "2026-06-16T21:00:00+00:00",
+                "level_id": 1548,
+                "origin_index": 3415,
+                "price": 45.23,
+                "side": "low"
+              },
+              {
+                "known_at": "2026-06-17T01:00:00+00:00",
+                "level_id": 1550,
+                "origin_index": 3419,
+                "price": 45.59,
+                "side": "low"
+              }
+            ],
+            "structural_keys": [
+              {
+                "direction": "LONG",
+                "extreme": 45.5,
+                "kind": "BULLISH_CONF_CONFIRMED",
+                "known_at": "2026-06-15T06:00:00+00:00",
+                "level_id": 1528,
+                "new_structure": {
+                  "direction": "LONG",
+                  "extreme": 45.43,
+                  "kind": "BULLISH_STRUCTURE_CONFIRMED",
+                  "known_at": "2026-06-15T03:00:00+00:00",
+                  "level_id": 1528,
+                  "protected": 44.96
+                },
+                "protected": 44.96
+              },
+              {
+                "direction": "LONG",
+                "extreme": 46.05,
+                "kind": "BULLISH_STRUCTURE_CONFIRMED",
+                "known_at": "2026-06-17T01:00:00+00:00",
+                "level_id": 1550,
+                "protected": 45.59
+              }
+            ]
+          },
+          "structure": {
+            "direction": "LONG",
+            "extreme": 46.05,
+            "kind": "BULLISH_STRUCTURE_CONFIRMED",
+            "known_at": "2026-06-17T01:00:00+00:00",
+            "level_id": 1550,
+            "protected": 45.59
+          }
+        },
+        "htf_trend": "BROKEN",
+        "known_at": "2026-06-17T17:30:00+00:00",
+        "ltf_trend": "BULLISH",
+        "matching_corrected_ready": [],
+        "range_external_poi_candidates": []
+      }
+    },
+    "trade_entry_allowed": false
+  }
+]

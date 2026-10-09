@@ -1,7 +1,3 @@
-# Intermediate PDF replay — native timing correction pending
-
-The complete 9 READY /0FILLED/0CLOSED pass below is preserved, but superseded by the objective observation-clock fix in [SOURCE_PDF_NATIVE_PROTOCOL.md](SOURCE_PDF_NATIVE_PROTOCOL.md). Its outcomes are already known; the new full replay is registered separately.
-
 # Bybit SOURCE_TRADE_CASE_VALIDATION — первичные PDF
 
 Полный replay завершён: **9 READY → 0 FILLED → 0 CLOSED**. Уникальных opportunities: 9; дубликатов: 0. Основная выборка: 0 первых уникальных закрытых сделок по хронологии entry.
