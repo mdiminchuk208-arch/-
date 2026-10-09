@@ -1,0 +1,42 @@
+{
+  "artifacts": {
+    "cancellations.jsonl.gz": "2c78a78c831782b735f0e0510d82aac5c168874a2e271aa3c9ec6e9ed0d0455c",
+    "flow_history.jsonl.gz": "6b7389b2533bc33f0f9b1205efa8fd9a21f4f836c98df9661ce617ca430a43a6",
+    "intermediate_audit.json": "eba0b01e408e0b234ceca51448361840bbf9f928011d30f3f463b78e46f6577a",
+    "old_loss_audit.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "range_audit.jsonl.gz": "e152c1cb9755c9518e6d75105706573c6569506243027f76c9fbd5afbc99f0c1",
+    "setup_outcomes.jsonl.gz": "523af77adb222ce5e0aa5d0160ce1a1ba1011de055ba665c48fcb24ea213e8cf",
+    "signals.jsonl.gz": "8ae7a8620cd227f771767cf5ce2b9d88c66f0f2c48b64bef13697c24dddd70d4",
+    "summary.json": "c00e279f23f9a95f57ffd78357c7dba4d2102ea849f510bf85ee0b5d6a5c23a1"
+  },
+  "code_hash": "5b1706474035e101b099c53dd9fe4cc62aee94443565c950689ff3b7f47906d9",
+  "fingerprint": "55d0a02792bd4b4d8228994ce4434ab6157f6af43943e8338ecde0df07fccd92",
+  "inputs": {
+    "15": {
+      "candles": 23039,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/15.csv",
+      "sha256": "c42c68735311d4e7045ddec5c622b6a899d07bce71fec2f3cc21bf4c2f8cf9e0"
+    },
+    "240": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/240.csv",
+      "sha256": "219ecec093e68589ca35ec90c5543fed8cee7a058266978c1d92898c6286d178"
+    },
+    "5": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/5.csv",
+      "sha256": "c0bc583b2af2f1bb28511547e784a0a922e1d1917cdcd44537967276c32c60ac"
+    },
+    "60": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/60.csv",
+      "sha256": "6a68584ba89b7b56c5e1cd09c423c2e48eeb4823ef8c673de10ab457b4e447dc"
+    }
+  },
+  "status": "COMPLETE",
+  "trade_entry_allowed": false
+}

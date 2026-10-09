@@ -1,0 +1,42 @@
+{
+  "artifacts": {
+    "cancellations.jsonl.gz": "48dcfe2674087b24cb09ada5ec01f7d7f1a107df8e26e9cf73e641c4cd7cecc3",
+    "flow_history.jsonl.gz": "b1cc1b86d20098b9cce2fee1e72c9c5ab9787b1bfca66b51de04bea1a67293eb",
+    "intermediate_audit.json": "9bb968d19ab8aba99b29a616ffb79bb0f6a94f8b00cd649bdba8316f37583bb1",
+    "old_loss_audit.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "range_audit.jsonl.gz": "d4e82764c8d01ae7d3aee361c250bab3f387f4cb6fa99827a6af9ca6afcc737b",
+    "setup_outcomes.jsonl.gz": "f4e84ae73e81036f769e28f9f5f34c1406dc861025ef4934e8cd279fa5123700",
+    "signals.jsonl.gz": "b4e48f30f36bd9ab1e3e86c11fc6a4d94b321e2ac1fbfb2df806c5403f9a7911",
+    "summary.json": "e20fd9ed5c06b055cd0365f12b73bb7ce7d4a59f8e5b7700ee1b8ddbca57d03e"
+  },
+  "code_hash": "5b1706474035e101b099c53dd9fe4cc62aee94443565c950689ff3b7f47906d9",
+  "fingerprint": "d4267e2cb0659ef8d243ca2adc58ac0aabbd60bdf2585bf8143c53f8519ee98c",
+  "inputs": {
+    "15": {
+      "candles": 23039,
+      "gaps": 0,
+      "path": "data/history/bybit/BTCUSDT/15.csv",
+      "sha256": "c15a595e948ad4d329c8b6044a95665dfbe53b97a2ef2d62df0d5230b8274b21"
+    },
+    "240": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/BTCUSDT/240.csv",
+      "sha256": "017a82769092847de9409bd71f8c0de2935f932661f1f202549b54453a501f7c"
+    },
+    "5": {
+      "candles": 69119,
+      "gaps": 0,
+      "path": "data/history/bybit/BTCUSDT/5.csv",
+      "sha256": "5035989c9d85cecb05980946931daed7bc3fcf1e7d4e8cc0cd36498e25550e16"
+    },
+    "60": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/BTCUSDT/60.csv",
+      "sha256": "711bc9aebbb618f450ac186f1a0a9d06309941c64e3489a5060292cabb502d54"
+    }
+  },
+  "status": "COMPLETE",
+  "trade_entry_allowed": false
+}

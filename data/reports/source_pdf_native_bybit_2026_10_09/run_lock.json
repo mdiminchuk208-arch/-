@@ -1,0 +1,338 @@
+{
+  "implementation": {
+    "SOURCE_PDF_NATIVE_PROTOCOL.md": "aa07745335b3ec27d0b577ad369d87f93eefd7cbf82d3247a08f291f7119fcac",
+    "SOURCE_PDF_PROTOCOL.md": "25fbd7920c60d80526a78ba8c72f5adf5665f4649efa0402f11e08566a888645",
+    "SOURCE_RECONSTRUCTION_2026_10_09.md": "40778bbe6e8a91bf9916a3ab369ca35e9e2bbe299634c9c8ffb60a372d123b9b",
+    "config/source_pdf_native_policy.json": "a08530b191cba946e7f6b1cb8ebdea08a6dbd7d836f5b3b2b32feec304215eee",
+    "data/source_materials/primary_pdf_2026_10_09/SW11.pdf": "ffc65d95bbc1e22186cbddd061befb93e8143f3a5075c985165ecfe7b054f681",
+    "data/source_materials/primary_pdf_2026_10_09/SW11.txt": "e913f457f2711b756b9df901563848ec97b8fdb6e4c2e7e4c4890743e80e9b6f",
+    "data/source_materials/primary_pdf_2026_10_09/SW12.pdf": "1a17dfb7deb3b227b2bf386b88be341a99ad034b1950e0310c6c450e3f22369b",
+    "data/source_materials/primary_pdf_2026_10_09/SW12.txt": "62ab3f7ee0af368471373d900ba64420e12c7b54f1ffc6c6a44d5cf469c34a54",
+    "data/source_materials/primary_pdf_2026_10_09/SW22.pdf": "ebac736d847b270c64ba38586c2f2a2a8685328d90eb7f6c9ada1bedd3a4d50b",
+    "data/source_materials/primary_pdf_2026_10_09/SW22.txt": "5c4e68bbd18e4797a4e5b50e417ef002a5bbb5b6c7bc374f23b362463f85b2f5",
+    "data/source_materials/primary_pdf_2026_10_09/SW5.pdf": "be8e14fbe03b0effbf4496eac104d30849e37e7f3db2fb92d4db1f942ace55ba",
+    "data/source_materials/primary_pdf_2026_10_09/SW5.txt": "5c655505788c181a808940863814a68d979a85cec0c20dcb3766cdf51075e656",
+    "data/source_materials/primary_pdf_2026_10_09/SW9.pdf": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+    "data/source_materials/primary_pdf_2026_10_09/SW9.txt": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+    "data/source_materials/primary_pdf_2026_10_09/manifest.json": "68b978806026cad0ed55d9060cd7a008bc45d93a23758d1857f2f1732ffe9385",
+    "scripts/run_source_pdf_native_bybit.py": "f09690f9f76229be2445b3291e4977956e8b36d1db18ca2d6e882b8deb3f7ac0",
+    "src/crypto_bot/common/models.py": "47f00db0e85f782752ce02b46564f1c65cb4fc36202f839f0f12dffc2435740b",
+    "src/crypto_bot/data/models.py": "6d455d47d76ebd0d9bfb9bb123376779d30f66b51c97b29bda106f32387eac54",
+    "src/crypto_bot/data/storage.py": "813da025d1f12156e431e6ca6556697f8eef7a1919bcc1fcc2b4a9a3b1740df5",
+    "src/crypto_bot/strategy/market_analysis.py": "a742f4d56b7343d3554ac3617d1fee7c3e8de43489dfb0f014f0cd29b3605c99",
+    "src/crypto_bot/strategy/range_engine.py": "0434d70b4115cfce7ac0a82df11fdb91dd3b4ffe78b984eb962e14a0d1746b4f",
+    "src/crypto_bot/strategy/sfp.py": "98690d684f3137028891f501b7304e8f8277187da86e4719491cbd86ee5ca472",
+    "src/crypto_bot/strategy/source_engine.py": "2225350b09f3ced89cec6611aaa286fbc7998519aefb8a56b4d111853e085ae0",
+    "src/crypto_bot/strategy/source_pdf_cases.py": "11f8d48aaefe6a8b7ec306fb5ca6073ce27d08f991f257a4be12ad0ef6f6881c",
+    "src/crypto_bot/strategy/source_pdf_native.py": "f211da8788d0fa91a56a02eff51c9e80f8b61687b4bdccaa7bc14beae758caf4",
+    "src/crypto_bot/strategy/source_portfolio.py": "8e0270413d466a697d3eaafc9cda2332f8e0915666b4fe995dec6e68a30e62fe",
+    "src/crypto_bot/strategy/structure.py": "39c17370f9f3fc8746a456c6663de4e43f80d357af03bc2b63aa367f990e98a7"
+  },
+  "inputs": {
+    "data/history/bybit/ADAUSDT/15.csv": {
+      "candles": 23040,
+      "gaps": 0,
+      "path": "data/history/bybit/ADAUSDT/15.csv",
+      "sha256": "b8f17c32c2c4a523f17ac9e44513261745477282627e400a3b6169016dc24d59"
+    },
+    "data/history/bybit/ADAUSDT/240.csv": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/ADAUSDT/240.csv",
+      "sha256": "939333c98892c91ff92cbf7bf09419bf05e0cc887e0a1de8abfe65dfe6818c14"
+    },
+    "data/history/bybit/ADAUSDT/5.csv": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/ADAUSDT/5.csv",
+      "sha256": "1600da71e214406729f547b1feb78d9dade86f33158bbdd879ccdfa074da2535"
+    },
+    "data/history/bybit/ADAUSDT/60.csv": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/ADAUSDT/60.csv",
+      "sha256": "d27de20a0b7c39c4fde21a2f7b66861c1aee3e5aecaa9b026b8ffc1013899bf5"
+    },
+    "data/history/bybit/AVAXUSDT/15.csv": {
+      "candles": 23040,
+      "gaps": 0,
+      "path": "data/history/bybit/AVAXUSDT/15.csv",
+      "sha256": "ee67aa28fe93495d5fcc2bd275014f793e3b9bc726f2f159f37b7b9a2207616d"
+    },
+    "data/history/bybit/AVAXUSDT/240.csv": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/AVAXUSDT/240.csv",
+      "sha256": "f8237dd5549d4061556b38b69f279aca828134c63310018b2224b321bc84b162"
+    },
+    "data/history/bybit/AVAXUSDT/5.csv": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/AVAXUSDT/5.csv",
+      "sha256": "2d2f5312a3688b17ef39b1b67e1c97d54c7afdba9a80a5c54588dd3ac84e216e"
+    },
+    "data/history/bybit/AVAXUSDT/60.csv": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/AVAXUSDT/60.csv",
+      "sha256": "ecb3abbddbc2d644c5f33ebac80b141bae7d068e2efe96fab231805e27245d5e"
+    },
+    "data/history/bybit/BNBUSDT/15.csv": {
+      "candles": 23039,
+      "gaps": 0,
+      "path": "data/history/bybit/BNBUSDT/15.csv",
+      "sha256": "916374fc697cea7d4b567ae2356fd332c63153d1532120bd5939f82b9c985f48"
+    },
+    "data/history/bybit/BNBUSDT/240.csv": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/BNBUSDT/240.csv",
+      "sha256": "68ac140426f226c5a53e0c268dad9c8c5f518b3b80fd84f2212c2a5bc0f6c722"
+    },
+    "data/history/bybit/BNBUSDT/5.csv": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/BNBUSDT/5.csv",
+      "sha256": "c76a359d661f7cb02b84a246a637efe519c10e93405c29962d57757ad843ec58"
+    },
+    "data/history/bybit/BNBUSDT/60.csv": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/BNBUSDT/60.csv",
+      "sha256": "e58b16ecb30024a5d95adfefd238371f14e61837d7d0618a0e711118753d5246"
+    },
+    "data/history/bybit/BTCUSDT/15.csv": {
+      "candles": 23039,
+      "gaps": 0,
+      "path": "data/history/bybit/BTCUSDT/15.csv",
+      "sha256": "c15a595e948ad4d329c8b6044a95665dfbe53b97a2ef2d62df0d5230b8274b21"
+    },
+    "data/history/bybit/BTCUSDT/240.csv": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/BTCUSDT/240.csv",
+      "sha256": "017a82769092847de9409bd71f8c0de2935f932661f1f202549b54453a501f7c"
+    },
+    "data/history/bybit/BTCUSDT/5.csv": {
+      "candles": 69119,
+      "gaps": 0,
+      "path": "data/history/bybit/BTCUSDT/5.csv",
+      "sha256": "5035989c9d85cecb05980946931daed7bc3fcf1e7d4e8cc0cd36498e25550e16"
+    },
+    "data/history/bybit/BTCUSDT/60.csv": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/BTCUSDT/60.csv",
+      "sha256": "711bc9aebbb618f450ac186f1a0a9d06309941c64e3489a5060292cabb502d54"
+    },
+    "data/history/bybit/DOGEUSDT/15.csv": {
+      "candles": 23040,
+      "gaps": 0,
+      "path": "data/history/bybit/DOGEUSDT/15.csv",
+      "sha256": "37e7e19c601e945e8b3305e3ffcafa72582ecf05d5c4257b11521ff8c1cbaa66"
+    },
+    "data/history/bybit/DOGEUSDT/240.csv": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/DOGEUSDT/240.csv",
+      "sha256": "686d4d1655f4e98f591ba88f49698c356015d63940d700e84dbaa7b2ed47278c"
+    },
+    "data/history/bybit/DOGEUSDT/5.csv": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/DOGEUSDT/5.csv",
+      "sha256": "ef2c8cd457f3645cbf214f472cb7bfac997bbcd3c51ee9fd08dbdfaa06bdf5f6"
+    },
+    "data/history/bybit/DOGEUSDT/60.csv": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/DOGEUSDT/60.csv",
+      "sha256": "d3588b39bf4ba2870ba7d8171f42c9a78074414080f1dcfe4b011d41f1853b3e"
+    },
+    "data/history/bybit/ETHUSDT/15.csv": {
+      "candles": 23039,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/15.csv",
+      "sha256": "c42c68735311d4e7045ddec5c622b6a899d07bce71fec2f3cc21bf4c2f8cf9e0"
+    },
+    "data/history/bybit/ETHUSDT/240.csv": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/240.csv",
+      "sha256": "219ecec093e68589ca35ec90c5543fed8cee7a058266978c1d92898c6286d178"
+    },
+    "data/history/bybit/ETHUSDT/5.csv": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/5.csv",
+      "sha256": "c0bc583b2af2f1bb28511547e784a0a922e1d1917cdcd44537967276c32c60ac"
+    },
+    "data/history/bybit/ETHUSDT/60.csv": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/60.csv",
+      "sha256": "6a68584ba89b7b56c5e1cd09c423c2e48eeb4823ef8c673de10ab457b4e447dc"
+    },
+    "data/history/bybit/LINKUSDT/15.csv": {
+      "candles": 23040,
+      "gaps": 0,
+      "path": "data/history/bybit/LINKUSDT/15.csv",
+      "sha256": "a00d508ffecfa07ef0799d21b65f29d35fc151a060edcd90c7a09c37c361a0c3"
+    },
+    "data/history/bybit/LINKUSDT/240.csv": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/LINKUSDT/240.csv",
+      "sha256": "c1c9d5febf3bbb253f30cd6ce2f9ff570bb3f3c8902e13b9e28ccd391c9940c6"
+    },
+    "data/history/bybit/LINKUSDT/5.csv": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/LINKUSDT/5.csv",
+      "sha256": "1dd65bb46df23fa092e64f361f5fb9d374facbccd7ebbad61a8c42fac888ec77"
+    },
+    "data/history/bybit/LINKUSDT/60.csv": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/LINKUSDT/60.csv",
+      "sha256": "71e75f38b4622d5417f86bfa1511a6fd056fe53b647e4cfd4778b87a659c3868"
+    },
+    "data/history/bybit/LTCUSDT/15.csv": {
+      "candles": 23040,
+      "gaps": 0,
+      "path": "data/history/bybit/LTCUSDT/15.csv",
+      "sha256": "10ff91d16c538b014c21138e420260a9778e35cc0e7ef6aa8d639a85ebb314fc"
+    },
+    "data/history/bybit/LTCUSDT/240.csv": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/LTCUSDT/240.csv",
+      "sha256": "093b55606ced0dc4d7f427990473f970305217e5e4f727ce05aed96f7c44cd63"
+    },
+    "data/history/bybit/LTCUSDT/5.csv": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/LTCUSDT/5.csv",
+      "sha256": "39331424b5986abc46cc32dcc4b322bf934034c2215d0a9c915b8c847b3d14cd"
+    },
+    "data/history/bybit/LTCUSDT/60.csv": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/LTCUSDT/60.csv",
+      "sha256": "354ceaf165a19fad08ee2b2f94404841d31a7721dc556917c166487a9621ed31"
+    },
+    "data/history/bybit/SOLUSDT/15.csv": {
+      "candles": 23039,
+      "gaps": 0,
+      "path": "data/history/bybit/SOLUSDT/15.csv",
+      "sha256": "eed5ce7e194c1bc78cf69e365993021d491f0c846b096070dd561ad677d29481"
+    },
+    "data/history/bybit/SOLUSDT/240.csv": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/SOLUSDT/240.csv",
+      "sha256": "522080db3e29661dc78648d90e304224b9a521ff17e2c191239e787b346d8b2c"
+    },
+    "data/history/bybit/SOLUSDT/5.csv": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/SOLUSDT/5.csv",
+      "sha256": "119edc89b702c8b658fd86a1827dd08f7e9ff65960582ac56bb9609644eeb046"
+    },
+    "data/history/bybit/SOLUSDT/60.csv": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/SOLUSDT/60.csv",
+      "sha256": "db51eaadcf3ad68a2aa64df138dd7b0b63f3d0f046b8addeb377c47236e08bb9"
+    },
+    "data/history/bybit/XRPUSDT/15.csv": {
+      "candles": 23040,
+      "gaps": 0,
+      "path": "data/history/bybit/XRPUSDT/15.csv",
+      "sha256": "e9007109253dd38273702460c002a14d5069615403e115238e0e1153938dd013"
+    },
+    "data/history/bybit/XRPUSDT/240.csv": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/XRPUSDT/240.csv",
+      "sha256": "e49b9039cb3fcec87c725b97a79a4055f5d4aeb496e32931d2f914d82bb34f75"
+    },
+    "data/history/bybit/XRPUSDT/5.csv": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/XRPUSDT/5.csv",
+      "sha256": "74f7c34ef46c0d112d24f86b66be89d50806e3a03f193b4cce0654129989c5c8"
+    },
+    "data/history/bybit/XRPUSDT/60.csv": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/XRPUSDT/60.csv",
+      "sha256": "fd086ca3baf8a2d1b6668d0fc1075e3b76393007411087d3a53b6fc4edf902bd"
+    }
+  },
+  "policy": {
+    "any_tf_mappings": [
+      [
+        240,
+        60
+      ]
+    ],
+    "breakeven": "NONE_ORIGINAL_SL",
+    "case_notional_admission_cap": null,
+    "case_reference_equity": 1170.0,
+    "cohort": "BYBIT_2026_ALREADY_INSPECTED_DEVELOPMENT",
+    "fee_rate": 0.0006,
+    "htf_interaction_clock": "CLOSED_NATIVE_5M_AFTER_POI_KNOWN_AT_OPEN",
+    "initial_equity": 1170.0,
+    "mappings": [
+      [
+        15,
+        5
+      ],
+      [
+        60,
+        5
+      ],
+      [
+        60,
+        15
+      ],
+      [
+        240,
+        5
+      ],
+      [
+        240,
+        15
+      ]
+    ],
+    "max_risk_fraction": 0.02,
+    "mode": "BACKTEST",
+    "nonrange_exit": "FULL_HTF_FTA_SOURCE_INTERPRETATION",
+    "one_position": false,
+    "policy_classification": "PRIMARY_PDF_SOURCE_RULES_WITH_DECLARED_MACHINE_CHOICES",
+    "portfolio_one_position": true,
+    "primary_closed_count": 50,
+    "primary_mode": "SOURCE_TRADE_CASE_VALIDATION",
+    "primary_order": "FILLED_ENTRY_CHRONOLOGY_THEN_READY_TIES",
+    "range_exit": "80_INSIDE_20_OPTIONAL_BREAKOUT",
+    "range_midpoint_tolerance": 0.08,
+    "risk_fraction": 0.02,
+    "slippage_fraction": 0.0002,
+    "symbol_priority": [
+      "BTCUSDT",
+      "ETHUSDT",
+      "SOLUSDT",
+      "XRPUSDT",
+      "BNBUSDT",
+      "DOGEUSDT",
+      "ADAUSDT",
+      "LINKUSDT",
+      "AVAXUSDT",
+      "LTCUSDT"
+    ],
+    "trade_entry_allowed": false,
+    "version": "source-primary-pdf-native-2"
+  },
+  "trade_entry_allowed": false
+}

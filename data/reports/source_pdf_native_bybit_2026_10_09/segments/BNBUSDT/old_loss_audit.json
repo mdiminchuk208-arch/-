@@ -1,0 +1,1625 @@
+[
+  {
+    "old_signal": {
+      "analysis_mode": "SOURCE_CONSERVATIVE",
+      "bos_time": "2026-03-30T00:20:00+00:00",
+      "direction": "LONG",
+      "entry_geometry_ready_time": "2026-03-30T00:50:00+00:00",
+      "entry_policy": "SOURCE_OB_NEAR_EDGE_WITHIN_OTE_INTERSECTION",
+      "entry_zone": {
+        "high": 601.228,
+        "low": 599.664
+      },
+      "event_time": "2026-03-30T04:00:00+00:00",
+      "htf_minutes": 240,
+      "invalidation_reasons": [],
+      "level_blocking_reasons": [],
+      "level_evidence": [
+        {
+          "details": [
+            [
+              "direction",
+              "LONG"
+            ]
+          ],
+          "kind": "SUPPORTING_HTF_POI",
+          "known_at": "2026-02-28T20:00:00+00:00",
+          "policy": "HTF_THREE_CANDLE_GAP_POI_BACKTEST_PARAMETER",
+          "prices": [
+            598.3,
+            600.5
+          ],
+          "source_times": [
+            "2026-02-28T12:00:00+00:00",
+            "2026-02-28T16:00:00+00:00",
+            "2026-02-28T20:00:00+00:00"
+          ],
+          "timeframe_minutes": 240
+        },
+        {
+          "details": [
+            [
+              "bos_relation",
+              "BEFORE_OR_AT_BOS"
+            ],
+            [
+              "window_start_b_index",
+              "18274"
+            ],
+            [
+              "window_end_b_index_exclusive",
+              "18293"
+            ]
+          ],
+          "kind": "LTF_OB",
+          "known_at": "2026-03-30T00:20:00+00:00",
+          "policy": "OB_BODY_ENGULF_IMBALANCE_IN_SOURCE_STRUCTURAL_IMPULSE",
+          "prices": [
+            595.8,
+            601.3,
+            595.8
+          ],
+          "source_times": [
+            "2026-03-29T22:50:00+00:00",
+            "2026-03-29T22:55:00+00:00",
+            "2026-03-29T23:00:00+00:00"
+          ],
+          "timeframe_minutes": 5
+        },
+        {
+          "details": [
+            [
+              "body_fraction",
+              "0.90196078431372595"
+            ],
+            [
+              "body_ratio",
+              "1.0454545454545561"
+            ],
+            [
+              "min_body_fraction",
+              "0.6"
+            ],
+            [
+              "min_engulf_body_ratio",
+              "1.0"
+            ]
+          ],
+          "kind": "AGGRESSIVE_IMPULSE",
+          "known_at": "2026-03-29T22:55:00+00:00",
+          "policy": "BODY_FRACTION_AND_ENGULF_RATIO_BACKTEST_PARAMETER",
+          "prices": [],
+          "source_times": [
+            "2026-03-29T22:50:00+00:00",
+            "2026-03-29T22:55:00+00:00"
+          ],
+          "timeframe_minutes": 5
+        },
+        {
+          "details": [
+            [
+              "level_id",
+              "3840"
+            ]
+          ],
+          "kind": "RAW_STRUCTURAL_LIQUIDITY_SWEEP",
+          "known_at": "2026-03-29T22:50:00+00:00",
+          "policy": "STRICT_STRUCTURAL_LIQUIDITY_TAKE_NORMALIZATION",
+          "prices": [
+            597.8
+          ],
+          "source_times": [
+            "2026-02-28T15:20:00+00:00",
+            "2026-03-29T22:50:00+00:00"
+          ],
+          "timeframe_minutes": 5
+        },
+        {
+          "details": [
+            [
+              "transition_id",
+              "696"
+            ]
+          ],
+          "kind": "EXPECTED_OPPOSITE_STRUCTURE",
+          "known_at": "2026-03-30T00:50:00+00:00",
+          "policy": "SOURCE_CONSERVATIVE_EXPECTED_OPPOSITE_STRUCTURE_NORMALIZATION",
+          "prices": [
+            595.8,
+            614.2
+          ],
+          "source_times": [
+            "2026-03-30T00:20:00+00:00",
+            "2026-03-30T00:50:00+00:00"
+          ],
+          "timeframe_minutes": 5
+        },
+        {
+          "details": [],
+          "kind": "STOP",
+          "known_at": "2026-03-30T00:50:00+00:00",
+          "policy": "SOURCE_OB_EXTREME",
+          "prices": [
+            595.8
+          ],
+          "source_times": [
+            "2026-03-29T22:50:00+00:00"
+          ],
+          "timeframe_minutes": 5
+        },
+        {
+          "details": [],
+          "kind": "ENTRY_REFERENCE",
+          "known_at": "2026-03-30T00:50:00+00:00",
+          "policy": "SOURCE_OB_NEAR_EDGE_WITHIN_OTE_INTERSECTION",
+          "prices": [
+            599.664,
+            601.228,
+            601.228
+          ],
+          "source_times": [
+            "2026-03-29T22:50:00+00:00",
+            "2026-03-30T00:50:00+00:00"
+          ],
+          "timeframe_minutes": 5
+        },
+        {
+          "details": [
+            [
+              "direction",
+              "SHORT"
+            ]
+          ],
+          "kind": "TARGET_POI_1",
+          "known_at": "2026-03-26T16:00:00+00:00",
+          "policy": "HTF_THREE_CANDLE_GAP_POI_BACKTEST_PARAMETER",
+          "prices": [
+            632.3,
+            632.8
+          ],
+          "source_times": [
+            "2026-03-26T08:00:00+00:00",
+            "2026-03-26T12:00:00+00:00",
+            "2026-03-26T16:00:00+00:00"
+          ],
+          "timeframe_minutes": 240
+        },
+        {
+          "details": [
+            [
+              "direction",
+              "SHORT"
+            ]
+          ],
+          "kind": "TARGET_POI_2",
+          "known_at": "2026-03-26T12:00:00+00:00",
+          "policy": "HTF_THREE_CANDLE_GAP_POI_BACKTEST_PARAMETER",
+          "prices": [
+            634.9,
+            640.9
+          ],
+          "source_times": [
+            "2026-03-26T04:00:00+00:00",
+            "2026-03-26T08:00:00+00:00",
+            "2026-03-26T12:00:00+00:00"
+          ],
+          "timeframe_minutes": 240
+        },
+        {
+          "details": [
+            [
+              "direction",
+              "SHORT"
+            ]
+          ],
+          "kind": "TARGET_POI_3",
+          "known_at": "2026-03-26T08:00:00+00:00",
+          "policy": "HTF_THREE_CANDLE_GAP_POI_BACKTEST_PARAMETER",
+          "prices": [
+            642.9,
+            643.7
+          ],
+          "source_times": [
+            "2026-03-26T00:00:00+00:00",
+            "2026-03-26T04:00:00+00:00",
+            "2026-03-26T08:00:00+00:00"
+          ],
+          "timeframe_minutes": 240
+        },
+        {
+          "details": [],
+          "kind": "TARGET_SELECTION",
+          "known_at": "2026-03-30T00:50:00+00:00",
+          "policy": "THREE_DISTINCT_OPPOSING_POI_NEAR_EDGES_BACKTEST_PARAMETER",
+          "prices": [
+            632.3,
+            634.9,
+            642.9
+          ],
+          "source_times": [
+            "2026-03-26T16:00:00+00:00",
+            "2026-03-26T12:00:00+00:00",
+            "2026-03-26T08:00:00+00:00"
+          ],
+          "timeframe_minutes": 240
+        }
+      ],
+      "level_policy": "AUTO_NORMALIZED_EVIDENCE_PENDING_SOURCE_REVIEW",
+      "levels_known_at": "2026-03-30T00:50:00+00:00",
+      "ltf_minutes": 5,
+      "mode": "BACKTEST",
+      "optimal_entry": 601.228,
+      "reasons": [
+        "HTF_SFP_FORMED",
+        "LTF_BOS_STRICTLY_AFTER_SFP",
+        "EXPECTED_OPPOSITE_STRUCTURE_AND_OTE_READY",
+        "AUTO_NORMALIZED_EVIDENCE_PENDING_SOURCE_REVIEW",
+        "SOURCE_OB_EXTREME",
+        "THREE_DISTINCT_OPPOSING_POI_NEAR_EDGES_BACKTEST_PARAMETER"
+      ],
+      "rr_at_optimal_entry": 5.724392041267505,
+      "rr_maximum": 8.446169772256649,
+      "rr_minimum": 5.724392041267505,
+      "score": 100,
+      "score_policy": "EVIDENCE_35_SFP_30_BOS_20_OTE_15_LEVELS_BACKTEST_PARAMETER",
+      "sfp_time": "2026-03-30T00:00:00+00:00",
+      "signal_id": "6368e0eee22ede75c86aa9da",
+      "status": "READY_FOR_VIRTUAL_ENTRY",
+      "stop_loss": 595.8,
+      "strategy_version": "0.4.21-causal-limit.3",
+      "symbol": "BNBUSDT",
+      "targets": [
+        632.3,
+        634.9,
+        642.9
+      ],
+      "trade_entry_allowed": false
+    },
+    "old_trade": {
+      "MAE": 5.748245599999905,
+      "MFE": 20.651754400000073,
+      "actual_entry_after_slippage": 601.3482455999999,
+      "adverse_gap": false,
+      "aggregate_risk_after": 23.400000000000002,
+      "aggregate_risk_before": 0,
+      "aggregate_risk_fraction_after": 0.02003017907148378,
+      "balance_after_trade": 1146.6000000000001,
+      "direction": "LONG",
+      "duration_seconds": 147900.0,
+      "entry_fee": 1.3221778517643503,
+      "entry_interval_end": "2026-03-31T10:00:00+00:00",
+      "entry_interval_start": "2026-03-31T09:55:00+00:00",
+      "entry_time": "2026-03-31T10:00:00+00:00",
+      "entry_time_precision": "BAR_INTERVAL_KNOWN_AT_CLOSE",
+      "entry_zone": {
+        "high": 601.228,
+        "low": 599.664
+      },
+      "equity_after_trade": 1146.6000000000001,
+      "excursion_policy": "ENTRY_BAR_CLOSE_ONLY_FAVOURABLE_FULL_ADVERSE_ENVELOPE",
+      "exit_reason": "STOP_FIRST_CONSERVATIVE",
+      "exit_time": "2026-04-02T03:05:00+00:00",
+      "fees_total": 2.6318948404329605,
+      "fill_model": "RESTING_LIMIT_TOUCH",
+      "fills": [
+        {
+          "action": "VIRTUAL_EXIT",
+          "balance_change": -22.077822148235654,
+          "entry_fee_allocation": 1.3221778517643503,
+          "exit_fee": 1.30971698866861,
+          "gross_pnl": -20.768105159567043,
+          "net_pnl": -23.400000000000006,
+          "price": 595.68084,
+          "quantity": 3.6644818856034,
+          "reason": "STOP_FIRST_CONSERVATIVE",
+          "reference_price": 595.8,
+          "sequence": 1545,
+          "signal_id": "6368e0eee22ede75c86aa9da",
+          "slippage_cost": 0.43665966148837393,
+          "symbol": "BNBUSDT",
+          "time": "2026-04-02T03:05:00+00:00",
+          "trade_entry_allowed": false
+        }
+      ],
+      "gross_pnl": -20.768105159567043,
+      "htf": 240,
+      "initial_equity": 1170.0,
+      "leverage": 3.0,
+      "ltf": 5,
+      "max_equity_during_trade": 1243.2564574872854,
+      "net_pnl": -23.400000000000006,
+      "new_breakeven": null,
+      "notional": 2203.6297529405842,
+      "quantity": 3.6644818856034,
+      "ready_time": "2026-03-30T00:50:00+00:00",
+      "required_margin": 734.5432509801948,
+      "result_R": -1.0000000000000002,
+      "risk_amount": 23.400000000000002,
+      "risk_percent": 0.02,
+      "score": 100,
+      "setup": "AUTO_NORMALIZED_EVIDENCE_PENDING_SOURCE_REVIEW",
+      "signal_id": "6368e0eee22ede75c86aa9da",
+      "signal_time": "2026-03-30T04:00:00+00:00",
+      "slippage_total": 0.8772974845117969,
+      "status": "CLOSED",
+      "stop": 595.8,
+      "stop_distance": 5.548245599999973,
+      "stop_percent": 0.009226343704493836,
+      "symbol": "BNBUSDT",
+      "targets": [
+        632.3,
+        634.9,
+        642.9
+      ],
+      "theoretical_entry": 601.228,
+      "trade_id": "6368e0eee22ede75c86aa9da"
+    },
+    "snapshots": {
+      "entry_interval_start": {
+        "bos": {
+          "direction": "LONG",
+          "extreme": 609.7,
+          "kind": "BEARISH_STRUCTURE_BROKEN_BOS",
+          "known_at": "2026-03-31T00:30:00+00:00",
+          "level_id": 7053,
+          "protected": 609.0
+        },
+        "conf": {
+          "direction": "LONG",
+          "extreme": 610.9,
+          "kind": "BULLISH_CONF_CONFIRMED",
+          "known_at": "2026-03-31T00:55:00+00:00",
+          "level_id": 7055,
+          "new_structure": {
+            "direction": "LONG",
+            "extreme": 610.2,
+            "kind": "BULLISH_STRUCTURE_CONFIRMED",
+            "known_at": "2026-03-31T00:50:00+00:00",
+            "level_id": 7055,
+            "protected": 608.9
+          },
+          "protected": 608.9
+        },
+        "fta": [
+          {
+            "aliases": [
+              "MANIPULATION"
+            ],
+            "confluence": {
+              "full_absorption_at": "2026-03-26T16:00:00+00:00",
+              "move_start_key": {
+                "known_at": "2026-03-24T12:00:00+00:00",
+                "level_id": 155,
+                "origin_index": 346,
+                "price": 626.8,
+                "side": "low"
+              },
+              "source": "SW22 p2–4"
+            },
+            "direction": "SHORT",
+            "external_poi": null,
+            "first_test": null,
+            "formed_at": "2026-03-26T16:00:00+00:00",
+            "high": 650.9,
+            "invalidated_at": null,
+            "kind": "BTS",
+            "known_at": "2026-03-29T16:00:00+00:00",
+            "last_native_test_at": null,
+            "last_test": null,
+            "leg_high": 650.9,
+            "leg_low": 607.0,
+            "low": 626.6,
+            "move_end_index": 353,
+            "native_touch_clock": true,
+            "origin_index": 346,
+            "raid": {
+              "candle_index": 353,
+              "direction": "SHORT",
+              "extreme": 650.9,
+              "known_at": "2026-03-25T12:00:00+00:00",
+              "liquidity_ids": [
+                "SWING:152",
+                "PDhigh:2026-03-23"
+              ],
+              "price": 650.7,
+              "sfp": false
+            },
+            "range_id": null,
+            "range_reclaim_at": null,
+            "range_retest_at": null,
+            "stop_extreme": null,
+            "structural_proof": {
+              "direction": "SHORT",
+              "extreme": 609.2,
+              "kind": "BULLISH_STRUCTURE_BROKEN_BOS",
+              "known_at": "2026-03-29T16:00:00+00:00",
+              "level_id": 164,
+              "protected": 610.0
+            },
+            "test_count": 0,
+            "visit_started_at": null,
+            "zone_id": "77654976496cec75b8dfcafd"
+          },
+          {
+            "aliases": [],
+            "confluence": {},
+            "direction": "SHORT",
+            "external_poi": null,
+            "first_test": null,
+            "formed_at": "2026-03-31T08:45:00+00:00",
+            "high": 608.5,
+            "invalidated_at": null,
+            "kind": "FVG",
+            "known_at": "2026-03-31T08:45:00+00:00",
+            "last_native_test_at": null,
+            "last_test": null,
+            "leg_high": 608.5,
+            "leg_low": 607.0,
+            "low": 608.3,
+            "move_end_index": null,
+            "native_touch_clock": false,
+            "origin_index": 18686,
+            "raid": null,
+            "range_id": null,
+            "range_reclaim_at": null,
+            "range_retest_at": null,
+            "stop_extreme": null,
+            "structural_proof": {
+              "direction": "SHORT",
+              "extreme": 608.9,
+              "kind": "BEARISH_STRUCTURE_CONFIRMED",
+              "known_at": "2026-03-31T08:30:00+00:00",
+              "level_id": 7091,
+              "protected": 610.3
+            },
+            "test_count": 0,
+            "visit_started_at": null,
+            "zone_id": "a79daae9a0dec8ef83c2e0f4"
+          }
+        ],
+        "htf_poi": {
+          "aliases": [],
+          "confluence": {},
+          "direction": "LONG",
+          "external_poi": null,
+          "first_test": "2026-03-01T01:15:00+00:00",
+          "formed_at": "2026-03-01T00:00:00+00:00",
+          "high": 615.0,
+          "invalidated_at": null,
+          "kind": "DEMAND",
+          "known_at": "2026-03-01T00:00:00+00:00",
+          "last_native_test_at": "2026-03-01T23:05:00+00:00",
+          "last_test": "2026-03-01T23:05:00+00:00",
+          "leg_high": 621.2,
+          "leg_low": 588.2,
+          "low": 588.2,
+          "move_end_index": 203,
+          "native_touch_clock": true,
+          "origin_index": 202,
+          "raid": {
+            "candle_index": 202,
+            "direction": "LONG",
+            "extreme": 590.0,
+            "known_at": "2026-02-28T08:00:00+00:00",
+            "liquidity_ids": [
+              "PDlow:2026-02-27",
+              "SWING:88"
+            ],
+            "price": 605.0,
+            "sfp": false
+          },
+          "range_id": null,
+          "range_reclaim_at": null,
+          "range_retest_at": null,
+          "stop_extreme": null,
+          "structural_proof": {
+            "direction": "LONG",
+            "extreme": 616.7,
+            "kind": "BEARISH_STRUCTURE_BROKEN_BOS",
+            "known_at": "2026-03-01T00:00:00+00:00",
+            "level_id": 89,
+            "protected": 615.3
+          },
+          "test_count": 4,
+          "visit_started_at": "2026-03-01T22:35:00+00:00",
+          "zone_id": "18807a9db52a36e337ab65e9"
+        },
+        "htf_trend": "BROKEN",
+        "known_at": "2026-03-31T09:55:00+00:00",
+        "liquidity_against": [],
+        "ltf_poi": {
+          "aliases": [],
+          "confluence": {
+            "imbalance": {
+              "high": 601.4,
+              "known_at": "2026-03-29T23:00:00+00:00",
+              "low": 601.3
+            }
+          },
+          "direction": "LONG",
+          "external_poi": null,
+          "first_test": null,
+          "formed_at": "2026-03-29T22:55:00+00:00",
+          "high": 601.3,
+          "invalidated_at": null,
+          "kind": "ORDER_BLOCK",
+          "known_at": "2026-03-30T00:20:00+00:00",
+          "last_native_test_at": null,
+          "last_test": null,
+          "leg_high": 613.4,
+          "leg_low": 595.8,
+          "low": 595.8,
+          "move_end_index": null,
+          "native_touch_clock": false,
+          "origin_index": 18281,
+          "raid": {
+            "candle_index": 18281,
+            "direction": "LONG",
+            "extreme": 595.8,
+            "known_at": "2026-03-29T22:50:00+00:00",
+            "liquidity_ids": [
+              "SWING:3841",
+              "SWING:3852"
+            ],
+            "price": 597.8,
+            "sfp": false
+          },
+          "range_id": null,
+          "range_reclaim_at": null,
+          "range_retest_at": null,
+          "stop_extreme": null,
+          "structural_proof": {
+            "direction": "LONG",
+            "extreme": 613.3,
+            "kind": "BEARISH_STRUCTURE_BROKEN_BOS",
+            "known_at": "2026-03-30T00:20:00+00:00",
+            "level_id": 6937,
+            "protected": 607.0
+          },
+          "test_count": 0,
+          "visit_started_at": null,
+          "zone_id": "35bcf2b7f1a5286f630b8a94"
+        },
+        "ltf_trend": "BEARISH",
+        "new_structure": {
+          "direction": "SHORT",
+          "extreme": 606.6,
+          "kind": "BEARISH_STRUCTURE_CONFIRMED",
+          "known_at": "2026-03-31T09:10:00+00:00",
+          "level_id": 7093,
+          "protected": 608.0
+        },
+        "old_entry": 601.228,
+        "old_stop": 595.8,
+        "order_flow_structure": null,
+        "pd_ote": {
+          "ote": false,
+          "passed": true,
+          "retracement": 0.6052121212121241
+        },
+        "reasons": [
+          "HTF_ORDER_FLOW_DIRECTION_BROKEN",
+          "LTF_CURRENT_STRUCTURE_BEARISH"
+        ],
+        "source_strategy_would": "REJECT",
+        "stop_behind_local_zone": true,
+        "timeframe_scope": "SECONDARY_CONSERVATIVE_1_TO_15",
+        "trade_entry_allowed": false
+      },
+      "ready_time": {
+        "bos": {
+          "direction": "LONG",
+          "extreme": 613.3,
+          "kind": "BEARISH_STRUCTURE_BROKEN_BOS",
+          "known_at": "2026-03-30T00:20:00+00:00",
+          "level_id": 6937,
+          "protected": 607.0
+        },
+        "conf": {
+          "direction": "LONG",
+          "extreme": 610.2,
+          "kind": "BULLISH_CONF_CONFIRMED",
+          "known_at": "2026-03-29T16:30:00+00:00",
+          "level_id": 6907,
+          "new_structure": {
+            "direction": "LONG",
+            "extreme": 609.5,
+            "kind": "BULLISH_STRUCTURE_CONFIRMED",
+            "known_at": "2026-03-29T16:25:00+00:00",
+            "level_id": 6907,
+            "protected": 608.7
+          },
+          "protected": 608.7
+        },
+        "fta": [
+          {
+            "aliases": [],
+            "confluence": {},
+            "direction": "SHORT",
+            "external_poi": null,
+            "first_test": null,
+            "formed_at": "2026-03-29T04:00:00+00:00",
+            "high": 615.0,
+            "invalidated_at": null,
+            "kind": "FVG",
+            "known_at": "2026-03-29T04:00:00+00:00",
+            "last_native_test_at": null,
+            "last_test": null,
+            "leg_high": 615.0,
+            "leg_low": 609.4,
+            "low": 614.8,
+            "move_end_index": null,
+            "native_touch_clock": true,
+            "origin_index": 373,
+            "raid": null,
+            "range_id": null,
+            "range_reclaim_at": null,
+            "range_retest_at": null,
+            "stop_extreme": null,
+            "structural_proof": {
+              "direction": "LONG",
+              "extreme": 618.6,
+              "kind": "BULLISH_STRUCTURE_CONFIRMED",
+              "known_at": "2026-03-28T20:00:00+00:00",
+              "level_id": 164,
+              "protected": 610.0
+            },
+            "test_count": 0,
+            "visit_started_at": null,
+            "zone_id": "4b5b6311d83d404bd7275b11"
+          },
+          {
+            "aliases": [],
+            "confluence": {},
+            "direction": "SHORT",
+            "external_poi": null,
+            "first_test": null,
+            "formed_at": "2026-03-28T23:10:00+00:00",
+            "high": 615.3,
+            "invalidated_at": null,
+            "kind": "FVG",
+            "known_at": "2026-03-28T23:10:00+00:00",
+            "last_native_test_at": null,
+            "last_test": null,
+            "leg_high": 615.3,
+            "leg_low": 613.1,
+            "low": 615.0,
+            "move_end_index": null,
+            "native_touch_clock": false,
+            "origin_index": 17995,
+            "raid": null,
+            "range_id": null,
+            "range_reclaim_at": null,
+            "range_retest_at": null,
+            "stop_extreme": null,
+            "structural_proof": {
+              "direction": "SHORT",
+              "extreme": 614.4,
+              "kind": "BEARISH_STRUCTURE_CONFIRMED",
+              "known_at": "2026-03-28T22:15:00+00:00",
+              "level_id": 6838,
+              "protected": 616.0
+            },
+            "test_count": 0,
+            "visit_started_at": null,
+            "zone_id": "d04be601ee482235336cb367"
+          }
+        ],
+        "htf_poi": {
+          "aliases": [],
+          "confluence": {},
+          "direction": "LONG",
+          "external_poi": null,
+          "first_test": "2026-03-01T01:15:00+00:00",
+          "formed_at": "2026-03-01T00:00:00+00:00",
+          "high": 615.0,
+          "invalidated_at": null,
+          "kind": "DEMAND",
+          "known_at": "2026-03-01T00:00:00+00:00",
+          "last_native_test_at": "2026-03-01T23:05:00+00:00",
+          "last_test": "2026-03-01T23:05:00+00:00",
+          "leg_high": 621.2,
+          "leg_low": 588.2,
+          "low": 588.2,
+          "move_end_index": 203,
+          "native_touch_clock": true,
+          "origin_index": 202,
+          "raid": {
+            "candle_index": 202,
+            "direction": "LONG",
+            "extreme": 590.0,
+            "known_at": "2026-02-28T08:00:00+00:00",
+            "liquidity_ids": [
+              "PDlow:2026-02-27",
+              "SWING:88"
+            ],
+            "price": 605.0,
+            "sfp": false
+          },
+          "range_id": null,
+          "range_reclaim_at": null,
+          "range_retest_at": null,
+          "stop_extreme": null,
+          "structural_proof": {
+            "direction": "LONG",
+            "extreme": 616.7,
+            "kind": "BEARISH_STRUCTURE_BROKEN_BOS",
+            "known_at": "2026-03-01T00:00:00+00:00",
+            "level_id": 89,
+            "protected": 615.3
+          },
+          "test_count": 4,
+          "visit_started_at": "2026-03-01T22:35:00+00:00",
+          "zone_id": "18807a9db52a36e337ab65e9"
+        },
+        "htf_trend": "BROKEN",
+        "known_at": "2026-03-30T00:50:00+00:00",
+        "liquidity_against": [],
+        "ltf_poi": {
+          "aliases": [],
+          "confluence": {
+            "imbalance": {
+              "high": 601.4,
+              "known_at": "2026-03-29T23:00:00+00:00",
+              "low": 601.3
+            }
+          },
+          "direction": "LONG",
+          "external_poi": null,
+          "first_test": null,
+          "formed_at": "2026-03-29T22:55:00+00:00",
+          "high": 601.3,
+          "invalidated_at": null,
+          "kind": "ORDER_BLOCK",
+          "known_at": "2026-03-30T00:20:00+00:00",
+          "last_native_test_at": null,
+          "last_test": null,
+          "leg_high": 613.4,
+          "leg_low": 595.8,
+          "low": 595.8,
+          "move_end_index": null,
+          "native_touch_clock": false,
+          "origin_index": 18281,
+          "raid": {
+            "candle_index": 18281,
+            "direction": "LONG",
+            "extreme": 595.8,
+            "known_at": "2026-03-29T22:50:00+00:00",
+            "liquidity_ids": [
+              "SWING:3841",
+              "SWING:3852"
+            ],
+            "price": 597.8,
+            "sfp": false
+          },
+          "range_id": null,
+          "range_reclaim_at": null,
+          "range_retest_at": null,
+          "stop_extreme": null,
+          "structural_proof": {
+            "direction": "LONG",
+            "extreme": 613.3,
+            "kind": "BEARISH_STRUCTURE_BROKEN_BOS",
+            "known_at": "2026-03-30T00:20:00+00:00",
+            "level_id": 6937,
+            "protected": 607.0
+          },
+          "test_count": 0,
+          "visit_started_at": null,
+          "zone_id": "35bcf2b7f1a5286f630b8a94"
+        },
+        "ltf_trend": "BULLISH",
+        "new_structure": {
+          "direction": "LONG",
+          "extreme": 614.2,
+          "kind": "BULLISH_STRUCTURE_CONFIRMED",
+          "known_at": "2026-03-30T00:50:00+00:00",
+          "level_id": 6947,
+          "protected": 608.3
+        },
+        "old_entry": 601.228,
+        "old_stop": 595.8,
+        "order_flow_structure": null,
+        "pd_ote": {
+          "ote": false,
+          "passed": true,
+          "retracement": 0.6052121212121241
+        },
+        "reasons": [
+          "HTF_ORDER_FLOW_DIRECTION_BROKEN",
+          "NO_ACTIVE_CONF_AFTER_OLD_BOS"
+        ],
+        "source_strategy_would": "WAIT",
+        "stop_behind_local_zone": true,
+        "timeframe_scope": "SECONDARY_CONSERVATIVE_1_TO_15",
+        "trade_entry_allowed": false
+      }
+    },
+    "source_folder": "data/reports/historical_blocker_investigation/stage3/final_240_5"
+  },
+  {
+    "old_signal": {
+      "analysis_mode": "SOURCE_CONSERVATIVE",
+      "bos_time": "2026-09-04T16:30:00+00:00",
+      "direction": "LONG",
+      "entry_geometry_ready_time": "2026-09-04T20:15:00+00:00",
+      "entry_policy": "SOURCE_OB_NEAR_EDGE_WITHIN_OTE_INTERSECTION",
+      "entry_zone": {
+        "high": 711.7824999999999,
+        "low": 710.635
+      },
+      "event_time": "2026-09-10T04:00:00+00:00",
+      "htf_minutes": 240,
+      "invalidation_reasons": [],
+      "level_blocking_reasons": [],
+      "level_evidence": [
+        {
+          "details": [
+            [
+              "direction",
+              "LONG"
+            ]
+          ],
+          "kind": "SUPPORTING_HTF_POI",
+          "known_at": "2026-09-03T16:00:00+00:00",
+          "policy": "HTF_THREE_CANDLE_GAP_POI_BACKTEST_PARAMETER",
+          "prices": [
+            699.5,
+            708.2
+          ],
+          "source_times": [
+            "2026-09-03T08:00:00+00:00",
+            "2026-09-03T12:00:00+00:00",
+            "2026-09-03T16:00:00+00:00"
+          ],
+          "timeframe_minutes": 240
+        },
+        {
+          "details": [
+            [
+              "bos_relation",
+              "BEFORE_OR_AT_BOS"
+            ],
+            [
+              "window_start_b_index",
+              "21322"
+            ],
+            [
+              "window_end_b_index_exclusive",
+              "21330"
+            ]
+          ],
+          "kind": "LTF_OB",
+          "known_at": "2026-09-04T16:30:00+00:00",
+          "policy": "OB_BODY_ENGULF_IMBALANCE_IN_SOURCE_STRUCTURAL_IMPULSE",
+          "prices": [
+            707.8,
+            712.5,
+            707.8
+          ],
+          "source_times": [
+            "2026-09-04T15:00:00+00:00",
+            "2026-09-04T15:15:00+00:00",
+            "2026-09-04T15:30:00+00:00"
+          ],
+          "timeframe_minutes": 15
+        },
+        {
+          "details": [
+            [
+              "body_fraction",
+              "0.78571428571426638"
+            ],
+            [
+              "body_ratio",
+              "16.5000000000054"
+            ],
+            [
+              "min_body_fraction",
+              "0.6"
+            ],
+            [
+              "min_engulf_body_ratio",
+              "1.0"
+            ]
+          ],
+          "kind": "AGGRESSIVE_IMPULSE",
+          "known_at": "2026-09-04T15:15:00+00:00",
+          "policy": "BODY_FRACTION_AND_ENGULF_RATIO_BACKTEST_PARAMETER",
+          "prices": [],
+          "source_times": [
+            "2026-09-04T15:00:00+00:00",
+            "2026-09-04T15:15:00+00:00"
+          ],
+          "timeframe_minutes": 15
+        },
+        {
+          "details": [
+            [
+              "level_id",
+              "8645"
+            ]
+          ],
+          "kind": "RAW_STRUCTURAL_LIQUIDITY_SWEEP",
+          "known_at": "2026-09-04T15:00:00+00:00",
+          "policy": "STRICT_STRUCTURAL_LIQUIDITY_TAKE_NORMALIZATION",
+          "prices": [
+            708.2
+          ],
+          "source_times": [
+            "2026-09-03T14:00:00+00:00",
+            "2026-09-04T15:00:00+00:00"
+          ],
+          "timeframe_minutes": 15
+        },
+        {
+          "details": [
+            [
+              "transition_id",
+              "781"
+            ]
+          ],
+          "kind": "EXPECTED_OPPOSITE_STRUCTURE",
+          "known_at": "2026-09-04T20:15:00+00:00",
+          "policy": "SOURCE_CONSERVATIVE_EXPECTED_OPPOSITE_STRUCTURE_NORMALIZATION",
+          "prices": [
+            707.8,
+            721.3
+          ],
+          "source_times": [
+            "2026-09-04T16:30:00+00:00",
+            "2026-09-04T20:15:00+00:00"
+          ],
+          "timeframe_minutes": 15
+        },
+        {
+          "details": [],
+          "kind": "STOP",
+          "known_at": "2026-09-04T20:15:00+00:00",
+          "policy": "SOURCE_OB_EXTREME",
+          "prices": [
+            707.8
+          ],
+          "source_times": [
+            "2026-09-04T15:00:00+00:00"
+          ],
+          "timeframe_minutes": 15
+        },
+        {
+          "details": [],
+          "kind": "ENTRY_REFERENCE",
+          "known_at": "2026-09-04T20:15:00+00:00",
+          "policy": "SOURCE_OB_NEAR_EDGE_WITHIN_OTE_INTERSECTION",
+          "prices": [
+            710.635,
+            711.7824999999999,
+            711.7824999999999
+          ],
+          "source_times": [
+            "2026-09-04T15:00:00+00:00",
+            "2026-09-04T20:15:00+00:00"
+          ],
+          "timeframe_minutes": 15
+        },
+        {
+          "details": [
+            [
+              "direction",
+              "SHORT"
+            ]
+          ],
+          "kind": "TARGET_POI_1",
+          "known_at": "2026-09-10T04:00:00+00:00",
+          "policy": "HTF_THREE_CANDLE_GAP_POI_BACKTEST_PARAMETER",
+          "prices": [
+            726.0,
+            735.8
+          ],
+          "source_times": [
+            "2026-09-09T20:00:00+00:00",
+            "2026-09-10T00:00:00+00:00",
+            "2026-09-10T04:00:00+00:00"
+          ],
+          "timeframe_minutes": 240
+        },
+        {
+          "details": [
+            [
+              "direction",
+              "SHORT"
+            ]
+          ],
+          "kind": "TARGET_POI_2",
+          "known_at": "2026-09-09T20:00:00+00:00",
+          "policy": "HTF_THREE_CANDLE_GAP_POI_BACKTEST_PARAMETER",
+          "prices": [
+            742.0,
+            747.3
+          ],
+          "source_times": [
+            "2026-09-09T12:00:00+00:00",
+            "2026-09-09T16:00:00+00:00",
+            "2026-09-09T20:00:00+00:00"
+          ],
+          "timeframe_minutes": 240
+        },
+        {
+          "details": [
+            [
+              "direction",
+              "SHORT"
+            ]
+          ],
+          "kind": "TARGET_POI_3",
+          "known_at": "2026-01-31T20:00:00+00:00",
+          "policy": "HTF_THREE_CANDLE_GAP_POI_BACKTEST_PARAMETER",
+          "prices": [
+            810.0,
+            831.5
+          ],
+          "source_times": [
+            "2026-01-31T12:00:00+00:00",
+            "2026-01-31T16:00:00+00:00",
+            "2026-01-31T20:00:00+00:00"
+          ],
+          "timeframe_minutes": 240
+        },
+        {
+          "details": [],
+          "kind": "TARGET_SELECTION",
+          "known_at": "2026-09-10T04:00:00+00:00",
+          "policy": "THREE_DISTINCT_OPPOSING_POI_NEAR_EDGES_BACKTEST_PARAMETER",
+          "prices": [
+            726.0,
+            742.0,
+            810.0
+          ],
+          "source_times": [
+            "2026-09-10T04:00:00+00:00",
+            "2026-09-09T20:00:00+00:00",
+            "2026-01-31T20:00:00+00:00"
+          ],
+          "timeframe_minutes": 240
+        }
+      ],
+      "level_policy": "AUTO_NORMALIZED_EVIDENCE_PENDING_SOURCE_REVIEW",
+      "levels_known_at": "2026-09-10T04:00:00+00:00",
+      "ltf_minutes": 15,
+      "mode": "BACKTEST",
+      "optimal_entry": 711.7824999999999,
+      "reasons": [
+        "HTF_SFP_FORMED",
+        "LTF_BOS_STRICTLY_AFTER_SFP",
+        "EXPECTED_OPPOSITE_STRUCTURE_AND_OTE_READY",
+        "AUTO_NORMALIZED_EVIDENCE_PENDING_SOURCE_REVIEW",
+        "SOURCE_OB_EXTREME",
+        "THREE_DISTINCT_OPPOSING_POI_NEAR_EDGES_BACKTEST_PARAMETER"
+      ],
+      "rr_at_optimal_entry": 3.5699937225361538,
+      "rr_maximum": 5.419753086419687,
+      "rr_minimum": 3.5699937225361538,
+      "score": 100,
+      "score_policy": "EVIDENCE_35_SFP_30_BOS_20_OTE_15_LEVELS_BACKTEST_PARAMETER",
+      "sfp_time": "2026-09-04T16:00:00+00:00",
+      "signal_id": "b15c3672f5c912a686373246",
+      "status": "READY_FOR_VIRTUAL_ENTRY",
+      "stop_loss": 707.8,
+      "strategy_version": "0.4.21-causal-limit.3",
+      "symbol": "BNBUSDT",
+      "targets": [
+        726.0,
+        742.0,
+        810.0
+      ],
+      "trade_entry_allowed": false
+    },
+    "old_trade": {
+      "MAE": 9.424856499999919,
+      "MFE": 0.1751435000001038,
+      "actual_entry_after_slippage": 711.9248564999999,
+      "adverse_gap": false,
+      "aggregate_risk_after": 23.400000000000002,
+      "aggregate_risk_before": 0,
+      "aggregate_risk_fraction_after": 0.020044608291889993,
+      "balance_after_trade": 1146.6,
+      "direction": "LONG",
+      "duration_seconds": 900.0,
+      "entry_fee": 1.952930806064982,
+      "entry_interval_end": "2026-09-10T12:45:00+00:00",
+      "entry_interval_start": "2026-09-10T12:30:00+00:00",
+      "entry_time": "2026-09-10T12:45:00+00:00",
+      "entry_time_precision": "BAR_INTERVAL_KNOWN_AT_CLOSE",
+      "entry_zone": {
+        "high": 711.7824999999999,
+        "low": 710.635
+      },
+      "equity_after_trade": 1146.6,
+      "excursion_policy": "ENTRY_BAR_CLOSE_ONLY_FAVOURABLE_FULL_ADVERSE_ENVELOPE",
+      "exit_reason": "STOP_FIRST_CONSERVATIVE",
+      "exit_time": "2026-09-10T13:00:00+00:00",
+      "fees_total": 3.89415810699416,
+      "fill_model": "RESTING_LIMIT_TOUCH",
+      "fills": [
+        {
+          "action": "VIRTUAL_EXIT",
+          "balance_change": -21.44706919393502,
+          "entry_fee_allocation": 1.952930806064982,
+          "exit_fee": 1.9412273009291785,
+          "gross_pnl": -19.505841893005844,
+          "net_pnl": -23.400000000000002,
+          "price": 707.6584399999999,
+          "quantity": 4.571949759946288,
+          "reason": "STOP_FIRST_CONSERVATIVE",
+          "reference_price": 707.8,
+          "sequence": 4778,
+          "signal_id": "b15c3672f5c912a686373246",
+          "slippage_cost": 0.647205208018119,
+          "symbol": "BNBUSDT",
+          "time": "2026-09-10T13:00:00+00:00",
+          "trade_entry_allowed": false
+        }
+      ],
+      "gross_pnl": -19.505841893005844,
+      "htf": 240,
+      "initial_equity": 1170.0,
+      "leverage": 3.0,
+      "ltf": 15,
+      "max_equity_during_trade": 1167.933426524727,
+      "net_pnl": -23.400000000000002,
+      "new_breakeven": null,
+      "notional": 3254.88467677497,
+      "quantity": 4.571949759946288,
+      "ready_time": "2026-09-10T04:00:00+00:00",
+      "required_margin": 1084.96155892499,
+      "result_R": -1.0,
+      "risk_amount": 23.400000000000002,
+      "risk_percent": 0.02,
+      "score": 100,
+      "setup": "AUTO_NORMALIZED_EVIDENCE_PENDING_SOURCE_REVIEW",
+      "signal_id": "b15c3672f5c912a686373246",
+      "signal_time": "2026-09-10T04:00:00+00:00",
+      "slippage_total": 1.2980519740199372,
+      "status": "CLOSED",
+      "stop": 707.8,
+      "stop_distance": 4.124856499999964,
+      "stop_percent": 0.005793949266329578,
+      "symbol": "BNBUSDT",
+      "targets": [
+        726.0,
+        742.0,
+        810.0
+      ],
+      "theoretical_entry": 711.7824999999999,
+      "trade_id": "b15c3672f5c912a686373246"
+    },
+    "snapshots": {
+      "entry_interval_start": {
+        "bos": {
+          "direction": "LONG",
+          "extreme": 718.2,
+          "kind": "BEARISH_STRUCTURE_BROKEN_BOS",
+          "known_at": "2026-09-10T11:30:00+00:00",
+          "level_id": 8907,
+          "protected": 718.1
+        },
+        "conf": {
+          "direction": "LONG",
+          "extreme": 753.2,
+          "kind": "BULLISH_CONF_CONFIRMED",
+          "known_at": "2026-09-08T22:45:00+00:00",
+          "level_id": 8842,
+          "new_structure": {
+            "direction": "LONG",
+            "extreme": 752.5,
+            "kind": "BULLISH_STRUCTURE_CONFIRMED",
+            "known_at": "2026-09-08T22:30:00+00:00",
+            "level_id": 8842,
+            "protected": 750.7
+          },
+          "protected": 750.7
+        },
+        "fta": [
+          {
+            "aliases": [],
+            "confluence": {},
+            "direction": "SHORT",
+            "external_poi": null,
+            "first_test": null,
+            "formed_at": "2026-09-10T04:00:00+00:00",
+            "high": 735.8,
+            "invalidated_at": null,
+            "kind": "FVG",
+            "known_at": "2026-09-10T04:00:00+00:00",
+            "last_native_test_at": null,
+            "last_test": null,
+            "leg_high": 735.8,
+            "leg_low": 715.8,
+            "low": 726.0,
+            "move_end_index": null,
+            "native_touch_clock": true,
+            "origin_index": 1363,
+            "raid": null,
+            "range_id": null,
+            "range_reclaim_at": null,
+            "range_retest_at": null,
+            "stop_extreme": null,
+            "structural_proof": null,
+            "test_count": 0,
+            "visit_started_at": null,
+            "zone_id": "626b07e29e808c2bbae2a304"
+          },
+          {
+            "aliases": [],
+            "confluence": {},
+            "direction": "SHORT",
+            "external_poi": null,
+            "first_test": null,
+            "formed_at": "2026-09-10T12:15:00+00:00",
+            "high": 717.5,
+            "invalidated_at": null,
+            "kind": "FVG",
+            "known_at": "2026-09-10T12:15:00+00:00",
+            "last_native_test_at": null,
+            "last_test": null,
+            "leg_high": 717.5,
+            "leg_low": 714.8,
+            "low": 716.6,
+            "move_end_index": null,
+            "native_touch_clock": true,
+            "origin_index": 21884,
+            "raid": null,
+            "range_id": null,
+            "range_reclaim_at": null,
+            "range_retest_at": null,
+            "stop_extreme": null,
+            "structural_proof": null,
+            "test_count": 0,
+            "visit_started_at": null,
+            "zone_id": "87ae2a85dd5598bb0d871dab"
+          }
+        ],
+        "htf_poi": {
+          "aliases": [],
+          "confluence": {},
+          "direction": "LONG",
+          "external_poi": null,
+          "first_test": "2026-09-09T21:20:00+00:00",
+          "formed_at": "2026-09-05T12:00:00+00:00",
+          "high": 730.1,
+          "invalidated_at": null,
+          "kind": "BREAKER",
+          "known_at": "2026-09-07T08:00:00+00:00",
+          "last_native_test_at": "2026-09-10T12:30:00+00:00",
+          "last_test": "2026-09-10T12:30:00+00:00",
+          "leg_high": 756.7,
+          "leg_low": 685.2,
+          "low": 685.2,
+          "move_end_index": null,
+          "native_touch_clock": true,
+          "origin_index": 761,
+          "raid": {
+            "candle_index": 1332,
+            "direction": "LONG",
+            "extreme": 707.8,
+            "known_at": "2026-09-04T16:00:00+00:00",
+            "liquidity_ids": [
+              "SWING:622"
+            ],
+            "price": 713.3,
+            "sfp": false
+          },
+          "range_id": null,
+          "range_reclaim_at": null,
+          "range_retest_at": null,
+          "stop_extreme": 707.8,
+          "structural_proof": {
+            "direction": "LONG",
+            "extreme": 756.1,
+            "kind": "BULLISH_STRUCTURE_CONFIRMED",
+            "known_at": "2026-09-07T08:00:00+00:00",
+            "level_id": 626,
+            "protected": 739.8
+          },
+          "test_count": 2,
+          "visit_started_at": "2026-09-09T21:35:00+00:00",
+          "zone_id": "09d9ab8a48d73691266ea9b5"
+        },
+        "htf_trend": "BROKEN",
+        "known_at": "2026-09-10T12:30:00+00:00",
+        "liquidity_against": [],
+        "ltf_poi": {
+          "aliases": [
+            "MANIPULATION"
+          ],
+          "confluence": {
+            "full_absorption_at": "2026-09-04T16:45:00+00:00",
+            "move_start_key": {
+              "known_at": "2026-09-04T14:15:00+00:00",
+              "level_id": 8686,
+              "origin_index": 21317,
+              "price": 718.4,
+              "side": "high"
+            },
+            "source": "SW22 p2–4"
+          },
+          "direction": "LONG",
+          "external_poi": null,
+          "first_test": "2026-09-04T20:50:00+00:00",
+          "formed_at": "2026-09-04T16:45:00+00:00",
+          "high": 718.4,
+          "invalidated_at": null,
+          "kind": "STB",
+          "known_at": "2026-09-04T20:15:00+00:00",
+          "last_native_test_at": "2026-09-04T21:55:00+00:00",
+          "last_test": "2026-09-04T21:55:00+00:00",
+          "leg_high": 721.3,
+          "leg_low": 707.8,
+          "low": 707.8,
+          "move_end_index": 21321,
+          "native_touch_clock": true,
+          "origin_index": 21317,
+          "raid": {
+            "candle_index": 21321,
+            "direction": "LONG",
+            "extreme": 707.8,
+            "known_at": "2026-09-04T15:00:00+00:00",
+            "liquidity_ids": [
+              "SWING:8645",
+              "SWING:8683"
+            ],
+            "price": 708.2,
+            "sfp": false
+          },
+          "range_id": null,
+          "range_reclaim_at": null,
+          "range_retest_at": null,
+          "stop_extreme": null,
+          "structural_proof": {
+            "direction": "LONG",
+            "extreme": 721.3,
+            "kind": "BULLISH_STRUCTURE_CONFIRMED",
+            "known_at": "2026-09-04T20:15:00+00:00",
+            "level_id": 8691,
+            "protected": 719.1
+          },
+          "test_count": 2,
+          "visit_started_at": "2026-09-04T21:30:00+00:00",
+          "zone_id": "1393b60fbaed42a4d358942a"
+        },
+        "ltf_trend": "BROKEN",
+        "new_structure": null,
+        "old_entry": 711.7824999999999,
+        "old_stop": 707.8,
+        "order_flow_structure": null,
+        "pd_ote": {
+          "ote": false,
+          "passed": true,
+          "retracement": 0.6282167832167851
+        },
+        "reasons": [
+          "HTF_ORDER_FLOW_DIRECTION_BROKEN",
+          "LTF_CURRENT_STRUCTURE_BROKEN",
+          "OLD_LOCAL_POI_ALREADY_TESTED_OR_INVALIDATED"
+        ],
+        "source_strategy_would": "WAIT",
+        "stop_behind_local_zone": true,
+        "timeframe_scope": "SECONDARY_CONSERVATIVE_1_TO_15",
+        "trade_entry_allowed": false
+      },
+      "ready_time": {
+        "bos": {
+          "direction": "LONG",
+          "extreme": 722.8,
+          "kind": "BEARISH_STRUCTURE_BROKEN_BOS",
+          "known_at": "2026-09-10T02:45:00+00:00",
+          "level_id": 8893,
+          "protected": 721.5
+        },
+        "conf": {
+          "direction": "LONG",
+          "extreme": 753.2,
+          "kind": "BULLISH_CONF_CONFIRMED",
+          "known_at": "2026-09-08T22:45:00+00:00",
+          "level_id": 8842,
+          "new_structure": {
+            "direction": "LONG",
+            "extreme": 752.5,
+            "kind": "BULLISH_STRUCTURE_CONFIRMED",
+            "known_at": "2026-09-08T22:30:00+00:00",
+            "level_id": 8842,
+            "protected": 750.7
+          },
+          "protected": 750.7
+        },
+        "fta": [
+          {
+            "aliases": [],
+            "confluence": {},
+            "direction": "SHORT",
+            "external_poi": null,
+            "first_test": null,
+            "formed_at": "2026-09-10T04:00:00+00:00",
+            "high": 735.8,
+            "invalidated_at": null,
+            "kind": "FVG",
+            "known_at": "2026-09-10T04:00:00+00:00",
+            "last_native_test_at": null,
+            "last_test": null,
+            "leg_high": 735.8,
+            "leg_low": 715.8,
+            "low": 726.0,
+            "move_end_index": null,
+            "native_touch_clock": true,
+            "origin_index": 1363,
+            "raid": null,
+            "range_id": null,
+            "range_reclaim_at": null,
+            "range_retest_at": null,
+            "stop_extreme": null,
+            "structural_proof": null,
+            "test_count": 0,
+            "visit_started_at": null,
+            "zone_id": "626b07e29e808c2bbae2a304"
+          },
+          {
+            "aliases": [],
+            "confluence": {},
+            "direction": "SHORT",
+            "external_poi": null,
+            "first_test": null,
+            "formed_at": "2026-09-09T20:00:00+00:00",
+            "high": 739.5,
+            "invalidated_at": null,
+            "kind": "FVG",
+            "known_at": "2026-09-09T20:00:00+00:00",
+            "last_native_test_at": null,
+            "last_test": null,
+            "leg_high": 739.5,
+            "leg_low": 735.8,
+            "low": 738.0,
+            "move_end_index": null,
+            "native_touch_clock": true,
+            "origin_index": 21819,
+            "raid": null,
+            "range_id": null,
+            "range_reclaim_at": null,
+            "range_retest_at": null,
+            "stop_extreme": null,
+            "structural_proof": null,
+            "test_count": 0,
+            "visit_started_at": null,
+            "zone_id": "ad34f755bd92076cbc5a3a38"
+          }
+        ],
+        "htf_poi": {
+          "aliases": [],
+          "confluence": {},
+          "direction": "LONG",
+          "external_poi": null,
+          "first_test": "2026-09-09T21:20:00+00:00",
+          "formed_at": "2026-09-05T12:00:00+00:00",
+          "high": 730.1,
+          "invalidated_at": null,
+          "kind": "BREAKER",
+          "known_at": "2026-09-07T08:00:00+00:00",
+          "last_native_test_at": "2026-09-10T04:00:00+00:00",
+          "last_test": "2026-09-10T04:00:00+00:00",
+          "leg_high": 756.7,
+          "leg_low": 685.2,
+          "low": 685.2,
+          "move_end_index": null,
+          "native_touch_clock": true,
+          "origin_index": 761,
+          "raid": {
+            "candle_index": 1332,
+            "direction": "LONG",
+            "extreme": 707.8,
+            "known_at": "2026-09-04T16:00:00+00:00",
+            "liquidity_ids": [
+              "SWING:622"
+            ],
+            "price": 713.3,
+            "sfp": false
+          },
+          "range_id": null,
+          "range_reclaim_at": null,
+          "range_retest_at": null,
+          "stop_extreme": 707.8,
+          "structural_proof": {
+            "direction": "LONG",
+            "extreme": 756.1,
+            "kind": "BULLISH_STRUCTURE_CONFIRMED",
+            "known_at": "2026-09-07T08:00:00+00:00",
+            "level_id": 626,
+            "protected": 739.8
+          },
+          "test_count": 2,
+          "visit_started_at": "2026-09-09T21:35:00+00:00",
+          "zone_id": "09d9ab8a48d73691266ea9b5"
+        },
+        "htf_trend": "BROKEN",
+        "known_at": "2026-09-10T04:00:00+00:00",
+        "liquidity_against": [],
+        "ltf_poi": {
+          "aliases": [
+            "MANIPULATION"
+          ],
+          "confluence": {
+            "full_absorption_at": "2026-09-04T16:45:00+00:00",
+            "move_start_key": {
+              "known_at": "2026-09-04T14:15:00+00:00",
+              "level_id": 8686,
+              "origin_index": 21317,
+              "price": 718.4,
+              "side": "high"
+            },
+            "source": "SW22 p2–4"
+          },
+          "direction": "LONG",
+          "external_poi": null,
+          "first_test": "2026-09-04T20:50:00+00:00",
+          "formed_at": "2026-09-04T16:45:00+00:00",
+          "high": 718.4,
+          "invalidated_at": null,
+          "kind": "STB",
+          "known_at": "2026-09-04T20:15:00+00:00",
+          "last_native_test_at": "2026-09-04T21:55:00+00:00",
+          "last_test": "2026-09-04T21:55:00+00:00",
+          "leg_high": 721.3,
+          "leg_low": 707.8,
+          "low": 707.8,
+          "move_end_index": 21321,
+          "native_touch_clock": true,
+          "origin_index": 21317,
+          "raid": {
+            "candle_index": 21321,
+            "direction": "LONG",
+            "extreme": 707.8,
+            "known_at": "2026-09-04T15:00:00+00:00",
+            "liquidity_ids": [
+              "SWING:8645",
+              "SWING:8683"
+            ],
+            "price": 708.2,
+            "sfp": false
+          },
+          "range_id": null,
+          "range_reclaim_at": null,
+          "range_retest_at": null,
+          "stop_extreme": null,
+          "structural_proof": {
+            "direction": "LONG",
+            "extreme": 721.3,
+            "kind": "BULLISH_STRUCTURE_CONFIRMED",
+            "known_at": "2026-09-04T20:15:00+00:00",
+            "level_id": 8691,
+            "protected": 719.1
+          },
+          "test_count": 2,
+          "visit_started_at": "2026-09-04T21:30:00+00:00",
+          "zone_id": "1393b60fbaed42a4d358942a"
+        },
+        "ltf_trend": "BROKEN",
+        "new_structure": null,
+        "old_entry": 711.7824999999999,
+        "old_stop": 707.8,
+        "order_flow_structure": null,
+        "pd_ote": {
+          "ote": false,
+          "passed": true,
+          "retracement": 0.6282167832167851
+        },
+        "reasons": [
+          "HTF_ORDER_FLOW_DIRECTION_BROKEN",
+          "LTF_CURRENT_STRUCTURE_BROKEN",
+          "OLD_LOCAL_POI_ALREADY_TESTED_OR_INVALIDATED"
+        ],
+        "source_strategy_would": "WAIT",
+        "stop_behind_local_zone": true,
+        "timeframe_scope": "SECONDARY_CONSERVATIVE_1_TO_15",
+        "trade_entry_allowed": false
+      }
+    },
+    "source_folder": "data/reports/historical_blocker_investigation/stage3/final_240_15"
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "selection": "EARLIEST_SOL_READY_KNOWN_AT_WITHOUT_NATIVE_TRADE_OUTCOMES",
+  "symbol": "SOLUSDT",
+  "cutoff": "2026-07-07T16:35:00+00:00",
+  "signal_id": "a2ce1597eb140da12d811ab2",
+  "native_history_trade_outcomes_not_yet_computed": true
+}

@@ -83,6 +83,12 @@ def verify_prefix(folder, cutoff=None, symbol="BTCUSDT"):
     assert evidence_json([asdict(s) for s in clean.signals]) == evidence_json([asdict(s) for s in mutated.signals])
     assert evidence_json(clean.cancellations) == evidence_json(mutated.cancellations)
     assert evidence_json(flows(clean)) == evidence_json(flows(mutated))
+    for signal in clean.signals:
+        if signal.known_at != cutoff:
+            continue
+        owner = clean.series[signal.htf]
+        destination_id = signal.evidence['order_flow']['destination_poi']['zone_id']
+        assert owner.zone_registry[destination_id].fresh(cutoff), 'flow destination already tested at READY'
     for tf in clean.series:
         a, b = clean.series[tf], mutated.series[tf]
         assert evidence_json([asdict(z) for z in a.zones]) == evidence_json([asdict(z) for z in b.zones])
@@ -101,7 +107,7 @@ def verify_ledger(folder):
     assert policy['trade_entry_allowed'] is False and policy['mode'] in ('BACKTEST', 'SHADOW')
     assert policy['mappings'] == [[15, 5], [60, 5], [60, 15], [240, 5], [240, 15]]
     assert len(lock['inputs']) == 40 and sum(r['candles'] for r in lock['inputs'].values()) == 993575
-    signals, cancellations = {}, {}
+    signals, cancellations, native_prices = {}, {}, {}
     for segment in (folder / 'segments').iterdir():
         for r in read_rows(segment / 'cancellations.jsonl.gz'):
             cancellations[r['signal_id']] = datetime.fromisoformat(r['known_at'])
@@ -110,14 +116,30 @@ def verify_ledger(folder):
             signals[r['signal_id']] = r
             cutoff = datetime.fromisoformat(r['known_at'])
             e, s = r['evidence'], sign(r['direction'])
+            if r['symbol'] not in native_prices:
+                native_prices[r['symbol']] = [c.to_strategy_candle(300000) for c in read_klines_csv(REPO / f"data/history/bybit/{r['symbol']}/5.csv")]
             timestamp_check(e, cutoff)
             raid, bos, new, conf = (datetime.fromisoformat(e[k]['known_at']) for k in ('liquidity_sweep', 'bos', 'new_structure', 'conf'))
             assert raid <= bos < new <= conf <= cutoff
             local = e['ltf_poi']
+            htf = e['htf_poi']
+            if htf['kind'] != 'RANGE_POI':
+                assert htf['native_touch_clock'] is True
+                assert datetime.fromisoformat(htf['known_at']) < datetime.fromisoformat(e['htf_interaction_at']) <= cutoff
+            assert e['fta']['native_touch_clock'] is True
+            assert e['fta']['first_test'] is None
+            current = next(c for c in read_klines_csv(REPO / f"data/history/bybit/{r['symbol']}/{r['ltf']}.csv")
+                           if c.to_strategy_candle(r['ltf'] * 60000).close_time == cutoff)
+            assert s * (current.close - r['entry']) > 0 and s * (r['targets'][0] - current.close) > 0
             assert local['structural_proof']['direction'] == r['direction']
             assert bos <= datetime.fromisoformat(local['structural_proof']['known_at']) <= datetime.fromisoformat(local['known_at'])
             flow = e['order_flow']
             assert flow['direction'] == r['direction'] and flow['invalidated_at'] is None
+            for target in (e['fta'], flow['destination_poi']):
+                available = datetime.fromisoformat(target['known_at'])
+                tested = [c for c in native_prices[r['symbol']] if available <= c.open_time and c.close_time <= cutoff
+                          and c.low <= target['high'] and c.high >= target['low']]
+                assert not tested, ('actual native target tested before READY', r['signal_id'], target['zone_id'])
             keys = flow['sequence']['structural_keys']
             for field in ('protected', 'extreme'):
                 assert s * (keys[-1][field] - keys[-2][field]) > 0

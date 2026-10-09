@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "all_unique_ready_limits_audited": 9,
+  "actual_fill_intervals_verified": 0,
+  "all_real_5m_bars_before_first_touch_or_cancellation_retained": true,
+  "no_occupancy_or_budget_gate": true,
+  "scope": "40_NATIVE_BYBIT_SERIES_993575_CANDLES",
+  "trade_entry_allowed": false
+}

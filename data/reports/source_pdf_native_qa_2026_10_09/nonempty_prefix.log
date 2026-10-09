@@ -1,0 +1,15 @@
+{
+  "real_prefix_future_mutation": {
+    "status": "PASS",
+    "symbol": "SOLUSDT",
+    "fixed_cutoff": "2026-07-07T16:35:00+00:00",
+    "native_prefix_candles": 67570,
+    "exact_signals": 1,
+    "exact_cancellations": 0,
+    "exact_global_flows": 1799,
+    "exact_range_external_audits": 102,
+    "future_mutation_4_native_TFs": "PASS",
+    "cohort": "ALREADY_INSPECTED_DEVELOPMENT"
+  },
+  "verification_script_sha256": "3227c003b90f176a183f5bd4a54c53f271a40c305f8fe96ab97a831f3f060070"
+}

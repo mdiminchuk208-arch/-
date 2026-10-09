@@ -1,0 +1,42 @@
+{
+  "artifacts": {
+    "cancellations.jsonl.gz": "5ca771bb107af5fc0ff60f4a3af379c16e5843ff47306bd281c3d743846e1caa",
+    "flow_history.jsonl.gz": "8393dcee58031ac963f22b8ff54ae54e81f4cb3b0ebe3643d4712c69195631c2",
+    "intermediate_audit.json": "21402e466ed8caa992219795f4e907050c361b75988d03dcfdd7adcbf004526b",
+    "old_loss_audit.json": "90beaef157052fd7662249d83d9c3e455f6410b90c0b3529bbb82f0dccc35cfc",
+    "range_audit.jsonl.gz": "11d49e4f9ee9277a3de8775a2da027533e92a8267c107e2f719af82f542e645c",
+    "setup_outcomes.jsonl.gz": "2426ae5ac07c2a3ff54dfe58613863d2de244f98dce40d7ea45288f2f60d9fd1",
+    "signals.jsonl.gz": "d92f5e267d1df1c2f0729496e682bfc7efdc820d9fb57d56702467e56cbd2ddc",
+    "summary.json": "fa2a317edfde0fc0544c6f2ebb681aabc03ebee7ae377c4a4236379d57b4b0df"
+  },
+  "code_hash": "5b1706474035e101b099c53dd9fe4cc62aee94443565c950689ff3b7f47906d9",
+  "fingerprint": "8ed5b501459fcf5d65e6d025aee81d49719509c2f01cc7f7dd3c58ee3c2ad5a1",
+  "inputs": {
+    "15": {
+      "candles": 23040,
+      "gaps": 0,
+      "path": "data/history/bybit/XRPUSDT/15.csv",
+      "sha256": "e9007109253dd38273702460c002a14d5069615403e115238e0e1153938dd013"
+    },
+    "240": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/XRPUSDT/240.csv",
+      "sha256": "e49b9039cb3fcec87c725b97a79a4055f5d4aeb496e32931d2f914d82bb34f75"
+    },
+    "5": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/XRPUSDT/5.csv",
+      "sha256": "74f7c34ef46c0d112d24f86b66be89d50806e3a03f193b4cce0654129989c5c8"
+    },
+    "60": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/XRPUSDT/60.csv",
+      "sha256": "fd086ca3baf8a2d1b6668d0fc1075e3b76393007411087d3a53b6fc4edf902bd"
+    }
+  },
+  "status": "COMPLETE",
+  "trade_entry_allowed": false
+}

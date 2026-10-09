@@ -1,4 +1,62 @@
-# Corrected source cases — latest continuation checkpoint
+# Primary-PDF source cases — current continuation checkpoint
+
+Все настоящие SW5/SW9/SW11/SW12/SW22 PDF сохранены и полностью прочитаны:
+54 страницы, весь текст и все схемы. `SOURCE_PDF_PROTOCOL.md` содержит
+постраничные SOURCE_RULE и отдельно обозначенные машинные решения.
+Source protocol опубликован в `18eb8bb`, первоначальный PDF движок в `63ab3ae`,
+native timing correction в `cbcd30a` до результатов повторного replay.
+Последняя policy: `source-primary-pdf-native-2`; исходный PDF replay сохранён.
+Timing correction знает первый результат и не объявляется слепым исследованием.
+
+**Полный Bybit SOURCE_TRADE_CASE_VALIDATION завершён: 9 READY → 0 FILLED → 0 CLOSED.**
+40 native серий / 993575 свечей / 10 символов, без интерполяции и новых загрузок.
+Strict mappings:15/5,60/5,60/15,240/5,240/15; ANY_TF240/60 отдельно:0 READY.
+Funnel:55734 setups → 8566 qualified_structure → 179 liquidity/POI →
+9 order_flow/PD → 9 unique READY; duplicates=0, OPEN/PENDING=0.
+Все девять quotes независимо проверены по фактическим активным native 5m барам:
+до fill они отменены — 6 LTF structure breaks, 2 destination tests, 1 inactive flow.
+WIN=0,LOSS=0,NetPnL=0; WinRate/PF/Expectancy/AvgR=N/A, поскольку CLOSED нет.
+Риск каждого независимого случая1170×2%=23.4, budget/occupancy не блокируют cases.
+Отдельный однопозиционный portfolio также0entries, cash/NAV1170.
+
+Цель 50 CLOSED не достигнута. Исчерпана вся доступная история для зафиксированной
+машинной source реализации: её максимум CLOSED=0. Это не доказательство
+максимума всех качественных discretionary вариантов PDF и не оценка edge.
+2026 история DEVELOPMENT, уже просмотренная; не OOS. Правила не подгонялись под PnL.
+Все 13 старых fc61f35 CLOSED проверены на точных READY/entry cutoffs:
+10 из11LOSS — false positives данной реконструкции; DOGE240/15
+`c1bc1cb68a185d4492c8b9e6` — uncertain/другой разрешённый вариант.
+Один прежний WIN также false positive; причины и snapshots сохранены в отчёте.
+74a6f8d и исходный PDF replay сохранены со всеми scripts/tests/artifacts.
+
+```bash
+python scripts/run_source_pdf_native_bybit.py --output data/reports/source_pdf_native_bybit_2026_10_09 --resume-existing --workers 4
+python scripts/verify_primary_pdfs.py
+python scripts/verify_source_pdf_native_evidence.py --input data/reports/source_pdf_native_bybit_2026_10_09 --symbol SOLUSDT --cutoff 2026-07-07T16:35:00+00:00 --output /tmp/source_pdf_native_evidence.json
+python scripts/audit_source_pdf_native_execution.py --input data/reports/source_pdf_native_bybit_2026_10_09 --output /tmp/source_pdf_native_execution.json
+python scripts/verify_source_pdf_preservation.py
+```
+
+QA:504 tests PASS, compileall/RuffE9F/mypy PASS. Nonempty SOL prefix67570
+native свечей:1READY/1799flows/102Range audits совпадают с full replay;
+future mutation всех4TF PASS. Все9READY проверены по causal timestamps,
+ключевой структуре и независимой реальной свежести FTA/global target.
+93core artifacts/27implementation files/40input hashes PASS.
+Verified COMPLETE `--resume-existing`:10сегментов, все105файлов неизменны.
+Byte-exact сохранены все15069 старых Git blobs74a6f8d и15258 blobs
+pre-outcome этапаcbcd30a; новый ledger QA helper намеренно дополнен.
+57baseline registered Git hashes PASS. Frozen robustness/exit исследования
+уже завершены; exit parity recheck88cases/301variants/264Achecks сохранён,
+без повторного дорогого перерасчёта и без изменения canonical.
+TP40/30/30, текущий SL, cost-adjusted BE послеTP1 неизменны.
+Только BACKTEST/SHADOW, `trade_entry_allowed=false`, без LIVE/private API/orders.
+
+[Все результаты, сравнение, READY и старые losses](SOURCE_ALIGNED_BYBIT_50_TRADE_REPORT.md).
+[Итоговый QA receipt](data/reports/source_pdf_native_qa_2026_10_09/delivery_receipt.json).
+
+## Historical 74a6f8d checkpoint — superseded below
+
+# Corrected source cases — historical continuation checkpoint
 
 Published implementation before corrected outcomes: `742fda0`; initial correction
 protocol `363fa01`. Full40 native Bybit series /993575 candles /10symbols completed.

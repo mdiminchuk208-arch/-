@@ -1,0 +1,14 @@
+{
+  "all_available_native_bars_until_READY_checked": true,
+  "native_trade_outcomes_not_yet_computed": true,
+  "ready_cases_checked": 5,
+  "signal_ids": [
+    "04fb0127b7b01c6e66209bb7",
+    "6c344f059a7c60a550543e0f",
+    "a2ce1597eb140da12d811ab2",
+    "18435abb9bf479f85cb2d2f7",
+    "26ebd579151eabf9cc29764e"
+  ],
+  "status": "PASS",
+  "trade_entry_allowed": false
+}
