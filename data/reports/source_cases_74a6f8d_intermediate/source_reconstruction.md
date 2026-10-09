@@ -1,7 +1,3 @@
-# Primary PDF reconstruction — supersedes missing-PDF interpretation
-
-SW5, SW9, SW11, SW12 and SW22 are now primary SOURCE_RULE: all 54 actual pages, text and diagrams read. See [SOURCE_PDF_PROTOCOL.md](SOURCE_PDF_PROTOCOL.md) for the complete page-cited matrix and pre-outcome choices. Original PDFs and full text: `data/source_materials/primary_pdf_2026_10_09`. The previous 74a6f8d matrix and report are preserved byte-for-byte in `data/reports/source_cases_74a6f8d_intermediate`. Previous interpretations below are historical and superseded where the PDF protocol differs.
-
 # Correction of the fc61f35 intermediate policy
 
 The prior registry is retained verbatim at `data/reports/source_bybit_fc61f35_intermediate/source_reconstruction.md`. The new five attachments are identical Windows shortcuts, not PDF contents; no missing-module summary can be promoted to SOURCE_RULE. See `data/source_materials/correction_2026_10_09/attachment_receipt.json`.

@@ -1,0 +1,428 @@
+
+===== SW9 PAGE 1 =====
+12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced
+
+
+
+
+      Главная        9. Торговые инструменты: Advanced
+      Методичка - Торговые инструменты: Advanced/Торгові інструменти: Advanced
+
+
+
+
+                      Торговые инструменты: Advanced/
+                      Торгові інструменти: Advanced
+                        RU       UA
+
+
+                      План модуля
+                      Доступ открыт по ссылке https://youtu.be/VgbnwodLjss
+
+                          1. Терминология.
+                          2. Order Block (OB).
+                          3. Breaker Block (BR).
+                          4. Point of Interest (POI).
+                          5. First Trouble Area (FTA).
+                          6. Используемые инструменты TW.
+                          7. Выводы.
+
+
+
+
+                      1. Терминология
+                      Order Block (OB) - свечная формация, благодаря которой можно определить, где
+                      крупный игрок размещает свою позицию на покупку или продажу актива.
+
+                      Breaker Block (BR) - это OB, который был пробит быстрым импульсным
+                      движением. Часто можно услышать название - брейкер.
+
+                      Point of Interest (POI) - это диапазон на графике, от которого ожидается реакция
+                      цены.
+
+                      First Trouble Area (FTA) - первая проблемная зона после смены тренда.
+
+
+
+
+                      2. Order Block (OB)
+https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     1/16
+
+
+===== SW9 PAGE 2 =====
+12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced
+
+                      Order Block - это свечная формация, благодаря которой можно определить, где
+                      крупный игрок размещает свою позицию на покупку или продажу актива.
+
+                      Графически данный инструмент состоит из свечи, которая сняла ликвидность.
+                      После этой свечи образуется агрессивная импульсная свеча, которая
+                      перекрывает предыдущую свечу.
+
+                      Наиболее точным является сигнал, когда после поглощенной свечи образуется
+                      имбаланс.
+
+                      Важно, чтобы при формировании ордерблока было получено дополнительное
+                      подтверждение – слом структуры. То есть смена движения на
+                      противоположное.
+
+                      Формация обязательно должна находиться в зоне интереса старшего
+                      таймфрейма. Если это условие не выполнено, то с наибольшей вероятностью
+                      цена пойдет искать другой ордерблок с более сильными условиями
+                      формирования.
+
+                      Схематический пример бычьего и медвежьего OB
+
+
+
+
+                      Для работы с OB выделяем всю свечу, которая была поглощена вместе с
+                      тенями. Для удобства можно использовать инструмент “Прямоугольник”.
+
+                      Вы можете использовать OB на любых ТФ, главное, чтобы были соблюдены все
+                      вышеупомянутые условия.
+
+                      Графический пример бычьего OB
+
+
+
+
+https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     2/16
+
+
+===== SW9 PAGE 3 =====
+12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced
+
+
+
+
+                      Графический пример медвежьего OB
+
+
+
+
+                      Как использовать OB в торговле?
+
+                      В 90% случаев мы работаем исключительно от первого теста OB, только в
+                      некоторых случаях можно рассматривать повторный вход от OB, дожидаясь
+                      реакции на младшем ТФ.
+
+                      Очень важно! OB должен находиться внутри структурного импульса и работать
+                      с ним необходимо по “тренду”.
+
+                      Первый вариант
+
+                             Выделяем диапазон OB.
+                             Выставляем лимитный ордер на границу диапазона. Для бычьего OB -
+                             верхняя граница, для медвежьего OB - нижняя. Также можно выставлять
+                             лимитные ордера внутри зоны ОВ.
+                             Стоп ставим за минимум/максимум OB. Либо за тень свечи, которая
+                             поглотила OB.
+
+https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     3/16
+
+
+===== SW9 PAGE 4 =====
+12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced
+
+                      Примеры:
+
+
+
+
+                      Второй вариант
+
+                      Более сложный вариант, используется на OB образованных на ТФ 15M - 1D и т.д.
+
+                             Выделяем диапазон OB на старшем таймфрейме.
+                             Переключаемся на ТФ ниже (1-15М).
+                             Ожидаем плавный структурный подход цены в диапазон OB.
+                             После реакции мы ожидаем слом структуры и формировании POI (зоны
+                             интереса).
+
+                      Примеры:
+
+
+
+
+https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     4/16
+
+
+===== SW9 PAGE 5 =====
+12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced
+
+
+
+
+                      Цена сломала 4Н структуру, отмечаем POI на 4Н ТФ.
+
+
+
+
+                      Цена пришла в POI 4Н, переключаемся на ТФ ниже. Мы ожидаем слом структуры
+                      на младшем таймфрейме и формирования POI.
+
+
+
+
+https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     5/16
+
+
+===== SW9 PAGE 6 =====
+12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced
+
+
+
+
+                      Получили слом структуры на младшем таймфрейме и сформированное POI.
+                      Выставляем лимитный ордер на новую POI.
+
+
+
+
+                      Работая по второму варианту, вход не только более безопасен и консервативен,
+                      но также появляется возможность открытия сделки с крайне высоким RR.
+
+                      Очень часто начинающие трейдеры используют каждое поглощение в качестве
+                      OB, не обращая внимания на IMB, а также выделяют OB, который не находится в
+                      структурном импульсе или зоне ОТЕ (соблюдение зон Premium и Discount).
+
+                      Нарушение условий поиска Order Block.
+
+
+
+
+https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     6/16
+
+
+===== SW9 PAGE 7 =====
+12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced
+
+
+
+
+                      В этом примере нижний ОВ в приоритете, так как под первым ОВ находится IMB
+                      второго. Впоследствии цена закрыла данный ценовой дисбаланс.
+
+                      Если вы встретите такую ситуацию, вы можете попробовать работать по второму
+                      варианту, через подтверждение. Если вы работаете по первому варианту, для
+                      вас будет важен именно нижний OB после перекрытия IMB.
+
+
+
+
+                      3. Breaker Block (BR)
+                      Breaker Block - это тот же OB, который был пробит быстрым импульсным
+                      движением. Очень важно, чтобы импульсное движение было цельным, без
+                      проторговки в области OB.
+
+                      Данный блок часто называют брейкером. Это зона на графике, в которой
+                      происходит слом структуры.
+
+                      Несмотря на свое название, брейкерблок не обязательно является разворотной
+                      моделью, он может сигнализировать о продолжении тренда.
+
+                      Для определения тенденции рынка нужно учитывать формирование
+                      повышающихся максимумов (HH) и повышающихся минимумов (HL) для бычьего
+                      тренда и понижающихся минимумов (LL) и максимумов (LH) для медвежьего.
+                      Брейкер образуется после образования нового HH или LL при импульсном
+                      пробитии ордерблока.
+
+                      Схематический пример бычьего и медвежьего BR
+
+
+
+
+https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     7/16
+
+
+===== SW9 PAGE 8 =====
+12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced
+
+
+
+
+                      Неправильная структура BR
+
+
+
+
+                      Графический пример бычьего BR
+
+
+
+
+https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     8/16
+
+
+===== SW9 PAGE 9 =====
+12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced
+
+
+
+
+                      Графический пример медвежьего BR
+
+
+
+
+                      Как использовать BR в торговле?
+
+                      Трейдинг невозможен без выставления стоп ордеров. В данном методе
+                      допустимо использовать два вида стоп ордеров – агрессивный и
+                      консервативный.
+
+                      Агрессивный стоп располагается сразу под брейкером, несмотря на хороший
+                      RR, такой стоп с высокой долей вероятности будет снят.
+
+                      Консервативный стоп вряд ли будет задет, он более безопасен, но в случае его
+                      использования, RR уже не будет такими привлекательным. На дистанции
+                      консервативные стопы срабатывают реже, давая возможность суммарно
+                      выходить в плюс по сделкам. Размещать консервативный стоп следует за
+                      импульсной свечой, снимающей ликвидность, то есть за ценовой минимум/
+                      максимум.
+https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     9/16
+
+
+===== SW9 PAGE 10 =====
+12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced
+
+                      Пример агрессивного стопа
+
+
+
+
+                      Пример консервативного стопа
+
+
+
+
+                      4. Point of Interest (POI)
+                      Point of Interest (POI) - это диапазон на графике, от которого ожидается реакция
+                      цены.
+
+
+
+https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     10/16
+
+
+===== SW9 PAGE 11 =====
+12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced
+
+                      POI - это общее название для рабочих инструментов, которыми могут выступать
+                      манипуляции, ордерблоки, брейкеры и другие торговые элементы.
+
+                      Мы выделяем данные зоны и при подходе цены к ним рассматриваем реакцию
+                      на на эту зону. На основе реакции принимается решение о входе в сделку.
+
+                      Схематический пример POI
+
+
+
+
+                      5. First Trouble Area (FTA)
+                      FTA (First Trouble Area) - это первая проблемная зона после смены характера
+                      движения. В качестве FTA могут использоваться различные POI, которые
+                      находятся в противоположном направлении от вашего входа. Так как вход может
+                      осуществляться как по тренду, так и против него, зона FTA может находиться в
+                      разных местах.
+
+                      Работа по тренду
+
+                      После слома младшего ТФ и перехода коррекционного движения в импульсное
+                      движение, рыночный тренд находится в синхронизации (к примеру, старший и
+                      младший ТФ - нисходящий). Если вы открываете сделку по тренду, то ваш тейк-
+                      профит (полный, либо частичный) будет находиться у первой проблемной зоны
+                      (FTA).
+
+                      Схематический пример FTA
+
+
+
+
+https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     11/16
+
+
+===== SW9 PAGE 12 =====
+12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced
+
+
+
+
+                      Графический пример FTA
+
+
+
+
+https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     12/16
+
+
+===== SW9 PAGE 13 =====
+12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced
+
+
+
+
+                      Работа в контртренд
+
+                      После слома младшего ТФ и перехода импульсного движения в коррекционное,
+                      рыночный тренд находится в рассинхронизации (к примеру, старший ТФ
+                      восходящий, а младший - нисходящий). Если вы открываете контртрендовую
+                      сделку, то ваш тейк-профит будет находиться у первой проблемной зоны (FTA).
+
+                      Схематический пример FTA
+
+
+
+
+                      Графический пример FTA
+
+
+
+
+https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     13/16
+
+
+===== SW9 PAGE 14 =====
+12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced
+
+
+
+
+https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     14/16
+
+
+===== SW9 PAGE 15 =====
+12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced
+
+
+
+
+                      6. Используемые инструменты TW
+                      Обозначение зоны торговых инструментов
+
+
+
+
+https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     15/16
+
+
+===== SW9 PAGE 16 =====
+12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced
+
+
+
+
+                      7. Выводы
+                      Ордерблок является хорошим фактором для входа, но должны быть соблюдены
+                      все необходимые условия. Вход в позицию должен осуществляться только по
+                      тренду. Импульсно пробитый ордерблок становится брейкером.
+
+                      FTA называют первой проблемной зоной, которой может быть любая POI со
+                      старшего ТФ. При открытии контртрендовой сделки, у зоны FTA мы производим
+                      частичную или полную фиксацию позиции.
+
+
+
+
+https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     16/16

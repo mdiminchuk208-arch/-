@@ -1,0 +1,18 @@
+Creator:         Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36
+Producer:        Skia/PDF m109
+CreationDate:    Sun Feb 12 19:46:50 2023 UTC
+ModDate:         Sun Feb 12 19:46:50 2023 UTC
+Custom Metadata: no
+Metadata Stream: no
+Tagged:          yes
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           16
+Encrypted:       no
+Page size:       594.96 x 840.96 pts (A4)
+Page rot:        0
+File size:       1546789 bytes
+Optimized:       no
+PDF version:     1.4
