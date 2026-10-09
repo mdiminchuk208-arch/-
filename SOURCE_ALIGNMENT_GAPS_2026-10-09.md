@@ -1,37 +1,40 @@
 # Strategy Engine — remaining source-alignment gaps
 
 Date: 2026-10-09
-Status: current `main` is intentionally fail-closed. These are remaining fidelity gaps, not permission to loosen entry safety.
+Status: current source-gate policy is intentionally fail-closed. These are fidelity gaps, not permission to loosen entry safety.
 
-## Closed in current main
+## Closed in current source-gate policy
 
 - Automatic gap/POI research proxy can no longer produce canonical `READY_FOR_VIRTUAL_ENTRY`.
 - Canonical READY requires explicit source-qualified levels and auditable `SourceQualification`.
-- Required source context currently includes structure path, Order Flow alignment, opposing-liquidity clearance, Premium/Discount attestation, zone freshness, source POI kind, source entry path and evidence.
+- Required source context currently includes structure path, Order Flow alignment, opposing-liquidity clearance, Premium/Discount attestation, zone freshness semantics, source POI kind, source entry path and evidence.
 - Conservative HTF→LTF path enforces LTF 1–15m and HTF 15m–1D.
 - Demand/Supply direction is enforced.
 - Frozen research artifacts remain readable but cannot become canonical source trades by omission.
 - Runtime remains BACKTEST/SHADOW only and `trade_entry_allowed=false`.
+- Repeated `ORDER_BLOCK` tests no longer use `fresh_untested` as an unconditional universal veto: a second test is admitted only with a separate causal LTF-reaction proof that is known before source qualification/entry availability. Demand/Supply remain fresh-only.
 
-## Gap A — repeated Order Block tests
+## Gap A — repeated Order Block tests — CLOSED IN `0.4.22-source-gate.3`
 
 Source support:
 
 - The Advanced trading-tools material says the first OB test is the normal case (about 90%).
 - A repeated OB entry can still be considered after a separately confirmed lower-timeframe reaction.
 
-Current runtime state:
+Implemented contract:
 
-- `SourceQualification.fresh_untested` is currently a universal boolean gate.
-- This is deliberately conservative, but it can reject a source-permitted second OB test even when a causal LTF reaction is separately proven.
+1. `SourceQualification` carries explicit repeat-test fields:
+   - `repeat_test_ltf_reaction_confirmed`;
+   - `repeat_test_ltf_reaction_known_at`;
+   - `repeat_test_ltf_reaction_evidence`.
+2. `ORDER_BLOCK` with `fresh_untested=false` remains blocked unless all repeat-reaction proof is explicitly present.
+3. The reaction timestamp must be timezone-aware and no later than the enclosing source qualification; `QualifiedLevels` already requires source qualification to be known no later than level availability. This keeps the proof causal before a snapshot can use it.
+4. Repeat-test proof is rejected for non-`ORDER_BLOCK` POI kinds. Demand/Supply therefore keep their dedicated strict fresh/untested rule.
+5. Repeat reaction evidence is carried into canonical signal audit evidence and the reason is labelled `SOURCE_OB_REPEAT_TEST_LTF_REACTION_CONFIRMED`, not `SOURCE_POI_FRESH`.
+6. Research auto-level proxies remain non-canonical and have no path to self-certify this caller/source proof.
+7. Regression coverage includes first test, unproved second test, proved second test, LONG/SHORT symmetry, future/non-causal timestamp rejection, missing evidence and Demand/Supply exclusion.
 
-Required implementation before loosening:
-
-1. Add an explicit field/evidence path such as `repeat_test_ltf_reaction_confirmed`.
-2. Allow `ORDER_BLOCK` with `fresh_untested=false` only when that separate reaction is causal, source-qualified and known before entry.
-3. Keep Demand/Supply freshness hard because its dedicated source explicitly requires an untested/fresh zone.
-4. Add long/short, first-test/second-test and future-mutation tests.
-5. Keep research proxies unable to self-certify the reaction.
+Safety boundary is unchanged: this only affects offline canonical virtual qualification; `trade_entry_allowed=false`, LIVE/private execution remain absent.
 
 ## Gap B — Premium/Discount scope
 
@@ -62,7 +65,7 @@ Still to automate causally:
 - active Order Flow;
 - meaningful opposing liquidity against setup;
 - source-complete POI taxonomy beyond gap/FVG research proxy;
-- path-specific freshness semantics;
+- path-specific freshness semantics beyond the now explicit repeated-OB exception;
 - path-specific Premium/Discount semantics;
 - first opposing source-valid FTA rather than requiring a software-shaped three-target pattern;
 - range-specific 80/20 exit model as a source path, separated from project 40/30/30 overlay.
