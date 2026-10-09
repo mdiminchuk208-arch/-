@@ -1,0 +1,39 @@
+{
+  "artifacts": {
+    "cancellations.jsonl.gz": "ace1bbe6ac094cac19f4a49ee7b1d3b904ebe043f4d842f8a97976e23c4e1597",
+    "old_loss_audit.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "setup_outcomes.jsonl.gz": "bd034a250e84ddbe140380488ab812f59d3f9552ebb85fc787c0ae3bceda7b5f",
+    "signals.jsonl.gz": "38f530425780f183d6c184d337df25a381a7d998c34d17c6fe1743e45d8d9769",
+    "summary.json": "015fb295989df7896e4a834c230b76430707d2b9f81b0f26a3120b16cb005714"
+  },
+  "code_hash": "033bfe75bbe061cfc000f39c21de032478e0893d2b68aa0d57ddbad16eca4ba6",
+  "fingerprint": "14f02d403a875b0cf1bd9e2b30aedf1348b0beb8c1519276bd6b34cbe927b663",
+  "inputs": {
+    "15": {
+      "candles": 23039,
+      "gaps": 0,
+      "path": "data/history/bybit/BTCUSDT/15.csv",
+      "sha256": "c15a595e948ad4d329c8b6044a95665dfbe53b97a2ef2d62df0d5230b8274b21"
+    },
+    "240": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/BTCUSDT/240.csv",
+      "sha256": "017a82769092847de9409bd71f8c0de2935f932661f1f202549b54453a501f7c"
+    },
+    "5": {
+      "candles": 69119,
+      "gaps": 0,
+      "path": "data/history/bybit/BTCUSDT/5.csv",
+      "sha256": "5035989c9d85cecb05980946931daed7bc3fcf1e7d4e8cc0cd36498e25550e16"
+    },
+    "60": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/BTCUSDT/60.csv",
+      "sha256": "711bc9aebbb618f450ac186f1a0a9d06309941c64e3489a5060292cabb502d54"
+    }
+  },
+  "status": "COMPLETE",
+  "trade_entry_allowed": false
+}

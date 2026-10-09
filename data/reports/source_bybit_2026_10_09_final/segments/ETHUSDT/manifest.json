@@ -1,0 +1,39 @@
+{
+  "artifacts": {
+    "cancellations.jsonl.gz": "c6758f4dc0e0c2a8b0e515028c1a2cc9d697b3341a8e7758461ed892d0a4c7c7",
+    "old_loss_audit.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "setup_outcomes.jsonl.gz": "ccf84ce7b1adc46e642b1b1159e61302980464930b0d1f142578552213f2da49",
+    "signals.jsonl.gz": "9b1008b50b3f50585b9954c61320e38e742f9a64ca8ed34c8580a53eb876aba5",
+    "summary.json": "8905a7e507d42fd0e2fb78efd2d179bd312f564aaaf0b1a74b03c1ea57d5bb43"
+  },
+  "code_hash": "033bfe75bbe061cfc000f39c21de032478e0893d2b68aa0d57ddbad16eca4ba6",
+  "fingerprint": "1b00f7248c6b9b54416dde6e7a7adfbeec16842e988d16d98dd48ae470f9435a",
+  "inputs": {
+    "15": {
+      "candles": 23039,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/15.csv",
+      "sha256": "c42c68735311d4e7045ddec5c622b6a899d07bce71fec2f3cc21bf4c2f8cf9e0"
+    },
+    "240": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/240.csv",
+      "sha256": "219ecec093e68589ca35ec90c5543fed8cee7a058266978c1d92898c6286d178"
+    },
+    "5": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/5.csv",
+      "sha256": "c0bc583b2af2f1bb28511547e784a0a922e1d1917cdcd44537967276c32c60ac"
+    },
+    "60": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/60.csv",
+      "sha256": "6a68584ba89b7b56c5e1cd09c423c2e48eeb4823ef8c673de10ab457b4e447dc"
+    }
+  },
+  "status": "COMPLETE",
+  "trade_entry_allowed": false
+}

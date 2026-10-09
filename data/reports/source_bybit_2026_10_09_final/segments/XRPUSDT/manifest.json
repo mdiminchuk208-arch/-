@@ -1,0 +1,39 @@
+{
+  "artifacts": {
+    "cancellations.jsonl.gz": "43a81d75e1366c3d299f659abce8887ef601497bd3d95fbb1ce89694a3130dcc",
+    "old_loss_audit.json": "810f23f70ccc2d5ee9808d14899989f1c1af855ec66ebedbc89af2206fcb18ef",
+    "setup_outcomes.jsonl.gz": "c00fcda3a6a691f3c4783d662249e78de3e3156b95811bdb982c4fa1a3bc7650",
+    "signals.jsonl.gz": "3e1ba96b661d08f260a2351f2fa9cf8f2803d2591e47e45af224495e8ca2c5ba",
+    "summary.json": "1d21260524a5496f791591d8597e3959bc7717b8b50838c86346d09b277e0d2d"
+  },
+  "code_hash": "033bfe75bbe061cfc000f39c21de032478e0893d2b68aa0d57ddbad16eca4ba6",
+  "fingerprint": "e390e21ebfb43e5097290af9bcf3916e71b845786639bfce791841f7124e5b25",
+  "inputs": {
+    "15": {
+      "candles": 23040,
+      "gaps": 0,
+      "path": "data/history/bybit/XRPUSDT/15.csv",
+      "sha256": "e9007109253dd38273702460c002a14d5069615403e115238e0e1153938dd013"
+    },
+    "240": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/XRPUSDT/240.csv",
+      "sha256": "e49b9039cb3fcec87c725b97a79a4055f5d4aeb496e32931d2f914d82bb34f75"
+    },
+    "5": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/XRPUSDT/5.csv",
+      "sha256": "74f7c34ef46c0d112d24f86b66be89d50806e3a03f193b4cce0654129989c5c8"
+    },
+    "60": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/XRPUSDT/60.csv",
+      "sha256": "fd086ca3baf8a2d1b6668d0fc1075e3b76393007411087d3a53b6fc4edf902bd"
+    }
+  },
+  "status": "COMPLETE",
+  "trade_entry_allowed": false
+}

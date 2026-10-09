@@ -1,5 +1,47 @@
 # Strategy Engine: завершённое зарегистрированное исследование
 
+## Итог нового source replay после получения ZIP — 2026-10-09
+
+Полный цикл завершён на сохранённых native Bybit data: **40 series / 993,575
+candles / 10 symbols / 6 mappings**. По заранее зафиксированной машинной
+интерпретации доступных оригиналов **MAX CLOSED = 13**, ещё **1 OPEN** на правой
+границе истории. Всего 647 READY и 14 виртуальных входов одного последовательного
+счёта. Закрытые: 2 WIN / 11 LOSS, net PnL **−200.41643367 USDT**, PF
+**0.14037608**, expectancy **−15.41664874 USDT**, mean R **−0.71226448**.
+Никакие параметры по PnL не выбраны; 50 CLOSED не объявляются достигнутыми.
+
+Архив прочитан: 8 реальных DOCX и 122 уникальные схемы; ожидаемые SW5/7/9/11/12/22
+содержат только shortcuts. Это ограничивает буквальную source-сертификацию,
+но полный historical replay выполнен. Правила и интерпретации:
+[SOURCE_RECONSTRUCTION_2026_10_09.md](SOURCE_RECONSTRUCTION_2026_10_09.md).
+Все сделки, funnel, старые пять losses и OLD vs NEW:
+[SOURCE_ALIGNED_BYBIT_50_TRADE_REPORT.md](SOURCE_ALIGNED_BYBIT_50_TRADE_REPORT.md).
+
+Отдельные engine / exits / risk: `source_engine.py`, `source_portfolio.py`.
+Frozen canonical TP40/30/30, SL и BE после TP1 сохранены в прежнем runtime;
+новый source replay использует объявленный FTA / Range80/20, исходный технический
+SL без автоматического BE и риск2% с базовыми затратами. Только BACKTEST/SHADOW;
+`trade_entry_allowed=false`, LIVE/private API отсутствуют.
+
+Проверяемое продолжение готового нового прогона:
+
+```bash
+python scripts/run_source_bybit.py --output data/reports/source_bybit_2026_10_09_final --resume-existing
+python scripts/verify_source_bybit_evidence.py --input data/reports/source_bybit_2026_10_09_final --output /tmp/source_evidence_receipt.json
+```
+
+Resume проверяет код, policy, input SHA, 10 segments и все core artifacts,
+после чего возвращает `VERIFIED_COMPLETE_NO_MUTATION`. Проверьте полный lock;
+не обновляйте ожидаемые SHA для обхода несовпадения. При изменении engine нужен
+новый output; старые и диагностические прогоны сохранены с точными snapshots.
+
+**471 tests PASS**, compileall, Ruff E9/F, mypy и safety PASS. Реальный BTC prefix
+до 2026-03-01 воспроизводит 6 signals / 6 cancellations точно. Аудит всех647
+READY подтверждает cutoff; 14 уникальных входов не перекрываются, R и затраты
+пересчитаны. QA receipts находятся в `data/reports/source_bybit_qa_final_2026_10_09`.
+Дорогие frozen studies не перезапускались. Раздел ниже — сохранённый предыдущий
+checkpoint до предоставления оригинального ZIP.
+
 ## Проверка продолжения на текущем main — 2026-10-09
 
 Завершённость ниже относится к frozen research baseline, а не к полной

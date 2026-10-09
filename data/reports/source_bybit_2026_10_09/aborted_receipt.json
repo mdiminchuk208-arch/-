@@ -1,0 +1,9 @@
+{
+  "status": "INTERRUPTED_BEFORE_PORTFOLIO_PNL",
+  "reason": "QA source-candle raid and Range P/D geometry corrections; no parameter fitting",
+  "frozen_research_modified": false,
+  "completed_segments": [
+    "BTCUSDT"
+  ],
+  "implementation_snapshot_matches_run_lock": true
+}

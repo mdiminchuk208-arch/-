@@ -1,0 +1,39 @@
+{
+  "artifacts": {
+    "cancellations.jsonl.gz": "f76a5f53a2871c37404297ede79dc6e38688406a97eca781dae1edeb54cefa9c",
+    "old_loss_audit.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "setup_outcomes.jsonl.gz": "c5d80799819dd409fba37d0e7abb95869fe6199f75343db83f384c653858b539",
+    "signals.jsonl.gz": "d84ac8c5eb4830b5481787b17955ee851d8c53c800f8587f69cb5760347e4015",
+    "summary.json": "32a98630edb4a4a5f0ad1c14340fd5eddb769bf4b8c7e3b4328d341860e5a60a"
+  },
+  "code_hash": "033bfe75bbe061cfc000f39c21de032478e0893d2b68aa0d57ddbad16eca4ba6",
+  "fingerprint": "81202529c736db4ffc877fed897240424071aec9b6d925346ecfa2566f52587a",
+  "inputs": {
+    "15": {
+      "candles": 23040,
+      "gaps": 0,
+      "path": "data/history/bybit/LINKUSDT/15.csv",
+      "sha256": "a00d508ffecfa07ef0799d21b65f29d35fc151a060edcd90c7a09c37c361a0c3"
+    },
+    "240": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/LINKUSDT/240.csv",
+      "sha256": "c1c9d5febf3bbb253f30cd6ce2f9ff570bb3f3c8902e13b9e28ccd391c9940c6"
+    },
+    "5": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/LINKUSDT/5.csv",
+      "sha256": "1dd65bb46df23fa092e64f361f5fb9d374facbccd7ebbad61a8c42fac888ec77"
+    },
+    "60": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/LINKUSDT/60.csv",
+      "sha256": "71e75f38b4622d5417f86bfa1511a6fd056fe53b647e4cfd4778b87a659c3868"
+    }
+  },
+  "status": "COMPLETE",
+  "trade_entry_allowed": false
+}

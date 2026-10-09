@@ -1,0 +1,39 @@
+{
+  "artifacts": {
+    "cancellations.jsonl.gz": "c30a07a234bace6044237e26760c3af9c96a2314a5f608a23fdcd406b2c1de23",
+    "old_loss_audit.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "setup_outcomes.jsonl.gz": "7fb42503a88112fc5761c1139da5ef6f36831711d104fa34b8847384bd67a238",
+    "signals.jsonl.gz": "d4d40649575b129713a6bd9d0b6eb1cc2b1c268eea0126dab1cf89ff08a8c87f",
+    "summary.json": "263e207701fcc2412ead568fdc3096ef86557a8720804b85c2df218d13399100"
+  },
+  "code_hash": "033bfe75bbe061cfc000f39c21de032478e0893d2b68aa0d57ddbad16eca4ba6",
+  "fingerprint": "8dbb13ebdc801adaf4a0703feac9e7e6e96ee1006762dff5e13e682932023311",
+  "inputs": {
+    "15": {
+      "candles": 23039,
+      "gaps": 0,
+      "path": "data/history/bybit/SOLUSDT/15.csv",
+      "sha256": "eed5ce7e194c1bc78cf69e365993021d491f0c846b096070dd561ad677d29481"
+    },
+    "240": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/SOLUSDT/240.csv",
+      "sha256": "522080db3e29661dc78648d90e304224b9a521ff17e2c191239e787b346d8b2c"
+    },
+    "5": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/SOLUSDT/5.csv",
+      "sha256": "119edc89b702c8b658fd86a1827dd08f7e9ff65960582ac56bb9609644eeb046"
+    },
+    "60": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/SOLUSDT/60.csv",
+      "sha256": "db51eaadcf3ad68a2aa64df138dd7b0b63f3d0f046b8addeb377c47236e08bb9"
+    }
+  },
+  "status": "COMPLETE",
+  "trade_entry_allowed": false
+}

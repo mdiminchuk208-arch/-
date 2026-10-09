@@ -1,0 +1,13 @@
+{
+  "artifacts": {
+    "decisions.jsonl.gz": "654823915eb7f161cd4ded71d730a8c53cbb8b4f18b5705286e98e325883088d",
+    "equity.jsonl.gz": "5a1e01395180eb4daf1d4e3216b4230b52a83190983e6dabcd3b77b449ee5199",
+    "primary_trades.jsonl.gz": "8ec440b881bddfed31bc31e3992608c4e1e2eab2fbfe59c6f462753362e57712",
+    "run_lock.json": "73c83c47976a5b0226f13c32c2416f2ded49a85c4e6c3805b3bff0cd6d1d8c03",
+    "summary.json": "70d9868e1198eca180e3e87940774d1b372400c21f09189d13b9b2fce207fb62",
+    "trades.jsonl.gz": "99a841c9b9f526f9511f8180866e0ff0d677524fa897619281a8f23d5df3b5b4"
+  },
+  "code_hash": "13aff8feb45d5f25cbb3eee69a3f30b03b876b2805203bbf7c58a0df188025e4",
+  "status": "COMPLETE",
+  "trade_entry_allowed": false
+}

@@ -1,0 +1,39 @@
+{
+  "artifacts": {
+    "cancellations.jsonl.gz": "6c1ce720168b734be982f4285bdd317d6a1b92506c7c32e359983bf34f25f003",
+    "old_loss_audit.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "setup_outcomes.jsonl.gz": "f6f7f5ebd12f5c11b6801a0b80330aacbe3c9d09a9145859a1ed548e90089938",
+    "signals.jsonl.gz": "27cf935be51cbfb915cea69866db8efb7a91177ec7dd471450a8416285aaf256",
+    "summary.json": "c54a3c4e02973ebb27a4f67299e10df1b40cca70adb3b9bf14fd566ea380a64d"
+  },
+  "code_hash": "13aff8feb45d5f25cbb3eee69a3f30b03b876b2805203bbf7c58a0df188025e4",
+  "fingerprint": "f9510e931ca3fc4a66a6803009d0ebd913fbb8be436388f3a88fd27e1efd37ed",
+  "inputs": {
+    "15": {
+      "candles": 23040,
+      "gaps": 0,
+      "path": "data/history/bybit/LTCUSDT/15.csv",
+      "sha256": "10ff91d16c538b014c21138e420260a9778e35cc0e7ef6aa8d639a85ebb314fc"
+    },
+    "240": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/LTCUSDT/240.csv",
+      "sha256": "093b55606ced0dc4d7f427990473f970305217e5e4f727ce05aed96f7c44cd63"
+    },
+    "5": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/LTCUSDT/5.csv",
+      "sha256": "39331424b5986abc46cc32dcc4b322bf934034c2215d0a9c915b8c847b3d14cd"
+    },
+    "60": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/LTCUSDT/60.csv",
+      "sha256": "354ceaf165a19fad08ee2b2f94404841d31a7721dc556917c166487a9621ed31"
+    }
+  },
+  "status": "COMPLETE",
+  "trade_entry_allowed": false
+}

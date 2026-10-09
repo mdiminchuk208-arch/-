@@ -1,0 +1,7 @@
+{
+  "status": "DIAGNOSTIC_ONLY_SUPERSEDED_BY_SOURCE_LIFECYCLE_QA",
+  "reason": "First-tested HTF D/S zones must remain watched for repeated visits and body invalidation; pending source limits cancel on broken LTF structure. No thresholds, symbols, periods, risk or exit fractions fitted.",
+  "implementation_snapshot_matches_run_lock": true,
+  "primary_result_eligible": false,
+  "trade_entry_allowed": false
+}

@@ -9,7 +9,7 @@ import statistics
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from run_source_bybit import read_rows, write_json
+from run_source_bybit import read_rows, stats, write_json
 
 
 def fmt(value, digits=4):
@@ -19,6 +19,7 @@ def fmt(value, digits=4):
 def report(folder, destination):
     summary = json.loads((folder / 'summary.json').read_text())
     primary = read_rows(folder / 'primary_trades.jsonl.gz')
+    all_trades = read_rows(folder / 'trades.jsonl.gz')
     policy = json.loads((folder / 'run_lock.json').read_text())['policy']
     prefix = folder.relative_to(destination.parent).as_posix()
     legacy_folders = ('limit_15_5', 'limit_60_5', 'final_60_15', 'final_240_5', 'final_240_15', 'final_240_60')
@@ -62,7 +63,7 @@ def report(folder, destination):
              'This is a deterministic source reconstruction with explicitly declared machine interpretations, '
              'not certification of the unavailable Advanced/Pro/risk chapters or prospective profitability. '
              'Sources and policy were committed before new PnL; parameters were not fitted. '
-             'All50 closures enter the sample in order, including losses. One account, at most one position/order; '
+             'Every available closure enters the sample in order, including losses, up to the target50. One account, at most one position/order; '
              'no overlapping research cases or independent capitals are pooled. Chronological observations can still be correlated.', '',
              '## Source audit and code changes', '',
              'The complete supplied ZIP contains eight actual DOCX, no actual PDF. Read every text and122 unique embedded diagrams '
@@ -155,10 +156,33 @@ def report(folder, destination):
         lines.append(f'| {key} | {fmt(value)} |')
     lines += ['', 'GrossPnL is before fees and slippage; GrossAfterSlippageBeforeFees uses actual simulated prices. '
               'Net = GrossPnL − Fees − Slippage. AvgLoss is positive loss magnitude; expectancy is net USDT/trade. '
-              'MaxDrawdown uses the account5m marked NAV through the50th closure, including open exposure and estimated exit fees. '
+              'MaxDrawdown uses the account5m marked NAV through the last primary closure, including open exposure and estimated exit fees. '
               'Group drawdown is undefined because these groups do not own separate capitals. '
-              'Undefined ratios are N/A rather than infinity.', '', '## Primary breakdown', '']
-    for dimension, groups in summary['primary_breakdown'].items():
+              'Undefined ratios are N/A rather than infinity.', '',
+              '## Censored endpoint', '',
+              f"Final cash={fmt(summary['final_cash'])} USDT; marked NAV={fmt(summary['final_equity'])} USDT. "
+              'Closed-trade statistics exclude fees/unrealized PnL of the endpoint OPEN position; '
+              'cash/NAV above include them. The position is retained, not force-closed to increase CLOSED.', '']
+    for t in all_trades:
+        if t['status'] == 'OPEN':
+            lines += [f"OPEN: {t['symbol']} {t['direction']} {t['htf']}/{t['ltf']}, entry={t['entry_time']} "
+                      f"@{fmt(t['entry'])}, SL={fmt(t['stop'])}, targets={t['targets']}, planned risk={fmt(t['risk_amount'])} USDT.", '']
+    breakdown = dict(summary['primary_breakdown'])
+    ltf_groups = {}
+    for t in primary:
+        ltf_groups.setdefault(t['evidence']['ltf_poi']['kind'], []).append(t)
+    breakdown['entry_ltf_poi_type'] = {key: stats(rows) for key, rows in ltf_groups.items()}
+    lines += ['## Primary breakdown', '', 'POI type denotes the HTF context; entry_ltf_poi_type describes the actual local entry zone. '
+              'Zero groups remain visible; manipulation aliases do not become separate trades.', '']
+    for dimension, original_groups in breakdown.items():
+        groups = dict(original_groups)
+        expected = (policy['symbol_priority'] if dimension == 'symbol' else
+                    [f'{h}/{l}' for h, l in policy['mappings']] if dimension == 'mapping' else
+                    ['HTF_POI_LTF_RAID_BOS_CONF', 'RANGE_DEVIATION'] if dimension == 'setup_type' else
+                    ['ORDER_BLOCK', 'BREAKER', 'DEMAND', 'SUPPLY', 'STB', 'BTS', 'FVG', 'RANGE_POI']
+                    if dimension in ('poi_type', 'entry_ltf_poi_type') else ['LONG', 'SHORT'])
+        for key in expected:
+            groups.setdefault(key, stats([]))
         lines += [f'### {dimension}', '', '| Group | CLOSED | Wins | Losses | WinRate | PF | Expectancy | AvgR | NetPnL | Fees | Slippage | Avg holding seconds |',
                   '|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|']
         for key, values in groups.items():
@@ -182,6 +206,12 @@ def report(folder, destination):
               'the registered first50 sample. Full NEW performance is retained in summary.json. '
               'OLD5 losses do not enter the new ledger merely by changing exits: the same quotes lack an emitted '
               'matching source entry chain or are rejected/waiting as listed above.', '',
+              '## Independent OLD mapping drawdowns', '',
+              '| Mapping | CLOSED | Max NAV drawdown |', '|---|---:|---:|']
+    for row in old_mapping:
+        p = row['portfolio']
+        lines.append(f"| {row['mapping']} | {p['completed_trades']} | {fmt(p['max_drawdown'] * 100)}% |")
+    lines += ['', 'Each OLD row owns its original1170 USDT account; these drawdowns are not summed.', '',
               '## QA and reproducibility', '',
               f'Run: `python scripts/run_source_bybit.py --output {prefix}`. '
               'Verify/reuse: add `--resume-existing`; it checks code/policy/input hashes, all10 segment manifests '
@@ -189,7 +219,7 @@ def report(folder, destination):
               'Compileall, targeted tests, full suite, Ruff E9/F, mypy and safety/evidence audit receipts '
               'are saved under `data/reports/source_bybit_qa_final_2026_10_09`. '
               'Frozen strategy code/config and old historical artifacts were preserved; costly frozen studies were not rerun.', '',
-              'This first50 sample is descriptive development validation. It does not establish robust edge, '
+              'This available chronological sample is descriptive development validation. It does not establish robust edge, '
               'prospective performance or LIVE readiness. No parameter or exit variant is selected from this table.', '']
     destination.write_text('\n'.join(lines))
     return summary['primary']

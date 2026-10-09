@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "archive_sha256": "33cee26232d90fe26840bb4fced2e75551a5368d59359ffecc4b72d92c3870b9",
+  "documents": 8,
+  "exact_reproducible_texts": [
+    {
+      "file": "03.clean.txt",
+      "sha256": "a6d7eda42ba228a3744c17540ddab0cc2482c0e3894df1d165697bbf6ef5a3e1"
+    },
+    {
+      "file": "06.clean.txt",
+      "sha256": "ad70ddbe23b29b1f0bce9638ffb34b9cd98f04fbf1efcb42eaa52cb5b94aa5c6"
+    },
+    {
+      "file": "11.clean.txt",
+      "sha256": "554e25064bec3ce2dca8dae8f1199e82f51c97344bbcc060ef0dde0038544f69"
+    },
+    {
+      "file": "14.clean.txt",
+      "sha256": "be369cab60dd4b2b804e2d7baf6c6e2352d33935223462fee24915a68400de9e"
+    },
+    {
+      "file": "16.clean.txt",
+      "sha256": "3dfe171ff6d8d9ac90b65683871be5db562c2d8248b5032a648f4ff2c476ac8f"
+    },
+    {
+      "file": "18.clean.txt",
+      "sha256": "605298b07a02a64d00ee2b6ba887cfdd8d366785aebf8d6e6d5e54d8a46da823"
+    },
+    {
+      "file": "19.clean.txt",
+      "sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a"
+    },
+    {
+      "file": "20.clean.txt",
+      "sha256": "befe59ee0e8e8f70938f36a310ab3346095ffcdf7ae3db311d266a67beb0527b"
+    }
+  ],
+  "shortcuts_never_executed": true
+}

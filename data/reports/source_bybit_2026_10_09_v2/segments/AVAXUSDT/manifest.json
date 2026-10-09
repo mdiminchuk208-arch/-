@@ -1,0 +1,39 @@
+{
+  "artifacts": {
+    "cancellations.jsonl.gz": "eadd4f0d775fc9bad4b79eb73b7673d595acee7119e86a22ff09ffd43207ef60",
+    "old_loss_audit.json": "dad2db4bbbd28e08f6d7a42487568efe54aa3180853c7a55792b96e59c5a107a",
+    "setup_outcomes.jsonl.gz": "6e42c9b80174a09d71e869c1a15751b9c0170401849cb1547184a8484fe82caf",
+    "signals.jsonl.gz": "20e74979b49c240f199b3b81ad5f6f352fd0e1c86a93ea00bb3d15c583d302ea",
+    "summary.json": "ef4a190aebbf2b393bbe4026b93cf20d857eef1e74a93131c3af89f91a514b6b"
+  },
+  "code_hash": "13aff8feb45d5f25cbb3eee69a3f30b03b876b2805203bbf7c58a0df188025e4",
+  "fingerprint": "585ec2100294d606c955e968305cb4abe811e0ed071b79d8ce0a12423f21b229",
+  "inputs": {
+    "15": {
+      "candles": 23040,
+      "gaps": 0,
+      "path": "data/history/bybit/AVAXUSDT/15.csv",
+      "sha256": "ee67aa28fe93495d5fcc2bd275014f793e3b9bc726f2f159f37b7b9a2207616d"
+    },
+    "240": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/AVAXUSDT/240.csv",
+      "sha256": "f8237dd5549d4061556b38b69f279aca828134c63310018b2224b321bc84b162"
+    },
+    "5": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/AVAXUSDT/5.csv",
+      "sha256": "2d2f5312a3688b17ef39b1b67e1c97d54c7afdba9a80a5c54588dd3ac84e216e"
+    },
+    "60": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/AVAXUSDT/60.csv",
+      "sha256": "ecb3abbddbc2d644c5f33ebac80b141bae7d068e2efe96fab231805e27245d5e"
+    }
+  },
+  "status": "COMPLETE",
+  "trade_entry_allowed": false
+}
