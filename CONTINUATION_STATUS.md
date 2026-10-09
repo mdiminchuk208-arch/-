@@ -1,5 +1,28 @@
 # Strategy Engine: завершённое зарегистрированное исследование
 
+## Проверка продолжения на текущем main — 2026-10-09
+
+Завершённость ниже относится к frozen research baseline, а не к полной
+source-сертификации текущего engine. После исследования source-gate изменил
+`replay.py` и replay CLI; исходный baseline hash guard правильно отклоняет
+прямой запуск старого pipeline на текущем main. Не заменяйте ожидаемые SHA.
+
+Для проверки сохранённых studies с исходным runtime без отката main:
+
+```bash
+python scripts/verify_frozen_research_resume.py --workers 4 --output data/reports/fresh_resume_validation
+```
+
+Нужен новый output path. Helper проверяет сохранённые артефакты и source context,
+восстанавливает 57 frozen файлов из Git в игнорируемом temporary runtime и
+использует проверяемый `--resume-existing` для сохранённых exit cases.
+Предыдущие historical artifacts остаются неизменными.
+
+Новый per-trade source audit и конкретные blockers полного Bybit source validation:
+[SOURCE_ALIGNED_BYBIT_50_TRADE_REPORT.md](SOURCE_ALIGNED_BYBIT_50_TRADE_REPORT.md).
+Оригинальный `Криптология.zip` недоступен в этой задаче; 50 source-valid CLOSED
+trades не получены и новый полный source-aligned backtest не объявлен завершённым.
+
 Все зарегистрированные historical, VALIDATION, retrospective HOLDOUT, walk-forward, execution, POI и exit sensitivity studies завершены. Полный inventory и итоговые таблицы имеют `complete=true`.
 
 Все 21 исходных fingerprints восстановлены точно; 57 canonical source/config SHA неизменны. Canonical TP 40/30/30, inclusive wick-touch и `trade_entry_allowed=false` сохранены. Варианты не выбраны для canonical.

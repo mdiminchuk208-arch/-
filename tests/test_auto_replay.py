@@ -5,7 +5,7 @@ from unittest.mock import patch
 import unittest
 
 from crypto_bot.strategy.auto_levels import AutoLevelPolicy, AutomaticLevelResult
-from crypto_bot.common.models import Candle, Direction
+from crypto_bot.common.models import Direction
 from crypto_bot.strategy.auto_levels import derive_automatic_levels
 from crypto_bot.strategy.replay import StrategySignal, evaluate_snapshot, opportunity_key
 from crypto_bot.strategy.trade_plan import PriceZone
