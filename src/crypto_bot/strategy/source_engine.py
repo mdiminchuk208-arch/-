@@ -85,7 +85,7 @@ class Zone:
     test_count: int = 0
     invalidated_at: datetime | None = None
     stop_extreme: float | None = None
-    range_id: int | None = None
+    range_id: str | int | None = None
 
     def __post_init__(self) -> None:
         if self.kind not in ZONE_TYPES or not 0 < self.low < self.high:
@@ -139,12 +139,14 @@ class SourceSeries:
                 raise ValueError('technical recovery is forbidden in source replay')
             self.events[e.candle_index].append(e)
         self.range_events: dict[int, list[MarketEvent]] = defaultdict(list)
-        self.range_bounds: dict[int, tuple[float, float, datetime]] = {}
+        self.range_bounds: dict[int, tuple[float, float, datetime, str]] = {}
         if ranges is not None:
             for r in ranges.ranges:
                 # Later lifecycle status/clarity is deliberately not a selection filter.
                 if r.midpoint_reaction_time is not None and r.lower < r.upper:
-                    self.range_bounds[r.range_id] = (r.lower, r.upper, r.midpoint_reaction_time)
+                    causal_id = identity(symbol, tf, r.first_boundary_time, r.first_boundary_price,
+                                         r.second_boundary_time, r.second_boundary_price)
+                    self.range_bounds[r.range_id] = (r.lower, r.upper, r.midpoint_reaction_time, causal_id)
             for e in ranges.events:
                 self.range_events[e.candle_index].append(e)
         self.index = -1
@@ -171,7 +173,7 @@ class SourceSeries:
     def _zone(self, kind: str, direction: str, low: float, high: float, now: datetime,
               origin: int, raid: Raid | None, *, aliases: tuple[str, ...] = ()) -> Zone:
         c = self.candles[self.index]
-        return Zone(identity(self.symbol, self.tf, kind, direction, origin, now), kind, direction,
+        return Zone(identity(self.symbol, self.tf, kind, direction, origin, now, low, high), kind, direction,
                     low, high, now, now, origin, raid, min(low, c.low, raid.extreme if raid else low),
                     max(high, c.high, raid.extreme if raid else high), aliases=aliases)
 
@@ -347,14 +349,14 @@ class SourceSeries:
         for e in self.range_events.get(index, ()):
             if e.kind not in (K.BULLISH_SFP_FORMATION_CONFIRMED, K.BEARISH_SFP_FORMATION_CONFIRMED) or e.range_id not in self.range_bounds:
                 continue
-            low, high, known = self.range_bounds[e.range_id]
+            low, high, known, causal_id = self.range_bounds[e.range_id]
             if known > now or e.event_time > now or e.sfp_pattern_extreme_price is None:
                 continue
             direction = 'LONG' if e.kind == K.BULLISH_SFP_FORMATION_CONFIRMED else 'SHORT'
-            raid = Raid(direction, now, e.level_price, e.sfp_pattern_extreme_price, max(0, index - 1), (f'RANGE:{e.range_id}',), True)
+            raid = Raid(direction, now, e.level_price, e.sfp_pattern_extreme_price, max(0, index - 1), (f'RANGE:{causal_id}',), True)
             z = self._zone('RANGE_POI', direction, low, high, now, index - 1, raid)
             z.leg_low, z.leg_high = low, high
-            z.range_id = e.range_id
+            z.range_id = causal_id
             z.first_test = z.last_test = now
             z.test_count = 1
             z.structural_proof = {'kind': 'IMPULSE_BOUNDARIES_MIDPOINT_DEVIATION_RECLAIM', 'known_at': known}
@@ -455,7 +457,19 @@ class SourceEngine:
                                  if s.htf == tf and s.invalidated_at is None}
         touched, events = series.advance(index)
         now = series.candles[index].close_time
-        for z in touched:
+        # A raid candle can be OB, D/S and STB/BTS simultaneously. One physical
+        # first interaction produces one context, with semantic aliases retained.
+        priority = {'ORDER_BLOCK': 0, 'BREAKER': 1, 'DEMAND': 2, 'SUPPLY': 2,
+                    'STB': 3, 'BTS': 3, 'MANIPULATION': 4, 'FVG': 5, 'RANGE_POI': 0}
+        physical: dict[tuple, Zone] = {}
+        for candidate in sorted(touched, key=lambda p: (priority[p.kind], p.zone_id)):
+            key = (candidate.direction, candidate.origin_index, candidate.low, candidate.high, candidate.range_id)
+            if key in physical:
+                chosen = physical[key]
+                chosen.aliases = tuple(sorted((set(chosen.aliases) | set(candidate.aliases) | {candidate.kind}) - {chosen.kind}))
+            else:
+                physical[key] = candidate
+        for z in physical.values():
             if z.kind == 'FVG' and (z.raid is None or z.structural_proof is None):
                 continue
             if z.invalidated_at is not None or z.raid is None:

@@ -93,9 +93,10 @@ def report(folder, destination):
              'Manipulation/STB/BTS aliases are not counted as independent setups. '
              'The60m LTF mapping is labelled any-TF interpretation, outside the secondary1–15m conservative preference. '
              'Missing modules limit literal source certification and detector completeness.', '',
-             'The first interrupted detector run is retained in `data/reports/source_bybit_2026_10_09`; no portfolio PnL was calculated. '
-             'QA corrected the OB origin-candle raid, middle-candle Breaker break linkage and true Range P/D bounds before '
-             'the complete v2 replay. No period, symbol or threshold was selected from PnL.', '',
+             'Prior interrupted and superseded runs are retained with exact implementation snapshots and QA reasons. '
+             'QA corrected the OB origin-candle raid, middle-candle Breaker linkage, true Range P/D bounds, '
+             'tested-zone lifecycle observation, broken-LTF limit cancellation and same-zone alias duplication. '
+             'The final run follows these corrections. No period, symbol or threshold was selected from PnL.', '',
              '## OLD five losses', '',
              'Old decisions below are reconstructed from the last saved signal available before entry and current native-history '
              'prefix state at both the old READY and entry-interval start. Old replay used rolling contexts; '
@@ -182,11 +183,11 @@ def report(folder, destination):
               'OLD5 losses do not enter the new ledger merely by changing exits: the same quotes lack an emitted '
               'matching source entry chain or are rejected/waiting as listed above.', '',
               '## QA and reproducibility', '',
-              'Run: `python scripts/run_source_bybit.py --output data/reports/source_bybit_2026_10_09_v2`. '
+              f'Run: `python scripts/run_source_bybit.py --output {prefix}`. '
               'Verify/reuse: add `--resume-existing`; it checks code/policy/input hashes, all10 segment manifests '
               'and all completed output hashes, then returns VERIFIED_COMPLETE_NO_MUTATION. Corruption or changes fail closed.', '',
               'Compileall, targeted tests, full suite, Ruff E9/F, mypy and safety/evidence audit receipts '
-              'are saved under `data/reports/source_bybit_qa_2026_10_09`. '
+              'are saved under `data/reports/source_bybit_qa_final_2026_10_09`. '
               'Frozen strategy code/config and old historical artifacts were preserved; costly frozen studies were not rerun.', '',
               'This first50 sample is descriptive development validation. It does not establish robust edge, '
               'prospective performance or LIVE readiness. No parameter or exit variant is selected from this table.', '']

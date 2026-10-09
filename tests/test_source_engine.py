@@ -71,6 +71,21 @@ class SourceGeometryTests(unittest.TestCase):
 
 
 class SourceCausalityTests(unittest.TestCase):
+    def test_ob_and_stb_aliases_do_not_create_duplicate_mapped_setups(self):
+        cs = [candle(0, 100, 102, 99, 101)]
+        series = {tf: SourceSeries('BTCUSDT', tf, cs, analyze_market(cs)) for tf in (5, 15, 60, 240)}
+        h = series[60]
+        raid = Raid('LONG', START, 99, 98, 0, ('SSL',))
+        for kind in ('ORDER_BLOCK', 'STB'):
+            z = Zone(kind, kind, 'LONG', 98, 100, START, START, 0, raid, 98, 110)
+            h.zones.append(z)
+            h.zone_registry[z.zone_id] = z
+        engine = SourceEngine('BTCUSDT', series)
+        engine.advance(60, 0)
+        self.assertEqual(len(engine.setups), 2)  # 60/5 and60/15; one physical zone.
+        self.assertEqual(engine.funnel['source_contexts'], 1)
+        self.assertTrue(all(s.poi.kind == 'ORDER_BLOCK' and 'STB' in s.poi.aliases for s in engine.setups))
+
     def test_tested_demand_context_still_observes_retest_and_body_invalidation(self):
         cs = [candle(0, 100, 101, 98, 100), candle(1, 105, 106, 104, 105),
               candle(2, 104, 105, 99, 100), candle(3, 99, 100, 94, 95)]
