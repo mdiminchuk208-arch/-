@@ -1,0 +1,22 @@
+test_cases_ignore_other_symbol_occupancy_and_portfolio_budget (tests.test_source_correction.SourceCaseTests.test_cases_ignore_other_symbol_occupancy_and_portfolio_budget) ... ok
+test_corrected_resume_requires_every_causal_evidence_artifact (tests.test_source_correction.SourceCaseTests.test_corrected_resume_requires_every_causal_evidence_artifact) ... ok
+test_known_cancellation_and_endpoint_censoring (tests.test_source_correction.SourceCaseTests.test_known_cancellation_and_endpoint_censoring) ... ok
+test_physical_aliases_and_mappings_dedup_before_outcomes (tests.test_source_correction.SourceCaseTests.test_physical_aliases_and_mappings_dedup_before_outcomes) ... ok
+test_ds_independent_multicandle_no_fvg (tests.test_source_correction.SourceCorrectionTests.test_ds_independent_multicandle_no_fvg) ... ok
+test_external_poi_formed_after_deviation_is_not_causal (tests.test_source_correction.SourceCorrectionTests.test_external_poi_formed_after_deviation_is_not_causal) ... ok
+test_failed_ob_does_not_manufacture_ds_without_move_raid (tests.test_source_correction.SourceCorrectionTests.test_failed_ob_does_not_manufacture_ds_without_move_raid) ... ok
+test_flow_requires_liquidity_work_break_and_directional_sequence (tests.test_source_correction.SourceCorrectionTests.test_flow_requires_liquidity_work_break_and_directional_sequence) ... ok
+test_full_prefix_and_future_mutation_preserve_all_corrected_state (tests.test_source_correction.SourceCorrectionTests.test_full_prefix_and_future_mutation_preserve_all_corrected_state) ... ok
+test_liquidity_against_context_is_not_limited_to_stop_band (tests.test_source_correction.SourceCorrectionTests.test_liquidity_against_context_is_not_limited_to_stop_band) ... ok
+test_pending_ds_return_is_already_a_test (tests.test_source_correction.SourceCorrectionTests.test_pending_ds_return_is_already_a_test) ... ok
+test_range_requires_separate_reclaim_then_boundary_retest (tests.test_source_correction.SourceCorrectionTests.test_range_requires_separate_reclaim_then_boundary_retest) ... ok
+test_range_sfp_without_external_poi_cannot_create_permission (tests.test_source_correction.SourceCorrectionTests.test_range_sfp_without_external_poi_cannot_create_permission) ... ok
+test_smaller_native_bar_test_invalidates_global_flow (tests.test_source_correction.SourceCorrectionTests.test_smaller_native_bar_test_invalidates_global_flow) ... ok
+test_strict_excludes_60m_execution (tests.test_source_correction.SourceCorrectionTests.test_strict_excludes_60m_execution) ... ok
+test_tested_global_destination_cannot_silently_retarget (tests.test_source_correction.SourceCorrectionTests.test_tested_global_destination_cannot_silently_retarget) ... ok
+test_type_specific_quotes_and_conservative_breaker_stop (tests.test_source_correction.SourceCorrectionTests.test_type_specific_quotes_and_conservative_breaker_stop) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.012s
+
+OK

@@ -26,11 +26,14 @@ The source registry records that limitation; absent evidence never becomes true.
   costs. No shared occupancy, compounding or3x portfolio budget admission filter.
   Fee.0006/slippage.0002 remain recorded project assumptions. Independent case
   PnLs are descriptive sums, not one shared-capital NAV or portfolio drawdown.
+  Cost-negative FTA geometry does not reject an otherwise valid independent case;
+  its actual net cost is reported. Portfolio cost admission remains separate.
 * Physical opportunity identity: symbol/direction + HTF reaction candle interval
   and overlapping HTF source zone + overlapping LTF entry zone. At each READY
   choose the first chronologically available opportunity; ties prefer higherHTF,
   lowerLTF, original symbol priority, ID. Overlapping aliases/mappings within the
-  same reaction are excluded before outcomes. Distinct reactions remain distinct.
+  same reaction are excluded before outcomes. An identical HTF zone/reaction also
+  deduplicates different local quotes across mappings. Distinct reactions remain distinct.
   First50 unique filled and CLOSED cases ordered by entry interval start, then
   READY/tie order. Every later closure and OPEN/PENDING censor is retained.
 * A separate PORTFOLIO_SIMULATION uses the same deduplicated strict signals with
