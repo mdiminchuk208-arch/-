@@ -1,276 +1,349 @@
-# Source-aligned Bybit validation: completed historical replay
+# Corrected Bybit source trade-case validation
 
-**CLOSED = 13** in the primary first50 sample. Entire native dataset replay completed: 13 CLOSED, 14 entries, 1 endpoint OPEN. MAX CLOSED = 13 under this fixed machine policy.
+Primary: **0 unique FILLED + CLOSED trade cases**. Full strict replay: 0 CLOSED, 0 FILLED, 0 OPEN, 0 PENDING censored. **MAX CLOSED = 0 under the registered corrected machine policy**; target50 was not reached.
 
-**BACKTEST only; trade_entry_allowed=false. LIVE/private API disabled.**
+**BACKTEST/SHADOW only; trade_entry_allowed=false; LIVE/private API/orders prohibited.**
 
-This is a deterministic source reconstruction with explicitly declared machine interpretations, not certification of the unavailable Advanced/Pro/risk chapters or prospective profitability. Sources and policy were committed before new PnL; parameters were not fitted. Every available closure enters the sample in order, including losses, up to the target50. One account, at most one position/order; no overlapping research cases or independent capitals are pooled. Chronological observations can still be correlated.
+The five newly uploaded files are Windows shortcuts, byte-identical to the old archive links, not PDF contents. Eight available DOCX originals and their diagrams were read previously; available Range, D/S, Smart Money Trader2 and Liquidity texts were checked for this correction. Missing SW5/9/11/12/22 contents cannot be newly read or promoted from SECONDARY_SOURCE to SOURCE_RULE. This result validates a declared machine interpretation of available originals and explicit user requirements, not the complete discretionary methodology. [Attachment receipt](data/source_materials/correction_2026_10_09/attachment_receipt.json).
 
-## Source audit and code changes
+Pre-outcome registration: `363fa01`; corrected implementation/tests and deterministic choices: `2b09acb`, both published before any corrected outcomes. Final NEW-POI proof guard/parallel runner commit `742fda0` also precedes outcomes; the interrupted no-outcome pass and exact code snapshot are retained under `data/reports/source_cases_bybit_2026_10_09_pre_qa`. [Correction protocol](SOURCE_CORRECTION_PROTOCOL.md) and [source registry](SOURCE_RECONSTRUCTION_2026_10_09.md) distinguish evidence and interpretations. No outcome-based threshold, symbol, period, entry, stop or exit selection occurred. Frozen studies were not rerun.
 
-The complete supplied ZIP contains eight actual DOCX, no actual PDF. Read every text and122 unique embedded diagrams (195 references). SW5, SW7, SW9, SW11, SW12 and SW22 contain shortcuts only. The original archive, full text, OCR and SHA manifest are preserved. [Registered source matrix](SOURCE_RECONSTRUCTION_2026_10_09.md) separates SOURCE_RULE, SOURCE_INTERPRETATION, PROJECT_OVERLAY and RESEARCH_PARAMETER.
+## Corrected behavior and sample semantics
 
-Implemented typed ORDER_BLOCK, BREAKER, DEMAND, SUPPLY, STB/BTS with MANIPULATION provenance, FVG/IMB and RANGE_POI. Source conservative structure keeps BOS distinct from subsequent new structure/CONF. Liquidity tracks BSL/SSL, confirmed structural and exact EQH/EQL pools, internal/external context, completed UTC PDH/PDL and source Range boundary raids. A contextual adverse pool must be swept before entry. Order Flow stores directional structure, raid and destination POI evidence with known_at/invalidation. P/D is enforced on the selected path; OTE is reported as confluence, not a trigger. D/S must be fresh; repeated OB has a separate confirmation contract based on secondary source material, and primary HTF contexts use first tests.
+STRICT_CONSERVATIVE mappings:15/5,60/5,60/15,240/5,240/15. 240/60 belongs only to ANY_TF research. Each unique physical opportunity is deduplicated before outcomes; first available READY wins, deterministic ties prefer higherHTF/lowerLTF/fixed symbol priority. Alias/mapping duplicates do not manufacture sample size. Each retained READY receives an independent case with reference1170USDT and planned risk23.4USDT(2%), including base entry/SL friction. It is independent of other symbols, account occupancy, compounding and3x portfolio budget. Case PnLs are descriptive sums of independent exposures, never shared-capital NAV or portfolio drawdown.
 
-Conservative chain: first HTF POI interaction → LTF raid → BOS → new structure → CONF → fresh local POI limit. No gap-only HTF permission, .6 displacement ratio, mandatory OTE, Score admission or three-gap target prerequisite. FTA is the nearest available opposing qualified POI. Non-Range full exit at FTA is a declared machine convention. Range80% exits inside the opposite edge/earlier FTA and20% uses a pre-entry external FTA when available; the optional remainder otherwise closes inside, with80/20 accounting. No automatic BE, original technical SL remains.
+Primary consists of first50 CLOSED cases by actual filled entry interval start, with READY/tie order. OPEN cases are excluded from CLOSED metrics and explicitly right-censored, not forced closed. All later cases/closures remain in the full artifacts. This complete40-series dataset (993575 candles,10symbols, native5/15/60/240m) was checked against saved SHA/count/identity/order/alignment/OHLC requirements. All January–September2026 history is already-inspected DEVELOPMENT, never OOS.
 
-Risk is fixed2% including planned base SL costs; initial equity1170 USDT. Fee0.06% and slippage0.02% per side. Prior3x isolated virtual notional budget is a PROJECT_OVERLAY; it can block tight-stop sizing. Funding, actual spread/order book and exchange fills are unavailable and not invented. Stops dominate OHLC ambiguity; entry-bar target touches require favourable CLOSE proof; gap stops can lose more than the planned2%. Intrabar fill time is a5m interval known at close.
+Range now requires a fresh causal external typed POI actually interacted with on deviation, a separate native close accepting inside the Range, and a later boundary retest. SFP alone cannot create RANGE_POI. D/S is a separate last opposite move detector, permits multiple candles and no FVG, requires forming-move old liquidity raid/full absorption/structure/freshness/P-D. Failed OB no longer becomes D/S. Order Flow stores HH/HL or LL/LH sequence, reclaimed structural liquidity/key test, subsequent body break, separate CONF and fresh global HTF destination. Global destination test, including smaller native candle observation, invalidates it; trend alone cannot authorize READY.
 
-Machine limitations: near-equal liquidity has no supplied numeric tolerance, so exact equality is the proven subset; qualitative Range impulse/midpoint uses the registered BOS proxy/.08 research tolerance. Manipulation/STB/BTS aliases are not counted as independent setups. The60m LTF mapping is labelled any-TF interpretation, outside the secondary1–15m conservative preference. Missing modules limit literal source certification and detector completeness.
+Local quote/SL choices were fixed by type: OB proximal boundary/full wick extreme; Breaker proximal boundary/conservative breaking-sweep extreme; STB/BTS midpoint/full manipulation wick; D/S midpoint/full last move wick; FVG midpoint/reaction raid within an independently proven context. All entries require reaction raid→body BOS→new structure→distinct CONF→fresh local POI. Liquidity role evidence spans the whole active structural leg and adverse equal pools, including pools beyond SL. Cause/destination/against/unrelated roles are recorded.
 
-Prior interrupted and superseded runs are retained with exact implementation snapshots and QA reasons. QA corrected the OB origin-candle raid, middle-candle Breaker linkage, true Range P/D bounds, tested-zone lifecycle observation, broken-LTF limit cancellation and same-zone alias duplication. The final run follows these corrections. No period, symbol or threshold was selected from PnL.
+Non-Range full FTA is a declared interpretation; Range80% inside opposite boundary plus optional20% to a pre-entry external FTA, otherwise remainder inside. Original technical SL throughout, no automatic BE. This additive policy does not change frozen canonical40/30/30 or cost-adjusted BE afterTP1. Fee.06% and slippage.02% per side are project assumptions. Funding/spread/ticks are unavailable. Stop-first OHLC ambiguity, entry-bar favorable target CLOSE proof and adverse gap fills remain conservative. Intrabar fill times are5m intervals known at close. MAE shown is a post-entry-bar OHLC upper bound; entry-bar extrema may precede unknown fill and are excluded. Entry-bar closures therefore have N/A true MAE.
 
-## OLD five losses
+## OLD7 / flawed fc61f3513 / corrected cases
 
-Old decisions below are reconstructed from the last saved signal available before entry and current native-history prefix state at both the old READY and entry-interval start. Old replay used rolling contexts; new source tape uses the complete causal prefix. REJECT/WAIT describes the implemented source policy, not a claim that an unavailable discretionary chapter proves the market could never support another trade.
+OLD7 spans six independent mapping accounts; fc61f35 used one sequential account with flawed source rules. Neither is a matched causal performance comparison. The previous13-trade report remains [verbatim](data/reports/source_bybit_fc61f35_intermediate/report.md), with its original artifacts.
 
-### XRPUSDT 60/5 SHORT — `3f8338b57a87fd615bbc4882`
+| Metric | OLD7 descriptive | fc61f35 intermediate13 | Corrected primary cases |
+|---|---:|---:|---:|
+| CLOSED | 7 | 13 | 0 |
+| Wins | 2 | 2 | 0 |
+| Losses | 5 | 11 | 0 |
+| WinRate | 0.285714 | 0.153846 | N/A |
+| ProfitFactor | 0.179384 | 0.140376 | N/A |
+| Expectancy | -13.742184 | -15.416649 | N/A |
+| AvgR | -0.585909 | -0.712264 | N/A |
+| MedianR | -1.000000 | -1.000000 | N/A |
+| NetPnL | -96.195286 | -200.416434 | 0 |
+| Fees | 17.744520 | 39.332695 | 0 |
+| Slippage | 5.914837 | 13.110893 | 0 |
+| MaxDrawdown | N/A | 237.295751 | N/A |
 
-OLD ENGINE ALLOWED TRADE BECAUSE: HTF_SFP_FORMED, LTF_BOS_STRICTLY_AFTER_SFP, EXPECTED_OPPOSITE_STRUCTURE_AND_OTE_READY, AUTO_NORMALIZED_EVIDENCE_PENDING_SOURCE_REVIEW, SOURCE_OB_EXTREME, THREE_DISTINCT_OPPOSING_POI_NEAR_EDGES_BACKTEST_PARAMETER; Score=100; entry=1.4353, SL=1.4593, targets=[1.3603, 1.3136, 1.2984]. The automatic .6/1.0 impulse and three fresh gap targets satisfied the research overlay; causal active OF/adverse-liquidity/P-D were not certified by that READY.
+N/A case drawdown reflects independent cases, not absent losses. Portfolio NAV drawdown appears separately.
 
-SOURCE STRATEGY WOULD: **REJECT at READY; REJECT before entry**.
+When CLOSED=0, zero net PnL reflects no trades; WR/PF/expectancy/R are undefined and cannot be compared as an improvement over either old sample.
 
-REASON: HTF_ORDER_FLOW_DIRECTION_BROKEN; LTF_CURRENT_STRUCTURE_BULLISH; MEANINGFUL_UNSWEPT_LIQUIDITY_BETWEEN_ENTRY_AND_SL.
+### OLD7 preserved research ledger
 
-At READY: HTF=BROKEN, LTF=BULLISH, adverse pools=1, typed HTF POI=BTS, local POI=BTS, local first test=None, P/D+OTE={'ote': True, 'passed': True, 'retracement': 0.7266514806378133}, FTA candidates=2, stop valid behind local POI=True. Before entry blockers: HTF_ORDER_FLOW_DIRECTION_BROKEN; LTF_CURRENT_STRUCTURE_BULLISH; MEANINGFUL_UNSWEPT_LIQUIDITY_BETWEEN_ENTRY_AND_SL.
+| Symbol | Direction | Mapping | Entry interval | Exit | NetPnL | R |
+|---|---|---|---|---|---:|---:|
+| BNBUSDT | LONG | 240/5 | 2026-03-31T09:55:00+00:00 | 2026-04-02T03:05:00+00:00 | -23.400000 | -1.000000 |
+| BTCUSDT | SHORT | 240/60 | 2026-04-29T09:00:00+00:00 | 2026-05-01T13:00:00+00:00 | 11.165866 | 0.477174 |
+| AVAXUSDT | LONG | 60/15 | 2026-05-12T14:15:00+00:00 | 2026-05-12T14:45:00+00:00 | -23.400000 | -1.000000 |
+| BNBUSDT | LONG | 240/15 | 2026-09-10T12:30:00+00:00 | 2026-09-10T13:00:00+00:00 | -23.400000 | -1.000000 |
+| XRPUSDT | SHORT | 15/5 | 2026-09-19T05:25:00+00:00 | 2026-09-21T01:25:00+00:00 | 9.862166 | 0.421460 |
+| XRPUSDT | SHORT | 60/5 | 2026-09-19T05:25:00+00:00 | 2026-09-21T08:40:00+00:00 | -23.400000 | -1.000000 |
+| AVAXUSDT | SHORT | 240/60 | 2026-09-20T11:00:00+00:00 | 2026-09-20T15:00:00+00:00 | -23.623317 | -1.000000 |
 
-### BNBUSDT 240/5 LONG — `6368e0eee22ede75c86aa9da`
+## Re-audit of all13 intermediate closures
 
-OLD ENGINE ALLOWED TRADE BECAUSE: HTF_SFP_FORMED, LTF_BOS_STRICTLY_AFTER_SFP, EXPECTED_OPPOSITE_STRUCTURE_AND_OTE_READY, AUTO_NORMALIZED_EVIDENCE_PENDING_SOURCE_REVIEW, SOURCE_OB_EXTREME, THREE_DISTINCT_OPPOSING_POI_NEAR_EDGES_BACKTEST_PARAMETER; Score=100; entry=601.2280, SL=595.8000, targets=[632.3, 634.9, 642.9]. The automatic .6/1.0 impulse and three fresh gap targets satisfied the research overlay; causal active OF/adverse-liquidity/P-D were not certified by that READY.
+| Symbol | Direction | Mapping | Old HTF/local POI | Old result/PnL | Classification | Reasons at old cutoff |
+|---|---|---|---|---|---|---|
+| ETHUSDT | SHORT | 60/15 | BTS/BTS | LOSS -23.400000 | FALSE_POSITIVE_IMPLEMENTATION | NO_CAUSALLY_ACTIVE_GLOBAL_ORDER_FLOW_AT_OLD_READY; OLD_UNIVERSAL_ENTRY_DIFFERS_FROM_REGISTERED_POI_POLICY |
+| LINKUSDT | SHORT | 60/5 | RANGE_POI/ORDER_BLOCK | LOSS -22.932000 | FALSE_POSITIVE_IMPLEMENTATION | RANGE_WITHOUT_REQUIRED_CAUSAL_EXTERNAL_POI; NO_CAUSALLY_ACTIVE_GLOBAL_ORDER_FLOW_AT_OLD_READY |
+| DOGEUSDT | LONG | 15/5 | STB/STB | LOSS -22.473360 | FALSE_POSITIVE_IMPLEMENTATION | NO_CAUSALLY_ACTIVE_GLOBAL_ORDER_FLOW_AT_OLD_READY; OLD_UNIVERSAL_ENTRY_DIFFERS_FROM_REGISTERED_POI_POLICY |
+| BTCUSDT | LONG | 15/5 | RANGE_POI/STB | LOSS -22.023893 | FALSE_POSITIVE_IMPLEMENTATION | RANGE_WITHOUT_REQUIRED_CAUSAL_EXTERNAL_POI; NO_CAUSALLY_ACTIVE_GLOBAL_ORDER_FLOW_AT_OLD_READY; OLD_UNIVERSAL_ENTRY_DIFFERS_FROM_REGISTERED_POI_POLICY |
+| DOGEUSDT | LONG | 240/15 | STB/FVG | LOSS -21.583415 | FALSE_POSITIVE_IMPLEMENTATION | NO_CAUSALLY_ACTIVE_GLOBAL_ORDER_FLOW_AT_OLD_READY; OLD_UNIVERSAL_ENTRY_DIFFERS_FROM_REGISTERED_POI_POLICY |
+| XRPUSDT | SHORT | 240/15 | SUPPLY/FVG | LOSS -21.151747 | FALSE_POSITIVE_IMPLEMENTATION | NO_CAUSALLY_ACTIVE_GLOBAL_ORDER_FLOW_AT_OLD_READY; OLD_UNIVERSAL_ENTRY_DIFFERS_FROM_REGISTERED_POI_POLICY; OLD_DS_WAS_FVG_DEPENDENT_FAILED_OB_FALLBACK |
+| DOGEUSDT | LONG | 240/60 | RANGE_POI/STB | LOSS -20.728712 | FALSE_POSITIVE_IMPLEMENTATION | 240_60_OUTSIDE_STRICT_CONSERVATIVE_SCOPE; RANGE_WITHOUT_REQUIRED_CAUSAL_EXTERNAL_POI; NO_CAUSALLY_ACTIVE_GLOBAL_ORDER_FLOW_AT_OLD_READY; OLD_UNIVERSAL_ENTRY_DIFFERS_FROM_REGISTERED_POI_POLICY |
+| LTCUSDT | LONG | 60/15 | RANGE_POI/DEMAND | LOSS -20.314137 | FALSE_POSITIVE_IMPLEMENTATION | RANGE_WITHOUT_REQUIRED_CAUSAL_EXTERNAL_POI; NO_CAUSALLY_ACTIVE_GLOBAL_ORDER_FLOW_AT_OLD_READY; OLD_UNIVERSAL_ENTRY_DIFFERS_FROM_REGISTERED_POI_POLICY |
+| LINKUSDT | LONG | 240/15 | RANGE_POI/FVG | LOSS -19.907855 | FALSE_POSITIVE_IMPLEMENTATION | RANGE_WITHOUT_REQUIRED_CAUSAL_EXTERNAL_POI; NO_CAUSALLY_ACTIVE_GLOBAL_ORDER_FLOW_AT_OLD_READY; OLD_UNIVERSAL_ENTRY_DIFFERS_FROM_REGISTERED_POI_POLICY |
+| LINKUSDT | SHORT | 240/15 | SUPPLY/BTS | LOSS -19.509698 | FALSE_POSITIVE_IMPLEMENTATION | NO_CAUSALLY_ACTIVE_GLOBAL_ORDER_FLOW_AT_OLD_READY; OLD_UNIVERSAL_ENTRY_DIFFERS_FROM_REGISTERED_POI_POLICY; OLD_DS_WAS_FVG_DEPENDENT_FAILED_OB_FALLBACK |
+| LINKUSDT | SHORT | 240/15 | SUPPLY/BTS | LOSS -19.119504 | FALSE_POSITIVE_IMPLEMENTATION | NO_CAUSALLY_ACTIVE_GLOBAL_ORDER_FLOW_AT_OLD_READY; OLD_UNIVERSAL_ENTRY_DIFFERS_FROM_REGISTERED_POI_POLICY; OLD_DS_WAS_FVG_DEPENDENT_FAILED_OB_FALLBACK |
+| XRPUSDT | LONG | 240/5 | STB/FVG | WIN 3.722067 | FALSE_POSITIVE_IMPLEMENTATION | NO_CAUSALLY_ACTIVE_GLOBAL_ORDER_FLOW_AT_OLD_READY; OLD_UNIVERSAL_ENTRY_DIFFERS_FROM_REGISTERED_POI_POLICY |
+| XRPUSDT | LONG | 15/5 | DEMAND/FVG | WIN 29.005818 | FALSE_POSITIVE_IMPLEMENTATION | NO_CAUSALLY_ACTIVE_GLOBAL_ORDER_FLOW_AT_OLD_READY; OLD_UNIVERSAL_ENTRY_DIFFERS_FROM_REGISTERED_POI_POLICY; OLD_DS_WAS_FVG_DEPENDENT_FAILED_OB_FALLBACK |
 
-SOURCE STRATEGY WOULD: **WAIT at READY; REJECT before entry**.
+Audit counts: `{'FALSE_POSITIVE_IMPLEMENTATION': 13}`. Exact old entries remaining eligible under corrected machine policy: 0. This does not declare the discretionary opportunities unprofitable or impossible; it tests the old executable entry/stop/scope/evidence contract. Every per-symbol intermediate_audit.json retains complete old ledger rows and independent current-prefix snapshots at old READY and entry start. Missing originals remain uncertain.
 
-REASON: HTF_ORDER_FLOW_DIRECTION_BROKEN; NO_ACTIVE_CONF_AFTER_OLD_BOS.
+### Five former RANGE losses: causal external POI
 
-At READY: HTF=BROKEN, LTF=BULLISH, adverse pools=0, typed HTF POI=DEMAND, local POI=STB, local first test=None, P/D+OTE={'ote': False, 'passed': True, 'retracement': 0.6052121212121241}, FTA candidates=2, stop valid behind local POI=True. Before entry blockers: HTF_ORDER_FLOW_DIRECTION_BROKEN; LTF_CURRENT_STRUCTURE_BEARISH.
+| Signal | Mapping | External POI existed and interacted before old deviation? | Verdict |
+|---|---|---|---|
+| 9c181eee25ee9e39d8b5a523 | 60/5 | NO causal qualifying external POI | FALSE_POSITIVE_IMPLEMENTATION |
+| ca98f11190187b5877332b3a | 15/5 | NO causal qualifying external POI | FALSE_POSITIVE_IMPLEMENTATION |
+| 25faa78ab0a2eea4d4c48c20 | 240/60 | NO causal qualifying external POI | FALSE_POSITIVE_IMPLEMENTATION |
+| d5cd448d6c02f037d76c9d35 | 60/15 | NO causal qualifying external POI | FALSE_POSITIVE_IMPLEMENTATION |
+| b58c6bbb565b806e85fa6798 | 240/15 | NO causal qualifying external POI | FALSE_POSITIVE_IMPLEMENTATION |
 
-### BNBUSDT 240/15 LONG — `b15c3672f5c912a686373246`
+These are failures of the declared executable contract. Alternative source-allowed entry/SL choices differing from the new fixed choices are not by themselves evidence that the discretionary trade was invalid. Unmodelled qualitative POIs and missing original chapters prevent a literal source verdict. The external POI audit uses reconstructed qualified typed OB/Breaker/D-S/STB-BTS zones; standalone FVG is not admitted as external Range permission in this conservative interpretation.
 
-OLD ENGINE ALLOWED TRADE BECAUSE: HTF_SFP_FORMED, LTF_BOS_STRICTLY_AFTER_SFP, EXPECTED_OPPOSITE_STRUCTURE_AND_OTE_READY, AUTO_NORMALIZED_EVIDENCE_PENDING_SOURCE_REVIEW, SOURCE_OB_EXTREME, THREE_DISTINCT_OPPOSING_POI_NEAR_EDGES_BACKTEST_PARAMETER; Score=100; entry=711.7825, SL=707.8000, targets=[726.0, 742.0, 810.0]. The automatic .6/1.0 impulse and three fresh gap targets satisfied the research overlay; causal active OF/adverse-liquidity/P-D were not certified by that READY.
 
-SOURCE STRATEGY WOULD: **WAIT at READY; WAIT before entry**.
+## Primary case ledger
 
-REASON: HTF_ORDER_FLOW_DIRECTION_BROKEN; LTF_CURRENT_STRUCTURE_BROKEN.
+| # | Symbol | L/S | Mapping | Setup | HTF/local POI | READY | Fill interval start | Entry | SL | Targets | Exit | Result | NetPnL | R | Fees | Slippage | Post-entry-bar MAE R bound |
+|---:|---|---|---|---|---|---|---|---:|---:|---|---|---|---:|---:|---:|---:|---:|
 
-At READY: HTF=BROKEN, LTF=BROKEN, adverse pools=0, typed HTF POI=DEMAND, local POI=STB, local first test=None, P/D+OTE={'ote': False, 'passed': True, 'retracement': 0.9185582822085899}, FTA candidates=2, stop valid behind local POI=True. Before entry blockers: HTF_ORDER_FLOW_DIRECTION_BROKEN; LTF_CURRENT_STRUCTURE_BROKEN.
+No source case actually filled; no50 outcomes or execution-based performance estimate exists.
 
-### AVAXUSDT 60/15 LONG — `75d2c61990233a3077fe2349`
+### Every READY order: independent real-bar no-fill evidence
 
-OLD ENGINE ALLOWED TRADE BECAUSE: HTF_SFP_FORMED, LTF_BOS_STRICTLY_AFTER_SFP, EXPECTED_OPPOSITE_STRUCTURE_AND_OTE_READY, AUTO_NORMALIZED_EVIDENCE_PENDING_SOURCE_REVIEW, SOURCE_OB_EXTREME, THREE_DISTINCT_OPPOSING_POI_NEAR_EDGES_BACKTEST_PARAMETER; Score=100; entry=9.7500, SL=9.6980, targets=[9.924, 10.074, 10.672]. The automatic .6/1.0 impulse and three fresh gap targets satisfied the research overlay; causal active OF/adverse-liquidity/P-D were not certified by that READY.
+| Symbol | Mapping | Setup | READY | Limit | SL | Targets | Cancel known at | Reason | Prior5m bars | Raw limit touched while active? |
+|---|---|---|---|---:|---:|---|---|---|---:|---|
+| DOGEUSDT | 15/5 | HTF_POI_LTF_RAID_BOS_CONF | 2026-08-17T16:15:00+00:00 | 0.070085 | 0.070050 | [0.0706] | 2026-08-17T16:45:00+00:00 | CANCEL_CONFIRMED_LTF_STRUCTURE_BROKEN | 6 | NO |
+| BTCUSDT | 60/5 | RANGE_DEVIATION | 2026-09-06T23:00:00+00:00 | 79672.900000 | 79604.600000 | [80188.09999999999, 80787.0] | 2026-09-06T23:10:00+00:00 | CANCEL_OPEN_OUTSIDE_SL_FTA | 2 | NO |
+| BTCUSDT | 15/5 | HTF_POI_LTF_RAID_BOS_CONF | 2026-09-14T13:50:00+00:00 | 77524.750000 | 77429.500000 | [78542.2] | 2026-09-14T14:20:00+00:00 | CANCEL_FLOW_DESTINATION_TESTED | 6 | NO |
 
-SOURCE STRATEGY WOULD: **REJECT at READY; REJECT before entry**.
+All actual5m OHLC bars while each limit existed are retained in [pending_order_audit.json](data/reports/source_case_qa_2026_10_09/pending_order_audit.json). None touched its entry quote before cancellation; account occupancy/budget did not reject any case. This proves the observed maximum under the fixed model and coverage, not an exhaustive discretionary maximum.
 
-REASON: HTF_ORDER_FLOW_DIRECTION_BEARISH; LTF_CURRENT_STRUCTURE_BEARISH.
 
-At READY: HTF=BEARISH, LTF=BEARISH, adverse pools=0, typed HTF POI=STB, local POI=FVG, local first test=None, P/D+OTE={'ote': False, 'passed': True, 'retracement': 0.554973821989526}, FTA candidates=2, stop valid behind local POI=True. Before entry blockers: HTF_ORDER_FLOW_DIRECTION_BEARISH; LTF_CURRENT_STRUCTURE_BROKEN; OLD_LOCAL_POI_ALREADY_TESTED_OR_INVALIDATED.
-
-### AVAXUSDT 240/60 SHORT — `d0220592f1743192e87311f9`
-
-OLD ENGINE ALLOWED TRADE BECAUSE: HTF_SFP_FORMED, LTF_BOS_STRICTLY_AFTER_SFP, EXPECTED_OPPOSITE_STRUCTURE_AND_OTE_READY, AUTO_NORMALIZED_EVIDENCE_PENDING_SOURCE_REVIEW, SOURCE_OB_EXTREME, THREE_DISTINCT_OPPOSING_POI_NEAR_EDGES_BACKTEST_PARAMETER; Score=100; entry=10.4056, SL=10.8180, targets=[9.406, 9.054, 8.356]. The automatic .6/1.0 impulse and three fresh gap targets satisfied the research overlay; causal active OF/adverse-liquidity/P-D were not certified by that READY.
-
-SOURCE STRATEGY WOULD: **REJECT at READY; REJECT before entry**.
-
-REASON: HTF_ORDER_FLOW_DIRECTION_BULLISH; NO_TYPED_QUALIFIED_HTF_POI_SUPPORTING_OLD_GAP; NO_ACTIVE_CONF_AFTER_OLD_BOS.
-
-At READY: HTF=BULLISH, LTF=BEARISH, adverse pools=0, typed HTF POI=NONE PROVEN, local POI=BTS, local first test=None, P/D+OTE=UNKNOWN_WITHOUT_TYPED_HTF_LEG, FTA candidates=2, stop valid behind local POI=True. Before entry blockers: HTF_ORDER_FLOW_DIRECTION_BULLISH; NO_TYPED_QUALIFIED_HTF_POI_SUPPORTING_OLD_GAP; NO_ACTIVE_CONF_AFTER_OLD_BOS.
-
-Full timestamps, BOS/CONF/protected levels, POI freshness, actual pool prices and source evidence: [data/reports/source_bybit_2026_10_09_final/old_vs_new.json](data/reports/source_bybit_2026_10_09_final/old_vs_new.json).
-
-## Dataset and exact funnel
-
-All40 native Bybit series and993,575 original candles were read, with stored SHA, identity, alignment and contiguous chronology validated. All10 fixed symbols and all6 mappings were evaluated. No Binance or newly fetched data enters this test. Entire saved coverage was processed; this2026 history was already inspected DEVELOPMENT, never relabelled OOS. Signals use closed native bars; execution uses the saved5m history.
-
-| Stage | Full dataset count |
-|---|---:|
-| source_contexts | 76470 |
-| setups | 32404 |
-| qualified_structure | 7036 |
-| liquidity_passed | 3621 |
-| poi_passed | 3621 |
-| order_flow_passed | 2355 |
-| pd_passed | 647 |
-| READY | 647 |
-| entries | 14 |
-| CLOSED | 13 |
-| open_censored | 1 |
-| pending_censored | 0 |
-
-Source contexts count qualified first POI interactions across all4 TFs, including5m context. Mapped setups are separate unique contexts per HTF/LTF, not independent trades. Gate counts mean ever passed per setup; latest reasons and cancellations remain in each segment. The full CLOSED count and first50 sample are distinct.
-
-| Virtual admission decision | Count |
-|---|---:|
-| CANCEL_ACTIVE_HTF_STRUCTURE_BROKEN | 4 |
-| CANCEL_CONFIRMED_LTF_STRUCTURE_BROKEN | 156 |
-| CANCEL_COST_GEOMETRY | 3 |
-| CANCEL_DEMAND_SUPPLY_SECOND_VISIT_NOT_FRESH | 4 |
-| CANCEL_FLOW_DESTINATION_TESTED | 137 |
-| CANCEL_ISOLATED_VIRTUAL_BUDGET | 47 |
-| CANCEL_OPEN_OUTSIDE_SL_FTA | 95 |
-| ONE_SEQUENTIAL_ACCOUNT_BUSY | 187 |
-| VIRTUAL_LIMIT_PENDING | 460 |
-
-## First chronological CLOSED trades
-
-| # | Symbol | Entry interval start → CLOSED UTC | Side | HTF/LTF | Setup / HTF POI | Sweep level / known_at | Entry | SL | FTA/targets | Exit | R | Net USDT | Result |
-|---:|---|---|---|---|---|---|---:|---:|---|---|---:|---:|---|
-| 1 | ETHUSDT | 2026-02-08T23:00:00+00:00 → 2026-02-08T23:10:00+00:00 | SHORT | 60/15 | HTF_POI_LTF_RAID_BOS_CONF / BTS | 2121.2400 / 2026-02-08T20:00:00+00:00 | 2114.8969 | 2129.4900 | 2044.4100 | ORIGINAL_SL_STOP_FIRST @2129.9159 | -1.0000 | -23.4000 | LOSS |
-| 2 | LINKUSDT | 2026-02-17T16:00:00+00:00 → 2026-02-17T16:40:00+00:00 | SHORT | 60/5 | RANGE_DEVIATION / RANGE_POI | 8.9040 / 2026-02-17T14:35:00+00:00 | 8.8462 | 8.9090 | 8.6440,8.5580 | ORIGINAL_SL_STOP_FIRST @8.9108 | -1.0000 | -22.9320 | LOSS |
-| 3 | DOGEUSDT | 2026-03-03T17:30:00+00:00 → 2026-03-03T20:55:00+00:00 | LONG | 15/5 | HTF_POI_LTF_RAID_BOS_CONF / STB | 0.0890 / 2026-03-03T15:20:00+00:00 | 0.0896 | 0.0888 | 0.0924 | ORIGINAL_SL_STOP_FIRST @0.0888 | -1.0000 | -22.4734 | LOSS |
-| 4 | BTCUSDT | 2026-03-06T18:50:00+00:00 → 2026-03-06T20:30:00+00:00 | LONG | 15/5 | RANGE_DEVIATION / RANGE_POI | 67985.2000 / 2026-03-06T17:40:00+00:00 | 68150.1273 | 67742.9000 | 68488.0000,68488.0000 | ORIGINAL_SL_STOP_FIRST @67729.3514 | -1.0000 | -22.0239 | LOSS |
-| 5 | DOGEUSDT | 2026-04-12T21:10:00+00:00 → 2026-04-12T22:05:00+00:00 | LONG | 240/15 | HTF_POI_LTF_RAID_BOS_CONF / STB | 0.0910 / 2026-04-12T11:00:00+00:00 | 0.0913 | 0.0908 | 0.0916 | ORIGINAL_SL_STOP_FIRST @0.0908 | -1.0000 | -21.5834 | LOSS |
-| 6 | XRPUSDT | 2026-04-20T23:55:00+00:00 → 2026-04-21T01:10:00+00:00 | SHORT | 240/15 | HTF_POI_LTF_RAID_BOS_CONF / SUPPLY | 1.4269 / 2026-04-20T14:30:00+00:00 | 1.4236 | 1.4312 | 1.3997 | ORIGINAL_SL_STOP_FIRST @1.4315 | -1.0000 | -21.1517 | LOSS |
-| 7 | DOGEUSDT | 2026-06-02T06:45:00+00:00 → 2026-06-02T14:10:00+00:00 | LONG | 240/60 | RANGE_DEVIATION / RANGE_POI | 0.0983 / 2026-06-01T16:00:00+00:00 | 0.0989 | 0.0979 | 0.1023,0.1023 | ORIGINAL_SL_STOP_FIRST @0.0979 | -1.0000 | -20.7287 | LOSS |
-| 8 | LTCUSDT | 2026-06-17T18:00:00+00:00 → 2026-06-17T19:30:00+00:00 | LONG | 60/15 | RANGE_DEVIATION / RANGE_POI | 45.5800 / 2026-06-17T04:30:00+00:00 | 45.2290 | 44.8600 | 46.1300,46.4100 | ORIGINAL_SL_STOP_FIRST @44.8510 | -1.0000 | -20.3141 | LOSS |
-| 9 | LINKUSDT | 2026-06-21T11:05:00+00:00 → 2026-06-21T12:20:00+00:00 | LONG | 240/15 | RANGE_DEVIATION / RANGE_POI | 7.9170 / 2026-06-20T17:30:00+00:00 | 7.9566 | 7.9030 | 8.0890,8.0890 | ORIGINAL_SL_STOP_FIRST @7.9014 | -1.0000 | -19.9079 | LOSS |
-| 10 | LINKUSDT | 2026-06-28T23:35:00+00:00 → 2026-06-29T03:05:00+00:00 | SHORT | 240/15 | HTF_POI_LTF_RAID_BOS_CONF / SUPPLY | 7.3110 / 2026-06-28T15:15:00+00:00 | 7.2805 | 7.3200 | 7.1370 | ORIGINAL_SL_STOP_FIRST @7.3215 | -1.0000 | -19.5097 | LOSS |
-| 11 | LINKUSDT | 2026-07-02T08:35:00+00:00 → 2026-07-02T09:40:00+00:00 | SHORT | 240/15 | HTF_POI_LTF_RAID_BOS_CONF / SUPPLY | 7.5360 / 2026-07-02T04:00:00+00:00 | 7.4875 | 7.5450 | 7.3900 | ORIGINAL_SL_STOP_FIRST @7.5465 | -1.0000 | -19.1195 | LOSS |
-| 12 | XRPUSDT | 2026-07-06T16:00:00+00:00 → 2026-07-06T16:10:00+00:00 | LONG | 240/5 | HTF_POI_LTF_RAID_BOS_CONF / STB | 1.1338 / 2026-07-06T09:50:00+00:00 | 1.1417 | 1.1334 | 1.1453 | SOURCE_TARGET_1 @1.1451 | 0.1986 | 3.7221 | WIN |
-| 13 | XRPUSDT | 2026-08-24T05:50:00+00:00 → 2026-08-24T07:15:00+00:00 | LONG | 15/5 | HTF_POI_LTF_RAID_BOS_CONF / DEMAND | 1.4647 / 2026-08-24T04:00:00+00:00 | 1.4738 | 1.4639 | 1.4943 | SOURCE_TARGET_1 @1.4940 | 1.5419 | 29.0058 | WIN |
-
-Every fill, cost, fraction, exact quote, source timestamps and causal evidence: [data/reports/source_bybit_2026_10_09_final/primary_trades.jsonl.gz](data/reports/source_bybit_2026_10_09_final/primary_trades.jsonl.gz).
-
-## Primary statistics
-
-| Metric | First chronological sample |
-|---|---:|
-| AvgHoldingSeconds | 6761.5385 |
-| AvgLoss | 21.1949 |
-| AvgR | -0.7123 |
-| AvgWin | 16.3639 |
-| BE | 0 |
-| CLOSED | 13 |
-| Expectancy | -15.4166 |
-| Fees | 39.3327 |
-| GrossAfterSlippageBeforeFees | -161.0837 |
-| GrossPnL | -147.9728 |
-| Losses | 11 |
-| MaxDrawdown | 237.2958 |
-| MaxDrawdownFraction | 0.2028 |
-| MaxLosingStreak | 11 |
-| MaxWinningStreak | 2 |
-| MedianR | -1.0000 |
-| NetPnL | -200.4164 |
-| PayoffRatio | 0.7721 |
-| ProfitFactor | 0.1404 |
-| Slippage | 13.1109 |
-| WinRate | 0.1538 |
-| Wins | 2 |
-
-GrossPnL is before fees and slippage; GrossAfterSlippageBeforeFees uses actual simulated prices. Net = GrossPnL − Fees − Slippage. AvgLoss is positive loss magnitude; expectancy is net USDT/trade. MaxDrawdown uses the account5m marked NAV through the last primary closure, including open exposure and estimated exit fees. Group drawdown is undefined because these groups do not own separate capitals. Undefined ratios are N/A rather than infinity.
-
-## Censored endpoint
-
-Final cash=968.8654 USDT; marked NAV=962.6639 USDT. Closed-trade statistics exclude fees/unrealized PnL of the endpoint OPEN position; cash/NAV above include them. The position is retained, not force-closed to increase CLOSED.
-
-OPEN: LINKUSDT LONG 60/15, entry=2026-09-22T09:05:00+00:00 @13.0026, SL=12.8100, targets=[13.083], planned risk=19.3917 USDT.
-
-## Primary breakdown
-
-POI type denotes the HTF context; entry_ltf_poi_type describes the actual local entry zone. Zero groups remain visible; manipulation aliases do not become separate trades.
+## Primary breakdown (including zero groups)
 
 ### direction
 
-| Group | CLOSED | Wins | Losses | WinRate | PF | Expectancy | AvgR | NetPnL | Fees | Slippage | Avg holding seconds |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| LONG | 8 | 2 | 6 | 0.2500 | 0.2576 | -11.7879 | -0.5324 | -94.3035 | 22.9348 | 7.6449 | 7987.5000 |
-| SHORT | 5 | 0 | 5 | 0.0000 | 0.0000 | -21.2226 | -1.0000 | -106.1129 | 16.3979 | 5.4660 | 4800.0000 |
+| Group | CLOSED | Wins | Losses | WR | PF | Expectancy | AvgR | MedianR | NetPnL |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| LONG | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| SHORT | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+
+### local_poi_type
+
+| Group | CLOSED | Wins | Losses | WR | PF | Expectancy | AvgR | MedianR | NetPnL |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| ORDER_BLOCK | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| BREAKER | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| DEMAND | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| SUPPLY | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| STB | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| BTS | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| FVG | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| RANGE_POI | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
 
 ### mapping
 
-| Group | CLOSED | Wins | Losses | WinRate | PF | Expectancy | AvgR | NetPnL | Fees | Slippage | Avg holding seconds |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 15/5 | 3 | 1 | 2 | 0.3333 | 0.6519 | -5.1638 | -0.1527 | -15.4914 | 9.0426 | 3.0142 | 7800.0000 |
-| 240/15 | 5 | 0 | 5 | 0.0000 | 0.0000 | -20.2544 | -1.0000 | -101.2722 | 16.4546 | 5.4849 | 5760.0000 |
-| 240/5 | 1 | 1 | 0 | 1.0000 | N/A | 3.7221 | 0.1986 | 3.7221 | 2.5916 | 0.8639 | 600.0000 |
-| 240/60 | 1 | 0 | 1 | 0.0000 | 0.0000 | -20.7287 | -1.0000 | -20.7287 | 2.0612 | 0.6871 | 26700.0000 |
-| 60/15 | 2 | 0 | 2 | 0.0000 | 0.0000 | -21.8571 | -1.0000 | -43.7141 | 5.9339 | 1.9780 | 3000.0000 |
-| 60/5 | 1 | 0 | 1 | 0.0000 | 0.0000 | -22.9320 | -1.0000 | -22.9320 | 3.2487 | 1.0829 | 2400.0000 |
+| Group | CLOSED | Wins | Losses | WR | PF | Expectancy | AvgR | MedianR | NetPnL |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 15/5 | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| 60/5 | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| 60/15 | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| 240/5 | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| 240/15 | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
 
 ### poi_type
 
-| Group | CLOSED | Wins | Losses | WinRate | PF | Expectancy | AvgR | NetPnL | Fees | Slippage | Avg holding seconds |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| BTS | 1 | 0 | 1 | 0.0000 | 0.0000 | -23.4000 | -1.0000 | -23.4000 | 3.3928 | 1.1309 | 600.0000 |
-| DEMAND | 1 | 1 | 0 | 1.0000 | N/A | 29.0058 | 1.5419 | 29.0058 | 2.8031 | 0.9344 | 5100.0000 |
-| RANGE_POI | 5 | 0 | 5 | 0.0000 | 0.0000 | -21.1813 | -1.0000 | -105.9066 | 14.3540 | 4.7847 | 9000.0000 |
-| STB | 3 | 1 | 2 | 0.3333 | 0.0845 | -13.4449 | -0.6005 | -40.3347 | 9.0264 | 3.0088 | 5400.0000 |
-| SUPPLY | 3 | 0 | 3 | 0.0000 | 0.0000 | -19.9270 | -1.0000 | -59.7809 | 9.7564 | 3.2521 | 7000.0000 |
-| ORDER_BLOCK | 0 | 0 | 0 | N/A | N/A | N/A | N/A | 0 | 0 | 0 | N/A |
-| BREAKER | 0 | 0 | 0 | N/A | N/A | N/A | N/A | 0 | 0 | 0 | N/A |
-| FVG | 0 | 0 | 0 | N/A | N/A | N/A | N/A | 0 | 0 | 0 | N/A |
+| Group | CLOSED | Wins | Losses | WR | PF | Expectancy | AvgR | MedianR | NetPnL |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| ORDER_BLOCK | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| BREAKER | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| DEMAND | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| SUPPLY | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| STB | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| BTS | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| FVG | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| RANGE_POI | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
 
 ### setup_type
 
-| Group | CLOSED | Wins | Losses | WinRate | PF | Expectancy | AvgR | NetPnL | Fees | Slippage | Avg holding seconds |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| HTF_POI_LTF_RAID_BOS_CONF | 8 | 2 | 6 | 0.2500 | 0.2572 | -11.8137 | -0.5324 | -94.5098 | 24.9787 | 8.3262 | 5362.5000 |
-| RANGE_DEVIATION | 5 | 0 | 5 | 0.0000 | 0.0000 | -21.1813 | -1.0000 | -105.9066 | 14.3540 | 4.7847 | 9000.0000 |
+| Group | CLOSED | Wins | Losses | WR | PF | Expectancy | AvgR | MedianR | NetPnL |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| HTF_POI_LTF_RAID_BOS_CONF | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| RANGE_DEVIATION | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
 
 ### symbol
 
-| Group | CLOSED | Wins | Losses | WinRate | PF | Expectancy | AvgR | NetPnL | Fees | Slippage | Avg holding seconds |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| BTCUSDT | 1 | 0 | 1 | 0.0000 | 0.0000 | -22.0239 | -1.0000 | -22.0239 | 3.5746 | 1.1915 | 6000.0000 |
-| DOGEUSDT | 3 | 0 | 3 | 0.0000 | 0.0000 | -21.5952 | -1.0000 | -64.7855 | 8.4960 | 2.8320 | 14100.0000 |
-| ETHUSDT | 1 | 0 | 1 | 0.0000 | 0.0000 | -23.4000 | -1.0000 | -23.4000 | 3.3928 | 1.1309 | 600.0000 |
-| LINKUSDT | 4 | 0 | 4 | 0.0000 | 0.0000 | -20.3673 | -1.0000 | -81.4691 | 12.1527 | 4.0509 | 5850.0000 |
-| LTCUSDT | 1 | 0 | 1 | 0.0000 | 0.0000 | -20.3141 | -1.0000 | -20.3141 | 2.5411 | 0.8470 | 5400.0000 |
-| XRPUSDT | 3 | 2 | 1 | 0.6667 | 1.5473 | 3.8587 | 0.2469 | 11.5761 | 9.1754 | 3.0585 | 3400.0000 |
-| SOLUSDT | 0 | 0 | 0 | N/A | N/A | N/A | N/A | 0 | 0 | 0 | N/A |
-| BNBUSDT | 0 | 0 | 0 | N/A | N/A | N/A | N/A | 0 | 0 | 0 | N/A |
-| ADAUSDT | 0 | 0 | 0 | N/A | N/A | N/A | N/A | 0 | 0 | 0 | N/A |
-| AVAXUSDT | 0 | 0 | 0 | N/A | N/A | N/A | N/A | 0 | 0 | 0 | N/A |
+| Group | CLOSED | Wins | Losses | WR | PF | Expectancy | AvgR | MedianR | NetPnL |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| BTCUSDT | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| ETHUSDT | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| SOLUSDT | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| XRPUSDT | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| BNBUSDT | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| DOGEUSDT | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| ADAUSDT | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| LINKUSDT | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| AVAXUSDT | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
+| LTCUSDT | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | 0 |
 
-### entry_ltf_poi_type
+## Complete-case funnel and censoring
 
-| Group | CLOSED | Wins | Losses | WinRate | PF | Expectancy | AvgR | NetPnL | Fees | Slippage | Avg holding seconds |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| BTS | 3 | 0 | 3 | 0.0000 | 0.0000 | -20.6764 | -1.0000 | -62.0292 | 9.3685 | 3.1228 | 5700.0000 |
-| ORDER_BLOCK | 1 | 0 | 1 | 0.0000 | 0.0000 | -22.9320 | -1.0000 | -22.9320 | 3.2487 | 1.0829 | 2400.0000 |
-| STB | 3 | 0 | 3 | 0.0000 | 0.0000 | -21.7420 | -1.0000 | -65.2260 | 8.3006 | 2.7669 | 15000.0000 |
-| FVG | 5 | 2 | 3 | 0.4000 | 0.5225 | -5.9830 | -0.2519 | -29.9151 | 15.8737 | 5.2912 | 3600.0000 |
-| DEMAND | 1 | 0 | 1 | 0.0000 | 0.0000 | -20.3141 | -1.0000 | -20.3141 | 2.5411 | 0.8470 | 5400.0000 |
-| BREAKER | 0 | 0 | 0 | N/A | N/A | N/A | N/A | 0 | 0 | 0 | N/A |
-| SUPPLY | 0 | 0 | 0 | N/A | N/A | N/A | N/A | 0 | 0 | 0 | N/A |
-| RANGE_POI | 0 | 0 | 0 | N/A | N/A | N/A | N/A | 0 | 0 | 0 | N/A |
+Strict mapped setup stages (ANY_TF excluded):
 
-## OLD vs NEW
+```json
+{
+  "setups": 26795,
+  "qualified_structure": 6285,
+  "liquidity_passed": 85,
+  "poi_passed": 85,
+  "READY": 3,
+  "order_flow_passed": 5,
+  "pd_passed": 3
+}
+```
 
-OLD contains seven unique development closures from six independent mapping accounts, solely a descriptive trade-case comparison. NEW contains the first sequential50 closures of one registered account. Different detections, coverage edges, costs/exit paths and occupancy make this a software comparison, not an isolated causal estimate of strategy improvement. Old capital/NAV is never summed.
+```json
+{
+  "CLOSED": 0,
+  "FILLED": 0,
+  "OPEN_CENSORED": 0,
+  "PENDING_CENSORED": 0,
+  "READY": 3,
+  "admission_decisions": {
+    "CANCEL_CONFIRMED_LTF_STRUCTURE_BROKEN": 1,
+    "CANCEL_FLOW_DESTINATION_TESTED": 1,
+    "CANCEL_OPEN_OUTSIDE_SL_FTA": 1,
+    "VIRTUAL_LIMIT_PENDING": 3
+  },
+  "cohort": "BYBIT_2026_ALREADY_INSPECTED_DEVELOPMENT",
+  "duplicates": 0,
+  "max_post_entry_bar_MAE_R": null,
+  "primary_selection": "FIRST_50_FILLED_CLOSED_BY_ENTRY_CHRONOLOGY",
+  "scope": "strict",
+  "shared_capital": false,
+  "source_certification": "DECLARED_MACHINE_POLICY_MISSING_ORIGINAL_ADVANCED_PRO_PDFS",
+  "status": "COMPLETE_FULL_NATIVE_DATASET",
+  "trade_entry_allowed": false,
+  "unique_opportunities": 3,
+  "validation_mode": "SOURCE_TRADE_CASE_VALIDATION"
+}
+```
 
-| Metric | OLD research engine | NEW source engine |
-|---|---:|---:|
-| Setups | 27974 | 32404 |
-| READY | 40 | 647 |
-| Entries | 7 | 14 |
-| Closed | 7 | 13 |
-| Wins | 2 | 2 |
-| Losses | 5 | 11 |
-| WinRate | 0.2857 | 0.1538 |
-| PF | 0.1794 | 0.1404 |
-| Expectancy | -13.7422 | -15.4166 |
-| Avg R | -0.5859 | -0.7123 |
-| Max DD | N/A: six independent capitals | 237.2958 |
+Full strict CLOSED metrics, beyond the primary first50:
 
-Setups/READY/Entries above cover the complete respective runs; NEW Closed/performance describe the registered first50 sample. Full NEW performance is retained in summary.json. OLD5 losses do not enter the new ledger merely by changing exits: the same quotes lack an emitted matching source entry chain or are rejected/waiting as listed above.
+```json
+{
+  "AvgHoldingSeconds": null,
+  "AvgLoss": null,
+  "AvgR": null,
+  "AvgWin": null,
+  "BE": 0,
+  "CLOSED": 0,
+  "Expectancy": null,
+  "Fees": 0,
+  "GrossAfterSlippageBeforeFees": 0,
+  "GrossPnL": 0,
+  "Losses": 0,
+  "MaxDrawdown": null,
+  "MaxDrawdownFraction": null,
+  "MaxLosingStreak": 0,
+  "MaxWinningStreak": 0,
+  "MedianR": null,
+  "NetPnL": 0,
+  "PayoffRatio": null,
+  "ProfitFactor": null,
+  "Slippage": 0,
+  "WinRate": null,
+  "Wins": 0
+}
+```
 
-## Independent OLD mapping drawdowns
+## Separate PORTFOLIO_SIMULATION
 
-| Mapping | CLOSED | Max NAV drawdown |
-|---|---:|---:|
-| 15/5 | 1 | 3.0596% |
-| 60/5 | 1 | 6.5356% |
-| 60/15 | 1 | 2.3238% |
-| 240/5 | 1 | 7.7745% |
-| 240/15 | 1 | 2.0000% |
-| 240/60 | 2 | 5.8864% |
+Same deduplicated strict signals, one pending/open account, current-equity2% risk and3x virtual notional cap. This is a capital/occupancy experiment, excluded from primary strategy-quality cases. Its raw detector funnel covers all6 detection mappings, including ANY_TF; entries/CLOSED/censoring and portfolio PnL/NAV use strict signals only. The strict setup-stage funnel above separates that scope.
 
-Each OLD row owns its original1170 USDT account; these drawdowns are not summed.
+```json
+{
+  "funnel": {
+    "CLOSED": 0,
+    "READY": 3,
+    "entries": 0,
+    "liquidity_passed": 85,
+    "open_censored": 0,
+    "order_flow_passed": 5,
+    "pd_passed": 3,
+    "pending_censored": 0,
+    "poi_passed": 85,
+    "qualified_structure": 6497,
+    "setups": 27798,
+    "source_contexts": 67568
+  },
+  "primary": {
+    "AvgHoldingSeconds": null,
+    "AvgLoss": null,
+    "AvgR": null,
+    "AvgWin": null,
+    "BE": 0,
+    "CLOSED": 0,
+    "Expectancy": null,
+    "Fees": 0,
+    "GrossAfterSlippageBeforeFees": 0,
+    "GrossPnL": 0,
+    "Losses": 0,
+    "MaxDrawdown": 0.0,
+    "MaxDrawdownFraction": 0.0,
+    "MaxLosingStreak": 0,
+    "MaxWinningStreak": 0,
+    "MedianR": null,
+    "NetPnL": 0,
+    "PayoffRatio": null,
+    "ProfitFactor": null,
+    "Slippage": 0,
+    "WinRate": null,
+    "Wins": 0
+  },
+  "admission_decisions": {
+    "CANCEL_CONFIRMED_LTF_STRUCTURE_BROKEN": 1,
+    "CANCEL_FLOW_DESTINATION_TESTED": 1,
+    "CANCEL_OPEN_OUTSIDE_SL_FTA": 1,
+    "VIRTUAL_LIMIT_PENDING": 3
+  },
+  "final_cash": 1170.0,
+  "final_equity": 1170.0
+}
+```
 
-## QA and reproducibility
+## Separate ANY_TF 240/60 research
 
-Run: `python scripts/run_source_bybit.py --output data/reports/source_bybit_2026_10_09_final`. Verify/reuse: add `--resume-existing`; it checks code/policy/input hashes, all10 segment manifests and all completed output hashes, then returns VERIFIED_COMPLETE_NO_MUTATION. Corruption or changes fail closed.
+Excluded from the strict primary sample and portfolio. Independent development cases only.
 
-Compileall, targeted tests, full suite, Ruff E9/F, mypy and safety/evidence audit receipts are saved under `data/reports/source_bybit_qa_final_2026_10_09`. Frozen strategy code/config and old historical artifacts were preserved; costly frozen studies were not rerun.
+```json
+{
+  "READY": 0,
+  "unique_opportunities": 0,
+  "FILLED": 0,
+  "CLOSED": 0,
+  "OPEN_CENSORED": 0,
+  "all_closed": {
+    "AvgHoldingSeconds": null,
+    "AvgLoss": null,
+    "AvgR": null,
+    "AvgWin": null,
+    "BE": 0,
+    "CLOSED": 0,
+    "Expectancy": null,
+    "Fees": 0,
+    "GrossAfterSlippageBeforeFees": 0,
+    "GrossPnL": 0,
+    "Losses": 0,
+    "MaxDrawdown": null,
+    "MaxDrawdownFraction": null,
+    "MaxLosingStreak": 0,
+    "MaxWinningStreak": 0,
+    "MedianR": null,
+    "NetPnL": 0,
+    "PayoffRatio": null,
+    "ProfitFactor": null,
+    "Slippage": 0,
+    "WinRate": null,
+    "Wins": 0
+  }
+}
+```
 
-This available chronological sample is descriptive development validation. It does not establish robust edge, prospective performance or LIVE readiness. No parameter or exit variant is selected from this table.
+## QA and reproduction
+
+Run: `python scripts/run_source_cases_bybit.py --output data/reports/source_cases_bybit_2026_10_09`. Existing segments/results require `--resume-existing`: exact implementation/policy/input/artifact set and hashes or fail closed. Completed verification returns VERIFIED_COMPLETE_NO_MUTATION.
+
+QA receipts/logs: `data/reports/source_case_qa_2026_10_09`. Compileall, targeted/full suite, RuffE9/F, mypy, real native prefix and future mutation, source evidence timestamps, scope/dedup/risk/cost ledger and safety checks are recorded there. Existing source scripts/tests/canonical strategy and prior historical artifacts are retained. No frozen research rerun. Original PDF reading/source certification remains blocked by actual shortcut uploads.
+
+Additional real BTC nonempty READY prefix at2026-09-14T13:50UTC:96,088 native candles, 2exact READY signals,1exact cancellation,1,131exact global-flow generations and159exact Range audits. Changing the next8native candles in each of4TFs leaves all earlier source state/decisions unchanged. The cutoff is the latest emitted BTC READY timestamp, selected from source metadata rather than PnL. The registered March1 prefix also passes (14,293candles/172flows/20Range audits). These validate the implemented causal machine policy, not completeness of missing source methodology.
+
+No robust-edge or LIVE-readiness conclusion follows from this already-inspected development sample. Numerical Range impulse/midpoint, exact-only equal pools and missing Advanced/Pro text limit source completeness.

@@ -60,7 +60,9 @@ def report(folder, destination):
              'available originals and explicit user requirements, not the complete discretionary methodology. '
              '[Attachment receipt](data/source_materials/correction_2026_10_09/attachment_receipt.json).', '',
              'Pre-outcome registration: `363fa01`; corrected implementation/tests and deterministic choices: `2b09acb`, '
-             'both published before any corrected outcomes. [Correction protocol](SOURCE_CORRECTION_PROTOCOL.md) and '
+             'both published before any corrected outcomes. Final NEW-POI proof guard/parallel runner commit `742fda0` '
+             'also precedes outcomes; the interrupted no-outcome pass and exact code snapshot are retained under '
+             '`data/reports/source_cases_bybit_2026_10_09_pre_qa`. [Correction protocol](SOURCE_CORRECTION_PROTOCOL.md) and '
              '[source registry](SOURCE_RECONSTRUCTION_2026_10_09.md) distinguish evidence and interpretations. '
              'No outcome-based threshold, symbol, period, entry, stop or exit selection occurred. Frozen studies were not rerun.', '',
              '## Corrected behavior and sample semantics', '',
@@ -103,6 +105,13 @@ def report(folder, destination):
     for k in keys:
         lines.append('| ' + k + ' | ' + ' | '.join(fmt(m.get(k)) for m in (old_stats, intermediate['primary'], case['primary'])) + ' |')
     lines += ['', 'N/A case drawdown reflects independent cases, not absent losses. Portfolio NAV drawdown appears separately.', '',
+              'When CLOSED=0, zero net PnL reflects no trades; WR/PF/expectancy/R are undefined and cannot be compared '
+              'as an improvement over either old sample.', '',
+              '### OLD7 preserved research ledger', '',
+              '| Symbol | Direction | Mapping | Entry interval | Exit | NetPnL | R |', '|---|---|---|---|---|---:|---:|']
+    for t in sorted(old, key=lambda v: v['entry_interval_start']):
+        lines.append(f"| {t['symbol']} | {t['direction']} | {t['htf']}/{t['ltf']} | {t['entry_interval_start']} | {t['exit_time']} | {fmt(t['net_pnl'])} | {fmt(t['result_R'])} |")
+    lines += ['',
               '## Re-audit of all13 intermediate closures', '',
               '| Symbol | Direction | Mapping | Old HTF/local POI | Old result/PnL | Classification | Reasons at old cutoff |',
               '|---|---|---|---|---|---|---|']
@@ -122,6 +131,11 @@ def report(folder, destination):
         t = a['old_trade']
         external = a['snapshots']['ready_time']['range_external_poi_candidates']
         lines.append(f"| {t['signal_id']} | {t['htf']}/{t['ltf']} | {'; '.join(z['zone_id'] for z in external) if external else 'NO causal qualifying external POI'} | {a['classification']} |")
+    lines += ['', 'These are failures of the declared executable contract. Alternative source-allowed entry/SL choices '
+              'differing from the new fixed choices are not by themselves evidence that the discretionary trade was invalid. '
+              'Unmodelled qualitative POIs and missing original chapters prevent a literal source verdict. The external POI '
+              'audit uses reconstructed qualified typed OB/Breaker/D-S/STB-BTS zones; standalone FVG is not admitted as '
+              'external Range permission in this conservative interpretation.', '']
     lines += ['', '## Primary case ledger', '',
               '| # | Symbol | L/S | Mapping | Setup | HTF/local POI | READY | Fill interval start | Entry | SL | Targets | Exit | Result | NetPnL | R | Fees | Slippage | Post-entry-bar MAE R bound |',
               '|---:|---|---|---|---|---|---|---|---:|---:|---|---|---|---:|---:|---:|---:|---:|']
@@ -131,6 +145,22 @@ def report(folder, destination):
                   f"{t['poi_type']}/{t['evidence']['ltf_poi']['kind']}", t['ready_time'], t['entry_interval_start'],
                   t['entry'], t['stop'], t['targets'], t['exit_time'], t['result'], t['net_pnl'], t['result_R'], t['fees'], t['slippage'], mae]
         lines.append('| ' + ' | '.join(fmt(v) for v in fields) + ' |')
+    if not primary:
+        lines += ['', 'No source case actually filled; no50 outcomes or execution-based performance estimate exists.', '']
+    pending_path = repo / 'data/reports/source_case_qa_2026_10_09/pending_order_audit.json'
+    if pending_path.exists():
+        pending = json.loads(pending_path.read_text())
+        lines += ['### Every READY order: independent real-bar no-fill evidence', '',
+                  '| Symbol | Mapping | Setup | READY | Limit | SL | Targets | Cancel known at | Reason | Prior5m bars | Raw limit touched while active? |',
+                  '|---|---|---|---|---:|---:|---|---|---|---:|---|']
+        for r in sorted(pending['rows'], key=lambda v: v['ready']):
+            fields = [r['symbol'], r['mapping'], r['setup_type'], r['ready'], r['entry'], r['SL'], r['targets'],
+                      r['cancel']['known_at'], r['cancel']['reason'], len(r['prior_actual_5m_intervals']), 'NO']
+            lines.append('| ' + ' | '.join(fmt(v) for v in fields) + ' |')
+        lines += ['', 'All actual5m OHLC bars while each limit existed are retained in '
+                  '[pending_order_audit.json](data/reports/source_case_qa_2026_10_09/pending_order_audit.json). '
+                  'None touched its entry quote before cancellation; account occupancy/budget did not reject any case. '
+                  'This proves the observed maximum under the fixed model and coverage, not an exhaustive discretionary maximum.', '']
     lines += ['', '## Primary breakdown (including zero groups)', '']
     for dim, raw in case['primary_breakdown'].items():
         groups = dict(raw)
@@ -142,12 +172,21 @@ def report(folder, destination):
             fields = ('CLOSED', 'Wins', 'Losses', 'WinRate', 'ProfitFactor', 'Expectancy', 'AvgR', 'MedianR', 'NetPnL')
             lines.append('| ' + key + ' | ' + ' | '.join(fmt(values[k]) for k in fields) + ' |')
         lines.append('')
+    strict_funnel = Counter()
+    for symbol in policy['symbol_priority']:
+        for row in read_rows(folder / 'segments' / symbol / 'setup_outcomes.jsonl.gz'):
+            if [row['htf'], row['ltf']] in policy['mappings']:
+                strict_funnel.update(row['stages'])
     lines += ['## Complete-case funnel and censoring', '',
+              'Strict mapped setup stages (ANY_TF excluded):', '',
+              '```json', json.dumps(dict(strict_funnel), indent=2), '```', '',
               '```json', json.dumps({k: v for k, v in case.items() if k not in ('primary_breakdown', 'primary', 'all_closed')}, indent=2), '```', '',
               'Full strict CLOSED metrics, beyond the primary first50:', '', '```json', json.dumps(case['all_closed'], indent=2), '```', '',
               '## Separate PORTFOLIO_SIMULATION', '',
               'Same deduplicated strict signals, one pending/open account, current-equity2% risk and3x virtual notional cap. '
-              'This is a capital/occupancy experiment, excluded from primary strategy-quality cases.', '',
+              'This is a capital/occupancy experiment, excluded from primary strategy-quality cases. '
+              'Its raw detector funnel covers all6 detection mappings, including ANY_TF; entries/CLOSED/censoring and '
+              'portfolio PnL/NAV use strict signals only. The strict setup-stage funnel above separates that scope.', '',
               '```json', json.dumps({k: portfolio[k] for k in ('funnel', 'primary', 'admission_decisions', 'final_cash', 'final_equity')}, indent=2), '```', '',
               '## Separate ANY_TF 240/60 research', '',
               'Excluded from the strict primary sample and portfolio. Independent development cases only.', '',
@@ -160,6 +199,12 @@ def report(folder, destination):
               'real native prefix and future mutation, source evidence timestamps, scope/dedup/risk/cost ledger and safety checks '
               'are recorded there. Existing source scripts/tests/canonical strategy and prior historical artifacts are retained. '
               'No frozen research rerun. Original PDF reading/source certification remains blocked by actual shortcut uploads.', '',
+              'Additional real BTC nonempty READY prefix at2026-09-14T13:50UTC:96,088 native candles, '
+              '2exact READY signals,1exact cancellation,1,131exact global-flow generations and159exact Range audits. '
+              'Changing the next8native candles in each of4TFs leaves all earlier source state/decisions unchanged. '
+              'The cutoff is the latest emitted BTC READY timestamp, selected from source metadata rather than PnL. '
+              'The registered March1 prefix also passes (14,293candles/172flows/20Range audits). '
+              'These validate the implemented causal machine policy, not completeness of missing source methodology.', '',
               'No robust-edge or LIVE-readiness conclusion follows from this already-inspected development sample. '
               'Numerical Range impulse/midpoint, exact-only equal pools and missing Advanced/Pro text limit source completeness.', '']
     destination.write_text('\n'.join(lines))

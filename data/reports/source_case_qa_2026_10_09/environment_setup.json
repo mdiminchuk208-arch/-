@@ -1,0 +1,11 @@
+{
+  "status": "DRAFT_SAVED",
+  "field": "start_skill",
+  "draft_id": "e2a8b1eb-ac42-439a-8412-7e6e877c0ea5~cecfgdraft_6ac9104296888191b68a218368e1dc29",
+  "requires_publish": true,
+  "runtime_workflow_verified": true,
+  "fresh_task_restoration_verified": false,
+  "install_script_changed": false,
+  "network_policy_changed": false,
+  "secrets_requested": false
+}

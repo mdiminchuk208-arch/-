@@ -1,0 +1,151 @@
+ETHUSDT analyze native 5m
+BTCUSDT analyze native 5m
+SOLUSDT analyze native 5m
+XRPUSDT analyze native 5m
+SOLUSDT analyze native 15m
+XRPUSDT analyze native 15m
+SOLUSDT analyze native 60m
+SOLUSDT analyze native 240m
+XRPUSDT analyze native 60m
+XRPUSDT analyze native 240m
+BTCUSDT analyze native 15m
+ETHUSDT analyze native 15m
+BTCUSDT analyze native 60m
+BTCUSDT analyze native 240m
+ETHUSDT analyze native 60m
+ETHUSDT analyze native 240m
+SOLUSDT observed through 2026-06-15T19:10:00+00:00; setups=1625 READY=0
+XRPUSDT observed through 2026-06-20T05:15:00+00:00; setups=1791 READY=0
+BTCUSDT observed through 2026-06-28T13:40:00+00:00; setups=1773 READY=0
+ETHUSDT observed through 2026-06-06T04:05:00+00:00; setups=1574 READY=0
+XRPUSDT COMPLETE: {'source_contexts': 7291, 'setups': 2929, 'qualified_structure': 712, 'liquidity_passed': 20, 'poi_passed': 20}
+BNBUSDT analyze native 5m
+SOLUSDT observed through 2026-09-13T07:55:00+00:00; setups=2754 READY=0
+SOLUSDT COMPLETE: {'source_contexts': 7022, 'setups': 2844, 'qualified_structure': 647, 'liquidity_passed': 2, 'poi_passed': 2}
+DOGEUSDT analyze native 5m
+BTCUSDT observed through 2026-09-12T13:30:00+00:00; setups=2715 READY=1
+ETHUSDT observed through 2026-08-14T23:45:00+00:00; setups=2454 READY=0
+BTCUSDT COMPLETE: {'source_contexts': 7556, 'setups': 2826, 'qualified_structure': 667, 'liquidity_passed': 20, 'poi_passed': 20, 'order_flow_passed': 2, 'pd_passed': 2, 'READY': 2}
+ADAUSDT analyze native 5m
+BNBUSDT analyze native 15m
+BNBUSDT analyze native 60m
+BNBUSDT analyze native 240m
+DOGEUSDT analyze native 15m
+ADAUSDT analyze native 15m
+ETHUSDT COMPLETE: {'source_contexts': 7421, 'setups': 2906, 'qualified_structure': 684, 'liquidity_passed': 7, 'poi_passed': 7}
+LINKUSDT analyze native 5m
+DOGEUSDT analyze native 60m
+DOGEUSDT analyze native 240m
+ADAUSDT analyze native 60m
+ADAUSDT analyze native 240m
+BNBUSDT observed through 2026-07-05T12:40:00+00:00; setups=1801 READY=0
+LINKUSDT analyze native 15m
+DOGEUSDT observed through 2026-06-13T03:40:00+00:00; setups=1655 READY=0
+LINKUSDT analyze native 60m
+LINKUSDT analyze native 240m
+ADAUSDT observed through 2026-06-27T09:10:00+00:00; setups=1612 READY=0
+BNBUSDT COMPLETE: {'source_contexts': 6194, 'setups': 2672, 'qualified_structure': 591, 'liquidity_passed': 3, 'poi_passed': 3}
+AVAXUSDT analyze native 5m
+ADAUSDT COMPLETE: {'source_contexts': 5727, 'setups': 2569, 'qualified_structure': 601}
+LTCUSDT analyze native 5m
+AVAXUSDT analyze native 15m
+DOGEUSDT COMPLETE: {'source_contexts': 6863, 'setups': 2832, 'qualified_structure': 702, 'liquidity_passed': 12, 'poi_passed': 12, 'order_flow_passed': 1, 'pd_passed': 1, 'READY': 1}
+LINKUSDT observed through 2026-07-13T01:05:00+00:00; setups=1941 READY=0
+AVAXUSDT analyze native 60m
+AVAXUSDT analyze native 240m
+LTCUSDT analyze native 15m
+LTCUSDT analyze native 60m
+LTCUSDT analyze native 240m
+LINKUSDT COMPLETE: {'source_contexts': 6659, 'setups': 2783, 'qualified_structure': 611, 'liquidity_passed': 7, 'poi_passed': 7}
+AVAXUSDT observed through 2026-07-04T15:55:00+00:00; setups=1798 READY=0
+LTCUSDT observed through 2026-06-09T21:55:00+00:00; setups=1487 READY=0
+AVAXUSDT observed through 2026-09-10T12:45:00+00:00; setups=2579 READY=0
+LTCUSDT COMPLETE: {'source_contexts': 6279, 'setups': 2697, 'qualified_structure': 615}
+AVAXUSDT COMPLETE: {'source_contexts': 6556, 'setups': 2740, 'qualified_structure': 667, 'liquidity_passed': 14, 'poi_passed': 14, 'order_flow_passed': 2}
+{
+  "status": "COMPLETE_FULL_NATIVE_DATASET",
+  "funnel": {
+    "READY": 3,
+    "liquidity_passed": 85,
+    "order_flow_passed": 5,
+    "pd_passed": 3,
+    "poi_passed": 85,
+    "qualified_structure": 6497,
+    "setups": 27798,
+    "source_contexts": 67568,
+    "entries": 0,
+    "CLOSED": 0,
+    "open_censored": 0,
+    "pending_censored": 0
+  },
+  "primary": {
+    "CLOSED": 0,
+    "Wins": 0,
+    "Losses": 0,
+    "BE": 0,
+    "WinRate": null,
+    "ProfitFactor": null,
+    "Expectancy": null,
+    "AvgR": null,
+    "MedianR": null,
+    "AvgWin": null,
+    "AvgLoss": null,
+    "PayoffRatio": null,
+    "NetPnL": 0,
+    "GrossPnL": 0,
+    "GrossAfterSlippageBeforeFees": 0,
+    "MaxDrawdown": 0.0,
+    "MaxDrawdownFraction": 0.0,
+    "MaxLosingStreak": 0,
+    "MaxWinningStreak": 0,
+    "Fees": 0,
+    "Slippage": 0,
+    "AvgHoldingSeconds": null
+  },
+  "all_closed": {
+    "CLOSED": 0,
+    "Wins": 0,
+    "Losses": 0,
+    "BE": 0,
+    "WinRate": null,
+    "ProfitFactor": null,
+    "Expectancy": null,
+    "AvgR": null,
+    "MedianR": null,
+    "AvgWin": null,
+    "AvgLoss": null,
+    "PayoffRatio": null,
+    "NetPnL": 0,
+    "GrossPnL": 0,
+    "GrossAfterSlippageBeforeFees": 0,
+    "MaxDrawdown": 0.0,
+    "MaxDrawdownFraction": 0.0,
+    "MaxLosingStreak": 0,
+    "MaxWinningStreak": 0,
+    "Fees": 0,
+    "Slippage": 0,
+    "AvgHoldingSeconds": null
+  },
+  "primary_breakdown": {
+    "direction": {},
+    "symbol": {},
+    "setup_type": {},
+    "poi_type": {},
+    "mapping": {}
+  },
+  "admission_decisions": {
+    "VIRTUAL_LIMIT_PENDING": 3,
+    "CANCEL_CONFIRMED_LTF_STRUCTURE_BROKEN": 1,
+    "CANCEL_OPEN_OUTSIDE_SL_FTA": 1,
+    "CANCEL_FLOW_DESTINATION_TESTED": 1
+  },
+  "primary_selection": "PORTFOLIO_SIMULATION_SEPARATE_FROM_PRIMARY_CASES",
+  "mode": "BACKTEST",
+  "trade_entry_allowed": false,
+  "one_position": true,
+  "initial_equity": 1170.0,
+  "final_cash": 1170.0,
+  "final_equity": 1170.0,
+  "funding": "UNAVAILABLE_NOT_MODELLED",
+  "cohort": "BYBIT_2026_ALREADY_INSPECTED_DEVELOPMENT"
+}

@@ -1,0 +1,20 @@
+{
+  "artifacts": {
+    "any_tf_cases.jsonl.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "any_tf_summary.json": "77e2a2b2c1e42d8debd1d67b5155353d28a17c958a6f03415d8bc76d56d1e313",
+    "case_decisions.jsonl.gz": "ec423476d12c7671a3d1692b1133586b102049e5b8a6f918fc2c4b238f1b23f8",
+    "case_summary.json": "b2422620dfc8155604eada3025558363c377891397fc0fe316c87cd27b3dfcc2",
+    "cases.jsonl.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "decisions.jsonl.gz": "ec423476d12c7671a3d1692b1133586b102049e5b8a6f918fc2c4b238f1b23f8",
+    "duplicate_opportunities.jsonl.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "equity.jsonl.gz": "842ad14bb98344ddfa52c5d9457386b2b03ff1c0afa8870911615bc44d457e82",
+    "primary_cases.jsonl.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "primary_trades.jsonl.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "run_lock.json": "0725bc1e55ee641a4cd95a23b2a9decc17f8289c8e75489d8317768f25b83ee3",
+    "summary.json": "7718cea4f0231cbaac67ed981219bc36c0ec5038c4de0bfdd5abd7179300d02c",
+    "trades.jsonl.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+  },
+  "code_hash": "c4f8555a305f35319c09def8c8116a4853ed6767b51648e2adf8aab8d84b4bca",
+  "status": "COMPLETE",
+  "trade_entry_allowed": false
+}

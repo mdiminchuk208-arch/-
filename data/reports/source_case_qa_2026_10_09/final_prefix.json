@@ -1,0 +1,14 @@
+{
+  "real_prefix_future_mutation": {
+    "cohort": "ALREADY_INSPECTED_DEVELOPMENT",
+    "exact_cancellations": 0,
+    "exact_global_flows": 172,
+    "exact_range_external_audits": 20,
+    "exact_signals": 0,
+    "fixed_cutoff": "2026-03-01T00:00:00+00:00",
+    "future_mutation_4_native_TFs": "PASS",
+    "native_prefix_candles": 14293,
+    "status": "PASS"
+  },
+  "verification_script_sha256": "8cfb9725e87bf45d3c4d11a2f6cfd9df5419b7b8da56c36ba89d46c91c0f8dd7"
+}

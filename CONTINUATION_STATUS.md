@@ -1,3 +1,55 @@
+# Corrected source cases — latest continuation checkpoint
+
+Published implementation before corrected outcomes: `742fda0`; initial correction
+protocol `363fa01`. Full40 native Bybit series /993575 candles /10symbols completed.
+**SOURCE_TRADE_CASE_VALIDATION:3 unique READY,0 FILLED,0 CLOSED,0 OPEN/PENDING.**
+Maximum observed closures under this registered machine interpretation =0. This
+is not an exhaustive source/discretionary maximum and cannot assess strategy edge.
+All3 entry quotes were never touched during their active real5m intervals; limits
+cancelled on LTF break, FTA/destination test or OPEN beyond the SL–FTA interval.
+Shared occupancy and budget did not reject any independent case.
+
+Strict mappings15/5,60/5,60/15,240/5,240/15;240/60 is separate ANY_TF research(0READY).
+Separate PORTFOLIO_SIMULATION also0entries, cash/NAV1170; not primary cases.
+Old13 closures are a flawed intermediate policy result, preserved verbatim in
+`data/reports/source_bybit_fc61f35_intermediate/report.md` and original artifacts.
+All13 fail the declared corrected executable contract; all5 oldRange losses lack
+reconstructed causal qualifying external POI, and240/60 is out of strict scope.
+Alternative source-allowed quotes/stops alone are not a literal methodology defect.
+
+Five latest purported PDF uploads remain identical Windows shortcuts. Actual
+SW5/9/11/12/22 PDF contents are still absent; summaries were not promoted to
+SOURCE_RULE. Missing originals block complete methodology certification, not the
+completed available-data machine replay. See attachment receipt and report.
+
+```bash
+python scripts/run_source_cases_bybit.py --output data/reports/source_cases_bybit_2026_10_09 --resume-existing --workers 4
+python scripts/verify_source_case_evidence.py --input data/reports/source_cases_bybit_2026_10_09 --output /tmp/source_case_evidence.json
+python scripts/audit_source_pending_limits.py --input data/reports/source_cases_bybit_2026_10_09 --output /tmp/pending_order_audit.json
+```
+
+Use the current locked source context; changed code/inputs/artifacts fail resume.
+Do not update expected hashes. New policies require a fresh output; preserve all
+existing results. The interrupted pre-outcome QA pass has exact code snapshots.
+Old `run_source_bybit.py` resume requires its originalfc61f35 registered context,
+including the old source registry; the new registry correctly changes that hash.
+Current old-run manifest/input/committed-code checks passed without rerunning it.
+
+QA:489full tests/18targeted PASS; compileall/RuffE9F/mypy PASS; real14,293-bar prefix,
+172flow generations/20Range audits and4TF future mutation PASS. Additional96,088-bar
+BTC prefix at the last emitted READY:2signals/1cancellation/1131flows/159Range audits
+match exactly;4TF future mutation PASS. Cutoff selected from source metadata, notPnL. All3 READY source
+proofs and93manifest artifact hashes verified. Actual trade risk/cost ledger has
+0rows; nonempty execution/cost/occupancy checks use labelled constructed unit tests.
+QA and independent every-active-bar no-fill proof: `data/reports/source_case_qa_2026_10_09`.
+No frozen research rerun, baselineTP40/30/30/SL/cost-adjustedTP1BE unchanged.
+Only BACKTEST/SHADOW,trade_entry_allowed=false,noLIVE/private API/orders.
+
+[Full comparison and evidence](SOURCE_ALIGNED_BYBIT_50_TRADE_REPORT.md).
+[Registered correction choices](SOURCE_CORRECTION_PROTOCOL.md).
+
+## Historical checkpoints below — superseded machine-policy descriptions
+
 # Strategy Engine: завершённое зарегистрированное исследование
 
 ## Итог нового source replay после получения ZIP — 2026-10-09

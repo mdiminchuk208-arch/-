@@ -61,8 +61,8 @@ def flows(engine):
     return [{'tf': tf, **f} for tf, s in engine.series.items() for f in s.flow_history]
 
 
-def verify_prefix(folder):
-    cutoff = datetime(2026, 3, 1, tzinfo=timezone.utc)
+def verify_prefix(folder, cutoff=None):
+    cutoff = cutoff or datetime(2026, 3, 1, tzinfo=timezone.utc)
     policy = json.loads((folder / 'run_lock.json').read_text())['policy']
     clean, total = prefix_engine(policy, cutoff, False)
     mutated, _ = prefix_engine(policy, cutoff, True)
@@ -179,6 +179,8 @@ def verify_ledger(folder):
             'full_strict_closed': len(closed), 'primary_closed': len(primary),
             'case_occupancy_independent': True, 'case_budget_independent': True,
             'scope_240_60_excluded': True, 'cost_and_risk_accounting': 'PASS',
+            'actual_cost_and_risk_ledger_rows': len(cases),
+            'nonempty_execution_cost_risk_validation': 'CONSTRUCTED_UNIT_FIXTURES_NOT_HISTORY_PERFORMANCE',
             'intermediate13_exact_cutoff_audits': dict(Counter(r['classification'] for r in audits)),
             'five_old_range_losses_audited': len(ranges), 'trade_entry_allowed': False}
 
@@ -205,8 +207,10 @@ if __name__ == '__main__':
     p.add_argument('--input', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--prefix-only', action='store_true')
+    p.add_argument('--cutoff', type=datetime.fromisoformat,
+                   help='optional event-time cutoff for additional nonempty READY prefix audit')
     args = p.parse_args()
-    result = {'real_prefix_future_mutation': verify_prefix(args.input.resolve())}
+    result = {'real_prefix_future_mutation': verify_prefix(args.input.resolve(), args.cutoff)}
     if not args.prefix_only:
         result.update(ledger=verify_ledger(args.input.resolve()), manifests=verify_manifests(args.input.resolve()))
     result['verification_script_sha256'] = sha256(Path(__file__).read_bytes()).hexdigest()

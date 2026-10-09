@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "new_files_safety_audited": 6,
+  "network_exchange_imports": false,
+  "private_API_imports": false,
+  "order_placement": false,
+  "trade_entry_allowed": false,
+  "old_tests_scripts_src_intermediate_artifacts_unchanged": 222,
+  "canonical_TP_SL_BE_unchanged": true,
+  "frozen_research_rerun": false,
+  "original_missing_PDF_content_still_unavailable": true
+}

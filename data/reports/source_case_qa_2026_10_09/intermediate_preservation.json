@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "prior_completed_core_artifacts_verified": 56,
+  "prior_source_context_git_commit": "fc61f35",
+  "prior_13_report_preserved_verbatim": true,
+  "old_native_history_40_SHA_unchanged": true,
+  "frozen_research_rerun": false,
+  "old_resume_requires_its_original_registered_source_context": true
+}

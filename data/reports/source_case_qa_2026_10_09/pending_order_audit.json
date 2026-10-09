@@ -1,0 +1,241 @@
+{
+  "all_READY_limits_independently_audited": 3,
+  "maximum_observed_filled_closed_under_registered_policy": 0,
+  "no_quote_touch_while_order_active": true,
+  "not_a_discretionary_source_maximum": true,
+  "rows": [
+    {
+      "SL": 79604.6,
+      "budget_rejection": false,
+      "cancel": {
+        "known_at": "2026-09-06T23:10:00+00:00",
+        "reason": "CANCEL_OPEN_OUTSIDE_SL_FTA",
+        "signal_id": "ea27f65b73e584faa2bfc806",
+        "trade_entry_allowed": false
+      },
+      "cancellation_boundary_bar": {
+        "close": 80146.6,
+        "high": 80205.6,
+        "interval_end": "2026-09-06T23:15:00+00:00",
+        "interval_start": "2026-09-06T23:10:00+00:00",
+        "low": 80146.0,
+        "open": 80205.6
+      },
+      "entry": 79672.9,
+      "htf_poi": "RANGE_POI",
+      "local_poi": "STB",
+      "mapping": "60/5",
+      "prior_actual_5m_intervals": [
+        {
+          "close": 80185.4,
+          "close_time": "2026-09-06T23:05:00+00:00",
+          "high": 80326.2,
+          "low": 79967.5,
+          "open": 80012.2,
+          "open_time": "2026-09-06T23:00:00+00:00",
+          "quote_touched": false
+        },
+        {
+          "close": 80205.6,
+          "close_time": "2026-09-06T23:10:00+00:00",
+          "high": 80228.1,
+          "low": 80095.1,
+          "open": 80185.4,
+          "open_time": "2026-09-06T23:05:00+00:00",
+          "quote_touched": false
+        }
+      ],
+      "quote_never_touched_before_known_cancel": true,
+      "ready": "2026-09-06T23:00:00+00:00",
+      "setup_type": "RANGE_DEVIATION",
+      "shared_account_busy": false,
+      "signal_id": "ea27f65b73e584faa2bfc806",
+      "symbol": "BTCUSDT",
+      "targets": [
+        80188.09999999999,
+        80787.0
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "SL": 77429.5,
+      "budget_rejection": false,
+      "cancel": {
+        "known_at": "2026-09-14T14:20:00+00:00",
+        "reason": "CANCEL_FLOW_DESTINATION_TESTED",
+        "signal_id": "54fdfab3931bf4e19debb560",
+        "trade_entry_allowed": false
+      },
+      "cancellation_boundary_bar": {
+        "close": 78250.1,
+        "high": 78624.0,
+        "interval_end": "2026-09-14T14:25:00+00:00",
+        "interval_start": "2026-09-14T14:20:00+00:00",
+        "low": 78250.1,
+        "open": 78620.7
+      },
+      "entry": 77524.75,
+      "htf_poi": "STB",
+      "local_poi": "STB",
+      "mapping": "15/5",
+      "prior_actual_5m_intervals": [
+        {
+          "close": 78192.0,
+          "close_time": "2026-09-14T13:55:00+00:00",
+          "high": 78468.0,
+          "low": 78164.5,
+          "open": 78407.0,
+          "open_time": "2026-09-14T13:50:00+00:00",
+          "quote_touched": false
+        },
+        {
+          "close": 78139.4,
+          "close_time": "2026-09-14T14:00:00+00:00",
+          "high": 78257.4,
+          "low": 78011.5,
+          "open": 78192.0,
+          "open_time": "2026-09-14T13:55:00+00:00",
+          "quote_touched": false
+        },
+        {
+          "close": 78387.0,
+          "close_time": "2026-09-14T14:05:00+00:00",
+          "high": 78423.9,
+          "low": 78119.8,
+          "open": 78139.4,
+          "open_time": "2026-09-14T14:00:00+00:00",
+          "quote_touched": false
+        },
+        {
+          "close": 78278.6,
+          "close_time": "2026-09-14T14:10:00+00:00",
+          "high": 78403.7,
+          "low": 78264.6,
+          "open": 78387.0,
+          "open_time": "2026-09-14T14:05:00+00:00",
+          "quote_touched": false
+        },
+        {
+          "close": 78474.5,
+          "close_time": "2026-09-14T14:15:00+00:00",
+          "high": 78504.8,
+          "low": 78272.1,
+          "open": 78278.6,
+          "open_time": "2026-09-14T14:10:00+00:00",
+          "quote_touched": false
+        },
+        {
+          "close": 78620.7,
+          "close_time": "2026-09-14T14:20:00+00:00",
+          "high": 78631.6,
+          "low": 78450.0,
+          "open": 78474.5,
+          "open_time": "2026-09-14T14:15:00+00:00",
+          "quote_touched": false
+        }
+      ],
+      "quote_never_touched_before_known_cancel": true,
+      "ready": "2026-09-14T13:50:00+00:00",
+      "setup_type": "HTF_POI_LTF_RAID_BOS_CONF",
+      "shared_account_busy": false,
+      "signal_id": "54fdfab3931bf4e19debb560",
+      "symbol": "BTCUSDT",
+      "targets": [
+        78542.2
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "SL": 0.07005,
+      "budget_rejection": false,
+      "cancel": {
+        "known_at": "2026-08-17T16:45:00+00:00",
+        "reason": "CANCEL_CONFIRMED_LTF_STRUCTURE_BROKEN",
+        "signal_id": "afd834d7916213bcbe1e44e9",
+        "trade_entry_allowed": false
+      },
+      "cancellation_boundary_bar": {
+        "close": 0.07041,
+        "high": 0.07041,
+        "interval_end": "2026-08-17T16:50:00+00:00",
+        "interval_start": "2026-08-17T16:45:00+00:00",
+        "low": 0.07033,
+        "open": 0.07035
+      },
+      "entry": 0.07008500000000001,
+      "htf_poi": "STB",
+      "local_poi": "STB",
+      "mapping": "15/5",
+      "prior_actual_5m_intervals": [
+        {
+          "close": 0.07033,
+          "close_time": "2026-08-17T16:20:00+00:00",
+          "high": 0.07035,
+          "low": 0.07028,
+          "open": 0.07029,
+          "open_time": "2026-08-17T16:15:00+00:00",
+          "quote_touched": false
+        },
+        {
+          "close": 0.07038,
+          "close_time": "2026-08-17T16:25:00+00:00",
+          "high": 0.07041,
+          "low": 0.07031,
+          "open": 0.07033,
+          "open_time": "2026-08-17T16:20:00+00:00",
+          "quote_touched": false
+        },
+        {
+          "close": 0.07035,
+          "close_time": "2026-08-17T16:30:00+00:00",
+          "high": 0.07038,
+          "low": 0.07033,
+          "open": 0.07038,
+          "open_time": "2026-08-17T16:25:00+00:00",
+          "quote_touched": false
+        },
+        {
+          "close": 0.07041,
+          "close_time": "2026-08-17T16:35:00+00:00",
+          "high": 0.07043,
+          "low": 0.07034,
+          "open": 0.07035,
+          "open_time": "2026-08-17T16:30:00+00:00",
+          "quote_touched": false
+        },
+        {
+          "close": 0.07044,
+          "close_time": "2026-08-17T16:40:00+00:00",
+          "high": 0.07044,
+          "low": 0.07038,
+          "open": 0.07041,
+          "open_time": "2026-08-17T16:35:00+00:00",
+          "quote_touched": false
+        },
+        {
+          "close": 0.07035,
+          "close_time": "2026-08-17T16:45:00+00:00",
+          "high": 0.07044,
+          "low": 0.07035,
+          "open": 0.07044,
+          "open_time": "2026-08-17T16:40:00+00:00",
+          "quote_touched": false
+        }
+      ],
+      "quote_never_touched_before_known_cancel": true,
+      "ready": "2026-08-17T16:15:00+00:00",
+      "setup_type": "HTF_POI_LTF_RAID_BOS_CONF",
+      "shared_account_busy": false,
+      "signal_id": "afd834d7916213bcbe1e44e9",
+      "symbol": "DOGEUSDT",
+      "targets": [
+        0.0706
+      ],
+      "trade_entry_allowed": false
+    }
+  ],
+  "scope": "40_NATIVE_BYBIT_SERIES_993575_CANDLES",
+  "status": "PASS",
+  "trade_entry_allowed": false,
+  "verification_script_sha256": "fe957b2a7fb6d207d653b7bcad0010f92758194d41218a7a2a56452ba974d2b6"
+}
