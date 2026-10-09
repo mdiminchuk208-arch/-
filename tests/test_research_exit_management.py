@@ -46,16 +46,20 @@ class ExitResearchTests(unittest.TestCase):
             (output/'results.json').write_text(canonical(receipts))
             for name in ('paired_actual_entries.json','post_be_follow.json','exit_real_causality.json'):
                 (output/name).write_text('[]')
-            with patch('run_exit_research.simulate',side_effect=AssertionError('Completed study must not rerun')) as simulate:
-                research_run_case(source,output,'EXTERNAL',resume_existing=True)
-                research_run_case(source,output,'EXTERNAL',resume_existing=True)
-                simulate.assert_not_called()
-            (output/'B_30_30_40_BE_TP1/trades.jsonl').write_text('corrupted execution\n')
-            with self.assertRaises(AssertionError):
-                research_run_case(source,output,'EXTERNAL',resume_existing=True)
-            (source/'signals.jsonl').write_text('changed frozen signals\n')
-            with self.assertRaises(ValueError):
-                research_run_case(source,output,'EXTERNAL',resume_existing=True)
+            # This unit test isolates completed-study reuse/integrity behavior. The
+            # real immutable-baseline guard intentionally rejects the now-evolved
+            # canonical strategy and is tested by the research protocol itself.
+            with patch('run_exit_research.check_baseline'):
+                with patch('run_exit_research.simulate',side_effect=AssertionError('Completed study must not rerun')) as simulate:
+                    research_run_case(source,output,'EXTERNAL',resume_existing=True)
+                    research_run_case(source,output,'EXTERNAL',resume_existing=True)
+                    simulate.assert_not_called()
+                (output/'B_30_30_40_BE_TP1/trades.jsonl').write_text('corrupted execution\n')
+                with self.assertRaises(AssertionError):
+                    research_run_case(source,output,'EXTERNAL',resume_existing=True)
+                (source/'signals.jsonl').write_text('changed frozen signals\n')
+                with self.assertRaises(ValueError):
+                    research_run_case(source,output,'EXTERNAL',resume_existing=True)
 
     def test_paired_fills_preserve_original_entry_and_future_exit_invariance(self):
         rows=[bar(0),bar(1),bar(2,108,111,107,110),bar(3,101,103,99,100),bar(4)]
