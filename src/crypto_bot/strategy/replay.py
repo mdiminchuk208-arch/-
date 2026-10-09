@@ -79,6 +79,14 @@ class StrategySignal:
     rr_at_optimal_entry: float | None = None
     trade_entry_allowed: bool = field(default=False, init=False)
 
+    def __post_init__(self):
+        if (self.status == "READY_FOR_VIRTUAL_ENTRY"
+                and self.level_policy != "EXPLICIT_QUALIFIED_LEVELS_ONLY"):
+            raise ValueError(
+                "canonical READY requires explicitly source-qualified levels; "
+                "research proxies cannot be promoted to virtual entry"
+            )
+
 
 @dataclass(frozen=True)
 class StrategySnapshot:
