@@ -52,7 +52,7 @@ class ReplayCliTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn('invalid choice', result.stderr)
 
-    def test_auto_cli_is_deterministic_and_shadow_has_same_evidence(self):
+    def test_auto_cli_is_deterministic_shadow_matches_and_no_proxy_entry_occurs(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             for tf, candles in histories().items():
@@ -72,8 +72,12 @@ class ReplayCliTests(unittest.TestCase):
                 payload = json.loads((destination / 'summary.json').read_text())
                 self.assertGreater(payload['unique_signal_count'], 0)
                 self.assertEqual(payload['automatic_level_policy']['min_body_fraction'], 0.6)
-                self.assertEqual(payload['level_selection_policy'], 'AUTO_NORMALIZED_EVIDENCE_PENDING_SOURCE_REVIEW')
+                self.assertEqual(payload['level_selection_policy'],
+                                 'AUTO_RESEARCH_PROXY_PENDING_SOURCE_QUALIFICATION')
+                self.assertEqual(payload['virtual_entry_count'], 0)
                 self.assertFalse(payload['trade_entry_allowed'])
+                self.assertIn('AUTO_LEVELS_ARE_RESEARCH_PROXIES_NOT_SOURCE_QUALIFIED_AND_CANNOT_CANONICALLY_ENTER',
+                              payload['limitations'])
                 payload.pop('mode')
                 for item in payload['signal_updates']:
                     item.pop('mode')
