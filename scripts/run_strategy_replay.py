@@ -60,6 +60,7 @@ def main():
             qrow = row.get('source_qualification')
             qualification = None
             if qrow is not None:
+                reaction_known_at = qrow.get('repeat_test_ltf_reaction_known_at')
                 qualification = SourceQualification(
                     known_at=datetime.fromisoformat(qrow['known_at']),
                     poi_kind=qrow['poi_kind'],
@@ -71,6 +72,11 @@ def main():
                     premium_discount_valid=qrow['premium_discount_valid'],
                     fresh_untested=qrow['fresh_untested'],
                     evidence=tuple(qrow['evidence']),
+                    repeat_test_ltf_reaction_confirmed=qrow.get('repeat_test_ltf_reaction_confirmed', False),
+                    repeat_test_ltf_reaction_known_at=(
+                        datetime.fromisoformat(reaction_known_at) if reaction_known_at is not None else None
+                    ),
+                    repeat_test_ltf_reaction_evidence=tuple(qrow.get('repeat_test_ltf_reaction_evidence', ())),
                 )
             qualified[key] = QualifiedLevels(
                 datetime.fromisoformat(row['known_at']), row['stop_loss'], tuple(row['targets']),
