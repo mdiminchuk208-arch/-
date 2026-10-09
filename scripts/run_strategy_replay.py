@@ -36,7 +36,7 @@ def main():
     level_source.add_argument('--qualified-levels', type=Path,
                         help='JSON signal_id -> known_at/stop_loss/targets/stop_policy/target_policy; no automatic qualification')
     level_source.add_argument('--auto-levels', action='store_true',
-                              help='opt-in experimental OB/HTF-gap selection; not source certification')
+                              help='opt-in experimental OB/HTF-gap selection; research evidence only, not source certification')
     parser.add_argument('--min-ob-body-fraction', type=float, default=0.6)
     parser.add_argument('--min-engulf-body-ratio', type=float, default=1.0)
     args = parser.parse_args()
@@ -124,7 +124,7 @@ def main():
         'input_code_hashes': code_hashes,
         'qualified_level_inputs': {key: asdict(value) for key, value in qualified.items()},
         'automatic_level_policy': asdict(auto_policy) if auto_policy is not None else None,
-        'level_selection_policy': ('AUTO_NORMALIZED_EVIDENCE_PENDING_SOURCE_REVIEW' if auto_policy is not None
+        'level_selection_policy': ('AUTO_RESEARCH_PROXY_PENDING_SOURCE_QUALIFICATION' if auto_policy is not None
                                    else 'EXPLICIT_QUALIFIED_LEVELS_ONLY'),
         'latest_signal_status_counts': dict(Counter(row['status'] for row in latest)),
         'automatic_level_blocking_counts': dict(Counter(reason for row in latest
@@ -136,8 +136,10 @@ def main():
         'virtual_entry_count': sum(d.action == 'VIRTUAL_ENTRY' for d in portfolio.journal),
         'final_equity': portfolio.equity, 'open_virtual_positions': sorted(portfolio.positions),
         'pending_virtual_setups': len(portfolio.pending),
-        'limitations': [('AUTO_LEVELS_ARE_EXPERIMENTAL_NOT_SOURCE_CERTIFIED' if auto_policy is not None
+        'limitations': [('AUTO_LEVELS_ARE_RESEARCH_PROXIES_NOT_SOURCE_QUALIFIED_AND_CANNOT_CANONICALLY_ENTER'
+                         if auto_policy is not None
                          else 'SL_AND_THREE_TARGETS_REQUIRE_CALLER_SOURCE_QUALIFICATION'),
+                        'SOURCE_COMPLETE_POI_LIQUIDITY_ORDER_FLOW_GATES_NOT_YET_IMPLEMENTED',
                         'SCORE_AND_MIDPOINT_ENTRY_ARE_BACKTEST_PARAMETERS',
                         'CLOSED_HTF_OBSERVATION_CAN_DELAY_NEXT_OPEN_SFP',
                         'FUNDING_AND_LIQUIDATION_NOT_MODELLED', 'NO_LIVE_FEED_OR_EXECUTION_ADAPTER'],
