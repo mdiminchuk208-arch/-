@@ -1,4 +1,4 @@
-"""The automatic source POI must remain in the emitted entry reference."""
+"""The automatic research POI must remain auditable without becoming canonical READY."""
 import unittest
 from crypto_bot.common.models import Direction
 from crypto_bot.strategy.auto_levels import derive_automatic_levels, ENTRY_POLICY
@@ -22,13 +22,20 @@ class ObEntryReferenceTests(unittest.TestCase):
             self.assertEqual(result.entry_policy,ENTRY_POLICY)
             self.assertTrue(any(e.kind=='ENTRY_REFERENCE' for e in result.evidence))
 
-    def test_emitted_signal_keeps_ob_quote_and_zone_instead_of_ote_midpoint(self):
+    def test_emitted_research_signal_keeps_ob_quote_and_zone_without_canonical_ready(self):
         for direction in Direction:
             signals,_=indexed_signal_updates(histories(direction),symbol='E2E',auto_level_policy=AutoLevelPolicy())
-            ready=next(s for s in signals if s.status=='READY_FOR_VIRTUAL_ENTRY')
-            ref=next(e for e in ready.level_evidence if e.kind=='ENTRY_REFERENCE')
-            self.assertEqual((ready.entry_zone.low,ready.entry_zone.high,ready.optimal_entry),ref.prices)
-            self.assertEqual(ready.entry_policy,ENTRY_POLICY)
+            research=next(s for s in signals
+                          if 'AUTO_RESEARCH_PROXY_READY_NOT_SOURCE_QUALIFIED' in s.reasons)
+            ref=next(e for e in research.level_evidence if e.kind=='ENTRY_REFERENCE')
+            self.assertEqual((research.entry_zone.low,research.entry_zone.high,research.optimal_entry),ref.prices)
+            self.assertEqual(research.entry_policy,ENTRY_POLICY)
+            self.assertEqual(research.status,'WAITING_FOR_SOURCE_LEVELS')
+            self.assertEqual(research.level_blocking_reasons,('AUTO_RESEARCH_PROXY_NOT_SOURCE_QUALIFIED',))
+            self.assertIsNone(research.stop_loss)
+            self.assertEqual(research.targets,())
+            self.assertFalse(research.trade_entry_allowed)
+            self.assertTrue(all(s.status!='READY_FOR_VIRTUAL_ENTRY' for s in signals))
 
 
 if __name__=='__main__':
