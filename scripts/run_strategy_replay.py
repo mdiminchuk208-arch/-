@@ -11,7 +11,7 @@ from pathlib import Path
 
 from crypto_bot.data.storage import read_klines_csv
 from crypto_bot.strategy.auto_levels import AutoLevelPolicy
-from crypto_bot.strategy.replay import EngineMode, QualifiedLevels, STRATEGY_VERSION, evaluate_snapshot
+from crypto_bot.strategy.replay import EngineMode, QualifiedLevels, SourceQualification, STRATEGY_VERSION, evaluate_snapshot
 from crypto_bot.strategy.virtual_portfolio import VirtualPortfolio
 
 
@@ -34,7 +34,7 @@ def main():
     parser.add_argument('--mode', choices=[m.value for m in EngineMode], default='BACKTEST')
     level_source = parser.add_mutually_exclusive_group()
     level_source.add_argument('--qualified-levels', type=Path,
-                        help='JSON signal_id -> known_at/stop_loss/targets/stop_policy/target_policy; no automatic qualification')
+                        help='JSON signal_id -> levels plus explicit source_qualification context; no automatic qualification')
     level_source.add_argument('--auto-levels', action='store_true',
                               help='opt-in experimental OB/HTF-gap selection; research evidence only, not source certification')
     parser.add_argument('--min-ob-body-fraction', type=float, default=0.6)
@@ -57,8 +57,25 @@ def main():
     if args.qualified_levels:
         payload = json.loads(args.qualified_levels.read_text(encoding='utf-8'))
         for key, row in payload.items():
-            qualified[key] = QualifiedLevels(datetime.fromisoformat(row['known_at']), row['stop_loss'],
-                                              tuple(row['targets']), row['stop_policy'], row['target_policy'])
+            qrow = row.get('source_qualification')
+            qualification = None
+            if qrow is not None:
+                qualification = SourceQualification(
+                    known_at=datetime.fromisoformat(qrow['known_at']),
+                    poi_kind=qrow['poi_kind'],
+                    entry_path=qrow['entry_path'],
+                    poi_source=qrow['poi_source'],
+                    structure_path_confirmed=qrow['structure_path_confirmed'],
+                    order_flow_aligned=qrow['order_flow_aligned'],
+                    opposing_liquidity_cleared=qrow['opposing_liquidity_cleared'],
+                    premium_discount_valid=qrow['premium_discount_valid'],
+                    fresh_untested=qrow['fresh_untested'],
+                    evidence=tuple(qrow['evidence']),
+                )
+            qualified[key] = QualifiedLevels(
+                datetime.fromisoformat(row['known_at']), row['stop_loss'], tuple(row['targets']),
+                row['stop_policy'], row['target_policy'], qualification,
+            )
     data, hashes = {}, {}
     for symbol in symbols:
         data[symbol] = {}
@@ -125,7 +142,7 @@ def main():
         'qualified_level_inputs': {key: asdict(value) for key, value in qualified.items()},
         'automatic_level_policy': asdict(auto_policy) if auto_policy is not None else None,
         'level_selection_policy': ('AUTO_RESEARCH_PROXY_PENDING_SOURCE_QUALIFICATION' if auto_policy is not None
-                                   else 'EXPLICIT_QUALIFIED_LEVELS_ONLY'),
+                                   else 'EXPLICIT_QUALIFIED_LEVELS_WITH_SOURCE_CONTEXT'),
         'latest_signal_status_counts': dict(Counter(row['status'] for row in latest)),
         'automatic_level_blocking_counts': dict(Counter(reason for row in latest
                                                         for reason in row['level_blocking_reasons'])),
@@ -138,8 +155,9 @@ def main():
         'pending_virtual_setups': len(portfolio.pending),
         'limitations': [('AUTO_LEVELS_ARE_RESEARCH_PROXIES_NOT_SOURCE_QUALIFIED_AND_CANNOT_CANONICALLY_ENTER'
                          if auto_policy is not None
-                         else 'SL_AND_THREE_TARGETS_REQUIRE_CALLER_SOURCE_QUALIFICATION'),
-                        'SOURCE_COMPLETE_POI_LIQUIDITY_ORDER_FLOW_GATES_NOT_YET_IMPLEMENTED',
+                         else 'EXPLICIT_LEVELS_REQUIRE_AUDITABLE_SOURCE_CONTEXT'),
+                        'SOURCE_CONTEXT_IS_CURRENTLY_CALLER_ASSERTED_WHERE_DETECTORS_ARE_NOT_IMPLEMENTED',
+                        'SOURCE_COMPLETE_POI_LIQUIDITY_ORDER_FLOW_DETECTORS_NOT_YET_IMPLEMENTED',
                         'SCORE_AND_MIDPOINT_ENTRY_ARE_BACKTEST_PARAMETERS',
                         'CLOSED_HTF_OBSERVATION_CAN_DELAY_NEXT_OPEN_SFP',
                         'FUNDING_AND_LIQUIDATION_NOT_MODELLED', 'NO_LIVE_FEED_OR_EXECUTION_ADAPTER'],
