@@ -159,6 +159,7 @@ class SourceSeries:
         self.zones: list[Zone] = []
         self.zone_registry: dict[str, Zone] = {}
         self.origins: set[tuple[str, int]] = set()
+        self.broken_obs: list[tuple[int, Zone]] = []
         self.pending: list[Zone] = []
         self.last_opposite: dict[str, int] = {}
         self.counts: Counter = Counter()
@@ -226,6 +227,7 @@ class SourceSeries:
                 z.invalidated_at = now
                 if z.kind == 'ORDER_BLOCK':
                     broken.append(z)
+        self.broken_obs = [(i, z) for i, z in self.broken_obs if i >= index - 1] + [(index, z) for z in broken]
         for z in self.pending:
             if (z.direction == 'LONG' and c.close < z.low) or (z.direction == 'SHORT' and c.close > z.high):
                 z.invalidated_at = now
@@ -295,13 +297,20 @@ class SourceSeries:
                                   else (b.open >= ob.close and b.close <= ob.open and b.close < b.open))
                         body = abs(ob.close - ob.open)
                         dominance = body > ob.high - ob.low - body
-                        kind = 'ORDER_BLOCK' if engulf and dominance else 'DEMAND' if gap_direction == 'LONG' else 'SUPPLY'
+                        # DOC19: the OB candle itself raids the old high/low/wick.
+                        # A later raid can qualify the broader forming D/S move,
+                        # but must not silently manufacture an OB candle.
+                        candle_raid = next((r for r in reversed(raids) if r.candle_index == origin), None)
+                        kind = 'ORDER_BLOCK' if engulf and dominance and candle_raid is not None else 'DEMAND' if gap_direction == 'LONG' else 'SUPPLY'
+                        if kind == 'ORDER_BLOCK':
+                            assert candle_raid is not None
+                            raid = candle_raid
                         aliases = ('DEMAND' if gap_direction == 'LONG' else 'SUPPLY',) if kind == 'ORDER_BLOCK' else ()
                         candidate = self._zone(kind, gap_direction, ob.low, ob.high, now, origin, raid, aliases=aliases)
                         if (kind, origin) not in self.origins:
                             self.origins.add((kind, origin))
                             self.pending.append(candidate)
-                for old in broken:
+                for _, old in self.broken_obs:
                     if old.direction != gap_direction:
                         direction = gap_direction
                         recent = [r for r in self.raids_after(old.known_at) if r.direction == direction]
@@ -341,6 +350,7 @@ class SourceSeries:
             direction = 'LONG' if e.kind == K.BULLISH_SFP_FORMATION_CONFIRMED else 'SHORT'
             raid = Raid(direction, now, e.level_price, e.sfp_pattern_extreme_price, max(0, index - 1), (f'RANGE:{e.range_id}',), True)
             z = self._zone('RANGE_POI', direction, low, high, now, index - 1, raid)
+            z.leg_low, z.leg_high = low, high
             z.range_id = e.range_id
             z.first_test = z.last_test = now
             z.test_count = 1
@@ -549,7 +559,10 @@ class SourceEngine:
                 targets, fractions = (boundary, fta), (0.8, 0.2)
                 exit_kind = 'RANGE_80_INSIDE_20_EXTERNAL_FTA'
             else:
-                targets, fractions = (min(fta, boundary) if s == 1 else max(fta, boundary),), (1.0,)
+                first = min(fta, boundary) if s == 1 else max(fta, boundary)
+                # Source permits declining the optional breakout remainder;
+                # preserve the80/20 accounting even when both close inside.
+                targets, fractions = (first, first), (0.8, 0.2)
                 exit_kind = 'RANGE_EARLIER_FTA_OPTIONAL_REMAINDER_CLOSED'
         if s * (l.candles[l.index].close - entry) <= 0 or s * (entry - stop) <= 0:
             setup.reason = 'WAIT_PROPER_SIDE_LIMIT_APPROACH'

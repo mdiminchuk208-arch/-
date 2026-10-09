@@ -1,13 +1,13 @@
 from __future__ import annotations
 
-from dataclasses import asdict
+from dataclasses import asdict, replace
 from datetime import datetime, timedelta, timezone
 import random
 import unittest
 
 from crypto_bot.common.models import Candle
-from crypto_bot.strategy.market_analysis import analyze_market
-from crypto_bot.strategy.source_engine import (Pool, Raid, SourceEngine, SourceSeries, SourceSignal, Zone,
+from crypto_bot.strategy.market_analysis import analyze_market, MarketEvent, MarketEventKind, TrendState
+from crypto_bot.strategy.source_engine import (Pool, Raid, Setup, SourceEngine, SourceSeries, SourceSignal, Zone,
                                                evidence_json, opposing_liquidity, pd_location)
 from crypto_bot.strategy.source_portfolio import SourcePortfolio, SourceRiskPolicy
 
@@ -71,6 +71,63 @@ class SourceGeometryTests(unittest.TestCase):
 
 
 class SourceCausalityTests(unittest.TestCase):
+    def test_ob_requires_origin_candle_raid_not_only_later_impulse_raid(self):
+        for origin_raids, expected in ((True, 'ORDER_BLOCK'), (False, 'DEMAND')):
+            cs = [candle(0, 105, 106, 102, 104),
+                  candle(1, 104, 104.5, 99 if origin_raids else 101, 100 if origin_raids else 102),
+                  candle(2, 100 if origin_raids else 102, 109, 99.5 if origin_raids else 100, 108),
+                  candle(3, 108, 111, 107, 110)]
+            # Constructed event tests the zone classifier, not market conformance.
+            event = MarketEvent(MarketEventKind.BULLISH_STRUCTURE_CONFIRMED, 3, cs[3].close_time,
+                                110, 1, 99, 'CONSTRUCTED_UNIT_STRUCTURE')
+            report = replace(analyze_market(cs), events=(event,))
+            series = SourceSeries('BTCUSDT', 5, cs, report)
+            series.pools['prior'] = Pool('prior', 'low', 100.5, START, 'SSL', 'EXTERNAL')
+            for i in range(4):
+                series.advance(i)
+            candidates = [z for z in series.zones if z.kind in ('ORDER_BLOCK', 'DEMAND')]
+            self.assertEqual(len(candidates), 1)
+            self.assertEqual(candidates[0].kind, expected)
+            self.assertEqual(candidates[0].raid.candle_index, 1 if origin_raids else 2)
+
+    def test_complete_causal_chain_is_ready_with_one_fta_without_ote(self):
+        now = START + timedelta(minutes=30)
+        cs = [candle(5, 104, 106, 103, 105)]
+        series = {tf: SourceSeries('BTCUSDT', tf, cs, analyze_market(cs)) for tf in (5, 15, 60, 240)}
+        l, h = series[5], series[60]
+        l.index = h.index = 0
+        t = lambda minutes: START + timedelta(minutes=minutes)
+        raid = Raid('LONG', t(10), 96, 95, 0, ('oldSSL',))
+        structural = {'direction': 'LONG', 'known_at': t(20), 'protected': 95, 'extreme': 108, 'kind': 'NEW_STRUCTURE'}
+        l.raids = [raid]
+        l.bos['LONG'] = {'known_at': t(15), 'direction': 'LONG'}
+        l.conf['LONG'] = {'known_at': t(25), 'new_structure': structural}
+        l.structure = structural
+        h.structure = dict(structural)
+        l.trend = h.trend = TrendState.BULLISH
+        zone = Zone('htf', 'DEMAND', 'LONG', 94, 101, START, START, 0, raid, 90, 120,
+                    structural_proof=structural, first_test=t(10), last_test=t(10))
+        local = Zone('local', 'ORDER_BLOCK', 'LONG', 98, 100, t(20), t(25), 0, raid, 95, 108,
+                     structural_proof=structural)
+        target = Zone('target', 'SUPPLY', 'SHORT', 110, 112, START, START, 0, None, 90, 120)
+        l.zones = [local]
+        h.zones = [target]
+        engine = SourceEngine('BTCUSDT', series)
+        setup = Setup('setup', 60, 5, zone, t(10))
+        l.pools['against'] = Pool('against', 'low', 97, t(5), 'SSL', 'INTERNAL')
+        engine._evaluate(setup, now)
+        self.assertEqual(engine.signals, [])
+        self.assertEqual(setup.reason, 'WAIT_MEANINGFUL_LIQUIDITY_AGAINST_SETUP')
+        l.pools.clear()  # Explicitly represents the subsequent raid, not a caller flag.
+        engine._evaluate(setup, now)
+        self.assertEqual(len(engine.signals), 1)
+        signal = engine.signals[0]
+        self.assertEqual(signal.targets, (110,))
+        self.assertFalse(signal.evidence['premium_discount']['ote_confluence'])
+        self.assertEqual(signal.evidence['bos']['known_at'], t(15))
+        self.assertEqual(signal.evidence['conf']['known_at'], t(25))
+        self.assertFalse(signal.trade_entry_allowed)
+
     def test_full_history_event_index_matches_each_observed_prefix(self):
         rng = random.Random(413)
         cs = []
