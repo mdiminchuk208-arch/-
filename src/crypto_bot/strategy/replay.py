@@ -208,12 +208,13 @@ def signals_from_opportunities(opportunities, by_id, htf_report, ltf_report,
                 level_evidence, blocking_reasons = automatic.evidence, automatic.blocked_reasons
                 reasons.append(level_policy)
                 if automatic.status == "READY":
-                    # Fail closed: the current auto detector uses declared research
-                    # proxies (gap-only HTF POI, numeric aggression and three proxy
-                    # targets). The supplied methodology additionally requires
-                    # source-valid POI classification and contextual liquidity /
-                    # Order-Flow qualification. Preserve evidence for research, but
-                    # do not convert it into QualifiedLevels or canonical READY.
+                    # Preserve the detector's causal research geometry for audit and
+                    # ablation while refusing to treat its proxy stop/targets as
+                    # source-qualified trade levels.
+                    if automatic.execution_zone is not None and automatic.entry_reference is not None:
+                        zone = automatic.execution_zone
+                        entry = automatic.entry_reference
+                        entry_policy = automatic.entry_policy
                     status = "WAITING_FOR_SOURCE_LEVELS"
                     blocking_reasons = ("AUTO_RESEARCH_PROXY_NOT_SOURCE_QUALIFIED",)
                     reasons.append("AUTO_RESEARCH_PROXY_READY_NOT_SOURCE_QUALIFIED")
