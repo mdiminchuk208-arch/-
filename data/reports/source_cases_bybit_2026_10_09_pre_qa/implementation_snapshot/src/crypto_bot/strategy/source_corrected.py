@@ -716,9 +716,7 @@ class SourceEngine:
             return
         self._stage(setup, 'qualified_structure')
         local_zones = [p for p in l.zones if p.kind != 'RANGE_POI' and p.direction == direction and p.fresh(now)
-                       and raid.known_at <= p.formed_at <= p.known_at <= now and p.structural_proof is not None
-                       and p.structural_proof.get('direction') == direction
-                       and bos['known_at'] <= p.structural_proof['known_at'] <= p.known_at]
+                       and raid.known_at <= p.formed_at <= p.known_at <= now and p.structural_proof is not None]
         if not local_zones:
             setup.reason = 'WAIT_NEW_FRESH_LTF_POI'
             return

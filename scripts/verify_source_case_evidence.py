@@ -112,6 +112,9 @@ def verify_ledger(folder):
             timestamp_check(e, cutoff)
             raid, bos, new, conf = (datetime.fromisoformat(e[k]['known_at']) for k in ('liquidity_sweep', 'bos', 'new_structure', 'conf'))
             assert raid <= bos < new <= conf <= cutoff
+            local = e['ltf_poi']
+            assert local['structural_proof']['direction'] == r['direction']
+            assert bos <= datetime.fromisoformat(local['structural_proof']['known_at']) <= datetime.fromisoformat(local['known_at'])
             flow = e['order_flow']
             assert flow['direction'] == r['direction'] and flow['invalidated_at'] is None
             for sequence in flow['sequence'].values():

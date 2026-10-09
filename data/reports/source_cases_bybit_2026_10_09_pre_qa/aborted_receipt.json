@@ -1,0 +1,15 @@
+{
+  "status": "INTERRUPTED_BEFORE_OUTCOMES_FOR_QA",
+  "reason": "Explicit new-local-POI proof direction and current-BOS causality guard required by registered conservative path",
+  "outcomes_computed": false,
+  "outcomes_inspected": false,
+  "completed_segments": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "SOLUSDT",
+    "XRPUSDT"
+  ],
+  "primary_eligible": false,
+  "implementation_commit": "2b09acb",
+  "preserved": true
+}

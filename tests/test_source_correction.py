@@ -11,7 +11,7 @@ import unittest
 
 from crypto_bot.strategy.market_analysis import analyze_market, MarketEvent, MarketEventKind as K, TrendState
 from crypto_bot.strategy.source_corrected import (MAPPINGS, Pool, Raid, SourceEngine, SourceSeries, Zone,
-                                                  evidence_json, liquidity_roles, poi_entry_policy)
+                                                  Setup, evidence_json, liquidity_roles, poi_entry_policy)
 from crypto_bot.strategy.source_cases import deduplicate_cases, replay_case
 from crypto_bot.strategy.source_portfolio import SourcePortfolio
 from scripts.run_source_cases_bybit import verify_segment
@@ -24,6 +24,38 @@ def zone(kind='DEMAND', direction='LONG', low=95, high=100, name='poi'):
 
 
 class SourceCorrectionTests(unittest.TestCase):
+    def test_new_local_poi_requires_own_directional_proof_after_current_bos(self):
+        t = lambda n: START + timedelta(minutes=n)
+        cs = [candle(5, 104, 106, 103, 105)]
+        series = {tf: SourceSeries('BTCUSDT', tf, cs, analyze_market(cs)) for tf in (5, 15, 60, 240)}
+        l, h = series[5], series[60]
+        l.index = h.index = 0
+        raid = Raid('LONG', t(10), 96, 95, 0, ('SWING:0',))
+        proof = {'direction': 'LONG', 'known_at': t(20), 'protected': 95, 'extreme': 108}
+        l.raids = [raid]
+        l.bos['LONG'] = {'known_at': t(15), 'direction': 'LONG'}
+        l.conf['LONG'] = {'known_at': t(25), 'new_structure': proof}
+        l.structure = h.structure = proof
+        l.trend = h.trend = TrendState.BULLISH
+        h.flow = {'direction': 'LONG', 'known_at': t(20), 'invalidated_at': None, 'structure': proof}
+        local = zone('ORDER_BLOCK', low=98, high=100, name='local')
+        local.formed_at, local.known_at = t(20), t(25)
+        target = zone('SUPPLY', 'SHORT', 110, 112, 'target')
+        l.zones, h.zones = [local], [target]
+        context = zone()
+        context.leg_low, context.leg_high = 90, 120
+        context.first_test = t(10)
+        engine = SourceEngine('BTCUSDT', series)
+        setup = Setup('unit', 60, 5, context, t(10))
+        for wrong in ({**proof, 'direction': 'SHORT'}, {**proof, 'known_at': t(10)}):
+            local.structural_proof = wrong
+            engine._evaluate(setup, t(30))
+            self.assertEqual(engine.signals, [])
+            self.assertEqual(setup.reason, 'WAIT_NEW_FRESH_LTF_POI')
+        local.structural_proof = proof
+        engine._evaluate(setup, t(30))
+        self.assertEqual(len(engine.signals), 1)
+
     def test_strict_excludes_60m_execution(self):
         self.assertEqual(MAPPINGS, ((15, 5), (60, 5), (60, 15), (240, 5), (240, 15)))
 

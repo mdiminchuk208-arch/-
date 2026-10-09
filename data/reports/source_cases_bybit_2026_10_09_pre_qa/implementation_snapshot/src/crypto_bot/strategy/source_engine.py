@@ -1,4 +1,4 @@
-"""Corrected causal source interpretation. See SOURCE_CORRECTION_PROTOCOL.md.
+"""Additive causal source replay. See SOURCE_RECONSTRUCTION_2026_10_09.md.
 
 This is an explicit machine interpretation, not the frozen research detector.
 No private client, execution adapter, exchange credentials or live admission.
@@ -16,10 +16,8 @@ from typing import Sequence
 from crypto_bot.common.models import Candle
 from crypto_bot.strategy.market_analysis import MarketAnalysisReport, MarketEvent, MarketEventKind as K, TrendState
 from crypto_bot.strategy.range_engine import RangeAnalysisReport
-from crypto_bot.strategy.source_engine import SourceSignal
 
-MAPPINGS = ((15, 5), (60, 5), (60, 15), (240, 5), (240, 15))
-ANY_TF_MAPPINGS = ((240, 60),)
+MAPPINGS = ((15, 5), (60, 5), (60, 15), (240, 5), (240, 15), (240, 60))
 ZONE_TYPES = frozenset({'ORDER_BLOCK', 'BREAKER', 'DEMAND', 'SUPPLY', 'MANIPULATION', 'STB', 'BTS', 'FVG', 'RANGE_POI'})
 
 
@@ -88,10 +86,6 @@ class Zone:
     invalidated_at: datetime | None = None
     stop_extreme: float | None = None
     range_id: str | int | None = None
-    move_end_index: int | None = None
-    external_poi: dict | None = None
-    range_reclaim_at: datetime | None = None
-    range_retest_at: datetime | None = None
 
     def __post_init__(self) -> None:
         if self.kind not in ZONE_TYPES or not 0 < self.low < self.high:
@@ -128,47 +122,6 @@ def opposing_liquidity(pools: Sequence[Pool], direction: str, entry: float, stop
     s = sign(direction)
     return [asdict(p) for p in pools if p.side == ('low' if s == 1 else 'high')
             and min(entry, stop) < p.price < max(entry, stop)]
-
-
-def poi_entry_policy(zone: Zone, reaction: Raid) -> tuple[float, float, str, str]:
-    """Registered type-specific choices; no outcomes are inputs."""
-    s = sign(zone.direction)
-    edge = zone.high if s == 1 else zone.low
-    extreme = zone.low if s == 1 else zone.high
-    if zone.kind == 'ORDER_BLOCK':
-        return edge, extreme, 'OB_PROXIMAL_WICK_BOUNDARY', 'OB_FULL_WICK_EXTREME'
-    if zone.kind == 'BREAKER':
-        stop = min(extreme, zone.stop_extreme or extreme, reaction.extreme) if s == 1 else max(extreme, zone.stop_extreme or extreme, reaction.extreme)
-        return edge, stop, 'BREAKER_PROXIMAL_BOUNDARY', 'CONSERVATIVE_BREAKING_SWEEP_EXTREME'
-    if zone.kind in ('STB', 'BTS', 'MANIPULATION'):
-        stop = min(extreme, zone.raid.extreme if zone.raid else extreme) if s == 1 else max(extreme, zone.raid.extreme if zone.raid else extreme)
-        return (zone.low + zone.high) / 2, stop, 'ABSORBED_MANIPULATION_MIDPOINT', 'MANIPULATION_FULL_WICK_SWEEP'
-    if zone.kind in ('DEMAND', 'SUPPLY'):
-        return (zone.low + zone.high) / 2, extreme, 'DS_LAST_MOVE_MIDPOINT', 'DS_FULL_MOVE_EXTREME'
-    if zone.kind == 'FVG':
-        return (zone.low + zone.high) / 2, reaction.extreme, 'FVG_MIDPOINT_WITH_INDEPENDENT_CONTEXT', 'REACTION_RAID_EXTREME'
-    raise ValueError('no registered entry policy for POI type')
-
-
-def liquidity_roles(h, l, context: Zone, direction: str, entry: float, now: datetime) -> list[dict]:
-    """Whole structural context and equal pools, independent of selected SL."""
-    s = sign(direction)
-    low, high = context.leg_low, context.leg_high
-    if h.flow is not None:
-        low = min(low, h.flow['structure']['protected'], h.flow['structure']['extreme'])
-        high = max(high, h.flow['structure']['protected'], h.flow['structure']['extreme'])
-    result = []
-    for series in (h, l):
-        for p in series.pools.values():
-            if p.known_at > now:
-                continue
-            adverse_side = p.side == ('low' if s == 1 else 'high') and s * (entry - p.price) > 0
-            against = adverse_side and (low <= p.price <= high or p.origin in ('EQH', 'EQL'))
-            destination = p.side == ('high' if s == 1 else 'low') and s * (p.price - entry) > 0
-            result.append({**asdict(p), 'timeframe': series.tf,
-                           'role': 'AGAINST_SETUP' if against else 'DESTINATION_OR_FUEL' if destination else 'UNRELATED_WITHOUT_CONTEXT',
-                           'context_low': low, 'context_high': high})
-    return result
 
 
 class SourceSeries:
@@ -213,12 +166,6 @@ class SourceSeries:
         self.pending: list[Zone] = []
         self.last_opposite: dict[str, int] = {}
         self.counts: Counter = Counter()
-        self.range_pending: list[Zone] = []
-        self.range_audit: list[dict] = []
-        self.swing_history: dict[str, list[dict]] = {'high': [], 'low': []}
-        self.flow: dict | None = None
-        self.flow_history: list[dict] = []
-        self.last_flow_conf: datetime | None = None
         self.day: object = None
         self.day_high = self.day_low = 0.0
         self.day_complete = False
@@ -241,145 +188,6 @@ class SourceSeries:
 
     def raids_after(self, start: datetime) -> list[Raid]:
         return self.raids[bisect_left(self.raids, start, key=lambda r: r.known_at):]
-
-    def _demand_supply(self, c: Candle) -> None:
-        # Independent last opposite move, with no FVG or failed-OB dependency.
-        for direction in ('LONG', 'SHORT'):
-            s = sign(direction)
-            if s * (c.close - c.open) <= 0:
-                continue
-            end = self.last_opposite.get(direction, -1)
-            if end < 0 or s * (self.candles[end].close - self.candles[end].open) >= 0:
-                continue
-            start = end
-            while start > 0 and s * (self.candles[start - 1].close - self.candles[start - 1].open) < 0:
-                start -= 1
-            move = self.candles[start:end + 1]
-            low, high = min(v.low for v in move), max(v.high for v in move)
-            if s * (c.close - (high if s == 1 else low)) <= 0:
-                continue
-            raids = [r for r in self.raids_after(move[0].open_time)
-                     if r.direction == direction and start <= r.candle_index <= end]
-            kind = 'DEMAND' if s == 1 else 'SUPPLY'
-            if not raids or (kind, start) in self.origins:
-                continue
-            self.origins.add((kind, start))
-            zone = self._zone(kind, direction, low, high, c.close_time, start, raids[-1])
-            zone.move_end_index = end
-            self.pending.append(zone)
-
-    def _range_contexts(self, c: Candle, touched: list[Zone]) -> None:
-        now, index = c.close_time, self.index
-        for z in list(self.range_pending):
-            assert z.raid is not None
-            if sign(z.direction) * (c.close - z.raid.extreme) <= 0:
-                self.range_pending.remove(z)
-                self.counts['range_invalidated_before_retest'] += 1
-                continue
-            inside = z.low < c.close < z.high
-            if z.range_reclaim_at is None:
-                if now > z.formed_at and inside:
-                    z.range_reclaim_at = now
-            elif now > z.range_reclaim_at and inside and (c.low <= z.low if z.direction == 'LONG' else c.high >= z.high):
-                z.range_retest_at = z.known_at = now
-                z.first_test = z.last_test = now
-                z.test_count = 1
-                self.zones.append(z)
-                self.zone_registry[z.zone_id] = z
-                touched.append(z)
-                self.range_pending.remove(z)
-                self.counts['zone_RANGE_POI'] += 1
-        for e in self.range_events.get(index, ()):
-            if e.kind not in (K.BULLISH_SFP_FORMATION_CONFIRMED, K.BEARISH_SFP_FORMATION_CONFIRMED) or e.range_id not in self.range_bounds:
-                continue
-            low, high, known, causal_id = self.range_bounds[e.range_id]
-            if known > now or e.event_time > now or e.sfp_pattern_extreme_price is None:
-                continue
-            direction = 'LONG' if e.kind == K.BULLISH_SFP_FORMATION_CONFIRMED else 'SHORT'
-            deviation = self.candles[max(0, index - 1)]
-            relevant = [z for z in self.zone_registry.values() if z.kind not in ('FVG', 'RANGE_POI')
-                        and z.direction == direction and z.known_at <= deviation.open_time
-                        and (z.first_test is None or z.first_test >= deviation.open_time)
-                        and z.invalidated_at is None
-                        and (z.high <= low if direction == 'LONG' else z.low >= high)
-                        and deviation.low <= z.high and deviation.high >= z.low]
-            external = max(relevant, key=lambda z: (z.high if direction == 'LONG' else -z.low, z.zone_id), default=None)
-            self.range_audit.append({'known_at': now, 'range_id': causal_id, 'low': low, 'high': high,
-                                     'direction': direction, 'deviation_open': deviation.open_time,
-                                     'external_poi': asdict(external) if external else None})
-            if external is None:
-                self.counts['range_sfp_without_required_external_poi'] += 1
-                continue
-            raid = Raid(direction, now, e.level_price, e.sfp_pattern_extreme_price,
-                        max(0, index - 1), (f'RANGE:{causal_id}',), True)
-            z = self._zone('RANGE_POI', direction, low, high, now, index - 1, raid)
-            z.leg_low, z.leg_high, z.range_id = low, high, causal_id
-            z.external_poi = asdict(external)
-            z.structural_proof = {'kind': 'EXTERNAL_POI_DEVIATION_RECLAIM_BOUNDARY_RETEST', 'known_at': known}
-            self.range_pending.append(z)
-
-    def _update_flow(self, c: Candle, proofs: list[dict]) -> None:
-        now = c.close_time
-        if self.flow is not None and self.flow.get('invalidated_at') is None:
-            f = self.flow
-            destination = self.zone_registry.get(f['destination_poi']['zone_id'])
-            reason = None
-            if destination is None or destination.invalidated_at is not None or destination.first_test is not None:
-                reason = 'GLOBAL_DESTINATION_TESTED_OR_INVALIDATED'
-            elif self.trend != (TrendState.BULLISH if f['direction'] == 'LONG' else TrendState.BEARISH):
-                reason = 'PROTECTED_STRUCTURE_BROKEN_OR_DIRECTION_CHANGED'
-            elif sign(f['direction']) * (c.close - f['liquidity_work']['extreme']) <= 0:
-                reason = 'FLOW_KEY_RAID_BODY_VIOLATION'
-            if reason:
-                f['invalidated_at'], f['invalidation_reason'] = now, reason
-                self.counts['flow_invalidations'] += 1
-        for proof in proofs:
-            if proof['kind'] not in (K.BULLISH_CONF_CONFIRMED.value, K.BEARISH_CONF_CONFIRMED.value):
-                continue
-            if self.last_flow_conf is not None and now <= self.last_flow_conf:
-                continue
-            self.last_flow_conf = now
-            direction, s = proof['direction'], sign(proof['direction'])
-            highs, lows = self.swing_history['high'], self.swing_history['low']
-            if len(highs) < 2 or len(lows) < 2 or self.structure is None:
-                continue
-            if s * (highs[-1]['price'] - highs[-2]['price']) <= 0 or s * (lows[-1]['price'] - lows[-2]['price']) <= 0:
-                continue
-            cause = None
-            broken_key = None
-            broken_at = None
-            for r in reversed(self.raids):
-                if r.direction != direction or not any(k.startswith('SWING:') for k in r.liquidity_ids):
-                    continue
-                rc = self.candles[r.candle_index]
-                if s * (rc.close - r.price) <= 0:
-                    continue
-                opposite_keys = highs if s == 1 else lows
-                key = next((v for v in reversed(opposite_keys) if v['known_at'] < r.known_at), None)
-                if key is None:
-                    continue
-                body_break = next((v for v in self.candles[r.candle_index + 1:self.index + 1]
-                                   if s * (v.close - key['price']) > 0), None)
-                if body_break is not None:
-                    cause, broken_key, broken_at = r, key, body_break.close_time
-                    break
-            if cause is None:
-                continue
-            assert broken_key is not None
-            destination = self.target(direction, c.close, now, global_only=True)
-            if destination is None:
-                continue
-            f = {'flow_id': identity(self.symbol, self.tf, direction, now, destination.zone_id),
-                 'direction': direction, 'known_at': now, 'structure': dict(self.structure),
-                 'sequence': {'highs': highs[-2:], 'lows': lows[-2:]},
-                 'key_test': {'price': cause.price, 'known_at': cause.known_at, 'reclaimed': True},
-                 'liquidity_work': asdict(cause), 'broken_key': dict(broken_key),
-                 'body_break_at': broken_at, 'conf': dict(proof),
-                 'destination_poi': asdict(destination), 'invalidated_at': None}
-            # A new CONF may update flow; each previous generation stays auditable.
-            self.flow = f
-            self.flow_history.append(f)
-            self.counts['active_flow_generations'] += 1
 
     def _day_pools(self, c: Candle) -> None:
         day = c.open_time.date()
@@ -428,9 +236,6 @@ class SourceSeries:
         for z in self.pending:
             if (z.direction == 'LONG' and c.close < z.low) or (z.direction == 'SHORT' and c.close > z.high):
                 z.invalidated_at = now
-            if z.kind in ('DEMAND', 'SUPPLY') and z.formed_at < now and c.low <= z.high and c.high >= z.low:
-                # A return while waiting for structural confirmation already tests D/S.
-                z.invalidated_at = now
         removed: dict[str, list[Pool]] = defaultdict(list)
         for key, p in list(self.pools.items()):
             if p.known_at < now and (c.high > p.price if p.side == 'high' else c.low < p.price):
@@ -453,7 +258,6 @@ class SourceSeries:
             self.counts[e.kind.value] += 1
             if e.kind in (K.SWING_HIGH_CONFIRMED, K.SWING_LOW_CONFIRMED):
                 side = 'high' if e.kind == K.SWING_HIGH_CONFIRMED else 'low'
-                self.swing_history[side].append({'side': side, 'price': e.price, 'known_at': now, 'level_id': e.level_id})
                 equal = any(p.side == side and p.price == e.price for p in self.pools.values())
                 key = f'SWING:{e.level_id}'
                 location = 'EXTERNAL' if self.structure is None or not min(self.structure['protected'], self.structure['extreme']) < e.price < max(self.structure['protected'], self.structure['extreme']) else 'INTERNAL'
@@ -502,9 +306,14 @@ class SourceSeries:
                         # A later raid can qualify the broader forming D/S move,
                         # but must not silently manufacture an OB candle.
                         candle_raid = next((r for r in reversed(raids) if r.candle_index == origin), None)
-                        if engulf and dominance and candle_raid is not None and ('ORDER_BLOCK', origin) not in self.origins:
-                            candidate = self._zone('ORDER_BLOCK', gap_direction, ob.low, ob.high, now, origin, candle_raid)
-                            self.origins.add(('ORDER_BLOCK', origin))
+                        kind = 'ORDER_BLOCK' if engulf and dominance and candle_raid is not None else 'DEMAND' if gap_direction == 'LONG' else 'SUPPLY'
+                        if kind == 'ORDER_BLOCK':
+                            assert candle_raid is not None
+                            raid = candle_raid
+                        aliases = ('DEMAND' if gap_direction == 'LONG' else 'SUPPLY',) if kind == 'ORDER_BLOCK' else ()
+                        candidate = self._zone(kind, gap_direction, ob.low, ob.high, now, origin, raid, aliases=aliases)
+                        if (kind, origin) not in self.origins:
+                            self.origins.add((kind, origin))
                             self.pending.append(candidate)
                 for _, old in self.broken_obs:
                     if old.direction != gap_direction:
@@ -514,7 +323,6 @@ class SourceSeries:
                             breaker = self._zone('BREAKER', direction, old.low, old.high, now, old.origin_index, recent[-1])
                             breaker.stop_extreme = min(c.low, recent[-1].extreme) if direction == 'LONG' else max(c.high, recent[-1].extreme)
                             self.pending.append(breaker)
-        self._demand_supply(c)
         # Absorption uses a completed close beyond the whole manipulation candle.
         for direction in ('LONG', 'SHORT'):
             latest_raid = self.latest_raid.get(direction)
@@ -538,8 +346,24 @@ class SourceSeries:
             if pending_proof is not None:
                 self._qualify(z, pending_proof)
                 self.pending.remove(z)
-        self._range_contexts(c, touched)
-        self._update_flow(c, proofs)
+        for e in self.range_events.get(index, ()):
+            if e.kind not in (K.BULLISH_SFP_FORMATION_CONFIRMED, K.BEARISH_SFP_FORMATION_CONFIRMED) or e.range_id not in self.range_bounds:
+                continue
+            low, high, known, causal_id = self.range_bounds[e.range_id]
+            if known > now or e.event_time > now or e.sfp_pattern_extreme_price is None:
+                continue
+            direction = 'LONG' if e.kind == K.BULLISH_SFP_FORMATION_CONFIRMED else 'SHORT'
+            raid = Raid(direction, now, e.level_price, e.sfp_pattern_extreme_price, max(0, index - 1), (f'RANGE:{causal_id}',), True)
+            z = self._zone('RANGE_POI', direction, low, high, now, index - 1, raid)
+            z.leg_low, z.leg_high = low, high
+            z.range_id = causal_id
+            z.first_test = z.last_test = now
+            z.test_count = 1
+            z.structural_proof = {'kind': 'IMPULSE_BOUNDARIES_MIDPOINT_DEVIATION_RECLAIM', 'known_at': known}
+            self.zones.append(z)
+            self.zone_registry[z.zone_id] = z
+            touched.append(z)
+            self.counts['zone_RANGE_POI'] += 1
         if c.close < c.open:
             self.last_opposite['LONG'] = index
         if c.close > c.open:
@@ -550,11 +374,10 @@ class SourceSeries:
                       and (z.first_test is None or z.kind in ('ORDER_BLOCK', 'RANGE_POI'))]
         return touched, applied
 
-    def target(self, direction: str, entry: float, now: datetime, *, global_only=False) -> Zone | None:
+    def target(self, direction: str, entry: float, now: datetime) -> Zone | None:
         s = sign(direction)
         opposite = 'SHORT' if s == 1 else 'LONG'
         eligible = [z for z in self.zones if z.direction == opposite and z.kind != 'RANGE_POI'
-                    and (not global_only or z.kind != 'FVG')
                     and z.fresh(now) and s * ((z.low if s == 1 else z.high) - entry) > 0]
         return min(eligible, key=lambda z: (s * (z.low if s == 1 else z.high), z.zone_id), default=None)
 
@@ -572,12 +395,39 @@ class Setup:
     reason: str = 'WAIT_LTF_RAID_BOS_NEW_STRUCTURE_CONF'
 
 
+@dataclass(frozen=True)
+class SourceSignal:
+    signal_id: str
+    setup_id: str
+    symbol: str
+    known_at: datetime
+    direction: str
+    htf: int
+    ltf: int
+    setup_type: str
+    poi_type: str
+    entry: float
+    stop: float
+    targets: tuple[float, ...]
+    fractions: tuple[float, ...]
+    evidence: dict
+    trade_entry_allowed: bool = False
+
+    def __post_init__(self) -> None:
+        s = sign(self.direction)
+        if self.trade_entry_allowed is not False:
+            raise ValueError('live admission is forbidden')
+        if not self.targets or len(self.targets) != len(self.fractions) or abs(sum(self.fractions) - 1) > 1e-10:
+            raise ValueError('invalid source exits')
+        if s * (self.entry - self.stop) <= 0 or any(s * (t - self.entry) <= 0 for t in self.targets):
+            raise ValueError('invalid entry/SL/target geometry')
+        if any(v <= 0 for v in self.fractions):
+            raise ValueError('invalid partial fraction')
 
 
 class SourceEngine:
-    def __init__(self, symbol: str, series: dict[int, SourceSeries], *, mappings=MAPPINGS):
+    def __init__(self, symbol: str, series: dict[int, SourceSeries]):
         self.symbol, self.series = symbol, series
-        self.mappings = mappings
         self.setups: list[Setup] = []
         self.active_setups: list[Setup] = []
         self.funnel: Counter = Counter()
@@ -607,17 +457,6 @@ class SourceEngine:
                                  if s.htf == tf and s.invalidated_at is None}
         touched, events = series.advance(index)
         now = series.candles[index].close_time
-        observed = series.candles[index]
-        # A known global zone's first test can be observed on a smaller native
-        # candle; waiting for the larger bar would incorrectly keep flow alive.
-        for owner in self.series.values():
-            flow = owner.flow
-            if flow is None or flow.get('invalidated_at') is not None or tf > owner.tf or flow['known_at'] > observed.open_time:
-                continue
-            destination = flow['destination_poi']
-            if observed.low <= destination['high'] and observed.high >= destination['low']:
-                flow['invalidated_at'], flow['invalidation_reason'] = now, 'GLOBAL_DESTINATION_TESTED_NATIVE_LOWER_TF'
-                owner.counts['flow_invalidations'] += 1
         # A raid candle can be OB, D/S and STB/BTS simultaneously. One physical
         # first interaction produces one context, with semantic aliases retained.
         priority = {'ORDER_BLOCK': 0, 'BREAKER': 1, 'DEMAND': 2, 'SUPPLY': 2,
@@ -636,11 +475,11 @@ class SourceEngine:
             if z.invalidated_at is not None or z.raid is None:
                 continue
             self.funnel['source_contexts'] += 1
-            for htf, ltf in self.mappings:
+            for htf, ltf in MAPPINGS:
                 if htf != tf:
                     continue
                 setup_id = identity(self.symbol, htf, ltf, z.zone_id, now)
-                setup = Setup(setup_id, htf, ltf, z, z.formed_at if z.kind == 'RANGE_POI' else now)
+                setup = Setup(setup_id, htf, ltf, z, now)
                 self.setups.append(setup)
                 self.active_setups.append(setup)
                 self._stage(setup, 'setups')
@@ -672,9 +511,6 @@ class SourceEngine:
                 self._cancel(setup, now, 'HTF_FLOW_DIRECTION_CHANGED')
                 continue
             if setup.ready_id is not None:
-                if h.flow is None or h.flow.get('invalidated_at') is not None or h.flow['direction'] != z.direction:
-                    self._cancel(setup, now, 'GLOBAL_ORDER_FLOW_INACTIVE')
-                    continue
                 if tf == setup.ltf and series.trend != expected:
                     self._cancel(setup, now, 'CONFIRMED_LTF_STRUCTURE_BROKEN')
                     continue
@@ -716,16 +552,14 @@ class SourceEngine:
             return
         self._stage(setup, 'qualified_structure')
         local_zones = [p for p in l.zones if p.kind != 'RANGE_POI' and p.direction == direction and p.fresh(now)
-                       and raid.known_at <= p.formed_at <= p.known_at <= now and p.structural_proof is not None
-                       and p.structural_proof.get('direction') == direction
-                       and bos['known_at'] <= p.structural_proof['known_at'] <= p.known_at]
+                       and raid.known_at <= p.formed_at <= p.known_at <= now and p.structural_proof is not None]
         if not local_zones:
             setup.reason = 'WAIT_NEW_FRESH_LTF_POI'
             return
         local = max(local_zones, key=lambda p: (p.known_at, p.kind != 'FVG', p.zone_id))
-        entry, stop, entry_policy, stop_policy = poi_entry_policy(local, raid)
-        roles = liquidity_roles(h, l, z, direction, entry, now)
-        adverse = [p for p in roles if p['role'] == 'AGAINST_SETUP']
+        entry = local.high if s == 1 else local.low
+        stop = min(local.low, raid.extreme, local.stop_extreme or local.low) if s == 1 else max(local.high, raid.extreme, local.stop_extreme or local.high)
+        adverse = opposing_liquidity(list(l.pools.values()) + list(h.pools.values()), direction, entry, stop)
         if adverse:
             setup.reason = 'WAIT_MEANINGFUL_LIQUIDITY_AGAINST_SETUP'
             return
@@ -736,7 +570,7 @@ class SourceEngine:
             setup.reason = 'WAIT_FIRST_OPPOSING_POI_FTA'
             return
         destination = min(destinations, key=lambda p: (s * (p.low if s == 1 else p.high), p.zone_id))
-        if h.flow is None or h.flow['direction'] != direction or h.flow.get('invalidated_at') is not None:
+        if z.kind != 'RANGE_POI' and (h.trend != expected or h.structure is None):
             setup.reason = 'WAIT_ACTIVE_HTF_ORDER_FLOW'
             return
         self._stage(setup, 'order_flow_passed')
@@ -770,13 +604,14 @@ class SourceEngine:
         proof = {'htf_poi': asdict(z), 'ltf_poi': asdict(local), 'liquidity_sweep': asdict(raid),
                  'bos': dict(bos), 'new_structure': dict(structure), 'conf': dict(conf),
                  'meaningful_liquidity_against': adverse, 'fta': asdict(destination),
-                 'order_flow': json.loads(evidence_json(h.flow)),
-                 'liquidity_roles': roles, 'entry_policy': entry_policy,
+                 'order_flow': {'direction': direction, 'structure': dict(h.structure or structure),
+                                'raid': asdict(z.raid), 'destination_poi_id': destination.zone_id,
+                                'known_at': now, 'invalid_on': ['STRUCTURE_BREAK', 'RAID_BODY_VIOLATION', 'DESTINATION_TEST']},
                  'premium_discount': {'low': z.leg_low, 'high': z.leg_high, 'retracement': retracement,
                                       'ote_confluence': ote}, 'exit_policy': exit_kind,
                  'classification': 'SOURCE_RULES_WITH_DECLARED_INTERPRETATIONS',
                  'ltf_scope': 'SECONDARY_CONSERVATIVE_1_TO_15' if setup.ltf <= 15 else 'ANY_TF_INTERPRETATION',
-                 'stop_policy': stop_policy}
+                 'stop_policy': 'BEHIND_LOCAL_POI_AND_REACTION_RAID_NO_AUTOMATIC_BE'}
         signal_id = identity(setup.setup_id, local.zone_id, now)
         signal = SourceSignal(signal_id, setup.setup_id, self.symbol, now, direction, setup.htf, setup.ltf,
                               'RANGE_DEVIATION' if z.kind == 'RANGE_POI' else 'HTF_POI_LTF_RAID_BOS_CONF',

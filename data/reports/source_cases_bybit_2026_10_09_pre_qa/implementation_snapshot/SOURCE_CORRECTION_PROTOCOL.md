@@ -75,8 +75,6 @@ The source registry records that limitation; absent evidence never becomes true.
   trades. Exact equality is a declared subset; near-equal tolerance is unknown.
 * Retain protected-level body BOS, distinct new structure and subsequent CONF.
   Required LTF reaction chain and all POI/flow evidence are causal at READY.
-  A NEW local POI's own structural proof must match direction and be known no
-  earlier than the current BOS. Freshness cannot substitute for that proof.
 * Non-Range exits full first opposing qualified FTA; Range80% inside opposite
   boundary and optional20% pre-entry external FTA, otherwise remainder inside.
   Original SL throughout, no TP1 automatic BE in this separate research policy.

@@ -7,7 +7,6 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter, defaultdict
-from concurrent.futures import ProcessPoolExecutor
 from dataclasses import asdict
 from datetime import datetime
 import gzip
@@ -447,8 +446,6 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--resume-existing', action='store_true')
-    parser.add_argument('--workers', type=int, default=1, choices=range(1, 5),
-                        help='independent symbol processes; output semantics unchanged')
     args = parser.parse_args()
     output = args.output.resolve()
     if output.exists() and not args.resume_existing:
@@ -492,17 +489,9 @@ def main():
     output.mkdir(parents=True, exist_ok=True)
     write_json(request_path, request)
     losses = old_losses()
-    jobs = [(symbol, output / 'segments' / symbol,
-             {str(tf): inputs[f'data/history/bybit/{symbol}/{tf}.csv'] for tf in (5, 15, 60, 240)},
-             code_hash, policy, losses) for symbol in policy['symbol_priority']]
-    if args.workers == 1:
-        for job in jobs:
-            detect_symbol(*job)
-    else:
-        with ProcessPoolExecutor(max_workers=args.workers) as pool:
-            futures = [pool.submit(detect_symbol, *job) for job in jobs]
-            for future in futures:
-                future.result()
+    for symbol in policy['symbol_priority']:
+        symbol_inputs = {str(tf): inputs[f'data/history/bybit/{symbol}/{tf}.csv'] for tf in (5, 15, 60, 240)}
+        detect_symbol(symbol, output / 'segments' / symbol, symbol_inputs, code_hash, policy, losses)
     case_summary = execute_cases(output, policy)
     summary = execute(output, policy)
     write_json(output / 'case_summary.json', case_summary)
