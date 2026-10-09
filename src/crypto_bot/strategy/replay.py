@@ -20,7 +20,7 @@ from crypto_bot.strategy.range_engine import RangeAnalysisReport, augment_market
 from crypto_bot.strategy.trade_plan import PriceZone, rr_ratio
 
 
-STRATEGY_VERSION = "0.4.21-causal-limit.3"
+STRATEGY_VERSION = "0.4.22-source-gate.1"
 
 
 class EngineMode(str, Enum):
@@ -161,7 +161,13 @@ def signals_from_opportunities(opportunities, by_id, htf_report, ltf_report,
                                htf_candles, ltf_candles, *, symbol, as_of, htf_minutes,
                                ltf_minutes, mode, qualified_levels=None, auto_level_policy=None,
                                automatic_results=None):
-    """Shared signal construction; availability gates also apply to indexed replay."""
+    """Shared signal construction; availability gates also apply to indexed replay.
+
+    Experimental automatic levels are research evidence only. Even when their
+    detector reaches READY, they are not source-certified POI/liquidity/Order-Flow
+    qualification and therefore cannot promote a setup to canonical virtual entry.
+    Only explicitly source-qualified levels can do that.
+    """
     signals = []
     for opp in sorted(opportunities, key=lambda o: (o.ltf_bos_event_time, o.expected_direction.value, o.ltf_bos_level_price)):
         key = opportunity_key(symbol, htf_minutes, ltf_minutes, opp)
@@ -171,7 +177,7 @@ def signals_from_opportunities(opportunities, by_id, htf_report, ltf_report,
         score, zone, entry, stop, targets, levels_time = 65, None, None, None, (), None
         rr_minimum = rr_maximum = rr_optimal = None
         entry_policy = "MIDPOINT_OF_OTE_BACKTEST_PARAMETER"
-        level_policy = ("AUTO_NORMALIZED_EVIDENCE_PENDING_SOURCE_REVIEW" if auto_level_policy is not None
+        level_policy = ("AUTO_RESEARCH_PROXY_PENDING_SOURCE_QUALIFICATION" if auto_level_policy is not None
                         else "EXPLICIT_QUALIFIED_LEVELS_ONLY")
         level_evidence, blocking_reasons = (), ()
         status = "WAITING_FOR_ENTRY_GEOMETRY"
@@ -194,13 +200,15 @@ def signals_from_opportunities(opportunities, by_id, htf_report, ltf_report,
                 level_evidence, blocking_reasons = automatic.evidence, automatic.blocked_reasons
                 reasons.append(level_policy)
                 if automatic.status == "READY":
-                    levels = QualifiedLevels(automatic.known_at, automatic.stop_loss, automatic.targets,
-                                             automatic.stop_policy, automatic.target_policy)
-                    if automatic.entry_reference is not None:
-                        if automatic.execution_zone is None:
-                            raise ValueError("automatic entry requires its OB/OTE execution zone")
-                        zone, entry = automatic.execution_zone, automatic.entry_reference
-                        entry_policy = automatic.entry_policy
+                    # Fail closed: the current auto detector uses declared research
+                    # proxies (gap-only HTF POI, numeric aggression and three proxy
+                    # targets). The supplied methodology additionally requires
+                    # source-valid POI classification and contextual liquidity /
+                    # Order-Flow qualification. Preserve evidence for research, but
+                    # do not convert it into QualifiedLevels or canonical READY.
+                    status = "WAITING_FOR_SOURCE_LEVELS"
+                    blocking_reasons = ("AUTO_RESEARCH_PROXY_NOT_SOURCE_QUALIFIED",)
+                    reasons.append("AUTO_RESEARCH_PROXY_READY_NOT_SOURCE_QUALIFIED")
                 else:
                     status = "WAITING_FOR_AUTO_LEVELS"
                     reasons.extend(blocking_reasons)
