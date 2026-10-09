@@ -1,8 +1,9 @@
-"""Full automatic OHLC integration, without asserted reports, levels or signals.
+"""Full automatic OHLC integration for the research proxy detector.
 
 The fixture is deliberately constructed test market data, not Bybit observations
 or profitability evidence. Every closed HTF candle equals its twelve LTF bars.
-The unchanged experimental OB/POI policy must pass all its original gates.
+The experimental OB/POI policy may complete its own proxy gates, but it must not
+be promoted to canonical source-qualified READY or a virtual position.
 """
 from dataclasses import replace
 from datetime import datetime
@@ -53,7 +54,8 @@ class AutomaticLifecycleTests(unittest.TestCase):
             cli.main([*common,'--mode','SHADOW','--stop-after-bars','188'])
             previous=(root/'state.json').read_bytes()
             restored=VirtualPortfolio.load_checkpoint(root/'state.json')
-            self.assertEqual(restored.positions['E2E'].tp_stage,1)
+            self.assertEqual(restored.positions,{})
+            self.assertEqual(restored.trades,{})
             self.assertFalse(json.loads((root/'report/summary.json').read_text())['run_complete'])
             with self.assertRaisesRegex(ValueError,'parameters changed'):
                 cli.main([*common,'--resume','--mode','BACKTEST'])
@@ -66,7 +68,7 @@ class AutomaticLifecycleTests(unittest.TestCase):
                 cli.main([*common,'--resume','--mode','SHADOW'])
             self.assertEqual((root/'state.json').read_bytes(),previous)
 
-    def test_backtest_shadow_long_short_full_automatic_lifecycle_and_restart(self):
+    def test_backtest_shadow_long_short_proxy_is_auditable_but_never_admitted(self):
         results=[]
         for direction in Direction:
             data=histories(direction)
@@ -77,30 +79,29 @@ class AutomaticLifecycleTests(unittest.TestCase):
             for mode in ('BACKTEST','SHADOW'):
                 updates,_=indexed_signal_updates(data,symbol='E2E',mode=mode,
                                                 auto_level_policy=AutoLevelPolicy())
-                ready=[s for s in updates if s.status=='READY_FOR_VIRTUAL_ENTRY']
-                self.assertEqual(len(ready),1)
-                self.assertEqual(ready[0].direction,direction)
-                self.assertEqual(ready[0].score,100)
-                self.assertGreater(ready[0].rr_minimum,0)
-                self.assertLessEqual(ready[0].rr_minimum,ready[0].rr_at_optimal_entry)
-                self.assertLessEqual(ready[0].rr_at_optimal_entry,ready[0].rr_maximum)
+                canonical=[s for s in updates if s.status=='READY_FOR_VIRTUAL_ENTRY']
+                research=[s for s in updates
+                          if 'AUTO_RESEARCH_PROXY_READY_NOT_SOURCE_QUALIFIED' in s.reasons]
+                self.assertEqual(canonical,[])
+                self.assertEqual(len(research),1)
+                self.assertEqual(research[0].direction,direction)
+                self.assertEqual(research[0].score,85)
+                self.assertEqual(research[0].level_blocking_reasons,
+                                 ('AUTO_RESEARCH_PROXY_NOT_SOURCE_QUALIFIED',))
+                self.assertIsNone(research[0].stop_loss)
+                self.assertEqual(research[0].targets,())
+                self.assertFalse(research[0].trade_entry_allowed)
                 p,observed=cli.simulate({'E2E':data[5]},updates,mode=mode)
-                self.assertEqual(len(p.trades),1)
-                trade=next(iter(p.trades.values()))
-                self.assertEqual(trade['status'],'CLOSED')
-                exits=[d for d in p.journal if d.action=='VIRTUAL_EXIT']
-                self.assertEqual([d.reason for d in exits],['TP1','TP2','TP3'])
-                for d,fraction in zip(exits,(.4,.3,.3)):
-                    self.assertAlmostEqual(d.quantity/trade['quantity'],fraction)
-                self.assertAlmostEqual(p.realized_pnl,trade['net_pnl'])
-                self.assertGreater(p.realized_pnl,0)
-                self.assertFalse(p.positions)
-                self.assertTrue(all(not d.trade_entry_allowed for d in p.journal))
+                self.assertEqual(p.trades,{})
+                self.assertEqual(p.positions,{})
+                self.assertEqual(p.pending,{})
+                self.assertEqual(p.realized_pnl,0)
+                self.assertFalse(any(d.action=='VIRTUAL_ENTRY' for d in p.journal))
                 with tempfile.TemporaryDirectory() as temp:
                     path=Path(temp)/'state.json'
-                    # Pending -> entry -> TP1 -> TP2: every restart is identical.
                     for cut in (186,187,188,189):
-                        cli.simulate({'E2E':data[5]},updates,mode=mode,checkpoint_path=path,stop_after_bars=cut)
+                        cli.simulate({'E2E':data[5]},updates,mode=mode,
+                                     checkpoint_path=path,stop_after_bars=cut)
                         restored=VirtualPortfolio.load_checkpoint(path)
                         q,signals=cli.simulate({'E2E':data[5]},updates,mode=mode,portfolio=restored)
                         self.assertEqual(q.snapshot(),p.snapshot())
@@ -109,7 +110,7 @@ class AutomaticLifecycleTests(unittest.TestCase):
         for i in (0,2):
             self.assertEqual(results[i][2:],results[i+1][2:])
 
-    def test_every_prefix_and_future_mutation_preserves_automatic_ready(self):
+    def test_every_prefix_and_future_mutation_preserves_research_proxy_state(self):
         data=histories()
         indexed,_=indexed_signal_updates(data,symbol='E2E',auto_level_policy=AutoLevelPolicy())
         states,expected={},[]
@@ -121,16 +122,19 @@ class AutomaticLifecycleTests(unittest.TestCase):
                 if states.get(signal.signal_id)!=signature:
                     expected.append(signal);states[signal.signal_id]=signature
         self.assertEqual(indexed,tuple(expected))
-        ready=next(s for s in indexed if s.status=='READY_FOR_VIRTUAL_ENTRY')
-        cutoff=ready.event_time
+        research=next(s for s in indexed
+                      if 'AUTO_RESEARCH_PROXY_READY_NOT_SOURCE_QUALIFIED' in s.reasons)
+        self.assertEqual(research.status,'WAITING_FOR_SOURCE_LEVELS')
+        cutoff=research.event_time
         altered={tf:[replace(c,open=c.open*2,high=c.high*2,low=c.low*2,close=c.close*2)
                      if c.close_time>cutoff else c for c in cs] for tf,cs in data.items()}
         mutated,_=indexed_signal_updates(altered,symbol='E2E',auto_level_policy=AutoLevelPolicy())
         self.assertEqual([s for s in indexed if s.event_time<=cutoff],
                          [s for s in mutated if s.event_time<=cutoff])
-        self.assertEqual(ready.level_blocking_reasons,())
+        self.assertEqual(research.level_blocking_reasons,
+                         ('AUTO_RESEARCH_PROXY_NOT_SOURCE_QUALIFIED',))
 
-    def test_cli_keeps_causal_ltf_tail_after_last_closed_htf(self):
+    def test_cli_keeps_causal_ltf_tail_and_reports_zero_canonical_entries(self):
         data=histories()
         with tempfile.TemporaryDirectory() as temp:
             root=Path(temp)
@@ -142,14 +146,15 @@ class AutomaticLifecycleTests(unittest.TestCase):
                       '--symbols','E2E','--days','max','--warmup-bars','0'])
             summary=json.loads((root/'report/summary.json').read_text())
             self.assertEqual(summary['execution_end'],data[5][-1].close_time.isoformat())
-            self.assertEqual(summary['funnel']['entries'],1)
-            self.assertEqual(summary['funnel']['completed_trades'],1)
-            # The snapshot CLI has the same causal tail and admission behavior.
+            self.assertEqual(summary['funnel']['entries'],0)
+            self.assertEqual(summary['funnel']['completed_trades'],0)
+            self.assertEqual(summary['portfolio']['final_equity'],summary['initial_capital'])
+            # Snapshot CLI has the same causal tail and fail-closed admission behavior.
             result=subprocess.run([sys.executable,'scripts/run_strategy_replay.py',
                 '--data-root',str(root/'history'),'--report-root',str(root/'snapshot'),
                 '--symbols','E2E','--bars','190','--warmup-bars','0','--auto-levels'],
                 env={**os.environ,'PYTHONPATH':'src'},capture_output=True,text=True)
             self.assertEqual(result.returncode,0,result.stderr)
             snapshot=json.loads((root/'snapshot/summary.json').read_text())
-            self.assertEqual(snapshot['virtual_entry_count'],1)
+            self.assertEqual(snapshot['virtual_entry_count'],0)
             self.assertAlmostEqual(snapshot['final_equity'],summary['portfolio']['final_equity'])
