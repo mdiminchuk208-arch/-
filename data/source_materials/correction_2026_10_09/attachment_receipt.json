@@ -1,0 +1,51 @@
+{
+  "files": [
+    {
+      "name": "[SW.BAND]11. Риск-менеджмент.lnk",
+      "bytes": 2057,
+      "sha256": "72acc397a7364c951edd0163090ec3d0c07dc72b31a13ad11bc0e852d8f918ce",
+      "format": "WINDOWS_SHELL_LINK",
+      "archive_identical": true,
+      "contains_pdf": false,
+      "executed": false
+    },
+    {
+      "name": "[SW.BAND]22. Торговые инструменты (Pro).lnk",
+      "bytes": 2154,
+      "sha256": "cab883728ea342bee23fbb4fdc30e6a2310453bb5d9442a00d23a2079c149325",
+      "format": "WINDOWS_SHELL_LINK",
+      "archive_identical": true,
+      "contains_pdf": false,
+      "executed": false
+    },
+    {
+      "name": "[SW.BAND]5. Рыночная структура (Advanced).lnk",
+      "bytes": 2172,
+      "sha256": "449ad10fd53e55e003ddb8a1133a2a7ddb537fc8254926e56363e49b94b5d585",
+      "format": "WINDOWS_SHELL_LINK",
+      "archive_identical": true,
+      "contains_pdf": false,
+      "executed": false
+    },
+    {
+      "name": "[SW.BAND]12. Индикаторы.lnk",
+      "bytes": 2010,
+      "sha256": "ed42912276edec8a6d865dc7945ecc28291953676a96491dda7d91e9d8bce537",
+      "format": "WINDOWS_SHELL_LINK",
+      "archive_identical": true,
+      "contains_pdf": false,
+      "executed": false
+    },
+    {
+      "name": "SW_BAND9_Торговые_инструменты_Advanced.lnk",
+      "bytes": 2147,
+      "sha256": "025115aed138e007b312c5e4b863fc3b35ff42cb1c4cd59ab4b0b94379e0989c",
+      "format": "WINDOWS_SHELL_LINK",
+      "archive_identical": true,
+      "contains_pdf": false,
+      "executed": false
+    }
+  ],
+  "pdfs_supplied": 0,
+  "secondary_promoted_to_source_rule": false
+}

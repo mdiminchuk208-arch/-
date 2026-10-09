@@ -1,11 +1,3 @@
-# Correction of the fc61f35 intermediate policy
-
-The prior registry is retained verbatim at `data/reports/source_bybit_fc61f35_intermediate/source_reconstruction.md`. The new five attachments are identical Windows shortcuts, not PDF contents; no missing-module summary can be promoted to SOURCE_RULE. See `data/source_materials/correction_2026_10_09/attachment_receipt.json`.
-
-The revised deterministic choices are registered in `SOURCE_CORRECTION_PROTOCOL.md` before corrected outcomes. That protocol supersedes the old machine-policy/sample choices below: five strict mappings; independent unique trade cases primary; causal external Range POI/reclaim/retest; independent no-FVG D/S; typed entry/SL; evidence-based global Order Flow; liquidity roles beyond the SL band. Canonical frozen strategy and studies are unchanged.
-
-## Prior registry — superseded machine choices retained for audit
-
 # Supplied Cryptology archive: rules fixed before new outcomes
 
 Input main: `8b0156346ae523a6d3fd721d6ea343de47f44afa`. Archive SHA256:

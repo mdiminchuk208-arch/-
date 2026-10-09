@@ -1,0 +1,318 @@
+Продолжай от:
+
+`fc61f35d8bd31e94545036e08fa202fed2623f36`
+
+Текущий результат `2 WIN / 11 LOSS / MAX CLOSED 13` НЕ считать финальной оценкой стратегии.
+
+Причина: после независимой проверки обнаружено, что source replay всё ещё содержит существенные несоответствия оригинальной методологии.
+
+Я дополнительно передаю реальные оригинальные PDF:
+
+- `[SW.BAND]5. Рыночная структура (Advanced).pdf`
+- `SW_BAND9_Торговые_инструменты_Advanced.pdf`
+- `[SW.BAND]11. Риск-менеджмент.pdf`
+- `[SW.BAND]12. Индикаторы.pdf`
+- `[SW.BAND]22. Торговые инструменты (Pro).pdf`
+
+Они имеют приоритет над вторичными summaries.
+
+Не повторяй frozen research.
+
+## 1. Перечитай эти PDF полностью
+
+Обнови `SOURCE_RECONSTRUCTION_2026_10_09.md`.
+
+Все правила из этих PDF переведи из `SECONDARY_SOURCE` в настоящий `SOURCE_RULE`, где это подтверждается текстом.
+
+## 2. Убери 240/60 из STRICT CONSERVATIVE source sample
+
+SW9 для conservative HTF→LTF OB path прямо требует LTF примерно `1–15M`.
+
+Поэтому:
+
+`240/60`
+
+может остаться отдельным research/ANY_TF test, но НЕ должно входить в основной source-valid 50-trade sample.
+
+Основные mappings для conservative validation должны удовлетворять исходному LTF rule.
+
+## 3. Исправь RANGE
+
+Текущий Range detector недостаточен.
+
+SW10 требует:
+
+### Aggressive Range
+- valid Range;
+- deviation / external liquidity raid;
+- обязательный relevant POI под/над range;
+- только после этого возможен trade.
+
+### Conservative Range
+- внешний POI является магнитом;
+- до взаимодействия с ним внутри range не входить;
+- дождаться interaction/reaction;
+- возврата/закрепления внутри range;
+- boundary retest;
+- только потом entry.
+
+Нельзя создавать source-valid `RANGE_POI` только потому, что получен Range SFP.
+
+Для каждого из прежних 5 RANGE losses перепроверь наличие source-required external POI.
+
+Если его не было causal до entry:
+
+`FALSE_POSITIVE_IMPLEMENTATION`
+
+и сделка не должна входить в новый sample.
+
+## 4. Реализуй настоящий Order Flow из SW22
+
+Order Flow НЕ равен просто:
+
+`HTF trend == direction`.
+
+Нужно causal доказать:
+
+- HH/HL для bullish либо LL/LH для bearish;
+- последовательную работу с liquidity;
+- tests ключевых lows/highs;
+- breaks ключевых highs/lows;
+- destination/global POI;
+- Order Flow remains active only until destination POI is tested;
+- после теста глобального POI старый flow invalid/change.
+
+Canonical READY разрешать только в направлении реально active Order Flow.
+
+## 5. Исправь Demand/Supply detector
+
+Нельзя делать:
+
+`failed OB => Demand/Supply`.
+
+D/S — отдельный source detector.
+
+Demand:
+- последнее нисходящее движение;
+- может включать одну или несколько свечей;
+- формирующее движение должно raid old liquidity;
+- зона untested;
+- LONG;
+- Discount.
+
+Supply:
+- последнее восходящее движение;
+- одна или несколько свечей;
+- old liquidity raid;
+- untested;
+- SHORT;
+- Premium.
+
+Не требовать FVG как обязательное условие D/S, если source этого не требует.
+
+## 6. POI-specific entry model
+
+Убрать универсальный:
+
+`LONG => local.high`
+`SHORT => local.low`
+
+для всех POI типов.
+
+Отдельные entry policies:
+
+### ORDER_BLOCK
+SW9:
+- bullish OB: upper boundary или source-valid point inside OB;
+- bearish OB: lower boundary или source-valid point inside;
+- conservative HTF/LTF entry идёт по NEW LTF POI после reaction + BOS;
+- SL за OB extreme либо engulfing candle wick по выбранному source path.
+
+### BREAKER
+Использовать source-specific entry и отдельно:
+- aggressive SL under/over breaker;
+- conservative SL behind liquidity-sweeping impulse extreme.
+Для primary validation использовать заранее зарегистрированный conservative вариант, а не выбирать по PnL.
+
+### STB/BTS
+SW22:
+- LONG: upper part либо 0.5;
+- SHORT: lower part либо 0.5;
+- main trend agreement;
+- liquidity pool swept;
+- manipulation fully absorbed;
+- BOS or CONF.
+
+Заранее зарегистрировать один deterministic machine interpretation ДО просмотра новых результатов.
+
+### FVG/IMB
+Не считать standalone permission.
+Entry semantics формализовать отдельно по source.
+
+### Demand/Supply
+Использовать отдельную policy, а не OB policy.
+
+## 7. Перепроверь liquidity-against-setup
+
+Текущий detector смотрит в основном pools между entry и stop.
+
+Снова прочитай `Smart Money Trader 2` + SW6/SW22.
+
+Создай auditable rule:
+
+- какая liquidity является причиной движения;
+- какая liquidity является destination;
+- какая liquidity действительно находится ПРОТИВ setup;
+- какую liquidity нужно обязательно sweep до entry.
+
+Не ограничивать понятие unrelated геометрией только между entry и SL, если source этого не говорит.
+
+## 8. Структура/CONF
+
+Используй реальный SW5.
+
+BOS:
+body close/acceptance through protected structural level.
+
+CONF:
+отдельное обновление новой structure.
+
+Для conservative sample искать entry только после source-valid CONF, где source path этого требует.
+
+## 9. 50 сделок считать НЕ через one-position portfolio
+
+Это очень важно.
+
+Текущий config:
+
+`one_position=true`
+
+и `ONE_SEQUENTIAL_ACCOUNT_BUSY`
+
+искусственно уменьшили:
+
+`647 READY → 14 entries`.
+
+Для проверки самой стратегии создать новый режим:
+
+`SOURCE_TRADE_CASE_VALIDATION`
+
+В нём каждый source-valid setup рассматривается как отдельный trade case:
+
+- real chronological candles;
+- real source entry;
+- actual future fill;
+- actual source stop;
+- actual source exit;
+- no lookahead;
+- один setup нельзя дублировать aliases/mappings как одну и ту же физическую возможность;
+- trade outcome не зависит от того, что другой символ в этот момент занял общий virtual account.
+
+Собрать:
+
+**первые 50 уникальных source-valid FILLED + CLOSED trade cases хронологически.**
+
+Это PRIMARY strategy-quality sample.
+
+Отдельно после этого сохранить:
+
+`PORTFOLIO_SIMULATION`
+
+с ограничениями капитала/одновременных позиций.
+
+Не смешивать эти два результата.
+
+## 10. Никакой подгонки
+
+Правила и deterministic choices commit BEFORE просмотра новых 50 outcomes.
+
+Не менять их после Win/Loss.
+
+Если источник даёт несколько допустимых способов entry/SL:
+
+выбрать один conservative deterministic вариант заранее либо тестировать варианты раздельно, но не выбирать лучший по PnL.
+
+## 11. Повторно проверить 13 текущих сделок
+
+Каждой присвоить:
+
+- SOURCE_VALID
+- FALSE_POSITIVE_IMPLEMENTATION
+- UNCERTAIN
+
+Особенно:
+
+- все 5 RANGE losses;
+- 240/60 loss;
+- D/S trades;
+- STB/BTS trades.
+
+Показать, какие из нынешних `2 WIN / 11 LOSS` вообще останутся после исправления.
+
+## 12. После исправления — получить 50
+
+Использовать уже проверенные Bybit candles.
+
+Не останавливайся на 13, если `SOURCE_TRADE_CASE_VALIDATION` позволяет получить 50 уникальных valid closures.
+
+Нужно:
+
+`50 unique source-valid CLOSED trade cases`
+
+или доказанный maximum только если даже trade-case replay всей истории даёт <50.
+
+## 13. Финальный отчёт
+
+Обновить `SOURCE_ALIGNED_BYBIT_50_TRADE_REPORT.md`.
+
+Обязательно:
+
+- OLD 7 research trades;
+- fc61f35 13-trade intermediate sample;
+- corrected source sample;
+- первые 50 trade cases;
+- Wins/Losses;
+- WinRate;
+- PF;
+- Expectancy;
+- Avg R;
+- Median R;
+- Net PnL;
+- Max adverse excursion если возможно;
+- setup type;
+- POI type;
+- LONG/SHORT;
+- symbol;
+- mapping.
+
+Отдельно Portfolio simulation.
+
+## 14. QA
+
+Обязательно:
+
+- compileall
+- targeted tests
+- full suite
+- Ruff
+- mypy
+- no-lookahead/prefix/future-mutation tests
+- safety audit
+
+`trade_entry_allowed=false`
+
+LIVE/private API/order placement запрещены.
+
+## 15. Git
+
+Не force push.
+
+Начало:
+
+`fc61f35d8bd31e94545036e08fa202fed2623f36`
+
+Сделай новые commits поверх него.
+
+Не уничтожай предыдущий 13-trade report — он теперь должен остаться как промежуточный flawed-machine-policy result для сравнения.
+
+Не останавливайся до corrected source replay и 50 trade-case outcomes либо доказанного объективного максимума.
