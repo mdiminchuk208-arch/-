@@ -20,7 +20,7 @@ from crypto_bot.strategy.range_engine import RangeAnalysisReport, augment_market
 from crypto_bot.strategy.trade_plan import PriceZone, rr_ratio
 
 
-STRATEGY_VERSION = "0.4.22-source-gate.2"
+STRATEGY_VERSION = "0.4.22-source-gate.3"
 
 SOURCE_POI_KINDS = {
     "ORDER_BLOCK",
@@ -65,6 +65,9 @@ class SourceQualification:
     premium_discount_valid: bool
     fresh_untested: bool
     evidence: tuple[str, ...]
+    repeat_test_ltf_reaction_confirmed: bool = False
+    repeat_test_ltf_reaction_known_at: datetime | None = None
+    repeat_test_ltf_reaction_evidence: tuple[str, ...] = ()
 
     def __post_init__(self):
         if self.known_at.utcoffset() is None:
@@ -77,6 +80,36 @@ class SourceQualification:
             raise ValueError("source qualification requires POI provenance")
         if not self.evidence or any(not item.strip() for item in self.evidence):
             raise ValueError("source qualification requires nonempty evidence")
+        repeat_proof_supplied = (
+            self.repeat_test_ltf_reaction_confirmed
+            or self.repeat_test_ltf_reaction_known_at is not None
+            or bool(self.repeat_test_ltf_reaction_evidence)
+        )
+        if repeat_proof_supplied:
+            if self.poi_kind != "ORDER_BLOCK":
+                raise ValueError("repeat-test LTF reaction qualification is only valid for ORDER_BLOCK")
+            if self.fresh_untested:
+                raise ValueError("repeat-test LTF reaction qualification requires a previously tested ORDER_BLOCK")
+            if not self.repeat_test_ltf_reaction_confirmed:
+                raise ValueError("repeat-test LTF reaction proof must be explicitly confirmed")
+            if self.repeat_test_ltf_reaction_known_at is None:
+                raise ValueError("repeat-test LTF reaction proof requires known_at")
+            if self.repeat_test_ltf_reaction_known_at.utcoffset() is None:
+                raise ValueError("repeat-test LTF reaction known_at must be timezone-aware")
+            if self.repeat_test_ltf_reaction_known_at > self.known_at:
+                raise ValueError("source qualification cannot precede repeat-test LTF reaction proof")
+            if (not self.repeat_test_ltf_reaction_evidence
+                    or any(not item.strip() for item in self.repeat_test_ltf_reaction_evidence)):
+                raise ValueError("repeat-test LTF reaction proof requires nonempty evidence")
+
+    @property
+    def poi_freshness_valid(self) -> bool:
+        return self.fresh_untested or (
+            self.poi_kind == "ORDER_BLOCK"
+            and self.repeat_test_ltf_reaction_confirmed
+            and self.repeat_test_ltf_reaction_known_at is not None
+            and bool(self.repeat_test_ltf_reaction_evidence)
+        )
 
     @property
     def canonical_ready(self) -> bool:
@@ -85,7 +118,7 @@ class SourceQualification:
             self.order_flow_aligned,
             self.opposing_liquidity_cleared,
             self.premium_discount_valid,
-            self.fresh_untested,
+            self.poi_freshness_valid,
         ))
 
 
@@ -198,7 +231,7 @@ def _source_qualification_blocker(
         return "LIQUIDITY_AGAINST_SETUP"
     if not qualification.premium_discount_valid:
         return "SOURCE_PREMIUM_DISCOUNT_NOT_VALID"
-    if not qualification.fresh_untested:
+    if not qualification.poi_freshness_valid:
         return "SOURCE_POI_NOT_FRESH"
     if qualification.poi_kind == "DEMAND" and direction != Direction.LONG:
         return "DEMAND_REQUIRES_LONG"
@@ -354,8 +387,14 @@ def signals_from_opportunities(opportunities, by_id, htf_report, ltf_report,
                     source_qualification_known_at = qualification.known_at
                     source_poi_kind = qualification.poi_kind
                     source_entry_path = qualification.entry_path
-                    source_qualification_evidence = qualification.evidence
+                    source_qualification_evidence = (
+                        qualification.evidence + qualification.repeat_test_ltf_reaction_evidence
+                    )
                     score += 15
+                    freshness_reason = (
+                        "SOURCE_POI_FRESH" if qualification.fresh_untested
+                        else "SOURCE_OB_REPEAT_TEST_LTF_REACTION_CONFIRMED"
+                    )
                     reasons.extend((
                         levels.stop_policy,
                         levels.target_policy,
@@ -364,7 +403,7 @@ def signals_from_opportunities(opportunities, by_id, htf_report, ltf_report,
                         "SOURCE_ORDER_FLOW_ALIGNED",
                         "SOURCE_OPPOSING_LIQUIDITY_CLEARED",
                         "SOURCE_PREMIUM_DISCOUNT_VALID",
-                        "SOURCE_POI_FRESH",
+                        freshness_reason,
                     ))
                     status = "READY_FOR_VIRTUAL_ENTRY"
         if invalid:

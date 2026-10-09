@@ -4,7 +4,13 @@ from dataclasses import replace
 from datetime import datetime, timedelta, timezone
 
 from crypto_bot.common.models import Candle, Direction
-from crypto_bot.strategy.replay import EngineMode, QualifiedLevels, SourceQualification, evaluate_snapshot
+from crypto_bot.strategy.replay import (
+    EngineMode,
+    QualifiedLevels,
+    SourceQualification,
+    _source_qualification_blocker,
+    evaluate_snapshot,
+)
 
 
 BASE = datetime(2026, 1, 1, tzinfo=timezone.utc)
@@ -86,6 +92,16 @@ class ReplayTests(unittest.TestCase):
         values.update(changes)
         return SourceQualification(**values)
 
+    def repeat_ob_qualification_for(self, known_at, **changes):
+        values = dict(
+            fresh_untested=False,
+            repeat_test_ltf_reaction_confirmed=True,
+            repeat_test_ltf_reaction_known_at=known_at - timedelta(minutes=1),
+            repeat_test_ltf_reaction_evidence=('TEST_CAUSAL_LTF_REACTION',),
+        )
+        values.update(changes)
+        return self.qualification_for(known_at, **values)
+
     def levels_for(self, signal, known_at, *, qualification=True):
         zone = signal.entry_zone
         if signal.direction == Direction.LONG:
@@ -139,7 +155,76 @@ class ReplayTests(unittest.TestCase):
         self.assertEqual(signal.source_entry_path, 'DIRECT_OB')
         self.assertEqual(signal.source_qualification_known_at, self.end)
         self.assertGreater(len(signal.source_qualification_evidence), 0)
+        self.assertIn('SOURCE_POI_FRESH', signal.reasons)
         self.assertFalse(signal.trade_entry_allowed)
+
+    def test_repeated_order_block_requires_separate_causal_ltf_reaction(self):
+        waiting = next(s for s in self.snapshot().signals if s.status == 'WAITING_FOR_SOURCE_LEVELS')
+        levels = self.levels_for(waiting, self.end)
+        unproved = replace(levels, qualification=replace(levels.qualification, fresh_untested=False))
+        blocked = self.snapshot(qualified_levels={waiting.signal_id: unproved})
+        blocked_signal = next(s for s in blocked.signals if s.signal_id == waiting.signal_id)
+        self.assertEqual(blocked_signal.status, 'WAITING_FOR_SOURCE_QUALIFICATION')
+        self.assertEqual(blocked_signal.level_blocking_reasons, ('SOURCE_POI_NOT_FRESH',))
+
+        repeated = replace(levels, qualification=self.repeat_ob_qualification_for(self.end))
+        allowed = self.snapshot(qualified_levels={waiting.signal_id: repeated})
+        signal = next(s for s in allowed.signals if s.signal_id == waiting.signal_id)
+        self.assertEqual(signal.status, 'READY_FOR_VIRTUAL_ENTRY')
+        self.assertIn('SOURCE_OB_REPEAT_TEST_LTF_REACTION_CONFIRMED', signal.reasons)
+        self.assertIn('TEST_CAUSAL_LTF_REACTION', signal.source_qualification_evidence)
+        self.assertNotIn('SOURCE_POI_FRESH', signal.reasons)
+        self.assertFalse(signal.trade_entry_allowed)
+
+    def test_repeated_order_block_gate_is_symmetric_for_long_and_short(self):
+        qualification = self.repeat_ob_qualification_for(self.end)
+        for direction in (Direction.LONG, Direction.SHORT):
+            with self.subTest(direction=direction):
+                self.assertIsNone(_source_qualification_blocker(
+                    qualification,
+                    direction=direction,
+                    htf_minutes=60,
+                    ltf_minutes=5,
+                ))
+
+    def test_repeated_order_block_proof_is_fail_closed_and_causal(self):
+        with self.assertRaises(ValueError):
+            self.repeat_ob_qualification_for(
+                self.end,
+                repeat_test_ltf_reaction_known_at=self.end + timedelta(minutes=1),
+            )
+        with self.assertRaises(ValueError):
+            self.repeat_ob_qualification_for(
+                self.end,
+                repeat_test_ltf_reaction_evidence=(),
+            )
+        with self.assertRaises(ValueError):
+            self.qualification_for(
+                self.end,
+                fresh_untested=False,
+                repeat_test_ltf_reaction_confirmed=False,
+                repeat_test_ltf_reaction_known_at=self.end - timedelta(minutes=1),
+                repeat_test_ltf_reaction_evidence=('TEST_CAUSAL_LTF_REACTION',),
+            )
+        with self.assertRaises(ValueError):
+            self.repeat_ob_qualification_for(self.end, fresh_untested=True)
+
+    def test_demand_supply_cannot_use_order_block_repeat_test_exception(self):
+        for poi_kind, direction in (('DEMAND', Direction.LONG), ('SUPPLY', Direction.SHORT)):
+            with self.subTest(poi_kind=poi_kind):
+                qualification = self.qualification_for(
+                    self.end,
+                    poi_kind=poi_kind,
+                    fresh_untested=False,
+                )
+                self.assertEqual(_source_qualification_blocker(
+                    qualification,
+                    direction=direction,
+                    htf_minutes=60,
+                    ltf_minutes=5,
+                ), 'SOURCE_POI_NOT_FRESH')
+                with self.assertRaises(ValueError):
+                    self.repeat_ob_qualification_for(self.end, poi_kind=poi_kind)
 
     def test_demand_supply_direction_and_conservative_tf_are_enforced(self):
         waiting = next(s for s in self.snapshot().signals if s.status == 'WAITING_FOR_SOURCE_LEVELS')
