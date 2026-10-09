@@ -1,0 +1,11 @@
+equla highs $
+
+$
+
+equal ‘lows $
+
+equal lows
+
+equla highs | $
+
+equal lows $ |
