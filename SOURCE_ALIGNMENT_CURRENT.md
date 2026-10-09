@@ -15,8 +15,9 @@ Original PDF/DOCX files are absent. This table compares the retained primary des
 | Preexisting/supporting | OB_CORE_001; 2 | Supporting same-direction HTF gap known by A OPEN; A overlaps; expected transition aligns | CAUSAL_MACHINE_INTERPRETATION_NOT_SEPARATE_SOURCE_QUOTE |
 | Fresh POI | OB_FIRST_TEST_001; 3 | No prior closed wick overlap, equality included; seed formation excluded; 51 original candidates genuinely stale | EXPLICIT_CONSERVATIVE_TOUCH_NORMALIZATION |
 | Fresh OB | OB_FIRST_TEST_001; 3 | First-test clock strictly after max(C close,BOS close); no premature BOS consumption | AVAILABILITY_BUG_FIXED_FIRST_TEST_SUBSET |
+| Repeated OB test | OB first-test/reaction guidance; `SOURCE_OF_TRUTH_TRADING_RULES.md` §4 | First test remains normal. A previously tested `ORDER_BLOCK` can pass freshness only with separate explicit causal LTF-reaction confirmation, timestamp and evidence known before qualification/entry; non-OB POIs cannot use this exception | GAP_A_CLOSED_SOURCE_GATE_3 |
 | OTE | retained trade_plan.py / project OTE description; no raw page verified | Frozen broken extreme, opposite structural anchor/correction; .705-.79 source zone | PRESERVED_GEOMETRY_NO_INDEPENDENT_RAW_SOURCE_VERIFICATION |
-| Targets | OB_CORE_001; 2 | Three distinct opposing gap near edges; original FTA extended explicitly for requested TP1/2/3 | BACKTEST_PARAMETER_NOT_THREE_SOURCE_TARGETS |
+| Targets | OB_CORE_001; 2 | Three distinct opposing gap near edges; original FTA extended explicitly for requested TP1/2/TP3 | BACKTEST_PARAMETER_NOT_THREE_SOURCE_TARGETS |
 | Range boundaries | RANGE_BOUNDARIES_001; 2 | Directional impulse-end then correction-end; midpoint reaction and clean structure | MATCH_RETAINED_DESCRIPTION_WITH_PROXY_AND_TOLERANCE |
 | Range SFP | SFP_RANGE_BOUNDARY_001; 5 | Same SFP rule on causally validated boundaries; original liquidity never reactivates | WIRING_MISMATCH_FIXED |
 | Clarity | RANGE_BOUNDARIES_MAY_BE_NONCRISP_001; RANGE section | Existing explicit price area proof replaces unconditional manual UNREVIEWED placeholder | UNFINISHED_INTERNAL_GUARD_COMPLETED |
