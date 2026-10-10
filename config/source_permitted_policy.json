@@ -1,0 +1,316 @@
+{
+  "version": "source-permitted-1",
+  "parent_commit": "d46646ffae9152bd3e0b3bae32689e6ffc80f210",
+  "mode": "BACKTEST",
+  "trade_entry_allowed": false,
+  "symbol_priority": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "SOLUSDT",
+    "XRPUSDT",
+    "BNBUSDT",
+    "DOGEUSDT",
+    "ADAUSDT",
+    "LINKUSDT",
+    "AVAXUSDT",
+    "LTCUSDT"
+  ],
+  "mappings": [
+    [
+      15,
+      5
+    ],
+    [
+      60,
+      5
+    ],
+    [
+      60,
+      15
+    ],
+    [
+      240,
+      5
+    ],
+    [
+      240,
+      15
+    ]
+  ],
+  "native_timeframes": [
+    5,
+    15,
+    60,
+    240
+  ],
+  "case_reference_equity": 1170.0,
+  "risk_fraction": 0.02,
+  "fee_rate": 0.0006,
+  "slippage_fraction": 0.0002,
+  "primary_closed_count": 50,
+  "entry_tie_precedence": [
+    "OB_DIRECT_FIRST_TEST",
+    "OB_DIRECT_INSIDE",
+    "OB_DIRECT_ENGULFING_STOP",
+    "OB_DIRECT_INSIDE_ENGULFING_STOP",
+    "OB_CONSERVATIVE_BOS_POI",
+    "OB_ULTRA_CONSERVATIVE_CONF",
+    "STB_BTS_EDGE",
+    "STB_BTS_HALF",
+    "BREAKER_CONSERVATIVE_STOP",
+    "BREAKER_AGGRESSIVE_STOP",
+    "DEMAND_SUPPLY",
+    "RANGE_CONSERVATIVE_RETEST",
+    "RANGE_AGGRESSIVE_EXTERNAL_POI",
+    "SFP_BOS_POI",
+    "SFP_ATR_STOP"
+  ],
+  "primary_cancellation": "CANCEL_SOURCE_POI_INVALIDATION",
+  "cancellation_cohorts": [
+    "CANCEL_SOURCE_POI_INVALIDATION",
+    "CANCEL_STRICT_STRUCTURE"
+  ],
+  "selection": "FIRST_CAUSALLY_AVAILABLE_READY_THEN_PATH_PRECEDENCE_AT_SAME_CLOSE_HIGHER_HTF_LOWER_LTF_SYMBOL_ID",
+  "range_midpoint_tolerance": 0.08,
+  "range_admissibility_sensitivity": [
+    0.04,
+    0.08,
+    0.12
+  ],
+  "range_sensitivity_classification": "RESEARCH_PARAMETER_ADMISSIBILITY_ONLY_NO_PNL",
+  "paths": [
+    {
+      "path_id": "OB_DIRECT_FIRST_TEST",
+      "confirmation": "DIRECT",
+      "poi_type": "ORDER_BLOCK",
+      "quote": "EDGE",
+      "stop": "OB_EXTREME",
+      "source_citations": [
+        "SW9 p2\u20133"
+      ],
+      "classifications": {
+        "definition": "SOURCE_RULE",
+        "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
+      },
+      "trade_entry_allowed": false
+    },
+    {
+      "path_id": "OB_DIRECT_INSIDE",
+      "confirmation": "DIRECT",
+      "poi_type": "ORDER_BLOCK",
+      "quote": "HALF",
+      "stop": "OB_EXTREME",
+      "source_citations": [
+        "SW9 p3"
+      ],
+      "classifications": {
+        "definition": "SOURCE_RULE",
+        "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
+      },
+      "trade_entry_allowed": false
+    },
+    {
+      "path_id": "OB_DIRECT_ENGULFING_STOP",
+      "confirmation": "DIRECT",
+      "poi_type": "ORDER_BLOCK",
+      "quote": "EDGE",
+      "stop": "ENGULFING_EXTREME",
+      "source_citations": [
+        "SW9 p3"
+      ],
+      "classifications": {
+        "definition": "SOURCE_RULE",
+        "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
+      },
+      "trade_entry_allowed": false
+    },
+    {
+      "path_id": "OB_DIRECT_INSIDE_ENGULFING_STOP",
+      "confirmation": "DIRECT",
+      "poi_type": "ORDER_BLOCK",
+      "quote": "HALF",
+      "stop": "ENGULFING_EXTREME",
+      "source_citations": [
+        "SW9 p3"
+      ],
+      "classifications": {
+        "definition": "SOURCE_RULE",
+        "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
+      },
+      "trade_entry_allowed": false
+    },
+    {
+      "path_id": "OB_CONSERVATIVE_BOS_POI",
+      "confirmation": "BOS",
+      "poi_type": "ANY_QUALIFIED",
+      "quote": "TYPE",
+      "stop": "TYPE",
+      "source_citations": [
+        "SW9 p4\u20136"
+      ],
+      "classifications": {
+        "definition": "SOURCE_RULE",
+        "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
+      },
+      "trade_entry_allowed": false
+    },
+    {
+      "path_id": "OB_ULTRA_CONSERVATIVE_CONF",
+      "confirmation": "CONF",
+      "poi_type": "ANY_QUALIFIED",
+      "quote": "TYPE",
+      "stop": "TYPE",
+      "source_citations": [
+        "SW5 p6\u20137"
+      ],
+      "classifications": {
+        "definition": "SOURCE_RULE",
+        "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
+      },
+      "trade_entry_allowed": false
+    },
+    {
+      "path_id": "STB_BTS_EDGE",
+      "confirmation": "DIRECT",
+      "poi_type": "STB_BTS",
+      "quote": "EDGE",
+      "stop": "MANIPULATION_EXTREME",
+      "source_citations": [
+        "SW22 p2\u20134"
+      ],
+      "classifications": {
+        "definition": "SOURCE_RULE",
+        "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
+      },
+      "trade_entry_allowed": false
+    },
+    {
+      "path_id": "STB_BTS_HALF",
+      "confirmation": "DIRECT",
+      "poi_type": "STB_BTS",
+      "quote": "HALF",
+      "stop": "MANIPULATION_EXTREME",
+      "source_citations": [
+        "SW22 p2\u20134"
+      ],
+      "classifications": {
+        "definition": "SOURCE_RULE",
+        "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
+      },
+      "trade_entry_allowed": false
+    },
+    {
+      "path_id": "BREAKER_CONSERVATIVE_STOP",
+      "confirmation": "DIRECT",
+      "poi_type": "BREAKER",
+      "quote": "EDGE",
+      "stop": "SWEEPING_IMPULSE_EXTREME",
+      "source_citations": [
+        "SW9 p7\u201310"
+      ],
+      "classifications": {
+        "definition": "SOURCE_RULE",
+        "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
+      },
+      "trade_entry_allowed": false
+    },
+    {
+      "path_id": "BREAKER_AGGRESSIVE_STOP",
+      "confirmation": "DIRECT",
+      "poi_type": "BREAKER",
+      "quote": "EDGE",
+      "stop": "BREAKER_EXTREME",
+      "source_citations": [
+        "SW9 p9\u201310"
+      ],
+      "classifications": {
+        "definition": "SOURCE_RULE",
+        "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
+      },
+      "trade_entry_allowed": false
+    },
+    {
+      "path_id": "DEMAND_SUPPLY",
+      "confirmation": "DIRECT",
+      "poi_type": "DEMAND_SUPPLY",
+      "quote": "HALF",
+      "stop": "MOVE_EXTREME",
+      "source_citations": [
+        "DOC18 P0005\u201312"
+      ],
+      "classifications": {
+        "definition": "SOURCE_RULE",
+        "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
+      },
+      "trade_entry_allowed": false
+    },
+    {
+      "path_id": "RANGE_CONSERVATIVE_RETEST",
+      "confirmation": "RANGE",
+      "poi_type": "RANGE_POI",
+      "quote": "BOUNDARY",
+      "stop": "DEVIATION_EXTREME",
+      "source_citations": [
+        "DOC06 P0124\u2013129"
+      ],
+      "classifications": {
+        "definition": "SOURCE_RULE",
+        "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
+      },
+      "trade_entry_allowed": false
+    },
+    {
+      "path_id": "RANGE_AGGRESSIVE_EXTERNAL_POI",
+      "confirmation": "RANGE_AGGRESSIVE",
+      "poi_type": "EXTERNAL_POI",
+      "quote": "TYPE",
+      "stop": "DEVIATION_EXTREME",
+      "source_citations": [
+        "DOC06 P0111\u2013121"
+      ],
+      "classifications": {
+        "definition": "SOURCE_RULE",
+        "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
+      },
+      "trade_entry_allowed": false
+    },
+    {
+      "path_id": "SFP_BOS_POI",
+      "confirmation": "SFP",
+      "poi_type": "ANY_QUALIFIED",
+      "quote": "TYPE",
+      "stop": "SFP_EXTREME",
+      "source_citations": [
+        "DOC16 P0075\u201387",
+        "SW9 p11\u201316"
+      ],
+      "classifications": {
+        "definition": "SOURCE_RULE",
+        "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
+      },
+      "trade_entry_allowed": false
+    },
+    {
+      "path_id": "SFP_ATR_STOP",
+      "confirmation": "SFP",
+      "poi_type": "ANY_QUALIFIED",
+      "quote": "TYPE",
+      "stop": "ATR14_BEYOND_SFP",
+      "source_citations": [
+        "DOC16 P0075\u201387",
+        "SW12 p12\u201313"
+      ],
+      "classifications": {
+        "definition": "SOURCE_RULE",
+        "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
+      },
+      "trade_entry_allowed": false
+    }
+  ],
+  "source_exit": "FULL_FIRST_HTF_FTA_OR_RANGE_80_INSIDE_20_FTA",
+  "automatic_BE": false,
+  "global_flow": "KEY_HH_HL_OR_LL_LH_REAL_CAUSAL_LIQUIDITY_WORK_FIXED_FRESH_TYPED_DESTINATION",
+  "arbitrary_order_expiry": null,
+  "data_expansion_priority": "EARLIER_NATIVE_BYBIT_USDT_PERPETUAL_THEN_PRIORITY_SYMBOLS_THEN_ADDITIONAL_PERIODS",
+  "cohort": "BYBIT_2026_PREVIOUSLY_INSPECTED_DEVELOPMENT"
+}

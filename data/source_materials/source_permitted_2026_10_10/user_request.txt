@@ -1,0 +1,831 @@
+Продолжай работу от текущего `main`.
+
+Текущий подтверждённый HEAD:
+
+`d46646ffae9152bd3e0b3bae32689e6ffc80f210`
+
+НЕ откатывать предыдущие commits.
+
+НЕ удалять старые отчёты.
+
+НЕ повторять уже завершённый frozen research.
+
+# ЭТО ФИНАЛЬНЫЙ ONE-PASS ЭТАП
+
+Мне больше НЕ нужны промежуточные ответы вида:
+
+- «нашли 9 READY»;
+- «0 FILLED»;
+- «нужен ещё один этап»;
+- «надо отдельно проверить ветку»;
+- «нужен ещё один prompt».
+
+В ЭТОМ ЖЕ ЗАПУСКЕ выполнить весь оставшийся цикл:
+
+**PRIMARY PDF RULES  
+→ ВСЕ source-permitted entry paths  
+→ cancellation/invalidation audit  
+→ Order Flow bottleneck audit  
+→ исправление implementation gaps  
+→ полный Bybit replay  
+→ расширение historical Bybit coverage при необходимости  
+→ первые 50 уникальных FILLED + CLOSED trade cases  
+→ финальные метрики  
+→ QA  
+→ commit в main.**
+
+Не останавливайся после промежуточного исследования.
+
+Не спрашивай разрешения переходить к следующему этапу.
+
+Работай самостоятельно до финального результата.
+
+---
+
+# 1. ИСХОДНЫЕ МАТЕРИАЛЫ УЖЕ ЕСТЬ
+
+Настоящие PDF уже получены и прочитаны:
+
+- SW5 — Рыночная структура Advanced
+- SW9 — Торговые инструменты Advanced
+- SW11 — Риск-менеджмент
+- SW12 — Индикаторы
+- SW22 — Торговые инструменты Pro
+
+Также использовать ранее подтверждённые:
+
+- SW4
+- SW6
+- SW8
+- SW10
+- Demand/Supply
+- Smart Money Trader 2
+- Методичка
+- обучалка
+
+Не требовать повторной загрузки этих файлов.
+
+Не останавливаться с сообщением про отсутствующие `.lnk`.
+
+Настоящие PDF уже являются primary source.
+
+---
+
+# 2. ТЕКУЩИЙ РЕЗУЛЬТАТ НЕ ЯВЛЯЕТСЯ ПОЛНОЙ СТРАТЕГИЕЙ
+
+Текущий strict result:
+
+`55,734 setups`
+→ `8,566 qualified_structure`
+→ `179 liquidity/POI`
+→ `9 READY`
+→ `0 FILLED`
+→ `0 CLOSED`
+
+Сохранить его неизменным как:
+
+`STRICT_CONSERVATIVE_D46646F`
+
+Но НЕ использовать этот cohort как единственное представление source methodology.
+
+В `SOURCE_PDF_PROTOCOL.md` уже признано:
+
+`selected conservative branch, not every permitted entry`
+
+Теперь необходимо реализовать **ВСЕ явно разрешённые первичными PDF торговые пути**.
+
+---
+
+# 3. ГЛАВНЫЙ ПРИНЦИП
+
+Не «ослаблять правила ради сделок».
+
+Вместо этого:
+
+**реализовать все варианты, которые прямо разрешены SOURCE.**
+
+Каждая ветка должна иметь:
+
+- source citation;
+- deterministic machine interpretation;
+- отдельный path_id;
+- свои entry rules;
+- свои stop rules;
+- свои cancellation/invalidation rules;
+- causal known_at;
+- отдельные tests.
+
+Никакого выбора лучшего варианта после просмотра PnL.
+
+---
+
+# 4. РЕАЛИЗОВАТЬ ВСЕ ORDER BLOCK PATHS
+
+## PATH: OB_DIRECT_FIRST_TEST
+
+SW9 p3 разрешает:
+
+- valid OB;
+- первый тест;
+- OB внутри structural impulse;
+- работа по trend;
+- direct resting limit.
+
+Entry:
+
+### Bullish OB
+proximal / upper boundary OB.
+
+### Bearish OB
+proximal / lower boundary OB.
+
+Также source допускает вход внутри OB.
+
+Для primary direct variant заранее выбрать один deterministic source-valid quote.
+
+Не требовать:
+
+`LTF BOS → new structure → CONF`
+
+для OB_DIRECT, если source напрямую этого не требует.
+
+Stop:
+
+- за OB extreme;
+или
+- за wick engulfing candle.
+
+Заранее зарегистрировать один deterministic primary stop.
+
+Второй вариант оставить отдельным cohort.
+
+---
+
+# 5. OB CONSERVATIVE PATH
+
+Отдельный:
+
+`OB_CONSERVATIVE_BOS_POI`
+
+По SW9 p4–6:
+
+HTF OB/POI
+→ reaction
+→ switch LTF 1–15m
+→ BOS
+→ new LTF POI
+→ limit on new POI.
+
+ВАЖНО:
+
+не добавлять обязательный CONF, если этот конкретный SW9 path заканчивается уже на BOS + new POI.
+
+---
+
+# 6. SW5 CONF ДОЛЖЕН БЫТЬ ОТДЕЛЬНЫМ ПОДМНОЖЕСТВОМ
+
+Создать:
+
+`OB_ULTRA_CONSERVATIVE_CONF`
+
+SW5:
+
+BOS
+→ новая structure
+→ CONF
+→ entry.
+
+Не превращать CONF в универсальное обязательное правило для всех SW9 entry paths.
+
+Показать отдельно результаты:
+
+- DIRECT
+- BOS+POI
+- BOS+POI+CONF.
+
+---
+
+# 7. STB/BTS — НЕ ТОЛЬКО 0.5
+
+SW22 разрешает:
+
+LONG:
+- верхняя часть STB/BTS;
+- либо 0.5.
+
+SHORT:
+- нижняя часть STB/BTS;
+- либо 0.5.
+
+Сейчас `.5-only` слишком узкий вариант.
+
+Создать отдельные cohorts:
+
+`STB_BTS_EDGE`
+`STB_BTS_HALF`
+
+Оба source-valid.
+
+Оба зарегистрировать ДО outcomes.
+
+Не выбирать потом лучший.
+
+---
+
+# 8. BREAKER — ОБА SOURCE STOP PATH
+
+SW9 разрешает:
+
+`BREAKER_AGGRESSIVE_STOP`
+
+stop за breaker.
+
+И:
+
+`BREAKER_CONSERVATIVE_STOP`
+
+stop за liquidity-sweeping impulse extreme.
+
+Entry / POI formation должна оставаться source-valid.
+
+Оба cohorts считать отдельно.
+
+Primary union использовать заранее определённый deterministic precedence.
+
+---
+
+# 9. DEMAND / SUPPLY
+
+Использовать самостоятельный detector.
+
+Не failed-OB fallback.
+
+Demand:
+
+- old liquidity raid;
+- last opposite move;
+- fresh;
+- Discount;
+- LONG.
+
+Supply:
+
+- old liquidity raid;
+- last opposite move;
+- fresh;
+- Premium;
+- SHORT.
+
+Если zone может состоять из нескольких свечей — поддержать это.
+
+Не требовать FVG как обязательный элемент, если source не требует.
+
+---
+
+# 10. RANGE
+
+Сохранить уже исправленную source logic:
+
+- valid range after directional impulse;
+- external POI;
+- deviation/liquidity raid;
+- reaction;
+- reclaim;
+- retest;
+- clean geometry;
+- source invalidation.
+
+Но проверить:
+
+не стал ли текущий Range detector чрезмерно строгим из-за research thresholds.
+
+Каждый численный threshold, которого нет в source, маркировать:
+
+`RESEARCH_PARAMETER`
+
+и отдельно провести sensitivity только для admissibility, не для поиска максимального PnL.
+
+---
+
+# 11. ORDER FLOW — ГЛАВНЫЙ BOTTLENECK
+
+Сейчас:
+
+`179 liquidity/POI → 9 OF/P-D`.
+
+Это слишком сильное сжатие и требует полного аудита.
+
+Текущие большие blockers:
+
+- `HTF_FLOW_DIRECTION_CHANGED` ≈ 26k
+- `OB_NEW_VISIT_REQUIRES_NEW_LTF_REACTION` ≈ 16k
+- `HTF_POI_BODY_INVALIDATION` ≈ 10k
+
+Для всех OF rejected contexts построить blocker histogram.
+
+Проверить, не требует ли implementation больше, чем SW22.
+
+Source Order Flow требует:
+
+- HH/HL bullish или LL/LH bearish;
+- реальную работу с liquidity;
+- движение к global POI;
+- актуальность до теста destination;
+- изменение потока после теста destination / structural change.
+
+Не добавлять дополнительные source gates без прямого основания.
+
+Все дополнительные machine assumptions маркировать:
+
+`SOURCE_INTERPRETATION`.
+
+---
+
+# 12. CANCELLATION POLICY — ПЕРЕПРОВЕРИТЬ ВСЕ 9 CURRENT READY
+
+Сейчас все 9 limits отменились:
+
+- 6 `CONFIRMED_LTF_STRUCTURE_BROKEN`
+- 2 `FLOW_DESTINATION_TESTED`
+- 1 `GLOBAL_ORDER_FLOW_INACTIVE`
+
+Для каждого cancellation event определить:
+
+### A.
+Это прямой `SOURCE_RULE`?
+
+или
+
+### B.
+Это наша `SOURCE_INTERPRETATION`?
+
+Если source не говорит, что generic later LTF break автоматически отменяет уже сформированную resting limit order:
+
+не использовать это как универсальную source истину.
+
+Создать минимум два заранее зарегистрированных execution cohorts:
+
+## CANCEL_STRICT_STRUCTURE
+
+текущий вариант.
+
+## CANCEL_SOURCE_POI_INVALIDATION
+
+pending limit живёт до source-defined invalidation именно торговой идеи / POI:
+
+- POI invalidated;
+- structural thesis invalidated;
+- Order Flow objectively changed;
+- destination consumed where it truly invalidates trade;
+- source-specific freshness lost.
+
+Не отменять order только из-за unrelated minor structure event.
+
+Оба cohorts зарегистрировать до нового outcome replay.
+
+---
+
+# 13. ENTRY EXPIRY
+
+Проверить текущую lifetime resting limit.
+
+Для каждого setup type определить из source:
+
+- когда order остаётся valid;
+- когда order становится stale;
+- когда first test уже произошёл;
+- когда POI invalidated;
+- когда flow invalidated.
+
+Нельзя invent arbitrary expiry.
+
+---
+
+# 14. PHYSICAL OPPORTUNITY ID
+
+Очень важно.
+
+Несколько разрешённых source variants одной и той же рыночной идеи не должны искусственно увеличивать sample.
+
+Создать:
+
+`physical_opportunity_id`.
+
+Одна физическая market opportunity может иметь:
+
+- OB_DIRECT;
+- OB_CONSERVATIVE;
+- CONF_STRICT;
+- STB edge;
+- STB .5;
+- stop variants.
+
+Variant outcomes считать отдельно.
+
+Но в `SOURCE_PERMITTED_UNION` одна физическая opportunity = максимум одна primary trade.
+
+---
+
+# 15. ЗАРЕГИСТРИРОВАТЬ PRIMARY UNION PRECEDENCE ДО OUTCOMES
+
+До запуска результатов зафиксировать порядок выбора variant для primary union.
+
+Например:
+
+1. OB_DIRECT_FIRST_TEST
+2. OB_CONSERVATIVE_BOS_POI
+3. OB_ULTRA_CONSERVATIVE_CONF
+4. STB_BTS_EDGE
+5. STB_BTS_HALF
+6. BREAKER_CONSERVATIVE
+7. DEMAND_SUPPLY
+8. RANGE
+
+Если source logic требует другой порядок — обосновать source.
+
+Главное:
+
+не выбирать вариант после просмотра победы/убытка.
+
+---
+
+# 16. НЕ ОТМЕНЯТЬ TRADE ПОСЛЕ ТОГО, КАК ИЗВЕСТЕН OUTCOME
+
+Opportunity selection, path, entry, stop, target и cancellation logic фиксируются causal до будущего движения.
+
+No lookahead.
+
+No outcome-based substitution.
+
+---
+
+# 17. ПЕРВЫЙ ПОЛНЫЙ REPLAY
+
+После исправлений заново прогнать:
+
+- 40 Bybit series;
+- 993,575 candles;
+- 10 symbols;
+- 5m/15m/60m/240m;
+- strict causal data;
+- no interpolation.
+
+Получить результаты отдельно:
+
+### STRICT_CONSERVATIVE_D46646F
+
+исторический:
+9 READY /0 fill.
+
+### SOURCE_DIRECT
+
+### SOURCE_CONSERVATIVE
+
+### SOURCE_CONF_STRICT
+
+### SOURCE_PERMITTED_UNION
+
+---
+
+# 18. ТРЕБУЕТСЯ 50 CLOSED
+
+Главная выборка:
+
+`SOURCE_PERMITTED_UNION`
+
+Нужно получить:
+
+**первые 50 уникальных source-valid FILLED + CLOSED physical trade cases хронологически.**
+
+Не 50 READY.
+
+Не 50 signals.
+
+Не 50 variants.
+
+Именно:
+
+`50 CLOSED`.
+
+Каждая сделка входит независимо от WIN/LOSS.
+
+---
+
+# 19. ЕСЛИ ТЕКУЩИХ 993,575 CANDLES НЕ ХВАТАЕТ
+
+НЕ ОСТАНАВЛИВАТЬСЯ.
+
+Автоматически расширить historical Bybit coverage.
+
+Приоритет:
+
+1. дополнительные более ранние native Bybit perpetual candles;
+2. дополнительные source-valid symbols из нашего priority USDT perpetual universe, если данные доступны;
+3. дополнительные periods тех же symbols.
+
+Нельзя использовать Binance в primary result.
+
+Primary dataset должен оставаться Bybit.
+
+---
+
+# 20. ИСТОЧНИК РАСШИРЕННЫХ ДАННЫХ
+
+Использовать только публичные historical Bybit data.
+
+Для каждого нового файла:
+
+- source URL/provider;
+- exchange = BYBIT;
+- instrument;
+- symbol;
+- interval;
+- start/end;
+- closed bars;
+- SHA256;
+- gap audit;
+- OHLC audit;
+- timestamp alignment.
+
+Не придумывать candles.
+
+Не преобразовывать Binance в Bybit.
+
+---
+
+# 21. ЕСЛИ API.BYBIT.COM / PUBLIC.BYBIT.COM ДАЮТ 403
+
+Не останавливаться после первого 403.
+
+Попробовать все доступные permitted read-only методы среды:
+
+- public Bybit archive;
+- accessible mirror/cached public archive;
+- existing verified project historical stores;
+- Git/project historical receipts;
+- supported web retrieval if available in environment.
+
+Но никаких private API keys.
+
+Если реально отсутствует network path после всех разрешённых read-only методов — зафиксировать это только после того, как существующий source-permitted replay полностью выполнен.
+
+---
+
+# 22. РАСШИРЯТЬ HISTORY ДО 50 CLOSED
+
+Если strategy frequency низкая:
+
+расширять назад по времени.
+
+Не менять стратегию ради увеличения количества сделок.
+
+Не уменьшать gates только чтобы получить 50.
+
+50 нужно получить за счёт:
+
+**реальных source-permitted paths + достаточной historical coverage.**
+
+---
+
+# 23. ЕСЛИ ДАЖЕ ПОСЛЕ РАСШИРЕНИЯ НЕ 50
+
+Только после объективного исчерпания доступной исторической Bybit data:
+
+дать:
+
+`MAX CLOSED = X`
+
+и доказательство:
+
+- весь доступный период;
+- все symbols;
+- все mappings;
+- все permitted paths;
+- exact blocker.
+
+Но НЕ останавливаться раньше только потому, что первые 9 orders не заполнились.
+
+---
+
+# 24. РИСК
+
+Primary source validation:
+
+максимум 2% per trade.
+
+SW11:
+
+0.25–2%.
+
+Для comparability оставить deterministic:
+
+`2%`
+
+или заранее зарегистрировать другое source-valid значение.
+
+Risk не влияет на WIN/LOSS setup validity.
+
+---
+
+# 25. EXIT
+
+Не использовать frozen 40/30/30+BE как source truth.
+
+Frozen baseline оставить неизменным.
+
+Для new source cohorts:
+
+- source FTA logic;
+- Range-specific 80/20 where source confirms;
+- technical source stop;
+- no automatic BE unless source path explicitly allows.
+
+---
+
+# 26. 50 TRADE TABLE
+
+Для всех первых 50:
+
+- #
+- physical_opportunity_id
+- path_id
+- symbol
+- datetime
+- LONG/SHORT
+- HTF/LTF
+- HTF POI
+- local POI
+- liquidity sweep
+- Order Flow
+- P/D
+- OTE
+- entry
+- stop
+- FTA/target
+- fill
+- exit
+- result R
+- net PnL
+- WIN/LOSS
+- exit reason.
+
+---
+
+# 27. ФИНАЛЬНЫЕ МЕТРИКИ
+
+Для 50 CLOSED:
+
+- Wins
+- Losses
+- BE
+- WinRate
+- Profit Factor
+- Expectancy
+- Avg R
+- Median R
+- Avg Win
+- Avg Loss
+- Payoff Ratio
+- Gross PnL
+- Net PnL
+- Fees
+- Slippage
+- Max Drawdown
+- Max winning streak
+- Max losing streak
+- Avg holding time.
+
+Breakdowns:
+
+- path
+- setup
+- POI
+- LONG/SHORT
+- symbol
+- mapping.
+
+---
+
+# 28. СРАВНЕНИЕ
+
+Итоговая таблица:
+
+| Cohort | READY | FILLED | CLOSED | W | L | WR | PF | Exp | AvgR |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| OLD research7 | | | 7 | 2 | 5 | | | | |
+| fc61f35 flawed | 647 | 14 | 13 | 2 | 11 | | | | |
+| d46646f strict | 9 | 0 | 0 | | | | | | |
+| OB direct | | | | | | | | | |
+| OB conservative | | | | | | | | | |
+| CONF strict | | | | | | | | | |
+| STB/BTS edge | | | | | | | | | |
+| STB/BTS half | | | | | | | | | |
+| Breaker | | | | | | | | | |
+| Demand/Supply | | | | | | | | | |
+| Range | | | | | | | | | |
+| SOURCE PERMITTED UNION | | | | | | | | | |
+
+---
+
+# 29. OLD 13 AUDIT
+
+Сохранить текущий вывод:
+
+10/11 old losses = false positive текущей source reconstruction.
+
+DOGE 240/15:
+
+`UNCERTAIN_OR_DIFFERENT_PERMITTED_VARIANT`
+
+Теперь повторно проверить DOGE 240/15 против всех новых source-permitted paths.
+
+Классифицировать окончательно, если evidence позволяет.
+
+---
+
+# 30. QA
+
+Перед финальным ответом обязательно:
+
+- targeted tests;
+- full suite;
+- compileall;
+- Ruff;
+- mypy;
+- prefix parity;
+- future mutation;
+- no-lookahead;
+- path dedup;
+- physical_opportunity dedup;
+- cancellation causality;
+- exact resume;
+- data SHA verification;
+- dataset gap audit.
+
+---
+
+# 31. SAFETY
+
+Только:
+
+BACKTEST / SHADOW.
+
+Всегда:
+
+`trade_entry_allowed=false`
+
+LIVE запрещён.
+
+Private API запрещён.
+
+Real order placement запрещён.
+
+---
+
+# 32. GIT
+
+Старт:
+
+`d46646ffae9152bd3e0b3bae32689e6ffc80f210`
+
+Без force push.
+
+Старые artifacts сохранить.
+
+Сделать logical commits:
+
+1. source permitted path registry;
+2. source path implementations;
+3. cancellation/invalidation correction;
+4. expanded Bybit history if required;
+5. final 50-trade replay;
+6. report/QA.
+
+---
+
+# 33. НЕ ОСТАНАВЛИВАЙСЯ НА ПРОМЕЖУТОЧНОМ РЕЗУЛЬТАТЕ
+
+Не отвечать пользователю после:
+
+- анализа blockers;
+- реализации Direct OB;
+- нового funnel;
+- получения 15/20/30 сделок;
+- очередного 0-fill одного cohort;
+- одного HTTP 403.
+
+Продолжать автоматически.
+
+Целевая точка ответа:
+
+**ВСЯ SOURCE METHODOLOGY ФОРМАЛИЗОВАНА  
+→ ВСЕ PERMITTED PATHS РЕАЛИЗОВАНЫ  
+→ HISTORY ДОСТАТОЧНО РАСШИРЕНА  
+→ ПОЛУЧЕНЫ ПЕРВЫЕ 50 CLOSED  
+→ МЕТРИКИ ГОТОВЫ  
+→ QA PASS  
+→ COMMIT В MAIN.**
+
+Если объективно невозможно получить ровно 50 только из-за недоступности исторических Bybit данных после полного исчерпания всех разрешённых read-only источников — только тогда сообщить точный максимум и доказанный внешний blocker.
+
+Но не завершать работу раньше.
