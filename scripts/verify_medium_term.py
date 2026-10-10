@@ -40,14 +40,14 @@ def first_difference(a, b, path='root'):
 REPO = Path(__file__).resolve().parents[1]
 
 
-def replay(data, policy, cutoff):
+def replay(data, policy, cutoff, engine_class=MediumTermEngine):
     series = {}
     for tf, candles in data.items():
         report = analyze_market(candles, timeframe_minutes=tf)
         ranges = analyze_ranges(candles, report, params=RangeDetectionParams(
             midpoint_tolerance_fraction=policy['range_midpoint_tolerance']))
         series[tf] = SourceSeries('BTCUSDT', tf, candles, report, ranges)
-    e = MediumTermEngine('BTCUSDT', series, policy)
+    e = engine_class('BTCUSDT', series, policy)
     events = heapq.merge(*[[(c.close_time, -tf, tf, i) for i, c in enumerate(cs)]
                           for tf, cs in data.items()])
     for at, rows in itertools.groupby(events, key=lambda r: r[0]):
@@ -107,6 +107,11 @@ def main():
                                                              high=c.high*1.23, low=c.low*1.23, close=c.close*1.23)
                          for c in cs] for tf, cs in data.items()}
         full, prefix, mutated = replay(data, policy, cut), replay(truncated, policy, cut), replay(modified, policy, cut)
+        from run_compiled_medium_term import CompiledMediumTermEngine
+        compiled = replay(data, policy, cut, engine_class=CompiledMediumTermEngine)
+        if full != compiled:
+            print('COMPILER_DIFFERENCE', first_difference(full, compiled), flush=True)
+            raise ValueError('Compiler decision equivalence failed at '+cut.isoformat())
         if full != prefix or full != mutated:
             for label, snapshot in [('full', full), ('prefix', prefix), ('mutated', mutated)]:
                 write_rows(ROOT / 'qa/prefix_failure' / (str(index)+'_'+label+'.jsonl.gz'), [snapshot])
@@ -122,7 +127,8 @@ def main():
                 known += 1
         receipt['checks'].append({'cutoff': cut, 'prefix': 'PASS', 'future_mutation': 'PASS',
                                   'signals_compared': len(full['signals']), 'known_timestamps_checked': known,
-                                  'all_native_TFs_and_complete_D1': True})
+                                  'all_native_TFs_and_complete_D1': True,
+                                  'compiled_decision_equivalence': 'PASS'})
         print('PREFIX_FUTURE_PASS', cut.isoformat(), len(full['signals']), known, flush=True)
     write_json(ROOT / 'qa/causality_and_baseline_receipt.json', receipt)
 
