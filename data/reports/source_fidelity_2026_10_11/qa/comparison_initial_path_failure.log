@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/workspace/-/scripts/build_source_fidelity_comparisons.py", line 137, in <module>
+    main()
+  File "/workspace/-/scripts/build_source_fidelity_comparisons.py", line 84, in main
+    native_ind = read_rows(native / 'simulation/enabled/independent_trades.jsonl.gz')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/scripts/run_medium_term_research.py", line 58, in read_rows
+    with gzip.open(path, 'rt') as stream:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/gzip.py", line 65, in open
+    binary_file = GzipFile(filename, gz_mode, compresslevel)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/gzip.py", line 201, in __init__
+    fileobj = self.myfileobj = builtins.open(filename, mode or 'rb')
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/-/data/reports/medium_term_2026_10_10/role_corrected_v2/native_bybit_2026/simulation/enabled/independent_trades.jsonl.gz'

@@ -54,6 +54,14 @@ def prefix_future():
     for i, at in enumerate(cuts):
         requests[at].append({'id': 'QA_' + str(i), 'stage': 'NO_HTF_CONTEXT',
                              'rejection': {'discovery': {'parent_id': 'NO_SUCH_PARENT'}}})
+        past = clock[max(0, (2000, 5000, 8000)[i] - 128):(2000, 5000, 8000)[i] + 1]
+        parent = {'leg_low': min(c.low for c in past), 'leg_high': max(c.high for c in past)}
+        for tf in (60, 240):
+            for direction in ('LONG', 'SHORT'):
+                requests[at].append({'id': f'QA_TARGET_{i}_{tf}_{direction}',
+                                     'stage': 'QA_NONTRADING_TARGET_LIQUIDITY_PROBE',
+                                     'direction': direction, 'entry': past[-1].close,
+                                     'htf': tf, 'ltf': 15, 'parent': parent})
     full = replay(data, 'BTCUSDT', requests, policy)
     for i, cut in enumerate(cuts):
         prefix = {tf: [c for c in cs if c.close_time <= cut] for tf, cs in data.items()}
@@ -77,7 +85,8 @@ def prefix_future():
     write_json(ROOT / 'qa/state_prefix_receipt.json', {
         'prefix_consistency': 'PASS', 'future_mutation': 'PASS', 'cuts': cuts,
         'samples': len(full), 'bars_M15': len(clock), 'D1_complete_days_checked': len(daily),
-        'scope': 'Real-history completed-state snapshots, not a new entry strategy',
+        'contextual_target_liquidity_probes': 12,
+        'scope': 'Real-history completed-state plus both-direction H1/H4 nearest-FTA/adverse-pool functions; explicit non-trading past-128-bar context, not source setup admission',
         'trade_entry_allowed': False})
 
 

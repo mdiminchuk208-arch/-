@@ -1,0 +1,9 @@
+{
+  "baseline_diagnostics": 555,
+  "current_diagnostics": 555,
+  "new_diagnostics": 0,
+  "exact_diagnostic_identity": "PASS",
+  "all_new_audit_files": "PASS",
+  "ruff_full_exit_code": 1,
+  "trade_entry_allowed": false
+}

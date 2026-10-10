@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/workspace/-/scripts/verify_source_fidelity_audit.py", line 184, in <module>
+    main()
+  File "/workspace/-/scripts/verify_source_fidelity_audit.py", line 179, in main
+    {'prefix': prefix_future, 'resume-existing': verify_state_resume,
+  File "/workspace/-/scripts/verify_source_fidelity_audit.py", line 97, in baseline_and_known_times
+    assert not modified, modified
+           ^^^^^^^^^^^^
+AssertionError: ['"data/source_materials/correction_2026_10_09/SW_BAND9_\\320\\242\\320\\276\\321\\200\\320\\263\\320\\276\\320\\262\\321\\213\\320\\265_\\320\\270\\320\\275\\321\\201\\321\\202\\321\\200\\321\\203\\320\\274\\320\\265\\320\\275\\321\\202\\321\\213_Advanced.lnk"', '"data/source_materials/correction_2026_10_09/[SW.BAND]11. \\320\\240\\320\\270\\321\\201\\320\\272-\\320\\274\\320\\265\\320\\275\\320\\265\\320\\264\\320\\266\\320\\274\\320\\265\\320\\275\\321\\202.lnk"', '"data/source_materials/correction_2026_10_09/[SW.BAND]12. \\320\\230\\320\\275\\320\\264\\320\\270\\320\\272\\320\\260\\321\\202\\320\\276\\321\\200\\321\\213.lnk"', '"data/source_materials/correction_2026_10_09/[SW.BAND]22. \\320\\242\\320\\276\\321\\200\\320\\263\\320\\276\\320\\262\\321\\213\\320\\265 \\320\\270\\320\\275\\321\\201\\321\\202\\321\\200\\321\\203\\320\\274\\320\\265\\320\\275\\321\\202\\321\\213 (Pro).lnk"', '"data/source_materials/correction_2026_10_09/[SW.BAND]5. \\320\\240\\321\\213\\320\\275\\320\\276\\321\\207\\320\\275\\320\\260\\321\\217 \\321\\201\\321\\202\\321\\200\\321\\203\\320\\272\\321\\202\\321\\203\\321\\200\\320\\260 (Advanced).lnk"']

@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/workspace/-/scripts/build_source_fidelity_comparisons.py", line 137, in <module>
+    main()
+  File "/workspace/-/scripts/build_source_fidelity_comparisons.py", line 89, in main
+    ('CURRENT_NATIVE_FULL_INDEPENDENT', statistics(native_ind)['win_rate']),
+                                        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/scripts/audit_source_fidelity_exits.py", line 183, in statistics
+    mean_MFE_R=math.fsum(r['MFE_R'] for r in closed)/len(closed) if closed else None,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/scripts/audit_source_fidelity_exits.py", line 183, in <genexpr>
+    mean_MFE_R=math.fsum(r['MFE_R'] for r in closed)/len(closed) if closed else None,
+                         ~^^^^^^^^^
+KeyError: 'MFE_R'

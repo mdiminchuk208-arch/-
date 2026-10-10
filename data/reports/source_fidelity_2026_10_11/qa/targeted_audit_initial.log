@@ -1,0 +1,14 @@
+test_entry_bar_favourable_high_cannot_manufacture_tp (test_source_fidelity_audit.SourceFidelityAuditTests.test_entry_bar_favourable_high_cannot_manufacture_tp) ... ok
+test_gap_stop_fills_adversely_at_open (test_source_fidelity_audit.SourceFidelityAuditTests.test_gap_stop_fills_adversely_at_open) ... ok
+test_no_fta_is_undefined_instead_of_far_target_substitution (test_source_fidelity_audit.SourceFidelityAuditTests.test_no_fta_is_undefined_instead_of_far_target_substitution) ... ok
+test_open_remainder_not_force_closed (test_source_fidelity_audit.SourceFidelityAuditTests.test_open_remainder_not_force_closed) ... ok
+test_prefix_future_mutation_and_modes_match (test_source_fidelity_audit.SourceFidelityAuditTests.test_prefix_future_mutation_and_modes_match) ... ok
+test_state_snapshot_must_be_frozen_before_future_bos_updates (test_source_fidelity_audit.SourceFidelityAuditTests.test_state_snapshot_must_be_frozen_before_future_bos_updates) ... ok
+test_stop_first_preserves_adverse_entry_envelope (test_source_fidelity_audit.SourceFidelityAuditTests.test_stop_first_preserves_adverse_entry_envelope) ... ok
+test_structural_exit_is_observable_close_and_costs_reconcile (test_source_fidelity_audit.SourceFidelityAuditTests.test_structural_exit_is_observable_close_and_costs_reconcile) ... ok
+test_tp1_be_and_no_be_differ_without_future_filter (test_source_fidelity_audit.SourceFidelityAuditTests.test_tp1_be_and_no_be_differ_without_future_filter) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.010s
+
+OK

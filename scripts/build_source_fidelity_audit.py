@@ -268,8 +268,8 @@ def traces():
             'actual_setup_tf': 'NOT_LOGGED_IN_ORIGINAL_REJECTION', 'context_tf': r['context_tf'],
             'category': 'ENGINE_EXTRA_REJECTION', 'original_source_rule_violated': 'NONE_DEMONSTRATED_BY_THIS_REASON',
             'engine_cause': ('FORMAL_MAIN_SETUP_OR_SETUP_TF_GATE' if r['context_tf'] is not None
-                          else 'FORMAL_HIGHER_MACRO_STRUCTURE_GATE_POSSIBLY_PLUS_MAIN_GATE'),
-            'genuine_context_absence': (False if r['context_tf'] is not None else 'UNPROVEN: missing machine structure is not absence of all source context'),
+                          else 'FORMAL_HIGHER_MACRO_CONTEXT_OBJECT_GATE_POSSIBLY_PLUS_MAIN_GATE'),
+            'genuine_context_absence': (False if r['context_tf'] is not None else 'UNPROVEN: missing eligible machine structure/range object is not absence of all source context'),
             'causal_active_flow_passed_before_this_gate': True,
             'original_tree_decision': 'UNCLEAR_REMAINING_SOURCE_CONDITIONS_NOT_ALL_EVALUATED',
             'first_discovery_parent_matches': [{'tf':m['tf'],'kind':m['zone']['kind'],

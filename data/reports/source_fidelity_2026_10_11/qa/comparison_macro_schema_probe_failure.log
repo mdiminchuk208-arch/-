@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/workspace/-/scripts/build_source_fidelity_comparisons.py", line 198, in <module>
+    main()
+  File "/workspace/-/scripts/build_source_fidelity_comparisons.py", line 159, in main
+    'causal_flow_proxy': signal['evidence']['macro_context']['classification']}
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'classification'

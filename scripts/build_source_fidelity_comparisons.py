@@ -131,6 +131,46 @@ def main():
             groups[(axis, value)].append(t)
     write_csv(ROOT / 'baseline_C_breakdowns.csv', [
         {'axis': axis, 'value': value, **statistics(ts)} for (axis, value), ts in sorted(groups.items())])
+    # Market "regime" is only the separately recorded causal flow proxy here,
+    # not a retrospectively fitted market segmentation or explanatory cause.
+    v2 = REPO / 'data/reports/strategy_v2_2026_10_10'
+    features = read_rows(v2 / 'features_TEST.jsonl.gz')
+    labels = {r['signal_id']: r for r in read_rows(v2 / 'labels_TEST.jsonl.gz')}
+    axes = Counter()
+    old_source_flags = []
+    def add(universe, fields, outcome):
+        for axis, value in fields.items():
+            axes[(universe, axis, str(value), outcome)] += 1
+    for feature in features:
+        label = labels[feature['signal_id']]
+        if label['status'] != 'CLOSED':
+            continue
+        _, admitted, _ = old_tree(feature, old['model'])
+        fields = {'symbol': feature['symbol'], 'direction': feature['direction'],
+                  'mapping': feature['mapping'], 'setup_branch': feature['path_id'],
+                  'year_month': feature['READY'][:7], 'causal_flow_proxy': feature['htf_flow_classification']}
+        add('OLD_TEST_ALL', fields, label['result'])
+        add('OLD_TEST_ADMITTED' if admitted else 'OLD_TEST_REJECTED', fields, label['result'])
+        if admitted:
+            old_source_flags.append({'signal_id': feature['signal_id'], 'symbol': feature['symbol'],
+                'READY': feature['READY'], 'path_id': feature['path_id'], 'mapping': feature['mapping'],
+                'adverse_liquidity_count_at_READY': feature['adverse_liquidity_count'],
+                'adverse_flag_scope': 'EXISTING_CONTEXTUAL_POOL_INTERPRETATION_AT_READY_NOT_PRE_ENTRY',
+                'actual_entry_source_decision': 'UNDETERMINED_FROM_READY_FEATURE_ALONE',
+                'result': label['result'], 'trade_entry_allowed': False})
+    for universe, cases in [('C_PRIMARY_INDEPENDENT', primary_ind), ('C_PRIMARY_SHARED', trades)]:
+        for trade in cases:
+            signal = signals[trade['signal_id']]
+            fields = {'symbol': trade['symbol'], 'direction': trade['direction'],
+                      'mapping': str(signal['htf']) + '/' + str(signal['ltf']),
+                      'setup_branch': signal['setup_type'], 'year_month': signal['known_at'][:7],
+                      'causal_flow_proxy': ('COUNTERTREND_ALLOWED' if signal['evidence']['macro_context']['countertrend_delivery']
+                                           else 'HIGHER_STRUCTURE_ALIGNED')}
+            add(universe, fields, 'WIN' if trade['net_pnl'] > 0 else 'LOSS')
+    write_csv(ROOT / 'entry_universe_comparison.csv', [
+        {'universe': universe, 'axis': axis, 'value': value, 'result': outcome, 'cases': count}
+        for (universe, axis, value, outcome), count in sorted(axes.items())])
+    write_csv(ROOT / 'old_meta_297_READY_source_flags.csv', old_source_flags)
     shared = json.loads((BASE / 'simulation/enabled/shared_summary.json').read_text())
     variants = [
         {'variant': 'A_EXACT_ORIGINAL', 'status': 'NOT_IDENTIFIABLE_FROM_AVAILABLE_SOURCES',
@@ -147,6 +187,9 @@ def main():
         'frozen_tree_current_880_feature_projections': projections,
         'projection_limit': 'Fixed old fitted numerical tree on current planned quotes; not original educational ALLOW or an executed portfolio variant',
         'old_TEST_exact_rejected': {'WIN': 588, 'LOSS': 2382, 'CLOSED': 2970},
+        'old_META_READY_adverse_liquidity_recorded': dict(Counter(
+            r['result'] for r in old_source_flags if r['adverse_liquidity_count_at_READY'] > 0)),
+        'old_META_READY_flag_limit': 'Recorded contextual role interpretation at READY; not proof it remained adverse at actual entry',
         'winrate_chain': decomposition,
         'total_difference_percentage_points': 100 * (chain[0][1] - chain[-1][1]),
         'cost_gate_ON': statistics(trades), 'cost_gate_OFF': statistics(off),

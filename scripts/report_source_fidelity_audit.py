@@ -22,13 +22,14 @@ def main():
     old = json.loads((ROOT / 'old_tree_reconstruction.json').read_text())
     comparison = json.loads((ROOT / 'comparison_summary.json').read_text())
     exits = json.loads((ROOT / 'matched_exits/summary.json').read_text())
+    transitions = json.loads((ROOT / 'exit_outcome_comparison.json').read_text())['models']
     baseline = comparison['strategy_variants'][2]
     rules = Counter(r['status'] for r in matrix)
     source_rows = '\n'.join('| ' + ' | '.join(str(m.get(k, '')) for k in
         ('source_id', 'file', 'type', 'timeframes', 'location')) + ' |' for m in inventory['materials'])
     model_rows = '\n'.join(
         '| ' + model + ' | ' + ' | '.join([
-            str(m['completed_trades']), str(m['open_cases']), number(m['win_rate'] * 100, 2),
+            str(m['completed_trades']), str(m['OPEN']), number(m['win_rate'] * 100, 2),
             number(m['gross_pnl'], 2), number(m['fees'], 2), number(m['slippage'], 2),
             number(m['net_pnl'], 2), number(m['profit_factor']), number(m['expectancy']),
             number(m['average_R']), number(m['average_winner']), number(m['average_loser']),
@@ -58,6 +59,8 @@ def main():
 {source_rows}
 
 Полный inventory с entry, confirmation, invalidation, exit и liquidity/POI/structure: `data/reports/source_fidelity_2026_10_11/source_inventory.csv` и `.json`.
+
+Восьми DOCX принадлежат195 вхождений122уникальных изображений. Все122 сохранённые OCR прочитаны и все122оригинальные диаграммы визуально проверены на7contact sheets (`source_visual_review/`, hashes→DOCX/member в manifest). На них есть structural/liquidity/range/OB/OTE/SFP примеры и дополнительные классические/интерфейсные иллюстрации; единого глобального исполнимого decision tree с правилами выбора всех ветвей не обнаружено. Original diagrams остаются внутри неизменных DOCX, thumbnails используются для audit, а не как новые SOURCE_RULE.
 
 ## B. Исходные роли M15/H1/H4/D1
 
@@ -89,6 +92,8 @@ D1/W1 — глобальная картина, H1/H4 — локальная ст
 22. Сохранённые known-at audits, purged chronological split, 243 real-native prefix/future checks, prediction/label mutation PASS. Доказательство алгоритмического future leakage не найдено. Повторное использование development history ограничивает OOS вывод, само по себе не доказательство lookahead bug.
 23. Да: 67,68% относится одному сильному по WR листу. На всех3267 CLOSED TEST **789/2478, WR24,1506%, PF0,6277, Net−21381,65 USDT**. Selected Net+9,4829, PF1,0043, Expectancy+0,03193, AvgR+0,0013645: высокий WR не равен большому экономическому edge. AvgWin11,1073/AvgLoss23,1571, payoff0,47965, breakeven WR≈67,58%.
 
+Старые READY features выбранного листа также сохраняют adverse_liquidity_count>0 у293/297 (199WIN/94LOSS); лист не проверяет этот признак. `old_meta_297_READY_source_flags.csv` сохраняет все297IDs. Это дополнительно ограничивает утверждение «68% original source-valid»: source-permitted тогда не применял этот blocker. Scope — existing contextual pool interpretation **на READY**, не доказательство, что liquidity осталась adverse на actual entry; данные не используются для удаления старых winners/losers.
+
 ## D. Был ли 68% честным OOS результатом?
 
 Разделение TRAIN/VALIDATION/TEST и frozen single opening соблюдены; все предсказания восстановлены. Новый untouched OOS отсутствует: весь native cohort уже участвовал в development. Не использовать этот результат как доказанный OOS исходной стратегии или цель настройки. Старый V2 search не возобновлялся.
@@ -110,6 +115,8 @@ Rule-by-rule матрица охватывает 52 положения: {dict(ru
 ## I. Правильно ли реализован universal H1/H4-owner?
 
 Как project policy он реализован и проверен, но как универсальное исходное правило — **EXTRA_RULE_NOT_IN_SOURCE**. Нижний TF не обязан создавать независимую безконтекстную идею; это не доказывает необходимости формального owner объекта. Источники допускают HTF POI/context с младшим trigger. `_macro_context` выбирает первый подходящий строго старший H4/D1 объект; это не одновременная проверка всех четырёх TF.
+
+Gate требует дополнительный формальный context object, но не всегда directional structure: для parent SFP/Range допускается active range вместо structure и не требуется совпадение macro direction. Среди880:337same-direction,281opposite-direction,262без directional structure с range context. Countertrend allowance flag у719 сделок не означает719фактических countertrend trades. Слова «macro structure gate» в начальном checkpoint надо читать с этим уточнением; финальный NO_HTF trace называет его CONTEXT_OBJECT_GATE. Это описание сохранённого кода, без изменения policy.
 
 ## J. Все 3 680 NO_HTF_CONTEXT
 
@@ -135,6 +142,8 @@ Rule-by-rule матрица охватывает 52 положения: {dict(ru
 
 Сумма=**{number(comparison['total_difference_percentage_points'])} п.п.**. Старый frozen leaf на том же TEST исключил2970=588WIN+2382LOSS: точный selection lift43,5262п.п. Shared admission baseline исключил1472=480WIN+992LOSS из2352, сохранив880 с тем же знаком результата: точный WR lift3,6302п.п. Case ledgers: `old_tree_TEST_all_leaf_trace.csv`, `capital_admission_2352_to_880.csv`. Различие TEST2026/полногоnative2026/primary2023–2025 смешивает период, инструменты, entries и exits; приписывать его одному условию нельзя. Разный состав нельзя устранить арифметическим сравнением агрегатов.
 
+`entry_universe_comparison.csv` даёт accepted/rejected universe counts по symbol, direction, mapping, branch, month и causal context proxy, отдельно OLD_TEST_ALL/ADMITTED/REJECTED и C_INDEPENDENT/SHARED. Old flow classification и current strictly-higher macro admission — разные определения context; proxy не выдаётся за единую ретроспективную market regime сегментацию. Сохраняются разные ready/execution periods и executionM5vsM15; exact matching всех traded IDs между2026 и2023–2025 невозможно из-за непересекающихся периодов.
+
 Новый source-owner/SL/FTA/exit/account policy действительно меняет проверяемую систему, но один причинный компонент всего падения не установлен. Same-entry exits ниже изолируют только сопровождение. Изменение entry надо проверять после определения source resolver, без P&L-подбора.
 
 ## N. Exit edge на тех же880 фактических входах
@@ -148,6 +157,8 @@ A diagnostic: сохранённая source-permitted альтернатива f
 {model_rows}
 
 Gross=reference-price P&L до costs; identity Gross−Fees−Slippage=Net. Историческое поле gross_pnl baseline уже содержит slippage: не вычитать его повторно. MFE/MAE mean в единицах первоначального риска и зависят от длительности наблюдения модели; это outcome diagnostics. UndefinedFTA cases: {exits['undefined_counts']}; они сохранены, не подменены дальней целью. Common defined+CLOSED entry sample={exits['common_defined_closed_entries']}; same-sample результаты отдельно в `matched_exits/summary.json`. OPEN остатки остаются OPEN, EOF не закрываются; не смешивать WR разных censored sets. Все fills и сделки по моделям в matched_exits/*.csv и *.jsonl.gz; `exit_outcome_transitions.csv` связывает каждый flip и P&L delta с неизменным entry.
+
+Точные переходы: B1 сохранил338WIN/542LOSS, изменил271exit time, Net delta+146,7001USDT. D без BE перевёл57WIN→LOSS,0LOSS→WIN;183exit time изменились; Net delta+203,3495USDT при WR−6,4773п.п. B2 nearestFTA на876common закрытых:70WIN→LOSS и64LOSS→WIN,361exit time изменён, matched Net delta+{number(transitions['B2_FULL_OLD_SOURCE_FTA']['common_net_delta'])}USDT. Четыре undefined включают1baselineWIN/3LOSS. A partialRange отличие отB2 меняетNet на+4,3984USDT при том же WR. Ни одна из проверенных exit моделей на этих фиксированных входах не восстанавливает68%. Эти outcomes не использованы для выбора production exit.
 
 ## O. Стратегические вариантыA/B/C и Anti-Scalp
 
@@ -168,6 +179,8 @@ Anti-Scalp policy не менялась. ON880:338/542,WR38,4091%,Net−1080,91;
 Да: extra universal-owner/macro gates, target scope/count, SL expansion, allocation/BE и missing adverse blocker — конкретные доказательства, что baseline не exact original. Это не доказательство, что исходная стратегия прибыльна или что правильное восстановление даст68%.
 
 Old tree: алгоритмический future leakage не доказан; development TEST не untouched OOS. Новые проверки: real-history state prefix/future mutation на9000M15, триcuts,93полных UTC D1; all5440known-time snapshots; same-entry real-history exit prefix/future mutation; BACKTEST/SHADOW parity для всех defined моделей; all880baseline C equality; strict manifests/resume; immutable17 728blobs;582unittests; mypy53sourcefiles; compileall; additive ruff. Detailed scopes и результаты в qa/*.json/log, включая сохранённые первые диагностические ошибки путей/единиц, исправленные до complete результатов. Нет LIVE/private API calls. Prefix probes не являются исчерпывающим доказательством всех возможных рынков, подтверждают проверенные data/code paths.
+
+Дополнительно prefix/future tests проверяют12 обоих направлений H1/H4 contextual target/liquidity probes на заранее известных128барных границах (non-trading QA context); real matched exit tests22chronologically decimated entries×5models=110PASS. Full mode parity4392defined pairs. Known-time audit проверил556824known_at,21760completed_at и остальные formation/test/body times, future evidence не найдено. Full Ruff baseline555=current555, exact diagnostic identity PASS, новых замечаний0. Повторяемые команды и архивный producer hash описаны в `SOURCE_FIDELITY_AUDIT_REPRODUCIBILITY.md`.
 
 ## R. Следующий шаг без оптимизации
 
