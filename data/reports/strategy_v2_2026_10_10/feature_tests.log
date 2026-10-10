@@ -1,0 +1,13 @@
+.......F
+======================================================================
+FAIL: test_wilson_and_minimum_sample_gate (test_strategy_v2_research.StrategyV2CausalityTests.test_wilson_and_minimum_sample_gate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/-/tests/test_strategy_v2_research.py", line 86, in test_wilson_and_minimum_sample_gate
+    self.assertAlmostEqual(hi,.759205,places=5)
+AssertionError: 0.7592525531762859 != 0.759205 within 5 places (4.755317628590827e-05 difference)
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.325s
+
+FAILED (failures=1)

@@ -1,0 +1,15 @@
+{
+  "TEST_access": false,
+  "TRAIN_eligible_CLOSED": 9696,
+  "VALIDATION_access": false,
+  "attempt_count": 67233,
+  "input_hashes": {
+    "features_TRAIN.jsonl.gz": "ce3a1182b5b9bd6ec1cfa09bb5fad958b2f94c4737286cc8ea5d90479819ac97",
+    "labels_TRAIN.jsonl.gz": "36e2aae54d42b7d4a42a65372ee92eef8cba3298ada165aaa92b4c46c83d5541"
+  },
+  "selection_policy": "REGISTERED_TOP20_PER_SCOPE_PLUS_CONTROLS_AND_SCORES",
+  "shortlist_sha256": "b2d5b31d49a8f2d7ea32a4bba052abb4a08ef6e49a2a3de5a629c6d95d51eae4",
+  "status": "SEALED_TRAIN_SEARCH",
+  "trade_entry_allowed": false,
+  "train_commit": "59519bb05aa81e20dc443f718a12f77f10a56153"
+}
