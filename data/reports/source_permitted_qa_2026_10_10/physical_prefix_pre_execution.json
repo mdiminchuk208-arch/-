@@ -1,0 +1,11 @@
+{
+  "status": "PASS_PRE_OUTCOME_GLOBAL_PHYSICAL_UNION",
+  "real_prefix_bars": 14293,
+  "raw_READY": 1775,
+  "context_union_READY": 620,
+  "physical_union_READY": 299,
+  "same_local_zone_multiple_physical_selected": 0,
+  "raw_source_rule_and_trade_fields_unchanged": true,
+  "execution_outcomes_seen": false,
+  "trade_entry_allowed": false
+}

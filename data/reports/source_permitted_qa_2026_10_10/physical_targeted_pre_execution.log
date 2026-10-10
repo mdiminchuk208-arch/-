@@ -1,0 +1,13 @@
+test_family_cohorts_reuse_global_ids (test_source_physical.PhysicalSourceTests.test_family_cohorts_reuse_global_ids) ... ok
+test_future_ready_cannot_rewrite_prefix_ids_or_choose_later_quote (test_source_physical.PhysicalSourceTests.test_future_ready_cannot_rewrite_prefix_ids_or_choose_later_quote) ... ok
+test_identity_pass_never_changes_quotes_stops_times_or_raw_input (test_source_physical.PhysicalSourceTests.test_identity_pass_never_changes_quotes_stops_times_or_raw_input) ... ok
+test_native_formation_aliases_share_identity_without_future_fill (test_source_physical.PhysicalSourceTests.test_native_formation_aliases_share_identity_without_future_fill) ... ok
+test_range_and_direct_on_same_external_first_test_share_identity (test_source_physical.PhysicalSourceTests.test_range_and_direct_on_same_external_first_test_share_identity) ... ok
+test_symbol_namespaces_do_not_share_native_formation_alias (test_source_physical.PhysicalSourceTests.test_symbol_namespaces_do_not_share_native_formation_alias) ... ok
+test_three_candle_fvg_geometry_aliases_across_native_tfs (test_source_physical.PhysicalSourceTests.test_three_candle_fvg_geometry_aliases_across_native_tfs) ... ok
+test_two_parent_patterns_same_local_zone_are_one_physical_entry (test_source_physical.PhysicalSourceTests.test_two_parent_patterns_same_local_zone_are_one_physical_entry) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.010s
+
+OK
