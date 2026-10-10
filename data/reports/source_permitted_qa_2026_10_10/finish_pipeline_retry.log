@@ -1,0 +1,14 @@
+Wait for the complete full40 native detector manifest; no partial trade results are primary.
+START run_source_permitted_physical_union.py
+PASS run_source_permitted_physical_union.py
+START verify_source_physical_evidence.py
+PASS verify_source_physical_evidence.py
+START verify_source_permitted_evidence.py
+PASS verify_source_permitted_evidence.py
+START run_source_permitted_bybit.py
+PASS run_source_permitted_bybit.py
+START run_source_permitted_physical_union.py
+PASS run_source_permitted_physical_union.py
+START report_source_permitted.py
+PASS report_source_permitted.py
+COMPLETE: measured first50, all ledgers, native evidence, exact resume and report.

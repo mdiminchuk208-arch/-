@@ -1,0 +1,204 @@
+{
+  "trade_entry_allowed": false,
+  "ledger": {
+    "status": "PASS",
+    "READY_raw_variants": 96954,
+    "physical_union_READY": 19448,
+    "cohort_case_instances_audited": 76524,
+    "cohorts": {
+      "cohorts/BREAKER_AGGRESSIVE_STOP/CANCEL_SOURCE_POI_INVALIDATION": {
+        "FILLED": 1927,
+        "CLOSED": 1926
+      },
+      "cohorts/BREAKER_AGGRESSIVE_STOP/CANCEL_STRICT_STRUCTURE": {
+        "FILLED": 935,
+        "CLOSED": 935
+      },
+      "cohorts/BREAKER_CONSERVATIVE_STOP/CANCEL_SOURCE_POI_INVALIDATION": {
+        "FILLED": 1928,
+        "CLOSED": 1920
+      },
+      "cohorts/BREAKER_CONSERVATIVE_STOP/CANCEL_STRICT_STRUCTURE": {
+        "FILLED": 934,
+        "CLOSED": 932
+      },
+      "cohorts/DEMAND_SUPPLY/CANCEL_SOURCE_POI_INVALIDATION": {
+        "FILLED": 2584,
+        "CLOSED": 2583
+      },
+      "cohorts/DEMAND_SUPPLY/CANCEL_STRICT_STRUCTURE": {
+        "FILLED": 739,
+        "CLOSED": 739
+      },
+      "cohorts/OB_CONSERVATIVE_BOS_POI/CANCEL_SOURCE_POI_INVALIDATION": {
+        "FILLED": 2700,
+        "CLOSED": 2698
+      },
+      "cohorts/OB_CONSERVATIVE_BOS_POI/CANCEL_STRICT_STRUCTURE": {
+        "FILLED": 638,
+        "CLOSED": 637
+      },
+      "cohorts/OB_DIRECT_ENGULFING_STOP/CANCEL_SOURCE_POI_INVALIDATION": {
+        "FILLED": 582,
+        "CLOSED": 582
+      },
+      "cohorts/OB_DIRECT_ENGULFING_STOP/CANCEL_STRICT_STRUCTURE": {
+        "FILLED": 93,
+        "CLOSED": 93
+      },
+      "cohorts/OB_DIRECT_FIRST_TEST/CANCEL_SOURCE_POI_INVALIDATION": {
+        "FILLED": 583,
+        "CLOSED": 583
+      },
+      "cohorts/OB_DIRECT_FIRST_TEST/CANCEL_STRICT_STRUCTURE": {
+        "FILLED": 93,
+        "CLOSED": 93
+      },
+      "cohorts/OB_DIRECT_INSIDE/CANCEL_SOURCE_POI_INVALIDATION": {
+        "FILLED": 548,
+        "CLOSED": 548
+      },
+      "cohorts/OB_DIRECT_INSIDE/CANCEL_STRICT_STRUCTURE": {
+        "FILLED": 29,
+        "CLOSED": 29
+      },
+      "cohorts/OB_DIRECT_INSIDE_ENGULFING_STOP/CANCEL_SOURCE_POI_INVALIDATION": {
+        "FILLED": 437,
+        "CLOSED": 437
+      },
+      "cohorts/OB_DIRECT_INSIDE_ENGULFING_STOP/CANCEL_STRICT_STRUCTURE": {
+        "FILLED": 24,
+        "CLOSED": 24
+      },
+      "cohorts/OB_ULTRA_CONSERVATIVE_CONF/CANCEL_SOURCE_POI_INVALIDATION": {
+        "FILLED": 1566,
+        "CLOSED": 1564
+      },
+      "cohorts/OB_ULTRA_CONSERVATIVE_CONF/CANCEL_STRICT_STRUCTURE": {
+        "FILLED": 762,
+        "CLOSED": 761
+      },
+      "cohorts/RANGE_AGGRESSIVE_EXTERNAL_POI/CANCEL_SOURCE_POI_INVALIDATION": {
+        "FILLED": 737,
+        "CLOSED": 734
+      },
+      "cohorts/RANGE_AGGRESSIVE_EXTERNAL_POI/CANCEL_STRICT_STRUCTURE": {
+        "FILLED": 48,
+        "CLOSED": 48
+      },
+      "cohorts/RANGE_CONSERVATIVE_RETEST/CANCEL_SOURCE_POI_INVALIDATION": {
+        "FILLED": 31,
+        "CLOSED": 31
+      },
+      "cohorts/RANGE_CONSERVATIVE_RETEST/CANCEL_STRICT_STRUCTURE": {
+        "FILLED": 30,
+        "CLOSED": 30
+      },
+      "cohorts/SFP_ATR_STOP/CANCEL_SOURCE_POI_INVALIDATION": {
+        "FILLED": 10633,
+        "CLOSED": 10623
+      },
+      "cohorts/SFP_ATR_STOP/CANCEL_STRICT_STRUCTURE": {
+        "FILLED": 1303,
+        "CLOSED": 1302
+      },
+      "cohorts/SFP_BOS_POI/CANCEL_SOURCE_POI_INVALIDATION": {
+        "FILLED": 10637,
+        "CLOSED": 10629
+      },
+      "cohorts/SFP_BOS_POI/CANCEL_STRICT_STRUCTURE": {
+        "FILLED": 1304,
+        "CLOSED": 1303
+      },
+      "cohorts/SOURCE_CONF_STRICT/CANCEL_SOURCE_POI_INVALIDATION": {
+        "FILLED": 1566,
+        "CLOSED": 1564
+      },
+      "cohorts/SOURCE_CONF_STRICT/CANCEL_STRICT_STRUCTURE": {
+        "FILLED": 762,
+        "CLOSED": 761
+      },
+      "cohorts/SOURCE_CONSERVATIVE/CANCEL_SOURCE_POI_INVALIDATION": {
+        "FILLED": 2700,
+        "CLOSED": 2698
+      },
+      "cohorts/SOURCE_CONSERVATIVE/CANCEL_STRICT_STRUCTURE": {
+        "FILLED": 638,
+        "CLOSED": 637
+      },
+      "cohorts/SOURCE_DIRECT/CANCEL_SOURCE_POI_INVALIDATION": {
+        "FILLED": 588,
+        "CLOSED": 588
+      },
+      "cohorts/SOURCE_DIRECT/CANCEL_STRICT_STRUCTURE": {
+        "FILLED": 94,
+        "CLOSED": 94
+      },
+      "cohorts/SOURCE_PERMITTED_UNION/CANCEL_SOURCE_POI_INVALIDATION": {
+        "FILLED": 16351,
+        "CLOSED": 16333
+      },
+      "cohorts/SOURCE_PERMITTED_UNION/CANCEL_STRICT_STRUCTURE": {
+        "FILLED": 3806,
+        "CLOSED": 3803
+      },
+      "cohorts/STB_BTS_EDGE/CANCEL_SOURCE_POI_INVALIDATION": {
+        "FILLED": 2854,
+        "CLOSED": 2853
+      },
+      "cohorts/STB_BTS_EDGE/CANCEL_STRICT_STRUCTURE": {
+        "FILLED": 1167,
+        "CLOSED": 1167
+      },
+      "cohorts/STB_BTS_HALF/CANCEL_SOURCE_POI_INVALIDATION": {
+        "FILLED": 3729,
+        "CLOSED": 3726
+      },
+      "cohorts/STB_BTS_HALF/CANCEL_STRICT_STRUCTURE": {
+        "FILLED": 444,
+        "CLOSED": 443
+      }
+    },
+    "native_identity_cost_risk_prefix_selection_cancellation": "PASS",
+    "trade_entry_allowed": false
+  },
+  "preservation": {
+    "status": "PASS",
+    "retained_74a6f8d": {
+      "unchanged_git_blobs": 15069,
+      "by_directory": {
+        "config": 3,
+        "data": 14907,
+        "scripts": 49,
+        "src": 39,
+        "tests": 71
+      }
+    },
+    "retained_cbcd30a": {
+      "unchanged_git_blobs": 15258,
+      "by_directory": {
+        "config": 5,
+        "data": 15082,
+        "scripts": 56,
+        "src": 42,
+        "tests": 73
+      }
+    },
+    "permitted_modified_new_helper": "scripts/verify_source_pdf_native_evidence.py",
+    "baseline_registered_git_hashes_verified": 57,
+    "baseline_commit": "3a9632606f79b4454509a60674eeac3877f77bbf",
+    "old_reports_byte_exact": true,
+    "canonical_source_config_tests_unchanged_since_74a6f8d": true,
+    "trade_entry_allowed": false
+  },
+  "retained_d46646f": {
+    "unchanged_git_blobs": 15385,
+    "by_directory": {
+      "config": 5,
+      "data": 15206,
+      "scripts": 59,
+      "src": 42,
+      "tests": 73
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "all_before_after_artifact_hashes_equal": true,
+  "artifact_counts": {
+    "native": 152,
+    "physical": 1118
+  },
+  "manifest_sha256": {
+    "native": "60685a08c8414ab2658d61e0ee45104241f9f746ca1ba7bae57756e98e0392a5",
+    "physical": "1149962e5ba916895def2ed639fb4bd0bc619ec2cafc23df0ad0c63cdd7035a8"
+  },
+  "replay_performed": false,
+  "status": "VERIFIED_COMPLETE_NO_MUTATION",
+  "trade_entry_allowed": false
+}

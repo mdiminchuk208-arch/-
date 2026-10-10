@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "baseline": "d46646f",
+  "current_findings": 555,
+  "baseline_findings": 555,
+  "new_findings": [],
+  "all_diagnostics_exactly_equal": true,
+  "trade_entry_allowed": false
+}

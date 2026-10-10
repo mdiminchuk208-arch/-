@@ -1,0 +1,19 @@
+{
+  "actual_unique_physical_count": 50,
+  "artifacts": {
+    "all_physical_union_cases.csv.gz": "e0191b42bcdcf100eab4f380ef6f85fa86d953468aa74dd0f05701058f7dfbd3",
+    "candidate_detection_funnel.json": "c9cffb75d7f56b440989e13af779f84f964d4e1bfc5cfa534bd8808c19bee1b6",
+    "cohort_metrics.csv": "95bdca28a656df2215c1a824f7172e97f7257e350e236294b21b9eec7bdda6c4",
+    "first50.csv": "43914160bdcc4e280db8af0504805e29a42389bff45bf054eebb6b16079053ed",
+    "historical_comparison.json": "987aba5e48786c58ae11e7b88488c8f8240a0f09c91ccce0e83cd654d8a64d6e",
+    "old13_all_source_paths_audit.json": "072208589113fee6fbdfe7d5440631d9eb03f233e8315edbe82e514a983d17ea",
+    "old9_fixed_plan_cancellation_audit.json": "3f68c0fcbbab9ee8c977206bb242d08d48d50af40809cfe2f8cd92078c529615",
+    "report.md": "ce7aba98c5ab5383d26c149ebe3d35a8d0bdb7758f6d9e30794a08bd6f417717",
+    "strict179_OF_audit.json": "7d1e273f0aa42bf2a58c4c128fa7f85add8e5989a4d2bf8f1763c725e1757dea",
+    "strict179_OF_summary.json": "bea546665afdafd2af1dac36dfd8c980afd9108e4de3db2ffc02116f03537b07"
+  },
+  "primary_count": 50,
+  "renderer_sha256": "1ab28d0ac317848a56d55cb4abbf8837c928476f86f0298812f8c2bf7edcae1e",
+  "source_manifest_sha256": "1149962e5ba916895def2ed639fb4bd0bc619ec2cafc23df0ad0c63cdd7035a8",
+  "trade_entry_allowed": false
+}

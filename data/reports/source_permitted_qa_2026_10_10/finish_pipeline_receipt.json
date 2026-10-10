@@ -1,0 +1,33 @@
+{
+  "CLOSED": 16333,
+  "FILLED": 16351,
+  "READY": 19448,
+  "pipeline_sha256": "be1d6d670b58b5fda03348503fd7e5dc7cc003fba6804b6f28bbf55cf8696067",
+  "primary50": {
+    "AvgHoldingSeconds": 15216.0,
+    "AvgLoss": 22.7951986073258,
+    "AvgR": -0.5077977069559078,
+    "AvgWin": 22.67451916166403,
+    "BE": 0,
+    "CLOSED": 50,
+    "Expectancy": -11.882466342768241,
+    "Fees": 243.3262085990917,
+    "GrossAfterSlippageBeforeFees": -350.79710853932033,
+    "GrossPnL": -269.6883831271688,
+    "Losses": 38,
+    "MaxDrawdown": 594.1233171384117,
+    "MaxDrawdownFraction": null,
+    "MaxLosingStreak": 10,
+    "MaxWinningStreak": 3,
+    "MedianR": -1.0,
+    "NetPnL": -594.1233171384121,
+    "PayoffRatio": 0.9947059269918803,
+    "ProfitFactor": 0.31411766115533063,
+    "Slippage": 81.10872541215157,
+    "WinRate": 0.24,
+    "Wins": 12,
+    "drawdown_scope": "CUMULATIVE_INDEPENDENT_CASE_NET_PNL_BY_EXIT_TIME; NOT_SHARED_NAV"
+  },
+  "status": "COMPLETE_TARGET_50_AND_INDEPENDENT_QA",
+  "trade_entry_allowed": false
+}

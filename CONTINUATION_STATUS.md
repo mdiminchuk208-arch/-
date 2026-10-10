@@ -1,3 +1,56 @@
+# Source-permitted physical cases — current continuation checkpoint
+
+Полный replay завершён:40 native Bybit серий /993575 свечей /10 символов.
+**19448 physical READY → 16351 FILLED → 16333 CLOSED**,
+OPEN=18, PENDING=118; endpoint не force-close.
+Цель достигнута: первые50 уникальных source-valid FILLED+CLOSED физически различных cases,
+хронологически по реальным native fill-интервалам и фиксированному tie order.
+**WIN=12,LOSS=38,BE=0; WR=24.00%;
+PF=0.31411766; Expectancy=-11.88246634 USDT;
+AvgR=-0.50779771; NetPnL=-594.12331714 USDT.**
+Полные метрики50/all-CLOSED, all38cohorts, разбивки, все сделки и source evidence сохранены.
+Расширение истории для цели50 не требуется; утверждение максимума Bybit universe не делается.
+
+Первичные5PDF/54страницы и ZIP/DOCX прочитаны и сохранены.
+Протокол7c47621, движок7f9782f, physical424d663, SFP bodyd87edb1,
+bounded execution096e225 опубликованы до финальных outcomes; полный replay artifacts0fc7246 опубликован.
+Все15 paths самостоятельны; primary union выбирается по earliest valid READY/registered precedence
+до исполнения, global physical aliases ставятся до cohort filtering; later winner не заменяет выбор.
+SourceFTA/Range80/20/SFPATR exits исследуются отдельно от frozen canonical.
+CanonicalTP40/30/30, текущийSL и cost-adjusted BE послеTP1 неизменны.
+Независимый case:reference1170 USDT, planned risk2%=23.4 с costs; shared occupancy/NAV не применяется.
+Development2026 уже просмотрена; OOS/прибыльность стратегии не объявляются. Даты отчёта Asia/Yekaterinburg(+05).
+
+QA:548tests, compileall, Ruff zero new /555 inherited, mypy46files PASS.
+Full source/native/identity96,954variants/46,589nativeSFPbodyevents/23,812ATRstops PASS;
+реальный14293bars prefix/all15paths +future mutation4TF PASS.
+Ledger76,524caseinstances, costs/risk/no-lookahead/cancellation/selection/physicaldedup PASS.
+Все40inputSHA/gap audit PASS; baseline15385d466 blobs и более ранние artifacts неизменны.
+Exact resumes:152native detector artifacts +1118physical execution artifacts, все SHA unchanged, replay=false.
+Detector corpus COMPLETE с явным scopeCORPUS_ONLY после OOM provisional aggregation32GiB;
+primary execution COMPLETE в отдельном physical root. Исходные попытки/logs не удалены.
+Verifier extra-CLOSE assertion исправлен по DOC16P0082–87 и ранее зарегистрированному inclusiveBOS timing;
+шесть same-CLOSE cases допустимы, источник/quotes/stops/targets/selection/PnL не менялись.
+
+Старые13fc61f35 cases проверены на точных old READY/entry cutoffs и всех новых source paths.
+10старыхLOSS остаются false positives strict projection, без автоматического переноса на весь source universe.
+DOGE240/15:точная старая FTA уже тестировалась native5m CLOSE2026-04-12T20:45UTC
+доREADY21:00UTC; старый план false positive зарегистрированного fresh-FTA contract.
+Другая formation/quote/target остаётся отдельным вариантом; старый UNCERTAIN и все snapshots сохранены.
+Все179старыхOF контекстов,9quotes и18controlled cancel replays доступны в новом отчёте.
+Frozen robustness45studies и exit88cases/301variants/264Aparity сохранены без повторного дорогого replay.
+
+[Итоговый отчёт](SOURCE_ALIGNED_BYBIT_50_TRADE_REPORT.md).
+[Все50 CSV](data/reports/source_permitted_analysis_2026_10_10/first50.csv).
+[Полный union CSV.gz](data/reports/source_permitted_analysis_2026_10_10/all_physical_union_cases.csv.gz).
+[Source protocol](SOURCE_PERMITTED_PROTOCOL.md).
+[QA receipts](data/reports/source_permitted_qa_2026_10_10).
+Только BACKTEST/SHADOW; **trade_entry_allowed=false**; без LIVE/private exchange API/orders.
+
+---
+
+## Historical checkpoint through d46646f — superseded by the source-permitted result above
+
 # Primary-PDF source cases — current continuation checkpoint
 
 Все настоящие SW5/SW9/SW11/SW12/SW22 PDF сохранены и полностью прочитаны:

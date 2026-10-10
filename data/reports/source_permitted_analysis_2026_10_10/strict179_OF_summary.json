@@ -1,0 +1,9 @@
+{
+  "all_original_179_accounted": true,
+  "first_old_rejection_reasons": {
+    "READY": 5,
+    "WAIT_ACTIVE_HTF_ORDER_FLOW": 170,
+    "WAIT_FIRST_OPPOSING_POI_FTA": 4
+  },
+  "new_active_flow_at_same_native_close": 29
+}

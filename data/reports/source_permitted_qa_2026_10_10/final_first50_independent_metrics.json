@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "actual_unique_physical_CLOSED": 50,
+  "first50_equal_full_chronological_CLOSED_prefix": true,
+  "metrics_independently_recomputed_with_fsum": {
+    "Wins": 12,
+    "Losses": 38,
+    "BE": 0,
+    "WinRate": 0.24,
+    "ProfitFactor": 0.31411766115533063,
+    "NetPnL": -594.1233171384121,
+    "Expectancy": -11.882466342768241,
+    "AvgR": -0.5077977069559076,
+    "MedianR": -1.0,
+    "GrossPnL": -269.6883831271688,
+    "Fees": 243.3262085990917,
+    "Slippage": 81.10872541215157
+  },
+  "first_fill_interval_UTC": "2026-01-25T19:15:00+00:00",
+  "last_fill_interval_UTC": "2026-01-27T04:10:00+00:00",
+  "fills_inside_first50_no_positive_outcome_filter": true,
+  "case_validation_not_shared_portfolio": true,
+  "trade_entry_allowed": false
+}

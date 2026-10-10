@@ -1,0 +1,204 @@
+{
+  "ledger": {
+    "READY_raw_variants": 96954,
+    "cohort_case_instances_audited": 76524,
+    "cohorts": {
+      "cohorts/BREAKER_AGGRESSIVE_STOP/CANCEL_SOURCE_POI_INVALIDATION": {
+        "CLOSED": 1926,
+        "FILLED": 1927
+      },
+      "cohorts/BREAKER_AGGRESSIVE_STOP/CANCEL_STRICT_STRUCTURE": {
+        "CLOSED": 935,
+        "FILLED": 935
+      },
+      "cohorts/BREAKER_CONSERVATIVE_STOP/CANCEL_SOURCE_POI_INVALIDATION": {
+        "CLOSED": 1920,
+        "FILLED": 1928
+      },
+      "cohorts/BREAKER_CONSERVATIVE_STOP/CANCEL_STRICT_STRUCTURE": {
+        "CLOSED": 932,
+        "FILLED": 934
+      },
+      "cohorts/DEMAND_SUPPLY/CANCEL_SOURCE_POI_INVALIDATION": {
+        "CLOSED": 2583,
+        "FILLED": 2584
+      },
+      "cohorts/DEMAND_SUPPLY/CANCEL_STRICT_STRUCTURE": {
+        "CLOSED": 739,
+        "FILLED": 739
+      },
+      "cohorts/OB_CONSERVATIVE_BOS_POI/CANCEL_SOURCE_POI_INVALIDATION": {
+        "CLOSED": 2698,
+        "FILLED": 2700
+      },
+      "cohorts/OB_CONSERVATIVE_BOS_POI/CANCEL_STRICT_STRUCTURE": {
+        "CLOSED": 637,
+        "FILLED": 638
+      },
+      "cohorts/OB_DIRECT_ENGULFING_STOP/CANCEL_SOURCE_POI_INVALIDATION": {
+        "CLOSED": 582,
+        "FILLED": 582
+      },
+      "cohorts/OB_DIRECT_ENGULFING_STOP/CANCEL_STRICT_STRUCTURE": {
+        "CLOSED": 93,
+        "FILLED": 93
+      },
+      "cohorts/OB_DIRECT_FIRST_TEST/CANCEL_SOURCE_POI_INVALIDATION": {
+        "CLOSED": 583,
+        "FILLED": 583
+      },
+      "cohorts/OB_DIRECT_FIRST_TEST/CANCEL_STRICT_STRUCTURE": {
+        "CLOSED": 93,
+        "FILLED": 93
+      },
+      "cohorts/OB_DIRECT_INSIDE/CANCEL_SOURCE_POI_INVALIDATION": {
+        "CLOSED": 548,
+        "FILLED": 548
+      },
+      "cohorts/OB_DIRECT_INSIDE/CANCEL_STRICT_STRUCTURE": {
+        "CLOSED": 29,
+        "FILLED": 29
+      },
+      "cohorts/OB_DIRECT_INSIDE_ENGULFING_STOP/CANCEL_SOURCE_POI_INVALIDATION": {
+        "CLOSED": 437,
+        "FILLED": 437
+      },
+      "cohorts/OB_DIRECT_INSIDE_ENGULFING_STOP/CANCEL_STRICT_STRUCTURE": {
+        "CLOSED": 24,
+        "FILLED": 24
+      },
+      "cohorts/OB_ULTRA_CONSERVATIVE_CONF/CANCEL_SOURCE_POI_INVALIDATION": {
+        "CLOSED": 1564,
+        "FILLED": 1566
+      },
+      "cohorts/OB_ULTRA_CONSERVATIVE_CONF/CANCEL_STRICT_STRUCTURE": {
+        "CLOSED": 761,
+        "FILLED": 762
+      },
+      "cohorts/RANGE_AGGRESSIVE_EXTERNAL_POI/CANCEL_SOURCE_POI_INVALIDATION": {
+        "CLOSED": 734,
+        "FILLED": 737
+      },
+      "cohorts/RANGE_AGGRESSIVE_EXTERNAL_POI/CANCEL_STRICT_STRUCTURE": {
+        "CLOSED": 48,
+        "FILLED": 48
+      },
+      "cohorts/RANGE_CONSERVATIVE_RETEST/CANCEL_SOURCE_POI_INVALIDATION": {
+        "CLOSED": 31,
+        "FILLED": 31
+      },
+      "cohorts/RANGE_CONSERVATIVE_RETEST/CANCEL_STRICT_STRUCTURE": {
+        "CLOSED": 30,
+        "FILLED": 30
+      },
+      "cohorts/SFP_ATR_STOP/CANCEL_SOURCE_POI_INVALIDATION": {
+        "CLOSED": 10623,
+        "FILLED": 10633
+      },
+      "cohorts/SFP_ATR_STOP/CANCEL_STRICT_STRUCTURE": {
+        "CLOSED": 1302,
+        "FILLED": 1303
+      },
+      "cohorts/SFP_BOS_POI/CANCEL_SOURCE_POI_INVALIDATION": {
+        "CLOSED": 10629,
+        "FILLED": 10637
+      },
+      "cohorts/SFP_BOS_POI/CANCEL_STRICT_STRUCTURE": {
+        "CLOSED": 1303,
+        "FILLED": 1304
+      },
+      "cohorts/SOURCE_CONF_STRICT/CANCEL_SOURCE_POI_INVALIDATION": {
+        "CLOSED": 1564,
+        "FILLED": 1566
+      },
+      "cohorts/SOURCE_CONF_STRICT/CANCEL_STRICT_STRUCTURE": {
+        "CLOSED": 761,
+        "FILLED": 762
+      },
+      "cohorts/SOURCE_CONSERVATIVE/CANCEL_SOURCE_POI_INVALIDATION": {
+        "CLOSED": 2698,
+        "FILLED": 2700
+      },
+      "cohorts/SOURCE_CONSERVATIVE/CANCEL_STRICT_STRUCTURE": {
+        "CLOSED": 637,
+        "FILLED": 638
+      },
+      "cohorts/SOURCE_DIRECT/CANCEL_SOURCE_POI_INVALIDATION": {
+        "CLOSED": 588,
+        "FILLED": 588
+      },
+      "cohorts/SOURCE_DIRECT/CANCEL_STRICT_STRUCTURE": {
+        "CLOSED": 94,
+        "FILLED": 94
+      },
+      "cohorts/SOURCE_PERMITTED_UNION/CANCEL_SOURCE_POI_INVALIDATION": {
+        "CLOSED": 16333,
+        "FILLED": 16351
+      },
+      "cohorts/SOURCE_PERMITTED_UNION/CANCEL_STRICT_STRUCTURE": {
+        "CLOSED": 3803,
+        "FILLED": 3806
+      },
+      "cohorts/STB_BTS_EDGE/CANCEL_SOURCE_POI_INVALIDATION": {
+        "CLOSED": 2853,
+        "FILLED": 2854
+      },
+      "cohorts/STB_BTS_EDGE/CANCEL_STRICT_STRUCTURE": {
+        "CLOSED": 1167,
+        "FILLED": 1167
+      },
+      "cohorts/STB_BTS_HALF/CANCEL_SOURCE_POI_INVALIDATION": {
+        "CLOSED": 3726,
+        "FILLED": 3729
+      },
+      "cohorts/STB_BTS_HALF/CANCEL_STRICT_STRUCTURE": {
+        "CLOSED": 443,
+        "FILLED": 444
+      }
+    },
+    "native_identity_cost_risk_prefix_selection_cancellation": "PASS",
+    "physical_union_READY": 19448,
+    "status": "PASS",
+    "trade_entry_allowed": false
+  },
+  "preservation": {
+    "baseline_commit": "3a9632606f79b4454509a60674eeac3877f77bbf",
+    "baseline_registered_git_hashes_verified": 57,
+    "canonical_source_config_tests_unchanged_since_74a6f8d": true,
+    "old_reports_byte_exact": true,
+    "permitted_modified_new_helper": "scripts/verify_source_pdf_native_evidence.py",
+    "retained_74a6f8d": {
+      "by_directory": {
+        "config": 3,
+        "data": 14907,
+        "scripts": 49,
+        "src": 39,
+        "tests": 71
+      },
+      "unchanged_git_blobs": 15069
+    },
+    "retained_cbcd30a": {
+      "by_directory": {
+        "config": 5,
+        "data": 15082,
+        "scripts": 56,
+        "src": 42,
+        "tests": 73
+      },
+      "unchanged_git_blobs": 15258
+    },
+    "status": "PASS",
+    "trade_entry_allowed": false
+  },
+  "retained_d46646f": {
+    "by_directory": {
+      "config": 5,
+      "data": 15206,
+      "scripts": 59,
+      "src": 42,
+      "tests": 73
+    },
+    "unchanged_git_blobs": 15385
+  },
+  "trade_entry_allowed": false
+}

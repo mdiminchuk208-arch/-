@@ -1,0 +1,350 @@
+BTCUSDT independent source/native/identity QA PASS
+ETHUSDT independent source/native/identity QA PASS
+SOLUSDT independent source/native/identity QA PASS
+XRPUSDT independent source/native/identity QA PASS
+BNBUSDT independent source/native/identity QA PASS
+DOGEUSDT independent source/native/identity QA PASS
+ADAUSDT independent source/native/identity QA PASS
+LINKUSDT independent source/native/identity QA PASS
+AVAXUSDT independent source/native/identity QA PASS
+LTCUSDT independent source/native/identity QA PASS
+{
+  "prefix": {
+    "status": "PASS",
+    "fixed_cutoff": "2026-03-01T00:00:00+00:00",
+    "symbol": "SOLUSDT",
+    "raw_candidate_READY": 1775,
+    "source_valid_READY": 1177,
+    "physical_IDs": 264,
+    "source_paths": {
+      "SFP_BOS_POI": 309,
+      "SFP_ATR_STOP": 307,
+      "DEMAND_SUPPLY": 41,
+      "RANGE_AGGRESSIVE_EXTERNAL_POI": 106,
+      "OB_CONSERVATIVE_BOS_POI": 79,
+      "OB_ULTRA_CONSERVATIVE_CONF": 58,
+      "BREAKER_CONSERVATIVE_STOP": 68,
+      "BREAKER_AGGRESSIVE_STOP": 68,
+      "STB_BTS_HALF": 48,
+      "OB_DIRECT_FIRST_TEST": 17,
+      "OB_DIRECT_INSIDE": 17,
+      "OB_DIRECT_ENGULFING_STOP": 17,
+      "OB_DIRECT_INSIDE_ENGULFING_STOP": 14,
+      "STB_BTS_EDGE": 27,
+      "RANGE_CONSERVATIVE_RETEST": 1
+    },
+    "native_prefix_candles": 14293,
+    "qualification": {
+      "REJECT_SFP_INVALID_BEFORE_READY": 598,
+      "PASS_SFP_VALID_AT_READY": 616
+    },
+    "actual_body_cancellations_known_in_prefix": 556,
+    "four_TF_future_mutation": "PASS",
+    "final_full_history_prefix_parity": "PASS",
+    "cache_sha256": "e0ede33dea9d56a2f52818b2a030e8d9ee288bd3e7226e7d5b40c56e6e40edec",
+    "trade_entry_allowed": false
+  },
+  "trade_entry_allowed": false,
+  "full": {
+    "status": "PASS",
+    "raw_candidate_READY": 137202,
+    "source_valid_READY": 96954,
+    "qualification": {
+      "REJECT_SFP_INVALID_BEFORE_READY": 40248,
+      "PASS_SFP_VALID_AT_READY": 47653
+    },
+    "primary_native_SFP_body_events": 46589,
+    "native_source_trade_fields_unchanged": "PASS",
+    "strict_control_preserved": "PASS",
+    "one_local_first_test_per_physical_union": "PASS",
+    "global_physical_claim_reconstruction": "PASS",
+    "native_formation": {
+      "primary_cases": 50,
+      "checks": {
+        "native_SFP_raid_reclaim_next_OPEN_and_post_reaction_BOS": 43,
+        "native_three_candle_FVG": 10,
+        "native_raid_body_engulf_full_wick_OB": 8
+      },
+      "all_source_valid_ATR_stops_independently_recomputed": 23812
+    },
+    "bounded_memory_per_symbol": true,
+    "symbols": {
+      "BTCUSDT": {
+        "status": "PASS",
+        "raw_candidate_READY": 14710,
+        "source_valid_READY": 10820,
+        "qualification": {
+          "REJECT_SFP_INVALID_BEFORE_READY": 3890,
+          "PASS_SFP_VALID_AT_READY": 5156
+        },
+        "primary_native_SFP_body_events": 5056,
+        "native_source_trade_fields_unchanged": "PASS",
+        "strict_control_preserved": "PASS",
+        "one_local_first_test_per_physical_union": "PASS",
+        "global_physical_claim_reconstruction": "PASS",
+        "future_outcomes_used": false,
+        "native_formation": {
+          "status": "PASS",
+          "primary_cases": 6,
+          "native_primary_formation_checks": {
+            "native_SFP_raid_reclaim_next_OPEN_and_post_reaction_BOS": 6,
+            "native_three_candle_FVG": 1
+          },
+          "all_source_valid_ATR_stops_independently_recomputed": 2576,
+          "ATR_method": "14_NATIVE_TR_SEED_THEN_WILDER_RMA_AT_FROZEN_PATTERN_INDEX",
+          "trade_entry_allowed": false
+        },
+        "trade_entry_allowed": false
+      },
+      "ETHUSDT": {
+        "status": "PASS",
+        "raw_candidate_READY": 15619,
+        "source_valid_READY": 11703,
+        "qualification": {
+          "REJECT_SFP_INVALID_BEFORE_READY": 3916,
+          "PASS_SFP_VALID_AT_READY": 5348
+        },
+        "primary_native_SFP_body_events": 5178,
+        "native_source_trade_fields_unchanged": "PASS",
+        "strict_control_preserved": "PASS",
+        "one_local_first_test_per_physical_union": "PASS",
+        "global_physical_claim_reconstruction": "PASS",
+        "future_outcomes_used": false,
+        "native_formation": {
+          "status": "PASS",
+          "primary_cases": 7,
+          "native_primary_formation_checks": {
+            "native_three_candle_FVG": 4,
+            "native_SFP_raid_reclaim_next_OPEN_and_post_reaction_BOS": 6,
+            "native_raid_body_engulf_full_wick_OB": 2
+          },
+          "all_source_valid_ATR_stops_independently_recomputed": 2673,
+          "ATR_method": "14_NATIVE_TR_SEED_THEN_WILDER_RMA_AT_FROZEN_PATTERN_INDEX",
+          "trade_entry_allowed": false
+        },
+        "trade_entry_allowed": false
+      },
+      "SOLUSDT": {
+        "status": "PASS",
+        "raw_candidate_READY": 14201,
+        "source_valid_READY": 9987,
+        "qualification": {
+          "REJECT_SFP_INVALID_BEFORE_READY": 4214,
+          "PASS_SFP_VALID_AT_READY": 4953
+        },
+        "primary_native_SFP_body_events": 4849,
+        "native_source_trade_fields_unchanged": "PASS",
+        "strict_control_preserved": "PASS",
+        "one_local_first_test_per_physical_union": "PASS",
+        "global_physical_claim_reconstruction": "PASS",
+        "future_outcomes_used": false,
+        "native_formation": {
+          "status": "PASS",
+          "primary_cases": 4,
+          "native_primary_formation_checks": {
+            "native_raid_body_engulf_full_wick_OB": 2,
+            "native_SFP_raid_reclaim_next_OPEN_and_post_reaction_BOS": 4,
+            "native_three_candle_FVG": 1
+          },
+          "all_source_valid_ATR_stops_independently_recomputed": 2475,
+          "ATR_method": "14_NATIVE_TR_SEED_THEN_WILDER_RMA_AT_FROZEN_PATTERN_INDEX",
+          "trade_entry_allowed": false
+        },
+        "trade_entry_allowed": false
+      },
+      "XRPUSDT": {
+        "status": "PASS",
+        "raw_candidate_READY": 14151,
+        "source_valid_READY": 9912,
+        "qualification": {
+          "REJECT_SFP_INVALID_BEFORE_READY": 4239,
+          "PASS_SFP_VALID_AT_READY": 5210
+        },
+        "primary_native_SFP_body_events": 5154,
+        "native_source_trade_fields_unchanged": "PASS",
+        "strict_control_preserved": "PASS",
+        "one_local_first_test_per_physical_union": "PASS",
+        "global_physical_claim_reconstruction": "PASS",
+        "future_outcomes_used": false,
+        "native_formation": {
+          "status": "PASS",
+          "primary_cases": 3,
+          "native_primary_formation_checks": {
+            "native_three_candle_FVG": 1,
+            "native_SFP_raid_reclaim_next_OPEN_and_post_reaction_BOS": 2,
+            "native_raid_body_engulf_full_wick_OB": 1
+          },
+          "all_source_valid_ATR_stops_independently_recomputed": 2605,
+          "ATR_method": "14_NATIVE_TR_SEED_THEN_WILDER_RMA_AT_FROZEN_PATTERN_INDEX",
+          "trade_entry_allowed": false
+        },
+        "trade_entry_allowed": false
+      },
+      "BNBUSDT": {
+        "status": "PASS",
+        "raw_candidate_READY": 12420,
+        "source_valid_READY": 8607,
+        "qualification": {
+          "REJECT_SFP_INVALID_BEFORE_READY": 3813,
+          "PASS_SFP_VALID_AT_READY": 4397
+        },
+        "primary_native_SFP_body_events": 4289,
+        "native_source_trade_fields_unchanged": "PASS",
+        "strict_control_preserved": "PASS",
+        "one_local_first_test_per_physical_union": "PASS",
+        "global_physical_claim_reconstruction": "PASS",
+        "future_outcomes_used": false,
+        "native_formation": {
+          "status": "PASS",
+          "primary_cases": 3,
+          "native_primary_formation_checks": {
+            "native_SFP_raid_reclaim_next_OPEN_and_post_reaction_BOS": 3
+          },
+          "all_source_valid_ATR_stops_independently_recomputed": 2197,
+          "ATR_method": "14_NATIVE_TR_SEED_THEN_WILDER_RMA_AT_FROZEN_PATTERN_INDEX",
+          "trade_entry_allowed": false
+        },
+        "trade_entry_allowed": false
+      },
+      "DOGEUSDT": {
+        "status": "PASS",
+        "raw_candidate_READY": 14190,
+        "source_valid_READY": 10008,
+        "qualification": {
+          "REJECT_SFP_INVALID_BEFORE_READY": 4182,
+          "PASS_SFP_VALID_AT_READY": 4927
+        },
+        "primary_native_SFP_body_events": 4825,
+        "native_source_trade_fields_unchanged": "PASS",
+        "strict_control_preserved": "PASS",
+        "one_local_first_test_per_physical_union": "PASS",
+        "global_physical_claim_reconstruction": "PASS",
+        "future_outcomes_used": false,
+        "native_formation": {
+          "status": "PASS",
+          "primary_cases": 4,
+          "native_primary_formation_checks": {
+            "native_SFP_raid_reclaim_next_OPEN_and_post_reaction_BOS": 4,
+            "native_three_candle_FVG": 1
+          },
+          "all_source_valid_ATR_stops_independently_recomputed": 2461,
+          "ATR_method": "14_NATIVE_TR_SEED_THEN_WILDER_RMA_AT_FROZEN_PATTERN_INDEX",
+          "trade_entry_allowed": false
+        },
+        "trade_entry_allowed": false
+      },
+      "ADAUSDT": {
+        "status": "PASS",
+        "raw_candidate_READY": 11694,
+        "source_valid_READY": 7811,
+        "qualification": {
+          "REJECT_SFP_INVALID_BEFORE_READY": 3883,
+          "PASS_SFP_VALID_AT_READY": 4059
+        },
+        "primary_native_SFP_body_events": 3939,
+        "native_source_trade_fields_unchanged": "PASS",
+        "strict_control_preserved": "PASS",
+        "one_local_first_test_per_physical_union": "PASS",
+        "global_physical_claim_reconstruction": "PASS",
+        "future_outcomes_used": false,
+        "native_formation": {
+          "status": "PASS",
+          "primary_cases": 5,
+          "native_primary_formation_checks": {
+            "native_SFP_raid_reclaim_next_OPEN_and_post_reaction_BOS": 4,
+            "native_raid_body_engulf_full_wick_OB": 1
+          },
+          "all_source_valid_ATR_stops_independently_recomputed": 2029,
+          "ATR_method": "14_NATIVE_TR_SEED_THEN_WILDER_RMA_AT_FROZEN_PATTERN_INDEX",
+          "trade_entry_allowed": false
+        },
+        "trade_entry_allowed": false
+      },
+      "LINKUSDT": {
+        "status": "PASS",
+        "raw_candidate_READY": 13761,
+        "source_valid_READY": 9567,
+        "qualification": {
+          "REJECT_SFP_INVALID_BEFORE_READY": 4194,
+          "PASS_SFP_VALID_AT_READY": 4711
+        },
+        "primary_native_SFP_body_events": 4587,
+        "native_source_trade_fields_unchanged": "PASS",
+        "strict_control_preserved": "PASS",
+        "one_local_first_test_per_physical_union": "PASS",
+        "global_physical_claim_reconstruction": "PASS",
+        "future_outcomes_used": false,
+        "native_formation": {
+          "status": "PASS",
+          "primary_cases": 8,
+          "native_primary_formation_checks": {
+            "native_SFP_raid_reclaim_next_OPEN_and_post_reaction_BOS": 6,
+            "native_raid_body_engulf_full_wick_OB": 1
+          },
+          "all_source_valid_ATR_stops_independently_recomputed": 2354,
+          "ATR_method": "14_NATIVE_TR_SEED_THEN_WILDER_RMA_AT_FROZEN_PATTERN_INDEX",
+          "trade_entry_allowed": false
+        },
+        "trade_entry_allowed": false
+      },
+      "AVAXUSDT": {
+        "status": "PASS",
+        "raw_candidate_READY": 13708,
+        "source_valid_READY": 9877,
+        "qualification": {
+          "REJECT_SFP_INVALID_BEFORE_READY": 3831,
+          "PASS_SFP_VALID_AT_READY": 4501
+        },
+        "primary_native_SFP_body_events": 4401,
+        "native_source_trade_fields_unchanged": "PASS",
+        "strict_control_preserved": "PASS",
+        "one_local_first_test_per_physical_union": "PASS",
+        "global_physical_claim_reconstruction": "PASS",
+        "future_outcomes_used": false,
+        "native_formation": {
+          "status": "PASS",
+          "primary_cases": 8,
+          "native_primary_formation_checks": {
+            "native_SFP_raid_reclaim_next_OPEN_and_post_reaction_BOS": 6,
+            "native_raid_body_engulf_full_wick_OB": 1,
+            "native_three_candle_FVG": 1
+          },
+          "all_source_valid_ATR_stops_independently_recomputed": 2248,
+          "ATR_method": "14_NATIVE_TR_SEED_THEN_WILDER_RMA_AT_FROZEN_PATTERN_INDEX",
+          "trade_entry_allowed": false
+        },
+        "trade_entry_allowed": false
+      },
+      "LTCUSDT": {
+        "status": "PASS",
+        "raw_candidate_READY": 12748,
+        "source_valid_READY": 8662,
+        "qualification": {
+          "REJECT_SFP_INVALID_BEFORE_READY": 4086,
+          "PASS_SFP_VALID_AT_READY": 4391
+        },
+        "primary_native_SFP_body_events": 4311,
+        "native_source_trade_fields_unchanged": "PASS",
+        "strict_control_preserved": "PASS",
+        "one_local_first_test_per_physical_union": "PASS",
+        "global_physical_claim_reconstruction": "PASS",
+        "future_outcomes_used": false,
+        "native_formation": {
+          "status": "PASS",
+          "primary_cases": 2,
+          "native_primary_formation_checks": {
+            "native_SFP_raid_reclaim_next_OPEN_and_post_reaction_BOS": 2,
+            "native_three_candle_FVG": 1
+          },
+          "all_source_valid_ATR_stops_independently_recomputed": 2194,
+          "ATR_method": "14_NATIVE_TR_SEED_THEN_WILDER_RMA_AT_FROZEN_PATTERN_INDEX",
+          "trade_entry_allowed": false
+        },
+        "trade_entry_allowed": false
+      }
+    },
+    "future_outcomes_used": false,
+    "trade_entry_allowed": false
+  },
+  "verifier_sha256": "cb85ff5160151067d9b4b38d831111ffd45b995ed006ba0dbebe32c81b94a4fd"
+}

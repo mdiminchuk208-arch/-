@@ -1,3 +1,46 @@
+# Crypto Bot / Strategy Engine — current source validation
+
+The full native Bybit replay completed **40 series / 993,575 candles**:
+**19,448 physical READY → 16,351 FILLED → 16,333 CLOSED**;
+18 OPEN and 118 pending cases remain censored.
+The chronological first50 contains **12 WIN / 38 LOSS / 0 BE**:
+WinRate 24.00%, PF 0.314118,
+Expectancy -11.882466 USDT, Avg R -0.507798, Net PnL -594.123317 USDT.
+
+[Full source report and all50 trades](SOURCE_ALIGNED_BYBIT_50_TRADE_REPORT.md),
+[first50 CSV](data/reports/source_permitted_analysis_2026_10_10/first50.csv),
+[all physical union cases CSV.gz](data/reports/source_permitted_analysis_2026_10_10/all_physical_union_cases.csv.gz),
+[all38 cohort metrics](data/reports/source_permitted_analysis_2026_10_10/cohort_metrics.csv).
+These are independent source trade cases with fixed reference1170 USDT / planned risk23.4,
+source FTA/Range exits and declared OHLC fees/slippage. 2026 is DEVELOPMENT; funding is unmodeled.
+The canonical TP40/30/30, SL and cost-adjusted TP1 breakeven remain frozen.
+Only BACKTEST/SHADOW; **trade_entry_allowed=false**; LIVE/private exchange API/orders are prohibited.
+
+All54 SW5/SW9/SW11/SW12/SW22 PDF pages and the ZIP/DOCX sources are retained.
+[Source rules and all15 registered paths](SOURCE_PERMITTED_PROTOCOL.md),
+[source reconstruction](SOURCE_PERMITTED_RECONSTRUCTION.md),
+[causal physical dedup](PHYSICAL_SOURCE_UNION_PROTOCOL.md),
+[native SFP lifecycle](SFP_SOURCE_LIFECYCLE_CORRECTION.md),
+[bounded execution with exact real parity](BOUNDED_SOURCE_EXECUTION_PROTOCOL.md).
+Source modules: `source_permitted.py`, `source_permitted_cases.py`, `source_physical.py`, `source_sfp_lifecycle.py`.
+
+QA:548 tests PASS, compileall PASS, mypy46files PASS, Ruff zero new findings against d466;
+full native/source/identity proof, all76,524 cohort case instances, first50 chronological uniqueness,
+prefix/future mutation, input SHA/gaps, old artifacts and both exact resumes PASS.
+[QA receipts](data/reports/source_permitted_qa_2026_10_10).
+The complete detector corpus is sealed separately from complete physical execution;
+the interrupted provisional memory aggregation and failed extra-CLOSE verifier log are preserved.
+The verifier correction introduced no source, selection, quote, stop, target or PnL change.
+
+```bash
+python scripts/run_source_permitted_bybit.py --output data/reports/source_permitted_bybit_2026_10_10 --resume-existing --workers 4
+python scripts/run_source_permitted_physical_union.py --source data/reports/source_permitted_bybit_2026_10_10 --output data/reports/source_permitted_physical_bybit_2026_10_10 --resume-existing
+```
+
+---
+
+## Preserved earlier README through d46646f
+
 # Crypto Bot / Strategy Engine
 
 Package version: **0.4.20**. Offline Strategy Engine policy: **0.4.21-causal-limit.3**.
