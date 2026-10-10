@@ -1,0 +1,22 @@
+bybit_2023_2025 BTCUSDT analyze 15 137758
+Traceback (most recent call last):
+  File "/workspace/-/scripts/run_medium_term_research.py", line 342, in <module>
+    main()
+  File "/workspace/-/scripts/run_medium_term_research.py", line 335, in main
+    detect(args.cohort, s, policy, lock, args.resume_existing)
+  File "/workspace/-/scripts/run_medium_term_research.py", line 157, in detect
+    analysis = SimpleNamespace(events=[]) if tf == 5 else analyze_market(candles, timeframe_minutes=tf)
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/src/crypto_bot/strategy/market_analysis.py", line 1316, in analyze_market
+    bearish_local = _post_bos_bearish_structure(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/src/crypto_bot/strategy/market_analysis.py", line 431, in _post_bos_bearish_structure
+    return _bearish_structure_ending_at_low(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/src/crypto_bot/strategy/market_analysis.py", line 332, in _bearish_structure_ending_at_low
+    if level.side == "low" and allowed(level) and level.swing_index < candidate_high.swing_index
+                               ^^^^^^^^^^^^^^
+  File "/workspace/-/src/crypto_bot/strategy/market_analysis.py", line 315, in allowed
+    def allowed(level: StructuralLevel) -> bool:
+
+KeyboardInterrupt

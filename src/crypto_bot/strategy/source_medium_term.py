@@ -158,6 +158,14 @@ class MediumTermEngine(SourceEngine):
         main_structure = flow.get('structure')
         if main_structure:
             pd_low, pd_high = sorted((main_structure['protected'], main_structure['extreme']))
+        elif parent.kind == 'SFP':
+            # A candle's raid/reclaim envelope is not a dealing range.
+            dr = macro.get('structure')
+            if dr:
+                pd_low, pd_high = sorted((dr['protected'], dr['extreme']))
+            elif macro['ranges']:
+                actual_range = max(macro['ranges'], key=lambda r: r['known_at'])
+                pd_low, pd_high = actual_range['low'], actual_range['high']
         pd_ok, ote, retracement = pd_location(direction, entry, pd_low, pd_high)
         if path_id in ('DEMAND_SUPPLY', 'STB_BTS_EDGE', 'STB_BTS_HALF') and not pd_ok:
             self._attempt(key, now, 'WAIT_SOURCE_REQUIRED_PD', path_id=path_id)
@@ -226,8 +234,23 @@ class MediumTermEngine(SourceEngine):
         now = c.close_time
         live = []
         for signal in self._live_signals:
-            parent, _local, h, _l, thesis, raid = self._signal_refs[signal.signal_id]
+            parent, local, h, _l, thesis, raid = self._signal_refs[signal.signal_id]
             reason = None
+            if now > signal.known_at:
+                pending_reason = None
+                if tf == signal.evidence['entry_zone_tf'] and local.invalidated_at:
+                    pending_reason = 'REFINEMENT_POI_BODY_INVALIDATED_PENDING_ONLY'
+                if tf in (240, 1440):
+                    macro_tf, _macro = self._macro_context(signal.htf, signal.direction, now,
+                                                         parent.kind in ('SFP', 'RANGE_POI'))
+                    if macro_tf is None:
+                        pending_reason = 'MACRO_CONTEXT_UNAVAILABLE_PENDING_ONLY'
+                if pending_reason:
+                    # Detection is independent of future fills: withdraw the
+                    # pending quote, but retain main thesis watches for entered
+                    # positions. No exit event is emitted for micro geometry.
+                    self._cancel(signal, self.policy['primary_cancellation'], now, pending_reason,
+                                 'SOURCE_ENTRY_LIFETIME_WITH_MEDIUM_OWNERSHIP', 'SW9/SW22')
             if now > signal.known_at and tf == signal.htf:
                 if parent.invalidated_at:
                     reason = 'MAIN_SOURCE_POI_BODY_INVALIDATED'

@@ -1,0 +1,47 @@
+native_bybit_2026 BTCUSDT analyze 5 69119
+native_bybit_2026 BTCUSDT analyze 15 23039
+native_bybit_2026 BTCUSDT analyze 60 5759
+native_bybit_2026 BTCUSDT analyze 240 1439
+native_bybit_2026 BTCUSDT analyze 1440 239
+native_bybit_2026 BTCUSDT 2026-04-12T14:30:00+00:00 READY {'enabled': 197, 'disabled_cost_gate': 197}
+native_bybit_2026 BTCUSDT 2026-05-11T01:45:00+00:00 READY {'enabled': 293, 'disabled_cost_gate': 294}
+native_bybit_2026 BTCUSDT 2026-06-03T04:05:00+00:00 READY {'enabled': 374, 'disabled_cost_gate': 375}
+Traceback (most recent call last):
+  File "/workspace/-/scripts/run_medium_term_research.py", line 342, in <module>
+    main()
+  File "/workspace/-/scripts/run_medium_term_research.py", line 335, in main
+    detect(args.cohort, s, policy, lock, args.resume_existing)
+  File "/workspace/-/scripts/run_medium_term_research.py", line 175, in detect
+    engine.evaluate(now, changed)
+  File "/workspace/-/src/crypto_bot/strategy/source_medium_term.py", line 330, in evaluate
+    self._direct(htf, ltf, q, now)
+  File "/workspace/-/src/crypto_bot/strategy/source_permitted.py", line 445, in _direct
+    self._emit(path,htf,ltf,parent,local,now,pid,visit,parent.visit_started_at,
+  File "/workspace/-/src/crypto_bot/strategy/source_medium_term.py", line 137, in _emit
+    macro_tf, macro = self._macro_context(htf, direction, now, countertrend)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/src/crypto_bot/strategy/source_medium_term.py", line 64, in _macro_context
+    'pools': [asdict(p) for p in owner.pools.values()],
+              ^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/dataclasses.py", line 1329, in asdict
+    return _asdict_inner(obj, dict_factory)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/dataclasses.py", line 1339, in _asdict_inner
+    f.name: _asdict_inner(getattr(obj, f.name), dict)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/dataclasses.py", line 1386, in _asdict_inner
+    return copy.deepcopy(obj)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py", line 162, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py", line 253, in _reconstruct
+    y = func(*args)
+        ^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py", line 252, in <genexpr>
+    args = (deepcopy(arg, memo) for arg in args)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py", line 151, in deepcopy
+    rv = reductor(4)
+         ^^^^^^^^^^^
+KeyboardInterrupt

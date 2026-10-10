@@ -51,6 +51,12 @@ Lifecycle: DISCOVERED, QUALIFIED, READY, ENTERED, CLOSED/INVALIDATED/EXPIRED.
 No time cooldown/TTL/forced closure/minimum holding. Structural changes supply
 the cooldown. Pending cancellations and entered structural exits use main-TF
 body evidence, not generic micro BOS. End-of-data is OPEN/CENSORED, not CLOSED.
+Revision before any new P&L evaluation: SFP P/D snapshots use the actual macro
+dealing range, not the pattern candle envelope. Refinement-POI body invalidation
+and absence of valid current macro context withdraw pending entries only;
+entered positions retain main-thesis exit watches. Initial detector jobs were
+interrupted before simulation and their logs/locks remain archived in the parent
+report root. Corrected runs use the `validated` subdirectory and a new lock.
 
 ## Anti-Scalp addition (frozen before new backtest)
 

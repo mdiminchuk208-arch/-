@@ -160,6 +160,34 @@ class MediumEngineTests(unittest.TestCase):
         self.assertLess(s.sfp_time, s.bos_time)
         self.assertIn('REAL_OB_SOURCE_CONFIRMATION', s.source_qualification_evidence[0])
 
+    def test_refinement_invalidation_withdraws_pending_but_preserves_main_exit_watch(self):
+        e, parent, raid = fixture()
+        local = Zone('REFINEMENT_M15_OB', 'ORDER_BLOCK', 'LONG', 95., 100.,
+                     parent.formed_at, parent.known_at, 0, raid, 90., 120.,
+                     structural_proof=parent.structural_proof)
+        self.emit(e, parent, raid, local=local, entry_tf=15)
+        local.invalidated_at = T+timedelta(hours=5)
+        c = Candle(T+timedelta(hours=4, minutes=45), local.invalidated_at, 102., 104., 101., 103.)
+        e._lifecycle(15, c)
+        self.assertEqual(e.cancellations[0]['reason'], 'REFINEMENT_POI_BODY_INVALIDATED_PENDING_ONLY')
+        self.assertFalse(e.exit_events)
+        self.assertEqual(len(e._live_signals), 1)
+        c = Candle(c.close_time, c.close_time+timedelta(hours=1), 92., 93., 88., 89.)
+        e._lifecycle(60, c)
+        self.assertEqual(e.exit_events[0]['reason'], 'MAIN_PROTECTED_STRUCTURE_BODY_BREAK')
+
+    def test_sfp_pd_uses_actual_macro_dealing_range(self):
+        from crypto_bot.strategy.source_permitted import SourceContextZone
+        e, local, raid = fixture()
+        parent = SourceContextZone('REAL_MAIN_SFP', 'SFP', 'LONG', 90., 100., T, T, 0,
+                                   raid, 90., 100., confluence={'next_open_time': T})
+        flow = {'direction': 'LONG', 'known_at': T+timedelta(hours=1), 'invalidated_at': None}
+        e._emit('SFP_BOS_POI', 60, 15, parent, local, T+timedelta(hours=4), 'SFP_IDEA', 1,
+                T, raid, flow_override=flow)
+        e._finalize_ready(0, T+timedelta(hours=4))
+        pd = e.signals[0].evidence['premium_discount']
+        self.assertEqual((pd['low'], pd['high']), (80., 150.))
+
     def test_resume_checks_artifact_membership_and_bytes(self):
         import sys
         sys.path.insert(0, str(REPO / 'scripts'))

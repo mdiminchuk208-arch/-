@@ -310,12 +310,17 @@ def simulate(cohort, symbols, policy, lock, arm, use_resume):
 
 
 def main():
+    global ROOT
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--cohort', choices=('bybit_2023_2025', 'native_bybit_2026'), required=True)
     parser.add_argument('--stage', choices=('register', 'detect', 'simulate', 'all'), default='all')
     parser.add_argument('--symbols', nargs='+')
     parser.add_argument('--resume-existing', action='store_true')
+    parser.add_argument('--output-root', type=Path, default=ROOT)
     args = parser.parse_args()
+    ROOT = args.output_root.resolve()
+    if not ROOT.is_relative_to(REPO / 'data/reports'):
+        raise ValueError('Research output must remain inside repository reports')
     policy = json.loads(POLICY_PATH.read_text())
     if args.cohort == 'native_bybit_2026':
         policy['execution_clock'] = 5
