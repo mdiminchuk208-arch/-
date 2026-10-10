@@ -10,6 +10,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from crypto_bot.research.medium_statistics import breakdowns, closed_statistics, instant
+from crypto_bot.strategy.anti_scalp import check_anti_scalp
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from run_medium_term_research import REPO, ROOT, digest, read_rows, seal, write_json
@@ -26,30 +27,74 @@ def normalize_old(row):
             'source_setup': row['path_id']}
 
 
-def csv_ledger(path, trades):
+def csv_ledger(path, trades, sources=None):
     fields = ['trade_id', 'symbol', 'direction', 'status', 'source_setup', 'htf', 'ltf',
               'ready_time', 'entry_time', 'entry_interval_start', 'exit_time', 'exit_reason',
               'ready_time_yekaterinburg', 'entry_time_yekaterinburg', 'exit_time_yekaterinburg',
               'theoretical_entry', 'actual_entry_after_slippage', 'stop', 'targets', 'quantity',
               'risk_amount', 'result_R', 'gross_reference_pnl', 'fees_total', 'slippage_total',
               'net_pnl', 'holding_hours_upper_bound', 'anti_scalp_edge_cost_ratio', 'trade_entry_allowed']
+    fields += ['ready_edge_cost_ratio', 'expected_gross_move_per_unit', 'estimated_round_trip_cost_per_unit',
+               'source_refinement_tf', 'macro_context_tf', 'flow_owner_tf', 'physical_opportunity_id',
+               'pnl_is_final', 'realized_gross_after_slippage', 'net_pnl_basis']
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open('w', newline='') as stream:
         writer = csv.DictWriter(stream, fields)
         writer.writeheader()
         for t in trades:
             row = {k: t.get(k) for k in fields}
-            row.update(gross_reference_pnl=t['gross_pnl']+t['slippage_total'],
+            row.update(gross_reference_pnl=t['gross_pnl']+t['slippage_total'] if t['status']=='CLOSED' else None,
                        holding_hours_upper_bound=(instant(t['exit_time'])-instant(t['entry_interval_start'])).total_seconds()/3600 if t['status']=='CLOSED' else None,
                        anti_scalp_edge_cost_ratio=t.get('anti_scalp', {}).get('edge_cost_ratio'),
                        targets=json.dumps(t['targets']), trade_entry_allowed=False)
+            row.update(pnl_is_final=t['status']=='CLOSED', realized_gross_after_slippage=t['gross_pnl'],
+                       net_pnl_basis='CLOSED_TOTAL' if t['status']=='CLOSED' else 'OPEN_PARTIAL_CASHFLOWS_NOT_MARKED')
             for key in ('ready_time', 'entry_time', 'exit_time'):
                 row[key+'_yekaterinburg'] = instant(t[key]).astimezone(LOCAL_ZONE).isoformat() if t.get(key) else None
+            source = (sources or {}).get(t['signal_id'])
+            if source:
+                e = source['evidence']
+                decision = check_anti_scalp(direction=t['direction'], entry=t['theoretical_entry'], target=t['targets'][0],
+                                           setup_tf=e['actual_setup_tf'], context_tf=e['macro_context_tf'],
+                                           main_setup_valid=e['main_setup_valid'], context_valid=True,
+                                           target_known_before_entry=instant(source['known_at']) <= instant(t['entry_interval_start']))
+                row.update(anti_scalp_edge_cost_ratio=decision.edge_cost_ratio,
+                           ready_edge_cost_ratio=e['anti_scalp']['edge_cost_ratio'],
+                           expected_gross_move_per_unit=decision.expected_gross_move,
+                           estimated_round_trip_cost_per_unit=decision.estimated_round_trip_cost,
+                           source_refinement_tf=e['entry_zone_tf'], macro_context_tf=e['macro_context_tf'],
+                           flow_owner_tf=e['flow_owner_tf'], physical_opportunity_id=e['physical_opportunity_id'])
             writer.writerow(row)
 
 
 def number(value, decimals=3):
     return '—' if value is None else f'{value:,.{decimals}f}'
+
+
+def csv_breakdowns(path, details):
+    fields = ['dimension', 'group', 'total_trades', 'wins', 'losses', 'win_rate', 'profit_factor',
+              'expectancy', 'average_R', 'average_planned_RR', 'gross_pnl', 'fees', 'slippage',
+              'net_pnl', 'turnover', 'average_cost_per_trade', 'holding_mean_h', 'holding_median_h',
+              'holding_p25_h', 'holding_p75_h', 'holding_p90_h', 'holding_min_h', 'holding_max_h']
+    sections = {'holding': details['holding_bins'], **details['groups'],
+                'horizon': {'short_<4h': details['short'], 'medium_>=4h': details['medium']}}
+    with path.open('w', newline='') as stream:
+        writer = csv.DictWriter(stream, fields)
+        writer.writeheader()
+        for dimension, groups in sections.items():
+            for group, m in groups.items():
+                row = {k: m.get(k) for k in fields}
+                row.update(dimension=dimension, group=group)
+                row.update({'holding_'+k+'_h': v for k, v in m['holding_hours'].items()})
+                writer.writerow(row)
+
+
+def group_table(groups):
+    lines = ['| Group (UTC for calendar) | CLOSED | WIN/LOSS | WR | PF | Exp | Avg R | Planned RR | Gross | Fees | Slip | Net |',
+             '|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|']
+    for label, m in groups.items():
+        lines.append(f"| {label} | {m['total_trades']} | {m['wins']}/{m['losses']} | {number(100*m['win_rate'] if m['win_rate'] is not None else None)}% | {number(m['profit_factor'])} | {number(m['expectancy'])} | {number(m['average_R'])} | {number(m['average_planned_RR'])} | {number(m['gross_pnl'])} | {number(m['fees'])} | {number(m['slippage'])} | {number(m['net_pnl'])} |")
+    return '\n'.join(lines)
 
 
 def metrics_table(rows):
@@ -75,16 +120,19 @@ def main():
     data = {'old_independent_cases': {'statistics': closed_statistics(old_trades), 'breakdowns': breakdowns(old_trades)},
             'cohorts': {}, 'trade_entry_allowed': False}
     table = [('Old independent cases / full first FTA', data['old_independent_cases']['statistics'])]
+    csv_breakdowns(ANALYSIS / 'breakdowns_old_independent.csv', data['old_independent_cases']['breakdowns'])
     for cohort in ('bybit_2023_2025', 'native_bybit_2026'):
         data['cohorts'][cohort] = {'arms': {}}
         cohort_data = data['cohorts'][cohort]
         gate_events = []
         ready_physical = {'enabled': set(), 'disabled_cost_gate': set()}
+        source_maps = {'enabled': {}, 'disabled_cost_gate': {}}
         for arm, physical_set in ready_physical.items():
             for folder in sorted((COHORT_ROOTS[cohort] / 'detection').iterdir()):
                 gate_events.extend(read_rows(folder / arm / 'anti_scalp_rejections.jsonl.gz') if arm == 'enabled' else [])
-                physical_set.update(s['evidence']['physical_opportunity_id']
-                                          for s in read_rows(folder / arm / 'signals.jsonl.gz'))
+                records = read_rows(folder / arm / 'signals.jsonl.gz')
+                physical_set.update(s['evidence']['physical_opportunity_id'] for s in records)
+                source_maps[arm].update({s['signal_id']: s for s in records})
         last_reject_by_id = {}
         for r in sorted(gate_events, key=lambda r: (r['known_at'], r['signal_id'])):
             if r['physical_opportunity_id'] not in ready_physical['enabled']:
@@ -127,8 +175,13 @@ def main():
                          trades_per_year=m['total_trades']/days*365.25,
                          trades_per_month=m['total_trades']/days*30.4375,
                          trades_per_day=m['total_trades']/days,
+                         entries_per_year=len(trades)/days*365.25,
+                         entries_per_month=len(trades)/days*30.4375,
+                         entries_per_day=len(trades)/days,
+                         total_trades_basis='CLOSED_ONLY; all_FILLED includes OPEN',
                          rates_denominator='SHARED_COMMON_COVERAGE_DAYS_INCLUDING_ZERO_TRADE_DAYS')
                 arm_data[account] = {'statistics': m, 'breakdowns': breakdowns(trades)}
+                csv_breakdowns(ANALYSIS / f'breakdowns_{cohort}_{account}_{arm}.csv', arm_data[account]['breakdowns'])
                 closed_rows = [t for t in trades if t['status'] == 'CLOSED']
                 arm_data[account]['exit_diagnostics'] = {
                     'terminal_reasons': dict(Counter(t['exit_reason'] for t in closed_rows)),
@@ -136,11 +189,11 @@ def main():
                     'TP3_reached_closed': sum(any(f['reason'] == 'TP3' for f in t['fills']) for t in closed_rows),
                     'holding_is_outcome_only': True}
                 table.append((cohort+'/'+account+'/'+arm, m))
-                csv_ledger(ANALYSIS / f'all_trades_{cohort}_{account}_{arm}.csv', trades)
+                csv_ledger(ANALYSIS / f'all_trades_{cohort}_{account}_{arm}.csv', trades, source_maps[arm])
                 if account == 'independent' and arm == 'enabled':
                     closed = sorted((t for t in trades if t['status'] == 'CLOSED'),
                                     key=lambda t: (t['entry_interval_start'], t['ready_time'], t['signal_id']))
-                    csv_ledger(ANALYSIS / f'first50_chronological_{cohort}.csv', closed[:50])
+                    csv_ledger(ANALYSIS / f'first50_chronological_{cohort}.csv', closed[:50], source_maps[arm])
             cohort_data['arms'][arm] = arm_data
     overlay = json.loads((ANALYSIS / 'old_pre_entry_gate_summary.json').read_text())
     data['old_pre_entry_overlay'] = overlay
@@ -148,6 +201,7 @@ def main():
     # Standard exported scientific figures, not a generated illustration.
     import matplotlib
     matplotlib.use('Agg')
+    matplotlib.rcParams['svg.hashsalt'] = 'medium-term-source-2026-10-10'
     import matplotlib.pyplot as plt
     labels = ['Old cases', '2026 medium', '2023–25 medium']
     selections = [data['old_independent_cases'], data['cohorts']['native_bybit_2026']['arms']['enabled']['independent'],
@@ -161,12 +215,14 @@ def main():
     axes[0].legend()
     for i, selected in enumerate(selections):
         m = selected['statistics']
-        axes[1].bar([i-.25, i, i+.25], [m['gross_pnl'], -m['fees']-m['slippage'], m['net_pnl']], width=.23,
+        count = m['total_trades'] or 1
+        axes[1].bar([i-.25, i, i+.25], [m['gross_pnl']/count, (-m['fees']-m['slippage'])/count, m['net_pnl']/count], width=.23,
                     color=['#4675a8', '#c26c40', '#447b50'])
     axes[1].set_xticks(range(len(labels)), labels)
-    axes[1].set_ylabel('Independent-case sum USDT (different periods; not NAV)')
+    axes[1].set_ylabel('Independent-case mean USDT/trade (not NAV)')
+    axes[1].set_title('Gross / costs / net; different periods and budget policies')
     axes[1].axhline(0, color='black', linewidth=.7)
-    fig.savefig(ANALYSIS / 'holding_and_costs.svg')
+    fig.savefig(ANALYSIS / 'holding_and_costs.svg', metadata={'Date': None})
     fig.savefig(ANALYSIS / 'holding_and_costs.png', dpi=170)
     plt.close(fig)
     primary = data['cohorts']['bybit_2023_2025']['arms']['enabled']
@@ -200,6 +256,7 @@ def main():
         'Anti-Scalp ON/OFF сравнивается полным причинным replay. Отказ раннему плохому варианту может дать позже READY другому source-valid пути той же идеи; shared occupancy и margin тоже меняют дальнейшие входы. Поэтому ON не обязан уменьшать FILLED ровно на количество отказов. Logged path reasons, unique physical ideas и unique never-READY приведены раздельно; все arms требуют среднесрочный setup/context.',
         '## G. Holding до/после',
         'Время — верхняя граница от начала entry interval до известного exit CLOSE. Intrabar touch точнее OHLC не определяет. OPEN не включены в closed holding. Mean/median/p25/p75/p90/min/max и полный year/month/day breakdown сохранены в medium_term_statistics.json.',
+        '\nPrimary shared frequency, включая нулевые дни: '+json.dumps({k:m[k] for k in ['all_FILLED','OPEN','trades_per_year','trades_per_month','trades_per_day','entries_per_year','entries_per_month','entries_per_day','total_trades_basis','rates_denominator']}, ensure_ascii=False),
         '### Старые independent cases', bins_table(data['old_independent_cases']['breakdowns']['holding_bins']),
         '### Matched 2026 medium independent cases', bins_table(matched['independent']['breakdowns']['holding_bins']),
         '### Primary 2023–25 medium shared portfolio', bins_table(primary['shared']['breakdowns']['holding_bins']),
@@ -211,6 +268,12 @@ def main():
         '## I. Полный новый backtest',
         'Requested 2023-01-01..2026-01-01; actual primary BTC/ETH coverage до 2025-12-05 23:30 UTC, около 2.93 лет. Warmup 2022 не торгуется. Это pinned Bybit mirror: normalized H1/H4 — complete M15 aggregates; сохранены native comparison differences/provenance limits. Другие exchange prices не смешивались. Все данные уже development, OOS/70% WR claim отсутствует.',
         '\nPrimary shared NAV: '+json.dumps(primary['shared_NAV'], ensure_ascii=False),
+        '\nPrimary shared results by direction', group_table(primary['shared']['breakdowns']['groups']['direction']),
+        '\nPrimary shared results by coin', group_table(primary['shared']['breakdowns']['groups']['coin']),
+        '\nPrimary shared results by setup', group_table(primary['shared']['breakdowns']['groups']['setup']),
+        '\nPrimary shared results by actual setup TF / execution clock', group_table(primary['shared']['breakdowns']['groups']['timeframe']),
+        '\nPrimary shared results by year', group_table(primary['shared']['breakdowns']['groups']['year']),
+        '\nPrimary shared results by month', group_table(primary['shared']['breakdowns']['groups']['month']),
         '\nВсе ENTERED сделки, включая OPEN: `data/reports/medium_term_2026_10_10/analysis/all_trades_*.csv`; source proofs, full journal и fills: `role_corrected_v2/{cohort}/detection` и `simulation`. LONG/SHORT, coin, setup, TF, year/month/day и все holding bins: `analysis/medium_term_statistics.json`. Audit/risk timestamps и календарные groups — UTC; человекочитаемые ready/entry/exit CSV дополнены Asia/Yekaterinburg (+05). Primary entry coverage: 2023-01-01 05:00..2025-12-06 04:30 +05.',
         '## J. Оставшиеся ограничения',
         'Funding/liquidation/tick intrabar path не моделируются. Cases и shared NAV нельзя складывать. Более длинный holding сам по себе не обещает edge. Старые source-valid losses, отклонённые новой horizon/cost policy, не объявляются задним числом source false positives. Сохранены QA failures и исправления: pending/main lifetime, RANGE terminal timestamp и actual H1 setup ownership. Финальные executions используют role_corrected_v2; native causal_final и primary compiled_primary сохранены как controls. READY reuse проверяет archived code 0b6bd4e, history SHA и все manifests; ускорение меняет только копирование targets и сканирование уже выбранных refinement paths.',
