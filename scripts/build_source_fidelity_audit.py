@@ -303,7 +303,9 @@ def traces():
             if e['actual_setup_tf']==tf:roles.append('ENGINE_MAIN_SETUP')
             if e['flow_owner_tf']==tf:roles.append('FLOW_OWNER')
             if e['refinement_tf']==tf:roles.append('SOURCE_REFINEMENT')
-            timeframe_trace[label]={'status':'PASS_COMPLETED_CAUSAL_STATE' if st['completed_at'] else 'UNCLEAR',
+            timeframe_trace[label]={'status':'UNCLEAR_ORIGINAL_ROLE_NOT_UNIQUELY_SPECIFIED',
+                'completed_state_check':'PASS' if st['completed_at'] else 'FAIL',
+                'current_engine_applicable_role_check':'PASS_SAVED_READY_PROOF' if roles else 'NOT_APPLICABLE',
                 'evidence':st,'roles':roles,'original_required_every_trade':False,
                 'note':'State availability is not proof of an unspecified four-TF original AND gate'}
         decision='ORIGINAL_TREE_REJECT_UNDER_STATED_INTERPRETATION' if violations else 'UNCLEAR_ORIGINAL_TREE'
@@ -363,6 +365,8 @@ def traces():
         'loss_original_trade_decisions':dict(Counter(r['final_original_strategy_decision'] for r in rows if r['result']=='LOSS')),
         'violations_counts':dict(Counter(v for r in rows for v in r['violated_rules'])),
         'loss_violations_counts':dict(Counter(v for r in rows if r['result']=='LOSS' for v in r['violated_rules'])),
+        'TRUE_SOURCE_REJECTION_demonstrated_by_NO_HTF_reason':0,
+        'TRUE_SOURCE_REJECTION_remaining_conditions':'UNDETERMINED; no full source admission replay from this reason alone',
         'source_valid_missed_trades_proven_by_rejection_reason_alone':0,
         'binary_original_allow_count':'UNIDENTIFIABLE; absence of demonstrated violation is not original-tree proof',
         'trade_entry_allowed':False}
