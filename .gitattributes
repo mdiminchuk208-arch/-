@@ -1,3 +1,0 @@
-# Byte-preserved input/output with CRLF; inspect directly instead of normalizing.
-data/source_materials/source_permitted_2026_10_10/user_request.txt -diff
-data/reports/source_permitted_qa_2026_10_10/ruff_pre_execution.log -diff

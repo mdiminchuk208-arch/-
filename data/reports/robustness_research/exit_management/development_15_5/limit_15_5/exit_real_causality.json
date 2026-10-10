@@ -1,1 +1,0 @@
-{"actual_tp1_trade": "7f9ef0e73c09c10eac6a738f", "cutoff": "2026-09-21T01:25:00+00:00", "full_prefix_future_mutation": true, "mutation_is_verification_only": true, "status": "PASS", "trade_entry_allowed": false, "variants": ["A_40_30_30_BE_TP1", "B_30_30_40_BE_TP1", "C_25_25_50_BE_TP1", "D_25_35_40_BE_TP1", "A_BE_LATER_CLOSE", "A_ORIGINAL_SL_UNTIL_TP2", "A_STRUCTURAL_AFTER_TP1"]}

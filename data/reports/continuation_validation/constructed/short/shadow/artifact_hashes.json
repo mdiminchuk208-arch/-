@@ -1,8 +1,0 @@
-{
-  "decisions.jsonl": "83a70472173c0d50d42b711319e63956d5b8746990f495eb322cb9979f424301",
-  "equity_curve.jsonl": "cedcf0e9512b540df7489ce14fccfedc6622313bda3eecc913507c4eb674aab2",
-  "setup_outcomes.jsonl": "6bc0c80eb0b4e59d096bcce3f779aebaf3d275a277c7b69a7cf495a296ab3df4",
-  "signals.jsonl": "bfb9051d1cdf0e66dcca123c14a5dd0354a4f95350a5d39e3e46c6de331b19bc",
-  "summary.json": "f6aabff56a9ee07de60a50c3ab6e899a6ed86de731162c6b51f5d75cf5ff5eb2",
-  "trades.jsonl": "27245af9ea23b146bfc4b2ae1a4709aac4395f6083db96699809afb7406f716f"
-}

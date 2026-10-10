@@ -1,7 +1,0 @@
-{
-  "status": "PASS",
-  "backtest_repeat": "BYTE_IDENTICAL_ALL_7_ARTIFACTS",
-  "backtest_shadow": "SUMMARY_SIGNALS_EQUAL_EXCEPT_MODE; DECISIONS_TRADES_EQUITY_BYTE_IDENTICAL",
-  "fingerprint_backtest": "0a65d50678c7cbf39593d7d15946e9bb4704215b82cc4b527219b7e3401f2860",
-  "fingerprint_shadow": "924e6d163a90a72fd83af0ba263aae4df045d3a17b0daf9c5d958431fb5eb74d"
-}

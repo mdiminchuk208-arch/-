@@ -1,6 +1,0 @@
-study,case,direction,exit_time,follow_end,follow_right_censored,later_tp2_price_touch,later_tp3_price_touch,not_a_counterfactual_profit_claim,original_sl_observed,signal_id,symbol,tp2_before_original_sl_stop_first,tp2_same_bar_order_ambiguous,tp3_before_original_sl_stop_first,tp3_same_bar_order_ambiguous
-binance_15_5,REFERENCE_SEGMENT_09,SHORT,2021-12-20T21:10:00+00:00,2022-01-19T21:10:00+00:00,False,True,True,True,True,13805e51dfbbaac6a5b789c7,ETHUSDT,False,False,False,False
-binance_15_5,REFERENCE_SEGMENT_09,SHORT,2022-01-07T19:50:00+00:00,2022-02-06T19:50:00+00:00,False,True,True,True,True,3c18b83161b1150a52905a91,BNBUSDT,False,False,False,False
-binance_15_5,VALIDATION_SEGMENT_10,LONG,2024-11-26T09:50:00+00:00,2024-12-08T00:00:00+00:00,True,True,True,True,True,332459bdcc550afa69fac362,DOGEUSDT,False,False,False,False
-development_15_5,limit_15_5,SHORT,2026-09-21T01:25:00+00:00,2026-09-22T11:15:00+00:00,True,False,False,True,True,7f9ef0e73c09c10eac6a738f,XRPUSDT,False,False,False,False
-development_240_60,final_240_60,SHORT,2026-05-01T13:00:00+00:00,2026-05-31T13:00:00+00:00,False,True,False,True,True,562f49bbf510d68fc4d4c67c,BTCUSDT,False,False,False,False

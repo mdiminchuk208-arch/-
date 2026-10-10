@@ -1,9 +1,0 @@
-{
-  "status": "PASS",
-  "resume": "VERIFIED_COMPLETE_NO_MUTATION",
-  "segments": 10,
-  "all_run_files_SHA_unchanged": 106,
-  "core_plus_segment_artifact_hashes": 93,
-  "primary_cases_closed": 0,
-  "trade_entry_allowed": false
-}

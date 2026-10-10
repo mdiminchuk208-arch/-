@@ -1,9 +1,0 @@
-{
-  "status": "PASS_UNCHANGED_BASELINE_FINDINGS",
-  "baseline": "d46646f",
-  "baseline_findings": 555,
-  "current_findings": 555,
-  "new_findings": 0,
-  "new_modules_and_tests_Ruff": "PASS",
-  "preserved_old_files_not_reformatted": true
-}

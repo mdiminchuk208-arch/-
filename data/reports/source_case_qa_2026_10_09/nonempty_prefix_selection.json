@@ -1,7 +1,0 @@
-{
-  "symbol": "BTCUSDT",
-  "cutoff": "2026-09-14T13:50:00+00:00",
-  "selection": "LATEST_BTC_EMITTED_READY_TIME_IN_SOURCE_SIGNAL_METADATA_NOT_PNL",
-  "purpose": "Verify actual nonempty READY and Range/global-flow evidence at the instant known; mutate next8native bars perTF",
-  "strategy_choices_changed": false
-}

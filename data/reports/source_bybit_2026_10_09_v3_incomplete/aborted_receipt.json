@@ -1,5 +1,0 @@
-{
-  "status": "DIAGNOSTIC_INTERRUPTED_BEFORE_PORTFOLIO",
-  "reason": "Physical HTF zone aliases must create one mapped setup; range IDs must use already-known geometry rather than offline counters. No parameters fitted.",
-  "trade_entry_allowed": false
-}
