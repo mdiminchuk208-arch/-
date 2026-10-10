@@ -292,6 +292,8 @@ def main():
         '### Matched 2026 medium independent cases', bins_table(matched['independent']['breakdowns']['holding_bins']),
         '### Primary 2023–25 medium shared portfolio', bins_table(primary['shared']['breakdowns']['holding_bins']),
         '\nPrimary holding summary: '+json.dumps(m['holding_hours'], ensure_ascii=False),
+        '\nPrimary independent holding summary: '+json.dumps(primary['independent']['statistics']['holding_hours'], ensure_ascii=False),
+        'В independent cases есть редкие удержания дольше года; они заметно увеличивают среднее относительно медианы. Они сохранены без ретроспективного удаления. Общий счёт исполняет другой набор входов из-за occupancy и risk/margin guards; его распределение приведено отдельно.',
         '## H. Costs',
         'Gross — движение между reference prices до slippage. Канонический ledger gross уже включает slippage; отчёт добавляет его обратно ровно один раз. Gross − fees − slippage = Net проверяется на каждой CLOSED trade. Costs % gross profit uses sum of positive gross-reference trade P&L; undefined ratios are null. Turnover uses actual entry/partial exit fill notionals.',
         '\nPrimary costs: '+json.dumps({k:m[k] for k in ['gross_pnl','fees','slippage','net_pnl','cost_identity_residual','turnover','total_costs','costs_percent_gross_profit','costs_percent_turnover','average_cost_per_trade','average_gross_move_fraction','average_net_move_fraction']}, ensure_ascii=False),

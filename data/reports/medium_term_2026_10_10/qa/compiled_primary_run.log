@@ -1,0 +1,759 @@
+bybit_2023_2025 ETHUSDT analyze 15 137758
+bybit_2023_2025 BTCUSDT analyze 15 137758
+bybit_2023_2025 ETHUSDT analyze 60 34439
+bybit_2023_2025 ETHUSDT analyze 240 8609
+bybit_2023_2025 ETHUSDT analyze 1440 1434
+bybit_2023_2025 BTCUSDT analyze 60 34439
+bybit_2023_2025 BTCUSDT analyze 240 8609
+bybit_2023_2025 BTCUSDT analyze 1440 1434
+bybit_2023_2025 ETHUSDT 2022-09-26T02:00:00+00:00 READY {'enabled': 0, 'disabled_cost_gate': 0}
+bybit_2023_2025 BTCUSDT 2022-10-11T17:30:00+00:00 READY {'enabled': 0, 'disabled_cost_gate': 0}
+bybit_2023_2025 ETHUSDT 2023-01-02T10:45:00+00:00 READY {'enabled': 91, 'disabled_cost_gate': 91}
+bybit_2023_2025 BTCUSDT 2023-01-01T23:45:00+00:00 READY {'enabled': 64, 'disabled_cost_gate': 68}
+bybit_2023_2025 ETHUSDT 2023-01-13T08:00:00+00:00 READY {'enabled': 123, 'disabled_cost_gate': 123}
+bybit_2023_2025 BTCUSDT 2023-01-21T17:30:00+00:00 READY {'enabled': 126, 'disabled_cost_gate': 127}
+bybit_2023_2025 ETHUSDT 2023-01-17T09:45:00+00:00 READY {'enabled': 124, 'disabled_cost_gate': 124}
+bybit_2023_2025 BTCUSDT 2023-02-05T10:15:00+00:00 READY {'enabled': 189, 'disabled_cost_gate': 190}
+bybit_2023_2025 ETHUSDT 2023-01-21T01:30:00+00:00 READY {'enabled': 127, 'disabled_cost_gate': 127}
+bybit_2023_2025 BTCUSDT 2023-02-14T18:00:00+00:00 READY {'enabled': 225, 'disabled_cost_gate': 227}
+bybit_2023_2025 ETHUSDT 2023-01-28T01:15:00+00:00 READY {'enabled': 139, 'disabled_cost_gate': 139}
+bybit_2023_2025 BTCUSDT 2023-02-27T22:30:00+00:00 READY {'enabled': 257, 'disabled_cost_gate': 259}
+bybit_2023_2025 ETHUSDT 2023-02-01T19:00:00+00:00 READY {'enabled': 152, 'disabled_cost_gate': 152}
+bybit_2023_2025 BTCUSDT 2023-03-10T00:00:00+00:00 READY {'enabled': 288, 'disabled_cost_gate': 290}
+bybit_2023_2025 ETHUSDT 2023-02-10T22:45:00+00:00 READY {'enabled': 187, 'disabled_cost_gate': 187}
+bybit_2023_2025 BTCUSDT 2023-03-16T10:15:00+00:00 READY {'enabled': 301, 'disabled_cost_gate': 303}
+bybit_2023_2025 ETHUSDT 2023-02-22T09:15:00+00:00 READY {'enabled': 231, 'disabled_cost_gate': 231}
+bybit_2023_2025 BTCUSDT 2023-03-23T17:00:00+00:00 READY {'enabled': 323, 'disabled_cost_gate': 325}
+bybit_2023_2025 ETHUSDT 2023-03-01T11:30:00+00:00 READY {'enabled': 251, 'disabled_cost_gate': 252}
+bybit_2023_2025 BTCUSDT 2023-03-31T21:00:00+00:00 READY {'enabled': 348, 'disabled_cost_gate': 350}
+bybit_2023_2025 ETHUSDT 2023-03-10T16:00:00+00:00 READY {'enabled': 276, 'disabled_cost_gate': 276}
+bybit_2023_2025 BTCUSDT 2023-04-08T16:30:00+00:00 READY {'enabled': 389, 'disabled_cost_gate': 391}
+bybit_2023_2025 ETHUSDT 2023-03-17T20:00:00+00:00 READY {'enabled': 297, 'disabled_cost_gate': 297}
+bybit_2023_2025 BTCUSDT 2023-04-16T14:45:00+00:00 READY {'enabled': 437, 'disabled_cost_gate': 439}
+bybit_2023_2025 ETHUSDT 2023-03-24T01:30:00+00:00 READY {'enabled': 322, 'disabled_cost_gate': 322}
+bybit_2023_2025 BTCUSDT 2023-04-23T05:30:00+00:00 READY {'enabled': 456, 'disabled_cost_gate': 458}
+bybit_2023_2025 ETHUSDT 2023-04-04T08:45:00+00:00 READY {'enabled': 357, 'disabled_cost_gate': 357}
+bybit_2023_2025 BTCUSDT 2023-05-01T04:00:00+00:00 READY {'enabled': 473, 'disabled_cost_gate': 476}
+bybit_2023_2025 ETHUSDT 2023-04-11T07:30:00+00:00 READY {'enabled': 377, 'disabled_cost_gate': 377}
+bybit_2023_2025 BTCUSDT 2023-05-11T21:00:00+00:00 READY {'enabled': 500, 'disabled_cost_gate': 503}
+bybit_2023_2025 ETHUSDT 2023-04-15T19:30:00+00:00 READY {'enabled': 383, 'disabled_cost_gate': 384}
+bybit_2023_2025 BTCUSDT 2023-05-23T16:00:00+00:00 READY {'enabled': 535, 'disabled_cost_gate': 538}
+bybit_2023_2025 ETHUSDT 2023-04-20T00:00:00+00:00 READY {'enabled': 397, 'disabled_cost_gate': 398}
+bybit_2023_2025 BTCUSDT 2023-05-30T13:30:00+00:00 READY {'enabled': 560, 'disabled_cost_gate': 563}
+bybit_2023_2025 ETHUSDT 2023-04-25T15:15:00+00:00 READY {'enabled': 423, 'disabled_cost_gate': 424}
+bybit_2023_2025 BTCUSDT 2023-06-06T20:15:00+00:00 READY {'enabled': 585, 'disabled_cost_gate': 588}
+bybit_2023_2025 ETHUSDT 2023-05-08T19:15:00+00:00 READY {'enabled': 444, 'disabled_cost_gate': 445}
+bybit_2023_2025 BTCUSDT 2023-06-15T08:00:00+00:00 READY {'enabled': 624, 'disabled_cost_gate': 627}
+bybit_2023_2025 ETHUSDT 2023-05-13T23:15:00+00:00 READY {'enabled': 458, 'disabled_cost_gate': 459}
+bybit_2023_2025 BTCUSDT 2023-06-27T20:00:00+00:00 READY {'enabled': 650, 'disabled_cost_gate': 653}
+bybit_2023_2025 ETHUSDT 2023-05-18T13:45:00+00:00 READY {'enabled': 483, 'disabled_cost_gate': 484}
+bybit_2023_2025 BTCUSDT 2023-07-03T07:30:00+00:00 READY {'enabled': 663, 'disabled_cost_gate': 666}
+bybit_2023_2025 ETHUSDT 2023-05-24T00:00:00+00:00 READY {'enabled': 504, 'disabled_cost_gate': 505}
+bybit_2023_2025 BTCUSDT 2023-07-10T20:00:00+00:00 READY {'enabled': 683, 'disabled_cost_gate': 686}
+bybit_2023_2025 ETHUSDT 2023-05-29T13:45:00+00:00 READY {'enabled': 522, 'disabled_cost_gate': 523}
+bybit_2023_2025 BTCUSDT 2023-07-20T03:00:00+00:00 READY {'enabled': 706, 'disabled_cost_gate': 709}
+bybit_2023_2025 ETHUSDT 2023-06-08T03:30:00+00:00 READY {'enabled': 546, 'disabled_cost_gate': 547}
+bybit_2023_2025 BTCUSDT 2023-07-30T00:00:00+00:00 READY {'enabled': 729, 'disabled_cost_gate': 732}
+bybit_2023_2025 ETHUSDT 2023-06-19T01:15:00+00:00 READY {'enabled': 587, 'disabled_cost_gate': 588}
+bybit_2023_2025 BTCUSDT 2023-08-04T22:15:00+00:00 READY {'enabled': 746, 'disabled_cost_gate': 750}
+bybit_2023_2025 ETHUSDT 2023-06-28T17:30:00+00:00 READY {'enabled': 622, 'disabled_cost_gate': 624}
+bybit_2023_2025 BTCUSDT 2023-08-09T11:15:00+00:00 READY {'enabled': 752, 'disabled_cost_gate': 756}
+bybit_2023_2025 ETHUSDT 2023-07-04T20:30:00+00:00 READY {'enabled': 641, 'disabled_cost_gate': 643}
+bybit_2023_2025 BTCUSDT 2023-08-22T00:00:00+00:00 READY {'enabled': 788, 'disabled_cost_gate': 796}
+bybit_2023_2025 ETHUSDT 2023-07-17T04:00:00+00:00 READY {'enabled': 676, 'disabled_cost_gate': 678}
+bybit_2023_2025 BTCUSDT 2023-09-03T06:00:00+00:00 READY {'enabled': 832, 'disabled_cost_gate': 840}
+bybit_2023_2025 ETHUSDT 2023-07-24T22:00:00+00:00 READY {'enabled': 693, 'disabled_cost_gate': 695}
+bybit_2023_2025 BTCUSDT 2023-09-09T00:45:00+00:00 READY {'enabled': 855, 'disabled_cost_gate': 863}
+bybit_2023_2025 ETHUSDT 2023-08-03T08:00:00+00:00 READY {'enabled': 731, 'disabled_cost_gate': 734}
+bybit_2023_2025 BTCUSDT 2023-09-19T20:00:00+00:00 READY {'enabled': 882, 'disabled_cost_gate': 890}
+bybit_2023_2025 ETHUSDT 2023-08-13T00:00:00+00:00 READY {'enabled': 771, 'disabled_cost_gate': 775}
+bybit_2023_2025 BTCUSDT 2023-09-25T00:15:00+00:00 READY {'enabled': 900, 'disabled_cost_gate': 909}
+bybit_2023_2025 ETHUSDT 2023-08-24T22:00:00+00:00 READY {'enabled': 819, 'disabled_cost_gate': 824}
+bybit_2023_2025 BTCUSDT 2023-10-01T06:15:00+00:00 READY {'enabled': 906, 'disabled_cost_gate': 915}
+bybit_2023_2025 ETHUSDT 2023-09-03T00:00:00+00:00 READY {'enabled': 847, 'disabled_cost_gate': 852}
+bybit_2023_2025 BTCUSDT 2023-10-05T12:00:00+00:00 READY {'enabled': 929, 'disabled_cost_gate': 938}
+bybit_2023_2025 ETHUSDT 2023-09-11T08:30:00+00:00 READY {'enabled': 883, 'disabled_cost_gate': 889}
+bybit_2023_2025 BTCUSDT 2023-10-10T09:15:00+00:00 READY {'enabled': 954, 'disabled_cost_gate': 963}
+bybit_2023_2025 ETHUSDT 2023-09-19T04:30:00+00:00 READY {'enabled': 913, 'disabled_cost_gate': 919}
+bybit_2023_2025 BTCUSDT 2023-10-17T20:00:00+00:00 READY {'enabled': 965, 'disabled_cost_gate': 975}
+bybit_2023_2025 ETHUSDT 2023-09-22T20:00:00+00:00 READY {'enabled': 932, 'disabled_cost_gate': 938}
+bybit_2023_2025 BTCUSDT 2023-10-20T15:15:00+00:00 READY {'enabled': 967, 'disabled_cost_gate': 977}
+bybit_2023_2025 ETHUSDT 2023-09-25T12:00:00+00:00 READY {'enabled': 943, 'disabled_cost_gate': 952}
+bybit_2023_2025 BTCUSDT 2023-10-23T10:00:00+00:00 READY {'enabled': 975, 'disabled_cost_gate': 985}
+bybit_2023_2025 ETHUSDT 2023-09-30T05:00:00+00:00 READY {'enabled': 955, 'disabled_cost_gate': 964}
+bybit_2023_2025 BTCUSDT 2023-10-26T01:15:00+00:00 READY {'enabled': 981, 'disabled_cost_gate': 991}
+bybit_2023_2025 ETHUSDT 2023-10-03T22:45:00+00:00 READY {'enabled': 965, 'disabled_cost_gate': 974}
+bybit_2023_2025 BTCUSDT 2023-10-27T21:45:00+00:00 READY {'enabled': 985, 'disabled_cost_gate': 995}
+bybit_2023_2025 ETHUSDT 2023-10-05T23:30:00+00:00 READY {'enabled': 969, 'disabled_cost_gate': 978}
+bybit_2023_2025 BTCUSDT 2023-10-29T19:30:00+00:00 READY {'enabled': 986, 'disabled_cost_gate': 996}
+bybit_2023_2025 ETHUSDT 2023-10-08T23:45:00+00:00 READY {'enabled': 978, 'disabled_cost_gate': 987}
+bybit_2023_2025 BTCUSDT 2023-10-31T15:15:00+00:00 READY {'enabled': 989, 'disabled_cost_gate': 999}
+bybit_2023_2025 ETHUSDT 2023-10-11T17:45:00+00:00 READY {'enabled': 987, 'disabled_cost_gate': 996}
+bybit_2023_2025 BTCUSDT 2023-11-02T12:00:00+00:00 READY {'enabled': 995, 'disabled_cost_gate': 1005}
+bybit_2023_2025 ETHUSDT 2023-10-14T08:00:00+00:00 READY {'enabled': 993, 'disabled_cost_gate': 1002}
+bybit_2023_2025 BTCUSDT 2023-11-04T07:00:00+00:00 READY {'enabled': 999, 'disabled_cost_gate': 1009}
+bybit_2023_2025 ETHUSDT 2023-10-18T00:15:00+00:00 READY {'enabled': 1001, 'disabled_cost_gate': 1010}
+bybit_2023_2025 BTCUSDT 2023-11-05T21:15:00+00:00 READY {'enabled': 999, 'disabled_cost_gate': 1009}
+bybit_2023_2025 ETHUSDT 2023-10-22T15:00:00+00:00 READY {'enabled': 1020, 'disabled_cost_gate': 1029}
+bybit_2023_2025 BTCUSDT 2023-11-07T16:00:00+00:00 READY {'enabled': 1004, 'disabled_cost_gate': 1014}
+bybit_2023_2025 ETHUSDT 2023-10-25T05:15:00+00:00 READY {'enabled': 1027, 'disabled_cost_gate': 1036}
+bybit_2023_2025 BTCUSDT 2023-11-09T06:30:00+00:00 READY {'enabled': 1006, 'disabled_cost_gate': 1016}
+bybit_2023_2025 ETHUSDT 2023-10-29T04:00:00+00:00 READY {'enabled': 1040, 'disabled_cost_gate': 1049}
+bybit_2023_2025 BTCUSDT 2023-11-16T13:00:00+00:00 READY {'enabled': 1035, 'disabled_cost_gate': 1045}
+bybit_2023_2025 ETHUSDT 2023-11-02T20:00:00+00:00 READY {'enabled': 1066, 'disabled_cost_gate': 1075}
+bybit_2023_2025 BTCUSDT 2023-11-22T20:00:00+00:00 READY {'enabled': 1053, 'disabled_cost_gate': 1063}
+bybit_2023_2025 ETHUSDT 2023-11-06T00:00:00+00:00 READY {'enabled': 1083, 'disabled_cost_gate': 1092}
+bybit_2023_2025 BTCUSDT 2023-12-01T00:00:00+00:00 READY {'enabled': 1074, 'disabled_cost_gate': 1084}
+bybit_2023_2025 ETHUSDT 2023-11-10T18:00:00+00:00 READY {'enabled': 1105, 'disabled_cost_gate': 1114}
+bybit_2023_2025 BTCUSDT 2023-12-03T12:30:00+00:00 READY {'enabled': 1075, 'disabled_cost_gate': 1085}
+bybit_2023_2025 ETHUSDT 2023-11-15T00:00:00+00:00 READY {'enabled': 1123, 'disabled_cost_gate': 1132}
+bybit_2023_2025 BTCUSDT 2023-12-05T07:15:00+00:00 READY {'enabled': 1080, 'disabled_cost_gate': 1090}
+bybit_2023_2025 ETHUSDT 2023-11-19T08:00:00+00:00 READY {'enabled': 1133, 'disabled_cost_gate': 1142}
+bybit_2023_2025 BTCUSDT 2023-12-08T00:00:00+00:00 READY {'enabled': 1089, 'disabled_cost_gate': 1099}
+bybit_2023_2025 ETHUSDT 2023-11-26T09:15:00+00:00 READY {'enabled': 1151, 'disabled_cost_gate': 1160}
+bybit_2023_2025 BTCUSDT 2023-12-16T16:00:00+00:00 READY {'enabled': 1102, 'disabled_cost_gate': 1112}
+bybit_2023_2025 ETHUSDT 2023-11-30T23:30:00+00:00 READY {'enabled': 1166, 'disabled_cost_gate': 1175}
+bybit_2023_2025 BTCUSDT 2023-12-24T00:00:00+00:00 READY {'enabled': 1127, 'disabled_cost_gate': 1137}
+bybit_2023_2025 ETHUSDT 2023-12-03T08:30:00+00:00 READY {'enabled': 1175, 'disabled_cost_gate': 1184}
+bybit_2023_2025 BTCUSDT 2024-01-01T03:45:00+00:00 READY {'enabled': 1160, 'disabled_cost_gate': 1170}
+bybit_2023_2025 ETHUSDT 2023-12-05T11:45:00+00:00 READY {'enabled': 1186, 'disabled_cost_gate': 1195}
+bybit_2023_2025 BTCUSDT 2024-01-03T10:00:00+00:00 READY {'enabled': 1169, 'disabled_cost_gate': 1179}
+bybit_2023_2025 ETHUSDT 2023-12-08T02:00:00+00:00 READY {'enabled': 1194, 'disabled_cost_gate': 1203}
+bybit_2023_2025 BTCUSDT 2024-01-10T10:45:00+00:00 READY {'enabled': 1193, 'disabled_cost_gate': 1203}
+bybit_2023_2025 ETHUSDT 2023-12-10T21:30:00+00:00 READY {'enabled': 1205, 'disabled_cost_gate': 1214}
+bybit_2023_2025 BTCUSDT 2024-01-18T06:30:00+00:00 READY {'enabled': 1202, 'disabled_cost_gate': 1212}
+bybit_2023_2025 ETHUSDT 2023-12-16T09:45:00+00:00 READY {'enabled': 1215, 'disabled_cost_gate': 1224}
+bybit_2023_2025 BTCUSDT 2024-01-25T20:45:00+00:00 READY {'enabled': 1228, 'disabled_cost_gate': 1238}
+bybit_2023_2025 ETHUSDT 2023-12-19T11:45:00+00:00 READY {'enabled': 1219, 'disabled_cost_gate': 1228}
+bybit_2023_2025 BTCUSDT 2024-01-30T20:00:00+00:00 READY {'enabled': 1244, 'disabled_cost_gate': 1254}
+bybit_2023_2025 ETHUSDT 2023-12-24T04:15:00+00:00 READY {'enabled': 1229, 'disabled_cost_gate': 1238}
+bybit_2023_2025 BTCUSDT 2024-02-06T20:45:00+00:00 READY {'enabled': 1266, 'disabled_cost_gate': 1278}
+bybit_2023_2025 ETHUSDT 2023-12-30T16:00:00+00:00 READY {'enabled': 1260, 'disabled_cost_gate': 1269}
+bybit_2023_2025 BTCUSDT 2024-02-09T16:00:00+00:00 READY {'enabled': 1269, 'disabled_cost_gate': 1281}
+bybit_2023_2025 ETHUSDT 2024-01-05T15:00:00+00:00 READY {'enabled': 1282, 'disabled_cost_gate': 1291}
+bybit_2023_2025 BTCUSDT 2024-02-19T13:00:00+00:00 READY {'enabled': 1285, 'disabled_cost_gate': 1297}
+bybit_2023_2025 ETHUSDT 2024-01-12T22:30:00+00:00 READY {'enabled': 1301, 'disabled_cost_gate': 1310}
+bybit_2023_2025 BTCUSDT 2024-02-26T04:15:00+00:00 READY {'enabled': 1313, 'disabled_cost_gate': 1325}
+bybit_2023_2025 ETHUSDT 2024-01-20T16:00:00+00:00 READY {'enabled': 1319, 'disabled_cost_gate': 1328}
+bybit_2023_2025 BTCUSDT 2024-03-05T03:30:00+00:00 READY {'enabled': 1320, 'disabled_cost_gate': 1332}
+bybit_2023_2025 ETHUSDT 2024-01-28T17:15:00+00:00 READY {'enabled': 1341, 'disabled_cost_gate': 1350}
+bybit_2023_2025 BTCUSDT 2024-03-11T12:15:00+00:00 READY {'enabled': 1328, 'disabled_cost_gate': 1340}
+bybit_2023_2025 ETHUSDT 2024-02-03T00:00:00+00:00 READY {'enabled': 1370, 'disabled_cost_gate': 1379}
+bybit_2023_2025 BTCUSDT 2024-03-17T14:45:00+00:00 READY {'enabled': 1348, 'disabled_cost_gate': 1360}
+bybit_2023_2025 ETHUSDT 2024-02-08T03:15:00+00:00 READY {'enabled': 1393, 'disabled_cost_gate': 1402}
+bybit_2023_2025 BTCUSDT 2024-03-23T04:00:00+00:00 READY {'enabled': 1369, 'disabled_cost_gate': 1381}
+bybit_2023_2025 ETHUSDT 2024-02-10T22:00:00+00:00 READY {'enabled': 1400, 'disabled_cost_gate': 1409}
+bybit_2023_2025 BTCUSDT 2024-03-30T00:00:00+00:00 READY {'enabled': 1380, 'disabled_cost_gate': 1392}
+bybit_2023_2025 ETHUSDT 2024-02-14T16:00:00+00:00 READY {'enabled': 1412, 'disabled_cost_gate': 1421}
+bybit_2023_2025 BTCUSDT 2024-04-05T08:00:00+00:00 READY {'enabled': 1405, 'disabled_cost_gate': 1417}
+bybit_2023_2025 ETHUSDT 2024-02-16T12:00:00+00:00 READY {'enabled': 1415, 'disabled_cost_gate': 1424}
+bybit_2023_2025 BTCUSDT 2024-04-08T06:45:00+00:00 READY {'enabled': 1425, 'disabled_cost_gate': 1437}
+bybit_2023_2025 ETHUSDT 2024-02-19T08:00:00+00:00 READY {'enabled': 1425, 'disabled_cost_gate': 1434}
+bybit_2023_2025 BTCUSDT 2024-04-13T03:15:00+00:00 READY {'enabled': 1441, 'disabled_cost_gate': 1453}
+bybit_2023_2025 ETHUSDT 2024-02-22T18:00:00+00:00 READY {'enabled': 1437, 'disabled_cost_gate': 1446}
+bybit_2023_2025 BTCUSDT 2024-04-19T13:00:00+00:00 READY {'enabled': 1460, 'disabled_cost_gate': 1472}
+bybit_2023_2025 ETHUSDT 2024-02-25T15:45:00+00:00 READY {'enabled': 1457, 'disabled_cost_gate': 1466}
+bybit_2023_2025 BTCUSDT 2024-04-22T19:45:00+00:00 READY {'enabled': 1476, 'disabled_cost_gate': 1488}
+bybit_2023_2025 ETHUSDT 2024-02-27T01:30:00+00:00 READY {'enabled': 1459, 'disabled_cost_gate': 1468}
+bybit_2023_2025 BTCUSDT 2024-04-23T16:45:00+00:00 READY {'enabled': 1478, 'disabled_cost_gate': 1490}
+bybit_2023_2025 ETHUSDT 2024-03-02T16:30:00+00:00 READY {'enabled': 1473, 'disabled_cost_gate': 1482}
+bybit_2023_2025 BTCUSDT 2024-04-25T12:30:00+00:00 READY {'enabled': 1483, 'disabled_cost_gate': 1495}
+bybit_2023_2025 ETHUSDT 2024-03-04T16:45:00+00:00 READY {'enabled': 1474, 'disabled_cost_gate': 1483}
+bybit_2023_2025 BTCUSDT 2024-04-29T15:00:00+00:00 READY {'enabled': 1508, 'disabled_cost_gate': 1520}
+bybit_2023_2025 ETHUSDT 2024-03-07T02:00:00+00:00 READY {'enabled': 1478, 'disabled_cost_gate': 1487}
+bybit_2023_2025 BTCUSDT 2024-05-04T16:00:00+00:00 READY {'enabled': 1524, 'disabled_cost_gate': 1536}
+bybit_2023_2025 ETHUSDT 2024-03-13T20:00:00+00:00 READY {'enabled': 1488, 'disabled_cost_gate': 1497}
+bybit_2023_2025 BTCUSDT 2024-05-09T18:15:00+00:00 READY {'enabled': 1546, 'disabled_cost_gate': 1558}
+bybit_2023_2025 ETHUSDT 2024-03-20T23:00:00+00:00 READY {'enabled': 1509, 'disabled_cost_gate': 1518}
+bybit_2023_2025 BTCUSDT 2024-05-14T16:15:00+00:00 READY {'enabled': 1567, 'disabled_cost_gate': 1579}
+bybit_2023_2025 ETHUSDT 2024-03-26T07:45:00+00:00 READY {'enabled': 1525, 'disabled_cost_gate': 1534}
+bybit_2023_2025 BTCUSDT 2024-05-17T00:45:00+00:00 READY {'enabled': 1578, 'disabled_cost_gate': 1590}
+bybit_2023_2025 ETHUSDT 2024-03-30T00:30:00+00:00 READY {'enabled': 1535, 'disabled_cost_gate': 1544}
+bybit_2023_2025 BTCUSDT 2024-05-23T07:15:00+00:00 READY {'enabled': 1592, 'disabled_cost_gate': 1604}
+bybit_2023_2025 ETHUSDT 2024-04-01T00:00:00+00:00 READY {'enabled': 1542, 'disabled_cost_gate': 1551}
+bybit_2023_2025 BTCUSDT 2024-05-26T08:45:00+00:00 READY {'enabled': 1604, 'disabled_cost_gate': 1616}
+bybit_2023_2025 ETHUSDT 2024-04-06T04:00:00+00:00 READY {'enabled': 1568, 'disabled_cost_gate': 1577}
+bybit_2023_2025 BTCUSDT 2024-05-29T21:00:00+00:00 READY {'enabled': 1622, 'disabled_cost_gate': 1635}
+bybit_2023_2025 ETHUSDT 2024-04-11T05:45:00+00:00 READY {'enabled': 1587, 'disabled_cost_gate': 1596}
+bybit_2023_2025 BTCUSDT 2024-06-03T12:00:00+00:00 READY {'enabled': 1635, 'disabled_cost_gate': 1648}
+bybit_2023_2025 ETHUSDT 2024-04-17T00:00:00+00:00 READY {'enabled': 1611, 'disabled_cost_gate': 1620}
+bybit_2023_2025 BTCUSDT 2024-06-07T11:00:00+00:00 READY {'enabled': 1652, 'disabled_cost_gate': 1665}
+bybit_2023_2025 ETHUSDT 2024-04-21T23:30:00+00:00 READY {'enabled': 1626, 'disabled_cost_gate': 1635}
+bybit_2023_2025 BTCUSDT 2024-06-12T19:15:00+00:00 READY {'enabled': 1672, 'disabled_cost_gate': 1686}
+bybit_2023_2025 ETHUSDT 2024-04-24T12:15:00+00:00 READY {'enabled': 1636, 'disabled_cost_gate': 1645}
+bybit_2023_2025 BTCUSDT 2024-06-18T12:45:00+00:00 READY {'enabled': 1699, 'disabled_cost_gate': 1714}
+bybit_2023_2025 ETHUSDT 2024-05-01T09:15:00+00:00 READY {'enabled': 1661, 'disabled_cost_gate': 1670}
+bybit_2023_2025 BTCUSDT 2024-06-23T13:15:00+00:00 READY {'enabled': 1711, 'disabled_cost_gate': 1726}
+bybit_2023_2025 ETHUSDT 2024-05-05T15:15:00+00:00 READY {'enabled': 1674, 'disabled_cost_gate': 1683}
+bybit_2023_2025 BTCUSDT 2024-06-29T15:45:00+00:00 READY {'enabled': 1725, 'disabled_cost_gate': 1740}
+bybit_2023_2025 ETHUSDT 2024-05-09T16:45:00+00:00 READY {'enabled': 1689, 'disabled_cost_gate': 1698}
+bybit_2023_2025 BTCUSDT 2024-07-02T20:30:00+00:00 READY {'enabled': 1731, 'disabled_cost_gate': 1746}
+bybit_2023_2025 ETHUSDT 2024-05-15T12:00:00+00:00 READY {'enabled': 1717, 'disabled_cost_gate': 1726}
+bybit_2023_2025 BTCUSDT 2024-07-09T08:00:00+00:00 READY {'enabled': 1745, 'disabled_cost_gate': 1761}
+bybit_2023_2025 ETHUSDT 2024-05-21T13:00:00+00:00 READY {'enabled': 1728, 'disabled_cost_gate': 1737}
+bybit_2023_2025 BTCUSDT 2024-07-14T01:30:00+00:00 READY {'enabled': 1759, 'disabled_cost_gate': 1775}
+bybit_2023_2025 ETHUSDT 2024-05-25T00:00:00+00:00 READY {'enabled': 1746, 'disabled_cost_gate': 1755}
+bybit_2023_2025 BTCUSDT 2024-07-15T00:00:00+00:00 READY {'enabled': 1761, 'disabled_cost_gate': 1777}
+bybit_2023_2025 ETHUSDT 2024-05-31T06:15:00+00:00 READY {'enabled': 1772, 'disabled_cost_gate': 1781}
+bybit_2023_2025 BTCUSDT 2024-07-21T00:00:00+00:00 READY {'enabled': 1777, 'disabled_cost_gate': 1793}
+bybit_2023_2025 ETHUSDT 2024-06-05T15:45:00+00:00 READY {'enabled': 1783, 'disabled_cost_gate': 1792}
+bybit_2023_2025 BTCUSDT 2024-07-26T15:15:00+00:00 READY {'enabled': 1798, 'disabled_cost_gate': 1814}
+bybit_2023_2025 ETHUSDT 2024-06-11T02:30:00+00:00 READY {'enabled': 1801, 'disabled_cost_gate': 1810}
+bybit_2023_2025 BTCUSDT 2024-07-29T01:15:00+00:00 READY {'enabled': 1801, 'disabled_cost_gate': 1817}
+bybit_2023_2025 ETHUSDT 2024-06-16T05:15:00+00:00 READY {'enabled': 1816, 'disabled_cost_gate': 1825}
+bybit_2023_2025 BTCUSDT 2024-07-31T07:00:00+00:00 READY {'enabled': 1810, 'disabled_cost_gate': 1826}
+bybit_2023_2025 ETHUSDT 2024-06-18T12:30:00+00:00 READY {'enabled': 1821, 'disabled_cost_gate': 1830}
+bybit_2023_2025 BTCUSDT 2024-08-05T00:15:00+00:00 READY {'enabled': 1826, 'disabled_cost_gate': 1842}
+bybit_2023_2025 ETHUSDT 2024-06-24T07:30:00+00:00 READY {'enabled': 1851, 'disabled_cost_gate': 1860}
+bybit_2023_2025 BTCUSDT 2024-08-09T23:15:00+00:00 READY {'enabled': 1836, 'disabled_cost_gate': 1852}
+bybit_2023_2025 ETHUSDT 2024-06-28T03:15:00+00:00 READY {'enabled': 1860, 'disabled_cost_gate': 1869}
+bybit_2023_2025 BTCUSDT 2024-08-10T23:15:00+00:00 READY {'enabled': 1838, 'disabled_cost_gate': 1854}
+bybit_2023_2025 ETHUSDT 2024-07-01T19:00:00+00:00 READY {'enabled': 1877, 'disabled_cost_gate': 1886}
+bybit_2023_2025 BTCUSDT 2024-08-14T09:00:00+00:00 READY {'enabled': 1849, 'disabled_cost_gate': 1865}
+bybit_2023_2025 ETHUSDT 2024-07-05T04:00:00+00:00 READY {'enabled': 1884, 'disabled_cost_gate': 1893}
+bybit_2023_2025 BTCUSDT 2024-08-19T04:00:00+00:00 READY {'enabled': 1864, 'disabled_cost_gate': 1880}
+bybit_2023_2025 ETHUSDT 2024-07-08T12:00:00+00:00 READY {'enabled': 1896, 'disabled_cost_gate': 1905}
+bybit_2023_2025 BTCUSDT 2024-08-20T08:30:00+00:00 READY {'enabled': 1871, 'disabled_cost_gate': 1887}
+bybit_2023_2025 ETHUSDT 2024-07-12T00:00:00+00:00 READY {'enabled': 1907, 'disabled_cost_gate': 1916}
+bybit_2023_2025 BTCUSDT 2024-08-24T17:00:00+00:00 READY {'enabled': 1877, 'disabled_cost_gate': 1893}
+bybit_2023_2025 ETHUSDT 2024-07-16T08:00:00+00:00 READY {'enabled': 1918, 'disabled_cost_gate': 1927}
+bybit_2023_2025 BTCUSDT 2024-08-28T16:15:00+00:00 READY {'enabled': 1885, 'disabled_cost_gate': 1901}
+bybit_2023_2025 ETHUSDT 2024-07-21T21:15:00+00:00 READY {'enabled': 1940, 'disabled_cost_gate': 1949}
+bybit_2023_2025 BTCUSDT 2024-09-02T12:00:00+00:00 READY {'enabled': 1904, 'disabled_cost_gate': 1920}
+bybit_2023_2025 ETHUSDT 2024-07-27T20:00:00+00:00 READY {'enabled': 1967, 'disabled_cost_gate': 1976}
+bybit_2023_2025 BTCUSDT 2024-09-06T21:15:00+00:00 READY {'enabled': 1921, 'disabled_cost_gate': 1937}
+bybit_2023_2025 ETHUSDT 2024-08-01T16:00:00+00:00 READY {'enabled': 1980, 'disabled_cost_gate': 1989}
+bybit_2023_2025 BTCUSDT 2024-09-09T23:15:00+00:00 READY {'enabled': 1929, 'disabled_cost_gate': 1945}
+bybit_2023_2025 ETHUSDT 2024-08-04T16:00:00+00:00 READY {'enabled': 1992, 'disabled_cost_gate': 2001}
+bybit_2023_2025 BTCUSDT 2024-09-11T01:15:00+00:00 READY {'enabled': 1930, 'disabled_cost_gate': 1946}
+bybit_2023_2025 ETHUSDT 2024-08-11T06:15:00+00:00 READY {'enabled': 2009, 'disabled_cost_gate': 2018}
+bybit_2023_2025 BTCUSDT 2024-09-12T17:15:00+00:00 READY {'enabled': 1935, 'disabled_cost_gate': 1951}
+bybit_2023_2025 ETHUSDT 2024-08-17T12:00:00+00:00 READY {'enabled': 2037, 'disabled_cost_gate': 2046}
+bybit_2023_2025 BTCUSDT 2024-09-14T15:30:00+00:00 READY {'enabled': 1944, 'disabled_cost_gate': 1960}
+bybit_2023_2025 ETHUSDT 2024-08-23T07:00:00+00:00 READY {'enabled': 2050, 'disabled_cost_gate': 2059}
+bybit_2023_2025 BTCUSDT 2024-09-15T13:00:00+00:00 READY {'enabled': 1946, 'disabled_cost_gate': 1962}
+bybit_2023_2025 ETHUSDT 2024-08-28T06:00:00+00:00 READY {'enabled': 2069, 'disabled_cost_gate': 2078}
+bybit_2023_2025 BTCUSDT 2024-09-19T09:15:00+00:00 READY {'enabled': 1958, 'disabled_cost_gate': 1974}
+bybit_2023_2025 ETHUSDT 2024-09-01T05:45:00+00:00 READY {'enabled': 2085, 'disabled_cost_gate': 2094}
+bybit_2023_2025 BTCUSDT 2024-09-21T07:00:00+00:00 READY {'enabled': 1962, 'disabled_cost_gate': 1978}
+bybit_2023_2025 ETHUSDT 2024-09-05T18:00:00+00:00 READY {'enabled': 2099, 'disabled_cost_gate': 2108}
+bybit_2023_2025 BTCUSDT 2024-09-25T01:45:00+00:00 READY {'enabled': 1976, 'disabled_cost_gate': 1992}
+bybit_2023_2025 ETHUSDT 2024-09-10T22:00:00+00:00 READY {'enabled': 2114, 'disabled_cost_gate': 2123}
+bybit_2023_2025 BTCUSDT 2024-09-28T10:00:00+00:00 READY {'enabled': 1987, 'disabled_cost_gate': 2003}
+bybit_2023_2025 ETHUSDT 2024-09-15T14:45:00+00:00 READY {'enabled': 2132, 'disabled_cost_gate': 2141}
+bybit_2023_2025 BTCUSDT 2024-09-29T19:15:00+00:00 READY {'enabled': 1989, 'disabled_cost_gate': 2005}
+bybit_2023_2025 ETHUSDT 2024-09-19T15:00:00+00:00 READY {'enabled': 2140, 'disabled_cost_gate': 2149}
+bybit_2023_2025 BTCUSDT 2024-10-02T17:45:00+00:00 READY {'enabled': 1995, 'disabled_cost_gate': 2011}
+bybit_2023_2025 ETHUSDT 2024-09-21T23:30:00+00:00 READY {'enabled': 2158, 'disabled_cost_gate': 2167}
+bybit_2023_2025 BTCUSDT 2024-10-07T00:00:00+00:00 READY {'enabled': 2018, 'disabled_cost_gate': 2034}
+bybit_2023_2025 ETHUSDT 2024-09-26T12:00:00+00:00 READY {'enabled': 2174, 'disabled_cost_gate': 2183}
+bybit_2023_2025 BTCUSDT 2024-10-07T18:30:00+00:00 READY {'enabled': 2020, 'disabled_cost_gate': 2036}
+bybit_2023_2025 ETHUSDT 2024-09-30T16:00:00+00:00 READY {'enabled': 2193, 'disabled_cost_gate': 2202}
+bybit_2023_2025 BTCUSDT 2024-10-12T16:15:00+00:00 READY {'enabled': 2032, 'disabled_cost_gate': 2048}
+bybit_2023_2025 ETHUSDT 2024-10-03T16:00:00+00:00 READY {'enabled': 2207, 'disabled_cost_gate': 2216}
+bybit_2023_2025 BTCUSDT 2024-10-16T12:30:00+00:00 READY {'enabled': 2048, 'disabled_cost_gate': 2064}
+bybit_2023_2025 ETHUSDT 2024-10-08T07:30:00+00:00 READY {'enabled': 2219, 'disabled_cost_gate': 2228}
+bybit_2023_2025 BTCUSDT 2024-10-18T05:15:00+00:00 READY {'enabled': 2050, 'disabled_cost_gate': 2066}
+bybit_2023_2025 ETHUSDT 2024-10-11T03:15:00+00:00 READY {'enabled': 2234, 'disabled_cost_gate': 2243}
+bybit_2023_2025 BTCUSDT 2024-10-19T16:00:00+00:00 READY {'enabled': 2053, 'disabled_cost_gate': 2069}
+bybit_2023_2025 ETHUSDT 2024-10-15T12:00:00+00:00 READY {'enabled': 2248, 'disabled_cost_gate': 2257}
+bybit_2023_2025 BTCUSDT 2024-10-22T19:15:00+00:00 READY {'enabled': 2062, 'disabled_cost_gate': 2078}
+bybit_2023_2025 ETHUSDT 2024-10-18T12:00:00+00:00 READY {'enabled': 2264, 'disabled_cost_gate': 2273}
+bybit_2023_2025 BTCUSDT 2024-10-28T12:00:00+00:00 READY {'enabled': 2083, 'disabled_cost_gate': 2099}
+bybit_2023_2025 ETHUSDT 2024-10-22T00:00:00+00:00 READY {'enabled': 2272, 'disabled_cost_gate': 2281}
+bybit_2023_2025 BTCUSDT 2024-11-03T08:00:00+00:00 READY {'enabled': 2096, 'disabled_cost_gate': 2112}
+bybit_2023_2025 ETHUSDT 2024-10-25T15:00:00+00:00 READY {'enabled': 2278, 'disabled_cost_gate': 2287}
+bybit_2023_2025 BTCUSDT 2024-11-08T08:00:00+00:00 READY {'enabled': 2111, 'disabled_cost_gate': 2127}
+bybit_2023_2025 ETHUSDT 2024-10-28T17:15:00+00:00 READY {'enabled': 2285, 'disabled_cost_gate': 2294}
+bybit_2023_2025 BTCUSDT 2024-11-12T22:30:00+00:00 READY {'enabled': 2119, 'disabled_cost_gate': 2135}
+bybit_2023_2025 ETHUSDT 2024-11-03T06:00:00+00:00 READY {'enabled': 2298, 'disabled_cost_gate': 2307}
+bybit_2023_2025 BTCUSDT 2024-11-16T16:00:00+00:00 READY {'enabled': 2132, 'disabled_cost_gate': 2148}
+bybit_2023_2025 ETHUSDT 2024-11-08T08:00:00+00:00 READY {'enabled': 2311, 'disabled_cost_gate': 2320}
+bybit_2023_2025 BTCUSDT 2024-11-21T18:00:00+00:00 READY {'enabled': 2139, 'disabled_cost_gate': 2155}
+bybit_2023_2025 ETHUSDT 2024-11-11T02:45:00+00:00 READY {'enabled': 2325, 'disabled_cost_gate': 2334}
+bybit_2023_2025 BTCUSDT 2024-11-26T16:00:00+00:00 READY {'enabled': 2151, 'disabled_cost_gate': 2167}
+bybit_2023_2025 ETHUSDT 2024-11-15T00:00:00+00:00 READY {'enabled': 2342, 'disabled_cost_gate': 2351}
+bybit_2023_2025 BTCUSDT 2024-12-01T14:15:00+00:00 READY {'enabled': 2161, 'disabled_cost_gate': 2177}
+bybit_2023_2025 ETHUSDT 2024-11-20T04:00:00+00:00 READY {'enabled': 2366, 'disabled_cost_gate': 2375}
+bybit_2023_2025 BTCUSDT 2024-12-06T08:00:00+00:00 READY {'enabled': 2173, 'disabled_cost_gate': 2189}
+bybit_2023_2025 ETHUSDT 2024-11-26T00:00:00+00:00 READY {'enabled': 2383, 'disabled_cost_gate': 2392}
+bybit_2023_2025 BTCUSDT 2024-12-11T00:00:00+00:00 READY {'enabled': 2198, 'disabled_cost_gate': 2214}
+bybit_2023_2025 ETHUSDT 2024-12-01T00:00:00+00:00 READY {'enabled': 2391, 'disabled_cost_gate': 2400}
+bybit_2023_2025 BTCUSDT 2024-12-15T00:15:00+00:00 READY {'enabled': 2215, 'disabled_cost_gate': 2231}
+bybit_2023_2025 ETHUSDT 2024-12-04T04:00:00+00:00 READY {'enabled': 2402, 'disabled_cost_gate': 2411}
+bybit_2023_2025 BTCUSDT 2024-12-19T17:15:00+00:00 READY {'enabled': 2221, 'disabled_cost_gate': 2237}
+bybit_2023_2025 ETHUSDT 2024-12-10T08:00:00+00:00 READY {'enabled': 2416, 'disabled_cost_gate': 2425}
+bybit_2023_2025 BTCUSDT 2024-12-23T02:15:00+00:00 READY {'enabled': 2228, 'disabled_cost_gate': 2244}
+bybit_2023_2025 ETHUSDT 2024-12-15T08:00:00+00:00 READY {'enabled': 2428, 'disabled_cost_gate': 2437}
+bybit_2023_2025 BTCUSDT 2024-12-25T18:45:00+00:00 READY {'enabled': 2237, 'disabled_cost_gate': 2253}
+bybit_2023_2025 ETHUSDT 2024-12-20T20:15:00+00:00 READY {'enabled': 2444, 'disabled_cost_gate': 2453}
+bybit_2023_2025 BTCUSDT 2024-12-28T15:00:00+00:00 READY {'enabled': 2246, 'disabled_cost_gate': 2262}
+bybit_2023_2025 ETHUSDT 2024-12-27T11:15:00+00:00 READY {'enabled': 2457, 'disabled_cost_gate': 2466}
+bybit_2023_2025 BTCUSDT 2024-12-31T08:00:00+00:00 READY {'enabled': 2255, 'disabled_cost_gate': 2271}
+bybit_2023_2025 ETHUSDT 2025-01-03T00:00:00+00:00 READY {'enabled': 2486, 'disabled_cost_gate': 2495}
+bybit_2023_2025 BTCUSDT 2025-01-03T16:30:00+00:00 READY {'enabled': 2267, 'disabled_cost_gate': 2283}
+bybit_2023_2025 ETHUSDT 2025-01-05T20:00:00+00:00 READY {'enabled': 2497, 'disabled_cost_gate': 2506}
+bybit_2023_2025 BTCUSDT 2025-01-06T22:15:00+00:00 READY {'enabled': 2275, 'disabled_cost_gate': 2291}
+bybit_2023_2025 ETHUSDT 2025-01-11T10:15:00+00:00 READY {'enabled': 2516, 'disabled_cost_gate': 2525}
+bybit_2023_2025 BTCUSDT 2025-01-10T13:00:00+00:00 READY {'enabled': 2278, 'disabled_cost_gate': 2294}
+bybit_2023_2025 ETHUSDT 2025-01-17T05:00:00+00:00 READY {'enabled': 2523, 'disabled_cost_gate': 2532}
+bybit_2023_2025 BTCUSDT 2025-01-14T19:00:00+00:00 READY {'enabled': 2289, 'disabled_cost_gate': 2305}
+bybit_2023_2025 ETHUSDT 2025-01-23T02:15:00+00:00 READY {'enabled': 2536, 'disabled_cost_gate': 2545}
+bybit_2023_2025 BTCUSDT 2025-01-19T02:00:00+00:00 READY {'enabled': 2296, 'disabled_cost_gate': 2312}
+bybit_2023_2025 ETHUSDT 2025-01-29T04:00:00+00:00 READY {'enabled': 2552, 'disabled_cost_gate': 2561}
+bybit_2023_2025 BTCUSDT 2025-01-23T22:00:00+00:00 READY {'enabled': 2303, 'disabled_cost_gate': 2319}
+bybit_2023_2025 ETHUSDT 2025-02-01T02:30:00+00:00 READY {'enabled': 2564, 'disabled_cost_gate': 2573}
+bybit_2023_2025 BTCUSDT 2025-01-28T08:00:00+00:00 READY {'enabled': 2313, 'disabled_cost_gate': 2329}
+bybit_2023_2025 ETHUSDT 2025-02-07T18:45:00+00:00 READY {'enabled': 2583, 'disabled_cost_gate': 2592}
+bybit_2023_2025 BTCUSDT 2025-01-30T04:00:00+00:00 READY {'enabled': 2324, 'disabled_cost_gate': 2340}
+bybit_2023_2025 ETHUSDT 2025-02-11T08:00:00+00:00 READY {'enabled': 2594, 'disabled_cost_gate': 2603}
+bybit_2023_2025 BTCUSDT 2025-02-03T12:00:00+00:00 READY {'enabled': 2333, 'disabled_cost_gate': 2350}
+bybit_2023_2025 ETHUSDT 2025-02-17T08:00:00+00:00 READY {'enabled': 2611, 'disabled_cost_gate': 2620}
+bybit_2023_2025 BTCUSDT 2025-02-08T01:30:00+00:00 READY {'enabled': 2346, 'disabled_cost_gate': 2363}
+bybit_2023_2025 ETHUSDT 2025-02-21T12:15:00+00:00 READY {'enabled': 2624, 'disabled_cost_gate': 2633}
+bybit_2023_2025 BTCUSDT 2025-02-12T00:00:00+00:00 READY {'enabled': 2358, 'disabled_cost_gate': 2375}
+bybit_2023_2025 ETHUSDT 2025-02-27T19:45:00+00:00 READY {'enabled': 2640, 'disabled_cost_gate': 2649}
+bybit_2023_2025 BTCUSDT 2025-02-16T20:00:00+00:00 READY {'enabled': 2370, 'disabled_cost_gate': 2387}
+bybit_2023_2025 ETHUSDT 2025-03-04T00:00:00+00:00 READY {'enabled': 2656, 'disabled_cost_gate': 2665}
+bybit_2023_2025 BTCUSDT 2025-02-20T19:45:00+00:00 READY {'enabled': 2390, 'disabled_cost_gate': 2407}
+bybit_2023_2025 ETHUSDT 2025-03-11T01:15:00+00:00 READY {'enabled': 2674, 'disabled_cost_gate': 2683}
+bybit_2023_2025 BTCUSDT 2025-02-25T00:45:00+00:00 READY {'enabled': 2402, 'disabled_cost_gate': 2419}
+bybit_2023_2025 ETHUSDT 2025-03-18T12:15:00+00:00 READY {'enabled': 2693, 'disabled_cost_gate': 2702}
+bybit_2023_2025 BTCUSDT 2025-02-27T16:00:00+00:00 READY {'enabled': 2410, 'disabled_cost_gate': 2427}
+bybit_2023_2025 ETHUSDT 2025-03-26T00:00:00+00:00 READY {'enabled': 2723, 'disabled_cost_gate': 2732}
+bybit_2023_2025 BTCUSDT 2025-03-02T16:45:00+00:00 READY {'enabled': 2416, 'disabled_cost_gate': 2433}
+bybit_2023_2025 ETHUSDT 2025-03-30T19:15:00+00:00 READY {'enabled': 2738, 'disabled_cost_gate': 2747}
+bybit_2023_2025 BTCUSDT 2025-03-05T14:00:00+00:00 READY {'enabled': 2428, 'disabled_cost_gate': 2445}
+bybit_2023_2025 ETHUSDT 2025-04-03T17:45:00+00:00 READY {'enabled': 2753, 'disabled_cost_gate': 2762}
+bybit_2023_2025 BTCUSDT 2025-03-07T13:45:00+00:00 READY {'enabled': 2434, 'disabled_cost_gate': 2451}
+bybit_2023_2025 ETHUSDT 2025-04-08T14:30:00+00:00 READY {'enabled': 2779, 'disabled_cost_gate': 2788}
+bybit_2023_2025 BTCUSDT 2025-03-10T18:15:00+00:00 READY {'enabled': 2437, 'disabled_cost_gate': 2454}
+bybit_2023_2025 ETHUSDT 2025-04-13T12:00:00+00:00 READY {'enabled': 2790, 'disabled_cost_gate': 2799}
+bybit_2023_2025 BTCUSDT 2025-03-14T20:00:00+00:00 READY {'enabled': 2449, 'disabled_cost_gate': 2466}
+bybit_2023_2025 ETHUSDT 2025-04-17T14:30:00+00:00 READY {'enabled': 2797, 'disabled_cost_gate': 2806}
+bybit_2023_2025 BTCUSDT 2025-03-16T11:00:00+00:00 READY {'enabled': 2453, 'disabled_cost_gate': 2470}
+bybit_2023_2025 ETHUSDT 2025-04-21T08:15:00+00:00 READY {'enabled': 2812, 'disabled_cost_gate': 2821}
+bybit_2023_2025 BTCUSDT 2025-03-20T09:00:00+00:00 READY {'enabled': 2461, 'disabled_cost_gate': 2478}
+bybit_2023_2025 ETHUSDT 2025-04-24T12:15:00+00:00 READY {'enabled': 2821, 'disabled_cost_gate': 2830}
+bybit_2023_2025 BTCUSDT 2025-03-24T13:45:00+00:00 READY {'enabled': 2476, 'disabled_cost_gate': 2493}
+bybit_2023_2025 ETHUSDT 2025-04-28T09:45:00+00:00 READY {'enabled': 2840, 'disabled_cost_gate': 2849}
+bybit_2023_2025 BTCUSDT 2025-03-26T04:45:00+00:00 READY {'enabled': 2483, 'disabled_cost_gate': 2500}
+bybit_2023_2025 ETHUSDT 2025-05-02T17:15:00+00:00 READY {'enabled': 2858, 'disabled_cost_gate': 2867}
+bybit_2023_2025 BTCUSDT 2025-03-26T23:00:00+00:00 READY {'enabled': 2484, 'disabled_cost_gate': 2501}
+bybit_2023_2025 ETHUSDT 2025-05-08T04:00:00+00:00 READY {'enabled': 2882, 'disabled_cost_gate': 2891}
+bybit_2023_2025 BTCUSDT 2025-03-28T02:15:00+00:00 READY {'enabled': 2492, 'disabled_cost_gate': 2509}
+bybit_2023_2025 ETHUSDT 2025-05-12T10:15:00+00:00 READY {'enabled': 2901, 'disabled_cost_gate': 2910}
+bybit_2023_2025 BTCUSDT 2025-04-01T13:15:00+00:00 READY {'enabled': 2505, 'disabled_cost_gate': 2522}
+bybit_2023_2025 ETHUSDT 2025-05-15T10:00:00+00:00 READY {'enabled': 2910, 'disabled_cost_gate': 2919}
+bybit_2023_2025 BTCUSDT 2025-04-05T21:45:00+00:00 READY {'enabled': 2519, 'disabled_cost_gate': 2536}
+bybit_2023_2025 ETHUSDT 2025-05-18T17:15:00+00:00 READY {'enabled': 2917, 'disabled_cost_gate': 2926}
+bybit_2023_2025 BTCUSDT 2025-04-09T12:00:00+00:00 READY {'enabled': 2527, 'disabled_cost_gate': 2544}
+bybit_2023_2025 ETHUSDT 2025-05-24T00:15:00+00:00 READY {'enabled': 2935, 'disabled_cost_gate': 2944}
+bybit_2023_2025 BTCUSDT 2025-04-13T18:45:00+00:00 READY {'enabled': 2540, 'disabled_cost_gate': 2557}
+bybit_2023_2025 ETHUSDT 2025-05-29T10:30:00+00:00 READY {'enabled': 2951, 'disabled_cost_gate': 2960}
+bybit_2023_2025 BTCUSDT 2025-04-16T20:00:00+00:00 READY {'enabled': 2552, 'disabled_cost_gate': 2569}
+bybit_2023_2025 ETHUSDT 2025-06-03T00:00:00+00:00 READY {'enabled': 2969, 'disabled_cost_gate': 2978}
+bybit_2023_2025 BTCUSDT 2025-04-18T12:45:00+00:00 READY {'enabled': 2558, 'disabled_cost_gate': 2575}
+bybit_2023_2025 ETHUSDT 2025-06-09T12:00:00+00:00 READY {'enabled': 2995, 'disabled_cost_gate': 3004}
+bybit_2023_2025 BTCUSDT 2025-04-19T12:45:00+00:00 READY {'enabled': 2558, 'disabled_cost_gate': 2575}
+bybit_2023_2025 ETHUSDT 2025-06-16T06:30:00+00:00 READY {'enabled': 3022, 'disabled_cost_gate': 3031}
+bybit_2023_2025 BTCUSDT 2025-04-20T19:45:00+00:00 READY {'enabled': 2561, 'disabled_cost_gate': 2578}
+bybit_2023_2025 ETHUSDT 2025-06-21T03:45:00+00:00 READY {'enabled': 3032, 'disabled_cost_gate': 3041}
+bybit_2023_2025 BTCUSDT 2025-04-21T20:45:00+00:00 READY {'enabled': 2563, 'disabled_cost_gate': 2580}
+bybit_2023_2025 ETHUSDT 2025-06-25T18:00:00+00:00 READY {'enabled': 3040, 'disabled_cost_gate': 3049}
+bybit_2023_2025 BTCUSDT 2025-04-22T15:00:00+00:00 READY {'enabled': 2567, 'disabled_cost_gate': 2584}
+bybit_2023_2025 ETHUSDT 2025-06-29T20:00:00+00:00 READY {'enabled': 3049, 'disabled_cost_gate': 3058}
+bybit_2023_2025 BTCUSDT 2025-04-25T08:00:00+00:00 READY {'enabled': 2576, 'disabled_cost_gate': 2593}
+bybit_2023_2025 ETHUSDT 2025-07-05T14:15:00+00:00 READY {'enabled': 3067, 'disabled_cost_gate': 3076}
+bybit_2023_2025 BTCUSDT 2025-04-26T15:45:00+00:00 READY {'enabled': 2576, 'disabled_cost_gate': 2593}
+bybit_2023_2025 ETHUSDT 2025-07-10T20:00:00+00:00 READY {'enabled': 3083, 'disabled_cost_gate': 3092}
+bybit_2023_2025 BTCUSDT 2025-04-27T17:15:00+00:00 READY {'enabled': 2579, 'disabled_cost_gate': 2596}
+bybit_2023_2025 ETHUSDT 2025-07-13T16:00:00+00:00 READY {'enabled': 3096, 'disabled_cost_gate': 3105}
+bybit_2023_2025 BTCUSDT 2025-04-30T13:30:00+00:00 READY {'enabled': 2596, 'disabled_cost_gate': 2613}
+bybit_2023_2025 ETHUSDT 2025-07-16T05:45:00+00:00 READY {'enabled': 3106, 'disabled_cost_gate': 3115}
+bybit_2023_2025 BTCUSDT 2025-05-02T16:00:00+00:00 READY {'enabled': 2603, 'disabled_cost_gate': 2620}
+bybit_2023_2025 ETHUSDT 2025-07-22T11:45:00+00:00 READY {'enabled': 3117, 'disabled_cost_gate': 3126}
+bybit_2023_2025 BTCUSDT 2025-05-04T18:15:00+00:00 READY {'enabled': 2607, 'disabled_cost_gate': 2624}
+bybit_2023_2025 ETHUSDT 2025-07-28T03:45:00+00:00 READY {'enabled': 3142, 'disabled_cost_gate': 3151}
+bybit_2023_2025 BTCUSDT 2025-05-07T23:00:00+00:00 READY {'enabled': 2621, 'disabled_cost_gate': 2638}
+bybit_2023_2025 ETHUSDT 2025-08-03T16:45:00+00:00 READY {'enabled': 3161, 'disabled_cost_gate': 3170}
+bybit_2023_2025 BTCUSDT 2025-05-08T21:30:00+00:00 READY {'enabled': 2626, 'disabled_cost_gate': 2643}
+bybit_2023_2025 ETHUSDT 2025-08-09T20:00:00+00:00 READY {'enabled': 3173, 'disabled_cost_gate': 3182}
+bybit_2023_2025 BTCUSDT 2025-05-09T18:00:00+00:00 READY {'enabled': 2627, 'disabled_cost_gate': 2644}
+bybit_2023_2025 ETHUSDT 2025-08-15T20:00:00+00:00 READY {'enabled': 3187, 'disabled_cost_gate': 3196}
+bybit_2023_2025 BTCUSDT 2025-05-10T09:00:00+00:00 READY {'enabled': 2627, 'disabled_cost_gate': 2644}
+bybit_2023_2025 ETHUSDT 2025-08-21T04:00:00+00:00 READY {'enabled': 3205, 'disabled_cost_gate': 3214}
+bybit_2023_2025 BTCUSDT 2025-05-13T08:00:00+00:00 READY {'enabled': 2632, 'disabled_cost_gate': 2649}
+bybit_2023_2025 ETHUSDT 2025-08-27T15:00:00+00:00 READY {'enabled': 3217, 'disabled_cost_gate': 3226}
+bybit_2023_2025 BTCUSDT 2025-05-16T22:00:00+00:00 READY {'enabled': 2642, 'disabled_cost_gate': 2659}
+bybit_2023_2025 ETHUSDT 2025-09-01T11:15:00+00:00 READY {'enabled': 3235, 'disabled_cost_gate': 3244}
+bybit_2023_2025 BTCUSDT 2025-05-20T04:00:00+00:00 READY {'enabled': 2652, 'disabled_cost_gate': 2669}
+bybit_2023_2025 ETHUSDT 2025-09-07T08:00:00+00:00 READY {'enabled': 3269, 'disabled_cost_gate': 3278}
+bybit_2023_2025 BTCUSDT 2025-05-23T11:45:00+00:00 READY {'enabled': 2661, 'disabled_cost_gate': 2678}
+bybit_2023_2025 ETHUSDT 2025-09-12T02:00:00+00:00 READY {'enabled': 3289, 'disabled_cost_gate': 3298}
+bybit_2023_2025 BTCUSDT 2025-05-27T04:00:00+00:00 READY {'enabled': 2671, 'disabled_cost_gate': 2688}
+bybit_2023_2025 ETHUSDT 2025-09-15T20:45:00+00:00 READY {'enabled': 3290, 'disabled_cost_gate': 3299}
+bybit_2023_2025 BTCUSDT 2025-05-31T01:00:00+00:00 READY {'enabled': 2678, 'disabled_cost_gate': 2695}
+bybit_2023_2025 ETHUSDT 2025-09-22T03:15:00+00:00 READY {'enabled': 3318, 'disabled_cost_gate': 3327}
+bybit_2023_2025 BTCUSDT 2025-06-03T20:00:00+00:00 READY {'enabled': 2685, 'disabled_cost_gate': 2702}
+bybit_2023_2025 ETHUSDT 2025-09-26T15:15:00+00:00 READY {'enabled': 3326, 'disabled_cost_gate': 3335}
+bybit_2023_2025 BTCUSDT 2025-06-07T00:00:00+00:00 READY {'enabled': 2697, 'disabled_cost_gate': 2714}
+bybit_2023_2025 ETHUSDT 2025-10-01T13:30:00+00:00 READY {'enabled': 3346, 'disabled_cost_gate': 3355}
+bybit_2023_2025 BTCUSDT 2025-06-10T22:15:00+00:00 READY {'enabled': 2705, 'disabled_cost_gate': 2722}
+bybit_2023_2025 ETHUSDT 2025-10-04T17:00:00+00:00 READY {'enabled': 3354, 'disabled_cost_gate': 3363}
+bybit_2023_2025 BTCUSDT 2025-06-15T00:00:00+00:00 READY {'enabled': 2721, 'disabled_cost_gate': 2738}
+bybit_2023_2025 ETHUSDT 2025-10-08T20:00:00+00:00 READY {'enabled': 3366, 'disabled_cost_gate': 3375}
+bybit_2023_2025 BTCUSDT 2025-06-19T00:00:00+00:00 READY {'enabled': 2736, 'disabled_cost_gate': 2753}
+bybit_2023_2025 ETHUSDT 2025-10-14T03:00:00+00:00 READY {'enabled': 3384, 'disabled_cost_gate': 3393}
+bybit_2023_2025 BTCUSDT 2025-06-22T17:00:00+00:00 READY {'enabled': 2752, 'disabled_cost_gate': 2769}
+bybit_2023_2025 ETHUSDT 2025-10-19T02:45:00+00:00 READY {'enabled': 3397, 'disabled_cost_gate': 3406}
+bybit_2023_2025 BTCUSDT 2025-06-25T01:15:00+00:00 READY {'enabled': 2758, 'disabled_cost_gate': 2775}
+bybit_2023_2025 ETHUSDT 2025-10-23T19:00:00+00:00 READY {'enabled': 3412, 'disabled_cost_gate': 3421}
+bybit_2023_2025 BTCUSDT 2025-06-25T12:30:00+00:00 READY {'enabled': 2758, 'disabled_cost_gate': 2775}
+bybit_2023_2025 ETHUSDT 2025-10-29T10:45:00+00:00 READY {'enabled': 3427, 'disabled_cost_gate': 3436}
+bybit_2023_2025 BTCUSDT 2025-06-26T04:30:00+00:00 READY {'enabled': 2759, 'disabled_cost_gate': 2776}
+bybit_2023_2025 ETHUSDT 2025-11-02T16:45:00+00:00 READY {'enabled': 3447, 'disabled_cost_gate': 3456}
+bybit_2023_2025 BTCUSDT 2025-06-27T03:00:00+00:00 READY {'enabled': 2766, 'disabled_cost_gate': 2783}
+bybit_2023_2025 ETHUSDT 2025-11-07T04:00:00+00:00 READY {'enabled': 3458, 'disabled_cost_gate': 3467}
+bybit_2023_2025 BTCUSDT 2025-06-27T16:00:00+00:00 READY {'enabled': 2766, 'disabled_cost_gate': 2783}
+bybit_2023_2025 ETHUSDT 2025-11-12T15:30:00+00:00 READY {'enabled': 3471, 'disabled_cost_gate': 3480}
+bybit_2023_2025 BTCUSDT 2025-06-28T06:15:00+00:00 READY {'enabled': 2771, 'disabled_cost_gate': 2788}
+bybit_2023_2025 ETHUSDT 2025-11-16T16:00:00+00:00 READY {'enabled': 3481, 'disabled_cost_gate': 3490}
+bybit_2023_2025 BTCUSDT 2025-06-29T01:45:00+00:00 READY {'enabled': 2773, 'disabled_cost_gate': 2790}
+bybit_2023_2025 ETHUSDT 2025-11-20T13:15:00+00:00 READY {'enabled': 3500, 'disabled_cost_gate': 3509}
+bybit_2023_2025 BTCUSDT 2025-06-29T23:15:00+00:00 READY {'enabled': 2773, 'disabled_cost_gate': 2792}
+bybit_2023_2025 ETHUSDT 2025-11-25T13:00:00+00:00 READY {'enabled': 3507, 'disabled_cost_gate': 3516}
+bybit_2023_2025 BTCUSDT 2025-06-30T12:15:00+00:00 READY {'enabled': 2777, 'disabled_cost_gate': 2795}
+bybit_2023_2025 ETHUSDT 2025-11-28T20:00:00+00:00 READY {'enabled': 3522, 'disabled_cost_gate': 3531}
+bybit_2023_2025 BTCUSDT 2025-07-01T12:00:00+00:00 READY {'enabled': 2780, 'disabled_cost_gate': 2798}
+bybit_2023_2025 ETHUSDT 2025-12-03T11:00:00+00:00 READY {'enabled': 3535, 'disabled_cost_gate': 3544}
+bybit_2023_2025 BTCUSDT 2025-07-03T16:00:00+00:00 READY {'enabled': 2788, 'disabled_cost_gate': 2806}
+bybit_2023_2025 ETHUSDT 2025-12-05T14:30:00+00:00 READY {'enabled': 3543, 'disabled_cost_gate': 3552}
+bybit_2023_2025 BTCUSDT 2025-07-07T13:00:00+00:00 READY {'enabled': 2801, 'disabled_cost_gate': 2820}
+bybit_2023_2025 BTCUSDT 2025-07-11T06:15:00+00:00 READY {'enabled': 2812, 'disabled_cost_gate': 2831}
+bybit_2023_2025 BTCUSDT 2025-07-15T04:00:00+00:00 READY {'enabled': 2816, 'disabled_cost_gate': 2835}
+bybit_2023_2025 BTCUSDT 2025-07-19T01:15:00+00:00 READY {'enabled': 2832, 'disabled_cost_gate': 2851}
+bybit_2023_2025 BTCUSDT 2025-07-22T08:00:00+00:00 READY {'enabled': 2848, 'disabled_cost_gate': 2868}
+bybit_2023_2025 BTCUSDT 2025-07-25T20:45:00+00:00 READY {'enabled': 2860, 'disabled_cost_gate': 2880}
+bybit_2023_2025 BTCUSDT 2025-07-28T05:30:00+00:00 READY {'enabled': 2867, 'disabled_cost_gate': 2889}
+bybit_2023_2025 BTCUSDT 2025-07-29T15:00:00+00:00 READY {'enabled': 2874, 'disabled_cost_gate': 2896}
+bybit_2023_2025 BTCUSDT 2025-08-02T11:15:00+00:00 READY {'enabled': 2891, 'disabled_cost_gate': 2913}
+bybit_2023_2025 BTCUSDT 2025-08-05T23:30:00+00:00 READY {'enabled': 2897, 'disabled_cost_gate': 2920}
+bybit_2023_2025 BTCUSDT 2025-08-07T17:15:00+00:00 READY {'enabled': 2903, 'disabled_cost_gate': 2927}
+bybit_2023_2025 BTCUSDT 2025-08-08T05:45:00+00:00 READY {'enabled': 2905, 'disabled_cost_gate': 2928}
+bybit_2023_2025 BTCUSDT 2025-08-08T19:30:00+00:00 READY {'enabled': 2906, 'disabled_cost_gate': 2929}
+bybit_2023_2025 BTCUSDT 2025-08-09T10:00:00+00:00 READY {'enabled': 2907, 'disabled_cost_gate': 2930}
+bybit_2023_2025 BTCUSDT 2025-08-13T00:15:00+00:00 READY {'enabled': 2914, 'disabled_cost_gate': 2937}
+bybit_2023_2025 BTCUSDT 2025-08-16T23:00:00+00:00 READY {'enabled': 2925, 'disabled_cost_gate': 2948}
+bybit_2023_2025 BTCUSDT 2025-08-20T15:00:00+00:00 READY {'enabled': 2937, 'disabled_cost_gate': 2960}
+bybit_2023_2025 BTCUSDT 2025-08-24T04:00:00+00:00 READY {'enabled': 2951, 'disabled_cost_gate': 2974}
+bybit_2023_2025 BTCUSDT 2025-08-26T23:00:00+00:00 READY {'enabled': 2960, 'disabled_cost_gate': 2983}
+bybit_2023_2025 BTCUSDT 2025-08-30T08:30:00+00:00 READY {'enabled': 2970, 'disabled_cost_gate': 2993}
+bybit_2023_2025 BTCUSDT 2025-09-02T09:30:00+00:00 READY {'enabled': 2980, 'disabled_cost_gate': 3003}
+bybit_2023_2025 BTCUSDT 2025-09-03T23:00:00+00:00 READY {'enabled': 2989, 'disabled_cost_gate': 3013}
+bybit_2023_2025 BTCUSDT 2025-09-07T00:00:00+00:00 READY {'enabled': 2998, 'disabled_cost_gate': 3023}
+bybit_2023_2025 BTCUSDT 2025-09-10T16:15:00+00:00 READY {'enabled': 3008, 'disabled_cost_gate': 3032}
+bybit_2023_2025 BTCUSDT 2025-09-14T00:00:00+00:00 READY {'enabled': 3018, 'disabled_cost_gate': 3042}
+bybit_2023_2025 BTCUSDT 2025-09-16T16:45:00+00:00 READY {'enabled': 3033, 'disabled_cost_gate': 3057}
+bybit_2023_2025 BTCUSDT 2025-09-17T09:45:00+00:00 READY {'enabled': 3041, 'disabled_cost_gate': 3067}
+bybit_2023_2025 BTCUSDT 2025-09-18T03:15:00+00:00 READY {'enabled': 3043, 'disabled_cost_gate': 3069}
+bybit_2023_2025 BTCUSDT 2025-09-18T17:00:00+00:00 READY {'enabled': 3045, 'disabled_cost_gate': 3072}
+bybit_2023_2025 BTCUSDT 2025-09-20T00:00:00+00:00 READY {'enabled': 3047, 'disabled_cost_gate': 3074}
+bybit_2023_2025 BTCUSDT 2025-09-23T04:00:00+00:00 READY {'enabled': 3055, 'disabled_cost_gate': 3082}
+bybit_2023_2025 BTCUSDT 2025-09-26T00:00:00+00:00 READY {'enabled': 3065, 'disabled_cost_gate': 3092}
+bybit_2023_2025 BTCUSDT 2025-09-29T06:30:00+00:00 READY {'enabled': 3071, 'disabled_cost_gate': 3098}
+bybit_2023_2025 BTCUSDT 2025-09-29T17:30:00+00:00 READY {'enabled': 3074, 'disabled_cost_gate': 3101}
+bybit_2023_2025 BTCUSDT 2025-10-01T16:00:00+00:00 READY {'enabled': 3077, 'disabled_cost_gate': 3104}
+bybit_2023_2025 BTCUSDT 2025-10-03T05:00:00+00:00 READY {'enabled': 3082, 'disabled_cost_gate': 3109}
+bybit_2023_2025 BTCUSDT 2025-10-04T02:00:00+00:00 READY {'enabled': 3083, 'disabled_cost_gate': 3110}
+bybit_2023_2025 BTCUSDT 2025-10-05T18:30:00+00:00 READY {'enabled': 3084, 'disabled_cost_gate': 3111}
+bybit_2023_2025 BTCUSDT 2025-10-08T10:30:00+00:00 READY {'enabled': 3087, 'disabled_cost_gate': 3114}
+bybit_2023_2025 BTCUSDT 2025-10-12T05:45:00+00:00 READY {'enabled': 3106, 'disabled_cost_gate': 3133}
+bybit_2023_2025 BTCUSDT 2025-10-16T05:15:00+00:00 READY {'enabled': 3108, 'disabled_cost_gate': 3135}
+bybit_2023_2025 BTCUSDT 2025-10-19T12:00:00+00:00 READY {'enabled': 3113, 'disabled_cost_gate': 3140}
+bybit_2023_2025 BTCUSDT 2025-10-23T00:00:00+00:00 READY {'enabled': 3114, 'disabled_cost_gate': 3141}
+bybit_2023_2025 BTCUSDT 2025-10-26T12:45:00+00:00 READY {'enabled': 3119, 'disabled_cost_gate': 3146}
+bybit_2023_2025 BTCUSDT 2025-10-30T04:00:00+00:00 READY {'enabled': 3121, 'disabled_cost_gate': 3148}
+bybit_2023_2025 BTCUSDT 2025-11-02T16:00:00+00:00 READY {'enabled': 3125, 'disabled_cost_gate': 3152}
+bybit_2023_2025 BTCUSDT 2025-11-05T16:00:00+00:00 READY {'enabled': 3132, 'disabled_cost_gate': 3159}
+bybit_2023_2025 BTCUSDT 2025-11-08T05:45:00+00:00 READY {'enabled': 3137, 'disabled_cost_gate': 3164}
+bybit_2023_2025 BTCUSDT 2025-11-10T20:00:00+00:00 READY {'enabled': 3144, 'disabled_cost_gate': 3171}
+bybit_2023_2025 BTCUSDT 2025-11-13T10:15:00+00:00 READY {'enabled': 3151, 'disabled_cost_gate': 3178}
+bybit_2023_2025 BTCUSDT 2025-11-16T21:15:00+00:00 READY {'enabled': 3165, 'disabled_cost_gate': 3192}
+bybit_2023_2025 BTCUSDT 2025-11-20T03:30:00+00:00 READY {'enabled': 3173, 'disabled_cost_gate': 3200}
+bybit_2023_2025 BTCUSDT 2025-11-23T18:30:00+00:00 READY {'enabled': 3178, 'disabled_cost_gate': 3205}
+bybit_2023_2025 BTCUSDT 2025-11-27T04:00:00+00:00 READY {'enabled': 3186, 'disabled_cost_gate': 3213}
+bybit_2023_2025 BTCUSDT 2025-11-30T20:15:00+00:00 READY {'enabled': 3197, 'disabled_cost_gate': 3224}
+bybit_2023_2025 BTCUSDT 2025-12-04T03:30:00+00:00 READY {'enabled': 3210, 'disabled_cost_gate': 3237}
+bybit_2023_2025 enabled independent cases 1 / 6760
+bybit_2023_2025 enabled independent cases 51 / 6760
+bybit_2023_2025 enabled independent cases 101 / 6760
+bybit_2023_2025 enabled independent cases 151 / 6760
+bybit_2023_2025 enabled independent cases 201 / 6760
+bybit_2023_2025 enabled independent cases 251 / 6760
+bybit_2023_2025 enabled independent cases 301 / 6760
+bybit_2023_2025 enabled independent cases 351 / 6760
+bybit_2023_2025 enabled independent cases 401 / 6760
+bybit_2023_2025 enabled independent cases 451 / 6760
+bybit_2023_2025 enabled independent cases 501 / 6760
+bybit_2023_2025 enabled independent cases 551 / 6760
+bybit_2023_2025 enabled independent cases 601 / 6760
+bybit_2023_2025 enabled independent cases 651 / 6760
+bybit_2023_2025 enabled independent cases 701 / 6760
+bybit_2023_2025 enabled independent cases 751 / 6760
+bybit_2023_2025 enabled independent cases 801 / 6760
+bybit_2023_2025 enabled independent cases 851 / 6760
+bybit_2023_2025 enabled independent cases 901 / 6760
+bybit_2023_2025 enabled independent cases 951 / 6760
+bybit_2023_2025 enabled independent cases 1001 / 6760
+bybit_2023_2025 enabled independent cases 1051 / 6760
+bybit_2023_2025 enabled independent cases 1101 / 6760
+bybit_2023_2025 enabled independent cases 1151 / 6760
+bybit_2023_2025 enabled independent cases 1201 / 6760
+bybit_2023_2025 enabled independent cases 1251 / 6760
+bybit_2023_2025 enabled independent cases 1301 / 6760
+bybit_2023_2025 enabled independent cases 1351 / 6760
+bybit_2023_2025 enabled independent cases 1401 / 6760
+bybit_2023_2025 enabled independent cases 1451 / 6760
+bybit_2023_2025 enabled independent cases 1501 / 6760
+bybit_2023_2025 enabled independent cases 1551 / 6760
+bybit_2023_2025 enabled independent cases 1601 / 6760
+bybit_2023_2025 enabled independent cases 1651 / 6760
+bybit_2023_2025 enabled independent cases 1701 / 6760
+bybit_2023_2025 enabled independent cases 1751 / 6760
+bybit_2023_2025 enabled independent cases 1801 / 6760
+bybit_2023_2025 enabled independent cases 1851 / 6760
+bybit_2023_2025 enabled independent cases 1901 / 6760
+bybit_2023_2025 enabled independent cases 1951 / 6760
+bybit_2023_2025 enabled independent cases 2001 / 6760
+bybit_2023_2025 enabled independent cases 2051 / 6760
+bybit_2023_2025 enabled independent cases 2101 / 6760
+bybit_2023_2025 enabled independent cases 2151 / 6760
+bybit_2023_2025 enabled independent cases 2201 / 6760
+bybit_2023_2025 enabled independent cases 2251 / 6760
+bybit_2023_2025 enabled independent cases 2301 / 6760
+bybit_2023_2025 enabled independent cases 2351 / 6760
+bybit_2023_2025 enabled independent cases 2401 / 6760
+bybit_2023_2025 enabled independent cases 2451 / 6760
+bybit_2023_2025 enabled independent cases 2501 / 6760
+bybit_2023_2025 enabled independent cases 2551 / 6760
+bybit_2023_2025 enabled independent cases 2601 / 6760
+bybit_2023_2025 enabled independent cases 2651 / 6760
+bybit_2023_2025 enabled independent cases 2701 / 6760
+bybit_2023_2025 enabled independent cases 2751 / 6760
+bybit_2023_2025 enabled independent cases 2801 / 6760
+bybit_2023_2025 enabled independent cases 2851 / 6760
+bybit_2023_2025 enabled independent cases 2901 / 6760
+bybit_2023_2025 enabled independent cases 2951 / 6760
+bybit_2023_2025 enabled independent cases 3001 / 6760
+bybit_2023_2025 enabled independent cases 3051 / 6760
+bybit_2023_2025 enabled independent cases 3101 / 6760
+bybit_2023_2025 enabled independent cases 3151 / 6760
+bybit_2023_2025 enabled independent cases 3201 / 6760
+bybit_2023_2025 enabled independent cases 3251 / 6760
+bybit_2023_2025 enabled independent cases 3301 / 6760
+bybit_2023_2025 enabled independent cases 3351 / 6760
+bybit_2023_2025 enabled independent cases 3401 / 6760
+bybit_2023_2025 enabled independent cases 3451 / 6760
+bybit_2023_2025 enabled independent cases 3501 / 6760
+bybit_2023_2025 enabled independent cases 3551 / 6760
+bybit_2023_2025 enabled independent cases 3601 / 6760
+bybit_2023_2025 enabled independent cases 3651 / 6760
+bybit_2023_2025 enabled independent cases 3701 / 6760
+bybit_2023_2025 enabled independent cases 3751 / 6760
+bybit_2023_2025 enabled independent cases 3801 / 6760
+bybit_2023_2025 enabled independent cases 3851 / 6760
+bybit_2023_2025 enabled independent cases 3901 / 6760
+bybit_2023_2025 enabled independent cases 3951 / 6760
+bybit_2023_2025 enabled independent cases 4001 / 6760
+bybit_2023_2025 enabled independent cases 4051 / 6760
+bybit_2023_2025 enabled independent cases 4101 / 6760
+bybit_2023_2025 enabled independent cases 4151 / 6760
+bybit_2023_2025 enabled independent cases 4201 / 6760
+bybit_2023_2025 enabled independent cases 4251 / 6760
+bybit_2023_2025 enabled independent cases 4301 / 6760
+bybit_2023_2025 enabled independent cases 4351 / 6760
+bybit_2023_2025 enabled independent cases 4401 / 6760
+bybit_2023_2025 enabled independent cases 4451 / 6760
+bybit_2023_2025 enabled independent cases 4501 / 6760
+bybit_2023_2025 enabled independent cases 4551 / 6760
+bybit_2023_2025 enabled independent cases 4601 / 6760
+bybit_2023_2025 enabled independent cases 4651 / 6760
+bybit_2023_2025 enabled independent cases 4701 / 6760
+bybit_2023_2025 enabled independent cases 4751 / 6760
+bybit_2023_2025 enabled independent cases 4801 / 6760
+bybit_2023_2025 enabled independent cases 4851 / 6760
+bybit_2023_2025 enabled independent cases 4901 / 6760
+bybit_2023_2025 enabled independent cases 4951 / 6760
+bybit_2023_2025 enabled independent cases 5001 / 6760
+bybit_2023_2025 enabled independent cases 5051 / 6760
+bybit_2023_2025 enabled independent cases 5101 / 6760
+bybit_2023_2025 enabled independent cases 5151 / 6760
+bybit_2023_2025 enabled independent cases 5201 / 6760
+bybit_2023_2025 enabled independent cases 5251 / 6760
+bybit_2023_2025 enabled independent cases 5301 / 6760
+bybit_2023_2025 enabled independent cases 5351 / 6760
+bybit_2023_2025 enabled independent cases 5401 / 6760
+bybit_2023_2025 enabled independent cases 5451 / 6760
+bybit_2023_2025 enabled independent cases 5501 / 6760
+bybit_2023_2025 enabled independent cases 5551 / 6760
+bybit_2023_2025 enabled independent cases 5601 / 6760
+bybit_2023_2025 enabled independent cases 5651 / 6760
+bybit_2023_2025 enabled independent cases 5701 / 6760
+bybit_2023_2025 enabled independent cases 5751 / 6760
+bybit_2023_2025 enabled independent cases 5801 / 6760
+bybit_2023_2025 enabled independent cases 5851 / 6760
+bybit_2023_2025 enabled independent cases 5901 / 6760
+bybit_2023_2025 enabled independent cases 5951 / 6760
+bybit_2023_2025 enabled independent cases 6001 / 6760
+bybit_2023_2025 enabled independent cases 6051 / 6760
+bybit_2023_2025 enabled independent cases 6101 / 6760
+bybit_2023_2025 enabled independent cases 6151 / 6760
+bybit_2023_2025 enabled independent cases 6201 / 6760
+bybit_2023_2025 enabled independent cases 6251 / 6760
+bybit_2023_2025 enabled independent cases 6301 / 6760
+bybit_2023_2025 enabled independent cases 6351 / 6760
+bybit_2023_2025 enabled independent cases 6401 / 6760
+bybit_2023_2025 enabled independent cases 6451 / 6760
+bybit_2023_2025 enabled independent cases 6501 / 6760
+bybit_2023_2025 enabled independent cases 6551 / 6760
+bybit_2023_2025 enabled independent cases 6601 / 6760
+bybit_2023_2025 enabled independent cases 6651 / 6760
+bybit_2023_2025 enabled independent cases 6701 / 6760
+bybit_2023_2025 enabled independent cases 6751 / 6760
+bybit_2023_2025 disabled_cost_gate independent cases 1 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 51 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 101 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 151 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 201 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 251 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 301 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 351 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 401 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 451 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 501 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 551 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 601 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 651 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 701 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 751 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 801 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 851 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 901 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 951 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1001 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1051 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1101 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1151 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1201 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1251 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1301 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1351 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1401 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1451 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1501 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1551 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1601 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1651 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1701 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1751 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1801 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1851 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1901 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 1951 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2001 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2051 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2101 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2151 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2201 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2251 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2301 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2351 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2401 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2451 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2501 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2551 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2601 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2651 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2701 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2751 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2801 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2851 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2901 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 2951 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3001 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3051 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3101 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3151 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3201 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3251 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3301 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3351 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3401 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3451 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3501 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3551 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3601 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3651 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3701 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3751 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3801 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3851 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3901 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 3951 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4001 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4051 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4101 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4151 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4201 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4251 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4301 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4351 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4401 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4451 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4501 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4551 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4601 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4651 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4701 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4751 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4801 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4851 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4901 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 4951 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5001 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5051 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5101 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5151 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5201 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5251 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5301 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5351 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5401 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5451 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5501 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5551 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5601 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5651 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5701 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5751 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5801 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5851 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5901 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 5951 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 6001 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 6051 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 6101 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 6151 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 6201 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 6251 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 6301 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 6351 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 6401 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 6451 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 6501 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 6551 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 6601 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 6651 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 6701 / 6796
+bybit_2023_2025 disabled_cost_gate independent cases 6751 / 6796

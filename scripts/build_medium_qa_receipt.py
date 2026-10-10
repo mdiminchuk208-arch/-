@@ -18,6 +18,10 @@ def main():
     match = re.search(r'Ran (\d+) tests in ([\d.]+)s', test_log)
     if match is None or '\nOK\n' not in test_log or 'FAILED (' in test_log:
         raise ValueError('Full unittest has not passed')
+    targeted_log = (qa / 'targeted_boundary_final.log').read_text()
+    targeted_match = re.search(r'Ran (\d+) tests in ([\d.]+)s', targeted_log)
+    if targeted_match is None or '\nOK\n' not in targeted_log or 'FAILED (' in targeted_log:
+        raise ValueError('Targeted medium tests have not passed')
     if 'Success: no issues found in 53 source files' not in (qa / 'mypy_role_final.log').read_text():
         raise ValueError('Full source mypy has not passed')
     if 'COMPILEALL_PASS' not in (qa / 'compile_delivery_final.log').read_text():
@@ -39,7 +43,7 @@ def main():
         raise ValueError('Causal/compiler parity missing')
     receipt = {'full_unittest': {'passed': int(match[1]), 'failed': 0, 'skipped': 0,
                                  'seconds': float(match[2]), 'log': 'qa/full_unittest_delivery.log'},
-               'targeted_medium_tests': {'passed': 17, 'log': 'qa/targeted_boundary_final.log'},
+               'targeted_medium_tests': {'passed': int(targeted_match[1]), 'log': 'qa/targeted_boundary_final.log'},
                'compile': {'status': 'PASS', 'log': 'qa/compile_delivery_final.log'},
                'mypy': {'status': 'PASS', 'source_files': 53, 'log': 'qa/mypy_role_final.log'},
                'lint': {'changed_files': 'PASS', 'full_tree': 'INHERITED_DIAGNOSTICS',
