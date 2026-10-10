@@ -1,0 +1,53 @@
+source_rule,source_file,source_location,original_meaning,current_code,status
+D1 role,11,P0113–15,Daily/weekly global context; no mandatory D1 object for every H4 idea,source_medium_term._macro_context,INTERPRETATION_CHANGED
+H4 role,"11,SW9",P0113–15; p5–6,Local structure/HTF POI can seed lower-TF trigger,source_medium_term._macro_context/_emit,PARTIAL_MATCH
+H1 role,"11,16,20",P0113–15; P0102–06; P0213–18,"Local structure, preferred SFP/medium analysis; not all entry ideas need an owner object",source_medium_term._emit,INTERPRETATION_CHANGED
+M15 role,SW9,"p2,p4–6",Can be HTF OB or actual lower-TF POI trigger,source_medium_term._emit/evaluate,INTERPRETATION_CHANGED
+Formal H1/H4 owner,"SW9,18","p2,p4; P0005–12",No universal named owner requirement; lower-TF formation may be valid with HTF context,source_medium_term._emit main_valid,EXTRA_RULE_NOT_IN_SOURCE
+Strict extra macro gate,"SW5,SW9,SW22",p9; p13; p5–6,Source context/flow is path-specific; no universal strictly-higher H4/D1 structure object,source_medium_term._macro_context/_emit,EXTRA_RULE_NOT_IN_SOURCE
+Four-TF conjunction,"11,03",P0113–15; P0028–30,Top-down analysis without explicit D1→H4→H1→M15 AND contract,source_medium_term._macro_context selects first valid macro,UNCLEAR
+Direction and flow,"SW22,SW9",p5–6; p13,Active flow alignment; explicit countertrend FTA allowed,source_permitted._active_flow/_conservative; source_medium_term._macro_context,PARTIAL_MATCH
+Swing geometry,SW5,p2,Three consecutive candle high/low inequality; right candle confirmation,market_analysis.analyze_market,EXACT_MATCH
+BOS,SW5,p4–5,Close body across protected structural point,market_analysis; source_pdf_native.SourceSeries.advance,EXACT_MATCH
+Conservative CONF,SW5,p6–7,Wait for new structure and its update for selected conservative path,source_permitted._conservative OB_ULTRA_CONSERVATIVE_CONF,PARTIAL_MATCH
+CHOCH,19,P0092–106,Structural change; supplementary synonym/confluence,source_permitted.SourceSeries._qualify/structural_proof,PARTIAL_MATCH
+POI taxonomy,SW9,p10–11,"Manipulation, OB, Breaker and other qualified tools; not gap alone",source_permitted.SourceSeries + source_pdf_native,PARTIAL_MATCH
+OB geometry,SW9,p2–3,Raid candle + engulf body/displacement; full engulfed candle wick zone,source_permitted.SourceSeries._order_blocks,EXACT_MATCH
+OB HTF POI,SW9,p2,OB requires higher-TF POI context,source_permitted._parents/_direct; source_medium_term._emit,PARTIAL_MATCH
+OB IMB importance,"SW9,19","p2,p6–7; P0103–12",IMB important quality; most accurate rather than every OB strictly mandatory,source_permitted.SourceSeries._order_blocks; confluence imbalance,PARTIAL_MATCH
+OB first/repeated test,SW9,p3,Usually first test; repeated entry requires fresh LTF reaction,source_permitted._direct/_conservative; Zone.test_allowed,PARTIAL_MATCH
+Conservative lower TF,SW9,p4–6,HTF OB M15–D1 → lower M1–M15 reaction/BOS/new POI,source_medium_term_policy mappings 240/60,INTERPRETATION_CHANGED
+Smooth approach,SW9,p4,"Smooth structural approach before reaction, not objectively quantified",source_permitted._conservative checks reaction/BOS/new POI only,MISSING
+Demand/Supply,18,P0005–12,"Old liquidity raid, last move, untested, P/D",source_pdf_native._demand_supply; source_permitted.SourceSeries.advance,PARTIAL_MATCH
+Freshness,"SW9,18",p3; P0011,Zone-specific first/repeat and untested D/S rules,Zone.fresh/test_allowed and native-touch visit state,PARTIAL_MATCH
+FVG/IMB geometry,16,P0051–60,Neighbour-wick gap and 0.5/full-fill inefficiency,source_pdf_native.SourceSeries.advance; poi_entry_policy,EXACT_MATCH
+FVG trigger permission,"SW9,16",p11; P0085–87,New POI with independent context/BOS; FVG alone not permission,source_permitted._conservative with parent context,PARTIAL_MATCH
+OTE geometry,19,P0140–55,0.705–0.79 and confluence; not standalone entry,source_pdf_native.pd_location,EXACT_MATCH
+P/D applicability,"18,SW9,SW22",P0012; p6; p4,D/S mandatory; OB important context; mitigation P/D,"source_medium_term._emit gates D/S/STB/BTS, records others",PARTIAL_MATCH
+Dealing range,"06,19",P0037–67; P0125–30,Impulse/correction boundaries and meaningful midpoint reaction,range_engine; source_pdf_native range_bounds,PARTIAL_MATCH
+Range tolerance 0.08,06,P0063–72,"Qualitative meaningful midpoint, no source numeric tolerance",RangeDetectionParams midpoint_tolerance_fraction,EXTRA_RULE_NOT_IN_SOURCE
+Liquidity sweep,"14,16",P0176–98; P0075–83,Actual structural/external pools and raid/reclaim,source_pdf_native advance; source_medium_term._observe_sfp_open,PARTIAL_MATCH
+EQH/EQL,14,P0143–59,"Substructure swings; tilted EQH/EQL allowed, not arbitrary two candle equality",source_pdf_native.advance exact-price equality only,PARTIAL_MATCH
+Liquidity against setup,"03,14",P0065; P0156–59,Do not enter before meaningful opposing liquidity sweep,source_medium_term._emit has NO blocker; source_pdf_native old blocker unused,MISSING
+SFP causality,16,P0075–87,External raid→reclaim close→next valid OPEN→LTF BOS,source_medium_term._observe_sfp_open; source_permitted._conservative,PARTIAL_MATCH
+SFP TF preference,16,P0102–06,"Any TF, H1+ preferred",source_medium_term._observe_sfp_open only 60/240,INTERPRETATION_CHANGED
+SFP body invalidation,SW12,p13,Pattern-TF body beyond pattern extreme; ATR protective stop unchanged,source_medium_term._lifecycle MAIN_SFP_BODY_INVALIDATION,EXACT_MATCH
+Breaker,"SW9,19",p7–9; P0113–16,Impulsive pierced OB with structural update; conservative sweep stop permitted,source_pdf_native.SourceSeries.advance; source_permitted._quote_stop,PARTIAL_MATCH
+STB/BTS,SW22,p2–4,"Trend, raid, full absorption, BOS/CONF, boundary or 0.5",source_pdf_native._manipulations; source_permitted._direct,PARTIAL_MATCH
+Mitigation,SW22,p3–4,Return to origin/0.5 in appropriate P/D,source_permitted._quote_stop,PARTIAL_MATCH
+FTA,SW9,"p11–13,p16",First opposing relevant POI on contextual higher TF,source_medium_term._targets only H4/D1; excludes H1 FTA,INTERPRETATION_CHANGED
+Three targets prerequisite,SW9,"p11,p16",Source permits one FTA full/partial; no exact three-target requirement,source_medium_term._emit len(target_evidence)<3,EXTRA_RULE_NOT_IN_SOURCE
+TP40/30/30,"SW9,06",p11–16; P0119–21,FTA full/partial; explicit Range80/20,VirtualPortfolio._manage,EXTRA_RULE_NOT_IN_SOURCE
+Range80/20,06,P0119–21,"80% inside range near boundary, 20% optional breakout",MediumTermEngine always fractions .4/.3/.3,INTERPRETATION_CHANGED
+Breakeven,"SW11,SW12,20",p8; p13; P0277,"Primary do-not-move-stop vs supplementary BE after 10–15%, not TP1",VirtualPortfolio._manage/_breakeven,CONFLICT_BETWEEN_SOURCES
+Initial stop ownership,SW9,"p3,p9",Local OB/engulf or sweep extreme stop alternatives,source_medium_term._emit expands stop to parent invalidator,INTERPRETATION_CHANGED
+Invalidation/lifecycle,"SW5,SW12,SW22",p4–7; p13; p6,Structural/pattern death and destination test; no unified universal life,source_medium_term._lifecycle pending vs main,PARTIAL_MATCH
+Re-entry,SW9,p3,Repeat OB with LTF confirmation; no universal lifetime one-trade rule,source_medium_term._retained never releases physical ID,EXTRA_RULE_NOT_IN_SOURCE
+Cooldown,SW9,p3,No fixed cooldown in primary materials,No time cooldown in current MediumTermEngine,EXACT_MATCH
+No future holding gate,SW11,p4,Only facts present at decision; duration unknown,anti_scalp.check_anti_scalp has no history/outcomes,EXACT_MATCH
+AntiScalp ratio >=3,SW11,p4,Plan risk; no numeric gross/cost=3 source rule,anti_scalp.AntiScalpPolicy (prior explicit user policy),EXTRA_RULE_NOT_IN_SOURCE
+AntiScalp four costs,SW11,p4,"Commission/slippage recognised, no fixed fee/slip schedule",anti_scalp.check_anti_scalp (prior explicit user policy),EXTRA_RULE_NOT_IN_SOURCE
+Risk 2%,SW11,p3–4,Primary professional default <=2%,SimulationPolicy risk_fraction=.02,EXACT_MATCH
+Portfolio 6%/daily4%/3x,SW11,p4–5,"Sizing/isolated margin principles, not this fixed combined policy",SimulationPolicy caps (prior explicit user policy),EXTRA_RULE_NOT_IN_SOURCE
+Indicators,SW12,"p2,p15","Context/confirmation, not standalone triggers",No indicator-only current entry; ATR specific SFP stop,PARTIAL_MATCH
+Original executable tree,"03,SW9,06","P0004–8; p3–6,p11–16; P0120–31","Education with alternative styles and further mentoring, not unique executable contract",15 machine paths plus project admission/exit interpretation,UNCLEAR
