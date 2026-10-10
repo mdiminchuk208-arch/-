@@ -1,0 +1,27 @@
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/BTCUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/ETHUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/SOLUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/XRPUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/BNBUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/DOGEUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/ADAUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/LINKUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/AVAXUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/LTCUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/role_corrected_v2/native_bybit_2026/detection/BTCUSDT
+Traceback (most recent call last):
+  File "/workspace/-/scripts/verify_medium_artifacts.py", line 142, in <module>
+    main()
+  File "/workspace/-/scripts/verify_medium_artifacts.py", line 60, in main
+    if any(d['trade_entry_allowed'] is not False for d in read_rows(folder / 'shared_journal.jsonl.gz')):
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/scripts/run_medium_term_research.py", line 58, in read_rows
+    with gzip.open(path, 'rt') as stream:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/gzip.py", line 65, in open
+    binary_file = GzipFile(filename, gz_mode, compresslevel)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/gzip.py", line 201, in __init__
+    fileobj = self.myfileobj = builtins.open(filename, mode or 'rb')
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/-/data/reports/medium_term_2026_10_10/role_corrected_v2/native_bybit_2026/detection/BTCUSDT/shared_journal.jsonl.gz'

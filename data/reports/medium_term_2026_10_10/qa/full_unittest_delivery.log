@@ -1,0 +1,15 @@
+........................................Indexed E2E: 3 signal changes; 2 level evaluations
+BACKTEST: $1170.00 -> equity $1170.00; 1 setups; 0 entries; trade_entry_allowed=false; fingerprint=15f287e93c3a41ad72d2c72de4a82614e5751587f6446b56d57347ec24940479
+.Indexed E2E: 3 signal changes; 2 level evaluations
+SHADOW: $1170.00 -> equity $1170.00; 1 setups; 0 entries; trade_entry_allowed=false; fingerprint=f27d3a8dbaa738bfb0e75cc0c3851719d9fc93b3dc09bdad660fdb05ba69c52e
+..........................................................................................................bybit_2023_2025 enabled independent cases 1 / 1
+.VERIFIED_RESUME data/tmpicyi_b5f
+............................................................................................................................................................................................source verified complete exit case reused
+source verified complete exit case reused
+.............................................................................................................................................................................................................................................
+----------------------------------------------------------------------
+Ran 573 tests in 24.147s
+
+OK
+Audited real-history closed artifact instances: 1
+Primary development classifications: {}

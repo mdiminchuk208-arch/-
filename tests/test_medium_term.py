@@ -8,6 +8,7 @@ from dataclasses import asdict, replace
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from types import SimpleNamespace
+from unittest.mock import patch
 
 from crypto_bot.common.models import Candle
 from crypto_bot.strategy.anti_scalp import AntiScalpPolicy, check_anti_scalp
@@ -241,6 +242,35 @@ class MediumEngineTests(unittest.TestCase):
             (folder / 'artifact.json').write_text('tampered')
             with self.assertRaises(ValueError):
                 resume(folder, 'fingerprint', True)
+
+    def test_requested_boundary_ready_enters_only_in_first_eligible_interval(self):
+        import sys
+        sys.path.insert(0, str(REPO / 'scripts'))
+        import run_medium_term_research as runner
+        e, parent, raid = fixture()
+        self.emit(e, parent, raid)
+        signal = e.signals[0]
+        at = signal.known_at
+        bars = [Candle(at-timedelta(minutes=15), at, 103., 135., 89., 101.),
+                Candle(at, at+timedelta(minutes=15), 100., 111., 99., 110.),
+                Candle(at+timedelta(minutes=15), at+timedelta(minutes=30), 111., 131., 105., 130.)]
+        policy = dict(e.policy, requested_start=at.isoformat())
+        with tempfile.TemporaryDirectory(dir=REPO / 'data') as temp:
+            root = Path(temp)
+            detected = root / 'bybit_2023_2025/detection/BTCUSDT'
+            runner.write_json(detected / 'manifest.json', {})
+            runner.write_rows(detected / 'enabled/signals.jsonl.gz', [asdict(signal)])
+            for name in ('cancellations', 'exit_events'):
+                runner.write_rows(detected / 'enabled' / (name+'.jsonl.gz'), [])
+            with patch.object(runner, 'ROOT', root), patch.object(runner, 'load_data', return_value=({15: bars}, {})):
+                runner.simulate('bybit_2023_2025', ['BTCUSDT'], policy, {}, 'enabled', False)
+            folder = root / 'bybit_2023_2025/simulation/enabled'
+            trades = runner.read_rows(folder / 'shared_trades.jsonl.gz')
+            self.assertEqual(len(trades), 1)
+            self.assertEqual(datetime.fromisoformat(trades[0]['entry_interval_start']), at)
+            self.assertEqual(trades[0]['status'], 'CLOSED')
+            coverage = json.loads((folder / 'coverage.json').read_text())
+            self.assertEqual(coverage['boundary_READY_seeded'], 1)
 
 
 if __name__ == '__main__':

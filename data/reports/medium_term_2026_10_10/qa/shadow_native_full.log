@@ -1,0 +1,2 @@
+FULL_SHARED_BACKTEST_SHADOW_PARITY native_bybit_2026 enabled {'status': 'PASS', 'FILLED': 399, 'journal_decisions_compared': 635901, 'NAV_rows_compared': 69119, 'trade_entry_allowed': False}
+FULL_SHARED_BACKTEST_SHADOW_PARITY native_bybit_2026 disabled_cost_gate {'status': 'PASS', 'FILLED': 401, 'journal_decisions_compared': 631307, 'NAV_rows_compared': 69119, 'trade_entry_allowed': False}

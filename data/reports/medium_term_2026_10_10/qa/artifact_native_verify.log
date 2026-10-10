@@ -1,0 +1,28 @@
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/BTCUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/ETHUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/SOLUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/XRPUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/BNBUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/DOGEUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/ADAUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/LINKUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/AVAXUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/LTCUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/role_corrected_v2/native_bybit_2026/detection/BTCUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/role_corrected_v2/native_bybit_2026/detection/ETHUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/role_corrected_v2/native_bybit_2026/detection/SOLUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/role_corrected_v2/native_bybit_2026/detection/XRPUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/role_corrected_v2/native_bybit_2026/detection/BNBUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/role_corrected_v2/native_bybit_2026/detection/DOGEUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/role_corrected_v2/native_bybit_2026/detection/ADAUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/role_corrected_v2/native_bybit_2026/detection/LINKUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/role_corrected_v2/native_bybit_2026/detection/AVAXUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/role_corrected_v2/native_bybit_2026/detection/LTCUSDT
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/role_corrected_v2/native_bybit_2026/simulation/enabled
+Traceback (most recent call last):
+  File "/workspace/-/scripts/verify_medium_artifacts.py", line 138, in <module>
+    main()
+  File "/workspace/-/scripts/verify_medium_artifacts.py", line 104, in main
+    if t['trade_id'] in ids or t['trade_entry_allowed']:
+                               ~^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'trade_entry_allowed'
