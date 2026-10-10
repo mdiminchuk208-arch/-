@@ -92,7 +92,8 @@
         "definition": "SOURCE_RULE",
         "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
       },
-      "trade_entry_allowed": false
+      "trade_entry_allowed": false,
+      "setup_family": "OB_DIRECT"
     },
     {
       "path_id": "OB_DIRECT_INSIDE",
@@ -107,7 +108,8 @@
         "definition": "SOURCE_RULE",
         "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
       },
-      "trade_entry_allowed": false
+      "trade_entry_allowed": false,
+      "setup_family": "OB_DIRECT"
     },
     {
       "path_id": "OB_DIRECT_ENGULFING_STOP",
@@ -122,7 +124,8 @@
         "definition": "SOURCE_RULE",
         "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
       },
-      "trade_entry_allowed": false
+      "trade_entry_allowed": false,
+      "setup_family": "OB_DIRECT"
     },
     {
       "path_id": "OB_DIRECT_INSIDE_ENGULFING_STOP",
@@ -137,7 +140,8 @@
         "definition": "SOURCE_RULE",
         "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
       },
-      "trade_entry_allowed": false
+      "trade_entry_allowed": false,
+      "setup_family": "OB_DIRECT"
     },
     {
       "path_id": "OB_CONSERVATIVE_BOS_POI",
@@ -152,7 +156,8 @@
         "definition": "SOURCE_RULE",
         "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
       },
-      "trade_entry_allowed": false
+      "trade_entry_allowed": false,
+      "setup_family": "OB_BOS"
     },
     {
       "path_id": "OB_ULTRA_CONSERVATIVE_CONF",
@@ -167,7 +172,8 @@
         "definition": "SOURCE_RULE",
         "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
       },
-      "trade_entry_allowed": false
+      "trade_entry_allowed": false,
+      "setup_family": "OB_CONF"
     },
     {
       "path_id": "STB_BTS_EDGE",
@@ -182,7 +188,8 @@
         "definition": "SOURCE_RULE",
         "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
       },
-      "trade_entry_allowed": false
+      "trade_entry_allowed": false,
+      "setup_family": "STB_BTS"
     },
     {
       "path_id": "STB_BTS_HALF",
@@ -197,7 +204,8 @@
         "definition": "SOURCE_RULE",
         "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
       },
-      "trade_entry_allowed": false
+      "trade_entry_allowed": false,
+      "setup_family": "STB_BTS"
     },
     {
       "path_id": "BREAKER_CONSERVATIVE_STOP",
@@ -212,7 +220,8 @@
         "definition": "SOURCE_RULE",
         "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
       },
-      "trade_entry_allowed": false
+      "trade_entry_allowed": false,
+      "setup_family": "BREAKER"
     },
     {
       "path_id": "BREAKER_AGGRESSIVE_STOP",
@@ -227,7 +236,8 @@
         "definition": "SOURCE_RULE",
         "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
       },
-      "trade_entry_allowed": false
+      "trade_entry_allowed": false,
+      "setup_family": "BREAKER"
     },
     {
       "path_id": "DEMAND_SUPPLY",
@@ -242,7 +252,8 @@
         "definition": "SOURCE_RULE",
         "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
       },
-      "trade_entry_allowed": false
+      "trade_entry_allowed": false,
+      "setup_family": "DEMAND_SUPPLY"
     },
     {
       "path_id": "RANGE_CONSERVATIVE_RETEST",
@@ -257,7 +268,8 @@
         "definition": "SOURCE_RULE",
         "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
       },
-      "trade_entry_allowed": false
+      "trade_entry_allowed": false,
+      "setup_family": "RANGE"
     },
     {
       "path_id": "RANGE_AGGRESSIVE_EXTERNAL_POI",
@@ -272,7 +284,8 @@
         "definition": "SOURCE_RULE",
         "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
       },
-      "trade_entry_allowed": false
+      "trade_entry_allowed": false,
+      "setup_family": "RANGE"
     },
     {
       "path_id": "SFP_BOS_POI",
@@ -288,7 +301,8 @@
         "definition": "SOURCE_RULE",
         "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
       },
-      "trade_entry_allowed": false
+      "trade_entry_allowed": false,
+      "setup_family": "SFP"
     },
     {
       "path_id": "SFP_ATR_STOP",
@@ -304,7 +318,8 @@
         "definition": "SOURCE_RULE",
         "numeric_boundary_normalization": "SOURCE_INTERPRETATION"
       },
-      "trade_entry_allowed": false
+      "trade_entry_allowed": false,
+      "setup_family": "SFP"
     }
   ],
   "source_exit": "FULL_FIRST_HTF_FTA_OR_RANGE_80_INSIDE_20_FTA",
@@ -312,5 +327,47 @@
   "global_flow": "KEY_HH_HL_OR_LL_LH_REAL_CAUSAL_LIQUIDITY_WORK_FIXED_FRESH_TYPED_DESTINATION",
   "arbitrary_order_expiry": null,
   "data_expansion_priority": "EARLIER_NATIVE_BYBIT_USDT_PERPETUAL_THEN_PRIORITY_SYMBOLS_THEN_ADDITIONAL_PERIODS",
-  "cohort": "BYBIT_2026_PREVIOUSLY_INSPECTED_DEVELOPMENT"
+  "cohort": "BYBIT_2026_PREVIOUSLY_INSPECTED_DEVELOPMENT",
+  "direct_mappings": [
+    [
+      15,
+      5
+    ],
+    [
+      60,
+      5
+    ],
+    [
+      60,
+      15
+    ],
+    [
+      240,
+      5
+    ],
+    [
+      240,
+      15
+    ],
+    [
+      240,
+      60
+    ]
+  ],
+  "countertrend_sfp": "HTF_SFP_REAL_LIQUIDITY_LTF_BOS_NEW_POI_TO_FIRST_HTF_FTA_SW9_P13",
+  "range_flow": "SOURCE_RANGE_DEVIATION_DELIVERY_NO_UNIVERSAL_TREND_HH_HL_INSIDE_STRUCTURELESS_RANGE",
+  "family_cohorts": {
+    "SOURCE_DIRECT": [
+      "OB_DIRECT_FIRST_TEST",
+      "OB_DIRECT_INSIDE",
+      "OB_DIRECT_ENGULFING_STOP",
+      "OB_DIRECT_INSIDE_ENGULFING_STOP"
+    ],
+    "SOURCE_CONSERVATIVE": [
+      "OB_CONSERVATIVE_BOS_POI"
+    ],
+    "SOURCE_CONF_STRICT": [
+      "OB_ULTRA_CONSERVATIVE_CONF"
+    ]
+  }
 }

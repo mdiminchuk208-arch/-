@@ -1,0 +1,85 @@
+test_atr_pattern_close_exits_executed_case_not_cancels_trade (test_source_permitted.CausalityAndUnionTests.test_atr_pattern_close_exits_executed_case_not_cancels_trade) ... ok
+test_atr_wilder_seed_and_current_closed_bar_only (test_source_permitted.CausalityAndUnionTests.test_atr_wilder_seed_and_current_closed_bar_only) ... ok
+test_fta_touch_other_than_global_destination_is_not_universal_cancel (test_source_permitted.CausalityAndUnionTests.test_fta_touch_other_than_global_destination_is_not_universal_cancel) ... ERROR
+test_full_analysis_future_mutation_keeps_all_prefix_source_state (test_source_permitted.CausalityAndUnionTests.test_full_analysis_future_mutation_keeps_all_prefix_source_state) ... ok
+test_gap_through_stop_is_real_paper_loss_not_retroactive_cancel (test_source_permitted.CausalityAndUnionTests.test_gap_through_stop_is_real_paper_loss_not_retroactive_cancel) ... ok
+test_native_5m_target_test_prevents_same_close_ready (test_source_permitted.CausalityAndUnionTests.test_native_5m_target_test_prevents_same_close_ready) ... ok
+test_ob_body_absorption_is_not_universal_full_wick_close (test_source_permitted.CausalityAndUnionTests.test_ob_body_absorption_is_not_universal_full_wick_close) ... ok
+test_ob_formation_uses_real_bos_without_future_conf (test_source_permitted.CausalityAndUnionTests.test_ob_formation_uses_real_bos_without_future_conf) ... ok
+test_of_liquidity_work_does_not_need_second_later_key_body_break (test_source_permitted.CausalityAndUnionTests.test_of_liquidity_work_does_not_need_second_later_key_body_break) ... ok
+test_physical_identity_across_aliases_and_native_tf_variants (test_source_permitted.CausalityAndUnionTests.test_physical_identity_across_aliases_and_native_tf_variants) ... ok
+test_registry_all_paths_have_sources_and_distinct_ids (test_source_permitted.CausalityAndUnionTests.test_registry_all_paths_have_sources_and_distinct_ids) ... ok
+test_same_bar_close_cancellation_cannot_prevent_prior_touch (test_source_permitted.CausalityAndUnionTests.test_same_bar_close_cancellation_cannot_prevent_prior_touch) ... ok
+test_sfp_local_flow_is_confluence_and_thesis_keeps_local_tf (test_source_permitted.CausalityAndUnionTests.test_sfp_local_flow_is_confluence_and_thesis_keeps_local_tf) ... ERROR
+test_source_poi_invalidation_cancels_both_at_known_close (test_source_permitted.CausalityAndUnionTests.test_source_poi_invalidation_cancels_both_at_known_close) ... ERROR
+test_union_has_one_physical_case_and_no_later_outcome_substitution (test_source_permitted.CausalityAndUnionTests.test_union_has_one_physical_case_and_no_later_outcome_substitution) ... ok
+test_unrelated_ltf_break_only_cancels_strict_cohort (test_source_permitted.CausalityAndUnionTests.test_unrelated_ltf_break_only_cancels_strict_cohort) ... ERROR
+test_breaker_aggressive_outside_block (test_source_permitted.PermittedPathTests.test_breaker_aggressive_outside_block) ... ok
+test_breaker_conservative_outside_sweep (test_source_permitted.PermittedPathTests.test_breaker_conservative_outside_sweep) ... ok
+test_conf_path_requires_distinct_later_structure (test_source_permitted.PermittedPathTests.test_conf_path_requires_distinct_later_structure) ... ok
+test_ds_independent_multi_candle_move_without_fvg (test_source_permitted.PermittedPathTests.test_ds_independent_multi_candle_move_without_fvg) ... ok
+test_ob_bos_poi_does_not_require_conf (test_source_permitted.PermittedPathTests.test_ob_bos_poi_does_not_require_conf) ... ok
+test_ob_direct_edge_no_extra_ltf_bos_or_conf (test_source_permitted.PermittedPathTests.test_ob_direct_edge_no_extra_ltf_bos_or_conf) ... ok
+test_ob_engulfing_stop_is_separate_from_ob_stop (test_source_permitted.PermittedPathTests.test_ob_engulfing_stop_is_separate_from_ob_stop) ... ok
+test_ob_inside_engulfing_combination (test_source_permitted.PermittedPathTests.test_ob_inside_engulfing_combination) ... ok
+test_ob_inside_is_distinct_fixed_quote (test_source_permitted.PermittedPathTests.test_ob_inside_is_distinct_fixed_quote) ... ok
+test_range_aggressive_fixed_external_quote_implies_deviation_at_fill (test_source_permitted.PermittedPathTests.test_range_aggressive_fixed_external_quote_implies_deviation_at_fill) ... ok
+test_range_conservative_boundary_limit_without_universal_conf (test_source_permitted.PermittedPathTests.test_range_conservative_boundary_limit_without_universal_conf) ... ok
+test_sfp_atr_stop_frozen_at_pattern (test_source_permitted.PermittedPathTests.test_sfp_atr_stop_frozen_at_pattern) ... ok
+test_sfp_bos_path_no_conf (test_source_permitted.PermittedPathTests.test_sfp_bos_path_no_conf) ... ok
+test_stb_edge (test_source_permitted.PermittedPathTests.test_stb_edge) ... ok
+test_stb_half (test_source_permitted.PermittedPathTests.test_stb_half) ... ok
+
+======================================================================
+ERROR: test_fta_touch_other_than_global_destination_is_not_universal_cancel (test_source_permitted.CausalityAndUnionTests.test_fta_touch_other_than_global_destination_is_not_universal_cancel)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/-/tests/test_source_permitted.py", line 169, in test_fta_touch_other_than_global_destination_is_not_universal_cancel
+    e._lifecycle(5,candle(1,105,110,103,105))
+  File "/workspace/-/src/crypto_bot/strategy/source_permitted.py", line 580, in _lifecycle
+    and datetime.fromisoformat(fta['known_at'])<=c.open_time
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: fromisoformat: argument must be str
+
+======================================================================
+ERROR: test_sfp_local_flow_is_confluence_and_thesis_keeps_local_tf (test_source_permitted.CausalityAndUnionTests.test_sfp_local_flow_is_confluence_and_thesis_keeps_local_tf)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/-/tests/test_source_permitted.py", line 177, in test_sfp_local_flow_is_confluence_and_thesis_keeps_local_tf
+    e._conservative(Context(60,5,sfp,START,1,'physical'),now)
+  File "/workspace/-/src/crypto_bot/strategy/source_permitted.py", line 477, in _conservative
+    self._emit(path,context.htf,context.ltf,z,local,now,context.physical_id,
+  File "/workspace/-/src/crypto_bot/strategy/source_permitted.py", line 330, in _emit
+    quote_stop = self._quote_stop(path, local, raid, h if path_id=='SFP_ATR_STOP' else self.series[entry_tf or ltf])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/src/crypto_bot/strategy/source_permitted.py", line 316, in _quote_stop
+    atr = owner.atr_values[raid.candle_index]
+          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_source_poi_invalidation_cancels_both_at_known_close (test_source_permitted.CausalityAndUnionTests.test_source_poi_invalidation_cancels_both_at_known_close)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/-/tests/test_source_permitted.py", line 220, in test_source_poi_invalidation_cancels_both_at_known_close
+    e._lifecycle(5,candle(1,103,104,94,94.5))
+  File "/workspace/-/src/crypto_bot/strategy/source_permitted.py", line 580, in _lifecycle
+    and datetime.fromisoformat(fta['known_at'])<=c.open_time
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: fromisoformat: argument must be str
+
+======================================================================
+ERROR: test_unrelated_ltf_break_only_cancels_strict_cohort (test_source_permitted.CausalityAndUnionTests.test_unrelated_ltf_break_only_cancels_strict_cohort)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/-/tests/test_source_permitted.py", line 214, in test_unrelated_ltf_break_only_cancels_strict_cohort
+    e._lifecycle(5,candle(1,105,106,102,104))
+  File "/workspace/-/src/crypto_bot/strategy/source_permitted.py", line 580, in _lifecycle
+    and datetime.fromisoformat(fta['known_at'])<=c.open_time
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: fromisoformat: argument must be str
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.025s
+
+FAILED (errors=4)

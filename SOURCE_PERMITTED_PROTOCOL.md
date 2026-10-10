@@ -44,6 +44,9 @@ Direct local POIs can use each registered HTF/LTF context. Direct HTF OBs may al
 use an already known higher native POI (15 within60,60 within240); no fictitious
 1D context is invented. Source direct OB works on any TF (SW9 p2); 5m is the real
 execution clock. Every entry records the actual entry-zone TF separately.
+DIRECT also permits240/60 (SW9 p2 anyTF), with its real60m source zone; BOS/CONF
+and SFP switching paths keep the five1–15m LTF mappings. This exception is
+registered before outcomes, not imported into the retained strict cohort.
 
 Generic indicators, RSI/volume divergences and ATR trend readings are confluence,
 not standalone entry paths (SW12 p15). Descriptive IMB fill is not promoted to an
@@ -72,6 +75,15 @@ literal universal SOURCE_RULE. Stops must remain beyond the source POI, never
 deliberately placed on an outstanding known pool. P/D is mandatory for D/S and
 STB mitigation; for SW9 OB it is recorded as confluence, not an uncited universal
 extra gate. OTE .705–.79 is recorded, not a new compulsory gate.
+Range has its source deviation-to-opposite-boundary delivery (DOC06 P0087–94);
+requiring trending HH/HL inside a structureless Range would contradict DOC19
+P0123. SFP countertrend uses its actual raid/reclaim and LTF BOS/new POI delivery
+to first HTF FTA (DOC16 P0084–87; SW9 p13), rather than compulsory synchronized
+HTF trend. Neither exception licenses uncontextualized random zigzag entries.
+Aggressive Range can preregister a fresh external POI limit after clean Range
+validation, before the deviation: an actual fill outside the known boundary
+itself proves the deviation at the real execution interval. This proof is added
+at fill; it is not backdated into READY or used to erase a losing execution.
 
 The old179 liquidity/POI contexts are reaudited with their complete old setup
 snapshots and rejection histogram. New context/OF attempts record exact causal

@@ -1,0 +1,31 @@
+test_atr_pattern_close_exits_executed_case_not_cancels_trade (tests.test_source_permitted.CausalityAndUnionTests.test_atr_pattern_close_exits_executed_case_not_cancels_trade) ... ok
+test_full_analysis_future_mutation_keeps_all_prefix_source_state (tests.test_source_permitted.CausalityAndUnionTests.test_full_analysis_future_mutation_keeps_all_prefix_source_state) ... ok
+test_gap_through_stop_is_real_paper_loss_not_retroactive_cancel (tests.test_source_permitted.CausalityAndUnionTests.test_gap_through_stop_is_real_paper_loss_not_retroactive_cancel) ... ok
+test_ob_body_absorption_is_not_universal_full_wick_close (tests.test_source_permitted.CausalityAndUnionTests.test_ob_body_absorption_is_not_universal_full_wick_close) ... ok
+test_of_liquidity_work_does_not_need_second_later_key_body_break (tests.test_source_permitted.CausalityAndUnionTests.test_of_liquidity_work_does_not_need_second_later_key_body_break) ... ok
+test_physical_identity_across_aliases_and_native_tf_variants (tests.test_source_permitted.CausalityAndUnionTests.test_physical_identity_across_aliases_and_native_tf_variants) ... ok
+test_registry_all_paths_have_sources_and_distinct_ids (tests.test_source_permitted.CausalityAndUnionTests.test_registry_all_paths_have_sources_and_distinct_ids) ... ok
+test_same_bar_close_cancellation_cannot_prevent_prior_touch (tests.test_source_permitted.CausalityAndUnionTests.test_same_bar_close_cancellation_cannot_prevent_prior_touch) ... ok
+test_source_poi_invalidation_cancels_both_at_known_close (tests.test_source_permitted.CausalityAndUnionTests.test_source_poi_invalidation_cancels_both_at_known_close) ... ok
+test_union_has_one_physical_case_and_no_later_outcome_substitution (tests.test_source_permitted.CausalityAndUnionTests.test_union_has_one_physical_case_and_no_later_outcome_substitution) ... ok
+test_unrelated_ltf_break_only_cancels_strict_cohort (tests.test_source_permitted.CausalityAndUnionTests.test_unrelated_ltf_break_only_cancels_strict_cohort) ... ok
+test_breaker_aggressive_outside_block (tests.test_source_permitted.PermittedPathTests.test_breaker_aggressive_outside_block) ... ok
+test_breaker_conservative_outside_sweep (tests.test_source_permitted.PermittedPathTests.test_breaker_conservative_outside_sweep) ... ok
+test_conf_path_requires_distinct_later_structure (tests.test_source_permitted.PermittedPathTests.test_conf_path_requires_distinct_later_structure) ... ok
+test_ds_independent_multi_candle_move_without_fvg (tests.test_source_permitted.PermittedPathTests.test_ds_independent_multi_candle_move_without_fvg) ... ok
+test_ob_bos_poi_does_not_require_conf (tests.test_source_permitted.PermittedPathTests.test_ob_bos_poi_does_not_require_conf) ... ok
+test_ob_direct_edge_no_extra_ltf_bos_or_conf (tests.test_source_permitted.PermittedPathTests.test_ob_direct_edge_no_extra_ltf_bos_or_conf) ... ok
+test_ob_engulfing_stop_is_separate_from_ob_stop (tests.test_source_permitted.PermittedPathTests.test_ob_engulfing_stop_is_separate_from_ob_stop) ... ok
+test_ob_inside_engulfing_combination (tests.test_source_permitted.PermittedPathTests.test_ob_inside_engulfing_combination) ... ok
+test_ob_inside_is_distinct_fixed_quote (tests.test_source_permitted.PermittedPathTests.test_ob_inside_is_distinct_fixed_quote) ... ok
+test_range_aggressive_fixed_external_quote_implies_deviation_at_fill (tests.test_source_permitted.PermittedPathTests.test_range_aggressive_fixed_external_quote_implies_deviation_at_fill) ... ok
+test_range_conservative_boundary_limit_without_universal_conf (tests.test_source_permitted.PermittedPathTests.test_range_conservative_boundary_limit_without_universal_conf) ... ok
+test_sfp_atr_stop_frozen_at_pattern (tests.test_source_permitted.PermittedPathTests.test_sfp_atr_stop_frozen_at_pattern) ... ok
+test_sfp_bos_path_no_conf (tests.test_source_permitted.PermittedPathTests.test_sfp_bos_path_no_conf) ... ok
+test_stb_edge (tests.test_source_permitted.PermittedPathTests.test_stb_edge) ... ok
+test_stb_half (tests.test_source_permitted.PermittedPathTests.test_stb_half) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.019s
+
+OK
