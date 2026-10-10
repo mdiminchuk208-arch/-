@@ -1,0 +1,24 @@
+{
+  "artifacts": {
+    "attempts.jsonl.gz": "2481eb5c56069a51411e2ab6757e2cbe64453686af8e123e06ccce5c81bdc35c",
+    "cancellations.jsonl.gz": "e57a5597d40914aac351850d45de96ccc4808b39159f8f992c6d74ca6e860022",
+    "dataset_audit.json": "b0d8b5980284f4bc2b2c26da449a74434895a6c4fa4382f63cdc79bd58a15e1f",
+    "exit_events.jsonl.gz": "4af26465e83b27087e84579b39282054d8447d9d2d6aa36b685fa07fffb697b9",
+    "flow_bottleneck.jsonl.gz": "30050d9998a766ede3baba3804af042f8be8743f7ba65dbec9c09fef176fe1e4",
+    "flow_history.jsonl.gz": "36251f58da18d568ee41fb77683caaff87fcc6da383825a207e10dcd517937a2",
+    "old13_audit.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "old9_cancel_audit.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "physical_anchors.json": "33b26d1583943b7df447fa630cf07157ba8bcf427137167634b37bfc4d3b185c",
+    "physical_claims.jsonl.gz": "ade6cf8e27436d1a8966c6160f3db0b32b356f0ea94641d7909c14f2dd7ee2ef",
+    "range_admissibility.json": "c61e486bdd2b5c8e4dcd7a894c84dcea80a7317d6070f8a486bb21873628b6e2",
+    "range_audit.jsonl.gz": "597f78f6a785feeddde01f3bc089fb29263868bfaab565ffd21131b5507fdb8c",
+    "signals.jsonl.gz": "16cd93dc626083342c445d1b5d3d733c66f11606147bca90c960de11cff22198",
+    "strict_bottleneck.jsonl.gz": "adde7876f213b07e05422fe394f9ac8f9b1be5128ec2d4b0b999bc427b9d6ddb",
+    "summary.json": "d9061401223784b4bbd18a3a646ca09eb722ee2a8e34fd2cfa8137f4312ff4ef"
+  },
+  "base_segment_manifest_sha256": "5b60d71bddc25569d6c0a4ea471d8327c5eac59d5aac681a3700144f22a117ab",
+  "causal_SFP_qualification_and_body_lifecycle_repaired": true,
+  "native_source_candidate_trade_fields_unchanged": true,
+  "status": "COMPLETE",
+  "trade_entry_allowed": false
+}

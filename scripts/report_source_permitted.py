@@ -3,9 +3,12 @@ from __future__ import annotations
 
 import argparse
 import csv
+import gzip
+import io
 import json
 import sys
 from collections import Counter, defaultdict
+from contextlib import ExitStack
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -44,7 +47,13 @@ def export_cases(path,rows):
         'HTF_POI','entry_POI','liquidity_raid','OrderFlow','PD_OTE','entry_reference','entry_after_slippage',
         'original_SL','targets','fills','exit_reason','WIN_LOSS_BE','R','gross_quote_PnL','Net_PnL','fees',
         'slippage','holding_seconds','reference_equity','planned_risk','quantity','source_citations','trade_entry_allowed')
-    with path.open('w',newline='') as f:
+    with ExitStack() as stack:
+        if path.suffix=='.gz':
+            raw=stack.enter_context(path.open('wb'))
+            compressed=stack.enter_context(gzip.GzipFile(filename='',mode='wb',fileobj=raw,mtime=0))
+            f=stack.enter_context(io.TextIOWrapper(compressed,encoding='utf-8',newline=''))
+        else:
+            f=stack.enter_context(path.open('w',newline=''))
         w=csv.DictWriter(f,fieldnames=fields);w.writeheader()
         for i,t in enumerate(rows,1):
             e=t['evidence'];dump=lambda obj:json.dumps(obj,ensure_ascii=False,separators=(',',':'))
@@ -177,7 +186,7 @@ def render(folder,out):
     policy=json.loads((folder/'run_lock.json').read_text())['policy']
     primary_folder=folder/'cohorts/SOURCE_PERMITTED_UNION/CANCEL_SOURCE_POI_INVALIDATION'
     trades=read_rows(primary_folder/'cases.jsonl.gz');primary=read_rows(primary_folder/'primary_cases.jsonl.gz')
-    export_cases(out/'first50.csv',primary);export_cases(out/'all_physical_union_cases.csv',trades)
+    export_cases(out/'first50.csv',primary);export_cases(out/'all_physical_union_cases.csv.gz',trades)
     normalize=json.loads((folder/'physical_normalization_receipt.json').read_text())
     qualification=Counter(r['status'] for r in read_rows(folder/'source_qualification.jsonl.gz'))
     old13=old13_audit(folder,out);of=strict179_audit(folder,out)
@@ -229,17 +238,17 @@ def render(folder,out):
         'SOURCE_DIRECT объединяет четыре directOB quote/stop варианта; SOURCE_CONSERVATIVE=BOS/POI, SOURCE_CONF_STRICT=CONF. Все19 source/family/union cohorts и оба cancel modes сохранены; их числа не складываются в уникальную выборку.',
         'Полные primary50 и all-CLOSED метрики каждой когорты: `cohort_metrics.csv`. Все cohort case ledgers сохранены в final root, включая варианты, которые не вошли в union.',
         '## Первые50: все сделки',
-        'Даты Asia/Yekaterinburg(+05). Полные physical IDs, READY/fill-known/exit, HTF/local POI, raid, OF, PD/OTE, source citations, targets/fills и расходы: [first50.csv](data/reports/source_permitted_analysis_2026_10_10/first50.csv). Все доступные union FILLED/OPEN: [all_physical_union_cases.csv](data/reports/source_permitted_analysis_2026_10_10/all_physical_union_cases.csv).',
+        'Даты Asia/Yekaterinburg(+05). Полные physical IDs, READY/fill-known/exit, HTF/local POI, raid, OF, PD/OTE, source citations, targets/fills и расходы: [first50.csv](data/reports/source_permitted_analysis_2026_10_10/first50.csv). Все доступные union FILLED/OPEN без потери полей: [all_physical_union_cases.csv.gz](data/reports/source_permitted_analysis_2026_10_10/all_physical_union_cases.csv.gz); gzip сохраняет полный CSV и позволяет опубликовать его в GitHub.',
         table(['#','Physical ID','Path','Symbol / side / HTF-LTF','Fill interval start(+05)','Entry reference','OriginalSL','Source targets','Exit known(+05)','W/L/BE','R','Net'],
           [[i,t['physical_opportunity_id'],t['path_id'],f'{t["symbol"]} {t["direction"]} {t["htf"]}/{t["ltf"]}',when(t['entry_interval_start']),fmt(t['entry_reference']),fmt(t['stop']),str(t['targets']),when(t['exit_time']),t['result'],fmt(t['result_R']),fmt(t['net_pnl'])] for i,t in enumerate(primary,1)]),
         '## Breakdown primary50','```json\n'+json.dumps(s['breakdowns'],ensure_ascii=False,indent=2)+'\n```',
         '## Сравнение сохранённых этапов',
-        table(['Stage','READY','FILLED','CLOSED','W/L','WR','PF','ExpectancyUSDT','AvgR','NetUSDT'],[
+        table(['Stage / metric sample','READY','FILLED','CLOSED all','W/L evaluated','WR','PF','ExpectancyUSDT','AvgR','NetUSDT'],[
             ['OLD7 / independent mappings',old7['READY'],old7['FILLED'],old7['CLOSED'],'2/5',fmt(100*old7['WinRate'])+'%',fmt(old7['ProfitFactor']),fmt(old7['Expectancy']),fmt(old7['AvgR']),fmt(old7['NetPnL'])],
             ['fc61f35 / flawed old source policy',647,14,13,'2/11','15.3846%',fmt(comparison['fc61f35']['ProfitFactor']),fmt(comparison['fc61f35']['Expectancy']),fmt(comparison['fc61f35']['AvgR']),fmt(comparison['fc61f35']['NetPnL'])],
             ['74a6f8d / no primary PDFs',3,0,0,'0/0','N/A','N/A','N/A','N/A',0],
             ['STRICT_CONSERVATIVE_D46646F',9,0,0,'0/0','N/A','N/A','N/A','N/A',0],
-            ['SOURCE_PERMITTED_UNION / native primary bodies',s['READY'],s['FILLED'],s['CLOSED'],f'{m["Wins"]}/{m["Losses"]}',fmt(100*m['WinRate'])+'%' if m['WinRate'] is not None else 'N/A',fmt(m['ProfitFactor']),fmt(m['Expectancy']),fmt(m['AvgR']),fmt(m['NetPnL'])]]),
+            ['SOURCE_PERMITTED_UNION / metrics first50',s['READY'],s['FILLED'],s['CLOSED'],f'{m["Wins"]}/{m["Losses"]}',fmt(100*m['WinRate'])+'%' if m['WinRate'] is not None else 'N/A',fmt(m['ProfitFactor']),fmt(m['Expectancy']),fmt(m['AvgR']),fmt(m['NetPnL'])]]),
         'OLD7, fc61f35 и new cases имеют разные entries/exits/risk-account conventions; это не matched profitability uplift. Strict9zero — узкая source-интерпретация, не окончательная оценка всех PDF paths. Архив105 strict artifacts, исходные trades и все старые losses неизменны.',
         '## Полный179 OF bottleneck','```json\n'+json.dumps(of,ensure_ascii=False,indent=2)+'\n```',
         'Все179 original liquidity/POI contexts со всеми reason changes и causal old/new OF snapshots сохранены: [strict179_OF_audit.json](data/reports/source_permitted_analysis_2026_10_10/strict179_OF_audit.json). Extra body-break/adverse-pool gates помечены interpretations, не универсальными SOURCE_RULE.',

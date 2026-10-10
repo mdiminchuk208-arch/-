@@ -1,0 +1,78 @@
+[
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 69120,
+    "end": "2026-09-22T11:20:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 5,
+    "sha256": "119edc89b702c8b658fd86a1827dd08f7e9ff65960582ac56bb9609644eeb046",
+    "source_receipt": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/SOLUSDT/5.csv",
+      "sha256": "119edc89b702c8b658fd86a1827dd08f7e9ff65960582ac56bb9609644eeb046"
+    },
+    "start": "2026-01-25T11:20:00+00:00",
+    "symbol": "SOLUSDT"
+  },
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 23039,
+    "end": "2026-09-22T11:15:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 15,
+    "sha256": "eed5ce7e194c1bc78cf69e365993021d491f0c846b096070dd561ad677d29481",
+    "source_receipt": {
+      "candles": 23039,
+      "gaps": 0,
+      "path": "data/history/bybit/SOLUSDT/15.csv",
+      "sha256": "eed5ce7e194c1bc78cf69e365993021d491f0c846b096070dd561ad677d29481"
+    },
+    "start": "2026-01-25T11:30:00+00:00",
+    "symbol": "SOLUSDT"
+  },
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 5759,
+    "end": "2026-09-22T11:00:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 60,
+    "sha256": "db51eaadcf3ad68a2aa64df138dd7b0b63f3d0f046b8addeb377c47236e08bb9",
+    "source_receipt": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/SOLUSDT/60.csv",
+      "sha256": "db51eaadcf3ad68a2aa64df138dd7b0b63f3d0f046b8addeb377c47236e08bb9"
+    },
+    "start": "2026-01-25T12:00:00+00:00",
+    "symbol": "SOLUSDT"
+  },
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 1439,
+    "end": "2026-09-22T08:00:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 240,
+    "sha256": "522080db3e29661dc78648d90e304224b9a521ff17e2c191239e787b346d8b2c",
+    "source_receipt": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/SOLUSDT/240.csv",
+      "sha256": "522080db3e29661dc78648d90e304224b9a521ff17e2c191239e787b346d8b2c"
+    },
+    "start": "2026-01-25T12:00:00+00:00",
+    "symbol": "SOLUSDT"
+  }
+]

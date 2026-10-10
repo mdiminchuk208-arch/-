@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "real_case_rows": 3,
+  "gzip_decompression_equals_full_CSV_bytes": true,
+  "gzip_repeated_export_bytes_identical": true,
+  "all_fields_preserved": true,
+  "trade_entry_allowed": false
+}

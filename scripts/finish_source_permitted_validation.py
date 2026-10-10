@@ -1,6 +1,7 @@
 """Finish the locked full40 replay, source qualification and measured delivery."""
 from __future__ import annotations
 
+import argparse
 import json
 import subprocess
 import sys
@@ -30,6 +31,10 @@ def snapshot(folder):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--resume-complete-replay', action='store_true',
+                        help='Verify the complete physical replay without rerunning it, then finish QA/report.')
+    args = parser.parse_args()
     print('Wait for the complete full40 native detector manifest; no partial trade results are primary.', flush=True)
     while True:
         try:
@@ -39,8 +44,13 @@ def main():
             pass
         time.sleep(5)
     verify_manifest(BASE)
-    run('run_source_permitted_physical_union.py', '--source', BASE, '--output', FINAL,
-        log='full_physical_union_execution.log')
+    if args.resume_complete_replay:
+        verify_manifest(FINAL)
+        run('run_source_permitted_physical_union.py', '--source', BASE, '--output', FINAL,
+            '--resume-existing', log='recovery_verified_physical_resume.log')
+    else:
+        run('run_source_permitted_physical_union.py', '--source', BASE, '--output', FINAL,
+            log='full_physical_union_execution.log')
     summary = json.loads((FINAL / 'summary.json').read_text())
     primary = summary['primary']
     write_json(QA / 'historical_coverage_decision.json', {

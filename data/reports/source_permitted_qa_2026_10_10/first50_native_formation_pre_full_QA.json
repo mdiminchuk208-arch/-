@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "primary_cases": 50,
+  "native_primary_formation_checks": {
+    "native_SFP_raid_reclaim_next_OPEN_and_post_reaction_BOS": 43,
+    "native_three_candle_FVG": 10,
+    "native_raid_body_engulf_full_wick_OB": 8
+  },
+  "all_source_valid_ATR_stops_independently_recomputed": 0,
+  "ATR_method": "14_NATIVE_TR_SEED_THEN_WILDER_RMA_AT_FROZEN_PATTERN_INDEX",
+  "trade_entry_allowed": false,
+  "all_ATR_stop_verification_deferred_to_full_symbol_QA": true
+}

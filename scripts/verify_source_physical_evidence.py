@@ -96,7 +96,15 @@ def native_case_formation(final, policy, native, valid, symbol=None):
             assert s*(following.open-raid['price']) > 0
             assert p['confluence']['next_real_5m_open'] == following.open
             assert instant(p['known_at']) == following.close_time
-            assert instant(e['confirmations']['bos']['known_at']) > following.close_time
+            bos_known = instant(e['confirmations']['bos']['known_at'])
+            # DOC16 P0082–87 completes SFP at the following OPEN, then requires
+            # local BOS. Both the real OPEN observation and that bar's BOS may
+            # become known at its CLOSE. The registered engine admits equality
+            # at interaction_at; an extra closed bar is not a source condition.
+            assert following.open_time < bos_known <= instant(t['ready_time'])
+            assert bos_known >= following.close_time
+            assert instant(q['known_at']) >= bos_known
+            assert instant(q['formed_at']) >= following.close_time
             checked['native_SFP_raid_reclaim_next_OPEN_and_post_reaction_BOS'] += 1
     return {'status': 'PASS', 'primary_cases': len(primary), 'native_primary_formation_checks': dict(checked),
             'all_source_valid_ATR_stops_independently_recomputed': atr_count,

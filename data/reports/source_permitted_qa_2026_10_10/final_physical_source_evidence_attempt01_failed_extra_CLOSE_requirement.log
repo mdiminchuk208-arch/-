@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspace/-/scripts/verify_source_physical_evidence.py", line 277, in <module>
+    result['full'] = full_check(base, final, lock['policy'])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/scripts/verify_source_physical_evidence.py", line 251, in full_check
+    row = symbol_check(base, final, policy, symbol); rows[symbol] = row
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/scripts/verify_source_physical_evidence.py", line 240, in symbol_check
+    'native_formation': native_case_formation(final, policy, native, valid, symbol),
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/scripts/verify_source_physical_evidence.py", line 99, in native_case_formation
+    assert instant(e['confirmations']['bos']['known_at']) > following.close_time
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

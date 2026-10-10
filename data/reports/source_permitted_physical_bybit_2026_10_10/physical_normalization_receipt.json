@@ -1,0 +1,12 @@
+{
+  "SFP_primary_lifecycle": "NATIVE_PATTERN_AND_POI_BODY; NO_FABRICATED_NEW_KEY_FROM_OLD_BOS_LEVEL",
+  "alias_claims_sha256": "51ee6ee6b247458d82cc97d8560042c2c1495d32d2ab80dc9e1ca7010647c517",
+  "base_complete_manifest_sha256": "60685a08c8414ab2658d61e0ee45104241f9f746ca1ba7bae57756e98e0392a5",
+  "canonical_physical_IDs": 19448,
+  "future_outcomes_used": false,
+  "global_assignment_before_family_filtering": true,
+  "raw_candidate_READY": 137202,
+  "signal_ids_quotes_stops_targets_known_at_unchanged": true,
+  "source_valid_READY": 96954,
+  "trade_entry_allowed": false
+}

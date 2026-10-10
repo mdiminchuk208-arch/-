@@ -1,0 +1,78 @@
+[
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 69119,
+    "end": "2026-09-22T11:15:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 5,
+    "sha256": "5035989c9d85cecb05980946931daed7bc3fcf1e7d4e8cc0cd36498e25550e16",
+    "source_receipt": {
+      "candles": 69119,
+      "gaps": 0,
+      "path": "data/history/bybit/BTCUSDT/5.csv",
+      "sha256": "5035989c9d85cecb05980946931daed7bc3fcf1e7d4e8cc0cd36498e25550e16"
+    },
+    "start": "2026-01-25T11:20:00+00:00",
+    "symbol": "BTCUSDT"
+  },
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 23039,
+    "end": "2026-09-22T11:15:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 15,
+    "sha256": "c15a595e948ad4d329c8b6044a95665dfbe53b97a2ef2d62df0d5230b8274b21",
+    "source_receipt": {
+      "candles": 23039,
+      "gaps": 0,
+      "path": "data/history/bybit/BTCUSDT/15.csv",
+      "sha256": "c15a595e948ad4d329c8b6044a95665dfbe53b97a2ef2d62df0d5230b8274b21"
+    },
+    "start": "2026-01-25T11:30:00+00:00",
+    "symbol": "BTCUSDT"
+  },
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 5759,
+    "end": "2026-09-22T11:00:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 60,
+    "sha256": "711bc9aebbb618f450ac186f1a0a9d06309941c64e3489a5060292cabb502d54",
+    "source_receipt": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/BTCUSDT/60.csv",
+      "sha256": "711bc9aebbb618f450ac186f1a0a9d06309941c64e3489a5060292cabb502d54"
+    },
+    "start": "2026-01-25T12:00:00+00:00",
+    "symbol": "BTCUSDT"
+  },
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 1439,
+    "end": "2026-09-22T08:00:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 240,
+    "sha256": "017a82769092847de9409bd71f8c0de2935f932661f1f202549b54453a501f7c",
+    "source_receipt": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/BTCUSDT/240.csv",
+      "sha256": "017a82769092847de9409bd71f8c0de2935f932661f1f202549b54453a501f7c"
+    },
+    "start": "2026-01-25T12:00:00+00:00",
+    "symbol": "BTCUSDT"
+  }
+]

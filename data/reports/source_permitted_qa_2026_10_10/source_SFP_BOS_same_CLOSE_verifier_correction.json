@@ -1,0 +1,56 @@
+{
+  "status": "VERIFIER_EXTRA_BAR_ASSERTION_CORRECTED",
+  "source": "DOC16 P0082\u201387: following OPEN reclaimed, then LTF BOS; no extra complete 5m bar required",
+  "registered_engine_condition": "bos.known_at >= context.interaction_at, published before outcomes",
+  "source_code_selection_quotes_stops_targets_cases_PnL_changed": false,
+  "no_lookahead": "BOS CLOSE strictly after actual following OPEN and not before following observation CLOSE; quote activates at or after READY",
+  "same_CLOSE_first50_examples": [
+    {
+      "signal_id": "eadeb22eeb2e51c8bb6f097a",
+      "symbol": "BTCUSDT",
+      "next_OPEN": "2026-01-26T02:00:00+00:00",
+      "real_OPEN_and_BOS_known_at": "2026-01-26T02:05:00+00:00",
+      "READY": "2026-01-26T02:05:00+00:00"
+    },
+    {
+      "signal_id": "fcfb4205dd492ef5a9f9c098",
+      "symbol": "LINKUSDT",
+      "next_OPEN": "2026-01-26T02:00:00+00:00",
+      "real_OPEN_and_BOS_known_at": "2026-01-26T02:05:00+00:00",
+      "READY": "2026-01-26T02:05:00+00:00"
+    },
+    {
+      "signal_id": "b157494f760d3c03e1388ef0",
+      "symbol": "DOGEUSDT",
+      "next_OPEN": "2026-01-26T05:00:00+00:00",
+      "real_OPEN_and_BOS_known_at": "2026-01-26T05:05:00+00:00",
+      "READY": "2026-01-26T05:15:00+00:00"
+    },
+    {
+      "signal_id": "191f690e046539be7498fe86",
+      "symbol": "LINKUSDT",
+      "next_OPEN": "2026-01-26T07:30:00+00:00",
+      "real_OPEN_and_BOS_known_at": "2026-01-26T07:35:00+00:00",
+      "READY": "2026-01-26T07:35:00+00:00"
+    },
+    {
+      "signal_id": "c94a2642278db02d7dc8be78",
+      "symbol": "AVAXUSDT",
+      "next_OPEN": "2026-01-26T07:30:00+00:00",
+      "real_OPEN_and_BOS_known_at": "2026-01-26T07:35:00+00:00",
+      "READY": "2026-01-26T07:35:00+00:00"
+    },
+    {
+      "signal_id": "ee773a14daec44f023efdf2d",
+      "symbol": "SOLUSDT",
+      "next_OPEN": "2026-01-26T23:00:00+00:00",
+      "real_OPEN_and_BOS_known_at": "2026-01-26T23:05:00+00:00",
+      "READY": "2026-01-26T23:05:00+00:00"
+    }
+  ],
+  "preserved_failed_logs": [
+    "final_physical_source_evidence_attempt01_failed_extra_CLOSE_requirement.log",
+    "finish_pipeline_attempt01_failed_extra_CLOSE_requirement.log"
+  ],
+  "trade_entry_allowed": false
+}

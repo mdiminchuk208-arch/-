@@ -1,0 +1,9 @@
+{
+  "history_extension_required": false,
+  "native_candles": 993575,
+  "native_series": 40,
+  "observed_source_physical_CLOSED": 16333,
+  "reason": "FIRST_50_UNIQUE_SOURCE_VALID_FILLED_CLOSED_AVAILABLE",
+  "target_unique_closed": 50,
+  "trade_entry_allowed": false
+}
