@@ -30,8 +30,10 @@ variant and all alias receipts. A canceled/loss-making first selection cannot be
 replaced with a later winner. All cohorts use the SAME globally assigned IDs.
 
 This correction changes sample identity only. Detection candles, all source
-predicates, READY times, original signal IDs, quotes/SL/targets, lifecycle events,
-risk/costs and exits stay byte-identical. Final execution uses independently
+predicates, READY times, original signal IDs, quotes/SL/targets,
+risk/costs and exits stay byte-identical. The independently registered SFP
+qualification/lifecycle repair is specified in `SFP_SOURCE_LIFECYCLE_CORRECTION.md`;
+it precedes this identity pass and is not an identity-only change. Final execution uses independently
 verified complete detector segments with their source/code/data SHA receipts;
 reuse is explicit and verifiable, not a false claim of identical run locks.
 The original full detector root stays unchanged. A fresh final physical root

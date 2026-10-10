@@ -1,0 +1,38 @@
+{
+  "status": "PASS_SOURCE_QUALIFICATION_PHYSICAL_FUTURE_MUTATION",
+  "native_prefix_bars": 14293,
+  "raw_candidates": 1775,
+  "source_valid_RAW_READY": 1177,
+  "physical_READY": 264,
+  "qualification": {
+    "REJECT_SFP_INVALID_BEFORE_READY": 598,
+    "PASS_SFP_VALID_AT_READY": 616
+  },
+  "paths": {
+    "SFP_BOS_POI": 309,
+    "SFP_ATR_STOP": 307,
+    "DEMAND_SUPPLY": 41,
+    "RANGE_AGGRESSIVE_EXTERNAL_POI": 106,
+    "OB_CONSERVATIVE_BOS_POI": 79,
+    "OB_ULTRA_CONSERVATIVE_CONF": 58,
+    "BREAKER_CONSERVATIVE_STOP": 68,
+    "BREAKER_AGGRESSIVE_STOP": 68,
+    "STB_BTS_HALF": 48,
+    "OB_DIRECT_FIRST_TEST": 17,
+    "OB_DIRECT_INSIDE": 17,
+    "OB_DIRECT_ENGULFING_STOP": 17,
+    "OB_DIRECT_INSIDE_ENGULFING_STOP": 14,
+    "STB_BTS_EDGE": 27,
+    "RANGE_CONSERVATIVE_RETEST": 1
+  },
+  "past_cancel_events": 556,
+  "future_mutation_native_TFs": [
+    5,
+    15,
+    60,
+    240
+  ],
+  "source_trade_fields_unchanged": true,
+  "no_new_PnL_used": true,
+  "trade_entry_allowed": false
+}
