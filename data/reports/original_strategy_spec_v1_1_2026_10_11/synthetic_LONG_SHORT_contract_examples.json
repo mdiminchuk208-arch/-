@@ -1,0 +1,4050 @@
+[
+  {
+    "kind": "SYNTHETIC_CONTRACT_ONLY_NOT_TRADE",
+    "input": {
+      "symbol": "SYNTHETIC",
+      "branch": "SFP",
+      "direction": "LONG",
+      "mode": "BACKTEST",
+      "event": "CLOSE",
+      "decision_at": 60000,
+      "setup_tf": 60,
+      "trigger_tf": 15,
+      "tick_size": "0.1",
+      "idea_poi_id": "source-poi-1",
+      "instrument_metadata": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tick_size": "0.1"
+      },
+      "facts": {
+        "market_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "liquidity_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "sfp_geometry": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "sfp_next_open": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "sfp_tf": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "sl_off_liquidity": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true,
+          "checked_price": "91.8"
+        },
+        "ltf_bos_source_entry": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "range_reclaim_retest": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "breaker_confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        }
+      },
+      "entry_poi": {
+        "known_at": 55000,
+        "completed_at": 55000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "entry-poi-1",
+        "parent_poi_id": "source-poi-1",
+        "low": "99",
+        "high": "101",
+        "formation_known_at": 54000
+      },
+      "source_defining_zone": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "source-poi-1",
+        "low": "95",
+        "high": "105"
+      },
+      "reaction": {
+        "known_at": 52500,
+        "completed_at": 52500,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true
+      },
+      "bos": {
+        "known_at": 53000,
+        "completed_at": 53000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tf": 15
+      },
+      "stop_anchor": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "kind": "SFP_PATTERN_EXTREME",
+        "price": "96",
+        "unique": true
+      },
+      "contextual_poi_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "contextual_pois": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "near-m15",
+          "low": "108",
+          "high": "110",
+          "tf": 15,
+          "contextual": true,
+          "opposing": true
+        },
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "far-h4",
+          "low": "118",
+          "high": "120",
+          "tf": 240,
+          "contextual": true,
+          "opposing": true
+        }
+      ],
+      "range_exit": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "range-1",
+        "low": "85",
+        "high": "115",
+        "unique": true
+      },
+      "liquidity_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "liquidity": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "role": "TARGET_OR_FUEL"
+        }
+      ],
+      "zone_first_test": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "value": true
+      },
+      "identity_evidence": {
+        "context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "context-origin-1"
+        },
+        "formation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "formation-1"
+        },
+        "confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "confirmation-1"
+        },
+        "poi": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "source-poi-1"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "known_at": 50400,
+          "completed_at": 50400,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "low": "96",
+          "high": "102",
+          "close": "101"
+        },
+        "old_level": {
+          "known_at": 20000,
+          "completed_at": 20000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "price": "100"
+        },
+        "next_open": {
+          "open": "101",
+          "known_at": 50401,
+          "evidence": "next OPEN only"
+        }
+      },
+      "atr_bars": [
+        {
+          "known_at": 0,
+          "completed_at": 0,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 3600,
+          "completed_at": 3600,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 7200,
+          "completed_at": 7200,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 10800,
+          "completed_at": 10800,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 14400,
+          "completed_at": 14400,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 18000,
+          "completed_at": 18000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 21600,
+          "completed_at": 21600,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 25200,
+          "completed_at": 25200,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 28800,
+          "completed_at": 28800,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 32400,
+          "completed_at": 32400,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 36000,
+          "completed_at": 36000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 39600,
+          "completed_at": 39600,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 43200,
+          "completed_at": 43200,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 46800,
+          "completed_at": 46800,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 50400,
+          "completed_at": 50400,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "96",
+          "close": "101",
+          "tf": 60
+        }
+      ]
+    },
+    "result": {
+      "status": "SOURCE_ALLOW_PLAN_ONLY",
+      "SOURCE_STRATEGY_DECISION": "ALLOW",
+      "trade_entry_allowed": false,
+      "source_trace": [
+        {
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_LIQUIDITY_CONTEXT",
+          "predicate": "liquidity_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_SFP_FORMATION",
+          "predicate": "sfp_geometry",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_SFP_FORMATION",
+          "predicate": "sfp_next_open",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_SFP_TF",
+          "predicate": "sfp_tf",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "value": true,
+          "known_at": 60000
+        }
+      ],
+      "resolution_ids": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5",
+        "U6"
+      ],
+      "identity": {
+        "physical_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "setup_id": "814057bd414c2a617843bad92ffc9508d4b9b1f7ec2a955b8518ee9710af0fb6",
+        "ready_at": 60000,
+        "zone_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "formation_key": "67f50d63863ce1c8248f6f1aecba3681519f441bec79527de42e185d26ce87bf"
+      },
+      "plan": {
+        "branch": "SFP",
+        "direction": "LONG",
+        "entry": "101",
+        "order_type": "LIMIT_AFTER_KNOWN_CONFIRMATION",
+        "stop": "91.8",
+        "stop_policy": "FIXED_INITIAL_PROTECTIVE_STOP",
+        "target": {
+          "kind": "FULL_CONTEXTUAL_FTA_EXIT",
+          "price": "108",
+          "poi_ids": [
+            "near-m15"
+          ],
+          "fractions_same_zone": [
+            "1"
+          ],
+          "total_fraction": "1",
+          "fixed_pre_entry": true
+        },
+        "known_at": 60000,
+        "pattern_tf": 60,
+        "sfp_extreme": "96",
+        "project_overlays_applied": false
+      }
+    }
+  },
+  {
+    "kind": "SYNTHETIC_CONTRACT_ONLY_NOT_TRADE",
+    "input": {
+      "symbol": "SYNTHETIC",
+      "branch": "SFP",
+      "direction": "SHORT",
+      "mode": "BACKTEST",
+      "event": "CLOSE",
+      "decision_at": 60000,
+      "setup_tf": 60,
+      "trigger_tf": 15,
+      "tick_size": "0.1",
+      "idea_poi_id": "source-poi-1",
+      "instrument_metadata": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tick_size": "0.1"
+      },
+      "facts": {
+        "market_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "liquidity_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "sfp_geometry": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "sfp_next_open": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "sfp_tf": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "sl_off_liquidity": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true,
+          "checked_price": "108.2"
+        },
+        "ltf_bos_source_entry": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "range_reclaim_retest": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "breaker_confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        }
+      },
+      "entry_poi": {
+        "known_at": 55000,
+        "completed_at": 55000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "entry-poi-1",
+        "parent_poi_id": "source-poi-1",
+        "low": "99",
+        "high": "101",
+        "formation_known_at": 54000
+      },
+      "source_defining_zone": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "source-poi-1",
+        "low": "95",
+        "high": "105"
+      },
+      "reaction": {
+        "known_at": 52500,
+        "completed_at": 52500,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true
+      },
+      "bos": {
+        "known_at": 53000,
+        "completed_at": 53000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tf": 15
+      },
+      "stop_anchor": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "kind": "SFP_PATTERN_EXTREME",
+        "price": "104",
+        "unique": true
+      },
+      "contextual_poi_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "contextual_pois": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "near-m15",
+          "low": "90",
+          "high": "92",
+          "tf": 15,
+          "contextual": true,
+          "opposing": true
+        },
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "far-h4",
+          "low": "80",
+          "high": "82",
+          "tf": 240,
+          "contextual": true,
+          "opposing": true
+        }
+      ],
+      "range_exit": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "range-1",
+        "low": "85",
+        "high": "115",
+        "unique": true
+      },
+      "liquidity_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "liquidity": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "role": "TARGET_OR_FUEL"
+        }
+      ],
+      "zone_first_test": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "value": true
+      },
+      "identity_evidence": {
+        "context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "context-origin-1"
+        },
+        "formation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "formation-1"
+        },
+        "confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "confirmation-1"
+        },
+        "poi": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "source-poi-1"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "known_at": 50400,
+          "completed_at": 50400,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "low": "98",
+          "high": "104",
+          "close": "99"
+        },
+        "old_level": {
+          "known_at": 20000,
+          "completed_at": 20000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "price": "100"
+        },
+        "next_open": {
+          "open": "99",
+          "known_at": 50401,
+          "evidence": "next OPEN only"
+        }
+      },
+      "atr_bars": [
+        {
+          "known_at": 0,
+          "completed_at": 0,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 3600,
+          "completed_at": 3600,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 7200,
+          "completed_at": 7200,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 10800,
+          "completed_at": 10800,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 14400,
+          "completed_at": 14400,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 18000,
+          "completed_at": 18000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 21600,
+          "completed_at": 21600,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 25200,
+          "completed_at": 25200,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 28800,
+          "completed_at": 28800,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 32400,
+          "completed_at": 32400,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 36000,
+          "completed_at": 36000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 39600,
+          "completed_at": 39600,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 43200,
+          "completed_at": 43200,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 46800,
+          "completed_at": 46800,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "102",
+          "low": "98",
+          "close": "100",
+          "tf": 60
+        },
+        {
+          "known_at": 50400,
+          "completed_at": 50400,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "high": "104",
+          "low": "98",
+          "close": "99",
+          "tf": 60
+        }
+      ]
+    },
+    "result": {
+      "status": "SOURCE_ALLOW_PLAN_ONLY",
+      "SOURCE_STRATEGY_DECISION": "ALLOW",
+      "trade_entry_allowed": false,
+      "source_trace": [
+        {
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_LIQUIDITY_CONTEXT",
+          "predicate": "liquidity_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_SFP_FORMATION",
+          "predicate": "sfp_geometry",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_SFP_FORMATION",
+          "predicate": "sfp_next_open",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_SFP_TF",
+          "predicate": "sfp_tf",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "value": true,
+          "known_at": 60000
+        }
+      ],
+      "resolution_ids": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5",
+        "U6"
+      ],
+      "identity": {
+        "physical_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "setup_id": "578880ca9a0656ca925728a1a2e84e5e34800c1173c9e5c45a75dc82fc495c1f",
+        "ready_at": 60000,
+        "zone_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "formation_key": "67f50d63863ce1c8248f6f1aecba3681519f441bec79527de42e185d26ce87bf"
+      },
+      "plan": {
+        "branch": "SFP",
+        "direction": "SHORT",
+        "entry": "99",
+        "order_type": "LIMIT_AFTER_KNOWN_CONFIRMATION",
+        "stop": "108.2",
+        "stop_policy": "FIXED_INITIAL_PROTECTIVE_STOP",
+        "target": {
+          "kind": "FULL_CONTEXTUAL_FTA_EXIT",
+          "price": "92",
+          "poi_ids": [
+            "near-m15"
+          ],
+          "fractions_same_zone": [
+            "1"
+          ],
+          "total_fraction": "1",
+          "fixed_pre_entry": true
+        },
+        "known_at": 60000,
+        "pattern_tf": 60,
+        "sfp_extreme": "104",
+        "project_overlays_applied": false
+      }
+    }
+  },
+  {
+    "kind": "SYNTHETIC_CONTRACT_ONLY_NOT_TRADE",
+    "input": {
+      "symbol": "SYNTHETIC",
+      "branch": "OB_CONSERVATIVE",
+      "direction": "LONG",
+      "mode": "BACKTEST",
+      "event": "CLOSE",
+      "decision_at": 60000,
+      "setup_tf": 60,
+      "trigger_tf": 15,
+      "tick_size": "0.1",
+      "idea_poi_id": "source-poi-1",
+      "instrument_metadata": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tick_size": "0.1"
+      },
+      "facts": {
+        "market_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "ob_formation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "higher_poi": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "trend_aligned": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "conservative_tf": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "smooth_approach": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "reaction_bos_new_poi": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "sl_off_liquidity": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true,
+          "checked_price": "94.9"
+        },
+        "ltf_bos_source_entry": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "range_reclaim_retest": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "breaker_confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        }
+      },
+      "entry_poi": {
+        "known_at": 55000,
+        "completed_at": 55000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "entry-poi-1",
+        "parent_poi_id": "source-poi-1",
+        "low": "99",
+        "high": "101",
+        "formation_known_at": 54000
+      },
+      "source_defining_zone": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "source-poi-1",
+        "low": "95",
+        "high": "105"
+      },
+      "reaction": {
+        "known_at": 52500,
+        "completed_at": 52500,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true
+      },
+      "bos": {
+        "known_at": 53000,
+        "completed_at": 53000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tf": 15
+      },
+      "stop_anchor": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "kind": "SOURCE_OB_EXTREME",
+        "price": "95",
+        "unique": true
+      },
+      "contextual_poi_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "contextual_pois": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "near-m15",
+          "low": "108",
+          "high": "110",
+          "tf": 15,
+          "contextual": true,
+          "opposing": true
+        },
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "far-h4",
+          "low": "118",
+          "high": "120",
+          "tf": 240,
+          "contextual": true,
+          "opposing": true
+        }
+      ],
+      "range_exit": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "range-1",
+        "low": "85",
+        "high": "115",
+        "unique": true
+      },
+      "liquidity_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "liquidity": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "role": "TARGET_OR_FUEL"
+        }
+      ],
+      "zone_first_test": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "value": true
+      },
+      "identity_evidence": {
+        "context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "context-origin-1"
+        },
+        "formation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "formation-1"
+        },
+        "confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "confirmation-1"
+        },
+        "poi": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "source-poi-1"
+        }
+      }
+    },
+    "result": {
+      "status": "SOURCE_ALLOW_PLAN_ONLY",
+      "SOURCE_STRATEGY_DECISION": "ALLOW",
+      "trade_entry_allowed": false,
+      "source_trace": [
+        {
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_OB_FORMATION",
+          "predicate": "ob_formation",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_OB_FORMATION",
+          "predicate": "higher_poi",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_OB_TREND",
+          "predicate": "trend_aligned",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_OB_CONS_TF",
+          "predicate": "conservative_tf",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_OB_APPROACH",
+          "predicate": "smooth_approach",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_OB_CONS_TRIGGER",
+          "predicate": "reaction_bos_new_poi",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "value": true,
+          "known_at": 60000
+        }
+      ],
+      "resolution_ids": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5",
+        "U6"
+      ],
+      "identity": {
+        "physical_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "setup_id": "814057bd414c2a617843bad92ffc9508d4b9b1f7ec2a955b8518ee9710af0fb6",
+        "ready_at": 60000,
+        "zone_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "formation_key": "67f50d63863ce1c8248f6f1aecba3681519f441bec79527de42e185d26ce87bf"
+      },
+      "plan": {
+        "branch": "OB_CONSERVATIVE",
+        "direction": "LONG",
+        "entry": "101",
+        "order_type": "LIMIT_AFTER_KNOWN_CONFIRMATION",
+        "stop": "94.9",
+        "stop_policy": "FIXED_INITIAL_PROTECTIVE_STOP",
+        "target": {
+          "kind": "FULL_CONTEXTUAL_FTA_EXIT",
+          "price": "108",
+          "poi_ids": [
+            "near-m15"
+          ],
+          "fractions_same_zone": [
+            "1"
+          ],
+          "total_fraction": "1",
+          "fixed_pre_entry": true
+        },
+        "known_at": 60000,
+        "pattern_tf": 60,
+        "sfp_extreme": null,
+        "project_overlays_applied": false
+      }
+    }
+  },
+  {
+    "kind": "SYNTHETIC_CONTRACT_ONLY_NOT_TRADE",
+    "input": {
+      "symbol": "SYNTHETIC",
+      "branch": "OB_CONSERVATIVE",
+      "direction": "SHORT",
+      "mode": "BACKTEST",
+      "event": "CLOSE",
+      "decision_at": 60000,
+      "setup_tf": 60,
+      "trigger_tf": 15,
+      "tick_size": "0.1",
+      "idea_poi_id": "source-poi-1",
+      "instrument_metadata": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tick_size": "0.1"
+      },
+      "facts": {
+        "market_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "ob_formation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "higher_poi": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "trend_aligned": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "conservative_tf": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "smooth_approach": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "reaction_bos_new_poi": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "sl_off_liquidity": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true,
+          "checked_price": "105.1"
+        },
+        "ltf_bos_source_entry": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "range_reclaim_retest": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "breaker_confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        }
+      },
+      "entry_poi": {
+        "known_at": 55000,
+        "completed_at": 55000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "entry-poi-1",
+        "parent_poi_id": "source-poi-1",
+        "low": "99",
+        "high": "101",
+        "formation_known_at": 54000
+      },
+      "source_defining_zone": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "source-poi-1",
+        "low": "95",
+        "high": "105"
+      },
+      "reaction": {
+        "known_at": 52500,
+        "completed_at": 52500,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true
+      },
+      "bos": {
+        "known_at": 53000,
+        "completed_at": 53000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tf": 15
+      },
+      "stop_anchor": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "kind": "SOURCE_OB_EXTREME",
+        "price": "105",
+        "unique": true
+      },
+      "contextual_poi_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "contextual_pois": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "near-m15",
+          "low": "90",
+          "high": "92",
+          "tf": 15,
+          "contextual": true,
+          "opposing": true
+        },
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "far-h4",
+          "low": "80",
+          "high": "82",
+          "tf": 240,
+          "contextual": true,
+          "opposing": true
+        }
+      ],
+      "range_exit": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "range-1",
+        "low": "85",
+        "high": "115",
+        "unique": true
+      },
+      "liquidity_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "liquidity": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "role": "TARGET_OR_FUEL"
+        }
+      ],
+      "zone_first_test": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "value": true
+      },
+      "identity_evidence": {
+        "context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "context-origin-1"
+        },
+        "formation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "formation-1"
+        },
+        "confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "confirmation-1"
+        },
+        "poi": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "source-poi-1"
+        }
+      }
+    },
+    "result": {
+      "status": "SOURCE_ALLOW_PLAN_ONLY",
+      "SOURCE_STRATEGY_DECISION": "ALLOW",
+      "trade_entry_allowed": false,
+      "source_trace": [
+        {
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_OB_FORMATION",
+          "predicate": "ob_formation",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_OB_FORMATION",
+          "predicate": "higher_poi",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_OB_TREND",
+          "predicate": "trend_aligned",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_OB_CONS_TF",
+          "predicate": "conservative_tf",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_OB_APPROACH",
+          "predicate": "smooth_approach",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_OB_CONS_TRIGGER",
+          "predicate": "reaction_bos_new_poi",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "value": true,
+          "known_at": 60000
+        }
+      ],
+      "resolution_ids": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5",
+        "U6"
+      ],
+      "identity": {
+        "physical_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "setup_id": "578880ca9a0656ca925728a1a2e84e5e34800c1173c9e5c45a75dc82fc495c1f",
+        "ready_at": 60000,
+        "zone_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "formation_key": "67f50d63863ce1c8248f6f1aecba3681519f441bec79527de42e185d26ce87bf"
+      },
+      "plan": {
+        "branch": "OB_CONSERVATIVE",
+        "direction": "SHORT",
+        "entry": "99",
+        "order_type": "LIMIT_AFTER_KNOWN_CONFIRMATION",
+        "stop": "105.1",
+        "stop_policy": "FIXED_INITIAL_PROTECTIVE_STOP",
+        "target": {
+          "kind": "FULL_CONTEXTUAL_FTA_EXIT",
+          "price": "92",
+          "poi_ids": [
+            "near-m15"
+          ],
+          "fractions_same_zone": [
+            "1"
+          ],
+          "total_fraction": "1",
+          "fixed_pre_entry": true
+        },
+        "known_at": 60000,
+        "pattern_tf": 60,
+        "sfp_extreme": null,
+        "project_overlays_applied": false
+      }
+    }
+  },
+  {
+    "kind": "SYNTHETIC_CONTRACT_ONLY_NOT_TRADE",
+    "input": {
+      "symbol": "SYNTHETIC",
+      "branch": "BREAKER",
+      "direction": "LONG",
+      "mode": "BACKTEST",
+      "event": "CLOSE",
+      "decision_at": 60000,
+      "setup_tf": 60,
+      "trigger_tf": 15,
+      "tick_size": "0.1",
+      "idea_poi_id": "source-poi-1",
+      "instrument_metadata": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tick_size": "0.1"
+      },
+      "facts": {
+        "market_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "breaker_formation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "flow_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "poi_reaction": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "sl_off_liquidity": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true,
+          "checked_price": "94.9"
+        },
+        "ltf_bos_source_entry": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "range_reclaim_retest": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "breaker_confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        }
+      },
+      "entry_poi": {
+        "known_at": 55000,
+        "completed_at": 55000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "entry-poi-1",
+        "parent_poi_id": "source-poi-1",
+        "low": "99",
+        "high": "101",
+        "formation_known_at": 54000
+      },
+      "source_defining_zone": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "source-poi-1",
+        "low": "95",
+        "high": "105"
+      },
+      "reaction": {
+        "known_at": 52500,
+        "completed_at": 52500,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true
+      },
+      "bos": {
+        "known_at": 53000,
+        "completed_at": 53000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tf": 15
+      },
+      "stop_anchor": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "kind": "RAID_IMPULSE_EXTREME",
+        "price": "95",
+        "unique": true
+      },
+      "contextual_poi_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "contextual_pois": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "near-m15",
+          "low": "108",
+          "high": "110",
+          "tf": 15,
+          "contextual": true,
+          "opposing": true
+        },
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "far-h4",
+          "low": "118",
+          "high": "120",
+          "tf": 240,
+          "contextual": true,
+          "opposing": true
+        }
+      ],
+      "range_exit": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "range-1",
+        "low": "85",
+        "high": "115",
+        "unique": true
+      },
+      "liquidity_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "liquidity": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "role": "TARGET_OR_FUEL"
+        }
+      ],
+      "zone_first_test": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "value": true
+      },
+      "identity_evidence": {
+        "context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "context-origin-1"
+        },
+        "formation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "formation-1"
+        },
+        "confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "confirmation-1"
+        },
+        "poi": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "source-poi-1"
+        }
+      }
+    },
+    "result": {
+      "status": "SOURCE_ALLOW_PLAN_ONLY",
+      "SOURCE_STRATEGY_DECISION": "ALLOW",
+      "trade_entry_allowed": false,
+      "source_trace": [
+        {
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_BREAKER_FORMATION",
+          "predicate": "breaker_formation",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_FLOW",
+          "predicate": "flow_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_POI",
+          "predicate": "poi_reaction",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "value": true,
+          "known_at": 60000
+        }
+      ],
+      "resolution_ids": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5",
+        "U6"
+      ],
+      "identity": {
+        "physical_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "setup_id": "814057bd414c2a617843bad92ffc9508d4b9b1f7ec2a955b8518ee9710af0fb6",
+        "ready_at": 60000,
+        "zone_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "formation_key": "67f50d63863ce1c8248f6f1aecba3681519f441bec79527de42e185d26ce87bf"
+      },
+      "plan": {
+        "branch": "BREAKER",
+        "direction": "LONG",
+        "entry": "101",
+        "order_type": "LIMIT_AFTER_KNOWN_CONFIRMATION",
+        "stop": "94.9",
+        "stop_policy": "FIXED_INITIAL_PROTECTIVE_STOP",
+        "target": {
+          "kind": "FULL_CONTEXTUAL_FTA_EXIT",
+          "price": "108",
+          "poi_ids": [
+            "near-m15"
+          ],
+          "fractions_same_zone": [
+            "1"
+          ],
+          "total_fraction": "1",
+          "fixed_pre_entry": true
+        },
+        "known_at": 60000,
+        "pattern_tf": 60,
+        "sfp_extreme": null,
+        "project_overlays_applied": false
+      }
+    }
+  },
+  {
+    "kind": "SYNTHETIC_CONTRACT_ONLY_NOT_TRADE",
+    "input": {
+      "symbol": "SYNTHETIC",
+      "branch": "BREAKER",
+      "direction": "SHORT",
+      "mode": "BACKTEST",
+      "event": "CLOSE",
+      "decision_at": 60000,
+      "setup_tf": 60,
+      "trigger_tf": 15,
+      "tick_size": "0.1",
+      "idea_poi_id": "source-poi-1",
+      "instrument_metadata": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tick_size": "0.1"
+      },
+      "facts": {
+        "market_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "breaker_formation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "flow_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "poi_reaction": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "sl_off_liquidity": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true,
+          "checked_price": "105.1"
+        },
+        "ltf_bos_source_entry": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "range_reclaim_retest": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "breaker_confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        }
+      },
+      "entry_poi": {
+        "known_at": 55000,
+        "completed_at": 55000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "entry-poi-1",
+        "parent_poi_id": "source-poi-1",
+        "low": "99",
+        "high": "101",
+        "formation_known_at": 54000
+      },
+      "source_defining_zone": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "source-poi-1",
+        "low": "95",
+        "high": "105"
+      },
+      "reaction": {
+        "known_at": 52500,
+        "completed_at": 52500,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true
+      },
+      "bos": {
+        "known_at": 53000,
+        "completed_at": 53000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tf": 15
+      },
+      "stop_anchor": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "kind": "RAID_IMPULSE_EXTREME",
+        "price": "105",
+        "unique": true
+      },
+      "contextual_poi_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "contextual_pois": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "near-m15",
+          "low": "90",
+          "high": "92",
+          "tf": 15,
+          "contextual": true,
+          "opposing": true
+        },
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "far-h4",
+          "low": "80",
+          "high": "82",
+          "tf": 240,
+          "contextual": true,
+          "opposing": true
+        }
+      ],
+      "range_exit": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "range-1",
+        "low": "85",
+        "high": "115",
+        "unique": true
+      },
+      "liquidity_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "liquidity": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "role": "TARGET_OR_FUEL"
+        }
+      ],
+      "zone_first_test": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "value": true
+      },
+      "identity_evidence": {
+        "context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "context-origin-1"
+        },
+        "formation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "formation-1"
+        },
+        "confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "confirmation-1"
+        },
+        "poi": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "source-poi-1"
+        }
+      }
+    },
+    "result": {
+      "status": "SOURCE_ALLOW_PLAN_ONLY",
+      "SOURCE_STRATEGY_DECISION": "ALLOW",
+      "trade_entry_allowed": false,
+      "source_trace": [
+        {
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_BREAKER_FORMATION",
+          "predicate": "breaker_formation",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_FLOW",
+          "predicate": "flow_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_POI",
+          "predicate": "poi_reaction",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "value": true,
+          "known_at": 60000
+        }
+      ],
+      "resolution_ids": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5",
+        "U6"
+      ],
+      "identity": {
+        "physical_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "setup_id": "578880ca9a0656ca925728a1a2e84e5e34800c1173c9e5c45a75dc82fc495c1f",
+        "ready_at": 60000,
+        "zone_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "formation_key": "67f50d63863ce1c8248f6f1aecba3681519f441bec79527de42e185d26ce87bf"
+      },
+      "plan": {
+        "branch": "BREAKER",
+        "direction": "SHORT",
+        "entry": "99",
+        "order_type": "LIMIT_AFTER_KNOWN_CONFIRMATION",
+        "stop": "105.1",
+        "stop_policy": "FIXED_INITIAL_PROTECTIVE_STOP",
+        "target": {
+          "kind": "FULL_CONTEXTUAL_FTA_EXIT",
+          "price": "92",
+          "poi_ids": [
+            "near-m15"
+          ],
+          "fractions_same_zone": [
+            "1"
+          ],
+          "total_fraction": "1",
+          "fixed_pre_entry": true
+        },
+        "known_at": 60000,
+        "pattern_tf": 60,
+        "sfp_extreme": null,
+        "project_overlays_applied": false
+      }
+    }
+  },
+  {
+    "kind": "SYNTHETIC_CONTRACT_ONLY_NOT_TRADE",
+    "input": {
+      "symbol": "SYNTHETIC",
+      "branch": "STB_BTS",
+      "direction": "LONG",
+      "mode": "BACKTEST",
+      "event": "CLOSE",
+      "decision_at": 60000,
+      "setup_tf": 60,
+      "trigger_tf": 15,
+      "tick_size": "0.1",
+      "idea_poi_id": "source-poi-1",
+      "instrument_metadata": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tick_size": "0.1"
+      },
+      "facts": {
+        "market_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "trend_aligned": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "stb_raid_absorption_structure": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "flow_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "pd_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "sl_off_liquidity": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true,
+          "checked_price": "94.9"
+        },
+        "ltf_bos_source_entry": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "range_reclaim_retest": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "breaker_confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        }
+      },
+      "entry_poi": {
+        "known_at": 55000,
+        "completed_at": 55000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "entry-poi-1",
+        "parent_poi_id": "source-poi-1",
+        "low": "99",
+        "high": "101",
+        "formation_known_at": 54000
+      },
+      "source_defining_zone": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "source-poi-1",
+        "low": "95",
+        "high": "105"
+      },
+      "reaction": {
+        "known_at": 52500,
+        "completed_at": 52500,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true
+      },
+      "bos": {
+        "known_at": 53000,
+        "completed_at": 53000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tf": 15
+      },
+      "stop_anchor": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "kind": "MANIPULATION_RAID_EXTREME",
+        "price": "95",
+        "unique": true
+      },
+      "contextual_poi_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "contextual_pois": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "near-m15",
+          "low": "108",
+          "high": "110",
+          "tf": 15,
+          "contextual": true,
+          "opposing": true
+        },
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "far-h4",
+          "low": "118",
+          "high": "120",
+          "tf": 240,
+          "contextual": true,
+          "opposing": true
+        }
+      ],
+      "range_exit": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "range-1",
+        "low": "85",
+        "high": "115",
+        "unique": true
+      },
+      "liquidity_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "liquidity": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "role": "TARGET_OR_FUEL"
+        }
+      ],
+      "zone_first_test": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "value": true
+      },
+      "identity_evidence": {
+        "context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "context-origin-1"
+        },
+        "formation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "formation-1"
+        },
+        "confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "confirmation-1"
+        },
+        "poi": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "source-poi-1"
+        }
+      }
+    },
+    "result": {
+      "status": "SOURCE_ALLOW_PLAN_ONLY",
+      "SOURCE_STRATEGY_DECISION": "ALLOW",
+      "trade_entry_allowed": false,
+      "source_trace": [
+        {
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_STB_FORMATION",
+          "predicate": "trend_aligned",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_STB_FORMATION",
+          "predicate": "stb_raid_absorption_structure",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_FLOW",
+          "predicate": "flow_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_PD",
+          "predicate": "pd_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "value": true,
+          "known_at": 60000
+        }
+      ],
+      "resolution_ids": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5",
+        "U6"
+      ],
+      "identity": {
+        "physical_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "setup_id": "814057bd414c2a617843bad92ffc9508d4b9b1f7ec2a955b8518ee9710af0fb6",
+        "ready_at": 60000,
+        "zone_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "formation_key": "67f50d63863ce1c8248f6f1aecba3681519f441bec79527de42e185d26ce87bf"
+      },
+      "plan": {
+        "branch": "STB_BTS",
+        "direction": "LONG",
+        "entry": "100",
+        "order_type": "LIMIT_AFTER_KNOWN_CONFIRMATION",
+        "stop": "94.9",
+        "stop_policy": "FIXED_INITIAL_PROTECTIVE_STOP",
+        "target": {
+          "kind": "FULL_CONTEXTUAL_FTA_EXIT",
+          "price": "108",
+          "poi_ids": [
+            "near-m15"
+          ],
+          "fractions_same_zone": [
+            "1"
+          ],
+          "total_fraction": "1",
+          "fixed_pre_entry": true
+        },
+        "known_at": 60000,
+        "pattern_tf": 60,
+        "sfp_extreme": null,
+        "project_overlays_applied": false
+      }
+    }
+  },
+  {
+    "kind": "SYNTHETIC_CONTRACT_ONLY_NOT_TRADE",
+    "input": {
+      "symbol": "SYNTHETIC",
+      "branch": "STB_BTS",
+      "direction": "SHORT",
+      "mode": "BACKTEST",
+      "event": "CLOSE",
+      "decision_at": 60000,
+      "setup_tf": 60,
+      "trigger_tf": 15,
+      "tick_size": "0.1",
+      "idea_poi_id": "source-poi-1",
+      "instrument_metadata": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tick_size": "0.1"
+      },
+      "facts": {
+        "market_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "trend_aligned": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "stb_raid_absorption_structure": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "flow_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "pd_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "sl_off_liquidity": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true,
+          "checked_price": "105.1"
+        },
+        "ltf_bos_source_entry": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "range_reclaim_retest": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "breaker_confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        }
+      },
+      "entry_poi": {
+        "known_at": 55000,
+        "completed_at": 55000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "entry-poi-1",
+        "parent_poi_id": "source-poi-1",
+        "low": "99",
+        "high": "101",
+        "formation_known_at": 54000
+      },
+      "source_defining_zone": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "source-poi-1",
+        "low": "95",
+        "high": "105"
+      },
+      "reaction": {
+        "known_at": 52500,
+        "completed_at": 52500,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true
+      },
+      "bos": {
+        "known_at": 53000,
+        "completed_at": 53000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tf": 15
+      },
+      "stop_anchor": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "kind": "MANIPULATION_RAID_EXTREME",
+        "price": "105",
+        "unique": true
+      },
+      "contextual_poi_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "contextual_pois": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "near-m15",
+          "low": "90",
+          "high": "92",
+          "tf": 15,
+          "contextual": true,
+          "opposing": true
+        },
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "far-h4",
+          "low": "80",
+          "high": "82",
+          "tf": 240,
+          "contextual": true,
+          "opposing": true
+        }
+      ],
+      "range_exit": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "range-1",
+        "low": "85",
+        "high": "115",
+        "unique": true
+      },
+      "liquidity_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "liquidity": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "role": "TARGET_OR_FUEL"
+        }
+      ],
+      "zone_first_test": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "value": true
+      },
+      "identity_evidence": {
+        "context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "context-origin-1"
+        },
+        "formation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "formation-1"
+        },
+        "confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "confirmation-1"
+        },
+        "poi": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "source-poi-1"
+        }
+      }
+    },
+    "result": {
+      "status": "SOURCE_ALLOW_PLAN_ONLY",
+      "SOURCE_STRATEGY_DECISION": "ALLOW",
+      "trade_entry_allowed": false,
+      "source_trace": [
+        {
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_STB_FORMATION",
+          "predicate": "trend_aligned",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_STB_FORMATION",
+          "predicate": "stb_raid_absorption_structure",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_FLOW",
+          "predicate": "flow_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_PD",
+          "predicate": "pd_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "value": true,
+          "known_at": 60000
+        }
+      ],
+      "resolution_ids": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5",
+        "U6"
+      ],
+      "identity": {
+        "physical_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "setup_id": "578880ca9a0656ca925728a1a2e84e5e34800c1173c9e5c45a75dc82fc495c1f",
+        "ready_at": 60000,
+        "zone_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "formation_key": "67f50d63863ce1c8248f6f1aecba3681519f441bec79527de42e185d26ce87bf"
+      },
+      "plan": {
+        "branch": "STB_BTS",
+        "direction": "SHORT",
+        "entry": "100",
+        "order_type": "LIMIT_AFTER_KNOWN_CONFIRMATION",
+        "stop": "105.1",
+        "stop_policy": "FIXED_INITIAL_PROTECTIVE_STOP",
+        "target": {
+          "kind": "FULL_CONTEXTUAL_FTA_EXIT",
+          "price": "92",
+          "poi_ids": [
+            "near-m15"
+          ],
+          "fractions_same_zone": [
+            "1"
+          ],
+          "total_fraction": "1",
+          "fixed_pre_entry": true
+        },
+        "known_at": 60000,
+        "pattern_tf": 60,
+        "sfp_extreme": null,
+        "project_overlays_applied": false
+      }
+    }
+  },
+  {
+    "kind": "SYNTHETIC_CONTRACT_ONLY_NOT_TRADE",
+    "input": {
+      "symbol": "SYNTHETIC",
+      "branch": "RANGE_CONSERVATIVE",
+      "direction": "LONG",
+      "mode": "BACKTEST",
+      "event": "CLOSE",
+      "decision_at": 60000,
+      "setup_tf": 60,
+      "trigger_tf": 15,
+      "tick_size": "0.1",
+      "idea_poi_id": "source-poi-1",
+      "instrument_metadata": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tick_size": "0.1"
+      },
+      "facts": {
+        "market_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "clear_range": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "range_deviation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "outside_poi": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "range_reclaim_retest": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "sl_off_liquidity": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true,
+          "checked_price": "94.9"
+        },
+        "ltf_bos_source_entry": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "breaker_confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        }
+      },
+      "entry_poi": {
+        "known_at": 55000,
+        "completed_at": 55000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "entry-poi-1",
+        "parent_poi_id": "source-poi-1",
+        "low": "99",
+        "high": "101",
+        "formation_known_at": 54000
+      },
+      "source_defining_zone": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "source-poi-1",
+        "low": "95",
+        "high": "105"
+      },
+      "reaction": {
+        "known_at": 52500,
+        "completed_at": 52500,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true
+      },
+      "bos": {
+        "known_at": 53000,
+        "completed_at": 53000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tf": 15
+      },
+      "stop_anchor": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "kind": "DEVIATION_INVALIDATION_EXTREME",
+        "price": "95",
+        "unique": true
+      },
+      "contextual_poi_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "contextual_pois": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "near-m15",
+          "low": "108",
+          "high": "110",
+          "tf": 15,
+          "contextual": true,
+          "opposing": true
+        },
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "far-h4",
+          "low": "118",
+          "high": "120",
+          "tf": 240,
+          "contextual": true,
+          "opposing": true
+        }
+      ],
+      "range_exit": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "range-1",
+        "low": "85",
+        "high": "115",
+        "unique": true
+      },
+      "liquidity_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "liquidity": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "role": "TARGET_OR_FUEL"
+        }
+      ],
+      "zone_first_test": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "value": true
+      },
+      "identity_evidence": {
+        "context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "context-origin-1"
+        },
+        "formation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "formation-1"
+        },
+        "confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "confirmation-1"
+        },
+        "poi": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "source-poi-1"
+        }
+      }
+    },
+    "result": {
+      "status": "SOURCE_ALLOW_PLAN_ONLY",
+      "SOURCE_STRATEGY_DECISION": "ALLOW",
+      "trade_entry_allowed": false,
+      "source_trace": [
+        {
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_RANGE_FORMATION",
+          "predicate": "clear_range",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_RANGE_DEVIATION",
+          "predicate": "range_deviation",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_RANGE_AGGRESSIVE",
+          "predicate": "outside_poi",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_RANGE_CONSERVATIVE",
+          "predicate": "range_reclaim_retest",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "value": true,
+          "known_at": 60000
+        }
+      ],
+      "resolution_ids": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5",
+        "U6"
+      ],
+      "identity": {
+        "physical_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "setup_id": "814057bd414c2a617843bad92ffc9508d4b9b1f7ec2a955b8518ee9710af0fb6",
+        "ready_at": 60000,
+        "zone_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "formation_key": "67f50d63863ce1c8248f6f1aecba3681519f441bec79527de42e185d26ce87bf"
+      },
+      "plan": {
+        "branch": "RANGE_CONSERVATIVE",
+        "direction": "LONG",
+        "entry": "101",
+        "order_type": "LIMIT_AFTER_KNOWN_CONFIRMATION",
+        "stop": "94.9",
+        "stop_policy": "FIXED_INITIAL_PROTECTIVE_STOP",
+        "target": {
+          "kind": "TECHNICAL_RESOLUTION_OPTIONAL_REMAINDER_DISABLED",
+          "price": "114.9",
+          "poi_ids": [
+            "range-1"
+          ],
+          "fractions_same_zone": [
+            "0.8",
+            "0.2"
+          ],
+          "total_fraction": "1",
+          "fixed_pre_entry": true
+        },
+        "known_at": 60000,
+        "pattern_tf": 60,
+        "sfp_extreme": null,
+        "project_overlays_applied": false
+      }
+    }
+  },
+  {
+    "kind": "SYNTHETIC_CONTRACT_ONLY_NOT_TRADE",
+    "input": {
+      "symbol": "SYNTHETIC",
+      "branch": "RANGE_CONSERVATIVE",
+      "direction": "SHORT",
+      "mode": "BACKTEST",
+      "event": "CLOSE",
+      "decision_at": 60000,
+      "setup_tf": 60,
+      "trigger_tf": 15,
+      "tick_size": "0.1",
+      "idea_poi_id": "source-poi-1",
+      "instrument_metadata": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tick_size": "0.1"
+      },
+      "facts": {
+        "market_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "clear_range": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "range_deviation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "outside_poi": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "range_reclaim_retest": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "sl_off_liquidity": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true,
+          "checked_price": "105.1"
+        },
+        "ltf_bos_source_entry": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "breaker_confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        }
+      },
+      "entry_poi": {
+        "known_at": 55000,
+        "completed_at": 55000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "entry-poi-1",
+        "parent_poi_id": "source-poi-1",
+        "low": "99",
+        "high": "101",
+        "formation_known_at": 54000
+      },
+      "source_defining_zone": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "source-poi-1",
+        "low": "95",
+        "high": "105"
+      },
+      "reaction": {
+        "known_at": 52500,
+        "completed_at": 52500,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true
+      },
+      "bos": {
+        "known_at": 53000,
+        "completed_at": 53000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tf": 15
+      },
+      "stop_anchor": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "kind": "DEVIATION_INVALIDATION_EXTREME",
+        "price": "105",
+        "unique": true
+      },
+      "contextual_poi_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "contextual_pois": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "near-m15",
+          "low": "90",
+          "high": "92",
+          "tf": 15,
+          "contextual": true,
+          "opposing": true
+        },
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "far-h4",
+          "low": "80",
+          "high": "82",
+          "tf": 240,
+          "contextual": true,
+          "opposing": true
+        }
+      ],
+      "range_exit": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "range-1",
+        "low": "85",
+        "high": "115",
+        "unique": true
+      },
+      "liquidity_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "liquidity": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "role": "TARGET_OR_FUEL"
+        }
+      ],
+      "zone_first_test": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "value": true
+      },
+      "identity_evidence": {
+        "context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "context-origin-1"
+        },
+        "formation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "formation-1"
+        },
+        "confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "confirmation-1"
+        },
+        "poi": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "source-poi-1"
+        }
+      }
+    },
+    "result": {
+      "status": "SOURCE_ALLOW_PLAN_ONLY",
+      "SOURCE_STRATEGY_DECISION": "ALLOW",
+      "trade_entry_allowed": false,
+      "source_trace": [
+        {
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_RANGE_FORMATION",
+          "predicate": "clear_range",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_RANGE_DEVIATION",
+          "predicate": "range_deviation",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_RANGE_AGGRESSIVE",
+          "predicate": "outside_poi",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_RANGE_CONSERVATIVE",
+          "predicate": "range_reclaim_retest",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "value": true,
+          "known_at": 60000
+        }
+      ],
+      "resolution_ids": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5",
+        "U6"
+      ],
+      "identity": {
+        "physical_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "setup_id": "578880ca9a0656ca925728a1a2e84e5e34800c1173c9e5c45a75dc82fc495c1f",
+        "ready_at": 60000,
+        "zone_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "formation_key": "67f50d63863ce1c8248f6f1aecba3681519f441bec79527de42e185d26ce87bf"
+      },
+      "plan": {
+        "branch": "RANGE_CONSERVATIVE",
+        "direction": "SHORT",
+        "entry": "99",
+        "order_type": "LIMIT_AFTER_KNOWN_CONFIRMATION",
+        "stop": "105.1",
+        "stop_policy": "FIXED_INITIAL_PROTECTIVE_STOP",
+        "target": {
+          "kind": "TECHNICAL_RESOLUTION_OPTIONAL_REMAINDER_DISABLED",
+          "price": "85.1",
+          "poi_ids": [
+            "range-1"
+          ],
+          "fractions_same_zone": [
+            "0.8",
+            "0.2"
+          ],
+          "total_fraction": "1",
+          "fixed_pre_entry": true
+        },
+        "known_at": 60000,
+        "pattern_tf": 60,
+        "sfp_extreme": null,
+        "project_overlays_applied": false
+      }
+    }
+  },
+  {
+    "kind": "SYNTHETIC_CONTRACT_ONLY_NOT_TRADE",
+    "input": {
+      "symbol": "SYNTHETIC",
+      "branch": "RANGE_RETURN_CHOCH",
+      "direction": "LONG",
+      "mode": "BACKTEST",
+      "event": "CLOSE",
+      "decision_at": 60000,
+      "setup_tf": 60,
+      "trigger_tf": 15,
+      "tick_size": "0.1",
+      "idea_poi_id": "source-poi-1",
+      "instrument_metadata": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tick_size": "0.1"
+      },
+      "facts": {
+        "market_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "clear_range": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "range_deviation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "return_choch_zone": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "sl_off_liquidity": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true,
+          "checked_price": "94.9"
+        },
+        "ltf_bos_source_entry": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "range_reclaim_retest": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "breaker_confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        }
+      },
+      "entry_poi": {
+        "known_at": 55000,
+        "completed_at": 55000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "entry-poi-1",
+        "parent_poi_id": "source-poi-1",
+        "low": "99",
+        "high": "101",
+        "formation_known_at": 54000
+      },
+      "source_defining_zone": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "source-poi-1",
+        "low": "95",
+        "high": "105"
+      },
+      "reaction": {
+        "known_at": 52500,
+        "completed_at": 52500,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true
+      },
+      "bos": {
+        "known_at": 53000,
+        "completed_at": 53000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tf": 15
+      },
+      "stop_anchor": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "kind": "DEVIATION_INVALIDATION_EXTREME",
+        "price": "95",
+        "unique": true
+      },
+      "contextual_poi_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "contextual_pois": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "near-m15",
+          "low": "108",
+          "high": "110",
+          "tf": 15,
+          "contextual": true,
+          "opposing": true
+        },
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "far-h4",
+          "low": "118",
+          "high": "120",
+          "tf": 240,
+          "contextual": true,
+          "opposing": true
+        }
+      ],
+      "range_exit": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "range-1",
+        "low": "85",
+        "high": "115",
+        "unique": true
+      },
+      "liquidity_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "liquidity": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "role": "TARGET_OR_FUEL"
+        }
+      ],
+      "zone_first_test": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "value": true
+      },
+      "identity_evidence": {
+        "context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "context-origin-1"
+        },
+        "formation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "formation-1"
+        },
+        "confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "confirmation-1"
+        },
+        "poi": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "source-poi-1"
+        }
+      }
+    },
+    "result": {
+      "status": "SOURCE_ALLOW_PLAN_ONLY",
+      "SOURCE_STRATEGY_DECISION": "ALLOW",
+      "trade_entry_allowed": false,
+      "source_trace": [
+        {
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_RANGE_FORMATION",
+          "predicate": "clear_range",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_RANGE_DEVIATION",
+          "predicate": "range_deviation",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_RANGE_CONSERVATIVE",
+          "predicate": "return_choch_zone",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "value": true,
+          "known_at": 60000
+        }
+      ],
+      "resolution_ids": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5",
+        "U6"
+      ],
+      "identity": {
+        "physical_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "setup_id": "814057bd414c2a617843bad92ffc9508d4b9b1f7ec2a955b8518ee9710af0fb6",
+        "ready_at": 60000,
+        "zone_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "formation_key": "67f50d63863ce1c8248f6f1aecba3681519f441bec79527de42e185d26ce87bf"
+      },
+      "plan": {
+        "branch": "RANGE_RETURN_CHOCH",
+        "direction": "LONG",
+        "entry": "101",
+        "order_type": "LIMIT_AFTER_KNOWN_CONFIRMATION",
+        "stop": "94.9",
+        "stop_policy": "FIXED_INITIAL_PROTECTIVE_STOP",
+        "target": {
+          "kind": "TECHNICAL_RESOLUTION_OPTIONAL_REMAINDER_DISABLED",
+          "price": "114.9",
+          "poi_ids": [
+            "range-1"
+          ],
+          "fractions_same_zone": [
+            "0.8",
+            "0.2"
+          ],
+          "total_fraction": "1",
+          "fixed_pre_entry": true
+        },
+        "known_at": 60000,
+        "pattern_tf": 60,
+        "sfp_extreme": null,
+        "project_overlays_applied": false
+      }
+    }
+  },
+  {
+    "kind": "SYNTHETIC_CONTRACT_ONLY_NOT_TRADE",
+    "input": {
+      "symbol": "SYNTHETIC",
+      "branch": "RANGE_RETURN_CHOCH",
+      "direction": "SHORT",
+      "mode": "BACKTEST",
+      "event": "CLOSE",
+      "decision_at": 60000,
+      "setup_tf": 60,
+      "trigger_tf": 15,
+      "tick_size": "0.1",
+      "idea_poi_id": "source-poi-1",
+      "instrument_metadata": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tick_size": "0.1"
+      },
+      "facts": {
+        "market_context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "clear_range": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "range_deviation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "return_choch_zone": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "sl_off_liquidity": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true,
+          "checked_price": "105.1"
+        },
+        "ltf_bos_source_entry": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "range_reclaim_retest": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        },
+        "breaker_confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "value": true
+        }
+      },
+      "entry_poi": {
+        "known_at": 55000,
+        "completed_at": 55000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "entry-poi-1",
+        "parent_poi_id": "source-poi-1",
+        "low": "99",
+        "high": "101",
+        "formation_known_at": 54000
+      },
+      "source_defining_zone": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "source-poi-1",
+        "low": "95",
+        "high": "105"
+      },
+      "reaction": {
+        "known_at": 52500,
+        "completed_at": 52500,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true
+      },
+      "bos": {
+        "known_at": 53000,
+        "completed_at": 53000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "tf": 15
+      },
+      "stop_anchor": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "kind": "DEVIATION_INVALIDATION_EXTREME",
+        "price": "105",
+        "unique": true
+      },
+      "contextual_poi_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "contextual_pois": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "near-m15",
+          "low": "90",
+          "high": "92",
+          "tf": 15,
+          "contextual": true,
+          "opposing": true
+        },
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "far-h4",
+          "low": "80",
+          "high": "82",
+          "tf": 240,
+          "contextual": true,
+          "opposing": true
+        }
+      ],
+      "range_exit": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "id": "range-1",
+        "low": "85",
+        "high": "115",
+        "unique": true
+      },
+      "liquidity_inventory": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "complete_for_known_prefix": true
+      },
+      "liquidity": [
+        {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "role": "TARGET_OR_FUEL"
+        }
+      ],
+      "zone_first_test": {
+        "known_at": 50000,
+        "completed_at": 50000,
+        "evidence": "SYNTHETIC explicit source annotation",
+        "source_validated": true,
+        "value": true
+      },
+      "identity_evidence": {
+        "context": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "context-origin-1"
+        },
+        "formation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "formation-1"
+        },
+        "confirmation": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "confirmation-1"
+        },
+        "poi": {
+          "known_at": 50000,
+          "completed_at": 50000,
+          "evidence": "SYNTHETIC explicit source annotation",
+          "source_validated": true,
+          "id": "source-poi-1"
+        }
+      }
+    },
+    "result": {
+      "status": "SOURCE_ALLOW_PLAN_ONLY",
+      "SOURCE_STRATEGY_DECISION": "ALLOW",
+      "trade_entry_allowed": false,
+      "source_trace": [
+        {
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_RANGE_FORMATION",
+          "predicate": "clear_range",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_RANGE_DEVIATION",
+          "predicate": "range_deviation",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_RANGE_CONSERVATIVE",
+          "predicate": "return_choch_zone",
+          "value": true,
+          "known_at": 60000
+        },
+        {
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "value": true,
+          "known_at": 60000
+        }
+      ],
+      "resolution_ids": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5",
+        "U6"
+      ],
+      "identity": {
+        "physical_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "setup_id": "578880ca9a0656ca925728a1a2e84e5e34800c1173c9e5c45a75dc82fc495c1f",
+        "ready_at": 60000,
+        "zone_id": "ec87fa80b882d68962bfe54eb5637e5b9c6989f94b0f00bf90b9f241176d347b",
+        "formation_key": "67f50d63863ce1c8248f6f1aecba3681519f441bec79527de42e185d26ce87bf"
+      },
+      "plan": {
+        "branch": "RANGE_RETURN_CHOCH",
+        "direction": "SHORT",
+        "entry": "99",
+        "order_type": "LIMIT_AFTER_KNOWN_CONFIRMATION",
+        "stop": "105.1",
+        "stop_policy": "FIXED_INITIAL_PROTECTIVE_STOP",
+        "target": {
+          "kind": "TECHNICAL_RESOLUTION_OPTIONAL_REMAINDER_DISABLED",
+          "price": "85.1",
+          "poi_ids": [
+            "range-1"
+          ],
+          "fractions_same_zone": [
+            "0.8",
+            "0.2"
+          ],
+          "total_fraction": "1",
+          "fixed_pre_entry": true
+        },
+        "known_at": 60000,
+        "pattern_tf": 60,
+        "sfp_extreme": null,
+        "project_overlays_applied": false
+      }
+    }
+  }
+]

@@ -1,0 +1,556 @@
+{
+  "frozen_v1_alternatives": {
+    "type": "COMPONENT_VARIANTS_NOT_COMPLETE_STRATEGIES",
+    "selected_winner": null,
+    "outcomes_used": false,
+    "entries": [
+      {
+        "resolver": "FTA",
+        "variant_id": "SOURCE_PERMITTED_VARIANT_A",
+        "name": "FULL_FTA",
+        "rule_id": "S_FTA_EXIT_OPTIONS",
+        "source_citation": [
+          {
+            "source_id": "SW9",
+            "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+            "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+            "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+            "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+            "page_or_paragraph": "p11–11",
+            "first": 11,
+            "last": 11,
+            "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n                      POI - это общее название для рабочих инструментов, которыми могут выступать\n                      манипуляции, ордерблоки, брейкеры и другие торговые элементы.\n\n                      Мы выделяем данные зоны и при подходе цены к ним рассматриваем реакцию\n                      на на эту зону. На основе реакции принимается решение о входе в сделку.\n\n                      Схематический пример POI\n\n\n\n\n                      5. First Trouble Area (FTA)\n                      FTA (First Trouble Area) - это первая проблемная зона после смены характера\n                      движения. В качестве FTA могут использоваться различные POI, которые\n                      находятся в противоположном направлении от вашего входа. Так как вход может\n                      осуществляться как по тренду, так и против него, зона FTA может находиться в\n                      разных местах.\n\n                      Работа по тренду\n\n                      После слома младшего ТФ и перехода коррекционного движения в импульсное\n                      движение, рыночный тренд находится в синхронизации (к примеру, старший и\n                      младший ТФ - нисходящий). Если вы открываете сделку по тренду, то ваш тейк-\n                      профит (полный, либо частичный) будет находиться у первой проблемной зоны\n                      (FTA).\n\n                      Схематический пример FTA\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     11/16",
+            "diagrams": [
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+                "page": 11,
+                "locator": "PDF page 11 (text + all embedded figures)"
+              }
+            ],
+            "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+          },
+          {
+            "source_id": "SW9",
+            "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+            "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+            "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+            "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+            "page_or_paragraph": "p16–16",
+            "first": 16,
+            "last": 16,
+            "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n\n\n\n                      7. Выводы\n                      Ордерблок является хорошим фактором для входа, но должны быть соблюдены\n                      все необходимые условия. Вход в позицию должен осуществляться только по\n                      тренду. Импульсно пробитый ордерблок становится брейкером.\n\n                      FTA называют первой проблемной зоной, которой может быть любая POI со\n                      старшего ТФ. При открытии контртрендовой сделки, у зоны FTA мы производим\n                      частичную или полную фиксацию позиции.\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     16/16",
+            "diagrams": [
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+                "page": 16,
+                "locator": "PDF page 16 (text + all embedded figures)"
+              }
+            ],
+            "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+          }
+        ],
+        "applicability": "Non-Range contextual FTA",
+        "material_ambiguity": true,
+        "remaining": "Target owner/quote unresolved",
+        "financial_run_allowed": false
+      },
+      {
+        "resolver": "FTA",
+        "variant_id": "SOURCE_PERMITTED_VARIANT_B",
+        "name": "PARTIAL_FTA",
+        "rule_id": "S_FTA_EXIT_OPTIONS",
+        "source_citation": [
+          {
+            "source_id": "SW9",
+            "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+            "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+            "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+            "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+            "page_or_paragraph": "p11–11",
+            "first": 11,
+            "last": 11,
+            "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n                      POI - это общее название для рабочих инструментов, которыми могут выступать\n                      манипуляции, ордерблоки, брейкеры и другие торговые элементы.\n\n                      Мы выделяем данные зоны и при подходе цены к ним рассматриваем реакцию\n                      на на эту зону. На основе реакции принимается решение о входе в сделку.\n\n                      Схематический пример POI\n\n\n\n\n                      5. First Trouble Area (FTA)\n                      FTA (First Trouble Area) - это первая проблемная зона после смены характера\n                      движения. В качестве FTA могут использоваться различные POI, которые\n                      находятся в противоположном направлении от вашего входа. Так как вход может\n                      осуществляться как по тренду, так и против него, зона FTA может находиться в\n                      разных местах.\n\n                      Работа по тренду\n\n                      После слома младшего ТФ и перехода коррекционного движения в импульсное\n                      движение, рыночный тренд находится в синхронизации (к примеру, старший и\n                      младший ТФ - нисходящий). Если вы открываете сделку по тренду, то ваш тейк-\n                      профит (полный, либо частичный) будет находиться у первой проблемной зоны\n                      (FTA).\n\n                      Схематический пример FTA\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     11/16",
+            "diagrams": [
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+                "page": 11,
+                "locator": "PDF page 11 (text + all embedded figures)"
+              }
+            ],
+            "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+          },
+          {
+            "source_id": "SW9",
+            "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+            "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+            "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+            "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+            "page_or_paragraph": "p16–16",
+            "first": 16,
+            "last": 16,
+            "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n\n\n\n                      7. Выводы\n                      Ордерблок является хорошим фактором для входа, но должны быть соблюдены\n                      все необходимые условия. Вход в позицию должен осуществляться только по\n                      тренду. Импульсно пробитый ордерблок становится брейкером.\n\n                      FTA называют первой проблемной зоной, которой может быть любая POI со\n                      старшего ТФ. При открытии контртрендовой сделки, у зоны FTA мы производим\n                      частичную или полную фиксацию позиции.\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     16/16",
+            "diagrams": [
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+                "page": 16,
+                "locator": "PDF page 16 (text + all embedded figures)"
+              }
+            ],
+            "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+          }
+        ],
+        "applicability": "Non-Range contextual FTA",
+        "material_ambiguity": true,
+        "remaining": "Fraction and remainder unresolved",
+        "financial_run_allowed": false
+      },
+      {
+        "resolver": "OB_ENTRY",
+        "variant_id": "A",
+        "name": "BORDER_OR_INSIDE",
+        "rule_id": "S_OB_DIRECT_ENTRY",
+        "source_citation": [
+          {
+            "source_id": "SW9",
+            "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+            "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+            "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+            "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+            "page_or_paragraph": "p3–3",
+            "first": 3,
+            "last": 3,
+            "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n\n\n\n                      Графический пример медвежьего OB\n\n\n\n\n                      Как использовать OB в торговле?\n\n                      В 90% случаев мы работаем исключительно от первого теста OB, только в\n                      некоторых случаях можно рассматривать повторный вход от OB, дожидаясь\n                      реакции на младшем ТФ.\n\n                      Очень важно! OB должен находиться внутри структурного импульса и работать\n                      с ним необходимо по “тренду”.\n\n                      Первый вариант\n\n                             Выделяем диапазон OB.\n                             Выставляем лимитный ордер на границу диапазона. Для бычьего OB -\n                             верхняя граница, для медвежьего OB - нижняя. Также можно выставлять\n                             лимитные ордера внутри зоны ОВ.\n                             Стоп ставим за минимум/максимум OB. Либо за тень свечи, которая\n                             поглотила OB.\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     3/16",
+            "diagrams": [
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+                "page": 3,
+                "locator": "PDF page 3 (text + all embedded figures)"
+              }
+            ],
+            "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+          }
+        ],
+        "applicability": "OB direct",
+        "material_ambiguity": true,
+        "remaining": "Inside quote/selection unresolved",
+        "financial_run_allowed": false
+      },
+      {
+        "resolver": "OB_ENTRY",
+        "variant_id": "B",
+        "name": "LTF_REACTION_BOS_POI",
+        "rule_id": "S_OB_CONS_TRIGGER",
+        "source_citation": [
+          {
+            "source_id": "SW9",
+            "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+            "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+            "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+            "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+            "page_or_paragraph": "p4–6",
+            "first": 4,
+            "last": 6,
+            "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n                      Примеры:\n\n\n\n\n                      Второй вариант\n\n                      Более сложный вариант, используется на OB образованных на ТФ 15M - 1D и т.д.\n\n                             Выделяем диапазон OB на старшем таймфрейме.\n                             Переключаемся на ТФ ниже (1-15М).\n                             Ожидаем плавный структурный подход цены в диапазон OB.\n                             После реакции мы ожидаем слом структуры и формировании POI (зоны\n                             интереса).\n\n                      Примеры:\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     4/16\n12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n\n\n\n                      Цена сломала 4Н структуру, отмечаем POI на 4Н ТФ.\n\n\n\n\n                      Цена пришла в POI 4Н, переключаемся на ТФ ниже. Мы ожидаем слом структуры\n                      на младшем таймфрейме и формирования POI.\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     5/16\n12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n\n\n\n                      Получили слом структуры на младшем таймфрейме и сформированное POI.\n                      Выставляем лимитный ордер на новую POI.\n\n\n\n\n                      Работая по второму варианту, вход не только более безопасен и консервативен,\n                      но также появляется возможность открытия сделки с крайне высоким RR.\n\n                      Очень часто начинающие трейдеры используют каждое поглощение в качестве\n                      OB, не обращая внимания на IMB, а также выделяют OB, который не находится в\n                      структурном импульсе или зоне ОТЕ (соблюдение зон Premium и Discount).\n\n                      Нарушение условий поиска Order Block.\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     6/16",
+            "diagrams": [
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+                "page": 4,
+                "locator": "PDF page 4 (text + all embedded figures)"
+              },
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+                "page": 5,
+                "locator": "PDF page 5 (text + all embedded figures)"
+              },
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+                "page": 6,
+                "locator": "PDF page 6 (text + all embedded figures)"
+              }
+            ],
+            "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+          }
+        ],
+        "applicability": "Conservative qualifying OB",
+        "material_ambiguity": true,
+        "remaining": "Smooth approach/POI quote unresolved",
+        "financial_run_allowed": false
+      },
+      {
+        "resolver": "OB_STOP",
+        "variant_id": "A",
+        "name": "OB_EXTREME",
+        "rule_id": "S_OB_DIRECT_STOP",
+        "source_citation": [
+          {
+            "source_id": "SW9",
+            "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+            "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+            "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+            "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+            "page_or_paragraph": "p3–3",
+            "first": 3,
+            "last": 3,
+            "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n\n\n\n                      Графический пример медвежьего OB\n\n\n\n\n                      Как использовать OB в торговле?\n\n                      В 90% случаев мы работаем исключительно от первого теста OB, только в\n                      некоторых случаях можно рассматривать повторный вход от OB, дожидаясь\n                      реакции на младшем ТФ.\n\n                      Очень важно! OB должен находиться внутри структурного импульса и работать\n                      с ним необходимо по “тренду”.\n\n                      Первый вариант\n\n                             Выделяем диапазон OB.\n                             Выставляем лимитный ордер на границу диапазона. Для бычьего OB -\n                             верхняя граница, для медвежьего OB - нижняя. Также можно выставлять\n                             лимитные ордера внутри зоны ОВ.\n                             Стоп ставим за минимум/максимум OB. Либо за тень свечи, которая\n                             поглотила OB.\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     3/16",
+            "diagrams": [
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+                "page": 3,
+                "locator": "PDF page 3 (text + all embedded figures)"
+              }
+            ],
+            "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+          }
+        ],
+        "applicability": "OB direct",
+        "material_ambiguity": true,
+        "remaining": "Beyond buffer unresolved",
+        "financial_run_allowed": false
+      },
+      {
+        "resolver": "OB_STOP",
+        "variant_id": "B",
+        "name": "ENGULF_WICK",
+        "rule_id": "S_OB_DIRECT_STOP",
+        "source_citation": [
+          {
+            "source_id": "SW9",
+            "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+            "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+            "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+            "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+            "page_or_paragraph": "p3–3",
+            "first": 3,
+            "last": 3,
+            "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n\n\n\n                      Графический пример медвежьего OB\n\n\n\n\n                      Как использовать OB в торговле?\n\n                      В 90% случаев мы работаем исключительно от первого теста OB, только в\n                      некоторых случаях можно рассматривать повторный вход от OB, дожидаясь\n                      реакции на младшем ТФ.\n\n                      Очень важно! OB должен находиться внутри структурного импульса и работать\n                      с ним необходимо по “тренду”.\n\n                      Первый вариант\n\n                             Выделяем диапазон OB.\n                             Выставляем лимитный ордер на границу диапазона. Для бычьего OB -\n                             верхняя граница, для медвежьего OB - нижняя. Также можно выставлять\n                             лимитные ордера внутри зоны ОВ.\n                             Стоп ставим за минимум/максимум OB. Либо за тень свечи, которая\n                             поглотила OB.\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     3/16",
+            "diagrams": [
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+                "page": 3,
+                "locator": "PDF page 3 (text + all embedded figures)"
+              }
+            ],
+            "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+          }
+        ],
+        "applicability": "OB direct",
+        "material_ambiguity": true,
+        "remaining": "Beyond buffer unresolved",
+        "financial_run_allowed": false
+      },
+      {
+        "resolver": "BREAKER_STOP",
+        "variant_id": "A",
+        "name": "BODY_AGGRESSIVE",
+        "rule_id": "S_BREAKER_STOPS",
+        "source_citation": [
+          {
+            "source_id": "SW9",
+            "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+            "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+            "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+            "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+            "page_or_paragraph": "p9–10",
+            "first": 9,
+            "last": 10,
+            "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n\n\n\n                      Графический пример медвежьего BR\n\n\n\n\n                      Как использовать BR в торговле?\n\n                      Трейдинг невозможен без выставления стоп ордеров. В данном методе\n                      допустимо использовать два вида стоп ордеров – агрессивный и\n                      консервативный.\n\n                      Агрессивный стоп располагается сразу под брейкером, несмотря на хороший\n                      RR, такой стоп с высокой долей вероятности будет снят.\n\n                      Консервативный стоп вряд ли будет задет, он более безопасен, но в случае его\n                      использования, RR уже не будет такими привлекательным. На дистанции\n                      консервативные стопы срабатывают реже, давая возможность суммарно\n                      выходить в плюс по сделкам. Размещать консервативный стоп следует за\n                      импульсной свечой, снимающей ликвидность, то есть за ценовой минимум/\n                      максимум.\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     9/16\n12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n                      Пример агрессивного стопа\n\n\n\n\n                      Пример консервативного стопа\n\n\n\n\n                      4. Point of Interest (POI)\n                      Point of Interest (POI) - это диапазон на графике, от которого ожидается реакция\n                      цены.\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     10/16",
+            "diagrams": [
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+                "page": 9,
+                "locator": "PDF page 9 (text + all embedded figures)"
+              },
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+                "page": 10,
+                "locator": "PDF page 10 (text + all embedded figures)"
+              }
+            ],
+            "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+          }
+        ],
+        "applicability": "Breaker",
+        "material_ambiguity": true,
+        "remaining": "Beyond buffer unresolved",
+        "financial_run_allowed": false
+      },
+      {
+        "resolver": "BREAKER_STOP",
+        "variant_id": "B",
+        "name": "RAID_EXTREME_CONSERVATIVE",
+        "rule_id": "S_BREAKER_STOPS",
+        "source_citation": [
+          {
+            "source_id": "SW9",
+            "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+            "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+            "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+            "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+            "page_or_paragraph": "p9–10",
+            "first": 9,
+            "last": 10,
+            "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n\n\n\n                      Графический пример медвежьего BR\n\n\n\n\n                      Как использовать BR в торговле?\n\n                      Трейдинг невозможен без выставления стоп ордеров. В данном методе\n                      допустимо использовать два вида стоп ордеров – агрессивный и\n                      консервативный.\n\n                      Агрессивный стоп располагается сразу под брейкером, несмотря на хороший\n                      RR, такой стоп с высокой долей вероятности будет снят.\n\n                      Консервативный стоп вряд ли будет задет, он более безопасен, но в случае его\n                      использования, RR уже не будет такими привлекательным. На дистанции\n                      консервативные стопы срабатывают реже, давая возможность суммарно\n                      выходить в плюс по сделкам. Размещать консервативный стоп следует за\n                      импульсной свечой, снимающей ликвидность, то есть за ценовой минимум/\n                      максимум.\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     9/16\n12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n                      Пример агрессивного стопа\n\n\n\n\n                      Пример консервативного стопа\n\n\n\n\n                      4. Point of Interest (POI)\n                      Point of Interest (POI) - это диапазон на графике, от которого ожидается реакция\n                      цены.\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     10/16",
+            "diagrams": [
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+                "page": 9,
+                "locator": "PDF page 9 (text + all embedded figures)"
+              },
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+                "page": 10,
+                "locator": "PDF page 10 (text + all embedded figures)"
+              }
+            ],
+            "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+          }
+        ],
+        "applicability": "Breaker",
+        "material_ambiguity": true,
+        "remaining": "Beyond buffer unresolved",
+        "financial_run_allowed": false
+      },
+      {
+        "resolver": "STB_ENTRY",
+        "variant_id": "A",
+        "name": "EDGE",
+        "rule_id": "S_STB_ENTRY",
+        "source_citation": [
+          {
+            "source_id": "SW22",
+            "source_document": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+            "source_sha256": "ebac736d847b270c64ba38586c2f2a2a8685328d90eb7f6c9ada1bedd3a4d50b",
+            "text": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+            "text_sha256": "5c4e68bbd18e4797a4e5b50e417ef002a5bbb5b6c7bc374f23b362463f85b2f5",
+            "page_or_paragraph": "p3–4",
+            "first": 3,
+            "last": 4,
+            "literal_passage": "12/02/2023, 23:10                                       https://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro\n\n\n\n\n                       Графический пример\n\n\n\n\n                       После того, как происходит слом структуры и поглощение всего движения BTS –\n                       у крупного игрока (умный капитал), остается открытой лонг позиция, которая\n                       является в моменте убыточной. В дальнейшем, чтобы закрыть данный минус или\n                       усреднить точку входа, крупному игроку нужно вернуть цену к значениям,\n                       зарождающим данное движение в шорт, чтобы полностью перекрыть свой\n                       убыток - тест зоны 0.5.\n\n                       Мы можем использовать STB/BTS как вход в позицию. Точкой входа будет\n                       являться как верхняя часть (лонг)/нижняя часть (шорт), так и 0.5 всей зоны\n                       STB/BTS, но должны быть соблюдены следующие факторы:\n\n                           1. Потенциальная позиция совпадает с основным трендом.\n                           2. Ценовое движение сняло пул ликвидности и полностью поглотило\n                              манипуляцию при развороте.\n                           3. Произошел слом, либо подтверждение структуры.\n\n\n\n\n                       3. Mitigation\nhttps://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro                                                           3/6\n12/02/2023, 23:10                                       https://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro\n\n                       Mitigation (test) - после удачной манипуляции и открытия лонг/шорт позиции,\n                       крупному игроку нужно закрыть свою шортовую/лонговую позицию так как она\n                       становится убыточной.\n\n                       Итак, крупный игрок открывает еще одну позицию для того, чтобы доставить\n                       цену в нужный диапазон. Если следовать правилу Premium/ Discount цена\n                       должна протестировать зону 0.5, либо ниже/выше 0.5. Туда и будет\n                       сконцентрировано наше внимание.\n\n                       Схематический пример\n\n\n\n\n                       Графический пример\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro                                                           4/6",
+            "diagrams": [
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+                "page": 3,
+                "locator": "PDF page 3 (text + all embedded figures)"
+              },
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+                "page": 4,
+                "locator": "PDF page 4 (text + all embedded figures)"
+              }
+            ],
+            "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+          }
+        ],
+        "applicability": "STB/BTS",
+        "material_ambiguity": true,
+        "remaining": "Owner/P-D/stop selection unresolved",
+        "financial_run_allowed": false
+      },
+      {
+        "resolver": "STB_ENTRY",
+        "variant_id": "B",
+        "name": "MIDPOINT",
+        "rule_id": "S_STB_ENTRY",
+        "source_citation": [
+          {
+            "source_id": "SW22",
+            "source_document": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+            "source_sha256": "ebac736d847b270c64ba38586c2f2a2a8685328d90eb7f6c9ada1bedd3a4d50b",
+            "text": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+            "text_sha256": "5c4e68bbd18e4797a4e5b50e417ef002a5bbb5b6c7bc374f23b362463f85b2f5",
+            "page_or_paragraph": "p3–4",
+            "first": 3,
+            "last": 4,
+            "literal_passage": "12/02/2023, 23:10                                       https://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro\n\n\n\n\n                       Графический пример\n\n\n\n\n                       После того, как происходит слом структуры и поглощение всего движения BTS –\n                       у крупного игрока (умный капитал), остается открытой лонг позиция, которая\n                       является в моменте убыточной. В дальнейшем, чтобы закрыть данный минус или\n                       усреднить точку входа, крупному игроку нужно вернуть цену к значениям,\n                       зарождающим данное движение в шорт, чтобы полностью перекрыть свой\n                       убыток - тест зоны 0.5.\n\n                       Мы можем использовать STB/BTS как вход в позицию. Точкой входа будет\n                       являться как верхняя часть (лонг)/нижняя часть (шорт), так и 0.5 всей зоны\n                       STB/BTS, но должны быть соблюдены следующие факторы:\n\n                           1. Потенциальная позиция совпадает с основным трендом.\n                           2. Ценовое движение сняло пул ликвидности и полностью поглотило\n                              манипуляцию при развороте.\n                           3. Произошел слом, либо подтверждение структуры.\n\n\n\n\n                       3. Mitigation\nhttps://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro                                                           3/6\n12/02/2023, 23:10                                       https://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro\n\n                       Mitigation (test) - после удачной манипуляции и открытия лонг/шорт позиции,\n                       крупному игроку нужно закрыть свою шортовую/лонговую позицию так как она\n                       становится убыточной.\n\n                       Итак, крупный игрок открывает еще одну позицию для того, чтобы доставить\n                       цену в нужный диапазон. Если следовать правилу Premium/ Discount цена\n                       должна протестировать зону 0.5, либо ниже/выше 0.5. Туда и будет\n                       сконцентрировано наше внимание.\n\n                       Схематический пример\n\n\n\n\n                       Графический пример\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro                                                           4/6",
+            "diagrams": [
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+                "page": 3,
+                "locator": "PDF page 3 (text + all embedded figures)"
+              },
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+                "page": 4,
+                "locator": "PDF page 4 (text + all embedded figures)"
+              }
+            ],
+            "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+          }
+        ],
+        "applicability": "STB/BTS",
+        "material_ambiguity": true,
+        "remaining": "Owner/P-D/stop selection unresolved",
+        "financial_run_allowed": false
+      },
+      {
+        "resolver": "RANGE_ENTRY",
+        "variant_id": "A",
+        "name": "DEVIATION_OUTSIDE_POI",
+        "rule_id": "S_RANGE_AGGRESSIVE",
+        "source_citation": [
+          {
+            "source_id": "06",
+            "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]10. Боковое движение.docx",
+            "source_sha256": "628cb1caa97138bc5470687e3743127cd147ac20c5cb39144345764be537e631",
+            "text": "data/source_materials/cryptology_2026_10_09/06.clean.txt",
+            "text_sha256": "ad70ddbe23b29b1f0bce9638ffb34b9cd98f04fbf1efcb42eaa52cb5b94aa5c6",
+            "page_or_paragraph": "word/document.xml:P0111–P0118",
+            "first": 111,
+            "last": 118,
+            "literal_passage": ". Агрессивный\n- на девиации и только при наличии POI под/над боковиком.\nВероятность отработки вашего трейда будет увеличена присутствием факторов,\nкоторые указывают на слабость покупателя/продавца. Самый распространенный\nинструмент для этого - дивергенции (инструмент будет разбираться в\nследующих темах).\nСхематическое изображение\nГрафическое изображение",
+            "diagrams": [],
+            "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+          }
+        ],
+        "applicability": "Clear Range",
+        "material_ambiguity": true,
+        "remaining": "Exact quote/SL unresolved",
+        "financial_run_allowed": false
+      },
+      {
+        "resolver": "RANGE_ENTRY",
+        "variant_id": "B",
+        "name": "RECLAIM_RETEST",
+        "rule_id": "S_RANGE_CONSERVATIVE",
+        "source_citation": [
+          {
+            "source_id": "06",
+            "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]10. Боковое движение.docx",
+            "source_sha256": "628cb1caa97138bc5470687e3743127cd147ac20c5cb39144345764be537e631",
+            "text": "data/source_materials/cryptology_2026_10_09/06.clean.txt",
+            "text_sha256": "ad70ddbe23b29b1f0bce9638ffb34b9cd98f04fbf1efcb42eaa52cb5b94aa5c6",
+            "page_or_paragraph": "word/document.xml:P0124–P0129",
+            "first": 124,
+            "last": 129,
+            "literal_passage": ". Консервативный\n- Наличие POI сверху/снизу всегда выступает сильным\nмагнитом для цены, поэтому мы ожидаем поход цены в ту зону, до этого позиции\nвнутри ренджа не открываем, если цена не дает реакцию на poi, входим\nконсервативно, после возврата и закрепления цены внутри боковика, на тесте\nграниц.",
+            "diagrams": [
+              {
+                "source_id": "06",
+                "member": "word/media/image13.jpg",
+                "sha256": "c81dbbc3ef15ca3755864ed0f987d58bb9e9cc6becf2199c313ac5be824cb423",
+                "after_paragraph": 129,
+                "next_paragraph": 130,
+                "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/c81dbbc3ef15ca3755864ed0f987d58bb9e9cc6becf2199c313ac5be824cb423.txt"
+              },
+              {
+                "source_id": "06",
+                "member": "word/media/image14.jpg",
+                "sha256": "beaa8047c54bd2c988b4c264bf596d1ac3be1a7a683f9ac67982e709a1de6cb7",
+                "after_paragraph": 129,
+                "next_paragraph": 130,
+                "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/beaa8047c54bd2c988b4c264bf596d1ac3be1a7a683f9ac67982e709a1de6cb7.txt"
+              },
+              {
+                "source_id": "06",
+                "member": "word/media/image15.jpg",
+                "sha256": "bace8d0ac14330586507f1ce4fd2f1821fd78ae390261804adcb7f68841b5e5c",
+                "after_paragraph": 129,
+                "next_paragraph": 130,
+                "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/bace8d0ac14330586507f1ce4fd2f1821fd78ae390261804adcb7f68841b5e5c.txt"
+              }
+            ],
+            "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+          },
+          {
+            "source_id": "19",
+            "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+            "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+            "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+            "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+            "page_or_paragraph": "word/document.xml:P0129–P0130",
+            "first": 129,
+            "last": 130,
+            "literal_passage": "Один из сетапов который мы используем для торговли боковых движений :\nВозврат цены после девиации - с последующим тестом зоны , которая отправила цену обратно в ренж , сделав choch.",
+            "diagrams": [
+              {
+                "source_id": "19",
+                "member": "word/media/image23.jpg",
+                "sha256": "4ea93e8e697f85283eb708642ebb84decbe11ebd0d1819a607f2d4b66eee01ae",
+                "after_paragraph": 130,
+                "next_paragraph": 131,
+                "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/4ea93e8e697f85283eb708642ebb84decbe11ebd0d1819a607f2d4b66eee01ae.txt"
+              }
+            ],
+            "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+          }
+        ],
+        "applicability": "Clear Range",
+        "material_ambiguity": true,
+        "remaining": "Acceptance/retest normalization unresolved",
+        "financial_run_allowed": false
+      },
+      {
+        "resolver": "OB_REPEAT",
+        "variant_id": "A",
+        "name": "FIRST_TEST_STYLE",
+        "rule_id": "S_OB_FIRST_TEST",
+        "source_citation": [
+          {
+            "source_id": "SW9",
+            "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+            "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+            "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+            "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+            "page_or_paragraph": "p3–3",
+            "first": 3,
+            "last": 3,
+            "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n\n\n\n                      Графический пример медвежьего OB\n\n\n\n\n                      Как использовать OB в торговле?\n\n                      В 90% случаев мы работаем исключительно от первого теста OB, только в\n                      некоторых случаях можно рассматривать повторный вход от OB, дожидаясь\n                      реакции на младшем ТФ.\n\n                      Очень важно! OB должен находиться внутри структурного импульса и работать\n                      с ним необходимо по “тренду”.\n\n                      Первый вариант\n\n                             Выделяем диапазон OB.\n                             Выставляем лимитный ордер на границу диапазона. Для бычьего OB -\n                             верхняя граница, для медвежьего OB - нижняя. Также можно выставлять\n                             лимитные ордера внутри зоны ОВ.\n                             Стоп ставим за минимум/максимум OB. Либо за тень свечи, которая\n                             поглотила OB.\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     3/16",
+            "diagrams": [
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+                "page": 3,
+                "locator": "PDF page 3 (text + all embedded figures)"
+              }
+            ],
+            "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+          }
+        ],
+        "applicability": "OB",
+        "material_ambiguity": true,
+        "remaining": "First-test predominantly, not random90% quota",
+        "financial_run_allowed": false
+      },
+      {
+        "resolver": "OB_REPEAT",
+        "variant_id": "B",
+        "name": "REPEAT_NEW_REACTION",
+        "rule_id": "S_OB_FIRST_TEST",
+        "source_citation": [
+          {
+            "source_id": "SW9",
+            "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+            "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+            "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+            "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+            "page_or_paragraph": "p3–3",
+            "first": 3,
+            "last": 3,
+            "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n\n\n\n                      Графический пример медвежьего OB\n\n\n\n\n                      Как использовать OB в торговле?\n\n                      В 90% случаев мы работаем исключительно от первого теста OB, только в\n                      некоторых случаях можно рассматривать повторный вход от OB, дожидаясь\n                      реакции на младшем ТФ.\n\n                      Очень важно! OB должен находиться внутри структурного импульса и работать\n                      с ним необходимо по “тренду”.\n\n                      Первый вариант\n\n                             Выделяем диапазон OB.\n                             Выставляем лимитный ордер на границу диапазона. Для бычьего OB -\n                             верхняя граница, для медвежьего OB - нижняя. Также можно выставлять\n                             лимитные ордера внутри зоны ОВ.\n                             Стоп ставим за минимум/максимум OB. Либо за тень свечи, которая\n                             поглотила OB.\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     3/16",
+            "diagrams": [
+              {
+                "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+                "page": 3,
+                "locator": "PDF page 3 (text + all embedded figures)"
+              }
+            ],
+            "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+          }
+        ],
+        "applicability": "OB",
+        "material_ambiguity": true,
+        "remaining": "Which exceptions qualify unresolved",
+        "financial_run_allowed": false
+      }
+    ]
+  },
+  "profile_inactive": [
+    "OB_DIRECT",
+    "RANGE_AGGRESSIVE",
+    "PARTIAL_FTA",
+    "RANGE_BREAKOUT_REMAINDER",
+    "STB_EDGE",
+    "BREAKER_AGGRESSIVE_STOP",
+    "REPEAT_SAME_ZONE"
+  ],
+  "outcome_comparison": false
+}

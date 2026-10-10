@@ -1,0 +1,18 @@
+{
+  "EXACT_ORIGINAL_IDENTIFIABLE": false,
+  "exact_original_verdict": "NOT_IDENTIFIABLE",
+  "EXECUTABLE_PROFILE_IDENTIFIABLE": true,
+  "identifiability_scope": "Deterministic conditional causal-evidence admission + price plan + ordered-event lifecycle. Not an identifiable automatic qualitative OHLC detector or exact historical original.",
+  "source_faithful_executable_profile_frozen_before_outcome": true,
+  "blocking_profile_choice_ambiguities": [],
+  "remaining_evidence_limits": [
+    "No unique automatic source algorithm for meaningful liquidity/smooth approach/whole impulse/range clarity/structural endpoints.",
+    "Without explicit causal source-validated evidence these cases WAIT; no inferred boolean annotations from the old engine.",
+    "Canonical POI/context/formation IDs and complete contextual inventory require a source-faithful adapter; no historical performance validation done.",
+    "OHLC simultaneous event order unresolved: WAIT_INTRABAR_ORDER; no exchange fill realism claimed."
+  ],
+  "automatic_ohlc_qualitative_detector_identifiable": false,
+  "production_integration": false,
+  "profitability_backtest_started": false,
+  "trade_entry_allowed": false
+}

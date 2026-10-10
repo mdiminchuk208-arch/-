@@ -1,0 +1,10 @@
+{
+  "raw_exit_code": 2,
+  "raw_findings": 429,
+  "source_request_CRLF_preserved": true,
+  "uploaded_request_bytes_identical": true,
+  "request_sha256": "3bfbb31bbd15a4078faa9225f10a76a4e2fd1999ffc948f45435e4f6eb2de871",
+  "code_generated_docs_scoped_exit_code": 0,
+  "only_excluded_path": "data/source_materials/original_strategy_spec_v1_1_2026_10_11/user_request.txt",
+  "raw_log_sha256": "5b8d4bcde889fc4b3149f2e2789f6e5aa6389f31637e389335c349d2a0c67295"
+}

@@ -1,0 +1,430 @@
+Продолжай Crypto Bot от frozen commit:
+
+`37cca859f700dc11e5741b964338e24d08f7a10f`
+
+Ветка:
+`medium-term-source-research`
+
+НЕ переписывать и НЕ изменять frozen `ORIGINAL_STRATEGY_SPEC_v1`.
+Его verdict `NOT_IDENTIFIABLE` должен сохраниться навсегда как audit evidence.
+
+Создать НОВУЮ версию:
+
+`ORIGINAL_STRATEGY_SPEC_v1.1`
+и
+`ORIGINAL_STRATEGY_EXECUTABLE_PROFILE_v1`
+
+Это не новая оптимизированная стратегия.
+
+Это deterministic executable resolution шести unresolved групп, принятый ДО любого profitability backtest.
+
+НЕ запускать financial backtest до полного freeze v1.1.
+НЕ смотреть P&L при реализации решений.
+`trade_entry_allowed=false`.
+LIVE/private API запрещены.
+
+==================================================
+RESOLUTION 1 — EXIT
+==================================================
+
+NON-RANGE:
+
+Использовать:
+
+`FULL_CONTEXTUAL_FTA_EXIT`
+
+100% позиции закрывается на первой causal contextual FTA.
+
+Не использовать partial FTA в executable profile v1.
+
+Причина:
+source разрешает full и partial, но partial не задаёт fraction/remainder lifecycle.
+Full FTA требует меньше новых предположений.
+
+FTA:
+
+не ограничивать только H4/D1.
+
+FTA = ближайшая уже известная causal opposing POI в направлении сделки среди source-valid contextual POI.
+
+Выбирать первую по цене относительно entry.
+
+Не использовать future POI.
+
+RANGE:
+
+сохранить source rule:
+
+80% фиксируется внутри range у source-defined boundary/FTA.
+
+Optional 20% breakout remainder В EXECUTABLE v1 НЕ АКТИВИРОВАТЬ, потому что полный lifecycle остатка source не задаёт.
+
+То есть executable profile закрывает оставшиеся 20% в той же source exit zone.
+
+Это должно быть явно помечено как:
+
+`TECHNICAL_RESOLUTION_OPTIONAL_REMAINDER_DISABLED`
+
+Canonical 40/30/30 НЕ является Original exit.
+
+==================================================
+RESOLUTION 2 — STOP
+==================================================
+
+Original executable profile:
+
+`FIXED_INITIAL_PROTECTIVE_STOP`
+
+Stop после открытия НЕ переносится.
+
+TP1→BE НЕ использовать внутри Original.
+
+Cost-adjusted BE сохраняется только как отдельный `PROJECT_POLICY`.
+
+Branch stops:
+
+OB:
+stop за source OB extreme.
+
+Breaker:
+использовать conservative stop за raid/impulse extreme.
+
+SFP:
+ATR(14) от SFP pattern extreme.
+
+ATR считать причинно по 14 завершённым bars pattern timeframe.
+
+Не использовать future ATR.
+
+Дополнительный arbitrary percentage buffer не добавлять.
+
+STB/BTS:
+structural stop за source-defining manipulation/raid extreme.
+
+Range:
+за source-defining deviation/structural invalidation extreme.
+
+Если source-defined extreme невозможно однозначно определить:
+`WAIT_UNRESOLVED_STOP_GEOMETRY`
+и entry запрещён.
+
+SFP manual body invalidation сохраняется отдельно:
+close при source-defined candle close за pattern extreme.
+
+==================================================
+RESOLUTION 3 — ENTRY / BRANCH
+==================================================
+
+Использовать conservative confirmed path там, где source его явно описывает.
+
+OB:
+HTF/source OB
+→ reaction
+→ lower TF
+→ BOS
+→ new POI
+→ entry on new POI.
+
+Direct OB entry оставить в registry как source-permitted alternative,
+но НЕ активировать в executable profile v1.
+
+SFP:
+completed SFP
+→ lower TF
+→ BOS
+→ source-valid entry search.
+
+Сам SFP не является автоматическим market entry.
+
+Range:
+использовать conservative reclaim/return/retest path.
+
+Aggressive deviation entry оставить source-permitted, но inactive in executable v1.
+
+STB/BTS:
+использовать 0.5 source entry.
+
+Edge entry оставить source-permitted inactive alternative.
+
+Breaker:
+source-valid breaker confirmation + conservative stop.
+
+MULTIPLE BRANCHES:
+
+Не создавать несколько trades из одного causal physical idea.
+
+Если одна direction/context/POI idea удовлетворяет нескольким branch:
+- первая полностью source-valid causal branch создаёт active physical idea;
+- остальные branch сохраняются как confluence/provenance;
+- duplicate position запрещён.
+
+Если source-valid branches materially конфликтуют:
+- direction;
+- entry plan;
+- invalidation;
+- target;
+
+не выбирать победителя.
+
+Статус:
+`WAIT_BRANCH_CONFLICT`
+
+Никакого fitted branch priority.
+
+После закрытия/invalidation новый trade возможен только при новом causal setup identity.
+
+==================================================
+RESOLUTION 4 — TIMEFRAMES
+==================================================
+
+Executable medium-term role model:
+
+D1:
+global market context.
+
+H4:
+higher/local structure, contextual POI, liquidity and possible setup context.
+
+H1:
+PRIMARY medium-term analysis/setup timeframe.
+
+M15:
+refinement/confirmation/trigger timeframe;
+может быть source-valid setup timeframe там, где branch rules это допускают.
+
+КРИТИЧЕСКИ:
+
+НЕ создавать mandatory ladder:
+
+`D1 PASS AND H4 PASS AND H1 OWNER AND M15 PASS`.
+
+D1/H4 context не является universal formal admission object.
+
+No `H1/H4 owner setup` universal gate.
+
+Branch-specific source rules решают, нужен ли higher context.
+
+SFP:
+source-valid on any TF;
+H1+ preference сохраняется как preference, не prohibition.
+
+Для executable medium-term scan primary universe:
+M15, H1, H4, D1.
+
+Conservative OB:
+source HTF bounds и lower-TF refinement bounds должны соблюдаться.
+В рамках доступного executable universe lower refinement = M15.
+
+Не добавлять M5/M1 в этот medium-term v1.1 backtest без отдельного заранее зафиксированного profile.
+
+MULTIPLE CONTEXT:
+
+не выбирать fixed H4/D1 owner.
+
+Для FTA использовать nearest causal opposing contextual POI.
+
+При конфликте trend разных TF применять только branch-specific source direction rules.
+Не reject только потому, что D1/H4/H1 не направлены одинаково.
+
+==================================================
+RESOLUTION 5 — LIQUIDITY / QUALITATIVE GEOMETRY
+==================================================
+
+Liquidity classifier states:
+
+`ADVERSE`
+`TARGET_OR_FUEL`
+`NEUTRAL`
+`UNKNOWN`
+
+ADVERSE:
+если source-defined contextual adverse liquidity доказана →
+`WAIT_SWEEP`.
+
+Entry запрещён.
+
+TARGET_OR_FUEL:
+использовать как target/FTA/context.
+Не считать automatic blocker.
+
+После sweep:
+полностью пересчитать актуальность setup.
+Не создавать automatic entry.
+
+UNKNOWN:
+НЕ превращать в PASS.
+
+Статус:
+`WAIT_UNRESOLVED_LIQUIDITY_CONTEXT`
+
+Старые 751 adverse flags НЕ использовать как blanket filter.
+
+Не удалять 751 trades и 446 losses по старой интерпретации.
+
+Qualitative concepts:
+- meaningful liquidity;
+- EQH/EQL tilt;
+- smooth approach;
+- whole impulse;
+- range clarity;
+- structural endpoints
+
+не получают скрытых numeric thresholds.
+
+Любая необходимая machine quantization:
+- отдельно зарегистрировать;
+- category=`TECHNICAL_NORMALIZATION`;
+- объяснить rationale;
+- зарегистрировать ДО financial backtest;
+- не называть source rule.
+
+Если понятие нельзя формализовать без materially arbitrary threshold:
+WAIT/UNKNOWN, а не silent PASS.
+
+==================================================
+RESOLUTION 6 — RE-ENTRY
+==================================================
+
+Executable v1:
+
+`FIRST_TEST_ONLY`
+
+Для одного OB/POI повторный entry после использования зоны запрещён.
+
+Source phrase «в некоторых случаях» не превращать в random 10% gate.
+
+Repeat entry разрешается только если существует:
+
+- новый causal setup;
+- новый formation/confirmation;
+- новый source-valid POI/identity;
+- полная повторная validation.
+
+Это считается NEW SETUP, не re-use старого OB.
+
+Не добавлять time cooldown.
+Не добавлять max retries по числу.
+Identity/evidence решают eligibility.
+
+==================================================
+SOURCE / PROJECT SEPARATION
+==================================================
+
+Сохранить архитектуру:
+
+SOURCE STRATEGY
+→ PROJECT ADMISSION
+→ RISK ENGINE
+→ POSITION MANAGEMENT
+→ EXECUTION
+
+Original executable profile заканчивается на source ALLOW + source entry/SL/FTA lifecycle.
+
+Следующие вещи НЕ смешивать с Original:
+
+- Anti-Scalp ratio3;
+- total risk6%;
+- daily guard;
+- correlation;
+- leverage;
+- 40/30/30;
+- cost-adjusted BE;
+- exchange safety.
+
+Это PROJECT_POLICY overlays.
+
+==================================================
+VERSIONING
+==================================================
+
+НЕ изменять frozen v1.
+
+Создать новый namespace:
+
+`docs/original_strategy_spec_v1_1/`
+
+Минимум:
+
+- `ORIGINAL_STRATEGY_SPEC_v1_1.md`
+- `ORIGINAL_STRATEGY_EXECUTABLE_PROFILE_v1.md`
+- updated executable decision tree MD/JSON;
+- updated registries;
+- `USER_RESOLUTION_DECISIONS.md`;
+- source-vs-resolution matrix;
+- conflict registry;
+- technical normalization registry;
+- source fidelity tests;
+- freeze manifest.
+
+Каждое из шести решений отметить:
+
+`USER_RESOLUTION_PRE_BACKTEST`
+
+или
+`TECHNICAL_NORMALIZATION_PRE_BACKTEST`
+
+но НЕ `SOURCE_RULE`, если source сам не выбирает вариант.
+
+==================================================
+IDENTIFIABILITY TARGET
+==================================================
+
+После этих решений verdict должен быть пересчитан.
+
+Если все material branch/entry/SL/exit/TF/liquidity/re-entry paths стали deterministic:
+
+`EXECUTABLE_PROFILE_IDENTIFIABLE = TRUE`
+
+Это НЕ означает:
+
+`EXACT_ORIGINAL_IDENTIFIABLE = TRUE`.
+
+Exact historical original может навсегда остаться NOT_IDENTIFIABLE.
+
+Правильная формулировка:
+
+`Source-faithful executable profile frozen before outcome`.
+
+==================================================
+QA BEFORE FREEZE
+==================================================
+
+Обязательно:
+
+- all previous tests;
+- source fidelity tests;
+- no-lookahead;
+- completed candles;
+- known_at;
+- prefix/future mutation;
+- deterministic replay;
+- BACKTEST/SHADOW parity contracts;
+- no future holding-time/P&L inputs;
+- v1 hashes unchanged;
+- audit c2d1 unchanged;
+- baseline 19404ec unchanged.
+
+НЕ запускать profitability backtest.
+
+После PASS:
+
+1. commit;
+2. SHA256 manifest;
+3. push branch;
+4. вернуть commit hash;
+5. `git diff --stat`;
+6. QA counts;
+7. `EXECUTABLE_PROFILE_IDENTIFIABLE TRUE/FALSE`;
+8. список любых оставшихся blocking ambiguities.
+
+==================================================
+FINAL STOP
+==================================================
+
+После freeze ОСТАНОВИТЬСЯ.
+
+Не запускать financial backtest в этом же этапе.
+
+Сначала вернуть мне frozen v1.1 commit и QA.
+
+Только отдельной следующей командой будет разрешён первый финансовый backtest этого executable profile.

@@ -1,0 +1,7 @@
+TF,minutes,role,scan,universal_gate
+M15,15,refinement_and_branch_supported_setup,true,false
+H1,60,primary_medium_term,true,false
+H4,240,local_structure_context_POI,true,false
+D1,1440,global_context,true,false
+M1,1,source_permitted_other_profile,false,false
+M5,5,source_permitted_other_profile,false,false

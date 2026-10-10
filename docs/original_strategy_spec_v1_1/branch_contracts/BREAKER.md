@@ -1,0 +1,7 @@
+# BREAKER executable contract
+
+Status: ACTIVE_CAUSAL_EVIDENCE_CONTRACT. See branch_contracts.json for preserved11 source stages/citations.
+
+Entry: Source new/retest POI proximal edge. Stop: U2. Target: Nearest opposing contextual FTA100%.
+
+No independent component trade is invented. U1–U6 are user decisions, not SOURCE_RULE.

@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "parent": {
+    "frozen_commit": "37cca859f700dc11e5741b964338e24d08f7a10f",
+    "v1_manifest_sha256": "db8bdb8d800a48c75ec3884a1da1cece7f47da4db8cc561d12e46c8d0f168aec",
+    "v1_artifacts": 55,
+    "verification": "VERIFIED_RESUME ORIGINAL_STRATEGY_SPEC_v1 55 artifacts; immutable audit+baseline PASS; NOT_IDENTIFIABLE",
+    "frozen_parent_additions": 58,
+    "status": "PASS"
+  },
+  "source_rules": 53,
+  "inherited_rules": 84,
+  "user_resolutions": 6,
+  "new_technical_normalizations": 10,
+  "active_branches": 6,
+  "source_nodes": 37,
+  "synthetic_long_short_contracts": 12,
+  "full_tests": 661,
+  "profile_tests": 50,
+  "source_citation_consistency": "PASS",
+  "v1_audit_baseline_immutability": "PASS",
+  "EXACT_ORIGINAL_IDENTIFIABLE": false,
+  "EXECUTABLE_PROFILE_IDENTIFIABLE": true,
+  "identifiability_scope": "Deterministic conditional causal-evidence admission + price plan + ordered-event lifecycle. Not an identifiable automatic qualitative OHLC detector or exact historical original.",
+  "financial_backtest_started": false,
+  "trade_entry_allowed": false
+}

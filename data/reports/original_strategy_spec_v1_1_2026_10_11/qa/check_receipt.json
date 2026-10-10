@@ -1,0 +1,36 @@
+{
+  "checks": [
+    {
+      "name": "full_unittest",
+      "exit_code": 0,
+      "log": "data/reports/original_strategy_spec_v1_1_2026_10_11/qa/full_unittest.log",
+      "sha256": "8f0eee26c3eee166b8a5b122678adb4de79803a96ca6f6288a92d192576e35dc"
+    },
+    {
+      "name": "profile_unittest",
+      "exit_code": 0,
+      "log": "data/reports/original_strategy_spec_v1_1_2026_10_11/qa/profile_unittest.log",
+      "sha256": "fac71c5834570ef0eb78453a6ae0ad68bf26fc1acc2194c622f62166b353791c"
+    },
+    {
+      "name": "ruff",
+      "exit_code": 0,
+      "log": "data/reports/original_strategy_spec_v1_1_2026_10_11/qa/ruff.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "name": "mypy",
+      "exit_code": 0,
+      "log": "data/reports/original_strategy_spec_v1_1_2026_10_11/qa/mypy.log",
+      "sha256": "1495598f2b8e6a09df4f1631545361d6c6e3e3204e506255935ef84876641cc6"
+    },
+    {
+      "name": "compile",
+      "exit_code": 0,
+      "log": "data/reports/original_strategy_spec_v1_1_2026_10_11/qa/compile.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "financial_backtest_started": false,
+  "production_changes": false
+}

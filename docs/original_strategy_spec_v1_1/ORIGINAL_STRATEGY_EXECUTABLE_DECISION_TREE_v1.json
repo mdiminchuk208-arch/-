@@ -1,0 +1,2264 @@
+{
+  "version": "1.1",
+  "active_branches": [
+    "SFP",
+    "OB_CONSERVATIVE",
+    "BREAKER",
+    "STB_BTS",
+    "RANGE_CONSERVATIVE",
+    "RANGE_RETURN_CHOCH"
+  ],
+  "source_nodes": [
+    {
+      "node_id": "SFP:0",
+      "branch_id": "SFP",
+      "stage": "context",
+      "rule_id": "S_STRUCTURE",
+      "source_citation": [
+        {
+          "source_id": "SW5",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+          "source_sha256": "be8e14fbe03b0effbf4496eac104d30849e37e7f3db2fb92d4db1f942ace55ba",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+          "text_sha256": "5c655505788c181a808940863814a68d979a85cec0c20dcb3766cdf51075e656",
+          "page_or_paragraph": "p2–3",
+          "first": 2,
+          "last": 3,
+          "literal_passage": "12/02/2023, 21:09                                  https://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced\n\n\n\n\n                      2. Структурные точки (swing)\n                      Swing - структурная точка, в которой происходит разворот цены.\n\n                      Swing High - более высокая структурная точка. Представляет из себя три\n                      последовательные свечи, две крайние из которых имеют более низкие\n                      максимумы, чем центральная, формирующая более высокий максимум.\n\n                      Swing Low - более низкая структурная точка. Представляет из себя три\n                      последовательные свечи, две крайние из которых имеют более высокие\n                      минимумы, чем центральная, формирующая более низкий минимум.\n\n\n\n\n                      В зависимости от выбранного таймфрейма, свинги могут выглядеть по-разному.\n                      Очень часто трейдеры отмечают свинги там, где для выбранного таймфрейма их\n                      нет. Важно, чтобы это была последовательность свечей, как написано выше, а не\n                      просто пик.\n\n                      Опытные трейдеры могут себе позволить раскладывать структуру нескольких\n                      таймфреймов на одном, но новичкам так делать не стоит. Для грамотного\n                      построения нужно использовать различные таймфреймы. Это позволяет\n                      выработать дисциплину и видение ценового движения.\n\n\n\n\n                      3. Структура цены (market structure)\n                      Рыночная структура является основной концепта Smart Money и одним из самых\n                      важных инструментов, с которым мы будем работать. Если соединить тренд и\n                      структурные точки (swing), то мы получим рыночную структуру.\n\n                      Восходящая структура - движение, при котором ключевые максимумы (HH) и\n                      минимумы (HL) выше предыдущих.\n\n\n\n\nhttps://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced                                                      2/9\n12/02/2023, 21:09                                  https://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced\n\n                      Нисходящая структура - движение, при котором ключевые максимумы (LH) и\n                      минимумы (LL) ниже предыдущих.\n\n                      Схематическое изображение восходящей и нисходящей структуры:\n\n\n\n\n                      Графическое изображение восходящей структуры:\n\n\n\n\n                      Графическое изображение нисходящей структуры:\n\n\n\n\nhttps://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced                                                      3/9",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+              "page": 2,
+              "locator": "PDF page 2 (text + all embedded figures)"
+            },
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+              "page": 3,
+              "locator": "PDF page 3 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        },
+        {
+          "source_id": "19",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+          "page_or_paragraph": "word/document.xml:P0053–P0073",
+          "first": 53,
+          "last": 73,
+          "literal_passage": "Структура рынка - последовательность максимумов и минимумов. Позволяет определить тренд и дальнейшее движение цены инструмента на различных ТФ\nРынок имеет три основные фазы движения :\nБычий тренд\nМедвежий тренд\nБоковое движение/флэт/Ренж\nЧтобы понять структуру рынка, как выглядит слом в структуры, нужно разобрать какие конкретные признаки в каждой тенденции.\nКаждый последующий тренд и даже боковое движение без тренда имеют свои особенности.\nСтруктура отрабатывает на всех таймфреймах!\nВосходящая структура (Бычья)\nВосходящий тренд состоит из более высоких минимумов (HL) и более высоких максимумов (HH).\nБычья структура рынка.\nБычья структура на графике.\nСиними линиями обозначено как обновляется структура,\nОбразование нового хая и нового лоя.\nСтоит обращать внимание только на те хаи, которые обновляют предыдущие.\nНисходящая структура (Медвежья).\nНисходящий тренд - более низкие минимумы (LL) и более низкие максимумы (LH).\nМедьвежья структура.\nМедьвежья структура на графике.\nСтоит обратить внимание что новые максимумы и минимумы ниже предыдущих.\nНам интересны только те лои, которые обновляют предыдущие!",
+          "diagrams": [
+            {
+              "source_id": "19",
+              "member": "word/media/image1.jpg",
+              "sha256": "b89e88686d16805a81e3692c74ba394e21225a51ed9e67cfa602e2db01b3d3fd",
+              "after_paragraph": 62,
+              "next_paragraph": 63,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/b89e88686d16805a81e3692c74ba394e21225a51ed9e67cfa602e2db01b3d3fd.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image2.jpg",
+              "sha256": "e1c69cf3cabb4725bd76f0e95e75273fabb259290c4d37cf72402cdd4ff7e99c",
+              "after_paragraph": 63,
+              "next_paragraph": 64,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/e1c69cf3cabb4725bd76f0e95e75273fabb259290c4d37cf72402cdd4ff7e99c.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image3.jpg",
+              "sha256": "72a90bbb4aa0b4dbdce69dd3db031eaa0b818e5d3057f99a70984229c94a61a5",
+              "after_paragraph": 69,
+              "next_paragraph": 70,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/72a90bbb4aa0b4dbdce69dd3db031eaa0b818e5d3057f99a70984229c94a61a5.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image4.jpg",
+              "sha256": "9c4b808f6ad20a62a0bd0fd0dd7a1236142ef66037b6b45175cd9bf2e79044bf",
+              "after_paragraph": 70,
+              "next_paragraph": 71,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/9c4b808f6ad20a62a0bd0fd0dd7a1236142ef66037b6b45175cd9bf2e79044bf.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "market_context"
+    },
+    {
+      "node_id": "SFP:1",
+      "branch_id": "SFP",
+      "stage": "context",
+      "rule_id": "S_LIQUIDITY_CONTEXT",
+      "source_citation": [
+        {
+          "source_id": "14",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]6. Ликвидность.docx",
+          "source_sha256": "8587a15f68f4214c27a7bcd66ae85058571ed95369bc96f32d41bf3ef4a35178",
+          "text": "data/source_materials/cryptology_2026_10_09/14.clean.txt",
+          "text_sha256": "be369cab60dd4b2b804e2d7baf6c6e2352d33935223462fee24915a68400de9e",
+          "page_or_paragraph": "word/document.xml:P0113–P0120",
+          "first": 113,
+          "last": 120,
+          "literal_passage": "Как ликвидность используется в торговле?\nЛиквидность не является точкой входа в позицию (только при продвинутой\nработе, которая рассматривается в пакете “Advanced” и “Pro”).\nМы никогда не знаем, послужит ли ликвидность “топливом” или обратными\nзаявками для набора позиции.\nМы не можем утверждать, за какой именно ликвидностью пойдет цена.\nМы будем использовать ликвидность как цель трейда, в которой позиция будет\nфиксироваться.",
+          "diagrams": [
+            {
+              "source_id": "14",
+              "member": "word/media/image9.jpg",
+              "sha256": "9ce1fe30fadf5d8fdec5bad051f4740566df5cc060655f4ab5a179eec4ced5fe",
+              "after_paragraph": 120,
+              "next_paragraph": 121,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/9ce1fe30fadf5d8fdec5bad051f4740566df5cc060655f4ab5a179eec4ced5fe.txt"
+            },
+            {
+              "source_id": "14",
+              "member": "word/media/image10.jpg",
+              "sha256": "981814945630bfbbda961523b0b3b7201cdb255b0c6d0380ff3f1c53421bbffa",
+              "after_paragraph": 120,
+              "next_paragraph": 121,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/981814945630bfbbda961523b0b3b7201cdb255b0c6d0380ff3f1c53421bbffa.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        },
+        {
+          "source_id": "19",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+          "page_or_paragraph": "word/document.xml:P0117–P0121",
+          "first": 117,
+          "last": 121,
+          "literal_passage": "LIQUIDITY(ликвидность - стопы игроков)\nЛиквидность выступает как цель вашего трейда\nЛиквидность-это инструменты Тех Анализа, которыми мы должны сманипулировать\nEqual lows/equal highs(одинаковые хаи или лои)\nTrendline liquidity(трендовая ликвидность)",
+          "diagrams": [
+            {
+              "source_id": "19",
+              "member": "word/media/image17.jpg",
+              "sha256": "a8c09fb5da019793b8600dff2a056a6124601a0094a19c5f82cb62724d2b6c4e",
+              "after_paragraph": 116,
+              "next_paragraph": 117,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/a8c09fb5da019793b8600dff2a056a6124601a0094a19c5f82cb62724d2b6c4e.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image18.jpg",
+              "sha256": "174ba866f4b37de25264eedeed18b251c3954b04ac3b825b7a39253bf9a5cc6f",
+              "after_paragraph": 116,
+              "next_paragraph": 117,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/174ba866f4b37de25264eedeed18b251c3954b04ac3b825b7a39253bf9a5cc6f.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image19.jpg",
+              "sha256": "6f9d5563da2857954e14bf989484fe6d2d51d409951b7eaa3e3dfbf889ad82a2",
+              "after_paragraph": 121,
+              "next_paragraph": 122,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/6f9d5563da2857954e14bf989484fe6d2d51d409951b7eaa3e3dfbf889ad82a2.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image20.jpg",
+              "sha256": "4931d9ea03e48c73d0f37aeee9edcf22e110b4eee4586fd86c258f5f8078d5cd",
+              "after_paragraph": 121,
+              "next_paragraph": 122,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/4931d9ea03e48c73d0f37aeee9edcf22e110b4eee4586fd86c258f5f8078d5cd.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "liquidity_context"
+    },
+    {
+      "node_id": "SFP:2",
+      "branch_id": "SFP",
+      "stage": "formation",
+      "rule_id": "S_SFP_FORMATION",
+      "source_citation": [
+        {
+          "source_id": "16",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]8. Торговые инструменты (Base).docx",
+          "source_sha256": "88d40f60f201de5ffe7da6591b59c6fd88a1fd7f9c64c281a2f099d84f52ac23",
+          "text": "data/source_materials/cryptology_2026_10_09/16.clean.txt",
+          "text_sha256": "3dfe171ff6d8d9ac90b65683871be5db562c2d8248b5032a648f4ff2c476ac8f",
+          "page_or_paragraph": "word/document.xml:P0068–P0083",
+          "first": 68,
+          "last": 83,
+          "literal_passage": "Данный паттерн работает с ликвидностью. Его главная особенность в том, что\nон снимает внешнюю ликвидность со структурного максимума или минимума.\nПри этом тело свечи не закрывается выше уровня внешней ликвидности,\nобразуя новый свинг. Далее цена чаще всего двигается в противоположную\nсторону.\nSFP - паттерн, который образуется в моменте, предвидеть его формирование\nнельзя.\nНам необходимо дождаться следующих условий:\nСнятия внешней ликвидности с границы бокового движения (боковое\nдвижение будет разобрано в будущих темах) или со структурного свинга\nмаксимума или минимума\n).\nЗакрытия свечи (которая сняла ликвидность) ниже/выше уровня уровня\nснятой ликвидности.\nДождаться открытия следующей свечи, которая также должна открыться\nниже уровня снимаемой ликвидности.",
+          "diagrams": [],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        },
+        {
+          "source_id": "19",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+          "page_or_paragraph": "word/document.xml:P0157–P0162",
+          "first": 157,
+          "last": 162,
+          "literal_passage": "SFP pattern\nSwing failure pattern - разворотный паттерн , которий состоит из 3 свечей ( в оригинале ) , может быть 4 свеча в направлении движения паттерна , которая подтвердит направление.\nЦель паттерна - подобрать / активировать стоп приказы трейдеров над вершинами либо низами ( swing high/low ) , так-же верхом и низом бокового движения.\nТо есть - цена делает обманный мув и меняет направление на противоположное , не совершив закрепление телом - не происходит choch/bos.\nАктуальность на всех тайм-фреймах.\nОбязательно наличие контекста = точек либо зон которые будут сниматься.",
+          "diagrams": [
+            {
+              "source_id": "19",
+              "member": "word/media/image26.jpg",
+              "sha256": "080d37f6fa91d099247a7bdddc8955af25ee3a39dc0a1f8cc442992309754c17",
+              "after_paragraph": 155,
+              "next_paragraph": 156,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/080d37f6fa91d099247a7bdddc8955af25ee3a39dc0a1f8cc442992309754c17.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image27.jpg",
+              "sha256": "106a333c1872c3eee633c8ccd1f9eb173cce540b08a25bae8ebac5975a2b5eb6",
+              "after_paragraph": 162,
+              "next_paragraph": 163,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/106a333c1872c3eee633c8ccd1f9eb173cce540b08a25bae8ebac5975a2b5eb6.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image28.jpg",
+              "sha256": "1dc91d46f479024a5345b2293700773e22668e66c44f0d21294ef90b23702db6",
+              "after_paragraph": 162,
+              "next_paragraph": 163,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/1dc91d46f479024a5345b2293700773e22668e66c44f0d21294ef90b23702db6.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "sfp_geometry"
+    },
+    {
+      "node_id": "SFP:3",
+      "branch_id": "SFP",
+      "stage": "next_open",
+      "rule_id": "S_SFP_FORMATION",
+      "source_citation": [
+        {
+          "source_id": "16",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]8. Торговые инструменты (Base).docx",
+          "source_sha256": "88d40f60f201de5ffe7da6591b59c6fd88a1fd7f9c64c281a2f099d84f52ac23",
+          "text": "data/source_materials/cryptology_2026_10_09/16.clean.txt",
+          "text_sha256": "3dfe171ff6d8d9ac90b65683871be5db562c2d8248b5032a648f4ff2c476ac8f",
+          "page_or_paragraph": "word/document.xml:P0068–P0083",
+          "first": 68,
+          "last": 83,
+          "literal_passage": "Данный паттерн работает с ликвидностью. Его главная особенность в том, что\nон снимает внешнюю ликвидность со структурного максимума или минимума.\nПри этом тело свечи не закрывается выше уровня внешней ликвидности,\nобразуя новый свинг. Далее цена чаще всего двигается в противоположную\nсторону.\nSFP - паттерн, который образуется в моменте, предвидеть его формирование\nнельзя.\nНам необходимо дождаться следующих условий:\nСнятия внешней ликвидности с границы бокового движения (боковое\nдвижение будет разобрано в будущих темах) или со структурного свинга\nмаксимума или минимума\n).\nЗакрытия свечи (которая сняла ликвидность) ниже/выше уровня уровня\nснятой ликвидности.\nДождаться открытия следующей свечи, которая также должна открыться\nниже уровня снимаемой ликвидности.",
+          "diagrams": [],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        },
+        {
+          "source_id": "19",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+          "page_or_paragraph": "word/document.xml:P0157–P0162",
+          "first": 157,
+          "last": 162,
+          "literal_passage": "SFP pattern\nSwing failure pattern - разворотный паттерн , которий состоит из 3 свечей ( в оригинале ) , может быть 4 свеча в направлении движения паттерна , которая подтвердит направление.\nЦель паттерна - подобрать / активировать стоп приказы трейдеров над вершинами либо низами ( swing high/low ) , так-же верхом и низом бокового движения.\nТо есть - цена делает обманный мув и меняет направление на противоположное , не совершив закрепление телом - не происходит choch/bos.\nАктуальность на всех тайм-фреймах.\nОбязательно наличие контекста = точек либо зон которые будут сниматься.",
+          "diagrams": [
+            {
+              "source_id": "19",
+              "member": "word/media/image26.jpg",
+              "sha256": "080d37f6fa91d099247a7bdddc8955af25ee3a39dc0a1f8cc442992309754c17",
+              "after_paragraph": 155,
+              "next_paragraph": 156,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/080d37f6fa91d099247a7bdddc8955af25ee3a39dc0a1f8cc442992309754c17.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image27.jpg",
+              "sha256": "106a333c1872c3eee633c8ccd1f9eb173cce540b08a25bae8ebac5975a2b5eb6",
+              "after_paragraph": 162,
+              "next_paragraph": 163,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/106a333c1872c3eee633c8ccd1f9eb173cce540b08a25bae8ebac5975a2b5eb6.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image28.jpg",
+              "sha256": "1dc91d46f479024a5345b2293700773e22668e66c44f0d21294ef90b23702db6",
+              "after_paragraph": 162,
+              "next_paragraph": 163,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/1dc91d46f479024a5345b2293700773e22668e66c44f0d21294ef90b23702db6.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "sfp_next_open"
+    },
+    {
+      "node_id": "SFP:4",
+      "branch_id": "SFP",
+      "stage": "tf",
+      "rule_id": "S_SFP_TF",
+      "source_citation": [
+        {
+          "source_id": "16",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]8. Торговые инструменты (Base).docx",
+          "source_sha256": "88d40f60f201de5ffe7da6591b59c6fd88a1fd7f9c64c281a2f099d84f52ac23",
+          "text": "data/source_materials/cryptology_2026_10_09/16.clean.txt",
+          "text_sha256": "3dfe171ff6d8d9ac90b65683871be5db562c2d8248b5032a648f4ff2c476ac8f",
+          "page_or_paragraph": "word/document.xml:P0102–P0106",
+          "first": 102,
+          "last": 106,
+          "literal_passage": "SFP формируется на структурных максимумах или минимумах любого\nтаймфрейма, однако наиболее предпочтительными для его поиска являются\nвременные промежутки, начиная с H1 и выше. Возникает он в результате\nнеудачной попытки участников рынка сформировать новый структурный\nмаксимум или минимум.",
+          "diagrams": [],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        },
+        {
+          "source_id": "19",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+          "page_or_paragraph": "word/document.xml:P0161–P0162",
+          "first": 161,
+          "last": 162,
+          "literal_passage": "Актуальность на всех тайм-фреймах.\nОбязательно наличие контекста = точек либо зон которые будут сниматься.",
+          "diagrams": [
+            {
+              "source_id": "19",
+              "member": "word/media/image27.jpg",
+              "sha256": "106a333c1872c3eee633c8ccd1f9eb173cce540b08a25bae8ebac5975a2b5eb6",
+              "after_paragraph": 162,
+              "next_paragraph": 163,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/106a333c1872c3eee633c8ccd1f9eb173cce540b08a25bae8ebac5975a2b5eb6.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image28.jpg",
+              "sha256": "1dc91d46f479024a5345b2293700773e22668e66c44f0d21294ef90b23702db6",
+              "after_paragraph": 162,
+              "next_paragraph": 163,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/1dc91d46f479024a5345b2293700773e22668e66c44f0d21294ef90b23702db6.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "sfp_tf"
+    },
+    {
+      "node_id": "SFP:8",
+      "branch_id": "SFP",
+      "stage": "sl_liquidity",
+      "rule_id": "S_SL_OFF_POOL",
+      "source_citation": [
+        {
+          "source_id": "SW11",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW11.pdf",
+          "source_sha256": "ffc65d95bbc1e22186cbddd061befb93e8143f3a5075c985165ecfe7b054f681",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+          "text_sha256": "e913f457f2711b756b9df901563848ec97b8fdb6e4c2e7e4c4890743e80e9b6f",
+          "page_or_paragraph": "p8–8",
+          "first": 8,
+          "last": 8,
+          "literal_passage": "7. Выводы\n12/02/2023, 21:48                                           https://cryptology.courses/labs/risk-menedzhmentrizik-menedzhment\n\n\n\n\n                          1. Не покупайте и не продавайте актив, пока цена не окажется в конкретной\n                             точке согласно ТС.\n                          2. Не открывайте позицию, если не знаете, где будет стоп-лосс.\n                          3. Не пытайтесь прогнуть рынок под себя, ставя стоп-лосс там, где удобно\n                             именно вам. Рынку не интересен ваш интерес, и только вы сами можете\n                             позаботиться о себе.\n                          4. Не передвигайте стоп-лосс. Это действие означает лишь одно: сделка не\n                             была рассчитана, и убыток не был принят перед открытием сделки. Такое\n                             поведение быстро приведет к убыткам.\n                          5. Не ставить стоп-лосс на уровне скопления ликвидности.\n                          6. Уважайте риски больше, чем профит. Научитесь фиксировать убыток\n                             ТОЛЬКО в рамках торговой системы, и профит проявит себя как побочный\n                             эффект этого навыка.\n                          7. НИКОГДА не инвестируйте ваши последние денежные средства.\n                             Инвестировать можно только свободные деньги — те, которые не\n                             понадобятся вам для жизнеобеспечения в ближайшее время.\n                          8. Не начинайте торговый путь с больших сумм. Работа с минимальным\n                             объемом и незначительными суммами денег даст вам четкое понимание\n                             того, как вы принимаете решения, как действуете, насколько вы\n                             дисциплинированны, насколько готовы следовать своим же правилам.\n                             Инвестируйте деньги, которые можете позволить себе вывести из личного\n                             или семейного бюджета без страха оказаться на мели. Трейдинг не\n                             азартная игра, а процесс, требующий знаний, умений и навыков. Важно\n                             освоить навык, протестировать торговую систему и сетапы на демо-счете\n                             или на маленьком реальном счете. Только потом, при положительной\n                             статистике, постепенно увеличивать депозит.\n                          9. Если вас беспокоит стоп-лосс, уменьшайте его до тех пор, пока не\n                             почувствуете себя спокойно.\n                        10. Имейте ввиду, что потерять деньги, которые вы системно зарабатывали в\n                             течение дней, месяцев или более длительного периода, можно за\n                             считанные секунды.\n\n                      Знание разрушает страх, а практика придает уверенности. Учитесь нести\n                      ответственность за свои решения, не винить в неудачах рынок.\n\n\n\n\nhttps://cryptology.courses/labs/risk-menedzhmentrizik-menedzhment                                                               8/8",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW11.pdf",
+              "page": 8,
+              "locator": "PDF page 8 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "sl_off_liquidity"
+    },
+    {
+      "node_id": "OB_CONSERVATIVE:0",
+      "branch_id": "OB_CONSERVATIVE",
+      "stage": "context",
+      "rule_id": "S_STRUCTURE",
+      "source_citation": [
+        {
+          "source_id": "SW5",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+          "source_sha256": "be8e14fbe03b0effbf4496eac104d30849e37e7f3db2fb92d4db1f942ace55ba",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+          "text_sha256": "5c655505788c181a808940863814a68d979a85cec0c20dcb3766cdf51075e656",
+          "page_or_paragraph": "p2–3",
+          "first": 2,
+          "last": 3,
+          "literal_passage": "12/02/2023, 21:09                                  https://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced\n\n\n\n\n                      2. Структурные точки (swing)\n                      Swing - структурная точка, в которой происходит разворот цены.\n\n                      Swing High - более высокая структурная точка. Представляет из себя три\n                      последовательные свечи, две крайние из которых имеют более низкие\n                      максимумы, чем центральная, формирующая более высокий максимум.\n\n                      Swing Low - более низкая структурная точка. Представляет из себя три\n                      последовательные свечи, две крайние из которых имеют более высокие\n                      минимумы, чем центральная, формирующая более низкий минимум.\n\n\n\n\n                      В зависимости от выбранного таймфрейма, свинги могут выглядеть по-разному.\n                      Очень часто трейдеры отмечают свинги там, где для выбранного таймфрейма их\n                      нет. Важно, чтобы это была последовательность свечей, как написано выше, а не\n                      просто пик.\n\n                      Опытные трейдеры могут себе позволить раскладывать структуру нескольких\n                      таймфреймов на одном, но новичкам так делать не стоит. Для грамотного\n                      построения нужно использовать различные таймфреймы. Это позволяет\n                      выработать дисциплину и видение ценового движения.\n\n\n\n\n                      3. Структура цены (market structure)\n                      Рыночная структура является основной концепта Smart Money и одним из самых\n                      важных инструментов, с которым мы будем работать. Если соединить тренд и\n                      структурные точки (swing), то мы получим рыночную структуру.\n\n                      Восходящая структура - движение, при котором ключевые максимумы (HH) и\n                      минимумы (HL) выше предыдущих.\n\n\n\n\nhttps://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced                                                      2/9\n12/02/2023, 21:09                                  https://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced\n\n                      Нисходящая структура - движение, при котором ключевые максимумы (LH) и\n                      минимумы (LL) ниже предыдущих.\n\n                      Схематическое изображение восходящей и нисходящей структуры:\n\n\n\n\n                      Графическое изображение восходящей структуры:\n\n\n\n\n                      Графическое изображение нисходящей структуры:\n\n\n\n\nhttps://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced                                                      3/9",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+              "page": 2,
+              "locator": "PDF page 2 (text + all embedded figures)"
+            },
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+              "page": 3,
+              "locator": "PDF page 3 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        },
+        {
+          "source_id": "19",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+          "page_or_paragraph": "word/document.xml:P0053–P0073",
+          "first": 53,
+          "last": 73,
+          "literal_passage": "Структура рынка - последовательность максимумов и минимумов. Позволяет определить тренд и дальнейшее движение цены инструмента на различных ТФ\nРынок имеет три основные фазы движения :\nБычий тренд\nМедвежий тренд\nБоковое движение/флэт/Ренж\nЧтобы понять структуру рынка, как выглядит слом в структуры, нужно разобрать какие конкретные признаки в каждой тенденции.\nКаждый последующий тренд и даже боковое движение без тренда имеют свои особенности.\nСтруктура отрабатывает на всех таймфреймах!\nВосходящая структура (Бычья)\nВосходящий тренд состоит из более высоких минимумов (HL) и более высоких максимумов (HH).\nБычья структура рынка.\nБычья структура на графике.\nСиними линиями обозначено как обновляется структура,\nОбразование нового хая и нового лоя.\nСтоит обращать внимание только на те хаи, которые обновляют предыдущие.\nНисходящая структура (Медвежья).\nНисходящий тренд - более низкие минимумы (LL) и более низкие максимумы (LH).\nМедьвежья структура.\nМедьвежья структура на графике.\nСтоит обратить внимание что новые максимумы и минимумы ниже предыдущих.\nНам интересны только те лои, которые обновляют предыдущие!",
+          "diagrams": [
+            {
+              "source_id": "19",
+              "member": "word/media/image1.jpg",
+              "sha256": "b89e88686d16805a81e3692c74ba394e21225a51ed9e67cfa602e2db01b3d3fd",
+              "after_paragraph": 62,
+              "next_paragraph": 63,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/b89e88686d16805a81e3692c74ba394e21225a51ed9e67cfa602e2db01b3d3fd.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image2.jpg",
+              "sha256": "e1c69cf3cabb4725bd76f0e95e75273fabb259290c4d37cf72402cdd4ff7e99c",
+              "after_paragraph": 63,
+              "next_paragraph": 64,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/e1c69cf3cabb4725bd76f0e95e75273fabb259290c4d37cf72402cdd4ff7e99c.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image3.jpg",
+              "sha256": "72a90bbb4aa0b4dbdce69dd3db031eaa0b818e5d3057f99a70984229c94a61a5",
+              "after_paragraph": 69,
+              "next_paragraph": 70,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/72a90bbb4aa0b4dbdce69dd3db031eaa0b818e5d3057f99a70984229c94a61a5.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image4.jpg",
+              "sha256": "9c4b808f6ad20a62a0bd0fd0dd7a1236142ef66037b6b45175cd9bf2e79044bf",
+              "after_paragraph": 70,
+              "next_paragraph": 71,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/9c4b808f6ad20a62a0bd0fd0dd7a1236142ef66037b6b45175cd9bf2e79044bf.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "market_context"
+    },
+    {
+      "node_id": "OB_CONSERVATIVE:1",
+      "branch_id": "OB_CONSERVATIVE",
+      "stage": "formation",
+      "rule_id": "S_OB_FORMATION",
+      "source_citation": [
+        {
+          "source_id": "SW9",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+          "page_or_paragraph": "p2–2",
+          "first": 2,
+          "last": 2,
+          "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n                      Order Block - это свечная формация, благодаря которой можно определить, где\n                      крупный игрок размещает свою позицию на покупку или продажу актива.\n\n                      Графически данный инструмент состоит из свечи, которая сняла ликвидность.\n                      После этой свечи образуется агрессивная импульсная свеча, которая\n                      перекрывает предыдущую свечу.\n\n                      Наиболее точным является сигнал, когда после поглощенной свечи образуется\n                      имбаланс.\n\n                      Важно, чтобы при формировании ордерблока было получено дополнительное\n                      подтверждение – слом структуры. То есть смена движения на\n                      противоположное.\n\n                      Формация обязательно должна находиться в зоне интереса старшего\n                      таймфрейма. Если это условие не выполнено, то с наибольшей вероятностью\n                      цена пойдет искать другой ордерблок с более сильными условиями\n                      формирования.\n\n                      Схематический пример бычьего и медвежьего OB\n\n\n\n\n                      Для работы с OB выделяем всю свечу, которая была поглощена вместе с\n                      тенями. Для удобства можно использовать инструмент “Прямоугольник”.\n\n                      Вы можете использовать OB на любых ТФ, главное, чтобы были соблюдены все\n                      вышеупомянутые условия.\n\n                      Графический пример бычьего OB\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     2/16",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+              "page": 2,
+              "locator": "PDF page 2 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "ob_formation"
+    },
+    {
+      "node_id": "OB_CONSERVATIVE:2",
+      "branch_id": "OB_CONSERVATIVE",
+      "stage": "higher_poi",
+      "rule_id": "S_OB_FORMATION",
+      "source_citation": [
+        {
+          "source_id": "SW9",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+          "page_or_paragraph": "p2–2",
+          "first": 2,
+          "last": 2,
+          "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n                      Order Block - это свечная формация, благодаря которой можно определить, где\n                      крупный игрок размещает свою позицию на покупку или продажу актива.\n\n                      Графически данный инструмент состоит из свечи, которая сняла ликвидность.\n                      После этой свечи образуется агрессивная импульсная свеча, которая\n                      перекрывает предыдущую свечу.\n\n                      Наиболее точным является сигнал, когда после поглощенной свечи образуется\n                      имбаланс.\n\n                      Важно, чтобы при формировании ордерблока было получено дополнительное\n                      подтверждение – слом структуры. То есть смена движения на\n                      противоположное.\n\n                      Формация обязательно должна находиться в зоне интереса старшего\n                      таймфрейма. Если это условие не выполнено, то с наибольшей вероятностью\n                      цена пойдет искать другой ордерблок с более сильными условиями\n                      формирования.\n\n                      Схематический пример бычьего и медвежьего OB\n\n\n\n\n                      Для работы с OB выделяем всю свечу, которая была поглощена вместе с\n                      тенями. Для удобства можно использовать инструмент “Прямоугольник”.\n\n                      Вы можете использовать OB на любых ТФ, главное, чтобы были соблюдены все\n                      вышеупомянутые условия.\n\n                      Графический пример бычьего OB\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     2/16",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+              "page": 2,
+              "locator": "PDF page 2 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "higher_poi"
+    },
+    {
+      "node_id": "OB_CONSERVATIVE:3",
+      "branch_id": "OB_CONSERVATIVE",
+      "stage": "trend",
+      "rule_id": "S_OB_TREND",
+      "source_citation": [
+        {
+          "source_id": "SW9",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+          "page_or_paragraph": "p3–3",
+          "first": 3,
+          "last": 3,
+          "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n\n\n\n                      Графический пример медвежьего OB\n\n\n\n\n                      Как использовать OB в торговле?\n\n                      В 90% случаев мы работаем исключительно от первого теста OB, только в\n                      некоторых случаях можно рассматривать повторный вход от OB, дожидаясь\n                      реакции на младшем ТФ.\n\n                      Очень важно! OB должен находиться внутри структурного импульса и работать\n                      с ним необходимо по “тренду”.\n\n                      Первый вариант\n\n                             Выделяем диапазон OB.\n                             Выставляем лимитный ордер на границу диапазона. Для бычьего OB -\n                             верхняя граница, для медвежьего OB - нижняя. Также можно выставлять\n                             лимитные ордера внутри зоны ОВ.\n                             Стоп ставим за минимум/максимум OB. Либо за тень свечи, которая\n                             поглотила OB.\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     3/16",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+              "page": 3,
+              "locator": "PDF page 3 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        },
+        {
+          "source_id": "SW9",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+          "page_or_paragraph": "p16–16",
+          "first": 16,
+          "last": 16,
+          "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n\n\n\n                      7. Выводы\n                      Ордерблок является хорошим фактором для входа, но должны быть соблюдены\n                      все необходимые условия. Вход в позицию должен осуществляться только по\n                      тренду. Импульсно пробитый ордерблок становится брейкером.\n\n                      FTA называют первой проблемной зоной, которой может быть любая POI со\n                      старшего ТФ. При открытии контртрендовой сделки, у зоны FTA мы производим\n                      частичную или полную фиксацию позиции.\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     16/16",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+              "page": 16,
+              "locator": "PDF page 16 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "trend_aligned"
+    },
+    {
+      "node_id": "OB_CONSERVATIVE:4",
+      "branch_id": "OB_CONSERVATIVE",
+      "stage": "tf",
+      "rule_id": "S_OB_CONS_TF",
+      "source_citation": [
+        {
+          "source_id": "SW9",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+          "page_or_paragraph": "p4–6",
+          "first": 4,
+          "last": 6,
+          "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n                      Примеры:\n\n\n\n\n                      Второй вариант\n\n                      Более сложный вариант, используется на OB образованных на ТФ 15M - 1D и т.д.\n\n                             Выделяем диапазон OB на старшем таймфрейме.\n                             Переключаемся на ТФ ниже (1-15М).\n                             Ожидаем плавный структурный подход цены в диапазон OB.\n                             После реакции мы ожидаем слом структуры и формировании POI (зоны\n                             интереса).\n\n                      Примеры:\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     4/16\n12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n\n\n\n                      Цена сломала 4Н структуру, отмечаем POI на 4Н ТФ.\n\n\n\n\n                      Цена пришла в POI 4Н, переключаемся на ТФ ниже. Мы ожидаем слом структуры\n                      на младшем таймфрейме и формирования POI.\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     5/16\n12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n\n\n\n                      Получили слом структуры на младшем таймфрейме и сформированное POI.\n                      Выставляем лимитный ордер на новую POI.\n\n\n\n\n                      Работая по второму варианту, вход не только более безопасен и консервативен,\n                      но также появляется возможность открытия сделки с крайне высоким RR.\n\n                      Очень часто начинающие трейдеры используют каждое поглощение в качестве\n                      OB, не обращая внимания на IMB, а также выделяют OB, который не находится в\n                      структурном импульсе или зоне ОТЕ (соблюдение зон Premium и Discount).\n\n                      Нарушение условий поиска Order Block.\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     6/16",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+              "page": 4,
+              "locator": "PDF page 4 (text + all embedded figures)"
+            },
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+              "page": 5,
+              "locator": "PDF page 5 (text + all embedded figures)"
+            },
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+              "page": 6,
+              "locator": "PDF page 6 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "conservative_tf"
+    },
+    {
+      "node_id": "OB_CONSERVATIVE:5",
+      "branch_id": "OB_CONSERVATIVE",
+      "stage": "approach",
+      "rule_id": "S_OB_APPROACH",
+      "source_citation": [
+        {
+          "source_id": "SW9",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+          "page_or_paragraph": "p4–4",
+          "first": 4,
+          "last": 4,
+          "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n                      Примеры:\n\n\n\n\n                      Второй вариант\n\n                      Более сложный вариант, используется на OB образованных на ТФ 15M - 1D и т.д.\n\n                             Выделяем диапазон OB на старшем таймфрейме.\n                             Переключаемся на ТФ ниже (1-15М).\n                             Ожидаем плавный структурный подход цены в диапазон OB.\n                             После реакции мы ожидаем слом структуры и формировании POI (зоны\n                             интереса).\n\n                      Примеры:\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     4/16",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+              "page": 4,
+              "locator": "PDF page 4 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "smooth_approach"
+    },
+    {
+      "node_id": "OB_CONSERVATIVE:6",
+      "branch_id": "OB_CONSERVATIVE",
+      "stage": "trigger",
+      "rule_id": "S_OB_CONS_TRIGGER",
+      "source_citation": [
+        {
+          "source_id": "SW9",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+          "page_or_paragraph": "p4–6",
+          "first": 4,
+          "last": 6,
+          "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n                      Примеры:\n\n\n\n\n                      Второй вариант\n\n                      Более сложный вариант, используется на OB образованных на ТФ 15M - 1D и т.д.\n\n                             Выделяем диапазон OB на старшем таймфрейме.\n                             Переключаемся на ТФ ниже (1-15М).\n                             Ожидаем плавный структурный подход цены в диапазон OB.\n                             После реакции мы ожидаем слом структуры и формировании POI (зоны\n                             интереса).\n\n                      Примеры:\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     4/16\n12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n\n\n\n                      Цена сломала 4Н структуру, отмечаем POI на 4Н ТФ.\n\n\n\n\n                      Цена пришла в POI 4Н, переключаемся на ТФ ниже. Мы ожидаем слом структуры\n                      на младшем таймфрейме и формирования POI.\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     5/16\n12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n\n\n\n                      Получили слом структуры на младшем таймфрейме и сформированное POI.\n                      Выставляем лимитный ордер на новую POI.\n\n\n\n\n                      Работая по второму варианту, вход не только более безопасен и консервативен,\n                      но также появляется возможность открытия сделки с крайне высоким RR.\n\n                      Очень часто начинающие трейдеры используют каждое поглощение в качестве\n                      OB, не обращая внимания на IMB, а также выделяют OB, который не находится в\n                      структурном импульсе или зоне ОТЕ (соблюдение зон Premium и Discount).\n\n                      Нарушение условий поиска Order Block.\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     6/16",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+              "page": 4,
+              "locator": "PDF page 4 (text + all embedded figures)"
+            },
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+              "page": 5,
+              "locator": "PDF page 5 (text + all embedded figures)"
+            },
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+              "page": 6,
+              "locator": "PDF page 6 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "reaction_bos_new_poi"
+    },
+    {
+      "node_id": "OB_CONSERVATIVE:11",
+      "branch_id": "OB_CONSERVATIVE",
+      "stage": "sl_liquidity",
+      "rule_id": "S_SL_OFF_POOL",
+      "source_citation": [
+        {
+          "source_id": "SW11",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW11.pdf",
+          "source_sha256": "ffc65d95bbc1e22186cbddd061befb93e8143f3a5075c985165ecfe7b054f681",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+          "text_sha256": "e913f457f2711b756b9df901563848ec97b8fdb6e4c2e7e4c4890743e80e9b6f",
+          "page_or_paragraph": "p8–8",
+          "first": 8,
+          "last": 8,
+          "literal_passage": "7. Выводы\n12/02/2023, 21:48                                           https://cryptology.courses/labs/risk-menedzhmentrizik-menedzhment\n\n\n\n\n                          1. Не покупайте и не продавайте актив, пока цена не окажется в конкретной\n                             точке согласно ТС.\n                          2. Не открывайте позицию, если не знаете, где будет стоп-лосс.\n                          3. Не пытайтесь прогнуть рынок под себя, ставя стоп-лосс там, где удобно\n                             именно вам. Рынку не интересен ваш интерес, и только вы сами можете\n                             позаботиться о себе.\n                          4. Не передвигайте стоп-лосс. Это действие означает лишь одно: сделка не\n                             была рассчитана, и убыток не был принят перед открытием сделки. Такое\n                             поведение быстро приведет к убыткам.\n                          5. Не ставить стоп-лосс на уровне скопления ликвидности.\n                          6. Уважайте риски больше, чем профит. Научитесь фиксировать убыток\n                             ТОЛЬКО в рамках торговой системы, и профит проявит себя как побочный\n                             эффект этого навыка.\n                          7. НИКОГДА не инвестируйте ваши последние денежные средства.\n                             Инвестировать можно только свободные деньги — те, которые не\n                             понадобятся вам для жизнеобеспечения в ближайшее время.\n                          8. Не начинайте торговый путь с больших сумм. Работа с минимальным\n                             объемом и незначительными суммами денег даст вам четкое понимание\n                             того, как вы принимаете решения, как действуете, насколько вы\n                             дисциплинированны, насколько готовы следовать своим же правилам.\n                             Инвестируйте деньги, которые можете позволить себе вывести из личного\n                             или семейного бюджета без страха оказаться на мели. Трейдинг не\n                             азартная игра, а процесс, требующий знаний, умений и навыков. Важно\n                             освоить навык, протестировать торговую систему и сетапы на демо-счете\n                             или на маленьком реальном счете. Только потом, при положительной\n                             статистике, постепенно увеличивать депозит.\n                          9. Если вас беспокоит стоп-лосс, уменьшайте его до тех пор, пока не\n                             почувствуете себя спокойно.\n                        10. Имейте ввиду, что потерять деньги, которые вы системно зарабатывали в\n                             течение дней, месяцев или более длительного периода, можно за\n                             считанные секунды.\n\n                      Знание разрушает страх, а практика придает уверенности. Учитесь нести\n                      ответственность за свои решения, не винить в неудачах рынок.\n\n\n\n\nhttps://cryptology.courses/labs/risk-menedzhmentrizik-menedzhment                                                               8/8",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW11.pdf",
+              "page": 8,
+              "locator": "PDF page 8 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "sl_off_liquidity"
+    },
+    {
+      "node_id": "BREAKER:0",
+      "branch_id": "BREAKER",
+      "stage": "context",
+      "rule_id": "S_STRUCTURE",
+      "source_citation": [
+        {
+          "source_id": "SW5",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+          "source_sha256": "be8e14fbe03b0effbf4496eac104d30849e37e7f3db2fb92d4db1f942ace55ba",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+          "text_sha256": "5c655505788c181a808940863814a68d979a85cec0c20dcb3766cdf51075e656",
+          "page_or_paragraph": "p2–3",
+          "first": 2,
+          "last": 3,
+          "literal_passage": "12/02/2023, 21:09                                  https://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced\n\n\n\n\n                      2. Структурные точки (swing)\n                      Swing - структурная точка, в которой происходит разворот цены.\n\n                      Swing High - более высокая структурная точка. Представляет из себя три\n                      последовательные свечи, две крайние из которых имеют более низкие\n                      максимумы, чем центральная, формирующая более высокий максимум.\n\n                      Swing Low - более низкая структурная точка. Представляет из себя три\n                      последовательные свечи, две крайние из которых имеют более высокие\n                      минимумы, чем центральная, формирующая более низкий минимум.\n\n\n\n\n                      В зависимости от выбранного таймфрейма, свинги могут выглядеть по-разному.\n                      Очень часто трейдеры отмечают свинги там, где для выбранного таймфрейма их\n                      нет. Важно, чтобы это была последовательность свечей, как написано выше, а не\n                      просто пик.\n\n                      Опытные трейдеры могут себе позволить раскладывать структуру нескольких\n                      таймфреймов на одном, но новичкам так делать не стоит. Для грамотного\n                      построения нужно использовать различные таймфреймы. Это позволяет\n                      выработать дисциплину и видение ценового движения.\n\n\n\n\n                      3. Структура цены (market structure)\n                      Рыночная структура является основной концепта Smart Money и одним из самых\n                      важных инструментов, с которым мы будем работать. Если соединить тренд и\n                      структурные точки (swing), то мы получим рыночную структуру.\n\n                      Восходящая структура - движение, при котором ключевые максимумы (HH) и\n                      минимумы (HL) выше предыдущих.\n\n\n\n\nhttps://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced                                                      2/9\n12/02/2023, 21:09                                  https://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced\n\n                      Нисходящая структура - движение, при котором ключевые максимумы (LH) и\n                      минимумы (LL) ниже предыдущих.\n\n                      Схематическое изображение восходящей и нисходящей структуры:\n\n\n\n\n                      Графическое изображение восходящей структуры:\n\n\n\n\n                      Графическое изображение нисходящей структуры:\n\n\n\n\nhttps://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced                                                      3/9",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+              "page": 2,
+              "locator": "PDF page 2 (text + all embedded figures)"
+            },
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+              "page": 3,
+              "locator": "PDF page 3 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        },
+        {
+          "source_id": "19",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+          "page_or_paragraph": "word/document.xml:P0053–P0073",
+          "first": 53,
+          "last": 73,
+          "literal_passage": "Структура рынка - последовательность максимумов и минимумов. Позволяет определить тренд и дальнейшее движение цены инструмента на различных ТФ\nРынок имеет три основные фазы движения :\nБычий тренд\nМедвежий тренд\nБоковое движение/флэт/Ренж\nЧтобы понять структуру рынка, как выглядит слом в структуры, нужно разобрать какие конкретные признаки в каждой тенденции.\nКаждый последующий тренд и даже боковое движение без тренда имеют свои особенности.\nСтруктура отрабатывает на всех таймфреймах!\nВосходящая структура (Бычья)\nВосходящий тренд состоит из более высоких минимумов (HL) и более высоких максимумов (HH).\nБычья структура рынка.\nБычья структура на графике.\nСиними линиями обозначено как обновляется структура,\nОбразование нового хая и нового лоя.\nСтоит обращать внимание только на те хаи, которые обновляют предыдущие.\nНисходящая структура (Медвежья).\nНисходящий тренд - более низкие минимумы (LL) и более низкие максимумы (LH).\nМедьвежья структура.\nМедьвежья структура на графике.\nСтоит обратить внимание что новые максимумы и минимумы ниже предыдущих.\nНам интересны только те лои, которые обновляют предыдущие!",
+          "diagrams": [
+            {
+              "source_id": "19",
+              "member": "word/media/image1.jpg",
+              "sha256": "b89e88686d16805a81e3692c74ba394e21225a51ed9e67cfa602e2db01b3d3fd",
+              "after_paragraph": 62,
+              "next_paragraph": 63,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/b89e88686d16805a81e3692c74ba394e21225a51ed9e67cfa602e2db01b3d3fd.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image2.jpg",
+              "sha256": "e1c69cf3cabb4725bd76f0e95e75273fabb259290c4d37cf72402cdd4ff7e99c",
+              "after_paragraph": 63,
+              "next_paragraph": 64,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/e1c69cf3cabb4725bd76f0e95e75273fabb259290c4d37cf72402cdd4ff7e99c.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image3.jpg",
+              "sha256": "72a90bbb4aa0b4dbdce69dd3db031eaa0b818e5d3057f99a70984229c94a61a5",
+              "after_paragraph": 69,
+              "next_paragraph": 70,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/72a90bbb4aa0b4dbdce69dd3db031eaa0b818e5d3057f99a70984229c94a61a5.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image4.jpg",
+              "sha256": "9c4b808f6ad20a62a0bd0fd0dd7a1236142ef66037b6b45175cd9bf2e79044bf",
+              "after_paragraph": 70,
+              "next_paragraph": 71,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/9c4b808f6ad20a62a0bd0fd0dd7a1236142ef66037b6b45175cd9bf2e79044bf.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "market_context"
+    },
+    {
+      "node_id": "BREAKER:1",
+      "branch_id": "BREAKER",
+      "stage": "context",
+      "rule_id": "S_STRUCTURE",
+      "source_citation": [
+        {
+          "source_id": "SW5",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+          "source_sha256": "be8e14fbe03b0effbf4496eac104d30849e37e7f3db2fb92d4db1f942ace55ba",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+          "text_sha256": "5c655505788c181a808940863814a68d979a85cec0c20dcb3766cdf51075e656",
+          "page_or_paragraph": "p2–3",
+          "first": 2,
+          "last": 3,
+          "literal_passage": "12/02/2023, 21:09                                  https://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced\n\n\n\n\n                      2. Структурные точки (swing)\n                      Swing - структурная точка, в которой происходит разворот цены.\n\n                      Swing High - более высокая структурная точка. Представляет из себя три\n                      последовательные свечи, две крайние из которых имеют более низкие\n                      максимумы, чем центральная, формирующая более высокий максимум.\n\n                      Swing Low - более низкая структурная точка. Представляет из себя три\n                      последовательные свечи, две крайние из которых имеют более высокие\n                      минимумы, чем центральная, формирующая более низкий минимум.\n\n\n\n\n                      В зависимости от выбранного таймфрейма, свинги могут выглядеть по-разному.\n                      Очень часто трейдеры отмечают свинги там, где для выбранного таймфрейма их\n                      нет. Важно, чтобы это была последовательность свечей, как написано выше, а не\n                      просто пик.\n\n                      Опытные трейдеры могут себе позволить раскладывать структуру нескольких\n                      таймфреймов на одном, но новичкам так делать не стоит. Для грамотного\n                      построения нужно использовать различные таймфреймы. Это позволяет\n                      выработать дисциплину и видение ценового движения.\n\n\n\n\n                      3. Структура цены (market structure)\n                      Рыночная структура является основной концепта Smart Money и одним из самых\n                      важных инструментов, с которым мы будем работать. Если соединить тренд и\n                      структурные точки (swing), то мы получим рыночную структуру.\n\n                      Восходящая структура - движение, при котором ключевые максимумы (HH) и\n                      минимумы (HL) выше предыдущих.\n\n\n\n\nhttps://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced                                                      2/9\n12/02/2023, 21:09                                  https://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced\n\n                      Нисходящая структура - движение, при котором ключевые максимумы (LH) и\n                      минимумы (LL) ниже предыдущих.\n\n                      Схематическое изображение восходящей и нисходящей структуры:\n\n\n\n\n                      Графическое изображение восходящей структуры:\n\n\n\n\n                      Графическое изображение нисходящей структуры:\n\n\n\n\nhttps://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced                                                      3/9",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+              "page": 2,
+              "locator": "PDF page 2 (text + all embedded figures)"
+            },
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+              "page": 3,
+              "locator": "PDF page 3 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        },
+        {
+          "source_id": "19",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+          "page_or_paragraph": "word/document.xml:P0053–P0073",
+          "first": 53,
+          "last": 73,
+          "literal_passage": "Структура рынка - последовательность максимумов и минимумов. Позволяет определить тренд и дальнейшее движение цены инструмента на различных ТФ\nРынок имеет три основные фазы движения :\nБычий тренд\nМедвежий тренд\nБоковое движение/флэт/Ренж\nЧтобы понять структуру рынка, как выглядит слом в структуры, нужно разобрать какие конкретные признаки в каждой тенденции.\nКаждый последующий тренд и даже боковое движение без тренда имеют свои особенности.\nСтруктура отрабатывает на всех таймфреймах!\nВосходящая структура (Бычья)\nВосходящий тренд состоит из более высоких минимумов (HL) и более высоких максимумов (HH).\nБычья структура рынка.\nБычья структура на графике.\nСиними линиями обозначено как обновляется структура,\nОбразование нового хая и нового лоя.\nСтоит обращать внимание только на те хаи, которые обновляют предыдущие.\nНисходящая структура (Медвежья).\nНисходящий тренд - более низкие минимумы (LL) и более низкие максимумы (LH).\nМедьвежья структура.\nМедьвежья структура на графике.\nСтоит обратить внимание что новые максимумы и минимумы ниже предыдущих.\nНам интересны только те лои, которые обновляют предыдущие!",
+          "diagrams": [
+            {
+              "source_id": "19",
+              "member": "word/media/image1.jpg",
+              "sha256": "b89e88686d16805a81e3692c74ba394e21225a51ed9e67cfa602e2db01b3d3fd",
+              "after_paragraph": 62,
+              "next_paragraph": 63,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/b89e88686d16805a81e3692c74ba394e21225a51ed9e67cfa602e2db01b3d3fd.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image2.jpg",
+              "sha256": "e1c69cf3cabb4725bd76f0e95e75273fabb259290c4d37cf72402cdd4ff7e99c",
+              "after_paragraph": 63,
+              "next_paragraph": 64,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/e1c69cf3cabb4725bd76f0e95e75273fabb259290c4d37cf72402cdd4ff7e99c.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image3.jpg",
+              "sha256": "72a90bbb4aa0b4dbdce69dd3db031eaa0b818e5d3057f99a70984229c94a61a5",
+              "after_paragraph": 69,
+              "next_paragraph": 70,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/72a90bbb4aa0b4dbdce69dd3db031eaa0b818e5d3057f99a70984229c94a61a5.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image4.jpg",
+              "sha256": "9c4b808f6ad20a62a0bd0fd0dd7a1236142ef66037b6b45175cd9bf2e79044bf",
+              "after_paragraph": 70,
+              "next_paragraph": 71,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/9c4b808f6ad20a62a0bd0fd0dd7a1236142ef66037b6b45175cd9bf2e79044bf.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "market_context"
+    },
+    {
+      "node_id": "BREAKER:2",
+      "branch_id": "BREAKER",
+      "stage": "formation",
+      "rule_id": "S_BREAKER_FORMATION",
+      "source_citation": [
+        {
+          "source_id": "SW9",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+          "page_or_paragraph": "p7–8",
+          "first": 7,
+          "last": 8,
+          "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n\n\n\n                      В этом примере нижний ОВ в приоритете, так как под первым ОВ находится IMB\n                      второго. Впоследствии цена закрыла данный ценовой дисбаланс.\n\n                      Если вы встретите такую ситуацию, вы можете попробовать работать по второму\n                      варианту, через подтверждение. Если вы работаете по первому варианту, для\n                      вас будет важен именно нижний OB после перекрытия IMB.\n\n\n\n\n                      3. Breaker Block (BR)\n                      Breaker Block - это тот же OB, который был пробит быстрым импульсным\n                      движением. Очень важно, чтобы импульсное движение было цельным, без\n                      проторговки в области OB.\n\n                      Данный блок часто называют брейкером. Это зона на графике, в которой\n                      происходит слом структуры.\n\n                      Несмотря на свое название, брейкерблок не обязательно является разворотной\n                      моделью, он может сигнализировать о продолжении тренда.\n\n                      Для определения тенденции рынка нужно учитывать формирование\n                      повышающихся максимумов (HH) и повышающихся минимумов (HL) для бычьего\n                      тренда и понижающихся минимумов (LL) и максимумов (LH) для медвежьего.\n                      Брейкер образуется после образования нового HH или LL при импульсном\n                      пробитии ордерблока.\n\n                      Схематический пример бычьего и медвежьего BR\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     7/16\n12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n\n\n\n                      Неправильная структура BR\n\n\n\n\n                      Графический пример бычьего BR\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     8/16",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+              "page": 7,
+              "locator": "PDF page 7 (text + all embedded figures)"
+            },
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+              "page": 8,
+              "locator": "PDF page 8 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "breaker_formation"
+    },
+    {
+      "node_id": "BREAKER:3",
+      "branch_id": "BREAKER",
+      "stage": "flow",
+      "rule_id": "S_FLOW",
+      "source_citation": [
+        {
+          "source_id": "SW22",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+          "source_sha256": "ebac736d847b270c64ba38586c2f2a2a8685328d90eb7f6c9ada1bedd3a4d50b",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+          "text_sha256": "5c4e68bbd18e4797a4e5b50e417ef002a5bbb5b6c7bc374f23b362463f85b2f5",
+          "page_or_paragraph": "p5–6",
+          "first": 5,
+          "last": 6,
+          "literal_passage": "12/02/2023, 23:10                                       https://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro\n\n\n\n\n                       4. Поток приказов (Order Flow)\n                       Поток приказов - ордера маркетмейкера на покупку/продажу, доставляющие\n                       цену в зоны интереса (POI) глобального значения.\n\n                       Основным отличием Order Flow от классического тренда является обязательная\n                       работа с ликвидностью. Для движения по структурному движению необходимо,\n                       чтобы крупный игрок проводил работу с ликвидностью ритейл-трейдеров и тем\n                       самым продолжал набирать свою позицию.\n\n                       Схематический пример\n\n\n\n\n                       Восходящий Order Flow - более высокие минимумы и максимумы.\n\n                       Графический пример\n\n\n\n\n                       Нисходящий Order Flow - более низкие максимумы и минимумы.\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro                                                           5/6\n12/02/2023, 23:10                                       https://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro\n\n                       Графический пример\n\n\n\n\n                       Пока цена совершает движение в зону интереса маркетмейкера, тем поток\n                       приказов остается актуальным, благодаря тестам ключевых минимумов/\n                       максимумов и пробоям ключевых максимумов/минимумов. Как только зона\n                       интереса маркетмейкера будет протестирована, поток приказов нарушается и\n                       меняется на противоположный. Работать нужно в направлении актуального\n                       потока приказов. Тем самым, мы повторяем действия маркетмейкера и делаем\n                       нашу сделку максимально безопасной.\n\n\n\n\n                       5. Выводы\n                       Рыночное движение - это большая система состоящая из небольших\n                       манипуляций, которые крупный игрок использует для набора/фиксации позиции.\n                       Следить за этими манипуляциями помогает понимание инструмента STB/BTS.\n\n                       Последовательность закрепления этих манипуляций и конечная цель\n                       фиксируется в рамках Order Flow.\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro                                                           6/6",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+              "page": 5,
+              "locator": "PDF page 5 (text + all embedded figures)"
+            },
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+              "page": 6,
+              "locator": "PDF page 6 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "flow_context"
+    },
+    {
+      "node_id": "BREAKER:4",
+      "branch_id": "BREAKER",
+      "stage": "poi",
+      "rule_id": "S_POI",
+      "source_citation": [
+        {
+          "source_id": "SW9",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+          "page_or_paragraph": "p10–11",
+          "first": 10,
+          "last": 11,
+          "literal_passage": "12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n                      Пример агрессивного стопа\n\n\n\n\n                      Пример консервативного стопа\n\n\n\n\n                      4. Point of Interest (POI)\n                      Point of Interest (POI) - это диапазон на графике, от которого ожидается реакция\n                      цены.\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     10/16\n12/02/2023, 21:46                                 https://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced\n\n                      POI - это общее название для рабочих инструментов, которыми могут выступать\n                      манипуляции, ордерблоки, брейкеры и другие торговые элементы.\n\n                      Мы выделяем данные зоны и при подходе цены к ним рассматриваем реакцию\n                      на на эту зону. На основе реакции принимается решение о входе в сделку.\n\n                      Схематический пример POI\n\n\n\n\n                      5. First Trouble Area (FTA)\n                      FTA (First Trouble Area) - это первая проблемная зона после смены характера\n                      движения. В качестве FTA могут использоваться различные POI, которые\n                      находятся в противоположном направлении от вашего входа. Так как вход может\n                      осуществляться как по тренду, так и против него, зона FTA может находиться в\n                      разных местах.\n\n                      Работа по тренду\n\n                      После слома младшего ТФ и перехода коррекционного движения в импульсное\n                      движение, рыночный тренд находится в синхронизации (к примеру, старший и\n                      младший ТФ - нисходящий). Если вы открываете сделку по тренду, то ваш тейк-\n                      профит (полный, либо частичный) будет находиться у первой проблемной зоны\n                      (FTA).\n\n                      Схематический пример FTA\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-advancedtorgovi-instrumenti-advanced                                                     11/16",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+              "page": 10,
+              "locator": "PDF page 10 (text + all embedded figures)"
+            },
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+              "page": 11,
+              "locator": "PDF page 11 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "poi_reaction"
+    },
+    {
+      "node_id": "BREAKER:8",
+      "branch_id": "BREAKER",
+      "stage": "sl_liquidity",
+      "rule_id": "S_SL_OFF_POOL",
+      "source_citation": [
+        {
+          "source_id": "SW11",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW11.pdf",
+          "source_sha256": "ffc65d95bbc1e22186cbddd061befb93e8143f3a5075c985165ecfe7b054f681",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+          "text_sha256": "e913f457f2711b756b9df901563848ec97b8fdb6e4c2e7e4c4890743e80e9b6f",
+          "page_or_paragraph": "p8–8",
+          "first": 8,
+          "last": 8,
+          "literal_passage": "7. Выводы\n12/02/2023, 21:48                                           https://cryptology.courses/labs/risk-menedzhmentrizik-menedzhment\n\n\n\n\n                          1. Не покупайте и не продавайте актив, пока цена не окажется в конкретной\n                             точке согласно ТС.\n                          2. Не открывайте позицию, если не знаете, где будет стоп-лосс.\n                          3. Не пытайтесь прогнуть рынок под себя, ставя стоп-лосс там, где удобно\n                             именно вам. Рынку не интересен ваш интерес, и только вы сами можете\n                             позаботиться о себе.\n                          4. Не передвигайте стоп-лосс. Это действие означает лишь одно: сделка не\n                             была рассчитана, и убыток не был принят перед открытием сделки. Такое\n                             поведение быстро приведет к убыткам.\n                          5. Не ставить стоп-лосс на уровне скопления ликвидности.\n                          6. Уважайте риски больше, чем профит. Научитесь фиксировать убыток\n                             ТОЛЬКО в рамках торговой системы, и профит проявит себя как побочный\n                             эффект этого навыка.\n                          7. НИКОГДА не инвестируйте ваши последние денежные средства.\n                             Инвестировать можно только свободные деньги — те, которые не\n                             понадобятся вам для жизнеобеспечения в ближайшее время.\n                          8. Не начинайте торговый путь с больших сумм. Работа с минимальным\n                             объемом и незначительными суммами денег даст вам четкое понимание\n                             того, как вы принимаете решения, как действуете, насколько вы\n                             дисциплинированны, насколько готовы следовать своим же правилам.\n                             Инвестируйте деньги, которые можете позволить себе вывести из личного\n                             или семейного бюджета без страха оказаться на мели. Трейдинг не\n                             азартная игра, а процесс, требующий знаний, умений и навыков. Важно\n                             освоить навык, протестировать торговую систему и сетапы на демо-счете\n                             или на маленьком реальном счете. Только потом, при положительной\n                             статистике, постепенно увеличивать депозит.\n                          9. Если вас беспокоит стоп-лосс, уменьшайте его до тех пор, пока не\n                             почувствуете себя спокойно.\n                        10. Имейте ввиду, что потерять деньги, которые вы системно зарабатывали в\n                             течение дней, месяцев или более длительного периода, можно за\n                             считанные секунды.\n\n                      Знание разрушает страх, а практика придает уверенности. Учитесь нести\n                      ответственность за свои решения, не винить в неудачах рынок.\n\n\n\n\nhttps://cryptology.courses/labs/risk-menedzhmentrizik-menedzhment                                                               8/8",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW11.pdf",
+              "page": 8,
+              "locator": "PDF page 8 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "sl_off_liquidity"
+    },
+    {
+      "node_id": "STB_BTS:0",
+      "branch_id": "STB_BTS",
+      "stage": "context",
+      "rule_id": "S_STRUCTURE",
+      "source_citation": [
+        {
+          "source_id": "SW5",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+          "source_sha256": "be8e14fbe03b0effbf4496eac104d30849e37e7f3db2fb92d4db1f942ace55ba",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+          "text_sha256": "5c655505788c181a808940863814a68d979a85cec0c20dcb3766cdf51075e656",
+          "page_or_paragraph": "p2–3",
+          "first": 2,
+          "last": 3,
+          "literal_passage": "12/02/2023, 21:09                                  https://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced\n\n\n\n\n                      2. Структурные точки (swing)\n                      Swing - структурная точка, в которой происходит разворот цены.\n\n                      Swing High - более высокая структурная точка. Представляет из себя три\n                      последовательные свечи, две крайние из которых имеют более низкие\n                      максимумы, чем центральная, формирующая более высокий максимум.\n\n                      Swing Low - более низкая структурная точка. Представляет из себя три\n                      последовательные свечи, две крайние из которых имеют более высокие\n                      минимумы, чем центральная, формирующая более низкий минимум.\n\n\n\n\n                      В зависимости от выбранного таймфрейма, свинги могут выглядеть по-разному.\n                      Очень часто трейдеры отмечают свинги там, где для выбранного таймфрейма их\n                      нет. Важно, чтобы это была последовательность свечей, как написано выше, а не\n                      просто пик.\n\n                      Опытные трейдеры могут себе позволить раскладывать структуру нескольких\n                      таймфреймов на одном, но новичкам так делать не стоит. Для грамотного\n                      построения нужно использовать различные таймфреймы. Это позволяет\n                      выработать дисциплину и видение ценового движения.\n\n\n\n\n                      3. Структура цены (market structure)\n                      Рыночная структура является основной концепта Smart Money и одним из самых\n                      важных инструментов, с которым мы будем работать. Если соединить тренд и\n                      структурные точки (swing), то мы получим рыночную структуру.\n\n                      Восходящая структура - движение, при котором ключевые максимумы (HH) и\n                      минимумы (HL) выше предыдущих.\n\n\n\n\nhttps://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced                                                      2/9\n12/02/2023, 21:09                                  https://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced\n\n                      Нисходящая структура - движение, при котором ключевые максимумы (LH) и\n                      минимумы (LL) ниже предыдущих.\n\n                      Схематическое изображение восходящей и нисходящей структуры:\n\n\n\n\n                      Графическое изображение восходящей структуры:\n\n\n\n\n                      Графическое изображение нисходящей структуры:\n\n\n\n\nhttps://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced                                                      3/9",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+              "page": 2,
+              "locator": "PDF page 2 (text + all embedded figures)"
+            },
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+              "page": 3,
+              "locator": "PDF page 3 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        },
+        {
+          "source_id": "19",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+          "page_or_paragraph": "word/document.xml:P0053–P0073",
+          "first": 53,
+          "last": 73,
+          "literal_passage": "Структура рынка - последовательность максимумов и минимумов. Позволяет определить тренд и дальнейшее движение цены инструмента на различных ТФ\nРынок имеет три основные фазы движения :\nБычий тренд\nМедвежий тренд\nБоковое движение/флэт/Ренж\nЧтобы понять структуру рынка, как выглядит слом в структуры, нужно разобрать какие конкретные признаки в каждой тенденции.\nКаждый последующий тренд и даже боковое движение без тренда имеют свои особенности.\nСтруктура отрабатывает на всех таймфреймах!\nВосходящая структура (Бычья)\nВосходящий тренд состоит из более высоких минимумов (HL) и более высоких максимумов (HH).\nБычья структура рынка.\nБычья структура на графике.\nСиними линиями обозначено как обновляется структура,\nОбразование нового хая и нового лоя.\nСтоит обращать внимание только на те хаи, которые обновляют предыдущие.\nНисходящая структура (Медвежья).\nНисходящий тренд - более низкие минимумы (LL) и более низкие максимумы (LH).\nМедьвежья структура.\nМедьвежья структура на графике.\nСтоит обратить внимание что новые максимумы и минимумы ниже предыдущих.\nНам интересны только те лои, которые обновляют предыдущие!",
+          "diagrams": [
+            {
+              "source_id": "19",
+              "member": "word/media/image1.jpg",
+              "sha256": "b89e88686d16805a81e3692c74ba394e21225a51ed9e67cfa602e2db01b3d3fd",
+              "after_paragraph": 62,
+              "next_paragraph": 63,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/b89e88686d16805a81e3692c74ba394e21225a51ed9e67cfa602e2db01b3d3fd.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image2.jpg",
+              "sha256": "e1c69cf3cabb4725bd76f0e95e75273fabb259290c4d37cf72402cdd4ff7e99c",
+              "after_paragraph": 63,
+              "next_paragraph": 64,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/e1c69cf3cabb4725bd76f0e95e75273fabb259290c4d37cf72402cdd4ff7e99c.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image3.jpg",
+              "sha256": "72a90bbb4aa0b4dbdce69dd3db031eaa0b818e5d3057f99a70984229c94a61a5",
+              "after_paragraph": 69,
+              "next_paragraph": 70,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/72a90bbb4aa0b4dbdce69dd3db031eaa0b818e5d3057f99a70984229c94a61a5.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image4.jpg",
+              "sha256": "9c4b808f6ad20a62a0bd0fd0dd7a1236142ef66037b6b45175cd9bf2e79044bf",
+              "after_paragraph": 70,
+              "next_paragraph": 71,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/9c4b808f6ad20a62a0bd0fd0dd7a1236142ef66037b6b45175cd9bf2e79044bf.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "market_context"
+    },
+    {
+      "node_id": "STB_BTS:1",
+      "branch_id": "STB_BTS",
+      "stage": "trend",
+      "rule_id": "S_STB_FORMATION",
+      "source_citation": [
+        {
+          "source_id": "SW22",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+          "source_sha256": "ebac736d847b270c64ba38586c2f2a2a8685328d90eb7f6c9ada1bedd3a4d50b",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+          "text_sha256": "5c4e68bbd18e4797a4e5b50e417ef002a5bbb5b6c7bc374f23b362463f85b2f5",
+          "page_or_paragraph": "p2–3",
+          "first": 2,
+          "last": 3,
+          "literal_passage": "12/02/2023, 23:10                                       https://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro\n\n                       Схематический пример\n\n\n\n\n                       Графический пример\n\n\n\n\n                       Отработка данного сетапа объясняется тем, что крупные игроки постоянно\n                       находятся в хеджированных (открытые сделки в обе стороны) позициях. Чтобы\n                       собрать ликвидность - они задействуют часть своего капитала, при открытии\n                       позиции в шорт, далее во время активации стоп-приказов и открытия позиций\n                       игроков торгующих на пробой уровня или трендовых линий, происходит набор\n                       лонгов. Это позволяет делать покупки на крупную сумму без воздействия на\n                       цену.\n\n                       После того, как происходит слом структуры и поглощение всего движения STB -\n                       у крупного игрока (умный капитал), остается открытой шорт позиция, которая\n                       является в моменте убыточной. В дальнейшем, чтобы закрыть данный минус или\n                       усреднить точку входа, крупному игроку нужно вернуть цену к значениям,\n                       зарождающим данное движение в лонг, чтобы полностью перекрыть свой\n                       убыток - тест зоны 0.5.\n\n                       BTS (buy to sell) - манипуляция умного капитала - купить, чтобы продать. Имеет\n                       точно такую же логику как и STB. Снятие пула ликвидности, набор шортовой\n                       позиции, что приводит к слому структуры.\n\n                       Схематический пример\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro                                                           2/6\n12/02/2023, 23:10                                       https://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro\n\n\n\n\n                       Графический пример\n\n\n\n\n                       После того, как происходит слом структуры и поглощение всего движения BTS –\n                       у крупного игрока (умный капитал), остается открытой лонг позиция, которая\n                       является в моменте убыточной. В дальнейшем, чтобы закрыть данный минус или\n                       усреднить точку входа, крупному игроку нужно вернуть цену к значениям,\n                       зарождающим данное движение в шорт, чтобы полностью перекрыть свой\n                       убыток - тест зоны 0.5.\n\n                       Мы можем использовать STB/BTS как вход в позицию. Точкой входа будет\n                       являться как верхняя часть (лонг)/нижняя часть (шорт), так и 0.5 всей зоны\n                       STB/BTS, но должны быть соблюдены следующие факторы:\n\n                           1. Потенциальная позиция совпадает с основным трендом.\n                           2. Ценовое движение сняло пул ликвидности и полностью поглотило\n                              манипуляцию при развороте.\n                           3. Произошел слом, либо подтверждение структуры.\n\n\n\n\n                       3. Mitigation\nhttps://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro                                                           3/6",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+              "page": 2,
+              "locator": "PDF page 2 (text + all embedded figures)"
+            },
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+              "page": 3,
+              "locator": "PDF page 3 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "trend_aligned"
+    },
+    {
+      "node_id": "STB_BTS:2",
+      "branch_id": "STB_BTS",
+      "stage": "formation",
+      "rule_id": "S_STB_FORMATION",
+      "source_citation": [
+        {
+          "source_id": "SW22",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+          "source_sha256": "ebac736d847b270c64ba38586c2f2a2a8685328d90eb7f6c9ada1bedd3a4d50b",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+          "text_sha256": "5c4e68bbd18e4797a4e5b50e417ef002a5bbb5b6c7bc374f23b362463f85b2f5",
+          "page_or_paragraph": "p2–3",
+          "first": 2,
+          "last": 3,
+          "literal_passage": "12/02/2023, 23:10                                       https://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro\n\n                       Схематический пример\n\n\n\n\n                       Графический пример\n\n\n\n\n                       Отработка данного сетапа объясняется тем, что крупные игроки постоянно\n                       находятся в хеджированных (открытые сделки в обе стороны) позициях. Чтобы\n                       собрать ликвидность - они задействуют часть своего капитала, при открытии\n                       позиции в шорт, далее во время активации стоп-приказов и открытия позиций\n                       игроков торгующих на пробой уровня или трендовых линий, происходит набор\n                       лонгов. Это позволяет делать покупки на крупную сумму без воздействия на\n                       цену.\n\n                       После того, как происходит слом структуры и поглощение всего движения STB -\n                       у крупного игрока (умный капитал), остается открытой шорт позиция, которая\n                       является в моменте убыточной. В дальнейшем, чтобы закрыть данный минус или\n                       усреднить точку входа, крупному игроку нужно вернуть цену к значениям,\n                       зарождающим данное движение в лонг, чтобы полностью перекрыть свой\n                       убыток - тест зоны 0.5.\n\n                       BTS (buy to sell) - манипуляция умного капитала - купить, чтобы продать. Имеет\n                       точно такую же логику как и STB. Снятие пула ликвидности, набор шортовой\n                       позиции, что приводит к слому структуры.\n\n                       Схематический пример\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro                                                           2/6\n12/02/2023, 23:10                                       https://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro\n\n\n\n\n                       Графический пример\n\n\n\n\n                       После того, как происходит слом структуры и поглощение всего движения BTS –\n                       у крупного игрока (умный капитал), остается открытой лонг позиция, которая\n                       является в моменте убыточной. В дальнейшем, чтобы закрыть данный минус или\n                       усреднить точку входа, крупному игроку нужно вернуть цену к значениям,\n                       зарождающим данное движение в шорт, чтобы полностью перекрыть свой\n                       убыток - тест зоны 0.5.\n\n                       Мы можем использовать STB/BTS как вход в позицию. Точкой входа будет\n                       являться как верхняя часть (лонг)/нижняя часть (шорт), так и 0.5 всей зоны\n                       STB/BTS, но должны быть соблюдены следующие факторы:\n\n                           1. Потенциальная позиция совпадает с основным трендом.\n                           2. Ценовое движение сняло пул ликвидности и полностью поглотило\n                              манипуляцию при развороте.\n                           3. Произошел слом, либо подтверждение структуры.\n\n\n\n\n                       3. Mitigation\nhttps://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro                                                           3/6",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+              "page": 2,
+              "locator": "PDF page 2 (text + all embedded figures)"
+            },
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+              "page": 3,
+              "locator": "PDF page 3 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "stb_raid_absorption_structure"
+    },
+    {
+      "node_id": "STB_BTS:3",
+      "branch_id": "STB_BTS",
+      "stage": "flow",
+      "rule_id": "S_FLOW",
+      "source_citation": [
+        {
+          "source_id": "SW22",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+          "source_sha256": "ebac736d847b270c64ba38586c2f2a2a8685328d90eb7f6c9ada1bedd3a4d50b",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+          "text_sha256": "5c4e68bbd18e4797a4e5b50e417ef002a5bbb5b6c7bc374f23b362463f85b2f5",
+          "page_or_paragraph": "p5–6",
+          "first": 5,
+          "last": 6,
+          "literal_passage": "12/02/2023, 23:10                                       https://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro\n\n\n\n\n                       4. Поток приказов (Order Flow)\n                       Поток приказов - ордера маркетмейкера на покупку/продажу, доставляющие\n                       цену в зоны интереса (POI) глобального значения.\n\n                       Основным отличием Order Flow от классического тренда является обязательная\n                       работа с ликвидностью. Для движения по структурному движению необходимо,\n                       чтобы крупный игрок проводил работу с ликвидностью ритейл-трейдеров и тем\n                       самым продолжал набирать свою позицию.\n\n                       Схематический пример\n\n\n\n\n                       Восходящий Order Flow - более высокие минимумы и максимумы.\n\n                       Графический пример\n\n\n\n\n                       Нисходящий Order Flow - более низкие максимумы и минимумы.\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro                                                           5/6\n12/02/2023, 23:10                                       https://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro\n\n                       Графический пример\n\n\n\n\n                       Пока цена совершает движение в зону интереса маркетмейкера, тем поток\n                       приказов остается актуальным, благодаря тестам ключевых минимумов/\n                       максимумов и пробоям ключевых максимумов/минимумов. Как только зона\n                       интереса маркетмейкера будет протестирована, поток приказов нарушается и\n                       меняется на противоположный. Работать нужно в направлении актуального\n                       потока приказов. Тем самым, мы повторяем действия маркетмейкера и делаем\n                       нашу сделку максимально безопасной.\n\n\n\n\n                       5. Выводы\n                       Рыночное движение - это большая система состоящая из небольших\n                       манипуляций, которые крупный игрок использует для набора/фиксации позиции.\n                       Следить за этими манипуляциями помогает понимание инструмента STB/BTS.\n\n                       Последовательность закрепления этих манипуляций и конечная цель\n                       фиксируется в рамках Order Flow.\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro                                                           6/6",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+              "page": 5,
+              "locator": "PDF page 5 (text + all embedded figures)"
+            },
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+              "page": 6,
+              "locator": "PDF page 6 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "flow_context"
+    },
+    {
+      "node_id": "STB_BTS:4",
+      "branch_id": "STB_BTS",
+      "stage": "pd",
+      "rule_id": "S_PD",
+      "source_citation": [
+        {
+          "source_id": "SW22",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+          "source_sha256": "ebac736d847b270c64ba38586c2f2a2a8685328d90eb7f6c9ada1bedd3a4d50b",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+          "text_sha256": "5c4e68bbd18e4797a4e5b50e417ef002a5bbb5b6c7bc374f23b362463f85b2f5",
+          "page_or_paragraph": "p4–4",
+          "first": 4,
+          "last": 4,
+          "literal_passage": "12/02/2023, 23:10                                       https://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro\n\n                       Mitigation (test) - после удачной манипуляции и открытия лонг/шорт позиции,\n                       крупному игроку нужно закрыть свою шортовую/лонговую позицию так как она\n                       становится убыточной.\n\n                       Итак, крупный игрок открывает еще одну позицию для того, чтобы доставить\n                       цену в нужный диапазон. Если следовать правилу Premium/ Discount цена\n                       должна протестировать зону 0.5, либо ниже/выше 0.5. Туда и будет\n                       сконцентрировано наше внимание.\n\n                       Схематический пример\n\n\n\n\n                       Графический пример\n\n\n\n\nhttps://cryptology.courses/labs/torgovye-instrumenty-pro--torgovi-instrumenti-pro                                                           4/6",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+              "page": 4,
+              "locator": "PDF page 4 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        },
+        {
+          "source_id": "19",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+          "page_or_paragraph": "word/document.xml:P0140–P0155",
+          "first": 140,
+          "last": 155,
+          "literal_passage": "0,5\n0,62\n0,705\n0,79\nЭта сетка отличается от классической по таким причинам\n0,5 - уровень, который считается справедливой ценой рынка.\nЗначение 0,5 так же используется в других инструментах и является важным уровнем.\nДля открытия позиции нам интересно поведение цены за пределами 0,5\nТак же в классической модели сетки Фибоначчи есть уровень 0,618 который является значимым, так как обычно цена заканчивает свою коррекцию именно у этих значений.\nПоэтому для более четкого входа в позицию используют расширенную сетку которая имеет название OTE\nOTE ( optimal trade entry) диапазон цен который находиться промежутке 0,705-0.79 является оптимальной зоной для открытия позиции.\nЗначение 0,705 получено путем среднего значения между 0,62 и 0,79\nДалее с ее помощью мы можем найти точки для открытия позиции\nТянем фибоначи с хая к лею для поиска шотр позиции или от хая к лею для открытия лонг позиции\nПример реакции цены на зону ОТЕ\nОТЕ дает максимальную отработку в связке с ордер блоком",
+          "diagrams": [
+            {
+              "source_id": "19",
+              "member": "word/media/image24.jpg",
+              "sha256": "b2515bfd2c8a25ff580946b633d9323b07be8b71d52ef8de1dc438007c730dc0",
+              "after_paragraph": 143,
+              "next_paragraph": 144,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/b2515bfd2c8a25ff580946b633d9323b07be8b71d52ef8de1dc438007c730dc0.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image25.jpg",
+              "sha256": "90f8587504027dd586d5f97ff79a396a0b622bf3fee5aef99e454d6f66fe2a9a",
+              "after_paragraph": 153,
+              "next_paragraph": 154,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/90f8587504027dd586d5f97ff79a396a0b622bf3fee5aef99e454d6f66fe2a9a.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image26.jpg",
+              "sha256": "080d37f6fa91d099247a7bdddc8955af25ee3a39dc0a1f8cc442992309754c17",
+              "after_paragraph": 155,
+              "next_paragraph": 156,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/080d37f6fa91d099247a7bdddc8955af25ee3a39dc0a1f8cc442992309754c17.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "pd_context"
+    },
+    {
+      "node_id": "STB_BTS:8",
+      "branch_id": "STB_BTS",
+      "stage": "sl_liquidity",
+      "rule_id": "S_SL_OFF_POOL",
+      "source_citation": [
+        {
+          "source_id": "SW11",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW11.pdf",
+          "source_sha256": "ffc65d95bbc1e22186cbddd061befb93e8143f3a5075c985165ecfe7b054f681",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+          "text_sha256": "e913f457f2711b756b9df901563848ec97b8fdb6e4c2e7e4c4890743e80e9b6f",
+          "page_or_paragraph": "p8–8",
+          "first": 8,
+          "last": 8,
+          "literal_passage": "7. Выводы\n12/02/2023, 21:48                                           https://cryptology.courses/labs/risk-menedzhmentrizik-menedzhment\n\n\n\n\n                          1. Не покупайте и не продавайте актив, пока цена не окажется в конкретной\n                             точке согласно ТС.\n                          2. Не открывайте позицию, если не знаете, где будет стоп-лосс.\n                          3. Не пытайтесь прогнуть рынок под себя, ставя стоп-лосс там, где удобно\n                             именно вам. Рынку не интересен ваш интерес, и только вы сами можете\n                             позаботиться о себе.\n                          4. Не передвигайте стоп-лосс. Это действие означает лишь одно: сделка не\n                             была рассчитана, и убыток не был принят перед открытием сделки. Такое\n                             поведение быстро приведет к убыткам.\n                          5. Не ставить стоп-лосс на уровне скопления ликвидности.\n                          6. Уважайте риски больше, чем профит. Научитесь фиксировать убыток\n                             ТОЛЬКО в рамках торговой системы, и профит проявит себя как побочный\n                             эффект этого навыка.\n                          7. НИКОГДА не инвестируйте ваши последние денежные средства.\n                             Инвестировать можно только свободные деньги — те, которые не\n                             понадобятся вам для жизнеобеспечения в ближайшее время.\n                          8. Не начинайте торговый путь с больших сумм. Работа с минимальным\n                             объемом и незначительными суммами денег даст вам четкое понимание\n                             того, как вы принимаете решения, как действуете, насколько вы\n                             дисциплинированны, насколько готовы следовать своим же правилам.\n                             Инвестируйте деньги, которые можете позволить себе вывести из личного\n                             или семейного бюджета без страха оказаться на мели. Трейдинг не\n                             азартная игра, а процесс, требующий знаний, умений и навыков. Важно\n                             освоить навык, протестировать торговую систему и сетапы на демо-счете\n                             или на маленьком реальном счете. Только потом, при положительной\n                             статистике, постепенно увеличивать депозит.\n                          9. Если вас беспокоит стоп-лосс, уменьшайте его до тех пор, пока не\n                             почувствуете себя спокойно.\n                        10. Имейте ввиду, что потерять деньги, которые вы системно зарабатывали в\n                             течение дней, месяцев или более длительного периода, можно за\n                             считанные секунды.\n\n                      Знание разрушает страх, а практика придает уверенности. Учитесь нести\n                      ответственность за свои решения, не винить в неудачах рынок.\n\n\n\n\nhttps://cryptology.courses/labs/risk-menedzhmentrizik-menedzhment                                                               8/8",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW11.pdf",
+              "page": 8,
+              "locator": "PDF page 8 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "sl_off_liquidity"
+    },
+    {
+      "node_id": "RANGE_CONSERVATIVE:0",
+      "branch_id": "RANGE_CONSERVATIVE",
+      "stage": "context",
+      "rule_id": "S_STRUCTURE",
+      "source_citation": [
+        {
+          "source_id": "SW5",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+          "source_sha256": "be8e14fbe03b0effbf4496eac104d30849e37e7f3db2fb92d4db1f942ace55ba",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+          "text_sha256": "5c655505788c181a808940863814a68d979a85cec0c20dcb3766cdf51075e656",
+          "page_or_paragraph": "p2–3",
+          "first": 2,
+          "last": 3,
+          "literal_passage": "12/02/2023, 21:09                                  https://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced\n\n\n\n\n                      2. Структурные точки (swing)\n                      Swing - структурная точка, в которой происходит разворот цены.\n\n                      Swing High - более высокая структурная точка. Представляет из себя три\n                      последовательные свечи, две крайние из которых имеют более низкие\n                      максимумы, чем центральная, формирующая более высокий максимум.\n\n                      Swing Low - более низкая структурная точка. Представляет из себя три\n                      последовательные свечи, две крайние из которых имеют более высокие\n                      минимумы, чем центральная, формирующая более низкий минимум.\n\n\n\n\n                      В зависимости от выбранного таймфрейма, свинги могут выглядеть по-разному.\n                      Очень часто трейдеры отмечают свинги там, где для выбранного таймфрейма их\n                      нет. Важно, чтобы это была последовательность свечей, как написано выше, а не\n                      просто пик.\n\n                      Опытные трейдеры могут себе позволить раскладывать структуру нескольких\n                      таймфреймов на одном, но новичкам так делать не стоит. Для грамотного\n                      построения нужно использовать различные таймфреймы. Это позволяет\n                      выработать дисциплину и видение ценового движения.\n\n\n\n\n                      3. Структура цены (market structure)\n                      Рыночная структура является основной концепта Smart Money и одним из самых\n                      важных инструментов, с которым мы будем работать. Если соединить тренд и\n                      структурные точки (swing), то мы получим рыночную структуру.\n\n                      Восходящая структура - движение, при котором ключевые максимумы (HH) и\n                      минимумы (HL) выше предыдущих.\n\n\n\n\nhttps://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced                                                      2/9\n12/02/2023, 21:09                                  https://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced\n\n                      Нисходящая структура - движение, при котором ключевые максимумы (LH) и\n                      минимумы (LL) ниже предыдущих.\n\n                      Схематическое изображение восходящей и нисходящей структуры:\n\n\n\n\n                      Графическое изображение восходящей структуры:\n\n\n\n\n                      Графическое изображение нисходящей структуры:\n\n\n\n\nhttps://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced                                                      3/9",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+              "page": 2,
+              "locator": "PDF page 2 (text + all embedded figures)"
+            },
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+              "page": 3,
+              "locator": "PDF page 3 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        },
+        {
+          "source_id": "19",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+          "page_or_paragraph": "word/document.xml:P0053–P0073",
+          "first": 53,
+          "last": 73,
+          "literal_passage": "Структура рынка - последовательность максимумов и минимумов. Позволяет определить тренд и дальнейшее движение цены инструмента на различных ТФ\nРынок имеет три основные фазы движения :\nБычий тренд\nМедвежий тренд\nБоковое движение/флэт/Ренж\nЧтобы понять структуру рынка, как выглядит слом в структуры, нужно разобрать какие конкретные признаки в каждой тенденции.\nКаждый последующий тренд и даже боковое движение без тренда имеют свои особенности.\nСтруктура отрабатывает на всех таймфреймах!\nВосходящая структура (Бычья)\nВосходящий тренд состоит из более высоких минимумов (HL) и более высоких максимумов (HH).\nБычья структура рынка.\nБычья структура на графике.\nСиними линиями обозначено как обновляется структура,\nОбразование нового хая и нового лоя.\nСтоит обращать внимание только на те хаи, которые обновляют предыдущие.\nНисходящая структура (Медвежья).\nНисходящий тренд - более низкие минимумы (LL) и более низкие максимумы (LH).\nМедьвежья структура.\nМедьвежья структура на графике.\nСтоит обратить внимание что новые максимумы и минимумы ниже предыдущих.\nНам интересны только те лои, которые обновляют предыдущие!",
+          "diagrams": [
+            {
+              "source_id": "19",
+              "member": "word/media/image1.jpg",
+              "sha256": "b89e88686d16805a81e3692c74ba394e21225a51ed9e67cfa602e2db01b3d3fd",
+              "after_paragraph": 62,
+              "next_paragraph": 63,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/b89e88686d16805a81e3692c74ba394e21225a51ed9e67cfa602e2db01b3d3fd.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image2.jpg",
+              "sha256": "e1c69cf3cabb4725bd76f0e95e75273fabb259290c4d37cf72402cdd4ff7e99c",
+              "after_paragraph": 63,
+              "next_paragraph": 64,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/e1c69cf3cabb4725bd76f0e95e75273fabb259290c4d37cf72402cdd4ff7e99c.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image3.jpg",
+              "sha256": "72a90bbb4aa0b4dbdce69dd3db031eaa0b818e5d3057f99a70984229c94a61a5",
+              "after_paragraph": 69,
+              "next_paragraph": 70,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/72a90bbb4aa0b4dbdce69dd3db031eaa0b818e5d3057f99a70984229c94a61a5.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image4.jpg",
+              "sha256": "9c4b808f6ad20a62a0bd0fd0dd7a1236142ef66037b6b45175cd9bf2e79044bf",
+              "after_paragraph": 70,
+              "next_paragraph": 71,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/9c4b808f6ad20a62a0bd0fd0dd7a1236142ef66037b6b45175cd9bf2e79044bf.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "market_context"
+    },
+    {
+      "node_id": "RANGE_CONSERVATIVE:1",
+      "branch_id": "RANGE_CONSERVATIVE",
+      "stage": "range",
+      "rule_id": "S_RANGE_FORMATION",
+      "source_citation": [
+        {
+          "source_id": "06",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]10. Боковое движение.docx",
+          "source_sha256": "628cb1caa97138bc5470687e3743127cd147ac20c5cb39144345764be537e631",
+          "text": "data/source_materials/cryptology_2026_10_09/06.clean.txt",
+          "text_sha256": "ad70ddbe23b29b1f0bce9638ffb34b9cd98f04fbf1efcb42eaa52cb5b94aa5c6",
+          "page_or_paragraph": "word/document.xml:P0037–P0072",
+          "first": 37,
+          "last": 72,
+          "literal_passage": "Боковик всегда образуется после сильного направленного движения в одну из\nсторон (восходящий или нисходящий импульс).\nОкончание этого импульса будет первой границей боковика, окончание\nкоррекционного движения - второй.\nВ\nо\nс\nх\nд\nя\nщ\nе\nв\nи\nж\nн\nПосле восходящего импульсного движения первой границей боковика будет\nмаксимум, второй - сформированный позже минимум.\nН\nПосле нисходящего импульсного движения первой границей боковика будет\nминимум, второй - сформированный позже максимум.\nДля обозначения боковика на графике, используем коррекционную сетку\nФибоначчи с настройками 0. 0,5 и 1\nСхематический пример\nГрафический пример\nУсловия формирования\nЦена должна получать хорошую реакцию от уровня 0.5, так как он выступает\nдополнительным фактором для определения правильности построения\nбоковика.\nХорошая (правильная) реакция на уровень 0.5 подтверждает то, что границы\nренджа определены правильно.\nОбратите внимание на то, как цена реагирует на уровень 0.5 в выделенной зоне.\nЭто не самый удачный пример боковика. Как вы видите, границы боковика\nсмазывались и дальнейшее ценовое движение определить достаточно сложно,\nпоэтому советуем пропускать такие ситуации, рынок всегда даст возможность\nзаработать.",
+          "diagrams": [
+            {
+              "source_id": "06",
+              "member": "word/media/image2.jpg",
+              "sha256": "a82a31b27c5361151de5d03e53eb748d8afec4ae77bcf78ffe33f8798774783c",
+              "after_paragraph": 38,
+              "next_paragraph": 39,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/a82a31b27c5361151de5d03e53eb748d8afec4ae77bcf78ffe33f8798774783c.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image3.jpg",
+              "sha256": "fc9ddd14eb90685adbcbda04f6ccd2b03879351ac2aa1c54cc66409f1f477dcc",
+              "after_paragraph": 38,
+              "next_paragraph": 39,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/fc9ddd14eb90685adbcbda04f6ccd2b03879351ac2aa1c54cc66409f1f477dcc.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image4.jpg",
+              "sha256": "edf0b096300da1f715ab9f0c851260b4a294cf08ce86ac1077ea4c2f3db4c43d",
+              "after_paragraph": 38,
+              "next_paragraph": 39,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/edf0b096300da1f715ab9f0c851260b4a294cf08ce86ac1077ea4c2f3db4c43d.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image4.jpg",
+              "sha256": "edf0b096300da1f715ab9f0c851260b4a294cf08ce86ac1077ea4c2f3db4c43d",
+              "after_paragraph": 61,
+              "next_paragraph": 62,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/edf0b096300da1f715ab9f0c851260b4a294cf08ce86ac1077ea4c2f3db4c43d.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image5.jpg",
+              "sha256": "84c65fb5df418cbeb5b1efb764438ad55e4f733898ac47905e552298fbd2eff1",
+              "after_paragraph": 61,
+              "next_paragraph": 62,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/84c65fb5df418cbeb5b1efb764438ad55e4f733898ac47905e552298fbd2eff1.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image6.jpg",
+              "sha256": "14cfe8a01b7b0aaeac39c80c42b94f3d7237df0bb1311411f7d57c356b595f77",
+              "after_paragraph": 61,
+              "next_paragraph": 62,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/14cfe8a01b7b0aaeac39c80c42b94f3d7237df0bb1311411f7d57c356b595f77.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image7.jpg",
+              "sha256": "8a455d3962fe5ba80abd58bb19c02497e14c268b203f529cfc5e4a8be06fb9fe",
+              "after_paragraph": 70,
+              "next_paragraph": 71,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/8a455d3962fe5ba80abd58bb19c02497e14c268b203f529cfc5e4a8be06fb9fe.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image8.jpg",
+              "sha256": "586a84a30ad9570c0438d13ea2706248cf732591af3df13b97f0c0b5287651d4",
+              "after_paragraph": 70,
+              "next_paragraph": 71,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/586a84a30ad9570c0438d13ea2706248cf732591af3df13b97f0c0b5287651d4.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        },
+        {
+          "source_id": "19",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+          "page_or_paragraph": "word/document.xml:P0122–P0128",
+          "first": 122,
+          "last": 128,
+          "literal_passage": "RANGE(боковик)\nВнутри боковика должна отсутствовать структура\nСhoch внутри боковика может не дать той отработки, которую вы ждёте.\nКак построить и определить range -первый хай после импульса и первый лой.\nТоргуют боковик только после отклонения ( выхода ) (Девиации) цены за грани боковика.\nОтклонение цены от боковика называется девиацией.\nДля того, что бы точно удостоверится, в валидности фигуры, мы должны видеть реакции от середины боковика, от уровня 0.5 на схеме.",
+          "diagrams": [
+            {
+              "source_id": "19",
+              "member": "word/media/image19.jpg",
+              "sha256": "6f9d5563da2857954e14bf989484fe6d2d51d409951b7eaa3e3dfbf889ad82a2",
+              "after_paragraph": 121,
+              "next_paragraph": 122,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/6f9d5563da2857954e14bf989484fe6d2d51d409951b7eaa3e3dfbf889ad82a2.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image20.jpg",
+              "sha256": "4931d9ea03e48c73d0f37aeee9edcf22e110b4eee4586fd86c258f5f8078d5cd",
+              "after_paragraph": 121,
+              "next_paragraph": 122,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/4931d9ea03e48c73d0f37aeee9edcf22e110b4eee4586fd86c258f5f8078d5cd.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image21.jpg",
+              "sha256": "3fe2b814568c35d470c560cb6ae29daedec6ebc5e527f69d60219b3ee785e99a",
+              "after_paragraph": 126,
+              "next_paragraph": 127,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/3fe2b814568c35d470c560cb6ae29daedec6ebc5e527f69d60219b3ee785e99a.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image22.jpg",
+              "sha256": "6a29ca6ff6edcaf35004a308ea52e10f870314db315b7ee3c8f0e01c53194ab8",
+              "after_paragraph": 126,
+              "next_paragraph": 127,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/6a29ca6ff6edcaf35004a308ea52e10f870314db315b7ee3c8f0e01c53194ab8.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image23.jpg",
+              "sha256": "4ea93e8e697f85283eb708642ebb84decbe11ebd0d1819a607f2d4b66eee01ae",
+              "after_paragraph": 130,
+              "next_paragraph": 131,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/4ea93e8e697f85283eb708642ebb84decbe11ebd0d1819a607f2d4b66eee01ae.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "clear_range"
+    },
+    {
+      "node_id": "RANGE_CONSERVATIVE:2",
+      "branch_id": "RANGE_CONSERVATIVE",
+      "stage": "deviation",
+      "rule_id": "S_RANGE_DEVIATION",
+      "source_citation": [
+        {
+          "source_id": "06",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]10. Боковое движение.docx",
+          "source_sha256": "628cb1caa97138bc5470687e3743127cd147ac20c5cb39144345764be537e631",
+          "text": "data/source_materials/cryptology_2026_10_09/06.clean.txt",
+          "text_sha256": "ad70ddbe23b29b1f0bce9638ffb34b9cd98f04fbf1efcb42eaa52cb5b94aa5c6",
+          "page_or_paragraph": "word/document.xml:P0074–P0094",
+          "first": 74,
+          "last": 94,
+          "literal_passage": "Девиация\nДевиация - ценовое движение, которое направлено на снятие внешней\nликвидности за пределами границ боковика.\nКак было сказано ранее, боковик образуется для набора и/или распределения\nкрупной позиции маркетмейкера. Исходя из этих слов, нужно понять где и как\nон набирает позицию в достаточном объеме.\nКлассический технический анализ учит, что стоп ордера нужно ставить за\nлокальные уровни поддержки и сопротивления, которыми и являются границы\nК примеру, ритейл-трейдер видит, что цена получает реакцию от уровня\nсопротивления, открывает позицию на понижение и выставляет свой стоп\nордер выше уровня. Обратной заявкой для позиции на понижение, является\nпокупка. Чем больше таких заявок, тем лучше для ММ.\nЦена всегда ходит от ликвидности к ликвидности. Девиация с одной стороны\nприводит к девиации с другой стороны.\nНапример, после формирования боковика образуется девиация сверху. Можно\nпредположить, что в скором времени цена окажется у нижней границы, чтобы\nсобрать всю ликвидность под ней, так как сверху уже ничего не осталось.\nПосле формирования боковика, цена аккумулировала много внутренней\nликвидности по обе стороны. Первое снятие произошло снизу, и как вы видите,\nсбор ликвидности снизу привел к ускоренному движению цены к верхней\nгранице боковика для снятия верхней ликвидности.",
+          "diagrams": [
+            {
+              "source_id": "06",
+              "member": "word/media/image8.jpg",
+              "sha256": "586a84a30ad9570c0438d13ea2706248cf732591af3df13b97f0c0b5287651d4",
+              "after_paragraph": 94,
+              "next_paragraph": 95,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/586a84a30ad9570c0438d13ea2706248cf732591af3df13b97f0c0b5287651d4.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image9.jpg",
+              "sha256": "3b67001a0cbf527a3924fe6f2f5de5a1f2cc36e1d58926b9d9934a8f5a3b4f16",
+              "after_paragraph": 94,
+              "next_paragraph": 95,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/3b67001a0cbf527a3924fe6f2f5de5a1f2cc36e1d58926b9d9934a8f5a3b4f16.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image10.jpg",
+              "sha256": "6cf09546ac9856363595c5e6a156312be518799b94fe2752cf9a57243ee59295",
+              "after_paragraph": 94,
+              "next_paragraph": 95,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/6cf09546ac9856363595c5e6a156312be518799b94fe2752cf9a57243ee59295.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        },
+        {
+          "source_id": "19",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+          "page_or_paragraph": "word/document.xml:P0125–P0130",
+          "first": 125,
+          "last": 130,
+          "literal_passage": "Как построить и определить range -первый хай после импульса и первый лой.\nТоргуют боковик только после отклонения ( выхода ) (Девиации) цены за грани боковика.\nОтклонение цены от боковика называется девиацией.\nДля того, что бы точно удостоверится, в валидности фигуры, мы должны видеть реакции от середины боковика, от уровня 0.5 на схеме.\nОдин из сетапов который мы используем для торговли боковых движений :\nВозврат цены после девиации - с последующим тестом зоны , которая отправила цену обратно в ренж , сделав choch.",
+          "diagrams": [
+            {
+              "source_id": "19",
+              "member": "word/media/image21.jpg",
+              "sha256": "3fe2b814568c35d470c560cb6ae29daedec6ebc5e527f69d60219b3ee785e99a",
+              "after_paragraph": 126,
+              "next_paragraph": 127,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/3fe2b814568c35d470c560cb6ae29daedec6ebc5e527f69d60219b3ee785e99a.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image22.jpg",
+              "sha256": "6a29ca6ff6edcaf35004a308ea52e10f870314db315b7ee3c8f0e01c53194ab8",
+              "after_paragraph": 126,
+              "next_paragraph": 127,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/6a29ca6ff6edcaf35004a308ea52e10f870314db315b7ee3c8f0e01c53194ab8.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image23.jpg",
+              "sha256": "4ea93e8e697f85283eb708642ebb84decbe11ebd0d1819a607f2d4b66eee01ae",
+              "after_paragraph": 130,
+              "next_paragraph": 131,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/4ea93e8e697f85283eb708642ebb84decbe11ebd0d1819a607f2d4b66eee01ae.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "range_deviation"
+    },
+    {
+      "node_id": "RANGE_CONSERVATIVE:3",
+      "branch_id": "RANGE_CONSERVATIVE",
+      "stage": "poi",
+      "rule_id": "S_RANGE_AGGRESSIVE",
+      "source_citation": [
+        {
+          "source_id": "06",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]10. Боковое движение.docx",
+          "source_sha256": "628cb1caa97138bc5470687e3743127cd147ac20c5cb39144345764be537e631",
+          "text": "data/source_materials/cryptology_2026_10_09/06.clean.txt",
+          "text_sha256": "ad70ddbe23b29b1f0bce9638ffb34b9cd98f04fbf1efcb42eaa52cb5b94aa5c6",
+          "page_or_paragraph": "word/document.xml:P0111–P0118",
+          "first": 111,
+          "last": 118,
+          "literal_passage": ". Агрессивный\n- на девиации и только при наличии POI под/над боковиком.\nВероятность отработки вашего трейда будет увеличена присутствием факторов,\nкоторые указывают на слабость покупателя/продавца. Самый распространенный\nинструмент для этого - дивергенции (инструмент будет разбираться в\nследующих темах).\nСхематическое изображение\nГрафическое изображение",
+          "diagrams": [],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "outside_poi"
+    },
+    {
+      "node_id": "RANGE_CONSERVATIVE:4",
+      "branch_id": "RANGE_CONSERVATIVE",
+      "stage": "retest",
+      "rule_id": "S_RANGE_CONSERVATIVE",
+      "source_citation": [
+        {
+          "source_id": "06",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]10. Боковое движение.docx",
+          "source_sha256": "628cb1caa97138bc5470687e3743127cd147ac20c5cb39144345764be537e631",
+          "text": "data/source_materials/cryptology_2026_10_09/06.clean.txt",
+          "text_sha256": "ad70ddbe23b29b1f0bce9638ffb34b9cd98f04fbf1efcb42eaa52cb5b94aa5c6",
+          "page_or_paragraph": "word/document.xml:P0124–P0129",
+          "first": 124,
+          "last": 129,
+          "literal_passage": ". Консервативный\n- Наличие POI сверху/снизу всегда выступает сильным\nмагнитом для цены, поэтому мы ожидаем поход цены в ту зону, до этого позиции\nвнутри ренджа не открываем, если цена не дает реакцию на poi, входим\nконсервативно, после возврата и закрепления цены внутри боковика, на тесте\nграниц.",
+          "diagrams": [
+            {
+              "source_id": "06",
+              "member": "word/media/image13.jpg",
+              "sha256": "c81dbbc3ef15ca3755864ed0f987d58bb9e9cc6becf2199c313ac5be824cb423",
+              "after_paragraph": 129,
+              "next_paragraph": 130,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/c81dbbc3ef15ca3755864ed0f987d58bb9e9cc6becf2199c313ac5be824cb423.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image14.jpg",
+              "sha256": "beaa8047c54bd2c988b4c264bf596d1ac3be1a7a683f9ac67982e709a1de6cb7",
+              "after_paragraph": 129,
+              "next_paragraph": 130,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/beaa8047c54bd2c988b4c264bf596d1ac3be1a7a683f9ac67982e709a1de6cb7.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image15.jpg",
+              "sha256": "bace8d0ac14330586507f1ce4fd2f1821fd78ae390261804adcb7f68841b5e5c",
+              "after_paragraph": 129,
+              "next_paragraph": 130,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/bace8d0ac14330586507f1ce4fd2f1821fd78ae390261804adcb7f68841b5e5c.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        },
+        {
+          "source_id": "19",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+          "page_or_paragraph": "word/document.xml:P0129–P0130",
+          "first": 129,
+          "last": 130,
+          "literal_passage": "Один из сетапов который мы используем для торговли боковых движений :\nВозврат цены после девиации - с последующим тестом зоны , которая отправила цену обратно в ренж , сделав choch.",
+          "diagrams": [
+            {
+              "source_id": "19",
+              "member": "word/media/image23.jpg",
+              "sha256": "4ea93e8e697f85283eb708642ebb84decbe11ebd0d1819a607f2d4b66eee01ae",
+              "after_paragraph": 130,
+              "next_paragraph": 131,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/4ea93e8e697f85283eb708642ebb84decbe11ebd0d1819a607f2d4b66eee01ae.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "range_reclaim_retest"
+    },
+    {
+      "node_id": "RANGE_CONSERVATIVE:8",
+      "branch_id": "RANGE_CONSERVATIVE",
+      "stage": "sl_liquidity",
+      "rule_id": "S_SL_OFF_POOL",
+      "source_citation": [
+        {
+          "source_id": "SW11",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW11.pdf",
+          "source_sha256": "ffc65d95bbc1e22186cbddd061befb93e8143f3a5075c985165ecfe7b054f681",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+          "text_sha256": "e913f457f2711b756b9df901563848ec97b8fdb6e4c2e7e4c4890743e80e9b6f",
+          "page_or_paragraph": "p8–8",
+          "first": 8,
+          "last": 8,
+          "literal_passage": "7. Выводы\n12/02/2023, 21:48                                           https://cryptology.courses/labs/risk-menedzhmentrizik-menedzhment\n\n\n\n\n                          1. Не покупайте и не продавайте актив, пока цена не окажется в конкретной\n                             точке согласно ТС.\n                          2. Не открывайте позицию, если не знаете, где будет стоп-лосс.\n                          3. Не пытайтесь прогнуть рынок под себя, ставя стоп-лосс там, где удобно\n                             именно вам. Рынку не интересен ваш интерес, и только вы сами можете\n                             позаботиться о себе.\n                          4. Не передвигайте стоп-лосс. Это действие означает лишь одно: сделка не\n                             была рассчитана, и убыток не был принят перед открытием сделки. Такое\n                             поведение быстро приведет к убыткам.\n                          5. Не ставить стоп-лосс на уровне скопления ликвидности.\n                          6. Уважайте риски больше, чем профит. Научитесь фиксировать убыток\n                             ТОЛЬКО в рамках торговой системы, и профит проявит себя как побочный\n                             эффект этого навыка.\n                          7. НИКОГДА не инвестируйте ваши последние денежные средства.\n                             Инвестировать можно только свободные деньги — те, которые не\n                             понадобятся вам для жизнеобеспечения в ближайшее время.\n                          8. Не начинайте торговый путь с больших сумм. Работа с минимальным\n                             объемом и незначительными суммами денег даст вам четкое понимание\n                             того, как вы принимаете решения, как действуете, насколько вы\n                             дисциплинированны, насколько готовы следовать своим же правилам.\n                             Инвестируйте деньги, которые можете позволить себе вывести из личного\n                             или семейного бюджета без страха оказаться на мели. Трейдинг не\n                             азартная игра, а процесс, требующий знаний, умений и навыков. Важно\n                             освоить навык, протестировать торговую систему и сетапы на демо-счете\n                             или на маленьком реальном счете. Только потом, при положительной\n                             статистике, постепенно увеличивать депозит.\n                          9. Если вас беспокоит стоп-лосс, уменьшайте его до тех пор, пока не\n                             почувствуете себя спокойно.\n                        10. Имейте ввиду, что потерять деньги, которые вы системно зарабатывали в\n                             течение дней, месяцев или более длительного периода, можно за\n                             считанные секунды.\n\n                      Знание разрушает страх, а практика придает уверенности. Учитесь нести\n                      ответственность за свои решения, не винить в неудачах рынок.\n\n\n\n\nhttps://cryptology.courses/labs/risk-menedzhmentrizik-menedzhment                                                               8/8",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW11.pdf",
+              "page": 8,
+              "locator": "PDF page 8 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "sl_off_liquidity"
+    },
+    {
+      "node_id": "RANGE_RETURN_CHOCH:0",
+      "branch_id": "RANGE_RETURN_CHOCH",
+      "stage": "context",
+      "rule_id": "S_STRUCTURE",
+      "source_citation": [
+        {
+          "source_id": "SW5",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+          "source_sha256": "be8e14fbe03b0effbf4496eac104d30849e37e7f3db2fb92d4db1f942ace55ba",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+          "text_sha256": "5c655505788c181a808940863814a68d979a85cec0c20dcb3766cdf51075e656",
+          "page_or_paragraph": "p2–3",
+          "first": 2,
+          "last": 3,
+          "literal_passage": "12/02/2023, 21:09                                  https://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced\n\n\n\n\n                      2. Структурные точки (swing)\n                      Swing - структурная точка, в которой происходит разворот цены.\n\n                      Swing High - более высокая структурная точка. Представляет из себя три\n                      последовательные свечи, две крайние из которых имеют более низкие\n                      максимумы, чем центральная, формирующая более высокий максимум.\n\n                      Swing Low - более низкая структурная точка. Представляет из себя три\n                      последовательные свечи, две крайние из которых имеют более высокие\n                      минимумы, чем центральная, формирующая более низкий минимум.\n\n\n\n\n                      В зависимости от выбранного таймфрейма, свинги могут выглядеть по-разному.\n                      Очень часто трейдеры отмечают свинги там, где для выбранного таймфрейма их\n                      нет. Важно, чтобы это была последовательность свечей, как написано выше, а не\n                      просто пик.\n\n                      Опытные трейдеры могут себе позволить раскладывать структуру нескольких\n                      таймфреймов на одном, но новичкам так делать не стоит. Для грамотного\n                      построения нужно использовать различные таймфреймы. Это позволяет\n                      выработать дисциплину и видение ценового движения.\n\n\n\n\n                      3. Структура цены (market structure)\n                      Рыночная структура является основной концепта Smart Money и одним из самых\n                      важных инструментов, с которым мы будем работать. Если соединить тренд и\n                      структурные точки (swing), то мы получим рыночную структуру.\n\n                      Восходящая структура - движение, при котором ключевые максимумы (HH) и\n                      минимумы (HL) выше предыдущих.\n\n\n\n\nhttps://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced                                                      2/9\n12/02/2023, 21:09                                  https://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced\n\n                      Нисходящая структура - движение, при котором ключевые максимумы (LH) и\n                      минимумы (LL) ниже предыдущих.\n\n                      Схематическое изображение восходящей и нисходящей структуры:\n\n\n\n\n                      Графическое изображение восходящей структуры:\n\n\n\n\n                      Графическое изображение нисходящей структуры:\n\n\n\n\nhttps://cryptology.courses/labs/rynochnaya-struktura-advancedrinkova-struktura-advanced                                                      3/9",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+              "page": 2,
+              "locator": "PDF page 2 (text + all embedded figures)"
+            },
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+              "page": 3,
+              "locator": "PDF page 3 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        },
+        {
+          "source_id": "19",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+          "page_or_paragraph": "word/document.xml:P0053–P0073",
+          "first": 53,
+          "last": 73,
+          "literal_passage": "Структура рынка - последовательность максимумов и минимумов. Позволяет определить тренд и дальнейшее движение цены инструмента на различных ТФ\nРынок имеет три основные фазы движения :\nБычий тренд\nМедвежий тренд\nБоковое движение/флэт/Ренж\nЧтобы понять структуру рынка, как выглядит слом в структуры, нужно разобрать какие конкретные признаки в каждой тенденции.\nКаждый последующий тренд и даже боковое движение без тренда имеют свои особенности.\nСтруктура отрабатывает на всех таймфреймах!\nВосходящая структура (Бычья)\nВосходящий тренд состоит из более высоких минимумов (HL) и более высоких максимумов (HH).\nБычья структура рынка.\nБычья структура на графике.\nСиними линиями обозначено как обновляется структура,\nОбразование нового хая и нового лоя.\nСтоит обращать внимание только на те хаи, которые обновляют предыдущие.\nНисходящая структура (Медвежья).\nНисходящий тренд - более низкие минимумы (LL) и более низкие максимумы (LH).\nМедьвежья структура.\nМедьвежья структура на графике.\nСтоит обратить внимание что новые максимумы и минимумы ниже предыдущих.\nНам интересны только те лои, которые обновляют предыдущие!",
+          "diagrams": [
+            {
+              "source_id": "19",
+              "member": "word/media/image1.jpg",
+              "sha256": "b89e88686d16805a81e3692c74ba394e21225a51ed9e67cfa602e2db01b3d3fd",
+              "after_paragraph": 62,
+              "next_paragraph": 63,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/b89e88686d16805a81e3692c74ba394e21225a51ed9e67cfa602e2db01b3d3fd.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image2.jpg",
+              "sha256": "e1c69cf3cabb4725bd76f0e95e75273fabb259290c4d37cf72402cdd4ff7e99c",
+              "after_paragraph": 63,
+              "next_paragraph": 64,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/e1c69cf3cabb4725bd76f0e95e75273fabb259290c4d37cf72402cdd4ff7e99c.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image3.jpg",
+              "sha256": "72a90bbb4aa0b4dbdce69dd3db031eaa0b818e5d3057f99a70984229c94a61a5",
+              "after_paragraph": 69,
+              "next_paragraph": 70,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/72a90bbb4aa0b4dbdce69dd3db031eaa0b818e5d3057f99a70984229c94a61a5.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image4.jpg",
+              "sha256": "9c4b808f6ad20a62a0bd0fd0dd7a1236142ef66037b6b45175cd9bf2e79044bf",
+              "after_paragraph": 70,
+              "next_paragraph": 71,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/9c4b808f6ad20a62a0bd0fd0dd7a1236142ef66037b6b45175cd9bf2e79044bf.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "market_context"
+    },
+    {
+      "node_id": "RANGE_RETURN_CHOCH:1",
+      "branch_id": "RANGE_RETURN_CHOCH",
+      "stage": "range",
+      "rule_id": "S_RANGE_FORMATION",
+      "source_citation": [
+        {
+          "source_id": "06",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]10. Боковое движение.docx",
+          "source_sha256": "628cb1caa97138bc5470687e3743127cd147ac20c5cb39144345764be537e631",
+          "text": "data/source_materials/cryptology_2026_10_09/06.clean.txt",
+          "text_sha256": "ad70ddbe23b29b1f0bce9638ffb34b9cd98f04fbf1efcb42eaa52cb5b94aa5c6",
+          "page_or_paragraph": "word/document.xml:P0037–P0072",
+          "first": 37,
+          "last": 72,
+          "literal_passage": "Боковик всегда образуется после сильного направленного движения в одну из\nсторон (восходящий или нисходящий импульс).\nОкончание этого импульса будет первой границей боковика, окончание\nкоррекционного движения - второй.\nВ\nо\nс\nх\nд\nя\nщ\nе\nв\nи\nж\nн\nПосле восходящего импульсного движения первой границей боковика будет\nмаксимум, второй - сформированный позже минимум.\nН\nПосле нисходящего импульсного движения первой границей боковика будет\nминимум, второй - сформированный позже максимум.\nДля обозначения боковика на графике, используем коррекционную сетку\nФибоначчи с настройками 0. 0,5 и 1\nСхематический пример\nГрафический пример\nУсловия формирования\nЦена должна получать хорошую реакцию от уровня 0.5, так как он выступает\nдополнительным фактором для определения правильности построения\nбоковика.\nХорошая (правильная) реакция на уровень 0.5 подтверждает то, что границы\nренджа определены правильно.\nОбратите внимание на то, как цена реагирует на уровень 0.5 в выделенной зоне.\nЭто не самый удачный пример боковика. Как вы видите, границы боковика\nсмазывались и дальнейшее ценовое движение определить достаточно сложно,\nпоэтому советуем пропускать такие ситуации, рынок всегда даст возможность\nзаработать.",
+          "diagrams": [
+            {
+              "source_id": "06",
+              "member": "word/media/image2.jpg",
+              "sha256": "a82a31b27c5361151de5d03e53eb748d8afec4ae77bcf78ffe33f8798774783c",
+              "after_paragraph": 38,
+              "next_paragraph": 39,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/a82a31b27c5361151de5d03e53eb748d8afec4ae77bcf78ffe33f8798774783c.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image3.jpg",
+              "sha256": "fc9ddd14eb90685adbcbda04f6ccd2b03879351ac2aa1c54cc66409f1f477dcc",
+              "after_paragraph": 38,
+              "next_paragraph": 39,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/fc9ddd14eb90685adbcbda04f6ccd2b03879351ac2aa1c54cc66409f1f477dcc.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image4.jpg",
+              "sha256": "edf0b096300da1f715ab9f0c851260b4a294cf08ce86ac1077ea4c2f3db4c43d",
+              "after_paragraph": 38,
+              "next_paragraph": 39,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/edf0b096300da1f715ab9f0c851260b4a294cf08ce86ac1077ea4c2f3db4c43d.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image4.jpg",
+              "sha256": "edf0b096300da1f715ab9f0c851260b4a294cf08ce86ac1077ea4c2f3db4c43d",
+              "after_paragraph": 61,
+              "next_paragraph": 62,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/edf0b096300da1f715ab9f0c851260b4a294cf08ce86ac1077ea4c2f3db4c43d.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image5.jpg",
+              "sha256": "84c65fb5df418cbeb5b1efb764438ad55e4f733898ac47905e552298fbd2eff1",
+              "after_paragraph": 61,
+              "next_paragraph": 62,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/84c65fb5df418cbeb5b1efb764438ad55e4f733898ac47905e552298fbd2eff1.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image6.jpg",
+              "sha256": "14cfe8a01b7b0aaeac39c80c42b94f3d7237df0bb1311411f7d57c356b595f77",
+              "after_paragraph": 61,
+              "next_paragraph": 62,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/14cfe8a01b7b0aaeac39c80c42b94f3d7237df0bb1311411f7d57c356b595f77.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image7.jpg",
+              "sha256": "8a455d3962fe5ba80abd58bb19c02497e14c268b203f529cfc5e4a8be06fb9fe",
+              "after_paragraph": 70,
+              "next_paragraph": 71,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/8a455d3962fe5ba80abd58bb19c02497e14c268b203f529cfc5e4a8be06fb9fe.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image8.jpg",
+              "sha256": "586a84a30ad9570c0438d13ea2706248cf732591af3df13b97f0c0b5287651d4",
+              "after_paragraph": 70,
+              "next_paragraph": 71,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/586a84a30ad9570c0438d13ea2706248cf732591af3df13b97f0c0b5287651d4.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        },
+        {
+          "source_id": "19",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+          "page_or_paragraph": "word/document.xml:P0122–P0128",
+          "first": 122,
+          "last": 128,
+          "literal_passage": "RANGE(боковик)\nВнутри боковика должна отсутствовать структура\nСhoch внутри боковика может не дать той отработки, которую вы ждёте.\nКак построить и определить range -первый хай после импульса и первый лой.\nТоргуют боковик только после отклонения ( выхода ) (Девиации) цены за грани боковика.\nОтклонение цены от боковика называется девиацией.\nДля того, что бы точно удостоверится, в валидности фигуры, мы должны видеть реакции от середины боковика, от уровня 0.5 на схеме.",
+          "diagrams": [
+            {
+              "source_id": "19",
+              "member": "word/media/image19.jpg",
+              "sha256": "6f9d5563da2857954e14bf989484fe6d2d51d409951b7eaa3e3dfbf889ad82a2",
+              "after_paragraph": 121,
+              "next_paragraph": 122,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/6f9d5563da2857954e14bf989484fe6d2d51d409951b7eaa3e3dfbf889ad82a2.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image20.jpg",
+              "sha256": "4931d9ea03e48c73d0f37aeee9edcf22e110b4eee4586fd86c258f5f8078d5cd",
+              "after_paragraph": 121,
+              "next_paragraph": 122,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/4931d9ea03e48c73d0f37aeee9edcf22e110b4eee4586fd86c258f5f8078d5cd.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image21.jpg",
+              "sha256": "3fe2b814568c35d470c560cb6ae29daedec6ebc5e527f69d60219b3ee785e99a",
+              "after_paragraph": 126,
+              "next_paragraph": 127,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/3fe2b814568c35d470c560cb6ae29daedec6ebc5e527f69d60219b3ee785e99a.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image22.jpg",
+              "sha256": "6a29ca6ff6edcaf35004a308ea52e10f870314db315b7ee3c8f0e01c53194ab8",
+              "after_paragraph": 126,
+              "next_paragraph": 127,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/6a29ca6ff6edcaf35004a308ea52e10f870314db315b7ee3c8f0e01c53194ab8.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image23.jpg",
+              "sha256": "4ea93e8e697f85283eb708642ebb84decbe11ebd0d1819a607f2d4b66eee01ae",
+              "after_paragraph": 130,
+              "next_paragraph": 131,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/4ea93e8e697f85283eb708642ebb84decbe11ebd0d1819a607f2d4b66eee01ae.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "clear_range"
+    },
+    {
+      "node_id": "RANGE_RETURN_CHOCH:2",
+      "branch_id": "RANGE_RETURN_CHOCH",
+      "stage": "deviation",
+      "rule_id": "S_RANGE_DEVIATION",
+      "source_citation": [
+        {
+          "source_id": "06",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]10. Боковое движение.docx",
+          "source_sha256": "628cb1caa97138bc5470687e3743127cd147ac20c5cb39144345764be537e631",
+          "text": "data/source_materials/cryptology_2026_10_09/06.clean.txt",
+          "text_sha256": "ad70ddbe23b29b1f0bce9638ffb34b9cd98f04fbf1efcb42eaa52cb5b94aa5c6",
+          "page_or_paragraph": "word/document.xml:P0074–P0094",
+          "first": 74,
+          "last": 94,
+          "literal_passage": "Девиация\nДевиация - ценовое движение, которое направлено на снятие внешней\nликвидности за пределами границ боковика.\nКак было сказано ранее, боковик образуется для набора и/или распределения\nкрупной позиции маркетмейкера. Исходя из этих слов, нужно понять где и как\nон набирает позицию в достаточном объеме.\nКлассический технический анализ учит, что стоп ордера нужно ставить за\nлокальные уровни поддержки и сопротивления, которыми и являются границы\nК примеру, ритейл-трейдер видит, что цена получает реакцию от уровня\nсопротивления, открывает позицию на понижение и выставляет свой стоп\nордер выше уровня. Обратной заявкой для позиции на понижение, является\nпокупка. Чем больше таких заявок, тем лучше для ММ.\nЦена всегда ходит от ликвидности к ликвидности. Девиация с одной стороны\nприводит к девиации с другой стороны.\nНапример, после формирования боковика образуется девиация сверху. Можно\nпредположить, что в скором времени цена окажется у нижней границы, чтобы\nсобрать всю ликвидность под ней, так как сверху уже ничего не осталось.\nПосле формирования боковика, цена аккумулировала много внутренней\nликвидности по обе стороны. Первое снятие произошло снизу, и как вы видите,\nсбор ликвидности снизу привел к ускоренному движению цены к верхней\nгранице боковика для снятия верхней ликвидности.",
+          "diagrams": [
+            {
+              "source_id": "06",
+              "member": "word/media/image8.jpg",
+              "sha256": "586a84a30ad9570c0438d13ea2706248cf732591af3df13b97f0c0b5287651d4",
+              "after_paragraph": 94,
+              "next_paragraph": 95,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/586a84a30ad9570c0438d13ea2706248cf732591af3df13b97f0c0b5287651d4.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image9.jpg",
+              "sha256": "3b67001a0cbf527a3924fe6f2f5de5a1f2cc36e1d58926b9d9934a8f5a3b4f16",
+              "after_paragraph": 94,
+              "next_paragraph": 95,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/3b67001a0cbf527a3924fe6f2f5de5a1f2cc36e1d58926b9d9934a8f5a3b4f16.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image10.jpg",
+              "sha256": "6cf09546ac9856363595c5e6a156312be518799b94fe2752cf9a57243ee59295",
+              "after_paragraph": 94,
+              "next_paragraph": 95,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/6cf09546ac9856363595c5e6a156312be518799b94fe2752cf9a57243ee59295.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        },
+        {
+          "source_id": "19",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+          "page_or_paragraph": "word/document.xml:P0125–P0130",
+          "first": 125,
+          "last": 130,
+          "literal_passage": "Как построить и определить range -первый хай после импульса и первый лой.\nТоргуют боковик только после отклонения ( выхода ) (Девиации) цены за грани боковика.\nОтклонение цены от боковика называется девиацией.\nДля того, что бы точно удостоверится, в валидности фигуры, мы должны видеть реакции от середины боковика, от уровня 0.5 на схеме.\nОдин из сетапов который мы используем для торговли боковых движений :\nВозврат цены после девиации - с последующим тестом зоны , которая отправила цену обратно в ренж , сделав choch.",
+          "diagrams": [
+            {
+              "source_id": "19",
+              "member": "word/media/image21.jpg",
+              "sha256": "3fe2b814568c35d470c560cb6ae29daedec6ebc5e527f69d60219b3ee785e99a",
+              "after_paragraph": 126,
+              "next_paragraph": 127,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/3fe2b814568c35d470c560cb6ae29daedec6ebc5e527f69d60219b3ee785e99a.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image22.jpg",
+              "sha256": "6a29ca6ff6edcaf35004a308ea52e10f870314db315b7ee3c8f0e01c53194ab8",
+              "after_paragraph": 126,
+              "next_paragraph": 127,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/6a29ca6ff6edcaf35004a308ea52e10f870314db315b7ee3c8f0e01c53194ab8.txt"
+            },
+            {
+              "source_id": "19",
+              "member": "word/media/image23.jpg",
+              "sha256": "4ea93e8e697f85283eb708642ebb84decbe11ebd0d1819a607f2d4b66eee01ae",
+              "after_paragraph": 130,
+              "next_paragraph": 131,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/4ea93e8e697f85283eb708642ebb84decbe11ebd0d1819a607f2d4b66eee01ae.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "range_deviation"
+    },
+    {
+      "node_id": "RANGE_RETURN_CHOCH:3",
+      "branch_id": "RANGE_RETURN_CHOCH",
+      "stage": "return",
+      "rule_id": "S_RANGE_CONSERVATIVE",
+      "source_citation": [
+        {
+          "source_id": "06",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]10. Боковое движение.docx",
+          "source_sha256": "628cb1caa97138bc5470687e3743127cd147ac20c5cb39144345764be537e631",
+          "text": "data/source_materials/cryptology_2026_10_09/06.clean.txt",
+          "text_sha256": "ad70ddbe23b29b1f0bce9638ffb34b9cd98f04fbf1efcb42eaa52cb5b94aa5c6",
+          "page_or_paragraph": "word/document.xml:P0124–P0129",
+          "first": 124,
+          "last": 129,
+          "literal_passage": ". Консервативный\n- Наличие POI сверху/снизу всегда выступает сильным\nмагнитом для цены, поэтому мы ожидаем поход цены в ту зону, до этого позиции\nвнутри ренджа не открываем, если цена не дает реакцию на poi, входим\nконсервативно, после возврата и закрепления цены внутри боковика, на тесте\nграниц.",
+          "diagrams": [
+            {
+              "source_id": "06",
+              "member": "word/media/image13.jpg",
+              "sha256": "c81dbbc3ef15ca3755864ed0f987d58bb9e9cc6becf2199c313ac5be824cb423",
+              "after_paragraph": 129,
+              "next_paragraph": 130,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/c81dbbc3ef15ca3755864ed0f987d58bb9e9cc6becf2199c313ac5be824cb423.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image14.jpg",
+              "sha256": "beaa8047c54bd2c988b4c264bf596d1ac3be1a7a683f9ac67982e709a1de6cb7",
+              "after_paragraph": 129,
+              "next_paragraph": 130,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/beaa8047c54bd2c988b4c264bf596d1ac3be1a7a683f9ac67982e709a1de6cb7.txt"
+            },
+            {
+              "source_id": "06",
+              "member": "word/media/image15.jpg",
+              "sha256": "bace8d0ac14330586507f1ce4fd2f1821fd78ae390261804adcb7f68841b5e5c",
+              "after_paragraph": 129,
+              "next_paragraph": 130,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/bace8d0ac14330586507f1ce4fd2f1821fd78ae390261804adcb7f68841b5e5c.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        },
+        {
+          "source_id": "19",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+          "page_or_paragraph": "word/document.xml:P0129–P0130",
+          "first": 129,
+          "last": 130,
+          "literal_passage": "Один из сетапов который мы используем для торговли боковых движений :\nВозврат цены после девиации - с последующим тестом зоны , которая отправила цену обратно в ренж , сделав choch.",
+          "diagrams": [
+            {
+              "source_id": "19",
+              "member": "word/media/image23.jpg",
+              "sha256": "4ea93e8e697f85283eb708642ebb84decbe11ebd0d1819a607f2d4b66eee01ae",
+              "after_paragraph": 130,
+              "next_paragraph": 131,
+              "ocr": "data/source_materials/cryptology_2026_10_09/diagram_ocr/4ea93e8e697f85283eb708642ebb84decbe11ebd0d1819a607f2d4b66eee01ae.txt"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "return_choch_zone"
+    },
+    {
+      "node_id": "RANGE_RETURN_CHOCH:7",
+      "branch_id": "RANGE_RETURN_CHOCH",
+      "stage": "sl_liquidity",
+      "rule_id": "S_SL_OFF_POOL",
+      "source_citation": [
+        {
+          "source_id": "SW11",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW11.pdf",
+          "source_sha256": "ffc65d95bbc1e22186cbddd061befb93e8143f3a5075c985165ecfe7b054f681",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+          "text_sha256": "e913f457f2711b756b9df901563848ec97b8fdb6e4c2e7e4c4890743e80e9b6f",
+          "page_or_paragraph": "p8–8",
+          "first": 8,
+          "last": 8,
+          "literal_passage": "7. Выводы\n12/02/2023, 21:48                                           https://cryptology.courses/labs/risk-menedzhmentrizik-menedzhment\n\n\n\n\n                          1. Не покупайте и не продавайте актив, пока цена не окажется в конкретной\n                             точке согласно ТС.\n                          2. Не открывайте позицию, если не знаете, где будет стоп-лосс.\n                          3. Не пытайтесь прогнуть рынок под себя, ставя стоп-лосс там, где удобно\n                             именно вам. Рынку не интересен ваш интерес, и только вы сами можете\n                             позаботиться о себе.\n                          4. Не передвигайте стоп-лосс. Это действие означает лишь одно: сделка не\n                             была рассчитана, и убыток не был принят перед открытием сделки. Такое\n                             поведение быстро приведет к убыткам.\n                          5. Не ставить стоп-лосс на уровне скопления ликвидности.\n                          6. Уважайте риски больше, чем профит. Научитесь фиксировать убыток\n                             ТОЛЬКО в рамках торговой системы, и профит проявит себя как побочный\n                             эффект этого навыка.\n                          7. НИКОГДА не инвестируйте ваши последние денежные средства.\n                             Инвестировать можно только свободные деньги — те, которые не\n                             понадобятся вам для жизнеобеспечения в ближайшее время.\n                          8. Не начинайте торговый путь с больших сумм. Работа с минимальным\n                             объемом и незначительными суммами денег даст вам четкое понимание\n                             того, как вы принимаете решения, как действуете, насколько вы\n                             дисциплинированны, насколько готовы следовать своим же правилам.\n                             Инвестируйте деньги, которые можете позволить себе вывести из личного\n                             или семейного бюджета без страха оказаться на мели. Трейдинг не\n                             азартная игра, а процесс, требующий знаний, умений и навыков. Важно\n                             освоить навык, протестировать торговую систему и сетапы на демо-счете\n                             или на маленьком реальном счете. Только потом, при положительной\n                             статистике, постепенно увеличивать депозит.\n                          9. Если вас беспокоит стоп-лосс, уменьшайте его до тех пор, пока не\n                             почувствуете себя спокойно.\n                        10. Имейте ввиду, что потерять деньги, которые вы системно зарабатывали в\n                             течение дней, месяцев или более длительного периода, можно за\n                             считанные секунды.\n\n                      Знание разрушает страх, а практика придает уверенности. Учитесь нести\n                      ответственность за свои решения, не винить в неудачах рынок.\n\n\n\n\nhttps://cryptology.courses/labs/risk-menedzhmentrizik-menedzhment                                                               8/8",
+          "diagrams": [
+            {
+              "original": "data/source_materials/primary_pdf_2026_10_09/SW11.pdf",
+              "page": 8,
+              "locator": "PDF page 8 (text + all embedded figures)"
+            }
+          ],
+          "diagram_scope": "Context pages/adjacent media, not a claim that every image is an executable rule"
+        }
+      ],
+      "known_at": "Only after all referenced formation/confirmation bars complete; next-open facts at OPEN; invalidation at native CLOSE.",
+      "predicate": "sl_off_liquidity"
+    }
+  ],
+  "source_nodes_scope": "These preserved v1 nodes supply predicates/citations only; legacy edge fields omitted.",
+  "resolution_nodes": [
+    {
+      "node_id": "PROFILE_SCOPE",
+      "rule_ids": [
+        "U3",
+        "U4",
+        "N11_STOP_TICK"
+      ],
+      "failure": "REJECT_INACTIVE_PROFILE_BRANCH / REJECT_OUTSIDE_EXECUTABLE_UNIVERSE / WAIT_UNRESOLVED_INSTRUMENT_METADATA",
+      "failure_statuses": [
+        "REJECT_INACTIVE_PROFILE_BRANCH",
+        "REJECT_OUTSIDE_EXECUTABLE_UNIVERSE",
+        "WAIT_UNRESOLVED_INSTRUMENT_METADATA"
+      ],
+      "known_at": "All evidence/dependencies completed and known before decision; OPEN previous-CLOSE phase explicit",
+      "PASS": "SOURCE_EVIDENCE"
+    },
+    {
+      "node_id": "SOURCE_EVIDENCE",
+      "rule_ids": [
+        "N11_EVIDENCE",
+        "N11_SOURCE_SCOPE"
+      ],
+      "failure": "REJECT_SOURCE_CONDITION / WAIT_UNRESOLVED_SOURCE_GEOMETRY",
+      "failure_statuses": [
+        "REJECT_SOURCE_CONDITION",
+        "WAIT_UNRESOLVED_SOURCE_GEOMETRY"
+      ],
+      "known_at": "All evidence/dependencies completed and known before decision; OPEN previous-CLOSE phase explicit",
+      "PASS": "CONFIRMED_PATH"
+    },
+    {
+      "node_id": "CONFIRMED_PATH",
+      "rule_ids": [
+        "U3",
+        "U4"
+      ],
+      "failure": "WAIT_NO_AVAILABLE_LOWER_TF / WAIT_SFP_LOWER_BOS_ENTRY_SEARCH / WAIT_RANGE_RECLAIM_RETEST / WAIT_BREAKER_CONFIRMATION / WAIT_CAUSAL_REACTION_BOS / WAIT_NEW_POI_AFTER_BOS",
+      "failure_statuses": [
+        "WAIT_NO_AVAILABLE_LOWER_TF",
+        "WAIT_SFP_LOWER_BOS_ENTRY_SEARCH",
+        "WAIT_RANGE_RECLAIM_RETEST",
+        "WAIT_BREAKER_CONFIRMATION",
+        "WAIT_CAUSAL_REACTION_BOS",
+        "WAIT_NEW_POI_AFTER_BOS"
+      ],
+      "known_at": "All evidence/dependencies completed and known before decision; OPEN previous-CLOSE phase explicit",
+      "PASS": "LIQUIDITY"
+    },
+    {
+      "node_id": "LIQUIDITY",
+      "rule_ids": [
+        "U5"
+      ],
+      "failure": "WAIT_SWEEP / WAIT_UNRESOLVED_LIQUIDITY_CONTEXT / WAIT_POST_SWEEP_REVALIDATION",
+      "failure_statuses": [
+        "WAIT_SWEEP",
+        "WAIT_UNRESOLVED_LIQUIDITY_CONTEXT",
+        "WAIT_POST_SWEEP_REVALIDATION"
+      ],
+      "known_at": "All evidence/dependencies completed and known before decision; OPEN previous-CLOSE phase explicit",
+      "PASS": "ENTRY"
+    },
+    {
+      "node_id": "ENTRY",
+      "rule_ids": [
+        "U3",
+        "N11_ENTRY"
+      ],
+      "failure": "WAIT_UNRESOLVED_ENTRY_GEOMETRY",
+      "failure_statuses": [
+        "WAIT_UNRESOLVED_ENTRY_GEOMETRY"
+      ],
+      "known_at": "All evidence/dependencies completed and known before decision; OPEN previous-CLOSE phase explicit",
+      "PASS": "STOP"
+    },
+    {
+      "node_id": "STOP",
+      "rule_ids": [
+        "U2",
+        "N11_STOP_TICK",
+        "N11_ATR_SMA14"
+      ],
+      "failure": "WAIT_UNRESOLVED_STOP_GEOMETRY / REJECT_STOP_GEOMETRY / WAIT_UNRESOLVED_STOP_LIQUIDITY",
+      "failure_statuses": [
+        "WAIT_UNRESOLVED_STOP_GEOMETRY",
+        "REJECT_STOP_GEOMETRY",
+        "WAIT_UNRESOLVED_STOP_LIQUIDITY"
+      ],
+      "known_at": "All evidence/dependencies completed and known before decision; OPEN previous-CLOSE phase explicit",
+      "PASS": "TARGET"
+    },
+    {
+      "node_id": "TARGET",
+      "rule_ids": [
+        "U1",
+        "N11_TARGET"
+      ],
+      "failure": "WAIT_UNRESOLVED_CONTEXTUAL_FTA",
+      "failure_statuses": [
+        "WAIT_UNRESOLVED_CONTEXTUAL_FTA"
+      ],
+      "known_at": "All evidence/dependencies completed and known before decision; OPEN previous-CLOSE phase explicit",
+      "PASS": "IDENTITY_FIRST_TEST"
+    },
+    {
+      "node_id": "IDENTITY_FIRST_TEST",
+      "rule_ids": [
+        "U6",
+        "N11_IDENTITY"
+      ],
+      "failure": "WAIT_UNRESOLVED_SETUP_IDENTITY / WAIT_FIRST_TEST_ONLY",
+      "failure_statuses": [
+        "WAIT_UNRESOLVED_SETUP_IDENTITY",
+        "WAIT_FIRST_TEST_ONLY"
+      ],
+      "known_at": "All evidence/dependencies completed and known before decision; OPEN previous-CLOSE phase explicit",
+      "PASS": "PHYSICAL_IDEA"
+    },
+    {
+      "node_id": "PHYSICAL_IDEA",
+      "rule_ids": [
+        "U3",
+        "N11_BATCH"
+      ],
+      "failure": "WAIT_BRANCH_CONFLICT / CONFLUENCE_ONLY",
+      "failure_statuses": [
+        "WAIT_BRANCH_CONFLICT",
+        "CONFLUENCE_ONLY"
+      ],
+      "known_at": "All evidence/dependencies completed and known before decision; OPEN previous-CLOSE phase explicit",
+      "PASS": "ALLOW_PLAN"
+    },
+    {
+      "node_id": "ALLOW_PLAN",
+      "rule_ids": [
+        "U1",
+        "U2",
+        "U3"
+      ],
+      "failure": "SOURCE_ALLOW_PLAN_ONLY",
+      "failure_statuses": [
+        "SOURCE_ALLOW_PLAN_ONLY"
+      ],
+      "known_at": "All evidence/dependencies completed and known before decision; OPEN previous-CLOSE phase explicit",
+      "PASS": "PROJECT_ADMISSION_REQUIRED"
+    }
+  ],
+  "EXACT_ORIGINAL_IDENTIFIABLE": false,
+  "EXECUTABLE_PROFILE_IDENTIFIABLE": true,
+  "trade_entry_allowed": false,
+  "ALLOW_means": "Source plan only; project/execution admission never enabled"
+}

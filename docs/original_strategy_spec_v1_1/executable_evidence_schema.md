@@ -1,0 +1,11 @@
+# Causal evidence schema
+
+Prices are positive decimal strings; instrument_metadata is timestamped public metadata whose tick_size must match the selected tick_size, not a tuned threshold. decision_at integer UTC seconds; OPEN/CLOSE with previous-close phase at same OPEN timestamp; mode BACKTEST/SHADOW only. Every structural/qualitative record has evidence, known_at, completed_at, optional recursive dependencies and source_validated=true; known_at≥completed_at and ≤decision_at. Source citations come from immutable rule registry; boolean facts are explicit supplied annotations, never detector proof.
+
+entry_poi low/high/id plus formation_known_at; branch stop_anchor kind/price/unique. SFP: raid, old_level, Range range_exit has source low/high boundaries and optional causal source_exit_poi for a nearer source-defined FTA. next_open containing only open/known_at, ATR15 contiguous candles. reaction→M15bos→newpoi chronological chain. source-specific facts must be source_validated. contextual_poi_inventory and liquidity_inventory attest complete_for_known_prefix; lists may contain future records, which are not accessed before known_at. No hidden H4/D1-only target selection.
+
+identity_evidence contains context/formation/confirmation/poi canonical IDs and timestamps. poi is original physical idea POI; entry_poi.parent_poi_id references it. sl_off_liquidity.checked_price must exactly match computed initial stop, not a different candidate quote. IDs must denote same physical objects across branches, never branch-specific serials; adapter is responsible. zone_first_test explicit causal unused-zone evidence plus persistent used zone/setup state. Caller passes all same-event source candidates to select_ideas before any lifecycle position is activated. Candidate ALLOW from evaluate is not a substitute for physical-idea selection.
+
+Liquidity roles ADVERSE/TARGET_OR_FUEL/NEUTRAL/UNKNOWN; known sweep requires explicit full source revalidation attestation and re-evaluation, no automatic entry. Whole impulse/smooth/tilt/endpoints without proof UNKNOWN.
+
+Lifecycle: explicit ordered QUOTE events or completed pattern-TF BAR_CLOSE; monetary outcomes and future holding duration forbidden recursively. Unordered OHLC does not invent limit fills.
