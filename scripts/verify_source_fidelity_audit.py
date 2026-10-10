@@ -83,8 +83,21 @@ def prefix_future():
 
 def baseline_and_known_times():
     lock = json.loads((ROOT / 'baseline_lock.json').read_text())
+    # Git's original text listing C-quoted five Cyrillic shortcut paths.
+    # Verify that frozen mapping against an unquoted NUL-separated tree;
+    # preserve the initial lock and check every canonical path's actual blob.
+    import ast
+    frozen = {(ast.literal_eval(name).encode('latin1').decode('utf8')
+               if name.startswith('"') else name): value for name, value in lock['git_blobs'].items()}
+    tree = subprocess.check_output(['git', 'ls-tree', '-rz', lock['commit']], cwd=REPO)
+    canonical = {}
+    for entry in tree.split(b'\0'):
+        if entry:
+            meta, name = entry.split(b'\t', 1)
+            canonical[name.decode()] = meta.split()[2].decode()
+    assert frozen == canonical, 'Frozen lock/canonical baseline tree identity mismatch'
     modified = []
-    for name, expected in lock['git_blobs'].items():
+    for name, expected in canonical.items():
         path = REPO / name
         if not path.is_file():
             modified.append(name)
@@ -124,6 +137,8 @@ def baseline_and_known_times():
     assert compileall.compile_dir(REPO / 'tests', quiet=1)
     write_json(ROOT / 'qa/immutable_and_known_times_receipt.json', {
         'baseline_commit': lock['commit'], 'baseline_blobs_checked': len(lock['git_blobs']),
+        'frozen_lock_to_NUL_tree_identity': 'PASS',
+        'C_quoted_Cyrillic_paths_decoded': sum(name.startswith('"') for name in lock['git_blobs']),
         'baseline_file_identity': 'PASS', 'state_snapshots': n, 'known_times_checks': dict(counts),
         'known_times': 'PASS', 'compileall': 'PASS', 'trade_entry_allowed': False})
 
@@ -174,8 +189,12 @@ def exit_history():
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('stage', choices=['prefix', 'resume-existing', 'baseline', 'exits'])
+    p.add_argument('stage', choices=['prefix', 'resume-existing', 'baseline', 'exits'],
+                   nargs='?', default='resume-existing')
+    p.add_argument('--resume-existing', action='store_true')
     args = p.parse_args()
+    if args.stage == 'resume-existing':
+        assert args.resume_existing, 'Completed state segments require --resume-existing'
     {'prefix': prefix_future, 'resume-existing': verify_state_resume,
      'baseline': baseline_and_known_times, 'exits': exit_history}[args.stage]()
 

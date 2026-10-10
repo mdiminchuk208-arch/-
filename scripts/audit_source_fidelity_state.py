@@ -21,7 +21,15 @@ from crypto_bot.strategy.source_pdf_native import evidence_json, liquidity_roles
 from crypto_bot.strategy.source_permitted import SourceSeries
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from run_medium_term_research import digest, load_data, read_rows, resume, seal, write_json, write_rows
+from run_medium_term_research import (
+    digest,
+    load_data,
+    read_rows,
+    resume,
+    seal,
+    write_json,
+    write_rows,
+)
 
 REPO = Path(__file__).resolve().parents[1]
 ROOT = REPO / 'data/reports/source_fidelity_2026_10_11'
@@ -57,15 +65,15 @@ def requests_for(symbol):
             continue
         signal = signals[t['signal_id']]
         for stage, at in [('READY', signal['known_at']), ('PRE_ENTRY', t['entry_interval_start'])]:
-            requests[datetime.fromisoformat(at)].append(dict(stage=stage, id=t['signal_id'],
-                direction=t['direction'], entry=signal['entry'], htf=signal['htf'],
-                ltf=signal['evidence']['entry_zone_tf'], parent=signal['evidence']['htf_poi'],
-                setup_tf=signal['evidence']['actual_setup_tf']))
+            requests[datetime.fromisoformat(at)].append({'stage': stage, 'id': t['signal_id'],
+                'direction': t['direction'], 'entry': signal['entry'], 'htf': signal['htf'],
+                'ltf': signal['evidence']['entry_zone_tf'], 'parent': signal['evidence']['htf_poi'],
+                'setup_tf': signal['evidence']['actual_setup_tf']})
     for r in rejected:
         if r['symbol'] != symbol:
             continue
-        requests[datetime.fromisoformat(r['known_at'])].append(dict(stage='NO_HTF_CONTEXT',
-            id=r['physical_opportunity_id'], rejection=r))
+        requests[datetime.fromisoformat(r['known_at'])].append({'stage': 'NO_HTF_CONTEXT',
+            'id': r['physical_opportunity_id'], 'rejection': r})
     return requests
 
 

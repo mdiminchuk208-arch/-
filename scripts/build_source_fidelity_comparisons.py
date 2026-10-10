@@ -93,6 +93,21 @@ def main():
     native = REPO / 'data/reports/medium_term_2026_10_10/role_corrected_v2/native_bybit_2026'
     native_ind = read_rows(native / 'simulation/enabled/independent_cases.jsonl.gz')
     primary_ind = read_rows(BASE / 'simulation/enabled/independent_cases.jsonl.gz')
+    independent_map = {t['signal_id']: t for t in primary_ind}
+    assert on_map.keys() <= independent_map.keys()
+    assert all(independent_map[sid]['net_pnl'] * t['net_pnl'] > 0 for sid, t in on_map.items())
+    journal = read_rows(BASE / 'simulation/enabled/shared_journal.jsonl.gz')
+    reasons = defaultdict(set)
+    for event in journal:
+        if event.get('reason') in {'DAILY_LOSS_LIMIT_LATCHED', 'ISOLATED_MARGIN_BUDGET', 'PREVIOUS_POSITION_STILL_OPEN'}:
+            reasons[event['signal_id']].add(event['reason'])
+    capital_rows = [
+        {'signal_id': t['signal_id'], 'symbol': t['symbol'], 'entry': t['entry_interval_start'],
+         'INDEPENDENT_result': 'WIN' if t['net_pnl'] > 0 else 'LOSS',
+         'SHARED_FILLED': t['signal_id'] in on_map, 'admission_reasons': sorted(reasons[t['signal_id']]),
+         'independent_net': t['net_pnl'], 'shared_net': on_map.get(t['signal_id'], {}).get('net_pnl')}
+        for t in primary_ind]
+    write_csv(ROOT / 'capital_admission_2352_to_880.csv', capital_rows)
     chain = [
         ('OLD_META_TEST_SELECTED', old['admitted_TEST']['WR']),
         ('OLD_TEST_UNFILTERED_INDEPENDENT', old['baseline_TEST']['WR']),
@@ -101,8 +116,9 @@ def main():
         ('CURRENT_PRIMARY_SHARED', statistics(trades)['win_rate'])]
     decomposition = [{'from': a[0], 'to': b[0], 'from_WR': a[1], 'to_WR': b[1],
                       'difference_percentage_points': 100 * (a[1] - b[1]),
-                      'identification': ('EXACT_SAME_TEST_FROZEN_LEAF_SELECTION'
-                                         if i == 0 else 'DESCRIPTIVE_COMBINED_SCOPE_CHANGE_NOT_SINGLE_CAUSAL_EFFECT')}
+                      'identification': ('EXACT_SAME_TEST_FROZEN_LEAF_SELECTION' if i == 0 else
+                                         'EXACT_SAME_COHORT_SHARED_ADMISSION_SUBSET_NO_COMMON_RESULT_FLIPS' if i == 3 else
+                                         'DESCRIPTIVE_COMBINED_SCOPE_CHANGE_NOT_SINGLE_CAUSAL_EFFECT')}
                      for i, (a, b) in enumerate(itertools.pairwise(chain))]
     write_csv(ROOT / 'winrate_decomposition.csv', decomposition)
     groups = defaultdict(list)
@@ -134,6 +150,11 @@ def main():
         'winrate_chain': decomposition,
         'total_difference_percentage_points': 100 * (chain[0][1] - chain[-1][1]),
         'cost_gate_ON': statistics(trades), 'cost_gate_OFF': statistics(off),
+        'capital_admission_removed': dict(Counter(r['INDEPENDENT_result'] for r in capital_rows if not r['SHARED_FILLED'])),
+        'capital_admission_common_result_flips': 0,
+        'cost_gate_changed_entry_results': {
+            'ON_only': dict(Counter('WIN' if on_map[s]['net_pnl'] > 0 else 'LOSS' for s in on_map.keys() - off_map.keys())),
+            'OFF_only': dict(Counter('WIN' if off_map[s]['net_pnl'] > 0 else 'LOSS' for s in off_map.keys() - on_map.keys()))},
         'cost_gate_entry_membership': {'common': len(on_map.keys() & off_map.keys()),
                                      'ON_only': len(on_map.keys() - off_map.keys()),
                                      'OFF_only': len(off_map.keys() - on_map.keys()),
