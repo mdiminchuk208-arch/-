@@ -1,0 +1,16 @@
+Дополнение пользователя к уже выполняемой задаче — 2026-10-10.
+Не перезапускать и не переделывать сделанное. Добавить обязательную ANTI-SCALP
+проверку до READY / ENTERED к текущей среднесрочной реализации и продолжить.
+Нужны H1/H4 setup и H4/D1 context; младший TF только уточняет вход, не создаёт
+идею. До входа нужен реальный structural target / FTA / liquidity target.
+expected_gross_move / estimated_round_trip_cost = edge_cost_ratio.
+Costs включают entry fee, exit fee, entry slippage, exit slippage.
+Недостаточный потенциал относительно costs => REJECTED_SCALP_RISK;
+подпричины REJECTED_SCALP_NO_HTF_CONTEXT, REJECTED_SCALP_TARGET_TOO_CLOSE,
+REJECTED_SCALP_POOR_EDGE_COST_RATIO.
+Не ставить фиксированные TP +3%, +5%, +8%; TP1/2/3 остаются source-aligned:
+structure / liquidity / FTA / R / volatility. Не использовать будущую
+фактическую длительность, не удалять постфактум короткие сделки.
+Дополнительно вывести количество отказов и каждую подпричину; сколько старых
+коротких сделок новый фильтр не допускает; влияние на total trades;
+holding-time distribution; Gross P&L, Fees, Slippage, Net P&L.
