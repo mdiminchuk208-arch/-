@@ -5,9 +5,10 @@ import argparse
 import gzip
 import json
 import sys
-from bisect import bisect_right
+from bisect import bisect_left, bisect_right
 from collections import Counter
 from dataclasses import asdict, replace
+from math import isclose
 from pathlib import Path
 
 from crypto_bot.data.storage import read_klines_csv
@@ -35,6 +36,70 @@ def native_data(policy, symbols):
 
 def ordered(rows):
     return sorted(rows, key=lambda r: r['signal_id'])
+
+
+def native_case_formation(final, policy, native, valid):
+    """Independently reconcile native OHLC formations and all frozen ATR stops."""
+    primary = read_rows(final / 'cohorts/SOURCE_PERMITTED_UNION' /
+                        policy['primary_cancellation'] / 'primary_cases.jsonl.gz')
+    checked = Counter(); atrs = {}
+    atr_count = 0
+    for r in valid.values():
+        if r['evidence']['path_id'] != 'SFP_ATR_STOP':
+            continue
+        key = (r['symbol'], r['htf']); p = r['evidence']['htf_poi']
+        if key not in atrs:
+            ranges = []; values = []
+            for i, c in enumerate(native[key]):
+                previous = native[key][i-1].close if i else c.open
+                ranges.append(max(c.high-c.low, abs(c.high-previous), abs(c.low-previous)))
+                values.append(sum(ranges[:14])/14 if i == 13 else
+                              (values[-1]*13+ranges[-1])/14 if i >= 14 else None)
+            atrs[key] = values
+        frozen = atrs[key][p['origin_index']]
+        assert frozen is not None
+        expected = p['raid']['extreme']-sign(r['direction'])*frozen
+        assert isclose(r['stop'], expected, rel_tol=1e-12)
+        atr_count += 1
+    for t in primary:
+        e = t['evidence']; q = e['ltf_poi']; s = sign(t['direction'])
+        cs = native[(t['symbol'], e['entry_zone_tf'])]
+        if q['kind'] == 'FVG':
+            a, c = cs[q['origin_index']], cs[q['origin_index']+2]
+            low, high = (a.high, c.low) if s == 1 else (c.high, a.low)
+            assert low < high and (q['low'], q['high']) == (low, high)
+            assert instant(q['formed_at']) == c.close_time
+            checked['native_three_candle_FVG'] += 1
+        elif q['kind'] == 'ORDER_BLOCK':
+            a = cs[q['origin_index']]; c = cs[q['origin_index']+1]
+            assert (q['low'], q['high']) == (a.low, a.high)
+            assert s*(a.close-a.open) < 0 and s*(c.close-c.open) > 0
+            assert (c.open <= a.close and c.close > a.open) if s == 1 else (
+                c.open >= a.close and c.close < a.open)
+            raid = q['raid']
+            assert raid['candle_index'] == q['origin_index']
+            assert raid['extreme'] == (a.low if s == 1 else a.high)
+            assert s*(raid['extreme']-raid['price']) < 0
+            checked['native_raid_body_engulf_full_wick_OB'] += 1
+        if t['path_id'].startswith('SFP_'):
+            p = e['htf_poi']; pattern = native[(t['symbol'], t['htf'])][p['origin_index']]
+            raid = p['raid']; assert (p['low'], p['high']) == (pattern.low, pattern.high)
+            assert raid['extreme'] == (pattern.low if s == 1 else pattern.high)
+            assert s*(raid['extreme']-raid['price']) < 0 and s*(pattern.close-raid['price']) > 0
+            opens = [c.open_time for c in native[(t['symbol'], 5)]]
+            following = native[(t['symbol'], 5)][bisect_left(opens, pattern.close_time)]
+            assert following.open_time == pattern.close_time
+            # DOC16 P0082–83 requires the reclaimed side of the swept level;
+            # it does not require OPEN inside the SFP candle's entire wick.
+            assert s*(following.open-raid['price']) > 0
+            assert p['confluence']['next_real_5m_open'] == following.open
+            assert instant(p['known_at']) == following.close_time
+            assert instant(e['confirmations']['bos']['known_at']) > following.close_time
+            checked['native_SFP_raid_reclaim_next_OPEN_and_post_reaction_BOS'] += 1
+    return {'status': 'PASS', 'primary_cases': len(primary), 'native_primary_formation_checks': dict(checked),
+            'all_source_valid_ATR_stops_independently_recomputed': atr_count,
+            'ATR_method': '14_NATIVE_TR_SEED_THEN_WILDER_RMA_AT_FROZEN_PATTERN_INDEX',
+            'trade_entry_allowed': False}
 
 
 def prefix_check(base, final, policy, cache):
@@ -159,7 +224,9 @@ def full_check(base, final, policy):
     assert len(local_zones) == len(set(local_zones))
     qualified, reproduced_proof, _ = repair_sfp_candidates(signals(raw_rows), native)
     mapped, claims = canonical_physical_signals(qualified, policy)
-    assert evidence_json(ordered([asdict(r) for r in mapped])) == evidence_json(ordered(final_rows))
+    assert len(mapped) == len(valid)
+    for r in mapped:
+        assert evidence_json(asdict(r)) == evidence_json(valid[r.signal_id])
     assert evidence_json(ordered(reproduced_proof)) == evidence_json(ordered(list(proof.values())))
     assert evidence_json(claims) == evidence_json(read_rows(final / 'physical_claims.jsonl.gz'))
     return {'status': 'PASS', 'raw_candidate_READY': len(raw), 'source_valid_READY': len(valid),
@@ -167,6 +234,7 @@ def full_check(base, final, policy):
             'primary_native_SFP_body_events': body_count, 'native_source_trade_fields_unchanged': 'PASS',
             'strict_control_preserved': 'PASS', 'one_local_first_test_per_physical_union': 'PASS',
             'global_physical_claim_reconstruction': 'PASS', 'future_outcomes_used': False,
+            'native_formation': native_case_formation(final, policy, native, valid),
             'trade_entry_allowed': False}
 
 

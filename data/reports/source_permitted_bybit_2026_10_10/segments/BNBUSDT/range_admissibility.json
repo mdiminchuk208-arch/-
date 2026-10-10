@@ -1,0 +1,74 @@
+[
+  {
+    "PnL_used": false,
+    "SFP_events": 106,
+    "classification": "RESEARCH_PARAMETER",
+    "ever_validated": 367,
+    "midpoint_tolerance": 0.04,
+    "tf": 15
+  },
+  {
+    "PnL_used": false,
+    "SFP_events": 171,
+    "classification": "RESEARCH_PARAMETER",
+    "ever_validated": 533,
+    "midpoint_tolerance": 0.08,
+    "tf": 15
+  },
+  {
+    "PnL_used": false,
+    "SFP_events": 237,
+    "classification": "RESEARCH_PARAMETER",
+    "ever_validated": 603,
+    "midpoint_tolerance": 0.12,
+    "tf": 15
+  },
+  {
+    "PnL_used": false,
+    "SFP_events": 51,
+    "classification": "RESEARCH_PARAMETER",
+    "ever_validated": 93,
+    "midpoint_tolerance": 0.04,
+    "tf": 60
+  },
+  {
+    "PnL_used": false,
+    "SFP_events": 70,
+    "classification": "RESEARCH_PARAMETER",
+    "ever_validated": 133,
+    "midpoint_tolerance": 0.08,
+    "tf": 60
+  },
+  {
+    "PnL_used": false,
+    "SFP_events": 81,
+    "classification": "RESEARCH_PARAMETER",
+    "ever_validated": 152,
+    "midpoint_tolerance": 0.12,
+    "tf": 60
+  },
+  {
+    "PnL_used": false,
+    "SFP_events": 6,
+    "classification": "RESEARCH_PARAMETER",
+    "ever_validated": 20,
+    "midpoint_tolerance": 0.04,
+    "tf": 240
+  },
+  {
+    "PnL_used": false,
+    "SFP_events": 12,
+    "classification": "RESEARCH_PARAMETER",
+    "ever_validated": 32,
+    "midpoint_tolerance": 0.08,
+    "tf": 240
+  },
+  {
+    "PnL_used": false,
+    "SFP_events": 14,
+    "classification": "RESEARCH_PARAMETER",
+    "ever_validated": 41,
+    "midpoint_tolerance": 0.12,
+    "tf": 240
+  }
+]

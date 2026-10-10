@@ -1,0 +1,78 @@
+[
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 69120,
+    "end": "2026-09-22T11:20:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 5,
+    "sha256": "c76a359d661f7cb02b84a246a637efe519c10e93405c29962d57757ad843ec58",
+    "source_receipt": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/BNBUSDT/5.csv",
+      "sha256": "c76a359d661f7cb02b84a246a637efe519c10e93405c29962d57757ad843ec58"
+    },
+    "start": "2026-01-25T11:20:00+00:00",
+    "symbol": "BNBUSDT"
+  },
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 23039,
+    "end": "2026-09-22T12:15:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 15,
+    "sha256": "916374fc697cea7d4b567ae2356fd332c63153d1532120bd5939f82b9c985f48",
+    "source_receipt": {
+      "candles": 23039,
+      "gaps": 0,
+      "path": "data/history/bybit/BNBUSDT/15.csv",
+      "sha256": "916374fc697cea7d4b567ae2356fd332c63153d1532120bd5939f82b9c985f48"
+    },
+    "start": "2026-01-25T12:30:00+00:00",
+    "symbol": "BNBUSDT"
+  },
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 5759,
+    "end": "2026-09-22T11:00:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 60,
+    "sha256": "e58b16ecb30024a5d95adfefd238371f14e61837d7d0618a0e711118753d5246",
+    "source_receipt": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/BNBUSDT/60.csv",
+      "sha256": "e58b16ecb30024a5d95adfefd238371f14e61837d7d0618a0e711118753d5246"
+    },
+    "start": "2026-01-25T12:00:00+00:00",
+    "symbol": "BNBUSDT"
+  },
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 1439,
+    "end": "2026-09-22T08:00:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 240,
+    "sha256": "68ac140426f226c5a53e0c268dad9c8c5f518b3b80fd84f2212c2a5bc0f6c722",
+    "source_receipt": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/BNBUSDT/240.csv",
+      "sha256": "68ac140426f226c5a53e0c268dad9c8c5f518b3b80fd84f2212c2a5bc0f6c722"
+    },
+    "start": "2026-01-25T12:00:00+00:00",
+    "symbol": "BNBUSDT"
+  }
+]
