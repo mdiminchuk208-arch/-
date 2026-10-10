@@ -1,0 +1,6026 @@
+[
+  {
+    "input": {
+      "case_id": "SFP_LONG",
+      "branch": "SFP",
+      "direction": "LONG",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 95,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "liquidity_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sfp_geometry": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sfp_next_open": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sfp_tf": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "no_adverse_proven": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "source_plan_complete": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fixed_stop_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sl_off_liquidity": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fta_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 96,
+          "high": 102,
+          "close": 101,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 101,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 101,
+          "low": 98,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 104,
+          "low": 99,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 106,
+          "low": 103,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "SFP",
+      "source_trace": [
+        {
+          "node_id": "SFP:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "SFP:1",
+          "rule_id": "S_LIQUIDITY_CONTEXT",
+          "predicate": "liquidity_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "14",
+              "page_or_paragraph": "word/document.xml:P0113–P0120"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0117–P0121"
+            }
+          ]
+        },
+        {
+          "node_id": "SFP:2",
+          "rule_id": "S_SFP_FORMATION",
+          "predicate": "sfp_geometry",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "16",
+              "page_or_paragraph": "word/document.xml:P0068–P0083"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0157–P0162"
+            }
+          ]
+        },
+        {
+          "node_id": "SFP:3",
+          "rule_id": "S_SFP_FORMATION",
+          "predicate": "sfp_next_open",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "16",
+              "page_or_paragraph": "word/document.xml:P0068–P0083"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0157–P0162"
+            }
+          ]
+        },
+        {
+          "node_id": "SFP:4",
+          "rule_id": "S_SFP_TF",
+          "predicate": "sfp_tf",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "16",
+              "page_or_paragraph": "word/document.xml:P0102–P0106"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0161–P0162"
+            }
+          ]
+        },
+        {
+          "node_id": "SFP:5",
+          "rule_id": "S_ADVERSE_BLOCK",
+          "predicate": "no_adverse_proven",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "03",
+              "page_or_paragraph": "word/document.xml:P0061–P0066"
+            }
+          ]
+        },
+        {
+          "node_id": "SFP:6",
+          "rule_id": "S_PLAN",
+          "predicate": "source_plan_complete",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p2–4"
+            }
+          ]
+        },
+        {
+          "node_id": "SFP:7",
+          "rule_id": "S_STOP_FIXED",
+          "predicate": "fixed_stop_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            },
+            {
+              "source_id": "SW12",
+              "page_or_paragraph": "p13–13"
+            }
+          ]
+        },
+        {
+          "node_id": "SFP:8",
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            }
+          ]
+        },
+        {
+          "node_id": "SFP:9",
+          "rule_id": "S_FTA",
+          "predicate": "fta_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p11–13"
+            },
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p16–16"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "CONTRACT_UNRESOLVED",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "SFP_SHORT",
+      "branch": "SFP",
+      "direction": "SHORT",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 105,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "liquidity_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sfp_geometry": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sfp_next_open": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sfp_tf": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "no_adverse_proven": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "source_plan_complete": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fixed_stop_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sl_off_liquidity": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fta_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 98,
+          "high": 104,
+          "close": 99,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 99,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 102,
+          "low": 99,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 101,
+          "low": 96,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 97,
+          "low": 94,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "SFP",
+      "source_trace": [
+        {
+          "node_id": "SFP:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "SFP:1",
+          "rule_id": "S_LIQUIDITY_CONTEXT",
+          "predicate": "liquidity_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "14",
+              "page_or_paragraph": "word/document.xml:P0113–P0120"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0117–P0121"
+            }
+          ]
+        },
+        {
+          "node_id": "SFP:2",
+          "rule_id": "S_SFP_FORMATION",
+          "predicate": "sfp_geometry",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "16",
+              "page_or_paragraph": "word/document.xml:P0068–P0083"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0157–P0162"
+            }
+          ]
+        },
+        {
+          "node_id": "SFP:3",
+          "rule_id": "S_SFP_FORMATION",
+          "predicate": "sfp_next_open",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "16",
+              "page_or_paragraph": "word/document.xml:P0068–P0083"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0157–P0162"
+            }
+          ]
+        },
+        {
+          "node_id": "SFP:4",
+          "rule_id": "S_SFP_TF",
+          "predicate": "sfp_tf",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "16",
+              "page_or_paragraph": "word/document.xml:P0102–P0106"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0161–P0162"
+            }
+          ]
+        },
+        {
+          "node_id": "SFP:5",
+          "rule_id": "S_ADVERSE_BLOCK",
+          "predicate": "no_adverse_proven",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "03",
+              "page_or_paragraph": "word/document.xml:P0061–P0066"
+            }
+          ]
+        },
+        {
+          "node_id": "SFP:6",
+          "rule_id": "S_PLAN",
+          "predicate": "source_plan_complete",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p2–4"
+            }
+          ]
+        },
+        {
+          "node_id": "SFP:7",
+          "rule_id": "S_STOP_FIXED",
+          "predicate": "fixed_stop_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            },
+            {
+              "source_id": "SW12",
+              "page_or_paragraph": "p13–13"
+            }
+          ]
+        },
+        {
+          "node_id": "SFP:8",
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            }
+          ]
+        },
+        {
+          "node_id": "SFP:9",
+          "rule_id": "S_FTA",
+          "predicate": "fta_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p11–13"
+            },
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p16–16"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "CONTRACT_UNRESOLVED",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "OB_DIRECT_LONG",
+      "branch": "OB_DIRECT",
+      "direction": "LONG",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 95,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "ob_formation": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "higher_poi": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "trend_aligned": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "ob_test_eligible": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "no_adverse_proven": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "source_plan_complete": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fixed_stop_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sl_off_liquidity": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fta_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 96,
+          "high": 102,
+          "close": 101,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 101,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 101,
+          "low": 98,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 104,
+          "low": 99,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 106,
+          "low": 103,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "OB_DIRECT",
+      "source_trace": [
+        {
+          "node_id": "OB_DIRECT:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_DIRECT:1",
+          "rule_id": "S_OB_FORMATION",
+          "predicate": "ob_formation",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p2–2"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_DIRECT:2",
+          "rule_id": "S_OB_FORMATION",
+          "predicate": "higher_poi",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p2–2"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_DIRECT:3",
+          "rule_id": "S_OB_TREND",
+          "predicate": "trend_aligned",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p3–3"
+            },
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p16–16"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_DIRECT:4",
+          "rule_id": "S_OB_FIRST_TEST",
+          "predicate": "ob_test_eligible",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p3–3"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_DIRECT:5",
+          "rule_id": "S_ADVERSE_BLOCK",
+          "predicate": "no_adverse_proven",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "03",
+              "page_or_paragraph": "word/document.xml:P0061–P0066"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_DIRECT:6",
+          "rule_id": "S_PLAN",
+          "predicate": "source_plan_complete",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p2–4"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_DIRECT:7",
+          "rule_id": "S_STOP_FIXED",
+          "predicate": "fixed_stop_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            },
+            {
+              "source_id": "SW12",
+              "page_or_paragraph": "p13–13"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_DIRECT:8",
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_DIRECT:9",
+          "rule_id": "S_FTA",
+          "predicate": "fta_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p11–13"
+            },
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p16–16"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "CONTRACT_UNRESOLVED",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "OB_DIRECT_SHORT",
+      "branch": "OB_DIRECT",
+      "direction": "SHORT",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 105,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "ob_formation": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "higher_poi": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "trend_aligned": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "ob_test_eligible": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "no_adverse_proven": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "source_plan_complete": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fixed_stop_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sl_off_liquidity": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fta_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 98,
+          "high": 104,
+          "close": 99,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 99,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 102,
+          "low": 99,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 101,
+          "low": 96,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 97,
+          "low": 94,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "OB_DIRECT",
+      "source_trace": [
+        {
+          "node_id": "OB_DIRECT:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_DIRECT:1",
+          "rule_id": "S_OB_FORMATION",
+          "predicate": "ob_formation",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p2–2"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_DIRECT:2",
+          "rule_id": "S_OB_FORMATION",
+          "predicate": "higher_poi",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p2–2"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_DIRECT:3",
+          "rule_id": "S_OB_TREND",
+          "predicate": "trend_aligned",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p3–3"
+            },
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p16–16"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_DIRECT:4",
+          "rule_id": "S_OB_FIRST_TEST",
+          "predicate": "ob_test_eligible",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p3–3"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_DIRECT:5",
+          "rule_id": "S_ADVERSE_BLOCK",
+          "predicate": "no_adverse_proven",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "03",
+              "page_or_paragraph": "word/document.xml:P0061–P0066"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_DIRECT:6",
+          "rule_id": "S_PLAN",
+          "predicate": "source_plan_complete",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p2–4"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_DIRECT:7",
+          "rule_id": "S_STOP_FIXED",
+          "predicate": "fixed_stop_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            },
+            {
+              "source_id": "SW12",
+              "page_or_paragraph": "p13–13"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_DIRECT:8",
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_DIRECT:9",
+          "rule_id": "S_FTA",
+          "predicate": "fta_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p11–13"
+            },
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p16–16"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "CONTRACT_UNRESOLVED",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "OB_CONSERVATIVE_LONG",
+      "branch": "OB_CONSERVATIVE",
+      "direction": "LONG",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 95,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "ob_formation": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "higher_poi": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "trend_aligned": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "conservative_tf": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "smooth_approach": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "reaction_bos_new_poi": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "ob_test_eligible": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "no_adverse_proven": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "source_plan_complete": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fixed_stop_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sl_off_liquidity": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fta_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 96,
+          "high": 102,
+          "close": 101,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 101,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 101,
+          "low": 98,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 104,
+          "low": 99,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 106,
+          "low": 103,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "OB_CONSERVATIVE",
+      "source_trace": [
+        {
+          "node_id": "OB_CONSERVATIVE:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:1",
+          "rule_id": "S_OB_FORMATION",
+          "predicate": "ob_formation",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p2–2"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:2",
+          "rule_id": "S_OB_FORMATION",
+          "predicate": "higher_poi",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p2–2"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:3",
+          "rule_id": "S_OB_TREND",
+          "predicate": "trend_aligned",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p3–3"
+            },
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p16–16"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:4",
+          "rule_id": "S_OB_CONS_TF",
+          "predicate": "conservative_tf",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p4–6"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:5",
+          "rule_id": "S_OB_APPROACH",
+          "predicate": "smooth_approach",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p4–4"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:6",
+          "rule_id": "S_OB_CONS_TRIGGER",
+          "predicate": "reaction_bos_new_poi",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p4–6"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:7",
+          "rule_id": "S_OB_FIRST_TEST",
+          "predicate": "ob_test_eligible",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p3–3"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:8",
+          "rule_id": "S_ADVERSE_BLOCK",
+          "predicate": "no_adverse_proven",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "03",
+              "page_or_paragraph": "word/document.xml:P0061–P0066"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:9",
+          "rule_id": "S_PLAN",
+          "predicate": "source_plan_complete",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p2–4"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:10",
+          "rule_id": "S_STOP_FIXED",
+          "predicate": "fixed_stop_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            },
+            {
+              "source_id": "SW12",
+              "page_or_paragraph": "p13–13"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:11",
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:12",
+          "rule_id": "S_FTA",
+          "predicate": "fta_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p11–13"
+            },
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p16–16"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "CONTRACT_UNRESOLVED",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "OB_CONSERVATIVE_SHORT",
+      "branch": "OB_CONSERVATIVE",
+      "direction": "SHORT",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 105,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "ob_formation": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "higher_poi": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "trend_aligned": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "conservative_tf": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "smooth_approach": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "reaction_bos_new_poi": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "ob_test_eligible": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "no_adverse_proven": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "source_plan_complete": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fixed_stop_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sl_off_liquidity": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fta_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 98,
+          "high": 104,
+          "close": 99,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 99,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 102,
+          "low": 99,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 101,
+          "low": 96,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 97,
+          "low": 94,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "OB_CONSERVATIVE",
+      "source_trace": [
+        {
+          "node_id": "OB_CONSERVATIVE:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:1",
+          "rule_id": "S_OB_FORMATION",
+          "predicate": "ob_formation",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p2–2"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:2",
+          "rule_id": "S_OB_FORMATION",
+          "predicate": "higher_poi",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p2–2"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:3",
+          "rule_id": "S_OB_TREND",
+          "predicate": "trend_aligned",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p3–3"
+            },
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p16–16"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:4",
+          "rule_id": "S_OB_CONS_TF",
+          "predicate": "conservative_tf",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p4–6"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:5",
+          "rule_id": "S_OB_APPROACH",
+          "predicate": "smooth_approach",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p4–4"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:6",
+          "rule_id": "S_OB_CONS_TRIGGER",
+          "predicate": "reaction_bos_new_poi",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p4–6"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:7",
+          "rule_id": "S_OB_FIRST_TEST",
+          "predicate": "ob_test_eligible",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p3–3"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:8",
+          "rule_id": "S_ADVERSE_BLOCK",
+          "predicate": "no_adverse_proven",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "03",
+              "page_or_paragraph": "word/document.xml:P0061–P0066"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:9",
+          "rule_id": "S_PLAN",
+          "predicate": "source_plan_complete",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p2–4"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:10",
+          "rule_id": "S_STOP_FIXED",
+          "predicate": "fixed_stop_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            },
+            {
+              "source_id": "SW12",
+              "page_or_paragraph": "p13–13"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:11",
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            }
+          ]
+        },
+        {
+          "node_id": "OB_CONSERVATIVE:12",
+          "rule_id": "S_FTA",
+          "predicate": "fta_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p11–13"
+            },
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p16–16"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "CONTRACT_UNRESOLVED",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "BREAKER_LONG",
+      "branch": "BREAKER",
+      "direction": "LONG",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 95,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "breaker_formation": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "flow_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "poi_reaction": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "no_adverse_proven": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "source_plan_complete": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fixed_stop_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sl_off_liquidity": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fta_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 96,
+          "high": 102,
+          "close": 101,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 101,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 101,
+          "low": 98,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 104,
+          "low": 99,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 106,
+          "low": 103,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "BREAKER",
+      "source_trace": [
+        {
+          "node_id": "BREAKER:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "BREAKER:1",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "BREAKER:2",
+          "rule_id": "S_BREAKER_FORMATION",
+          "predicate": "breaker_formation",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p7–8"
+            }
+          ]
+        },
+        {
+          "node_id": "BREAKER:3",
+          "rule_id": "S_FLOW",
+          "predicate": "flow_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW22",
+              "page_or_paragraph": "p5–6"
+            }
+          ]
+        },
+        {
+          "node_id": "BREAKER:4",
+          "rule_id": "S_POI",
+          "predicate": "poi_reaction",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p10–11"
+            }
+          ]
+        },
+        {
+          "node_id": "BREAKER:5",
+          "rule_id": "S_ADVERSE_BLOCK",
+          "predicate": "no_adverse_proven",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "03",
+              "page_or_paragraph": "word/document.xml:P0061–P0066"
+            }
+          ]
+        },
+        {
+          "node_id": "BREAKER:6",
+          "rule_id": "S_PLAN",
+          "predicate": "source_plan_complete",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p2–4"
+            }
+          ]
+        },
+        {
+          "node_id": "BREAKER:7",
+          "rule_id": "S_STOP_FIXED",
+          "predicate": "fixed_stop_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            },
+            {
+              "source_id": "SW12",
+              "page_or_paragraph": "p13–13"
+            }
+          ]
+        },
+        {
+          "node_id": "BREAKER:8",
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            }
+          ]
+        },
+        {
+          "node_id": "BREAKER:9",
+          "rule_id": "S_FTA",
+          "predicate": "fta_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p11–13"
+            },
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p16–16"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "CONTRACT_UNRESOLVED",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "BREAKER_SHORT",
+      "branch": "BREAKER",
+      "direction": "SHORT",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 105,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "breaker_formation": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "flow_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "poi_reaction": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "no_adverse_proven": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "source_plan_complete": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fixed_stop_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sl_off_liquidity": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fta_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 98,
+          "high": 104,
+          "close": 99,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 99,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 102,
+          "low": 99,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 101,
+          "low": 96,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 97,
+          "low": 94,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "BREAKER",
+      "source_trace": [
+        {
+          "node_id": "BREAKER:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "BREAKER:1",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "BREAKER:2",
+          "rule_id": "S_BREAKER_FORMATION",
+          "predicate": "breaker_formation",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p7–8"
+            }
+          ]
+        },
+        {
+          "node_id": "BREAKER:3",
+          "rule_id": "S_FLOW",
+          "predicate": "flow_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW22",
+              "page_or_paragraph": "p5–6"
+            }
+          ]
+        },
+        {
+          "node_id": "BREAKER:4",
+          "rule_id": "S_POI",
+          "predicate": "poi_reaction",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p10–11"
+            }
+          ]
+        },
+        {
+          "node_id": "BREAKER:5",
+          "rule_id": "S_ADVERSE_BLOCK",
+          "predicate": "no_adverse_proven",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "03",
+              "page_or_paragraph": "word/document.xml:P0061–P0066"
+            }
+          ]
+        },
+        {
+          "node_id": "BREAKER:6",
+          "rule_id": "S_PLAN",
+          "predicate": "source_plan_complete",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p2–4"
+            }
+          ]
+        },
+        {
+          "node_id": "BREAKER:7",
+          "rule_id": "S_STOP_FIXED",
+          "predicate": "fixed_stop_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            },
+            {
+              "source_id": "SW12",
+              "page_or_paragraph": "p13–13"
+            }
+          ]
+        },
+        {
+          "node_id": "BREAKER:8",
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            }
+          ]
+        },
+        {
+          "node_id": "BREAKER:9",
+          "rule_id": "S_FTA",
+          "predicate": "fta_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p11–13"
+            },
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p16–16"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "CONTRACT_UNRESOLVED",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "STB_BTS_LONG",
+      "branch": "STB_BTS",
+      "direction": "LONG",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 95,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "trend_aligned": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "stb_raid_absorption_structure": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "flow_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "pd_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "no_adverse_proven": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "source_plan_complete": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fixed_stop_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sl_off_liquidity": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fta_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 96,
+          "high": 102,
+          "close": 101,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 101,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 101,
+          "low": 98,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 104,
+          "low": 99,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 106,
+          "low": 103,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "STB_BTS",
+      "source_trace": [
+        {
+          "node_id": "STB_BTS:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "STB_BTS:1",
+          "rule_id": "S_STB_FORMATION",
+          "predicate": "trend_aligned",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW22",
+              "page_or_paragraph": "p2–3"
+            }
+          ]
+        },
+        {
+          "node_id": "STB_BTS:2",
+          "rule_id": "S_STB_FORMATION",
+          "predicate": "stb_raid_absorption_structure",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW22",
+              "page_or_paragraph": "p2–3"
+            }
+          ]
+        },
+        {
+          "node_id": "STB_BTS:3",
+          "rule_id": "S_FLOW",
+          "predicate": "flow_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW22",
+              "page_or_paragraph": "p5–6"
+            }
+          ]
+        },
+        {
+          "node_id": "STB_BTS:4",
+          "rule_id": "S_PD",
+          "predicate": "pd_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW22",
+              "page_or_paragraph": "p4–4"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0140–P0155"
+            }
+          ]
+        },
+        {
+          "node_id": "STB_BTS:5",
+          "rule_id": "S_ADVERSE_BLOCK",
+          "predicate": "no_adverse_proven",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "03",
+              "page_or_paragraph": "word/document.xml:P0061–P0066"
+            }
+          ]
+        },
+        {
+          "node_id": "STB_BTS:6",
+          "rule_id": "S_PLAN",
+          "predicate": "source_plan_complete",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p2–4"
+            }
+          ]
+        },
+        {
+          "node_id": "STB_BTS:7",
+          "rule_id": "S_STOP_FIXED",
+          "predicate": "fixed_stop_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            },
+            {
+              "source_id": "SW12",
+              "page_or_paragraph": "p13–13"
+            }
+          ]
+        },
+        {
+          "node_id": "STB_BTS:8",
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            }
+          ]
+        },
+        {
+          "node_id": "STB_BTS:9",
+          "rule_id": "S_FTA",
+          "predicate": "fta_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p11–13"
+            },
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p16–16"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "CONTRACT_UNRESOLVED",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "STB_BTS_SHORT",
+      "branch": "STB_BTS",
+      "direction": "SHORT",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 105,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "trend_aligned": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "stb_raid_absorption_structure": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "flow_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "pd_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "no_adverse_proven": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "source_plan_complete": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fixed_stop_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sl_off_liquidity": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fta_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 98,
+          "high": 104,
+          "close": 99,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 99,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 102,
+          "low": 99,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 101,
+          "low": 96,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 97,
+          "low": 94,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "STB_BTS",
+      "source_trace": [
+        {
+          "node_id": "STB_BTS:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "STB_BTS:1",
+          "rule_id": "S_STB_FORMATION",
+          "predicate": "trend_aligned",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW22",
+              "page_or_paragraph": "p2–3"
+            }
+          ]
+        },
+        {
+          "node_id": "STB_BTS:2",
+          "rule_id": "S_STB_FORMATION",
+          "predicate": "stb_raid_absorption_structure",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW22",
+              "page_or_paragraph": "p2–3"
+            }
+          ]
+        },
+        {
+          "node_id": "STB_BTS:3",
+          "rule_id": "S_FLOW",
+          "predicate": "flow_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW22",
+              "page_or_paragraph": "p5–6"
+            }
+          ]
+        },
+        {
+          "node_id": "STB_BTS:4",
+          "rule_id": "S_PD",
+          "predicate": "pd_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW22",
+              "page_or_paragraph": "p4–4"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0140–P0155"
+            }
+          ]
+        },
+        {
+          "node_id": "STB_BTS:5",
+          "rule_id": "S_ADVERSE_BLOCK",
+          "predicate": "no_adverse_proven",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "03",
+              "page_or_paragraph": "word/document.xml:P0061–P0066"
+            }
+          ]
+        },
+        {
+          "node_id": "STB_BTS:6",
+          "rule_id": "S_PLAN",
+          "predicate": "source_plan_complete",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p2–4"
+            }
+          ]
+        },
+        {
+          "node_id": "STB_BTS:7",
+          "rule_id": "S_STOP_FIXED",
+          "predicate": "fixed_stop_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            },
+            {
+              "source_id": "SW12",
+              "page_or_paragraph": "p13–13"
+            }
+          ]
+        },
+        {
+          "node_id": "STB_BTS:8",
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            }
+          ]
+        },
+        {
+          "node_id": "STB_BTS:9",
+          "rule_id": "S_FTA",
+          "predicate": "fta_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p11–13"
+            },
+            {
+              "source_id": "SW9",
+              "page_or_paragraph": "p16–16"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "CONTRACT_UNRESOLVED",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "RANGE_AGGRESSIVE_LONG",
+      "branch": "RANGE_AGGRESSIVE",
+      "direction": "LONG",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 95,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "clear_range": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "range_deviation": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "outside_poi": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "no_adverse_proven": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "source_plan_complete": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fixed_stop_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sl_off_liquidity": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "range_exit_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 96,
+          "high": 102,
+          "close": 101,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 101,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 101,
+          "low": 98,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 104,
+          "low": 99,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 106,
+          "low": 103,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "RANGE_AGGRESSIVE",
+      "source_trace": [
+        {
+          "node_id": "RANGE_AGGRESSIVE:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_AGGRESSIVE:1",
+          "rule_id": "S_RANGE_FORMATION",
+          "predicate": "clear_range",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0037–P0072"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0122–P0128"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_AGGRESSIVE:2",
+          "rule_id": "S_RANGE_DEVIATION",
+          "predicate": "range_deviation",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0074–P0094"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0125–P0130"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_AGGRESSIVE:3",
+          "rule_id": "S_RANGE_AGGRESSIVE",
+          "predicate": "outside_poi",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0111–P0118"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_AGGRESSIVE:4",
+          "rule_id": "S_ADVERSE_BLOCK",
+          "predicate": "no_adverse_proven",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "03",
+              "page_or_paragraph": "word/document.xml:P0061–P0066"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_AGGRESSIVE:5",
+          "rule_id": "S_PLAN",
+          "predicate": "source_plan_complete",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p2–4"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_AGGRESSIVE:6",
+          "rule_id": "S_STOP_FIXED",
+          "predicate": "fixed_stop_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            },
+            {
+              "source_id": "SW12",
+              "page_or_paragraph": "p13–13"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_AGGRESSIVE:7",
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_AGGRESSIVE:8",
+          "rule_id": "S_RANGE_EXIT",
+          "predicate": "range_exit_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0119–P0121"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "CONTRACT_UNRESOLVED",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "RANGE_AGGRESSIVE_SHORT",
+      "branch": "RANGE_AGGRESSIVE",
+      "direction": "SHORT",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 105,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "clear_range": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "range_deviation": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "outside_poi": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "no_adverse_proven": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "source_plan_complete": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fixed_stop_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sl_off_liquidity": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "range_exit_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 98,
+          "high": 104,
+          "close": 99,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 99,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 102,
+          "low": 99,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 101,
+          "low": 96,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 97,
+          "low": 94,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "RANGE_AGGRESSIVE",
+      "source_trace": [
+        {
+          "node_id": "RANGE_AGGRESSIVE:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_AGGRESSIVE:1",
+          "rule_id": "S_RANGE_FORMATION",
+          "predicate": "clear_range",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0037–P0072"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0122–P0128"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_AGGRESSIVE:2",
+          "rule_id": "S_RANGE_DEVIATION",
+          "predicate": "range_deviation",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0074–P0094"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0125–P0130"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_AGGRESSIVE:3",
+          "rule_id": "S_RANGE_AGGRESSIVE",
+          "predicate": "outside_poi",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0111–P0118"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_AGGRESSIVE:4",
+          "rule_id": "S_ADVERSE_BLOCK",
+          "predicate": "no_adverse_proven",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "03",
+              "page_or_paragraph": "word/document.xml:P0061–P0066"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_AGGRESSIVE:5",
+          "rule_id": "S_PLAN",
+          "predicate": "source_plan_complete",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p2–4"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_AGGRESSIVE:6",
+          "rule_id": "S_STOP_FIXED",
+          "predicate": "fixed_stop_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            },
+            {
+              "source_id": "SW12",
+              "page_or_paragraph": "p13–13"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_AGGRESSIVE:7",
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_AGGRESSIVE:8",
+          "rule_id": "S_RANGE_EXIT",
+          "predicate": "range_exit_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0119–P0121"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "CONTRACT_UNRESOLVED",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "RANGE_CONSERVATIVE_LONG",
+      "branch": "RANGE_CONSERVATIVE",
+      "direction": "LONG",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 95,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "clear_range": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "range_deviation": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "outside_poi": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "range_reclaim_retest": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "no_adverse_proven": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "source_plan_complete": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fixed_stop_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sl_off_liquidity": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "range_exit_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 96,
+          "high": 102,
+          "close": 101,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 101,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 101,
+          "low": 98,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 104,
+          "low": 99,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 106,
+          "low": 103,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "RANGE_CONSERVATIVE",
+      "source_trace": [
+        {
+          "node_id": "RANGE_CONSERVATIVE:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_CONSERVATIVE:1",
+          "rule_id": "S_RANGE_FORMATION",
+          "predicate": "clear_range",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0037–P0072"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0122–P0128"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_CONSERVATIVE:2",
+          "rule_id": "S_RANGE_DEVIATION",
+          "predicate": "range_deviation",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0074–P0094"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0125–P0130"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_CONSERVATIVE:3",
+          "rule_id": "S_RANGE_AGGRESSIVE",
+          "predicate": "outside_poi",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0111–P0118"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_CONSERVATIVE:4",
+          "rule_id": "S_RANGE_CONSERVATIVE",
+          "predicate": "range_reclaim_retest",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0124–P0129"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0129–P0130"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_CONSERVATIVE:5",
+          "rule_id": "S_ADVERSE_BLOCK",
+          "predicate": "no_adverse_proven",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "03",
+              "page_or_paragraph": "word/document.xml:P0061–P0066"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_CONSERVATIVE:6",
+          "rule_id": "S_PLAN",
+          "predicate": "source_plan_complete",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p2–4"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_CONSERVATIVE:7",
+          "rule_id": "S_STOP_FIXED",
+          "predicate": "fixed_stop_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            },
+            {
+              "source_id": "SW12",
+              "page_or_paragraph": "p13–13"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_CONSERVATIVE:8",
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_CONSERVATIVE:9",
+          "rule_id": "S_RANGE_EXIT",
+          "predicate": "range_exit_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0119–P0121"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "CONTRACT_UNRESOLVED",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "RANGE_CONSERVATIVE_SHORT",
+      "branch": "RANGE_CONSERVATIVE",
+      "direction": "SHORT",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 105,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "clear_range": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "range_deviation": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "outside_poi": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "range_reclaim_retest": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "no_adverse_proven": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "source_plan_complete": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fixed_stop_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sl_off_liquidity": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "range_exit_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 98,
+          "high": 104,
+          "close": 99,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 99,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 102,
+          "low": 99,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 101,
+          "low": 96,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 97,
+          "low": 94,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "RANGE_CONSERVATIVE",
+      "source_trace": [
+        {
+          "node_id": "RANGE_CONSERVATIVE:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_CONSERVATIVE:1",
+          "rule_id": "S_RANGE_FORMATION",
+          "predicate": "clear_range",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0037–P0072"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0122–P0128"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_CONSERVATIVE:2",
+          "rule_id": "S_RANGE_DEVIATION",
+          "predicate": "range_deviation",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0074–P0094"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0125–P0130"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_CONSERVATIVE:3",
+          "rule_id": "S_RANGE_AGGRESSIVE",
+          "predicate": "outside_poi",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0111–P0118"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_CONSERVATIVE:4",
+          "rule_id": "S_RANGE_CONSERVATIVE",
+          "predicate": "range_reclaim_retest",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0124–P0129"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0129–P0130"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_CONSERVATIVE:5",
+          "rule_id": "S_ADVERSE_BLOCK",
+          "predicate": "no_adverse_proven",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "03",
+              "page_or_paragraph": "word/document.xml:P0061–P0066"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_CONSERVATIVE:6",
+          "rule_id": "S_PLAN",
+          "predicate": "source_plan_complete",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p2–4"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_CONSERVATIVE:7",
+          "rule_id": "S_STOP_FIXED",
+          "predicate": "fixed_stop_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            },
+            {
+              "source_id": "SW12",
+              "page_or_paragraph": "p13–13"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_CONSERVATIVE:8",
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_CONSERVATIVE:9",
+          "rule_id": "S_RANGE_EXIT",
+          "predicate": "range_exit_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0119–P0121"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "CONTRACT_UNRESOLVED",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "RANGE_RETURN_CHOCH_LONG",
+      "branch": "RANGE_RETURN_CHOCH",
+      "direction": "LONG",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 95,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "clear_range": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "range_deviation": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "return_choch_zone": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "no_adverse_proven": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "source_plan_complete": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fixed_stop_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sl_off_liquidity": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "range_exit_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 96,
+          "high": 102,
+          "close": 101,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 101,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 101,
+          "low": 98,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 104,
+          "low": 99,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 106,
+          "low": 103,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "RANGE_RETURN_CHOCH",
+      "source_trace": [
+        {
+          "node_id": "RANGE_RETURN_CHOCH:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_RETURN_CHOCH:1",
+          "rule_id": "S_RANGE_FORMATION",
+          "predicate": "clear_range",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0037–P0072"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0122–P0128"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_RETURN_CHOCH:2",
+          "rule_id": "S_RANGE_DEVIATION",
+          "predicate": "range_deviation",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0074–P0094"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0125–P0130"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_RETURN_CHOCH:3",
+          "rule_id": "S_RANGE_CONSERVATIVE",
+          "predicate": "return_choch_zone",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0124–P0129"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0129–P0130"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_RETURN_CHOCH:4",
+          "rule_id": "S_ADVERSE_BLOCK",
+          "predicate": "no_adverse_proven",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "03",
+              "page_or_paragraph": "word/document.xml:P0061–P0066"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_RETURN_CHOCH:5",
+          "rule_id": "S_PLAN",
+          "predicate": "source_plan_complete",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p2–4"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_RETURN_CHOCH:6",
+          "rule_id": "S_STOP_FIXED",
+          "predicate": "fixed_stop_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            },
+            {
+              "source_id": "SW12",
+              "page_or_paragraph": "p13–13"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_RETURN_CHOCH:7",
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_RETURN_CHOCH:8",
+          "rule_id": "S_RANGE_EXIT",
+          "predicate": "range_exit_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0119–P0121"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "CONTRACT_UNRESOLVED",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "RANGE_RETURN_CHOCH_SHORT",
+      "branch": "RANGE_RETURN_CHOCH",
+      "direction": "SHORT",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 105,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "clear_range": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "range_deviation": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "return_choch_zone": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "no_adverse_proven": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "source_plan_complete": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fixed_stop_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "sl_off_liquidity": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "range_exit_plan": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 98,
+          "high": 104,
+          "close": 99,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 99,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 102,
+          "low": 99,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 101,
+          "low": 96,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 97,
+          "low": 94,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "RANGE_RETURN_CHOCH",
+      "source_trace": [
+        {
+          "node_id": "RANGE_RETURN_CHOCH:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_RETURN_CHOCH:1",
+          "rule_id": "S_RANGE_FORMATION",
+          "predicate": "clear_range",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0037–P0072"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0122–P0128"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_RETURN_CHOCH:2",
+          "rule_id": "S_RANGE_DEVIATION",
+          "predicate": "range_deviation",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0074–P0094"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0125–P0130"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_RETURN_CHOCH:3",
+          "rule_id": "S_RANGE_CONSERVATIVE",
+          "predicate": "return_choch_zone",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0124–P0129"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0129–P0130"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_RETURN_CHOCH:4",
+          "rule_id": "S_ADVERSE_BLOCK",
+          "predicate": "no_adverse_proven",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "03",
+              "page_or_paragraph": "word/document.xml:P0061–P0066"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_RETURN_CHOCH:5",
+          "rule_id": "S_PLAN",
+          "predicate": "source_plan_complete",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p2–4"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_RETURN_CHOCH:6",
+          "rule_id": "S_STOP_FIXED",
+          "predicate": "fixed_stop_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            },
+            {
+              "source_id": "SW12",
+              "page_or_paragraph": "p13–13"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_RETURN_CHOCH:7",
+          "rule_id": "S_SL_OFF_POOL",
+          "predicate": "sl_off_liquidity",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW11",
+              "page_or_paragraph": "p8–8"
+            }
+          ]
+        },
+        {
+          "node_id": "RANGE_RETURN_CHOCH:8",
+          "rule_id": "S_RANGE_EXIT",
+          "predicate": "range_exit_plan",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "06",
+              "page_or_paragraph": "word/document.xml:P0119–P0121"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "CONTRACT_UNRESOLVED",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "DEMAND_SUPPLY_POI_LONG",
+      "branch": "DEMAND_SUPPLY_POI",
+      "direction": "LONG",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 95,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "snd_old_raid_untested": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "pd_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 96,
+          "high": 102,
+          "close": 101,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 101,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 101,
+          "low": 98,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 104,
+          "low": 99,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 106,
+          "low": 103,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "DEMAND_SUPPLY_POI",
+      "source_trace": [
+        {
+          "node_id": "DEMAND_SUPPLY_POI:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "DEMAND_SUPPLY_POI:1",
+          "rule_id": "S_SND_FORMATION",
+          "predicate": "snd_old_raid_untested",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "18",
+              "page_or_paragraph": "word/document.xml:P0005–P0012"
+            }
+          ]
+        },
+        {
+          "node_id": "DEMAND_SUPPLY_POI:2",
+          "rule_id": "S_SND_FORMATION",
+          "predicate": "pd_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "18",
+              "page_or_paragraph": "word/document.xml:P0005–P0012"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "COMPONENT_ONLY",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "DEMAND_SUPPLY_POI_SHORT",
+      "branch": "DEMAND_SUPPLY_POI",
+      "direction": "SHORT",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 105,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "snd_old_raid_untested": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "pd_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 98,
+          "high": 104,
+          "close": 99,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 99,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 102,
+          "low": 99,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 101,
+          "low": 96,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 97,
+          "low": 94,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "DEMAND_SUPPLY_POI",
+      "source_trace": [
+        {
+          "node_id": "DEMAND_SUPPLY_POI:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "DEMAND_SUPPLY_POI:1",
+          "rule_id": "S_SND_FORMATION",
+          "predicate": "snd_old_raid_untested",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "18",
+              "page_or_paragraph": "word/document.xml:P0005–P0012"
+            }
+          ]
+        },
+        {
+          "node_id": "DEMAND_SUPPLY_POI:2",
+          "rule_id": "S_SND_FORMATION",
+          "predicate": "pd_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "18",
+              "page_or_paragraph": "word/document.xml:P0005–P0012"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "COMPONENT_ONLY",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "FVG_POI_LONG",
+      "branch": "FVG_POI",
+      "direction": "LONG",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 95,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fvg_geometry": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 96,
+          "high": 102,
+          "close": 101,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 101,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 101,
+          "low": 98,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 104,
+          "low": 99,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 106,
+          "low": 103,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "FVG_POI",
+      "source_trace": [
+        {
+          "node_id": "FVG_POI:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "FVG_POI:1",
+          "rule_id": "S_FVG",
+          "predicate": "fvg_geometry",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "16",
+              "page_or_paragraph": "word/document.xml:P0051–P0060"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0109–P0112"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "COMPONENT_ONLY",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "FVG_POI_SHORT",
+      "branch": "FVG_POI",
+      "direction": "SHORT",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 105,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "fvg_geometry": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 98,
+          "high": 104,
+          "close": 99,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 99,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 102,
+          "low": 99,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 101,
+          "low": 96,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 97,
+          "low": 94,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "FVG_POI",
+      "source_trace": [
+        {
+          "node_id": "FVG_POI:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "FVG_POI:1",
+          "rule_id": "S_FVG",
+          "predicate": "fvg_geometry",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "16",
+              "page_or_paragraph": "word/document.xml:P0051–P0060"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0109–P0112"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "COMPONENT_ONLY",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "OTE_CONFLUENCE_LONG",
+      "branch": "OTE_CONFLUENCE",
+      "direction": "LONG",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 95,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "ote_geometry": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 96,
+          "high": 102,
+          "close": 101,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 101,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 101,
+          "low": 98,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 104,
+          "low": 99,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 106,
+          "low": 103,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "OTE_CONFLUENCE",
+      "source_trace": [
+        {
+          "node_id": "OTE_CONFLUENCE:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "OTE_CONFLUENCE:1",
+          "rule_id": "S_OTE",
+          "predicate": "ote_geometry",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0138–P0156"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "COMPONENT_ONLY",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "OTE_CONFLUENCE_SHORT",
+      "branch": "OTE_CONFLUENCE",
+      "direction": "SHORT",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 105,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "ote_geometry": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 98,
+          "high": 104,
+          "close": 99,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 99,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 102,
+          "low": 99,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 101,
+          "low": 96,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 97,
+          "low": 94,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "OTE_CONFLUENCE",
+      "source_trace": [
+        {
+          "node_id": "OTE_CONFLUENCE:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "OTE_CONFLUENCE:1",
+          "rule_id": "S_OTE",
+          "predicate": "ote_geometry",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0138–P0156"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "COMPONENT_ONLY",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "AMD_CONTEXT_LONG",
+      "branch": "AMD_CONTEXT",
+      "direction": "LONG",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 95,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "amd_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 96,
+          "high": 102,
+          "close": 101,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 101,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 101,
+          "low": 98,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 104,
+          "low": 99,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 106,
+          "low": 103,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "AMD_CONTEXT",
+      "source_trace": [
+        {
+          "node_id": "AMD_CONTEXT:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "AMD_CONTEXT:1",
+          "rule_id": "S_AMD",
+          "predicate": "amd_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0163–P0170"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "COMPONENT_ONLY",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  },
+  {
+    "input": {
+      "case_id": "AMD_CONTEXT_SHORT",
+      "branch": "AMD_CONTEXT",
+      "direction": "SHORT",
+      "mode": "BACKTEST",
+      "decision_at": 100,
+      "event": "CLOSE",
+      "setup_tf": 60,
+      "trigger_tf": 5,
+      "entry": 105,
+      "facts": {
+        "market_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        },
+        "amd_context": {
+          "value": true,
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "SYNTHETIC named source-condition annotation, not detected OHLC"
+        }
+      },
+      "sfp": {
+        "raid": {
+          "low": 98,
+          "high": 104,
+          "close": 99,
+          "known_at": 90,
+          "completed_at": 90,
+          "evidence": "synthetic raid candle"
+        },
+        "old_level": {
+          "price": 100,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "old confirmed structural level"
+        },
+        "next_open": {
+          "open": 99,
+          "known_at": 91,
+          "evidence": "next native open only"
+        }
+      },
+      "fvg": [
+        {
+          "high": 102,
+          "low": 99,
+          "known_at": 50,
+          "completed_at": 50,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 101,
+          "low": 96,
+          "known_at": 60,
+          "completed_at": 60,
+          "evidence": "synthetic FVG candle"
+        },
+        {
+          "high": 97,
+          "low": 94,
+          "known_at": 70,
+          "completed_at": 70,
+          "evidence": "synthetic FVG candle"
+        }
+      ],
+      "impulse": {
+        "high": 110,
+        "low": 90,
+        "known_at": 75,
+        "completed_at": 75,
+        "evidence": "selected causal impulse"
+      },
+      "liquidity": [
+        {
+          "role": "TARGET",
+          "known_at": 80,
+          "completed_at": 80,
+          "evidence": "synthetic contextual role annotation; not old pool union"
+        }
+      ],
+      "formal_H1_H4_owner": false,
+      "project_edge_cost_ratio": 1,
+      "interpretation_limit": "All qualitative facts supplied; no source normalization gap is closed by fixture"
+    },
+    "result": {
+      "branch": "AMD_CONTEXT",
+      "source_trace": [
+        {
+          "node_id": "AMD_CONTEXT:0",
+          "rule_id": "S_STRUCTURE",
+          "predicate": "market_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "SW5",
+              "page_or_paragraph": "p2–3"
+            },
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0053–P0073"
+            }
+          ]
+        },
+        {
+          "node_id": "AMD_CONTEXT:1",
+          "rule_id": "S_AMD",
+          "predicate": "amd_context",
+          "status": "PASS",
+          "decision_at": 100,
+          "source_citation": [
+            {
+              "source_id": "19",
+              "page_or_paragraph": "word/document.xml:P0163–P0170"
+            }
+          ]
+        }
+      ],
+      "terminal": "SOURCE_CONDITIONS_PASS",
+      "source_conditions_pass": true,
+      "SOURCE_STRATEGY_DECISION": "COMPONENT_ONLY",
+      "verdict": "NOT_IDENTIFIABLE",
+      "trade_entry_allowed": false,
+      "material_questions": [
+        "Q_EXIT",
+        "Q_STOP",
+        "Q_BRANCH_ENTRY",
+        "Q_TF",
+        "Q_LIQUIDITY_NORMALIZATION",
+        "Q_REENTRY"
+      ]
+    }
+  }
+]

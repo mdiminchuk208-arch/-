@@ -1,0 +1,22 @@
+{
+  "status": "REUSED_FULL_AUDIT_REVIEW_PLUS_TARGETED_REVIEW",
+  "previous_full_review": "13 complete texts,122 unique DOCX diagrams,54 PDF pages; unchanged audit evidence reused",
+  "this_stage_targeted_visual_review": [
+    "DOC14 word/media/image11.jpg false EQ example",
+    "DOC14 word/media/image12.jpg proper EQ example",
+    "DOC14 word/media/image17.jpg false substructure EQ example",
+    "SW9 pages5–8 conservative/stackedOB/Breaker",
+    "SW12pages13–15fixedstop/ATR/supportingindicators",
+    "SW11pages5–8 stop/no-pool/fixedstop"
+  ],
+  "review_conclusion": "Diagrams constrain meaning, do not uniquely define numeric smooth/tilt/scope thresholds",
+  "preserved_evidence_hashes": {
+    "data/reports/source_fidelity_2026_10_11/source_visual_review/media_review_manifest.json": "b4213a8a4fcec3834cd8de1037124fdb17398dc688290289ae8b78c0cce2a359",
+    "data/source_materials/primary_pdf_2026_10_09/visual_review/receipt.json": "604c0e16fc5124c9790e82deebc2a44d9cf8758c145aa7ba1edec3aa3b5dbd8d",
+    "data/source_materials/primary_pdf_2026_10_09/visual_review/montage-SW9-2.jpg": "5547e68dd71db1f10e2bab1338f2e0f045ad152a1d2ad89f2fd679dfce49d31c",
+    "data/source_materials/primary_pdf_2026_10_09/visual_review/montage-SW12-4.jpg": "13463551dc18622caf47f5e5ca734ab9db3bcca46381369c94508ca55f39c9ed",
+    "data/source_materials/primary_pdf_2026_10_09/visual_review/montage-SW11-2.jpg": "ed3b7c4aaf74b5ebeaa18716bf2ac4814f65db19bef40efef3e3a94c8c9e271d"
+  },
+  "all_materials_operational_authority": false,
+  "financial_outcomes_accessed": false
+}

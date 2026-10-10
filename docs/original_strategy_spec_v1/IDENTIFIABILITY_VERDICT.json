@@ -1,0 +1,26 @@
+{
+  "verdict": "NOT_IDENTIFIABLE",
+  "fully_defined_original_A": false,
+  "executable_market_strategy": false,
+  "executable_partial_evidence_checker": true,
+  "new_financial_backtest_started": false,
+  "resolved_by_sources": [
+    "Conservative LTF M1–M15 and lower than HTF",
+    "SFP anyTF, H1+ only preference",
+    "Primary fixed stop profile over mixed supplemental BE; conflict preserved",
+    "OB wick zone, full vs partial FTA both permitted",
+    "Range80/20 is setup-specific; fixed40/30/30 not original",
+    "Typed first/repeat OB distinction; no source lifetime ban",
+    "EQ uses substructure swings and signed tilt; no numerical tolerance"
+  ],
+  "material_question_ids": [
+    "Q_EXIT",
+    "Q_STOP",
+    "Q_BRANCH_ENTRY",
+    "Q_TF",
+    "Q_LIQUIDITY_NORMALIZATION",
+    "Q_REENTRY"
+  ],
+  "audit_conclusions_changed": false,
+  "trade_entry_allowed": false
+}

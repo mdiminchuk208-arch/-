@@ -1,0 +1,533 @@
+Продолжай работу над Crypto Bot с текущего состояния после Source Fidelity Audit.
+
+Текущий audit commit:
+`c2d1e8cfb94637caaf150bb9c508cb011c3e85ba`
+
+Ветка:
+`medium-term-source-research`
+
+НЕ оптимизировать стратегию.
+НЕ подбирать параметры по P&L/WinRate.
+НЕ запускать новый финальный backtest до завершения этой задачи.
+НЕ менять baseline `19404ec...`.
+НЕ включать LIVE.
+`trade_entry_allowed=false`.
+
+==================================================
+ГЛАВНАЯ ЦЕЛЬ
+==================================================
+
+Создать:
+
+`ORIGINAL_STRATEGY_SPEC_v1`
+
+Это должен быть один полностью определённый, причинный и исполнимый контракт исходной торговой стратегии, восстановленный из 13 уникальных source documents.
+
+Нельзя считать текущий MediumTermEngine источником истины.
+
+Источник истины:
+1. оригинальные учебные материалы;
+2. диаграммы/скриншоты внутри них;
+3. ранее подтверждённые source-aligned правила.
+
+Текущая машинная реализация используется только для сравнения.
+
+==================================================
+1. СОХРАНИТЬ РЕЗУЛЬТАТЫ АУДИТА
+==================================================
+
+Не менять выводы Source Fidelity Audit.
+
+Зафиксировано:
+
+- текущий baseline НЕ является exact original strategy;
+- universal `H1/H4 owner` = `EXTRA_RULE_NOT_IN_SOURCE`;
+- обязательная лестница `D1→H4→H1→M15` для каждого entry не найдена;
+- 3680 `NO_HTF_CONTEXT` = ENGINE_EXTRA_REJECTION по этой причине;
+- старые 67.6768% не являются доказанным WinRate original strategy;
+- exact ORIGINAL A/B пока `NOT_IDENTIFIABLE`.
+
+Не пытаться восстановить 68%.
+
+==================================================
+2. РАЗДЕЛИТЬ ВСЕ ПРАВИЛА НА 3 СЛОЯ
+==================================================
+
+Каждое правило должно иметь один из статусов:
+
+A. `SOURCE_RULE`
+— прямо поддерживается оригинальными материалами.
+
+B. `PROJECT_POLICY`
+— решение Crypto Bot, разрешённое пользователем, но отсутствующее как обязательное правило источника.
+
+C. `TECHNICAL_NORMALIZATION`
+— числовая/алгоритмическая формализация качественного source concept.
+
+Запрещено превращать B или C в SOURCE_RULE.
+
+Создать machine-readable registry:
+
+`original_strategy_rule_registry_v1.json`
+
+Для каждого правила:
+- rule_id;
+- category;
+- source document;
+- page/diagram;
+- literal meaning;
+- executable interpretation;
+- confidence;
+- conflicts;
+- known_at semantics;
+- whether mandatory/optional/context-dependent.
+
+==================================================
+3. ВОССТАНОВИТЬ РЕАЛЬНЫЕ РОЛИ TF
+==================================================
+
+Не использовать текущую формулу:
+
+`D1/H4 context → H1/H4 owner → lower TF refinement`
+
+как данность.
+
+Восстановить роли исключительно из источников.
+
+Уже подтверждено аудитом:
+
+- D1/W1 = глобальная картина;
+- H1/H4 = локальная структура;
+- M15 может быть HTF POI/OB и refinement;
+- SFP допустим на разных TF;
+- H1+ является preference, а не универсальным запретом других TF;
+- источник допускает HTF POI/context + младший trigger;
+- универсального H1/H4 owner-object нет.
+
+Нужно сформировать:
+
+`TF_ROLE_MATRIX`
+
+с колонками:
+
+TF
+→ allowed roles
+→ preferred roles
+→ prohibited roles
+→ source evidence
+→ certainty.
+
+Не изобретать mandatory ladder там, где источник её не задаёт.
+
+==================================================
+4. ЗАКРЫТЬ 6 НЕОДНОЗНАЧНОСТЕЙ ORIGINAL CONTRACT
+==================================================
+
+Audit установил, что exact Original A невозможно определить из-за:
+
+1. full vs partial exit;
+2. stop vs breakeven policy;
+3. branch priority;
+4. timeframe ladder / mapping;
+5. qualitative adverse liquidity;
+6. re-entry.
+
+Нужно разобрать КАЖДУЮ отдельно.
+
+Для каждой создать:
+
+`RESOLVER_<NAME>.md`
+
+Структура:
+
+- все relevant source passages;
+- все diagrams;
+- существующие варианты трактовки;
+- какие варианты прямо разрешены;
+- какие прямо запрещены;
+- есть ли источник, задающий приоритет;
+- есть ли конфликт источников;
+- можно ли получить deterministic rule без добавления новой стратегии.
+
+==================================================
+5. ЕСЛИ SOURCE НЕ ДАЁТ ОДНОГО ОТВЕТА
+==================================================
+
+НЕ выбирать вариант по:
+- WinRate;
+- PF;
+- P&L;
+- числу сделок;
+- красивому результату.
+
+Использовать следующий порядок resolver:
+
+1. explicit primary-source rule;
+2. более конкретное правило выше общего;
+3. setup-specific rule выше universal assumption;
+4. diagram + text consistency;
+5. chronology/source hierarchy, если она доказуема;
+6. если остаются несколько source-permitted вариантов — НЕ скрывать это.
+
+В таком случае формально создать:
+
+`SOURCE_PERMITTED_VARIANT_A`
+`SOURCE_PERMITTED_VARIANT_B`
+
+Но только если оба реально поддерживаются источниками.
+
+Не выбирать победителя по backtest.
+
+==================================================
+6. ADVERSE LIQUIDITY — ОСОБО ВАЖНО
+==================================================
+
+Audit установил:
+
+- current MediumTermEngine не применяет meaningful adverse-liquidity blocker;
+- старый source code имел такой blocker;
+- 751/880 текущих сделок были отмечены adverse liquidity по одной старой contextual-pool интерпретации;
+- среди них 446 LOSS;
+- но эта интерпретация пока не доказана как единственная source-correct.
+
+Нельзя просто удалить 751 сделку.
+
+Нужно восстановить точное source meaning:
+
+Что такое:
+`meaningful adverse liquidity`
+
+Ответить:
+
+- какая liquidity считается meaningful;
+- на каком TF;
+- относительно какого setup;
+- когда она считается adverse;
+- запрещает ли она entry полностью;
+- является ли target/FTA вместо blocker;
+- зависит ли от distance;
+- зависит ли от structure/order flow;
+- когда condition перестаёт быть adverse;
+- как tilted pools / EQH/EQL участвуют;
+- known_at timestamp.
+
+Сделать отдельный:
+
+`ADVERSE_LIQUIDITY_SOURCE_RESOLVER.md`
+
+До его завершения не использовать adverse liquidity для удаления сделок.
+
+==================================================
+7. CONSERVATIVE OB
+==================================================
+
+Audit нашёл:
+
+- 7 текущих входов вне conservative TF range SW9;
+- 4 из них LOSS;
+- source также содержит smooth-approach condition, отсутствующее в текущем engine.
+
+Восстановить exact conservative OB contract:
+
+- допустимые TF;
+- required sweep;
+- engulf;
+- imbalance;
+- freshness;
+- first test;
+- approach semantics;
+- relation with OTE;
+- relation with BOS;
+- invalidation;
+- entry;
+- stop;
+- FTA.
+
+Не использовать current implementation как источник.
+
+==================================================
+8. ENTRY RESOLVER
+==================================================
+
+Для каждого source setup определить deterministic entry contract.
+
+Минимум для:
+
+- SFP;
+- Breaker;
+- Conservative OB;
+- STB;
+- Range;
+- другие реально source-supported branches.
+
+Для каждой ветки:
+
+CONTEXT
+→ SETUP FORMATION
+→ CONFIRMATION
+→ POI
+→ TRIGGER
+→ ENTRY ZONE
+→ OPTIMAL ENTRY
+→ INVALIDATION
+→ SL
+→ TARGET/FTA
+→ RE-ENTRY.
+
+Нужно явно показать, где применяется:
+
+- Market Structure;
+- Order Flow;
+- Liquidity;
+- SFP;
+- BOS/CHOCH;
+- OB;
+- FVG/IMB;
+- SnD;
+- OTE 0.705–0.79;
+- Premium/Discount;
+- Range;
+- FTA.
+
+==================================================
+9. BRANCH PRIORITY
+==================================================
+
+Если одна рыночная ситуация удовлетворяет нескольким setup:
+
+например:
+SFP + OB + Breaker + Range context,
+
+нужно установить:
+
+- являются ли это отдельными trades;
+- одним physical idea;
+- confluence;
+- какой branch владеет entry;
+- есть ли source priority;
+- разрешён ли повторный вход.
+
+Не сохранять текущую policy:
+`one physical idea for lifetime`
+
+как source rule без доказательства.
+
+==================================================
+10. STOP / BREAKEVEN
+==================================================
+
+Audit установил конфликт:
+
+- первичные SW11/SW12 запрещают перенос stop;
+- дополнительный DOC20 предлагает BE после +10–15%;
+- current canonical TP1→cost-BE является PROJECT_POLICY, а не доказанным primary source rule.
+
+Нужно определить source hierarchy и setup applicability.
+
+Не принимать текущий BE автоматически.
+
+Итог должен ясно разделять:
+
+`ORIGINAL_SOURCE_STOP_POLICY`
+и
+`CRYPTO_BOT_PROJECT_BE_POLICY`.
+
+==================================================
+11. EXIT / FTA
+==================================================
+
+Не считать TP40/30/30 частью original strategy без source evidence.
+
+Восстановить:
+
+- nearest contextual FTA;
+- opposing POI;
+- liquidity targets;
+- Range 80/20;
+- source body exits;
+- partial/full close;
+- target owner timeframe.
+
+Если разные setup имеют разные exit rules — сохранить их раздельно.
+
+Не навязывать один universal exit всем branch.
+
+==================================================
+12. НЕ ТЕРЯТЬ ПРАВИЛЬНЫЕ ИНЖЕНЕРНЫЕ ГАРАНТИИ
+==================================================
+
+Сохранить независимо от strategy interpretation:
+
+- causality;
+- no lookahead;
+- known_at;
+- completed candles only;
+- prefix consistency;
+- future mutation tests;
+- BACKTEST/SHADOW parity;
+- deterministic replay;
+- immutable evidence;
+- fees/slippage accounting;
+- audit logs.
+
+Это engineering correctness, а не изменение стратегии.
+
+==================================================
+13. PROJECT POLICY НЕ УДАЛЯТЬ
+==================================================
+
+Следующие вещи сохранить отдельно, но НЕ включать внутрь Original Source Spec:
+
+- Anti-Scalp;
+- edge_cost_ratio=3;
+- fees/slippage viability;
+- portfolio total risk 6%;
+- daily guard;
+- correlation rules;
+- leverage;
+- canonical 40/30/30;
+- cost-adjusted BE;
+- exchange safety.
+
+Они должны применяться только ПОСЛЕ:
+
+`SOURCE_STRATEGY_DECISION = ALLOW`
+
+Архитектура:
+
+SOURCE STRATEGY
+→ PROJECT ADMISSION
+→ RISK ENGINE
+→ POSITION MANAGEMENT
+→ EXECUTION.
+
+==================================================
+14. СОЗДАТЬ ORIGINAL DECISION TREE
+==================================================
+
+После resolver создать:
+
+`ORIGINAL_STRATEGY_DECISION_TREE_v1.json`
+
+и человеческую версию:
+
+`ORIGINAL_STRATEGY_DECISION_TREE_v1.md`
+
+Для каждой ветки нужен пошаговый путь:
+
+START
+→ context
+→ setup
+→ confirmation
+→ entry
+→ invalidation
+→ SL
+→ target
+→ lifecycle.
+
+Каждый node:
+- rule ID;
+- source citation;
+- known_at;
+- PASS/FAIL;
+- next node.
+
+Никаких fitted ML thresholds.
+Никакого дерева 67.68%.
+Это должно быть дерево МЕТОДОЛОГИИ.
+
+==================================================
+15. SOURCE FIDELITY TEST SUITE
+==================================================
+
+До backtest создать тесты:
+
+- каждый SOURCE_RULE имеет source citation;
+- ни один EXTRA_RULE не находится внутри source decision;
+- lower TF valid cases не блокируются только из-за отсутствия formal H1/H4 owner;
+- допустимые source TF сохраняются;
+- SFP preference H1+ не превращается в prohibition;
+- conservative OB TF bounds соблюдаются;
+- adverse liquidity resolver выполняется;
+- branch-specific exits выполняются;
+- stop rules выполняются;
+- source conflict не скрывается.
+
+Добавить synthetic LONG/SHORT examples для каждой branch.
+
+==================================================
+16. FREEZE SPEC BEFORE FINANCIAL OUTCOME
+==================================================
+
+Очень важно:
+
+Когда `ORIGINAL_STRATEGY_SPEC_v1` готов:
+
+1. сделать commit;
+2. посчитать hashes;
+3. сохранить rule registry;
+4. сохранить decision tree;
+5. сохранить all resolver decisions;
+6. зарегистрировать всё ДО просмотра нового P&L.
+
+Только после freeze разрешается реализация/backtest.
+
+==================================================
+17. BACKTEST ПОКА НЕ ЗАПУСКАТЬ, ЕСЛИ CONTRACT НЕ IDENTIFIABLE
+==================================================
+
+Если после полного source review остаётся хотя бы одна ambiguity, которая materially меняет entry/SL/exit:
+
+НЕ создавать искусственный единственный Original A.
+
+В финальном отчёте показать:
+
+`IDENTIFIABLE`
+или
+`NOT_IDENTIFIABLE`.
+
+Если NOT_IDENTIFIABLE:
+выдать минимальный список конкретных вопросов, на которые требуется решение пользователя.
+
+Каждый вопрос должен иметь:
+- source option A;
+- source option B;
+- последствия только логические, БЕЗ показа какой вариант прибыльнее;
+- recommendation только если один вариант лучше поддержан источником.
+
+==================================================
+18. ФИНАЛЬНАЯ ДОСТАВКА ЭТОГО ЭТАПА
+==================================================
+
+Вернуть:
+
+1. `ORIGINAL_STRATEGY_SPEC_v1.md`
+2. `original_strategy_rule_registry_v1.json`
+3. `ORIGINAL_STRATEGY_DECISION_TREE_v1.md`
+4. `ORIGINAL_STRATEGY_DECISION_TREE_v1.json`
+5. `TF_ROLE_MATRIX.csv`
+6. все 6 resolver documents;
+7. `ADVERSE_LIQUIDITY_SOURCE_RESOLVER.md`
+8. branch contracts;
+9. source conflict registry;
+10. list of PROJECT_POLICY overlays;
+11. list of TECHNICAL_NORMALIZATION;
+12. source fidelity tests;
+13. IDENTIFIABLE / NOT_IDENTIFIABLE verdict;
+14. если требуется — короткий список unresolved questions для пользователя;
+15. commit hash;
+16. QA results.
+
+==================================================
+КРИТЕРИЙ УСПЕХА
+==================================================
+
+Успех этого этапа НЕ:
+
+“получить хороший WinRate”.
+
+Успех:
+
+“получить одну причинную, проверяемую и максимально faithful исходным материалам торговую спецификацию, в которой ясно отделены source rules от наших project policies.”
+
+До этого момента НЕ запускать новый финальный profitability backtest.

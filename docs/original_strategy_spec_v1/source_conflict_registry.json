@@ -1,0 +1,77 @@
+{
+  "conflicts": [
+    {
+      "conflict_id": "C_STOP_BE",
+      "rules": "S_STOP_FIXED / S_SUPPLEMENT_BE",
+      "status": "PRIMARY_SCOPE_RESOLVED",
+      "resolution": "SW11 p8 и SFP SW12 p13 fixed stop; DOC20 P0277 mixed futures advice BE 10–15%. Primary explicit/setup-specific prevails for primary spec. Chronological supersession не доказана. DOC20 остаётся отдельным supplemental profile, не TP1/cost-BE."
+    },
+    {
+      "conflict_id": "C_OB_IMB",
+      "rules": "S_OB_IMB",
+      "status": "UNRESOLVED_SCOPE",
+      "resolution": "SW9 p2 most accurate с IMB, p6–7 предупреждает игнорирование; DOC19 P0103 определяет OB перед IMB. Universal no-IMB prohibition не однозначен. Stacked-OB diagram priority конкретен, не ranking всех branches."
+    },
+    {
+      "conflict_id": "C_BREAKER_IMB",
+      "rules": "S_BREAKER_FORMATION / S_BREAKER_IMB_CHOCH",
+      "status": "UNRESOLVED_SCOPE",
+      "resolution": "Primary цельный impulse/new HH/LL vs DOC19 mandatory IMB+CHOCH. Можно задать усиленный DOC19 profile, но не автоматически объявить его единственным original."
+    },
+    {
+      "conflict_id": "C_SFP_SYMMETRY",
+      "rules": "S_SFP_FORMATION",
+      "status": "GEOMETRY_RESOLVED",
+      "resolution": "SW8 next OPEN «ниже» написано для short; текст/диаграммы LONG требуют reclaimed side above LOW. Это явно описанная симметрия, не alpha filter."
+    },
+    {
+      "conflict_id": "C_SFP_CANDLE_COUNT",
+      "rules": "S_SFP_FORMATION",
+      "status": "SETUP_SPECIFIC_PRIMARY_PREVAILS",
+      "resolution": "DOC19 три/четыре свечи vs SW8 raid CLOSE + next OPEN. Нельзя требовать universal дополнительную четвёртую свечу для primary SFP; уточнение точного execution остаётся открытым."
+    },
+    {
+      "conflict_id": "C_RANGE_CLARITY",
+      "rules": "S_RANGE_FORMATION",
+      "status": "SETUP_SPECIFIC_PRIMARY_PREVAILS",
+      "resolution": "DOC19 P0085 допускает нечеткие края как рыночное состояние; DOC06 P0069–72 рекомендует такие торговые ситуации пропускать. Range entry требует clear range; numeric clarity OPEN."
+    },
+    {
+      "conflict_id": "C_CONF_SCOPE",
+      "rules": "S_CONF / S_OB_CONS_TRIGGER",
+      "status": "SOURCE_VARIANTS_PRESERVED",
+      "resolution": "SW5 conservative CONF, SW9 second OB method BOS+new POI. CONF более поздний style, не обязательная замена SW9 BOS во всех entries."
+    },
+    {
+      "conflict_id": "C_TF_UPPER_BOUND",
+      "rules": "S_OB_CONS_TF",
+      "status": "UNRESOLVED_OUTSIDE_EXPLICIT_RANGE",
+      "resolution": "SW9 M15–D1 «и т.д.»: LTF1–15M определён; D1 не абсолютный запрет W1. Вне явно описанного HTF интервала вернуть UNRESOLVED, не source FAIL."
+    },
+    {
+      "conflict_id": "C_OTE_ANCHORS",
+      "rules": "S_OTE",
+      "status": "UNRESOLVED_NORMALIZATION",
+      "resolution": "DOC19 P0153 ошибочно повторяет направление high→low для двух sides; diagram и retracement дают смысл, но causal impulse owner/tie выбор не полный."
+    },
+    {
+      "conflict_id": "C_EXIT_UNSPECIFIED",
+      "rules": "S_FTA_EXIT_OPTIONS / S_RANGE_EXIT",
+      "status": "SOURCE_VARIANTS_PRESERVED",
+      "resolution": "Full/partial FTA прямо разрешены, partial amount/remainder нет. Range80/20 не переносится в non-Range; near-edge offset и остаток не определены."
+    },
+    {
+      "conflict_id": "C_ADVERSE_MEANING",
+      "rules": "S_ADVERSE_BLOCK",
+      "status": "UNRESOLVED_NORMALIZATION",
+      "resolution": "SOURCE запрет против setup определён; meaningful TF/scope/tilt/distance классификация не однозначна. Старые751flags не дают право на удаление."
+    },
+    {
+      "conflict_id": "C_ADVERSE_SHORT_SCOPE",
+      "rules": "S_ADVERSE_WAIT",
+      "status": "UNRESOLVED_SCOPE",
+      "resolution": "DOC14 P0158 «ниже вашей точки входа» не задаёт симметричный universal SHORT blocker. Зеркальная модель plausible normalization, требует маркировки/решения."
+    }
+  ],
+  "hierarchy": "User-specified resolver procedure; primary specificity, not unproved chronological supersession"
+}

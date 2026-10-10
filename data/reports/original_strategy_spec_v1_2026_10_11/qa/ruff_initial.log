@@ -1,0 +1,8 @@
+scripts/build_original_strategy_spec_v1.py:346:13: ISC004 Unparenthesized implicit string concatenation in collection
+scripts/build_original_strategy_spec_v1.py:672:14: ISC004 Unparenthesized implicit string concatenation in collection
+scripts/build_original_strategy_spec_v1.py:674:14: ISC004 Unparenthesized implicit string concatenation in collection
+scripts/build_original_strategy_spec_v1.py:676:14: ISC004 Unparenthesized implicit string concatenation in collection
+scripts/build_original_strategy_spec_v1.py:679:14: ISC004 Unparenthesized implicit string concatenation in collection
+scripts/build_original_strategy_spec_v1.py:762:14: ISC004 Unparenthesized implicit string concatenation in collection
+Found 6 errors.
+No fixes available (6 hidden fixes can be enabled with the `--unsafe-fixes` option).

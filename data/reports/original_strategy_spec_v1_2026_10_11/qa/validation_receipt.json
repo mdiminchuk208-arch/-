@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "verdict": "NOT_IDENTIFIABLE",
+  "source_documents": 13,
+  "rules": 84,
+  "source_rules": 53,
+  "project_policies": 12,
+  "technical_normalizations": 19,
+  "source_tree_nodes": 90,
+  "branches_and_components": 12,
+  "synthetic_long_short_examples": 24,
+  "diagram_inline_anchors": 130,
+  "unique_docx_diagrams": 122,
+  "literal_source_citation_validation": "PASS",
+  "source_registry_tree_consistency": "PASS",
+  "conflicts_not_hidden": "PASS",
+  "immutable_previous_stage": {
+    "audit_commit": "c2d1e8cfb94637caaf150bb9c508cb011c3e85ba",
+    "baseline_commit": "19404ec0f4a7dd39b93c76240b6ad605278f0646",
+    "audit_tree_blobs": 17851,
+    "baseline_blobs": 17728,
+    "audit_manifest_artifacts": 122,
+    "Git_blob_identity": "PASS",
+    "archived_delivery_membership": "PASS",
+    "verification_scope": "Membership at immutable c2d1 tree; later additive spec files allowed, old manifest not rewritten"
+  },
+  "trade_entry_allowed": false,
+  "production_changes": false,
+  "financial_backtest_started": false
+}

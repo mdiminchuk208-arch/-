@@ -1,0 +1,16 @@
+{
+  "raw_git_diff_check_exit": 2,
+  "raw_check": "FORMAT_FINDINGS_PRESERVED",
+  "findings": {
+    "CRLF_SOURCE_OR_STANDARD_CSV": 544,
+    "VERBATIM_SOURCE_QUOTE_BLANK_LINE": 874
+  },
+  "code_and_nonquoted_artifacts_diff_check": "PASS",
+  "preserved_user_request_matches_uploaded_bytes": true,
+  "reason": "Exact uploaded CRLF text, standard CSV CRLF, and blank verbatim PDF quote layout; no code whitespace errors. Frozen artifacts are not rewritten.",
+  "freeze_manifest_sha256": "db8bdb8d800a48c75ec3884a1da1cece7f47da4db8cc561d12e46c8d0f168aec",
+  "all_spec_semantic_and_causal_checks": "PASS",
+  "financial_backtest_started": false,
+  "raw_log_sha256": "da2a0bcd922eecaea6572766fca27c1ddf475dfff6a4e56fe4499198266a1450",
+  "post_freeze_receipt_scope": "Additive delivery QA namespace outside frozen spec; spec hashes remain unchanged"
+}
