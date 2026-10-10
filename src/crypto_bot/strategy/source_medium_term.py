@@ -104,6 +104,7 @@ class MediumTermEngine(SourceEngine):
     def _emit(self, path_id, htf, ltf, parent, local, now, pid, visit, interaction,
               raid, confirmations=None, entry_tf=None, flow_override=None, range_zone=None):
         qtf = entry_tf or ltf
+        setup_tf = qtf if parent is local else htf
         key = (path_id, htf, ltf, pid)
         if key in self._emitted or pid in self._retained:
             return
@@ -138,7 +139,7 @@ class MediumTermEngine(SourceEngine):
         target_evidence = self._targets(direction, entry, now, range_zone)
         first = target_evidence[0]['price'] if target_evidence else None
         scalp = check_anti_scalp(direction=direction, entry=entry, target=first,
-                                 setup_tf=htf, context_tf=macro_tf,
+                                 setup_tf=setup_tf, context_tf=macro_tf,
                                  main_setup_valid=main_valid, context_valid=macro is not None,
                                  target_known_before_entry=bool(target_evidence), policy=self.cost_policy)
         if not main_valid or macro is None or (self.anti_scalp_enabled and not scalp.allowed):
@@ -186,7 +187,8 @@ class MediumTermEngine(SourceEngine):
         if proof_time is None or raid.known_at > proof_time or raid_event_time >= proof_time or proof_time > now:
             self._attempt(key, now, 'WAIT_CAUSAL_RAID_THEN_SOURCE_CONFIRMATION', path_id=path_id)
             return
-        evidence = {'path_id': path_id, 'physical_opportunity_id': pid, 'setup_tf': htf,
+        evidence = {'path_id': path_id, 'physical_opportunity_id': pid, 'setup_tf': setup_tf,
+                        'actual_setup_tf': setup_tf, 'flow_owner_tf': htf,
                         'refinement_tf': qtf, 'execution_clock': self.clock, 'macro_context_tf': macro_tf,
                         'macro_context': macro, 'main_setup_valid': main_valid,
                         'htf_poi': asdict(parent), 'ltf_poi': asdict(local), 'liquidity_sweep': asdict(raid),
@@ -254,14 +256,14 @@ class MediumTermEngine(SourceEngine):
                     # positions. No exit event is emitted for micro geometry.
                     self._cancel(signal, self.policy['primary_cancellation'], now, pending_reason,
                                  'SOURCE_ENTRY_LIFETIME_WITH_MEDIUM_OWNERSHIP', 'SW9/SW22')
-            if now > signal.known_at and tf == signal.htf:
-                if parent.invalidated_at:
+            if now > signal.known_at:
+                if tf == actual_setup_tf(signal) and parent.invalidated_at:
                     reason = 'MAIN_SOURCE_POI_BODY_INVALIDATED'
-                elif parent.kind == 'SFP' and sign(signal.direction) * (c.close - raid.extreme) <= 0:
+                elif tf == signal.htf and parent.kind == 'SFP' and sign(signal.direction) * (c.close - raid.extreme) <= 0:
                     reason = 'MAIN_SFP_BODY_INVALIDATION'
-                elif thesis and sign(signal.direction) * (c.close - thesis['protected']) <= 0:
+                elif tf == signal.htf and thesis and sign(signal.direction) * (c.close - thesis['protected']) <= 0:
                     reason = 'MAIN_PROTECTED_STRUCTURE_BODY_BREAK'
-                elif (parent.kind == 'RANGE_POI' and parent.range_id in h.range_terminal
+                elif (tf == signal.htf and parent.kind == 'RANGE_POI' and parent.range_id in h.range_terminal
                       and h.range_terminal[parent.range_id] <= now):
                     reason = 'MAIN_RANGE_EXHAUSTED'
             if reason:
@@ -365,6 +367,15 @@ class MediumTermEngine(SourceEngine):
         self._finalize_ready(start, now)
 
 
+def actual_setup_tf(signal):
+    e = signal.evidence
+    if 'actual_setup_tf' in e:
+        return e['actual_setup_tf']
+    if e['htf_poi']['zone_id'] == e['ltf_poi']['zone_id']:
+        return e['entry_zone_tf']
+    return signal.htf
+
+
 def portfolio_signal(signal, clock, mode=EngineMode.BACKTEST):
     """Typed source-proof adapter; legacy field names retain their real meaning
     in evidence. sfp_time is real raid observation, bos_time is real typed source
@@ -376,7 +387,7 @@ def portfolio_signal(signal, clock, mode=EngineMode.BACKTEST):
     proof_at = e['source_confirmation_known_at']
     raid_at = datetime.fromisoformat(raid_at) if isinstance(raid_at, str) else raid_at
     proof_at = datetime.fromisoformat(proof_at) if isinstance(proof_at, str) else proof_at
-    return StrategySignal(signal.signal_id, signal.symbol, signal.htf, clock,
+    return StrategySignal(signal.signal_id, signal.symbol, actual_setup_tf(signal), clock,
                           Direction.LONG if signal.direction == 'LONG' else Direction.SHORT,
                           signal.known_at, raid_at, proof_at, 'READY_FOR_VIRTUAL_ENTRY', 100,
                           ('ALL_REGISTERED_SOURCE_AND_MEDIUM_GATES_PASSED',),
@@ -411,7 +422,7 @@ class MediumTermPortfolio(VirtualPortfolio):
         # duration is passed to the decision. OPEN is observable before entry.
         reference = signal.optimal_entry if intrabar else candle.open
         d = check_anti_scalp(direction=source.direction, entry=reference, target=source.targets[0],
-                             setup_tf=e['setup_tf'], context_tf=e['macro_context_tf'],
+                             setup_tf=actual_setup_tf(source), context_tf=e['macro_context_tf'],
                              main_setup_valid=e['main_setup_valid'], context_valid=True,
                              target_known_before_entry=source.known_at <= candle.open_time,
                              policy=AntiScalpPolicy(self.policy.fee_fraction, self.policy.slippage_fraction,

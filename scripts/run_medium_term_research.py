@@ -241,6 +241,13 @@ def simulate(cohort, symbols, policy, lock, arm, use_resume):
                 for s, cs in clocks.items()}
     signal_updates, cancel_updates, exit_updates = indexed(all_signals), indexed(cancels), indexed(exits)
     portfolio = create_portfolio(policy, arm)
+    # Warmup-qualified READY at the requested boundary is observable before
+    # the first eligible OPEN. Seed it using actual bars ending at that CLOSE.
+    # This does not admit a trade or reuse the warmup interval's HIGH/LOW.
+    boundary_signals = signal_updates[start]
+    if boundary_signals:
+        boundary_bars = {s: next(c for c in cs if c.close_time == start) for s, cs in clocks.items()}
+        portfolio.source_step(boundary_bars, boundary_signals, cancel_updates[start], exit_updates[start])
     for now in sorted(next(iter(per_time.values()))):
         bars = {s: cs[now] for s, cs in per_time.items()}
         portfolio.source_step(bars, signal_updates[now], cancel_updates[now], exit_updates[now])
@@ -252,7 +259,7 @@ def simulate(cohort, symbols, policy, lock, arm, use_resume):
     write_rows(folder / 'shared_equity_curve.jsonl.gz', portfolio.equity_curve)
     write_rows(folder / 'admission_anti_scalp_rejections.jsonl.gz', portfolio.anti_scalp_admission_rejections)
     from research_support import performance
-    summary = performance(portfolio, [portfolio_signal(s, clock) for s in all_signals if start < s.known_at <= end], start, end)
+    summary = performance(portfolio, [portfolio_signal(s, clock) for s in all_signals if start <= s.known_at <= end], start, end)
     write_json(folder / 'shared_summary.json', summary)
     # Independent cases cover each symbol's full available entry interval.
     cases, case_lifecycle, case_admission_blocks = [], [], []
@@ -293,6 +300,11 @@ def simulate(cohort, symbols, policy, lock, arm, use_resume):
                                        'status': ('EXPIRED' if any('TARGET_CONSUMED' in d.reason or 'RANGE_EXHAUSTED' in d.reason
                                                                   for d in p.journal if d.action == 'SETUP_INVALIDATED') else 'INVALIDATED'),
                                        'known_at': p.last_close, 'trade_entry_allowed': False})
+        elif signal.signal_id in p.consumed_ids:
+            blocks = [d for d in p.journal if d.action == 'VIRTUAL_ENTRY_BLOCKED']
+            case_lifecycle.append({'idea_id': signal.evidence['physical_opportunity_id'], 'signal_id': signal.signal_id,
+                                       'status': 'REJECTED_ADMISSION', 'known_at': p.last_close,
+                                       'reasons': [d.reason for d in blocks], 'trade_entry_allowed': False})
         else:
             case_lifecycle.append({'idea_id': signal.evidence['physical_opportunity_id'], 'signal_id': signal.signal_id,
                                        'status': 'CENSORED_UNFILLED', 'known_at': p.last_close, 'trade_entry_allowed': False})
@@ -306,6 +318,7 @@ def simulate(cohort, symbols, policy, lock, arm, use_resume):
                                               'per_symbol': {s: {'start': cs[0].open_time, 'end': cs[-1].close_time}
                                                           for s, cs in clocks.items()},
                                               'requested_start': policy['requested_start'], 'requested_end': policy['requested_end'],
+                                              'boundary_READY_seeded': len(boundary_signals),
                                               'forced_close': False, 'trade_entry_allowed': False})
     seal(folder, fp, {'arm': arm, 'READY': len(all_signals), 'FILLED': len(cases),
                           'CLOSED': sum(t['status'] == 'CLOSED' for t in cases),

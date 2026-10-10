@@ -213,6 +213,20 @@ class MediumEngineTests(unittest.TestCase):
         self.assertEqual(e.cancellations[0]['reason'], 'MAIN_TARGET_CONSUMED_PENDING_ONLY')
         self.assertFalse(e.exit_events)
 
+    def test_h1_parent_inside_h4_flow_exits_on_h1_observation(self):
+        e, parent, raid = fixture()
+        e._emit('DEMAND_SUPPLY', 240, 60, parent, parent, T+timedelta(hours=4),
+                'ACTUAL_H1_SETUP', 1, T, raid, entry_tf=60)
+        e._finalize_ready(0, T+timedelta(hours=4))
+        s = e.signals[0]
+        self.assertEqual(s.evidence['actual_setup_tf'], 60)
+        self.assertEqual(s.evidence['flow_owner_tf'], 240)
+        self.assertEqual(portfolio_signal(s, 15).htf_minutes, 60)
+        parent.invalidated_at = T+timedelta(hours=5)
+        c = Candle(T+timedelta(hours=4), parent.invalidated_at, 92., 93., 88., 89.)
+        e._lifecycle(60, c)
+        self.assertEqual(e.exit_events[0]['known_at'], parent.invalidated_at)
+
     def test_resume_checks_artifact_membership_and_bytes(self):
         import sys
         sys.path.insert(0, str(REPO / 'scripts'))
