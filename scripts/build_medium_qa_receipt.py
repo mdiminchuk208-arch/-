@@ -20,6 +20,8 @@ def main():
         raise ValueError('Full unittest has not passed')
     if 'Success: no issues found in 53 source files' not in (qa / 'mypy_role_final.log').read_text():
         raise ValueError('Full source mypy has not passed')
+    if 'COMPILEALL_PASS' not in (qa / 'compile_delivery_final.log').read_text():
+        raise ValueError('Final compilation has not passed')
     before = json.loads((qa / 'ruff_full_final.json').read_text())
     after = json.loads((qa / 'ruff_delivery_tree.json').read_text())
     new = Counter(map(diagnostics_key, after))-Counter(map(diagnostics_key, before))
