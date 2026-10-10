@@ -468,6 +468,10 @@ class SourceEngine:
         proof={'bos':dict(bos),'reaction_at':context.interaction_at}
         context.stages.add('BOS_POI')
         if z.kind=='SFP':
+            paths=[p for p in ('SFP_BOS_POI','SFP_ATR_STOP')
+                   if (p,context.htf,context.ltf,context.physical_id) not in self._emitted]
+            if not paths:
+                return
             # SW9 explicitly allows a countertrend LTF transition to first HTF FTA.
             direction=z.direction
             f={'flow_id':identity('SFP_DELIVERY',context.physical_id),
@@ -475,7 +479,7 @@ class SourceEngine:
                 'structural_break':dict(bos),'source':'DOC16 P0075–87; SW9 p13',
                 'classification':'SOURCE_INTERPRETATION_COUNTERTREND_REACTION','invalidated_at':None,
                 'local_flow_confluence':json.loads(evidence_json(self._active_flow(l,direction)))}
-            for path in ('SFP_BOS_POI','SFP_ATR_STOP'):
+            for path in paths:
                 self._emit(path,context.htf,context.ltf,z,local,now,context.physical_id,
                            context.visit,context.interaction_at,z.raid,proof,flow_override=f)
             return

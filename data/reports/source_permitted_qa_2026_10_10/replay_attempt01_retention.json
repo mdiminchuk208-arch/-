@@ -1,0 +1,14 @@
+{
+  "status": "RETAINED_INCOMPLETE_PRE_OUTCOME_ATTEMPT",
+  "terminated_task_processes": [
+    55940,
+    55941,
+    55942,
+    55943,
+    55944
+  ],
+  "reason": "remove redundant emitted SFP evidence construction; verify exact decision parity",
+  "source_outcomes_seen": false,
+  "no_deleted_artifacts": true,
+  "trade_entry_allowed": false
+}
