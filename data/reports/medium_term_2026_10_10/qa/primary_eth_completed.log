@@ -1,0 +1,2 @@
+VERIFIED_RESUME data/reports/medium_term_2026_10_10/compiled_primary/bybit_2023_2025/detection/ETHUSDT
+{'status': 'PASS', 'archive_commit': '0b6bd4e', 'symbol': 'ETHUSDT', 'READY': {'enabled': 3545, 'disabled_cost_gate': 3554}, 'manifest_sha256': '6ea957facf4491c7f90e69284609382825a861fcf130b7b16901a6cc810af843', 'fingerprint': '68cf2fbdecc812cbe430f5629c8ba9a1bacffc7010a65db42f53ed7c69144d02', 'trade_entry_allowed': False}

@@ -113,6 +113,17 @@ def bins_table(bins):
     return '\n'.join(lines)
 
 
+def filter_effect_table(cohorts):
+    lines = ['| Cohort / account | FILLED OFF → ON | CLOSED OFF → ON | Δ FILLED | Net OFF → ON |',
+             '|---|---:|---:|---:|---:|']
+    for cohort, data in cohorts.items():
+        for account in ('independent', 'shared'):
+            before = data['arms']['disabled_cost_gate'][account]['statistics']
+            after = data['arms']['enabled'][account]['statistics']
+            lines.append(f"| {cohort}/{account} | {before['all_FILLED']} → {after['all_FILLED']} | {before['total_trades']} → {after['total_trades']} | {after['all_FILLED']-before['all_FILLED']:+d} | {number(before['net_pnl'])} → {number(after['net_pnl'])} |")
+    return '\n'.join(lines)
+
+
 def main():
     ANALYSIS.mkdir(parents=True, exist_ok=True)
     old_path = REPO / 'data/reports/source_permitted_physical_bybit_2026_10_10/cohorts/SOURCE_PERMITTED_UNION/CANCEL_SOURCE_POI_INVALIDATION/cases.jsonl.gz'
@@ -252,6 +263,7 @@ def main():
         '\nПричины до READY (счётчики causal path/reason, не уникальных trades): '+json.dumps({c:{a:v['detection_funnel'] for a,v in d['arms'].items()} for c,d in data['cohorts'].items()}, ensure_ascii=False),
         '\nНезаполненные READY: '+json.dumps({c:{a:v['terminal_unfilled_statuses'] for a,v in d['arms'].items()} for c,d in data['cohorts'].items()}, ensure_ascii=False),
         '\nAnti-Scalp rejection counters: '+json.dumps({c:v['anti_scalp'] for c,v in data['cohorts'].items()}, ensure_ascii=False),
+        '\nВлияние cost gate на полный replay; Net только CLOSED:', filter_effect_table(data['cohorts']),
         '\nСопоставление старых коротких cases (gate использовал только READY evidence): '+json.dumps(overlay, ensure_ascii=False),
         'Anti-Scalp ON/OFF сравнивается полным причинным replay. Отказ раннему плохому варианту может дать позже READY другому source-valid пути той же идеи; shared occupancy и margin тоже меняют дальнейшие входы. Поэтому ON не обязан уменьшать FILLED ровно на количество отказов. Logged path reasons, unique physical ideas и unique never-READY приведены раздельно; все arms требуют среднесрочный setup/context.',
         '## G. Holding до/после',
@@ -265,6 +277,11 @@ def main():
         'Gross — движение между reference prices до slippage. Канонический ledger gross уже включает slippage; отчёт добавляет его обратно ровно один раз. Gross − fees − slippage = Net проверяется на каждой CLOSED trade. Costs % gross profit uses sum of positive gross-reference trade P&L; undefined ratios are null. Turnover uses actual entry/partial exit fill notionals.',
         '\nPrimary costs: '+json.dumps({k:m[k] for k in ['gross_pnl','fees','slippage','net_pnl','cost_identity_residual','turnover','total_costs','costs_percent_gross_profit','costs_percent_turnover','average_cost_per_trade','average_gross_move_fraction','average_net_move_fraction']}, ensure_ascii=False),
         '\nShort <4h / medium ≥4h comparisons доступны для каждого cohort/account/filter. Holding — outcome; корреляция с costs не доказывает, что удержание само вызывает loss. Предвходные target distance, stop width и friction дают причинную интерпретацию.',
+        metrics_table([(label+'/'+horizon, selected['breakdowns'][horizon])
+                       for label, selected in [('Old independent', data['old_independent_cases']),
+                                               ('Matched medium independent', matched['independent']),
+                                               ('Primary medium shared', primary['shared'])]
+                       for horizon in ('short', 'medium')]),
         '## I. Полный новый backtest',
         'Requested 2023-01-01..2026-01-01; actual primary BTC/ETH coverage до 2025-12-05 23:30 UTC, около 2.93 лет. Warmup 2022 не торгуется. Это pinned Bybit mirror: normalized H1/H4 — complete M15 aggregates; сохранены native comparison differences/provenance limits. Другие exchange prices не смешивались. Все данные уже development, OOS/70% WR claim отсутствует.',
         '\nPrimary shared NAV: '+json.dumps(primary['shared_NAV'], ensure_ascii=False),
@@ -282,7 +299,7 @@ def main():
         '\nДиагностика закрытий matched shared: '+json.dumps(matched['shared']['exit_diagnostics'], ensure_ascii=False),
         'edge_cost_ratio измеряет достаточность потенциального хода, но не вероятность достижения target. Source-valid идея может быстро получить SL или structural exit. Эти исходы остаются в оценке, включая короткие losses; новые thresholds по ним не выбирались.',
         '## K. Файлы',
-        '`src/crypto_bot/strategy/anti_scalp.py`, `source_medium_term.py`; `src/crypto_bot/research/medium_statistics.py`; config/source_medium_term_policy.json; scripts/run_medium_term_research.py, run_compiled_medium_term.py, replay_medium_role_correction.py, verify_medium_term.py, verify_medium_artifacts.py, verify_medium_execution_parity.py, audit_old_medium_gate.py, report_medium_term.py; tests/test_medium_term.py; MEDIUM_TERM_RESEARCH_PROTOCOL.md, MEDIUM_TERM_COMPILATION_PROTOCOL.md, MEDIUM_TERM_ROLE_CORRECTION_PROTOCOL.md и MEDIUM_TERM_SOURCE_RECONSTRUCTION.md. Все старые artifacts/tests/reports/history сохранены.',
+        '`src/crypto_bot/strategy/anti_scalp.py`, `source_medium_term.py`; `src/crypto_bot/research/medium_statistics.py`; config/source_medium_term_policy.json; scripts/run_medium_term_research.py, run_compiled_medium_term.py, replay_medium_role_correction.py, verify_medium_term.py, verify_medium_artifacts.py, verify_medium_execution_parity.py, audit_old_medium_gate.py, report_medium_term.py, build_medium_qa_receipt.py; tests/test_medium_term.py; MEDIUM_TERM_RESEARCH_PROTOCOL.md, MEDIUM_TERM_COMPILATION_PROTOCOL.md, MEDIUM_TERM_ROLE_CORRECTION_PROTOCOL.md и MEDIUM_TERM_SOURCE_RECONSTRUCTION.md. Воспроизводимая настройка среды: scripts/cloud_environment_install.sh и CLOUD_ENVIRONMENT_SETUP.md. Все старые artifacts/tests/reports/history сохранены.',
         '## L. Commit',
         f'Исходный код до результатов: c754eb0; эквивалентный compiler: 0b6bd4e; role correction зарегистрирован до corrected P&L: 7ef3605. HEAD при генерации отчёта: {head}; ветка medium-term-source-research. Финальный artifact commit сообщается после sealing. Force push не использовался; main baseline dab8d25 сохранён.',
         '## M. Tests / QA', json.dumps(qa, ensure_ascii=False, indent=2),

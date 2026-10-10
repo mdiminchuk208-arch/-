@@ -23,7 +23,7 @@ def main():
     before = json.loads((qa / 'ruff_full_final.json').read_text())
     after = json.loads((qa / 'ruff_delivery_tree.json').read_text())
     new = Counter(map(diagnostics_key, after))-Counter(map(diagnostics_key, before))
-    if new or 'All checks passed!' not in (qa / 'ruff_changed_delivery.log').read_text():
+    if new or 'All checks passed!' not in (qa / 'ruff_changed_delivery_final.log').read_text():
         raise ValueError('New lint regression')
     integrity = json.loads((qa / 'artifact_integrity_receipt.json').read_text())
     expected_cohorts = {'bybit_2023_2025', 'native_bybit_2026'}
@@ -38,7 +38,7 @@ def main():
     receipt = {'full_unittest': {'passed': int(match[1]), 'failed': 0, 'skipped': 0,
                                  'seconds': float(match[2]), 'log': 'qa/full_unittest_delivery.log'},
                'targeted_medium_tests': {'passed': 17, 'log': 'qa/targeted_boundary_final.log'},
-               'compile': {'status': 'PASS', 'log': 'qa/compile_delivery.log'},
+               'compile': {'status': 'PASS', 'log': 'qa/compile_delivery_final.log'},
                'mypy': {'status': 'PASS', 'source_files': 53, 'log': 'qa/mypy_role_final.log'},
                'lint': {'changed_files': 'PASS', 'full_tree': 'INHERITED_DIAGNOSTICS',
                         'inherited_findings': len(after), 'new_findings': 0,
