@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "real_source_valid_prefix_signals": 1177,
+  "cohorts": 38,
+  "case_instances_audited": 960,
+  "original_and_compact_ledger_receipts_exactly_equal": true,
+  "fixture_manifest_bypassed_for_both": true,
+  "full_final_manifest_verification_remains_mandatory": true,
+  "helper_sha256": "b5597aeae06e9bf99b82c728e6d576de3e24d874b9457301bc41bb5331a641fa",
+  "trade_entry_allowed": false
+}

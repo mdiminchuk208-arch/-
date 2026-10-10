@@ -65,13 +65,21 @@ def old13_audit(folder,out):
     for symbol in json.loads((folder/'run_lock.json').read_text())['policy']['symbol_priority']:
         seg=folder/'segments'/symbol
         native[symbol]=[r.to_strategy_candle(300000) for r in read_klines_csv(REPO/f'data/history/bybit/{symbol}/5.csv')]
-        all_signals+=read_rows(seg/'signals.jsonl.gz');audits+=json.loads((seg/'old13_audit.json').read_text())
+        symbol_audits=json.loads((seg/'old13_audit.json').read_text());audits+=symbol_audits
+        # Retain exactly the old READY scopes used below, before reading any
+        # outcomes; later signals cannot witness a historical source contract.
+        all_signals.extend(r for r in read_rows(seg/'signals.jsonl.gz') if any(
+            r['direction']==a['old_trade']['direction'] and r['htf']==a['old_trade']['htf']
+            and r['ltf']==a['old_trade']['ltf'] and instant(r['known_at'])<=instant(a['old_trade']['ready_time'])
+            for a in symbol_audits))
         for old_row in json.loads((STRICT/'segments'/symbol/'intermediate_audit.json').read_text()):
             original_classifications[old_row['old_trade']['trade_id']]=old_row
         for r in read_rows(seg/'cancellations.jsonl.gz'):
             if r['cohort']=='CANCEL_SOURCE_POI_INVALIDATION':cancel[r['signal_id']].append(r)
+    old_scope_ids={r['signal_id'] for r in all_signals}
     for p in (folder/'cohorts').glob('*/CANCEL_SOURCE_POI_INVALIDATION/cases.jsonl.gz'):
-        for t in read_rows(p):all_cases[t['signal_id']]=t
+        for t in read_rows(p):
+            if t['signal_id'] in old_scope_ids:all_cases[t['signal_id']]=t
     result=[]
     for row in audits:
         old=row['old_trade'];ready=instant(old['ready_time']);entry=instant(old['entry_interval_start'])
@@ -246,6 +254,7 @@ def render(folder,out):
         '## QA / воспроизводимость / сохранность',
         '548 tests PASS перед final execution, dedicated15paths + physical + source-body tests; compileall/Ruff changed files/mypy PASS. Full-tree Ruff555 inherited findings byte/diagnostic-identical to d466, zero new; old code не переписан ради lint. Реальный nonempty prefix14293bars/all15paths, future mutation4TF; source body qualification и physical mapping также prefix-causal. Independent cross-TF OHLC302362bars:0mismatches. Итоговый ledger/no-lookahead/cost/risk/selection/preservation и exact-resume receipts находятся в `data/reports/source_permitted_qa_2026_10_10`.',
         'Registry7c47621, implementation7f9782f, exact performance parityc8263dd, global physical424d663, native SFP validity/lifecycled87edb1 опубликованы до final outcomes. Все завершённые robustness/controlled-exit/frozen artifacts сохранены без повторного перерасчёта. Final native40 detector manifest и final physical manifest неизменяемы; SHA каждого source/code/data/artifact проверяется.',
+        'Все40 detector segments завершены. Последующая provisional all-symbol aggregation остановлена лимитом памяти32GiB до outcomes; исходный log и все artifacts сохранены. Base manifest честно сертифицирует только COMPLETE DETECTOR CORPUS. Primary execution выполнен отдельно с bounded-memory scheduling, опубликованным в096e225: source selection/replay/risk/exits не менялись. На реальном prefix все196 сравниваемых artifacts/38cohorts побайтно совпали с оригинальным исполнителем. См. `BOUNDED_SOURCE_EXECUTION_PROTOCOL.md` и `bounded_execution_real_parity.json`.',
         f'```bash\npython scripts/run_source_permitted_bybit.py --output data/reports/source_permitted_bybit_2026_10_10 --resume-existing --workers 4\npython scripts/run_source_permitted_physical_union.py --source data/reports/source_permitted_bybit_2026_10_10 --output {folder.relative_to(REPO)} --resume-existing\n```']
     text='\n\n'.join(sections)+'\n'
     (REPO/'SOURCE_ALIGNED_BYBIT_50_TRADE_REPORT.md').write_text(text)

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "historical_cases": 13,
+  "fixture": "REAL_NONEMPTY_SOL_SOURCE_PREFIX_WITH_ALL13_HISTORICAL_CUTOFFS",
+  "original_and_scoped_old13_audits_exactly_equal": true,
+  "outcome_based_source_selection": false,
+  "renderer_sha256": "852f536cbf538b5e57b2c14d30e80af8c7b68c9c3b8c4fdbbd3e617ed8d8c021",
+  "trade_entry_allowed": false
+}

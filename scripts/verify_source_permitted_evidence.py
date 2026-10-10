@@ -137,7 +137,7 @@ def ledger_checks(folder):
         assert digest(REPO / name) == h, name
     for name, row in lock['inputs'].items():
         assert digest(REPO / name) == row['sha256'], name
-    signals, by_symbol, cancels = {}, defaultdict(list), defaultdict(list)
+    signals, cancels = {}, defaultdict(list)
     prices, opens, closes = {}, {}, {}
     for symbol in policy['symbol_priority']:
         prices[symbol] = [r.to_strategy_candle(300000) for r in
@@ -149,7 +149,6 @@ def ledger_checks(folder):
             cancels[(r['signal_id'], r['cohort'])].append(r)
         for r in read_rows(segment / 'signals.jsonl.gz'):
             assert r['signal_id'] not in signals
-            signals[r['signal_id']] = r; by_symbol[symbol].append(r)
             ready = instant(r['known_at']); e = r['evidence']; s = sign(r['direction'])
             timestamp_check(e, ready)
             assert r['trade_entry_allowed'] is False
@@ -182,6 +181,12 @@ def ledger_checks(folder):
                 assert r['fractions'] == [.8, .2]
             current_index = bisect_right(closes[symbol], ready) - 1
             assert closes[symbol][current_index] == ready
+            # Every full source proof above is checked before releasing it.
+            # select_union reads only these two evidence fields; its function,
+            # ordering and all case/ledger checks below remain unchanged.
+            signals[r['signal_id']] = {**r, 'evidence': {
+                'path_id': e['path_id'],
+                'physical_opportunity_id': e['physical_opportunity_id']}}
     selected = read_rows(folder / 'selections/SOURCE_PERMITTED_UNION.jsonl.gz')
     assert len({r['physical_opportunity_id'] for r in selected}) == len(selected)
     hydrated = [SourceSignal(**{**r, 'known_at': instant(r['known_at']), 'targets': tuple(r['targets']),
