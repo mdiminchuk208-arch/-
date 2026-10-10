@@ -1,0 +1,10 @@
+{
+  "all_diagnostics_exactly_equal": true,
+  "baseline_commit": "dab8d254aaf4babc07659e3d03d14b269445767b",
+  "baseline_diagnostics_artifact": "data/reports/source_permitted_qa_2026_10_10/final_bounded_ruff_full_tree.json",
+  "baseline_diagnostics_sha256": "30782fead8be314e6eee345dea2c35a91120ad6560421812b21e775d4ea77372",
+  "current_findings": 555,
+  "inherited_findings": 555,
+  "new_findings": [],
+  "status": "PASS"
+}

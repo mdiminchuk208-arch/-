@@ -1,0 +1,8 @@
+{
+  "freeze_commit": "e569909556e059c3f704d6ebe6f1f2e1b2616871",
+  "labels_sha256": "9db6e06d0927e01a030a3b4a78a6176552ca7109f7505774f4b16ae2e5ccd61a",
+  "opened_at_UTC": "2026-10-10T14:08:45.990411+00:00",
+  "rule_selection_allowed": false,
+  "status": "TEST_OPENED_ONCE_AFTER_COMMITTED_FREEZE",
+  "trade_entry_allowed": false
+}

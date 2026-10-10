@@ -1,0 +1,20 @@
+{
+  "CLOSED_conditioning_limit": "REQUESTED_ALL_CLOSED_ANALYSIS; ALL_18_OPEN_RETAINED_AND_PREDICTED",
+  "OOS_provenance": "V2_SPECIFIC_DEVELOPMENT_TEST; PREVIOUSLY_INSPECTED_HISTORY; NOT_FRESH_OOS",
+  "TRAIN_VALIDATION_selection_access": "SEPARATE_PARTITION_FILES; TRAIN_MINER_REJECTS_TEST",
+  "causal_ATR_CLOSE": "PASS_ALL_16351",
+  "chronological_split_ties_and_purge": "PASS_ALL_16351",
+  "frozen_commit": "e569909556e059c3f704d6ebe6f1f2e1b2616871",
+  "one_time_TEST_after_committed_rules_and_predictions": "PASS",
+  "original_feature_audit_sha256": "86b8f343d7be1d0bec64d206f33c495f1e69610e180a146c5e1b0b1e72e66e1d",
+  "post_TEST_rule_or_model_changes": false,
+  "prediction_label_identity_mutation": "PASS_ALL_FINAL_CANDIDATES",
+  "purged_counts": {
+    "TRAIN": 103,
+    "VALIDATION": 54
+  },
+  "real_native_prefix_and_future_mutation_checks": 243,
+  "same_physical_pre_READY_confluence": "PASS_ALL_WITNESSES",
+  "status": "PASS",
+  "trade_entry_allowed": false
+}

@@ -1,0 +1,17 @@
+{
+  "artifacts": {
+    "TEST_opening_receipt.json": "85fae342082ceebd34634c708548ad724d3dc6f1318849e0dff55d0d1cd5b758",
+    "TEST_summary.json": "2d1d82e528d6188521b0c691423cfc6dea41fc50b50b297b2a4672fae991bfa3",
+    "strategy_v2_feature_outcome_table.csv.gz": "a5e1beecb0d14d86556d5a30874a28e4f0e2f6fd18a857687ebdb9014bfa763c",
+    "strategy_v2_frozen_period_stability.csv": "6a974b889017449b12412bf33b29adf8aacb9d1e6500db05725e194e5e7748c8",
+    "strategy_v2_oos_breakdowns.csv": "b8bf952c0646e3b4681a4d20d6beae929c18f5804c2f5c72eaa84ea10133ef7d",
+    "strategy_v2_oos_friction_stress.csv": "d9a3398b93d37017209df87e0ab098a1e89904477f62d63a80b153bb79574354",
+    "strategy_v2_oos_leave_one_group_out.csv": "3d0f8355d33b8bb064fd5e801244046af8bb919edc3e213a429566495526e5c9",
+    "strategy_v2_oos_results.csv": "65dae10679dde4acaec0a178adf911c48eefba7b28aa91c81d750f4a56502a73",
+    "strategy_v2_oos_selected_cases.csv.gz": "6904c976d442ea29880c4fe214279391fc4fe478add0c331a1eb231a05b795c6"
+  },
+  "freeze_commit": "e569909556e059c3f704d6ebe6f1f2e1b2616871",
+  "status": "COMPLETE_SINGLE_FROZEN_TEST",
+  "test_open_count": 1,
+  "trade_entry_allowed": false
+}

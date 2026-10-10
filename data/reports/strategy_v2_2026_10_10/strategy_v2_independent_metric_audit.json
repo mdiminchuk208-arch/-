@@ -1,0 +1,70 @@
+{
+  "candidates": [
+    {
+      "CLOSED": 3267,
+      "LOSS": 2478,
+      "MaxDrawdown_decimal": 22562.01750731741,
+      "NetPnL_fsum": -21381.65423288869,
+      "WIN": 789,
+      "Wilson_scipy": [
+        0.2271388405754206,
+        0.2564802766260071
+      ],
+      "candidate_name": "A",
+      "status": "PASS"
+    },
+    {
+      "CLOSED": 476,
+      "LOSS": 329,
+      "MaxDrawdown_decimal": 1186.9472574046704,
+      "NetPnL_fsum": -29.158875489729127,
+      "WIN": 147,
+      "Wilson_scipy": [
+        0.26898776101374844,
+        0.35172029441918307
+      ],
+      "candidate_name": "A_PLUS",
+      "status": "PASS"
+    },
+    {
+      "CLOSED": 297,
+      "LOSS": 181,
+      "MaxDrawdown_decimal": 617.8667285379385,
+      "NetPnL_fsum": -426.82608830978086,
+      "WIN": 116,
+      "Wilson_scipy": [
+        0.3368215805096625,
+        0.44711777327886926
+      ],
+      "candidate_name": "BEST_DETERMINISTIC",
+      "status": "PASS"
+    },
+    {
+      "CLOSED": 297,
+      "LOSS": 96,
+      "MaxDrawdown_decimal": 312.2113613407063,
+      "NetPnL_fsum": 9.482899963829322,
+      "WIN": 201,
+      "Wilson_scipy": [
+        0.6216109514257341,
+        0.72741009245433
+      ],
+      "candidate_name": "BEST_META",
+      "status": "PASS"
+    },
+    {
+      "CLOSED": 476,
+      "LOSS": 329,
+      "MaxDrawdown_decimal": 1186.9472574046704,
+      "NetPnL_fsum": -29.158875489729127,
+      "WIN": 147,
+      "Wilson_scipy": [
+        0.26898776101374844,
+        0.35172029441918307
+      ],
+      "candidate_name": "TOP",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS"
+}
