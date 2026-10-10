@@ -1,0 +1,40 @@
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+| Cohort / account / filter | CLOSED | WIN/LOSS | WR | PF | Exp | Avg R | Gross | Fees | Slip | Net | Mean/median h |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Old independent cases / full first FTA | 16333 | 4021/12312 | 24.619% | 0.615 | -6.735 | -0.288 | 11,576.962 | 91,180.156 | 30,393.386 | -109,996.579 | 6.448/1.083 |
+| bybit_2023_2025/independent/enabled | 2352 | 818/1534 | 34.779% | 0.776 | -3.041 | -0.130 | -558.927 | 4,944.969 | 1,648.323 | -7,152.220 | 164.133/9.250 |
+| bybit_2023_2025/shared/enabled | 880 | 338/542 | 38.409% | 0.742 | -1.228 | -0.130 | -231.839 | 636.801 | 212.267 | -1,080.907 | 25.005/9.500 |
+| bybit_2023_2025/independent/disabled_cost_gate | 2351 | 831/1520 | 35.347% | 0.765 | -3.172 | -0.136 | -848.538 | 4,957.268 | 1,652.423 | -7,458.229 | 163.723/8.500 |
+| bybit_2023_2025/shared/disabled_cost_gate | 880 | 343/537 | 38.977% | 0.755 | -1.231 | -0.132 | -173.908 | 682.214 | 227.405 | -1,083.526 | 24.792/9.250 |
+| native_bybit_2026/independent/enabled | 2270 | 790/1480 | 34.802% | 0.816 | -2.566 | -0.110 | 886.448 | 5,033.974 | 1,677.991 | -5,825.517 | 20.540/7.500 |
+| native_bybit_2026/shared/enabled | 396 | 153/243 | 38.636% | 0.834 | -1.677 | -0.088 | 14.811 | 509.270 | 169.757 | -664.215 | 29.347/9.875 |
+| native_bybit_2026/independent/disabled_cost_gate | 2259 | 798/1461 | 35.325% | 0.814 | -2.566 | -0.110 | 887.370 | 5,012.562 | 1,670.854 | -5,796.046 | 20.375/7.250 |
+| native_bybit_2026/shared/disabled_cost_gate | 398 | 156/242 | 39.196% | 0.827 | -1.698 | -0.092 | -2.417 | 505.094 | 168.365 | -675.876 | 29.106/9.542 |

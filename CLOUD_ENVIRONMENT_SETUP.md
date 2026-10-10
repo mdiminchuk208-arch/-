@@ -4,14 +4,21 @@
 cloud-environment:cloud-environment-runtime. Python 3.12, isolated venv
 `/workspace/crypto-bot-venv`, editable crypto-bot-core 0.4.20.
 
-Повторяемый installer: `scripts/cloud_environment_install.sh`. Он выполнен
-дважды; pip check и imports numpy/scipy/sklearn/matplotlib/pyarrow прошли.
+Повторяемый installer: `scripts/cloud_environment_install.sh`. Установка
+зависимостей выполнена дважды; pip check и imports
+numpy/scipy/sklearn/matplotlib/pyarrow прошли.
 Логи: `data/reports/medium_term_2026_10_10/qa/setup_install*.log`.
 Кэши находятся в writable /workspace/.cache; HOME не переназначается.
+XDG_CACHE_HOME=/workspace/.cache и fontconfig cache исправляют выявленное
+сообщение «No writable cache directories» при экспорте графиков. Новая
+cache-часть и bash syntax проверены; повторный renderer завершился без
+сообщения, все report/CSV/figure SHA остались идентичными. Первоначальный
+лог и графики сохранены в qa/final_report_render_initial_fontconfig.log
+и qa/fontconfig_render_initial/.
 
-Сохранён конфигурационный draft revision 3:
+Сохранён и повторно прочитан конфигурационный draft revision 4:
 `e2a8b1eb-ac42-439a-8412-7e6e877c0ea5~cecfgdraft_6ac9104296888191b68a218368e1dc29`.
-Setup script и start instructions сохранены, PIP_CACHE_DIR и MPLCONFIGDIR
+Setup script и start instructions сохранены; PIP_CACHE_DIR, MPLCONFIGDIR и XDG_CACHE_HOME
 указаны как environment requirements. Draft требует публикации в настройках
 cloud environment для использования при следующем запуске; сохранение draft
 само по себе не публикует конфигурацию. Repository membership, ref main,
