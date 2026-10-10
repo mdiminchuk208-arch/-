@@ -1,0 +1,15 @@
+{
+  "TEST_access": false,
+  "TRAIN_access_for_model_fit": true,
+  "final_primary": "BEST_DETERMINISTIC",
+  "final_rules_sha256": "911ed4493260d572527cea97a229df3dffca9315bd7b92f39befc7da75ee9cd3",
+  "input_hashes": {
+    "features_TRAIN.jsonl.gz": "ce3a1182b5b9bd6ec1cfa09bb5fad958b2f94c4737286cc8ea5d90479819ac97",
+    "features_VALIDATION.jsonl.gz": "4c21564490013b18ed697a68e117cbb8d4cd30d105e6450cf92a4dfdd2351543",
+    "labels_TRAIN.jsonl.gz": "36e2aae54d42b7d4a42a65372ee92eef8cba3298ada165aaa92b4c46c83d5541",
+    "labels_VALIDATION.jsonl.gz": "47fe71f8ffc4df537f29df66e405342ba1587de56b7a3ee9ed0a4075459fc5f3"
+  },
+  "status": "FROZEN_VALIDATION_SELECTION_TEST_UNOPENED",
+  "trade_entry_allowed": false,
+  "validation_attempts": 418
+}

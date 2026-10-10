@@ -1,0 +1,3 @@
+VALIDATION best deterministic {"CLOSED":218,"Expectancy":0.21810988369930648,"PF":1.0197201296156932,"WR":0.518348623853211,"rule":{"conditions":[["friction_R","<=",0.15],["sweep_ATR",">=",0.1]],"kind":"RULE","scope":"CORE_C"}}
+VALIDATION best meta {"CLOSED":297,"Expectancy":-1.811186568949631,"PF":0.7773879329605723,"WR":0.6296296296296297,"rule":{"kind":"META","model_id":"TREE_D3_L200","threshold":0.55}}
+PRIMARY BEST_DETERMINISTIC TEST_NOT_OPENED

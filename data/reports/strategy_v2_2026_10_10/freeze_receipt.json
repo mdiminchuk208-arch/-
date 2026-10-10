@@ -1,0 +1,28 @@
+{
+  "TEST_labels_read": false,
+  "frozen_at_UTC": "2026-10-10T14:08:06.536727+00:00",
+  "hashes": {
+    "STRATEGY_V2_RESEARCH_PROTOCOL.md": "76307d8148fa068eee0df068e725456003e307e1904217c0f4d374922dc911fb",
+    "data/reports/strategy_v2_2026_10_10/features_TEST.jsonl.gz": "43f670af3f412a12c1ebcd9649ff21ae9c2cce6141f8fe69aa9d3c1392c4ef46",
+    "data/reports/strategy_v2_2026_10_10/frozen_TEST_predictions.jsonl.gz": "1e6f6ced91e0191adf5c81c3d7127fa243d131a7de25dfd1e6e11e59349c31fc",
+    "data/reports/strategy_v2_2026_10_10/labels_TEST.jsonl.gz": "9db6e06d0927e01a030a3b4a78a6176552ca7109f7505774f4b16ae2e5ccd61a",
+    "data/reports/strategy_v2_2026_10_10/split.json": "34de3b8cdb982ccb75f913777659a127cc3816f39b727b796678da8411a88609",
+    "data/reports/strategy_v2_2026_10_10/strategy_v2_final_rules.json": "911ed4493260d572527cea97a229df3dffca9315bd7b92f39befc7da75ee9cd3",
+    "data/reports/strategy_v2_2026_10_10/validation_selection_receipt.json": "0ab044c8dde9bdc48fc73a9f6d64c93a2cb945fdc794d2cbcd15c31610b3944f",
+    "scripts/build_strategy_v2_features.py": "48ce5ba15df1ef51e7c537b56257eca8827050b11781ebdd9d101c76664ccb1d",
+    "scripts/evaluate_strategy_v2.py": "f320a227bfc94cd553c7b92e2ac301b8f7ced13fe6fb13da8c457cbe5351096a",
+    "scripts/research_strategy_v2.py": "5c16a622550d442f27ce2d1d4b35314c93c9aa5386cf869c634d3a58ba4b8d6d",
+    "src/crypto_bot/research/__init__.py": "9291d8d5ee0dbf283b980107836070e349e2116f59cd32c41053d443771b933c",
+    "src/crypto_bot/research/v2_common.py": "6cb2294716873987477e46ba5444eb59ccbdd43c0e3698ce58ac9ac9a8d4094c",
+    "src/crypto_bot/research/v2_features.py": "9ac11f96e4a69048474b44784458204d1fb5586926080a2e596433fc2f0a6391",
+    "src/crypto_bot/research/v2_rules.py": "3d0e422366767cb132028764dc5c794182728c60d9b10841565071b9dc1996a4"
+  },
+  "label_and_identity_mutation_predictions": "PASS_ALL_FINAL_CANDIDATES",
+  "prediction_rows": 16425,
+  "preregistration_commit": "7fd0eb1a64595336f3be1c74306e935bb8bf3fa0",
+  "primary_name": "BEST_DETERMINISTIC",
+  "status": "FROZEN_TEST_PREDICTIONS_BEFORE_LABEL_OPENING",
+  "test_feature_rows_including_OPEN": 3285,
+  "trade_entry_allowed": false,
+  "train_search_commit": "1550e01"
+}
