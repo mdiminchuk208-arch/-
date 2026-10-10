@@ -36,7 +36,7 @@ def closed_statistics(trades, *, gross_includes_slippage=True):
     trades = [t for t in trades if t['status'] == 'CLOSED']
     base = trade_statistics(trades)
     costs = []
-    gross_moves, net_moves = [], []
+    gross_moves, net_moves, planned_rr = [], [], []
     gross, fees, slip, turnover, positive_gross = 0., 0., 0., 0., 0.
     for t in trades:
         f, s = t['fees_total'], t['slippage_total']
@@ -54,6 +54,9 @@ def closed_statistics(trades, *, gross_includes_slippage=True):
         turnover += fill_turnover
         gross_moves.append(g/(qty*entry) if qty*entry else 0.)
         net_moves.append(t['net_pnl']/(qty*entry) if qty*entry else 0.)
+        targets = t.get('targets', [])
+        if len(targets) == 3 and entry != t['stop']:
+            planned_rr.append(sum(fraction*abs(price-entry) for fraction, price in zip((.4, .3, .3), targets))/abs(entry-t['stop']))
     hours = [holding_seconds(t)/3600 for t in trades]
     base.update(total_trades=len(trades), gross_pnl=gross, fees=fees, slippage=slip,
                 cost_identity_residual=gross-fees-slip-base['net_pnl'], turnover=turnover,
@@ -63,6 +66,7 @@ def closed_statistics(trades, *, gross_includes_slippage=True):
                 average_cost_per_trade=mean(costs) if costs else None,
                 average_gross_move_fraction=mean(gross_moves) if gross_moves else None,
                 average_net_move_fraction=mean(net_moves) if net_moves else None,
+                average_planned_RR=mean(planned_rr) if planned_rr else None,
                 holding_hours={'mean': mean(hours) if hours else None,
                                'median': quantile(hours, .5), 'p25': quantile(hours, .25),
                                'p75': quantile(hours, .75), 'p90': quantile(hours, .9),

@@ -240,6 +240,9 @@ class MediumTermEngine(SourceEngine):
                 pending_reason = None
                 if tf == signal.evidence['entry_zone_tf'] and local.invalidated_at:
                     pending_reason = 'REFINEMENT_POI_BODY_INVALIDATED_PENDING_ONLY'
+                if tf == self.clock and (c.high >= signal.targets[0] if signal.direction == 'LONG'
+                                          else c.low <= signal.targets[0]):
+                    pending_reason = 'MAIN_TARGET_CONSUMED_PENDING_ONLY'
                 if tf in (240, 1440):
                     macro_tf, _macro = self._macro_context(signal.htf, signal.direction, now,
                                                          parent.kind in ('SFP', 'RANGE_POI'))
@@ -258,7 +261,8 @@ class MediumTermEngine(SourceEngine):
                     reason = 'MAIN_SFP_BODY_INVALIDATION'
                 elif thesis and sign(signal.direction) * (c.close - thesis['protected']) <= 0:
                     reason = 'MAIN_PROTECTED_STRUCTURE_BODY_BREAK'
-                elif parent.kind == 'RANGE_POI' and parent.range_id in h.range_terminal:
+                elif (parent.kind == 'RANGE_POI' and parent.range_id in h.range_terminal
+                      and h.range_terminal[parent.range_id] <= now):
                     reason = 'MAIN_RANGE_EXHAUSTED'
             if reason:
                 self._cancel(signal, self.policy['primary_cancellation'], now, reason,

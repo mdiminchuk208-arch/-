@@ -1,0 +1,18 @@
+bybit_2023_2025 BTCUSDT analyze 15 137758
+Traceback (most recent call last):
+  File "/workspace/-/scripts/run_medium_term_research.py", line 347, in <module>
+    main()
+  File "/workspace/-/scripts/run_medium_term_research.py", line 340, in main
+    detect(args.cohort, s, policy, lock, args.resume_existing)
+  File "/workspace/-/scripts/run_medium_term_research.py", line 158, in detect
+    ranges = None if tf == 5 else analyze_ranges(candles, analysis, params=RangeDetectionParams(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/src/crypto_bot/strategy/range_engine.py", line 700, in analyze_ranges
+    candidates = _make_range_candidates(base_report)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/src/crypto_bot/strategy/range_engine.py", line 235, in _make_range_candidates
+    first = next(
+            ^^^^^
+  File "/workspace/-/src/crypto_bot/strategy/range_engine.py", line 237, in <genexpr>
+    e
+KeyboardInterrupt

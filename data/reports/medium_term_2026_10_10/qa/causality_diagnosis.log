@@ -1,0 +1,7 @@
+DIFFERENCE ('root.cancellations[1].signal_id', 'a6efd8bb68be07602e406c80', '1749bb7c6d1c1ba26d5c6199') None
+Traceback (most recent call last):
+  File "/workspace/-/scripts/verify_medium_term.py", line 131, in <module>
+    main()
+  File "/workspace/-/scripts/verify_medium_term.py", line 114, in main
+    raise ValueError('Prefix/future mutation parity failed at ' + cut.isoformat())
+ValueError: Prefix/future mutation parity failed at 2022-01-21T20:15:00+00:00

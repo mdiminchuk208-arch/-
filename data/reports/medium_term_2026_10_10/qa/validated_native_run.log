@@ -1,0 +1,79 @@
+native_bybit_2026 BTCUSDT analyze 5 69119
+native_bybit_2026 BTCUSDT analyze 15 23039
+native_bybit_2026 BTCUSDT analyze 60 5759
+native_bybit_2026 BTCUSDT analyze 240 1439
+native_bybit_2026 BTCUSDT analyze 1440 239
+native_bybit_2026 BTCUSDT 2026-04-13T04:45:00+00:00 READY {'enabled': 197, 'disabled_cost_gate': 197}
+native_bybit_2026 BTCUSDT 2026-05-08T20:00:00+00:00 READY {'enabled': 284, 'disabled_cost_gate': 284}
+native_bybit_2026 BTCUSDT 2026-05-31T02:45:00+00:00 READY {'enabled': 370, 'disabled_cost_gate': 371}
+native_bybit_2026 BTCUSDT 2026-07-05T14:30:00+00:00 READY {'enabled': 458, 'disabled_cost_gate': 459}
+native_bybit_2026 BTCUSDT 2026-07-27T22:45:00+00:00 READY {'enabled': 531, 'disabled_cost_gate': 533}
+native_bybit_2026 BTCUSDT 2026-08-07T15:00:00+00:00 READY {'enabled': 561, 'disabled_cost_gate': 564}
+native_bybit_2026 BTCUSDT 2026-08-20T20:30:00+00:00 READY {'enabled': 593, 'disabled_cost_gate': 596}
+native_bybit_2026 BTCUSDT 2026-09-01T18:30:00+00:00 READY {'enabled': 622, 'disabled_cost_gate': 625}
+Traceback (most recent call last):
+  File "/workspace/-/scripts/run_medium_term_research.py", line 347, in <module>
+    main()
+  File "/workspace/-/scripts/run_medium_term_research.py", line 340, in main
+    detect(args.cohort, s, policy, lock, args.resume_existing)
+  File "/workspace/-/scripts/run_medium_term_research.py", line 175, in detect
+    engine.evaluate(now, changed)
+  File "/workspace/-/src/crypto_bot/strategy/source_medium_term.py", line 360, in evaluate
+    self._conservative(context, now)
+  File "/workspace/-/src/crypto_bot/strategy/source_permitted.py", line 486, in _conservative
+    self._emit('OB_CONSERVATIVE_BOS_POI',context.htf,context.ltf,z,local,now,
+  File "/workspace/-/src/crypto_bot/strategy/source_medium_term.py", line 138, in _emit
+    target_evidence = self._targets(direction, entry, now, range_zone)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/src/crypto_bot/strategy/source_medium_term.py", line 85, in _targets
+    'known_at': z.known_at, 'source': asdict(z)})
+                                      ^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/dataclasses.py", line 1329, in asdict
+    return _asdict_inner(obj, dict_factory)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/dataclasses.py", line 1339, in _asdict_inner
+    f.name: _asdict_inner(getattr(obj, f.name), dict)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/dataclasses.py", line 1382, in _asdict_inner
+    return type(obj)((_asdict_inner(k, dict_factory),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/dataclasses.py", line 1383, in <genexpr>
+    _asdict_inner(v, dict_factory))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/dataclasses.py", line 1386, in _asdict_inner
+    return copy.deepcopy(obj)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py", line 162, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py", line 253, in _reconstruct
+    y = func(*args)
+        ^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py", line 252, in <genexpr>
+    args = (deepcopy(arg, memo) for arg in args)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py", line 162, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py", line 253, in _reconstruct
+    y = func(*args)
+        ^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py", line 252, in <genexpr>
+    args = (deepcopy(arg, memo) for arg in args)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py", line 162, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py", line 253, in _reconstruct
+    y = func(*args)
+        ^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py", line 252, in <genexpr>
+    args = (deepcopy(arg, memo) for arg in args)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py", line 136, in deepcopy
+    y = copier(x, memo)
+        ^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py", line 172, in _deepcopy_atomic
+    def _deepcopy_atomic(x, memo):
+    
+KeyboardInterrupt

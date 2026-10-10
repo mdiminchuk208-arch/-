@@ -4,7 +4,7 @@ import inspect
 import json
 import tempfile
 import unittest
-from dataclasses import asdict
+from dataclasses import asdict, replace
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from types import SimpleNamespace
@@ -187,6 +187,31 @@ class MediumEngineTests(unittest.TestCase):
         e._finalize_ready(0, T+timedelta(hours=4))
         pd = e.signals[0].evidence['premium_discount']
         self.assertEqual((pd['low'], pd['high']), (80., 150.))
+
+    def test_future_range_terminal_metadata_cannot_invalidate_now(self):
+        from crypto_bot.strategy.source_permitted import SourceContextZone
+        e, local, raid = fixture()
+        parent = SourceContextZone('MAIN_RANGE', 'RANGE_POI', 'LONG', 90., 140., T, T, 0,
+                                   raid, 90., 140., range_id='ACTUAL_RANGE')
+        e._emit('RANGE_AGGRESSIVE_EXTERNAL_POI', 60, 15, parent, local,
+                T+timedelta(hours=4), 'RANGE_IDEA', 1, T, raid,
+                flow_override={'direction': 'LONG', 'known_at': T}, entry_tf=60)
+        e._finalize_ready(0, T+timedelta(hours=4))
+        e.series[60].range_terminal['ACTUAL_RANGE'] = T+timedelta(days=10)
+        c = Candle(T+timedelta(hours=4), T+timedelta(hours=5), 102., 104., 101., 103.)
+        e._lifecycle(60, c)
+        self.assertFalse(e.exit_events)
+        c = replace(c, open_time=T+timedelta(days=10), close_time=T+timedelta(days=10, hours=1))
+        e._lifecycle(60, c)
+        self.assertEqual(e.exit_events[0]['reason'], 'MAIN_RANGE_EXHAUSTED')
+
+    def test_target_consumption_expires_pending_without_position_exit(self):
+        e, parent, raid = fixture()
+        self.emit(e, parent, raid)
+        c = Candle(T+timedelta(hours=4), T+timedelta(hours=4, minutes=15), 108., 111., 107., 110.)
+        e._lifecycle(15, c)
+        self.assertEqual(e.cancellations[0]['reason'], 'MAIN_TARGET_CONSUMED_PENDING_ONLY')
+        self.assertFalse(e.exit_events)
 
     def test_resume_checks_artifact_membership_and_bytes(self):
         import sys

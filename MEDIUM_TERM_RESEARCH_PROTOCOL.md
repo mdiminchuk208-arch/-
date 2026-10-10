@@ -57,6 +57,15 @@ and absence of valid current macro context withdraw pending entries only;
 entered positions retain main-thesis exit watches. Initial detector jobs were
 interrupted before simulation and their logs/locks remain archived in the parent
 report root. Corrected runs use the `validated` subdirectory and a new lock.
+Prefix QA then found a new engine error: RANGE terminal-map membership was
+checked without comparing the terminal observation timestamp. READY evidence
+was identical under prefix/future mutation, but one range exit was early.
+Correct it to terminal_known_at <= current_close and preserve failed snapshots.
+Final causal runs use `causal_final`; no thresholds or source entry rules change.
+Independent detection may use up to three workers on the four-CPU instance.
+An already consumed first structural target withdraws pending quotes at its
+observable execution close (EXPIRED); it does not close an entered position or
+retroactively undo an ambiguous same-bar entry. Holding is never a gate.
 
 ## Anti-Scalp addition (frozen before new backtest)
 

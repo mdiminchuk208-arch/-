@@ -1,0 +1,21 @@
+test_four_costs_and_cash_identity_both_directions (test_medium_term.AntiScalpTests.test_four_costs_and_cash_identity_both_directions) ... ok
+test_invalid_costs_and_safety (test_medium_term.AntiScalpTests.test_invalid_costs_and_safety) ... ok
+test_no_outcome_or_future_duration_inputs (test_medium_term.AntiScalpTests.test_no_outcome_or_future_duration_inputs) ... ok
+test_reason_precedence_and_missing_context (test_medium_term.AntiScalpTests.test_reason_precedence_and_missing_context) ... ok
+test_threshold_boundary_and_zero_costs (test_medium_term.AntiScalpTests.test_threshold_boundary_and_zero_costs) ... ok
+test_adapter_retains_real_source_confirmation (test_medium_term.MediumEngineTests.test_adapter_retains_real_source_confirmation) ... ok
+test_canonical_partial_be_and_same_clock_mode_determinism (test_medium_term.MediumEngineTests.test_canonical_partial_be_and_same_clock_mode_determinism) ... ok
+test_cost_rejection_is_before_ready_and_future_target_excluded (test_medium_term.MediumEngineTests.test_cost_rejection_is_before_ready_and_future_target_excluded) ... ok
+test_future_range_terminal_metadata_cannot_invalidate_now (test_medium_term.MediumEngineTests.test_future_range_terminal_metadata_cannot_invalidate_now) ... ok
+test_lower_timeframe_cannot_own_idea (test_medium_term.MediumEngineTests.test_lower_timeframe_cannot_own_idea) ... ok
+test_main_ownership_targets_cost_and_alias_dedup (test_medium_term.MediumEngineTests.test_main_ownership_targets_cost_and_alias_dedup) ... ok
+test_refinement_invalidation_withdraws_pending_but_preserves_main_exit_watch (test_medium_term.MediumEngineTests.test_refinement_invalidation_withdraws_pending_but_preserves_main_exit_watch) ... ok
+test_resume_checks_artifact_membership_and_bytes (test_medium_term.MediumEngineTests.test_resume_checks_artifact_membership_and_bytes) ... VERIFIED_RESUME data/tmpw96wqccx
+ok
+test_sfp_pd_uses_actual_macro_dealing_range (test_medium_term.MediumEngineTests.test_sfp_pd_uses_actual_macro_dealing_range) ... ok
+test_target_consumption_expires_pending_without_position_exit (test_medium_term.MediumEngineTests.test_target_consumption_expires_pending_without_position_exit) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.037s
+
+OK

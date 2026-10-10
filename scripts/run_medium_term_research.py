@@ -9,6 +9,7 @@ import json
 import sys
 import time
 from collections import defaultdict
+from concurrent.futures import ProcessPoolExecutor
 from dataclasses import asdict
 from datetime import datetime, timedelta
 from hashlib import sha256
@@ -289,7 +290,9 @@ def simulate(cohort, symbols, policy, lock, arm, use_resume):
                                        'known_at': t.get('exit_time', clocks[signal.symbol][-1].close_time), 'trade_entry_allowed': False}])
         elif signal.signal_id in p.terminal_ids:
             case_lifecycle.append({'idea_id': signal.evidence['physical_opportunity_id'], 'signal_id': signal.signal_id,
-                                       'status': 'INVALIDATED', 'known_at': p.last_close, 'trade_entry_allowed': False})
+                                       'status': ('EXPIRED' if any('TARGET_CONSUMED' in d.reason or 'RANGE_EXHAUSTED' in d.reason
+                                                                  for d in p.journal if d.action == 'SETUP_INVALIDATED') else 'INVALIDATED'),
+                                       'known_at': p.last_close, 'trade_entry_allowed': False})
         else:
             case_lifecycle.append({'idea_id': signal.evidence['physical_opportunity_id'], 'signal_id': signal.signal_id,
                                        'status': 'CENSORED_UNFILLED', 'known_at': p.last_close, 'trade_entry_allowed': False})
@@ -317,6 +320,7 @@ def main():
     parser.add_argument('--symbols', nargs='+')
     parser.add_argument('--resume-existing', action='store_true')
     parser.add_argument('--output-root', type=Path, default=ROOT)
+    parser.add_argument('--workers', type=int, choices=(1, 2, 3), default=1)
     args = parser.parse_args()
     ROOT = args.output_root.resolve()
     if not ROOT.is_relative_to(REPO / 'data/reports'):
@@ -336,8 +340,14 @@ def main():
         print('REGISTERED_BEFORE_OUTCOMES', args.cohort, sha256(evidence_json(lock).encode()).hexdigest())
         return
     if args.stage in ('detect', 'all'):
-        for s in symbols:
-            detect(args.cohort, s, policy, lock, args.resume_existing)
+        if args.workers == 1:
+            for s in symbols:
+                detect(args.cohort, s, policy, lock, args.resume_existing)
+        else:
+            with ProcessPoolExecutor(max_workers=args.workers) as pool:
+                jobs = [pool.submit(detect, args.cohort, s, policy, lock, args.resume_existing) for s in symbols]
+                for job in jobs:
+                    job.result()
     if args.stage in ('simulate', 'all'):
         for arm in ('enabled', 'disabled_cost_gate'):
             simulate(args.cohort, symbols, policy, lock, arm, args.resume_existing)
