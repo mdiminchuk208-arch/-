@@ -1,0 +1,12 @@
+{
+  "status": "FINAL_REPORT_COMMIT_PUBLISHED_AND_CSV_BYTES_VERIFIED",
+  "report_commit": "2132c66c7f6d9f7a3ecaa86cb022c0bf5f73385f",
+  "verified_remote_main_report_commit": "2132c66c7f6d9f7a3ecaa86cb022c0bf5f73385f",
+  "CSV_blob_equals_working_bytes": {
+    "data/reports/source_permitted_analysis_2026_10_10/first50.csv": "43914160bdcc4e280db8af0504805e29a42389bff45bf054eebb6b16079053ed",
+    "data/reports/source_permitted_analysis_2026_10_10/cohort_metrics.csv": "95bdca28a656df2215c1a824f7172e97f7257e350e236294b21b9eec7bdda6c4"
+  },
+  "explicit_CSV_no_text_normalization_no_diff": true,
+  "force_push": false,
+  "trade_entry_allowed": false
+}
