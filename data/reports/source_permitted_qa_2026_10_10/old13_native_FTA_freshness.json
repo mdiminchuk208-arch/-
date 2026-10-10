@@ -1,0 +1,612 @@
+[
+  {
+    "old_trade_id": "235e7ba6c224826bf8e64cd2",
+    "symbol": "XRPUSDT",
+    "mapping": [
+      240,
+      15
+    ],
+    "old_READY": "2026-04-20T23:30:00+00:00",
+    "old_FTA": {
+      "aliases": [],
+      "direction": "LONG",
+      "first_test": null,
+      "formed_at": "2026-04-20T06:30:00+00:00",
+      "high": 1.3997,
+      "invalidated_at": null,
+      "kind": "FVG",
+      "known_at": "2026-04-20T06:30:00+00:00",
+      "last_test": null,
+      "leg_high": 1.405,
+      "leg_low": 1.3991,
+      "low": 1.3991,
+      "origin_index": 8137,
+      "raid": null,
+      "range_id": null,
+      "stop_extreme": null,
+      "structural_proof": null,
+      "test_count": 0,
+      "zone_id": "3421c5003983911b5dea635f"
+    },
+    "first_native_test_known_at": null,
+    "registered_fresh_FTA_contract_passed": true,
+    "source": "registered native first-test freshness; not exclusion of all discretionary POI variants",
+    "first_test_ohlc": null,
+    "trade_entry_allowed": false
+  },
+  {
+    "old_trade_id": "3fa88b97bdbbf06988a7684b",
+    "symbol": "XRPUSDT",
+    "mapping": [
+      240,
+      5
+    ],
+    "old_READY": "2026-07-06T16:00:00+00:00",
+    "old_FTA": {
+      "aliases": [],
+      "direction": "SHORT",
+      "first_test": null,
+      "formed_at": "2026-07-06T08:20:00+00:00",
+      "high": 1.1483,
+      "invalidated_at": null,
+      "kind": "SUPPLY",
+      "known_at": "2026-07-06T08:35:00+00:00",
+      "last_test": null,
+      "leg_high": 1.1509,
+      "leg_low": 1.1413,
+      "low": 1.1453,
+      "origin_index": 46616,
+      "raid": {
+        "candle_index": 46617,
+        "direction": "SHORT",
+        "extreme": 1.1509,
+        "known_at": "2026-07-06T08:10:00+00:00",
+        "liquidity_ids": [
+          "SWING:19704",
+          "SWING:19712"
+        ],
+        "price": 1.15,
+        "sfp": false
+      },
+      "range_id": null,
+      "stop_extreme": null,
+      "structural_proof": {
+        "direction": "SHORT",
+        "extreme": 1.1413,
+        "kind": "BULLISH_STRUCTURE_BROKEN_BOS",
+        "known_at": "2026-07-06T08:35:00+00:00",
+        "level_id": 19731,
+        "protected": 1.1442
+      },
+      "test_count": 0,
+      "zone_id": "2189dae80a21ebe3180d6196"
+    },
+    "first_native_test_known_at": null,
+    "registered_fresh_FTA_contract_passed": true,
+    "source": "registered native first-test freshness; not exclusion of all discretionary POI variants",
+    "first_test_ohlc": null,
+    "trade_entry_allowed": false
+  },
+  {
+    "old_trade_id": "07b320b636a8d15d4ed8af6d",
+    "symbol": "XRPUSDT",
+    "mapping": [
+      15,
+      5
+    ],
+    "old_READY": "2026-08-24T05:50:00+00:00",
+    "old_FTA": {
+      "aliases": [],
+      "direction": "SHORT",
+      "first_test": null,
+      "formed_at": "2026-08-24T01:15:00+00:00",
+      "high": 1.4949,
+      "invalidated_at": null,
+      "kind": "FVG",
+      "known_at": "2026-08-24T01:15:00+00:00",
+      "last_test": null,
+      "leg_high": 1.4949,
+      "leg_low": 1.4867,
+      "low": 1.4943,
+      "origin_index": 60644,
+      "raid": null,
+      "range_id": null,
+      "stop_extreme": null,
+      "structural_proof": {
+        "direction": "SHORT",
+        "extreme": 1.481,
+        "kind": "BEARISH_STRUCTURE_CONFIRMED",
+        "known_at": "2026-08-24T00:55:00+00:00",
+        "level_id": 25188,
+        "protected": 1.51
+      },
+      "test_count": 0,
+      "zone_id": "89d9feb6c1d690b0e977581b"
+    },
+    "first_native_test_known_at": null,
+    "registered_fresh_FTA_contract_passed": true,
+    "source": "registered native first-test freshness; not exclusion of all discretionary POI variants",
+    "first_test_ohlc": null,
+    "trade_entry_allowed": false
+  },
+  {
+    "old_trade_id": "c8d326347c6830f75b573f88",
+    "symbol": "DOGEUSDT",
+    "mapping": [
+      15,
+      5
+    ],
+    "old_READY": "2026-03-03T17:05:00+00:00",
+    "old_FTA": {
+      "aliases": [],
+      "direction": "SHORT",
+      "first_test": null,
+      "formed_at": "2026-03-03T04:10:00+00:00",
+      "high": 0.09249,
+      "invalidated_at": null,
+      "kind": "FVG",
+      "known_at": "2026-03-03T04:10:00+00:00",
+      "last_test": null,
+      "leg_high": 0.09249,
+      "leg_low": 0.0921,
+      "low": 0.09239,
+      "origin_index": 10567,
+      "raid": null,
+      "range_id": null,
+      "stop_extreme": null,
+      "structural_proof": null,
+      "test_count": 0,
+      "zone_id": "e2c6b46c6ed7057191b39e97"
+    },
+    "first_native_test_known_at": null,
+    "registered_fresh_FTA_contract_passed": true,
+    "source": "registered native first-test freshness; not exclusion of all discretionary POI variants",
+    "first_test_ohlc": null,
+    "trade_entry_allowed": false
+  },
+  {
+    "old_trade_id": "c1bc1cb68a185d4492c8b9e6",
+    "symbol": "DOGEUSDT",
+    "mapping": [
+      240,
+      15
+    ],
+    "old_READY": "2026-04-12T21:00:00+00:00",
+    "old_FTA": {
+      "aliases": [],
+      "direction": "SHORT",
+      "first_test": null,
+      "formed_at": "2026-04-12T08:00:00+00:00",
+      "high": 0.09271,
+      "invalidated_at": null,
+      "kind": "FVG",
+      "known_at": "2026-04-12T08:00:00+00:00",
+      "last_test": null,
+      "leg_high": 0.09271,
+      "leg_low": 0.09095,
+      "low": 0.09156,
+      "origin_index": 458,
+      "raid": null,
+      "range_id": null,
+      "stop_extreme": null,
+      "structural_proof": {
+        "direction": "LONG",
+        "extreme": 0.09607,
+        "kind": "BULLISH_STRUCTURE_CONFIRMED",
+        "known_at": "2026-04-08T04:00:00+00:00",
+        "level_id": 193,
+        "protected": 0.09
+      },
+      "test_count": 0,
+      "zone_id": "686c201f0111e6c4d48ef728"
+    },
+    "first_native_test_known_at": "2026-04-12T20:45:00+00:00",
+    "registered_fresh_FTA_contract_passed": false,
+    "source": "registered native first-test freshness; not exclusion of all discretionary POI variants",
+    "first_test_ohlc": {
+      "open": 0.09113,
+      "high": 0.09165,
+      "low": 0.09113,
+      "close": 0.09148
+    },
+    "trade_entry_allowed": false
+  },
+  {
+    "old_trade_id": "25faa78ab0a2eea4d4c48c20",
+    "symbol": "DOGEUSDT",
+    "mapping": [
+      240,
+      60
+    ],
+    "old_READY": "2026-06-02T01:00:00+00:00",
+    "old_FTA": {
+      "aliases": [],
+      "direction": "SHORT",
+      "first_test": null,
+      "formed_at": "2026-05-26T17:00:00+00:00",
+      "high": 0.10381,
+      "invalidated_at": null,
+      "kind": "SUPPLY",
+      "known_at": "2026-05-27T22:00:00+00:00",
+      "last_test": null,
+      "leg_high": 0.10381,
+      "leg_low": 0.09916,
+      "low": 0.10231,
+      "origin_index": 2906,
+      "raid": {
+        "candle_index": 2906,
+        "direction": "SHORT",
+        "extreme": 0.10381,
+        "known_at": "2026-05-26T15:00:00+00:00",
+        "liquidity_ids": [
+          "SWING:1340",
+          "PDhigh:2026-05-25"
+        ],
+        "price": 0.10376,
+        "sfp": false
+      },
+      "range_id": null,
+      "stop_extreme": null,
+      "structural_proof": {
+        "direction": "SHORT",
+        "extreme": 0.10033,
+        "kind": "BULLISH_STRUCTURE_BROKEN_BOS",
+        "known_at": "2026-05-27T22:00:00+00:00",
+        "level_id": 1348,
+        "protected": 0.1004
+      },
+      "test_count": 0,
+      "zone_id": "0a105ee1c7734ff246b0a7a3"
+    },
+    "first_native_test_known_at": null,
+    "registered_fresh_FTA_contract_passed": true,
+    "source": "registered native first-test freshness; not exclusion of all discretionary POI variants",
+    "first_test_ohlc": null,
+    "trade_entry_allowed": false
+  },
+  {
+    "old_trade_id": "c0eb9c4daf48e1f3e98d72f8",
+    "symbol": "ETHUSDT",
+    "mapping": [
+      60,
+      15
+    ],
+    "old_READY": "2026-02-08T22:15:00+00:00",
+    "old_FTA": {
+      "aliases": [
+        "MANIPULATION"
+      ],
+      "direction": "LONG",
+      "first_test": null,
+      "formed_at": "2026-02-07T15:30:00+00:00",
+      "high": 2044.41,
+      "invalidated_at": null,
+      "kind": "STB",
+      "known_at": "2026-02-07T17:45:00+00:00",
+      "last_test": null,
+      "leg_high": 2072.35,
+      "leg_low": 2017.3,
+      "low": 2017.3,
+      "origin_index": 1256,
+      "raid": {
+        "candle_index": 1256,
+        "direction": "LONG",
+        "extreme": 2017.3,
+        "known_at": "2026-02-07T14:45:00+00:00",
+        "liquidity_ids": [
+          "SWING:602"
+        ],
+        "price": 2027.24,
+        "sfp": false
+      },
+      "range_id": null,
+      "stop_extreme": null,
+      "structural_proof": {
+        "direction": "LONG",
+        "extreme": 2067.0,
+        "kind": "BEARISH_STRUCTURE_BROKEN_BOS",
+        "known_at": "2026-02-07T17:45:00+00:00",
+        "level_id": 605,
+        "protected": 2063.35
+      },
+      "test_count": 0,
+      "zone_id": "eda81ad46ef62d5f8753763c"
+    },
+    "first_native_test_known_at": null,
+    "registered_fresh_FTA_contract_passed": true,
+    "source": "registered native first-test freshness; not exclusion of all discretionary POI variants",
+    "first_test_ohlc": null,
+    "trade_entry_allowed": false
+  },
+  {
+    "old_trade_id": "ca98f11190187b5877332b3a",
+    "symbol": "BTCUSDT",
+    "mapping": [
+      15,
+      5
+    ],
+    "old_READY": "2026-03-06T18:40:00+00:00",
+    "old_FTA": {
+      "aliases": [
+        "MANIPULATION"
+      ],
+      "direction": "SHORT",
+      "first_test": null,
+      "formed_at": "2026-03-06T16:55:00+00:00",
+      "high": 68685.4,
+      "invalidated_at": null,
+      "kind": "BTS",
+      "known_at": "2026-03-06T17:30:00+00:00",
+      "last_test": null,
+      "leg_high": 68685.4,
+      "leg_low": 68161.2,
+      "low": 68488.0,
+      "origin_index": 11585,
+      "raid": {
+        "candle_index": 11585,
+        "direction": "SHORT",
+        "extreme": 68685.4,
+        "known_at": "2026-03-06T16:50:00+00:00",
+        "liquidity_ids": [
+          "SWING:5380"
+        ],
+        "price": 68656.2,
+        "sfp": false
+      },
+      "range_id": null,
+      "stop_extreme": null,
+      "structural_proof": {
+        "direction": "SHORT",
+        "extreme": 68220.0,
+        "kind": "BULLISH_STRUCTURE_BROKEN_BOS",
+        "known_at": "2026-03-06T17:30:00+00:00",
+        "level_id": 5376,
+        "protected": 68259.9
+      },
+      "test_count": 0,
+      "zone_id": "88420dddc39b27659f15ea27"
+    },
+    "first_native_test_known_at": null,
+    "registered_fresh_FTA_contract_passed": true,
+    "source": "registered native first-test freshness; not exclusion of all discretionary POI variants",
+    "first_test_ohlc": null,
+    "trade_entry_allowed": false
+  },
+  {
+    "old_trade_id": "d5cd448d6c02f037d76c9d35",
+    "symbol": "LTCUSDT",
+    "mapping": [
+      60,
+      15
+    ],
+    "old_READY": "2026-06-17T17:30:00+00:00",
+    "old_FTA": {
+      "aliases": [
+        "MANIPULATION"
+      ],
+      "direction": "SHORT",
+      "first_test": null,
+      "formed_at": "2026-06-04T19:45:00+00:00",
+      "high": 46.63,
+      "invalidated_at": null,
+      "kind": "BTS",
+      "known_at": "2026-06-04T20:30:00+00:00",
+      "last_test": null,
+      "leg_high": 46.63,
+      "leg_low": 45.94,
+      "low": 46.41,
+      "origin_index": 12508,
+      "raid": {
+        "candle_index": 12508,
+        "direction": "SHORT",
+        "extreme": 46.63,
+        "known_at": "2026-06-04T18:45:00+00:00",
+        "liquidity_ids": [
+          "SWING:5132"
+        ],
+        "price": 46.54,
+        "sfp": false
+      },
+      "range_id": null,
+      "stop_extreme": null,
+      "structural_proof": {
+        "direction": "SHORT",
+        "extreme": 45.94,
+        "kind": "BEARISH_STRUCTURE_CONFIRMED",
+        "known_at": "2026-06-04T20:30:00+00:00",
+        "level_id": 5139,
+        "protected": 46.59
+      },
+      "test_count": 0,
+      "zone_id": "c4b250faf894b8ff35b7a1e4"
+    },
+    "first_native_test_known_at": null,
+    "registered_fresh_FTA_contract_passed": true,
+    "source": "registered native first-test freshness; not exclusion of all discretionary POI variants",
+    "first_test_ohlc": null,
+    "trade_entry_allowed": false
+  },
+  {
+    "old_trade_id": "9c181eee25ee9e39d8b5a523",
+    "symbol": "LINKUSDT",
+    "mapping": [
+      60,
+      5
+    ],
+    "old_READY": "2026-02-17T15:40:00+00:00",
+    "old_FTA": {
+      "aliases": [],
+      "direction": "LONG",
+      "first_test": null,
+      "formed_at": "2026-02-13T16:00:00+00:00",
+      "high": 8.558,
+      "invalidated_at": null,
+      "kind": "FVG",
+      "known_at": "2026-02-13T16:00:00+00:00",
+      "last_test": null,
+      "leg_high": 8.82,
+      "leg_low": 8.528,
+      "low": 8.528,
+      "origin_index": 457,
+      "raid": null,
+      "range_id": null,
+      "stop_extreme": null,
+      "structural_proof": {
+        "direction": "LONG",
+        "extreme": 8.446,
+        "kind": "BULLISH_STRUCTURE_CONFIRMED",
+        "known_at": "2026-02-13T08:00:00+00:00",
+        "level_id": 213,
+        "protected": 8.296
+      },
+      "test_count": 0,
+      "zone_id": "b155fedc33e80f1129ded5a8"
+    },
+    "first_native_test_known_at": null,
+    "registered_fresh_FTA_contract_passed": true,
+    "source": "registered native first-test freshness; not exclusion of all discretionary POI variants",
+    "first_test_ohlc": null,
+    "trade_entry_allowed": false
+  },
+  {
+    "old_trade_id": "b58c6bbb565b806e85fa6798",
+    "symbol": "LINKUSDT",
+    "mapping": [
+      240,
+      15
+    ],
+    "old_READY": "2026-06-21T09:45:00+00:00",
+    "old_FTA": {
+      "aliases": [],
+      "direction": "SHORT",
+      "first_test": null,
+      "formed_at": "2026-06-18T14:00:00+00:00",
+      "high": 8.121,
+      "invalidated_at": null,
+      "kind": "SUPPLY",
+      "known_at": "2026-06-18T16:15:00+00:00",
+      "last_test": null,
+      "leg_high": 8.121,
+      "leg_low": 7.767,
+      "low": 8.089,
+      "origin_index": 13831,
+      "raid": {
+        "candle_index": 13831,
+        "direction": "SHORT",
+        "extreme": 8.121,
+        "known_at": "2026-06-18T13:30:00+00:00",
+        "liquidity_ids": [
+          "SWING:6075"
+        ],
+        "price": 8.118,
+        "sfp": false
+      },
+      "range_id": null,
+      "stop_extreme": null,
+      "structural_proof": {
+        "direction": "SHORT",
+        "extreme": 7.767,
+        "kind": "BEARISH_STRUCTURE_CONFIRMED",
+        "known_at": "2026-06-18T16:15:00+00:00",
+        "level_id": 6094,
+        "protected": 8.103
+      },
+      "test_count": 0,
+      "zone_id": "065e80b40e4deeb1af40eeaa"
+    },
+    "first_native_test_known_at": null,
+    "registered_fresh_FTA_contract_passed": true,
+    "source": "registered native first-test freshness; not exclusion of all discretionary POI variants",
+    "first_test_ohlc": null,
+    "trade_entry_allowed": false
+  },
+  {
+    "old_trade_id": "d6b7416116c201f0a70c378c",
+    "symbol": "LINKUSDT",
+    "mapping": [
+      240,
+      15
+    ],
+    "old_READY": "2026-06-28T22:15:00+00:00",
+    "old_FTA": {
+      "aliases": [
+        "MANIPULATION"
+      ],
+      "direction": "LONG",
+      "first_test": null,
+      "formed_at": "2026-06-26T13:45:00+00:00",
+      "high": 7.137,
+      "invalidated_at": null,
+      "kind": "STB",
+      "known_at": "2026-06-26T15:00:00+00:00",
+      "last_test": null,
+      "leg_high": 7.285,
+      "leg_low": 7.049,
+      "low": 7.049,
+      "origin_index": 14599,
+      "raid": {
+        "candle_index": 14599,
+        "direction": "LONG",
+        "extreme": 7.049,
+        "known_at": "2026-06-26T13:30:00+00:00",
+        "liquidity_ids": [
+          "SWING:6417"
+        ],
+        "price": 7.086,
+        "sfp": false
+      },
+      "range_id": null,
+      "stop_extreme": null,
+      "structural_proof": {
+        "direction": "LONG",
+        "extreme": 7.285,
+        "kind": "BULLISH_STRUCTURE_CONFIRMED",
+        "known_at": "2026-06-26T15:00:00+00:00",
+        "level_id": 6420,
+        "protected": 7.201
+      },
+      "test_count": 0,
+      "zone_id": "2582051b79c4c1afd1f7c960"
+    },
+    "first_native_test_known_at": null,
+    "registered_fresh_FTA_contract_passed": true,
+    "source": "registered native first-test freshness; not exclusion of all discretionary POI variants",
+    "first_test_ohlc": null,
+    "trade_entry_allowed": false
+  },
+  {
+    "old_trade_id": "fd05901bf55ee3c53409bed9",
+    "symbol": "LINKUSDT",
+    "mapping": [
+      240,
+      15
+    ],
+    "old_READY": "2026-07-02T07:45:00+00:00",
+    "old_FTA": {
+      "aliases": [],
+      "direction": "LONG",
+      "first_test": null,
+      "formed_at": "2026-07-02T01:45:00+00:00",
+      "high": 7.39,
+      "invalidated_at": null,
+      "kind": "FVG",
+      "known_at": "2026-07-02T01:45:00+00:00",
+      "last_test": null,
+      "leg_high": 7.428,
+      "leg_low": 7.369,
+      "low": 7.369,
+      "origin_index": 15126,
+      "raid": null,
+      "range_id": null,
+      "stop_extreme": null,
+      "structural_proof": null,
+      "test_count": 0,
+      "zone_id": "e5b8282214693fa770e2dc0d"
+    },
+    "first_native_test_known_at": null,
+    "registered_fresh_FTA_contract_passed": true,
+    "source": "registered native first-test freshness; not exclusion of all discretionary POI variants",
+    "first_test_ohlc": null,
+    "trade_entry_allowed": false
+  }
+]

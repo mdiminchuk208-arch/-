@@ -1,0 +1,8 @@
+{
+  "status": "PASS_UNCHANGED_BASELINE_FINDINGS",
+  "baseline": "d46646f",
+  "baseline_findings": 555,
+  "current_findings": 555,
+  "new_findings": 0,
+  "all_diagnostic_identities_locations_messages_equal": true
+}
