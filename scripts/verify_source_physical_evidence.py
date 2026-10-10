@@ -38,10 +38,12 @@ def ordered(rows):
     return sorted(rows, key=lambda r: r['signal_id'])
 
 
-def native_case_formation(final, policy, native, valid):
+def native_case_formation(final, policy, native, valid, symbol=None):
     """Independently reconcile native OHLC formations and all frozen ATR stops."""
     primary = read_rows(final / 'cohorts/SOURCE_PERMITTED_UNION' /
                         policy['primary_cancellation'] / 'primary_cases.jsonl.gz')
+    if symbol is not None:
+        primary = [t for t in primary if t['symbol'] == symbol]
     checked = Counter(); atrs = {}
     atr_count = 0
     for r in valid.values():
@@ -147,14 +149,13 @@ def prefix_check(base, final, policy, cache):
             'cache_sha256': digest(cache), 'trade_entry_allowed': False}
 
 
-def full_check(base, final, policy):
-    raw_rows = [r for symbol in policy['symbol_priority'] for r in
-                read_rows(base / 'segments' / symbol / 'signals.jsonl.gz')]
-    final_rows = [r for symbol in policy['symbol_priority'] for r in
-                  read_rows(final / 'segments' / symbol / 'signals.jsonl.gz')]
+def symbol_check(base, final, policy, symbol):
+    raw_rows = read_rows(base / 'segments' / symbol / 'signals.jsonl.gz')
+    final_rows = read_rows(final / 'segments' / symbol / 'signals.jsonl.gz')
     raw = {r['signal_id']: r for r in raw_rows}; valid = {r['signal_id']: r for r in final_rows}
-    proof = {r['signal_id']: r for r in read_rows(final / 'source_qualification.jsonl.gz')}
-    native = native_data(policy, policy['symbol_priority'])
+    with gzip.open(final / 'source_qualification.jsonl.gz', 'rt') as f:
+        proof = {r['signal_id']: r for line in f if (r := json.loads(line))['signal_id'] in raw}
+    native = native_data(policy, [symbol])
     times = {k: [c.close_time for c in cs] for k, cs in native.items()}
     first_pattern_body = {}
     for sid, r in raw.items():
@@ -195,29 +196,29 @@ def full_check(base, final, policy):
             assert r['evidence']['structural_thesis'] is None
             assert r['evidence']['former_BOS_broken_level_not_new_protected_key'] == original['evidence']['structural_thesis']
     body_count = 0
-    for symbol in policy['symbol_priority']:
-        old_strict = [r for r in read_rows(base / 'segments' / symbol / 'cancellations.jsonl.gz')
-                      if r['signal_id'] in valid and r['cohort'] == 'CANCEL_STRICT_STRUCTURE']
-        events = read_rows(final / 'segments' / symbol / 'cancellations.jsonl.gz')
-        assert ordered(old_strict) == ordered([r for r in events if r['cohort'] == 'CANCEL_STRICT_STRUCTURE'])
-        for event in events:
-            r = valid[event['signal_id']]; e = r['evidence']
-            if not (e['path_id'].startswith('SFP_') and event['cohort'] == policy['primary_cancellation']):
-                continue
-            at = instant(event['known_at']); s = sign(r['direction'])
-            assert at > instant(r['known_at'])
-            if event['reason'] == 'SFP_PATTERN_NATIVE_BODY_INVALIDATED':
-                pk = (symbol, r['htf'], e['htf_poi']['zone_id'])
-                assert first_pattern_body[pk].close_time == at
-            else:
-                assert event['reason'] == 'ENTRY_POI_NATIVE_BODY_INVALIDATED'
-                key = (symbol, e['entry_zone_tf']); q = e['ltf_poi']
-                start = bisect_right(times[key], instant(r['known_at']))
-                boundary = q['low'] if s == 1 else q['high']
-                first = next(c for c in native[key][start:] if s * (c.close - boundary) < 0)
-                assert first.close_time == at
-            body_count += 1
+    old_strict = [r for r in read_rows(base / 'segments' / symbol / 'cancellations.jsonl.gz')
+                  if r['signal_id'] in valid and r['cohort'] == 'CANCEL_STRICT_STRUCTURE']
+    events = read_rows(final / 'segments' / symbol / 'cancellations.jsonl.gz')
+    assert ordered(old_strict) == ordered([r for r in events if r['cohort'] == 'CANCEL_STRICT_STRUCTURE'])
+    for event in events:
+        r = valid[event['signal_id']]; e = r['evidence']
+        if not (e['path_id'].startswith('SFP_') and event['cohort'] == policy['primary_cancellation']):
+            continue
+        at = instant(event['known_at']); s = sign(r['direction'])
+        assert at > instant(r['known_at'])
+        if event['reason'] == 'SFP_PATTERN_NATIVE_BODY_INVALIDATED':
+            pk = (symbol, r['htf'], e['htf_poi']['zone_id'])
+            assert first_pattern_body[pk].close_time == at
+        else:
+            assert event['reason'] == 'ENTRY_POI_NATIVE_BODY_INVALIDATED'
+            key = (symbol, e['entry_zone_tf']); q = e['ltf_poi']
+            start = bisect_right(times[key], instant(r['known_at']))
+            boundary = q['low'] if s == 1 else q['high']
+            first = next(c for c in native[key][start:] if s * (c.close - boundary) < 0)
+            assert first.close_time == at
+        body_count += 1
     selected = read_rows(final / 'selections/SOURCE_PERMITTED_UNION.jsonl.gz')
+    selected = [r for r in selected if r['signal_id'] in valid]
     local_zones = [(valid[r['signal_id']]['symbol'], valid[r['signal_id']]['direction'],
                     valid[r['signal_id']]['evidence']['entry_zone_tf'],
                     valid[r['signal_id']]['evidence']['ltf_poi']['zone_id']) for r in selected]
@@ -228,14 +229,40 @@ def full_check(base, final, policy):
     for r in mapped:
         assert evidence_json(asdict(r)) == evidence_json(valid[r.signal_id])
     assert evidence_json(ordered(reproduced_proof)) == evidence_json(ordered(list(proof.values())))
-    assert evidence_json(claims) == evidence_json(read_rows(final / 'physical_claims.jsonl.gz'))
+    with gzip.open(final / 'physical_claims.jsonl.gz', 'rt') as f:
+        observed_claims = [r for line in f if (r := json.loads(line))['signal_id'] in valid]
+    assert evidence_json(claims) == evidence_json(observed_claims)
     return {'status': 'PASS', 'raw_candidate_READY': len(raw), 'source_valid_READY': len(valid),
             'qualification': dict(Counter(r['status'] for r in proof.values())),
             'primary_native_SFP_body_events': body_count, 'native_source_trade_fields_unchanged': 'PASS',
             'strict_control_preserved': 'PASS', 'one_local_first_test_per_physical_union': 'PASS',
             'global_physical_claim_reconstruction': 'PASS', 'future_outcomes_used': False,
-            'native_formation': native_case_formation(final, policy, native, valid),
+            'native_formation': native_case_formation(final, policy, native, valid, symbol),
             'trade_entry_allowed': False}
+
+
+def full_check(base, final, policy):
+    rows = {}; formation = Counter(); qualification = Counter()
+    raw_count = valid_count = body_count = primary_count = atr_count = 0
+    # All physical alias namespaces include symbol. A symbol's causal subsequence
+    # is identical to its subsequence in global READY order; global claim order is
+    # additionally checked by the separately locked selection/ledger verifier.
+    for symbol in policy['symbol_priority']:
+        row = symbol_check(base, final, policy, symbol); rows[symbol] = row
+        raw_count += row['raw_candidate_READY']; valid_count += row['source_valid_READY']
+        body_count += row['primary_native_SFP_body_events']; qualification.update(row['qualification'])
+        formation.update(row['native_formation']['native_primary_formation_checks'])
+        primary_count += row['native_formation']['primary_cases']
+        atr_count += row['native_formation']['all_source_valid_ATR_stops_independently_recomputed']
+        print(symbol + ' independent source/native/identity QA PASS', flush=True)
+    return {'status': 'PASS', 'raw_candidate_READY': raw_count, 'source_valid_READY': valid_count,
+            'qualification': dict(qualification), 'primary_native_SFP_body_events': body_count,
+            'native_source_trade_fields_unchanged': 'PASS', 'strict_control_preserved': 'PASS',
+            'one_local_first_test_per_physical_union': 'PASS', 'global_physical_claim_reconstruction': 'PASS',
+            'native_formation': {'primary_cases': primary_count, 'checks': dict(formation),
+                'all_source_valid_ATR_stops_independently_recomputed': atr_count},
+            'bounded_memory_per_symbol': True, 'symbols': rows,
+            'future_outcomes_used': False, 'trade_entry_allowed': False}
 
 
 if __name__ == '__main__':

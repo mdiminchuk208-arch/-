@@ -1,0 +1,11 @@
+{
+  "all15_paths": true,
+  "bounded_executor_sha256": "ef6cea824d9e0212938ea34c1bb4261a0f75af4f37e06e3965ecc86422ada336",
+  "byte_equal_original_artifacts": 196,
+  "cohorts": 38,
+  "native_prefix_candles": 14293,
+  "outcomes_used_to_change_rules": false,
+  "source_valid_READY": 1177,
+  "status": "PASS_EXACT_REAL_PREFIX_REPLAY_PARITY",
+  "trade_entry_allowed": false
+}

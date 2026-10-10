@@ -1,0 +1,78 @@
+[
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 69120,
+    "end": "2026-09-22T11:20:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 5,
+    "sha256": "39331424b5986abc46cc32dcc4b322bf934034c2215d0a9c915b8c847b3d14cd",
+    "source_receipt": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/LTCUSDT/5.csv",
+      "sha256": "39331424b5986abc46cc32dcc4b322bf934034c2215d0a9c915b8c847b3d14cd"
+    },
+    "start": "2026-01-25T11:20:00+00:00",
+    "symbol": "LTCUSDT"
+  },
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 23040,
+    "end": "2026-09-22T11:30:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 15,
+    "sha256": "10ff91d16c538b014c21138e420260a9778e35cc0e7ef6aa8d639a85ebb314fc",
+    "source_receipt": {
+      "candles": 23040,
+      "gaps": 0,
+      "path": "data/history/bybit/LTCUSDT/15.csv",
+      "sha256": "10ff91d16c538b014c21138e420260a9778e35cc0e7ef6aa8d639a85ebb314fc"
+    },
+    "start": "2026-01-25T11:30:00+00:00",
+    "symbol": "LTCUSDT"
+  },
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 5759,
+    "end": "2026-09-22T11:00:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 60,
+    "sha256": "354ceaf165a19fad08ee2b2f94404841d31a7721dc556917c166487a9621ed31",
+    "source_receipt": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/LTCUSDT/60.csv",
+      "sha256": "354ceaf165a19fad08ee2b2f94404841d31a7721dc556917c166487a9621ed31"
+    },
+    "start": "2026-01-25T12:00:00+00:00",
+    "symbol": "LTCUSDT"
+  },
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 1439,
+    "end": "2026-09-22T08:00:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 240,
+    "sha256": "093b55606ced0dc4d7f427990473f970305217e5e4f727ce05aed96f7c44cd63",
+    "source_receipt": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/LTCUSDT/240.csv",
+      "sha256": "093b55606ced0dc4d7f427990473f970305217e5e4f727ce05aed96f7c44cd63"
+    },
+    "start": "2026-01-25T12:00:00+00:00",
+    "symbol": "LTCUSDT"
+  }
+]

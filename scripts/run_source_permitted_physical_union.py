@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import gc
 import json
 import shutil
 import sys
@@ -20,13 +21,13 @@ from run_source_permitted_bybit import (
     REPO,
     SEGMENT_FILES,
     digest,
-    execute,
     instant,
     read_rows,
     verify_manifest,
     write_json,
     write_rows,
 )
+from source_permitted_bounded import execute
 
 
 def verify_base(folder):
@@ -44,45 +45,45 @@ def verify_base(folder):
 
 
 def normalize_detection(source,output,policy):
-    raw=[]
-    for symbol in policy['symbol_priority']:
-        for r in read_rows(source/'segments'/symbol/'signals.jsonl.gz'):
-            raw.append(SourceSignal(**{**r,'known_at':instant(r['known_at']),
-                                        'targets':tuple(r['targets']),'fractions':tuple(r['fractions'])}))
-    native={(symbol,tf):[c.to_strategy_candle(tf*60000) for c in
-             read_klines_csv(REPO/f'data/history/bybit/{symbol}/{tf}.csv')]
-            for symbol in policy['symbol_priority'] for tf in policy['native_timeframes']}
-    qualified,qualification,body_cancellations=repair_sfp_candidates(raw,native)
-    signals,claims=canonical_physical_signals(qualified,policy)
-    write_rows(output/'source_qualification.jsonl.gz',qualification)
-    write_rows(output/'physical_claims.jsonl.gz',claims)
-    by_id={r.signal_id:r for r in signals}
+    all_qualification=[];all_claims=[];claim_keys={};raw_count=valid_count=0
     segment_files=list(SEGMENT_FILES)+['physical_claims.jsonl.gz']
     for symbol in policy['symbol_priority']:
         base=source/'segments'/symbol;target=output/'segments'/symbol
         if target.exists():
-            m=verify_manifest(target)
-            if m['base_segment_manifest_sha256']!=digest(base/'manifest.json'):
-                raise ValueError('different source segment receipt')
-            continue
-        target.mkdir(parents=True)
-        # Preserve native detector ordering; only evidence identity fields change.
-        ordered=[by_id[r['signal_id']] for r in read_rows(base/'signals.jsonl.gz') if r['signal_id'] in by_id]
+            raise ValueError('retain incomplete physical root; use a new root')
+        raw=[SourceSignal(**{**r,'known_at':instant(r['known_at']),
+            'targets':tuple(r['targets']),'fractions':tuple(r['fractions'])})
+             for r in read_rows(base/'signals.jsonl.gz')]
+        native={(symbol,tf):[c.to_strategy_candle(tf*60000) for c in
+            read_klines_csv(REPO/f'data/history/bybit/{symbol}/{tf}.csv')]
+            for tf in policy['native_timeframes']}
+        qualified,qualification,body_cancellations=repair_sfp_candidates(raw,native)
+        signals,claims=canonical_physical_signals(qualified,policy)
+        raw_count+=len(raw);valid_count+=len(qualified);all_qualification.extend(qualification);all_claims.extend(claims)
+        for r in signals:
+            claim_keys[r.signal_id]=(r.known_at,policy['entry_tie_precedence'].index(r.evidence['path_id']),
+                -r.htf,r.ltf,policy['symbol_priority'].index(r.symbol),r.signal_id)
+        by_id={r.signal_id:r for r in signals};target.mkdir(parents=True)
+        ordered=[by_id[r.signal_id] for r in raw if r.signal_id in by_id]
         write_rows(target/'signals.jsonl.gz',(asdict(r) for r in ordered))
         sfp_ids={r.signal_id for r in ordered if r.evidence['path_id'].startswith('SFP_')}
         cancels=[r for r in read_rows(base/'cancellations.jsonl.gz') if r['signal_id'] in by_id
-                 and not(r['signal_id'] in sfp_ids and r['cohort']=='CANCEL_SOURCE_POI_INVALIDATION')]
+            and not(r['signal_id'] in sfp_ids and r['cohort']=='CANCEL_SOURCE_POI_INVALIDATION')]
         cancels.extend(r for r in body_cancellations if r['signal_id'] in sfp_ids)
         cancels.sort(key=lambda r:(instant(r['known_at']),r['signal_id'],r['cohort']))
-        write_rows(target/'cancellations.jsonl.gz',cancels)
-        write_rows(target/'physical_claims.jsonl.gz',(r for r in claims if by_id[r['signal_id']].symbol==symbol))
+        write_rows(target/'cancellations.jsonl.gz',cancels);write_rows(target/'physical_claims.jsonl.gz',claims)
         for name in SEGMENT_FILES:
             if name not in ('signals.jsonl.gz','cancellations.jsonl.gz'):shutil.copyfile(base/name,target/name)
         write_json(target/'manifest.json',{'status':'COMPLETE','base_segment_manifest_sha256':digest(base/'manifest.json'),
             'native_source_candidate_trade_fields_unchanged':True,'causal_SFP_qualification_and_body_lifecycle_repaired':True,
             'artifacts':{n:digest(target/n) for n in segment_files},'trade_entry_allowed':False})
-    write_json(output/'physical_normalization_receipt.json',{'raw_candidate_READY':len(raw),'source_valid_READY':len(qualified),
-        'canonical_physical_IDs':len({r.evidence['physical_opportunity_id'] for r in signals}),
+        del raw,native,qualified,signals,by_id,ordered,cancels
+        gc.collect();print(symbol+' source qualification/identity COMPLETE',flush=True)
+    all_claims.sort(key=lambda r:claim_keys[r['signal_id']])
+    write_rows(output/'source_qualification.jsonl.gz',all_qualification)
+    write_rows(output/'physical_claims.jsonl.gz',all_claims)
+    write_json(output/'physical_normalization_receipt.json',{'raw_candidate_READY':raw_count,'source_valid_READY':valid_count,
+        'canonical_physical_IDs':len({r['physical_opportunity_id'] for r in all_claims}),
         'signal_ids_quotes_stops_targets_known_at_unchanged':True,
         'SFP_primary_lifecycle':'NATIVE_PATTERN_AND_POI_BODY; NO_FABRICATED_NEW_KEY_FROM_OLD_BOS_LEVEL',
         'global_assignment_before_family_filtering':True,'future_outcomes_used':False,
@@ -97,7 +98,7 @@ def main():
     source,output=a.source.resolve(),a.output.resolve()
     if source==output:raise ValueError('retain detector root; require separate physical root')
     base,lock=verify_base(source)
-    names=['PHYSICAL_SOURCE_UNION_PROTOCOL.md','src/crypto_bot/strategy/source_physical.py',
+    names=['BOUNDED_SOURCE_EXECUTION_PROTOCOL.md','scripts/source_permitted_bounded.py','PHYSICAL_SOURCE_UNION_PROTOCOL.md','src/crypto_bot/strategy/source_physical.py',
            'scripts/run_source_permitted_physical_union.py','tests/test_source_physical.py',
            'SFP_SOURCE_LIFECYCLE_CORRECTION.md','src/crypto_bot/strategy/source_sfp_lifecycle.py',
            'tests/test_source_sfp_lifecycle.py']
