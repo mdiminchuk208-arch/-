@@ -1,0 +1,25 @@
+ast_serialize==0.12.1
+cloudpickle==3.1.2
+contourpy==1.4.0
+-e git+https://github.com/mdiminchuk208-arch/-.git@7fd0eb1a64595336f3be1c74306e935bb8bf3fa0#egg=crypto_bot_core
+cycler==0.12.1
+fonttools==4.66.1
+joblib==1.6.0
+kiwisolver==1.5.1
+librt==0.16.0
+matplotlib==3.10.7
+mypy==2.4.0
+mypy_extensions==1.1.0
+numpy==2.2.6
+packaging==26.3
+pathspec==1.1.1
+pillow==12.3.0
+pyarrow==25.0.1
+pyparsing==3.3.3
+python-dateutil==2.9.0.post0
+ruff==0.16.10
+scikit-learn==1.7.2
+scipy==1.15.3
+six==1.17.0
+threadpoolctl==3.7.0
+typing_extensions==4.16.0
