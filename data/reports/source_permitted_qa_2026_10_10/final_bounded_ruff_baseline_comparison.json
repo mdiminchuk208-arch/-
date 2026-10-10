@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "baseline": "d46646ffae9152bd3e0b3bae32689e6ffc80f210",
+  "current_diagnostics": 555,
+  "baseline_diagnostics": 555,
+  "new_diagnostics": [],
+  "resolved_diagnostics": [],
+  "trade_entry_allowed": false
+}
