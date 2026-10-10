@@ -1,0 +1,50 @@
+WARNING: The directory '/home/agent/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Obtaining file:///workspace/-
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: ruff==0.16.10 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from -r requirements-dev.txt (line 1)) (0.16.10)
+Requirement already satisfied: mypy==2.4.0 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from -r requirements-dev.txt (line 2)) (2.4.0)
+Requirement already satisfied: pyarrow==25.0.1 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from -r requirements-research.txt (line 2)) (25.0.1)
+Requirement already satisfied: numpy==2.2.6 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from -r requirements-strategy-v2.txt (line 2)) (2.2.6)
+Requirement already satisfied: scipy==1.15.3 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from -r requirements-strategy-v2.txt (line 3)) (1.15.3)
+Requirement already satisfied: scikit-learn==1.7.2 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from -r requirements-strategy-v2.txt (line 4)) (1.7.2)
+Requirement already satisfied: matplotlib==3.10.7 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from -r requirements-strategy-v2.txt (line 5)) (3.10.7)
+Requirement already satisfied: typing_extensions>=4.6.0 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from mypy==2.4.0->-r requirements-dev.txt (line 2)) (4.16.0)
+Requirement already satisfied: mypy_extensions>=1.0.0 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from mypy==2.4.0->-r requirements-dev.txt (line 2)) (1.1.0)
+Requirement already satisfied: pathspec>=1.0.0 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from mypy==2.4.0->-r requirements-dev.txt (line 2)) (1.1.1)
+Requirement already satisfied: librt>=0.16.0 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from mypy==2.4.0->-r requirements-dev.txt (line 2)) (0.16.0)
+Requirement already satisfied: ast-serialize<1.0.0,>=0.11.2 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from mypy==2.4.0->-r requirements-dev.txt (line 2)) (0.12.1)
+Requirement already satisfied: joblib>=1.2.0 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from scikit-learn==1.7.2->-r requirements-strategy-v2.txt (line 4)) (1.6.0)
+Requirement already satisfied: threadpoolctl>=3.1.0 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from scikit-learn==1.7.2->-r requirements-strategy-v2.txt (line 4)) (3.7.0)
+Requirement already satisfied: contourpy>=1.0.1 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from matplotlib==3.10.7->-r requirements-strategy-v2.txt (line 5)) (1.4.0)
+Requirement already satisfied: cycler>=0.10 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from matplotlib==3.10.7->-r requirements-strategy-v2.txt (line 5)) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from matplotlib==3.10.7->-r requirements-strategy-v2.txt (line 5)) (4.66.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from matplotlib==3.10.7->-r requirements-strategy-v2.txt (line 5)) (1.5.1)
+Requirement already satisfied: packaging>=20.0 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from matplotlib==3.10.7->-r requirements-strategy-v2.txt (line 5)) (26.3)
+Requirement already satisfied: pillow>=8 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from matplotlib==3.10.7->-r requirements-strategy-v2.txt (line 5)) (12.3.0)
+Requirement already satisfied: pyparsing>=3 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from matplotlib==3.10.7->-r requirements-strategy-v2.txt (line 5)) (3.3.3)
+Requirement already satisfied: python-dateutil>=2.7 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from matplotlib==3.10.7->-r requirements-strategy-v2.txt (line 5)) (2.9.0.post0)
+Requirement already satisfied: cloudpickle>=3.0 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from joblib>=1.2.0->scikit-learn==1.7.2->-r requirements-strategy-v2.txt (line 4)) (3.1.2)
+Requirement already satisfied: six>=1.5 in /workspace/crypto-bot-venv/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib==3.10.7->-r requirements-strategy-v2.txt (line 5)) (1.17.0)
+Building wheels for collected packages: crypto-bot-core
+  Building editable for crypto-bot-core (pyproject.toml): started
+  Building editable for crypto-bot-core (pyproject.toml): finished with status 'done'
+  Created wheel for crypto-bot-core: filename=crypto_bot_core-0.4.20-0.editable-py3-none-any.whl size=1320 sha256=65bd787d7bf4e65f2b6244c8ee6c09aa3920336f59c3a0c63e6c1cd62188910a
+  Stored in directory: /tmp/pip-ephem-wheel-cache-2rgiemvw/wheels/d3/0f/d0/50511a9e7904f6f45fbcf8b600c963a0a626be751e99777b62
+Successfully built crypto-bot-core
+Installing collected packages: crypto-bot-core
+  Attempting uninstall: crypto-bot-core
+    Found existing installation: crypto-bot-core 0.4.20
+    Uninstalling crypto-bot-core-0.4.20:
+      Successfully uninstalled crypto-bot-core-0.4.20
+Successfully installed crypto-bot-core-0.4.20
+WARNING: The directory '/home/agent/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+No broken requirements found.
+mkdir -p failed for path /home/agent/.config/matplotlib: [Errno 30] Read-only file system: '/home/agent/.config/matplotlib'
+Matplotlib created a temporary cache directory at /tmp/matplotlib-3kww989w because there was an issue with the default path (/home/agent/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.

@@ -28,7 +28,10 @@ from run_medium_term_research import (
 def main():
     policy = json.loads((REPO / 'config/source_medium_term_policy.json').read_text())
     old = REPO / 'data/reports/source_permitted_physical_bybit_2026_10_10'
-    signals = {r['signal_id']: r for r in read_rows(old / 'selections/SOURCE_PERMITTED_UNION.jsonl.gz')}
+    selected_ids = {r['signal_id'] for r in read_rows(old / 'selections/SOURCE_PERMITTED_UNION.jsonl.gz')}
+    signals = {r['signal_id']: r for symbol in policy['symbol_priority']
+               for r in read_rows(old / 'segments' / symbol / 'signals.jsonl.gz')
+               if r['signal_id'] in selected_ids}
     cases = read_rows(old / 'cohorts/SOURCE_PERMITTED_UNION/CANCEL_SOURCE_POI_INVALIDATION/cases.jsonl.gz')
     decisions = []
     for symbol in policy['symbol_priority']:
