@@ -1,0 +1,771 @@
+Продолжай работу по проекту Crypto Bot.
+
+Repository:
+`mdiminchuk208-arch/-`
+
+Базовый подтверждённый commit:
+
+`dab8d254aaf4babc07659e3d03d14b269445767b`
+
+Текущий baseline НЕ ломать и не переписывать.
+
+Исходный verified результат:
+
+- 40 Bybit series
+- 993 575 candles
+- 19 448 READY
+- 16 351 FILLED
+- 16 333 CLOSED
+- 4 021 WIN
+- 12 312 LOSS
+- WinRate ≈ 24.62%
+- PF ≈ 0.615
+- AvgR ≈ −0.288R
+- NetPnL ≈ −109 997 USDT
+
+При этом до fees/slippage стратегия имеет примерно:
+
+`GrossPnL ≈ +11 577 USDT`
+
+Основная проблема — слишком слабый raw edge относительно комиссий и slippage.
+
+---
+
+# ГЛАВНАЯ ЗАДАЧА
+
+Построить и объективно проверить:
+
+`STRATEGY V2 — HIGH PRECISION`
+
+Цель:
+
+`WinRate >= 70%`
+
+Но результат считается успешным ТОЛЬКО если одновременно:
+
+- OOS WinRate >= 70%
+- Profit Factor >= 1.5
+- Expectancy > 0 после fees + slippage
+- AvgR > 0
+- NetPnL > 0
+- минимум 200 CLOSED сделок на OOS TEST
+
+Если этих условий нет — НЕ объявлять стратегию рабочей.
+
+Не подгонять правила только ради 70%.
+
+---
+
+# ОСНОВНАЯ ИДЕЯ V2
+
+Не торговать все source-valid setups.
+
+Искать только очень качественные A+ / TOP setups.
+
+Основное исследовательское ядро:
+
+## CORE A
+`BREAKER_CONSERVATIVE_STOP`
+
+## CORE B
+`RANGE_AGGRESSIVE_EXTERNAL_POI`
+
+## CORE C
+`SFP_BOS_POI`
+
+CORE C использовать только если удаётся выделить сильный подтип.
+
+Также обязательно исследовать случаи перекрёстного подтверждения:
+
+`Breaker + Range context`
+
+и другие случаи, где две независимые setup-family одновременно подтверждают одну physical opportunity.
+
+Не просто объединять WinRate двух стратегий.
+
+Нужно искать:
+
+`CONFLUENCE`
+
+---
+
+# 1. ИСПОЛЬЗОВАТЬ ВСЕ 16 333 CLOSED
+
+Не ограничиваться first50.
+
+Использовать полный source-valid physical union ledger.
+
+Для каждой сделки построить flat feature table.
+
+Использовать ТОЛЬКО признаки, которые были известны ДО entry.
+
+Запрещён outcome leakage.
+
+---
+
+# 2. FEATURE TABLE
+
+Для каждой сделки собрать минимум:
+
+## Identity
+
+- physical_opportunity_id
+- signal_id
+- path_id
+- setup_family
+- symbol
+- direction
+- mapping
+- HTF
+- LTF
+- entry_zone_tf
+
+## HTF context
+
+- HTF structure direction
+- HTF BOS/CONF
+- HTF Order Flow direction
+- HTF flow classification
+- trade direction aligned with HTF flow
+- global POI kind
+- global POI age
+- destination POI
+- destination distance
+
+## Liquidity
+
+- liquidity raid present
+- SFP true/false
+- number of liquidity_ids swept
+- internal/external liquidity if available
+- sweep size
+- sweep size normalized by ATR/range
+- liquidity against setup still present
+- EQH/EQL information if available
+
+## POI
+
+- HTF_POI kind
+- entry_POI kind
+- freshness
+- first_test
+- test_count
+- zone age
+- POI width
+- POI width %
+- POI width / SL
+- native touch
+- external POI
+- manipulation alias
+- STB/BTS
+- OB
+- Breaker
+- Demand/Supply
+- FVG
+- Range
+
+## Structure
+
+- structural proof kind
+- BOS vs CONF
+- protected level
+- displacement size
+- raid → BOS time
+- BOS → POI time
+- POI → READY time
+- READY → fill time
+- number of structural confirmations
+
+## Premium / Discount / OTE
+
+- PD allowed
+- retracement
+- OTE true/false
+- EQ relation
+- Premium/Discount position
+
+## Entry / Risk / Target
+
+- entry_reference
+- entry_after_slippage
+- original SL
+- SL distance
+- SL distance %
+- SL / ATR
+- target price
+- FTA distance
+- target distance %
+- gross target R
+- expected target R
+- target / SL ratio
+
+## Costs
+
+КРИТИЧЕСКИ ВАЖНО.
+
+Для сделки ДО entry рассчитать:
+
+`expected_fee`
+
+`expected_slippage`
+
+`expected_total_friction`
+
+и:
+
+`friction_R = expected_total_friction / planned_risk`
+
+Также:
+
+`net_target_R = gross_target_R - friction_R`
+
+Не использовать реальные post-trade costs как сигнал, если они не могли быть оценены заранее.
+
+---
+
+# 3. TIME FEATURES
+
+Разрешено использовать:
+
+- hour
+- weekday
+- session
+
+Но только как robustness/context.
+
+Не строить стратегию на конкретных датах.
+
+---
+
+# 4. TRAIN / VALIDATION / TEST
+
+Историю разделить ХРОНОЛОГИЧЕСКИ.
+
+НЕ random split.
+
+Использовать:
+
+### TRAIN
+первые 60%
+
+### VALIDATION
+следующие 20%
+
+### TEST / OOS
+последние 20%
+
+TEST нельзя использовать:
+
+- для поиска признаков
+- для выбора threshold
+- для настройки score
+- для выбора лучшего кандидата
+
+TEST открыть только ПОСЛЕ окончательного freeze правил.
+
+---
+
+# 5. WIN VS LOSS ANALYSIS
+
+На TRAIN сравнить WIN и LOSS.
+
+Для каждого признака показать:
+
+- sample size
+- wins
+- losses
+- WinRate
+- PF
+- expectancy
+- AvgR
+- NetPnL
+- lift относительно baseline
+
+И distributions:
+
+WIN vs LOSS.
+
+Найти признаки, которые:
+
+1. часто встречаются у WIN
+2. значительно реже у LOSS
+3. имеют логическое объяснение
+4. устойчивы между периодами
+5. не зависят от одной монеты
+
+---
+
+# 6. BREAKER ANALYSIS
+
+Отдельно исследовать `BREAKER_CONSERVATIVE_STOP`.
+
+Текущий результат примерно:
+
+- 1 920 CLOSED
+- WR ≈ 35.9%
+- PF ≈ 0.86
+
+Нужно понять:
+
+почему winning Breaker отличается от losing Breaker.
+
+Проверить:
+
+- HTF flow alignment
+- fresh vs tested Breaker
+- number of liquidity pools swept
+- distance to FTA
+- target R
+- friction R
+- POI age
+- structure freshness
+- first test
+- manipulation strength
+- displacement
+- premium/discount
+- OTE
+- time decay
+
+---
+
+# 7. RANGE ANALYSIS
+
+Отдельно исследовать:
+
+`RANGE_AGGRESSIVE_EXTERNAL_POI`
+
+Текущий ориентир:
+
+- 734 CLOSED
+- WR ≈ 26.8%
+- PF ≈ 0.79
+
+Искать winning subset.
+
+Особенно:
+
+- true external POI
+- range deviation
+- direction of HTF flow
+- liquidity sweep
+- distance to opposite range boundary
+- target/SL
+- friction
+- first test
+- quality of reclaim/deviation
+
+---
+
+# 8. SFP ANALYSIS
+
+`SFP_BOS_POI` очень частый и генерирует слишком много слабых сделок.
+
+Не использовать его автоматически как ядро.
+
+Нужно найти high-quality subset.
+
+Проверить:
+
+- 1 vs 2 vs 3+ liquidity pools swept
+- HTF timeframe
+- first test
+- entry POI kind
+- BOS strength
+- flow alignment
+- target R
+- friction R
+- POI freshness
+- time between SFP and BOS
+- time between BOS and entry
+- SFP range position
+- target distance
+
+---
+
+# 9. CONFLUENCE STRATEGY
+
+Это ключевой эксперимент.
+
+Искать ситуации, где одновременно присутствуют подтверждения нескольких моделей.
+
+Например:
+
+`Breaker Conservative`
++
+`Range context`
+
+или:
+
+`Breaker`
++
+`SFP`
++
+`HTF Order Flow`
+
+или:
+
+`Range`
++
+`external liquidity sweep`
++
+`fresh POI`
+
+Создать deterministic:
+
+`CONFLUENCE_SCORE`
+
+Но score должен состоять только из pre-entry features.
+
+Например исследовать такие компоненты:
+
+- +2 Breaker
+- +2 strong Range context
+- +2 HTF flow alignment
+- +1 external liquidity sweep
+- +1 2+ liquidity pools
+- +1 fresh first-test POI
+- +1 BOS displacement
+- +1 correct P/D
+- +1 OTE
+- +2 net_target_R >= threshold
+- +2 low friction_R
+- −2 nearby opposing POI
+- −2 stale setup
+
+Это только исследовательские кандидаты.
+
+Не принимать эти веса без проверки.
+
+---
+
+# 10. COST / FRICTION FILTER
+
+Обязательно исследовать заранее заданную grid.
+
+### friction_R:
+
+- <= 0.30R
+- <= 0.20R
+- <= 0.15R
+- <= 0.10R
+- <= 0.075R
+- <= 0.05R
+
+### net_target_R:
+
+- >= 0.5R
+- >= 0.75R
+- >= 1.0R
+- >= 1.5R
+- >= 2.0R
+- >= 2.5R
+- >= 3.0R
+
+### gross target R:
+
+- >= 1R
+- >= 1.5R
+- >= 2R
+- >= 2.5R
+- >= 3R
+
+Главная задача:
+
+перестать брать сделки, где ожидаемое движение слишком маленькое относительно fees/slippage.
+
+---
+
+# 11. HIGH PRECISION SEARCH
+
+Цель — НЕ максимальное количество trades.
+
+Разрешается сократить:
+
+16 333 trades
+
+до:
+
+- 3 000
+- 1 000
+- 500
+- 300
+- 200
+
+если качество значительно растёт.
+
+Искать:
+
+A setup  
+A+ setup  
+TOP setup
+
+Отдельно показать:
+
+- A WR
+- A+ WR
+- TOP WR
+
+---
+
+# 12. RULE COMPLEXITY
+
+Чтобы избежать overfit:
+
+финальная Strategy V2 должна иметь максимум:
+
+`5–7 основных условий`
+
+Не создавать правило из 20 условий.
+
+Не использовать:
+
+- конкретный symbol whitelist как главный edge
+- конкретный месяц
+- конкретную дату
+- уникальные trade IDs
+
+---
+
+# 13. MODEL / META FILTER
+
+Если простые deterministic rules не дают 70%:
+
+разрешается второй этап.
+
+Построить интерпретируемый meta-filter:
+
+например:
+
+- logistic regression
+- shallow decision tree max_depth <= 3
+- simple monotonic score
+
+Только TRAIN.
+
+Validation — threshold selection.
+
+TEST — один финальный прогон.
+
+Не использовать black-box neural network.
+
+Нужно понимать, почему сигнал получил высокий score.
+
+---
+
+# 14. 70% НЕ ЦЕЛЬ ДЛЯ ПОДГОНКИ
+
+Очень важно.
+
+Если лучший честный OOS результат:
+
+- 58%
+- 62%
+- 67%
+
+так и написать.
+
+НЕ ослаблять статистические требования ради цифры 70%.
+
+НЕ перебирать TEST до получения 70%.
+
+---
+
+# 15. MINIMUM STATISTICAL REQUIREMENTS
+
+Чтобы объявить:
+
+`TARGET_70_CONFIRMED`
+
+нужно:
+
+- >= 200 OOS CLOSED
+- WR >= 70%
+- PF >= 1.5
+- Expectancy > 0
+- AvgR > 0
+- NetPnL > 0
+
+Также рассчитать:
+
+`95% Wilson Confidence Interval`
+
+для WinRate.
+
+Желательно, чтобы нижняя граница CI была существенно выше baseline.
+
+---
+
+# 16. OOS REPORT
+
+Для каждого финального кандидата показать:
+
+- CLOSED
+- WIN
+- LOSS
+- BE
+- WR
+- WR Wilson 95% CI
+- PF
+- Expectancy
+- AvgR
+- NetPnL
+- GrossPnL
+- fees
+- slippage
+- Max Drawdown
+- AvgWin
+- AvgLoss
+- Payoff ratio
+- Average holding
+- trades/month
+
+Разбивки:
+
+- LONG
+- SHORT
+- symbol
+- mapping
+- HTF/LTF
+- setup family
+- month/time period
+
+---
+
+# 17. ROBUSTNESS
+
+Новая стратегия не считается устойчивой, если прибыль идёт:
+
+- только с одной монеты
+- только LONG
+- только SHORT
+- только одного месяца
+- только одного mapping
+
+Показать robustness.
+
+---
+
+# 18. НИКАКОГО LIVE
+
+Во всей работе:
+
+`trade_entry_allowed=false`
+
+Разрешено только:
+
+- BACKTEST
+- SHADOW
+- RESEARCH
+
+Запрещено:
+
+- LIVE
+- private exchange API
+- real orders
+- Withdraw
+- изменение реального баланса
+
+---
+
+# 19. НЕ ЛОМАТЬ BASELINE
+
+Commit:
+
+`dab8d254aaf4babc07659e3d03d14b269445767b`
+
+должен остаться воспроизводимым.
+
+Работать в новой ветке:
+
+`strategy-v2-70wr-research`
+
+Не force push.
+
+Не merge автоматически в main.
+
+---
+
+# 20. OUTPUT FILES
+
+Создать:
+
+`STRATEGY_V2_70WR_ANALYSIS.md`
+
+`strategy_v2_feature_table.csv.gz`
+
+или parquet.
+
+`strategy_v2_win_loss_feature_analysis.csv`
+
+`strategy_v2_candidates.json`
+
+`strategy_v2_validation_results.csv`
+
+`strategy_v2_oos_results.csv`
+
+`strategy_v2_final_rules.json`
+
+`strategy_v2_confluence_score.json`
+
+`strategy_v2_leakage_audit.json`
+
+`strategy_v2_qa_receipt.json`
+
+---
+
+# 21. QA
+
+Проверить:
+
+- no-lookahead
+- no outcome leakage
+- prefix/future mutation
+- chronological split integrity
+- dedup by physical opportunity
+- fees/slippage causal
+- exact dataset hashes
+- tests
+- compileall
+- mypy
+- Ruff delta
+
+---
+
+# 22. ФИНАЛЬНЫЙ VERDICT
+
+В самом конце дать только один из двух статусов:
+
+`TARGET_70_CONFIRMED`
+
+или
+
+`TARGET_70_NOT_CONFIRMED`
+
+Если подтверждено — указать:
+
+- финальные rules
+- OOS WR
+- PF
+- Expectancy
+- AvgR
+- NetPnL
+- OOS CLOSED
+- CI
+
+Если не подтверждено — указать:
+
+- лучший честный кандидат
+- его WR
+- PF
+- Expectancy
+- количество OOS trades
+- насколько не хватило до 70%
+- какие признаки действительно дали самый сильный lift
+
+Не останавливайся после первого промежуточного результата.
+
+Дойди максимально далеко за один проход:
+
+feature mining → candidates → validation → frozen rules → OOS TEST → final verdict.
+
+Не задавай пользователю промежуточных вопросов, если можешь принять технически обоснованное решение самостоятельно.
