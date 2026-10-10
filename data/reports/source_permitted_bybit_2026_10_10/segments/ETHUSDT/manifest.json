@@ -1,0 +1,48 @@
+{
+  "artifacts": {
+    "attempts.jsonl.gz": "f1e88d2193c8c669b9110b4524663d19adb516ff5df39ef95f90527493a7b01c",
+    "cancellations.jsonl.gz": "76aeabc947a857faa661de2e08bccf4aa2ee95244eda85543ed94bf8be6e6bfd",
+    "dataset_audit.json": "5009a918ed3a5395719604448aebad1e04aa4b522f168e55f4ee9e6cf36f5ebc",
+    "exit_events.jsonl.gz": "3aefcc86498d55c3303a5db6b2cb0c63b1d1e48eeba0ed7d990b4afb674eaf59",
+    "flow_bottleneck.jsonl.gz": "20346ce1694fb461b8e6c47b407369e819411b8fed2b3ecdd7cb6bcbd33fa37e",
+    "flow_history.jsonl.gz": "5006468631cc889d2a977e2647ca1525b26272e1bb74c4e97711aaab94c718b2",
+    "old13_audit.json": "3f2c0aace207f2c4de0fe704a258aa139c56d697249b3bd7e7c0d6f72f4415ee",
+    "old9_cancel_audit.json": "1ea0d5677a83e6af39296806c791de8eaa04614d22b333ada94727b9f0764d5e",
+    "physical_anchors.json": "d5e544acf37d23eabdc88820946716a76c3a218ef954afe53ba57185ad506bf9",
+    "range_admissibility.json": "1cfe2d48334b8b31ae6a59f915ca4d0935779ebdd0a5a656bd6c35bd47d0ec30",
+    "range_audit.jsonl.gz": "43592d2684d79a653839ad7d6f1aafd90b63423251492c487d9449f749828417",
+    "signals.jsonl.gz": "d0e6ef2bcf86ff0793cbd42e4e9c48bdcd674cd5747621ba44002e56b9edcd8b",
+    "strict_bottleneck.jsonl.gz": "25a8c00ec1485339e221d6748c6818cd1c5d9a552c4d1dee02f8ce533ed67c71",
+    "summary.json": "0e7a5a0a93274ccf11568ff049bb39f20f3e74184aa5fd87375d0cf0f6b2e032"
+  },
+  "code_hash": "ec61bd176fc4d0043e8e0bb02b90420e478da82758d60d03062ee152d7f0349d",
+  "fingerprint": "6a5e0ff974338bdadc989ee72048f1a52df3587e2b5469de51a09e771fc2f9d0",
+  "inputs": {
+    "15": {
+      "candles": 23039,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/15.csv",
+      "sha256": "c42c68735311d4e7045ddec5c622b6a899d07bce71fec2f3cc21bf4c2f8cf9e0"
+    },
+    "240": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/240.csv",
+      "sha256": "219ecec093e68589ca35ec90c5543fed8cee7a058266978c1d92898c6286d178"
+    },
+    "5": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/5.csv",
+      "sha256": "c0bc583b2af2f1bb28511547e784a0a922e1d1917cdcd44537967276c32c60ac"
+    },
+    "60": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/60.csv",
+      "sha256": "6a68584ba89b7b56c5e1cd09c423c2e48eeb4823ef8c673de10ab457b4e447dc"
+    }
+  },
+  "status": "COMPLETE",
+  "trade_entry_allowed": false
+}

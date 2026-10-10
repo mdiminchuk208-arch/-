@@ -1,0 +1,78 @@
+[
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 69120,
+    "end": "2026-09-22T11:20:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 5,
+    "sha256": "c0bc583b2af2f1bb28511547e784a0a922e1d1917cdcd44537967276c32c60ac",
+    "source_receipt": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/5.csv",
+      "sha256": "c0bc583b2af2f1bb28511547e784a0a922e1d1917cdcd44537967276c32c60ac"
+    },
+    "start": "2026-01-25T11:20:00+00:00",
+    "symbol": "ETHUSDT"
+  },
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 23039,
+    "end": "2026-09-22T12:15:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 15,
+    "sha256": "c42c68735311d4e7045ddec5c622b6a899d07bce71fec2f3cc21bf4c2f8cf9e0",
+    "source_receipt": {
+      "candles": 23039,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/15.csv",
+      "sha256": "c42c68735311d4e7045ddec5c622b6a899d07bce71fec2f3cc21bf4c2f8cf9e0"
+    },
+    "start": "2026-01-25T12:30:00+00:00",
+    "symbol": "ETHUSDT"
+  },
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 5759,
+    "end": "2026-09-22T11:00:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 60,
+    "sha256": "6a68584ba89b7b56c5e1cd09c423c2e48eeb4823ef8c673de10ab457b4e447dc",
+    "source_receipt": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/60.csv",
+      "sha256": "6a68584ba89b7b56c5e1cd09c423c2e48eeb4823ef8c673de10ab457b4e447dc"
+    },
+    "start": "2026-01-25T12:00:00+00:00",
+    "symbol": "ETHUSDT"
+  },
+  {
+    "OHLC": "PASS_BY_VALIDATED_NATIVE_MODEL",
+    "alignment": "PASS",
+    "count": 1439,
+    "end": "2026-09-22T08:00:00+00:00",
+    "exchange": "BYBIT",
+    "gaps": 0,
+    "instrument": "USDT_LINEAR_PERPETUAL",
+    "interval": 240,
+    "sha256": "219ecec093e68589ca35ec90c5543fed8cee7a058266978c1d92898c6286d178",
+    "source_receipt": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/ETHUSDT/240.csv",
+      "sha256": "219ecec093e68589ca35ec90c5543fed8cee7a058266978c1d92898c6286d178"
+    },
+    "start": "2026-01-25T12:00:00+00:00",
+    "symbol": "ETHUSDT"
+  }
+]

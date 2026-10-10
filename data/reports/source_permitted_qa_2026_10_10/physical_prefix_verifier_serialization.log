@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/workspace/-/scripts/verify_source_physical_evidence.py", line 179, in <module>
+    result = {'prefix': prefix_check(base, final, lock['policy'], a.prefix_cache), 'trade_entry_allowed': False}
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/scripts/verify_source_physical_evidence.py", line 56, in prefix_check
+    assert evidence_json(mapped) == evidence_json(mutated_mapped)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/src/crypto_bot/strategy/source_pdf_native.py", line 48, in evidence_json
+    return json.dumps(value, default=lambda x: x.isoformat() if isinstance(x, datetime) else x.value,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/workspace/-/src/crypto_bot/strategy/source_pdf_native.py", line 48, in <lambda>
+    return json.dumps(value, default=lambda x: x.isoformat() if isinstance(x, datetime) else x.value,
+                                                                                             ^^^^^^^
+AttributeError: 'SourceSignal' object has no attribute 'value'

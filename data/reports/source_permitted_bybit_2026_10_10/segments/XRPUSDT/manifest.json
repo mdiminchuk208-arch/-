@@ -1,0 +1,48 @@
+{
+  "artifacts": {
+    "attempts.jsonl.gz": "a0956b9819291e1499e43748693928223e678f619fdcc2ec3e69b120ed383478",
+    "cancellations.jsonl.gz": "0058faec52defa0c4ea0b743a91f63421d4336ac74fa13fb17091e2425777db7",
+    "dataset_audit.json": "a659dbe03a508bbe69e413dd0d1908f7d789e8ee6f41dc790172653ef2541a1a",
+    "exit_events.jsonl.gz": "bd8e583f0e53d7bf3fe7c098e883c2d47902c15f2077802279e43f9d71e494a6",
+    "flow_bottleneck.jsonl.gz": "1fa1980e0970b26803f79e0f0032650375fbb82b3f65c0f39580b0addb4ebc90",
+    "flow_history.jsonl.gz": "67f0fe9faa33b118e575035fee79e9e8c0ffda6692a47009c89afc44135c08c1",
+    "old13_audit.json": "978bdc68f660a2984dd0f2be60ea90766ed42610325795b17906ec09d4d98d3c",
+    "old9_cancel_audit.json": "5ffb2d02f03aa8fe9f53a9902ac1c009ef927b6e5795b481519be6c5b200f5e7",
+    "physical_anchors.json": "5cbeb86626383ebedf880e0e4578fc26e2c31ab226a826be47e00c9775d5d441",
+    "range_admissibility.json": "49658c6255a8109ae478ae08af9ff6cfe36f7924928383b1398d07f7a066c54e",
+    "range_audit.jsonl.gz": "3c3a751647cf97c2f246099aed46f4e59aebbaf05ef9ec1aae8f3ef0523bae2d",
+    "signals.jsonl.gz": "c85964c2b5ab1f04f8222bc993eda3a6a066f54c0671d8bb08c26e3b0ca89691",
+    "strict_bottleneck.jsonl.gz": "5e1946758cc55a90c2809fddfeaa395b928089032590c6b9ca8f336b32a612d7",
+    "summary.json": "0493b667e5b456dfc47bacff130be1c0bd904f375b11bc3c1eab1e387bdaa919"
+  },
+  "code_hash": "ec61bd176fc4d0043e8e0bb02b90420e478da82758d60d03062ee152d7f0349d",
+  "fingerprint": "b4b70e09a4796f446d4ca0e62789f0938820c1f1a82483e51eb6aca5dbd33949",
+  "inputs": {
+    "15": {
+      "candles": 23040,
+      "gaps": 0,
+      "path": "data/history/bybit/XRPUSDT/15.csv",
+      "sha256": "e9007109253dd38273702460c002a14d5069615403e115238e0e1153938dd013"
+    },
+    "240": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/XRPUSDT/240.csv",
+      "sha256": "e49b9039cb3fcec87c725b97a79a4055f5d4aeb496e32931d2f914d82bb34f75"
+    },
+    "5": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/XRPUSDT/5.csv",
+      "sha256": "74f7c34ef46c0d112d24f86b66be89d50806e3a03f193b4cce0654129989c5c8"
+    },
+    "60": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/XRPUSDT/60.csv",
+      "sha256": "fd086ca3baf8a2d1b6668d0fc1075e3b76393007411087d3a53b6fc4edf902bd"
+    }
+  },
+  "status": "COMPLETE",
+  "trade_entry_allowed": false
+}

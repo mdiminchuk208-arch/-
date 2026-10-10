@@ -1,0 +1,48 @@
+{
+  "artifacts": {
+    "attempts.jsonl.gz": "e5c70f0f56cb7d97dcbf1e18d3595fef529c5205f70cb2feaff042c5a9b6583a",
+    "cancellations.jsonl.gz": "e30e63730ac64a43f0f9b93be1a1348a4ac14954d8c1f84570d2f577691624b3",
+    "dataset_audit.json": "2971c729d82911a29f3cfcf0a11776dc65682050a502dd68cdc87c409787ff22",
+    "exit_events.jsonl.gz": "b93462cbd781bd29f4812059867da05e352181a35513e8e8aaa8fe9c33330740",
+    "flow_bottleneck.jsonl.gz": "d2d2c20806de0e317618fac2981ccfe899d6c6c2473efbeeb001e7aabef5bc7b",
+    "flow_history.jsonl.gz": "eff33ab2c321e4467934d72d1357e26594d7e14d8b6172a2993cddbabf6d00a1",
+    "old13_audit.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "old9_cancel_audit.json": "b75b1b67cf363ea750ed3bd00df383abb26acbb1fe8ae83628606bb4115ae249",
+    "physical_anchors.json": "8643c60c400c97832283ae2615703e347e5d3b9669812e08ffca10be4a25f4b3",
+    "range_admissibility.json": "cd567afdc89ece3fec42913bdbaa77c4ac79ea01068b279b9e1dbbc5f3ff5bf8",
+    "range_audit.jsonl.gz": "459deef63e320db850d6573362e2c11b01c37f88285641d60e648350fd3f95a5",
+    "signals.jsonl.gz": "9564bd4d90daac8c6db3f1c572ba5ab741be31bced621be209aa1e309887ff6f",
+    "strict_bottleneck.jsonl.gz": "1adbaa2212a4682945a36125225246674c814ffb73403daa73eb2cd7454df456",
+    "summary.json": "6bb92139a5cbacde337415bcc435ae207dcffb3b132aee64c0825f174119d310"
+  },
+  "code_hash": "ec61bd176fc4d0043e8e0bb02b90420e478da82758d60d03062ee152d7f0349d",
+  "fingerprint": "00be60f039f9292539eb3691d4a608c7c026b1ff2e558b8187016f4c4b681d5c",
+  "inputs": {
+    "15": {
+      "candles": 23039,
+      "gaps": 0,
+      "path": "data/history/bybit/SOLUSDT/15.csv",
+      "sha256": "eed5ce7e194c1bc78cf69e365993021d491f0c846b096070dd561ad677d29481"
+    },
+    "240": {
+      "candles": 1439,
+      "gaps": 0,
+      "path": "data/history/bybit/SOLUSDT/240.csv",
+      "sha256": "522080db3e29661dc78648d90e304224b9a521ff17e2c191239e787b346d8b2c"
+    },
+    "5": {
+      "candles": 69120,
+      "gaps": 0,
+      "path": "data/history/bybit/SOLUSDT/5.csv",
+      "sha256": "119edc89b702c8b658fd86a1827dd08f7e9ff65960582ac56bb9609644eeb046"
+    },
+    "60": {
+      "candles": 5759,
+      "gaps": 0,
+      "path": "data/history/bybit/SOLUSDT/60.csv",
+      "sha256": "db51eaadcf3ad68a2aa64df138dd7b0b63f3d0f046b8addeb377c47236e08bb9"
+    }
+  },
+  "status": "COMPLETE",
+  "trade_entry_allowed": false
+}

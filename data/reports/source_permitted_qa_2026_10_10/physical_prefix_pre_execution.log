@@ -1,0 +1,39 @@
+{
+  "prefix": {
+    "status": "PASS",
+    "fixed_cutoff": "2026-03-01T00:00:00+00:00",
+    "symbol": "SOLUSDT",
+    "raw_candidate_READY": 1775,
+    "source_valid_READY": 1177,
+    "physical_IDs": 264,
+    "source_paths": {
+      "SFP_BOS_POI": 309,
+      "SFP_ATR_STOP": 307,
+      "DEMAND_SUPPLY": 41,
+      "RANGE_AGGRESSIVE_EXTERNAL_POI": 106,
+      "OB_CONSERVATIVE_BOS_POI": 79,
+      "OB_ULTRA_CONSERVATIVE_CONF": 58,
+      "BREAKER_CONSERVATIVE_STOP": 68,
+      "BREAKER_AGGRESSIVE_STOP": 68,
+      "STB_BTS_HALF": 48,
+      "OB_DIRECT_FIRST_TEST": 17,
+      "OB_DIRECT_INSIDE": 17,
+      "OB_DIRECT_ENGULFING_STOP": 17,
+      "OB_DIRECT_INSIDE_ENGULFING_STOP": 14,
+      "STB_BTS_EDGE": 27,
+      "RANGE_CONSERVATIVE_RETEST": 1
+    },
+    "native_prefix_candles": 14293,
+    "qualification": {
+      "REJECT_SFP_INVALID_BEFORE_READY": 598,
+      "PASS_SFP_VALID_AT_READY": 616
+    },
+    "actual_body_cancellations_known_in_prefix": 556,
+    "four_TF_future_mutation": "PASS",
+    "final_full_history_prefix_parity": "PENDING_FINAL_ROOT",
+    "cache_sha256": "e0ede33dea9d56a2f52818b2a030e8d9ee288bd3e7226e7d5b40c56e6e40edec",
+    "trade_entry_allowed": false
+  },
+  "trade_entry_allowed": false,
+  "verifier_sha256": "62278a8113dfaf0b5e4ebc2e4dcec8bfb0351c9dcfdbe111e7650b12b87df7d7"
+}
