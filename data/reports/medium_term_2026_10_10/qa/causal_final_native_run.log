@@ -1,0 +1,405 @@
+native_bybit_2026 BTCUSDT analyze 5 69119
+native_bybit_2026 BTCUSDT analyze 15 23039
+native_bybit_2026 SOLUSDT analyze 5 69120
+native_bybit_2026 SOLUSDT analyze 15 23039
+native_bybit_2026 ETHUSDT analyze 5 69120
+native_bybit_2026 ETHUSDT analyze 15 23039
+native_bybit_2026 SOLUSDT analyze 60 5759
+native_bybit_2026 BTCUSDT analyze 60 5759
+native_bybit_2026 SOLUSDT analyze 240 1439
+native_bybit_2026 SOLUSDT analyze 1440 239
+native_bybit_2026 ETHUSDT analyze 60 5759
+native_bybit_2026 BTCUSDT analyze 240 1439
+native_bybit_2026 ETHUSDT analyze 240 1439
+native_bybit_2026 BTCUSDT analyze 1440 239
+native_bybit_2026 ETHUSDT analyze 1440 239
+native_bybit_2026 SOLUSDT 2026-04-13T00:00:00+00:00 READY {'enabled': 174, 'disabled_cost_gate': 174}
+native_bybit_2026 ETHUSDT 2026-03-22T12:00:00+00:00 READY {'enabled': 152, 'disabled_cost_gate': 152}
+native_bybit_2026 BTCUSDT 2026-03-21T15:45:00+00:00 READY {'enabled': 132, 'disabled_cost_gate': 132}
+native_bybit_2026 SOLUSDT 2026-05-08T10:45:00+00:00 READY {'enabled': 277, 'disabled_cost_gate': 277}
+native_bybit_2026 ETHUSDT 2026-04-16T08:00:00+00:00 READY {'enabled': 225, 'disabled_cost_gate': 225}
+native_bybit_2026 BTCUSDT 2026-04-20T20:45:00+00:00 READY {'enabled': 235, 'disabled_cost_gate': 235}
+native_bybit_2026 SOLUSDT 2026-06-03T04:00:00+00:00 READY {'enabled': 343, 'disabled_cost_gate': 344}
+native_bybit_2026 ETHUSDT 2026-05-11T18:45:00+00:00 READY {'enabled': 315, 'disabled_cost_gate': 315}
+native_bybit_2026 BTCUSDT 2026-05-09T01:45:00+00:00 READY {'enabled': 284, 'disabled_cost_gate': 284}
+native_bybit_2026 SOLUSDT 2026-06-21T00:15:00+00:00 READY {'enabled': 390, 'disabled_cost_gate': 391}
+native_bybit_2026 ETHUSDT 2026-05-31T16:00:00+00:00 READY {'enabled': 395, 'disabled_cost_gate': 395}
+native_bybit_2026 BTCUSDT 2026-05-28T03:00:00+00:00 READY {'enabled': 363, 'disabled_cost_gate': 364}
+native_bybit_2026 SOLUSDT 2026-07-04T06:15:00+00:00 READY {'enabled': 429, 'disabled_cost_gate': 430}
+native_bybit_2026 ETHUSDT 2026-06-17T03:30:00+00:00 READY {'enabled': 440, 'disabled_cost_gate': 440}
+native_bybit_2026 BTCUSDT 2026-06-15T06:45:00+00:00 READY {'enabled': 408, 'disabled_cost_gate': 409}
+native_bybit_2026 SOLUSDT 2026-07-22T11:15:00+00:00 READY {'enabled': 490, 'disabled_cost_gate': 491}
+native_bybit_2026 ETHUSDT 2026-07-06T23:00:00+00:00 READY {'enabled': 507, 'disabled_cost_gate': 507}
+native_bybit_2026 BTCUSDT 2026-07-13T20:00:00+00:00 READY {'enabled': 500, 'disabled_cost_gate': 501}
+native_bybit_2026 SOLUSDT 2026-08-07T19:00:00+00:00 READY {'enabled': 537, 'disabled_cost_gate': 539}
+native_bybit_2026 BTCUSDT 2026-07-29T08:00:00+00:00 READY {'enabled': 534, 'disabled_cost_gate': 536}
+native_bybit_2026 ETHUSDT 2026-07-24T19:00:00+00:00 READY {'enabled': 571, 'disabled_cost_gate': 571}
+native_bybit_2026 SOLUSDT 2026-08-17T16:00:00+00:00 READY {'enabled': 563, 'disabled_cost_gate': 565}
+native_bybit_2026 BTCUSDT 2026-08-08T00:00:00+00:00 READY {'enabled': 564, 'disabled_cost_gate': 567}
+native_bybit_2026 ETHUSDT 2026-08-06T20:15:00+00:00 READY {'enabled': 622, 'disabled_cost_gate': 622}
+native_bybit_2026 SOLUSDT 2026-08-27T07:00:00+00:00 READY {'enabled': 594, 'disabled_cost_gate': 597}
+native_bybit_2026 ETHUSDT 2026-08-21T10:00:00+00:00 READY {'enabled': 679, 'disabled_cost_gate': 681}
+native_bybit_2026 BTCUSDT 2026-08-20T05:00:00+00:00 READY {'enabled': 593, 'disabled_cost_gate': 596}
+native_bybit_2026 SOLUSDT 2026-09-06T21:30:00+00:00 READY {'enabled': 630, 'disabled_cost_gate': 633}
+native_bybit_2026 ETHUSDT 2026-08-30T07:00:00+00:00 READY {'enabled': 721, 'disabled_cost_gate': 723}
+native_bybit_2026 BTCUSDT 2026-08-31T02:45:00+00:00 READY {'enabled': 620, 'disabled_cost_gate': 623}
+native_bybit_2026 SOLUSDT 2026-09-16T22:15:00+00:00 READY {'enabled': 660, 'disabled_cost_gate': 663}
+native_bybit_2026 ETHUSDT 2026-09-10T10:45:00+00:00 READY {'enabled': 764, 'disabled_cost_gate': 766}
+native_bybit_2026 BTCUSDT 2026-09-17T12:15:00+00:00 READY {'enabled': 684, 'disabled_cost_gate': 689}
+native_bybit_2026 XRPUSDT analyze 5 69120
+native_bybit_2026 XRPUSDT analyze 15 23040
+native_bybit_2026 BNBUSDT analyze 5 69120
+native_bybit_2026 BNBUSDT analyze 15 23039
+native_bybit_2026 XRPUSDT analyze 60 5759
+native_bybit_2026 XRPUSDT analyze 240 1439
+native_bybit_2026 XRPUSDT analyze 1440 239
+native_bybit_2026 BNBUSDT analyze 60 5759
+native_bybit_2026 BNBUSDT analyze 240 1439
+native_bybit_2026 BNBUSDT analyze 1440 239
+native_bybit_2026 DOGEUSDT analyze 5 69120
+native_bybit_2026 DOGEUSDT analyze 15 23040
+native_bybit_2026 DOGEUSDT analyze 60 5759
+native_bybit_2026 DOGEUSDT analyze 240 1439
+native_bybit_2026 DOGEUSDT analyze 1440 239
+native_bybit_2026 XRPUSDT 2026-04-16T06:15:00+00:00 READY {'enabled': 210, 'disabled_cost_gate': 211}
+native_bybit_2026 BNBUSDT 2026-04-02T13:20:00+00:00 READY {'enabled': 152, 'disabled_cost_gate': 154}
+native_bybit_2026 DOGEUSDT 2026-04-24T00:00:00+00:00 READY {'enabled': 240, 'disabled_cost_gate': 240}
+native_bybit_2026 XRPUSDT 2026-05-22T07:45:00+00:00 READY {'enabled': 345, 'disabled_cost_gate': 347}
+native_bybit_2026 BNBUSDT 2026-05-07T22:15:00+00:00 READY {'enabled': 254, 'disabled_cost_gate': 258}
+native_bybit_2026 DOGEUSDT 2026-05-23T12:00:00+00:00 READY {'enabled': 343, 'disabled_cost_gate': 343}
+native_bybit_2026 XRPUSDT 2026-06-24T14:35:00+00:00 READY {'enabled': 442, 'disabled_cost_gate': 444}
+native_bybit_2026 BNBUSDT 2026-06-13T11:00:00+00:00 READY {'enabled': 365, 'disabled_cost_gate': 369}
+native_bybit_2026 DOGEUSDT 2026-07-05T23:15:00+00:00 READY {'enabled': 456, 'disabled_cost_gate': 456}
+native_bybit_2026 XRPUSDT 2026-07-22T11:30:00+00:00 READY {'enabled': 514, 'disabled_cost_gate': 516}
+native_bybit_2026 BNBUSDT 2026-07-25T01:35:00+00:00 READY {'enabled': 483, 'disabled_cost_gate': 488}
+native_bybit_2026 DOGEUSDT 2026-08-10T00:00:00+00:00 READY {'enabled': 568, 'disabled_cost_gate': 569}
+native_bybit_2026 XRPUSDT 2026-08-14T01:00:00+00:00 READY {'enabled': 562, 'disabled_cost_gate': 565}
+native_bybit_2026 BNBUSDT 2026-08-17T23:00:00+00:00 READY {'enabled': 552, 'disabled_cost_gate': 558}
+native_bybit_2026 DOGEUSDT 2026-08-25T00:00:00+00:00 READY {'enabled': 599, 'disabled_cost_gate': 600}
+native_bybit_2026 XRPUSDT 2026-08-27T00:30:00+00:00 READY {'enabled': 593, 'disabled_cost_gate': 596}
+native_bybit_2026 BNBUSDT 2026-08-30T09:15:00+00:00 READY {'enabled': 584, 'disabled_cost_gate': 590}
+native_bybit_2026 DOGEUSDT 2026-09-07T09:00:00+00:00 READY {'enabled': 640, 'disabled_cost_gate': 641}
+native_bybit_2026 XRPUSDT 2026-09-11T05:45:00+00:00 READY {'enabled': 621, 'disabled_cost_gate': 624}
+native_bybit_2026 BNBUSDT 2026-09-16T02:45:00+00:00 READY {'enabled': 632, 'disabled_cost_gate': 638}
+native_bybit_2026 DOGEUSDT 2026-09-18T15:30:00+00:00 READY {'enabled': 660, 'disabled_cost_gate': 661}
+native_bybit_2026 ADAUSDT analyze 5 69120
+native_bybit_2026 ADAUSDT analyze 15 23040
+native_bybit_2026 LINKUSDT analyze 5 69120
+native_bybit_2026 LINKUSDT analyze 15 23040
+native_bybit_2026 ADAUSDT analyze 60 5759
+native_bybit_2026 ADAUSDT analyze 240 1439
+native_bybit_2026 ADAUSDT analyze 1440 239
+native_bybit_2026 LINKUSDT analyze 60 5759
+native_bybit_2026 XRPUSDT 2026-09-22T03:30:00+00:00 READY {'enabled': 654, 'disabled_cost_gate': 657}
+native_bybit_2026 LINKUSDT analyze 240 1439
+native_bybit_2026 LINKUSDT analyze 1440 239
+native_bybit_2026 AVAXUSDT analyze 5 69120
+native_bybit_2026 AVAXUSDT analyze 15 23040
+native_bybit_2026 AVAXUSDT analyze 60 5759
+native_bybit_2026 AVAXUSDT analyze 240 1439
+native_bybit_2026 AVAXUSDT analyze 1440 239
+native_bybit_2026 ADAUSDT 2026-05-16T09:45:00+00:00 READY {'enabled': 278, 'disabled_cost_gate': 279}
+native_bybit_2026 LINKUSDT 2026-04-14T16:00:00+00:00 READY {'enabled': 208, 'disabled_cost_gate': 208}
+native_bybit_2026 AVAXUSDT 2026-04-14T13:00:00+00:00 READY {'enabled': 198, 'disabled_cost_gate': 202}
+native_bybit_2026 ADAUSDT 2026-07-01T14:30:00+00:00 READY {'enabled': 385, 'disabled_cost_gate': 386}
+native_bybit_2026 LINKUSDT 2026-05-15T00:00:00+00:00 READY {'enabled': 290, 'disabled_cost_gate': 290}
+native_bybit_2026 AVAXUSDT 2026-06-06T21:45:00+00:00 READY {'enabled': 379, 'disabled_cost_gate': 383}
+native_bybit_2026 ADAUSDT 2026-07-13T09:30:00+00:00 READY {'enabled': 405, 'disabled_cost_gate': 406}
+native_bybit_2026 LINKUSDT 2026-06-21T02:00:00+00:00 READY {'enabled': 391, 'disabled_cost_gate': 391}
+native_bybit_2026 AVAXUSDT 2026-07-04T15:00:00+00:00 READY {'enabled': 459, 'disabled_cost_gate': 463}
+native_bybit_2026 ADAUSDT 2026-08-02T01:00:00+00:00 READY {'enabled': 459, 'disabled_cost_gate': 460}
+native_bybit_2026 LINKUSDT 2026-07-24T20:00:00+00:00 READY {'enabled': 500, 'disabled_cost_gate': 502}
+native_bybit_2026 AVAXUSDT 2026-07-22T08:00:00+00:00 READY {'enabled': 521, 'disabled_cost_gate': 525}
+native_bybit_2026 ADAUSDT 2026-08-12T01:30:00+00:00 READY {'enabled': 485, 'disabled_cost_gate': 486}
+native_bybit_2026 LINKUSDT 2026-08-20T01:45:00+00:00 READY {'enabled': 589, 'disabled_cost_gate': 591}
+native_bybit_2026 AVAXUSDT 2026-08-15T10:45:00+00:00 READY {'enabled': 597, 'disabled_cost_gate': 601}
+native_bybit_2026 ADAUSDT 2026-08-27T23:15:00+00:00 READY {'enabled': 515, 'disabled_cost_gate': 516}
+native_bybit_2026 LINKUSDT 2026-09-15T16:05:00+00:00 READY {'enabled': 666, 'disabled_cost_gate': 668}
+native_bybit_2026 AVAXUSDT 2026-09-04T22:30:00+00:00 READY {'enabled': 648, 'disabled_cost_gate': 652}
+native_bybit_2026 LTCUSDT analyze 5 69120
+native_bybit_2026 LTCUSDT analyze 15 23040
+native_bybit_2026 LTCUSDT analyze 60 5759
+native_bybit_2026 LTCUSDT analyze 240 1439
+native_bybit_2026 LTCUSDT analyze 1440 239
+native_bybit_2026 ADAUSDT 2026-09-20T01:15:00+00:00 READY {'enabled': 564, 'disabled_cost_gate': 565}
+native_bybit_2026 AVAXUSDT 2026-09-12T18:30:00+00:00 READY {'enabled': 666, 'disabled_cost_gate': 670}
+native_bybit_2026 LTCUSDT 2026-04-10T04:00:00+00:00 READY {'enabled': 193, 'disabled_cost_gate': 194}
+native_bybit_2026 LTCUSDT 2026-05-23T08:30:00+00:00 READY {'enabled': 327, 'disabled_cost_gate': 329}
+native_bybit_2026 LTCUSDT 2026-06-26T05:45:00+00:00 READY {'enabled': 390, 'disabled_cost_gate': 394}
+native_bybit_2026 LTCUSDT 2026-07-20T12:00:00+00:00 READY {'enabled': 454, 'disabled_cost_gate': 459}
+native_bybit_2026 LTCUSDT 2026-08-01T03:00:00+00:00 READY {'enabled': 488, 'disabled_cost_gate': 493}
+native_bybit_2026 LTCUSDT 2026-08-11T21:00:00+00:00 READY {'enabled': 522, 'disabled_cost_gate': 527}
+native_bybit_2026 LTCUSDT 2026-08-21T21:30:00+00:00 READY {'enabled': 557, 'disabled_cost_gate': 562}
+native_bybit_2026 LTCUSDT 2026-09-08T02:00:00+00:00 READY {'enabled': 598, 'disabled_cost_gate': 603}
+native_bybit_2026 LTCUSDT 2026-09-21T06:45:00+00:00 READY {'enabled': 636, 'disabled_cost_gate': 641}
+native_bybit_2026 enabled independent cases 1 / 6721
+native_bybit_2026 enabled independent cases 51 / 6721
+native_bybit_2026 enabled independent cases 101 / 6721
+native_bybit_2026 enabled independent cases 151 / 6721
+native_bybit_2026 enabled independent cases 201 / 6721
+native_bybit_2026 enabled independent cases 251 / 6721
+native_bybit_2026 enabled independent cases 301 / 6721
+native_bybit_2026 enabled independent cases 351 / 6721
+native_bybit_2026 enabled independent cases 401 / 6721
+native_bybit_2026 enabled independent cases 451 / 6721
+native_bybit_2026 enabled independent cases 501 / 6721
+native_bybit_2026 enabled independent cases 551 / 6721
+native_bybit_2026 enabled independent cases 601 / 6721
+native_bybit_2026 enabled independent cases 651 / 6721
+native_bybit_2026 enabled independent cases 701 / 6721
+native_bybit_2026 enabled independent cases 751 / 6721
+native_bybit_2026 enabled independent cases 801 / 6721
+native_bybit_2026 enabled independent cases 851 / 6721
+native_bybit_2026 enabled independent cases 901 / 6721
+native_bybit_2026 enabled independent cases 951 / 6721
+native_bybit_2026 enabled independent cases 1001 / 6721
+native_bybit_2026 enabled independent cases 1051 / 6721
+native_bybit_2026 enabled independent cases 1101 / 6721
+native_bybit_2026 enabled independent cases 1151 / 6721
+native_bybit_2026 enabled independent cases 1201 / 6721
+native_bybit_2026 enabled independent cases 1251 / 6721
+native_bybit_2026 enabled independent cases 1301 / 6721
+native_bybit_2026 enabled independent cases 1351 / 6721
+native_bybit_2026 enabled independent cases 1401 / 6721
+native_bybit_2026 enabled independent cases 1451 / 6721
+native_bybit_2026 enabled independent cases 1501 / 6721
+native_bybit_2026 enabled independent cases 1551 / 6721
+native_bybit_2026 enabled independent cases 1601 / 6721
+native_bybit_2026 enabled independent cases 1651 / 6721
+native_bybit_2026 enabled independent cases 1701 / 6721
+native_bybit_2026 enabled independent cases 1751 / 6721
+native_bybit_2026 enabled independent cases 1801 / 6721
+native_bybit_2026 enabled independent cases 1851 / 6721
+native_bybit_2026 enabled independent cases 1901 / 6721
+native_bybit_2026 enabled independent cases 1951 / 6721
+native_bybit_2026 enabled independent cases 2001 / 6721
+native_bybit_2026 enabled independent cases 2051 / 6721
+native_bybit_2026 enabled independent cases 2101 / 6721
+native_bybit_2026 enabled independent cases 2151 / 6721
+native_bybit_2026 enabled independent cases 2201 / 6721
+native_bybit_2026 enabled independent cases 2251 / 6721
+native_bybit_2026 enabled independent cases 2301 / 6721
+native_bybit_2026 enabled independent cases 2351 / 6721
+native_bybit_2026 enabled independent cases 2401 / 6721
+native_bybit_2026 enabled independent cases 2451 / 6721
+native_bybit_2026 enabled independent cases 2501 / 6721
+native_bybit_2026 enabled independent cases 2551 / 6721
+native_bybit_2026 enabled independent cases 2601 / 6721
+native_bybit_2026 enabled independent cases 2651 / 6721
+native_bybit_2026 enabled independent cases 2701 / 6721
+native_bybit_2026 enabled independent cases 2751 / 6721
+native_bybit_2026 enabled independent cases 2801 / 6721
+native_bybit_2026 enabled independent cases 2851 / 6721
+native_bybit_2026 enabled independent cases 2901 / 6721
+native_bybit_2026 enabled independent cases 2951 / 6721
+native_bybit_2026 enabled independent cases 3001 / 6721
+native_bybit_2026 enabled independent cases 3051 / 6721
+native_bybit_2026 enabled independent cases 3101 / 6721
+native_bybit_2026 enabled independent cases 3151 / 6721
+native_bybit_2026 enabled independent cases 3201 / 6721
+native_bybit_2026 enabled independent cases 3251 / 6721
+native_bybit_2026 enabled independent cases 3301 / 6721
+native_bybit_2026 enabled independent cases 3351 / 6721
+native_bybit_2026 enabled independent cases 3401 / 6721
+native_bybit_2026 enabled independent cases 3451 / 6721
+native_bybit_2026 enabled independent cases 3501 / 6721
+native_bybit_2026 enabled independent cases 3551 / 6721
+native_bybit_2026 enabled independent cases 3601 / 6721
+native_bybit_2026 enabled independent cases 3651 / 6721
+native_bybit_2026 enabled independent cases 3701 / 6721
+native_bybit_2026 enabled independent cases 3751 / 6721
+native_bybit_2026 enabled independent cases 3801 / 6721
+native_bybit_2026 enabled independent cases 3851 / 6721
+native_bybit_2026 enabled independent cases 3901 / 6721
+native_bybit_2026 enabled independent cases 3951 / 6721
+native_bybit_2026 enabled independent cases 4001 / 6721
+native_bybit_2026 enabled independent cases 4051 / 6721
+native_bybit_2026 enabled independent cases 4101 / 6721
+native_bybit_2026 enabled independent cases 4151 / 6721
+native_bybit_2026 enabled independent cases 4201 / 6721
+native_bybit_2026 enabled independent cases 4251 / 6721
+native_bybit_2026 enabled independent cases 4301 / 6721
+native_bybit_2026 enabled independent cases 4351 / 6721
+native_bybit_2026 enabled independent cases 4401 / 6721
+native_bybit_2026 enabled independent cases 4451 / 6721
+native_bybit_2026 enabled independent cases 4501 / 6721
+native_bybit_2026 enabled independent cases 4551 / 6721
+native_bybit_2026 enabled independent cases 4601 / 6721
+native_bybit_2026 enabled independent cases 4651 / 6721
+native_bybit_2026 enabled independent cases 4701 / 6721
+native_bybit_2026 enabled independent cases 4751 / 6721
+native_bybit_2026 enabled independent cases 4801 / 6721
+native_bybit_2026 enabled independent cases 4851 / 6721
+native_bybit_2026 enabled independent cases 4901 / 6721
+native_bybit_2026 enabled independent cases 4951 / 6721
+native_bybit_2026 enabled independent cases 5001 / 6721
+native_bybit_2026 enabled independent cases 5051 / 6721
+native_bybit_2026 enabled independent cases 5101 / 6721
+native_bybit_2026 enabled independent cases 5151 / 6721
+native_bybit_2026 enabled independent cases 5201 / 6721
+native_bybit_2026 enabled independent cases 5251 / 6721
+native_bybit_2026 enabled independent cases 5301 / 6721
+native_bybit_2026 enabled independent cases 5351 / 6721
+native_bybit_2026 enabled independent cases 5401 / 6721
+native_bybit_2026 enabled independent cases 5451 / 6721
+native_bybit_2026 enabled independent cases 5501 / 6721
+native_bybit_2026 enabled independent cases 5551 / 6721
+native_bybit_2026 enabled independent cases 5601 / 6721
+native_bybit_2026 enabled independent cases 5651 / 6721
+native_bybit_2026 enabled independent cases 5701 / 6721
+native_bybit_2026 enabled independent cases 5751 / 6721
+native_bybit_2026 enabled independent cases 5801 / 6721
+native_bybit_2026 enabled independent cases 5851 / 6721
+native_bybit_2026 enabled independent cases 5901 / 6721
+native_bybit_2026 enabled independent cases 5951 / 6721
+native_bybit_2026 enabled independent cases 6001 / 6721
+native_bybit_2026 enabled independent cases 6051 / 6721
+native_bybit_2026 enabled independent cases 6101 / 6721
+native_bybit_2026 enabled independent cases 6151 / 6721
+native_bybit_2026 enabled independent cases 6201 / 6721
+native_bybit_2026 enabled independent cases 6251 / 6721
+native_bybit_2026 enabled independent cases 6301 / 6721
+native_bybit_2026 enabled independent cases 6351 / 6721
+native_bybit_2026 enabled independent cases 6401 / 6721
+native_bybit_2026 enabled independent cases 6451 / 6721
+native_bybit_2026 enabled independent cases 6501 / 6721
+native_bybit_2026 enabled independent cases 6551 / 6721
+native_bybit_2026 enabled independent cases 6601 / 6721
+native_bybit_2026 enabled independent cases 6651 / 6721
+native_bybit_2026 enabled independent cases 6701 / 6721
+native_bybit_2026 disabled_cost_gate independent cases 1 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 51 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 101 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 151 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 201 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 251 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 301 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 351 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 401 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 451 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 501 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 551 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 601 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 651 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 701 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 751 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 801 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 851 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 901 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 951 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1001 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1051 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1101 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1151 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1201 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1251 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1301 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1351 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1401 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1451 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1501 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1551 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1601 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1651 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1701 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1751 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1801 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1851 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1901 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 1951 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2001 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2051 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2101 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2151 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2201 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2251 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2301 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2351 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2401 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2451 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2501 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2551 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2601 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2651 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2701 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2751 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2801 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2851 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2901 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 2951 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3001 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3051 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3101 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3151 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3201 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3251 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3301 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3351 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3401 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3451 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3501 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3551 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3601 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3651 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3701 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3751 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3801 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3851 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3901 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 3951 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4001 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4051 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4101 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4151 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4201 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4251 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4301 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4351 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4401 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4451 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4501 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4551 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4601 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4651 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4701 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4751 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4801 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4851 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4901 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 4951 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5001 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5051 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5101 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5151 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5201 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5251 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5301 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5351 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5401 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5451 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5501 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5551 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5601 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5651 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5701 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5751 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5801 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5851 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5901 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 5951 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 6001 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 6051 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 6101 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 6151 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 6201 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 6251 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 6301 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 6351 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 6401 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 6451 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 6501 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 6551 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 6601 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 6651 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 6701 / 6753
+native_bybit_2026 disabled_cost_gate independent cases 6751 / 6753

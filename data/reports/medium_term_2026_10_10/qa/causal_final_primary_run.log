@@ -1,0 +1,63 @@
+bybit_2023_2025 BTCUSDT analyze 15 137758
+bybit_2023_2025 BTCUSDT analyze 60 34439
+bybit_2023_2025 BTCUSDT analyze 240 8609
+bybit_2023_2025 BTCUSDT analyze 1440 1434
+bybit_2023_2025 BTCUSDT 2022-09-22T20:15:00+00:00 READY {'enabled': 0, 'disabled_cost_gate': 0}
+bybit_2023_2025 BTCUSDT 2022-12-17T08:15:00+00:00 READY {'enabled': 0, 'disabled_cost_gate': 0}
+bybit_2023_2025 BTCUSDT 2023-01-03T00:45:00+00:00 READY {'enabled': 72, 'disabled_cost_gate': 73}
+bybit_2023_2025 BTCUSDT 2023-01-12T02:30:00+00:00 READY {'enabled': 95, 'disabled_cost_gate': 96}
+bybit_2023_2025 BTCUSDT 2023-01-21T10:45:00+00:00 READY {'enabled': 125, 'disabled_cost_gate': 126}
+bybit_2023_2025 BTCUSDT 2023-01-28T22:15:00+00:00 READY {'enabled': 164, 'disabled_cost_gate': 165}
+bybit_2023_2025 BTCUSDT 2023-02-03T03:45:00+00:00 READY {'enabled': 183, 'disabled_cost_gate': 184}
+bybit_2023_2025 BTCUSDT 2023-02-07T00:00:00+00:00 READY {'enabled': 196, 'disabled_cost_gate': 199}
+bybit_2023_2025 BTCUSDT 2023-02-10T02:30:00+00:00 READY {'enabled': 209, 'disabled_cost_gate': 211}
+bybit_2023_2025 BTCUSDT 2023-02-12T12:45:00+00:00 READY {'enabled': 215, 'disabled_cost_gate': 217}
+bybit_2023_2025 BTCUSDT 2023-02-15T05:00:00+00:00 READY {'enabled': 225, 'disabled_cost_gate': 227}
+bybit_2023_2025 BTCUSDT 2023-02-24T22:15:00+00:00 READY {'enabled': 250, 'disabled_cost_gate': 252}
+bybit_2023_2025 BTCUSDT 2023-02-26T08:15:00+00:00 READY {'enabled': 254, 'disabled_cost_gate': 256}
+bybit_2023_2025 BTCUSDT 2023-03-02T16:00:00+00:00 READY {'enabled': 265, 'disabled_cost_gate': 267}
+bybit_2023_2025 BTCUSDT 2023-03-08T16:45:00+00:00 READY {'enabled': 285, 'disabled_cost_gate': 287}
+bybit_2023_2025 BTCUSDT 2023-03-10T08:00:00+00:00 READY {'enabled': 288, 'disabled_cost_gate': 290}
+bybit_2023_2025 BTCUSDT 2023-03-11T20:30:00+00:00 READY {'enabled': 291, 'disabled_cost_gate': 293}
+bybit_2023_2025 BTCUSDT 2023-03-15T06:15:00+00:00 READY {'enabled': 297, 'disabled_cost_gate': 299}
+bybit_2023_2025 BTCUSDT 2023-03-18T11:30:00+00:00 READY {'enabled': 305, 'disabled_cost_gate': 307}
+bybit_2023_2025 BTCUSDT 2023-03-20T12:00:00+00:00 READY {'enabled': 308, 'disabled_cost_gate': 310}
+bybit_2023_2025 BTCUSDT 2023-03-23T04:00:00+00:00 READY {'enabled': 321, 'disabled_cost_gate': 323}
+bybit_2023_2025 BTCUSDT 2023-03-26T07:15:00+00:00 READY {'enabled': 330, 'disabled_cost_gate': 332}
+bybit_2023_2025 BTCUSDT 2023-03-29T07:00:00+00:00 READY {'enabled': 342, 'disabled_cost_gate': 344}
+bybit_2023_2025 BTCUSDT 2023-03-31T03:30:00+00:00 READY {'enabled': 344, 'disabled_cost_gate': 346}
+bybit_2023_2025 BTCUSDT 2023-04-03T06:00:00+00:00 READY {'enabled': 360, 'disabled_cost_gate': 362}
+bybit_2023_2025 BTCUSDT 2023-04-06T05:30:00+00:00 READY {'enabled': 373, 'disabled_cost_gate': 375}
+Traceback (most recent call last):
+  File "/workspace/-/scripts/run_medium_term_research.py", line 357, in <module>
+    main()
+  File "/workspace/-/scripts/run_medium_term_research.py", line 345, in main
+    detect(args.cohort, s, policy, lock, args.resume_existing)
+  File "/workspace/-/scripts/run_medium_term_research.py", line 176, in detect
+    engine.evaluate(now, changed)
+  File "/workspace/-/src/crypto_bot/strategy/source_medium_term.py", line 357, in evaluate
+    self._direct(htf, ltf, q, now)
+  File "/workspace/-/src/crypto_bot/strategy/source_permitted.py", line 445, in _direct
+    self._emit(path,htf,ltf,parent,local,now,pid,visit,parent.visit_started_at,
+  File "/workspace/-/src/crypto_bot/strategy/source_medium_term.py", line 138, in _emit
+    target_evidence = self._targets(direction, entry, now, range_zone)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/src/crypto_bot/strategy/source_medium_term.py", line 85, in _targets
+    'known_at': z.known_at, 'source': asdict(z)})
+                                      ^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/dataclasses.py", line 1329, in asdict
+    return _asdict_inner(obj, dict_factory)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/dataclasses.py", line 1339, in _asdict_inner
+    f.name: _asdict_inner(getattr(obj, f.name), dict)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/dataclasses.py", line 1382, in _asdict_inner
+    return type(obj)((_asdict_inner(k, dict_factory),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/dataclasses.py", line 1383, in <genexpr>
+    _asdict_inner(v, dict_factory))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/dataclasses.py", line 1332, in _asdict_inner
+    def _asdict_inner(obj, dict_factory):
+    
+KeyboardInterrupt

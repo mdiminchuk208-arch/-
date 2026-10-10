@@ -31,6 +31,7 @@ def csv_ledger(path, trades, sources=None):
     fields = ['trade_id', 'symbol', 'direction', 'status', 'source_setup', 'htf', 'ltf',
               'ready_time', 'entry_time', 'entry_interval_start', 'exit_time', 'exit_reason',
               'ready_time_yekaterinburg', 'entry_time_yekaterinburg', 'exit_time_yekaterinburg',
+              'entry_interval_start_yekaterinburg',
               'theoretical_entry', 'actual_entry_after_slippage', 'stop', 'targets', 'quantity',
               'risk_amount', 'result_R', 'gross_reference_pnl', 'fees_total', 'slippage_total',
               'net_pnl', 'holding_hours_upper_bound', 'anti_scalp_edge_cost_ratio', 'trade_entry_allowed']
@@ -49,7 +50,7 @@ def csv_ledger(path, trades, sources=None):
                        targets=json.dumps(t['targets']), trade_entry_allowed=False)
             row.update(pnl_is_final=t['status']=='CLOSED', realized_gross_after_slippage=t['gross_pnl'],
                        net_pnl_basis='CLOSED_TOTAL' if t['status']=='CLOSED' else 'OPEN_PARTIAL_CASHFLOWS_NOT_MARKED')
-            for key in ('ready_time', 'entry_time', 'exit_time'):
+            for key in ('ready_time', 'entry_time', 'exit_time', 'entry_interval_start'):
                 row[key+'_yekaterinburg'] = instant(t[key]).astimezone(LOCAL_ZONE).isoformat() if t.get(key) else None
             source = (sources or {}).get(t['signal_id'])
             if source:
@@ -121,6 +122,19 @@ def filter_effect_table(cohorts):
             before = data['arms']['disabled_cost_gate'][account]['statistics']
             after = data['arms']['enabled'][account]['statistics']
             lines.append(f"| {cohort}/{account} | {before['all_FILLED']} → {after['all_FILLED']} | {before['total_trades']} → {after['total_trades']} | {after['all_FILLED']-before['all_FILLED']:+d} | {number(before['net_pnl'])} → {number(after['net_pnl'])} |")
+    return '\n'.join(lines)
+
+
+def anti_scalp_counts_table(cohorts):
+    reasons = ('NO_HTF_CONTEXT', 'TARGET_TOO_CLOSE', 'POOR_EDGE_COST_RATIO')
+    lines = ['| Cohort / counting basis | Total | NO_HTF_CONTEXT | TARGET_TOO_CLOSE | POOR_EDGE_COST_RATIO |',
+             '|---|---:|---:|---:|---:|']
+    for cohort, data in cohorts.items():
+        gate = data['anti_scalp']
+        for basis, key in [('path/reason decisions', 'path_reason_counts'),
+                           ('unique ideas never READY / final reason', 'exclusive_final_reason_counts_never_READY')]:
+            counts = [gate[key].get('REJECTED_SCALP_'+reason, 0) for reason in reasons]
+            lines.append('| '+cohort+'/'+basis+' | '+str(sum(counts))+' | '+' | '.join(map(str, counts))+' |')
     return '\n'.join(lines)
 
 
@@ -214,6 +228,7 @@ def main():
     matplotlib.use('Agg')
     matplotlib.rcParams['svg.hashsalt'] = 'medium-term-source-2026-10-10'
     import matplotlib.pyplot as plt
+    from matplotlib.patches import Patch
     labels = ['Old cases', '2026 medium', '2023–25 medium']
     selections = [data['old_independent_cases'], data['cohorts']['native_bybit_2026']['arms']['enabled']['independent'],
                   data['cohorts']['bybit_2023_2025']['arms']['enabled']['independent']]
@@ -232,6 +247,9 @@ def main():
     axes[1].set_xticks(range(len(labels)), labels)
     axes[1].set_ylabel('Independent-case mean USDT/trade (not NAV)')
     axes[1].set_title('Gross / costs / net; different periods and budget policies')
+    axes[1].legend(handles=[Patch(color=color, label=label) for color, label in
+                            [('#4675a8', 'Gross before friction'),
+                             ('#c26c40', 'Fees + slippage (deduction)'), ('#447b50', 'Net')]])
     axes[1].axhline(0, color='black', linewidth=.7)
     fig.savefig(ANALYSIS / 'holding_and_costs.svg', metadata={'Date': None})
     fig.savefig(ANALYSIS / 'holding_and_costs.png', dpi=170)
@@ -262,12 +280,13 @@ def main():
         '\nMatched independent funnel: '+json.dumps({k:matched['manifest'][k] for k in ('READY','FILLED','CLOSED','shared_FILLED','shared_CLOSED')}, ensure_ascii=False),
         '\nПричины до READY (счётчики causal path/reason, не уникальных trades): '+json.dumps({c:{a:v['detection_funnel'] for a,v in d['arms'].items()} for c,d in data['cohorts'].items()}, ensure_ascii=False),
         '\nНезаполненные READY: '+json.dumps({c:{a:v['terminal_unfilled_statuses'] for a,v in d['arms'].items()} for c,d in data['cohorts'].items()}, ensure_ascii=False),
-        '\nAnti-Scalp rejection counters: '+json.dumps({c:v['anti_scalp'] for c,v in data['cohorts'].items()}, ensure_ascii=False),
+        '\nAnti-Scalp rejection counters:', anti_scalp_counts_table(data['cohorts']),
+        '\nПолные counters и идентификаторы cost-gate exclusions: '+json.dumps({c:v['anti_scalp'] for c,v in data['cohorts'].items()}, ensure_ascii=False),
         '\nВлияние cost gate на полный replay; Net только CLOSED:', filter_effect_table(data['cohorts']),
         '\nСопоставление старых коротких cases (gate использовал только READY evidence): '+json.dumps(overlay, ensure_ascii=False),
         'Anti-Scalp ON/OFF сравнивается полным причинным replay. Отказ раннему плохому варианту может дать позже READY другому source-valid пути той же идеи; shared occupancy и margin тоже меняют дальнейшие входы. Поэтому ON не обязан уменьшать FILLED ровно на количество отказов. Logged path reasons, unique physical ideas и unique never-READY приведены раздельно; все arms требуют среднесрочный setup/context.',
         '## G. Holding до/после',
-        'Время — верхняя граница от начала entry interval до известного exit CLOSE. Intrabar touch точнее OHLC не определяет. OPEN не включены в closed holding. Mean/median/p25/p75/p90/min/max и полный year/month/day breakdown сохранены в medium_term_statistics.json.',
+        'Время — верхняя граница от начала entry interval до известного exit CLOSE. entry_time обозначает CLOSE, на котором виртуальный fill стал наблюдаемым; точный intrabar touch OHLC не определяет. OPEN не включены в closed holding. Mean/median/p25/p75/p90/min/max и полный year/month/day breakdown сохранены в medium_term_statistics.json.',
         '\nPrimary shared frequency, включая нулевые дни: '+json.dumps({k:m[k] for k in ['all_FILLED','OPEN','trades_per_year','trades_per_month','trades_per_day','entries_per_year','entries_per_month','entries_per_day','total_trades_basis','rates_denominator']}, ensure_ascii=False),
         '### Старые independent cases', bins_table(data['old_independent_cases']['breakdowns']['holding_bins']),
         '### Matched 2026 medium independent cases', bins_table(matched['independent']['breakdowns']['holding_bins']),
@@ -291,7 +310,7 @@ def main():
         '\nPrimary shared results by actual setup TF / execution clock', group_table(primary['shared']['breakdowns']['groups']['timeframe']),
         '\nPrimary shared results by year', group_table(primary['shared']['breakdowns']['groups']['year']),
         '\nPrimary shared results by month', group_table(primary['shared']['breakdowns']['groups']['month']),
-        '\nВсе ENTERED сделки, включая OPEN: `data/reports/medium_term_2026_10_10/analysis/all_trades_*.csv`; source proofs, full journal и fills: `role_corrected_v2/{cohort}/detection` и `simulation`. LONG/SHORT, coin, setup, TF, year/month/day и все holding bins: `analysis/medium_term_statistics.json`. Audit/risk timestamps и календарные groups — UTC; человекочитаемые ready/entry/exit CSV дополнены Asia/Yekaterinburg (+05). Primary entry coverage: 2023-01-01 05:00..2025-12-06 04:30 +05.',
+        '\nВсе ENTERED сделки, включая OPEN: `data/reports/medium_term_2026_10_10/analysis/all_trades_*.csv`; source proofs, full journal и fills: `role_corrected_v2/{cohort}/detection` и `simulation`. LONG/SHORT, coin, setup, TF, year/month/day и все holding bins: `analysis/medium_term_statistics.json`. Audit/risk timestamps и календарные groups — UTC; year/month/day groups основаны на entry_interval_start. Человекочитаемые ready/entry/exit и начало entry interval в CSV дополнены Asia/Yekaterinburg (+05). Primary entry coverage: 2023-01-01 05:00..2025-12-06 04:30 +05.',
         '## J. Оставшиеся ограничения',
         'Funding/liquidation/tick intrabar path не моделируются. Cases и shared NAV нельзя складывать. Более длинный holding сам по себе не обещает edge. Старые source-valid losses, отклонённые новой horizon/cost policy, не объявляются задним числом source false positives. Сохранены QA failures и исправления: pending/main lifetime, RANGE terminal timestamp и actual H1 setup ownership. Финальные executions используют role_corrected_v2; native causal_final и primary compiled_primary сохранены как controls. READY reuse проверяет archived code 0b6bd4e, history SHA и все manifests; ускорение меняет только копирование targets и сканирование уже выбранных refinement paths.',
         'Поправки ownership по каждому signal/known_at сохранены в ownership_corrections.jsonl.gz и statistics JSON. Они уточняют момент выхода по исходному body rule и не исключают убыточные входы по будущим результатам. First50 chronological CLOSED — экспорт, не выбор лучшего поднабора; для оценки используется вся доступная история.',
