@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "candidates": 131099,
+  "annotations": 2186597,
+  "causal_prefix_cursors": 8,
+  "all_unit_prefix_hashes_counts_verified": true,
+  "all_annotation_cutoffs_validated": true,
+  "actual_visible_object_identity_queries": "PASS",
+  "no_future_no_old_labels_no_outcomes": "PASS",
+  "BACKTEST_SHADOW_view_identity": "PASS (mode is not an annotation input)",
+  "human_chart_review_claimed": false,
+  "new_qualitative_selector_added": false,
+  "trade_entry_allowed": false
+}

@@ -1,0 +1,798 @@
+Продолжай Crypto Bot на ветке:
+
+`medium-term-source-research`
+
+Текущая frozen база:
+
+Strategy v1.1 commit:
+`43e9d7addcd427650ff856dd1fa99f78ee5c06f7`
+
+Metadata recovery parent:
+`4b28c3892b51a1bb3b331dd344651c16ef7c8432`
+
+Evidence completion v3 commit:
+`abf47b3beaf6c18952f908c99fd5e1c8a4808730`
+
+Evidence completion v3 manifest SHA256:
+`2ac66c22e51ca21cfa802002a98fdc52d60c1d16c57899cfb2d3aaaf7365055e`
+
+Текущий frozen state:
+
+- RAW_PROPOSALS = 176365
+- WAIT_NO_AVAILABLE_LOWER_TF = 45266
+- QUALITATIVE_UNKNOWN = 131099
+- SOURCE_READY_EXCEPT_EXECUTION_METADATA = 0
+- SOURCE_ALLOW = 0
+- HISTORICAL_METADATA_VERIFIED = FALSE
+- SECOND_FINANCIAL_BACKTEST_RAN = FALSE
+- trade_entry_allowed = false
+
+==================================================
+MASTER OBJECTIVE
+==================================================
+
+За один непрерывный workflow пройти максимально далеко по цепочке:
+
+STAGE 1
+BLINDED SOURCE ANNOTATION
+
+→ STAGE 2
+SOURCE EVIDENCE COMPLETION v4
+
+→ STAGE 3
+HISTORICAL EXECUTION METADATA RESOLUTION
+
+→ STAGE 4
+FINAL SOURCE ALLOW ASSEMBLY
+
+→ STAGE 5
+PRE-OUTCOME FINANCIAL FREEZE
+
+→ STAGE 6
+SECOND FINANCIAL BACKTEST
+
+→ STAGE 7
+ROBUSTNESS / STABILITY ANALYSIS
+
+→ STAGE 8
+PROJECT OVERLAYS DIAGNOSTIC
+
+→ STAGE 9
+PAPER-TRADING READINESS GATE
+
+Каждый stage:
+
+- отдельный namespace;
+- отдельный QA;
+- отдельный freeze manifest;
+- отдельный commit;
+- без переписывания предыдущего stage.
+
+Если dependent gate не пройден:
+
+dependent stages STOP.
+
+Но independent stages могут продолжаться.
+
+==================================================
+GLOBAL INVARIANTS
+==================================================
+
+НЕ изменять:
+
+- ORIGINAL_STRATEGY_SPEC_v1
+- ORIGINAL_STRATEGY_SPEC_v1.1
+- U1–U6
+- N11
+- frozen executable tree
+- v2/v3 evidence freezes
+- first financial result
+- baseline C
+- Source Fidelity Audit
+
+Не добавлять M1/M5 в frozen profile.
+
+Не менять FIRST_TEST_ONLY.
+
+Не менять fixed initial stop semantics.
+
+Не менять contextual FTA semantics.
+
+Не менять WAIT semantics.
+
+Не применять outcome-based optimization.
+
+Не использовать:
+
+- old751 adverse labels
+- old446 losses
+- old NO_HTF_CONTEXT
+- fitted 68% tree
+- old winner/loser labels
+- future candles
+- P&L
+- MFE/MAE
+- holding outcome
+
+для построения SOURCE evidence.
+
+LIVE запрещён.
+
+Private exchange API запрещён.
+
+`trade_entry_allowed=false` до отдельной будущей user-authorized production stage.
+
+==================================================
+STAGE 1 — BLINDED SOURCE ANNOTATION
+==================================================
+
+Цель:
+
+разрешить qualitative evidence для 131099 UNKNOWN cases максимально source-faithful способом.
+
+Использовать только frozen blinded candidate views.
+
+Annotator не должен видеть:
+
+- future candles
+- future prices
+- trade result
+- WIN/LOSS
+- P&L
+- MFE/MAE
+- hold duration
+- baseline result
+- old engine classification
+
+Allowed answers:
+
+PASS
+FAIL
+UNKNOWN
+
+Ключевые вопросы:
+
+- market_context
+- flow_context
+- meaningful_liquidity
+- liquidity_context
+- adverse_liquidity
+- contextual_poi_relation
+- protected_endpoints
+- clear_range
+- range_deviation
+- range_reclaim_retest
+- outside_poi
+- return_choch_zone
+- trend_aligned
+- higher_poi
+- reaction_bos_new_poi
+- smooth_approach
+- selected_impulse
+- stb_raid_absorption_structure
+- breaker_confirmation
+- breaker_formation
+- poi_reaction
+- whole_impulse
+- first eligible test
+- inventory completeness
+- source confirmation
+- source entry POI relation
+
+==================================================
+ANNOTATION RULE
+==================================================
+
+Если qualitative concept нельзя определить строго по source framing и visible history:
+
+`UNKNOWN`.
+
+Не создавать:
+
+- numeric thresholds
+- scores
+- ML classifier
+- heuristic percentages
+- fitted rules
+
+только ради уменьшения UNKNOWN.
+
+==================================================
+ANNOTATION BATCHING
+==================================================
+
+131099 cases не считать одной человеческой задачей.
+
+Работать batch-wise.
+
+Сначала materialize canonical candidate views.
+
+Каждый batch:
+
+- fixed candidate IDs
+- fixed cutoff
+- fixed source citations
+- fixed visible object set
+- no outcome columns
+
+Сохранять:
+
+`ANNOTATION_LEDGER.jsonl.gz`
+
+Для каждой annotation:
+
+- candidate_id
+- question
+- answer
+- confidence category if schema permits
+- source citations
+- visible_cutoff
+- annotator provenance
+- known_at
+- reason
+- UNKNOWN reason where applicable
+
+==================================================
+STAGE 1 FREEZE
+==================================================
+
+Создать:
+
+`docs/original_v1_1_blinded_annotation_v1/`
+
+Минимум:
+
+- ANNOTATION_PROTOCOL.md
+- ANNOTATION_LEDGER.jsonl.gz
+- ANNOTATION_COUNTS.json
+- UNKNOWN_REASON_BREAKDOWN.json
+- NO_OUTCOME_LEAKAGE_QA.json
+- QA_REPORT.md
+- freeze_manifest.json
+
+Commit:
+
+`Freeze blinded source annotation v1`
+
+==================================================
+STAGE 2 — SOURCE EVIDENCE COMPLETION v4
+==================================================
+
+На основе frozen v3 + Stage1 annotations собрать новую evidence state.
+
+Не менять strategy rules.
+
+Для каждого candidate попытаться закрыть:
+
+- canonical source context
+- contextual origin
+- source confirmation
+- source entry POI
+- source stop anchor
+- FTA inventory
+- first-test state
+- liquidity role
+- protected endpoints
+- branch conflict
+- inventory completeness
+- canonical identity
+
+Statuses:
+
+- OBJECTIVE_SOURCE_FAIL
+- QUALITATIVE_FAIL
+- QUALITATIVE_UNKNOWN
+- WAIT_NO_AVAILABLE_LOWER_TF
+- OTHER_SOURCE_WAIT
+- SOURCE_READY_EXCEPT_EXECUTION_METADATA
+
+==================================================
+SOURCE_READY_EXCEPT_EXECUTION_METADATA
+==================================================
+
+Case qualifies only if EVERYTHING except historical execution metadata is complete.
+
+Must have:
+
+- unique physical identity
+- unique setup identity
+- unique source entry POI
+- unique source stop anchor
+- unique source FTA/Range exit
+- no unresolved branch conflict
+- no qualitative UNKNOWN
+- no first-test ambiguity
+- no liquidity-context ambiguity
+
+==================================================
+STAGE 2 FREEZE
+==================================================
+
+Создать:
+
+`docs/original_v1_1_evidence_completion_v4/`
+
+Сохранить:
+
+- full funnel
+- all cases
+- source-ready-except-metadata cases
+- unknown cases
+- fail cases
+- old880 recheck
+- QA
+- reproducibility
+- manifest
+
+Commit:
+
+`Freeze source evidence completion v4`
+
+==================================================
+GATE 2
+==================================================
+
+If:
+
+`SOURCE_READY_EXCEPT_EXECUTION_METADATA = 0`
+
+then:
+
+FINANCIAL stages remain blocked.
+
+Но Stage 3 metadata может продолжаться независимо.
+
+==================================================
+STAGE 3 — HISTORICAL EXECUTION METADATA RESOLUTION
+==================================================
+
+Не повторять бездумно предыдущий поиск.
+
+Использовать уже найденный provenance.
+
+Попытаться закрыть хотя бы execution-minimum fields, required for financial simulation:
+
+- tick_size
+- effective tick periods
+- qty_step
+- minimum_qty
+- contract identity
+- linear perpetual
+- base asset
+- quote asset
+
+Разделить поля:
+
+A. PRICE_EXECUTION_CRITICAL
+B. SIZE_EXECUTION_CRITICAL
+C. DESCRIPTIVE
+
+Если source financial backtest можно математически корректно провести без quantity metadata через normalized R accounting:
+
+это разрешается ТОЛЬКО как отдельный preregistered accounting mode,
+не как proof historical exchange execution.
+
+Например:
+
+`NORMALIZED_R_BACKTEST_WITHOUT_EXCHANGE_QTY_EXECUTION`
+
+может использоваться только если:
+
+- entry/SL/FTA source prices определены;
+- price tick ambiguity решена;
+- no claim of exchange-realistic sizing.
+
+==================================================
+IMPORTANT METADATA POLICY
+==================================================
+
+Не требовать лишние поля, если они не влияют на конкретный financial metric.
+
+Но каждый omitted field должен быть classified:
+
+`NOT_REQUIRED_FOR_THIS_ACCOUNTING_VIEW`
+
+а не silently assumed.
+
+Нельзя:
+- backdate current API;
+- infer from candle decimals;
+- fabricate effective dates.
+
+==================================================
+STAGE 3 OUTPUT
+==================================================
+
+Создать:
+
+`docs/original_v1_1_execution_metadata_v3/`
+
+С verdict:
+
+- VERIFIED_PRICE_EXECUTION_INTERVALS
+- VERIFIED_QTY_EXECUTION_INTERVALS
+- NORMALIZED_R_ELIGIBLE_INTERVALS
+- UNKNOWN_INTERVALS
+
+Commit:
+
+`Freeze historical execution metadata v3`
+
+==================================================
+GATE 3
+==================================================
+
+Financial stage может продолжиться, если есть:
+
+A.
+fully exchange-executable verified interval
+
+ИЛИ
+
+B.
+pre-authorized normalized-R research mode, где missing quantity metadata реально не влияет на R result.
+
+Но:
+
+если tick-rounded entry/SL/FTA нельзя причинно определить,
+financial run запрещён.
+
+==================================================
+STAGE 4 — FINAL SOURCE ALLOW ASSEMBLY
+==================================================
+
+Intersect:
+
+SOURCE_READY_EXCEPT_EXECUTION_METADATA
+
+WITH
+
+execution-eligible intervals.
+
+Создать:
+
+`FINAL_SOURCE_ALLOW_CASES`
+
+Case допускается только если:
+
+- source evidence complete
+- metadata/accounting eligibility complete
+- chronology causal
+- entry/SL/FTA deterministic
+- branch conflict resolved
+- first-test valid
+- no material UNKNOWN
+
+==================================================
+STAGE 4 FREEZE
+==================================================
+
+Создать:
+
+`docs/original_v1_1_final_source_allow_v1/`
+
+Сохранить:
+
+- FINAL_SOURCE_ALLOW_CASES.jsonl.gz
+- excluded metadata cases
+- excluded qualitative cases
+- excluded lower-TF cases
+- full inclusion/exclusion ledger
+- QA
+- manifest
+
+Commit:
+
+`Freeze final source allow cohort`
+
+==================================================
+GATE 4
+==================================================
+
+If:
+
+`FINAL_SOURCE_ALLOW_CASES = 0`
+
+STOP all finance.
+
+Return exact blockers.
+
+Do not weaken anything.
+
+==================================================
+STAGE 5 — PRE-OUTCOME FINANCIAL FREEZE
+==================================================
+
+Only after final source cohort freeze.
+
+Create:
+
+`ORIGINAL_V1_1_SECOND_FINANCIAL_BACKTEST_PROTOCOL.md`
+
+and:
+
+`original_v1_1_second_financial_backtest_preregistration.json`
+
+Freeze:
+
+- exact case IDs
+- dataset hashes
+- dates
+- symbols
+- TF
+- entry
+- stop
+- FTA
+- Range exit
+- fill semantics
+- same-bar ambiguity
+- gaps
+- fees
+- slippage
+- funding
+- normalized-R or exchange-size accounting mode
+- initial equity
+- risk convention
+- EOF policy
+- metrics
+
+Commit before P&L:
+
+`PRE_OUTCOME_SECOND_FINANCIAL_BACKTEST`
+
+==================================================
+STAGE 6 — SECOND FINANCIAL BACKTEST
+==================================================
+
+Run only frozen FINAL_SOURCE_ALLOW_CASES.
+
+No reclassification after outcome.
+
+Primary metrics:
+
+- cases
+- orders
+- filled
+- closed
+- open/censored
+- intrabar unresolved
+- WIN
+- LOSS
+- WR
+- Gross
+- Fees
+- Slippage
+- Funding
+- Net
+- PF
+- Expectancy
+- AvgR
+- medianR
+- AvgWin
+- AvgLoss
+- payoff ratio
+- breakeven WR
+- MaxDD
+- max loss streak
+- mean hold
+- median hold
+
+Breakdowns:
+
+- BTC/ETH
+- LONG/SHORT
+- branch
+- setup TF
+- year
+- month
+
+==================================================
+EXECUTION CHRONOLOGY
+==================================================
+
+No arbitrary:
+
+- SL-first
+- TP-first
+- optimistic
+- pessimistic
+
+If same-bar order unknowable:
+
+`WAIT_INTRABAR_ORDER`
+
+Primary result excludes unresolved chronology unless preregistered conservative event model already existed before outcome.
+
+==================================================
+STAGE 6 RESULT FREEZE
+==================================================
+
+Create:
+
+`ORIGINAL_V1_1_SECOND_FINANCIAL_BACKTEST_REPORT.md`
+
+and result namespace.
+
+Commit:
+
+`SECOND_FINANCIAL_RESULT`
+
+No modifications after result.
+
+==================================================
+STAGE 7 — ROBUSTNESS / STABILITY
+==================================================
+
+Only if financial result exists.
+
+Do NOT optimize.
+
+Analyze frozen result across:
+
+- yearly segments
+- rolling windows
+- BTC vs ETH
+- LONG vs SHORT
+- branch
+- TF
+- volatility regimes if regime classification is causal and outcome-independent
+- hold-duration bins
+- cost sensitivity using preregistered symmetric diagnostics
+
+Do NOT select best subgroup and call it strategy.
+
+Report:
+
+- stability
+- concentration
+- dependency
+- sample size
+- confidence limitations
+
+==================================================
+ROBUSTNESS GATE
+==================================================
+
+No claim of robust edge unless:
+
+- enough CLOSED sample
+- PF > 1 net
+- expectancy > 0 net
+- drawdown acceptable
+- performance not concentrated in one tiny subgroup/time segment
+- multiple periods show consistency
+
+Do not invent thresholds post hoc.
+
+If no preregistered acceptance thresholds exist:
+report descriptive robustness only.
+
+==================================================
+STAGE 8 — PROJECT OVERLAYS
+==================================================
+
+Only after Original result frozen.
+
+Test separately:
+
+A. Original source strategy
+
+B. Original + Anti-Scalp
+
+C. Original + project risk
+
+D. Original + 40/30/30 + cost BE
+
+E. Original + full project admission/risk/position management
+
+Each variant must be labelled:
+
+`PROJECT_OVERLAY`
+
+Never rewrite ORIGINAL result.
+
+Compare matched entries where possible.
+
+==================================================
+STAGE 9 — PAPER TRADING READINESS
+==================================================
+
+Do not start paper trading automatically.
+
+Only produce readiness verdict.
+
+Required project policy remains:
+
+- minimum 200 CLOSED virtual trades
+- minimum 30 calendar days
+- acceptable:
+  - WinRate
+  - Net P&L
+  - PF
+  - Expectancy
+  - Avg R:R
+  - MaxDD
+  - loss streak
+  - breakdown by setup/coin/LONG/SHORT
+
+If not ready:
+
+`PAPER_TRADING_READY = FALSE`
+
+If conditions appear satisfied:
+
+still do NOT start paper trading without explicit user command.
+
+==================================================
+GLOBAL QA
+==================================================
+
+Every stage must verify:
+
+- v1 hash
+- v1.1 hash
+- v2 hash
+- v3 hash
+- metadata recovery hash
+- first financial result hash
+- baseline/audit invariance
+- dataset hashes
+- completed candles
+- known_at
+- no-lookahead
+- prefix identity
+- future mutation
+- canonical IDs
+- no outcome leakage
+- BACKTEST/SHADOW parity
+- deterministic replay
+- resume reproducibility
+
+No LIVE/private API.
+
+`trade_entry_allowed=false`.
+
+==================================================
+MASTER FINAL RESPONSE
+==================================================
+
+At completion, return one compact stage table:
+
+STAGE
+STATUS
+COMMIT
+MANIFEST SHA
+KEY COUNTS
+NEXT GATE
+
+Then return:
+
+- latest source-ready count
+- final SOURCE_ALLOW count
+- whether second finance ran
+- WR/PF/Net/Expectancy/AvgR/MaxDD if finance ran
+- robustness verdict if available
+- project-overlay status
+- PAPER_TRADING_READY
+- exact STOP reason if pipeline stopped
+- all key artifact paths
+
+==================================================
+FINAL SAFETY STOP
+==================================================
+
+No LIVE trading.
+
+No production order authorization.
+
+No exchange secrets.
+
+No strategy mutation after outcome.
+
+No third-party/private APIs.
+
+No optimization disguised as evidence completion.
+
+`trade_entry_allowed=false`
+
+until explicit future user authorization.
