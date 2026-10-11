@@ -1,0 +1,17 @@
+{
+  "cutoff": 1719792000,
+  "symbols": {
+    "BTCUSDT": {
+      "prefix_cases": 210,
+      "prefix_SHADOW_identity": "PASS",
+      "future_suffix_10x_mutation": "PASS"
+    },
+    "ETHUSDT": {
+      "prefix_cases": 216,
+      "prefix_SHADOW_identity": "PASS",
+      "future_suffix_10x_mutation": "PASS"
+    }
+  },
+  "status": "PASS",
+  "trade_entry_allowed": false
+}

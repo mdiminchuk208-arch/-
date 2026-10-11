@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "tests": 930,
+  "deterministic_replay_outputs": 8,
+  "replay_sha256": {
+    "FROZEN_CASES.jsonl.gz": "2aba8d689a8071ce008df7e42e9937c0c3607ae4e188659a72cc836684fe7c59",
+    "EXCLUDED_VERSION_CASES.jsonl.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "DATASET_VERIFICATION.json": "9a13a5ecc3fc5edbdc0403dd2e64375a1afa5d40396a8eaaebf5dea199ba2fa3",
+    "COHORT_FUNNEL.json": "6d0b3a69802fec058b994415e6982407d47941db5bf275c14e305781ff32945a",
+    "BACKTEST_PROTOCOL.md": "89311572ef916560611b53e759971b03c5ab94819be4171c703a5f0debab4d92",
+    "EXECUTION_ASSUMPTIONS.md": "7e6967cadfa5dd261c73d1ff23fc54084f5f011c68cd8fd1152c508dea001399",
+    "COST_MODEL.md": "20319e15ae5e32cfc8320e03f9aac904d6002c9be09f7a7241d7034795c8382f",
+    "PREREGISTRATION.json": "0e796cb15014d4dbccc80ca1640b1cf443d20bbe7ea5de844b8eb0113df49776"
+  },
+  "code_sha256": {
+    "scripts/run_machine_strategy_research.py": "fbefa8805c0cb3d18602d34bb44093c7a231d2691cf0f8b04cc942a78d90ddab",
+    "scripts/machine_strategy_v2_execution.py": "1be53a60536719d936494e48aeb344ed326ef914b0b3a2a5d92f9de2e3c36e89",
+    "tests/test_machine_strategy_v2_execution.py": "eab7cde5a075534d254c4d53c49a1f3283edc5e2cafcada42b602193e9fb5236"
+  },
+  "qa_log_sha256": {
+    "full_unittest": "6935109f2986289b49b08dad14154847bcf02a21a8bf80992fee7fb4c8480d7b",
+    "ruff": "d63ab3df51a50c66f9c57056288c7d4faf9dce413552d89215714320ac2b748e",
+    "compile": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mypy": "1495598f2b8e6a09df4f1631545361d6c6e3e3204e506255935ef84876641cc6",
+    "frozen_parent_resume": "38d9339ec8b8252ff3963972b8c62bae4a04e7f0b194b002f0afb600c58566d7"
+  },
+  "original_invariance": "PASS",
+  "trade_entry_allowed": false
+}
