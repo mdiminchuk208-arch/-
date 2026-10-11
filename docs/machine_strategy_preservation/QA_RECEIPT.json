@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "tests": 939,
+  "deterministic_replay_outputs": 2,
+  "replay_sha256": {
+    "PRESERVATION_REPORT.json": "b820867802fcfc423d0195005f9d84943118bf82f28fafbef33b3fd40ca29109",
+    "PRESERVATION_REPORT.md": "efece2f5f80184cc148b87652c130205583150c35c1cdade02e79986b0ef336b"
+  },
+  "code_sha256": {
+    "scripts/build_machine_strategy_workflow_report.py": "1dbf8740d642bbb7b2eea9de6ee93025947f1e7a65a6bcb6824e5657f86b02a2"
+  },
+  "qa_log_sha256": {
+    "full_unittest": "3b433f671736c23b701e1f7b712a21e3bd15ed909645f3c26a279995c7d2cd9d",
+    "ruff": "d63ab3df51a50c66f9c57056288c7d4faf9dce413552d89215714320ac2b748e",
+    "compile": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mypy": "1495598f2b8e6a09df4f1631545361d6c6e3e3204e506255935ef84876641cc6",
+    "frozen_parent_resume": "38d9339ec8b8252ff3963972b8c62bae4a04e7f0b194b002f0afb600c58566d7"
+  },
+  "original_invariance": "PASS",
+  "trade_entry_allowed": false
+}

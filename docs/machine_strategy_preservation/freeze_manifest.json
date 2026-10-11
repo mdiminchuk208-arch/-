@@ -1,0 +1,25 @@
+{
+  "stage": "preservation",
+  "version": "ALL_FROZEN_VERSIONS",
+  "status": "PRESERVED",
+  "parents": {
+    "docs/machine_strategy_v2_design/freeze_manifest.json": "89f0e38f773a7644a7e544c36c70983b06d454cba3062c737cb407a1fa820875"
+  },
+  "artifacts": {
+    "docs/machine_strategy_preservation/PRESERVATION_REPORT.json": "b820867802fcfc423d0195005f9d84943118bf82f28fafbef33b3fd40ca29109",
+    "docs/machine_strategy_preservation/PRESERVATION_REPORT.md": "efece2f5f80184cc148b87652c130205583150c35c1cdade02e79986b0ef336b",
+    "docs/machine_strategy_preservation/QA_RECEIPT.json": "089cecb3bf87c7ce3c83502fb722170d8c8b5389a083820d4d5e3527eea5e829",
+    "docs/machine_strategy_preservation/QA_REPORT.md": "76bca18e425f30b43c4b80dea51379ba5456cc819fc7665f472d080f11dc59c0",
+    "docs/machine_strategy_preservation/qa/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/machine_strategy_preservation/qa/frozen_parent_resume.log": "38d9339ec8b8252ff3963972b8c62bae4a04e7f0b194b002f0afb600c58566d7",
+    "docs/machine_strategy_preservation/qa/full_unittest.log": "3b433f671736c23b701e1f7b712a21e3bd15ed909645f3c26a279995c7d2cd9d",
+    "docs/machine_strategy_preservation/qa/mypy.log": "1495598f2b8e6a09df4f1631545361d6c6e3e3204e506255935ef84876641cc6",
+    "docs/machine_strategy_preservation/qa/ruff.log": "d63ab3df51a50c66f9c57056288c7d4faf9dce413552d89215714320ac2b748e",
+    "scripts/build_machine_strategy_workflow_report.py": "1dbf8740d642bbb7b2eea9de6ee93025947f1e7a65a6bcb6824e5657f86b02a2"
+  },
+  "QA_tests": 939,
+  "outcomes_computed": false,
+  "trade_entry_allowed": false,
+  "LIVE_enabled": false,
+  "historical_exchange_execution_claimed": false
+}
