@@ -1,0 +1,19 @@
+# Evidence adapter v2 QA
+
+PASS: 753 tests (683 inherited + 70 new); zero failed/skipped. compileall, changed-code ruff and mypy src pass. This is verification of evidence/provenance/causality, not a claim that historical metadata or qualitative evidence is complete.
+
+All frozen strategy/spec files match their SHA256 manifests: v1 55 artifacts, v1.1 55 artifacts. First result matches all 27 frozen artifacts and its original result-manifest SHA256. First preregistration and all 15 pre-outcome dependencies match frozen hashes, including reused read-only price loading and RAW enumeration. Source Fidelity Audit/baseline archived Git control passes: all 17851 archived audit/baseline blobs, including 17728 baseline records, remain unchanged. Native/D1 dataset audit equality passes; no history/source file was rewritten.
+
+Full objective replay matches byte-for-byte SHA256 for all 26 generated outputs, including deterministic gzip archives. RAW cohort is byte-equivalent to the original 176365 proposals. Actual-history prefix identity passes on each of the eight series. Synthetic future suffix mutation, endpoint/annotation future availability, replay/canonical identity and first-test idempotence tests pass. Derived source objects enforce max founding/annotation known time; annotation visible window cannot exceed its claimed known_at.
+
+Checked 825551 causal object records and 364480 completed candles. All object IDs recompute from immutable causal defining content. Every annotation candidate's four-TF view cutoff is <= its decision_at. ANNOTATION_NO_OUTCOME_LEAKAGE=PASS for all 131099 candidate references, object/candle archives and materializer contract tests. Shared archives are never annotator views; the materializer excludes the future prefix explicitly. Materialize individual candidates lazily.
+
+Capability matrix: 336 field rows; all cited rule IDs are immutable SOURCE_RULE records. U1–U6/N11 remain separate resolutions, no PROJECT_POLICY or numeric normalization was promoted into SOURCE_RULE. Conditional assembly of all six active branch schemas passes frozen evaluate in BACKTEST/SHADOW synthetic evidence-only cases. These fixtures are not historical labels or trades. The existing synthetic finance/accounting unit tests remain part of the explicitly required inherited suite; no historical financial accounting was executed in this task.
+
+Metadata effective-date tests pass: half-open intervals, unknown/unproven periods, current snapshot backdating and overlapping proofs handled. Historical verdict remains UNKNOWN for both symbols throughout the requested period; no tick/quantity filter was invented from decimal prices, current examples or synthetic fixtures. Current public Bybit request was blocked with CONNECT403; pinned official documentation sample was retrieved but rejected as historical interval proof. Domain additions are saved in a configuration draft, not applied to runtime.
+
+Old880 recheck uses only an outcome-free roster and explicit id/time/direction/native-TF projection. No old entry/SL/FTA/owner/adverse labels or trading outcomes become evidence. Counts: inactive branch 102; objective SOURCE fail 0; evidence complete 0; qualitative required 3; remaining UNKNOWN 775. All 778 active old cases retain unproven metadata WAIT. No old financial ratios were calculated.
+
+No second financial run, no profitability, no parameter optimization, no old-label classifier, no LIVE/private API, no production integration. trade_entry_allowed=false throughout. EVIDENCE_COMPLETE=0 and SOURCE_DECISION_READY=0. READY_FOR_SECOND_FINANCIAL_BACKTEST=FALSE.
+
+Detailed receipt: QA_RECEIPT.json. Commands/logs: qa/. Full paths and hashes are sealed in freeze_manifest.json. Freeze belongs on medium-term-source-research; main is untouched. STOP after commit/push.

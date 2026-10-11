@@ -1,0 +1,64 @@
+{
+  "version": "1",
+  "scope": [
+    1672531200,
+    1764977401
+  ],
+  "intervals": "[effective_from,effective_to)",
+  "verdict": "UNKNOWN_ALL_REQUESTED_PERIODS",
+  "records": [
+    {
+      "symbol": "BTCUSDT",
+      "effective_from": 1672531200,
+      "effective_to": 1764977401,
+      "values": null,
+      "verification_status": "UNKNOWN",
+      "provenance": {
+        "repository_search": "No historical effective-dated instrument snapshot found",
+        "archive_search": "Immutable project copies/client/models and synthetic fixtures do not prove filters",
+        "authoritative_attempt": "GET https://api.bybit.com/v5/market/instruments-info?category=linear&symbol=BTCUSDT",
+        "attempt_result": "CONNECT tunnel 403; exit 56; no API response received",
+        "official_document": "docs/original_v1_1_evidence_adapter_v2/provenance/bybit_official_instrument.mdx",
+        "source_sha256": "413cd16af6097248140024f99eea563c9c1eb980335d0218cf45b908b4b354a4",
+        "official_document_commit": "59e3d457dea6b419a14987c19a3aabf4ffb38238",
+        "fetched_date_UTC": "2026-10-11",
+        "known_semantics": "Fetch date is not historical effective/known time",
+        "rejected_as_period_proof": "Current docs response example lacks applicable effective interval; launchTime is not filter effective_from",
+        "effective_period_proof": false,
+        "historical_known_at": null,
+        "authoritative": true
+      }
+    },
+    {
+      "symbol": "ETHUSDT",
+      "effective_from": 1672531200,
+      "effective_to": 1764977401,
+      "values": null,
+      "verification_status": "UNKNOWN",
+      "provenance": {
+        "repository_search": "No historical effective-dated instrument snapshot found",
+        "archive_search": "Immutable project copies/client/models and synthetic fixtures do not prove filters",
+        "authoritative_attempt": "GET https://api.bybit.com/v5/market/instruments-info?category=linear&symbol=BTCUSDT",
+        "attempt_result": "CONNECT tunnel 403; exit 56; no API response received",
+        "official_document": "docs/original_v1_1_evidence_adapter_v2/provenance/bybit_official_instrument.mdx",
+        "source_sha256": "413cd16af6097248140024f99eea563c9c1eb980335d0218cf45b908b4b354a4",
+        "official_document_commit": "59e3d457dea6b419a14987c19a3aabf4ffb38238",
+        "fetched_date_UTC": "2026-10-11",
+        "known_semantics": "Fetch date is not historical effective/known time",
+        "rejected_as_period_proof": "Current docs response example lacks applicable effective interval; launchTime is not filter effective_from",
+        "effective_period_proof": false,
+        "historical_known_at": null,
+        "authoritative": true
+      }
+    }
+  ],
+  "not_inferred_from": [
+    "today filters",
+    "OHLC decimal digits",
+    "GCD of candle prices",
+    "synthetic tick .1",
+    "launch timestamp"
+  ],
+  "next_required_evidence": "Dated authoritative snapshots + change log/unchanged-period proof covering each admitted interval; public access alone is insufficient",
+  "trade_entry_allowed": false
+}

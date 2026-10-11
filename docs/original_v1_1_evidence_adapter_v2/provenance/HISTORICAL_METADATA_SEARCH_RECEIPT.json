@@ -1,0 +1,28 @@
+{
+  "priority": [
+    "existing_repository",
+    "immutable_project_archives",
+    "authoritative_public_history",
+    "unchanged_period_proof"
+  ],
+  "repository_searches": [
+    "rg metadata field names in src/scripts/tests/data/history/data/source_materials",
+    "rg JSON/JSONL/CSV/MD for tickSize/qtyStep/priceFilter/lotSizeFilter in data/docs",
+    "tracked instrument/metadata filenames and public Bybit-client Git history"
+  ],
+  "found": [
+    "src/crypto_bot/data/bybit.py current public endpoint/parser",
+    "src/crypto_bot/data/models.py optional model filters",
+    "tests/test_bybit_data.py synthetic fixture",
+    "ready_root_cause metadata.json with engine diagnostic counters",
+    "archived project copies of client/models",
+    "official Bybit docs current API schema/sample"
+  ],
+  "historical_effective_dated_snapshot_found": false,
+  "current_or_synthetic_values_backdated": false,
+  "authoritative_public_API_result": "blocked CONNECT403",
+  "official_docs_sample_proves_effective_period": false,
+  "unknown_intervals": "Entire requested period for both symbols; no proven interval selectively withheld",
+  "limits": "No authoritative change log or historical snapshot was reachable/supplied; negative search is scoped to saved repository/materials, not a claim that no archive exists elsewhere",
+  "trade_entry_allowed": false
+}

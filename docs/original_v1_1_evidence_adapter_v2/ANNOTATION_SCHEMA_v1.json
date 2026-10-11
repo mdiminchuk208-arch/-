@@ -1,0 +1,134 @@
+{
+  "version": "1",
+  "concepts": {
+    "market_context": [
+      "S_STRUCTURE"
+    ],
+    "liquidity_context": [
+      "S_LIQUIDITY_CONTEXT"
+    ],
+    "ob_formation": [
+      "S_OB_FORMATION"
+    ],
+    "higher_poi": [
+      "S_OB_FORMATION"
+    ],
+    "trend_aligned": [
+      "S_OB_TREND",
+      "S_STB_FORMATION"
+    ],
+    "smooth_approach": [
+      "S_OB_APPROACH"
+    ],
+    "reaction_bos_new_poi": [
+      "S_OB_CONS_TRIGGER"
+    ],
+    "breaker_formation": [
+      "S_BREAKER_FORMATION"
+    ],
+    "flow_context": [
+      "S_FLOW"
+    ],
+    "poi_reaction": [
+      "S_POI"
+    ],
+    "stb_raid_absorption_structure": [
+      "S_STB_FORMATION"
+    ],
+    "pd_context": [
+      "S_PD"
+    ],
+    "clear_range": [
+      "S_RANGE_FORMATION"
+    ],
+    "range_deviation": [
+      "S_RANGE_DEVIATION"
+    ],
+    "outside_poi": [
+      "S_RANGE_AGGRESSIVE"
+    ],
+    "range_reclaim_retest": [
+      "S_RANGE_CONSERVATIVE"
+    ],
+    "return_choch_zone": [
+      "S_RANGE_CONSERVATIVE"
+    ],
+    "ltf_bos_source_entry": [
+      "S_SFP_REFINE"
+    ],
+    "breaker_confirmation": [
+      "S_BREAKER_FORMATION"
+    ],
+    "sl_off_liquidity": [
+      "S_SL_OFF_POOL"
+    ],
+    "meaningful_liquidity": [
+      "S_LIQUIDITY_CONTEXT"
+    ],
+    "adverse_liquidity": [
+      "S_ADVERSE_BLOCK",
+      "S_ADVERSE_WAIT"
+    ],
+    "whole_impulse": [
+      "S_BREAKER_FORMATION"
+    ],
+    "reasonable_tilt": [
+      "S_EQ_STRUCTURE"
+    ],
+    "protected_endpoints": [
+      "S_STRUCTURE",
+      "S_BOS"
+    ],
+    "contextual_poi_relation": [
+      "S_POI",
+      "S_FTA"
+    ],
+    "selected_impulse": [
+      "S_OTE",
+      "S_PD"
+    ],
+    "selected_range": [
+      "S_RANGE_FORMATION",
+      "S_PD"
+    ],
+    "zone_first_test": [
+      "S_OB_FIRST_TEST"
+    ],
+    "inventory_completeness": [
+      "S_FTA",
+      "S_POOL_SCOPE"
+    ],
+    "source_stop_anchor": [
+      "S_PLAN"
+    ],
+    "branch_confirmation": [
+      "S_BOS",
+      "S_CONF"
+    ]
+  },
+  "states": [
+    "PASS",
+    "FAIL",
+    "UNKNOWN"
+  ],
+  "required": [
+    "concept",
+    "state",
+    "object_ids",
+    "source_rule_ids",
+    "decision_at",
+    "known_at",
+    "completed_at",
+    "allowed_window",
+    "annotator_id",
+    "rationale",
+    "provenance"
+  ],
+  "provenance_required": [
+    "blinded_pack_sha256"
+  ],
+  "disagreement": "UNKNOWN, no majority-vote machine truth",
+  "qualitative_state_is_not_geometry_validation": "PASS does not manufacture an entry POI, protected endpoint, source OB or complete inventory",
+  "validator": "scripts/original_v1_1_evidence_adapter_v2.py:validate_annotation",
+  "trade_entry_allowed": false
+}

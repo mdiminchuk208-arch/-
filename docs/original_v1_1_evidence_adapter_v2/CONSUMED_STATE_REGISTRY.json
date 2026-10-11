@@ -1,0 +1,16 @@
+{
+  "rule": "FIRST_TEST_ONLY",
+  "historical_source_valid_eligible_tests": 0,
+  "entries": [],
+  "absence_does_not_attest_unused_zones": true,
+  "producer": "ConsumedRegistry.test",
+  "unordered_touch": "UNKNOWN",
+  "old_zone_reuse": "CONSUMED once explicit first eligible test exists",
+  "new_identity_requires": [
+    "new formation",
+    "new confirmation",
+    "new POI"
+  ],
+  "cooldown_or_retry_limit": null,
+  "trade_entry_allowed": false
+}

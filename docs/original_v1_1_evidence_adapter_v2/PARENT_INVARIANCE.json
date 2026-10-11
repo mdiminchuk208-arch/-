@@ -1,0 +1,14 @@
+{
+  "docs/original_strategy_spec_v1_1/freeze_manifest.json": {
+    "sha256": "dca962ff1f829887d0787a6329112e77f4ce714023bee85f666ed37843f2ecbb",
+    "verified_artifacts": 55
+  },
+  "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result_manifest.json": {
+    "sha256": "68d2e80fd295154526df9998ad34f36f45cfdcb1c62b886519abe1de97bc51e5",
+    "verified_artifacts": 27
+  },
+  "docs/original_strategy_spec_v1/freeze_manifest.json": {
+    "sha256": "db8bdb8d800a48c75ec3884a1da1cece7f47da4db8cc561d12e46c8d0f168aec",
+    "verified_artifacts": 55
+  }
+}

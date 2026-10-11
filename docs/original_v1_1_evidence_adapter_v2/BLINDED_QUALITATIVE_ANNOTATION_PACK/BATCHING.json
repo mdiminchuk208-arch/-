@@ -1,0 +1,17 @@
+{
+  "exact_candidates": 131099,
+  "batch_size": 100,
+  "batches": 1311,
+  "last_batch_size": 99,
+  "ordering": "formation_at,symbol,setup_tf,original frozen RAW stream order",
+  "scope": "100 is annotation transport batch size, NOT strategy rule",
+  "materializer": "scripts/materialize_original_v1_1_annotation_pack.py",
+  "annotation_states": [
+    "PASS",
+    "FAIL",
+    "UNKNOWN"
+  ],
+  "historical_annotations_supplied": 0,
+  "view": "complete available known-prefix; no fixed trading lookback",
+  "trade_entry_allowed": false
+}

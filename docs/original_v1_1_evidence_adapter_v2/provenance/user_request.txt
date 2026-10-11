@@ -1,0 +1,790 @@
+Продолжай Crypto Bot с текущего состояния после первого frozen financial run.
+
+Текущая ветка:
+
+`medium-term-source-research`
+
+Frozen strategy commit:
+
+`43e9d7addcd427650ff856dd1fa99f78ee5c06f7`
+
+Первый financial preregistration:
+
+`008b80d97cf008e14af94d4271c12188257a926f`
+
+Первый frozen result:
+
+`a49c40eda1191354ce936994455119c79010baf7`
+
+Freeze manifest ORIGINAL v1.1:
+
+`dca962ff1f829887d0787a6329112e77f4ce714023bee85f666ed37843f2ecbb`
+
+==================================================
+ГЛАВНАЯ ЦЕЛЬ
+==================================================
+
+Создать и заморозить:
+
+`SOURCE_FAITHFUL_HISTORICAL_EVIDENCE_ADAPTER_v2`
+
+который способен причинно заполнить frozen evidence schema для:
+
+`ORIGINAL_STRATEGY_EXECUTABLE_PROFILE_v1`
+
+на исторических данных BTCUSDT / ETHUSDT.
+
+ЭТО НЕ BACKTEST ЭТАП.
+
+На этом этапе:
+
+- НЕ считать profitability;
+- НЕ считать P&L;
+- НЕ считать WinRate;
+- НЕ запускать второй financial backtest;
+- НЕ оптимизировать;
+- НЕ менять стратегию.
+
+==================================================
+КРИТИЧЕСКИЕ ИНВАРИАНТЫ
+==================================================
+
+НЕ изменять:
+
+- ORIGINAL_STRATEGY_SPEC_v1;
+- ORIGINAL_STRATEGY_SPEC_v1.1;
+- U1–U6;
+- N11 conventions;
+- frozen executable decision tree;
+- frozen first financial result;
+- baseline C;
+- Source Fidelity Audit.
+
+`trade_entry_allowed=false`.
+
+LIVE/private API запрещены.
+
+Никаких production integrations.
+
+==================================================
+1. ЗАФИКСИРОВАТЬ ПРАВИЛЬНЫЙ ВЫВОД ПЕРВОГО RUN
+==================================================
+
+Первый run:
+
+RAW proposals = 176365
+EVIDENCE COMPLETE = 0
+SOURCE PASS = 0
+WAIT = 176365
+ALLOW = 0
+FILLED = 0
+CLOSED = 0
+
+Это НЕ financial result стратегии.
+
+Это результат отсутствующего evidence layer.
+
+Текущий adapter намеренно подавал:
+
+- `instrument_metadata=None`;
+- `facts={}`;
+- `liquidity=[]`;
+- `entry_poi=None`;
+- `stop_anchor=None`;
+- `identity_evidence={}`.
+
+Следовательно:
+
+не использовать первый run как доказательство отсутствия edge.
+
+==================================================
+2. СОЗДАТЬ EVIDENCE CAPABILITY MATRIX
+==================================================
+
+Прочитать полностью:
+
+`docs/original_strategy_spec_v1_1/executable_evidence_schema.md`
+
+и executable profile/tree/contracts.
+
+Для КАЖДОГО required evidence field создать:
+
+`EVIDENCE_CAPABILITY_MATRIX.csv`
+
+Категории:
+
+A. `DETERMINISTIC_FROM_OHLC`
+
+B. `DETERMINISTIC_FROM_EXCHANGE_METADATA`
+
+C. `DERIVABLE_FROM_EXPLICIT_SOURCE_GEOMETRY`
+
+D. `QUALITATIVE_REQUIRES_ANNOTATION`
+
+E. `NOT_RECONSTRUCTABLE`
+
+Колонки:
+
+- evidence_field
+- required_by_branch
+- category
+- source_rule_ids
+- input_data
+- causal_known_at
+- exact_producer
+- automatic_possible
+- ambiguity
+- WAIT reason if missing
+- notes
+
+==================================================
+3. ИСПРАВИТЬ UNIVERSAL INSTRUMENT METADATA BLOCKER
+==================================================
+
+Первый blocker:
+
+`WAIT_UNRESOLVED_INSTRUMENT_METADATA = 176365`
+
+Это нужно закрыть ПЕРВЫМ.
+
+Восстановить historical/effective-dated metadata Bybit для:
+
+BTCUSDT
+ETHUSDT
+
+Минимум:
+
+- tick_size;
+- price_precision;
+- qty_step;
+- quantity_precision;
+- minimum_qty;
+- contract type;
+- linear perpetual identity;
+- quote/base asset;
+- effective_from;
+- effective_to.
+
+Приоритет:
+
+1. уже сохранённая metadata в repo;
+2. immutable archived project evidence;
+3. authoritative historical Bybit public metadata;
+4. доказательство неизменности параметра за весь relevant period.
+
+НЕЛЬЗЯ:
+
+просто взять сегодняшнее значение и объявить его историческим.
+
+Создать:
+
+`HISTORICAL_INSTRUMENT_METADATA_v1.json`
+
+Для каждой записи:
+
+- symbol
+- effective_from
+- effective_to
+- values
+- provenance
+- source hash
+- fetched/known semantics
+- verification status.
+
+Если часть истории не доказана:
+
+UNKNOWN только для этого периода.
+
+==================================================
+4. НЕ СЧИТАТЬ 176365 RAW PROPOSALS НАСТОЯЩИМИ SETUPS
+==================================================
+
+Текущий raw proposal universe — широкий geometric prefilter.
+
+Теперь построить objective evidence pipeline.
+
+Последовательно реализовать только source-supported deterministic predicates.
+
+Минимум:
+
+### Structure
+- completed bars;
+- strict three-bar swing;
+- HH / HL / LH / LL where causally identifiable;
+- BOS body close;
+- CONF where exact source definition allows.
+
+### Liquidity geometry
+- structural swing pools;
+- internal/external pools where endpoints known;
+- previous levels only when causal data available;
+- exact sweep/raid facts.
+
+Не объявлять meaningful/adverse автоматически только из наличия pool.
+
+### SFP
+- structural/range level;
+- raid;
+- reclaim body CLOSE;
+- next OPEN semantics;
+- pattern TF;
+- causal completion.
+
+### OB
+- source candle;
+- liquidity raid fact;
+- following impulse/engulf evidence where objectively identifiable;
+- BOS;
+- HTF/context relationship only where source evidence can actually establish it;
+- first-test/consumed status.
+
+### Breaker
+- only from prior source-valid OB candidate;
+- source-defined break relationship;
+- causal whole-impulse evidence only if actually identifiable.
+
+### FVG/IMB
+- exact wick-gap geometry;
+- equilibrium 0.5.
+
+### OTE
+- only when source-valid impulse endpoints already exist;
+- 0.705–0.79.
+
+### Premium/Discount
+- only when source-valid dealing range is already identified.
+
+### Range
+- candidate boundaries;
+- deviation;
+- reclaim;
+- return/retest;
+- but `range clarity` remains qualitative unless source gives exact algorithm.
+
+### STB/BTS
+- raid;
+- manipulation geometry;
+- engulf;
+- BOS/CONF where exact.
+
+### ATR
+- frozen N11_ATR_SMA14;
+- completed bars only;
+- no future information.
+
+==================================================
+5. НИКАКИХ СТАРЫХ MACHINE LABELS КАК TRUTH
+==================================================
+
+Запрещено импортировать как source evidence:
+
+- old751 adverse liquidity labels;
+- 446 losses;
+- old NO_HTF_CONTEXT;
+- H1/H4 owner;
+- old macro context;
+- old FTA labels;
+- old range tolerance;
+- old significance filters;
+- old branch owner;
+- fitted 68% tree;
+- WIN/LOSS;
+- MFE/MAE;
+- P&L.
+
+Можно использовать старый engine только ПОСЛЕ freeze как diagnostic comparison.
+
+==================================================
+6. QUALITATIVE EVIDENCE
+==================================================
+
+Следующие concepts НЕ превращать самовольно в numeric thresholds:
+
+- meaningful liquidity;
+- adverse liquidity contextual significance;
+- smooth structural approach;
+- whole impulse;
+- range clarity;
+- reasonable tilted EQH/EQL;
+- protected structural endpoints;
+- некоторые contextual POI relations;
+- branch confirmation, если source geometry не полностью однозначна.
+
+Создать:
+
+`QUALITATIVE_EVIDENCE_ANNOTATION_PROTOCOL_v1.md`
+
+Для каждого concept определить:
+
+- что именно должен видеть annotator;
+- source citations;
+- PASS definition;
+- FAIL definition;
+- UNKNOWN definition;
+- allowed historical window;
+- decision_at;
+- known_at;
+- запрещённые future bars;
+- forbidden outcome information;
+- disagreement policy;
+- provenance format.
+
+Никаких hidden thresholds.
+
+==================================================
+7. BLINDED ANNOTATION
+==================================================
+
+Не размечать сразу 176365 raw proposals.
+
+Сначала максимально сузить universe objective rules.
+
+После deterministic filtering создать:
+
+`BLINDED_QUALITATIVE_ANNOTATION_PACK`
+
+Для каждого remaining candidate показывать только информацию, известную на decision time:
+
+- candles до decision_at;
+- необходимые D1/H4/H1/M15 context bars;
+- structural objects;
+- POI candidates;
+- liquidity objects;
+- source rules;
+- candidate direction/branch.
+
+Строго НЕ показывать:
+
+- future candles;
+- будущий SL/TP outcome;
+- WIN/LOSS;
+- P&L;
+- MFE;
+- MAE;
+- holding time;
+- baseline result;
+- old tree prediction.
+
+Добавить автоматический QA:
+
+`ANNOTATION_NO_OUTCOME_LEAKAGE=PASS`
+
+==================================================
+8. ADVERSE LIQUIDITY
+==================================================
+
+Frozen states:
+
+- `ADVERSE`
+- `TARGET_OR_FUEL`
+- `NEUTRAL`
+- `UNKNOWN`
+
+Для `ADVERSE` должны существовать causal evidence:
+
+- exact liquidity object ID;
+- timeframe;
+- location relative to entry/setup;
+- setup direction;
+- order-flow/structure relation;
+- applicable source rule;
+- evidence known_at.
+
+Если classification неоднозначна:
+
+`UNKNOWN`
+
+Не удалять сделки.
+
+`ADVERSE -> WAIT_SWEEP`
+
+После causal sweep:
+
+полностью revalidate setup.
+
+Никакого automatic entry after sweep.
+
+==================================================
+9. CANONICAL CAUSAL IDS
+==================================================
+
+Полностью реализовать frozen N11_IDENTITY.
+
+Stable IDs минимум:
+
+- swing_id;
+- structure_id;
+- impulse_id;
+- liquidity_pool_id;
+- POI_id;
+- OB_id;
+- breaker_id;
+- SFP_id;
+- STB_id;
+- range_id;
+- FVG_id;
+- formation_id;
+- confirmation_id;
+- refined_POI_id;
+- contextual_origin_id;
+- physical_idea_id;
+- setup_id.
+
+Properties:
+
+- deterministic;
+- stable under replay;
+- prefix-safe;
+- future mutation cannot change already-known object identity;
+- no branch-name duplication of same physical idea.
+
+==================================================
+10. FIRST TEST / CONSUMED ZONE
+==================================================
+
+Реализовать causal consumed-state registry.
+
+Frozen executable rule:
+
+`FIRST_TEST_ONLY`
+
+Для POI/OB:
+
+- first valid test identifiable causally;
+- after consumed, old zone cannot create same setup again;
+- future new formation + new confirmation + new POI = NEW setup identity.
+
+Не использовать:
+- arbitrary cooldown;
+- random 90%;
+- max retry count.
+
+==================================================
+11. ENTRY POI EVIDENCE
+==================================================
+
+Evidence layer должен уметь causal заполнить:
+
+`entry_poi`
+
+для active frozen branches:
+
+### OB_CONSERVATIVE
+reaction
+→ M15 BOS
+→ new source-valid POI.
+
+### SFP
+completed pattern
+→ M15 BOS
+→ source-valid entry POI.
+
+### BREAKER
+source-valid confirmed breaker POI.
+
+### STB_BTS
+source-valid STB/BTS geometry + midpoint.
+
+### RANGE
+conservative reclaim/return/retest POI.
+
+Если POI не unique:
+
+WAIT.
+
+==================================================
+12. STOP EVIDENCE
+==================================================
+
+Заполнить:
+
+`stop_anchor`
+
+согласно frozen U2/N11.
+
+OB:
+source extreme.
+
+Breaker:
+raid/impulse extreme.
+
+SFP:
+pattern extreme + ATR SMA14.
+
+STB:
+manipulation/raid extreme.
+
+Range:
+deviation/invalidation extreme.
+
+Если anchor nonunique:
+
+`WAIT_UNRESOLVED_STOP_GEOMETRY`.
+
+Никакого outcome-dependent выбора stop.
+
+==================================================
+13. FTA INVENTORY
+==================================================
+
+Построить causal:
+
+`CONTEXTUAL_FTA_INVENTORY`
+
+из всех уже известных source-valid opposing POI в frozen TF universe:
+
+M15
+H1
+H4
+D1
+
+Для каждого FTA candidate:
+
+- POI ID;
+- TF;
+- price zone;
+- direction relation;
+- known_at;
+- source type;
+- validity;
+- consumed state.
+
+Target selection по frozen N11_TARGET:
+
+nearest known opposing contextual POI по направлению trade.
+
+Никаких future POI.
+
+Не ограничивать только H4/D1.
+
+==================================================
+14. TIMEFRAME RULES
+==================================================
+
+Использовать frozen universe:
+
+M15
+H1
+H4
+D1
+
+Не создавать universal ladder.
+
+D1:
+global context.
+
+H4:
+higher/local structure/context.
+
+H1:
+primary medium-term setup analysis.
+
+M15:
+refinement/confirmation/trigger.
+
+Для M15 SFP/OB, если frozen branch требует strictly-lower refinement:
+
+`WAIT_NO_AVAILABLE_LOWER_TF`
+
+Не считать source rejection.
+
+==================================================
+15. OBJECTIVE EVIDENCE RUN — БЕЗ ДЕНЕГ
+==================================================
+
+После создания adapter v2 прогнать ТОТ ЖЕ dataset:
+
+BTCUSDT
+ETHUSDT
+
+2023-01-01 00:00
+→
+2025-12-05 23:30 UTC
+
+M15/H1/H4/D1.
+
+НЕ считать execution P&L.
+
+НЕ запускать financial accounting.
+
+Показать funnel:
+
+RAW PROPOSALS
+→ OBJECTIVE GEOMETRY PASS
+→ OBJECTIVE SOURCE FAIL
+→ QUALITATIVE ANNOTATION REQUIRED
+→ EVIDENCE COMPLETE
+→ SOURCE DECISION READY
+→ REMAINING UNKNOWN
+
+Также breakdown:
+
+- symbol;
+- direction;
+- TF;
+- branch;
+- year;
+- evidence gap.
+
+==================================================
+16. СОХРАНИТЬ РАЗНИЦУ МЕЖДУ FAIL И UNKNOWN
+==================================================
+
+Категории должны быть строго разными:
+
+`OBJECTIVE_FAIL`
+= доказанное нарушение frozen/source rule.
+
+`QUALITATIVE_REQUIRED`
+= автоматическая система не имеет права решить.
+
+`UNKNOWN`
+= evidence недостаточно.
+
+`EVIDENCE_COMPLETE`
+= все требуемые evidence fields доступны.
+
+Никогда не превращать UNKNOWN в FAIL.
+
+==================================================
+17. OLD 880 RE-EVALUATION
+==================================================
+
+Перепроверить старые 880 baseline cases через adapter v2.
+
+Outcome columns не использовать.
+
+Вернуть:
+
+- inactive profile branch REJECT;
+- objective source fail;
+- evidence complete;
+- qualitative required;
+- remaining WAIT.
+
+Проверить специально:
+
+`WAIT_UNRESOLVED_INSTRUMENT_METADATA`
+
+должен исчезнуть там, где metadata доказана.
+
+НЕ рассчитывать P&L этих cases.
+
+==================================================
+18. MANUAL/ANNOTATION SCALE
+==================================================
+
+Если после objective filtering остаётся большой qualitative set:
+
+НЕ выдумывать автоматический classifier.
+
+Вместо этого:
+
+1. посчитать exact count;
+2. сформировать blinded annotation dataset;
+3. определить reasonable batching;
+4. создать tooling/schema для дальнейшей разметки;
+5. остановиться.
+
+Если evidence может быть полностью восстановлена causal geometry без subjective labels — доказать это отдельно для каждого field.
+
+==================================================
+19. QA
+==================================================
+
+Обязательно:
+
+- all existing 683+ tests;
+- frozen strategy hashes unchanged;
+- first financial result unchanged;
+- dataset hashes unchanged;
+- completed candles only;
+- no-lookahead;
+- known_at;
+- prefix consistency;
+- future mutation;
+- deterministic replay;
+- canonical ID stability;
+- BACKTEST/SHADOW evidence parity;
+- annotation outcome leakage test;
+- no old labels imported;
+- instrument metadata effective-date verification;
+- no financial outcome computation;
+- `trade_entry_allowed=false`;
+- no LIVE/private API.
+
+==================================================
+20. FREEZE ADAPTER V2
+==================================================
+
+После полного PASS создать immutable namespace:
+
+`docs/original_v1_1_evidence_adapter_v2/`
+
+Минимум:
+
+- `EVIDENCE_ADAPTER_V2_SPEC.md`
+- `EVIDENCE_CAPABILITY_MATRIX.csv`
+- `HISTORICAL_INSTRUMENT_METADATA_v1.json`
+- `OBJECTIVE_SOURCE_DETECTORS.md`
+- `QUALITATIVE_EVIDENCE_ANNOTATION_PROTOCOL_v1.md`
+- `CANONICAL_ID_CONTRACT.md`
+- `EVIDENCE_FUNNEL.json`
+- `OLD880_EVIDENCE_RECHECK.csv`
+- `REMAINING_EVIDENCE_GAPS.md`
+- `QA_REPORT.md`
+- `REPRODUCIBILITY.md`
+- `freeze_manifest.json`
+
+Сохранить adapter code и tests.
+
+Сделать отдельный commit:
+
+`PRE_FINANCIAL_EVIDENCE_FREEZE`
+
+и push в:
+
+`medium-term-source-research`
+
+==================================================
+21. FINAL RESPONSE
+==================================================
+
+Вернуть:
+
+1. commit hash;
+2. freeze manifest SHA256;
+3. historical metadata verdict;
+4. RAW proposal count;
+5. objective PASS count;
+6. objective FAIL count;
+7. qualitative-required count;
+8. evidence-complete count;
+9. remaining UNKNOWN count;
+10. top missing evidence fields;
+11. breakdown по branch/TF;
+12. old880 statuses;
+13. QA count/results;
+14. artifact paths.
+
+Также ответить прямо:
+
+`READY_FOR_SECOND_FINANCIAL_BACKTEST = TRUE/FALSE`
+
+TRUE только если evidence-complete source cases реально существуют и financial run может быть выполнен без изменения frozen strategy/evidence rules.
+
+==================================================
+STOP
+==================================================
+
+НЕ запускать второй financial backtest.
+
+НЕ считать новый WinRate.
+
+НЕ считать P&L.
+
+НЕ менять стратегию.
+
+После freeze adapter v2 ОСТАНОВИТЬСЯ.
+
+Следующий financial run разрешается только отдельной командой пользователя.

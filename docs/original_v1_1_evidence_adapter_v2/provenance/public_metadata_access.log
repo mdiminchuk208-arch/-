@@ -1,0 +1,6 @@
+2026-10-11 UTC
+GET https://api.bybit.com/v5/market/instruments-info?category=linear&symbol=BTCUSDT
+curl exit 56: CONNECT tunnel failed, response 403
+Official API schema/sample fetched via allowed raw.githubusercontent.com, pinned commit 59e3d457dea6b419a14987c19a3aabf4ffb38238.
+Sample is not historical effective-date proof.
+Network draft saved: api.bybit.com, announcements.bybit.com, bybit-exchange.github.io; requires review/save/publish, not applied to current runtime.
