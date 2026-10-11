@@ -1,0 +1,10 @@
+{
+  "scope": [
+    1672531200,
+    1764977401
+  ],
+  "interval_convention": "[effective_from,effective_to)",
+  "records": [],
+  "verified_intervals": 0,
+  "trade_entry_allowed": false
+}

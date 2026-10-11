@@ -1,0 +1,9 @@
+# Metadata evidence resolution
+
+The two targeted official public pages returned HTTP 200; structured literal bodies are unchanged from the immutable recovery collection. ETHUSDT announcement states 0.05 -> 0.01 with body effectiveness Jan 17 2023 08:00 UTC, publication Jan 6 and title Jan 6. BTCUSDT announcement states 0.5 -> 0.1 with body effectiveness Feb 10 2023 08:00 UTC, publication Feb 7 and title Feb 8. Keep these dates separate; scheduling differences are not by themselves proof of an erroneous notice.
+
+Reassessment removes unnecessary quantity constraints for dimensionless normalized R. The remaining barrier is exact historical price-filter epoch/version proof, not absent qty_step/minimum_qty. No contemporaneous production response, immutable original notice version or bounded implemented tick interval was recovered. The current page body is available to this research in 2026; no historical known_at is invented. USDT perpetual labels in announcements describe the mentioned contracts but do not prove every execution filter throughout the scoring interval. No inference from absence of other search hits or candle representation.
+
+VERIFIED_PRICE_EXECUTION_INTERVALS=0; VERIFIED_QTY_EXECUTION_INTERVALS=0; NORMALIZED_R_ELIGIBLE_INTERVALS=0; both full-symbol scoring intervals UNKNOWN. Source Gate 2 independently has zero source-ready cases. This is an evidence STOP, not a profitability conclusion or a proof of a maximum number of source-valid trades.
+
+Further progress needs exact causally blinded source attestations with canonical IDs and primary citations, and historical exact-contract tick/filter version proof. These would get new annotation/evidence/metadata versions; current freezes stay immutable. No financial result, robustness or overlay result is created. PAPER_TRADING_READY=false and paper does not start. trade_entry_allowed=false.

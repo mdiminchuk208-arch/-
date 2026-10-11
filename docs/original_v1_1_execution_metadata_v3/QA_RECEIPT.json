@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "tests": 887,
+  "deterministic_replay_outputs": 11,
+  "replay_sha256": {
+    "EXECUTION_FIELD_REQUIREMENTS.json": "c7ee7227210b79b5366f8913e8e638e4b7fafde8bec6c80ed2b05c71871221f5",
+    "PRIMARY_METADATA_SOURCE_REVIEW.json": "71e73606c42cd002652bccacb630ad7dc00553883a1f68ef5b8b2ddc85c4cf51",
+    "VERIFIED_PRICE_EXECUTION_INTERVALS.json": "f19e2f77dea696e6420f2a246c1735c45415e5d6c96e63f0d143b0ab9b8243e7",
+    "VERIFIED_QTY_EXECUTION_INTERVALS.json": "f19e2f77dea696e6420f2a246c1735c45415e5d6c96e63f0d143b0ab9b8243e7",
+    "NORMALIZED_R_ELIGIBLE_INTERVALS.json": "f19e2f77dea696e6420f2a246c1735c45415e5d6c96e63f0d143b0ab9b8243e7",
+    "UNKNOWN_INTERVALS.json": "0c9de2d376243f85ad60d70217de68e2f34da454b1812421c9ba0e8abd3be68c",
+    "METADATA_GATE_STATUS.json": "2aea2b57d1ca19f91043a1bf982367aeebbbe24397a70b1a026cefdc7e32a07a",
+    "MASTER_STAGE_GATE_REPORT.json": "69be03a986c2ce8fc37fc126943f6352d6bba1e85b0ed6252ec38a6b34bfa24e",
+    "PARENT_INVARIANCE.json": "c3b1f6f878fa1b66447b94f8708c7433ef0b45a668e3a65ceb71e29b9a7afe61",
+    "provenance/ETHUSDT_official_notice.text.txt": "7c7499498f767e5c58178a017987518979e588d9f98c7c4a398d21842ca74bcf",
+    "provenance/BTCUSDT_official_notice.text.txt": "b827508fd126ac8410c603e2476e0e3e8840b80028cb34985068c8fc055ff501"
+  },
+  "frozen_v1_v1_1_v2_v3_recovery_first_result_dataset": "PASS",
+  "baseline_source_audit_archive_invariance": "PASS",
+  "code_sha256": {
+    "scripts/original_v1_1_execution_metadata_v3.py": "59f69c9a60922c8c8b4d53715f58126fafadddc547f02051d7d01b64ba354266",
+    "tests/test_original_v1_1_execution_metadata_v3.py": "b12bb05cac0926131efc7544159de240157f03c254ec7e0f3a3c2deaa351f8be"
+  },
+  "qa_log_sha256": {
+    "full_unittest": "6cde4c7bf5d86e91dfccdfceb2ded527098fc4de9e8b227c9d6bff5ac54baffa",
+    "ruff": "d63ab3df51a50c66f9c57056288c7d4faf9dce413552d89215714320ac2b748e",
+    "compile": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mypy": "1495598f2b8e6a09df4f1631545361d6c6e3e3204e506255935ef84876641cc6",
+    "frozen_parent_resume": "38d9339ec8b8252ff3963972b8c62bae4a04e7f0b194b002f0afb600c58566d7"
+  },
+  "SECOND_FINANCIAL_BACKTEST_RAN": false,
+  "trade_entry_allowed": false
+}

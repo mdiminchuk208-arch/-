@@ -1,0 +1,39 @@
+{
+  "requests": [
+    {
+      "symbol": "ETHUSDT",
+      "url": "https://announcements.bybit.com/en/article/changes-to-tick-size-for-ethusdt-eth-perp-perpetual-contracts-2023-01-06--bltb4b6d3ffa3c5206c/",
+      "source_selection": "PINNED_OFFICIAL_NOTICE_FROM_EXISTING_PROVENANCE",
+      "method": "PUBLIC_GET_READ_ONLY",
+      "http_status": "200",
+      "exit_code": 0,
+      "error": "",
+      "retrieved_at_UTC": "2026-10-11T11:05:38.743104+00:00",
+      "body_file": "docs/original_v1_1_execution_metadata_v3/provenance/ETHUSDT_official_notice.html",
+      "body_sha256": "d2908f041b04a84510b5f712441da3ea13edb1724a38e9e24b59b8125fbaebef",
+      "headers_file": "docs/original_v1_1_execution_metadata_v3/provenance/ETHUSDT_official_notice.headers",
+      "headers_sha256": "fb88cdecc81ca28f471cffb1ba84b3826e8ff6b35a6b504f80004c5fe3da82be",
+      "exchange_secrets_sent": false,
+      "private_API": false
+    },
+    {
+      "symbol": "BTCUSDT",
+      "url": "https://announcements.bybit.com/en/article/changes-to-tick-size-for-usdt-usdc-perpetual-contracts-2023-02-08--blt80c14139bdd327bc/",
+      "source_selection": "PINNED_OFFICIAL_NOTICE_FROM_EXISTING_PROVENANCE",
+      "method": "PUBLIC_GET_READ_ONLY",
+      "http_status": "200",
+      "exit_code": 0,
+      "error": "",
+      "retrieved_at_UTC": "2026-10-11T11:05:39.837388+00:00",
+      "body_file": "docs/original_v1_1_execution_metadata_v3/provenance/BTCUSDT_official_notice.html",
+      "body_sha256": "32392821ab32106c23008933fc103d114d78e9ae76744345a1312b9c3099b181",
+      "headers_file": "docs/original_v1_1_execution_metadata_v3/provenance/BTCUSDT_official_notice.headers",
+      "headers_sha256": "ea47f6a11d7027bf3eda0da16394f6bbf1bad9965d0fe574e16cb826fa2c6c67",
+      "exchange_secrets_sent": false,
+      "private_API": false
+    }
+  ],
+  "broad_metadata_search_repeated": false,
+  "proxy_and_TLS_preserved": true,
+  "third_party_API_called": false
+}

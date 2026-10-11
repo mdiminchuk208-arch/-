@@ -1,0 +1,13 @@
+{
+  "VERIFIED_PRICE_EXECUTION_INTERVALS": 0,
+  "VERIFIED_QTY_EXECUTION_INTERVALS": 0,
+  "NORMALIZED_R_ELIGIBLE_INTERVALS": 0,
+  "UNKNOWN_SYMBOL_INTERVALS": 2,
+  "HISTORICAL_METADATA_VERIFIED": false,
+  "GATE_3": "STOP_NO_CAUSALLY_VERIFIED_PRICE_TICK_INTERVAL",
+  "normalized_R_mode_authorized_for_future_preregistration": true,
+  "accounting_mode_preregistered": false,
+  "exchange_realistic_sizing_claim": false,
+  "SECOND_FINANCIAL_BACKTEST_RAN": false,
+  "trade_entry_allowed": false
+}

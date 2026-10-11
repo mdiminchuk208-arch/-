@@ -1,0 +1,9 @@
+{
+  "v3_manifest_sha256": "2ac66c22e51ca21cfa802002a98fdc52d60c1d16c57899cfb2d3aaaf7365055e",
+  "v1_v1_1_v2_v3_recovery_first_result_dataset_hashes": "PASS",
+  "evidence_v4": {
+    "manifest": "docs/original_v1_1_evidence_completion_v4/freeze_manifest.json",
+    "sha256": "ab55a6f99cc6acdd3cc55be23b21f14e8d9fe7768896dc8b521478dca4acde6b",
+    "artifacts": 24
+  }
+}

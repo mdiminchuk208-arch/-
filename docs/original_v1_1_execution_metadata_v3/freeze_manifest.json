@@ -1,0 +1,42 @@
+{
+  "name": "HISTORICAL_EXECUTION_METADATA_v3",
+  "status": "STOP_NO_CAUSALLY_VERIFIED_PRICE_TICK_INTERVAL",
+  "parent": {
+    "evidence_v4_manifest_sha256": "ab55a6f99cc6acdd3cc55be23b21f14e8d9fe7768896dc8b521478dca4acde6b",
+    "recovery_manifest_sha256": "a8df076d0f84ee566cee1c662480ec1e0d1a9406354974917f96e591fb3b35d6"
+  },
+  "artifacts": {
+    "docs/original_v1_1_execution_metadata_v3/EXECUTION_FIELD_REQUIREMENTS.json": "c7ee7227210b79b5366f8913e8e638e4b7fafde8bec6c80ed2b05c71871221f5",
+    "docs/original_v1_1_execution_metadata_v3/EXECUTION_METADATA_PROTOCOL.md": "12dff8e64b6f94e1624c40d2d962b81c97ebe62a782a435ee1d5680694b25477",
+    "docs/original_v1_1_execution_metadata_v3/MASTER_STAGE_GATE_REPORT.json": "69be03a986c2ce8fc37fc126943f6352d6bba1e85b0ed6252ec38a6b34bfa24e",
+    "docs/original_v1_1_execution_metadata_v3/METADATA_EVIDENCE_REPORT.md": "d66ffe62644b55d9483da087cbd809b7883cbbdf07d30847545d637ff7e87e94",
+    "docs/original_v1_1_execution_metadata_v3/METADATA_GATE_STATUS.json": "2aea2b57d1ca19f91043a1bf982367aeebbbe24397a70b1a026cefdc7e32a07a",
+    "docs/original_v1_1_execution_metadata_v3/NORMALIZED_R_ELIGIBLE_INTERVALS.json": "f19e2f77dea696e6420f2a246c1735c45415e5d6c96e63f0d143b0ab9b8243e7",
+    "docs/original_v1_1_execution_metadata_v3/PARENT_INVARIANCE.json": "c3b1f6f878fa1b66447b94f8708c7433ef0b45a668e3a65ceb71e29b9a7afe61",
+    "docs/original_v1_1_execution_metadata_v3/PRIMARY_METADATA_SOURCE_REVIEW.json": "71e73606c42cd002652bccacb630ad7dc00553883a1f68ef5b8b2ddc85c4cf51",
+    "docs/original_v1_1_execution_metadata_v3/QA_RECEIPT.json": "ba0bc9d9bb40d2b7ed06e623a01b5d75731177c4288b91090a12f70fcb32269b",
+    "docs/original_v1_1_execution_metadata_v3/QA_REPORT.md": "4f1c8e89e8e9bcfc6316b2e2d6f08090d0058c1694bb53b8cf07b1c652923143",
+    "docs/original_v1_1_execution_metadata_v3/REPRODUCIBILITY.md": "3a705e136b9b6e0ad6d2393678f361d664be721436c100caaef026945373adb6",
+    "docs/original_v1_1_execution_metadata_v3/UNKNOWN_INTERVALS.json": "0c9de2d376243f85ad60d70217de68e2f34da454b1812421c9ba0e8abd3be68c",
+    "docs/original_v1_1_execution_metadata_v3/VERIFIED_PRICE_EXECUTION_INTERVALS.json": "f19e2f77dea696e6420f2a246c1735c45415e5d6c96e63f0d143b0ab9b8243e7",
+    "docs/original_v1_1_execution_metadata_v3/VERIFIED_QTY_EXECUTION_INTERVALS.json": "f19e2f77dea696e6420f2a246c1735c45415e5d6c96e63f0d143b0ab9b8243e7",
+    "docs/original_v1_1_execution_metadata_v3/provenance/BTCUSDT_official_notice.headers": "ea47f6a11d7027bf3eda0da16394f6bbf1bad9965d0fe574e16cb826fa2c6c67",
+    "docs/original_v1_1_execution_metadata_v3/provenance/BTCUSDT_official_notice.html": "32392821ab32106c23008933fc103d114d78e9ae76744345a1312b9c3099b181",
+    "docs/original_v1_1_execution_metadata_v3/provenance/BTCUSDT_official_notice.text.txt": "b827508fd126ac8410c603e2476e0e3e8840b80028cb34985068c8fc055ff501",
+    "docs/original_v1_1_execution_metadata_v3/provenance/ETHUSDT_official_notice.headers": "fb88cdecc81ca28f471cffb1ba84b3826e8ff6b35a6b504f80004c5fe3da82be",
+    "docs/original_v1_1_execution_metadata_v3/provenance/ETHUSDT_official_notice.html": "d2908f041b04a84510b5f712441da3ea13edb1724a38e9e24b59b8125fbaebef",
+    "docs/original_v1_1_execution_metadata_v3/provenance/ETHUSDT_official_notice.text.txt": "7c7499498f767e5c58178a017987518979e588d9f98c7c4a398d21842ca74bcf",
+    "docs/original_v1_1_execution_metadata_v3/provenance/TARGETED_RETRIEVAL_RECEIPT.json": "cf0fbe3b291cccdc2073a5d4336902c7de31dcd587fe47d07fb2eff98e5fbb20",
+    "docs/original_v1_1_execution_metadata_v3/qa/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/original_v1_1_execution_metadata_v3/qa/frozen_parent_resume.log": "38d9339ec8b8252ff3963972b8c62bae4a04e7f0b194b002f0afb600c58566d7",
+    "docs/original_v1_1_execution_metadata_v3/qa/full_unittest.log": "6cde4c7bf5d86e91dfccdfceb2ded527098fc4de9e8b227c9d6bff5ac54baffa",
+    "docs/original_v1_1_execution_metadata_v3/qa/mypy.log": "1495598f2b8e6a09df4f1631545361d6c6e3e3204e506255935ef84876641cc6",
+    "docs/original_v1_1_execution_metadata_v3/qa/ruff.log": "d63ab3df51a50c66f9c57056288c7d4faf9dce413552d89215714320ac2b748e",
+    "scripts/original_v1_1_execution_metadata_v3.py": "59f69c9a60922c8c8b4d53715f58126fafadddc547f02051d7d01b64ba354266",
+    "tests/test_original_v1_1_execution_metadata_v3.py": "b12bb05cac0926131efc7544159de240157f03c254ec7e0f3a3c2deaa351f8be"
+  },
+  "QA": "PASS",
+  "QA_tests": 887,
+  "SECOND_FINANCIAL_BACKTEST_RAN": false,
+  "trade_entry_allowed": false
+}

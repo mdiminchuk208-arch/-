@@ -1,0 +1,68 @@
+{
+  "accounting_mode": "NORMALIZED_R_BACKTEST_WITHOUT_EXCHANGE_QTY_EXECUTION",
+  "status": "ELIGIBILITY_CONTRACT_ONLY_NOT_FINANCIAL_PREREGISTRATION",
+  "fields": {
+    "tick_size": {
+      "classification": "PRICE_EXECUTION_CRITICAL",
+      "normalized_R": "REQUIRED",
+      "exchange_execution": "REQUIRED"
+    },
+    "effective_tick_periods": {
+      "classification": "PRICE_EXECUTION_CRITICAL",
+      "normalized_R": "REQUIRED",
+      "exchange_execution": "REQUIRED"
+    },
+    "contract_identity": {
+      "classification": "PRICE_EXECUTION_CRITICAL",
+      "normalized_R": "REQUIRED",
+      "exchange_execution": "REQUIRED"
+    },
+    "contract_type": {
+      "classification": "PRICE_EXECUTION_CRITICAL",
+      "normalized_R": "REQUIRED",
+      "exchange_execution": "REQUIRED"
+    },
+    "linear_perpetual": {
+      "classification": "PRICE_EXECUTION_CRITICAL",
+      "normalized_R": "REQUIRED",
+      "exchange_execution": "REQUIRED"
+    },
+    "qty_step": {
+      "classification": "SIZE_EXECUTION_CRITICAL",
+      "normalized_R": "NOT_REQUIRED_FOR_THIS_ACCOUNTING_VIEW",
+      "exchange_execution": "REQUIRED"
+    },
+    "minimum_qty": {
+      "classification": "SIZE_EXECUTION_CRITICAL",
+      "normalized_R": "NOT_REQUIRED_FOR_THIS_ACCOUNTING_VIEW",
+      "exchange_execution": "REQUIRED"
+    },
+    "quantity_precision": {
+      "classification": "SIZE_EXECUTION_CRITICAL",
+      "normalized_R": "NOT_REQUIRED_FOR_THIS_ACCOUNTING_VIEW",
+      "exchange_execution": "REQUIRED"
+    },
+    "base_asset": {
+      "classification": "DESCRIPTIVE",
+      "normalized_R": "NOT_REQUIRED_FOR_THIS_ACCOUNTING_VIEW",
+      "exchange_execution": "REQUIRED_BY_UNCHANGED_FROZEN_ADAPTER"
+    },
+    "quote_asset": {
+      "classification": "DESCRIPTIVE",
+      "normalized_R": "NOT_REQUIRED_FOR_THIS_ACCOUNTING_VIEW",
+      "exchange_execution": "REQUIRED_BY_UNCHANGED_FROZEN_ADAPTER"
+    },
+    "price_precision": {
+      "classification": "DESCRIPTIVE",
+      "normalized_R": "NOT_REQUIRED_FOR_THIS_ACCOUNTING_VIEW",
+      "exchange_execution": "REQUIRED_BY_UNCHANGED_FROZEN_ADAPTER"
+    }
+  },
+  "quantity_omission_proof": "For an explicitly linear contract, gross price PnL=q*direction*(exit-entry) and initial price risk=q*abs(entry-stop). With proportional fees and proportional price slippage, every monetary term and denominator scales with q>0, so q cancels in R. This does not prove an executable exchange lot, actual monetary account PnL, fee tier or funding cost. No fixed monetary charges may be silently omitted.",
+  "price_tick_requirement": "Entry/stop/FTA source prices and historical tick rounding must be deterministic. No candle-decimal inference, dummy tick, current-API backdating or fabricated effective periods.",
+  "descriptive_omission_limits": "Exact symbol/contract identity and linearity remain REQUIRED. Base/quote names do not affect dimensionless R; no currency-valued PnL claim. Separate display price_precision is redundant only when an exact verified Decimal tick defines the price lattice. No quantity values are imputed.",
+  "source_price_requirement": "Stage 4 source-complete entry, fixed stop and contextual FTA/Range prices, branch/first-test/chronology proof required for each case; interval eligibility alone never admits a case.",
+  "funding_and_costs": "Not calculated here. A Stage 5 preregistration must specify proportional cost/funding conventions and unknown-cost treatment before any financial outcome.",
+  "frozen_metadata_adapter_modified": false,
+  "trade_entry_allowed": false
+}

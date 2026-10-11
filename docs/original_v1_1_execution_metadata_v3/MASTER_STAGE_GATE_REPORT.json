@@ -1,0 +1,105 @@
+{
+  "stages": [
+    {
+      "stage": 1,
+      "status": "FROZEN_QUALITATIVE_UNKNOWN",
+      "commit": "601f4330c9321fcebe000f63dbafef349b4eb4c9",
+      "manifest_sha256": "8f2a7e150802ba6a066592cd9052f82dba1711ec18e45de10eac80b0de8a9ce1",
+      "candidates": 131099,
+      "annotations": 2186597,
+      "next_gate": "SOURCE_COMPLETION_REQUIRED"
+    },
+    {
+      "stage": 2,
+      "status": "STOP_NO_SOURCE_READY_CASES",
+      "commit": "3d4aa7e6bda90974538bdf66b9d1d703e1aad605",
+      "manifest_sha256": "ab55a6f99cc6acdd3cc55be23b21f14e8d9fe7768896dc8b521478dca4acde6b",
+      "RAW_PROPOSALS": 176365,
+      "QUALITATIVE_UNKNOWN": 131099,
+      "WAIT_NO_AVAILABLE_LOWER_TF": 45266,
+      "SOURCE_READY_EXCEPT_EXECUTION_METADATA": 0,
+      "next_gate": "SOURCE_READY_GT_0"
+    },
+    {
+      "stage": 3,
+      "status": "STOP_NO_CAUSALLY_VERIFIED_PRICE_TICK_INTERVAL",
+      "commit": null,
+      "commit_resolution": "Containing git commit of this namespace freeze_manifest.json",
+      "manifest_sha256": null,
+      "manifest_resolution": "SHA256 of this namespace freeze_manifest.json, computed externally after seal to avoid self-reference",
+      "VERIFIED_PRICE_EXECUTION_INTERVALS": 0,
+      "NORMALIZED_R_ELIGIBLE_INTERVALS": 0,
+      "next_gate": "CAUSALLY_VERIFIED_PRICE_TICK_INTERVAL_REQUIRED"
+    },
+    {
+      "stage": 4,
+      "name": "FINAL_SOURCE_ALLOW_ASSEMBLY",
+      "status": "BLOCKED_NOT_RUN",
+      "commit": null,
+      "manifest_sha256": null,
+      "next_gate": "SOURCE_AND_PRICE_EXECUTION_GATES_REQUIRED"
+    },
+    {
+      "stage": 5,
+      "name": "PRE_OUTCOME_FINANCIAL_FREEZE",
+      "status": "BLOCKED_NOT_RUN",
+      "commit": null,
+      "manifest_sha256": null,
+      "next_gate": "SOURCE_AND_PRICE_EXECUTION_GATES_REQUIRED"
+    },
+    {
+      "stage": 6,
+      "name": "SECOND_FINANCIAL_BACKTEST",
+      "status": "BLOCKED_NOT_RUN",
+      "commit": null,
+      "manifest_sha256": null,
+      "next_gate": "SOURCE_AND_PRICE_EXECUTION_GATES_REQUIRED"
+    },
+    {
+      "stage": 7,
+      "name": "ROBUSTNESS_STABILITY",
+      "status": "BLOCKED_NOT_RUN",
+      "commit": null,
+      "manifest_sha256": null,
+      "next_gate": "SOURCE_AND_PRICE_EXECUTION_GATES_REQUIRED"
+    },
+    {
+      "stage": 8,
+      "name": "PROJECT_OVERLAYS_DIAGNOSTIC",
+      "status": "BLOCKED_NOT_RUN",
+      "commit": null,
+      "manifest_sha256": null,
+      "next_gate": "SOURCE_AND_PRICE_EXECUTION_GATES_REQUIRED"
+    },
+    {
+      "stage": 9,
+      "name": "PAPER_TRADING_READINESS",
+      "status": "BLOCKED_NOT_RUN",
+      "commit": null,
+      "manifest_sha256": null,
+      "next_gate": "SOURCE_AND_PRICE_EXECUTION_GATES_REQUIRED"
+    }
+  ],
+  "latest_source_ready": 0,
+  "FINAL_SOURCE_ALLOW_CASES": 0,
+  "final_source_allow_cohort_frozen": false,
+  "zero_allow_basis": "Empty source-ready set implies empty possible intersection; Stage 4 was not run or frozen.",
+  "SECOND_FINANCIAL_BACKTEST_RAN": false,
+  "financial_metrics": null,
+  "robustness_verdict": "NOT_AVAILABLE_NO_SECOND_FINANCIAL_RESULT",
+  "project_overlays": "BLOCKED_NOT_RUN",
+  "PAPER_TRADING_READY": false,
+  "paper_readiness_assessed_as_completed_stage": false,
+  "paper_readiness_reason": "No second financial result or qualified 200 CLOSED/30-day virtual record established by this workflow; no paper launch authorized.",
+  "STOP_REASONS": [
+    "STOP_NO_SOURCE_READY_CASES",
+    "STOP_NO_CAUSALLY_VERIFIED_PRICE_TICK_INTERVAL"
+  ],
+  "source_blocker": "No unique source-validated context/protected endpoints/contextual entry/FTA/first-test and physical/setup identity; material qualitative predicates UNKNOWN. No numeric/discretionary selector invented.",
+  "metadata_blocker": "Historical implemented tick epochs and causal version availability unverified even with quantity omitted for normalized R.",
+  "future_progress_requires": [
+    "Causally blinded source attestations for material relations, with exact canonical IDs and source citations; a new annotation/evidence freeze",
+    "Contemporaneous or immutably versioned exact-contract price filter epoch proof; separate metadata freeze"
+  ],
+  "trade_entry_allowed": false
+}

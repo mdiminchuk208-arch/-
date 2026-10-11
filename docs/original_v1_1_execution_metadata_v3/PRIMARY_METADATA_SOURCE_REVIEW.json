@@ -1,0 +1,64 @@
+{
+  "saved_official_parameter_articles_reviewed": 72,
+  "saved_official_documentation_examples_reviewed": 5,
+  "exact_symbol_tick_notices": [
+    {
+      "symbol": "ETHUSDT",
+      "source_url": "https://announcements.bybit.com/en/article/changes-to-tick-size-for-ethusdt-eth-perp-perpetual-contracts-2023-01-06--bltb4b6d3ffa3c5206c/",
+      "previous_literal_sha256": "7c7499498f767e5c58178a017987518979e588d9f98c7c4a398d21842ca74bcf",
+      "current_literal_sha256": "7c7499498f767e5c58178a017987518979e588d9f98c7c4a398d21842ca74bcf",
+      "literal_body_unchanged": true,
+      "title": "Changes To Tick Size for ETHUSDT & ETH-PERP Perpetual Contracts (Jan 6, 2023)",
+      "page_claimed_publication": "2023-01-06T07:03:06.000Z",
+      "title_date": "2023-01-06",
+      "announced_effective_date": "2023-01-17 08:00:00 UTC",
+      "announced_tick_before": "0.05",
+      "announced_tick_after": "0.01",
+      "contract_type_literal": "USDT Perpetual",
+      "date_interpretation": "Publication/title and announced effective date may legitimately differ. The difference alone is not evidence that the change is false. Neither publication nor title date is substituted for actual filter effectiveness.",
+      "verified_historical_version_at_publication": false,
+      "verified_implemented_filter_period": false,
+      "verified_quantity_period": false,
+      "historical_known_at": null,
+      "assessment": "CURRENT_OFFICIAL_ANNOUNCEMENT_OF_CHANGE_ONLY",
+      "blocker": "No contemporaneously versioned historical filter observation or immutable announcement version; no bounded implemented tick period. Current page body is observed in 2026 and cannot be backdated to scoring history.",
+      "missing_size_fields_irrelevant_to_normalized_R": [
+        "qty_step",
+        "minimum_qty",
+        "quantity_precision"
+      ],
+      "admitted_interval": false
+    },
+    {
+      "symbol": "BTCUSDT",
+      "source_url": "https://announcements.bybit.com/en/article/changes-to-tick-size-for-usdt-usdc-perpetual-contracts-2023-02-08--blt80c14139bdd327bc/",
+      "previous_literal_sha256": "b827508fd126ac8410c603e2476e0e3e8840b80028cb34985068c8fc055ff501",
+      "current_literal_sha256": "b827508fd126ac8410c603e2476e0e3e8840b80028cb34985068c8fc055ff501",
+      "literal_body_unchanged": true,
+      "title": "Changes to Tick Size for USDT & USDC Perpetual Contracts (2023-02-08)",
+      "page_claimed_publication": "2023-02-07T11:02:47.000Z",
+      "title_date": "2023-02-08",
+      "announced_effective_date": "2023-02-10 08:00:00 UTC",
+      "announced_tick_before": "0.5",
+      "announced_tick_after": "0.1",
+      "contract_type_literal": "USDT Perpetual",
+      "date_interpretation": "Publication/title and announced effective date may legitimately differ. The difference alone is not evidence that the change is false. Neither publication nor title date is substituted for actual filter effectiveness.",
+      "verified_historical_version_at_publication": false,
+      "verified_implemented_filter_period": false,
+      "verified_quantity_period": false,
+      "historical_known_at": null,
+      "assessment": "CURRENT_OFFICIAL_ANNOUNCEMENT_OF_CHANGE_ONLY",
+      "blocker": "No contemporaneously versioned historical filter observation or immutable announcement version; no bounded implemented tick period. Current page body is observed in 2026 and cannot be backdated to scoring history.",
+      "missing_size_fields_irrelevant_to_normalized_R": [
+        "qty_step",
+        "minimum_qty",
+        "quantity_precision"
+      ],
+      "admitted_interval": false
+    }
+  ],
+  "rejected_substring": "NEIROETHUSDT is not ETHUSDT",
+  "documentation_examples": "Five existing official dated examples are documentation payloads, not contemporaneously observed production filter epochs. No historical values admitted.",
+  "scope_of_search": "Existing complete saved provenance reused; only two targeted official public GETs. No archive/current API/broad search repetition.",
+  "trade_entry_allowed": false
+}

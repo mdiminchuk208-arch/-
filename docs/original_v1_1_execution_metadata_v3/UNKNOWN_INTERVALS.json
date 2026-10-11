@@ -1,0 +1,64 @@
+{
+  "scope": [
+    1672531200,
+    1764977401
+  ],
+  "scope_UTC": [
+    "2023-01-01 00:00:00 UTC",
+    "2025-12-05 23:30:00 UTC inclusive"
+  ],
+  "records": [
+    {
+      "symbol": "BTCUSDT",
+      "effective_from": 1672531200,
+      "effective_to": 1764977401,
+      "status": "UNKNOWN",
+      "historical_known_at": null,
+      "values": null,
+      "PRICE_EXECUTION_CRITICAL": "UNKNOWN_PERIOD_PROOF",
+      "SIZE_EXECUTION_CRITICAL": "UNKNOWN_FOR_EXCHANGE_EXECUTION",
+      "normalized_R_size_fields": "NOT_REQUIRED_FOR_THIS_ACCOUNTING_VIEW",
+      "missing_normalized_R_price_fields": [
+        "tick_size",
+        "effective_tick_periods",
+        "contract_identity",
+        "contract_type",
+        "linear_perpetual"
+      ],
+      "proof": {
+        "historical_version_verified": false,
+        "effective_period_verified": false,
+        "exact_contract_verified": false,
+        "price_filter_verified": false
+      },
+      "reason": "Partial announced tick changes and descriptive contract labels do not establish causally versioned implemented filter intervals. Removing quantity requirements leaves price tick/period proof unresolved.",
+      "trade_entry_allowed": false
+    },
+    {
+      "symbol": "ETHUSDT",
+      "effective_from": 1672531200,
+      "effective_to": 1764977401,
+      "status": "UNKNOWN",
+      "historical_known_at": null,
+      "values": null,
+      "PRICE_EXECUTION_CRITICAL": "UNKNOWN_PERIOD_PROOF",
+      "SIZE_EXECUTION_CRITICAL": "UNKNOWN_FOR_EXCHANGE_EXECUTION",
+      "normalized_R_size_fields": "NOT_REQUIRED_FOR_THIS_ACCOUNTING_VIEW",
+      "missing_normalized_R_price_fields": [
+        "tick_size",
+        "effective_tick_periods",
+        "contract_identity",
+        "contract_type",
+        "linear_perpetual"
+      ],
+      "proof": {
+        "historical_version_verified": false,
+        "effective_period_verified": false,
+        "exact_contract_verified": false,
+        "price_filter_verified": false
+      },
+      "reason": "Partial announced tick changes and descriptive contract labels do not establish causally versioned implemented filter intervals. Removing quantity requirements leaves price tick/period proof unresolved.",
+      "trade_entry_allowed": false
+    }
+  ]
+}
