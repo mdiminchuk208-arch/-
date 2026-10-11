@@ -1,0 +1,35 @@
+{
+  "stage": "pre_outcome",
+  "version": "v2.2",
+  "status": "FROZEN",
+  "parents": {
+    "docs/machine_strategy_v2_design/freeze_manifest.json": "89f0e38f773a7644a7e544c36c70983b06d454cba3062c737cb407a1fa820875",
+    "docs/machine_strategy_v2_2_design/freeze_manifest.json": "911ac7f159d28aebb2f1d4751f5ea8c7570ee5d6c245fb078881aff22bcf2c2a",
+    "docs/machine_strategy_v2_pre_outcome/freeze_manifest.json": "4bb0d1f484161e4db79ad4ebdf4e80dff88186f197b4555dedf82eb901699595"
+  },
+  "artifacts": {
+    "docs/machine_strategy_v2_2_pre_outcome/BACKTEST_PROTOCOL.md": "89311572ef916560611b53e759971b03c5ab94819be4171c703a5f0debab4d92",
+    "docs/machine_strategy_v2_2_pre_outcome/COHORT_FUNNEL.json": "111b047ad676c709dbc2e0587c5c57ab4699f6bc49382c56c996cadc8bb08f91",
+    "docs/machine_strategy_v2_2_pre_outcome/COST_MODEL.md": "20319e15ae5e32cfc8320e03f9aac904d6002c9be09f7a7241d7034795c8382f",
+    "docs/machine_strategy_v2_2_pre_outcome/DATASET_VERIFICATION.json": "9a13a5ecc3fc5edbdc0403dd2e64375a1afa5d40396a8eaaebf5dea199ba2fa3",
+    "docs/machine_strategy_v2_2_pre_outcome/EXCLUDED_VERSION_CASES.jsonl.gz": "5764b2d47614c85f0a6ec3f2068ae6be5bda2320da0248a347258df44ecb4ef4",
+    "docs/machine_strategy_v2_2_pre_outcome/EXECUTION_ASSUMPTIONS.md": "7e6967cadfa5dd261c73d1ff23fc54084f5f011c68cd8fd1152c508dea001399",
+    "docs/machine_strategy_v2_2_pre_outcome/FROZEN_CASES.jsonl.gz": "80ca9f7ab8b66b6c2416849bb2d34867053e798d36b7ff0900394e081bed37d5",
+    "docs/machine_strategy_v2_2_pre_outcome/PREREGISTRATION.json": "1aaabf3adacc9a363bbcb3620de55febfc797ac1b19cee9aeea9d980b6ee0392",
+    "docs/machine_strategy_v2_2_pre_outcome/QA_RECEIPT.json": "7c831615b6e490c7ff06e4c19f430ce76c21c266d7454271b256b5cada1b2340",
+    "docs/machine_strategy_v2_2_pre_outcome/QA_REPORT.md": "6cc8aad4519b7d760a2d41a27bbeeca24569c513cf6dec8f98d4b84978fe9e35",
+    "docs/machine_strategy_v2_2_pre_outcome/qa/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/machine_strategy_v2_2_pre_outcome/qa/frozen_parent_resume.log": "38d9339ec8b8252ff3963972b8c62bae4a04e7f0b194b002f0afb600c58566d7",
+    "docs/machine_strategy_v2_2_pre_outcome/qa/full_unittest.log": "17e6a23f35ad26cfa7e7de660b56e0477fc4b17790d9f9e5a7a24681f6378893",
+    "docs/machine_strategy_v2_2_pre_outcome/qa/mypy.log": "1495598f2b8e6a09df4f1631545361d6c6e3e3204e506255935ef84876641cc6",
+    "docs/machine_strategy_v2_2_pre_outcome/qa/ruff.log": "d63ab3df51a50c66f9c57056288c7d4faf9dce413552d89215714320ac2b748e",
+    "scripts/machine_strategy_v2_execution.py": "1be53a60536719d936494e48aeb344ed326ef914b0b3a2a5d92f9de2e3c36e89",
+    "scripts/run_machine_strategy_research.py": "fbefa8805c0cb3d18602d34bb44093c7a231d2691cf0f8b04cc942a78d90ddab",
+    "tests/test_machine_strategy_v2_execution.py": "eab7cde5a075534d254c4d53c49a1f3283edc5e2cafcada42b602193e9fb5236"
+  },
+  "QA_tests": 939,
+  "outcomes_computed": false,
+  "trade_entry_allowed": false,
+  "LIVE_enabled": false,
+  "historical_exchange_execution_claimed": false
+}
