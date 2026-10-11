@@ -1,0 +1,31 @@
+To increase market liquidity and improve your trading experience, Bybit will adjust the tick size for the following Perpetual Contracts on Nov 27, 2024, at 10:00 AM UTC. 
+
+Symbol
+Current ticksize
+New ticksize
+BCHUSDT
+0.05
+0.1
+IDUSDT
+0.00005
+0.0001
+JOEUSDT
+0.00005
+0.0001
+MDTUSDT
+0.000005
+0.00001
+ILVUSDT
+0.005
+0.01
+
+Note:
+- No trading functions for USDT Perpetual Contracts were affected during the adjustment process.
+- API users can obtain prices with the updated tick size via GET /v5/market/instruments-info after the aforementioned timestamp. For more information, please refer to our API documentation.
+- Orders placed before the aforementioned timestamp will remain in the order book with the original tick size.
+
+If necessary, please adjust your trading strategy in accordance with the new tick size. We seek your understanding for any inconvenience caused.
+
+Thank you for your continued support!
+
+The Bybit Team

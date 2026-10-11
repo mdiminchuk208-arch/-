@@ -1,0 +1,52 @@
+To increase market liquidity and improve your trading experience, Bybit will adjust the tick size for the following Perpetual Contracts by
+ Sep 23, 2025, 6:00AM UTC.
+
+
+  
+Symbol
+  
+Current ticksize
+  
+New ticksize
+FUELUSDT
+0.00001
+0.000001
+HOTUSDT
+0.000001
+0.0000001
+SXTUSDT
+0.0001
+0.00001
+XCHUSDT
+0.01
+0.001
+10000ELONUSDT
+0.000001
+0.0000001
+BADGERUSDT
+0.001
+0.0001
+GORKUSDT
+0.00001
+0.000001
+NTRNUSDT
+0.0001
+0.00001
+RFCUSDT
+0.00001
+0.000001
+SQDUSDT
+0.0001
+0.00001
+SWELLUSDT
+0.00001
+0.000001
+
+Note:
+No trading functions for USDT Perpetual Contracts were affected during the adjustment process.
+API users can obtain prices with the updated tick size via GET /v5/market/instruments-info after the aforementioned timestamp. For more information, please refer to our API documentation.
+Orders placed before the aforementioned timestamp will remain in the order book with the original tick size.
+If necessary, please adjust your trading strategy in accordance with the new tick size. We seek your understanding for any inconvenience caused. 
+
+Thank you for your continued support!
+The Bybit Team

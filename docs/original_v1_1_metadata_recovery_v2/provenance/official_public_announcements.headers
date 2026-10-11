@@ -1,0 +1,15 @@
+HTTP/1.1 200 OK
+date: Sun, 11 Oct 2026 09:15:32 GMT
+server: envoy
+
+HTTP/2 403 
+server: envoy
+date: Sun, 11 Oct 2026 09:15:33 GMT
+content-length: 96
+content-type: application/json
+x-cache: Error from cloudfront
+via: 1.1 eded6ceb5fcf620926ec41d66d9f7be6.cloudfront.net (CloudFront)
+x-amz-cf-pop: ORD56-P13
+x-amz-cf-id: u5Hjq8Ff_sWDYFZSKp2huBtM6XwLL4XAvccuB7mqE3CeUqUB-I8uVQ==
+x-envoy-upstream-service-time: 45
+

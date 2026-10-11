@@ -1,0 +1,52 @@
+To increase market liquidity and improve your trading experience, Bybit will adjust the tick size for the following Perpetual Contracts by 
+Mar 20, 2025, 9AM UTC
+. 
+
+Symbol
+Current ticksize
+New ticksize
+BIOUSDT
+0.0001
+0.00001
+MELANIAUSDT
+0.001
+0.0001
+NFPUSDT
+0.0001
+0.00001
+PORTALUSDT
+0.0001
+0.00001
+AIXBTUSDT
+0.0001
+0.00001
+CHESSUSDT
+0.0001
+0.00001
+MBOXUSDT
+0.0001
+0.00001
+MYRIAUSDT
+0.000001
+0.0000001
+IOUSDT
+0.001
+0.0001
+LEVERUSDT
+0.000001
+0.0000001
+SCAUSDT
+0.0001
+0.00001
+
+
+Note:
+- No trading functions for Perpetual Contracts were affected during the adjustment process.
+- API users can obtain prices with the updated tick size via GET /v5/market/instruments-info after the aforementioned timestamp. For more information, please refer to our API documentation.
+- Orders placed before the aforementioned timestamp will remain in the order book with the original tick size.
+
+If necessary, please adjust your trading strategy in accordance with the new tick size. We seek your understanding for any inconvenience caused.
+
+Thank you for your continued support!
+
+The Bybit Team

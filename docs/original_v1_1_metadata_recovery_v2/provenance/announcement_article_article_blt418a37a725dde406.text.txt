@@ -1,0 +1,30 @@
+
+
+In our ongoing efforts to enhance market liquidity and optimize your trading experience, Bybit will be adjusting the tick size for select 
+USDT
+ 
+Perpetual
+ 
+Contract 
+on 
+Dec 15, 2023
+, at 
+6AM
+ 
+UTC
+.
+
+
+Note:
+Trading bots facing negative arbitrage due to the updated tick sizes will be automatically terminated. This applies to bots created through Copy Trading as well.
+Changes to the tick size will not impact any trading functions for USDT Perpetual Contracts.
+API users can access updated tick sizes via GET /v5/market/instruments-info after the mentioned timestamp. For more details, please consult our 
+API documentation
+.
+Orders placed before the specified timestamp will remain in the order book with the original tick size, but will be displayed with the new tick size.
+
+If necessary, please adjust your trading strategy in accordance with the new tick size. We seek your understanding for any inconvenience caused.
+
+Thank you for your continued support!
+
+The Bybit Team

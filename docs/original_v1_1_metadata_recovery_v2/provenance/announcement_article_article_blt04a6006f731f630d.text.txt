@@ -1,0 +1,43 @@
+
+
+In order to enhance the user experience for 
+Unified Trading Account 
+users, we have made some updates to the page display and logic optimization of both the 
+Bybit.com Website
+, 
+Bybit App
+ and 
+OpenAPI 
+user interface. The new field names and logic will be more concise and intuitive.
+
+These updates are expected to be implemented on
+ May 18, 2023
+.
+
+Upcoming changes to the Bybit.com Website and Bybit App user interface are as follows:
+
+Account Level Changes:
+Renaming ""Estimated Balance"" to ""Total Equity"".
+Removing the fields: ""Equity,"" , ""Wallet Balance,"" and ""Available Balance."".
+Margin Balance: Will be hidden in Isolated Margin mode, displayed as usual for Cross Margin mode, and include option value in Portfolio Margin mode
+
+Asset Level Changes:
+Asset Net Value: The valuation of the USD net value for single currencies will no longer be multiplied by the Collateral Value Ratio.
+Amount:  ""Available to Borrow"" will no longer be shown on the user interface.
+Will now show the transferable amount of each coin.
+
+
+Upcoming changes for OpenAPI users are as follows:
+
+/v5/account/wallet-balance
+The usdValue will no longer be multiplied by the Collateral Value Ratio (collateralRatio). Therefore, totalEquity will also not be multiplied by this rate.
+
+/v5/account/info
+""ISOLATED_MARGIN"" added to marginMode.
+
+We appreciate your continued support and understanding. If you have any questions or concerns, please feel free to reach out to our Ccustomer Support by filling in this webform 
+here
+.
+
+Regards,
+The Bybit Team

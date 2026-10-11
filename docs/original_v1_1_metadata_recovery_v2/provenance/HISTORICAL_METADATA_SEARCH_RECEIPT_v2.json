@@ -1,0 +1,318 @@
+{
+  "stage": "A",
+  "collection_date_UTC": "2026-10-11T09:15:31.774730+00:00",
+  "sources": [
+    {
+      "role": "official_docs",
+      "url": "https://github.com/bybit-exchange/docs.git",
+      "pinned_commit": "59e3d457dea6b419a14987c19a3aabf4ffb38238",
+      "commit_time": "2026-10-09T16:46:27+08:00",
+      "reachable_commit_count": 3678,
+      "complete_clone_no_shallow": true
+    },
+    {
+      "role": "official_sdk",
+      "url": "https://github.com/bybit-exchange/pybit.git",
+      "pinned_commit": "70fef73cb6e55305c77a2e585706f3706a7d1d1a",
+      "commit_time": "2026-09-30T18:53:27+08:00",
+      "reachable_commit_count": 713,
+      "complete_clone_no_shallow": true
+    }
+  ],
+  "network_attempts": [
+    {
+      "label": "BTCUSDT_current_api",
+      "method": "GET",
+      "url": "https://api.bybit.com/v5/market/instruments-info?category=linear&symbol=BTCUSDT",
+      "exit_code": 0,
+      "http_code": "403",
+      "error": "",
+      "headers_file": "docs/original_v1_1_metadata_recovery_v2/provenance/BTCUSDT_current_api.headers",
+      "body_file": "docs/original_v1_1_metadata_recovery_v2/provenance/BTCUSDT_current_api.response",
+      "private_API": false,
+      "credentials_sent": false,
+      "proxy_policy_bypassed": false,
+      "raw_header_sha256": "296438d73b71500b955c33b7e7c5ebaf736edd84e16732901952d4ddd9267e5f"
+    },
+    {
+      "label": "ETHUSDT_current_api",
+      "method": "GET",
+      "url": "https://api.bybit.com/v5/market/instruments-info?category=linear&symbol=ETHUSDT",
+      "exit_code": 0,
+      "http_code": "403",
+      "error": "",
+      "headers_file": "docs/original_v1_1_metadata_recovery_v2/provenance/ETHUSDT_current_api.headers",
+      "body_file": "docs/original_v1_1_metadata_recovery_v2/provenance/ETHUSDT_current_api.response",
+      "private_API": false,
+      "credentials_sent": false,
+      "proxy_policy_bypassed": false,
+      "raw_header_sha256": "cf1647830ee8ffaeb3faee200bc043a72c3328d1fa68e2d5cd0736449196a0d4"
+    },
+    {
+      "label": "official_public_announcements",
+      "method": "GET",
+      "url": "https://api.bybit.com/v5/announcements/index?locale=en-US&type=new_crypto&limit=50",
+      "exit_code": 0,
+      "http_code": "403",
+      "error": "",
+      "headers_file": "docs/original_v1_1_metadata_recovery_v2/provenance/official_public_announcements.headers",
+      "body_file": "docs/original_v1_1_metadata_recovery_v2/provenance/official_public_announcements.response",
+      "private_API": false,
+      "credentials_sent": false,
+      "proxy_policy_bypassed": false,
+      "raw_header_sha256": "0901a1f7cca0356e1f3c220ff6783c824876470d2a091c26dd3e4a0416ab3943"
+    },
+    {
+      "label": "official_derivatives_change_2025",
+      "method": "GET",
+      "url": "https://announcements.bybit.com/article/adjustments-to-bybit-s-derivative-trading-limit-order-mechanism-blt469228de1902fff6/",
+      "exit_code": 0,
+      "http_code": "301",
+      "error": "",
+      "headers_file": "docs/original_v1_1_metadata_recovery_v2/provenance/official_derivatives_change_2025.headers",
+      "body_file": "docs/original_v1_1_metadata_recovery_v2/provenance/official_derivatives_change_2025.response",
+      "private_API": false,
+      "credentials_sent": false,
+      "proxy_policy_bypassed": false,
+      "raw_header_sha256": "9a58fc64bb9af9312149c753bfd5619070977ae480495f382a2b7af35656dc13"
+    },
+    {
+      "label": "public_archive_index",
+      "method": "GET",
+      "url": "https://web.archive.org/cdx/search/cdx?url=api.bybit.com%2Fv5%2Fmarket%2Finstruments-info%2A&output=json&filter=statuscode%3A200&collapse=timestamp%3A6",
+      "exit_code": 56,
+      "http_code": "000",
+      "error": "curl: (56) CONNECT tunnel failed, response 403",
+      "headers_file": "docs/original_v1_1_metadata_recovery_v2/provenance/public_archive_index.headers",
+      "body_file": null,
+      "private_API": false,
+      "credentials_sent": false,
+      "proxy_policy_bypassed": false,
+      "raw_header_sha256": "33ddf5776b358706f9f2b1657f7661070a95143b8de90e0f7840face5f0a2801"
+    }
+  ],
+  "searches": [
+    {
+      "command": [
+        "rg",
+        "-l",
+        "--hidden",
+        "-g",
+        "!.git/**",
+        "-g",
+        "!*.csv*",
+        "-g",
+        "!*.jsonl*",
+        "-g",
+        "!*.pdf",
+        "-g",
+        "!*.txt",
+        "-g",
+        "!*.log",
+        "tickSize|qtyStep|minOrderQty|effective_from|effective_to|tick_size|quantity_precision",
+        "src",
+        "scripts",
+        "tests",
+        "config",
+        "docs",
+        "data"
+      ],
+      "cwd_role": "project",
+      "exit_code": 0,
+      "stderr": "",
+      "matched_files": [
+        {
+          "path": "scripts/original_strategy_executable_profile_v1.py",
+          "sha256": "eb104b1f28c42ac05ff766610b5b3e86d4784bab49bfa2ce129e65c63e8d0b31"
+        },
+        {
+          "path": "src/crypto_bot/data/models.py",
+          "sha256": "6d455d47d76ebd0d9bfb9bb123376779d30f66b51c97b29bda106f32387eac54"
+        },
+        {
+          "path": "src/crypto_bot/data/bybit.py",
+          "sha256": "28b58fde1abe1f3048a7aae25a5f65cf2225cb1b16eeb103378e05a515aba527"
+        },
+        {
+          "path": "tests/test_original_strategy_spec_v1_1.py",
+          "sha256": "865a3b89f0920cdb4ca00dceaded6e90106af9d79cfec8d68b074a3f40e01c2e"
+        },
+        {
+          "path": "scripts/build_original_v1_1_evidence_adapter_v2_docs.py",
+          "sha256": "781c858e119a2e72d436d39cffec8259f4035266db83cd8177d54e5c0b7bdc7a"
+        },
+        {
+          "path": "tests/test_bybit_data.py",
+          "sha256": "3004584637fbf93cfdae8d624ab454225f1a5fbe543f3fabced3311daf432ad3"
+        },
+        {
+          "path": "tests/test_original_v1_1_evidence_adapter_v2.py",
+          "sha256": "89f5c95652a4f8e9366a68fe0ad575b29f125fa0dc5d95e88e8c6fc43554bdf7"
+        },
+        {
+          "path": "scripts/original_v1_1_evidence_adapter.py",
+          "sha256": "b3845ac5731a61a2e96d61dd590b739cac9782d66885a1a89854a377ddfbefc4"
+        },
+        {
+          "path": "scripts/build_original_strategy_spec_v1_1.py",
+          "sha256": "43d67a95866265e1d1c69cf76386f4f61fd031ceeaacca5368d003953815d82a"
+        },
+        {
+          "path": "scripts/original_v1_1_evidence_adapter_v2.py",
+          "sha256": "2696b57a8412d8c1b6308e98ffa8c29a06688829be4b204df4dd0fd633812215"
+        },
+        {
+          "path": "docs/original_strategy_spec_v1_1/executable_evidence_schema.md",
+          "sha256": "c78b6b503faa7581535173ddc661534d03725cdd12d19c8bb7b7a99b6be7566a"
+        },
+        {
+          "path": "data/reports/source_bybit_2026_10_09_v2/implementation_snapshot/src/crypto_bot/data/models.py",
+          "sha256": "6d455d47d76ebd0d9bfb9bb123376779d30f66b51c97b29bda106f32387eac54"
+        },
+        {
+          "path": "docs/original_v1_1_evidence_adapter_v2/provenance/bybit_official_instrument.mdx",
+          "sha256": "413cd16af6097248140024f99eea563c9c1eb980335d0218cf45b908b4b354a4"
+        },
+        {
+          "path": "docs/original_v1_1_evidence_adapter_v2/provenance/HISTORICAL_METADATA_SEARCH_RECEIPT.json",
+          "sha256": "322b0f86e595f80409bf026b5d7bacf3c23e0bd48897894ce886fe8d0d3ed7cb"
+        },
+        {
+          "path": "docs/original_v1_1_evidence_adapter_v2/HISTORICAL_INSTRUMENT_METADATA_v1.json",
+          "sha256": "e03003ad764cd45f89e3c70948eee2abe3a0d938b87b951cdf035ce9bfaa6263"
+        },
+        {
+          "path": "data/reports/original_strategy_spec_v1_1_2026_10_11/synthetic_LONG_SHORT_contract_examples.json",
+          "sha256": "31125589d3549dca9d19c7f9bc4b648dad5e6e63eb7fc1af9c685b3a910a3813"
+        },
+        {
+          "path": "data/reports/source_bybit_2026_10_09/implementation_snapshot/src/crypto_bot/data/models.py",
+          "sha256": "6d455d47d76ebd0d9bfb9bb123376779d30f66b51c97b29bda106f32387eac54"
+        },
+        {
+          "path": "data/reports/source_cases_bybit_2026_10_09_pre_qa/implementation_snapshot/src/crypto_bot/data/models.py",
+          "sha256": "6d455d47d76ebd0d9bfb9bb123376779d30f66b51c97b29bda106f32387eac54"
+        },
+        {
+          "path": "data/reports/source_bybit_2026_10_09_v3_incomplete/implementation_snapshot/src/crypto_bot/data/models.py",
+          "sha256": "6d455d47d76ebd0d9bfb9bb123376779d30f66b51c97b29bda106f32387eac54"
+        }
+      ],
+      "interpretation": "File-name-only search; code/models/synthetic examples and v2 UNKNOWN registry. No authoritative effective-dated production instrument snapshot."
+    },
+    {
+      "command": [
+        "git",
+        "log",
+        "--all",
+        "--format=%H %cI %s",
+        "--",
+        "src/crypto_bot/data/bybit.py",
+        "src/crypto_bot/data/models.py"
+      ],
+      "cwd_role": "project",
+      "exit_code": 0,
+      "stdout": "38fe78ea7efea2978b45939b0af4baa85baa1e75 2026-10-08T04:51:31Z Import current Crypto Bot Strategy Engine with historical audits\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "log",
+        "--all",
+        "--format=%H %cI %s",
+        "--",
+        "*instrument*",
+        "*metadata*"
+      ],
+      "cwd_role": "project",
+      "exit_code": 0,
+      "stdout": "29f6eacb18e6b09fe87ca372f2d697cf45c27e48 2026-10-11T08:54:14Z PRE_FINANCIAL_EVIDENCE_FREEZE\n38fe78ea7efea2978b45939b0af4baa85baa1e75 2026-10-08T04:51:31Z Import current Crypto Bot Strategy Engine with historical audits\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "log",
+        "--all",
+        "--no-merges",
+        "--format=%H %cI %s",
+        "--",
+        "docs/v5/market/instrument.mdx"
+      ],
+      "pinned_repository_head": "59e3d457dea6b419a14987c19a3aabf4ffb38238",
+      "output": "docs/original_v1_1_metadata_recovery_v2/provenance/OFFICIAL_INSTRUMENT_HISTORY.log",
+      "sha256": "a1c0de476a5acde6557685a8a9e8bea45a70358f345a8aeb41808dea70c75157"
+    },
+    {
+      "command": [
+        "git",
+        "log",
+        "--all",
+        "-G",
+        "tickSize|qtyStep|minOrderQty|precision",
+        "--format=%H %cI %s",
+        "--",
+        "docs/changelog/v5.mdx"
+      ],
+      "pinned_repository_head": "59e3d457dea6b419a14987c19a3aabf4ffb38238",
+      "output": "docs/original_v1_1_metadata_recovery_v2/provenance/OFFICIAL_FILTER_CHANGE_SEARCH.log",
+      "sha256": "db9b36b5b565d43c2bcd43b9a40b95a873070a7e326fac910c01e36166c7fc71"
+    },
+    {
+      "command": [
+        "git",
+        "log",
+        "--all",
+        "--no-merges",
+        "-p",
+        "-G",
+        "tickSize|qtyStep|minOrderQty|priceScale",
+        "--format=%H %cI %s",
+        "--",
+        "docs/v5/market/instrument.mdx"
+      ],
+      "pinned_repository_head": "59e3d457dea6b419a14987c19a3aabf4ffb38238",
+      "output": "docs/original_v1_1_metadata_recovery_v2/provenance/OFFICIAL_FILTER_DIFFS.log",
+      "sha256": "54cd8aacb39a6eab18b54b7f10a798806173b4d58df7852339dbdd42179ec11e"
+    },
+    {
+      "command": [
+        "git",
+        "log",
+        "--all",
+        "-G",
+        "tickSize|qtyStep|minOrderQty|effective_from|effective_to",
+        "--format=%H %cI %s",
+        "--",
+        "tests",
+        "pybit"
+      ],
+      "cwd_role": "bybit_metadata_recovery_pybit",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "interpretation": "No instrument filter/effective-period fixture found in reachable SDK history; SDK not executed."
+    },
+    {
+      "scope": "Full official instrument document history/filter diffs; current V5 changelog; five immutable full-document snapshots (before2023/end2023/end2024/requested-end/current).",
+      "finding": "Dated source samples exist, but no full production effective interval proof. No gap-free historical filter change schedule for BTCUSDT/ETHUSDT identified. Documentation continuity is not filter continuity."
+    },
+    {
+      "command": [
+        "git",
+        "ls-remote",
+        "https://github.com/bybit-exchange/bybit-official-api-docs.git",
+        "HEAD"
+      ],
+      "cwd_role": "project",
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "remote: Repository not found.\nfatal: repository 'https://github.com/bybit-exchange/bybit-official-api-docs.git/' not found\n",
+      "interpretation": "Guessed legacy official repository URL not found; no historical data obtained."
+    }
+  ],
+  "historical_periods_proved": 0,
+  "trade_entry_allowed": false,
+  "limits": "Search is scoped to project repository/reachable official Git histories and attempted public references. Bybit API returned upstream CloudFront geographic 403; web.archive.org CONNECT was proxy-blocked. Announcement frontend is reachable and assessed in ANNOUNCEMENT_RECOVERY_RECEIPT.json. No global absence claim. Current API, documentation sample, sample server time and sample launchTime do not prove effective historical intervals."
+}

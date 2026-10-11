@@ -1,0 +1,39 @@
+To increase market liquidity and improve your trading experience, Bybit will adjust the tick size for the following Perpetual Contracts on 
+Mar 14, 2025, by 10:00AM UTC
+. 
+
+Symbol
+Current ticksize
+New ticksize
+BTCUSD
+0.5
+0.1
+ETHUSD
+0.05
+0.01
+DOTUSD
+0.005
+0.001
+ETCPERP
+0.005
+0.001
+OPPERP
+0.0005
+0.0001
+BNBPERP
+0.05
+0.1
+XLMPERP
+0.0001
+0.00001
+
+Note:
+- No trading functions for Perpetual Contracts were affected during the adjustment process.
+- API users can obtain prices with the updated tick size via GET /v5/market/instruments-info after the aforementioned timestamp. For more information, please refer to our API documentation.
+- Orders placed before the aforementioned timestamp will remain in the order book with the original tick size.
+
+If necessary, please adjust your trading strategy in accordance with the new tick size. We seek your understanding for any inconvenience caused.
+
+Thank you for your continued support!
+
+The Bybit Team

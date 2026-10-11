@@ -1,0 +1,145 @@
+{
+  "version": "2",
+  "scope": [
+    1672531200,
+    1764977401
+  ],
+  "intervals": "[effective_from,effective_to)",
+  "scope_UTC": [
+    "2023-01-01 00:00:00 UTC",
+    "2025-12-05 23:30:00 UTC inclusive"
+  ],
+  "verification_status_mapping": {
+    "VERIFIED": "VERIFIED_HISTORICAL (frozen adapter contract)",
+    "UNKNOWN": "UNKNOWN"
+  },
+  "metadata_verified_periods": 0,
+  "verdict": "UNKNOWN_ALL_REQUESTED_PERIODS",
+  "required_values": [
+    "tick_size",
+    "price_precision",
+    "qty_step",
+    "quantity_precision",
+    "minimum_qty",
+    "contract_type",
+    "linear_perpetual",
+    "base_asset",
+    "quote_asset"
+  ],
+  "required_interval_fields": [
+    "effective_from",
+    "effective_to"
+  ],
+  "records": [
+    {
+      "symbol": "BTCUSDT",
+      "effective_from": 1672531200,
+      "effective_to": 1764977401,
+      "status": "UNKNOWN",
+      "verification_status": "UNKNOWN",
+      "values": null,
+      "missing_verified_values": [
+        "tick_size",
+        "price_precision",
+        "qty_step",
+        "quantity_precision",
+        "minimum_qty",
+        "contract_type",
+        "linear_perpetual",
+        "base_asset",
+        "quote_asset"
+      ],
+      "provenance": {
+        "effective_period_proof": false,
+        "historical_known_at": null,
+        "authoritative": false,
+        "assessment": "Official partial tick-change notices and dated documentation samples do not prove complete historical filter intervals",
+        "source_assessment": "docs/original_v1_1_metadata_recovery_v2/provenance/PARTIAL_METADATA_SOURCE_ASSESSMENT.json"
+      }
+    },
+    {
+      "symbol": "ETHUSDT",
+      "effective_from": 1672531200,
+      "effective_to": 1764977401,
+      "status": "UNKNOWN",
+      "verification_status": "UNKNOWN",
+      "values": null,
+      "missing_verified_values": [
+        "tick_size",
+        "price_precision",
+        "qty_step",
+        "quantity_precision",
+        "minimum_qty",
+        "contract_type",
+        "linear_perpetual",
+        "base_asset",
+        "quote_asset"
+      ],
+      "provenance": {
+        "effective_period_proof": false,
+        "historical_known_at": null,
+        "authoritative": false,
+        "assessment": "Official partial tick-change notices and dated documentation samples do not prove complete historical filter intervals",
+        "source_assessment": "docs/original_v1_1_metadata_recovery_v2/provenance/PARTIAL_METADATA_SOURCE_ASSESSMENT.json"
+      }
+    }
+  ],
+  "partial_source_observations": [
+    {
+      "symbol": "ETHUSDT",
+      "source_url": "https://announcements.bybit.com/en/article/changes-to-tick-size-for-ethusdt-eth-perp-perpetual-contracts-2023-01-06--bltb4b6d3ffa3c5206c/",
+      "source_file": "docs/original_v1_1_metadata_recovery_v2/provenance/announcement_article_article_bltb4b6d3ffa3c5206c.html",
+      "source_sha256": "c383145ef41b8fdd9e2e166d923d439518898def2ff22a9def455da15251a6e0",
+      "literal_text_file": "docs/original_v1_1_metadata_recovery_v2/provenance/announcement_article_article_bltb4b6d3ffa3c5206c.text.txt",
+      "literal_text_sha256": "7c7499498f767e5c58178a017987518979e588d9f98c7c4a398d21842ca74bcf",
+      "article_title": "Changes To Tick Size for ETHUSDT & ETH-PERP Perpetual Contracts (Jan 6, 2023)",
+      "page_published_date": "2023-01-06T07:03:06.000Z",
+      "title_claimed_date": "2023-01-06",
+      "body_claimed_date": "2023-01-17 08:00:00 UTC",
+      "contract_type_literal": "USDT Perpetual",
+      "tick_size_before": "0.05",
+      "tick_size_after": "0.01",
+      "assessment": "ANNOUNCED_TICK_CHANGE_ONLY",
+      "material_date_discrepancy": true,
+      "implemented_change_proved": false,
+      "effective_period_proof": false,
+      "historical_known_at": null,
+      "other_required_filters_proved": false,
+      "admitted_as_VERIFIED_interval": false,
+      "rationale": "Current official notice states a before/after tick change. Title date and body effective date differ; immutable original publication/version history was not recovered. Notice supplies no qty_step, quantity_precision, minimum_qty or price_precision interval proof. Neither publication date nor title is silently substituted for actual effective/known time."
+    },
+    {
+      "symbol": "BTCUSDT",
+      "source_url": "https://announcements.bybit.com/en/article/changes-to-tick-size-for-usdt-usdc-perpetual-contracts-2023-02-08--blt80c14139bdd327bc/",
+      "source_file": "docs/original_v1_1_metadata_recovery_v2/provenance/announcement_article_article_blt80c14139bdd327bc.html",
+      "source_sha256": "54237783b62ee62a7332261b84ecba18e4136085c8b169c2840d6064e824df14",
+      "literal_text_file": "docs/original_v1_1_metadata_recovery_v2/provenance/announcement_article_article_blt80c14139bdd327bc.text.txt",
+      "literal_text_sha256": "b827508fd126ac8410c603e2476e0e3e8840b80028cb34985068c8fc055ff501",
+      "article_title": "Changes to Tick Size for USDT & USDC Perpetual Contracts (2023-02-08)",
+      "page_published_date": "2023-02-07T11:02:47.000Z",
+      "title_claimed_date": "2023-02-08",
+      "body_claimed_date": "2023-02-10 08:00:00 UTC",
+      "contract_type_literal": "USDT Perpetual",
+      "tick_size_before": "0.5",
+      "tick_size_after": "0.1",
+      "assessment": "ANNOUNCED_TICK_CHANGE_ONLY",
+      "material_date_discrepancy": true,
+      "implemented_change_proved": false,
+      "effective_period_proof": false,
+      "historical_known_at": null,
+      "other_required_filters_proved": false,
+      "admitted_as_VERIFIED_interval": false,
+      "rationale": "Current official notice states a before/after tick change. Title date and body effective date differ; immutable original publication/version history was not recovered. Notice supplies no qty_step, quantity_precision, minimum_qty or price_precision interval proof. Neither publication date nor title is silently substituted for actual effective/known time."
+    }
+  ],
+  "not_inferred_from": [
+    "current API",
+    "OHLC decimal representation",
+    "sample launchTime",
+    "documentation commit time",
+    "testnet fixture",
+    "absence of search hits",
+    "current page publication date"
+  ],
+  "trade_entry_allowed": false
+}

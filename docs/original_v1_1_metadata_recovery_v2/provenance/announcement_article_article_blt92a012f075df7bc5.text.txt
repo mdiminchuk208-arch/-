@@ -1,0 +1,97 @@
+To increase market liquidity and improve your trading experience, Bybit will adjust the tick size for the following USDT Perpetual Contracts on 
+Feb 24, 2023, at 8AM UTC
+. 
+
+
+Symbol
+Current ticksize
+New ticksize
+SOLUSDT
+0.005
+0.001
+OPUSDT
+0.0005
+0.0001
+FTMUSDT
+0.0005
+0.0001
+SHIB1000USDT
+0.000005
+0.000001
+DYDXUSDT
+0.005
+0.001
+ATOMUSDT
+0.005
+0.001
+AXSUSDT
+0.005
+0.001
+MANAUSDT
+0.0005
+0.0001
+MASKUSDT
+0.005
+0.001
+LRCUSDT
+0.0005
+0.0001
+MINAUSDT
+0.001
+0.0001
+STGUSDT
+0.0005
+0.0001
+BLZUSDT
+0.00005
+0.00001
+HBARUSDT
+0.00005
+0.00001
+BNXUSDT
+0.05
+0.01
+AAVEUSDT
+0.05
+0.01
+ALGOUSDT
+0.0005
+0.0001
+SFPUSDT
+0.0005
+0.0001
+ANKRUSDT
+0.00005
+0.00001
+ETHWUSDT
+0.005
+0.001
+AGLDUSDT
+0.0005
+0.0001
+SKLUSDT
+0.00005
+0.00001
+AUDIOUSDT
+0.0005
+0.0001
+KNCUSDT
+0.0005
+0.0001
+ONEUSDT
+0.00005
+0.00001
+
+
+Note:
+No trading functions for USDT Perpetual Contracts were affected during the adjustment process.
+API users can obtain prices with the updated tick size via GET /derivatives/v3/public/instruments-info after the aforementioned timestamp. For more information, please refer to our 
+API documentation
+.
+Orders placed before the aforementioned timestamp will remain in the order book with the original tick size.
+
+If necessary, please adjust your trading strategy in accordance with the new tick size. We seek your understanding for any inconvenience caused.
+
+Thank you for your continued support!
+
+The Bybit Team

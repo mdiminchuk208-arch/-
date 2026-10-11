@@ -1,0 +1,96 @@
+To increase market liquidity and improve your trading experience, Bybit will adjust the tick size for the following Perpetual Contracts by 
+Mar 11, 2025, 8:00AM UTC
+. 
+
+Symbol
+Current ticksize
+New ticksize
+WUSDT
+0.0001
+0.00001
+LUCEUSDT
+0.00001
+0.000001
+ORDIPERP
+0.01
+0.001
+BUZZUSDT
+0.00001
+0.000001
+ENJUSDT
+0.0001
+0.00001
+WLDUSDT
+0.001
+0.0001
+XRDUSDT
+0.00001
+0.000001
+COOKUSDT
+0.00001
+0.000001
+WLDPERP
+0.001
+0.0001
+WOOUSDT
+0.0001
+0.00001
+JAILSTOOLUSDT
+0.00001
+0.000001
+APTUSDT
+0.0005
+0.001
+ASTRUSDT
+0.000005
+0.00001
+BNBUSDT
+0.05
+0.1
+BNTUSDT
+0.00005
+0.0001
+CTCUSDT
+0.00005
+0.0001
+FXSUSDT
+0.0005
+0.0001
+GLMRUSDT
+0.00005
+0.00001
+GMXUSDT
+0.005
+0.001
+LDOUSDT
+0.0005
+0.0001
+ONTUSDT
+0.00005
+0.0001
+RPLUSDT
+0.005
+0.001
+SSVUSDT
+0.005
+0.001
+WAVESUSDT
+0.0005
+0.0001
+XVGUSDT
+0.0000005
+0.000001
+
+
+
+
+Note:
+- No trading functions for Perpetual Contracts were affected during the adjustment process.
+- API users can obtain prices with the updated tick size via GET /v5/market/instruments-info after the aforementioned timestamp. For more information, please refer to our API documentation.
+- Orders placed before the aforementioned timestamp will remain in the order book with the original tick size.
+
+If necessary, please adjust your trading strategy in accordance with the new tick size. We seek your understanding for any inconvenience caused.
+
+Thank you for your continued support!
+
+The Bybit Team

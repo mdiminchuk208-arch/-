@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "scope": "Stage A STOP evidence; no new financial result acceptance",
+  "full_tests": 769,
+  "frozen_v2_manifest_sha256": "79b922c5b9f9008acda333ce768330aa2c2687470d09c22936632b92783a4283",
+  "strategy_v1_v1_1_first_result_v2_dataset_hashes": "PASS",
+  "baseline_source_audit_invariance": "PASS (frozen v1.1 verified resume)",
+  "source_registry_causality_canonical_ID_prefix_future_mutation_BACKTEST_SHADOW_parity": "PASS (unchanged frozen code + full regression; no new historical annotation)",
+  "metadata_effective_period_correctness": "PASS (complete UNKNOWN map; no partial observation admitted)",
+  "no_outcome_leakage": "PASS (metadata-only sources; parent result/baseline bytes hashed, no outcome selection)",
+  "replay_files": {
+    "HISTORICAL_INSTRUMENT_METADATA_v2.json": "0c805698c7f2b1438254569a5e6ff8965e25aad6e53f0154c84001e5fa902108",
+    "STAGE_A_STOP_STATUS.json": "e25d2ad35abb9ba7f8cedfb0b6f98bd41f8cc5416896ab661b052d43fb910e13",
+    "HISTORICAL_METADATA_EVIDENCE_REPORT.md": "2633e195eeb0faccd2c6af072e938e24c7adb937aeeb0804987e562115310343",
+    "REPRODUCIBILITY.md": "77547a781e2c17097219c11e7ba7b54a3a2ef2eb193906c45aa70043c3319152"
+  },
+  "financial_identity": "NOT_APPLICABLE_SECOND_FINANCIAL_BACKTEST_NOT_RUN",
+  "code_sha256": {
+    "scripts/collect_original_v1_1_metadata_recovery_v2.py": "ea6e269c655f49b1f232dff40986a5634bc81f51714950c43c562e5444e4c141",
+    "scripts/collect_original_v1_1_metadata_announcements_v2.py": "870ca90666c469993387fbbf84d048eea990dc801f9e7afde1c85105c18f45e8",
+    "scripts/audit_original_v1_1_metadata_recovery_v2.py": "872baa5cf105e3555c26d91ad594590fa0a1fabfeff04fa94119d4c64ac165b6",
+    "tests/test_original_v1_1_metadata_recovery_v2.py": "8376c9ff3de3d77036cf7222cebd884b01055b8febbced9078654d012736f0e3"
+  },
+  "qa_log_sha256": {
+    "full_unittest": "0057490659655bb4ba5f677513d998846ced02a1fc064e294ce451742e5a865a",
+    "ruff": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "compile": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mypy": "1495598f2b8e6a09df4f1631545361d6c6e3e3204e506255935ef84876641cc6",
+    "frozen_parent_resume": "38d9339ec8b8252ff3963972b8c62bae4a04e7f0b194b002f0afb600c58566d7"
+  },
+  "SECOND_FINANCIAL_BACKTEST_RAN": false,
+  "trade_entry_allowed": false
+}

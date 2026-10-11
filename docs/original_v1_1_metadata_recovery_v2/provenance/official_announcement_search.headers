@@ -1,0 +1,29 @@
+HTTP/1.1 200 OK
+date: Sun, 11 Oct 2026 09:16:36 GMT
+server: envoy
+
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+x-content-type-options: nosniff
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+x-xss-protection: 1; mode=block
+x-frame-options: SAMEORIGIN
+x-frame-options: SAMEORIGIN
+x-dns-prefetch-control: on
+referrer-policy: strict-origin-when-cross-origin
+referrer-policy: strict-origin-when-cross-origin
+permissions-policy: camera=(), microphone=(), geolocation=()
+cache-control: no-store
+server: envoy
+x-cld-src: Loc-T
+x-akamai-transformed: 0 - 0 -
+date: Sun, 11 Oct 2026 09:16:36 GMT
+alt-svc: h3=":443"; ma=93600
+access-control-expose-headers: X-Country-Code,Server
+x-country-code: DE
+strict-transport-security: max-age=31536000 ; includeSubDomains
+set-cookie: [REDACTED_PUBLIC_RESPONSE_COOKIE]
+set-cookie: [REDACTED_PUBLIC_RESPONSE_COOKIE]
+x-envoy-upstream-service-time: 284
+

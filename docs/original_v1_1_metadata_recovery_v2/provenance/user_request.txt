@@ -1,0 +1,772 @@
+Продолжай Crypto Bot на ветке:
+
+`medium-term-source-research`
+
+Текущие frozen refs:
+
+Strategy v1.1:
+`43e9d7addcd427650ff856dd1fa99f78ee5c06f7`
+
+First financial preregistration:
+`008b80d97cf008e14af94d4271c12188257a926f`
+
+First frozen result:
+`a49c40eda1191354ce936994455119c79010baf7`
+
+ORIGINAL v1.1 freeze manifest:
+`dca962ff1f829887d0787a6329112e77f4ce714023bee85f666ed37843f2ecbb`
+
+Evidence Adapter v2 уже создан и заморожен.
+
+Текущий evidence status:
+
+RAW_PROPOSALS = 176365
+OBJECTIVE_GEOMETRY_PASS = 176365
+OBJECTIVE_SOURCE_FAIL = 0
+QUALITATIVE_REQUIRED = 131099
+EVIDENCE_COMPLETE = 0
+SOURCE_DECISION_READY = 0
+REMAINING_UNKNOWN = 45266
+READY_FOR_SECOND_FINANCIAL_BACKTEST = FALSE
+
+==================================================
+ГЛАВНАЯ ЦЕЛЬ
+==================================================
+
+За ОДИН рабочий запуск попытаться пройти цепочку:
+
+HISTORICAL METADATA RECOVERY
+→ OBJECTIVE EVIDENCE COMPLETION
+→ QUALITATIVE EVIDENCE COMPLETION
+→ EVIDENCE FREEZE v3
+→ PRE-OUTCOME SECOND-BACKTEST PREREGISTRATION
+→ SECOND FINANCIAL BACKTEST
+
+НО:
+
+financial backtest разрешён ТОЛЬКО если все обязательные evidence gates честно пройдены.
+
+Если хотя бы один critical gate нельзя пройти без новой стратегии, скрытого threshold, outcome leakage или недоказанной metadata:
+
+STOP.
+
+Не считать P&L.
+
+==================================================
+НЕИЗМЕНЯЕМЫЕ ИНВАРИАНТЫ
+==================================================
+
+НЕ менять:
+
+- ORIGINAL_STRATEGY_SPEC_v1;
+- ORIGINAL_STRATEGY_SPEC_v1.1;
+- U1–U6;
+- N11;
+- executable tree;
+- active/inactive branches;
+- TF universe M15/H1/H4/D1;
+- FIRST_TEST_ONLY;
+- fixed initial stop;
+- contextual FTA;
+- qualitative UNKNOWN semantics;
+- WAIT semantics.
+
+Не добавлять M1/M5.
+
+`WAIT_NO_AVAILABLE_LOWER_TF` не чинить изменением TF profile.
+
+Не использовать:
+
+- old751 adverse labels;
+- old446 losses;
+- old NO_HTF_CONTEXT;
+- H1/H4 owner;
+- fitted 68% tree;
+- baseline outcomes;
+- WIN/LOSS;
+- MFE/MAE;
+- P&L;
+- future candles;
+- project 40/30/30;
+- TP1→BE;
+- Anti-Scalp;
+- project risk gates
+
+для построения SOURCE evidence.
+
+`trade_entry_allowed=false`.
+
+LIVE/private API запрещены.
+
+Production integration запрещена.
+
+==================================================
+STAGE A — HISTORICAL METADATA RECOVERY
+==================================================
+
+Нужно попытаться доказать historical/effective-dated Bybit instrument metadata для:
+
+BTCUSDT
+ETHUSDT
+
+Период:
+
+2023-01-01 00:00 UTC
+—
+2025-12-05 23:30 UTC
+
+Минимум:
+
+- tick_size;
+- price_precision;
+- qty_step;
+- quantity_precision;
+- minimum_qty;
+- contract type;
+- linear perpetual identity;
+- base asset;
+- quote asset;
+- effective_from;
+- effective_to.
+
+Искать:
+
+1. repo artifacts;
+2. archived API snapshots;
+3. historical manifests;
+4. immutable logs;
+5. official/public Bybit historical references;
+6. archived documentation/snapshots;
+7. parameter change history.
+
+Не считать current API value доказательством прошлого.
+
+Не выводить tick size из decimal representation candles.
+
+Если удаётся доказать только часть периода:
+
+создать interval map:
+
+`VERIFIED`
+`UNKNOWN`
+
+и использовать финансово только VERIFIED intervals позже.
+
+Создать:
+
+`HISTORICAL_INSTRUMENT_METADATA_v2.json`
+
+и:
+
+`HISTORICAL_METADATA_EVIDENCE_REPORT.md`
+
+==================================================
+GATE A
+==================================================
+
+Для financial stage требуется:
+
+хотя бы один non-trivial historical interval с VERIFIED metadata для BTC или ETH.
+
+Если:
+
+`metadata_verified_periods = 0`
+
+то:
+
+STOP.
+
+Вернуть:
+
+`STOP_REASON=NO_VERIFIED_HISTORICAL_INSTRUMENT_METADATA`
+
+Не считать P&L.
+
+==================================================
+STAGE B — OBJECTIVE SOURCE EVIDENCE COMPLETION
+==================================================
+
+Использовать Evidence Adapter v2 как основу.
+
+Максимально заполнить всё, что можно получить causal/deterministic путём:
+
+- swings;
+- HH/HL/LH/LL where identifiable;
+- BOS;
+- CONF where source-exact;
+- structural pools;
+- sweep/raid;
+- SFP geometry;
+- next OPEN semantics;
+- OB formation facts;
+- Breaker relation;
+- FVG;
+- OTE;
+- PD;
+- ATR14;
+- Range raw geometry;
+- STB/BTS geometry;
+- first-test state;
+- consumed-zone state;
+- stable canonical IDs;
+- source-valid POI inventory;
+- contextual FTA inventory;
+- stop anchor where unique;
+- entry POI where unique;
+- source confirmation where objective.
+
+Не вводить новые numeric thresholds.
+
+==================================================
+STAGE C — COHORT DEDUP / ANNOTATION TRIAGE
+==================================================
+
+Не размечать все 131099 cases как независимые visual tasks.
+
+Сначала определить physical/contextual equivalence.
+
+Group candidates by frozen causal identity where applicable:
+
+- same physical idea;
+- same contextual origin;
+- same source POI;
+- same formation;
+- same confirmation;
+- same branch-equivalent plan;
+- same decision-state where evidence questions identical.
+
+Нельзя объединять cases, если различается material evidence.
+
+Создать:
+
+`ANNOTATION_UNIT_MAP.jsonl.gz`
+
+Для каждого unit:
+
+- annotation_unit_id;
+- candidate_ids;
+- physical_idea_id;
+- context ids;
+- decision cutoff;
+- required questions;
+- why safe to group.
+
+Показать:
+
+RAW qualitative candidates
+→ unique annotation units.
+
+==================================================
+STAGE D — QUALITATIVE EVIDENCE COMPLETION
+==================================================
+
+Использовать только blinded/outcome-free pack.
+
+Нужно попытаться закрыть:
+
+- meaningful liquidity;
+- adverse vs target/fuel vs neutral;
+- smooth structural approach;
+- whole impulse;
+- clear range;
+- reasonable EQ tilt;
+- protected structural endpoints;
+- contextual POI relation;
+- market context;
+- source confirmation;
+- source entry POI;
+- first eligible test;
+- contextual FTA inventory completeness.
+
+Правила:
+
+PASS / FAIL / UNKNOWN.
+
+Если source не даёт однозначного ответа:
+
+UNKNOWN.
+
+Не превращать qualitative concepts в hidden numeric classifier.
+
+Не создавать fitted heuristic.
+
+Не использовать future bars.
+
+Не использовать outcome.
+
+==================================================
+ВАЖНО — АВТОМАТИЧЕСКАЯ РАЗМЕТКА
+==================================================
+
+Разрешена только если решение следует непосредственно из:
+
+- explicit source geometry;
+- frozen rule;
+- deterministic causal fact.
+
+Если требуется human/discretionary judgment:
+
+НЕ подделывать автоматическую label.
+
+Создать blinded annotation unit и оставить UNKNOWN, если честно закрыть невозможно.
+
+==================================================
+STAGE E — EVIDENCE COMPLETE ASSEMBLY
+==================================================
+
+После metadata + objective + qualitative этапов собрать historical source cases.
+
+Case считается:
+
+`EVIDENCE_COMPLETE`
+
+только если ВСЕ fields frozen executable schema заполнены доказуемо.
+
+После этого вызвать frozen executable evaluate.
+
+Статусы:
+
+- SOURCE ALLOW
+- SOURCE REJECT
+- SOURCE WAIT
+
+Не считать trade ещё.
+
+Создать funnel:
+
+RAW
+→ OBJECTIVE
+→ QUALITATIVE
+→ EVIDENCE_COMPLETE
+→ SOURCE_ALLOW
+→ SOURCE_REJECT
+→ SOURCE_WAIT
+
+==================================================
+CRITICAL GATE E
+==================================================
+
+Для запуска второго financial backtest требуется:
+
+1. metadata VERIFIED на timestamps соответствующих cases;
+2. `EVIDENCE_COMPLETE > 0`;
+3. `SOURCE_ALLOW > 0`;
+4. entry POI unique;
+5. stop anchor unique;
+6. FTA/Range exit unique;
+7. causal event chronology available;
+8. no unresolved branch conflict;
+9. no unknown critical evidence.
+
+Если:
+
+`SOURCE_ALLOW = 0`
+
+или
+
+`EVIDENCE_COMPLETE = 0`
+
+то:
+
+STOP.
+
+Не считать financial result.
+
+Вернуть конкретный blocker breakdown.
+
+==================================================
+STAGE F — FREEZE EVIDENCE v3
+==================================================
+
+Если Gate E PASS:
+
+создать immutable namespace:
+
+`docs/original_v1_1_evidence_adapter_v3/`
+
+Включить:
+
+- EVIDENCE_ADAPTER_V3_SPEC.md
+- HISTORICAL_INSTRUMENT_METADATA_v2.json
+- HISTORICAL_METADATA_EVIDENCE_REPORT.md
+- OBJECTIVE_EVIDENCE_REPORT.md
+- ANNOTATION_UNIT_MAP.jsonl.gz
+- QUALITATIVE_COMPLETION_REPORT.md
+- EVIDENCE_FUNNEL.json
+- SOURCE_ALLOW_CASES.jsonl.gz
+- SOURCE_REJECT_CASES.jsonl.gz
+- SOURCE_WAIT_CASES.jsonl.gz
+- OLD880_RECHECK_V3.csv
+- QA_REPORT.md
+- QA_RECEIPT.json
+- REPRODUCIBILITY.md
+- freeze_manifest.json
+
+Сделать commit:
+
+`PRE_SECOND_FINANCIAL_EVIDENCE_FREEZE`
+
+Запомнить commit SHA и manifest SHA256.
+
+==================================================
+STAGE G — PRE-OUTCOME SECOND FINANCIAL PREREGISTRATION
+==================================================
+
+ТОЛЬКО после Evidence v3 freeze.
+
+До просмотра financial outcome создать:
+
+`ORIGINAL_V1_1_SECOND_FINANCIAL_BACKTEST_PROTOCOL.md`
+
+`original_v1_1_second_financial_backtest_preregistration.json`
+
+Зафиксировать:
+
+- strategy commit;
+- evidence v3 commit;
+- evidence manifest;
+- exact dataset hashes;
+- exact verified metadata intervals;
+- symbols;
+- TF;
+- included SOURCE_ALLOW case IDs;
+- excluded WAIT/UNKNOWN;
+- fill semantics;
+- intrabar policy;
+- entry;
+- SL;
+- exit;
+- fee;
+- slippage;
+- funding;
+- risk/accounting convention;
+- EOF handling;
+- metrics.
+
+Сделать отдельный commit:
+
+`PRE_OUTCOME_SECOND_FINANCIAL_BACKTEST`
+
+Только после этого разрешено считать P&L.
+
+==================================================
+STAGE H — SECOND FINANCIAL BACKTEST
+==================================================
+
+Запускать только на frozen:
+
+`SOURCE_ALLOW`
+
+cases из Evidence v3.
+
+Не заново вычислять labels после просмотра результата.
+
+==================================================
+EXECUTION
+==================================================
+
+Использовать frozen N11 event rules.
+
+Если exact event ordering известен:
+
+симулировать.
+
+Если OHLC внутри одной свечи допускает несколько mutually-exclusive paths и порядок не наблюдаем:
+
+`WAIT_INTRABAR_ORDER`
+
+Такие cases исключить из primary outcome и перечислить отдельно.
+
+Не применять arbitrary SL-first/TP-first.
+
+==================================================
+ENTRY / STOP / EXIT
+==================================================
+
+ENTRY:
+
+frozen U3/N11 only.
+
+STOP:
+
+frozen fixed initial protective stop.
+
+Никакого BE.
+
+EXIT:
+
+Non-Range:
+100% contextual FTA.
+
+Range:
+frozen source exit zone.
+
+Не использовать project exit policy.
+
+==================================================
+COSTS
+==================================================
+
+Использовать заранее зарегистрированные baseline-compatible execution costs.
+
+Показать отдельно:
+
+Gross
+Fees
+Slippage
+Funding if applicable
+Net
+
+Никаких post-outcome cost changes.
+
+==================================================
+ACCOUNTING VIEWS
+==================================================
+
+A. INDEPENDENT_SOURCE_CASES
+
+B. SHARED_PORTFOLIO
+
+Оба preregistered.
+
+Project admission/risk filters не должны менять SOURCE validity.
+
+Если shared portfolio использует fixed accounting risk:
+
+маркировать как accounting convention, не source rule.
+
+==================================================
+SECOND RUN METRICS
+==================================================
+
+Обязательно:
+
+- source candidates;
+- EVIDENCE_COMPLETE;
+- SOURCE_ALLOW;
+- orders;
+- filled;
+- closed;
+- open/censored;
+- intrabar unresolved;
+- WIN;
+- LOSS;
+- WR;
+- Gross;
+- Fees;
+- Slippage;
+- Funding;
+- Net;
+- PF;
+- Expectancy;
+- Avg R;
+- median R;
+- Avg Win;
+- Avg Loss;
+- payoff;
+- breakeven WR;
+- MaxDD;
+- max loss streak;
+- mean hold;
+- median hold.
+
+Breakdowns:
+
+- BTC/ETH;
+- LONG/SHORT;
+- branch;
+- setup TF;
+- year;
+- month;
+- metadata verified period.
+
+==================================================
+COMPARE AGAINST BASELINE C
+==================================================
+
+Baseline C remains:
+
+880 CLOSED
+338 WIN
+542 LOSS
+WR 38.409%
+PF 0.7422
+Net -1080.91 USDT
+AvgR -0.1299
+
+Comparison must clearly state:
+
+different cohorts,
+different admission,
+different exits,
+different evidence availability.
+
+Do not attribute difference to one filter unless matched-case analysis proves it.
+
+Do not treat old 67.68% fitted leaf as benchmark.
+
+==================================================
+MATCHED OLD880
+==================================================
+
+For old880 show:
+
+- inactive branch;
+- SOURCE FAIL;
+- WAIT;
+- EVIDENCE COMPLETE;
+- SOURCE ALLOW;
+- exact matched entry plan if any.
+
+If matched fills exist, then and only then calculate matched outcome diagnostic.
+
+Do not reuse old source labels.
+
+==================================================
+QA BEFORE RESULT ACCEPTANCE
+==================================================
+
+Must PASS:
+
+- strategy manifests;
+- Evidence v2 manifest;
+- Evidence v3 manifest;
+- first-result manifest;
+- baseline/audit invariance;
+- dataset hashes;
+- no-lookahead;
+- completed candles;
+- known_at;
+- prefix identity;
+- future mutation;
+- replay;
+- canonical IDs;
+- annotation no-outcome leakage;
+- metadata effective period correctness;
+- BACKTEST/SHADOW parity;
+- financial identity;
+- resume reproducibility;
+- no LIVE/private API;
+- `trade_entry_allowed=false`.
+
+==================================================
+NO OPTIMIZATION AFTER RESULT
+==================================================
+
+После P&L:
+
+НЕ менять:
+
+- strategy;
+- evidence;
+- metadata interval;
+- labels;
+- stop;
+- entry;
+- target;
+- branch;
+- timeframe;
+- cost assumptions.
+
+Если результат плохой — сохранить.
+
+Если хороший — сохранить.
+
+Не запускать третий вариант.
+
+==================================================
+FINAL ARTIFACTS IF BACKTEST RAN
+==================================================
+
+Создать:
+
+`ORIGINAL_V1_1_SECOND_FINANCIAL_BACKTEST_REPORT.md`
+
+и сохранить:
+
+- preregistration;
+- financial metrics;
+- all trades;
+- cost ledger;
+- equity;
+- per-trade evidence trace;
+- rule trace;
+- intrabar unresolved;
+- WAIT/REJECT/ALLOW;
+- matched baseline diagnostics;
+- QA;
+- result manifest.
+
+Сделать:
+
+`SECOND_FINANCIAL_RESULT`
+
+commit.
+
+==================================================
+FINAL RESPONSE
+==================================================
+
+Если STOP до finance:
+
+вернуть:
+
+- exact stop stage;
+- stop reason;
+- metadata status;
+- annotation units;
+- evidence complete;
+- SOURCE ALLOW;
+- remaining UNKNOWN;
+- blockers;
+- QA;
+- commit;
+- manifest;
+- `SECOND_FINANCIAL_BACKTEST_RAN=FALSE`.
+
+Если finance состоялся:
+
+вернуть:
+
+1. Evidence v3 freeze commit;
+2. Evidence manifest SHA;
+3. PRE-OUTCOME second-backtest commit;
+4. RESULT commit;
+5. exact tested interval;
+6. SOURCE_ALLOW;
+7. FILLED;
+8. CLOSED;
+9. WIN/LOSS;
+10. WR;
+11. Gross;
+12. Fees;
+13. Slippage;
+14. Funding;
+15. Net;
+16. PF;
+17. Expectancy;
+18. AvgR;
+19. MaxDD;
+20. holding;
+21. branch/TF/symbol breakdown;
+22. matched old880;
+23. baseline C comparison;
+24. QA;
+25. artifact paths;
+26. `SECOND_FINANCIAL_BACKTEST_RAN=TRUE`.
+
+==================================================
+FINAL STOP
+==================================================
+
+После второго financial result:
+
+STOP.
+
+Не оптимизировать.
+Не менять profile.
+Не включать project overlays.
+Не включать LIVE.
+Не разрешать trade execution.
+
+`trade_entry_allowed=false`.

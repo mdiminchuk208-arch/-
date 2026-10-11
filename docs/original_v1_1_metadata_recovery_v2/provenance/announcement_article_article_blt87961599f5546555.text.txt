@@ -1,0 +1,55 @@
+To increase market liquidity and improve your trading experience, Bybit will adjust the tick size for the following Perpetual Contracts on Nov 4, 2024, at 10 AM UTC. 
+
+Symbol
+Current ticksize
+New ticksize
+1000CATSUSDT
+0.0001
+0.00001
+REZUSDT
+0.0001
+0.00001
+FBUSDT
+0.01
+0.001
+A8USDT
+0.0001
+0.00001
+MOBILEUSDT
+0.000001
+0.0000001
+VANRYUSDT
+0.0001
+0.00001
+ZKFUSDT
+0.000001
+0.0000001
+LSKUSDT
+0.001
+0.0001
+DEGENUSDT
+0.00001
+0.000001
+NYANUSDT
+0.0001
+0.00001
+RIFUSDT
+0.0001
+0.00001
+RDNTUSDT
+0.00005
+0.00001
+ZBCNUSDT
+0.000001
+0.0000001
+
+Note:
+- No trading functions for USDT Perpetual Contracts were affected during the adjustment process.
+- API users can obtain prices with the updated tick size via GET /v5/market/instruments-info after the aforementioned timestamp. For more information, please refer to our API documentation.
+- Orders placed before the aforementioned timestamp will remain in the order book with the original tick size.
+
+If necessary, please adjust your trading strategy in accordance with the new tick size. We seek your understanding for any inconvenience caused.
+
+Thank you for your continued support!
+
+The Bybit Team

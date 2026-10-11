@@ -1,0 +1,192 @@
+[
+  {
+    "version": "pre_2023",
+    "commit": "76078860be81a344323d69f45053ea1ddbcdec9a",
+    "commit_time": "2022-12-30T14:45:04+08:00",
+    "document_sha256": "c901ad5ce055f53b57d55ec8e5c909ced4bb563cbddccb641937e166941910ff",
+    "file": "docs/original_v1_1_metadata_recovery_v2/provenance/OFFICIAL_INSTRUMENT_pre_2023.mdx",
+    "snapshot_type": "DOCUMENTATION_EXAMPLE_NOT_PRODUCTION_API_ARCHIVE",
+    "response_projection": [
+      {
+        "category": "spot",
+        "symbol": "ETHUSDT",
+        "contract_type": null,
+        "base_asset": "ETH",
+        "quote_asset": "USDT",
+        "settle_asset": null,
+        "priceScale": null,
+        "tickSize": "0.01",
+        "qtyStep": null,
+        "minOrderQty": "0.0005",
+        "example_server_time": 1672027811156,
+        "sample_launchTime": null,
+        "admissible_as_historical_interval": false
+      },
+      {
+        "category": "linear",
+        "symbol": "ETHUSDT",
+        "contract_type": "LinearPerpetual",
+        "base_asset": "ETH",
+        "quote_asset": "USDT",
+        "settle_asset": "USDT",
+        "priceScale": "2",
+        "tickSize": "0.05",
+        "qtyStep": "0.01",
+        "minOrderQty": "0.01",
+        "example_server_time": 1672039120937,
+        "sample_launchTime": "1583193600000",
+        "admissible_as_historical_interval": false
+      }
+    ],
+    "effective_from": null,
+    "effective_to": null,
+    "period_proof": false,
+    "testnet_host_present": true
+  },
+  {
+    "version": "end_2023",
+    "commit": "b93bbb189c5dfd6a9839e1a198d41eb4c697e4fb",
+    "commit_time": "2023-12-29T12:27:27+08:00",
+    "document_sha256": "8c4d6941c42966d7d0d397d8c3854c4453d63be0a8c4bb9d5cf1a880fbe14aa8",
+    "file": "docs/original_v1_1_metadata_recovery_v2/provenance/OFFICIAL_INSTRUMENT_end_2023.mdx",
+    "snapshot_type": "DOCUMENTATION_EXAMPLE_NOT_PRODUCTION_API_ARCHIVE",
+    "response_projection": [
+      {
+        "category": "linear",
+        "symbol": "BTCUSDT",
+        "contract_type": "LinearPerpetual",
+        "base_asset": "BTC",
+        "quote_asset": "USDT",
+        "settle_asset": "USDT",
+        "priceScale": "2",
+        "tickSize": "0.50",
+        "qtyStep": "0.001",
+        "minOrderQty": "0.001",
+        "example_server_time": 1672712495660,
+        "sample_launchTime": "1585526400000",
+        "admissible_as_historical_interval": false
+      }
+    ],
+    "effective_from": null,
+    "effective_to": null,
+    "period_proof": false,
+    "testnet_host_present": true
+  },
+  {
+    "version": "end_2024",
+    "commit": "443842a9795d555aac95527bdf084f8444c4f1b3",
+    "commit_time": "2024-12-30T16:10:41+08:00",
+    "document_sha256": "d3f195969947fae765b40c63aaa05cb9f4cc28ed8a47c94264bd94990ac7ff46",
+    "file": "docs/original_v1_1_metadata_recovery_v2/provenance/OFFICIAL_INSTRUMENT_end_2024.mdx",
+    "snapshot_type": "DOCUMENTATION_EXAMPLE_NOT_PRODUCTION_API_ARCHIVE",
+    "response_projection": [
+      {
+        "category": "linear",
+        "symbol": "BTCUSDT",
+        "contract_type": "LinearPerpetual",
+        "base_asset": "BTC",
+        "quote_asset": "USDT",
+        "settle_asset": "USDT",
+        "priceScale": "2",
+        "tickSize": "0.10",
+        "qtyStep": "0.001",
+        "minOrderQty": "0.001",
+        "example_server_time": 1707186451514,
+        "sample_launchTime": "1585526400000",
+        "admissible_as_historical_interval": false
+      }
+    ],
+    "effective_from": null,
+    "effective_to": null,
+    "period_proof": false,
+    "testnet_host_present": true
+  },
+  {
+    "version": "requested_end",
+    "commit": "4710960b3ce49e2bc8a8bee2615b05f97e1585b3",
+    "commit_time": "2025-12-05T16:02:51+08:00",
+    "document_sha256": "b783737b5a2c434354ccd654316eaad9984ab8dcd09f76f6367f75fcf5dcabf6",
+    "file": "docs/original_v1_1_metadata_recovery_v2/provenance/OFFICIAL_INSTRUMENT_requested_end.mdx",
+    "snapshot_type": "DOCUMENTATION_EXAMPLE_NOT_PRODUCTION_API_ARCHIVE",
+    "response_projection": [
+      {
+        "category": "linear",
+        "symbol": "BTCUSDT",
+        "contract_type": "LinearPerpetual",
+        "base_asset": "BTC",
+        "quote_asset": "USDT",
+        "settle_asset": "USDT",
+        "priceScale": "2",
+        "tickSize": "0.10",
+        "qtyStep": "0.001",
+        "minOrderQty": "0.001",
+        "example_server_time": 1735809771618,
+        "sample_launchTime": "1585526400000",
+        "admissible_as_historical_interval": false
+      },
+      {
+        "category": "spot",
+        "symbol": "BTCUSDT",
+        "contract_type": null,
+        "base_asset": "BTC",
+        "quote_asset": "USDT",
+        "settle_asset": null,
+        "priceScale": null,
+        "tickSize": "0.1",
+        "qtyStep": null,
+        "minOrderQty": "0.000011",
+        "example_server_time": 1760027412300,
+        "sample_launchTime": null,
+        "admissible_as_historical_interval": false
+      }
+    ],
+    "effective_from": null,
+    "effective_to": null,
+    "period_proof": false,
+    "testnet_host_present": true
+  },
+  {
+    "version": "current",
+    "commit": "59e3d457dea6b419a14987c19a3aabf4ffb38238",
+    "commit_time": "2026-10-09T16:46:27+08:00",
+    "document_sha256": "413cd16af6097248140024f99eea563c9c1eb980335d0218cf45b908b4b354a4",
+    "file": "docs/original_v1_1_metadata_recovery_v2/provenance/OFFICIAL_INSTRUMENT_current.mdx",
+    "snapshot_type": "DOCUMENTATION_EXAMPLE_NOT_PRODUCTION_API_ARCHIVE",
+    "response_projection": [
+      {
+        "category": "linear",
+        "symbol": "BTCUSDT",
+        "contract_type": "LinearPerpetual",
+        "base_asset": "BTC",
+        "quote_asset": "USDT",
+        "settle_asset": "USDT",
+        "priceScale": "2",
+        "tickSize": "0.10",
+        "qtyStep": "0.001",
+        "minOrderQty": "0.001",
+        "example_server_time": 1735809771618,
+        "sample_launchTime": "1585526400000",
+        "admissible_as_historical_interval": false
+      },
+      {
+        "category": "spot",
+        "symbol": "BTCUSDT",
+        "contract_type": null,
+        "base_asset": "BTC",
+        "quote_asset": "USDT",
+        "settle_asset": null,
+        "priceScale": null,
+        "tickSize": "0.1",
+        "qtyStep": null,
+        "minOrderQty": "0.000011",
+        "example_server_time": 1760027412300,
+        "sample_launchTime": null,
+        "admissible_as_historical_interval": false
+      }
+    ],
+    "effective_from": null,
+    "effective_to": null,
+    "period_proof": false,
+    "testnet_host_present": true
+  }
+]

@@ -1,0 +1,40 @@
+To increase market liquidity and improve your trading experience, Bybit will adjust the tick size for the following Perpetual Contracts on Oct 2, 2024, at 9 AM UTC. 
+
+Symbol
+Current ticksize
+New ticksize
+STRKUSDT
+0.001
+0.0001
+STRKPERP
+0.001
+0.0001
+NEIROETHUSDT
+0.0001
+0.00001
+DOGSUSDT
+0.000001
+0.0000001
+ETHFIUSDT
+0.001
+0.0001
+ETHFIPERP
+0.001
+0.0001
+BIGTIMEUSDT
+0.0001
+0.00001
+ALTUSDT
+0.0001
+0.00001
+
+Note:
+- No trading functions for USDT & USDC Perpetual Contracts were affected during the adjustment process.
+- API users can obtain prices with the updated tick size via GET /v5/market/instruments-info after the aforementioned timestamp. For more information, please refer to our [API documentation](https://bybit-exchange.github.io/docs/v5/intro).
+- Orders placed before the aforementioned timestamp will remain in the order book with the original tick size.
+
+If necessary, please adjust your trading strategy in accordance with the new tick size. We seek your understanding for any inconvenience caused.
+
+Thank you for your continued support!
+
+The Bybit Team

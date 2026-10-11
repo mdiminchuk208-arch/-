@@ -1,0 +1,75 @@
+
+
+In our ongoing efforts to enhance market liquidity and optimize your trading experience, Bybit will be adjusting the 
+tick size
+ for select 
+USDT
+ 
+Perpetual
+ 
+Contracts
+ on 
+Apr
+ 
+3
+, 
+2024
+ at 
+10:30AM
+ 
+UTC
+.
+
+
+Symbol
+Current ticksize
+New ticksize
+ARKMUSDT
+0.00005
+0.0001
+ARKUSDT
+0.00001
+0.0001
+BADGERUSDT
+0.0001
+0.001
+FETUSDT
+0.00005
+0.0001
+FRONTUSDT
+0.00001
+0.0001
+INJUSDT
+0.0005
+0.001
+SEIUSDT
+0.00001
+0.0001
+SOLUSDT
+0.001
+0.01
+STXUSDT
+0.00005
+0.0001
+TOMIUSDT
+0.001
+0.0001
+SCAUSDT
+0.001
+0.0001
+SOLPERP
+0.005
+0.01
+
+
+
+Note
+:
+For trading pairs where the tick size is adjusted to a higher decimal value, such as from 0.0001 to 0.001, the adjustment may result in negative grid profits for the respective Futures Grid Bot. This change may also lead to Futures Martingale liquidation in extreme cases. Hence, you are advised to manually terminate your bot before the adjustment to avoid any potential loss, and you can create a new bot after the adjustment is completed. Please note that this applies to bots created through Copy Trading as well.
+Changes to the tick size will not impact any trading functions for USDT Perpetual Contracts.
+API users can access updated tick sizes via GET /v5/market/instruments-info after the mentioned timestamp. For more details, please consult our API 
+documentation
+.
+Orders placed before the specified timestamp will remain in the order book with the original tick size, but will be displayed with the new tick size.
+
+If necessary, please align your trading strategy based on the updated tick size. We appreciate your understanding for any inconvenience this may cause.

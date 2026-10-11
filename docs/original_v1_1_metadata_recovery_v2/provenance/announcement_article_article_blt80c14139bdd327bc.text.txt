@@ -1,0 +1,34 @@
+
+
+To increase market liquidity and improve your trading experience, Bybit will adjust the tick size for the following USDT & USDC Perpetual Contracts on 
+Feb 10, 2023, at 8AM UTC
+. 
+
+
+
+Contract Type
+Contract Name
+Before Adjustment
+After Adjustment
+USDT Perpetual
+BTCUSDT
+0.5
+0.1
+USDC Perpetual
+BTC-PERP
+0.5
+0.1
+
+
+Note:
+No trading functions for USDT & USDC Perpetual Contracts were affected during the adjustment process.
+API users can obtain prices with the updated tick size via GET /derivatives/v3/public/instruments-info after the aforementioned timestamp. For more information, please refer to our 
+API documentation
+.
+Orders placed before the aforementioned timestamp will remain in the order book with the original tick size.
+
+If necessary, please adjust your trading strategy in accordance with the new tick size. We seek your understanding for any inconvenience caused.
+
+Thank you for your continued support!
+
+The Bybit Team

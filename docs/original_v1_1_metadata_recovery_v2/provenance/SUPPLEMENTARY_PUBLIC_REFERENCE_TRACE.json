@@ -1,0 +1,35 @@
+{
+  "references": [
+    {
+      "file": "docs/original_v1_1_metadata_recovery_v2/provenance/official_announcement_index.js",
+      "url": "https://announcements.bybit.com/static/announcements/_next/static/chunks/pages/index-2d8edfffe4ffe7ef.js",
+      "method": "GET",
+      "http_code": 200,
+      "purpose": "Read publicly exposed announcement search schema, no JS execution or credentials"
+    },
+    {
+      "file": "docs/original_v1_1_metadata_recovery_v2/provenance/official_derivatives_change_2025_followed.html",
+      "url": "https://announcements.bybit.com/article/adjustments-to-bybit-s-derivative-trading-limit-order-mechanism-blt469228de1902fff6/",
+      "method": "GET_WITH_NORMAL_REDIRECT",
+      "http_code": 200,
+      "purpose": "Official linked 2025 price-limit change reference; does not prove required tick/qty/precision tuple"
+    },
+    {
+      "file": "docs/original_v1_1_metadata_recovery_v2/provenance/official_announcement_search.html",
+      "url": "https://announcements.bybit.com/en/?search=tick%20size",
+      "method": "GET",
+      "http_code": 200,
+      "purpose": "Initial query parameter ignored by frontend; no search completeness inferred"
+    },
+    {
+      "file": "docs/original_v1_1_metadata_recovery_v2/provenance/official_announcement_keyword.html",
+      "url": "https://announcements.bybit.com/en/?keyword=tick%20size",
+      "method": "GET",
+      "http_code": 200,
+      "purpose": "Initial query parameter ignored by frontend; no search completeness inferred"
+    }
+  ],
+  "credentials_sent": false,
+  "private_API": false,
+  "proxy_or_geo_restrictions_bypassed": false
+}

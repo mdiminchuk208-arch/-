@@ -1,0 +1,1830 @@
+[
+  {
+    "objectID": "article.blt1c6769523a390522",
+    "title": "Update on Tick Size for Spot Pairs",
+    "url": "/article/update-on-tick-size-for-spot-pairs-blt1c6769523a390522",
+    "date_timestamp": 1668394310,
+    "publish_time": null,
+    "topics": [
+      "Spot"
+    ]
+  },
+  {
+    "objectID": "article.blt06e751682223f7dc",
+    "title": "Changes To Tick Size for USDT Perpetual Contracts",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contracts-blt06e751682223f7dc/",
+    "date_timestamp": 1669108586,
+    "publish_time": null,
+    "topics": [
+      "Derivatives"
+    ]
+  },
+  {
+    "objectID": "article.blt0375f67b5eb33d1d",
+    "title": "Changes To Tick Size  for USDT Perpetual Contracts",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contracts-blt0375f67b5eb33d1d/",
+    "date_timestamp": 1669716000,
+    "publish_time": null,
+    "topics": [
+      "Derivatives"
+    ]
+  },
+  {
+    "objectID": "article.blt3673e0720a6b1c64",
+    "title": "Changes To Tick Size for USDT Perpetual Contracts (2022-12-29)",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contracts-2022-12-29--blt3673e0720a6b1c64/",
+    "date_timestamp": 1672300800,
+    "publish_time": null,
+    "topics": [
+      "Derivatives"
+    ]
+  },
+  {
+    "objectID": "article.blt46eeac6c593e8c84",
+    "title": "Changes To Tick Size for BITUSD Inverse Perpetual Contract (2022-12-30)",
+    "url": "/article/changes-to-tick-size-for-bitusd-inverse-perpetual-contract-2022-12-30--blt46eeac6c593e8c84/",
+    "date_timestamp": 1672375556,
+    "publish_time": null,
+    "topics": [
+      "Derivatives"
+    ]
+  },
+  {
+    "objectID": "article.bltb4b6d3ffa3c5206c",
+    "title": "Changes To Tick Size for ETHUSDT & ETH-PERP Perpetual Contracts (Jan 6, 2023)",
+    "url": "/article/changes-to-tick-size-for-ethusdt-eth-perp-perpetual-contracts-2023-01-06--bltb4b6d3ffa3c5206c/",
+    "date_timestamp": 1672988586,
+    "publish_time": null,
+    "topics": [
+      "Derivatives"
+    ]
+  },
+  {
+    "objectID": "article.blt02bd9c956436ef50",
+    "title": "Update on Tick Size for Spot Pairs: Jan 13, 2023",
+    "url": "/article/update-on-tick-size-for-spot-pairs-jan-13-2023-blt02bd9c956436ef50/",
+    "date_timestamp": 1673593040,
+    "publish_time": null,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt9ae17c3e17e34f67",
+    "title": "Changes to Tick Size for USDT Perpetual Contracts (2023-01-31)",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contracts-2023-01-31--blt9ae17c3e17e34f67/",
+    "date_timestamp": 1675146919,
+    "publish_time": null,
+    "topics": [
+      "Derivatives",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt80c14139bdd327bc",
+    "title": "Changes to Tick Size for USDT & USDC Perpetual Contracts (2023-02-08)",
+    "url": "/article/changes-to-tick-size-for-usdt-usdc-perpetual-contracts-2023-02-08--blt80c14139bdd327bc/",
+    "date_timestamp": 1675767767,
+    "publish_time": null,
+    "topics": [
+      "Derivatives",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt92a012f075df7bc5",
+    "title": "Changes to Tick Size for USDT Perpetual Contracts (2023-02-22)",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contracts-2023-02-22--blt92a012f075df7bc5/",
+    "date_timestamp": 1677047719,
+    "publish_time": null,
+    "topics": [
+      "Derivatives",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt8833814262702d0f",
+    "title": "Changes to Tick Size for USDT Perpetual Contract (2023-04-10)",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contract-2023-04-10--blt8833814262702d0f/",
+    "date_timestamp": 1681108519,
+    "publish_time": null,
+    "topics": [
+      "Derivatives",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt0c48cca929ecb8be",
+    "title": "Changes To Tick Size for USDT Perpetual Contract",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contract-blt0c48cca929ecb8be/",
+    "date_timestamp": 1682492216,
+    "publish_time": null,
+    "topics": [
+      "Institutions",
+      "Derivatives"
+    ]
+  },
+  {
+    "objectID": "article.blt04a6006f731f630d",
+    "title": "Unified Trading Account: Upcoming Parameter Modifications",
+    "url": "/article/unified-trading-account-upcoming-parameter-modifications-blt04a6006f731f630d/",
+    "date_timestamp": 1684224000,
+    "publish_time": null,
+    "topics": [
+      "Institutions",
+      "Margin Trading",
+      "Unified Trading Account"
+    ]
+  },
+  {
+    "objectID": "article.blt262c2a2b6f7fd79c",
+    "title": "Changes To Tick Size for  USDT Perpetual Contracts",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contracts-blt262c2a2b6f7fd79c/",
+    "date_timestamp": 1684288800,
+    "publish_time": null,
+    "topics": [
+      "Institutions",
+      "Derivatives"
+    ]
+  },
+  {
+    "objectID": "article.blt17f20cc47e080046",
+    "title": "Changes To Tick Size for USDT Perpetual Contracts (Sep 27, 2023)",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contracts-sep-27-2023--blt17f20cc47e080046/",
+    "date_timestamp": 1695783957,
+    "publish_time": null,
+    "topics": [
+      "Derivatives",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt40e511d72dcd279f",
+    "title": "Changes To Tick Size for USDT  Perpetual Contracts",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contracts-blt40e511d72dcd279f/",
+    "date_timestamp": 1697813202,
+    "publish_time": null,
+    "topics": [
+      "Derivatives",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt7a0fb874a1d9dbd5",
+    "title": "Changes To Tick Size for USDT Perpetual Contracts (Nov 1, 2023)",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contracts-nov-1-2023--blt7a0fb874a1d9dbd5/",
+    "date_timestamp": 1698331602,
+    "publish_time": null,
+    "topics": [
+      "Derivatives",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.bltdc29a222e440a197",
+    "title": "Changes To Tick Size for USDT Perpetual Contracts 2023-11-08",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contracts-2023-11-02-bltdc29a222e440a197/",
+    "date_timestamp": 1698911313,
+    "publish_time": null,
+    "topics": [
+      "Derivatives",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt7d933fe8d81cfd41",
+    "title": "Changes To Tick Size for USDT Perpetual Contracts (Nov 22, 2023)",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contracts-nov-22-2023--blt7d933fe8d81cfd41/",
+    "date_timestamp": 1700128800,
+    "publish_time": null,
+    "topics": [
+      "Derivatives",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.bltc19c2a168ed28a14",
+    "title": "Changes To Tick Size for USDT Perpetual Contracts (Dec 5, 2023)",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contracts-dec-5-2023--bltc19c2a168ed28a14/",
+    "date_timestamp": 1701165600,
+    "publish_time": null,
+    "topics": [
+      "Derivatives",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt418a37a725dde406",
+    "title": "Changes to Tick Size for USDT Perpetual Contract (Dec 15, 2023)",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contract-dec-15-2023--blt418a37a725dde406/",
+    "date_timestamp": 1702375200,
+    "publish_time": null,
+    "topics": [
+      "Derivatives",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt35cb771098a20607",
+    "title": "Changes to Tick Size for USDT Perpetual Contracts (Dec 22, 2023)",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contracts-dec-22-2023--blt35cb771098a20607/",
+    "date_timestamp": 1702651602,
+    "publish_time": null,
+    "topics": [
+      "Derivatives",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.bltd8abd6df961602c9",
+    "title": "Changes to Tick Size for USDT Perpetual Contracts (Jan 17, 2024)",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contracts-jan-17-2024--bltd8abd6df961602c9/",
+    "date_timestamp": 1705048585,
+    "publish_time": null,
+    "topics": [
+      "Derivatives",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt982581fae60d08e1",
+    "title": "Update on Tick Sizes for Spot Pairs (January 24, 2024)",
+    "url": "/article/update-on-tick-sizes-for-spot-pairs-june-24-2024--blt982581fae60d08e1/",
+    "date_timestamp": 1705656872,
+    "publish_time": null,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt2b05ec768db86ba3",
+    "title": "Update on Tick Sizes for Spot Pairs (January 26, 2024)",
+    "url": "/article/update-on-tick-sizes-for-spot-pairs-january-26-2024--blt2b05ec768db86ba3/",
+    "date_timestamp": 1706070872,
+    "publish_time": null,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.bltf44e86c01043ac37",
+    "title": "Update on Tick Sizes for Spot Pairs (February 6, 2024)",
+    "url": "/article/bltf44e86c01043ac37/",
+    "date_timestamp": 1707102576,
+    "publish_time": null,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt7a22497b09c0adad",
+    "title": "Update on Tick Sizes for Spot Pairs (February 10, 2024)",
+    "url": "/article/blt7a22497b09c0adad/",
+    "date_timestamp": 1707383540,
+    "publish_time": null,
+    "topics": [
+      "Spot"
+    ]
+  },
+  {
+    "objectID": "article.blt0e218b884fd48ae6",
+    "title": "Changes to Tick Size for USDT Perpetual Contracts (Mar 11, 2024)",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contracts-mar-11-2024--blt0e218b884fd48ae6/",
+    "date_timestamp": 1709607600,
+    "publish_time": null,
+    "topics": [
+      "Derivatives",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt4c50e1952ed10fe8",
+    "title": "Update on Tick Sizes for Spot Pairs  (March 7, 2024)",
+    "url": "/article/update-on-tick-sizes-for-spot-pairs-march-7-2024--blt4c50e1952ed10fe8/",
+    "date_timestamp": 1709722800,
+    "publish_time": null,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.bltec1391049ec6fae7",
+    "title": "Changes to Tick Size for USDT Perpetual Contracts (Apr 3, 2024)",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contracts-apr-3-2024--bltec1391049ec6fae7/",
+    "date_timestamp": 1711508400,
+    "publish_time": 1712135324,
+    "topics": [
+      "Derivatives",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.bltd8d89659d0869e70",
+    "title": "Update on Tick Sizes for Spot Pairs April 18, 2024",
+    "url": "/article/update-on-tick-sizes-for-spot-pairs-april-18-2024-bltd8d89659d0869e70/",
+    "date_timestamp": 1713160800,
+    "publish_time": 1713161594,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blte9f97f1e3be9cd76",
+    "title": "Update on Tick Sizes for Spot Pairs (May 3, 2024)",
+    "url": "/article/update-on-tick-sizes-for-spot-pairs-ticksizeupdatedate--blte9f97f1e3be9cd76/",
+    "date_timestamp": 1714446000,
+    "publish_time": 1714446757,
+    "topics": [
+      "Spot"
+    ]
+  },
+  {
+    "objectID": "article.blt98351379ee86b629",
+    "title": "Update on Tick Sizes for Spot Pairs (May 24, 2024)",
+    "url": "/article/update-on-tick-sizes-for-spot-pairs-may-24-2024--blt98351379ee86b629/",
+    "date_timestamp": 1716282000,
+    "publish_time": 1716281299,
+    "topics": [
+      "Spot",
+      "Trading Bots",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.bltcf0c7be36658b745",
+    "title": "Update on Tick Sizes for Spot Pairs June 13, 2024",
+    "url": "/article/update-on-tick-sizes-for-spot-pairs-june-13-2024-bltcf0c7be36658b745/",
+    "date_timestamp": 1717740000,
+    "publish_time": 1717733589,
+    "topics": [
+      "Spot",
+      "Trading Bots",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt50699aa4c1c69579",
+    "title": "Update on Tick Sizes for Spot Pairs (June 26, 2024)",
+    "url": "/article/update-on-tick-sizes-for-spot-pairs-june-26-2024--blt50699aa4c1c69579/",
+    "date_timestamp": 1718928000,
+    "publish_time": 1718880226,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt8ce7809e0682c386",
+    "title": "Update on Tick Sizes for Spot Pairs (July 9, 2024)",
+    "url": "/article/update-on-tick-sizes-for-spot-pairs-july-9-2024--blt8ce7809e0682c386/",
+    "date_timestamp": 1720078232,
+    "publish_time": 1720083549,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.bltcf8261810bc3242a",
+    "title": "Update on Tick Sizes for Spot Pairs (July 30, 2024)",
+    "url": "/article/update-on-tick-sizes-for-spot-pairs-july-30-2024--bltcf8261810bc3242a/",
+    "date_timestamp": 1721898000,
+    "publish_time": 1721890195,
+    "topics": [
+      "Spot"
+    ]
+  },
+  {
+    "objectID": "article.bltcc9b5780e50dd8ba",
+    "title": "Update on Tick Sizes for Spot Pairs (Aug 14, 2024)",
+    "url": "/article/update-on-tick-sizes-for-spot-pairs-aug-14-2024--bltcc9b5780e50dd8ba/",
+    "date_timestamp": 1723431600,
+    "publish_time": 1723435097,
+    "topics": [
+      "Spot"
+    ]
+  },
+  {
+    "objectID": "article.bltbd427fdf3f101eaf",
+    "title": "Update on Tick Sizes for Spot Pairs (Aug 28, 2024)",
+    "url": "/article/update-on-tick-sizes-for-spot-pairs-aug-28-2024--bltbd427fdf3f101eaf/",
+    "date_timestamp": 1724386008,
+    "publish_time": 1724391233,
+    "topics": [
+      "Spot",
+      "Trading Bots",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt8850fd04dc4f7b6a",
+    "title": "Updates on Tick Size for Spot Pairs (Sep 16, 2024)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-blt8850fd04dc4f7b6a/",
+    "date_timestamp": 1726128000,
+    "publish_time": 1726133394,
+    "topics": [
+      "Spot"
+    ]
+  },
+  {
+    "objectID": "article.blt35398af62d0cf3cd",
+    "title": "Changes To Tick Size for USDT Perpetual Contracts.",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contracts--blt35398af62d0cf3cd/",
+    "date_timestamp": 1726624800,
+    "publish_time": 1726624800,
+    "topics": [
+      "Derivatives"
+    ]
+  },
+  {
+    "objectID": "article.blte12811fa480822d5",
+    "title": "Updates on Tick Size for Spot Pairs (Sep 23, 2024)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-sep-23-2024--blte12811fa480822d5/",
+    "date_timestamp": 1726798863,
+    "publish_time": 1726799336,
+    "topics": [
+      "Spot"
+    ]
+  },
+  {
+    "objectID": "article.blt22872fc8e8e9f11a",
+    "title": "Updates on Tick Size for Spot Pairs (Oct 01, 2024)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-oct-01-2024--blt22872fc8e8e9f11a/",
+    "date_timestamp": 1727222400,
+    "publish_time": 1727308800,
+    "topics": [
+      "Spot",
+      "Spot Listings"
+    ]
+  },
+  {
+    "objectID": "article.blt98abcdf13050f61e",
+    "title": "Changes To Tick Size for USDT & USDC Perpetual Contracts",
+    "url": "/article/changes-to-tick-size-for-usdt-usdc-perpetual-contracts-blt98abcdf13050f61e/",
+    "date_timestamp": 1727343580,
+    "publish_time": 1727433340,
+    "topics": [
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blte65038d9b32dbc62",
+    "title": "Updates on Tick Size for Spot Pairs (Oct 14, 2024)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-oct-14-2024--blte65038d9b32dbc62/",
+    "date_timestamp": 1728441645,
+    "publish_time": 1728460802,
+    "topics": [
+      "Spot"
+    ]
+  },
+  {
+    "objectID": "article.blt91914d8281254b07",
+    "title": "Updates on Tick Size for Spot Pairs (Oct 16, 2024)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-oct-16-2024--blt91914d8281254b07/",
+    "date_timestamp": 1728613358,
+    "publish_time": 1728626400,
+    "topics": [
+      "Spot",
+      "Upgrades",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt87961599f5546555",
+    "title": "Changes To Tick Size for USDT Perpetual Contracts!",
+    "url": "/article/changes-to-tick-size-for-usdt-perpetual-contracts--blt87961599f5546555/",
+    "date_timestamp": 1730707200,
+    "publish_time": 1730708766,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt3a79f415b65a60dd",
+    "title": "Updates on Tick Size for Spot Pairs (Nov 15, 2024)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-nov-15-2024--blt3a79f415b65a60dd/",
+    "date_timestamp": 1731522287,
+    "publish_time": 1731492003,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt7787c1db0cbdb983",
+    "title": "Change Tick Size for USDT Perpetual Contracts!",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contracts--blt7787c1db0cbdb983/",
+    "date_timestamp": 1732003092,
+    "publish_time": 1732003216,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.blt552348ef5437ebea",
+    "title": "Change Tick Size for USDT Perpetual Contract",
+    "url": "/article/copy-of-change-tick-size-for-usdt-perpetual-contract-blt552348ef5437ebea/",
+    "date_timestamp": 1732018446,
+    "publish_time": 1732018464,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.blt1482d97be496bc0f",
+    "title": "Change Tick Size for USDT Perpetual Contracts",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contracts-blt1482d97be496bc0f/",
+    "date_timestamp": 1732611600,
+    "publish_time": 1732611596,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.bltf8e22ea823f34cf3",
+    "title": "Change Tick Size for Perpetual Contracts (Dec 5, 2024)",
+    "url": "/article/change-tick-size-for-perpetual-contracts-dec-5-2024--bltf8e22ea823f34cf3/",
+    "date_timestamp": 1733298534,
+    "publish_time": 1733299205,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT",
+      "USDC"
+    ]
+  },
+  {
+    "objectID": "article.bltbd83e2f3da0a7c66",
+    "title": "Updates on Tick Size for Spot Pairs (Dec 12, 2024)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-bltbd83e2f3da0a7c66/",
+    "date_timestamp": 1733754879,
+    "publish_time": 1733811910,
+    "topics": [
+      "Spot"
+    ]
+  },
+  {
+    "objectID": "article.blt9a7be0c5730f124d",
+    "title": "Change Tick Size for Perpetual Contracts (Dec 17, 2024)",
+    "url": "/article/change-tick-size-for-perpetual-contracts-dec-17-2024--blt9a7be0c5730f124d/",
+    "date_timestamp": 1734344286,
+    "publish_time": 1734345002,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.bltaa11585a70ad5bc1",
+    "title": "Updates on Tick Size for Spot Pairs (Jan 2, 2025)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-jan-2-2025--bltaa11585a70ad5bc1/",
+    "date_timestamp": 1735023244,
+    "publish_time": 1735023921,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt96f1cea87db75db9",
+    "title": "Update on Minimum Single Order Value and Quantity for Spot and Margin Trading Pairs",
+    "url": "/article/update-on-minimum-single-order-value-and-quantity-for-spot-and-margin-trading-pairs-blt96f1cea87db75db9/",
+    "date_timestamp": 1736172561,
+    "publish_time": 1736150402,
+    "topics": [
+      "Spot",
+      "Institutions",
+      "Margin Trading"
+    ]
+  },
+  {
+    "objectID": "article.blt563b2882e367edcd",
+    "title": "Change Tick Size for USDT Perpetual Contract (Jan 9, 2025)",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-jan-9-2025--blt563b2882e367edcd/",
+    "date_timestamp": 1736323074,
+    "publish_time": 1736323268,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.bltb2ac18c16fc7afaf",
+    "title": "Change Tick Size for USDT Perpetual Contract (Jan 13, 2025)",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-jan-13-2025--bltb2ac18c16fc7afaf/",
+    "date_timestamp": 1736518651,
+    "publish_time": 1736519404,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.bltec4b78020e786669",
+    "title": "Change Tick Size for Inverse Perpetual Contract (Jan 13, 2025)",
+    "url": "/article/change-tick-size-for-inverse-perpetual-contract-jan-13-2025--bltec4b78020e786669/",
+    "date_timestamp": 1736518651,
+    "publish_time": 1736739347,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt95f2580aead9afb8",
+    "title": "Change Tick Size for USDT Perpetual Contract (Jan 21, 2025)",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-jan-21-2025--blt95f2580aead9afb8/",
+    "date_timestamp": 1737337969,
+    "publish_time": 1737338400,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.blt398e93cfe72e29c2",
+    "title": "Updates on Tick Size for Spot Pairs (Feb 7, 2025)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-feb-7-2025--blt398e93cfe72e29c2/",
+    "date_timestamp": 1738584836,
+    "publish_time": 1738569600,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt13ed9385e0a133eb",
+    "title": "Change Tick Size for USDT Perpetual Contract (Feb 7, 2025)",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-feb-7-2025--blt13ed9385e0a133eb/",
+    "date_timestamp": 1738806769,
+    "publish_time": 1738823400,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.bltf1533402024ae622",
+    "title": "Change Tick Size for USDT Perpetual Contract (Feb 6, 2025)",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-feb-6-2025--bltf1533402024ae622/",
+    "date_timestamp": 1738806769,
+    "publish_time": 1738804224,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.blt96d4390bfb106409",
+    "title": "Change Tick Size for UROUSDT Perpetual Contract",
+    "url": "/article/change-tick-size-for-urousdt-perpetual-contract-blt96d4390bfb106409/",
+    "date_timestamp": 1738893169,
+    "publish_time": 1738911600,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.blt7c14627fe7f3f6f6",
+    "title": "Change Tick Size for USDT Perpetual Contracts (Feb 11, 2025)",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-feb-11-2025--blt7c14627fe7f3f6f6/",
+    "date_timestamp": 1739152369,
+    "publish_time": 1739176262,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.blt33f021e33199be32",
+    "title": "Change Tick Size for Perpetual Contracts (Feb 18, 2025)",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contracts-feb-18-2025--blt33f021e33199be32/",
+    "date_timestamp": 1739773395,
+    "publish_time": 1739783615,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.blt78d4486b83829610",
+    "title": "Updates on Tick Size for Spot Pairs (Feb 24, 2025)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-feb-24-2025--blt78d4486b83829610/",
+    "date_timestamp": 1739859843,
+    "publish_time": 1740150383,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt2de28893c6d8cf78",
+    "title": "Change Tick Size for LUMIAUSDT Perpetual Contract",
+    "url": "/article/change-tick-size-for-lumiausdt-perpetual-contract-blt2de28893c6d8cf78/",
+    "date_timestamp": 1740018779,
+    "publish_time": 1740020400,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.blt5d4eec16767c7440",
+    "title": "Updates on Tick Size for Spot Pairs (Feb 26, 2025)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-feb-26-2025--blt5d4eec16767c7440/",
+    "date_timestamp": 1740468975,
+    "publish_time": 1740469226,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt5b88492b8616595a",
+    "title": "Change Tick Size for Perpetual Contracts (Feb 26, 2025)",
+    "url": "/article/change-tick-size-for-perpetual-contracts-feb-26-2025--blt5b88492b8616595a/",
+    "date_timestamp": 1740473371,
+    "publish_time": 1740474322,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.blt8634b02124d61308",
+    "title": "Change Tick Size for AVAXUSDT Perpetual Contract",
+    "url": "/article/change-tick-size-for-avaxusdt-perpetual-contract-blt8634b02124d61308/",
+    "date_timestamp": 1741424229,
+    "publish_time": 1741424402,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.bltaf1994882f3dddbd",
+    "title": "Change Tick Size for Perpetual Contracts (Mar 11, 2025)",
+    "url": "/article/change-tick-size-for-perpetual-contracts-mar-11-2025--bltaf1994882f3dddbd/",
+    "date_timestamp": 1741605233,
+    "publish_time": 1741606201,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.bltfc7a1af4e9593320",
+    "title": "Change Tick Size for MANAUSD Perpetual Contract",
+    "url": "/article/change-tick-size-for-manausd-perpetual-contract-bltfc7a1af4e9593320/",
+    "date_timestamp": 1741798713,
+    "publish_time": 1741798793,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.bltd048c3c042f6efa6",
+    "title": "Change of Tick Size for Perpetual Contracts (Mar 14, 2025)",
+    "url": "/article/change-of-tick-size-for-perpetual-contracts-mar-14-2025--bltd048c3c042f6efa6/",
+    "date_timestamp": 1741867210,
+    "publish_time": 1741936111,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT",
+      "USDC"
+    ]
+  },
+  {
+    "objectID": "article.blt2d93fc35e6ebe912",
+    "title": "Updates on Tick Size for Spot Pairs (Mar 19, 2025)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-mar-19-2025--blt2d93fc35e6ebe912/",
+    "date_timestamp": 1741879243,
+    "publish_time": 1741946402,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blte0bd3b76a7e2fa15",
+    "title": "Updates on Tick Size for Selected BTC Spot Pairs (Mar 21, 2025)",
+    "url": "/article/updates-on-tick-size-for-selected-btc-spot-pairs-mar-21-2025--blte0bd3b76a7e2fa15/",
+    "date_timestamp": 1742288261,
+    "publish_time": 1742292001,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.bltcad87d1fcc08016f",
+    "title": "Change of Tick Size for Perpetual Contracts (Mar 20, 2025)",
+    "url": "/article/change-of-tick-size-for-perpetual-contracts-mar-20-2025--bltcad87d1fcc08016f/",
+    "date_timestamp": 1742396233,
+    "publish_time": 1742396399,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.blt5450422b397ef458",
+    "title": "Change of Tick Size for Perpetual Contracts (Mar 25, 2025)",
+    "url": "/article/change-of-tick-size-for-perpetual-contracts-mar-25-2025--blt5450422b397ef458/",
+    "date_timestamp": 1742803848,
+    "publish_time": 1742805000,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.bltbcbfd4750d288cf7",
+    "title": "Change of Tick Size for Perpetual Contracts (Apr 1, 2025)",
+    "url": "/article/change-of-tick-size-for-perpetual-contracts-apr-1-2025--bltbcbfd4750d288cf7/",
+    "date_timestamp": 1743423156,
+    "publish_time": 1743424200,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.bltb9ff1602525b229f",
+    "title": "Change of Tick Size for Perpetual Contracts (Apr 3, 2025)",
+    "url": "/article/change-of-tick-size-for-perpetual-contracts-apr-3-2025--bltb9ff1602525b229f/",
+    "date_timestamp": 1743604852,
+    "publish_time": 1743606000,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.blt2eba774bdfdc5e1b",
+    "title": "Change of Tick Size for Perpetual Contracts (Apr 14, 2025)",
+    "url": "/article/change-of-tick-size-for-perpetual-contracts-apr-15-2025--blt2eba774bdfdc5e1b/",
+    "date_timestamp": 1744650108,
+    "publish_time": 1744650479,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.blt1ce1c792dd01c167",
+    "title": "Updates on Tick Size for Spot Pairs (Apr 18, 2025)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-apr-18-2025--blt1ce1c792dd01c167/",
+    "date_timestamp": 1744878168,
+    "publish_time": 1744976952,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.bltaefc6caedaa532f3",
+    "title": "Updates on Tick Size for Spot Pairs (May 7, 2025)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-may-7-2025--bltaefc6caedaa532f3/",
+    "date_timestamp": 1746627750,
+    "publish_time": 1746628189,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.bltb40904d163da4dea",
+    "title": "Change of Tick Size for Perpetual Contracts (May 14, 2025)",
+    "url": "/article/change-of-tick-size-for-perpetual-contracts-may-14-2025--bltb40904d163da4dea/",
+    "date_timestamp": 1747141772,
+    "publish_time": 1747143000,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.blt27ef1143ba173e35",
+    "title": "Change of Tick Size for Perpetual Contracts (May 21, 2025)",
+    "url": "/article/change-of-tick-size-for-perpetual-contracts-may-21-2025--blt27ef1143ba173e35/",
+    "date_timestamp": 1747728262,
+    "publish_time": 1747729801,
+    "topics": [
+      "Upgrades",
+      "Derivatives",
+      "Institutions",
+      "USDT"
+    ]
+  },
+  {
+    "objectID": "article.blt0c986caca1d5222d",
+    "title": "Spot and margin pairs: Removal of minimum order quantity limit",
+    "url": "/article/spot-and-margin-pairs-removal-of-minimum-order-quantity-limit-blt0c986caca1d5222d/",
+    "date_timestamp": 1748008494,
+    "publish_time": 1748412143,
+    "topics": [
+      "Spot",
+      "Margin Trading",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt9f3d7c7e953186cb",
+    "title": "Updates on Tick Size for Spot Pairs (May 29, 2025)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-ticksizeupdatedate--blt9f3d7c7e953186cb/",
+    "date_timestamp": 1748337041,
+    "publish_time": 1748510086,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt6b35af1aba898937",
+    "title": "Change Tick  Size for USDT Perpetual Contract May 30, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-may-30-2025-blt6b35af1aba898937/",
+    "date_timestamp": 1748582670,
+    "publish_time": 1748582911,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.bltd2f50b79f20684a5",
+    "title": "Updates on Tick Size for Spot Pairs",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-bltd2f50b79f20684a5/",
+    "date_timestamp": 1749456000,
+    "publish_time": 1749462084,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.bltb682a566a7307315",
+    "title": "Updates on Tick Size for Spot Pairs.",
+    "url": "/article/updates-on-tick-size-for-spot-pairs--bltb682a566a7307315/",
+    "date_timestamp": 1750153690,
+    "publish_time": 1750154917,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt3a7139d0998b7462",
+    "title": "Change Tick Size for USDT Perpetual Contract Jun 23,  2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-jun-23-2025-blt3a7139d0998b7462/",
+    "date_timestamp": 1750432380,
+    "publish_time": 1750432627,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.bltf98d85f2d79a4cc5",
+    "title": "Updates on Tick Size for Spot Pairs",
+    "url": "/article/--updates-on-tick-size-for-spot-pairs-bltf98d85f2d79a4cc5/",
+    "date_timestamp": 1751952458,
+    "publish_time": 1752142910,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.bltbeb23a2c804bcdb1",
+    "title": "Change Tick Size for USDT Perpetual Contract  Jul 10, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-jul-10-2025-bltbeb23a2c804bcdb1/",
+    "date_timestamp": 1752136870,
+    "publish_time": 1752136964,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blt3759fe9d2fa92814",
+    "title": "Bybit updates Options trading fee calculation parameters",
+    "url": "/article/bybit-updates-options-trading-fee-calculation-parameters-blt3759fe9d2fa92814/",
+    "date_timestamp": 1752671400,
+    "publish_time": 1752672083,
+    "topics": [
+      "Options",
+      "News"
+    ]
+  },
+  {
+    "objectID": "article.bltc0078d68db01c505",
+    "title": "Change Tick Size for USDT Perpetual Contract Jul 27,  2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-jul-27-2025-bltc0078d68db01c505/",
+    "date_timestamp": 1753607350,
+    "publish_time": 1753608857,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blt626daa67746835f9",
+    "title": "- Updates on Tick Size for Spot Pairs",
+    "url": "/article/--updates-on-tick-size-for-spot-pairs-blt626daa67746835f9/",
+    "date_timestamp": 1753680143,
+    "publish_time": 1753688526,
+    "topics": [
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt749c80e713241587",
+    "title": "Updates on Tick Size for Spot Pairs",
+    "url": "/article/updates-on-tick-size-for-spot-pairs111-blt749c80e713241587/",
+    "date_timestamp": 1755087066,
+    "publish_time": 1755087417,
+    "topics": [
+      "VIP",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.bltc1b91b9375dbd0ec",
+    "title": "Change Tick Size for USDT Perpetual  Contract Aug 20, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-aug-20-2025-bltc1b91b9375dbd0ec/",
+    "date_timestamp": 1755671950,
+    "publish_time": 1755672060,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blt4bd93ce3afe30294",
+    "title": "Change Tick Size for USDT Perpetual Contract Sep 3, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-sep-3-2025-blt4bd93ce3afe30294/",
+    "date_timestamp": 1756910580,
+    "publish_time": 1756911212,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.bltab12a5f40cc7732e",
+    "title": "Change Tick Size for USDT Perpetual Contract Sep  5, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-sep-5-2025-bltab12a5f40cc7732e/",
+    "date_timestamp": 1757051750,
+    "publish_time": 1757051858,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.bltfa84b4a0ff68f846",
+    "title": "Change Tick Size for USDT Perpetual Contract Sep 10, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-sep-10-2025-bltfa84b4a0ff68f846/",
+    "date_timestamp": 1757435800,
+    "publish_time": 1757436042,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blte1052a09c560910f",
+    "title": "Updates on Tick Size for  Spot Pairs",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-blte1052a09c560910f/",
+    "date_timestamp": 1757996512,
+    "publish_time": 1758009601,
+    "topics": [
+      "VIP",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt061f7782162885fa",
+    "title": "Update on minimum single order value and quantity for Spot and Margin trading pairs",
+    "url": "/article/update-on-minimum-single-order-value-and-quantity-for-spot-and-margin-trading-pairs-blt061f7782162885fa/",
+    "date_timestamp": 1758005232,
+    "publish_time": 1758009600,
+    "topics": [
+      "VIP",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt8e6dbea4947db3d8",
+    "title": "Change Tick Size for USDT Perpetual Contract Sep 23, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-sep-23-2025-blt8e6dbea4947db3d8/",
+    "date_timestamp": 1758557230,
+    "publish_time": 1758557911,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blt20c66f9d5a9bbccd",
+    "title": "Change Tick Size for USDT Perpetual  Contract Sep 23, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-sep-23-2025-blt20c66f9d5a9bbccd/",
+    "date_timestamp": 1758602280,
+    "publish_time": 1758602589,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blt0322d021f5e2544f",
+    "title": "Change Tick Size for USDT Perpetual Contract Sep 29, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-sep-29-2025-blt0322d021f5e2544f/",
+    "date_timestamp": 1759052340,
+    "publish_time": 1759052615,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.bltec67afff97adab45",
+    "title": "Change Tick Size for USDT Perpetual Contract Oct 9, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-oct-9-2025-bltec67afff97adab45/",
+    "date_timestamp": 1759721800,
+    "publish_time": 1759722185,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blt2af6fd349bde15c0",
+    "title": "Trading Parameters Adjustment for BBSOL, CMETH, and METH",
+    "url": "/article/adjustment-to-risk-parameters-for-bbsol-cmeth-and-meth-blt2af6fd349bde15c0/",
+    "date_timestamp": 1760253890,
+    "publish_time": 1760255214,
+    "topics": [
+      "Spot",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.bltaf8aca33418fd2e6",
+    "title": "Update on minimum single order value and quantity for Spot and Margin trading pairs！",
+    "url": "/article/update-on-minimum-single-order-value-and-quantity-for-spot-and-margin-trading-pairs--bltaf8aca33418fd2e6/",
+    "date_timestamp": 1760505418,
+    "publish_time": 1760515261,
+    "topics": [
+      "VIP",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt103b9222987247a2",
+    "title": "Updates on Tick Size for Spot Pairs！",
+    "url": "/article/updates-on-tick-size-for-spot-pairs--blt103b9222987247a2/",
+    "date_timestamp": 1760505625,
+    "publish_time": 1760517001,
+    "topics": [
+      "VIP",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt81e88a33bf4cb6c1",
+    "title": "Change Tick Size for USDT Perpetual Contract Oct 21, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-oct-21-2025-blt81e88a33bf4cb6c1/",
+    "date_timestamp": 1760888500,
+    "publish_time": 1760944412,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blt9ebfe3c85adc2254",
+    "title": "Change Tick Size for USDT Perpetual Contract Oct 29, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-oct-29-2025-blt9ebfe3c85adc2254/",
+    "date_timestamp": 1761610240,
+    "publish_time": 1761610769,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.bltd295af278ad862e4",
+    "title": "Change Tick Size for USDT Perpetual Contract Nov 6, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-nov-6-2025-bltd295af278ad862e4/",
+    "date_timestamp": 1762319410,
+    "publish_time": 1762327127,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.bltb24e3aeb8029170f",
+    "title": "Updates on tick size for Spot pairs",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-bltb24e3aeb8029170f/",
+    "date_timestamp": 1763107200,
+    "publish_time": 1763112866,
+    "topics": [
+      "VIP",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.bltd3041877efbc17a8",
+    "title": "Change Tick Size for USDT Perpetual Contract Nov 18, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-nov-18-2025-bltd3041877efbc17a8/",
+    "date_timestamp": 1763344710,
+    "publish_time": 1763345497,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blt4de7cc13ec7c0602",
+    "title": "Change Tick Size for USDT Perpetual Contract Nov 21, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-nov-21-2025-blt4de7cc13ec7c0602/",
+    "date_timestamp": 1763607890,
+    "publish_time": 1763610399,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blt30b6d90606ce4105",
+    "title": "Change Tick Size for USDT Perpetual Contract Nov 25, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-nov-25-2025-blt30b6d90606ce4105/",
+    "date_timestamp": 1763961620,
+    "publish_time": 1763964689,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.bltfa3b8d5c99b63bd6",
+    "title": "Change Tick Size for USDT Perpetual Contract Dec 2, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-dec-2-2025-bltfa3b8d5c99b63bd6/",
+    "date_timestamp": 1764571010,
+    "publish_time": 1764571128,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blt2e7ff69670f08114",
+    "title": "Updates on tick size for Spot Pairs",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-blt2e7ff69670f08114/",
+    "date_timestamp": 1764921600,
+    "publish_time": 1764943664,
+    "topics": [
+      "VIP",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.bltbb92b8b5e8bc2bc3",
+    "title": "Change Tick Size for USDT Perpetual Contract Dec 9, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-dec-9-2025-bltbb92b8b5e8bc2bc3/",
+    "date_timestamp": 1765160920,
+    "publish_time": 1765161382,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blta46ce5625a083c50",
+    "title": "Change Tick Size for USDT Perpetual Contract Dec 13, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-dec-13-2025-blta46ce5625a083c50/",
+    "date_timestamp": 1765510750,
+    "publish_time": 1765511213,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blt5a4334734836bc32",
+    "title": "Change Tick Size for USDT Perpetual Contract Dec 17, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-dec-17-2025-blt5a4334734836bc32/",
+    "date_timestamp": 1765865840,
+    "publish_time": 1765866354,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blt359c31154ddb1938",
+    "title": "Update on minimum single order value and quantity for spot and margin Trading Pairs",
+    "url": "/article/update-on-minimum-single-order-value-and-quantity-for-spot-and-margin-trading-pairs-blt359c31154ddb1938/",
+    "date_timestamp": 1765958400,
+    "publish_time": 1765958400,
+    "topics": [
+      "VIP",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt08946d9bed428ed3",
+    "title": "Change Tick Size for USDT Perpetual Contract Dec 19, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-dec-19-2025-blt08946d9bed428ed3/",
+    "date_timestamp": 1766037300,
+    "publish_time": 1766037604,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blt9836f15aa75be922",
+    "title": "Updates on Tick Size for spot pairs",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-blt9836f15aa75be922/",
+    "date_timestamp": 1766131200,
+    "publish_time": 1766131200,
+    "topics": [
+      "VIP",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.blt712c871ee7456ff7",
+    "title": "Change Tick Size for USDT Perpetual Contract Dec 23, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-dec-23-2025-blt712c871ee7456ff7/",
+    "date_timestamp": 1766390470,
+    "publish_time": 1766391116,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.bltf6dbe6d0e9656d50",
+    "title": "Change  Tick Size for USDT Perpetual Contract Dec 31, 2025",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-dec-31-2025-bltf6dbe6d0e9656d50/",
+    "date_timestamp": 1767014160,
+    "publish_time": 1767015733,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.bltb7bba7e6015daf73",
+    "title": "Change Tick Size for USDT Perpetual Contract Jan 6, 2026",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-jan-6-2026-bltb7bba7e6015daf73/",
+    "date_timestamp": 1767584500,
+    "publish_time": 1767585143,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blt7060901c04757924",
+    "title": "Change Tick Size  for USDT Perpetual Contract Jan 9, 2026",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-jan-9-2026-blt7060901c04757924/",
+    "date_timestamp": 1767846870,
+    "publish_time": 1767850686,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blta678afd107bb41b6",
+    "title": "Updates On Tick Size for Spot pairs",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-blta678afd107bb41b6/",
+    "date_timestamp": 1767952800,
+    "publish_time": 1767945812,
+    "topics": [
+      "Spot"
+    ]
+  },
+  {
+    "objectID": "article.blt09e1c3f9de2d23e2",
+    "title": "Change Tick Size for USDT Perpetual Contract Jan 15, 2026",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-jan-15-2026-blt09e1c3f9de2d23e2/",
+    "date_timestamp": 1768296730,
+    "publish_time": 1768306565,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blt4e4b8ca4bef94d2d",
+    "title": "Change Tick Size for USDT Perpetual Contract Jan 22, 2026",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-jan-22-2026-blt4e4b8ca4bef94d2d/",
+    "date_timestamp": 1768961580,
+    "publish_time": 1768962513,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.bltecec9767a72d644b",
+    "title": "Updates on Tick size for Spot Pairs",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-bltecec9767a72d644b/",
+    "date_timestamp": 1769068800,
+    "publish_time": 1769068801,
+    "topics": [
+      "VIP",
+      "Institutions"
+    ]
+  },
+  {
+    "objectID": "article.bltd8041beb0d0d5001",
+    "title": "Change Tick Size for USDT Perpetual Contract Jan 27, 2026",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-jan-27-2026-bltd8041beb0d0d5001/",
+    "date_timestamp": 1769409290,
+    "publish_time": 1769410132,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blt8ffa20c488aa7dea",
+    "title": "Change Tick Size for USDT Perpetual Contract Feb 3, 2026",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-feb-3-2026-blt8ffa20c488aa7dea/",
+    "date_timestamp": 1770000440,
+    "publish_time": 1770001020,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blt472cfac2e0dd3ab8",
+    "title": "Updates on tick size for Spot pairs (Feb 6, 2026, 8:00AM UTC)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-feb-6-2026-8-00am-utc--blt472cfac2e0dd3ab8/",
+    "date_timestamp": 1770102720,
+    "publish_time": 1770127208,
+    "topics": [
+      "Spot",
+      "Institutions",
+      "VIP"
+    ]
+  },
+  {
+    "objectID": "article.bltf87724ebf8ec1920",
+    "title": "Change Tick Size for USDT Perpetual Contract Feb 9, 2026",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-feb-9-2026-bltf87724ebf8ec1920/",
+    "date_timestamp": 1770346880,
+    "publish_time": 1770347098,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.bltf8eadf5c2a9f0f9e",
+    "title": "Change Tick Size for USDT Perpetual Contract Feb 25, 2026",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-feb-25-2026-bltf8eadf5c2a9f0f9e/",
+    "date_timestamp": 1771987630,
+    "publish_time": 1771987705,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.bltd47b3ec87bd0fe73",
+    "title": "Updates on tick size for Spot pairs (Mar 2, 2026, 10:00AM UTC)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-mar-2-2026-10-00am-utc--bltd47b3ec87bd0fe73/",
+    "date_timestamp": 1772102310,
+    "publish_time": 1772114408,
+    "topics": [
+      "Spot",
+      "Institutions",
+      "VIP"
+    ]
+  },
+  {
+    "objectID": "article.blt434cd294f670f324",
+    "title": "Enabling automated adjustments for selected spot trading parameters",
+    "url": "/article/enabling-automated-adjustments-for-selected-spot-trading-parameters-blt434cd294f670f324/",
+    "date_timestamp": 1773648000,
+    "publish_time": 1773679122,
+    "topics": [
+      "Institutions",
+      "VIP"
+    ]
+  },
+  {
+    "objectID": "article.bltdc47ad37a9df200a",
+    "title": "Updates on tick size for Spot pairs (Apr 1, 2026, 10:00AM UTC)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-apr-1-2026-10-00am-utc--bltdc47ad37a9df200a/",
+    "date_timestamp": 1774859750,
+    "publish_time": 1774864808,
+    "topics": [
+      "Spot",
+      "Institutions",
+      "VIP"
+    ]
+  },
+  {
+    "objectID": "article.blt1d751e461e90bafa",
+    "title": "Updates on tick size for Spot pairs (Apr 20, 2026, 7:00AM UTC)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-apr-20-2026-7-00am-utc--blt1d751e461e90bafa/",
+    "date_timestamp": 1776392100,
+    "publish_time": 1776412808,
+    "topics": [
+      "Spot",
+      "Institutions",
+      "VIP"
+    ]
+  },
+  {
+    "objectID": "article.blt8cc849b9222b4f54",
+    "title": "Change Tick Size for USDT Perpetual Contract May 7, 2026",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-may-7-2026-blt8cc849b9222b4f54/",
+    "date_timestamp": 1778033560,
+    "publish_time": 1778122970,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blta2b6dcde4d51db81",
+    "title": "Updates on tick size for Spot pairs (May 13, 2026, 08:00AM UTC)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-may-13-2026-12-00am-utc--blta2b6dcde4d51db81/",
+    "date_timestamp": 1778486190,
+    "publish_time": 1778487549,
+    "topics": [
+      "Spot",
+      "Institutions",
+      "VIP"
+    ]
+  },
+  {
+    "objectID": "article.blt539f4749d220f97b",
+    "title": "Change Tick Size for USDT Perpetual Contract Jun 5, 2026",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-jun-5-2026-blt539f4749d220f97b/",
+    "date_timestamp": 1780565220,
+    "publish_time": 1780565907,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.blt4f859a69f6600b94",
+    "title": "Updates on tick size for Spot pairs (Jun 26, 2026, 8:00AM UTC)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-jun-26-2026-8-00am-utc--blt4f859a69f6600b94/",
+    "date_timestamp": 1782283920,
+    "publish_time": 1782288005,
+    "topics": [
+      "Spot",
+      "Institutions",
+      "VIP"
+    ]
+  },
+  {
+    "objectID": "article.blt903043ec0835c5e9",
+    "title": "Change Tick Size for USDT Perpetual Contract Jun 30, 2026",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-jun-30-2026-blt903043ec0835c5e9/",
+    "date_timestamp": 1782700960,
+    "publish_time": 1782705978,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.art5f88fb218208",
+    "title": "Updates on tick size for Spot pairs (Jul 13, 2026, 8:00AM UTC)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-jul-13-2026-8-00am-utc--art5f88fb218208/",
+    "date_timestamp": 1783919092,
+    "publish_time": 1783922409,
+    "topics": [
+      "Spot",
+      "Institutions",
+      "VIP"
+    ]
+  },
+  {
+    "objectID": "article.art2c7f982380fe",
+    "title": "Change Tick Size for USDT Perpetual Contract Jul 18, 2026",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-jul-18-2026--art2c7f982380fe/",
+    "date_timestamp": 1784272578,
+    "publish_time": 1784285324,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.art909445e589a8",
+    "title": "Updates on tick size for Spot pairs (Aug 11, 2026, 8:30AM UTC)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-aug-11-2026-8-30am-utc--art909445e589a8/",
+    "date_timestamp": 1785913132,
+    "publish_time": 1785916809,
+    "topics": [
+      "Spot",
+      "Institutions",
+      "VIP"
+    ]
+  },
+  {
+    "objectID": "article.art0ae2431459d9",
+    "title": "Change Tick Size for USDT Perpetual Contract Aug 11, 2026",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-aug-11-2026--art0ae2431459d9/",
+    "date_timestamp": 1785920971,
+    "publish_time": 1785923069,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.art4f47b6648755",
+    "title": "Change Tick Size for USDT Perpetual Contract Aug 11, 2026",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-aug-11-2026--art4f47b6648755/",
+    "date_timestamp": 1786012616,
+    "publish_time": 1786076183,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  },
+  {
+    "objectID": "article.art2024a72d4f76",
+    "title": "Updates on tick size for Spot pairs (Oct 12, 2026, 7:30AM UTC)",
+    "url": "/article/updates-on-tick-size-for-spot-pairs-oct-12-2026-7-30am-utc--art2024a72d4f76/",
+    "date_timestamp": 1791428762,
+    "publish_time": 1791532278,
+    "topics": [
+      "Spot",
+      "Institutions",
+      "VIP"
+    ]
+  },
+  {
+    "objectID": "article.art5c4a8b8eef37",
+    "title": "Change Tick Size for USDT Perpetual Contract Oct 12, 2026",
+    "url": "/article/change-tick-size-for-usdt-perpetual-contract-oct-12-2026--art5c4a8b8eef37/",
+    "date_timestamp": 1791428954,
+    "publish_time": 1791441712,
+    "topics": [
+      "USDT",
+      "Derivatives",
+      "Institutions",
+      "Upgrades"
+    ]
+  }
+]

@@ -1,0 +1,112 @@
+To increase market liquidity and improve your trading experience, Bybit will adjust the tick size for the following Perpetual Contracts by
+ Nov 6, 2025, 8:00AM UTC.
+
+
+  
+Symbol
+  
+Current ticksize
+  
+New ticksize
+BOMEUSDT
+0.000001
+0.0000001
+SLPUSDT
+0.000001
+0.0000001
+ANKRUSDT
+0.00001
+0.000001
+GALAUSDT
+0.00001
+0.000001
+IOTXUSDT
+0.00001
+0.000001
+PEOPLEUSDT
+0.00001
+0.000001
+REZUSDT
+0.00001
+0.000001
+TOWNSUSDT
+0.00001
+0.000001
+4USDT
+0.0001
+0.00001
+BBUSDT
+0.0001
+0.00001
+DYMUSDT
+0.0001
+0.00001
+FLUXUSDT
+0.0001
+0.00001
+IDUSDT
+0.0001
+0.00001
+JOEUSDT
+0.0001
+0.00001
+KAIAUSDT
+0.0001
+0.00001
+KERNELUSDT
+0.0001
+0.00001
+MANTAUSDT
+0.0001
+0.00001
+MELANIAUSDT
+0.0001
+0.00001
+OMUSDT
+0.0001
+0.00001
+ONGUSDT
+0.0001
+0.00001
+POWRUSDT
+0.0001
+0.00001
+PYTHUSDT
+0.0001
+0.00001
+SAGAUSDT
+0.0001
+0.00001
+ZETAUSDT
+0.0001
+0.00001
+CYBERUSDT
+0.001
+0.0001
+JTOUSDT
+0.001
+0.0001
+TIAUSDT
+0.001
+0.0001
+UMAUSDT
+0.001
+0.0001
+ILVUSDT
+0.01
+0.001
+KSMUSDT
+0.01
+0.001
+MMTUSDT
+0.00001
+0.0001
+
+Note:
+No trading functions for USDT Perpetual Contracts were affected during the adjustment process.
+API users can obtain prices with the updated tick size via GET /v5/market/instruments-info after the aforementioned timestamp. For more information, please refer to our API documentation.
+Orders placed before the aforementioned timestamp will remain in the order book with the original tick size.
+If necessary, please adjust your trading strategy in accordance with the new tick size. We seek your understanding for any inconvenience caused. 
+
+Thank you for your continued support!
+The Bybit Team
