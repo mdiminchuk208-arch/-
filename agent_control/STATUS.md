@@ -4,7 +4,7 @@ State: FAILURE_AUDIT_FROZEN_V3_DESIGN_GATE_OPEN
 
 Branch: `machine-v3-research`. Failure audit task completed; no v3 rule or financial rerun created.
 
-Audit commit: recorded in the subsequent control-state commit after the diagnostic freeze.
+Audit commit: `8ca75ed35876d8f5d4d363e9e8808d7bd4417e87`.
 
 Audit: `docs/machine_strategy_failure_audit_v1/`.
 Freeze manifest SHA-256: `9dd7cd7a26ac503c350501a8967c7fed450888aed349542f5592162e993d1201`.

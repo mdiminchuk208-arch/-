@@ -2,7 +2,7 @@
 
 Branch: `machine-v3-research`.
 Failure audit: completed and frozen in `docs/machine_strategy_failure_audit_v1/`.
-Audit commit: recorded in the subsequent control-state commit after freeze.
+Audit commit: `8ca75ed35876d8f5d4d363e9e8808d7bd4417e87`.
 Audit manifest SHA-256: `9dd7cd7a26ac503c350501a8967c7fed450888aed349542f5592162e993d1201`.
 
 ECC project trust/config verification is complete. Actual project config is `/workspace/-/.codex/config.toml`; the initially assumed `/workspace/.codex` path is absent. All four named roles and 348 ECC skills are available. Three analysis roles ran via cloud collaboration with the configured model/instructions; strategy_designer did not run. Hooks remain untrusted.
