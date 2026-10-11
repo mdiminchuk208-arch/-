@@ -1,0 +1,17 @@
+{
+  "version": "v2.2",
+  "classification": "MACHINE_RULE_PRE_BACKTEST",
+  "rule_ids": [
+    "M21_EDGE_COST_BUDGET",
+    "M22_STRUCTURAL_ONE_R"
+  ],
+  "minimum_edge_cost_ratio": 5,
+  "minimum_structural_R": 1,
+  "definition": "Retain v2.1 cost budget. Structural target distance must additionally cover at least one initial planned stop distance: abs(FTA-entry)/abs(entry-fixed stop)>=1. No farther substitute target; reject before order when nearest causal FTA fails.",
+  "rationale": "A new risk-budget hypothesis: a full nearest-target win must offer at least the gross price risk of one planned stop. Unity is risk symmetry, not a searched optimum. It does not guarantee positive expectancy or solve sample/OOS/execution gaps.",
+  "holding_duration_used_for_admission": false,
+  "outcome_labels_used_for_admission": false,
+  "TP_percent_fixed": false,
+  "base_geometry_changed": false,
+  "trade_entry_allowed": false
+}
