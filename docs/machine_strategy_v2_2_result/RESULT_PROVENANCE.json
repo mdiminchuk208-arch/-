@@ -1,0 +1,11 @@
+{
+  "version": "v2.2",
+  "pre_outcome_commit": "84253b63a3ad6f6d72bfb0a8dca5c87a665d577d",
+  "pre_outcome_manifest_sha256": "38a0b6d8746f3c1ab3b36fca11106b6e80a8db284baaccdd58d71381c66e3a9b",
+  "dataset_sha256": "9a13a5ecc3fc5edbdc0403dd2e64375a1afa5d40396a8eaaebf5dea199ba2fa3",
+  "exact_case_ids_preserved": true,
+  "admission_reclassified_after_outcome": false,
+  "financial_outcomes_computed": true,
+  "accounting_mode": "NORMALIZED_R_RESEARCH_MODE_UNROUNDED_THEORETICAL_PRICES",
+  "trade_entry_allowed": false
+}

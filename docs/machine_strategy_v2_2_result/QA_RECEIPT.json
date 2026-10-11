@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "tests": 939,
+  "deterministic_replay_outputs": 7,
+  "replay_sha256": {
+    "ALL_CASE_EXECUTIONS.jsonl.gz": "58f54015d27fb0f98875b73e230362999d327f5b911d19501cdeb01838f8057d",
+    "ALL_TRADES.jsonl.gz": "1fa690867a9598c72b16adcd939577e4011fcd10940241ff6129575e8da88841",
+    "CLOSED_TRADES.jsonl.gz": "703f2d9e34ae84ca58091d0fcc19d34b96afa9f67e008a0e9dc5afbea199a37c",
+    "METRICS.json": "3380150dc70f3c579c81945de2acdecc32ec7d255e41340d9380dd15ee785dba",
+    "BREAKDOWNS.json": "ba9790e7795f1036d98803cea3aef40999f7b9236b7bc6303d8804e1979a5c02",
+    "RESULT_PROVENANCE.json": "454b8b1c7245eb2f19a50590b6469c423ff17a487173e8d767179905bbe96183",
+    "FINANCIAL_REPORT.md": "2060f841c3e8e44ad16f842e4490fd69b6e5b30cb7114097dc983a4d4e471f90"
+  },
+  "code_sha256": {
+    "scripts/run_machine_strategy_research.py": "fbefa8805c0cb3d18602d34bb44093c7a231d2691cf0f8b04cc942a78d90ddab",
+    "scripts/machine_strategy_v2_execution.py": "1be53a60536719d936494e48aeb344ed326ef914b0b3a2a5d92f9de2e3c36e89",
+    "tests/test_machine_strategy_v2_execution.py": "eab7cde5a075534d254c4d53c49a1f3283edc5e2cafcada42b602193e9fb5236"
+  },
+  "qa_log_sha256": {
+    "full_unittest": "32b38fcf39ecc250a7bae2eb8a23034ed98b0c3a25dc26a78c73eaa083e57ad4",
+    "ruff": "d63ab3df51a50c66f9c57056288c7d4faf9dce413552d89215714320ac2b748e",
+    "compile": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mypy": "1495598f2b8e6a09df4f1631545361d6c6e3e3204e506255935ef84876641cc6",
+    "frozen_parent_resume": "38d9339ec8b8252ff3963972b8c62bae4a04e7f0b194b002f0afb600c58566d7"
+  },
+  "original_invariance": "PASS",
+  "trade_entry_allowed": false
+}
