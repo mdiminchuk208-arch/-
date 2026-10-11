@@ -1,0 +1,18 @@
+VERIFIED_RESUME evidence adapter v2 75 artifacts; no financial computation
+Completion index BTCUSDT 15 374161
+Completion index BTCUSDT 60 94938
+Completion index BTCUSDT 240 23878
+Completion index BTCUSDT 1440 3985
+Completion index ETHUSDT 15 375682
+Completion index ETHUSDT 60 95184
+Completion index ETHUSDT 240 23955
+Completion index ETHUSDT 1440 3881
+Source evidence completion 20000
+Source evidence completion 40000
+Source evidence completion 60000
+Source evidence completion 80000
+Source evidence completion 100000
+Source evidence completion 120000
+Source evidence completion 140000
+Source evidence completion 160000
+{"OBJECTIVE_SOURCE_FAIL":0,"OTHER_SOURCE_WAIT":0,"QUALITATIVE_CANDIDATES":131099,"QUALITATIVE_FAIL":0,"QUALITATIVE_UNKNOWN":131099,"RAW_PROPOSALS":176365,"SOURCE_READY_EXCEPT_EXECUTION_METADATA":0,"UNIQUE_ANNOTATION_UNITS":131099,"WAIT_NO_AVAILABLE_LOWER_TF":45266}

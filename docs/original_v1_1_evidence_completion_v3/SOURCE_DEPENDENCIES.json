@@ -1,0 +1,8 @@
+{
+  "source_citations_read_only": "docs/original_v1_1_evidence_adapter_v2/SOURCE_CITATION_INDEX.json",
+  "source_citations_sha256": "a84aaabeb8965cdc91bb81b03d69ee7c7cf00555a3e5ad8f8482f202f6a74ca6",
+  "v1_1_manifest": "docs/original_strategy_spec_v1_1/freeze_manifest.json",
+  "classification": "SOURCE_RULE definitions unchanged; U1-U6 USER_RESOLUTION_PRE_BACKTEST; N11 TECHNICAL_NORMALIZATION",
+  "no_new_source_rules": true,
+  "trade_entry_allowed": false
+}

@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "full_tests": 823,
+  "replayed_outputs": 19,
+  "replay_sha256": {
+    "SOURCE_FAIL_CASES.jsonl.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "OTHER_SOURCE_WAIT_CASES.jsonl.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "SOURCE_EVIDENCE_COMPLETION_FUNNEL.json": "eb3f17b0b5ca0f67e650353c3cb53e409f6e3c29004dbf70a59347524b53c7b0",
+    "ALL_SOURCE_EVIDENCE_CASES.jsonl.gz": "ff3b4d452e0179fb94cf926804eca920d8cb6f6f4770e90e6c0d02a86da996f1",
+    "OLD880_EVIDENCE_RECHECK_V3.csv": "2cd015e844655c412c030261046d99909ea82411edf1bd82355c41ce50b711da",
+    "LOWER_TF_WAIT_CASES.jsonl.gz": "8f51360b3574b3e65f334dd432dbc9a7c28240680e794bb1ccaf1383e3cffd45",
+    "ANNOTATION_UNIT_MAP.jsonl.gz": "33ea8560854463b30a4850065c7a06e487149cf846c4615562186a8cc3291a12",
+    "QUALITATIVE_UNKNOWN_CASES.jsonl.gz": "605d4bcaa62fc8c6938c2cc62d91bf5584c4747a8c74ffb95fffb378f5af8206",
+    "PARENT_INVARIANCE.json": "976686af5d0efd34b19ca19f5360d5abb35c8f3f8ddcc292597ff96d08d23245",
+    "DATASET_VERIFICATION.json": "9a13a5ecc3fc5edbdc0403dd2e64375a1afa5d40396a8eaaebf5dea199ba2fa3",
+    "SOURCE_READY_EXCEPT_METADATA.jsonl.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "CAUSAL_OBJECTS/BTCUSDT_15.jsonl.gz": "216b835c0509357f44fc29f34bce7f6984efc620a40018b59fd66c70861985f7",
+    "CAUSAL_OBJECTS/ETHUSDT_1440.jsonl.gz": "e8df3fe1c0ed3ea2473290a1a23ee7a0901f2cfd12f6a77955c237b70d471fcd",
+    "CAUSAL_OBJECTS/BTCUSDT_60.jsonl.gz": "2fe0640a8041c9178361ed2238e5607da7889dce894b6dcc5d609d1a0487bda3",
+    "CAUSAL_OBJECTS/BTCUSDT_1440.jsonl.gz": "f44935ddff08c538dbbdbe6aeeed6f04032040fc7734ab5127610ab66824a6f1",
+    "CAUSAL_OBJECTS/ETHUSDT_15.jsonl.gz": "54e1cbc4979551fa59a8a08250269f5b671975dfe2f3e1b862da7cda072a5d13",
+    "CAUSAL_OBJECTS/BTCUSDT_240.jsonl.gz": "e8576101c27567d691d9b44252158477bc8d61abe88858a25808ddc249dd6df4",
+    "CAUSAL_OBJECTS/ETHUSDT_60.jsonl.gz": "85da943ffacf00210d2c678730654a75858a08b0d47acb44995d5bbb4f1365f5",
+    "CAUSAL_OBJECTS/ETHUSDT_240.jsonl.gz": "3b3516b60405e029360ea567be4e06c5578516a6791b3192181590f22cc31d2d"
+  },
+  "historical_prefix_series": 8,
+  "full_ledger_and_materialized_annotation_cutoff": "PASS",
+  "v1_v1_1_v2_metadata_recovery_first_result_dataset_hashes": "PASS",
+  "baseline_source_audit_invariance": "PASS (17851 frozen archive paths)",
+  "causality_future_mutation_source_registry_canonical_ID_first_test_mode_parity": "PASS",
+  "no_old_labels_no_outcome_leakage_no_financial_accounting": "PASS",
+  "code_sha256": {
+    "scripts/original_v1_1_evidence_completion_v3.py": "80c6a3f7cef593a198a3e53463535bffe27e0446d0d41e5dae3056f3293db595",
+    "scripts/original_v1_1_source_plan_geometry_v3.py": "1fd4e0f7c04bd5259e51fa1a96c9e537ba63335d3cae3c105cd98a4b1d91a0b4",
+    "scripts/run_original_v1_1_evidence_completion_v3.py": "dfe252541920ec5d89b37c08166102f4b97499f90829ec816b985609da08f0d5",
+    "scripts/materialize_original_v1_1_evidence_completion_v3.py": "15a65c1770d396baac8ba636deb8c22af1c0e76d660c9a3fcfb2c78b4745c433",
+    "scripts/audit_original_v1_1_evidence_completion_v3.py": "94df244bb77537fbfe0f06fadb03dbca7dd1362017bb93a09784856194cd88c0",
+    "tests/test_original_v1_1_evidence_completion_v3.py": "b52ad206e7497413c491e9b35c3abd37e95c4ec022829eb9bb41ab725f28888d"
+  },
+  "qa_log_sha256": {
+    "full_unittest": "1cbc7c7196a340e193824ef08f063029f6322d9913081a17a7fd059c3a1e62f7",
+    "ruff": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "compile": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mypy": "1495598f2b8e6a09df4f1631545361d6c6e3e3204e506255935ef84876641cc6",
+    "frozen_parent_resume": "38d9339ec8b8252ff3963972b8c62bae4a04e7f0b194b002f0afb600c58566d7",
+    "metadata_resume": "630c01ec99326a6520dfdd658ff00fd38649ff072d8504b129243c798cfb6a71"
+  },
+  "HISTORICAL_METADATA_VERIFIED": false,
+  "SECOND_FINANCIAL_BACKTEST_RAN": false,
+  "trade_entry_allowed": false
+}

@@ -1,0 +1,10 @@
+{
+  "docs/original_v1_1_evidence_adapter_v2/freeze_manifest.json": {
+    "sha256": "79b922c5b9f9008acda333ce768330aa2c2687470d09c22936632b92783a4283",
+    "artifacts": 75
+  },
+  "docs/original_v1_1_metadata_recovery_v2/recovery_manifest.json": {
+    "sha256": "a8df076d0f84ee566cee1c662480ec1e0d1a9406354974917f96e591fb3b35d6",
+    "artifacts": 214
+  }
+}

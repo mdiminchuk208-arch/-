@@ -1,0 +1,66 @@
+[
+  {
+    "symbol": "BTCUSDT",
+    "tf": 15,
+    "cutoff": 1702986300,
+    "objects": 186954,
+    "prefix_sha256": "f5726e24c8ac86c4cbe668bf4f4a02c608393a823422a1a94477dd4801621627",
+    "status": "PASS"
+  },
+  {
+    "symbol": "BTCUSDT",
+    "tf": 60,
+    "cutoff": 1702983600,
+    "objects": 47875,
+    "prefix_sha256": "dd5192ae29240af22f0fbb4a30b3ff00f39aa721ee9f3bc746fd016ff6ef40a8",
+    "status": "PASS"
+  },
+  {
+    "symbol": "BTCUSDT",
+    "tf": 240,
+    "cutoff": 1702972800,
+    "objects": 12237,
+    "prefix_sha256": "c9c47c47fc5b155387eca80c7900d9fafd14729747ad8164ec481e1d829b9eeb",
+    "status": "PASS"
+  },
+  {
+    "symbol": "BTCUSDT",
+    "tf": 1440,
+    "cutoff": 1702944000,
+    "objects": 2001,
+    "prefix_sha256": "df1e249fbf956f8d69e46c7b95f56c9c040a74ea958e686148e0ed04fdeab30d",
+    "status": "PASS"
+  },
+  {
+    "symbol": "ETHUSDT",
+    "tf": 15,
+    "cutoff": 1702986300,
+    "objects": 187437,
+    "prefix_sha256": "e658f8cab2fea6a7c034b54f687929953e47defd9bbd52d664cdce50ca8e144f",
+    "status": "PASS"
+  },
+  {
+    "symbol": "ETHUSDT",
+    "tf": 60,
+    "cutoff": 1702983600,
+    "objects": 47964,
+    "prefix_sha256": "a7624d0342e9d32a4e4d0ed5c7df237785d6bf6be53ce55a81f0bbd715422b63",
+    "status": "PASS"
+  },
+  {
+    "symbol": "ETHUSDT",
+    "tf": 240,
+    "cutoff": 1702972800,
+    "objects": 12085,
+    "prefix_sha256": "4bbcd6c9677b9cfb4269170d561e8dc1337eeb6b48805ebb2ff286ad418c5122",
+    "status": "PASS"
+  },
+  {
+    "symbol": "ETHUSDT",
+    "tf": 1440,
+    "cutoff": 1702944000,
+    "objects": 1937,
+    "prefix_sha256": "7339a30a431a1ccb043a848e4ddf0defd723bbf9451477f20711d8ff38320e6c",
+    "status": "PASS"
+  }
+]

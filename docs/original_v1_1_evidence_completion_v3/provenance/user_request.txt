@@ -1,0 +1,819 @@
+Продолжай Crypto Bot после metadata recovery commit:
+
+`4b28c3892b51a1bb3b331dd344651c16ef7c8432`
+
+Ветка:
+
+`medium-term-source-research`
+
+Metadata recovery manifest SHA256:
+
+`a8df076d0f84ee566cee1c662480ec1e0d1a9406354974917f96e591fb3b35d6`
+
+Frozen strategy v1.1 commit:
+
+`43e9d7addcd427650ff856dd1fa99f78ee5c06f7`
+
+Evidence Adapter v2 уже заморожен.
+
+Текущий frozen evidence state:
+
+- RAW_PROPOSALS = 176365
+- OBJECTIVE_GEOMETRY_PASS = 176365
+- OBJECTIVE_SOURCE_FAIL = 0
+- QUALITATIVE_REQUIRED = 131099
+- EVIDENCE_COMPLETE = 0
+- SOURCE_DECISION_READY = 0
+- WAIT_NO_AVAILABLE_LOWER_TF / REMAINING_UNKNOWN = 45266
+- historical metadata = UNKNOWN for BTCUSDT and ETHUSDT
+- trade_entry_allowed=false
+
+==================================================
+ГЛАВНАЯ ЦЕЛЬ
+==================================================
+
+Продолжить Stage B/C/D/E и определить, сколько historical candidates можно довести до состояния:
+
+`SOURCE_READY_EXCEPT_EXECUTION_METADATA`
+
+Это означает:
+
+вся source strategy evidence завершена,
+НО historical instrument metadata всё ещё UNKNOWN.
+
+НЕ запускать financial backtest.
+
+НЕ считать:
+- P&L
+- WinRate
+- PF
+- Expectancy
+- MaxDD
+- fees/slippage
+- financial fills
+
+==================================================
+1. PROCESS ORDER
+==================================================
+
+Historical metadata больше НЕ использовать как early terminating gate для source evidence.
+
+Metadata остаётся:
+
+`PARALLEL_EXECUTION_BLOCKER`
+
+Pipeline:
+
+RAW proposal
+→ objective source evidence
+→ canonical source context
+→ branch confirmation
+→ qualitative evidence
+→ source plan geometry
+→ SOURCE_READY_EXCEPT_EXECUTION_METADATA
+→ STOP
+
+Financial execution остаётся запрещён.
+
+==================================================
+2. НЕИЗМЕНЯЕМЫЕ ИНВАРИАНТЫ
+==================================================
+
+НЕ изменять:
+
+- ORIGINAL_STRATEGY_SPEC_v1
+- ORIGINAL_STRATEGY_SPEC_v1.1
+- U1–U6
+- N11
+- frozen executable tree
+- active branches
+- M15/H1/H4/D1 universe
+- FIRST_TEST_ONLY
+- fixed initial source stop
+- contextual FTA semantics
+- WAIT semantics
+- Evidence Adapter v2
+- Metadata Recovery v2
+- first financial result
+- baseline C
+- Source Fidelity Audit
+
+Не добавлять M1/M5.
+
+Не исправлять `WAIT_NO_AVAILABLE_LOWER_TF` изменением профиля.
+
+`trade_entry_allowed=false`.
+
+LIVE/private API запрещены.
+
+==================================================
+STAGE B — OBJECTIVE SOURCE EVIDENCE COMPLETION
+==================================================
+
+Использовать frozen historical data и Evidence Adapter v2.
+
+Для каждого candidate максимально заполнить причинно-детерминированные source facts.
+
+Обязательно обрабатывать:
+
+### Structure
+- strict 3-bar swings
+- HH/HL/LH/LL where deterministically identifiable
+- BOS body close
+- CONF where source definition is exact
+- structural endpoints where objectively known
+
+### Liquidity
+- structural liquidity pools
+- internal/external relation where endpoints known
+- raid/sweep facts
+- causal known_at
+- no automatic meaningful/adverse classification merely because a level exists
+
+### SFP
+- source level
+- raid
+- body reclaim
+- next OPEN semantics
+- pattern TF
+- completion time
+- refinement requirement
+
+### OB
+- parent source candle
+- raid fact
+- engulf/impulse objective geometry
+- BOS
+- first-test / consumed state
+- HTF/context linkage only when evidence actually exists
+
+### Breaker
+- prior valid parent OB relationship
+- break relationship
+- confirmation geometry where objective
+
+### STB/BTS
+- raid
+- engulf/manipulation
+- BOS/CONF
+- midpoint geometry
+
+### Range
+- candidate boundaries
+- deviation
+- reclaim
+- return/retest
+- objective endpoints
+- do NOT invent clear-range threshold
+
+### FVG/IMB
+- exact wick gap
+- equilibrium 0.5
+
+### OTE
+- 0.705–0.79 only when source-valid impulse endpoints already exist
+
+### Premium/Discount
+- only relative to already source-valid dealing range
+
+### ATR
+- frozen N11_ATR_SMA14
+- completed bars only
+
+==================================================
+3. SEPARATE SOURCE GEOMETRY FROM EXECUTION METADATA
+==================================================
+
+Critical:
+
+do NOT require tick size to resolve a SOURCE anchor.
+
+Example:
+
+`source_stop_anchor = OB low`
+
+can be COMPLETE.
+
+But:
+
+`executable_stop_price = OB low - one tick`
+
+remains:
+
+`BLOCKED_EXECUTION_METADATA`.
+
+Do the same split for:
+
+### Entry
+`source_entry_poi`
+vs
+`tick_rounded_entry_price`
+
+### Stop
+`source_stop_anchor`
+vs
+`tick_rounded_stop_price`
+
+### FTA
+`source_fta_poi/zone`
+vs
+`tick_rounded_target_price`
+
+### Position size
+source strategy does not require exact exchange qty step;
+execution quantity remains metadata blocked.
+
+==================================================
+4. CANONICAL SOURCE CONTEXT
+==================================================
+
+Current universal gap:
+
+`CANONICAL_SOURCE_CONTEXT = 176365`
+
+Attempt to construct source context using only causal evidence.
+
+Minimum objects:
+
+- contextual origin
+- structure
+- selected impulse where identifiable
+- liquidity pools
+- source POI
+- formation
+- confirmation
+- refinement
+- FTA inventory
+
+Every object must include:
+
+- deterministic canonical ID
+- symbol
+- TF
+- direction
+- known_at
+- parent IDs
+- source rule IDs
+- validity state
+
+If multiple materially valid contexts exist and source gives no selector:
+
+`UNKNOWN_CONTEXT_NONUNIQUE`
+
+Do not choose based on outcome.
+
+==================================================
+5. SOURCE CONFIRMATION
+==================================================
+
+Current universal gap:
+
+`SOURCE_CONFIRMATION = 176365`
+
+Implement branch-specific confirmation, not universal confirmation.
+
+### OB_CONSERVATIVE
+reaction
+→ M15 BOS
+→ new POI
+
+### SFP
+completed SFP
+→ M15 BOS
+→ source-valid entry search
+
+### BREAKER
+source-valid breaker formation/confirmation
+
+### STB_BTS
+raid/engulf/BOS/CONF as required
+
+### RANGE
+reclaim/return/retest confirmation
+
+If confirmation is objective:
+COMPLETE.
+
+If it needs subjective source judgment:
+QUALITATIVE_REQUIRED.
+
+==================================================
+6. SOURCE ENTRY POI
+==================================================
+
+Current universal gap:
+
+`SOURCE_ENTRY_POI = 176365`
+
+Resolve source POI independently from tick rounding.
+
+For every resolved POI save:
+
+- canonical POI ID
+- low/high
+- TF
+- source type
+- formation ID
+- confirmation ID
+- known_at
+- parent idea ID
+- rule IDs
+
+If unique:
+`SOURCE_ENTRY_POI_COMPLETE`
+
+If nonunique:
+`UNKNOWN_ENTRY_POI_NONUNIQUE`
+
+==================================================
+7. SOURCE STOP ANCHOR
+==================================================
+
+Resolve only frozen SOURCE anchor.
+
+### OB
+source extreme
+
+### Breaker
+raid/impulse extreme
+
+### SFP
+pattern extreme + causal ATR14 construction
+
+### STB
+manipulation/raid extreme
+
+### Range
+deviation/invalidation extreme
+
+Do NOT require tick metadata for source anchor completion.
+
+If anchor is source-nonunique:
+
+`UNKNOWN_STOP_ANCHOR_NONUNIQUE`
+
+==================================================
+8. CONTEXTUAL FTA INVENTORY
+==================================================
+
+Build causal inventory of opposing source-valid POIs across:
+
+M15
+H1
+H4
+D1
+
+For each FTA candidate:
+
+- ID
+- TF
+- type
+- zone low/high
+- known_at
+- validity
+- consumed state
+- direction relationship
+
+Frozen selection:
+
+nearest known opposing contextual POI.
+
+If nearest source FTA is unique:
+`SOURCE_FTA_COMPLETE`
+
+If material tie/nonunique source interpretation:
+UNKNOWN.
+
+Do not round to tick.
+
+==================================================
+9. FIRST TEST / CONSUMED STATE
+==================================================
+
+Resolve:
+
+`zone_first_test`
+
+using frozen FIRST_TEST_ONLY.
+
+Need:
+
+- POI born_at
+- first causal touch
+- consumed timestamp
+- whether candidate is first eligible interaction
+
+No:
+- cooldown
+- retry count
+- random 90%
+- old engine state
+
+==================================================
+STAGE C — ANNOTATION UNIT DEDUP
+==================================================
+
+Current:
+
+`QUALITATIVE_REQUIRED = 131099`
+
+Do NOT treat them as 131099 fully independent annotation tasks.
+
+Create deterministic equivalence units.
+
+Output:
+
+`ANNOTATION_UNIT_MAP.jsonl.gz`
+
+A group is allowed only if all material qualitative questions share the same:
+
+- physical idea ID
+- contextual origin
+- source POI
+- formation
+- direction
+- branch/question set
+- historical visible cutoff
+- source context objects
+
+If material facts differ:
+separate units.
+
+Return:
+
+- raw qualitative candidates
+- unique annotation units
+- average candidates per unit
+- median candidates per unit
+- max group size
+- branch distribution
+- TF distribution
+
+==================================================
+STAGE D — BLINDED QUALITATIVE COMPLETION
+==================================================
+
+Use only the previously frozen blinded pack and causal views.
+
+Annotator MUST NOT see:
+
+- future candles
+- future TP/SL
+- P&L
+- WIN/LOSS
+- MFE/MAE
+- future holding duration
+- baseline result
+- old 68% tree
+- old adverse751
+- old NO_HTF
+- project admission result
+
+Allowed labels:
+
+`PASS`
+`FAIL`
+`UNKNOWN`
+
+Required qualitative questions include where relevant:
+
+- meaningful liquidity
+- liquidity context
+- adverse / target_or_fuel / neutral / unknown
+- market context
+- flow context
+- smooth approach
+- whole impulse
+- clear range
+- reasonable EQ tilt
+- protected endpoints
+- contextual POI relation
+- higher POI
+- trend alignment
+- source confirmation
+- reaction/BOS/new POI
+- range deviation
+- range reclaim/retest
+- outside POI
+- STB raid/absorption/structure
+- breaker confirmation
+- POI reaction
+- inventory completeness
+
+==================================================
+10. NO FAKE AUTOMATION
+==================================================
+
+Automatic PASS/FAIL allowed only when directly implied by:
+
+- explicit source rule
+- deterministic geometry
+- already source-validated causal object
+
+If concept still requires human/discretionary judgment:
+
+label:
+
+`UNKNOWN`
+
+Do NOT create:
+
+- ML classifier
+- scoring model
+- hidden threshold
+- percentage heuristic
+- ATR heuristic
+- old-engine proxy
+
+==================================================
+11. ADVERSE LIQUIDITY
+==================================================
+
+States remain:
+
+- ADVERSE
+- TARGET_OR_FUEL
+- NEUTRAL
+- UNKNOWN
+
+ADVERSE requires explicit evidence:
+
+- liquidity object ID
+- timeframe
+- direction
+- spatial relation
+- structure/order-flow context
+- source rule
+- known_at
+
+If ambiguous:
+UNKNOWN.
+
+ADVERSE:
+`WAIT_SWEEP`
+
+After sweep:
+whole setup revalidation required.
+
+==================================================
+STAGE E — SOURCE READINESS ASSEMBLY
+==================================================
+
+For each case evaluate ALL frozen source evidence EXCEPT execution metadata.
+
+Create exclusive top-level statuses:
+
+1. `OBJECTIVE_SOURCE_FAIL`
+
+2. `WAIT_NO_AVAILABLE_LOWER_TF`
+
+3. `QUALITATIVE_FAIL`
+
+4. `QUALITATIVE_UNKNOWN`
+
+5. `OTHER_SOURCE_WAIT`
+
+6. `SOURCE_READY_EXCEPT_EXECUTION_METADATA`
+
+Do NOT call #6 `SOURCE_ALLOW`.
+
+`SOURCE_ALLOW=0` must remain true while historical metadata is UNKNOWN.
+
+==================================================
+12. SOURCE_READY_EXCEPT_EXECUTION_METADATA CONTRACT
+==================================================
+
+Case qualifies ONLY if all of these are complete:
+
+- canonical source context
+- branch validity
+- source confirmation
+- source entry POI
+- source stop anchor
+- contextual FTA/Range exit
+- liquidity classification
+- first-test state
+- protected endpoints where required
+- inventory completeness
+- physical idea identity
+- setup identity
+- all material qualitative predicates
+
+No critical UNKNOWN.
+
+The ONLY unresolved critical item may be:
+
+`HISTORICAL_INSTRUMENT_METADATA`
+
+and downstream execution rounding/sizing derived from it.
+
+==================================================
+13. M15 LOWER-TF COVERAGE
+==================================================
+
+Preserve:
+
+`WAIT_NO_AVAILABLE_LOWER_TF = 45266`
+
+unless objective replay proves an earlier counting bug.
+
+Do NOT add M1/M5.
+
+Do NOT reinterpret as SOURCE FAIL.
+
+These cases cannot become SOURCE_READY_EXCEPT_EXECUTION_METADATA in current profile.
+
+==================================================
+14. OLD880 RECHECK
+==================================================
+
+Re-evaluate old880 without outcome columns.
+
+Return exclusive status counts:
+
+- REJECT_INACTIVE_PROFILE_BRANCH
+- OBJECTIVE_SOURCE_FAIL
+- WAIT_NO_AVAILABLE_LOWER_TF
+- QUALITATIVE_FAIL
+- QUALITATIVE_UNKNOWN
+- OTHER_SOURCE_WAIT
+- SOURCE_READY_EXCEPT_EXECUTION_METADATA
+
+No P&L.
+
+No matched outcome analysis.
+
+==================================================
+15. NEW FUNNEL
+==================================================
+
+Create:
+
+`SOURCE_EVIDENCE_COMPLETION_FUNNEL.json`
+
+Required fields:
+
+- RAW_PROPOSALS
+- OBJECTIVE_SOURCE_FAIL
+- WAIT_NO_AVAILABLE_LOWER_TF
+- QUALITATIVE_CANDIDATES
+- UNIQUE_ANNOTATION_UNITS
+- QUALITATIVE_PASS
+- QUALITATIVE_FAIL
+- QUALITATIVE_UNKNOWN
+- OTHER_SOURCE_WAIT
+- SOURCE_READY_EXCEPT_EXECUTION_METADATA
+- HISTORICAL_METADATA_BLOCKED
+- SOURCE_ALLOW
+- SOURCE_DECISION_READY_FOR_FINANCE
+
+Expected invariants:
+
+`SOURCE_ALLOW = 0`
+
+`SOURCE_DECISION_READY_FOR_FINANCE = 0`
+
+while metadata remains unverified.
+
+Also provide non-exclusive parallel gap diagnostics separately.
+
+==================================================
+16. IMPORTANT INTERPRETATION
+==================================================
+
+If:
+
+`SOURCE_READY_EXCEPT_EXECUTION_METADATA > 0`
+
+then we have successfully separated:
+
+strategy/evidence readiness
+
+from:
+
+exchange execution metadata.
+
+This still does NOT prove profitability.
+
+If:
+
+`SOURCE_READY_EXCEPT_EXECUTION_METADATA = 0`
+
+report exact remaining source/evidence blockers.
+
+Do not weaken rules to create ready cases.
+
+==================================================
+17. EVIDENCE v3 FREEZE
+==================================================
+
+Create immutable namespace:
+
+`docs/original_v1_1_evidence_completion_v3/`
+
+Include minimum:
+
+- `EVIDENCE_COMPLETION_V3_SPEC.md`
+- `SOURCE_EVIDENCE_COMPLETION_FUNNEL.json`
+- `ANNOTATION_UNIT_MAP.jsonl.gz`
+- `QUALITATIVE_COMPLETION_REPORT.md`
+- `SOURCE_READY_EXCEPT_METADATA.jsonl.gz`
+- `QUALITATIVE_UNKNOWN_CASES.jsonl.gz`
+- `SOURCE_FAIL_CASES.jsonl.gz`
+- `OLD880_EVIDENCE_RECHECK_V3.csv`
+- `REMAINING_SOURCE_GAPS.md`
+- `QA_REPORT.md`
+- `QA_RECEIPT.json`
+- `REPRODUCIBILITY.md`
+- `freeze_manifest.json`
+
+Save all implementation code/tests.
+
+==================================================
+18. QA
+==================================================
+
+Must PASS:
+
+- all inherited tests
+- v1 manifest
+- v1.1 manifest
+- Evidence v2 manifest
+- metadata recovery v2 manifest
+- first result manifest
+- audit/baseline invariance
+- dataset hashes
+- no-lookahead
+- completed candles
+- known_at
+- prefix consistency
+- future mutation
+- canonical IDs
+- first-test idempotence
+- annotation cutoff
+- annotation no-outcome leakage
+- BACKTEST/SHADOW evidence parity
+- no old labels imported
+- no financial accounting
+- trade_entry_allowed=false
+- no LIVE/private API
+
+==================================================
+19. COMMIT
+==================================================
+
+After successful freeze:
+
+commit message:
+
+`Freeze source evidence completion v3 without execution metadata`
+
+Push:
+
+`medium-term-source-research`
+
+Do not modify main.
+
+==================================================
+20. FINAL RESPONSE
+==================================================
+
+Return exactly:
+
+1. commit SHA
+2. freeze manifest SHA256
+3. RAW proposals
+4. qualitative candidates
+5. unique annotation units
+6. objective source fails
+7. WAIT_NO_AVAILABLE_LOWER_TF
+8. qualitative PASS
+9. qualitative FAIL
+10. qualitative UNKNOWN
+11. other source WAIT
+12. `SOURCE_READY_EXCEPT_EXECUTION_METADATA`
+13. old880 breakdown
+14. top remaining blockers
+15. QA tests/status
+16. artifact paths
+17. `HISTORICAL_METADATA_VERIFIED=FALSE`
+18. `SECOND_FINANCIAL_BACKTEST_RAN=FALSE`
+19. `trade_entry_allowed=false`
+
+==================================================
+STOP
+==================================================
+
+Do NOT search historical metadata again in this task.
+
+Do NOT run financial backtest.
+
+Do NOT compute P&L.
+
+Do NOT optimize strategy.
+
+Do NOT add M1/M5.
+
+Do NOT change U1–U6/N11.
+
+Freeze v3 and STOP.
