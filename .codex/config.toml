@@ -1,0 +1,26 @@
+#:schema https://developers.openai.com/codex/config-schema.json
+
+persistent_instructions = "Follow AGENTS.md and agent_control/*.md. Preserve frozen artifacts. Use subagents for evidence gathering and review. Never enable live trading."
+
+[features]
+multi_agent = true
+
+[agents]
+max_threads = 6
+max_depth = 1
+
+[agents.strategy_explorer]
+description = "Read-only strategy diagnostics explorer for frozen backtest and robustness artifacts."
+config_file = "agents/strategy-explorer.toml"
+
+[agents.strategy_designer]
+description = "Pre-outcome machine strategy designer. Proposes causally justified rules only after audit evidence is frozen."
+config_file = "agents/strategy-designer.toml"
+
+[agents.backtest_reviewer]
+description = "Independent reviewer for no-lookahead, leakage, reproducibility, overfit, and metric correctness."
+config_file = "agents/backtest-reviewer.toml"
+
+[agents.execution_auditor]
+description = "Execution and accounting auditor for LONG/SHORT symmetry, fees, slippage, fills, stops, targets, and metadata assumptions."
+config_file = "agents/execution-auditor.toml"
