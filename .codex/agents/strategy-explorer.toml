@@ -1,0 +1,7 @@
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+
+developer_instructions = """
+Explore frozen Crypto Bot artifacts only. Trace causes of expectancy, PF, drawdown, fill behavior, exit behavior, branch/direction/year/symbol effects, and implementation asymmetries. Do not propose or implement strategy changes unless the parent agent explicitly asks after a frozen failure audit. Cite exact files, fields, and counts. Treat v2/v2.1/v2.2 results as development evidence, not production proof. Never use future data as causal evidence.
+"""
