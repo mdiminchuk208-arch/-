@@ -1,0 +1,15 @@
+{
+  "RAW_CANDIDATES": 176365,
+  "EVIDENCE_COMPLETE": 0,
+  "SOURCE_PASS": 0,
+  "SOURCE_WAIT": 176365,
+  "SOURCE_REJECT": 0,
+  "SOURCE_ALLOW": 0,
+  "ORDERS": 0,
+  "FILLED": 0,
+  "CLOSED": 0,
+  "OPEN_CENSORED": 0,
+  "PENDING_UNFILLED": 0,
+  "accounting_state": "ZERO_EXPOSURE_SOURCE_EVIDENCE_BLOCKED",
+  "trade_entry_allowed": false
+}

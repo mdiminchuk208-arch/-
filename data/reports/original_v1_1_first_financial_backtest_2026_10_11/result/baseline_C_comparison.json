@@ -1,0 +1,46 @@
+{
+  "baseline_C": {
+    "READY_signals": 6760,
+    "admitted_entries": 880,
+    "closed": 880,
+    "WIN": 338,
+    "LOSS": 542,
+    "win_rate_percent": 38.40909090909091,
+    "gross_pnl": -231.83894809071938,
+    "fees": 636.8008335167013,
+    "slippage": 212.26693523198855,
+    "net_pnl": -1080.9067168394095,
+    "profit_factor": 0.7422047615415776,
+    "expectancy": -1.2283030873175107,
+    "average_R": -0.12992932917345448,
+    "average_holding_seconds": 89117.38636363637,
+    "median_holding_seconds": 33300.0,
+    "max_drawdown_fraction": 0.9329808668639642,
+    "gross_definition": "Old gross_pnl already includes slippage; added it back once for cost-before Gross"
+  },
+  "baseline880_v1_1_decisions": {
+    "WAIT": 778,
+    "REJECT": 102
+  },
+  "baseline880_v1_1_reasons": {
+    "WAIT_UNRESOLVED_INSTRUMENT_METADATA": 778,
+    "REJECT_INACTIVE_PROFILE_BRANCH": 102
+  },
+  "new_v1_1_filled_not_in_baseline": 0,
+  "exact_matched_source_filled_cases": 0,
+  "no_matched_causal_effect_estimate": true,
+  "gates_not_applied": [
+    "universal_H1_H4_owner",
+    "mandatory_D1_H4_context_objects",
+    "old_NO_HTF_CONTEXT",
+    "H4_D1_only_FTA",
+    "old_adverse751_446",
+    "fitted_68pct_tree",
+    "AntiScalp_ratio3",
+    "canonical40_30_30",
+    "TP1_BE",
+    "cost_BE",
+    "project_totalrisk_daily_correlation_leverage"
+  ],
+  "comparison_limit": "Primary result is no evidence-complete trades, not a test of setup profitability. Inactive legacy styles rejected at that exact event; no claim a new confirmed setup could not form later."
+}

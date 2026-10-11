@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "reason": "Original CSV files exceed GitHub 100MiB file limit",
+  "financial_results_and_preregistered_producer_unchanged": true,
+  "originals_preserved_locally": true,
+  "records": [
+    {
+      "original": "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/all_candidates.csv",
+      "original_size": 117710997,
+      "original_sha256": "388f6691a298c25993b4c5f6e1deb9f8a36fdac3c49ecdd760627efafe70a9af",
+      "archive": "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/all_candidates.csv.gz",
+      "archive_size": 8843059,
+      "archive_sha256": "3a5d76b775de792d9f057695549b20796af3ba92b86588d99682bb1cec3956f3",
+      "decompressed_byte_equality": "PASS"
+    },
+    {
+      "original": "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/all_WAIT.csv",
+      "original_size": 117710997,
+      "original_sha256": "388f6691a298c25993b4c5f6e1deb9f8a36fdac3c49ecdd760627efafe70a9af",
+      "archive": "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/all_WAIT.csv.gz",
+      "archive_size": 8843059,
+      "archive_sha256": "3a5d76b775de792d9f057695549b20796af3ba92b86588d99682bb1cec3956f3",
+      "decompressed_byte_equality": "PASS"
+    }
+  ]
+}

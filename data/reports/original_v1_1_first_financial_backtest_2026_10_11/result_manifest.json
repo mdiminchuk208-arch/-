@@ -1,0 +1,286 @@
+{
+  "status": "FIRST_RESULT_FROZEN",
+  "registered_at_UTC": "2026-10-11T07:23:08.476249+00:00",
+  "PRE_OUTCOME_commit": "008b80d97cf008e14af94d4271c12188257a926f",
+  "strategy_commit": "43e9d7addcd427650ff856dd1fa99f78ee5c06f7",
+  "preregistration_sha256": "881c789d937474892896ecac887f0f7848e68890b12c7cc343931f8b746dabc2",
+  "strategy_manifest_sha256": "dca962ff1f829887d0787a6329112e77f4ce714023bee85f666ed37843f2ecbb",
+  "artifacts": {
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/equity_INDEPENDENT_SOURCE_CASES.json": "1b142cda94eb92bc0be308c43c606a33534100bfea4d6b933afa206a61038fba",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/WAIT_breakdown.json": "148bb35df358d61a6da7fba4fe9409907e8ed6d32ac6a3efef5cdcb8765890b7",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/intrabar_ambiguous_cases.csv": "a093bf19a15a17a7a02c04a0186fa1879be8499bc4635996bab2cbb18b0227a3",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/cost_ledger_INDEPENDENT_SOURCE_CASES.csv": "ddade8fb9baf507cbf111c8adc446482cdc358b4a574caaa6f7a2973a15e15bb",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/ARTIFACT_INDEX.md": "cab3230e6b375159e6a9f184aa19ced35f1c5eff09733f63c9349465f5a60195",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/baseline880_source_decisions.csv": "8a46cbcc4b5caf4bdf965222dd9d9c2ab24e49bdb0114c93562c443312197ef2",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/cost_ledger_SHARED_PORTFOLIO.csv": "ddade8fb9baf507cbf111c8adc446482cdc358b4a574caaa6f7a2973a15e15bb",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/equity_SHARED_PORTFOLIO.json": "1b142cda94eb92bc0be308c43c606a33534100bfea4d6b933afa206a61038fba",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/run_receipt.json": "6f8370e21fdbc80c9d24fa76803440b8781e69646d6e7f282c345bf94d73d4a1",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/all_WAIT.csv.gz": "3a5d76b775de792d9f057695549b20796af3ba92b86588d99682bb1cec3956f3",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/all_ALLOW.csv": "67fe0d60edd633ca13f3e63eff55291e0fa94a46431ccdb04a9e329f8be97e84",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/breakdowns.csv": "638174341a59fe8995b43f75eca9d67d8dd04504eb6f6936229de3a93de71683",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/all_REJECT.csv": "67fe0d60edd633ca13f3e63eff55291e0fa94a46431ccdb04a9e329f8be97e84",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/QA_receipt.json": "96ef1ec57d0ce8a8745da9a8cc8fa12f9d88628cf4ca4ce8f4ced99b51e7c144",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/all_candidates.csv": "388f6691a298c25993b4c5f6e1deb9f8a36fdac3c49ecdd760627efafe70a9af",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/baseline_C_comparison.json": "e446a68706ad04e2bb4cef58a2696375c3896ef44090d266d67ab06872f051e4",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/metrics.json": "c9e23d286da77527731879ce5f15c5351f5b2d7825c2909f982cc5ef077bfbd0",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/all_WAIT.csv": "388f6691a298c25993b4c5f6e1deb9f8a36fdac3c49ecdd760627efafe70a9af",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/all_raw_proposals.jsonl.gz": "1b2af0c03ca16298162dc2ae33af52ae0ab6c40990bd6acc04be666811243ff9",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/all_trades.csv": "ca367e8d325f1e95536194ce19bd83299424eff0b5c9030874b964d5dbf05ded",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/per_trade_rule_trace.jsonl.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/funnel.json": "54d6a5fae2d08858eb5e25d56ae3f335014435e67bba339b10fa929ca86a5640",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/all_evidence_and_rule_traces.jsonl.gz": "d398072977648c24b40845574612bc052cefa6be637d339fe5509ab6ad2417a7",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/all_candidates.csv.gz": "3a5d76b775de792d9f057695549b20796af3ba92b86588d99682bb1cec3956f3",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/qa/causal_QA.log": "d195f1146e71cda5f3b53e5f767094d63df4e9a6a4e2d6ada95d1ea3003c3fc0",
+    "data/reports/original_v1_1_first_financial_backtest_2026_10_11/result/qa/first_run.log": "9bc8cbd2d69e5a95cfb49579f37e41718faf132b748ce0e6b10e5d06ccc63ecc",
+    "ORIGINAL_V1_1_FIRST_FINANCIAL_BACKTEST_REPORT.md": "3fe701cfa822d1df3ee5fb3464ee422b821df60b2135e76fc23e8d930e44d976"
+  },
+  "QA": {
+    "status": "PASS",
+    "PRE_OUTCOME_commit": "008b80d97cf008e14af94d4271c12188257a926f",
+    "all_previous_and_new_tests": 683,
+    "preflight_receipt_sha256": "452a1e0247616ec4052e96632856b9918b2fbd88127659ec716c1d8b5a122028",
+    "freeze_and_dataset_verification": "PASS",
+    "known_at_and_completed_all_proposals": 176365,
+    "BACKTEST_SHADOW_equal_all_proposals": 176365,
+    "unique_chronological_RAW_ids": "PASS",
+    "prefix_consistency": [
+      {
+        "symbol": "BTCUSDT",
+        "tf": 15,
+        "cutoff": "2023-07-01T00:00:00+00:00",
+        "raw_count": 10735,
+        "sha256": "08d8f86e2de40ddfd1cc5845afb57292c21eba6d2942f67ce7f39e1b3cef2c03"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "tf": 15,
+        "cutoff": "2024-07-01T00:00:00+00:00",
+        "raw_count": 33190,
+        "sha256": "9a56f9af95973e90bb9f68dcdc7071ccbb82f6b9564a681f16605a3f44a550ea"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "tf": 15,
+        "cutoff": "2025-07-01T00:00:00+00:00",
+        "raw_count": 56265,
+        "sha256": "12a30a5318c721125eb738c18c15fa79abc14f59cfa049dc740fe23a17e7179f"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "tf": 60,
+        "cutoff": "2023-07-01T00:00:00+00:00",
+        "raw_count": 2819,
+        "sha256": "84108860bf41f5fa24c43ac7e188c8ec92340ed7a100e22e75a8af243c95e223"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "tf": 60,
+        "cutoff": "2024-07-01T00:00:00+00:00",
+        "raw_count": 8737,
+        "sha256": "c2d56e2cbad5a7c4d834bea135e4ab597c798213c372e91d8f7bff512c40232f"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "tf": 60,
+        "cutoff": "2025-07-01T00:00:00+00:00",
+        "raw_count": 14260,
+        "sha256": "7e012b4a31cab75454d3a8b53bd248c8a7027428170a198af0615644e25bbd30"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "tf": 240,
+        "cutoff": "2023-07-01T00:00:00+00:00",
+        "raw_count": 688,
+        "sha256": "f6e1e38accfd2c3c6e42363f6d9863c15fb2cd8dd007e14b75c96e17f233feb1"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "tf": 240,
+        "cutoff": "2024-07-01T00:00:00+00:00",
+        "raw_count": 2145,
+        "sha256": "83436eaf8e7ae4fc9046ee44439b60892a6adc0eff9588bc1db970db0a9caa1e"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "tf": 240,
+        "cutoff": "2025-07-01T00:00:00+00:00",
+        "raw_count": 3554,
+        "sha256": "72e859f2bc5ae397a9e719ed3cf8c7714232685146dd878a35d5a4f9e525c513"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "tf": 1440,
+        "cutoff": "2023-07-01T00:00:00+00:00",
+        "raw_count": 130,
+        "sha256": "b1dd30cf7654a40d15f90efc55434475feeaac2193185151520a2ee588d46f44"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "tf": 1440,
+        "cutoff": "2024-07-01T00:00:00+00:00",
+        "raw_count": 378,
+        "sha256": "106e5e45bd8d4f78e38af42c3a0683cb3bdb75fbaecec5229acad6c08ebbf9cf"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "tf": 1440,
+        "cutoff": "2025-07-01T00:00:00+00:00",
+        "raw_count": 647,
+        "sha256": "6d7708b61a69159a816d519d142663390daf0424e4f5d23f92f7e8a77accc486"
+      },
+      {
+        "symbol": "ETHUSDT",
+        "tf": 15,
+        "cutoff": "2023-07-01T00:00:00+00:00",
+        "raw_count": 11169,
+        "sha256": "211d323bf9e7ddabbbe62dfd83a085463c233003e68003922ebe434dfd26c0c8"
+      },
+      {
+        "symbol": "ETHUSDT",
+        "tf": 15,
+        "cutoff": "2024-07-01T00:00:00+00:00",
+        "raw_count": 33662,
+        "sha256": "9e3343c97c5e1b2d4363dee4e30d161026c4b550e353383c13f5cbd93caa11ea"
+      },
+      {
+        "symbol": "ETHUSDT",
+        "tf": 15,
+        "cutoff": "2025-07-01T00:00:00+00:00",
+        "raw_count": 56415,
+        "sha256": "5b0d834373224744cc98d3bdb208fe92bd0b67ca8d8cfe747315ee7c14918cc1"
+      },
+      {
+        "symbol": "ETHUSDT",
+        "tf": 60,
+        "cutoff": "2023-07-01T00:00:00+00:00",
+        "raw_count": 2898,
+        "sha256": "03521b9510173b9c81ff8a8c00d833838e1519378da837fc9219dd4a05d7166f"
+      },
+      {
+        "symbol": "ETHUSDT",
+        "tf": 60,
+        "cutoff": "2024-07-01T00:00:00+00:00",
+        "raw_count": 8715,
+        "sha256": "5ab9e94305fd183203ae29829c204219fa0a9a8121a2111a3d4ba48a5c1d7dd5"
+      },
+      {
+        "symbol": "ETHUSDT",
+        "tf": 60,
+        "cutoff": "2025-07-01T00:00:00+00:00",
+        "raw_count": 14189,
+        "sha256": "28a6a584891f8620bb8d2bdd312173ce69fead0e34f0cc54d887cee1436c39a7"
+      },
+      {
+        "symbol": "ETHUSDT",
+        "tf": 240,
+        "cutoff": "2023-07-01T00:00:00+00:00",
+        "raw_count": 704,
+        "sha256": "f82489187be6904c58e855947af6af65742cf693831f8985fc721f9071c6ec00"
+      },
+      {
+        "symbol": "ETHUSDT",
+        "tf": 240,
+        "cutoff": "2024-07-01T00:00:00+00:00",
+        "raw_count": 2230,
+        "sha256": "e26c08160dfad83a66b060410e18a6f1e37831b86aea2a34909f26e09e38ace4"
+      },
+      {
+        "symbol": "ETHUSDT",
+        "tf": 240,
+        "cutoff": "2025-07-01T00:00:00+00:00",
+        "raw_count": 3697,
+        "sha256": "74a03f29da9e219e3cb3621eac5d5f75df36e46bf49cb0b46f2e9d53ddb1d33c"
+      },
+      {
+        "symbol": "ETHUSDT",
+        "tf": 1440,
+        "cutoff": "2023-07-01T00:00:00+00:00",
+        "raw_count": 127,
+        "sha256": "403d2402b6bf3305322246bc3c454021de5a533ac56d201c3eaed1210b3c34e0"
+      },
+      {
+        "symbol": "ETHUSDT",
+        "tf": 1440,
+        "cutoff": "2024-07-01T00:00:00+00:00",
+        "raw_count": 347,
+        "sha256": "8c134568afb03e4e2fd721c64f4d875438255e7fba37393fe7ff24095074c72d"
+      },
+      {
+        "symbol": "ETHUSDT",
+        "tf": 1440,
+        "cutoff": "2025-07-01T00:00:00+00:00",
+        "raw_count": 610,
+        "sha256": "ffbb4764cde88dcb9d737446436d41a434eb42540282358e11042ca47a34cc84"
+      }
+    ],
+    "future_mutation": [
+      {
+        "symbol": "BTCUSDT",
+        "tf": 15,
+        "cutoff": "2024-07-01T00:00:00+00:00",
+        "future_bars_mutated": 50206,
+        "prefix_sha256": "9a56f9af95973e90bb9f68dcdc7071ccbb82f6b9564a681f16605a3f44a550ea"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "tf": 60,
+        "cutoff": "2024-07-01T00:00:00+00:00",
+        "future_bars_mutated": 12551,
+        "prefix_sha256": "c2d56e2cbad5a7c4d834bea135e4ab597c798213c372e91d8f7bff512c40232f"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "tf": 240,
+        "cutoff": "2024-07-01T00:00:00+00:00",
+        "future_bars_mutated": 3137,
+        "prefix_sha256": "83436eaf8e7ae4fc9046ee44439b60892a6adc0eff9588bc1db970db0a9caa1e"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "tf": 1440,
+        "cutoff": "2024-07-01T00:00:00+00:00",
+        "future_bars_mutated": 522,
+        "prefix_sha256": "106e5e45bd8d4f78e38af42c3a0683cb3bdb75fbaecec5229acad6c08ebbf9cf"
+      },
+      {
+        "symbol": "ETHUSDT",
+        "tf": 15,
+        "cutoff": "2024-07-01T00:00:00+00:00",
+        "future_bars_mutated": 50206,
+        "prefix_sha256": "9e3343c97c5e1b2d4363dee4e30d161026c4b550e353383c13f5cbd93caa11ea"
+      },
+      {
+        "symbol": "ETHUSDT",
+        "tf": 60,
+        "cutoff": "2024-07-01T00:00:00+00:00",
+        "future_bars_mutated": 12551,
+        "prefix_sha256": "5ab9e94305fd183203ae29829c204219fa0a9a8121a2111a3d4ba48a5c1d7dd5"
+      },
+      {
+        "symbol": "ETHUSDT",
+        "tf": 240,
+        "cutoff": "2024-07-01T00:00:00+00:00",
+        "future_bars_mutated": 3137,
+        "prefix_sha256": "e26c08160dfad83a66b060410e18a6f1e37831b86aea2a34909f26e09e38ace4"
+      },
+      {
+        "symbol": "ETHUSDT",
+        "tf": 1440,
+        "cutoff": "2024-07-01T00:00:00+00:00",
+        "future_bars_mutated": 522,
+        "prefix_sha256": "8c134568afb03e4e2fd721c64f4d875438255e7fba37393fe7ff24095074c72d"
+      }
+    ],
+    "financial_identity_both_views": "PASS_ZERO_EXPOSURE_PLUS_SYNTHETIC_COST_TESTS",
+    "flat_accounting_and_no_fabricated_fills": "PASS",
+    "export_counts_and_grouping": "PASS",
+    "qualitative_annotation_coverage": "EMPTY_NOT_INFERRED",
+    "historical_fills_and_shared_sizing_exercised": false,
+    "no_LIVE_private_API": true,
+    "trade_entry_allowed": false,
+    "resume": "Run --seal then read-only --resume-existing; keep its receipt outside the sealed namespace"
+  },
+  "trade_entry_allowed": false,
+  "source_profitability_identifiable": false,
+  "NEXT": "STOP. Do not optimise or run a second variant."
+}

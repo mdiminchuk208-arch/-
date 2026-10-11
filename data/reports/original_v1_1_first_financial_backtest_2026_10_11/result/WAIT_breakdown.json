@@ -1,0 +1,20 @@
+{
+  "exclusive_primary_reasons": {
+    "WAIT_UNRESOLVED_INSTRUMENT_METADATA": 176365,
+    "WAIT_NO_AVAILABLE_LOWER_TF": 0,
+    "WAIT_UNRESOLVED_LIQUIDITY_CONTEXT": 0,
+    "WAIT_UNRESOLVED_STOP_GEOMETRY": 0,
+    "WAIT_BRANCH_CONFLICT": 0,
+    "WAIT_INTRABAR_ORDER": 0,
+    "MISSING_QUALITATIVE_EVIDENCE": 0
+  },
+  "overlapping_evidence_blockers": {
+    "MISSING_QUALITATIVE_EVIDENCE": 176365,
+    "WAIT_NO_AVAILABLE_LOWER_TF": 45266,
+    "WAIT_UNRESOLVED_LIQUIDITY_CONTEXT": 176365,
+    "WAIT_UNRESOLVED_STOP_GEOMETRY": 176365,
+    "WAIT_BRANCH_CONFLICT": 0,
+    "WAIT_INTRABAR_ORDER": 0
+  },
+  "note": "Frozen evaluate checks missing tick metadata before qualitative predicates/lower refinement. Parallel blockers explain hidden gaps; do not add overlapping counts to exclusive WAIT."
+}
