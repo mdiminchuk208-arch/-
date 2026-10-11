@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "tests": 939,
+  "deterministic_replay_outputs": 4,
+  "replay_sha256": {
+    "ALL_FILLED_TRADES_VERSIONS.csv": "d0263d908ebb29a97a1984e24e6ad6914b60a682d9050f4373984a6004056e83",
+    "COMPARATIVE_REPORT.json": "7351b06c6a2a7643e3ce25a63744a8aa969e903e795388bc02812d53a3885da0",
+    "MASTER_STAGE_REPORT.json": "4f93406c07be4335c299593f6d81fa033fb54f3211dfbe824e6f984dddb0313e",
+    "MASTER_REPORT.md": "4e836bdb393611413c93d38d9c87853562a9d3cf3ef3dbe18753ffef9f8b0d0d"
+  },
+  "code_sha256": {
+    "scripts/build_machine_strategy_workflow_report.py": "1dbf8740d642bbb7b2eea9de6ee93025947f1e7a65a6bcb6824e5657f86b02a2"
+  },
+  "qa_log_sha256": {
+    "full_unittest": "121d63a836cc4a594a4330cfdf1c34402b47f5163a0ba2d8409805d9b1a6c9b1",
+    "ruff": "d63ab3df51a50c66f9c57056288c7d4faf9dce413552d89215714320ac2b748e",
+    "compile": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mypy": "1495598f2b8e6a09df4f1631545361d6c6e3e3204e506255935ef84876641cc6",
+    "frozen_parent_resume": "38d9339ec8b8252ff3963972b8c62bae4a04e7f0b194b002f0afb600c58566d7"
+  },
+  "original_invariance": "PASS",
+  "trade_entry_allowed": false
+}

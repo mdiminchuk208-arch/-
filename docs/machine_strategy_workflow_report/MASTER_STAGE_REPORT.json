@@ -1,0 +1,208 @@
+{
+  "stages": [
+    {
+      "stage": 0,
+      "version": "Original/reference",
+      "status": "HASH_VERIFIED_PRESERVED",
+      "commit": "29da54ed9476b3281c0d7aab225ffa6c39d31c6a",
+      "manifest": "docs/machine_strategy_preservation/freeze_manifest.json",
+      "manifest_sha256": "5503fdd6393386ceac2c5c73e6afda2943a7d6fb29caefa6e4129d69a265a1d0",
+      "next_gate": "INITIAL_PROOF_PRECEDES_MACHINE_DESIGN"
+    },
+    {
+      "stage": 1,
+      "substage": "design",
+      "version": "v2",
+      "status": "DETERMINISTIC",
+      "commit": "3861d9e8ce661066cf46ade123be846f943aec19",
+      "manifest": "docs/machine_strategy_v2_design/freeze_manifest.json",
+      "manifest_sha256": "89f0e38f773a7644a7e544c36c70983b06d454cba3062c737cb407a1fa820875",
+      "next_gate": "NEXT_SEQUENTIAL_STAGE"
+    },
+    {
+      "stage": 2,
+      "substage": "pre_outcome",
+      "version": "v2",
+      "status": "PRE_OUTCOME_COMMITTED",
+      "commit": "c6bf08761800750146dfb99f0c33f4a3c9b29a76",
+      "manifest": "docs/machine_strategy_v2_pre_outcome/freeze_manifest.json",
+      "manifest_sha256": "4bb0d1f484161e4db79ad4ebdf4e80dff88186f197b4555dedf82eb901699595",
+      "next_gate": "NEXT_SEQUENTIAL_STAGE"
+    },
+    {
+      "stage": 3,
+      "substage": "result",
+      "version": "v2",
+      "status": "FINANCIAL_RESULT_FROZEN",
+      "commit": "4c18005a633390d1d6f4105462af44a9fcefc373",
+      "manifest": "docs/machine_strategy_v2_result/freeze_manifest.json",
+      "manifest_sha256": "8bc9d44a585548a832ef38ad16bad8e5019d30936cdd1f0a8627ebe269c0862d",
+      "next_gate": "NEXT_SEQUENTIAL_STAGE"
+    },
+    {
+      "stage": 4,
+      "substage": "robustness",
+      "version": "v2",
+      "status": "FAIL",
+      "commit": "72852d307fc016eaba882245477231c62f2cbaa7",
+      "manifest": "docs/machine_strategy_v2_robustness/freeze_manifest.json",
+      "manifest_sha256": "308dc43892f12299e6215a632e9a61244b8259eda60fef6f87a39965841231b9",
+      "next_gate": "QUALITY_AND_EXECUTION_READINESS"
+    },
+    {
+      "stage": 5,
+      "substage": "design",
+      "version": "v2.1",
+      "status": "DETERMINISTIC",
+      "commit": "39e263542b0f94677a8665e0d1e7931617296778",
+      "manifest": "docs/machine_strategy_v2_1_design/freeze_manifest.json",
+      "manifest_sha256": "9f427bd73c76f4524c4d8713edaa501c14ceda9d7621b0c444ce38d6126a20c3",
+      "next_gate": "NEXT_SEQUENTIAL_STAGE"
+    },
+    {
+      "stage": 5,
+      "substage": "pre_outcome",
+      "version": "v2.1",
+      "status": "PRE_OUTCOME_COMMITTED",
+      "commit": "8d9dbf777af433788825ad0a4ab2cf3b7881ffe6",
+      "manifest": "docs/machine_strategy_v2_1_pre_outcome/freeze_manifest.json",
+      "manifest_sha256": "38fd39a6eb15264e02638c4c2c922aaaaf829586aa9f69e574a3a2e7ee3fc7f7",
+      "next_gate": "NEXT_SEQUENTIAL_STAGE"
+    },
+    {
+      "stage": 5,
+      "substage": "result",
+      "version": "v2.1",
+      "status": "FINANCIAL_RESULT_FROZEN",
+      "commit": "a6da596765b8a2c003fed1a4b0b92ec755a6566a",
+      "manifest": "docs/machine_strategy_v2_1_result/freeze_manifest.json",
+      "manifest_sha256": "e7bc27ba660eff33ca29b20ad3f85c82b1f87c148902dabca81098c25ac57a52",
+      "next_gate": "NEXT_SEQUENTIAL_STAGE"
+    },
+    {
+      "stage": 5,
+      "substage": "robustness",
+      "version": "v2.1",
+      "status": "FAIL",
+      "commit": "db4b7c7f632288c107b213264209d26752da096c",
+      "manifest": "docs/machine_strategy_v2_1_robustness/freeze_manifest.json",
+      "manifest_sha256": "b0b73c16e629bc6f091e2fdb93a222b51dee5c8c48baa46b43c3c25a4bb2cdc5",
+      "next_gate": "QUALITY_AND_EXECUTION_READINESS"
+    },
+    {
+      "stage": 6,
+      "substage": "design",
+      "version": "v2.2",
+      "status": "DETERMINISTIC",
+      "commit": "fe16012f944f73d22a23acee653408beab85d923",
+      "manifest": "docs/machine_strategy_v2_2_design/freeze_manifest.json",
+      "manifest_sha256": "911ac7f159d28aebb2f1d4751f5ea8c7570ee5d6c245fb078881aff22bcf2c2a",
+      "next_gate": "NEXT_SEQUENTIAL_STAGE"
+    },
+    {
+      "stage": 6,
+      "substage": "pre_outcome",
+      "version": "v2.2",
+      "status": "PRE_OUTCOME_COMMITTED",
+      "commit": "84253b63a3ad6f6d72bfb0a8dca5c87a665d577d",
+      "manifest": "docs/machine_strategy_v2_2_pre_outcome/freeze_manifest.json",
+      "manifest_sha256": "38a0b6d8746f3c1ab3b36fca11106b6e80a8db284baaccdd58d71381c66e3a9b",
+      "next_gate": "NEXT_SEQUENTIAL_STAGE"
+    },
+    {
+      "stage": 6,
+      "substage": "result",
+      "version": "v2.2",
+      "status": "FINANCIAL_RESULT_FROZEN",
+      "commit": "e1b6b00c3534541e6cfa862e4319181cc8c42722",
+      "manifest": "docs/machine_strategy_v2_2_result/freeze_manifest.json",
+      "manifest_sha256": "25de0e2d0c6d13c6d867d26b9eb1d48a4e1bdd603cde26d7c4952d07ce85da6d",
+      "next_gate": "NEXT_SEQUENTIAL_STAGE"
+    },
+    {
+      "stage": 6,
+      "substage": "robustness",
+      "version": "v2.2",
+      "status": "FAIL",
+      "commit": "0c3cd926d3038de6d1b85a950880b26a2c089ea3",
+      "manifest": "docs/machine_strategy_v2_2_robustness/freeze_manifest.json",
+      "manifest_sha256": "2e6e937a4c49eda0954663b8cb5899f6bd6cb07187a23151805104378ba8e404",
+      "next_gate": "QUALITY_AND_EXECUTION_READINESS"
+    },
+    {
+      "stage": 7,
+      "version": null,
+      "status": "BLOCKED_NOT_RUN",
+      "commit": null,
+      "manifest": null,
+      "next_gate": "QUALIFIED_BASE_PRODUCTION_CANDIDATE"
+    },
+    {
+      "stage": 8,
+      "version": null,
+      "status": "BLOCKED_NOT_RUN",
+      "commit": null,
+      "manifest": null,
+      "next_gate": "SATISFACTORY_BACKTEST_ROBUSTNESS_AND_TESTED_OVERLAYS"
+    },
+    {
+      "stage": 9,
+      "version": null,
+      "status": "BLOCKED_NOT_RUN",
+      "commit": null,
+      "manifest": null,
+      "next_gate": "SUCCESSFUL_200_CLOSED_30_DAY_FORWARD_PAPER_GATE"
+    }
+  ],
+  "CURRENT_PRODUCTION_CANDIDATE": null,
+  "machine_version_selected": null,
+  "candidate_metrics": {
+    "Backtest_CLOSED": null,
+    "WR": null,
+    "PF": null,
+    "Expectancy": null,
+    "AvgR": null,
+    "Net": null,
+    "MaxDD": null,
+    "Robustness": null
+  },
+  "completed_versions": [
+    "v2",
+    "v2.1",
+    "v2.2"
+  ],
+  "Paper_trades": 0,
+  "Paper_days": 0,
+  "PAPER_TRADING_READY": false,
+  "REAL_TRADING_READY": false,
+  "project_overlays": "BLOCKED_NOT_RUN",
+  "trade_entry_allowed": false,
+  "STOP_REASONS": [
+    "No production candidate selected: completed development versions do not establish qualified backtest/robustness and exchange execution evidence.",
+    "Theoretical unrounded tick/epsilon execution and unavailable funding cannot establish realistic exchange performance.",
+    "No independent forward/OOS validation; same-history v2.1/v2.2 results are development diagnostics.",
+    "No paper session started; 0 CLOSED virtual paper trades and 0 calendar days. Historical CLOSED is not forward paper evidence."
+  ],
+  "Original_source_ready_unchanged": 0,
+  "main_modified": false,
+  "all_key_artifact_paths": {
+    "v2": {
+      "design": "docs/machine_strategy_v2_design",
+      "pre_outcome": "docs/machine_strategy_v2_pre_outcome",
+      "result": "docs/machine_strategy_v2_result",
+      "robustness": "docs/machine_strategy_v2_robustness"
+    },
+    "v2.1": {
+      "design": "docs/machine_strategy_v2_1_design",
+      "pre_outcome": "docs/machine_strategy_v2_1_pre_outcome",
+      "result": "docs/machine_strategy_v2_1_result",
+      "robustness": "docs/machine_strategy_v2_1_robustness"
+    },
+    "v2.2": {
+      "design": "docs/machine_strategy_v2_2_design",
+      "pre_outcome": "docs/machine_strategy_v2_2_pre_outcome",
+      "result": "docs/machine_strategy_v2_2_result",
+      "robustness": "docs/machine_strategy_v2_2_robustness"
+    }
+  }
+}
