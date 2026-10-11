@@ -1,0 +1,32 @@
+{
+  "stage": "DESIGN",
+  "version": "v2.1",
+  "status": "PRE_OUTCOME_SINGLE_HYPOTHESIS",
+  "parents": {
+    "docs/machine_strategy_v2_robustness/freeze_manifest.json": "308dc43892f12299e6215a632e9a61244b8259eda60fef6f87a39965841231b9"
+  },
+  "artifacts": {
+    "docs/machine_strategy_v2_1_design/DECISION_TREE.md": "2459cf329b1039e01723d830e7fd6457d8a59c14a6426e2272bb6fe901e00402",
+    "docs/machine_strategy_v2_1_design/DIAGNOSIS.json": "d450e284c04c5ee5e5992ebda5524442ef308e1053191c2ed51e5439c3870569",
+    "docs/machine_strategy_v2_1_design/MACHINE_RULE_REGISTRY.csv": "15adca63955918e868d4957938b47a16171bb119d4c4ee219e70fa12096cb652",
+    "docs/machine_strategy_v2_1_design/MACHINE_STRATEGY_SPEC.md": "a5cd4355d7294f039006be6825e0e636c61d42c5f422d0e060d1263375a18a71",
+    "docs/machine_strategy_v2_1_design/PARENT_INVARIANCE.json": "d0d01d3c78736b12ea28aa4aa923ebf3dcc20a28910e17f2ec886702fcd52e61",
+    "docs/machine_strategy_v2_1_design/QA_RECEIPT.json": "dac4e7f215fe1ed3d631bcc2f0e811d0dba9a46902b0eadbab56a1856f259965",
+    "docs/machine_strategy_v2_1_design/QA_REPORT.md": "dc2fd48424a0d2cc4dcefa30d3a3e6aaba5d9f4a706da0e365970b2e214e7d96",
+    "docs/machine_strategy_v2_1_design/VERSION_RULES.json": "8108da0d678ab5ffcb12f4083be3ca8a4fcca0a25d7e83c21dba23089ac09886",
+    "docs/machine_strategy_v2_1_design/qa/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/machine_strategy_v2_1_design/qa/frozen_parent_resume.log": "38d9339ec8b8252ff3963972b8c62bae4a04e7f0b194b002f0afb600c58566d7",
+    "docs/machine_strategy_v2_1_design/qa/full_unittest.log": "cffbd668dea80038b33402b09e07cffd51605b9bd6c2b360a1c148435a68de35",
+    "docs/machine_strategy_v2_1_design/qa/mypy.log": "1495598f2b8e6a09df4f1631545361d6c6e3e3204e506255935ef84876641cc6",
+    "docs/machine_strategy_v2_1_design/qa/ruff.log": "d63ab3df51a50c66f9c57056288c7d4faf9dce413552d89215714320ac2b748e",
+    "scripts/build_machine_strategy_improvement_design.py": "fa961987759b8b2017503fa12992298c9f2fc35cd1d8b9ae78e41e326e8d241b",
+    "scripts/commit_machine_research_stage.py": "282db0adff69d85598811092c3c0ab7610e0f111199537f56ab6f650a5fb3df1",
+    "scripts/continue_machine_strategy_workflow.py": "33f5d1c4263b9e7b0efd2869b64ceff892db2cba0440ccf3c42293384dba13c8",
+    "tests/test_machine_strategy_improvements.py": "48b4d56091c6b7afdb1fa8aa9aa606b5705dea8246938fc8817176bfc817e433"
+  },
+  "QA_tests": 939,
+  "outcomes_computed": false,
+  "trade_entry_allowed": false,
+  "LIVE_enabled": false,
+  "historical_exchange_execution_claimed": false
+}

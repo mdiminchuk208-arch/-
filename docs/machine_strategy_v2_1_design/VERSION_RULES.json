@@ -1,0 +1,16 @@
+{
+  "version": "v2.1",
+  "classification": "MACHINE_RULE_PRE_BACKTEST",
+  "rule_ids": [
+    "M21_EDGE_COST_BUDGET"
+  ],
+  "minimum_edge_cost_ratio": 5,
+  "minimum_structural_R": 0,
+  "definition": "Before READY/order, abs(structural FTA-entry)/((entry+FTA)*(fee+slippage each leg)) must be >=5. Known H1/H4/D1 setup/context and causal structural FTA are inherited mandatory gates. Target/stop are not moved.",
+  "rationale": "Economic budget: estimated full round-trip costs may consume at most 20% of structural gross potential. Five follows this declared cost budget, not a parameter sweep or best historical WR/PF. v2 positive Gross is overwhelmed by modeled costs.",
+  "holding_duration_used_for_admission": false,
+  "outcome_labels_used_for_admission": false,
+  "TP_percent_fixed": false,
+  "base_geometry_changed": false,
+  "trade_entry_allowed": false
+}
