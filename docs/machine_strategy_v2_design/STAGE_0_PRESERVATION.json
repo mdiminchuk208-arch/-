@@ -1,0 +1,45 @@
+{
+  "current_parent_commit": "6918d82b94db52f96bc542533235fbe98be6092c",
+  "original_invariance": {
+    "v3_manifest_sha256": "2ac66c22e51ca21cfa802002a98fdc52d60c1d16c57899cfb2d3aaaf7365055e",
+    "v1_v1_1_v2_v3_recovery_first_result_dataset_hashes": "PASS",
+    "latest_frozen_predecessors": {
+      "docs/original_v1_1_blinded_annotation_v1": {
+        "manifest": "docs/original_v1_1_blinded_annotation_v1/freeze_manifest.json",
+        "sha256": "8f2a7e150802ba6a066592cd9052f82dba1711ec18e45de10eac80b0de8a9ce1",
+        "artifacts": 1333
+      },
+      "docs/original_v1_1_evidence_completion_v4": {
+        "manifest": "docs/original_v1_1_evidence_completion_v4/freeze_manifest.json",
+        "sha256": "ab55a6f99cc6acdd3cc55be23b21f14e8d9fe7768896dc8b521478dca4acde6b",
+        "artifacts": 24
+      },
+      "docs/original_v1_1_execution_metadata_v3": {
+        "manifest": "docs/original_v1_1_execution_metadata_v3/freeze_manifest.json",
+        "sha256": "9320bcbacef61442aa4b5fc4c1d76b03528fc200092ef27af25f6ad6dd2fbf50",
+        "artifacts": 28
+      }
+    }
+  },
+  "main_modified": false,
+  "Original_source_reference_preserved": true,
+  "concepts": [
+    "SFP",
+    "OB",
+    "Breaker",
+    "STB/BTS",
+    "Range",
+    "FVG/IMB",
+    "liquidity",
+    "BOS",
+    "CONF",
+    "OTE",
+    "PD",
+    "FTA",
+    "FIRST_TEST_ONLY",
+    "fixed initial stop",
+    "M15/H1/H4/D1"
+  ],
+  "new_machine_selectors_classified": true,
+  "trade_entry_allowed": false
+}

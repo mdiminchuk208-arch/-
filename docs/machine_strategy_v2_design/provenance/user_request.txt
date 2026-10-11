@@ -1,0 +1,980 @@
+Продолжай проект Crypto Bot как прямое продолжение текущей ветки исследования.
+
+Рабочая ветка:
+
+`medium-term-source-research`
+
+Текущий HEAD:
+
+`6918d82b94db52f96bc542533235fbe98be6092c`
+
+Все frozen predecessors сохранить неизменными.
+
+Не менять `main`.
+
+==================================================
+ГЛАВНАЯ ЦЕЛЬ
+==================================================
+
+Нужно пройти полный путь:
+
+CURRENT STRATEGY
+→ MACHINE_STRATEGY_v2
+→ PRE-OUTCOME FREEZE
+→ BACKTEST
+→ ROBUSTNESS
+→ MACHINE v2.1 / v2.2 IMPROVEMENTS
+→ PAPER TRADING
+→ REAL TRADING READINESS
+
+Важно:
+
+не смешивать эти этапы.
+
+Каждый stage:
+
+- имеет отдельную цель;
+- отдельные artifacts;
+- отдельный QA;
+- отдельный manifest;
+- отдельный commit;
+- отдельный gate для перехода дальше.
+
+Если gate не пройден:
+остановить только зависимые stages.
+
+Не переписывать предыдущие frozen stages.
+
+==================================================
+GLOBAL PRINCIPLES
+==================================================
+
+1. Original v1/v1.1 остаётся source reference.
+
+2. Machine Strategy v2 — это НЕ exact Original.
+
+3. Все новые правила, которых нет однозначно в source, маркировать:
+
+`MACHINE_RULE_PRE_BACKTEST`
+
+4. До первого frozen financial result запрещена outcome-based оптимизация.
+
+5. После получения результата нельзя задним числом менять v2.
+
+6. Любые улучшения после результата создаются только как:
+
+- v2.1
+- v2.2
+- v2.3
+
+с отдельным pre-outcome freeze.
+
+7. LIVE trading запрещён на всех stages до отдельного финального authorization.
+
+8.
+
+`trade_entry_allowed=false`
+
+сохранять до отдельной будущей production activation.
+
+==================================================
+STAGE 0 — PRESERVE CURRENT STRATEGY
+==================================================
+
+Считать текущую стратегию базой.
+
+Сохранить:
+
+- SFP
+- OB
+- Breaker
+- STB/BTS
+- Range
+- FVG/IMB
+- liquidity
+- BOS
+- CONF
+- OTE
+- PD
+- FTA
+- FIRST_TEST_ONLY
+- fixed initial stop
+- M15/H1/H4/D1
+
+Не начинать стратегию заново.
+
+Не выбрасывать source concepts.
+
+Задача Machine Strategy v2:
+
+не заменить основу,
+а сделать её полностью детерминированной для машины.
+
+==================================================
+STAGE 1 — MACHINE STRATEGY v2 DESIGN
+==================================================
+
+Цель:
+
+закрыть все дискреционные UNKNOWN из Original v1.1 точными машинными правилами.
+
+До этого stage не смотреть:
+
+- WIN/LOSS;
+- P&L;
+- PF;
+- WR;
+- MFE;
+- MAE;
+- будущие свечи;
+- old 67.68%;
+- baseline 38.41%;
+- profitable subgroups.
+
+==================================================
+1.1 TIMEFRAME MODEL
+==================================================
+
+TF universe:
+
+- D1 = global context
+- H4 = local context
+- H1 = primary decision TF
+- M15 = refinement
+
+Не добавлять M1/M5 в Machine v2.
+
+Не требовать universal alignment всех TF.
+
+==================================================
+1.2 CANONICAL CONTEXT
+==================================================
+
+Нужно детерминированно определить:
+
+- structural direction;
+- protected endpoint;
+- current structural leg;
+- contextual origin;
+- selected impulse;
+- dealing range.
+
+Использовать:
+
+- strict 3-bar swing;
+- BOS = body close;
+- completed candles only;
+- causal known_at only.
+
+Если существует несколько допустимых контекстов:
+
+применять заранее установленный deterministic tie-break.
+
+Никакого outcome-based выбора.
+
+==================================================
+1.3 PROTECTED ENDPOINT
+==================================================
+
+Bullish:
+последний structural swing low, потеря которого body-close invalidates current bullish leg.
+
+Bearish:
+последний structural swing high.
+
+Endpoint обновляется только после causal structural confirmation.
+
+==================================================
+1.4 SELECTED IMPULSE
+==================================================
+
+Selected impulse:
+
+последний causal impulse, который непосредственно создал BOS, подтверждающий текущую structural leg.
+
+Хранить:
+
+- start swing;
+- end swing;
+- BOS ID;
+- direction;
+- known_at;
+- canonical ID.
+
+==================================================
+1.5 DEALING RANGE / PD / OTE
+==================================================
+
+Dealing range строить из selected impulse.
+
+EQ:
+`0.5`
+
+OTE:
+`0.705–0.79`
+
+Не оптимизировать эти значения до первого P&L.
+
+==================================================
+1.6 LIQUIDITY MODEL
+==================================================
+
+Machine Strategy v2 должна явно классифицировать:
+
+- structural liquidity;
+- internal liquidity;
+- external liquidity;
+- adverse liquidity;
+- target/fuel liquidity;
+- neutral liquidity.
+
+Liquidity не является standalone entry trigger.
+
+Если liquidity relation не может быть определена:
+WAIT.
+
+Все classification rules задать pre-outcome.
+
+==================================================
+1.7 POI SELECTION
+==================================================
+
+Нужно однозначно определить выбор POI для:
+
+- OB
+- Breaker
+- STB
+- FVG
+- Range
+- SFP refinement
+
+Если несколько POI:
+
+использовать заранее определённый machine priority.
+
+Priority должен зависеть только от causal market structure.
+
+Не использовать будущую эффективность зоны.
+
+==================================================
+1.8 FIRST TEST
+==================================================
+
+Сохранить:
+
+`FIRST_TEST_ONLY`
+
+Для каждого POI:
+
+- born_at;
+- first eligible touch;
+- consumed_at;
+- setup identity.
+
+Повторное использование consumed POI запрещено.
+
+Новая структура/новая formation = новая setup identity.
+
+==================================================
+1.9 BRANCH RULES
+==================================================
+
+Определить отдельно:
+
+### SFP
+completed SFP
+→ required refinement
+→ confirmation
+→ entry POI
+→ stop
+→ FTA
+
+### OB
+valid OB
+→ reaction
+→ confirmation
+→ new POI
+→ entry
+
+### Breaker
+valid source OB relationship
+→ break
+→ confirmation
+→ retest/reaction
+→ entry
+
+### STB/BTS
+raid/manipulation
+→ engulf/structure
+→ confirmation
+→ entry
+
+### Range
+valid selected range
+→ deviation
+→ reclaim
+→ retest
+→ entry
+
+==================================================
+1.10 BRANCH CONFLICT
+==================================================
+
+Если один physical market event создаёт несколько branches:
+
+не создавать несколько одинаковых trades.
+
+Создать deterministic priority.
+
+Priority задаётся ДО backtest.
+
+Сохранить:
+
+- physical_idea_id
+- setup_id
+- chosen_branch
+- rejected_sibling_branches
+
+==================================================
+1.11 ENTRY
+==================================================
+
+Нужно определить точную source/machine entry geometry.
+
+Отдельно:
+
+- source POI;
+- executable price;
+- price rounding.
+
+Если historical tick unavailable:
+
+сохранять unrounded theoretical machine price отдельно.
+
+==================================================
+1.12 STOP
+==================================================
+
+Machine v2 использует fixed initial stop.
+
+Не применять BE в Original/Machine v2 base result.
+
+Stop anchors:
+
+- SFP → pattern extreme + frozen ATR construction where required
+- OB → source extreme
+- Breaker → raid/impulse extreme
+- STB → manipulation extreme
+- Range → deviation/invalidation extreme
+
+==================================================
+1.13 TARGET / FTA
+==================================================
+
+Non-Range:
+
+nearest valid opposing contextual FTA.
+
+Range:
+
+frozen Range exit model.
+
+FTA inventory должен быть causal и существовать до entry.
+
+==================================================
+1.14 INTRABAR POLICY
+==================================================
+
+Не использовать arbitrary:
+
+- TP-first
+- SL-first
+- optimistic
+- pessimistic
+
+Если последовательность внутри свечи неизвестна:
+
+`WAIT_INTRABAR_ORDER`
+
+Если существует lower-TF causal evidence within allowed TF universe — можно использовать его только по заранее зафиксированному правилу.
+
+==================================================
+STAGE 1 OUTPUT
+==================================================
+
+Создать:
+
+`docs/machine_strategy_v2_design/`
+
+Минимум:
+
+- MACHINE_STRATEGY_V2_SPEC.md
+- MACHINE_RULE_REGISTRY.csv
+- MACHINE_DECISION_TREE.md
+- MACHINE_CONTEXT_MODEL.md
+- MACHINE_LIQUIDITY_MODEL.md
+- MACHINE_POI_SELECTION.md
+- MACHINE_BRANCH_RULES.md
+- MACHINE_ENTRY_STOP_TARGET.md
+- MACHINE_INTRABAR_POLICY.md
+- QA_REPORT.md
+- freeze_manifest.json
+
+Commit:
+
+`Freeze Machine Strategy v2 design`
+
+==================================================
+GATE 1
+==================================================
+
+Strategy должна быть полностью deterministic.
+
+Не должно остаться critical:
+
+- context UNKNOWN
+- branch conflict UNKNOWN
+- POI UNKNOWN
+- stop anchor UNKNOWN
+- FTA UNKNOWN
+- first-test UNKNOWN
+
+Если остаются:
+не запускать backtest.
+
+==================================================
+STAGE 2 — PRE-OUTCOME FREEZE
+==================================================
+
+До просмотра P&L создать frozen executable implementation Machine v2.
+
+Создать:
+
+- deterministic engine;
+- exact candidate cohort;
+- exact case IDs;
+- exact dataset hashes;
+- exact price logic;
+- exact fees/slippage policy;
+- exact fill policy;
+- exact intrabar policy;
+- exact accounting mode.
+
+==================================================
+METADATA POLICY
+==================================================
+
+Historical exchange metadata отделять от strategy logic.
+
+Если точная historical tick metadata доказана:
+использовать exchange-executable mode.
+
+Если нет:
+
+разрешается отдельный:
+
+`NORMALIZED_R_RESEARCH_MODE`
+
+только если результат не требует недоказанного quantity metadata.
+
+Но любые недоказанные price-rounding assumptions должны быть явно зарегистрированы.
+
+Никакого silent inference.
+
+==================================================
+PRE-OUTCOME ARTIFACTS
+==================================================
+
+Создать:
+
+`docs/machine_strategy_v2_pre_outcome/`
+
+Минимум:
+
+- BACKTEST_PROTOCOL.md
+- PREREGISTRATION.json
+- FROZEN_CASES.jsonl.gz
+- DATASET_VERIFICATION.json
+- EXECUTION_ASSUMPTIONS.md
+- COST_MODEL.md
+- QA_REPORT.md
+- freeze_manifest.json
+
+Commit:
+
+`PRE_OUTCOME_MACHINE_STRATEGY_V2`
+
+После этого commit Machine v2 больше не менять.
+
+==================================================
+STAGE 3 — MACHINE v2 BACKTEST
+==================================================
+
+Запустить полный historical backtest только после pre-outcome freeze.
+
+Основной диапазон:
+
+использовать текущую frozen historical dataset 2023–2025.
+
+BTCUSDT
+ETHUSDT
+
+если dataset coverage сохранена.
+
+==================================================
+METRICS
+==================================================
+
+Считать минимум:
+
+- RAW candidates
+- allowed setups
+- orders
+- fills
+- closed
+- censored/open
+- WIN
+- LOSS
+- WinRate
+- Gross P&L
+- Fees
+- Slippage
+- Funding where supported
+- Net P&L
+- Profit Factor
+- Expectancy
+- AvgR
+- MedianR
+- Avg win
+- Avg loss
+- payoff ratio
+- breakeven WR
+- Max Drawdown
+- max loss streak
+- average hold
+- median hold
+
+==================================================
+BREAKDOWNS
+==================================================
+
+Обязательно:
+
+- BTC / ETH
+- LONG / SHORT
+- SFP
+- OB
+- Breaker
+- STB
+- Range
+- M15/H1/H4/D1 where relevant
+- year
+- month
+
+Но НЕ выбирать лучший subgroup как новую стратегию внутри этого stage.
+
+==================================================
+BACKTEST RESULT FREEZE
+==================================================
+
+Создать:
+
+`docs/machine_strategy_v2_result/`
+
+Commit:
+
+`Freeze Machine Strategy v2 financial result`
+
+После результата v2 immutable.
+
+==================================================
+STAGE 4 — ROBUSTNESS
+==================================================
+
+После frozen result проверить:
+
+- performance по годам;
+- rolling periods;
+- BTC vs ETH;
+- LONG vs SHORT;
+- branches;
+- TF;
+- cost sensitivity;
+- hold-duration;
+- sample concentration;
+- drawdown concentration;
+- losing streaks.
+
+Цель:
+
+не найти лучший параметр,
+а понять стабильность edge.
+
+==================================================
+ROBUSTNESS RULES
+==================================================
+
+Не оптимизировать v2.
+
+Не удалять плохие периоды.
+
+Не удалять плохие coins/branches только потому, что они ухудшают результат.
+
+Отчёт должен показать:
+
+- stable;
+- unstable;
+- concentrated;
+- weak;
+- insufficient sample.
+
+==================================================
+STAGE 4 OUTPUT
+==================================================
+
+`docs/machine_strategy_v2_robustness/`
+
+Commit:
+
+`Freeze Machine Strategy v2 robustness analysis`
+
+==================================================
+GATE 4
+==================================================
+
+Если v2 показывает:
+
+- отрицательную expectancy;
+- PF < 1 net;
+- неприемлемый DD;
+- отсутствие стабильности;
+
+не переходить сразу к paper trading.
+
+Переходить к Machine v2.1 design.
+
+==================================================
+STAGE 5 — IMPROVEMENT CYCLE v2.1
+==================================================
+
+Machine v2.1 создаётся только ПОСЛЕ полного frozen анализа v2.
+
+Очень важно:
+
+v2.1 — новая стратегия version.
+
+Нельзя переписывать v2.
+
+==================================================
+IMPROVEMENT METHOD
+==================================================
+
+Сначала diagnosis:
+
+- где возникают losses;
+- какой branch нестабилен;
+- какой context produces poor trades;
+- где costs destroy edge;
+- где entries слишком поздние;
+- где FTA слишком близко;
+- где drawdown concentrates.
+
+Затем предложить минимальный набор логически обоснованных изменений.
+
+Каждое изменение:
+
+- имеет rationale;
+- не использует future data;
+- не выбирается только потому, что увеличило P&L;
+- получает отдельный machine rule ID.
+
+==================================================
+NO BLIND OPTIMIZATION
+==================================================
+
+Запрещено:
+
+- brute-force parameter search;
+- thousands of combinations;
+- maximizing WR;
+- maximizing PF on full historical sample;
+- deleting losing setups post hoc.
+
+==================================================
+v2.1 PIPELINE
+==================================================
+
+Для v2.1 повторить:
+
+design
+→ pre-outcome freeze
+→ backtest
+→ result freeze
+→ robustness.
+
+Если v2.1 недостаточно хороша:
+
+создать v2.2.
+
+==================================================
+STAGE 6 — MACHINE v2.2
+==================================================
+
+Тот же принцип.
+
+Не делать бесконечное количество versions.
+
+После v2 / v2.1 / v2.2 выполнить comparative report.
+
+Сравнить:
+
+- expectancy
+- PF
+- Net
+- DD
+- AvgR
+- WR
+- stability
+- sample size
+- branch concentration
+- costs
+
+==================================================
+FINAL STRATEGY SELECTION
+==================================================
+
+Выбирать production candidate не по одному WR.
+
+Основные критерии:
+
+1. positive expectancy;
+2. PF > 1 net;
+3. reasonable DD;
+4. stable across periods;
+5. sufficient number of trades;
+6. not dependent on one tiny subgroup;
+7. implementable live without unrealistic execution assumptions.
+
+Создать:
+
+`MACHINE_STRATEGY_PRODUCTION_CANDIDATE`
+
+==================================================
+STAGE 7 — PROJECT OVERLAYS
+==================================================
+
+Только после выбора base machine candidate.
+
+Отдельно проверить project layers:
+
+- signal score
+- project admission
+- dynamic risk 2–5%
+- total open risk 6%
+- max correlated positions
+- leverage
+- 40/30/30
+- cost-aware BE after TP1
+- exchange selection
+- duplicate prevention
+
+Эти правила не должны менять исторический base-strategy result.
+
+Сделать отдельный overlay report.
+
+==================================================
+STAGE 8 — PAPER TRADING
+==================================================
+
+Paper Trading только после:
+
+- frozen machine strategy;
+- satisfactory backtest;
+- satisfactory robustness;
+- project overlays tested.
+
+Никакого automatic transition to real money.
+
+==================================================
+PAPER POLICY
+==================================================
+
+Минимум:
+
+- 200 CLOSED virtual trades;
+- минимум 30 календарных дней.
+
+Отслеживать:
+
+- WinRate
+- Net P&L
+- PF
+- Expectancy
+- AvgR
+- MaxDD
+- loss streak
+- setup breakdown
+- coin breakdown
+- LONG/SHORT
+- execution difference vs backtest
+- fees/slippage
+- signal frequency
+
+==================================================
+PAPER GATE
+==================================================
+
+После 200 CLOSED + 30 days:
+
+выдать только verdict:
+
+- PASS
+- EXTEND
+- FAIL
+
+Не запускать real trading автоматически.
+
+==================================================
+STAGE 9 — REAL TRADING READINESS
+==================================================
+
+Только после successful paper gate.
+
+Даже тогда:
+
+`trade_entry_allowed=false`
+
+до explicit user authorization.
+
+Подготовить:
+
+- production readiness report;
+- exchange API safety check;
+- max-risk enforcement;
+- STOP AUTO TRADING;
+- CLOSE ALL;
+- Safe Mode;
+- audit logging;
+- SL/TP exchange protection;
+- secret storage;
+- failure handling.
+
+==================================================
+REAL TRADING START
+==================================================
+
+Запрещено самостоятельно:
+
+- включать real auto;
+- отправлять реальные ордера;
+- использовать withdrawal permissions;
+- менять risk limits.
+
+Real activation требует отдельной команды пользователя.
+
+==================================================
+MASTER QA
+==================================================
+
+Каждый stage обязан проверять:
+
+- deterministic replay;
+- dataset hashes;
+- no-lookahead;
+- completed candles;
+- known_at;
+- future mutation;
+- prefix consistency;
+- canonical identities;
+- no outcome leakage in pre-outcome stages;
+- BACKTEST/SHADOW parity where applicable;
+- freeze invariance;
+- clean git status.
+
+==================================================
+COMMIT STRUCTURE
+==================================================
+
+Пример:
+
+1.
+`Freeze Machine Strategy v2 design`
+
+2.
+`PRE_OUTCOME_MACHINE_STRATEGY_V2`
+
+3.
+`Freeze Machine Strategy v2 financial result`
+
+4.
+`Freeze Machine Strategy v2 robustness analysis`
+
+5.
+`Freeze Machine Strategy v2.1 design`
+
+6.
+`PRE_OUTCOME_MACHINE_STRATEGY_V2_1`
+
+7.
+`Freeze Machine Strategy v2.1 result`
+
+и далее аналогично.
+
+==================================================
+MASTER FINAL REPORT
+==================================================
+
+После выполнения максимально доступных stages вернуть таблицу:
+
+| Stage | Version | Status | Commit | Manifest | Key result | Next gate |
+
+И отдельно:
+
+CURRENT_PRODUCTION_CANDIDATE
+
+Machine version:
+Backtest CLOSED:
+WR:
+PF:
+Expectancy:
+AvgR:
+Net:
+MaxDD:
+Robustness:
+Paper trades:
+Paper days:
+PAPER_TRADING_READY:
+REAL_TRADING_READY:
+trade_entry_allowed:
+
+Также вернуть:
+
+- какие stages completed;
+- какие blocked;
+- точный STOP reason;
+- какие улучшения были сделаны между v2/v2.1/v2.2;
+- почему выбран final candidate;
+- artifact paths.
+
+==================================================
+КЛЮЧЕВОЙ ПРИНЦИП
+==================================================
+
+Вся работа должна идти именно в таком порядке:
+
+CURRENT STRATEGY
+→ MACHINE v2
+→ FREEZE BEFORE P&L
+→ BACKTEST
+→ ROBUSTNESS
+→ v2.1/v2.2 IMPROVEMENTS
+→ PAPER TRADING
+→ REAL TRADING READINESS
+
+Никогда не перескакивать через gate.
+
+Никогда не переписывать старую frozen version после просмотра её результата.
+
+Никогда не выдавать backtest result за гарантию будущей прибыли.
+
+Никогда не запускать real trading автоматически.

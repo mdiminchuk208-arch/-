@@ -1,0 +1,28 @@
+{
+  "status": "PASS_DETERMINISTIC_DEFINITIONS",
+  "critical_definition_UNKNOWN": 0,
+  "required_observations_may_WAIT": true,
+  "historical_cohort_built": false,
+  "financial_outcomes_viewed": false,
+  "parameters": {
+    "swing_bars": 3,
+    "ATR": 14,
+    "EQ": "0.5",
+    "OTE": [
+      "0.705",
+      "0.79"
+    ],
+    "pending_H1_cycles": 16,
+    "order_H1_cycles": 1,
+    "theoretical_outside_epsilon_relative": "0.00000001"
+  },
+  "branch_priority": {
+    "BREAKER": 0,
+    "STB": 1,
+    "SFP": 2,
+    "OB": 3,
+    "RANGE": 4
+  },
+  "machine_rule_count": 29,
+  "trade_entry_allowed": false
+}

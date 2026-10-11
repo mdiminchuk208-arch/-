@@ -1,0 +1,17 @@
+{
+  "classification": "MACHINE_RULE_PRE_BACKTEST",
+  "minimum_closed": 200,
+  "net_PF_strictly_above": 1,
+  "net_expectancy_strictly_above": 0,
+  "maximum_closed_return_drawdown_R": 20,
+  "minimum_positive_calendar_years": 2,
+  "maximum_single_group_net_positive_profit_share": "0.80",
+  "maximum_intrabar_unresolved_fraction": "0.20",
+  "required_execution_realism": "VERIFIED_PRICE_METADATA_AND_COST_FUNDING_SUPPORT_FOR_PRODUCTION",
+  "role": "Pre-outcome research acceptance gates, not SOURCE rules. Closed independent-case cumulative-R drawdown is diagnostic, not live portfolio drawdown.",
+  "improvement_limit": 2,
+  "improvement_method": "After frozen robustness only: one logical causal hypothesis per new version, no parameter search; previous versions immutable. Same dataset retests are development diagnostics, not independent validation.",
+  "paper_minimum_closed": 200,
+  "paper_minimum_calendar_days": 30,
+  "trade_entry_allowed": false
+}

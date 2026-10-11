@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "tests": 912,
+  "deterministic_replay_outputs": 13,
+  "replay_sha256": {
+    "MACHINE_STRATEGY_V2_SPEC.md": "2e7ff44dba0ee88877c626c5a1d9aa9ed33ff127747d475044e3ba93767e1779",
+    "MACHINE_DECISION_TREE.md": "350b9eb4032801b0814952daa90c843278bd9f401210a9eb62cefd3bb2b3cfcf",
+    "MACHINE_CONTEXT_MODEL.md": "f42e2bfa52179dc54b69165dbfba11e9773f32fa6ad93d0fe59c5a33647cffff",
+    "MACHINE_LIQUIDITY_MODEL.md": "25f9e26948f3c8e5e38cd98b7cc64a730d488f087661102a16394dfc52077736",
+    "MACHINE_POI_SELECTION.md": "d80138191609d92e1ea7c25d59095bb92c9481818d81d07b2b5699abd464d114",
+    "MACHINE_BRANCH_RULES.md": "de423574c928fad76b7adf70069f2880324debe7d63d733621b82fc88d3c954e",
+    "MACHINE_ENTRY_STOP_TARGET.md": "c7a02415b966925baf80b5888446aaa39ef9d86cf0ff147d9ef7bee99b77e886",
+    "MACHINE_INTRABAR_POLICY.md": "64d33933e6daa9f1e4cb1a78aea6ff2bebb86cf6d06199e20c56f57474251748",
+    "MACHINE_RULE_REGISTRY.csv": "92e2529a78fa26ba6c237a3df6e0d90a4ed243ebf93eb1f1563a7fb9d4f7f39e",
+    "SOURCE_CITATIONS.json": "abbf171213b1a96a39052086b1c0f0678f7b6a67638dfbf3011743cc1546f428",
+    "GATE_1.json": "bf1a78f6818a80884a3b083ffa9733a0d6600dca1e0c197447e18800f83a6583",
+    "READINESS_POLICY.json": "6ddc70f26ee62f850267b090cb87db264b80ff952586a6feab217b0b3be73fe6",
+    "STAGE_0_PRESERVATION.json": "80ec0fff357d7b7027e6bdea23b4a7cca640ec29702629473cf33791ff284f4c"
+  },
+  "code_sha256": {
+    "scripts/machine_strategy_v2_core.py": "d6b0560e7db1691a0fc3de2fd05eb02aeee127e0b1cf105190d896ef61a7ae69",
+    "scripts/machine_strategy_research_io.py": "30616944a1fd49b67e7814226d9f8a4dd43bd94c8b79809e360fb78738f44fac",
+    "scripts/build_machine_strategy_v2_design.py": "917b1d5eb6caa3a68e62e9da2fc1332a31749cee80a4cb9ea05bfe43a7033aee",
+    "tests/test_machine_strategy_v2_core.py": "3679544c4ae24beaa189eca1e6c59cffa7099ea12193701a0b1bfbb07bfd179e"
+  },
+  "qa_log_sha256": {
+    "full_unittest": "156c542cc698aa3f070430e0a89a2466e2188e10a2c9a9908a80010be5e63354",
+    "ruff": "d63ab3df51a50c66f9c57056288c7d4faf9dce413552d89215714320ac2b748e",
+    "compile": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mypy": "1495598f2b8e6a09df4f1631545361d6c6e3e3204e506255935ef84876641cc6",
+    "frozen_parent_resume": "38d9339ec8b8252ff3963972b8c62bae4a04e7f0b194b002f0afb600c58566d7"
+  },
+  "original_invariance": "PASS",
+  "trade_entry_allowed": false
+}

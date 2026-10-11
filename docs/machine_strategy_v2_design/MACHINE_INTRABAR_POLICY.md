@@ -1,0 +1,3 @@
+# Intrabar order
+
+M2_INTRABAR/M2_EXPIRY are frozen before financial calculation. Orders become available strictly after H1 decision close; M15 is finest evidence. OPEN gap events precede later bar extrema. A single SL/FTA hit in a previously filled bar is resolved. Both in one M15 bar remain WAIT_INTRABAR_ORDER. For a wick-touch limit, a target hit without ordered evidence might precede fill and remains WAIT; a stop-only crossing after traversing limit is ordered under an explicitly continuous within-bar path. No arbitrary TP-first/SL-first. Precise fill/exit timestamps are observation times or bounds, not invented intrabar instants.
