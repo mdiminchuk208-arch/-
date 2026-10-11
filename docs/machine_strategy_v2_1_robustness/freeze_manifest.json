@@ -1,0 +1,27 @@
+{
+  "stage": "robustness",
+  "version": "v2.1",
+  "status": "FROZEN",
+  "parents": {
+    "docs/machine_strategy_v2_1_result/freeze_manifest.json": "e7bc27ba660eff33ca29b20ad3f85c82b1f87c148902dabca81098c25ac57a52"
+  },
+  "artifacts": {
+    "docs/machine_strategy_v2_1_robustness/QA_RECEIPT.json": "9a1b5ec0fa3a9e661dd1d5a070e33c01a2f97c4e4bfd2a6051f9ced6471ecfac",
+    "docs/machine_strategy_v2_1_robustness/QA_REPORT.md": "0e5a2f97863f0cfd4c2095723554ed6dd83b1762b2466c43d474a74d64d1b8c3",
+    "docs/machine_strategy_v2_1_robustness/ROBUSTNESS.json": "ce216353a3fdcfea1c1191ea116cfae67e3cd2955cdaecba6bb3c7cca125ca35",
+    "docs/machine_strategy_v2_1_robustness/ROBUSTNESS_REPORT.md": "687ad644ba28c1a449e601c84f5817a4616291fcd4514da5e6f52b0e3973e8e3",
+    "docs/machine_strategy_v2_1_robustness/qa/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/machine_strategy_v2_1_robustness/qa/frozen_parent_resume.log": "38d9339ec8b8252ff3963972b8c62bae4a04e7f0b194b002f0afb600c58566d7",
+    "docs/machine_strategy_v2_1_robustness/qa/full_unittest.log": "c1ab8e6035266ececa393b296e9f57e613812fea563c69b76da66d5ea307ed46",
+    "docs/machine_strategy_v2_1_robustness/qa/mypy.log": "1495598f2b8e6a09df4f1631545361d6c6e3e3204e506255935ef84876641cc6",
+    "docs/machine_strategy_v2_1_robustness/qa/ruff.log": "d63ab3df51a50c66f9c57056288c7d4faf9dce413552d89215714320ac2b748e",
+    "scripts/machine_strategy_v2_execution.py": "1be53a60536719d936494e48aeb344ed326ef914b0b3a2a5d92f9de2e3c36e89",
+    "scripts/run_machine_strategy_research.py": "fbefa8805c0cb3d18602d34bb44093c7a231d2691cf0f8b04cc942a78d90ddab",
+    "tests/test_machine_strategy_v2_execution.py": "eab7cde5a075534d254c4d53c49a1f3283edc5e2cafcada42b602193e9fb5236"
+  },
+  "QA_tests": 939,
+  "outcomes_computed": true,
+  "trade_entry_allowed": false,
+  "LIVE_enabled": false,
+  "historical_exchange_execution_claimed": false
+}
