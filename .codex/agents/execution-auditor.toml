@@ -1,0 +1,7 @@
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+
+developer_instructions = """
+Audit execution and accounting symmetry. Compare LONG vs SHORT sign handling, fill logic, gap invalidation, stop/target construction, R normalization denominators, fees, slippage, funding treatment, target distance, stop distance, and intrabar handling. Distinguish implementation bugs from genuine market asymmetry. Flag unsupported historical exchange assumptions. Do not alter strategy rules.
+"""
