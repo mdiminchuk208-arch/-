@@ -1,0 +1,32 @@
+{
+  "stage": "result",
+  "version": "v2",
+  "status": "FROZEN",
+  "parents": {
+    "docs/machine_strategy_v2_pre_outcome/freeze_manifest.json": "4bb0d1f484161e4db79ad4ebdf4e80dff88186f197b4555dedf82eb901699595"
+  },
+  "artifacts": {
+    "docs/machine_strategy_v2_result/ALL_CASE_EXECUTIONS.jsonl.gz": "50cd5c55cd97cfad0099362e2af297a71497efad8a6c5fd60388ea54924f5560",
+    "docs/machine_strategy_v2_result/ALL_TRADES.jsonl.gz": "9db605c961c98a69914581eaced68b8a490d4880362cbe00cfc9dcf4a35633c6",
+    "docs/machine_strategy_v2_result/BREAKDOWNS.json": "02356972fa59a74c1686a04e23997cb9ab822245462a3b94f7c5470790c127d7",
+    "docs/machine_strategy_v2_result/CLOSED_TRADES.jsonl.gz": "9fcf8fd1c0ba4deb2410217059e0d6814fc92af8086b44187d0fe6df470991c8",
+    "docs/machine_strategy_v2_result/FINANCIAL_REPORT.md": "3a17ef089d96536309de4b41b5ddecb7b994a2852731ff9731401f4452444885",
+    "docs/machine_strategy_v2_result/METRICS.json": "e668969221f9603045afd1acb8d598b91f739e540352fc9f7f453ea6a9bae245",
+    "docs/machine_strategy_v2_result/QA_RECEIPT.json": "846df9f823347ea37ea0447a9d56e799b5f704650dc3f29892bb08ce9775f123",
+    "docs/machine_strategy_v2_result/QA_REPORT.md": "426bcaf20cab0f7dc190149e4eaf10ff276a20552e8e3b1c2a3b8af6ddd46587",
+    "docs/machine_strategy_v2_result/RESULT_PROVENANCE.json": "c28c5e91e8a150d547c079e53ab36a43e767904326a9f4a964be75a4b5b857c5",
+    "docs/machine_strategy_v2_result/qa/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/machine_strategy_v2_result/qa/frozen_parent_resume.log": "38d9339ec8b8252ff3963972b8c62bae4a04e7f0b194b002f0afb600c58566d7",
+    "docs/machine_strategy_v2_result/qa/full_unittest.log": "6be4afeaf45caaa44c9604d0d74eee7159741c5d6178dae740d3a66dff2fd6d8",
+    "docs/machine_strategy_v2_result/qa/mypy.log": "1495598f2b8e6a09df4f1631545361d6c6e3e3204e506255935ef84876641cc6",
+    "docs/machine_strategy_v2_result/qa/ruff.log": "d63ab3df51a50c66f9c57056288c7d4faf9dce413552d89215714320ac2b748e",
+    "scripts/machine_strategy_v2_execution.py": "1be53a60536719d936494e48aeb344ed326ef914b0b3a2a5d92f9de2e3c36e89",
+    "scripts/run_machine_strategy_research.py": "fbefa8805c0cb3d18602d34bb44093c7a231d2691cf0f8b04cc942a78d90ddab",
+    "tests/test_machine_strategy_v2_execution.py": "eab7cde5a075534d254c4d53c49a1f3283edc5e2cafcada42b602193e9fb5236"
+  },
+  "QA_tests": 930,
+  "outcomes_computed": true,
+  "trade_entry_allowed": false,
+  "LIVE_enabled": false,
+  "historical_exchange_execution_claimed": false
+}

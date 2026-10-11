@@ -1,0 +1,48 @@
+# Frozen machine financial result
+
+{
+  "cases": 761,
+  "orders": 761,
+  "filled": 228,
+  "CLOSED": 223,
+  "open_censored": 0,
+  "order_censored": 0,
+  "intrabar_unresolved": 5,
+  "WIN": 118,
+  "LOSS": 105,
+  "FLAT": 0,
+  "WR_percent": 52.91479820627802,
+  "Gross_R": 50.992033515862616,
+  "Fees_R": 74.2363605392651,
+  "Slippage_R": 24.74545351308837,
+  "Funding_R": null,
+  "Net_R_ex_funding": -47.98978053649086,
+  "PF_net": 0.6829382381754818,
+  "Expectancy_R": -0.2152008095806765,
+  "AvgR": -0.21520080958067653,
+  "MedianR": 0.036539827706252775,
+  "AvgWin_R": 0.8760004269537164,
+  "AvgLoss_R": -1.4415031515907561,
+  "payoff_ratio": 0.6076992797324203,
+  "breakeven_WR_percent": 62.20068719359235,
+  "MaxDD_R": 78.95457438204309,
+  "MaxDD_percent_closed_case_curve": 61.809877497053215,
+  "max_loss_streak": 6,
+  "average_hold_hours": 6.673766816143497,
+  "median_hold_hours": 2.75,
+  "equity_curve_convention": "100 initial R units; one unit price risk per independent case; sorted observable exit time then case ID. Diagnostic closed-case curve, no shared margin/portfolio claim.",
+  "net_definition": "Closed independent cases only; funding unavailable/excluded. All amounts are normalized risk units, not exchange account currency.",
+  "status_counts": {
+    "GAP_INVALIDATED_BEFORE_FILL": 280,
+    "UNFILLED_EXPIRED": 253,
+    "CLOSED": 223,
+    "WAIT_INTRABAR_ORDER": 5
+  },
+  "known_entry_fees_all_filled_R": 38.2138371119598,
+  "cost_multiplier": "1",
+  "trade_entry_allowed": false,
+  "raw_candidates": 18020,
+  "allowed_setups": 761
+}
+
+See ALL_CASE_EXECUTIONS/ALL_TRADES/CLOSED_TRADES and BREAKDOWNS for every case, WIN/LOSS and complete groups. Normalized risk units, funding excluded, theoretical unrounded execution; not exact Original or historical exchange-account PnL. Unresolved intrabar exclusions may bias resolved results. No strategy changes after outcomes.
