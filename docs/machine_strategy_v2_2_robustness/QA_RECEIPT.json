@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "tests": 939,
+  "deterministic_replay_outputs": 2,
+  "replay_sha256": {
+    "ROBUSTNESS.json": "452d758b244d77746f4060415d416805035d5ab12175971eb5322a310bc80957",
+    "ROBUSTNESS_REPORT.md": "b57771475bd6ae88436d8c421485b89ae8c32217afccde76ce57b8a699f297f5"
+  },
+  "code_sha256": {
+    "scripts/run_machine_strategy_research.py": "fbefa8805c0cb3d18602d34bb44093c7a231d2691cf0f8b04cc942a78d90ddab",
+    "scripts/machine_strategy_v2_execution.py": "1be53a60536719d936494e48aeb344ed326ef914b0b3a2a5d92f9de2e3c36e89",
+    "tests/test_machine_strategy_v2_execution.py": "eab7cde5a075534d254c4d53c49a1f3283edc5e2cafcada42b602193e9fb5236"
+  },
+  "qa_log_sha256": {
+    "full_unittest": "9ce18693f8599ead2e9d0de4fe883f398cf509821eb93a5f2cac13ab449c4bb0",
+    "ruff": "d63ab3df51a50c66f9c57056288c7d4faf9dce413552d89215714320ac2b748e",
+    "compile": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mypy": "1495598f2b8e6a09df4f1631545361d6c6e3e3204e506255935ef84876641cc6",
+    "frozen_parent_resume": "38d9339ec8b8252ff3963972b8c62bae4a04e7f0b194b002f0afb600c58566d7"
+  },
+  "original_invariance": "PASS",
+  "trade_entry_allowed": false
+}
