@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "full_tests": 683,
+  "all_previous_tests": 661,
+  "new_tests": 22,
+  "checks": [
+    {
+      "name": "full_unittest",
+      "command": "PYTHONPATH=src python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "log": "data/reports/original_v1_1_first_financial_backtest_2026_10_11/preregistration/qa/full_unittest.log",
+      "sha256": "afb1d82f5793718d8e2260367bc355558544364f85fed6dea94cebc3c9f5f140"
+    },
+    {
+      "name": "ruff",
+      "command": "ruff check five new producer/test files --ignore E402",
+      "exit_code": 0,
+      "log": "data/reports/original_v1_1_first_financial_backtest_2026_10_11/preregistration/qa/ruff.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "name": "mypy",
+      "command": "mypy src",
+      "exit_code": 0,
+      "log": "data/reports/original_v1_1_first_financial_backtest_2026_10_11/preregistration/qa/mypy.log",
+      "sha256": "1495598f2b8e6a09df4f1631545361d6c6e3e3204e506255935ef84876641cc6"
+    },
+    {
+      "name": "compile",
+      "command": "python -m compileall -q src scripts tests",
+      "exit_code": 0,
+      "log": "data/reports/original_v1_1_first_financial_backtest_2026_10_11/preregistration/qa/compile.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "frozen_profile_resume",
+      "command": "python scripts/verify_original_strategy_spec_v1_1.py --resume-existing",
+      "exit_code": 0,
+      "log": "data/reports/original_v1_1_first_financial_backtest_2026_10_11/preregistration/qa/frozen_profile_resume.log",
+      "sha256": "38d9339ec8b8252ff3963972b8c62bae4a04e7f0b194b002f0afb600c58566d7"
+    }
+  ],
+  "stage": "BEFORE_PRE_OUTCOME_COMMIT_NO_REAL_HISTORY_FINANCIAL_CALCULATION",
+  "strategy_artifacts_unchanged": true,
+  "trade_entry_allowed": false
+}

@@ -1,0 +1,525 @@
+Разрешаю отдельным этапом запустить ПЕРВЫЙ финансовый backtest заранее замороженного:
+
+`ORIGINAL_STRATEGY_EXECUTABLE_PROFILE_v1`
+
+Frozen commit:
+
+`43e9d7addcd427650ff856dd1fa99f78ee5c06f7`
+
+Freeze manifest:
+
+`dca962ff1f829887d0787a6329112e77f4ce714023bee85f666ed37843f2ecbb`
+
+Ключевые frozen invariants:
+
+- `EXECUTABLE_PROFILE_IDENTIFIABLE=true`
+- `EXACT_ORIGINAL_IDENTIFIABLE=false`
+- outcomes не использовались при выборе U1–U6/N11
+- profitability backtest ранее не запускался
+- production integration отсутствует
+- `trade_entry_allowed=false`
+
+==================================================
+1. СНАЧАЛА PREREGISTRATION
+==================================================
+
+До первого расчёта финансового результата создать и заморозить:
+
+`ORIGINAL_V1_1_FINANCIAL_BACKTEST_PROTOCOL.md`
+
+`original_v1_1_financial_backtest_preregistration.json`
+
+Зафиксировать:
+
+- commit стратегии;
+- freeze manifest;
+- hashes executable artifacts;
+- hashes market datasets;
+- BTCUSDT/ETHUSDT;
+- exact historical interval baseline C;
+- M15/H1/H4/D1;
+- evidence adapter/version;
+- ENTRY;
+- STOP;
+- FTA/Range exit;
+- WAIT semantics;
+- fill semantics;
+- intrabar ambiguity;
+- fees;
+- slippage;
+- funding treatment;
+- initial equity;
+- risk/accounting mode;
+- EOF handling;
+- metrics;
+- comparison policy.
+
+Сделать отдельный PRE-OUTCOME commit.
+
+После этого не менять protocol по результатам backtest.
+
+==================================================
+2. PRIMARY DATASET
+==================================================
+
+Использовать тот же verified Bybit BTCUSDT + ETHUSDT historical dataset и тот же exact ≈2.93-year period, что использовался для frozen baseline C.
+
+Не расширять:
+- symbols;
+- period;
+- TF universe.
+
+TF:
+
+M15
+H1
+H4
+D1
+
+Не добавлять M1/M5.
+
+==================================================
+3. SOURCE ADMISSION
+==================================================
+
+Использовать исключительно frozen:
+
+`ORIGINAL_STRATEGY_EXECUTABLE_PROFILE_v1`
+
+Не использовать current MediumTermEngine для admission.
+
+Не возвращать:
+
+- universal H1/H4 owner;
+- mandatory D1/H4 context-object gate;
+- old `NO_HTF_CONTEXT`;
+- H4/D1-only target;
+- old adverse751 filter;
+- fitted 68% tree;
+- canonical 40/30/30;
+- TP1→BE.
+
+==================================================
+4. U1 — EXIT
+==================================================
+
+Non-Range:
+
+100% позиции на nearest known opposing contextual FTA.
+
+FTA должна быть:
+- causal;
+- known before entry;
+- source-valid;
+- nearest по направлению сделки;
+- не ограничена только H4/D1.
+
+Range:
+
+использовать frozen v1.1 Range exit:
+80% + remaining20% в той же source-defined exit zone.
+
+Breakout remainder отключён.
+
+==================================================
+5. U2 — STOP
+==================================================
+
+`FIXED_INITIAL_PROTECTIVE_STOP`
+
+Stop не переносить.
+
+OB:
+source extreme + minimum tick beyond.
+
+Breaker:
+raid/impulse extreme + minimum tick.
+
+SFP:
+ATR SMA14 от pattern extreme согласно N11.
+
+STB/BTS:
+manipulation/raid extreme.
+
+Range:
+deviation/invalidation extreme.
+
+Если stop geometry nonunique:
+
+`WAIT_UNRESOLVED_STOP_GEOMETRY`
+
+Никакого project BE.
+
+==================================================
+6. U3 — ENTRY
+==================================================
+
+Active frozen branches:
+
+OB conservative:
+reaction → M15 BOS → new POI → entry.
+
+SFP:
+completed SFP → M15 BOS → source-valid entry search.
+
+Breaker:
+confirmed Breaker + conservative stop.
+
+STB/BTS:
+0.5 entry.
+
+Range:
+conservative reclaim/return/retest paths.
+
+Duplicate branches одного physical idea:
+confluence, не несколько trades.
+
+Conflict:
+`WAIT_BRANCH_CONFLICT`.
+
+==================================================
+7. U4 — TF
+==================================================
+
+D1 = global context.
+H4 = higher/local context/POI.
+H1 = primary medium-term setup analysis.
+M15 = refinement/confirmation/trigger.
+
+Не требовать universal:
+
+D1 AND H4 AND H1 AND M15.
+
+Нет formal H1/H4 owner gate.
+
+M15 setup, которому необходим strictly-lower refinement:
+
+`WAIT_NO_AVAILABLE_LOWER_TF`.
+
+Это WAIT coverage, а не source rejection.
+
+==================================================
+8. U5 — LIQUIDITY / QUALITATIVE EVIDENCE
+==================================================
+
+Использовать только frozen causal evidence schema.
+
+Liquidity states:
+
+- ADVERSE
+- TARGET_OR_FUEL
+- NEUTRAL
+- UNKNOWN
+
+ADVERSE:
+`WAIT_SWEEP`.
+
+После sweep:
+полная revalidation.
+
+UNKNOWN:
+`WAIT_UNRESOLVED_LIQUIDITY_CONTEXT`.
+
+Не использовать old751/446 как готовые labels.
+
+Qualitative evidence:
+
+- meaningful liquidity;
+- smooth approach;
+- whole impulse;
+- range clarity;
+- EQ tilt;
+- structural endpoints;
+- branch confirmation.
+
+Если explicit causal source_validated evidence отсутствует:
+
+WAIT.
+
+НЕ выводить artificial numeric thresholds ради покрытия.
+
+==================================================
+9. U6 — REENTRY
+==================================================
+
+`FIRST_TEST_ONLY`.
+
+Consumed OB/POI не переиспользовать.
+
+Повторный trade только при:
+
+- новой formation;
+- новой confirmation;
+- новой POI identity;
+- полной новой validation.
+
+Не добавлять cooldown/random90%/retry count.
+
+==================================================
+10. INTRABAR
+==================================================
+
+Если одна OHLC-свеча касается нескольких mutually exclusive событий и порядок неизвестен:
+
+`WAIT_INTRABAR_ORDER`
+
+Не использовать:
+- automatic SL-first;
+- automatic TP-first;
+- optimistic path;
+- pessimistic path
+
+в PRIMARY result.
+
+Такие случаи вывести отдельно.
+
+==================================================
+11. EVIDENCE COVERAGE REPORT
+==================================================
+
+Обязательно показать funnel:
+
+RAW CANDIDATES
+→ EVIDENCE COMPLETE
+→ SOURCE PASS
+→ SOURCE WAIT
+→ SOURCE REJECT
+→ SOURCE ALLOW
+→ ORDERS
+→ FILLED
+→ CLOSED
+→ OPEN/CENSORED
+
+Для WAIT дать breakdown минимум:
+
+- WAIT_NO_AVAILABLE_LOWER_TF
+- WAIT_UNRESOLVED_LIQUIDITY_CONTEXT
+- WAIT_UNRESOLVED_STOP_GEOMETRY
+- WAIT_BRANCH_CONFLICT
+- WAIT_INTRABAR_ORDER
+- missing qualitative evidence
+- другие frozen WAIT reasons.
+
+Критично:
+
+`WAIT` не считать `REJECT`.
+
+Недостающая annotation не означает отсутствие setup.
+
+==================================================
+12. FINANCIAL ACCOUNTING
+==================================================
+
+Для PRIMARY ORIGINAL backtest:
+
+SOURCE STRATEGY определяет:
+- admission;
+- entry;
+- initial SL;
+- exit.
+
+Project overlays НЕ должны менять Original admission/lifecycle.
+
+Но отдельно посчитать реальные execution costs:
+
+- entry fee;
+- exit fee;
+- slippage.
+
+Показать ОБА результата:
+
+`GROSS`
+и
+`NET AFTER COSTS`.
+
+Не применять Anti-Scalp ratio3 в PRIMARY Original result.
+
+Не применять canonical40/30/30.
+
+Не применять cost-BE.
+
+Не применять project risk gates как source filters.
+
+Если для monetary simulator нужен sizing convention, использовать заранее preregistered fixed risk convention и отдельно маркировать его как accounting normalization, не source rule.
+
+==================================================
+13. ОСНОВНЫЕ МЕТРИКИ
+==================================================
+
+Обязательно:
+
+- RAW candidates;
+- SOURCE ALLOW count;
+- FILLED;
+- CLOSED;
+- OPEN/CENSORED;
+- WIN;
+- LOSS;
+- WinRate;
+- Gross P&L;
+- Fees;
+- Slippage;
+- Net P&L;
+- Profit Factor;
+- Expectancy;
+- Avg R;
+- median R;
+- Avg Win;
+- Avg Loss;
+- payoff ratio;
+- breakeven WR;
+- Max Drawdown;
+- max loss streak;
+- average hold;
+- median hold;
+- LONG vs SHORT;
+- BTC vs ETH;
+- branch breakdown;
+- timeframe breakdown;
+- year/month breakdown;
+- WAIT breakdown.
+
+==================================================
+14. ДВА ACCOUNTING VIEWS
+==================================================
+
+Желательно дать два заранее зарегистрированных представления, НЕ выбирая лучшее:
+
+A. `INDEPENDENT_SOURCE_CASES`
+- каждый source-valid trade считается независимо;
+- показывает чистый setup edge.
+
+B. `SHARED_PORTFOLIO`
+- единый виртуальный капитал;
+- causal chronology;
+- заранее фиксированный risk sizing;
+- без изменения source entry logic.
+
+Если shared portfolio требует project risk restrictions, вывести их как отдельный secondary variant, а не смешивать с PRIMARY source result.
+
+==================================================
+15. СРАВНЕНИЕ С BASELINE C
+==================================================
+
+После получения результата сравнить с frozen baseline C:
+
+- READY/candidates;
+- admitted entries;
+- WR;
+- Gross;
+- Net;
+- PF;
+- Expectancy;
+- AvgR;
+- DD;
+- hold duration.
+
+Но НЕ пытаться объяснять различия одним фактором без matched evidence.
+
+Особенно показать:
+
+- сколько старых 880 baseline trades допускает v1.1;
+- сколько отвергает;
+- сколько переводит в WAIT;
+- сколько новых v1.1 trades отсутствовало в baseline;
+- какие machine-extra gates baseline больше не применяются.
+
+==================================================
+16. НИКАКОЙ ОПТИМИЗАЦИИ ПОСЛЕ РЕЗУЛЬТАТА
+==================================================
+
+После открытия P&L:
+
+НЕ менять ничего.
+
+Если:
+WR низкий → сохранить.
+PF<1 → сохранить.
+Net<0 → сохранить.
+SOURCE ALLOW мало → сохранить.
+SOURCE ALLOW=0 → сохранить.
+WAIT огромен → сохранить.
+
+Никаких исправлений стратегии в этом же commit/run.
+
+==================================================
+17. QA
+==================================================
+
+Обязательно:
+
+- all previous tests;
+- v1.1 freeze hash verification;
+- no-lookahead;
+- known_at;
+- completed candles;
+- prefix consistency;
+- future mutation;
+- deterministic replay;
+- BACKTEST/SHADOW parity;
+- financial identity Gross−Fees−Slippage=Net;
+- resume reproducibility;
+- dataset hashes;
+- no LIVE/private API;
+- `trade_entry_allowed=false`.
+
+==================================================
+18. FINAL REPORT
+==================================================
+
+Создать:
+
+`ORIGINAL_V1_1_FIRST_FINANCIAL_BACKTEST_REPORT.md`
+
+Также сохранить:
+
+- all trades CSV;
+- all candidates;
+- all WAIT;
+- all REJECT;
+- all ALLOW;
+- per-trade rule trace;
+- evidence trace;
+- branch breakdowns;
+- TF breakdowns;
+- cost ledger;
+- metrics JSON;
+- dataset manifest;
+- preregistration;
+- QA receipts.
+
+В финальном ответе вернуть:
+
+1. PRE-OUTCOME preregistration commit;
+2. RESULT commit;
+3. exact dataset period;
+4. candidate funnel;
+5. CLOSED / WIN / LOSS;
+6. WinRate;
+7. Gross;
+8. Fees;
+9. Slippage;
+10. Net;
+11. PF;
+12. Expectancy;
+13. AvgR;
+14. MaxDD;
+15. holding median/mean;
+16. WAIT count + top reasons;
+17. comparison vs baseline C;
+18. QA;
+19. report/artifact paths.
+
+==================================================
+STOP
+==================================================
+
+После первого frozen result ОСТАНОВИТЬСЯ.
+
+Не оптимизировать.
+Не запускать второй вариант.
+Не изменять U1–U6/N11.
+Не включать project overlays.
+Не включать LIVE.
+
+Вернуть первый честный frozen result как есть.

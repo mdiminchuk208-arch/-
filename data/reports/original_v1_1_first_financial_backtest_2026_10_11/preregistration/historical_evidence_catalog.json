@@ -1,0 +1,8 @@
+{
+  "version": "RAW_GEOMETRY_WITH_EXTERNAL_EVIDENCE_v1",
+  "historical_source_validated_records": [],
+  "instrument_metadata_records_known_in_historical_interval": [],
+  "reason": "No explicitly source_validated historical annotation bundle exists in frozen source inputs. Baseline engine role/classification fields and old751 labels are not authoritative SOURCE evidence.",
+  "synthetic_examples_excluded": true,
+  "baseline_engine_labels_excluded": true
+}
