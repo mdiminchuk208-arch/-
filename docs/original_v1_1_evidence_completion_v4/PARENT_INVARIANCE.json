@@ -1,0 +1,9 @@
+{
+  "v3_manifest_sha256": "2ac66c22e51ca21cfa802002a98fdc52d60c1d16c57899cfb2d3aaaf7365055e",
+  "v1_v1_1_v2_v3_recovery_first_result_dataset_hashes": "PASS",
+  "annotation_stage": {
+    "manifest": "docs/original_v1_1_blinded_annotation_v1/freeze_manifest.json",
+    "sha256": "8f2a7e150802ba6a066592cd9052f82dba1711ec18e45de10eac80b0de8a9ce1",
+    "artifacts": 1333
+  }
+}

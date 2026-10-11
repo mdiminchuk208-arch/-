@@ -1,0 +1,52 @@
+# Remaining source gaps
+
+- `UNKNOWN_BRANCH_CONFLICT_RESOLUTION`: 176365
+- `UNKNOWN_CANONICAL_SOURCE_CONTEXT`: 176365
+- `UNKNOWN_CANONICAL_SOURCE_CONTEXT_AND_IDENTITY`: 176365
+- `UNKNOWN_SOURCE_CONFIRMATION`: 176365
+- `UNKNOWN_SOURCE_CONTEXT_INVENTORY`: 176365
+- `UNKNOWN_SOURCE_ENTRY_POI`: 176365
+- `UNKNOWN_SOURCE_FTA_ENTRY_UNRESOLVED`: 176365
+- `UNKNOWN_SOURCE_STOP_LIQUIDITY_CLEARANCE`: 176365
+- `WAIT_FIRST_TEST_ONLY`: 176365
+- `WAIT_UNRESOLVED_LIQUIDITY_CONTEXT`: 176365
+- `adverse_liquidity`: 176365
+- `canonical_source_context`: 176365
+- `contextual_poi_relation`: 176365
+- `inventory_completeness`: 176365
+- `market_context`: 176365
+- `protected_endpoints`: 176365
+- `sl_off_liquidity`: 176365
+- `source_confirmation`: 176365
+- `source_entry_poi`: 176365
+- `source_fta_inventory`: 176365
+- `zone_first_test`: 176365
+- `UNKNOWN_SOURCE_STOP_ANCHOR`: 120091
+- `source_stop_anchor`: 120091
+- `clear_range`: 108456
+- `range_deviation`: 108456
+- `range_reclaim_retest`: 108456
+- `selected_range`: 108456
+- `liquidity_context`: 56274
+- `ltf_bos_source_entry`: 56274
+- `meaningful_liquidity`: 56274
+- `outside_poi`: 54228
+- `return_choch_zone`: 54228
+- `WAIT_NO_AVAILABLE_LOWER_TF`: 45266
+- `trend_aligned`: 7778
+- `flow_context`: 7746
+- `higher_poi`: 3889
+- `ob_formation`: 3889
+- `reaction_bos_new_poi`: 3889
+- `smooth_approach`: 3889
+- `pd_context`: 3889
+- `selected_impulse`: 3889
+- `stb_raid_absorption_structure`: 3889
+- `breaker_confirmation`: 3857
+- `breaker_formation`: 3857
+- `poi_reaction`: 3857
+- `whole_impulse`: 3857
+- `reasonable_tilt`: 262
+
+Source context/protected/selected endpoints and contextual role relations remain underdetermined by the source framing and current view. No new selector is introduced.
+SOURCE_READY_EXCEPT_EXECUTION_METADATA=0 is an evidence gate result; no maximum achievable trade count or profitability verdict is claimed.

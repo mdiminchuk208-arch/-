@@ -1,0 +1,1637 @@
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/crypto_bot/analysis_report.py:1:1
+  |
+1 | / from __future__ import annotations
+2 | |
+3 | | import csv
+4 | | import json
+5 | | from collections import Counter
+6 | | from pathlib import Path
+7 | |
+8 | | from crypto_bot.strategy.market_analysis import MarketAnalysisReport, TrendState
+  | |________________________________________________________________________________^
+help: Organize imports
+   |
+9  |
+   -
+10 | EVENT_FIELDS = [
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/crypto_bot/data/bybit.py:1:1
+   |
+ 1 | / from __future__ import annotations
+ 2 | |
+ 3 | | import json
+ 4 | | import time
+ 5 | | from dataclasses import dataclass
+ 6 | | from typing import Callable, Mapping, Any
+ 7 | | from urllib.parse import urlencode
+ 8 | | from urllib.request import Request, urlopen
+ 9 | |
+10 | | from crypto_bot.data.models import HistoricalFetch, InstrumentInfo, MarketCandle
+   | |________________________________________________________________________________^
+help: Organize imports
+   |
+5  | from dataclasses import dataclass
+   - from typing import Callable, Mapping, Any
+6  + from typing import Any, Callable, Mapping
+7  | from urllib.parse import urlencode
+8  | from urllib.request import Request, urlopen
+9  |
+10 | from crypto_bot.data.models import HistoricalFetch, InstrumentInfo, MarketCandle
+   -
+11 |
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Callable`, `Mapping`
+ --> src/crypto_bot/data/bybit.py:6:1
+  |
+4 | import time
+5 | from dataclasses import dataclass
+6 | from typing import Callable, Mapping, Any
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7 | from urllib.parse import urlencode
+8 | from urllib.request import Request, urlopen
+  |
+help: Import from `collections.abc`
+  |
+5 | from dataclasses import dataclass
+  - from typing import Callable, Mapping, Any
+6 + from typing import Any
+7 + from collections.abc import Callable, Mapping
+8 | from urllib.parse import urlencode
+  |
+
+UP035 [*] Import from `collections.abc` instead: `Iterable`
+ --> src/crypto_bot/data/models.py:6:1
+  |
+4 | from datetime import datetime, timezone
+5 | from math import isfinite
+6 | from typing import Iterable
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7 |
+8 | from crypto_bot.common.models import Candle
+  |
+help: Import from `collections.abc`
+  |
+5 | from math import isfinite
+  - from typing import Iterable
+6 + from collections.abc import Iterable
+7 |
+  |
+
+UP017 [*] Use `datetime.UTC` alias
+  --> src/crypto_bot/data/models.py:42:73
+   |
+41 |     def to_strategy_candle(self, interval_ms: int) -> Candle:
+42 |         open_time = datetime.fromtimestamp(self.open_time_ms / 1000, tz=timezone.utc)
+   |                                                                         ^^^^^^^^^^^^
+43 |         close_time = datetime.fromtimestamp((self.open_time_ms + interval_ms) / 1000, tz=timezone.utc)
+44 |         return Candle(
+   |
+help: Convert to `datetime.UTC` alias
+   |
+3  | from dataclasses import dataclass
+   - from datetime import datetime, timezone
+4  + from datetime import datetime, timezone, UTC
+5  | from math import isfinite
+--------------------------------------------------------------------------------
+41 |     def to_strategy_candle(self, interval_ms: int) -> Candle:
+   -         open_time = datetime.fromtimestamp(self.open_time_ms / 1000, tz=timezone.utc)
+42 +         open_time = datetime.fromtimestamp(self.open_time_ms / 1000, tz=UTC)
+43 |         close_time = datetime.fromtimestamp((self.open_time_ms + interval_ms) / 1000, tz=timezone.utc)
+   |
+
+UP017 [*] Use `datetime.UTC` alias
+  --> src/crypto_bot/data/models.py:43:90
+   |
+41 |     def to_strategy_candle(self, interval_ms: int) -> Candle:
+42 |         open_time = datetime.fromtimestamp(self.open_time_ms / 1000, tz=timezone.utc)
+43 |         close_time = datetime.fromtimestamp((self.open_time_ms + interval_ms) / 1000, tz=timezone.utc)
+   |                                                                                          ^^^^^^^^^^^^
+44 |         return Candle(
+45 |             open_time=open_time,
+   |
+help: Convert to `datetime.UTC` alias
+   |
+3  | from dataclasses import dataclass
+   - from datetime import datetime, timezone
+4  + from datetime import datetime, timezone, UTC
+5  | from math import isfinite
+--------------------------------------------------------------------------------
+42 |         open_time = datetime.fromtimestamp(self.open_time_ms / 1000, tz=timezone.utc)
+   -         close_time = datetime.fromtimestamp((self.open_time_ms + interval_ms) / 1000, tz=timezone.utc)
+43 +         close_time = datetime.fromtimestamp((self.open_time_ms + interval_ms) / 1000, tz=UTC)
+44 |         return Candle(
+   |
+
+UP037 [*] Remove quotes from type annotation
+   --> src/crypto_bot/data/models.py:112:10
+    |
+110 |         server_time_ms: int,
+111 |         candles: Iterable[MarketCandle],
+112 |     ) -> "HistoricalFetch":
+    |          ^^^^^^^^^^^^^^^^^
+113 |         return cls(
+114 |             exchange=exchange,
+    |
+help: Remove quotes
+    |
+111 |         candles: Iterable[MarketCandle],
+    -     ) -> "HistoricalFetch":
+112 +     ) -> HistoricalFetch:
+113 |         return cls(
+    |
+
+UP035 [*] Import from `collections.abc` instead: `Sequence`
+ --> src/crypto_bot/data/qa.py:5:1
+  |
+3 | from dataclasses import dataclass
+4 | from enum import Enum
+5 | from typing import Sequence
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+6 |
+7 | from crypto_bot.data.models import MarketCandle
+  |
+help: Import from `collections.abc`
+  |
+4 | from enum import Enum
+  - from typing import Sequence
+5 + from collections.abc import Sequence
+6 |
+  |
+
+RUF007 Prefer `itertools.pairwise()` over `zip()` when iterating over successive pairs
+   --> src/crypto_bot/data/qa.py:107:24
+    |
+106 |     unique_sorted = sorted(seen)
+107 |     for left, right in zip(unique_sorted, unique_sorted[1:]):
+    |                        ^^^
+108 |         delta = right - left
+109 |         if delta > interval_ms:
+    |
+help: Replace `zip()` with `itertools.pairwise()`
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/crypto_bot/data/storage.py:1:1
+  |
+1 | / from __future__ import annotations
+2 | |
+3 | | import csv
+4 | | from pathlib import Path
+5 | | from typing import Iterable
+6 | |
+7 | | from crypto_bot.data.models import MarketCandle
+  | |_______________________________________________^
+help: Organize imports
+  |
+8 |
+  -
+9 | CSV_FIELDS = [
+  |
+
+UP035 [*] Import from `collections.abc` instead: `Iterable`
+ --> src/crypto_bot/data/storage.py:5:1
+  |
+3 | import csv
+4 | from pathlib import Path
+5 | from typing import Iterable
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+6 |
+7 | from crypto_bot.data.models import MarketCandle
+  |
+help: Import from `collections.abc`
+  |
+4 | from pathlib import Path
+  - from typing import Iterable
+5 + from collections.abc import Iterable
+6 |
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/crypto_bot/global_report.py:1:1
+  |
+1 | / from __future__ import annotations
+2 | |
+3 | | import csv
+4 | | import json
+5 | | from pathlib import Path
+6 | |
+7 | | from crypto_bot.strategy.global_opportunity import GlobalOpportunity
+8 | | from crypto_bot.strategy.mtf_diagnostics import BosInventory, CandidateBosDiagnostic
+  | |____________________________________________________________________________________^
+help: Organize imports
+   |
+9  |
+   -
+10 | GLOBAL_FIELDS = [
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/crypto_bot/mtf_report.py:1:1
+  |
+1 | / from __future__ import annotations
+2 | |
+3 | | import csv
+4 | | import json
+5 | | from collections import Counter
+6 | | from pathlib import Path
+7 | |
+8 | | from crypto_bot.strategy.mtf_sfp import MtfSfpReport
+  | |____________________________________________________^
+help: Organize imports
+   |
+9  |
+   -
+10 | MTF_FIELDS = [
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/crypto_bot/range_report.py:1:1
+  |
+1 | / from __future__ import annotations
+2 | |
+3 | | import csv
+4 | | import json
+5 | | from collections import Counter
+6 | | from pathlib import Path
+7 | |
+8 | | from crypto_bot.strategy.market_analysis import MarketEventKind
+9 | | from crypto_bot.strategy.range_engine import RangeAnalysisReport, RangeDetectionParams, range_review_key
+  | |________________________________________________________________________________________________________^
+help: Organize imports
+   |
+8  | from crypto_bot.strategy.market_analysis import MarketEventKind
+   - from crypto_bot.strategy.range_engine import RangeAnalysisReport, RangeDetectionParams, range_review_key
+   -
+9  + from crypto_bot.strategy.range_engine import (
+10 +     RangeAnalysisReport,
+11 +     RangeDetectionParams,
+12 +     range_review_key,
+13 + )
+14 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/crypto_bot/range_validation_report.py:1:1
+   |
+ 1 | / from __future__ import annotations
+ 2 | |
+ 3 | | import csv
+ 4 | | import json
+ 5 | | from dataclasses import asdict
+ 6 | | from pathlib import Path
+ 7 | |
+ 8 | | from crypto_bot.strategy.range_validation import (
+ 9 | |     OriginMtfFunnel,
+10 | |     RangeAuditRow,
+11 | |     RangeStageFunnel,
+12 | |     RangeValidationMatrixRow,
+13 | | )
+   | |_^
+help: Organize imports
+   |
+14 |
+   -
+15 | AUDIT_FIELDS = [
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/crypto_bot/strategy/auto_levels.py:8:1
+   |
+ 6 |   source certification and never grants permission for exchange execution.
+ 7 |   """
+ 8 | / from __future__ import annotations
+ 9 | |
+10 | | from dataclasses import dataclass
+11 | | from bisect import bisect_right
+12 | | from datetime import datetime
+13 | | from math import isfinite
+14 | | from typing import Sequence
+15 | |
+16 | | from crypto_bot.common.models import Candle, Direction
+17 | | from crypto_bot.strategy.market_analysis import (
+18 | |     MarketAnalysisReport, MarketEventKind, StructureAnalysisMode, TrendState,
+19 | | )
+20 | | from crypto_bot.strategy.mtf_sfp import MtfOpportunity
+21 | | from crypto_bot.strategy.order_block import OrderBlockEvidence, assess_order_block
+22 | | from crypto_bot.strategy.trade_plan import PriceZone, derive_structural_impulse_context
+   | |_______________________________________________________________________________________^
+help: Organize imports
+   |
+9  |
+10 + from bisect import bisect_right
+11 | from dataclasses import dataclass
+   - from bisect import bisect_right
+12 | from datetime import datetime
+--------------------------------------------------------------------------------
+17 | from crypto_bot.strategy.market_analysis import (
+   -     MarketAnalysisReport, MarketEventKind, StructureAnalysisMode, TrendState,
+18 +     MarketAnalysisReport,
+19 +     MarketEventKind,
+20 +     StructureAnalysisMode,
+21 +     TrendState,
+22 | )
+23 | from crypto_bot.strategy.mtf_sfp import MtfOpportunity
+24 | from crypto_bot.strategy.order_block import OrderBlockEvidence, assess_order_block
+25 | from crypto_bot.strategy.trade_plan import PriceZone, derive_structural_impulse_context
+   -
+26 |
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Sequence`
+  --> src/crypto_bot/strategy/auto_levels.py:14:1
+   |
+12 | from datetime import datetime
+13 | from math import isfinite
+14 | from typing import Sequence
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+15 |
+16 | from crypto_bot.common.models import Candle, Direction
+   |
+help: Import from `collections.abc`
+   |
+13 | from math import isfinite
+   - from typing import Sequence
+14 + from collections.abc import Sequence
+15 |
+   |
+
+SIM102 Use a single `if` statement instead of nested `if` statements
+   --> src/crypto_bot/strategy/auto_levels.py:133:9
+    |
+131 |           if not 0 <= transition.bos_index < len(candles) or transition.bos_time != candles[transition.bos_index].close_time:
+132 |               raise ValueError("structure transition BOS identity does not match history")
+133 | /         if transition.resolved_index is not None:
+134 | |             if (not transition.bos_index <= transition.resolved_index < len(candles)
+135 | |                     or transition.resolved_time != candles[transition.resolved_index].close_time):
+    | |__________________________________________________________________________________________________^
+136 |                   raise ValueError("structure transition resolution does not match history")
+137 |       if len({t.transition_id for t in report.structure_transition_diagnostics}) != len(report.structure_transition_diagnostics):
+    |
+help: Combine `if` statements using `and`
+
+SIM102 Use a single `if` statement instead of nested `if` statements
+   --> src/crypto_bot/strategy/auto_levels.py:218:13
+    |
+216 |               if right <= begin or end <= left:
+217 |                   return None
+218 | /             if begin <= left and right <= end:
+219 | |                 if self.lows[node] > zone.high or self.highs[node] < zone.low:
+    | |______________________________________________________________________________^
+220 |                       return None
+221 |               if right - left == 1:
+    |
+help: Combine `if` statements using `and`
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/crypto_bot/strategy/checkpoint.py:6:1
+   |
+ 4 |   pickle, import-by-name, credentials or exchange execution are used on restore.
+ 5 |   """
+ 6 | / from __future__ import annotations
+ 7 | |
+ 8 | | from dataclasses import fields, is_dataclass
+ 9 | | from datetime import date, datetime, timedelta
+10 | | from enum import Enum
+11 | | from hashlib import sha256
+12 | | import json
+13 | | from math import isclose, isfinite
+14 | | import os
+15 | | from pathlib import Path
+16 | | import tempfile
+17 | |
+18 | | from crypto_bot.common.models import Direction
+19 | | from crypto_bot.strategy.auto_levels import LevelEvidence
+20 | | from crypto_bot.strategy.market_analysis import StructureAnalysisMode
+21 | | from crypto_bot.strategy.replay import EngineMode, STRATEGY_VERSION, StrategySignal
+22 | | from crypto_bot.strategy.trade_plan import PriceZone
+23 | | from crypto_bot.strategy.virtual_portfolio import (
+24 | |     Decision, SimulationPolicy, VirtualPortfolio, VirtualPosition,
+25 | | )
+   | |_^
+26 |
+27 |   SCHEMA_VERSION = 1
+   |
+help: Organize imports
+   |
+7  |
+8  + import json
+9  + import os
+10 + import tempfile
+11 | from dataclasses import fields, is_dataclass
+12 | from datetime import date, datetime, timedelta
+13 | from enum import Enum
+14 | from hashlib import sha256
+   - import json
+15 | from math import isclose, isfinite
+   - import os
+16 | from pathlib import Path
+   - import tempfile
+17 |
+18 | from crypto_bot.common.models import Direction
+19 | from crypto_bot.strategy.auto_levels import LevelEvidence
+20 | from crypto_bot.strategy.market_analysis import StructureAnalysisMode
+   - from crypto_bot.strategy.replay import EngineMode, STRATEGY_VERSION, StrategySignal
+21 + from crypto_bot.strategy.replay import STRATEGY_VERSION, EngineMode, StrategySignal
+22 | from crypto_bot.strategy.trade_plan import PriceZone
+23 | from crypto_bot.strategy.virtual_portfolio import (
+   -     Decision, SimulationPolicy, VirtualPortfolio, VirtualPosition,
+24 +     Decision,
+25 +     SimulationPolicy,
+26 +     VirtualPortfolio,
+27 +     VirtualPosition,
+28 | )
+   |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> src/crypto_bot/strategy/checkpoint.py:109:16
+    |
+108 |   def save_checkpoint(portfolio: VirtualPortfolio, path: str | Path):
+109 |       envelope = dict(schema_version=SCHEMA_VERSION, strategy_version=STRATEGY_VERSION,
+    |  ________________^
+110 | |                     trade_entry_allowed=False, state=snapshot(portfolio))
+    | |_________________________________________________________________________^
+111 |       envelope['sha256'] = sha256(_canonical(envelope).encode()).hexdigest()
+112 |       target = Path(path)
+    |
+help: Rewrite as a literal
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/crypto_bot/strategy/cross_asset_validation.py:1:1
+  |
+1 | / from __future__ import annotations
+2 | |
+3 | | from dataclasses import dataclass
+4 | | from typing import Mapping, Sequence
+  | |____________________________________^
+help: Organize imports
+  |
+5 |
+  -
+6 | DEFAULT_CROSS_ASSET_BASKET: tuple[str, ...] = (
+  |
+
+UP035 [*] Import from `collections.abc` instead: `Mapping`, `Sequence`
+ --> src/crypto_bot/strategy/cross_asset_validation.py:4:1
+  |
+3 | from dataclasses import dataclass
+4 | from typing import Mapping, Sequence
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: Import from `collections.abc`
+  |
+3 | from dataclasses import dataclass
+  - from typing import Mapping, Sequence
+4 + from collections.abc import Mapping, Sequence
+5 |
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/crypto_bot/strategy/global_opportunity.py:1:1
+  |
+1 | / from __future__ import annotations
+2 | |
+3 | | from dataclasses import dataclass
+4 | | from datetime import datetime, timedelta
+5 | |
+6 | | from crypto_bot.common.models import Direction
+7 | | from crypto_bot.strategy.market_analysis import StructureAnalysisMode
+8 | | from crypto_bot.strategy.mtf_sfp import MtfSfpReport
+  | |____________________________________________________^
+help: Organize imports
+   |
+9  |
+   -
+10 | PRODUCTION_GLOBAL_CLUSTER_WINDOW_MINUTES = 0
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/crypto_bot/strategy/historical_replay.py:9:1
+   |
+ 7 |   This index never accepts manual reviews or promotes future range outcomes.
+ 8 |   """
+ 9 | / from __future__ import annotations
+10 | |
+11 | | from bisect import bisect_right
+12 | | from collections import defaultdict, Counter
+13 | | from dataclasses import replace
+14 | | from heapq import heappush, heappop
+15 | |
+16 | | from crypto_bot.common.models import Direction
+17 | | from crypto_bot.strategy.auto_levels import AutoLevelPolicy, FreshnessIndex, derive_automatic_levels, ob_impulse_window
+18 | | from crypto_bot.strategy.market_analysis import analyze_market, MarketEventKind, TrendState, LiquidityState
+19 | | from crypto_bot.strategy.mtf_sfp import (link_sfp_formations_to_ltf_bos,
+20 | |     MtfSfpStatus, cluster_entry_search_opportunities, _attach_entry_geometry)
+21 | | from crypto_bot.strategy.replay import EngineMode, opportunity_key, signals_from_opportunities
+22 | | from crypto_bot.strategy.range_engine import augment_market_report_with_range_sfps
+23 | | from crypto_bot.strategy.trade_plan import PriceZone
+   | |____________________________________________________^
+help: Organize imports
+   |
+11 | from bisect import bisect_right
+   - from collections import defaultdict, Counter
+12 + from collections import Counter, defaultdict
+13 | from dataclasses import replace
+   - from heapq import heappush, heappop
+14 + from heapq import heappop, heappush
+15 |
+16 | from crypto_bot.common.models import Direction
+   - from crypto_bot.strategy.auto_levels import AutoLevelPolicy, FreshnessIndex, derive_automatic_levels, ob_impulse_window
+   - from crypto_bot.strategy.market_analysis import analyze_market, MarketEventKind, TrendState, LiquidityState
+   - from crypto_bot.strategy.mtf_sfp import (link_sfp_formations_to_ltf_bos,
+   -     MtfSfpStatus, cluster_entry_search_opportunities, _attach_entry_geometry)
+   - from crypto_bot.strategy.replay import EngineMode, opportunity_key, signals_from_opportunities
+17 + from crypto_bot.strategy.auto_levels import (
+18 +     AutoLevelPolicy,
+19 +     FreshnessIndex,
+20 +     derive_automatic_levels,
+21 +     ob_impulse_window,
+22 + )
+23 + from crypto_bot.strategy.market_analysis import (
+24 +     LiquidityState,
+25 +     MarketEventKind,
+26 +     TrendState,
+27 +     analyze_market,
+28 + )
+29 + from crypto_bot.strategy.mtf_sfp import (
+30 +     MtfSfpStatus,
+31 +     _attach_entry_geometry,
+32 +     cluster_entry_search_opportunities,
+33 +     link_sfp_formations_to_ltf_bos,
+34 + )
+35 | from crypto_bot.strategy.range_engine import augment_market_report_with_range_sfps
+36 + from crypto_bot.strategy.replay import (
+37 +     EngineMode,
+38 +     opportunity_key,
+39 +     signals_from_opportunities,
+40 + )
+41 | from crypto_bot.strategy.trade_plan import PriceZone
+   |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> src/crypto_bot/strategy/historical_replay.py:199:16
+    |
+197 |                   signatures[signal.signal_id] = signature
+198 |       updates.sort(key=lambda s:(s.event_time, s.bos_time, s.direction.value, s.signal_id))
+199 |       metadata = dict(structure_events={str(ltf_minutes):dict(Counter(e.kind.value for e in lr.events)),
+    |  ________________^
+200 | |                                      str(htf_minutes):dict(Counter(e.kind.value for e in hr.events))},
+201 | |                     sfp_bos_links=len(confirmed), automatic_evaluations=automatic_evaluations,
+202 | |                     range_episodes={str(ltf_minutes):dict(Counter(e.status for e in lrange.sweep_episodes)),
+203 | |                                     str(htf_minutes):dict(Counter(e.status for e in hrange.sweep_episodes))},
+204 | |                     range_sfp_events={str(ltf_minutes):lrange.sfp_formation_count,
+205 | |                                       str(htf_minutes):hrange.sfp_formation_count},
+206 | |                     index_policy='CANDLE_CLOSE_KNOWLEDGE_GATES_CAUSAL_AUTOMATIC_RANGE')
+    | |_______________________________________________________________________________________^
+207 |       return tuple(updates), metadata
+    |
+help: Rewrite as a literal
+
+UP035 [*] Import from `collections.abc` instead: `Sequence`
+ --> src/crypto_bot/strategy/market_analysis.py:6:1
+  |
+4 | from datetime import datetime
+5 | from enum import Enum
+6 | from typing import Sequence, TypedDict
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7 |
+8 | from crypto_bot.common.models import Candle
+  |
+help: Import from `collections.abc`
+  |
+5 | from enum import Enum
+  - from typing import Sequence, TypedDict
+6 + from typing import TypedDict
+7 + from collections.abc import Sequence
+8 |
+  |
+
+PIE796 Enum contains duplicate value: `"BEARISH_SFP_FORMATION_CONFIRMED"`
+   --> src/crypto_bot/strategy/market_analysis.py:104:5
+    |
+102 |     BULLISH_SFP_INVALIDATED_CLOSE = "BULLISH_SFP_INVALIDATED_CLOSE"
+103 |     # Backward-compatible enum aliases. The output value now explicitly says FORMATION.
+104 |     BEARISH_SFP_CONFIRMED = "BEARISH_SFP_FORMATION_CONFIRMED"
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+105 |     BULLISH_SFP_CONFIRMED = "BULLISH_SFP_FORMATION_CONFIRMED"
+    |
+
+PIE796 Enum contains duplicate value: `"BULLISH_SFP_FORMATION_CONFIRMED"`
+   --> src/crypto_bot/strategy/market_analysis.py:105:5
+    |
+103 |     # Backward-compatible enum aliases. The output value now explicitly says FORMATION.
+104 |     BEARISH_SFP_CONFIRMED = "BEARISH_SFP_FORMATION_CONFIRMED"
+105 |     BULLISH_SFP_CONFIRMED = "BULLISH_SFP_FORMATION_CONFIRMED"
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SIM103 Return the negated condition directly
+   --> src/crypto_bot/strategy/market_analysis.py:263:9
+    |
+261 |           if min_swing_index is not None and level.swing_index < min_swing_index:
+262 |               return False
+263 | /         if min_confirmed_after_index is not None and level.confirmed_index <= min_confirmed_after_index:
+264 | |             return False
+265 | |         return True
+    | |___________________^
+266 |
+267 |       candidate_lows = [
+    |
+help: Inline condition
+
+SIM103 Return the negated condition directly
+   --> src/crypto_bot/strategy/market_analysis.py:318:9
+    |
+316 |           if min_swing_index is not None and level.swing_index < min_swing_index:
+317 |               return False
+318 | /         if min_confirmed_after_index is not None and level.confirmed_index <= min_confirmed_after_index:
+319 | |             return False
+320 | |         return True
+    | |___________________^
+321 |
+322 |       candidate_highs = [
+    |
+help: Inline condition
+
+PLR1736 [*] List index lookup in `enumerate()` loop
+    --> src/crypto_bot/strategy/market_analysis.py:1099:67
+     |
+1097 |         new_low: StructuralLevel | None = None
+1098 |         if i >= 2:
+1099 |             left, center, right = candles[i - 2], candles[i - 1], candles[i]
+     |                                                                   ^^^^^^^^^^
+1100 |             if is_swing_high(left, center, right):
+1101 |                 new_high = StructuralLevel(
+     |
+help: Use the loop variable directly
+     |
+1098 |         if i >= 2:
+     -             left, center, right = candles[i - 2], candles[i - 1], candles[i]
+1099 +             left, center, right = candles[i - 2], candles[i - 1], candle
+1100 |             if is_swing_high(left, center, right):
+     |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/crypto_bot/strategy/mtf_sfp.py:1:1
+   |
+ 1 | / from __future__ import annotations
+ 2 | |
+ 3 | | from dataclasses import dataclass, replace
+ 4 | | from datetime import datetime, timedelta
+ 5 | | from enum import Enum
+ 6 | | from itertools import groupby
+ 7 | | from typing import TypedDict
+ 8 | |
+ 9 | | from crypto_bot.common.models import Direction
+10 | | from crypto_bot.strategy.market_analysis import MarketAnalysisReport, MarketEvent, MarketEventKind, StructureAnalysisMode
+11 | | from crypto_bot.strategy.trade_plan import TradePlanGeometryError, build_trade_plan_geometry, derive_structural_impulse_context
+   | |_______________________________________________________________________________________________________________________________^
+help: Organize imports
+   |
+9  | from crypto_bot.common.models import Direction
+   - from crypto_bot.strategy.market_analysis import MarketAnalysisReport, MarketEvent, MarketEventKind, StructureAnalysisMode
+   - from crypto_bot.strategy.trade_plan import TradePlanGeometryError, build_trade_plan_geometry, derive_structural_impulse_context
+10 + from crypto_bot.strategy.market_analysis import (
+11 +     MarketAnalysisReport,
+12 +     MarketEvent,
+13 +     MarketEventKind,
+14 +     StructureAnalysisMode,
+15 + )
+16 + from crypto_bot.strategy.trade_plan import (
+17 +     TradePlanGeometryError,
+18 +     build_trade_plan_geometry,
+19 +     derive_structural_impulse_context,
+20 + )
+21 |
+   |
+
+SIM114 [*] Combine `if` branches using logical `or` operator
+   --> src/crypto_bot/strategy/mtf_sfp.py:214:9
+    |
+212 |           if event.kind != expected_kind or event.event_time <= sfp.event_time:
+213 |               continue
+214 | /         if sfp.episode_id is not None and event.episode_id == sfp.episode_id:
+215 | |             matches.append(event)
+216 | |         elif sfp.episode_id is None and event.level_id == sfp.level_id:
+217 | |             matches.append(event)
+    | |_________________________________^
+218 |       return min(matches, key=lambda e: (e.event_time, e.candle_index, e.level_id)) if matches else None
+    |
+help: Combine `if` branches
+    |
+213 |             continue
+    -         if sfp.episode_id is not None and event.episode_id == sfp.episode_id:
+    -             matches.append(event)
+    -         elif sfp.episode_id is None and event.level_id == sfp.level_id:
+214 +         if sfp.episode_id is not None and event.episode_id == sfp.episode_id or sfp.episode_id is None and event.level_id == sfp.level_id:
+215 |             matches.append(event)
+    |
+
+SIM102 Use a single `if` statement instead of nested `if` statements
+   --> src/crypto_bot/strategy/mtf_sfp.py:401:5
+    |
+399 |       if (ltf_observation_start is None) != (ltf_observation_end is None):
+400 |           raise MtfSfpError("LTF observation start/end must be supplied together")
+401 | /     if ltf_observation_start is not None and ltf_observation_end is not None:
+402 | |         if ltf_observation_end <= ltf_observation_start:
+    | |________________________________________________________^
+403 |               raise MtfSfpError("LTF observation end must be after start")
+404 |       for name, value in (
+    |
+help: Combine `if` statements using `and`
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> src/crypto_bot/strategy/mtf_sfp.py:450:36
+    |
+448 |           invalidation = _matching_invalidation(sfp, htf_report)
+449 |
+450 |           common: _CandidateCommon = dict(
+    |  ____________________________________^
+451 | |             candidate_id=candidate_id,
+452 | |             htf_minutes=htf_minutes,
+453 | |             ltf_minutes=ltf_minutes,
+454 | |             htf_sfp_kind=sfp.kind,
+455 | |             htf_sfp_event_time=sfp.event_time,
+456 | |             htf_sfp_candle_index=sfp.candle_index,
+457 | |             htf_episode_id=sfp.episode_id,
+458 | |             htf_level_id=sfp.level_id,
+459 | |             htf_level_price=sfp.level_price,
+460 | |             htf_liquidity_origin=sfp.liquidity_origin,
+461 | |             htf_range_id=sfp.range_id,
+462 | |             htf_recovery_transition_ids=sfp.recovery_transition_ids,
+463 | |             expected_direction=direction,
+464 | |             expected_ltf_bos_kind=expected_bos_kind,
+465 | |             max_wait_ltf_bars=max_wait_ltf_bars,
+466 | |             max_wait_minutes=max_wait_minutes,
+467 | |             sfp_invalidation_price=sfp.sfp_pattern_extreme_price,
+468 | |             sfp_invalidation_event_time=invalidation.event_time if invalidation else None,
+469 | |             sfp_invalidation_candle_index=invalidation.candle_index if invalidation else None,
+470 | |             sfp_invalidation_close_price=invalidation.price if invalidation else None,
+471 | |             deadline_event_time=deadline,
+472 | |             trade_entry_allowed=False,
+473 | |         )
+    | |_________^
+474 |
+475 |           if ltf_observation_start is not None and ltf_observation_end is not None:
+    |
+help: Rewrite as a literal
+
+SIM102 Use a single `if` statement instead of nested `if` statements
+   --> src/crypto_bot/strategy/mtf_sfp.py:475:9
+    |
+473 |           )
+474 |
+475 | /         if ltf_observation_start is not None and ltf_observation_end is not None:
+476 | |             if eligible_from < ltf_observation_start or eligible_from >= ltf_observation_end:
+    | |_____________________________________________________________________________________________^
+477 |                   candidates.append(
+478 |                       MtfSfpCandidate(
+    |
+help: Combine `if` statements using `and`
+
+C408 Unnecessary `tuple()` call (rewrite as a literal)
+  --> src/crypto_bot/strategy/order_block.py:85:58
+   |
+84 |     if e.test_number == 1:
+85 |         return OrderBlockAssessment(True, True, quality, tuple())
+   |                                                          ^^^^^^^
+86 |
+87 |     if not e.ltf_reaction_confirmed:
+   |
+help: Rewrite as a literal
+
+C408 Unnecessary `tuple()` call (rewrite as a literal)
+  --> src/crypto_bot/strategy/order_block.py:95:54
+   |
+93 |         )
+94 |
+95 |     return OrderBlockAssessment(True, True, quality, tuple())
+   |                                                      ^^^^^^^
+help: Rewrite as a literal
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/crypto_bot/strategy/portfolio_statistics.py:24:12
+   |
+22 |           peak=max(peak,contribution)
+23 |           dd=max(dd,peak-contribution)
+24 |       return dict(completed_trades=len(trades),wins=wins,losses=losses,
+   |  ____________^
+25 | |         breakevens=len(trades)-wins-losses,net_pnl=sum(pnls),gross_profit=gross_profit,
+26 | |         gross_loss=gross_loss,profit_factor=gross_profit/gross_loss if gross_loss else None,
+27 | |         expectancy=mean(pnls) if pnls else None,average_R=mean(rs) if rs else None,
+28 | |         median_R=median(rs) if rs else None,win_rate=wins/len(trades) if trades else None,
+29 | |         loss_rate=losses/len(trades) if trades else None,
+30 | |         breakeven_rate=(len(trades)-wins-losses)/len(trades) if trades else None,
+31 | |         longest_win_streak=max_win,longest_loss_streak=max_loss,
+32 | |         realized_contribution_drawdown_usdt=dd,
+33 | |         undefined_ratio_policy='NULL_WHEN_NO_TRADES_OR_NO_LOSSES')
+   | |__________________________________________________________________^
+help: Rewrite as a literal
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/crypto_bot/strategy/portfolio_statistics.py:67:40
+   |
+65 |       for category in ('by_symbol','by_direction','score_buckets'):
+66 |           eligible=[(key,value['net_pnl']) for key,value in result[category].items() if value['completed_trades']]
+67 |           result['best_worst'][category]=dict(best=max(eligible,key=lambda x:(x[1],x[0]))[0],
+   |  ________________________________________^
+68 | |             worst=min(eligible,key=lambda x:(x[1],x[0]))[0]) if eligible else dict(best=None,worst=None)
+   | |____________________________________________________________^
+69 |       return result
+   |
+help: Rewrite as a literal
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> src/crypto_bot/strategy/portfolio_statistics.py:68:79
+   |
+66 |         eligible=[(key,value['net_pnl']) for key,value in result[category].items() if value['completed_trades']]
+67 |         result['best_worst'][category]=dict(best=max(eligible,key=lambda x:(x[1],x[0]))[0],
+68 |             worst=min(eligible,key=lambda x:(x[1],x[0]))[0]) if eligible else dict(best=None,worst=None)
+   |                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+69 |     return result
+   |
+help: Rewrite as a literal
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/crypto_bot/strategy/range_engine.py:1:1
+   |
+ 1 | / from __future__ import annotations
+ 2 | |
+ 3 | | from dataclasses import dataclass, replace
+ 4 | | from bisect import bisect_left, bisect_right
+ 5 | | from datetime import datetime
+ 6 | | from enum import Enum
+ 7 | | from math import isfinite
+ 8 | | from typing import Sequence
+ 9 | |
+10 | | from crypto_bot.common.models import Candle
+11 | | from crypto_bot.strategy.market_analysis import MarketAnalysisReport, MarketEvent, MarketEventKind
+12 | | from crypto_bot.strategy.sfp import detect_sfp
+   | |______________________________________________^
+help: Organize imports
+   |
+2  |
+3  + from bisect import bisect_left, bisect_right
+4  | from dataclasses import dataclass, replace
+   - from bisect import bisect_left, bisect_right
+5  | from datetime import datetime
+--------------------------------------------------------------------------------
+10 | from crypto_bot.common.models import Candle
+   - from crypto_bot.strategy.market_analysis import MarketAnalysisReport, MarketEvent, MarketEventKind
+11 + from crypto_bot.strategy.market_analysis import (
+12 +     MarketAnalysisReport,
+13 +     MarketEvent,
+14 +     MarketEventKind,
+15 + )
+16 | from crypto_bot.strategy.sfp import detect_sfp
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Sequence`
+  --> src/crypto_bot/strategy/range_engine.py:8:1
+   |
+ 6 | from enum import Enum
+ 7 | from math import isfinite
+ 8 | from typing import Sequence
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9 |
+10 | from crypto_bot.common.models import Candle
+   |
+help: Import from `collections.abc`
+  |
+7 | from math import isfinite
+  - from typing import Sequence
+8 + from collections.abc import Sequence
+9 |
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/crypto_bot/strategy/range_validation.py:1:1
+   |
+ 1 | / from __future__ import annotations
+ 2 | |
+ 3 | | from collections import Counter
+ 4 | | from dataclasses import dataclass
+ 5 | | from datetime import datetime, timedelta
+ 6 | | from typing import Iterable
+ 7 | |
+ 8 | | from crypto_bot.strategy.market_analysis import MarketEventKind
+ 9 | | from crypto_bot.strategy.mtf_sfp import MtfSfpReport, MtfSfpStatus
+10 | | from crypto_bot.strategy.range_engine import RangeAnalysisReport, RangeStatus, range_review_key_text
+   | |____________________________________________________________________________________________________^
+help: Organize imports
+   |
+9  | from crypto_bot.strategy.mtf_sfp import MtfSfpReport, MtfSfpStatus
+   - from crypto_bot.strategy.range_engine import RangeAnalysisReport, RangeStatus, range_review_key_text
+10 + from crypto_bot.strategy.range_engine import (
+11 +     RangeAnalysisReport,
+12 +     RangeStatus,
+13 +     range_review_key_text,
+14 + )
+15 |
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Iterable`
+ --> src/crypto_bot/strategy/range_validation.py:6:1
+  |
+4 | from dataclasses import dataclass
+5 | from datetime import datetime, timedelta
+6 | from typing import Iterable
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7 |
+8 | from crypto_bot.strategy.market_analysis import MarketEventKind
+  |
+help: Import from `collections.abc`
+  |
+5 | from datetime import datetime, timedelta
+  - from typing import Iterable
+6 + from collections.abc import Iterable
+7 |
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/crypto_bot/strategy/recovery_ablation.py:2:1
+   |
+ 1 |   """Offline ablation accounting. Never used to decide causal market events."""
+ 2 | / from __future__ import annotations
+ 3 | |
+ 4 | | from dataclasses import asdict
+ 5 | | from datetime import datetime
+ 6 | | from enum import Enum
+ 7 | | import hashlib
+ 8 | | import json
+ 9 | |
+10 | | from crypto_bot.strategy.market_analysis import MarketEventKind
+   | |_______________________________________________________________^
+11 |
+12 |   BOS_KINDS = {MarketEventKind.BULLISH_STRUCTURE_BROKEN_BOS, MarketEventKind.BEARISH_STRUCTURE_BROKEN_BOS}
+   |
+help: Organize imports
+  |
+3 |
+4 + import hashlib
+5 + import json
+6 | from dataclasses import asdict
+7 | from datetime import datetime
+8 | from enum import Enum
+  - import hashlib
+  - import json
+9 |
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/crypto_bot/strategy/replay.py:6:1
+   |
+ 4 |   an opt-in experimental detector; automatic selection is not source certification.
+ 5 |   """
+ 6 | / from __future__ import annotations
+ 7 | |
+ 8 | | from dataclasses import dataclass, field
+ 9 | | from datetime import datetime, timedelta
+10 | | from enum import Enum
+11 | | from hashlib import sha256
+12 | | from math import isfinite
+13 | | from typing import Mapping, Sequence
+14 | |
+15 | | from crypto_bot.common.models import Candle, Direction
+16 | | from crypto_bot.strategy.auto_levels import AutoLevelPolicy, LevelEvidence, derive_automatic_levels
+17 | | from crypto_bot.strategy.market_analysis import StructureAnalysisMode, analyze_market
+18 | | from crypto_bot.strategy.mtf_sfp import MtfSfpReport, attach_source_qualified_trade_levels, link_sfp_formations_to_ltf_bos
+19 | | from crypto_bot.strategy.range_engine import RangeAnalysisReport, augment_market_report_with_range_sfps
+20 | | from crypto_bot.strategy.trade_plan import PriceZone, rr_ratio
+   | |______________________________________________________________^
+help: Organize imports
+   |
+15 | from crypto_bot.common.models import Candle, Direction
+   - from crypto_bot.strategy.auto_levels import AutoLevelPolicy, LevelEvidence, derive_automatic_levels
+16 + from crypto_bot.strategy.auto_levels import (
+17 +     AutoLevelPolicy,
+18 +     LevelEvidence,
+19 +     derive_automatic_levels,
+20 + )
+21 | from crypto_bot.strategy.market_analysis import StructureAnalysisMode, analyze_market
+   - from crypto_bot.strategy.mtf_sfp import MtfSfpReport, attach_source_qualified_trade_levels, link_sfp_formations_to_ltf_bos
+   - from crypto_bot.strategy.range_engine import RangeAnalysisReport, augment_market_report_with_range_sfps
+22 + from crypto_bot.strategy.mtf_sfp import (
+23 +     MtfSfpReport,
+24 +     attach_source_qualified_trade_levels,
+25 +     link_sfp_formations_to_ltf_bos,
+26 + )
+27 + from crypto_bot.strategy.range_engine import (
+28 +     RangeAnalysisReport,
+29 +     augment_market_report_with_range_sfps,
+30 + )
+31 | from crypto_bot.strategy.trade_plan import PriceZone, rr_ratio
+   -
+32 |
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Mapping`, `Sequence`
+  --> src/crypto_bot/strategy/replay.py:13:1
+   |
+11 | from hashlib import sha256
+12 | from math import isfinite
+13 | from typing import Mapping, Sequence
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14 |
+15 | from crypto_bot.common.models import Candle, Direction
+   |
+help: Import from `collections.abc`
+   |
+12 | from math import isfinite
+   - from typing import Mapping, Sequence
+13 + from collections.abc import Mapping, Sequence
+14 |
+   |
+
+SIM102 Use a single `if` statement instead of nested `if` statements
+   --> src/crypto_bot/strategy/replay.py:207:5
+    |
+205 |       if qualification.poi_kind == "SUPPLY" and direction != Direction.SHORT:
+206 |           return "SUPPLY_REQUIRES_SHORT"
+207 | /     if qualification.entry_path == "CONSERVATIVE_HTF_LTF":
+208 | |         if not (1 <= ltf_minutes <= 15 and 15 <= htf_minutes <= 1440):
+    | |______________________________________________________________________^
+209 |               return "CONSERVATIVE_HTF_LTF_TIMEFRAME_OUT_OF_SOURCE_RANGE"
+210 |       return None
+    |
+help: Combine `if` statements using `and`
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/crypto_bot/strategy/source_cases.py:2:1
+  |
+1 |   """Independent paper trade cases; costs and source fills without shared occupancy."""
+2 | / from __future__ import annotations
+3 | | from datetime import datetime, timedelta
+4 | | from bisect import bisect_left
+5 | | from math import isfinite
+6 | | from typing import Sequence
+7 | | from crypto_bot.common.models import Candle
+8 | | from crypto_bot.strategy.source_engine import SourceSignal, sign
+9 | | from crypto_bot.strategy.source_portfolio import SourcePortfolio
+  | |________________________________________________________________^
+help: Organize imports
+  |
+2 | from __future__ import annotations
+3 +
+4 + from bisect import bisect_left
+5 | from datetime import datetime, timedelta
+  - from bisect import bisect_left
+6 | from math import isfinite
+7 | from typing import Sequence
+8 +
+9 | from crypto_bot.common.models import Candle
+  |
+
+UP035 [*] Import from `collections.abc` instead: `Sequence`
+ --> src/crypto_bot/strategy/source_cases.py:6:1
+  |
+4 | from bisect import bisect_left
+5 | from math import isfinite
+6 | from typing import Sequence
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7 | from crypto_bot.common.models import Candle
+8 | from crypto_bot.strategy.source_engine import SourceSignal, sign
+  |
+help: Import from `collections.abc`
+  |
+5 | from math import isfinite
+  - from typing import Sequence
+6 + from collections.abc import Sequence
+7 | from crypto_bot.common.models import Candle
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/crypto_bot/strategy/source_corrected.py:6:1
+   |
+ 4 |   No private client, execution adapter, exchange credentials or live admission.
+ 5 |   """
+ 6 | / from __future__ import annotations
+ 7 | |
+ 8 | | from collections import Counter, defaultdict
+ 9 | | from bisect import bisect_left
+10 | | from dataclasses import asdict, dataclass, field
+11 | | from datetime import datetime
+12 | | from hashlib import sha256
+13 | | import json
+14 | | from typing import Sequence
+15 | |
+16 | | from crypto_bot.common.models import Candle
+17 | | from crypto_bot.strategy.market_analysis import MarketAnalysisReport, MarketEvent, MarketEventKind as K, TrendState
+18 | | from crypto_bot.strategy.range_engine import RangeAnalysisReport
+19 | | from crypto_bot.strategy.source_engine import SourceSignal
+   | |__________________________________________________________^
+20 |
+21 |   MAPPINGS = ((15, 5), (60, 5), (60, 15), (240, 5), (240, 15))
+   |
+help: Organize imports
+   |
+7  |
+   - from collections import Counter, defaultdict
+8  + import json
+9  | from bisect import bisect_left
+10 + from collections import Counter, defaultdict
+11 | from dataclasses import asdict, dataclass, field
+12 | from datetime import datetime
+13 | from hashlib import sha256
+   - import json
+14 | from typing import Sequence
+15 |
+16 | from crypto_bot.common.models import Candle
+   - from crypto_bot.strategy.market_analysis import MarketAnalysisReport, MarketEvent, MarketEventKind as K, TrendState
+17 + from crypto_bot.strategy.market_analysis import (
+18 +     MarketAnalysisReport,
+19 +     MarketEvent,
+20 +     TrendState,
+21 + )
+22 + from crypto_bot.strategy.market_analysis import MarketEventKind as K
+23 | from crypto_bot.strategy.range_engine import RangeAnalysisReport
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Sequence`
+  --> src/crypto_bot/strategy/source_corrected.py:14:1
+   |
+12 | from hashlib import sha256
+13 | import json
+14 | from typing import Sequence
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+15 |
+16 | from crypto_bot.common.models import Candle
+   |
+help: Import from `collections.abc`
+   |
+13 | import json
+   - from typing import Sequence
+14 + from collections.abc import Sequence
+15 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/crypto_bot/strategy/source_engine.py:6:1
+   |
+ 4 |   No private client, execution adapter, exchange credentials or live admission.
+ 5 |   """
+ 6 | / from __future__ import annotations
+ 7 | |
+ 8 | | from collections import Counter, defaultdict
+ 9 | | from bisect import bisect_left
+10 | | from dataclasses import asdict, dataclass, field
+11 | | from datetime import datetime
+12 | | from hashlib import sha256
+13 | | import json
+14 | | from typing import Sequence
+15 | |
+16 | | from crypto_bot.common.models import Candle
+17 | | from crypto_bot.strategy.market_analysis import MarketAnalysisReport, MarketEvent, MarketEventKind as K, TrendState
+18 | | from crypto_bot.strategy.range_engine import RangeAnalysisReport
+   | |________________________________________________________________^
+19 |
+20 |   MAPPINGS = ((15, 5), (60, 5), (60, 15), (240, 5), (240, 15), (240, 60))
+   |
+help: Organize imports
+   |
+7  |
+   - from collections import Counter, defaultdict
+8  + import json
+9  | from bisect import bisect_left
+10 + from collections import Counter, defaultdict
+11 | from dataclasses import asdict, dataclass, field
+12 | from datetime import datetime
+13 | from hashlib import sha256
+   - import json
+14 | from typing import Sequence
+15 |
+16 | from crypto_bot.common.models import Candle
+   - from crypto_bot.strategy.market_analysis import MarketAnalysisReport, MarketEvent, MarketEventKind as K, TrendState
+17 + from crypto_bot.strategy.market_analysis import (
+18 +     MarketAnalysisReport,
+19 +     MarketEvent,
+20 +     TrendState,
+21 + )
+22 + from crypto_bot.strategy.market_analysis import MarketEventKind as K
+23 | from crypto_bot.strategy.range_engine import RangeAnalysisReport
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Sequence`
+  --> src/crypto_bot/strategy/source_engine.py:14:1
+   |
+12 | from hashlib import sha256
+13 | import json
+14 | from typing import Sequence
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+15 |
+16 | from crypto_bot.common.models import Candle
+   |
+help: Import from `collections.abc`
+   |
+13 | import json
+   - from typing import Sequence
+14 + from collections.abc import Sequence
+15 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/crypto_bot/strategy/source_pdf.py:6:1
+   |
+ 4 |   No private client, execution adapter, exchange credentials or live admission.
+ 5 |   """
+ 6 | / from __future__ import annotations
+ 7 | |
+ 8 | | from collections import Counter, defaultdict
+ 9 | | from bisect import bisect_left
+10 | | from dataclasses import asdict, dataclass, field
+11 | | from datetime import datetime
+12 | | from hashlib import sha256
+13 | | import json
+14 | | import math
+15 | | from typing import Sequence
+16 | |
+17 | | from crypto_bot.common.models import Candle
+18 | | from crypto_bot.strategy.market_analysis import MarketAnalysisReport, MarketEvent, MarketEventKind as K, TrendState
+19 | | from crypto_bot.strategy.range_engine import RangeAnalysisReport
+20 | | from crypto_bot.strategy.source_engine import SourceSignal
+   | |__________________________________________________________^
+21 |
+22 |   MAPPINGS = ((15, 5), (60, 5), (60, 15), (240, 5), (240, 15))
+   |
+help: Organize imports
+   |
+7  |
+8  + import json
+9  + import math
+10 + from bisect import bisect_left
+11 | from collections import Counter, defaultdict
+   - from bisect import bisect_left
+12 | from dataclasses import asdict, dataclass, field
+13 | from datetime import datetime
+14 | from hashlib import sha256
+   - import json
+   - import math
+15 | from typing import Sequence
+16 |
+17 | from crypto_bot.common.models import Candle
+   - from crypto_bot.strategy.market_analysis import MarketAnalysisReport, MarketEvent, MarketEventKind as K, TrendState
+18 + from crypto_bot.strategy.market_analysis import (
+19 +     MarketAnalysisReport,
+20 +     MarketEvent,
+21 +     TrendState,
+22 + )
+23 + from crypto_bot.strategy.market_analysis import MarketEventKind as K
+24 | from crypto_bot.strategy.range_engine import RangeAnalysisReport
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Sequence`
+  --> src/crypto_bot/strategy/source_pdf.py:15:1
+   |
+13 | import json
+14 | import math
+15 | from typing import Sequence
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+16 |
+17 | from crypto_bot.common.models import Candle
+   |
+help: Import from `collections.abc`
+   |
+14 | import math
+   - from typing import Sequence
+15 + from collections.abc import Sequence
+16 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/crypto_bot/strategy/source_pdf_cases.py:2:1
+  |
+1 |   """Independent paper trade cases; costs and source fills without shared occupancy."""
+2 | / from __future__ import annotations
+3 | | from datetime import datetime, timedelta
+4 | | from bisect import bisect_left
+5 | | from math import isfinite
+6 | | from typing import Sequence
+7 | | from crypto_bot.common.models import Candle
+8 | | from crypto_bot.strategy.source_engine import SourceSignal, sign
+9 | | from crypto_bot.strategy.source_portfolio import SourcePortfolio
+  | |________________________________________________________________^
+help: Organize imports
+  |
+2 | from __future__ import annotations
+3 +
+4 + from bisect import bisect_left
+5 | from datetime import datetime, timedelta
+  - from bisect import bisect_left
+6 | from math import isfinite
+7 | from typing import Sequence
+8 +
+9 | from crypto_bot.common.models import Candle
+  |
+
+UP035 [*] Import from `collections.abc` instead: `Sequence`
+ --> src/crypto_bot/strategy/source_pdf_cases.py:6:1
+  |
+4 | from bisect import bisect_left
+5 | from math import isfinite
+6 | from typing import Sequence
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7 | from crypto_bot.common.models import Candle
+8 | from crypto_bot.strategy.source_engine import SourceSignal, sign
+  |
+help: Import from `collections.abc`
+  |
+5 | from math import isfinite
+  - from typing import Sequence
+6 + from collections.abc import Sequence
+7 | from crypto_bot.common.models import Candle
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/crypto_bot/strategy/source_pdf_native.py:8:1
+   |
+ 6 |   No private client, execution adapter, exchange credentials or live admission.
+ 7 |   """
+ 8 | / from __future__ import annotations
+ 9 | |
+10 | | from collections import Counter, defaultdict
+11 | | from bisect import bisect_left
+12 | | from dataclasses import asdict, dataclass, field
+13 | | from datetime import datetime
+14 | | from hashlib import sha256
+15 | | import json
+16 | | import math
+17 | | from typing import Sequence
+18 | |
+19 | | from crypto_bot.common.models import Candle
+20 | | from crypto_bot.strategy.market_analysis import MarketAnalysisReport, MarketEvent, MarketEventKind as K, TrendState
+21 | | from crypto_bot.strategy.range_engine import RangeAnalysisReport
+22 | | from crypto_bot.strategy.source_engine import SourceSignal
+   | |__________________________________________________________^
+23 |
+24 |   MAPPINGS = ((15, 5), (60, 5), (60, 15), (240, 5), (240, 15))
+   |
+help: Organize imports
+   |
+9  |
+10 + import json
+11 + import math
+12 + from bisect import bisect_left
+13 | from collections import Counter, defaultdict
+   - from bisect import bisect_left
+14 | from dataclasses import asdict, dataclass, field
+15 | from datetime import datetime
+16 | from hashlib import sha256
+   - import json
+   - import math
+17 | from typing import Sequence
+18 |
+19 | from crypto_bot.common.models import Candle
+   - from crypto_bot.strategy.market_analysis import MarketAnalysisReport, MarketEvent, MarketEventKind as K, TrendState
+20 + from crypto_bot.strategy.market_analysis import (
+21 +     MarketAnalysisReport,
+22 +     MarketEvent,
+23 +     TrendState,
+24 + )
+25 + from crypto_bot.strategy.market_analysis import MarketEventKind as K
+26 | from crypto_bot.strategy.range_engine import RangeAnalysisReport
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Sequence`
+  --> src/crypto_bot/strategy/source_pdf_native.py:17:1
+   |
+15 | import json
+16 | import math
+17 | from typing import Sequence
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+18 |
+19 | from crypto_bot.common.models import Candle
+   |
+help: Import from `collections.abc`
+   |
+16 | import math
+   - from typing import Sequence
+17 + from collections.abc import Sequence
+18 |
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Sequence`
+ --> src/crypto_bot/strategy/structure.py:4:1
+  |
+3 | from dataclasses import dataclass
+4 | from typing import Sequence
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5 |
+6 | from crypto_bot.common.models import Candle
+  |
+help: Import from `collections.abc`
+  |
+3 | from dataclasses import dataclass
+  - from typing import Sequence
+4 + from collections.abc import Sequence
+5 |
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/crypto_bot/strategy/structure_stability.py:1:1
+  |
+1 | / from __future__ import annotations
+2 | |
+3 | | from dataclasses import dataclass
+4 | | from datetime import datetime
+5 | |
+6 | | from crypto_bot.strategy.market_analysis import MarketAnalysisReport, MarketEventKind
+  | |_____________________________________________________________________________________^
+help: Organize imports
+  |
+7 |
+  -
+8 | _BOS_KINDS = {
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/crypto_bot/strategy/trade_plan.py:7:5
+  |
+6 | if TYPE_CHECKING:
+7 |     from crypto_bot.strategy.market_analysis import MarketAnalysisReport, MarketEventKind
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+8 |
+9 | from crypto_bot.common.models import Direction
+  |
+help: Organize imports
+   |
+6  | if TYPE_CHECKING:
+   -     from crypto_bot.strategy.market_analysis import MarketAnalysisReport, MarketEventKind
+7  +     from crypto_bot.strategy.market_analysis import (
+8  +         MarketAnalysisReport,
+9  +         MarketEventKind,
+10 +     )
+11 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/crypto_bot/strategy/trade_plan.py:9:1
+  |
+7 |     from crypto_bot.strategy.market_analysis import MarketAnalysisReport, MarketEventKind
+8 |
+9 | from crypto_bot.common.models import Direction
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: Organize imports
+   |
+10 |
+   -
+11 | OTE_SHALLOW = 0.705
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/crypto_bot/strategy/virtual_portfolio.py:9:1
+   |
+ 7 |   Fees and slippage apply to every partial exit. Funding/liquidation are not modelled.
+ 8 |   """
+ 9 | / from __future__ import annotations
+10 | |
+11 | | from dataclasses import dataclass, field, asdict, replace
+12 | | from datetime import datetime, timedelta, timezone
+13 | | from math import isfinite
+14 | | from typing import Mapping, Sequence
+15 | |
+16 | | from crypto_bot.common.models import Candle, Direction
+17 | | from crypto_bot.strategy.market_analysis import StructureAnalysisMode
+18 | | from crypto_bot.strategy.replay import EngineMode, StrategySignal
+   | |_________________________________________________________________^
+help: Organize imports
+   |
+10 |
+   - from dataclasses import dataclass, field, asdict, replace
+11 + from dataclasses import asdict, dataclass, field, replace
+12 | from datetime import datetime, timedelta, timezone
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Mapping`, `Sequence`
+  --> src/crypto_bot/strategy/virtual_portfolio.py:14:1
+   |
+12 | from datetime import datetime, timedelta, timezone
+13 | from math import isfinite
+14 | from typing import Mapping, Sequence
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+15 |
+16 | from crypto_bot.common.models import Candle, Direction
+   |
+help: Import from `collections.abc`
+   |
+13 | from math import isfinite
+   - from typing import Mapping, Sequence
+14 + from collections.abc import Mapping, Sequence
+15 |
+   |
+
+UP017 [*] Use `datetime.UTC` alias
+   --> src/crypto_bot/strategy/virtual_portfolio.py:266:31
+    |
+265 |     def _roll_day(self, when):
+266 |         day = when.astimezone(timezone.utc).date()
+    |                               ^^^^^^^^^^^^
+267 |         if day != self._day:
+268 |             self._day, self._day_start_equity, self._daily_blocked = day, self.equity, False
+    |
+help: Convert to `datetime.UTC` alias
+    |
+11  | from dataclasses import dataclass, field, asdict, replace
+    - from datetime import datetime, timedelta, timezone
+12  + from datetime import datetime, timedelta, timezone, UTC
+13  | from math import isfinite
+--------------------------------------------------------------------------------
+265 |     def _roll_day(self, when):
+    -         day = when.astimezone(timezone.utc).date()
+266 +         day = when.astimezone(UTC).date()
+267 |         if day != self._day:
+    |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> src/crypto_bot/strategy/virtual_portfolio.py:340:45
+    |
+338 |   …     self._mark({signal.symbol: reference})
+339 |   …     self._check_daily_loss()
+340 |   …     self.trades[signal.signal_id] = dict(
+    |  _______________________________________^
+341 | | …         trade_id=signal.signal_id, signal_id=signal.signal_id, symbol=signal.symbol,
+342 | | …         direction=signal.direction.name, htf=signal.htf_minutes, ltf=signal.ltf_minutes,
+343 | | …         setup=signal.level_policy, score=signal.score, signal_time=signal.event_time,
+344 | | …         ready_time=max(signal.entry_geometry_ready_time, signal.levels_known_at),
+345 | | …         entry_time=when, theoretical_entry=reference,
+346 | | …         fill_model='RESTING_LIMIT_TOUCH' if intrabar else 'NEXT_OPEN',
+347 | | …         entry_time_precision='BAR_INTERVAL_KNOWN_AT_CLOSE' if intrabar else 'EXACT_OPEN',
+348 | | …         entry_interval_start=candle.open_time, entry_interval_end=candle.close_time,
+349 | | …         actual_entry_after_slippage=entry, entry_zone=asdict(signal.entry_zone),
+350 | | …         stop=signal.stop_loss, targets=list(signal.targets), initial_equity=initial_equity,
+351 | | …         risk_percent=self.policy.risk_fraction, risk_amount=risk,
+352 | | …         stop_distance=abs(entry - signal.stop_loss), stop_percent=abs(entry - signal.stop_loss)/entry,
+353 | | …         quantity=quantity, notional=quantity*entry, leverage=self.policy.leverage,
+354 | | …         required_margin=quantity*entry/self.policy.leverage,
+355 | | …         aggregate_risk_before=existing_risk, aggregate_risk_after=self.aggregate_stop_risk,
+356 | | …         aggregate_risk_fraction_after=self.aggregate_stop_risk/self.equity,
+357 | | …         entry_fee=entry_fee, fees_total=entry_fee, slippage_total=entry_slip,
+358 | | …         gross_pnl=0.0, net_pnl=0.0, fills=[], new_breakeven=None, status='OPEN',
+359 | | …         result_R=None, MFE=0.0, MAE=0.0,
+360 | | …         excursion_policy=('ENTRY_BAR_CLOSE_ONLY_FAVOURABLE_FULL_ADVERSE_ENVELOPE' if intrabar
+361 | | …                           else 'FULL_CLOSED_BAR_ENVELOPE_ORDER_UNKNOWN'),
+362 | | …         max_equity_during_trade=self.equity, adverse_gap=False,
+363 | | …     )
+    | |_______^
+364 |   …     self._log(when, signal, "VIRTUAL_ENTRY", "RESTING_LIMIT_ACTUAL_TOUCH" if intrabar else "NEXT_OPEN_INSIDE_ENTRY_ZONE", quantit…
+365 |   …               -entry_fee, reference_price=reference, slippage_cost=entry_slip, balance_change=-entry_fee)
+    |
+help: Rewrite as a literal
+
+C414 Unnecessary `tuple()` call within `sorted()`
+   --> src/crypto_bot/strategy/virtual_portfolio.py:436:28
+    |
+434 |         # All admissions precede every same-bar exit. No foreign symbol's future
+435 |         # close profit funds risk. OPEN fills precede interval-ambiguous touches.
+436 |         for key, signal in sorted(tuple(self.pending.items()), key=lambda item: (item[1].symbol, item[0])):
+    |                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+437 |             if signal.symbol in bars and self._admit(signal, bars[signal.symbol]):
+438 |                 self.pending.pop(key)
+    |
+help: Remove the inner `tuple()` call
+
+C414 Unnecessary `tuple()` call within `sorted()`
+   --> src/crypto_bot/strategy/virtual_portfolio.py:441:32
+    |
+439 |         intrabar_ids = set()
+440 |         if self.policy.resting_limit_entries:
+441 |             for key, signal in sorted(tuple(self.pending.items()), key=lambda item: (item[1].symbol, item[0])):
+    |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+442 |                 if signal.symbol in bars and self._admit(signal, bars[signal.symbol], intrabar=True):
+443 |                     self.pending.pop(key)
+    |
+help: Remove the inner `tuple()` call
+
+C414 Unnecessary `tuple()` call within `sorted()`
+   --> src/crypto_bot/strategy/virtual_portfolio.py:446:23
+    |
+444 |                     if key in self.trades:
+445 |                         intrabar_ids.add(key)
+446 |         for symbol in sorted(tuple(self.positions)):
+    |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+447 |             position, candle = self.positions[symbol], bars[symbol]
+448 |             if position.signal.signal_id in intrabar_ids:
+    |
+help: Remove the inner `tuple()` call
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> src/crypto_bot/strategy/virtual_portfolio.py:470:34
+    |
+468 |               trade = self.trades[position.signal.signal_id]
+469 |               trade['max_equity_during_trade'] = max(trade['max_equity_during_trade'], self.equity)
+470 |           self.equity_curve.append(dict(timestamp=first.close_time, starting_balance=self.starting_balance,
+    |  __________________________________^
+471 | |             balance=self.balance, realized_pnl=self.realized_pnl, unrealized_pnl=self.unrealized_pnl,
+472 | |             equity=self.equity, equity_peak=self.equity_peak, drawdown=dd,
+473 | |             drawdown_absolute=self.equity_peak-self.equity, open_positions=len(self.positions),
+474 | |             allocated_margin=self.allocated_margin, available_equity=self.available_equity,
+475 | |             aggregate_stop_risk=self.aggregate_stop_risk, daily_realized_pnl=self.daily_realized_pnl,
+476 | |             fees_paid=self.fees_paid, slippage_cost=self.slippage_cost, status=self.status,
+477 | |             trade_entry_allowed=False))
+    | |______________________________________^
+478 |           for signal in signals:
+479 |               if signal.status in ("INVALIDATED", "REJECTED_ENTRY_GEOMETRY", "SOURCE_CONTEXT_BLOCKED"):
+    |
+help: Rewrite as a literal
+
+Found 74 errors.
+[*] 51 fixable with the `--fix` option (16 hidden fixes can be enabled with the `--unsafe-fixes` option).

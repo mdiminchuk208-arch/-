@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "candidate_join_count": 131099,
+  "annotations": 2186597,
+  "unjoined_qualitative_candidates": 0,
+  "old880_outcomes_used": false,
+  "future_annotations_used": false,
+  "old_cutoff_labels_transplanted": false,
+  "trade_entry_allowed": false
+}
