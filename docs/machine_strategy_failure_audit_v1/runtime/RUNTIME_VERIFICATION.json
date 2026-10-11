@@ -1,0 +1,44 @@
+{
+  "runtime": "/workspace/ecc-setup/codex-ecc",
+  "codex_version": "0.159.0-alpha.3",
+  "ecc_version": "2.2.3",
+  "ecc_upstream_commit": "8ce348fbea0d66f5c49c7b35e8ba8bb143b15132",
+  "trusted_projects": [
+    "/workspace",
+    "/workspace/-"
+  ],
+  "global_trust_bypass": false,
+  "actual_project_layer": "/workspace/-/.codex",
+  "requested_workspace_dot_codex_exists": true,
+  "project_layer_disabled_reason": null,
+  "multi_agent": true,
+  "ecc_skills_enabled": 348,
+  "skill_errors": [],
+  "roles_available": [
+    "strategy_explorer",
+    "strategy_designer",
+    "execution_auditor",
+    "backtest_reviewer"
+  ],
+  "roles_launched": [
+    "strategy_explorer",
+    "execution_auditor",
+    "backtest_reviewer"
+  ],
+  "strategy_designer_launched": false,
+  "agent_transport": "cloud collaboration, configured role instructions and models",
+  "native_cli_agent_type_launch_claimed": false,
+  "agent_model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "hooks_trusted": false,
+  "hooks_config": null,
+  "hook_trust_added": false,
+  "role_instruction_sha256": {
+    "strategy_explorer": "2c2eb0879dde24d09c6c695170160aed1e2641dcfcfab0ea76536b296837618a",
+    "strategy_designer": "e67f820afe5afa63501364d893d4355cd0885e680a1fc8299def321054db9ce4",
+    "execution_auditor": "512a2238f8446fbdc9a6a5c3ad4731efcd69613f3cd46c517708cf8e7e4b04b6",
+    "backtest_reviewer": "e647c1adc97e2e1f93c167ffc1934d81687e77308c64c7efdfb1a958e8ac6d76"
+  },
+  "research_skill_frontmatter_fix_only": true,
+  "trade_entry_allowed": false
+}

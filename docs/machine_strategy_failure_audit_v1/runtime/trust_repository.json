@@ -1,0 +1,22 @@
+{
+  "method": "config/value/write",
+  "params": {
+    "filePath": "/workspace/ecc-setup/codex-home/config.toml",
+    "keyPath": "projects",
+    "value": {
+      "/workspace": {
+        "trust_level": "trusted"
+      },
+      "/workspace/-": {
+        "trust_level": "trusted"
+      }
+    },
+    "mergeStrategy": "upsert"
+  },
+  "result": {
+    "status": "ok",
+    "version": "sha256:c4c30631654b7de3c8b1044cb532213c33b029b39e361197ff24bc9cc8b5a7a8",
+    "filePath": "/workspace/ecc-setup/codex-home/config.toml",
+    "overriddenMetadata": null
+  }
+}

@@ -1,0 +1,1731 @@
+{
+  "diagnostic_only": true,
+  "trade_entry_allowed": false,
+  "PAPER_enabled": false,
+  "LIVE_enabled": false,
+  "versions": {
+    "v2": {
+      "overall": {
+        "cases": 761,
+        "FILLED": 228,
+        "CLOSED": 223,
+        "WIN": 118,
+        "LOSS": 105,
+        "Gross_WIN": 122,
+        "Gross_LOSS": 101,
+        "WR_percent": 52.91479820627802,
+        "Gross_R": 50.992033515862616,
+        "Fees_R": 74.2363605392651,
+        "Slippage_R": 24.74545351308837,
+        "Net_R_ex_funding": -47.98978053649087,
+        "Funding_R": null,
+        "PF_net": 0.6829382381754818,
+        "PF_gross": 1.609524149746485,
+        "Expectancy_R": -0.21520080958067653,
+        "Gross_expectancy_R": 0.2286638274253929,
+        "mean_cost_R": 0.44386463700606943,
+        "MaxDD_R": 78.95457438204306,
+        "cost_break_even_multiplier": 0.5151656797165982,
+        "gross_positive_net_nonpositive": 4,
+        "status_counts": {
+          "CLOSED": 223,
+          "GAP_INVALIDATED_BEFORE_FILL": 280,
+          "UNFILLED_EXPIRED": 253,
+          "WAIT_INTRABAR_ORDER": 5
+        },
+        "geometry_all_cases": {
+          "planned_stop_bps": {
+            "n": 761,
+            "min": 0.0389588700229073,
+            "p10": 12.310486544767006,
+            "median": 94.99281776856726,
+            "p90": 325.7894042627722,
+            "max": 12057.536113443999
+          },
+          "planned_target_bps": {
+            "n": 761,
+            "min": 0.8299243039874404,
+            "p10": 23.24785057378193,
+            "median": 78.85776232592791,
+            "p90": 212.98892570878297,
+            "max": 1162.0800524353194
+          },
+          "planned_target_R": {
+            "n": 761,
+            "min": 0.0025241894131755637,
+            "p10": 0.1499097159120114,
+            "median": 0.8179814275790803,
+            "p90": 7.860082520740873,
+            "max": 1368.475770474881
+          },
+          "pre_entry_edge_cost_ratio": {
+            "n": 761,
+            "min": 0.05186811666868376,
+            "p10": 1.4513036763111673,
+            "median": 4.909253508053703,
+            "p90": 13.25213944849772,
+            "max": 68.64164873891897
+          }
+        },
+        "geometry_closed": {
+          "planned_stop_bps": {
+            "n": 223,
+            "min": 1.057284056703508,
+            "p10": 23.95715850932868,
+            "median": 120.09734274070583,
+            "p90": 314.95451770293295,
+            "max": 12057.536113443999
+          },
+          "planned_target_bps": {
+            "n": 223,
+            "min": 1.5233863237406868,
+            "p10": 19.469031671845116,
+            "median": 64.85995024198473,
+            "p90": 144.41380705104922,
+            "max": 347.4695587905785
+          },
+          "planned_target_R": {
+            "n": 223,
+            "min": 0.007395277921829374,
+            "p10": 0.14013094855795405,
+            "median": 0.4812064533222579,
+            "p90": 3.6734047089409514,
+            "max": 104.41427119259887
+          },
+          "pre_entry_edge_cost_ratio": {
+            "n": 223,
+            "min": 0.09521889799214107,
+            "p10": 1.2156308582709903,
+            "median": 4.0406430946209095,
+            "p90": 9.02519921597749,
+            "max": 22.100815454149423
+          }
+        },
+        "closed_planned_target_below_one_R": 167,
+        "closed_planned_round_trip_cost_at_FTA_above_one_R": 14,
+        "realized_cost_R": {
+          "n": 223,
+          "min": 0.0013250544749675971,
+          "p10": 0.05086625425386652,
+          "median": 0.1378109865400485,
+          "p90": 0.7496168805308369,
+          "max": 15.133913848218038
+        },
+        "actual_fill_stop_bps": {
+          "n": 223,
+          "min": 1.057284056703508,
+          "p10": 21.358499145953537,
+          "median": 116.7789562286173,
+          "p90": 314.95451770293295,
+          "max": 12007.590779518338
+        },
+        "actual_fill_target_R": {
+          "n": 223,
+          "min": 0.009294964499859502,
+          "p10": 0.18598573302048,
+          "median": 0.5544333404210079,
+          "p90": 4.112213156326899,
+          "max": 104.41427119259887
+        },
+        "recorded_observation_hold_hours": {
+          "n": 223,
+          "min": 0.0,
+          "p10": 0.25,
+          "median": 2.75,
+          "p90": 11.75,
+          "max": 162.25
+        },
+        "gross_trade_R": {
+          "n": 223,
+          "min": -1.0,
+          "p10": -1.0,
+          "median": 0.11483388587148198,
+          "p90": 0.8237045656071613,
+          "max": 33.361584201605986
+        },
+        "net_trade_R": {
+          "n": 223,
+          "min": -16.133913848218036,
+          "p10": -1.5837503810662288,
+          "median": 0.036539827706252775,
+          "p90": 0.6834896388219286,
+          "max": 23.49186404228313
+        }
+      },
+      "by_direction": {
+        "LONG": {
+          "cases": 414,
+          "FILLED": 123,
+          "CLOSED": 118,
+          "WIN": 70,
+          "LOSS": 48,
+          "Gross_WIN": 72,
+          "Gross_LOSS": 46,
+          "WR_percent": 59.32203389830508,
+          "Gross_R": 73.7091475194727,
+          "Fees_R": 34.97704851120661,
+          "Slippage_R": 11.659016170402204,
+          "Net_R_ex_funding": 27.073082837863875,
+          "Funding_R": null,
+          "PF_net": 1.4624748142793926,
+          "PF_gross": 3.0077976658518364,
+          "Expectancy_R": 0.22943290540562605,
+          "Gross_expectancy_R": 0.6246537925379042,
+          "mean_cost_R": 0.3952208871322781,
+          "MaxDD_R": 23.487885952649428,
+          "cost_break_even_multiplier": 1.580518168132233,
+          "gross_positive_net_nonpositive": 2,
+          "status_counts": {
+            "CLOSED": 118,
+            "GAP_INVALIDATED_BEFORE_FILL": 147,
+            "UNFILLED_EXPIRED": 144,
+            "WAIT_INTRABAR_ORDER": 5
+          },
+          "geometry_all_cases": {
+            "planned_stop_bps": {
+              "n": 414,
+              "min": 0.0389588700229073,
+              "p10": 13.953729515021355,
+              "median": 108.32605786139919,
+              "p90": 358.44858872841974,
+              "max": 3184.56567810619
+            },
+            "planned_target_bps": {
+              "n": 414,
+              "min": 0.8299243039874404,
+              "p10": 21.03433394263283,
+              "median": 76.39933493514086,
+              "p90": 215.32779031777108,
+              "max": 1162.0800524353194
+            },
+            "planned_target_R": {
+              "n": 414,
+              "min": 0.0025241894131755637,
+              "p10": 0.12534986021092387,
+              "median": 0.7394956783661165,
+              "p90": 7.426178295698752,
+              "max": 1368.475770474881
+            },
+            "pre_entry_edge_cost_ratio": {
+              "n": 414,
+              "min": 0.05186811666868376,
+              "p10": 1.3132646889897959,
+              "median": 4.756787655692368,
+              "p90": 13.314629238708369,
+              "max": 68.64164873891897
+            }
+          },
+          "geometry_closed": {
+            "planned_stop_bps": {
+              "n": 118,
+              "min": 1.6255155729589952,
+              "p10": 30.54519831006766,
+              "median": 118.02024965777687,
+              "p90": 314.3204847817749,
+              "max": 2635.8086989077265
+            },
+            "planned_target_bps": {
+              "n": 118,
+              "min": 5.36822941789721,
+              "p10": 18.972382214550322,
+              "median": 67.09071580288912,
+              "p90": 149.6885709194261,
+              "max": 270.7325939072184
+            },
+            "planned_target_R": {
+              "n": 118,
+              "min": 0.012796660382821075,
+              "p10": 0.1486924441281648,
+              "median": 0.4966585950529487,
+              "p90": 2.84595984494814,
+              "max": 40.368982856837135
+            },
+            "pre_entry_edge_cost_ratio": {
+              "n": 118,
+              "min": 0.3354243068869902,
+              "p10": 1.1846492091587557,
+              "median": 4.1791503775785275,
+              "p90": 9.286026817560073,
+              "max": 16.694795849940853
+            }
+          },
+          "closed_planned_target_below_one_R": 89,
+          "closed_planned_round_trip_cost_at_FTA_above_one_R": 6,
+          "realized_cost_R": {
+            "n": 118,
+            "min": 0.006186468340918332,
+            "p10": 0.05095687042648187,
+            "median": 0.13976734601107854,
+            "p90": 0.6349896414399189,
+            "max": 9.869720159322855
+          },
+          "actual_fill_stop_bps": {
+            "n": 118,
+            "min": 1.6255155729589952,
+            "p10": 25.202756488809143,
+            "median": 113.85035739832527,
+            "p90": 314.3204847817749,
+            "max": 2608.6439159506717
+          },
+          "actual_fill_target_R": {
+            "n": 118,
+            "min": 0.020209181304705476,
+            "p10": 0.1906634768074486,
+            "median": 0.5410064190527062,
+            "p90": 2.84595984494814,
+            "max": 40.368982856837135
+          },
+          "recorded_observation_hold_hours": {
+            "n": 118,
+            "min": 0.0,
+            "p10": 0.5,
+            "median": 2.875,
+            "p90": 16.05,
+            "max": 162.25
+          },
+          "gross_trade_R": {
+            "n": 118,
+            "min": -1.0,
+            "p10": -1.0,
+            "median": 0.19894632621251662,
+            "p90": 1.0132291719453725,
+            "max": 33.361584201605986
+          },
+          "net_trade_R": {
+            "n": 118,
+            "min": -10.457764718267391,
+            "p10": -1.2457302660912049,
+            "median": 0.08257663965760684,
+            "p90": 0.9158472948754703,
+            "max": 23.49186404228313
+          }
+        },
+        "SHORT": {
+          "cases": 347,
+          "FILLED": 105,
+          "CLOSED": 105,
+          "WIN": 48,
+          "LOSS": 57,
+          "Gross_WIN": 50,
+          "Gross_LOSS": 55,
+          "WR_percent": 45.714285714285715,
+          "Gross_R": -22.717114003610074,
+          "Fees_R": 39.2593120280585,
+          "Slippage_R": 13.086437342686166,
+          "Net_R_ex_funding": -75.06286337435475,
+          "Funding_R": null,
+          "PF_net": 0.19129195856211995,
+          "PF_gross": 0.5161147475642651,
+          "Expectancy_R": -0.7148844130890928,
+          "Gross_expectancy_R": -0.21635346670104835,
+          "mean_cost_R": 0.49853094638804446,
+          "MaxDD_R": 75.34045176091185,
+          "cost_break_even_multiplier": -0.4339820191074839,
+          "gross_positive_net_nonpositive": 2,
+          "status_counts": {
+            "CLOSED": 105,
+            "GAP_INVALIDATED_BEFORE_FILL": 133,
+            "UNFILLED_EXPIRED": 109
+          },
+          "geometry_all_cases": {
+            "planned_stop_bps": {
+              "n": 347,
+              "min": 1.057284056703508,
+              "p10": 9.653056113334674,
+              "median": 76.76879688954602,
+              "p90": 261.97346405879074,
+              "max": 12057.536113443999
+            },
+            "planned_target_bps": {
+              "n": 347,
+              "min": 1.411054709123735,
+              "p10": 26.636409886222523,
+              "median": 82.38969572843324,
+              "p90": 204.31324037377018,
+              "max": 545.5199579037267
+            },
+            "planned_target_R": {
+              "n": 347,
+              "min": 0.007395277921829374,
+              "p10": 0.19649154741711475,
+              "median": 1.1246605149055795,
+              "p90": 8.4521429267909,
+              "max": 104.41427119259887
+            },
+            "pre_entry_edge_cost_ratio": {
+              "n": 347,
+              "min": 0.08819714186985178,
+              "p10": 1.6669957811239506,
+              "median": 5.170656423499497,
+              "p90": 12.901438514755556,
+              "max": 35.051049727576356
+            }
+          },
+          "geometry_closed": {
+            "planned_stop_bps": {
+              "n": 105,
+              "min": 1.057284056703508,
+              "p10": 20.222527566232863,
+              "median": 124.3565088136248,
+              "p90": 317.31256775448725,
+              "max": 12057.536113443999
+            },
+            "planned_target_bps": {
+              "n": 105,
+              "min": 1.5233863237406868,
+              "p10": 20.77372431674357,
+              "median": 60.34993172368195,
+              "p90": 140.70481226505794,
+              "max": 347.4695587905785
+            },
+            "planned_target_R": {
+              "n": 105,
+              "min": 0.007395277921829374,
+              "p10": 0.14334539751834532,
+              "median": 0.4812064533222579,
+              "p90": 4.1759869481868215,
+              "max": 104.41427119259887
+            },
+            "pre_entry_edge_cost_ratio": {
+              "n": 105,
+              "min": 0.09521889799214107,
+              "p10": 1.2997078331330023,
+              "median": 3.7832867876965515,
+              "p90": 8.856374129300251,
+              "max": 22.100815454149423
+            }
+          },
+          "closed_planned_target_below_one_R": 78,
+          "closed_planned_round_trip_cost_at_FTA_above_one_R": 8,
+          "realized_cost_R": {
+            "n": 105,
+            "min": 0.0013250544749675971,
+            "p10": 0.05025164936143584,
+            "median": 0.1339259759382295,
+            "p90": 0.8658837806483256,
+            "max": 15.133913848218038
+          },
+          "actual_fill_stop_bps": {
+            "n": 105,
+            "min": 1.057284056703508,
+            "p10": 18.64915216061506,
+            "median": 119.17066291757345,
+            "p90": 317.31256775448725,
+            "max": 12007.590779518338
+          },
+          "actual_fill_target_R": {
+            "n": 105,
+            "min": 0.009294964499859502,
+            "p10": 0.18775493726712494,
+            "median": 0.5731699081577526,
+            "p90": 5.010368142205547,
+            "max": 104.41427119259887
+          },
+          "recorded_observation_hold_hours": {
+            "n": 105,
+            "min": 0.0,
+            "p10": 0.25,
+            "median": 2.0,
+            "p90": 10.8,
+            "max": 138.75
+          },
+          "gross_trade_R": {
+            "n": 105,
+            "min": -1.0,
+            "p10": -1.0,
+            "median": -0.3865813637418371,
+            "p90": 0.6026052610139477,
+            "max": 2.966457728303368
+          },
+          "net_trade_R": {
+            "n": 105,
+            "min": -16.133913848218036,
+            "p10": -1.7608362249921279,
+            "median": -0.527349104969211,
+            "p90": 0.4600891090231024,
+            "max": 2.6267204432704476
+          }
+        }
+      },
+      "frozen_cost_sensitivity": {
+        "0.5": {
+          "cases": 761,
+          "orders": 761,
+          "filled": 228,
+          "CLOSED": 223,
+          "open_censored": 0,
+          "order_censored": 0,
+          "intrabar_unresolved": 5,
+          "WIN": 121,
+          "LOSS": 102,
+          "FLAT": 0,
+          "WR_percent": 54.26008968609865,
+          "Gross_R": 50.992033515862616,
+          "Fees_R": 37.11818026963255,
+          "Slippage_R": 12.372726756544186,
+          "Funding_R": null,
+          "Net_R_ex_funding": 1.5011264896858727,
+          "PF_net": 1.0127951172202914,
+          "Expectancy_R": 0.006731508922358174,
+          "AvgR": 0.006731508922358174,
+          "MedianR": 0.0752646391284612,
+          "AvgWin_R": 0.9819949365591876,
+          "AvgLoss_R": -1.1501986356272138,
+          "payoff_ratio": 0.8537611731939647,
+          "breakeven_WR_percent": 53.944381534166865,
+          "MaxDD_R": 40.927065848798065,
+          "MaxDD_percent_closed_case_curve": 30.54891251181803,
+          "max_loss_streak": 4,
+          "average_hold_hours": 6.673766816143497,
+          "median_hold_hours": 2.75,
+          "equity_curve_convention": "100 initial R units; one unit price risk per independent case; sorted observable exit time then case ID. Diagnostic closed-case curve, no shared margin/portfolio claim.",
+          "net_definition": "Closed independent cases only; funding unavailable/excluded. All amounts are normalized risk units, not exchange account currency.",
+          "status_counts": {
+            "GAP_INVALIDATED_BEFORE_FILL": 280,
+            "UNFILLED_EXPIRED": 253,
+            "CLOSED": 223,
+            "WAIT_INTRABAR_ORDER": 5
+          },
+          "known_entry_fees_all_filled_R": 38.2138371119598,
+          "cost_multiplier": "0.5",
+          "trade_entry_allowed": false
+        },
+        "1": {
+          "cases": 761,
+          "orders": 761,
+          "filled": 228,
+          "CLOSED": 223,
+          "open_censored": 0,
+          "order_censored": 0,
+          "intrabar_unresolved": 5,
+          "WIN": 118,
+          "LOSS": 105,
+          "FLAT": 0,
+          "WR_percent": 52.91479820627802,
+          "Gross_R": 50.992033515862616,
+          "Fees_R": 74.2363605392651,
+          "Slippage_R": 24.74545351308837,
+          "Funding_R": null,
+          "Net_R_ex_funding": -47.98978053649086,
+          "PF_net": 0.6829382381754818,
+          "Expectancy_R": -0.2152008095806765,
+          "AvgR": -0.21520080958067653,
+          "MedianR": 0.036539827706252775,
+          "AvgWin_R": 0.8760004269537164,
+          "AvgLoss_R": -1.4415031515907561,
+          "payoff_ratio": 0.6076992797324203,
+          "breakeven_WR_percent": 62.20068719359235,
+          "MaxDD_R": 78.95457438204309,
+          "MaxDD_percent_closed_case_curve": 61.809877497053215,
+          "max_loss_streak": 6,
+          "average_hold_hours": 6.673766816143497,
+          "median_hold_hours": 2.75,
+          "equity_curve_convention": "100 initial R units; one unit price risk per independent case; sorted observable exit time then case ID. Diagnostic closed-case curve, no shared margin/portfolio claim.",
+          "net_definition": "Closed independent cases only; funding unavailable/excluded. All amounts are normalized risk units, not exchange account currency.",
+          "status_counts": {
+            "GAP_INVALIDATED_BEFORE_FILL": 280,
+            "UNFILLED_EXPIRED": 253,
+            "CLOSED": 223,
+            "WAIT_INTRABAR_ORDER": 5
+          },
+          "known_entry_fees_all_filled_R": 38.2138371119598,
+          "cost_multiplier": "1",
+          "trade_entry_allowed": false
+        },
+        "2": {
+          "cases": 761,
+          "orders": 761,
+          "filled": 228,
+          "CLOSED": 223,
+          "open_censored": 0,
+          "order_censored": 0,
+          "intrabar_unresolved": 5,
+          "WIN": 97,
+          "LOSS": 126,
+          "FLAT": 0,
+          "WR_percent": 43.49775784753363,
+          "Gross_R": 50.992033515862616,
+          "Fees_R": 148.4727210785302,
+          "Slippage_R": 49.49090702617674,
+          "Funding_R": null,
+          "Net_R_ex_funding": -146.97159458884434,
+          "PF_net": 0.3376691398518949,
+          "Expectancy_R": -0.6590654465867459,
+          "AvgR": -0.6590654465867459,
+          "MedianR": -0.10217082908349119,
+          "AvgWin_R": 0.7724636514775208,
+          "AvgLoss_R": -1.7611156252552689,
+          "payoff_ratio": 0.43862176929215213,
+          "breakeven_WR_percent": 69.51097372119094,
+          "MaxDD_R": 162.97927405267643,
+          "MaxDD_percent_closed_case_curve": 140.62837637788914,
+          "max_loss_streak": 7,
+          "average_hold_hours": 6.673766816143497,
+          "median_hold_hours": 2.75,
+          "equity_curve_convention": "100 initial R units; one unit price risk per independent case; sorted observable exit time then case ID. Diagnostic closed-case curve, no shared margin/portfolio claim.",
+          "net_definition": "Closed independent cases only; funding unavailable/excluded. All amounts are normalized risk units, not exchange account currency.",
+          "status_counts": {
+            "GAP_INVALIDATED_BEFORE_FILL": 280,
+            "UNFILLED_EXPIRED": 253,
+            "CLOSED": 223,
+            "WAIT_INTRABAR_ORDER": 5
+          },
+          "known_entry_fees_all_filled_R": 38.2138371119598,
+          "cost_multiplier": "2",
+          "trade_entry_allowed": false
+        }
+      },
+      "accounting_identity_errors": 0
+    },
+    "v2.1": {
+      "overall": {
+        "cases": 373,
+        "FILLED": 85,
+        "CLOSED": 83,
+        "WIN": 38,
+        "LOSS": 45,
+        "Gross_WIN": 38,
+        "Gross_LOSS": 45,
+        "WR_percent": 45.78313253012048,
+        "Gross_R": 27.610450180102635,
+        "Fees_R": 29.21419925919829,
+        "Slippage_R": 9.738066419732764,
+        "Net_R_ex_funding": -11.341815498828417,
+        "Funding_R": null,
+        "PF_net": 0.8375520967969219,
+        "PF_gross": 1.6967317821043184,
+        "Expectancy_R": -0.13664837950395683,
+        "Gross_expectancy_R": 0.3326560262662968,
+        "mean_cost_R": 0.4693044057702537,
+        "MaxDD_R": 29.06326643521276,
+        "cost_break_even_multiplier": 0.7088278357845791,
+        "gross_positive_net_nonpositive": 0,
+        "status_counts": {
+          "CLOSED": 83,
+          "GAP_INVALIDATED_BEFORE_FILL": 111,
+          "UNFILLED_EXPIRED": 177,
+          "WAIT_INTRABAR_ORDER": 2
+        },
+        "geometry_all_cases": {
+          "planned_stop_bps": {
+            "n": 373,
+            "min": 0.2337448574766355,
+            "p10": 14.323169698745877,
+            "median": 90.38778983633163,
+            "p90": 349.74526597362797,
+            "max": 12057.536113443999
+          },
+          "planned_target_bps": {
+            "n": 373,
+            "min": 79.82162495317051,
+            "p10": 89.1079296827882,
+            "median": 133.66876460821126,
+            "p90": 276.6028559658918,
+            "max": 1162.0800524353194
+          },
+          "planned_target_R": {
+            "n": 373,
+            "min": 0.007395277921829374,
+            "p10": 0.4147701324052078,
+            "median": 1.6688263900357028,
+            "p90": 10.031041310615967,
+            "max": 498.7860915506772
+          },
+          "pre_entry_edge_cost_ratio": {
+            "n": 373,
+            "min": 5.008842255973452,
+            "p10": 5.573771360849508,
+            "median": 8.36439834217046,
+            "p90": 17.5301227092543,
+            "max": 68.64164873891897
+          }
+        },
+        "geometry_closed": {
+          "planned_stop_bps": {
+            "n": 83,
+            "min": 1.057284056703508,
+            "p10": 21.490085023091982,
+            "median": 130.3219274465281,
+            "p90": 343.7761377979103,
+            "max": 12057.536113443999
+          },
+          "planned_target_bps": {
+            "n": 83,
+            "min": 79.82162495317051,
+            "p10": 82.62127162676695,
+            "median": 117.19351321245671,
+            "p90": 190.9989771586033,
+            "max": 347.4695587905785
+          },
+          "planned_target_R": {
+            "n": 83,
+            "min": 0.007395277921829374,
+            "p10": 0.33499058366677703,
+            "median": 0.8914833388415502,
+            "p90": 6.490043481777998,
+            "max": 104.41427119259887
+          },
+          "pre_entry_edge_cost_ratio": {
+            "n": 83,
+            "min": 5.008842255973452,
+            "p10": 5.185250306421358,
+            "median": 7.28192485792607,
+            "p90": 11.854425832186338,
+            "max": 22.100815454149423
+          }
+        },
+        "closed_planned_target_below_one_R": 44,
+        "closed_planned_round_trip_cost_at_FTA_above_one_R": 6,
+        "realized_cost_R": {
+          "n": 83,
+          "min": 0.0013250544749675971,
+          "p10": 0.04622370568054118,
+          "median": 0.12897222528938382,
+          "p90": 0.7785136851374262,
+          "max": 15.133913848218038
+        },
+        "actual_fill_stop_bps": {
+          "n": 83,
+          "min": 1.057284056703508,
+          "p10": 20.647008437285557,
+          "median": 124.83203723642644,
+          "p90": 343.7761377979103,
+          "max": 12007.590779518338
+        },
+        "actual_fill_target_R": {
+          "n": 83,
+          "min": 0.009294964499859502,
+          "p10": 0.34547026253652763,
+          "median": 0.9133092417226926,
+          "p90": 7.19469763706032,
+          "max": 104.41427119259887
+        },
+        "recorded_observation_hold_hours": {
+          "n": 83,
+          "min": 0.0,
+          "p10": 0.25,
+          "median": 3.5,
+          "p90": 21.8,
+          "max": 162.25
+        },
+        "gross_trade_R": {
+          "n": 83,
+          "min": -1.0,
+          "p10": -1.0,
+          "median": -0.5515513805863934,
+          "p90": 1.2184130252340706,
+          "max": 20.40969095110803
+        },
+        "net_trade_R": {
+          "n": 83,
+          "min": -16.133913848218036,
+          "p10": -1.6686742536913455,
+          "median": -0.6316756641047537,
+          "p90": 1.1012178152057803,
+          "max": 18.08379651384657
+        }
+      },
+      "by_direction": {
+        "LONG": {
+          "cases": 194,
+          "FILLED": 47,
+          "CLOSED": 45,
+          "WIN": 24,
+          "LOSS": 21,
+          "Gross_WIN": 24,
+          "Gross_LOSS": 21,
+          "WR_percent": 53.333333333333336,
+          "Gross_R": 37.68184932772726,
+          "Fees_R": 9.916390179290161,
+          "Slippage_R": 3.3054633930967205,
+          "Net_R_ex_funding": 24.459995755340373,
+          "Funding_R": null,
+          "PF_net": 2.000708671041708,
+          "PF_gross": 3.0432014418144933,
+          "Expectancy_R": 0.543555461229786,
+          "Gross_expectancy_R": 0.8373744295050501,
+          "mean_cost_R": 0.29381896827526405,
+          "MaxDD_R": 7.898092909046266,
+          "cost_break_even_multiplier": 2.849967224446029,
+          "gross_positive_net_nonpositive": 0,
+          "status_counts": {
+            "CLOSED": 45,
+            "GAP_INVALIDATED_BEFORE_FILL": 52,
+            "UNFILLED_EXPIRED": 95,
+            "WAIT_INTRABAR_ORDER": 2
+          },
+          "geometry_all_cases": {
+            "planned_stop_bps": {
+              "n": 194,
+              "min": 0.2337448574766355,
+              "p10": 13.801350777250274,
+              "median": 111.71534741765888,
+              "p90": 386.30390941450963,
+              "max": 2990.9941592894143
+            },
+            "planned_target_bps": {
+              "n": 194,
+              "min": 80.7533251369174,
+              "p10": 90.01005325531118,
+              "median": 136.85032093784275,
+              "p90": 288.774033879997,
+              "max": 1162.0800524353194
+            },
+            "planned_target_R": {
+              "n": 194,
+              "min": 0.051399341933587535,
+              "p10": 0.33812767027561236,
+              "median": 1.3976209187741369,
+              "p90": 9.245919198096308,
+              "max": 498.7860915506772
+            },
+            "pre_entry_edge_cost_ratio": {
+              "n": 194,
+              "min": 5.026786335490155,
+              "p10": 5.600423605749485,
+              "median": 8.495015961318817,
+              "p90": 17.791280294923283,
+              "max": 68.64164873891897
+            }
+          },
+          "geometry_closed": {
+            "planned_stop_bps": {
+              "n": 45,
+              "min": 6.927706442674056,
+              "p10": 24.472210069199896,
+              "median": 130.3219274465281,
+              "p90": 362.66919565263674,
+              "max": 2635.8086989077265
+            },
+            "planned_target_bps": {
+              "n": 45,
+              "min": 81.53336511545467,
+              "p10": 87.61447283473068,
+              "median": 118.53990364902103,
+              "p90": 189.20450159043907,
+              "max": 270.7325939072184
+            },
+            "planned_target_R": {
+              "n": 45,
+              "min": 0.051399341933587535,
+              "p10": 0.32821351152788175,
+              "median": 0.9227761485826002,
+              "p90": 4.21730477820296,
+              "max": 20.40969095110803
+            },
+            "pre_entry_edge_cost_ratio": {
+              "n": 45,
+              "min": 5.075145634613863,
+              "p10": 5.4520102230136285,
+              "median": 7.365091118486234,
+              "p90": 11.71440122060508,
+              "max": 16.694795849940853
+            }
+          },
+          "closed_planned_target_below_one_R": 23,
+          "closed_planned_round_trip_cost_at_FTA_above_one_R": 3,
+          "realized_cost_R": {
+            "n": 45,
+            "min": 0.006186468340918332,
+            "p10": 0.04401940111506486,
+            "median": 0.12347563208766406,
+            "p90": 0.7650717905037061,
+            "max": 2.3258944372614625
+          },
+          "actual_fill_stop_bps": {
+            "n": 45,
+            "min": 6.927706442674056,
+            "p10": 20.98538904175272,
+            "median": 130.3219274465281,
+            "p90": 362.66919565263674,
+            "max": 2608.6439159506717
+          },
+          "actual_fill_target_R": {
+            "n": 45,
+            "min": 0.06626670945412223,
+            "p10": 0.3383102233865183,
+            "median": 1.0092271422912298,
+            "p90": 6.106434463560736,
+            "max": 20.40969095110803
+          },
+          "recorded_observation_hold_hours": {
+            "n": 45,
+            "min": 0.25,
+            "p10": 0.5,
+            "median": 4.5,
+            "p90": 21.1,
+            "max": 162.25
+          },
+          "gross_trade_R": {
+            "n": 45,
+            "min": -1.0,
+            "p10": -1.0,
+            "median": 0.08486024511277608,
+            "p90": 1.9567441507302108,
+            "max": 20.40969095110803
+          },
+          "net_trade_R": {
+            "n": 45,
+            "min": -2.4162341199399022,
+            "p10": -1.2554178457359606,
+            "median": 0.06972817391372249,
+            "p90": 1.6764120574498054,
+            "max": 18.08379651384657
+          }
+        },
+        "SHORT": {
+          "cases": 179,
+          "FILLED": 38,
+          "CLOSED": 38,
+          "WIN": 14,
+          "LOSS": 24,
+          "Gross_WIN": 14,
+          "Gross_LOSS": 24,
+          "WR_percent": 36.84210526315789,
+          "Gross_R": -10.071399147624618,
+          "Fees_R": 19.297809079908127,
+          "Slippage_R": 6.432603026636043,
+          "Net_R_ex_funding": -35.80181125416879,
+          "Funding_R": null,
+          "PF_net": 0.21098801106302909,
+          "PF_gross": 0.5246193752672013,
+          "Expectancy_R": -0.9421529277412839,
+          "Gross_expectancy_R": -0.26503681967433207,
+          "mean_cost_R": 0.6771161080669519,
+          "MaxDD_R": 35.80181125416879,
+          "cost_break_even_multiplier": -0.3914200482262427,
+          "gross_positive_net_nonpositive": 0,
+          "status_counts": {
+            "CLOSED": 38,
+            "GAP_INVALIDATED_BEFORE_FILL": 59,
+            "UNFILLED_EXPIRED": 82
+          },
+          "geometry_all_cases": {
+            "planned_stop_bps": {
+              "n": 179,
+              "min": 1.057284056703508,
+              "p10": 16.424374815455945,
+              "median": 73.10704562698677,
+              "p90": 267.98088813139594,
+              "max": 12057.536113443999
+            },
+            "planned_target_bps": {
+              "n": 179,
+              "min": 79.82162495317051,
+              "p10": 88.09679944806781,
+              "median": 127.59878175824261,
+              "p90": 276.3240054725084,
+              "max": 545.5199579037267
+            },
+            "planned_target_R": {
+              "n": 179,
+              "min": 0.007395277921829374,
+              "p10": 0.4693535205918067,
+              "median": 2.2210402681533488,
+              "p90": 11.147278800718498,
+              "max": 104.41427119259887
+            },
+            "pre_entry_edge_cost_ratio": {
+              "n": 179,
+              "min": 5.008842255973452,
+              "p10": 5.530410611252076,
+              "median": 8.02613008091808,
+              "p90": 17.512202550750686,
+              "max": 35.051049727576356
+            }
+          },
+          "geometry_closed": {
+            "planned_stop_bps": {
+              "n": 38,
+              "min": 1.057284056703508,
+              "p10": 20.078529816179874,
+              "median": 129.5658831814903,
+              "p90": 307.26477326133534,
+              "max": 12057.536113443999
+            },
+            "planned_target_bps": {
+              "n": 38,
+              "min": 79.82162495317051,
+              "p10": 82.45702438505555,
+              "median": 112.77515107174379,
+              "p90": 187.5026136789635,
+              "max": 347.4695587905785
+            },
+            "planned_target_R": {
+              "n": 38,
+              "min": 0.007395277921829374,
+              "p10": 0.39368684044120716,
+              "median": 0.821558388846631,
+              "p90": 8.585577939292477,
+              "max": 104.41427119259887
+            },
+            "pre_entry_edge_cost_ratio": {
+              "n": 38,
+              "min": 5.008842255973452,
+              "p10": 5.174899370366137,
+              "median": 7.088416843891623,
+              "p90": 11.829981462541777,
+              "max": 22.100815454149423
+            }
+          },
+          "closed_planned_target_below_one_R": 21,
+          "closed_planned_round_trip_cost_at_FTA_above_one_R": 3,
+          "realized_cost_R": {
+            "n": 38,
+            "min": 0.0013250544749675971,
+            "p10": 0.05182051181961374,
+            "median": 0.130082785931683,
+            "p90": 0.8482709441755419,
+            "max": 15.133913848218038
+          },
+          "actual_fill_stop_bps": {
+            "n": 38,
+            "min": 1.057284056703508,
+            "p10": 19.24761365708822,
+            "median": 123.13861449411179,
+            "p90": 307.26477326133534,
+            "max": 12007.590779518338
+          },
+          "actual_fill_target_R": {
+            "n": 38,
+            "min": 0.009294964499859502,
+            "p10": 0.39368684044120716,
+            "median": 0.868635736234588,
+            "p90": 8.585577939292477,
+            "max": 104.41427119259887
+          },
+          "recorded_observation_hold_hours": {
+            "n": 38,
+            "min": 0.0,
+            "p10": 0.175,
+            "median": 2.5,
+            "p90": 15.6,
+            "max": 49.25
+          },
+          "gross_trade_R": {
+            "n": 38,
+            "min": -1.0,
+            "p10": -1.0,
+            "median": -0.6604939351802124,
+            "p90": 0.8201276043396107,
+            "max": 2.966457728303368
+          },
+          "net_trade_R": {
+            "n": 38,
+            "min": -16.133913848218036,
+            "p10": -1.8482709441755418,
+            "median": -0.7315644496983591,
+            "p90": 0.6869847796748023,
+            "max": 2.6267204432704476
+          }
+        }
+      },
+      "frozen_cost_sensitivity": {
+        "0.5": {
+          "cases": 373,
+          "orders": 373,
+          "filled": 85,
+          "CLOSED": 83,
+          "open_censored": 0,
+          "order_censored": 0,
+          "intrabar_unresolved": 2,
+          "WIN": 38,
+          "LOSS": 45,
+          "FLAT": 0,
+          "WR_percent": 45.78313253012048,
+          "Gross_R": 27.61045018010263,
+          "Fees_R": 14.607099629599144,
+          "Slippage_R": 4.869033209866382,
+          "Funding_R": null,
+          "Net_R_ex_funding": 8.134317340637109,
+          "PF_net": 1.1486443705593945,
+          "Expectancy_R": 0.09800382338116999,
+          "AvgR": 0.09800382338116999,
+          "MedianR": -0.5916135223455736,
+          "AvgWin_R": 1.6541490387433557,
+          "AvgLoss_R": -1.2160743584802312,
+          "payoff_ratio": 1.3602367546098095,
+          "breakeven_WR_percent": 42.36863094547134,
+          "MaxDD_R": 17.216987440633517,
+          "MaxDD_percent_closed_case_curve": 14.902298518560015,
+          "max_loss_streak": 5,
+          "average_hold_hours": 9.704819277108435,
+          "median_hold_hours": 3.5,
+          "equity_curve_convention": "100 initial R units; one unit price risk per independent case; sorted observable exit time then case ID. Diagnostic closed-case curve, no shared margin/portfolio claim.",
+          "net_definition": "Closed independent cases only; funding unavailable/excluded. All amounts are normalized risk units, not exchange account currency.",
+          "status_counts": {
+            "UNFILLED_EXPIRED": 177,
+            "CLOSED": 83,
+            "GAP_INVALIDATED_BEFORE_FILL": 111,
+            "WAIT_INTRABAR_ORDER": 2
+          },
+          "known_entry_fees_all_filled_R": 15.575922408927978,
+          "cost_multiplier": "0.5",
+          "trade_entry_allowed": false
+        },
+        "1": {
+          "cases": 373,
+          "orders": 373,
+          "filled": 85,
+          "CLOSED": 83,
+          "open_censored": 0,
+          "order_censored": 0,
+          "intrabar_unresolved": 2,
+          "WIN": 38,
+          "LOSS": 45,
+          "FLAT": 0,
+          "WR_percent": 45.78313253012048,
+          "Gross_R": 27.61045018010263,
+          "Fees_R": 29.21419925919829,
+          "Slippage_R": 9.738066419732764,
+          "Funding_R": null,
+          "Net_R_ex_funding": -11.341815498828415,
+          "PF_net": 0.8375520967969219,
+          "Expectancy_R": -0.1366483795039568,
+          "AvgR": -0.1366483795039568,
+          "MedianR": -0.6316756641047537,
+          "AvgWin_R": 1.538851462890601,
+          "AvgLoss_R": -1.5515149130815833,
+          "payoff_ratio": 0.991838009364776,
+          "breakeven_WR_percent": 50.20488590429668,
+          "MaxDD_R": 29.063266435212768,
+          "MaxDD_percent_closed_case_curve": 26.38837114598526,
+          "max_loss_streak": 5,
+          "average_hold_hours": 9.704819277108435,
+          "median_hold_hours": 3.5,
+          "equity_curve_convention": "100 initial R units; one unit price risk per independent case; sorted observable exit time then case ID. Diagnostic closed-case curve, no shared margin/portfolio claim.",
+          "net_definition": "Closed independent cases only; funding unavailable/excluded. All amounts are normalized risk units, not exchange account currency.",
+          "status_counts": {
+            "UNFILLED_EXPIRED": 177,
+            "CLOSED": 83,
+            "GAP_INVALIDATED_BEFORE_FILL": 111,
+            "WAIT_INTRABAR_ORDER": 2
+          },
+          "known_entry_fees_all_filled_R": 15.575922408927978,
+          "cost_multiplier": "1",
+          "trade_entry_allowed": false
+        },
+        "2": {
+          "cases": 373,
+          "orders": 373,
+          "filled": 85,
+          "CLOSED": 83,
+          "open_censored": 0,
+          "order_censored": 0,
+          "intrabar_unresolved": 2,
+          "WIN": 38,
+          "LOSS": 45,
+          "FLAT": 0,
+          "WR_percent": 45.78313253012048,
+          "Gross_R": 27.61045018010263,
+          "Fees_R": 58.42839851839658,
+          "Slippage_R": 19.476132839465528,
+          "Funding_R": null,
+          "Net_R_ex_funding": -50.29408117775947,
+          "PF_net": 0.49709852016118916,
+          "Expectancy_R": -0.6059527852742105,
+          "AvgR": -0.6059527852742105,
+          "MedianR": -0.7156608694917973,
+          "AvgWin_R": 1.3082563111850911,
+          "AvgLoss_R": -2.2223960222842876,
+          "payoff_ratio": 0.5886693001908819,
+          "breakeven_WR_percent": 62.94576220991039,
+          "MaxDD_R": 57.1555315200538,
+          "MaxDD_percent_closed_case_curve": 55.092439833987584,
+          "max_loss_streak": 5,
+          "average_hold_hours": 9.704819277108435,
+          "median_hold_hours": 3.5,
+          "equity_curve_convention": "100 initial R units; one unit price risk per independent case; sorted observable exit time then case ID. Diagnostic closed-case curve, no shared margin/portfolio claim.",
+          "net_definition": "Closed independent cases only; funding unavailable/excluded. All amounts are normalized risk units, not exchange account currency.",
+          "status_counts": {
+            "UNFILLED_EXPIRED": 177,
+            "CLOSED": 83,
+            "GAP_INVALIDATED_BEFORE_FILL": 111,
+            "WAIT_INTRABAR_ORDER": 2
+          },
+          "known_entry_fees_all_filled_R": 15.575922408927978,
+          "cost_multiplier": "2",
+          "trade_entry_allowed": false
+        }
+      },
+      "accounting_identity_errors": 0
+    },
+    "v2.2": {
+      "overall": {
+        "cases": 238,
+        "FILLED": 40,
+        "CLOSED": 39,
+        "WIN": 13,
+        "LOSS": 26,
+        "Gross_WIN": 13,
+        "Gross_LOSS": 26,
+        "WR_percent": 33.33333333333333,
+        "Gross_R": 30.007826894751865,
+        "Fees_R": 26.603316070284713,
+        "Slippage_R": 8.867772023428238,
+        "Net_R_ex_funding": -5.463261198961088,
+        "Funding_R": null,
+        "PF_net": 0.8962485230465017,
+        "PF_gross": 2.2460828345275936,
+        "Expectancy_R": -0.14008362048618175,
+        "Gross_expectancy_R": 0.7694314588397914,
+        "mean_cost_R": 0.9095150793259731,
+        "MaxDD_R": 23.649806378517834,
+        "cost_break_even_multiplier": 0.8459798812901536,
+        "gross_positive_net_nonpositive": 0,
+        "status_counts": {
+          "CLOSED": 39,
+          "GAP_INVALIDATED_BEFORE_FILL": 79,
+          "UNFILLED_EXPIRED": 119,
+          "WAIT_INTRABAR_ORDER": 1
+        },
+        "geometry_all_cases": {
+          "planned_stop_bps": {
+            "n": 238,
+            "min": 0.2337448574766355,
+            "p10": 10.032501131920972,
+            "median": 42.98515570409073,
+            "p90": 127.37054903863478,
+            "max": 282.76995749240484
+          },
+          "planned_target_bps": {
+            "n": 238,
+            "min": 80.90988357183156,
+            "p10": 90.43005630365096,
+            "median": 142.61495437184854,
+            "p90": 291.13901657109466,
+            "max": 1162.0800524353194
+          },
+          "planned_target_R": {
+            "n": 238,
+            "min": 1.0092271422912298,
+            "p10": 1.2869167460410222,
+            "median": 3.601956015819148,
+            "p90": 13.913101800408075,
+            "max": 498.7860915506772
+          },
+          "pre_entry_edge_cost_ratio": {
+            "n": 238,
+            "min": 5.036492621658036,
+            "p10": 5.642059296701333,
+            "median": 8.92949323191027,
+            "p90": 18.28363297624787,
+            "max": 68.64164873891897
+          }
+        },
+        "geometry_closed": {
+          "planned_stop_bps": {
+            "n": 39,
+            "min": 1.057284056703508,
+            "p10": 12.913968953563208,
+            "median": 47.245686590512996,
+            "p90": 128.69905381295132,
+            "max": 203.14762041491034
+          },
+          "planned_target_bps": {
+            "n": 39,
+            "min": 81.685999019768,
+            "p10": 89.68672741188489,
+            "median": 118.53990364902103,
+            "p90": 200.22237164235088,
+            "max": 264.136404590431
+          },
+          "planned_target_R": {
+            "n": 39,
+            "min": 1.0092271422912298,
+            "p10": 1.1460500307248105,
+            "median": 2.450165386163566,
+            "p90": 11.83654005351465,
+            "max": 104.41427119259887
+          },
+          "pre_entry_edge_cost_ratio": {
+            "n": 39,
+            "min": 5.126312335958005,
+            "p10": 5.580386203102013,
+            "median": 7.390725968597159,
+            "p90": 12.586542023550093,
+            "max": 16.729468368175908
+          }
+        },
+        "closed_planned_target_below_one_R": 0,
+        "closed_planned_round_trip_cost_at_FTA_above_one_R": 6,
+        "realized_cost_R": {
+          "n": 39,
+          "min": 0.07957851363645438,
+          "p10": 0.12507900958949855,
+          "median": 0.3397372850329202,
+          "p90": 1.4512138501673992,
+          "max": 15.133913848218038
+        },
+        "actual_fill_stop_bps": {
+          "n": 39,
+          "min": 1.057284056703508,
+          "p10": 11.045108653724242,
+          "median": 46.76852152031579,
+          "p90": 128.69905381295132,
+          "max": 203.14762041491034
+        },
+        "actual_fill_target_R": {
+          "n": 39,
+          "min": 1.0092271422912298,
+          "p10": 1.1460500307248105,
+          "median": 2.6128972797540078,
+          "p90": 11.83654005351465,
+          "max": 104.41427119259887
+        },
+        "recorded_observation_hold_hours": {
+          "n": 39,
+          "min": 0.0,
+          "p10": 0.2,
+          "median": 2.0,
+          "p90": 11.75,
+          "max": 49.25
+        },
+        "gross_trade_R": {
+          "n": 39,
+          "min": -1.0,
+          "p10": -1.0,
+          "median": -1.0,
+          "p90": 2.9999664003520876,
+          "max": 20.40969095110803
+        },
+        "net_trade_R": {
+          "n": 39,
+          "min": -16.133913848218036,
+          "p10": -2.0542744075872643,
+          "median": -1.213870967194931,
+          "p90": 2.6297942888179673,
+          "max": 18.08379651384657
+        }
+      },
+      "by_direction": {
+        "LONG": {
+          "cases": 115,
+          "FILLED": 23,
+          "CLOSED": 22,
+          "WIN": 10,
+          "LOSS": 12,
+          "Gross_WIN": 10,
+          "Gross_LOSS": 12,
+          "WR_percent": 45.45454545454545,
+          "Gross_R": 37.95957744023352,
+          "Fees_R": 8.55077117091141,
+          "Slippage_R": 2.85025705697047,
+          "Net_R_ex_funding": 26.558549212351636,
+          "Funding_R": null,
+          "PF_net": 2.6762802254220524,
+          "PF_gross": 4.564161120925328,
+          "Expectancy_R": 1.2072067823796198,
+          "Gross_expectancy_R": 1.7254353381924326,
+          "mean_cost_R": 0.5182285558128128,
+          "MaxDD_R": 7.246876162992715,
+          "cost_break_even_multiplier": 3.3294871902343997,
+          "gross_positive_net_nonpositive": 0,
+          "status_counts": {
+            "CLOSED": 22,
+            "GAP_INVALIDATED_BEFORE_FILL": 35,
+            "UNFILLED_EXPIRED": 57,
+            "WAIT_INTRABAR_ORDER": 1
+          },
+          "geometry_all_cases": {
+            "planned_stop_bps": {
+              "n": 115,
+              "min": 0.2337448574766355,
+              "p10": 9.169520153274833,
+              "median": 51.560684521566365,
+              "p90": 136.61558259986748,
+              "max": 282.76995749240484
+            },
+            "planned_target_bps": {
+              "n": 115,
+              "min": 80.90988357183156,
+              "p10": 91.06598375134328,
+              "median": 144.45582728310714,
+              "p90": 316.6868334791831,
+              "max": 1162.0800524353194
+            },
+            "planned_target_R": {
+              "n": 115,
+              "min": 1.0092271422912298,
+              "p10": 1.2745281438797065,
+              "median": 3.8065252150039073,
+              "p90": 16.659508663072856,
+              "max": 498.7860915506772
+            },
+            "pre_entry_edge_cost_ratio": {
+              "n": 115,
+              "min": 5.036492621658036,
+              "p10": 5.665824701461495,
+              "median": 8.963745938439551,
+              "p90": 19.48440146538612,
+              "max": 68.64164873891897
+            }
+          },
+          "geometry_closed": {
+            "planned_stop_bps": {
+              "n": 22,
+              "min": 6.927706442674056,
+              "p10": 14.050060727974435,
+              "median": 68.33425303023157,
+              "p90": 157.99818807708067,
+              "max": 203.14762041491034
+            },
+            "planned_target_bps": {
+              "n": 22,
+              "min": 86.10557514436098,
+              "p10": 98.60315669340243,
+              "median": 129.05176601950413,
+              "p90": 191.76295886548402,
+              "max": 243.52777151635067
+            },
+            "planned_target_R": {
+              "n": 22,
+              "min": 1.0092271422912298,
+              "p10": 1.065178895235777,
+              "median": 2.043835100858549,
+              "p90": 8.403831236367623,
+              "max": 20.40969095110803
+            },
+            "pre_entry_edge_cost_ratio": {
+              "n": 22,
+              "min": 5.358528487654714,
+              "p10": 6.132463273958819,
+              "median": 8.013986390952489,
+              "p90": 11.871331532270732,
+              "max": 15.037384680735238
+            }
+          },
+          "closed_planned_target_below_one_R": 0,
+          "closed_planned_round_trip_cost_at_FTA_above_one_R": 3,
+          "realized_cost_R": {
+            "n": 22,
+            "min": 0.07957851363645438,
+            "p10": 0.10104494359822214,
+            "median": 0.23385014137667454,
+            "p90": 1.3641403152748435,
+            "max": 2.3258944372614625
+          },
+          "actual_fill_stop_bps": {
+            "n": 22,
+            "min": 6.927706442674056,
+            "p10": 11.947592890655597,
+            "median": 68.33425303023157,
+            "p90": 157.99818807708067,
+            "max": 203.14762041491034
+          },
+          "actual_fill_target_R": {
+            "n": 22,
+            "min": 1.0092271422912298,
+            "p10": 1.065178895235777,
+            "median": 2.043835100858549,
+            "p90": 10.263287485121351,
+            "max": 20.40969095110803
+          },
+          "recorded_observation_hold_hours": {
+            "n": 22,
+            "min": 0.25,
+            "p10": 0.5,
+            "median": 3.5,
+            "p90": 17.875,
+            "max": 38.5
+          },
+          "gross_trade_R": {
+            "n": 22,
+            "min": -1.0,
+            "p10": -1.0,
+            "median": -0.4942363423134594,
+            "p90": 5.090300029755407,
+            "max": 20.40969095110803
+          },
+          "net_trade_R": {
+            "n": 22,
+            "min": -2.4162341199399022,
+            "p10": -1.731878594720955,
+            "median": -0.6423912081560449,
+            "p90": 4.337810758777658,
+            "max": 18.08379651384657
+          }
+        },
+        "SHORT": {
+          "cases": 123,
+          "FILLED": 17,
+          "CLOSED": 17,
+          "WIN": 3,
+          "LOSS": 14,
+          "Gross_WIN": 3,
+          "Gross_LOSS": 14,
+          "WR_percent": 17.647058823529413,
+          "Gross_R": -7.951750545481652,
+          "Fees_R": 18.052544899373302,
+          "Slippage_R": 6.017514966457767,
+          "Net_R_ex_funding": -32.02181041131272,
+          "Funding_R": null,
+          "PF_net": 0.13016000103910377,
+          "PF_gross": 0.40797188867567663,
+          "Expectancy_R": -1.8836359065478072,
+          "Gross_expectancy_R": -0.46775003208715604,
+          "mean_cost_R": 1.4158858744606513,
+          "MaxDD_R": 32.02181041131272,
+          "cost_break_even_multiplier": -0.33035856951771236,
+          "gross_positive_net_nonpositive": 0,
+          "status_counts": {
+            "CLOSED": 17,
+            "GAP_INVALIDATED_BEFORE_FILL": 44,
+            "UNFILLED_EXPIRED": 62
+          },
+          "geometry_all_cases": {
+            "planned_stop_bps": {
+              "n": 123,
+              "min": 1.057284056703508,
+              "p10": 10.925936836372783,
+              "median": 39.68789488944115,
+              "p90": 112.50634751454967,
+              "max": 211.7581343387795
+            },
+            "planned_target_bps": {
+              "n": 123,
+              "min": 81.66171611166975,
+              "p10": 90.0342624924452,
+              "median": 138.62893336508438,
+              "p90": 279.2365917292759,
+              "max": 545.5199579037267
+            },
+            "planned_target_R": {
+              "n": 123,
+              "min": 1.0647346984740704,
+              "p10": 1.311553846289768,
+              "median": 3.5235399533769103,
+              "p90": 12.853040048417618,
+              "max": 104.41427119259887
+            },
+            "pre_entry_edge_cost_ratio": {
+              "n": 123,
+              "min": 5.124782182364881,
+              "p10": 5.652587931359573,
+              "median": 8.724783708283796,
+              "p90": 17.699408292202694,
+              "max": 35.051049727576356
+            }
+          },
+          "geometry_closed": {
+            "planned_stop_bps": {
+              "n": 17,
+              "min": 1.057284056703508,
+              "p10": 12.618125069816157,
+              "median": 34.36453547349602,
+              "p90": 87.79892004358956,
+              "max": 104.52625599013489
+            },
+            "planned_target_bps": {
+              "n": 17,
+              "min": 81.685999019768,
+              "p10": 82.89205583308492,
+              "median": 117.23247431000162,
+              "p90": 214.8424331347161,
+              "max": 264.136404590431
+            },
+            "planned_target_R": {
+              "n": 17,
+              "min": 1.1246605149055795,
+              "p10": 1.3169677193489029,
+              "median": 3.00278222777538,
+              "p90": 15.54580785934806,
+              "max": 104.41427119259887
+            },
+            "pre_entry_edge_cost_ratio": {
+              "n": 17,
+              "min": 5.126312335958005,
+              "p10": 5.202315366931824,
+              "median": 7.370231166167426,
+              "p90": 13.574778176230563,
+              "max": 16.729468368175908
+            }
+          },
+          "closed_planned_target_below_one_R": 0,
+          "closed_planned_round_trip_cost_at_FTA_above_one_R": 3,
+          "realized_cost_R": {
+            "n": 17,
+            "min": 0.15217185966361196,
+            "p10": 0.18591204215196455,
+            "median": 0.4663962834806877,
+            "p90": 1.3071829676203488,
+            "max": 15.133913848218038
+          },
+          "actual_fill_stop_bps": {
+            "n": 17,
+            "min": 1.057284056703508,
+            "p10": 12.618125069816157,
+            "median": 34.36453547349602,
+            "p90": 86.26082173329026,
+            "max": 104.52625599013489
+          },
+          "actual_fill_target_R": {
+            "n": 17,
+            "min": 1.1246605149055795,
+            "p10": 1.3169677193489029,
+            "median": 3.00278222777538,
+            "p90": 15.54580785934806,
+            "max": 104.41427119259887
+          },
+          "recorded_observation_hold_hours": {
+            "n": 17,
+            "min": 0.0,
+            "p10": 0.0,
+            "median": 0.25,
+            "p90": 6.3,
+            "max": 49.25
+          },
+          "gross_trade_R": {
+            "n": 17,
+            "min": -1.0,
+            "p10": -1.0,
+            "median": -1.0,
+            "p90": 1.230198098731799,
+            "max": 2.966457728303368
+          },
+          "net_trade_R": {
+            "n": 17,
+            "min": -16.133913848218036,
+            "p10": -2.307182967620349,
+            "median": -1.4663962834806876,
+            "p90": 1.06046497606591,
+            "max": 2.6267204432704476
+          }
+        }
+      },
+      "frozen_cost_sensitivity": {
+        "0.5": {
+          "cases": 238,
+          "orders": 238,
+          "filled": 40,
+          "CLOSED": 39,
+          "open_censored": 0,
+          "order_censored": 0,
+          "intrabar_unresolved": 1,
+          "WIN": 13,
+          "LOSS": 26,
+          "FLAT": 0,
+          "WR_percent": 33.33333333333333,
+          "Gross_R": 30.00782689475186,
+          "Fees_R": 13.301658035142356,
+          "Slippage_R": 4.433886011714119,
+          "Funding_R": null,
+          "Net_R_ex_funding": 12.272282847895388,
+          "PF_net": 1.3198450890408668,
+          "Expectancy_R": 0.3146739191768048,
+          "AvgR": 0.3146739191768048,
+          "MedianR": -1.1069354835974656,
+          "AvgWin_R": 3.8955185598145863,
+          "AvgLoss_R": -1.4757484011420858,
+          "payoff_ratio": 2.6396901780817337,
+          "breakeven_WR_percent": 27.47486602079524,
+          "MaxDD_R": 12.690565990139376,
+          "MaxDD_percent_closed_case_curve": 10.922024892929146,
+          "max_loss_streak": 7,
+          "average_hold_hours": 5.666666666666667,
+          "median_hold_hours": 2.0,
+          "equity_curve_convention": "100 initial R units; one unit price risk per independent case; sorted observable exit time then case ID. Diagnostic closed-case curve, no shared margin/portfolio claim.",
+          "net_definition": "Closed independent cases only; funding unavailable/excluded. All amounts are normalized risk units, not exchange account currency.",
+          "status_counts": {
+            "UNFILLED_EXPIRED": 119,
+            "CLOSED": 39,
+            "GAP_INVALIDATED_BEFORE_FILL": 79,
+            "WAIT_INTRABAR_ORDER": 1
+          },
+          "known_entry_fees_all_filled_R": 14.253985433801796,
+          "cost_multiplier": "0.5",
+          "trade_entry_allowed": false
+        },
+        "1": {
+          "cases": 238,
+          "orders": 238,
+          "filled": 40,
+          "CLOSED": 39,
+          "open_censored": 0,
+          "order_censored": 0,
+          "intrabar_unresolved": 1,
+          "WIN": 13,
+          "LOSS": 26,
+          "FLAT": 0,
+          "WR_percent": 33.33333333333333,
+          "Gross_R": 30.00782689475186,
+          "Fees_R": 26.603316070284713,
+          "Slippage_R": 8.867772023428238,
+          "Funding_R": null,
+          "Net_R_ex_funding": -5.463261198961086,
+          "PF_net": 0.8962485230465018,
+          "Expectancy_R": -0.1400836204861817,
+          "AvgR": -0.1400836204861817,
+          "MedianR": -1.213870967194931,
+          "AvgWin_R": 3.6303021889515517,
+          "AvgLoss_R": -2.025276525205048,
+          "payoff_ratio": 1.7924970460930036,
+          "breakeven_WR_percent": 35.81024378876622,
+          "MaxDD_R": 23.64980637851785,
+          "MaxDD_percent_closed_case_curve": 21.194854910466532,
+          "max_loss_streak": 7,
+          "average_hold_hours": 5.666666666666667,
+          "median_hold_hours": 2.0,
+          "equity_curve_convention": "100 initial R units; one unit price risk per independent case; sorted observable exit time then case ID. Diagnostic closed-case curve, no shared margin/portfolio claim.",
+          "net_definition": "Closed independent cases only; funding unavailable/excluded. All amounts are normalized risk units, not exchange account currency.",
+          "status_counts": {
+            "UNFILLED_EXPIRED": 119,
+            "CLOSED": 39,
+            "GAP_INVALIDATED_BEFORE_FILL": 79,
+            "WAIT_INTRABAR_ORDER": 1
+          },
+          "known_entry_fees_all_filled_R": 14.253985433801796,
+          "cost_multiplier": "1",
+          "trade_entry_allowed": false
+        },
+        "2": {
+          "cases": 238,
+          "orders": 238,
+          "filled": 40,
+          "CLOSED": 39,
+          "open_censored": 0,
+          "order_censored": 0,
+          "intrabar_unresolved": 1,
+          "WIN": 13,
+          "LOSS": 26,
+          "FLAT": 0,
+          "WR_percent": 33.33333333333333,
+          "Gross_R": 30.00782689475186,
+          "Fees_R": 53.206632140569425,
+          "Slippage_R": 17.735544046856475,
+          "Funding_R": null,
+          "Net_R_ex_funding": -40.93434929267404,
+          "PF_net": 0.49608503192836756,
+          "Expectancy_R": -1.049598699812155,
+          "AvgR": -1.049598699812155,
+          "MedianR": -1.427741934389862,
+          "AvgWin_R": 3.0998694472254824,
+          "AvgLoss_R": -3.1243327733309734,
+          "payoff_ratio": 0.9921700638567352,
+          "breakeven_WR_percent": 50.196517764354574,
+          "MaxDD_R": 47.21710950624547,
+          "MaxDD_percent_closed_case_curve": 45.512756078472094,
+          "max_loss_streak": 7,
+          "average_hold_hours": 5.666666666666667,
+          "median_hold_hours": 2.0,
+          "equity_curve_convention": "100 initial R units; one unit price risk per independent case; sorted observable exit time then case ID. Diagnostic closed-case curve, no shared margin/portfolio claim.",
+          "net_definition": "Closed independent cases only; funding unavailable/excluded. All amounts are normalized risk units, not exchange account currency.",
+          "status_counts": {
+            "UNFILLED_EXPIRED": 119,
+            "CLOSED": 39,
+            "GAP_INVALIDATED_BEFORE_FILL": 79,
+            "WAIT_INTRABAR_ORDER": 1
+          },
+          "known_entry_fees_all_filled_R": 14.253985433801796,
+          "cost_multiplier": "2",
+          "trade_entry_allowed": false
+        }
+      },
+      "accounting_identity_errors": 0
+    }
+  },
+  "funding": "UNAVAILABLE_EXCLUDED_NOT_ASSERTED_ZERO",
+  "currency_PnL": null,
+  "cost_break_even_multiplier": "Gross/(Fees+Slippage), arithmetic diagnosis only; not an executable fee assumption.",
+  "causal_attribution_limit": "Gross realized returns jointly depend on signals, fills, stops and targets. These mechanisms cannot be uniquely apportioned without a preregistered independent counterfactual."
+}

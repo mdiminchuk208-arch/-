@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "reviewer": "backtest_reviewer",
+  "agent": "/root/backtest_reviewer",
+  "transport": "cloud collaboration",
+  "exact_final_review_text": "PASS — independent read-only review of the final audit code and regenerated outputs. All requested corrections are present. I independently verified 498 reported groups with zero mismatches and rehashed all 14 frozen machine manifests, artifacts, and parents with zero issues. The retained role reports exist; current QA records show 963 tests, lint, type checks, compile, and Original resume passing. I found no blocker to sealing, subject to the seal’s deterministic replay and hash guards.\n\nThe audit remains a retrospective diagnosis. Intrabar timing, exchange execution, funding, and independent OOS performance remain unresolved; no production or trading claim follows.",
+  "code_sha256": {
+    "scripts/audit_machine_strategy_failure_v1.py": "11ca32033f0d1d06cba4391ecff062b19dad293a00b239c3676e090bf34ab5d6",
+    "tests/test_machine_strategy_failure_audit.py": "f639923ed7236a214f1a42cd30cd3ae8d9c20af5828ccf41f84ac885162e7e26",
+    "tests/test_machine_strategy_failure_symmetry.py": "6a6096721e00745a5ad2d256e493d9aef094a04ef1c7dff9877e86489d55d571"
+  },
+  "generated_sha256": {
+    "FAILURE_AUDIT_REPORT.md": "bf090d8ccb9e9668dfe1e81b1c3d8cda6c04bf9fe32627b5f37592dbf55c5748",
+    "FAILURE_AUDIT.json": "5a573c65e5e2e6a9ecf23d170bab158cdfe1d09c8b6af994e744c7cc3222cf2e",
+    "LONG_SHORT_ASYMMETRY.json": "9919e18c12c05a9c6c1cbad0b2f37470743bb884bd9662495d8675c224bb5688",
+    "GROSS_VS_NET_COST_ATTRIBUTION.json": "a158c95deef439c7232c4d66a5ebeb7a0c50ab8c14f206ce1ff8ecba8f6153de",
+    "EXIT_REASON_BREAKDOWN.json": "81743f736ec109da9c1433f19e0489b592172e7c5b41359dcd6d605d018ca967",
+    "IMPLEMENTATION_SYMMETRY_QA.json": "e4f4d97320b155cf4a30c042f5947eba3c54d13d8b27f15401e55797761b5cca",
+    "EXTREME_R_AUDIT.json": "24e5baea605e262fcc3e1aa11b3482947f9c82b909232f2ffba37910f79ace42",
+    "CAUSALITY_QA.json": "ea97ec9599dd8f45677f870e8b2be0cc5312d2e5cd54404979bef2b712f97b03",
+    "FROZEN_INPUT_VERIFICATION.json": "3e9397e8000dd9d9909d02be31dd72406a9d28348d3b2e467690901c3e1bb4ba",
+    "CASE_DIAGNOSTICS.csv": "37501894210673c235ceef300506cb420ccca65c99027593905ff063ec6fa6f0"
+  },
+  "groups_independently_verified": 498,
+  "group_mismatches": 0,
+  "machine_namespaces_independently_verified": 14,
+  "QA_tests": 963,
+  "production_claim": false,
+  "trade_entry_allowed": false
+}

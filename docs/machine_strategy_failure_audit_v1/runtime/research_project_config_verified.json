@@ -1,0 +1,285 @@
+[
+  {
+    "method": "config/read",
+    "cwd": "/workspace/-",
+    "result": {
+      "config": {
+        "projects": {
+          "/workspace/-": {
+            "trust_level": "trusted"
+          },
+          "/workspace": {
+            "trust_level": "trusted"
+          }
+        },
+        "agents": {
+          "enabled": null,
+          "max_concurrent_threads_per_session": 6,
+          "max_depth": 1,
+          "default_subagent_model": null,
+          "default_subagent_reasoning_effort": null,
+          "job_max_runtime_seconds": null,
+          "interrupt_message": null,
+          "backtest_reviewer": {
+            "description": "Independent reviewer for no-lookahead, leakage, reproducibility, overfit, and metric correctness.",
+            "config_file": "/workspace/-/.codex/agents/backtest-reviewer.toml",
+            "nickname_candidates": null
+          },
+          "execution_auditor": {
+            "description": "Execution and accounting auditor for LONG/SHORT symmetry, fees, slippage, fills, stops, targets, and metadata assumptions.",
+            "config_file": "/workspace/-/.codex/agents/execution-auditor.toml",
+            "nickname_candidates": null
+          },
+          "strategy_designer": {
+            "description": "Pre-outcome machine strategy designer. Proposes causally justified rules only after audit evidence is frozen.",
+            "config_file": "/workspace/-/.codex/agents/strategy-designer.toml",
+            "nickname_candidates": null
+          },
+          "strategy_explorer": {
+            "description": "Read-only strategy diagnostics explorer for frozen backtest and robustness artifacts.",
+            "config_file": "/workspace/-/.codex/agents/strategy-explorer.toml",
+            "nickname_candidates": null
+          }
+        },
+        "features": {
+          "network_proxy": null,
+          "multi_agent": true,
+          "plugins": true,
+          "api_key_model_discovery": false,
+          "auth_elicitation": true,
+          "background_paginated_rollout_migration": false,
+          "codex_apps_mcp_2026_07_28": false,
+          "mcp_2026_07_28": false,
+          "memories": false,
+          "mentions_v2": true,
+          "remote_control": false,
+          "remote_plugin": true,
+          "tool_suggest": true,
+          "windows_sandbox_service": false
+        },
+        "hooks": null,
+        "plugins": {
+          "ecc@ecc": {
+            "enabled": true
+          },
+          "unified-computer-use@openai-bundled": {
+            "enabled": true
+          }
+        }
+      },
+      "layers": [
+        {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "disabledReason": null,
+          "version": "sha256:846fc3eadd563ee98187c3e7db4b22fd809efaf17a12791ef6cdf1d1757a4237",
+          "config": {
+            "features": {
+              "multi_agent": true
+            },
+            "agents": {
+              "max_threads": 6,
+              "max_depth": 1,
+              "strategy_explorer": {
+                "description": "Read-only strategy diagnostics explorer for frozen backtest and robustness artifacts.",
+                "config_file": "/workspace/-/.codex/agents/strategy-explorer.toml"
+              },
+              "strategy_designer": {
+                "description": "Pre-outcome machine strategy designer. Proposes causally justified rules only after audit evidence is frozen.",
+                "config_file": "/workspace/-/.codex/agents/strategy-designer.toml"
+              },
+              "backtest_reviewer": {
+                "description": "Independent reviewer for no-lookahead, leakage, reproducibility, overfit, and metric correctness.",
+                "config_file": "/workspace/-/.codex/agents/backtest-reviewer.toml"
+              },
+              "execution_auditor": {
+                "description": "Execution and accounting auditor for LONG/SHORT symmetry, fees, slippage, fills, stops, targets, and metadata assumptions.",
+                "config_file": "/workspace/-/.codex/agents/execution-auditor.toml"
+              }
+            }
+          }
+        },
+        {
+          "name": {
+            "type": "user",
+            "file": "/workspace/ecc-setup/codex-home/config.toml",
+            "profile": null
+          },
+          "disabledReason": null,
+          "version": "sha256:c4c30631654b7de3c8b1044cb532213c33b029b39e361197ff24bc9cc8b5a7a8",
+          "config": {
+            "features": {
+              "plugins": true,
+              "multi_agent": true
+            },
+            "plugins": {
+              "ecc@ecc": {
+                "enabled": true
+              }
+            },
+            "projects": {
+              "/workspace": {
+                "trust_level": "trusted"
+              },
+              "/workspace/-": {
+                "trust_level": "trusted"
+              }
+            }
+          }
+        },
+        {
+          "name": {
+            "type": "system",
+            "file": "/etc/codex/config.toml"
+          },
+          "disabledReason": null,
+          "version": "sha256:fc917ea045b48d350a364e5a62753f14fe7d2db19bf20830813aed8db1a72d1c",
+          "config": {
+            "plugins": {
+              "unified-computer-use@openai-bundled": {
+                "enabled": true
+              }
+            }
+          }
+        }
+      ],
+      "origins": {
+        "agents.execution_auditor.description": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:846fc3eadd563ee98187c3e7db4b22fd809efaf17a12791ef6cdf1d1757a4237"
+        },
+        "agents.backtest_reviewer.description": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:846fc3eadd563ee98187c3e7db4b22fd809efaf17a12791ef6cdf1d1757a4237"
+        },
+        "projects./workspace/-.trust_level": {
+          "name": {
+            "type": "user",
+            "file": "/workspace/ecc-setup/codex-home/config.toml",
+            "profile": null
+          },
+          "version": "sha256:c4c30631654b7de3c8b1044cb532213c33b029b39e361197ff24bc9cc8b5a7a8"
+        },
+        "agents.strategy_explorer.description": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:846fc3eadd563ee98187c3e7db4b22fd809efaf17a12791ef6cdf1d1757a4237"
+        },
+        "agents.strategy_designer.config_file": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:846fc3eadd563ee98187c3e7db4b22fd809efaf17a12791ef6cdf1d1757a4237"
+        },
+        "agents.max_depth": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:846fc3eadd563ee98187c3e7db4b22fd809efaf17a12791ef6cdf1d1757a4237"
+        },
+        "features.multi_agent": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:846fc3eadd563ee98187c3e7db4b22fd809efaf17a12791ef6cdf1d1757a4237"
+        },
+        "projects./workspace.trust_level": {
+          "name": {
+            "type": "user",
+            "file": "/workspace/ecc-setup/codex-home/config.toml",
+            "profile": null
+          },
+          "version": "sha256:c4c30631654b7de3c8b1044cb532213c33b029b39e361197ff24bc9cc8b5a7a8"
+        },
+        "agents.strategy_designer.description": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:846fc3eadd563ee98187c3e7db4b22fd809efaf17a12791ef6cdf1d1757a4237"
+        },
+        "agents.strategy_explorer.config_file": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:846fc3eadd563ee98187c3e7db4b22fd809efaf17a12791ef6cdf1d1757a4237"
+        },
+        "agents.backtest_reviewer.config_file": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:846fc3eadd563ee98187c3e7db4b22fd809efaf17a12791ef6cdf1d1757a4237"
+        },
+        "agents.execution_auditor.config_file": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:846fc3eadd563ee98187c3e7db4b22fd809efaf17a12791ef6cdf1d1757a4237"
+        },
+        "plugins.ecc@ecc.enabled": {
+          "name": {
+            "type": "user",
+            "file": "/workspace/ecc-setup/codex-home/config.toml",
+            "profile": null
+          },
+          "version": "sha256:c4c30631654b7de3c8b1044cb532213c33b029b39e361197ff24bc9cc8b5a7a8"
+        },
+        "features.plugins": {
+          "name": {
+            "type": "user",
+            "file": "/workspace/ecc-setup/codex-home/config.toml",
+            "profile": null
+          },
+          "version": "sha256:c4c30631654b7de3c8b1044cb532213c33b029b39e361197ff24bc9cc8b5a7a8"
+        },
+        "agents.max_concurrent_threads_per_session": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:846fc3eadd563ee98187c3e7db4b22fd809efaf17a12791ef6cdf1d1757a4237"
+        },
+        "plugins.unified-computer-use@openai-bundled.enabled": {
+          "name": {
+            "type": "system",
+            "file": "/etc/codex/config.toml"
+          },
+          "version": "sha256:fc917ea045b48d350a364e5a62753f14fe7d2db19bf20830813aed8db1a72d1c"
+        }
+      }
+    }
+  },
+  {
+    "method": "skills/list",
+    "cwd": "/workspace/-",
+    "ecc_skills": 348,
+    "enabled_ecc_skills": 348,
+    "errors": [],
+    "crypto_research_skills": [
+      {
+        "name": "crypto-strategy-research",
+        "description": "Audit frozen Crypto Bot strategies, preserve causal evidence, and separate diagnosis from pre-outcome strategy design and validation.",
+        "path": "/workspace/-/.agents/skills/crypto-strategy-research/SKILL.md",
+        "scope": "repo",
+        "enabled": true,
+        "pluginId": null
+      }
+    ]
+  }
+]

@@ -1,3 +1,8 @@
+---
+name: crypto-strategy-research
+description: Audit frozen Crypto Bot strategies, preserve causal evidence, and separate diagnosis from pre-outcome strategy design and validation.
+---
+
 # Crypto Strategy Research Skill
 
 Use this skill for all Machine Strategy research in Crypto Bot.

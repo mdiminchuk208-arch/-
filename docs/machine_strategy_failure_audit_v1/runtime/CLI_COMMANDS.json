@@ -1,0 +1,22 @@
+[
+  {
+    "command": [
+      "/workspace/ecc-setup/codex-ecc",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "codex-cli 0.159.0-alpha.3\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/workspace/ecc-setup/codex-ecc",
+      "plugin",
+      "list",
+      "--json"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"installed\": [\n    {\n      \"pluginId\": \"ecc@ecc\",\n      \"name\": \"ecc\",\n      \"marketplaceName\": \"ecc\",\n      \"version\": \"2.2.3\",\n      \"installed\": true,\n      \"enabled\": true,\n      \"source\": {\n        \"source\": \"local\",\n        \"path\": \"/workspace/ecc-setup/codex-home/.tmp/marketplaces/ecc\"\n      },\n      \"marketplaceSource\": {\n        \"sourceType\": \"git\",\n        \"source\": \"https://github.com/affaan-m/ECC.git\"\n      },\n      \"installPolicy\": \"AVAILABLE\",\n      \"authPolicy\": \"ON_INSTALL\"\n    }\n  ],\n  \"available\": []\n}\n",
+    "stderr": ""
+  }
+]

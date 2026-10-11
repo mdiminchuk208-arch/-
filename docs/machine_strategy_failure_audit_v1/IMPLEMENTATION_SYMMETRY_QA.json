@@ -1,0 +1,66 @@
+{
+  "diagnostic_only": true,
+  "trade_entry_allowed": false,
+  "PAPER_enabled": false,
+  "LIVE_enabled": false,
+  "versions": {
+    "v2": {
+      "closed_records_checked": 223,
+      "accounting_identity_errors": 0,
+      "same_bar_wick_fill_stop_timing_issue_ids": [
+        "b5da080487fa83f92f021f08600e6afb66dfbf7be2ae02c49e825273ceefb50c",
+        "fabecf547c2ccd74bf69b85eb93ad39fb1e97ca2ffe10b720bc7fe1d05e0771a",
+        "9cdfc8e674a03263d4f32bc75697a3a182889b343045033cca5f8d3a8fb12c25",
+        "82947a4dc7f77cf501abd1697bef3fa2845efc1edb8875e04995e9cbda4424a7",
+        "ede81fd2453984e72a532c1e1b4f0a3385d426073829b6d222ecbe518e16a5d3",
+        "d5fd4904577f9a79086811bab83dbcfcc8d34b83bfde14a1b9fc3d91407f7889"
+      ],
+      "same_bar_timing_count": 6,
+      "unresolved_by_direction": {
+        "LONG": 5,
+        "SHORT": 0
+      }
+    },
+    "v2.1": {
+      "closed_records_checked": 83,
+      "accounting_identity_errors": 0,
+      "same_bar_wick_fill_stop_timing_issue_ids": [
+        "fabecf547c2ccd74bf69b85eb93ad39fb1e97ca2ffe10b720bc7fe1d05e0771a",
+        "9cdfc8e674a03263d4f32bc75697a3a182889b343045033cca5f8d3a8fb12c25",
+        "ede81fd2453984e72a532c1e1b4f0a3385d426073829b6d222ecbe518e16a5d3",
+        "d5fd4904577f9a79086811bab83dbcfcc8d34b83bfde14a1b9fc3d91407f7889"
+      ],
+      "same_bar_timing_count": 4,
+      "unresolved_by_direction": {
+        "LONG": 2,
+        "SHORT": 0
+      }
+    },
+    "v2.2": {
+      "closed_records_checked": 39,
+      "accounting_identity_errors": 0,
+      "same_bar_wick_fill_stop_timing_issue_ids": [
+        "fabecf547c2ccd74bf69b85eb93ad39fb1e97ca2ffe10b720bc7fe1d05e0771a",
+        "9cdfc8e674a03263d4f32bc75697a3a182889b343045033cca5f8d3a8fb12c25",
+        "ede81fd2453984e72a532c1e1b4f0a3385d426073829b6d222ecbe518e16a5d3",
+        "d5fd4904577f9a79086811bab83dbcfcc8d34b83bfde14a1b9fc3d91407f7889"
+      ],
+      "same_bar_timing_count": 4,
+      "unresolved_by_direction": {
+        "LONG": 1,
+        "SHORT": 0
+      }
+    }
+  },
+  "arithmetic_verdict": "PASS_NO_SIGN_OR_COST_IDENTITY_ERROR_FOUND",
+  "timing_evidence_verdict": "KNOWN_BOUNDS_OVERPRECISION",
+  "frozen_execution_changed": false,
+  "references": {
+    "planning": "scripts/machine_strategy_v2_core.py:402-475",
+    "execution": "scripts/machine_strategy_v2_execution.py:26-156",
+    "new_tests": "tests/test_machine_strategy_failure_symmetry.py"
+  },
+  "synthetic_QA_contract": "Affine price reflection compares event/gross symmetry; expected bps cost differences are explicit. Positive price scaling preserves all normalized amounts. Relative epsilon is not affine-reflection invariant.",
+  "timing_issue": "Wick fill + same-bar stop uses fill_at=exit_at=bar.end and point exit_time_bounds; OHLC only proves intrabar order/interval. Recorded hold_hours=0 is observation timing, not exact elapsed duration. Frozen P&L remains unchanged.",
+  "proof_limit": "Static predicates, saved arithmetic and bounded synthetic tests cannot prove every real-market path or exchange execution equivalence."
+}

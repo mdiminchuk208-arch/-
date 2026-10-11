@@ -1,0 +1,493 @@
+{
+  "diagnostic_only": true,
+  "trade_entry_allowed": false,
+  "PAPER_enabled": false,
+  "LIVE_enabled": false,
+  "versions": {
+    "v2": {
+      "metrics": {
+        "cases": 761,
+        "FILLED": 228,
+        "CLOSED": 223,
+        "WIN": 118,
+        "LOSS": 105,
+        "Gross_WIN": 122,
+        "Gross_LOSS": 101,
+        "WR_percent": 52.91479820627802,
+        "Gross_R": 50.992033515862616,
+        "Fees_R": 74.2363605392651,
+        "Slippage_R": 24.74545351308837,
+        "Net_R_ex_funding": -47.98978053649087,
+        "Funding_R": null,
+        "PF_net": 0.6829382381754818,
+        "PF_gross": 1.609524149746485,
+        "Expectancy_R": -0.21520080958067653,
+        "Gross_expectancy_R": 0.2286638274253929,
+        "mean_cost_R": 0.44386463700606943,
+        "MaxDD_R": 78.95457438204306,
+        "cost_break_even_multiplier": 0.5151656797165982,
+        "gross_positive_net_nonpositive": 4,
+        "status_counts": {
+          "CLOSED": 223,
+          "GAP_INVALIDATED_BEFORE_FILL": 280,
+          "UNFILLED_EXPIRED": 253,
+          "WAIT_INTRABAR_ORDER": 5
+        },
+        "geometry_all_cases": {
+          "planned_stop_bps": {
+            "n": 761,
+            "min": 0.0389588700229073,
+            "p10": 12.310486544767006,
+            "median": 94.99281776856726,
+            "p90": 325.7894042627722,
+            "max": 12057.536113443999
+          },
+          "planned_target_bps": {
+            "n": 761,
+            "min": 0.8299243039874404,
+            "p10": 23.24785057378193,
+            "median": 78.85776232592791,
+            "p90": 212.98892570878297,
+            "max": 1162.0800524353194
+          },
+          "planned_target_R": {
+            "n": 761,
+            "min": 0.0025241894131755637,
+            "p10": 0.1499097159120114,
+            "median": 0.8179814275790803,
+            "p90": 7.860082520740873,
+            "max": 1368.475770474881
+          },
+          "pre_entry_edge_cost_ratio": {
+            "n": 761,
+            "min": 0.05186811666868376,
+            "p10": 1.4513036763111673,
+            "median": 4.909253508053703,
+            "p90": 13.25213944849772,
+            "max": 68.64164873891897
+          }
+        },
+        "geometry_closed": {
+          "planned_stop_bps": {
+            "n": 223,
+            "min": 1.057284056703508,
+            "p10": 23.95715850932868,
+            "median": 120.09734274070583,
+            "p90": 314.95451770293295,
+            "max": 12057.536113443999
+          },
+          "planned_target_bps": {
+            "n": 223,
+            "min": 1.5233863237406868,
+            "p10": 19.469031671845116,
+            "median": 64.85995024198473,
+            "p90": 144.41380705104922,
+            "max": 347.4695587905785
+          },
+          "planned_target_R": {
+            "n": 223,
+            "min": 0.007395277921829374,
+            "p10": 0.14013094855795405,
+            "median": 0.4812064533222579,
+            "p90": 3.6734047089409514,
+            "max": 104.41427119259887
+          },
+          "pre_entry_edge_cost_ratio": {
+            "n": 223,
+            "min": 0.09521889799214107,
+            "p10": 1.2156308582709903,
+            "median": 4.0406430946209095,
+            "p90": 9.02519921597749,
+            "max": 22.100815454149423
+          }
+        },
+        "closed_planned_target_below_one_R": 167,
+        "closed_planned_round_trip_cost_at_FTA_above_one_R": 14,
+        "realized_cost_R": {
+          "n": 223,
+          "min": 0.0013250544749675971,
+          "p10": 0.05086625425386652,
+          "median": 0.1378109865400485,
+          "p90": 0.7496168805308369,
+          "max": 15.133913848218038
+        },
+        "actual_fill_stop_bps": {
+          "n": 223,
+          "min": 1.057284056703508,
+          "p10": 21.358499145953537,
+          "median": 116.7789562286173,
+          "p90": 314.95451770293295,
+          "max": 12007.590779518338
+        },
+        "actual_fill_target_R": {
+          "n": 223,
+          "min": 0.009294964499859502,
+          "p10": 0.18598573302048,
+          "median": 0.5544333404210079,
+          "p90": 4.112213156326899,
+          "max": 104.41427119259887
+        },
+        "recorded_observation_hold_hours": {
+          "n": 223,
+          "min": 0.0,
+          "p10": 0.25,
+          "median": 2.75,
+          "p90": 11.75,
+          "max": 162.25
+        },
+        "gross_trade_R": {
+          "n": 223,
+          "min": -1.0,
+          "p10": -1.0,
+          "median": 0.11483388587148198,
+          "p90": 0.8237045656071613,
+          "max": 33.361584201605986
+        },
+        "net_trade_R": {
+          "n": 223,
+          "min": -16.133913848218036,
+          "p10": -1.5837503810662288,
+          "median": 0.036539827706252775,
+          "p90": 0.6834896388219286,
+          "max": 23.49186404228313
+        }
+      },
+      "unique_cases": 761,
+      "nested_development_history": true,
+      "robustness_verdict": "FAIL"
+    },
+    "v2.1": {
+      "metrics": {
+        "cases": 373,
+        "FILLED": 85,
+        "CLOSED": 83,
+        "WIN": 38,
+        "LOSS": 45,
+        "Gross_WIN": 38,
+        "Gross_LOSS": 45,
+        "WR_percent": 45.78313253012048,
+        "Gross_R": 27.610450180102635,
+        "Fees_R": 29.21419925919829,
+        "Slippage_R": 9.738066419732764,
+        "Net_R_ex_funding": -11.341815498828417,
+        "Funding_R": null,
+        "PF_net": 0.8375520967969219,
+        "PF_gross": 1.6967317821043184,
+        "Expectancy_R": -0.13664837950395683,
+        "Gross_expectancy_R": 0.3326560262662968,
+        "mean_cost_R": 0.4693044057702537,
+        "MaxDD_R": 29.06326643521276,
+        "cost_break_even_multiplier": 0.7088278357845791,
+        "gross_positive_net_nonpositive": 0,
+        "status_counts": {
+          "CLOSED": 83,
+          "GAP_INVALIDATED_BEFORE_FILL": 111,
+          "UNFILLED_EXPIRED": 177,
+          "WAIT_INTRABAR_ORDER": 2
+        },
+        "geometry_all_cases": {
+          "planned_stop_bps": {
+            "n": 373,
+            "min": 0.2337448574766355,
+            "p10": 14.323169698745877,
+            "median": 90.38778983633163,
+            "p90": 349.74526597362797,
+            "max": 12057.536113443999
+          },
+          "planned_target_bps": {
+            "n": 373,
+            "min": 79.82162495317051,
+            "p10": 89.1079296827882,
+            "median": 133.66876460821126,
+            "p90": 276.6028559658918,
+            "max": 1162.0800524353194
+          },
+          "planned_target_R": {
+            "n": 373,
+            "min": 0.007395277921829374,
+            "p10": 0.4147701324052078,
+            "median": 1.6688263900357028,
+            "p90": 10.031041310615967,
+            "max": 498.7860915506772
+          },
+          "pre_entry_edge_cost_ratio": {
+            "n": 373,
+            "min": 5.008842255973452,
+            "p10": 5.573771360849508,
+            "median": 8.36439834217046,
+            "p90": 17.5301227092543,
+            "max": 68.64164873891897
+          }
+        },
+        "geometry_closed": {
+          "planned_stop_bps": {
+            "n": 83,
+            "min": 1.057284056703508,
+            "p10": 21.490085023091982,
+            "median": 130.3219274465281,
+            "p90": 343.7761377979103,
+            "max": 12057.536113443999
+          },
+          "planned_target_bps": {
+            "n": 83,
+            "min": 79.82162495317051,
+            "p10": 82.62127162676695,
+            "median": 117.19351321245671,
+            "p90": 190.9989771586033,
+            "max": 347.4695587905785
+          },
+          "planned_target_R": {
+            "n": 83,
+            "min": 0.007395277921829374,
+            "p10": 0.33499058366677703,
+            "median": 0.8914833388415502,
+            "p90": 6.490043481777998,
+            "max": 104.41427119259887
+          },
+          "pre_entry_edge_cost_ratio": {
+            "n": 83,
+            "min": 5.008842255973452,
+            "p10": 5.185250306421358,
+            "median": 7.28192485792607,
+            "p90": 11.854425832186338,
+            "max": 22.100815454149423
+          }
+        },
+        "closed_planned_target_below_one_R": 44,
+        "closed_planned_round_trip_cost_at_FTA_above_one_R": 6,
+        "realized_cost_R": {
+          "n": 83,
+          "min": 0.0013250544749675971,
+          "p10": 0.04622370568054118,
+          "median": 0.12897222528938382,
+          "p90": 0.7785136851374262,
+          "max": 15.133913848218038
+        },
+        "actual_fill_stop_bps": {
+          "n": 83,
+          "min": 1.057284056703508,
+          "p10": 20.647008437285557,
+          "median": 124.83203723642644,
+          "p90": 343.7761377979103,
+          "max": 12007.590779518338
+        },
+        "actual_fill_target_R": {
+          "n": 83,
+          "min": 0.009294964499859502,
+          "p10": 0.34547026253652763,
+          "median": 0.9133092417226926,
+          "p90": 7.19469763706032,
+          "max": 104.41427119259887
+        },
+        "recorded_observation_hold_hours": {
+          "n": 83,
+          "min": 0.0,
+          "p10": 0.25,
+          "median": 3.5,
+          "p90": 21.8,
+          "max": 162.25
+        },
+        "gross_trade_R": {
+          "n": 83,
+          "min": -1.0,
+          "p10": -1.0,
+          "median": -0.5515513805863934,
+          "p90": 1.2184130252340706,
+          "max": 20.40969095110803
+        },
+        "net_trade_R": {
+          "n": 83,
+          "min": -16.133913848218036,
+          "p10": -1.6686742536913455,
+          "median": -0.6316756641047537,
+          "p90": 1.1012178152057803,
+          "max": 18.08379651384657
+        }
+      },
+      "unique_cases": 373,
+      "nested_development_history": true,
+      "robustness_verdict": "FAIL"
+    },
+    "v2.2": {
+      "metrics": {
+        "cases": 238,
+        "FILLED": 40,
+        "CLOSED": 39,
+        "WIN": 13,
+        "LOSS": 26,
+        "Gross_WIN": 13,
+        "Gross_LOSS": 26,
+        "WR_percent": 33.33333333333333,
+        "Gross_R": 30.007826894751865,
+        "Fees_R": 26.603316070284713,
+        "Slippage_R": 8.867772023428238,
+        "Net_R_ex_funding": -5.463261198961088,
+        "Funding_R": null,
+        "PF_net": 0.8962485230465017,
+        "PF_gross": 2.2460828345275936,
+        "Expectancy_R": -0.14008362048618175,
+        "Gross_expectancy_R": 0.7694314588397914,
+        "mean_cost_R": 0.9095150793259731,
+        "MaxDD_R": 23.649806378517834,
+        "cost_break_even_multiplier": 0.8459798812901536,
+        "gross_positive_net_nonpositive": 0,
+        "status_counts": {
+          "CLOSED": 39,
+          "GAP_INVALIDATED_BEFORE_FILL": 79,
+          "UNFILLED_EXPIRED": 119,
+          "WAIT_INTRABAR_ORDER": 1
+        },
+        "geometry_all_cases": {
+          "planned_stop_bps": {
+            "n": 238,
+            "min": 0.2337448574766355,
+            "p10": 10.032501131920972,
+            "median": 42.98515570409073,
+            "p90": 127.37054903863478,
+            "max": 282.76995749240484
+          },
+          "planned_target_bps": {
+            "n": 238,
+            "min": 80.90988357183156,
+            "p10": 90.43005630365096,
+            "median": 142.61495437184854,
+            "p90": 291.13901657109466,
+            "max": 1162.0800524353194
+          },
+          "planned_target_R": {
+            "n": 238,
+            "min": 1.0092271422912298,
+            "p10": 1.2869167460410222,
+            "median": 3.601956015819148,
+            "p90": 13.913101800408075,
+            "max": 498.7860915506772
+          },
+          "pre_entry_edge_cost_ratio": {
+            "n": 238,
+            "min": 5.036492621658036,
+            "p10": 5.642059296701333,
+            "median": 8.92949323191027,
+            "p90": 18.28363297624787,
+            "max": 68.64164873891897
+          }
+        },
+        "geometry_closed": {
+          "planned_stop_bps": {
+            "n": 39,
+            "min": 1.057284056703508,
+            "p10": 12.913968953563208,
+            "median": 47.245686590512996,
+            "p90": 128.69905381295132,
+            "max": 203.14762041491034
+          },
+          "planned_target_bps": {
+            "n": 39,
+            "min": 81.685999019768,
+            "p10": 89.68672741188489,
+            "median": 118.53990364902103,
+            "p90": 200.22237164235088,
+            "max": 264.136404590431
+          },
+          "planned_target_R": {
+            "n": 39,
+            "min": 1.0092271422912298,
+            "p10": 1.1460500307248105,
+            "median": 2.450165386163566,
+            "p90": 11.83654005351465,
+            "max": 104.41427119259887
+          },
+          "pre_entry_edge_cost_ratio": {
+            "n": 39,
+            "min": 5.126312335958005,
+            "p10": 5.580386203102013,
+            "median": 7.390725968597159,
+            "p90": 12.586542023550093,
+            "max": 16.729468368175908
+          }
+        },
+        "closed_planned_target_below_one_R": 0,
+        "closed_planned_round_trip_cost_at_FTA_above_one_R": 6,
+        "realized_cost_R": {
+          "n": 39,
+          "min": 0.07957851363645438,
+          "p10": 0.12507900958949855,
+          "median": 0.3397372850329202,
+          "p90": 1.4512138501673992,
+          "max": 15.133913848218038
+        },
+        "actual_fill_stop_bps": {
+          "n": 39,
+          "min": 1.057284056703508,
+          "p10": 11.045108653724242,
+          "median": 46.76852152031579,
+          "p90": 128.69905381295132,
+          "max": 203.14762041491034
+        },
+        "actual_fill_target_R": {
+          "n": 39,
+          "min": 1.0092271422912298,
+          "p10": 1.1460500307248105,
+          "median": 2.6128972797540078,
+          "p90": 11.83654005351465,
+          "max": 104.41427119259887
+        },
+        "recorded_observation_hold_hours": {
+          "n": 39,
+          "min": 0.0,
+          "p10": 0.2,
+          "median": 2.0,
+          "p90": 11.75,
+          "max": 49.25
+        },
+        "gross_trade_R": {
+          "n": 39,
+          "min": -1.0,
+          "p10": -1.0,
+          "median": -1.0,
+          "p90": 2.9999664003520876,
+          "max": 20.40969095110803
+        },
+        "net_trade_R": {
+          "n": 39,
+          "min": -16.133913848218036,
+          "p10": -2.0542744075872643,
+          "median": -1.213870967194931,
+          "p90": 2.6297942888179673,
+          "max": 18.08379651384657
+        }
+      },
+      "unique_cases": 238,
+      "nested_development_history": true,
+      "robustness_verdict": "FAIL"
+    }
+  },
+  "verdict": "FAILURE_MECHANISMS_IDENTIFIED_WITH_CAUSAL_LIMITS",
+  "production_candidate": null,
+  "v3_design_justified": true,
+  "v3_design_gate": "ONLY_AFTER_AUDIT_FREEZE_SEPARATE_PRE_OUTCOME_SPEC",
+  "strategy_rules_changed": false,
+  "financial_backtest_ran": false,
+  "new_filters_or_parameters_selected": false,
+  "SHORT_disabled": false,
+  "mechanisms": [
+    "SHORT_GROSS_WEAKNESS_PRECEDES_COSTS",
+    "COSTS_EXCEED_AGGREGATE_GROSS_EDGE",
+    "SUB_ONE_R_NEAREST_FTA_PLANS",
+    "TINY_STOP_DENOMINATOR_TAILS",
+    "FILL_SELECTION_AND_EXIT_MIX",
+    "NESTED_DEPENDENT_DEVELOPMENT_COHORTS"
+  ],
+  "unresolved": [
+    "Causal signal/regime explanation cannot be isolated from realized policy-dependent exits.",
+    "Historical tick, spread, funding and portfolio sizing remain unverified.",
+    "D1 context IDs do not supply a frozen causal regime/alignment label.",
+    "Within-bar fill/exit timing and unresolved LONG cases limit directional/holding inference.",
+    "No untouched OOS or forward evidence; no subgroup production inference."
+  ],
+  "design_questions_without_rules": [
+    "How should risk units and sizing remain stable for structural tiny-stop plans?",
+    "How should a causal structural target/stop policy represent executable economic capacity?",
+    "Can frozen causal context labels distinguish directional signal quality from fill selection?",
+    "What independent evaluation protocol tests both directions without subgroup selection?"
+  ]
+}

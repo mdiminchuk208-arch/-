@@ -1,0 +1,81 @@
+{
+  "code_sha256": {
+    "scripts/audit_machine_strategy_failure_v1.py": "11ca32033f0d1d06cba4391ecff062b19dad293a00b239c3676e090bf34ab5d6",
+    "tests/test_machine_strategy_failure_audit.py": "f639923ed7236a214f1a42cd30cd3ae8d9c20af5828ccf41f84ac885162e7e26",
+    "tests/test_machine_strategy_failure_symmetry.py": "6a6096721e00745a5ad2d256e493d9aef094a04ef1c7dff9877e86489d55d571"
+  },
+  "checks": {
+    "full_unittest": {
+      "commands": [
+        [
+          "/workspace/crypto-bot-venv/bin/python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-v"
+        ]
+      ],
+      "exit_code": 0,
+      "seconds": 22.6
+    },
+    "ruff": {
+      "commands": [
+        [
+          "/workspace/crypto-bot-venv/bin/ruff",
+          "check",
+          "src",
+          "--select",
+          "E9,F63,F7,F82"
+        ],
+        [
+          "/workspace/crypto-bot-venv/bin/ruff",
+          "check",
+          "scripts/audit_machine_strategy_failure_v1.py",
+          "tests/test_machine_strategy_failure_audit.py",
+          "tests/test_machine_strategy_failure_symmetry.py"
+        ]
+      ],
+      "exit_code": 0,
+      "seconds": 0.016
+    },
+    "compile": {
+      "commands": [
+        [
+          "/workspace/crypto-bot-venv/bin/python",
+          "-m",
+          "compileall",
+          "-q",
+          "src",
+          "tests",
+          "scripts"
+        ]
+      ],
+      "exit_code": 0,
+      "seconds": 0.028
+    },
+    "mypy": {
+      "commands": [
+        [
+          "/workspace/crypto-bot-venv/bin/mypy",
+          "src"
+        ]
+      ],
+      "exit_code": 0,
+      "seconds": 0.13
+    },
+    "frozen_parent_resume": {
+      "commands": [
+        [
+          "/workspace/crypto-bot-venv/bin/python",
+          "scripts/verify_original_strategy_spec_v1_1.py",
+          "--resume-existing"
+        ]
+      ],
+      "exit_code": 0,
+      "seconds": 5.743
+    }
+  },
+  "status": "PASS"
+}

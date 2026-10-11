@@ -1,0 +1,151 @@
+[
+  {
+    "method": "config/value/write",
+    "params": {
+      "filePath": "/workspace/ecc-setup/codex-home/config.toml",
+      "keyPath": "projects",
+      "value": {
+        "/workspace": {
+          "trust_level": "trusted"
+        }
+      },
+      "mergeStrategy": "upsert"
+    },
+    "result": {
+      "status": "ok",
+      "version": "sha256:8ab2ba385d7ab6ed14faaf07a77d3e39ef725b5e49c547a368f6e7c4b9e893d8",
+      "filePath": "/workspace/ecc-setup/codex-home/config.toml",
+      "overriddenMetadata": null
+    }
+  },
+  {
+    "method": "config/read",
+    "cwd": "/workspace/-",
+    "result": {
+      "config": {
+        "agents": null,
+        "plugins": {
+          "ecc@ecc": {
+            "enabled": true
+          },
+          "unified-computer-use@openai-bundled": {
+            "enabled": true
+          }
+        },
+        "projects": {
+          "/workspace": {
+            "trust_level": "trusted"
+          }
+        },
+        "hooks": null,
+        "features": {
+          "network_proxy": null,
+          "multi_agent": true,
+          "plugins": true,
+          "api_key_model_discovery": false,
+          "auth_elicitation": true,
+          "background_paginated_rollout_migration": false,
+          "codex_apps_mcp_2026_07_28": false,
+          "mcp_2026_07_28": false,
+          "memories": false,
+          "mentions_v2": true,
+          "remote_control": false,
+          "remote_plugin": true,
+          "tool_suggest": true,
+          "windows_sandbox_service": false
+        }
+      },
+      "layers": [
+        {
+          "name": {
+            "type": "user",
+            "file": "/workspace/ecc-setup/codex-home/config.toml",
+            "profile": null
+          },
+          "disabledReason": null,
+          "version": "sha256:8ab2ba385d7ab6ed14faaf07a77d3e39ef725b5e49c547a368f6e7c4b9e893d8",
+          "config": {
+            "features": {
+              "plugins": true,
+              "multi_agent": true
+            },
+            "plugins": {
+              "ecc@ecc": {
+                "enabled": true
+              }
+            },
+            "projects": {
+              "/workspace": {
+                "trust_level": "trusted"
+              }
+            }
+          }
+        },
+        {
+          "name": {
+            "type": "system",
+            "file": "/etc/codex/config.toml"
+          },
+          "disabledReason": null,
+          "version": "sha256:fc917ea045b48d350a364e5a62753f14fe7d2db19bf20830813aed8db1a72d1c",
+          "config": {
+            "plugins": {
+              "unified-computer-use@openai-bundled": {
+                "enabled": true
+              }
+            }
+          }
+        }
+      ],
+      "origins": {
+        "plugins.ecc@ecc.enabled": {
+          "name": {
+            "type": "user",
+            "file": "/workspace/ecc-setup/codex-home/config.toml",
+            "profile": null
+          },
+          "version": "sha256:8ab2ba385d7ab6ed14faaf07a77d3e39ef725b5e49c547a368f6e7c4b9e893d8"
+        },
+        "features.multi_agent": {
+          "name": {
+            "type": "user",
+            "file": "/workspace/ecc-setup/codex-home/config.toml",
+            "profile": null
+          },
+          "version": "sha256:8ab2ba385d7ab6ed14faaf07a77d3e39ef725b5e49c547a368f6e7c4b9e893d8"
+        },
+        "plugins.unified-computer-use@openai-bundled.enabled": {
+          "name": {
+            "type": "system",
+            "file": "/etc/codex/config.toml"
+          },
+          "version": "sha256:fc917ea045b48d350a364e5a62753f14fe7d2db19bf20830813aed8db1a72d1c"
+        },
+        "features.plugins": {
+          "name": {
+            "type": "user",
+            "file": "/workspace/ecc-setup/codex-home/config.toml",
+            "profile": null
+          },
+          "version": "sha256:8ab2ba385d7ab6ed14faaf07a77d3e39ef725b5e49c547a368f6e7c4b9e893d8"
+        },
+        "projects./workspace.trust_level": {
+          "name": {
+            "type": "user",
+            "file": "/workspace/ecc-setup/codex-home/config.toml",
+            "profile": null
+          },
+          "version": "sha256:8ab2ba385d7ab6ed14faaf07a77d3e39ef725b5e49c547a368f6e7c4b9e893d8"
+        }
+      }
+    }
+  },
+  {
+    "method": "skills/list",
+    "cwd": "/workspace/-",
+    "ecc_skills": 348,
+    "enabled_ecc_skills": 348,
+    "errors": [],
+    "crypto_research_skills": []
+  }
+]

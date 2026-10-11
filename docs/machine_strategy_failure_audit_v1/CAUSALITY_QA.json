@@ -1,0 +1,67 @@
+{
+  "diagnostic_only": true,
+  "trade_entry_allowed": false,
+  "PAPER_enabled": false,
+  "LIVE_enabled": false,
+  "versions": {
+    "v2": {
+      "pre_entry_cases_checked": 761,
+      "nested_known_at_checked": true,
+      "outcome_fields_in_preentry": 0,
+      "end_swing_at_checked": true,
+      "pre_entry_consumed_at_null": true,
+      "saved_execution_chronology_checked": 761,
+      "saved_execution_chronology_errors": 0,
+      "local_projection_cutoff": 1719792000,
+      "local_projection_cases": 426,
+      "local_projection_determinism": "PASS",
+      "local_projection_is_independent_future_mutation_proof": false
+    },
+    "v2.1": {
+      "pre_entry_cases_checked": 373,
+      "nested_known_at_checked": true,
+      "outcome_fields_in_preentry": 0,
+      "end_swing_at_checked": true,
+      "pre_entry_consumed_at_null": true,
+      "saved_execution_chronology_checked": 373,
+      "saved_execution_chronology_errors": 0,
+      "local_projection_cutoff": 1719792000,
+      "local_projection_cases": 185,
+      "local_projection_determinism": "PASS",
+      "local_projection_is_independent_future_mutation_proof": false
+    },
+    "v2.2": {
+      "pre_entry_cases_checked": 238,
+      "nested_known_at_checked": true,
+      "outcome_fields_in_preentry": 0,
+      "end_swing_at_checked": true,
+      "pre_entry_consumed_at_null": true,
+      "saved_execution_chronology_checked": 238,
+      "saved_execution_chronology_errors": 0,
+      "local_projection_cutoff": 1719792000,
+      "local_projection_cases": 114,
+      "local_projection_determinism": "PASS",
+      "local_projection_is_independent_future_mutation_proof": false
+    }
+  },
+  "geometry_input": "FROZEN_CASES only; execution outcomes joined after feature computation.",
+  "inherited_actual_history_prefix_receipt": {
+    "cutoff": 1719792000,
+    "symbols": {
+      "BTCUSDT": {
+        "prefix_cases": 210,
+        "prefix_SHADOW_identity": "PASS",
+        "future_suffix_10x_mutation": "PASS"
+      },
+      "ETHUSDT": {
+        "prefix_cases": 216,
+        "prefix_SHADOW_identity": "PASS",
+        "future_suffix_10x_mutation": "PASS"
+      }
+    },
+    "status": "PASS",
+    "trade_entry_allowed": false
+  },
+  "fresh_actual_historical_cohort_or_execution_rerun": false,
+  "scope": "All saved pre-entry known_at/end_swing_at fields recursively checked, pre-entry consumed_at null, and saved execution chronology checked. Saved-case projection determinism is a same-input local check, not independent future-mutation proof. Actual midpoint candle-prefix/future-mutation proof is inherited hash-verified evidence, not newly rerun or all-instant proof."
+}
