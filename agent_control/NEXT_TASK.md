@@ -1,180 +1,177 @@
-# Next Task — MACHINE_STRATEGY_v3 Implementation Readiness Freeze
+# Next Task — MACHINE_STRATEGY_v3 Historical Market-Metadata Recovery Freeze
 
-The v3 design is frozen at `62590f1e09e2fa7516038ba1b3d813b0411d93ab`. Do NOT change strategy rules and do NOT run any historical financial outcome evaluation in this task.
+The v3 design and complete implementation are frozen. The implementation gate ended in an objective financial STOP because historical exchange price-grid/tick epochs are not verified. Do NOT change strategy rules and do NOT run any historical v3 financial outcomes in this task.
 
 ## Objective
-Complete and independently freeze the full causal implementation infrastructure required to execute the already-frozen `MACHINE_STRATEGY_v3` exactly as specified.
+Recover, verify, and independently freeze the strongest available historical exchange-metadata evidence for BTCUSDT and ETHUSDT Bybit USDT linear perpetual covering the frozen development path and warmup.
 
-This gate exists to remove the two current first-backtest STOP reasons:
-1. `HISTORICAL_EVENT_ADAPTER_NOT_IMPLEMENTED`
-2. `NO_VERIFIED_HISTORICAL_TICK_EPOCHS`
+Primary blockers to resolve if evidence permits:
+1. `NO_VERIFIED_HISTORICAL_TICK_EPOCHS`
+2. `HISTORICAL_EXCHANGE_PRICE_GRID_UNVERIFIED`
 
-If either blocker cannot be removed with evidence, keep the STOP explicitly. Never fabricate metadata, interpolate rules, or weaken the frozen design to force a backtest.
+This is an EVIDENCE + PROVENANCE gate only. If complete proof cannot be established, narrow the unresolved intervals precisely and preserve STOP. Never infer historical tick settings from candle decimal precision, current API settings, later notices, or desired backtest readiness.
 
 ## Immutable inputs
-Treat these as frozen and read-only:
+Read-only/frozen:
 - `docs/machine_strategy_v3_design/`
+- `docs/machine_strategy_v3_implementation_readiness/`
 - `docs/machine_strategy_failure_audit_v1/`
 - all Original/source/baseline/v2/v2.1/v2.2 frozen namespaces
-- v3 spec hash `c3876fa2239268f251454304d66a5828f6928e379c27398d4ded3b9c99786ed8`
-- v3 design manifest hash `f612b806292844e5d17bee783c9e04879e4a3d32530570a900a467e4ca2e5cc0`
+- v3 design freeze `62590f1e09e2fa7516038ba1b3d813b0411d93ab`
+- v3 implementation freeze `43e57ee5c7867dd9421961629746555c8a2e9556`
+- frozen strategy/spec/adapter/runner hashes recorded in `agent_control/STATUS.md`
 
-No rule may be changed because of case counts, outcomes, historical P&L, PF, WR, expectancy, drawdown, MFE/MAE, or subgroup performance.
+No strategy parameter, family, direction, entry, stop, target, state, cost, or validation threshold may be changed in this task.
 
-## Required multi-agent workflow
-Use all relevant project roles:
-1. `strategy_explorer` — map frozen v3 contract requirements to existing historical data/event primitives and identify missing adapter surfaces.
-2. `execution_auditor` — own tick-epoch provenance, price-grid validity, rounding, cost/execution identities, and LONG/SHORT symmetry.
-3. `strategy_designer` — implementation-conformance role only: verify the adapter/runner implements the frozen spec exactly; no strategy redesign.
-4. `backtest_reviewer` — independently review no-lookahead, provenance, hidden tuning, metadata claims, data completeness, and freeze readiness.
+## Required specialist workflow
+Use the smallest competent team, but the following roles are required:
+1. `tick_metadata_researcher` — lead historical tick/price-grid evidence discovery and source chronology.
+2. `historical_data_engineer` — map evidence intervals against exact frozen BTC/ETH M15 data coverage and identify gaps/overlaps.
+3. `market_microstructure_auditor` — assess whether each source actually proves executable price-grid semantics rather than merely display precision.
+4. `no_lookahead_auditor` — verify publication/capture/effective/known-at chronology and reject retroactive assumptions.
+5. `execution_auditor` — independently validate tick rounding implications and exact adapter compatibility.
+6. `final_independent_reviewer` — final PASS/STOP decision; must be independent of evidence collection.
 
-Record role outputs under the new readiness namespace.
+Optional roles when useful: `strategy_explorer`, `oos_forward_validator`, `backtest_reviewer`.
 
-## A. Full historical event adapter
-Implement the complete deterministic adapter needed to transform verified historical market data into the frozen v3 causal event/state/setup representation.
+Do not claim that every configured role was used unless it actually ran.
 
-Required coverage:
-- BTCUSDT and ETHUSDT Bybit USDT linear perpetual;
-- M15 native input with deterministic contiguous UTC H1/H4/D1 derivation where allowed by the frozen spec;
-- causal market-state generation;
-- all five setup families: SFP, OB, Breaker, STB, Range;
-- POI/FTA/liquidity inventories required by the frozen design;
-- first-test and physical-idea reservation semantics;
-- entry-order representation, gap invalidation, unfilled state, intrabar ambiguity state;
-- structural stop and risk-normalization inputs;
-- target selection and modeled-cost feasibility inputs;
-- exact known-at / source-bar / formation timestamps;
-- deterministic identity/hash generation;
-- explicit WAIT/REJECT reasons for missing, ambiguous, discontinuous, or unverifiable data.
+## A. Evidence search scope
+Search exhaustively but reproducibly for BTCUSDT and ETHUSDT USDT perpetual historical price-grid/tick metadata over:
+- warmup: `2022-01-01T00:00:00Z <= t < 2023-01-01T00:00:00Z`
+- development: `2023-01-01T00:00:00Z <= t < 2025-12-05T23:30:00Z`
 
-The adapter must not read realized outcome, exit, future path, P&L or performance columns while deciding admission or constructing an order.
+Prioritize evidence classes in this order:
+1. Official Bybit dated tick-size/rule-change announcements with immutable or independently archived copies.
+2. Official historical/static instrument metadata snapshots, downloadable exchange-maintained files, status pages, API examples or release artifacts with trustworthy capture/publication time.
+3. Independent web archives of official Bybit pages/API responses where capture timestamps and bytes are verifiable.
+4. Reputable third-party archival datasets only when they contain explicit instrument metadata, exact contract identity, capture time, provenance and immutable hashes.
 
-## B. Full runner implementation — outcome engine may exist but must not be financially executed
-Implement any remaining runner/execution code required for the later frozen-spec financial backtest, including exit/state transitions, but test it only on synthetic fixtures or deliberately non-financial contract fixtures in this gate.
+Search official announcement pages/API/indexes by symbol, contract class, tick-size wording, price-filter terminology and date. Search archive indexes and snapshots around suspected change windows, not just exact current URLs. Search both pre-change and post-change evidence so continuity is not assumed from one notice.
 
-Do NOT run the completed runner over historical development cases in a way that reveals aggregate or case-level financial outcomes.
-Do NOT print or inspect historical v3 wins/losses, R, PF, P&L, expectancy, drawdown, MFE/MAE, or equity.
+A failed search or archive miss is NOT evidence that no change occurred.
 
-A static/behavioral guard must make accidental historical outcome evaluation in this gate detectable.
+## B. Evidence standards
+For every candidate source retain separately:
+- symbol and contract identity;
+- source class;
+- original URL or archive identifier;
+- title/page date;
+- publication time if available;
+- stated effective time;
+- archive capture time;
+- retrieval time;
+- raw byte/content hash;
+- normalized relevant-text hash when applicable;
+- literal before/after tick values if stated;
+- what the source proves;
+- what it does NOT prove;
+- verification status.
 
-## C. Historical tick-epoch provenance
-Establish price tick-size epochs for BTCUSDT and ETHUSDT over every historical development interval that would be eligible for the first v3 financial run.
+Never collapse publication time, effective time, archive time and retrieval time into one timestamp.
 
-Evidence hierarchy:
-1. official Bybit dated announcements / rule-change notices;
-2. official archived/static instrument metadata or exchange-maintained historical material with immutable capture/hash and known publication time;
-3. independently archived evidence only when provenance, capture time, and content integrity are explicit.
+Do NOT promote a historical epoch solely because:
+- current `/v5/market/instruments-info` reports a tick size;
+- historical candles contain a certain number of decimal places;
+- all observed trades happen to align to a grid;
+- a later article says a previous tick changed but pre-effective publication cannot be established;
+- no additional change notice was found.
 
-Rules:
-- current `instruments-info` is NOT proof of historical values by itself;
-- publication date, effective date, title date, retrieval date and archive capture date must remain separate fields;
-- do not infer an epoch boundary merely from observed candle decimals;
-- do not backfill unknown periods from later settings;
-- if exact coverage is not provable for a period, mark it `UNVERIFIED` and preserve STOP for that period.
+Observed price alignment may be retained only as non-authoritative consistency QA, never as epoch proof.
 
-For each symbol produce machine-readable intervals with:
+## C. Epoch construction
+Construct non-overlapping candidate and verified interval maps per symbol.
+
+A `VERIFIED` epoch requires enough evidence to support all material fields required by the frozen runner:
 - `valid_from`
-- `valid_to`
+- `valid_to` or an independently justified open interval boundary
 - `tick_size`
 - `effective_at`
 - `known_at`
-- `source_url_or_archive_id`
-- `source_hash`
-- `evidence_class`
-- `verification_status`
-- notes on publication/effective-date discrepancies.
+- exact instrument identity
+- evidence receipts/hashes
 
-## D. Data-grid authenticity and completeness
-Verify every historical input series used by the adapter:
-- source identity and content hash;
-- symbol/contract type;
-- UTC timestamps;
-- expected M15 continuity;
-- duplicate/missing bars;
-- H1/H4/D1 derivation rules;
-- source aliases/overlap so duplicate representations are not treated as independent evidence;
-- exact data period eligible for development evaluation.
+If continuity across a boundary is not proven, split the map and mark the unknown interval `UNVERIFIED` rather than bridging it.
 
-Never interpolate missing OHLCV bars.
-If continuity cannot be established, produce explicit WAIT/STOP coverage maps.
+Report coverage separately for warmup and development, in timestamps and duration percentage. The final financial-readiness decision requires 100% verified executable coverage for the exact declared evaluation interval; partial coverage does not authorize silently dropping periods.
 
-## E. OOS readiness preparation — no OOS outcome observation
-Preserve the frozen validation principle: all currently inventoried history is exposed development, and old 2026 TEST data is not untouched OOS.
+## D. Price-grid authenticity
+Independently assess whether the frozen historical OHLC inputs are compatible with each verified tick epoch.
 
-In this gate:
-- determine whether a contiguous 365-day pre-start warmup can be assembled from independently verified public data for a future prospective OOS registration;
-- verify acquisition procedure, hashes, continuity checks, and metadata coverage;
-- do not generate candidate signals, positions, trade labels or P&L for the prospective OOS period;
-- do not claim a pristine OOS window exists until a separate append-only registration freezes exact future start/end timestamps after the complete implementation freeze;
-- if warmup/data/metadata cannot be made ready, preserve `STOP_NO_PRISTINE_OOS`.
+This check is secondary and cannot create an epoch. It may:
+- detect contradiction between evidence and data;
+- verify every OHLC price is representable on the claimed grid within exact decimal arithmetic;
+- identify source rows that violate an otherwise documented exchange grid;
+- force STOP if contradictions remain unresolved.
 
-Do NOT silently change the frozen validation protocol. Any necessary non-outcome operational clarification must be explicitly documented, independently reviewed, and re-frozen before observation.
+Use exact decimal/integer scaling; no float-tolerance handwaving.
+Do not modify candle prices or round source history to make it fit.
 
-## Required readiness namespace
-Create an immutable namespace such as:
-`docs/machine_strategy_v3_implementation_readiness/`
+## E. Alternative evidence path if full historical proof is impossible
+If exhaustive evidence still cannot establish 100% historical coverage:
+- preserve `V3_FINANCIAL_STOP`;
+- identify the minimal exact unresolved intervals per symbol;
+- state whether a shorter historical interval is fully proven, but DO NOT authorize truncating development or selecting that interval based on performance;
+- assess whether a prospective-only metadata collection path can establish future executable epochs from a clean registration point;
+- do not change the frozen validation protocol in this task.
+
+The purpose is to learn whether the blocker is removable, not to force a PASS.
+
+## Required namespace
+Create a new immutable namespace:
+`docs/machine_strategy_v3_market_metadata_recovery/`
 
 Required artifacts:
-- `IMPLEMENTATION_READINESS_REPORT.md`
-- `HISTORICAL_ADAPTER_SPEC.json`
-- `HISTORICAL_ADAPTER_COVERAGE.json`
-- `TICK_EPOCH_EVIDENCE.md`
-- `TICK_EPOCHS.json`
-- `DATA_GRID_AUTHENTICITY.json`
-- `DATA_CONTINUITY_REPORT.json`
-- `OUTCOME_GUARD_QA.json`
-- `OOS_READINESS.json`
+- `MARKET_METADATA_RECOVERY_REPORT.md`
+- `EVIDENCE_SEARCH_LOG.json`
+- `SOURCE_INVENTORY.json`
+- `BTCUSDT_TICK_EPOCHS.json`
+- `ETHUSDT_TICK_EPOCHS.json`
+- `EPOCH_COVERAGE_MAP.json`
+- `PRICE_GRID_COMPATIBILITY.json`
+- `PROVENANCE_TIMELINE.json`
+- `UNRESOLVED_INTERVALS.json`
 - `INDEPENDENT_REVIEW.md`
 - `QA_REPORT.md`
 - `freeze_manifest.json`
 
-Store immutable evidence receipts/hashes or reproducible retrieval metadata where legally/technically possible. Do not commit secrets or private API credentials.
+Retain immutable evidence receipts/raw pages or reproducible archive metadata where legally and technically possible. Do not commit credentials, cookies, private account data or secrets.
 
-## Mandatory QA before freeze
+## Mandatory QA
 At minimum:
-- deterministic adapter replay;
-- historical input prefix/future-mutation no-lookahead test;
-- known-at timestamp validation;
-- M15→H1/H4/D1 aggregation fixtures;
-- LONG/SHORT reflection/symmetry fixtures;
-- all-five-family synthetic fixtures;
-- tick rounding/epoch boundary fixtures;
-- gap/missing-bar/duplicate-bar tests;
-- intrabar ambiguity tests;
-- first-test/reservation/re-entry tests;
-- cost identity and risk-floor invariants;
-- static scan proving admission/order construction does not read outcome columns;
-- guard proving historical financial evaluation was not executed in this gate;
-- frozen namespace hash invariance;
-- full test suite, Ruff/format, mypy, compile;
-- independent reviewer PASS required for readiness.
+- exact hash verification for retained evidence;
+- deterministic rebuild/replay of epoch maps;
+- non-overlap and monotonic interval checks;
+- publication/effective/capture/retrieval timestamp separation checks;
+- exact BTC/ETH symbol/contract identity checks;
+- full frozen-data-period coverage calculation;
+- exact-decimal OHLC/grid compatibility check for any VERIFIED epoch;
+- contradiction detection across sources;
+- static proof that no strategy outcome/P&L data was read for evidence decisions;
+- frozen v3 design/implementation namespace invariance;
+- full tests, Ruff/format, mypy and compile for new code;
+- final independent reviewer PASS required for any readiness promotion.
 
 ## Decision gate
-At completion, publish one of the following exact states:
+Publish exactly one primary state:
 
-### `V3_IMPLEMENTATION_FROZEN_READY_FOR_FIRST_FINANCIAL_BACKTEST`
-Only if ALL are true:
-- full adapter and runner implement frozen v3 deterministically;
-- development data grid is verified for the declared evaluation period;
-- historical tick epochs fully cover that declared period;
-- all QA/review passes;
-- no historical v3 financial outcomes were viewed before freeze.
+### `V3_MARKET_METADATA_FROZEN_READY_FOR_FINANCIAL_AUTH_GATE`
+Only if BOTH symbols have 100% VERIFIED historical tick/price-grid coverage for the exact intended warmup/development interval, data compatibility passes, evidence chronology is defensible, all QA passes, and no v3 financial result was generated/viewed.
 
-### `V3_IMPLEMENTATION_FROZEN_FINANCIAL_STOP`
-If any required implementation/data/tick evidence remains unresolved. List exact blockers and affected periods/symbols.
+### `V3_MARKET_METADATA_FROZEN_FINANCIAL_STOP`
+If any required interval remains unverified or contradictory. List exact unresolved intervals and strongest remaining evidence gap.
 
-Separately report OOS state. OOS readiness does not need to be complete to freeze implementation, but no production qualification can occur without later pristine OOS/forward validation.
+Even a PASS here does NOT itself run or authorize the financial backtest. A separate NEXT_TASK must explicitly open the first financial evaluation gate.
 
 Update `agent_control/STATUS.md` and `CURRENT_STATE.md` with:
-- complete implementation freeze commit SHA;
-- manifest and code/spec hashes;
-- exact tick-epoch coverage verdict;
-- historical adapter/data coverage verdict;
-- actual agents used;
+- metadata freeze commit SHA;
+- namespace/manifest hash;
+- verified coverage by symbol and interval;
+- unresolved intervals;
+- exact agents actually used;
 - QA/review result;
-- whether first development financial backtest is now authorized;
-- whether a separate prospective OOS-registration gate can be opened.
+- whether a separate first-financial-auth gate may now be opened.
 
-Do NOT run the first financial backtest in this task even if readiness becomes PASS.
+Do NOT run historical v3 financial outcomes.
 Do NOT enable PAPER or LIVE.
 `trade_entry_allowed=false` remains invariant.
