@@ -1,170 +1,199 @@
-# Next Task — MACHINE_STRATEGY_v3 Prospective Data/Metadata Capture + OOS Registration Readiness Freeze
+# Next Task — MACHINE_STRATEGY_v3 Prospective Capture Activation + Control Plane v2 Freeze
 
-The historical metadata-recovery gate is frozen at `7e89543ef9b443ac65b64f125c919e885dccf37b` with `V3_MARKET_METADATA_FROZEN_FINANCIAL_STOP`. Historical v3 execution must remain STOP: do not weaken that decision, do not infer old tick epochs, and do not run any historical v3 financial outcomes.
+The prospective-readiness gate is frozen at `fdf5b95e34c724ab73e8f3e64d36aed562ad965b` with `V3_PROSPECTIVE_READINESS_FROZEN_STOP`. Preserve that STOP and every prior freeze. Do NOT run historical v3 financial outcomes, do NOT generate OOS signals/trades, and do NOT change strategy rules.
 
 ## Objective
-Create and independently freeze the prospective-only data/metadata infrastructure required to establish a genuinely clean future validation path for the already-frozen `MACHINE_STRATEGY_v3`.
+Remove the currently removable infrastructure blockers and start a real append-only prospective evidence clock for the frozen v3 strategy.
 
-This gate must answer two questions without observing strategy outcomes:
-1. Can BTCUSDT/ETHUSDT Bybit USDT-linear current/future tick/price-grid metadata be captured prospectively with causally known timestamps and immutable receipts from a clean start?
-2. Can the frozen 365-day pre-start warmup/data-integrity prerequisites be assembled and verified well enough to permit a separate exact OOS registration commit?
+This gate has four goals:
+1. activate a lawful public prospective BTCUSDT/ETHUSDT Bybit data + instrument-metadata collector from an environment where official public endpoints are normally reachable, without VPN/proxy/geolocation spoofing or credentials;
+2. establish append-only provenance/continuity storage that can accumulate a future 365-day warmup;
+3. create a phase-stable Control Plane v2 so active QA no longer depends on old `NEXT_TASK` text while all historical frozen tests remain immutable and auditable;
+4. create a new fail-closed execution authorization gateway with an OS/process isolation boundary, without modifying the frozen v3 adapter/runner.
 
-This is DATA + METADATA + CONTROL-PLANE infrastructure only. Strategy rules remain immutable. No signals, orders, positions, trade labels, case outcomes, P&L, PF, WR, expectancy, drawdown, MFE/MAE or equity may be generated or inspected.
+No PASS in this gate authorizes financial evaluation, PAPER, LIVE, or OOS registration.
 
 ## Immutable inputs
-Treat as read-only:
-- `docs/machine_strategy_v3_design/`
-- `docs/machine_strategy_v3_implementation_readiness/`
-- `docs/machine_strategy_v3_market_metadata_recovery/`
-- all failure-audit/source/baseline/v2/v2.1/v2.2 frozen namespaces
-- v3 design freeze `62590f1e09e2fa7516038ba1b3d813b0411d93ab`
-- v3 implementation freeze `43e57ee5c7867dd9421961629746555c8a2e9556`
-- metadata-recovery freeze `7e89543ef9b443ac65b64f125c919e885dccf37b`
+Read-only/frozen:
+- baseline `ba65e91c2b1675f48e80ac785bb3adf89d17bb0b`
+- failure audit `8ca75ed35876d8f5d4d363e9e8808d7bd4417e87`
+- v3 design `62590f1e09e2fa7516038ba1b3d813b0411d93ab`
+- v3 implementation `43e57ee5c7867dd9421961629746555c8a2e9556`
+- v3 metadata recovery `7e89543ef9b443ac65b64f125c919e885dccf37b`
+- v3 prospective readiness `fdf5b95e34c724ab73e8f3e64d36aed562ad965b`
+- all corresponding frozen namespaces/manifests and the frozen adapter/runner hashes recorded in `STATUS.md`.
 
-Historical financial STOP remains authoritative. Do not relabel historical data as verified/OOS.
+Historical verified tick coverage remains 0%. Do not reinterpret or backfill it.
 
 ## Required specialist workflow
-Use the smallest competent team, with these required functions:
-1. `oos_forward_validator` — lead contamination/embargo/registration protocol review.
-2. `tick_metadata_researcher` — prospective tick/instrument metadata capture and announcement provenance.
-3. `historical_data_engineer` — warmup gap acquisition, continuity, hashes and source identity.
-4. `market_microstructure_auditor` — confirm captured fields prove executable price-grid semantics from capture time forward.
-5. `no_lookahead_auditor` — verify raw-access isolation, known-at chronology and zero strategy-state leakage.
-6. `final_independent_reviewer` — independent PASS/STOP seal.
+Required functions:
+1. `historical_data_engineer` — prospective M15 collector, continuity, dedupe, receipts and append-only storage.
+2. `tick_metadata_researcher` — current/future official instrument metadata and dated tick/filter notices.
+3. `oos_forward_validator` — prospective clock, embargo, contamination and future-registration semantics.
+4. `no_lookahead_auditor` — prove collector/control tooling cannot read strategy state or outcomes.
+5. `market_microstructure_auditor` — verify captured metadata proves executable price-grid semantics from its defensible known-at boundary.
+6. `backtest_engineer` — Control Plane v2 / authorization gateway implementation only; no financial backtest.
+7. `final_independent_reviewer` — independent final PASS/STOP seal.
 
-Use `execution_auditor`, `backtest_reviewer`, or `overfit_red_team` if a specific issue requires them. Do not claim agents that did not actually run.
+Use `execution_auditor`, `backtest_reviewer`, `overfit_red_team` when useful. Record actual identities/functions; do not claim unused agents.
 
-## A. Prospective tick/price-grid capture
-Build an append-only prospective metadata capture path for BTCUSDT and ETHUSDT Bybit USDT linear perpetual.
+## A. Activate prospective public capture
+Implement a production-like, append-only collector for:
+- BTCUSDT and ETHUSDT;
+- Bybit USDT linear perpetual;
+- official public instrument metadata including exact `tickSize` / price-filter fields when available;
+- completed native M15 OHLCV bars only;
+- dated official notices that change tick/price filters where technically available.
 
-At minimum:
-- capture current public instrument metadata from an official Bybit source when technically available;
-- retain raw bytes/response, retrieval timestamp, request parameters, HTTP status, content hash and normalized selected fields;
-- record `tickSize`, price-filter semantics and exact instrument identity;
-- separately monitor/capture dated official notices that may change tick/price filters;
-- never backdate current metadata before its actual capture time;
-- define deterministic epoch-opening/closing semantics for future changes;
-- if official endpoint access is blocked, retain immutable failure receipts and use only evidence classes permitted by the frozen protocol;
-- no credentials/private API.
+### Access policy
+- no private API keys, cookies, account session, VPN, proxy, residential routing or geolocation spoofing;
+- do not evade a 403 from the current cloud environment;
+- an ordinary GitHub-hosted Actions runner or other normal project CI runner MAY be used as the collector environment if it reaches the same official public endpoint without any evasion mechanism;
+- if the official endpoint is also unavailable there, retain immutable failure receipts and STOP that source;
+- official alternative endpoints may be used only if documented/normal for public market data, not as a disguised geo-bypass.
 
-A prospective epoch may begin no earlier than the first defensible causally known capture/effective boundary. Historical unknown periods remain unknown.
+### Collector behavior
+- capture raw response bytes, request URL/params, response status/headers needed for provenance, retrieval UTC timestamp and SHA-256;
+- normalize separately; never overwrite raw bytes;
+- capture exact instrument identity and category;
+- fetch enough recent closed M15 bars with overlap to tolerate delayed CI runs, then exact-dedupe by symbol/open-time;
+- never store an unfinished bar as completed;
+- detect missing/duplicate/conflicting bars and never interpolate;
+- use exact decimal representation for prices/filters;
+- collector must not import strategy/adapter/runner modules;
+- collector must not generate signals, states, setups, orders, labels or financial metrics.
 
-## B. Warmup data readiness
-The frozen protocol requires 365 days of completed pre-start bars for state warmup with no pre-start orders/outcomes.
+Prefer a bounded schedule with overlap and deterministic backfill after transient outages rather than assuming exact cron timing. Keep storage/commit growth reasonable; design a reproducible daily/periodic packing scheme if needed while preserving raw hashes and retrieval chronology.
 
-Resolve the exact missing warmup intervals previously recorded for BTCUSDT and ETHUSDT using independently verifiable public data if possible.
+## B. Append-only capture channel
+Create a separate prospective evidence surface so collector writes cannot conflict with active research work. A dedicated branch such as `machine-v3-prospective-capture` is allowed and preferred.
 
 Requirements:
-- exact BTCUSDT/ETHUSDT Bybit USDT-linear identity;
-- completed native M15 bars only;
-- UTC timestamp continuity and duplicate detection;
-- raw-source receipts/hashes and retrieval timestamps;
-- deterministic normalization;
-- no interpolation, synthetic bars or silent alias substitution;
-- compare overlap against already pinned local data and report any OHLCV conflicts explicitly;
-- derived H1/H4/D1 only from verified contiguous M15 after capture/merge QA.
+- append-only evidence files/receipts;
+- no rewriting prior captures;
+- deterministic index/manifest chain with previous-manifest hash;
+- capture sequence number + retrieval time;
+- provenance for the workflow/code commit that produced each capture;
+- workflow has only the minimum repository permission needed;
+- no secrets other than the normal GitHub workflow token if repository write is necessary;
+- concurrency control prevents races/double writers;
+- failed fetches are evidence too and must not be converted into synthetic success.
 
-If multiple public mirrors disagree, preserve the disagreement and STOP registration until independently resolved. Do not choose the source that makes strategy behavior preferable.
+Before enabling recurring collection, execute at least one bounded manual/CI capture and independently verify the exact bytes, hashes, identity and no-strategy isolation. If verified, enable the schedule in the final reviewed workflow bytes and record the first defensible prospective capture time `T0`.
 
-## C. OOS embargo and exact registration readiness
-Preserve the frozen validation protocol exactly unless an explicitly non-outcome operational clarification is required and independently reviewed.
+`T0` is NOT OOS registration and does not retroactively verify any earlier period.
 
-The intended prospective OOS remains:
-- BTCUSDT + ETHUSDT Bybit USDT linear perpetual;
-- completed M15, derived UTC H1/H4/D1;
-- 365 UTC days locked evaluation;
-- 365 days contiguous pre-start warmup;
-- no pre-start orders/carried positions;
-- no candidate signals, positions, trade labels, P&L or equity observation before locked end;
-- raw access before end limited to logged integrity/continuity/metadata checks by tooling that cannot access strategy state.
+## C. Warmup accumulation and historical gap policy
+Do not force-fill prior gaps. Continue attempting only independently verifiable public Bybit-specific sources where allowed, but the durable path is prospective accumulation.
 
-Create a registration-readiness artifact that computes the earliest legally valid start boundary under the frozen rule, but DO NOT register/start OOS unless every prerequisite is objectively satisfied in this gate.
+Create a machine-readable clock showing:
+- `T0` for each symbol/data surface;
+- current verified contiguous completed-M15 span after T0;
+- exact missing/conflicting intervals;
+- earliest possible date at which a 365-day contiguous warmup could become eligible if collection remains complete;
+- conditions that reset/invalidate the continuity clock.
 
-If all prerequisites are satisfied, create a separate append-only exact registration artifact/commit that freezes:
-- implementation/spec/manifest hashes;
-- exact start UTC D1 open;
-- exact end exclusive timestamp;
-- exact 365-day warmup interval;
-- symbols/contract/timeframes;
-- data acquisition procedures;
-- prospective tick metadata start evidence;
-- embargo policy;
-- integrity-only access policy;
-- invalidation conditions.
+The frozen OOS registration rule remains unchanged. Do not register OOS in this gate.
 
-If any prerequisite is unresolved, publish STOP and list exact blockers. Do not shift dates to force readiness.
+## D. Control Plane v2 governance
+Resolve `FROZEN_ACTIVE_TEST_HEADERS_CONFLICT_WITH_CURRENT_TASK` by explicitly versioning active control tests, not by editing frozen test bytes or injecting old task text.
 
-## D. Control-plane / QA hardening
-The completed metadata gate disclosed two brittle current-phase tests coupled to an old `NEXT_TASK` header and a forged-auth-file guard limitation.
+Requirements:
+- preserve old phase-specific tests byte-for-byte as historical evidence;
+- define an append-only active-test registry/manifest with version and hashes;
+- migrate each brittle test to a phase-stable semantic equivalent that checks immutable capabilities/state rather than a prose `NEXT_TASK` header;
+- document one-to-one semantic mapping from legacy assertions to active replacements;
+- active current-phase suite must run honestly without monkeypatching task bytes, skips, xfail, filtered failures or weakened guard semantics;
+- legacy suite remains separately reproducible/auditable and is not falsely called current-phase PASS.
 
-Without touching frozen strategy behavior:
-- remove task-header brittleness from active non-frozen test/control infrastructure so the unmodified current-phase suite can run honestly;
-- preserve the semantic guard itself: unauthorized historical outcome execution must still fail closed;
-- replace fixture-only phase assumptions with explicit immutable capability/authorization inputs where needed;
-- no auth artifact may authorize a financial run in this gate;
-- add tests proving missing/invalid/forged authorization still blocks before historical outcomes.
+## E. Execution Authorization Gateway v2
+Do not modify the frozen adapter/runner. Add a new outer gateway/version that is the only supported active path for any future historical/OOS execution.
 
-Do not modify frozen namespaces to make tests green.
+It must:
+- default DENY;
+- reject absent/invalid/forged/stale/wrong-phase authorization before strategy history reads;
+- bind authorization to exact strategy spec, implementation, runner, data/evidence manifest and allowed phase hashes;
+- distinguish `INTEGRITY_ONLY`, `OOS_REGISTERED_EMBARGOED`, `FINANCIAL_EVALUATION_AUTHORIZED`, `PAPER`, and `LIVE` capabilities; only `INTEGRITY_ONLY` is permitted in this gate;
+- ensure `trade_entry_allowed=false` regardless of malformed input;
+- make financial authorization impossible to mint from collector/runtime data alone.
 
-## Required namespace
-Create an immutable namespace:
-`docs/machine_strategy_v3_prospective_readiness/`
+### Isolation
+Add the strongest available OS/process boundary for integrity-only tooling:
+- separate subprocess/process identity/workdir with explicit allowlisted files and environment;
+- no strategy-state path visibility where the host permits it;
+- no network except exact allowlisted public collection endpoints during collection;
+- no shell/subprocess spawning from integrity worker unless explicitly required and audited;
+- prefer OS namespace/container/sandbox primitives if available;
+- if true OS-level isolation is unavailable, prove the strongest enforceable boundary and preserve an explicit STOP for that item rather than claiming equivalent security.
+
+## F. Required namespace
+Create immutable namespace:
+`docs/machine_strategy_v3_capture_control_v2/`
 
 Required artifacts:
-- `PROSPECTIVE_READINESS_REPORT.md`
-- `CURRENT_METADATA_CAPTURE.json`
-- `PROSPECTIVE_TICK_EPOCH_PROTOCOL.json`
-- `WARMUP_SOURCE_INVENTORY.json`
-- `WARMUP_CONTINUITY.json`
-- `WARMUP_CONFLICTS.json`
-- `RAW_ACCESS_EMBARGO_SPEC.json`
-- `OOS_REGISTRATION_READINESS.json`
-- `CONTROL_PLANE_GUARD_QA.json`
+- `CAPTURE_CONTROL_REPORT.md`
+- `COLLECTOR_SPEC.json`
+- `COLLECTOR_ACCESS_RECEIPTS.json`
+- `CAPTURE_BRANCH_PROTOCOL.json`
+- `PROSPECTIVE_CLOCK.json`
+- `ACTIVE_TEST_GOVERNANCE.json`
+- `LEGACY_TO_ACTIVE_TEST_MAPPING.json`
+- `AUTHORIZATION_GATEWAY_SPEC.json`
+- `ISOLATION_QA.json`
+- `OUTCOME_ISOLATION_QA.json`
 - `INDEPENDENT_REVIEW.md`
 - `QA_REPORT.md`
 - `freeze_manifest.json`
 
-If and only if registration prerequisites are all met, additionally create a separate append-only namespace such as:
-`docs/machine_strategy_v3_oos_registration/`
-with exact immutable registration artifacts. Do not create a fake registration on STOP.
+If recurring capture is successfully activated, also retain the exact collector workflow SHA/content hash and first capture manifest/hash/T0. Do not copy prospective raw data into this frozen report namespace if the separate append-only capture branch is the canonical evidence surface; reference its immutable commit/hash instead.
 
 ## Mandatory QA
 At minimum:
-- deterministic replay of metadata/warmup readiness outputs;
-- raw-response/hash verification;
-- exact timestamp/known-at/capture chronology checks;
-- exact symbol/contract identity checks;
-- M15 continuity/duplicate/gap checks;
-- overlap conflict checks using exact decimals;
-- future mutation/prefix isolation for integrity tooling;
-- static/dynamic proof integrity-only tooling cannot import/read strategy-state or financial outcome surfaces;
-- unauthorized/forged/missing auth capability tests must fail closed;
-- unmodified current-phase full test suite PASS (no old NEXT_TASK byte injection workaround);
+- bounded real public capture attempt in the intended collector environment;
+- raw byte/hash replay and normalized-output determinism;
+- exact BTC/ETH contract/category/tick identity checks;
+- closed-M15 cutoff/continuity/dedupe/conflict tests;
+- collector future-mutation/prefix tests;
+- static import graph proving collector/integrity worker does not import strategy/outcome modules;
+- dynamic file-access/read audit proving no strategy-state/outcome reads in integrity mode;
+- active-test-registry hash verification;
+- unmodified new active current-phase suite PASS;
+- separate reproducibility record for legacy frozen tests without mislabeling them current PASS;
+- missing/forged/wrong-hash/wrong-phase auth tests DENY before history read;
+- OS/process isolation escape-negative tests appropriate to the selected mechanism;
+- capture branch race/idempotence tests;
+- frozen namespace/hash invariance;
 - Ruff/format, mypy, compile;
-- frozen namespace invariance;
-- independent reviewer PASS required for readiness promotion.
+- independent reviewer PASS required for any ACTIVE decision.
 
 ## Decision gate
-Publish exactly one primary state:
+Publish exactly one state:
 
-### `V3_PROSPECTIVE_READINESS_FROZEN_READY_FOR_OOS_REGISTRATION`
-Only if prospective metadata capture is defensible, 365-day warmup is contiguous/verified, control-plane QA passes, and the exact registration prerequisites are all met without strategy/outcome observation.
+### `V3_CAPTURE_CONTROL_FROZEN_ACTIVE`
+Only if:
+- at least one defensible official prospective metadata + M15 capture path is operational for BOTH symbols from a non-evasive public environment;
+- append-only capture storage/manifest chain is verified and recurring collection is activated;
+- a defensible T0 is frozen;
+- Control Plane v2 active suite passes honestly;
+- authorization gateway fails closed;
+- required isolation is implemented and reviewer accepts its exact guarantees/limitations;
+- no strategy outcome was generated/viewed.
 
-### `V3_PROSPECTIVE_READINESS_FROZEN_STOP`
-If metadata capture, warmup continuity/authenticity, embargo isolation, or control-plane QA remains unresolved. List exact blockers.
+### `V3_CAPTURE_CONTROL_FROZEN_STOP`
+If any critical requirement remains unresolved. List exact blockers and distinguish time-dependent accumulation from engineering failures.
 
-If the READY state is reached, registration itself may be created only according to Section C and must still generate zero strategy outcomes in this gate.
+Even ACTIVE does NOT authorize OOS registration yet. OOS registration can open only after the frozen 365-day warmup prerequisites are objectively satisfied and independently reviewed.
 
 Update `agent_control/STATUS.md` and `CURRENT_STATE.md` with:
-- prospective-readiness freeze commit SHA;
-- manifest hash;
-- metadata capture verdict;
-- warmup continuity verdict;
-- control-plane QA verdict;
-- exact agents actually used;
-- whether OOS registration was objectively allowed/created;
-- exact remaining blockers.
+- freeze commit/manifest hash;
+- exact collector environment and access verdict;
+- capture branch/workflow commit and T0 if activated;
+- current prospective contiguous duration;
+- active-test/control-plane verdict;
+- isolation/auth-gateway verdict;
+- actual agents used;
+- exact remaining blockers and next eligible gate.
 
-Historical financial backtest remains unauthorized regardless of this gate result.
+Historical financial backtest remains unauthorized.
 Do NOT enable PAPER or LIVE.
 `trade_entry_allowed=false` remains invariant.
