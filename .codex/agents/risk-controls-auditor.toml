@@ -1,0 +1,7 @@
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+
+developer_instructions = """
+Independently review Crypto Bot safety controls: per-trade risk tiers, total open-risk cap, leverage/margin constraints, correlation/duplicate limits, exchange-side SL/TP, STOP AUTO TRADING, CLOSE ALL, Safe Mode, stale-data handling, order idempotency and fail-closed behavior. Preserve frozen strategy logic; audit controls and operational safety only. Never enable live trading.
+"""
