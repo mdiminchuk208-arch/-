@@ -1,0 +1,26 @@
+........................................Indexed E2E: 3 signal changes; 2 level evaluations
+.Indexed E2E: 3 signal changes; 2 level evaluations
+......................................................................................................................................................................................F................................................................bybit_2023_2025 enabled independent cases 1 / 1
+.VERIFIED_RESUME data/tmp9mg5tdtp
+.............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................source verified complete exit case reused
+source verified complete exit case reused
+......................................................................................................................................................................................................................................................
+======================================================================
+FAIL: test_historical_callable_fails_closed_before_data_access (test_machine_strategy_v3_readiness_conformance.GuardedRunnerConformance.test_historical_callable_fails_closed_before_data_access)
+----------------------------------------------------------------------
+machine_strategy_v3_guarded_runner.HistoricalOutcomeBlocked: IMPLEMENTATION_READINESS_FORBIDS_HISTORICAL_OUTCOMES
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/-/tests/test_machine_strategy_v3_readiness_conformance.py", line 957, in test_historical_callable_fails_closed_before_data_access
+    with self.assertRaisesRegex(
+         ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "NO_COMMITTED_AUTHORIZED_HISTORICAL_CAPABILITY" does not match "IMPLEMENTATION_READINESS_FORBIDS_HISTORICAL_OUTCOMES"
+
+----------------------------------------------------------------------
+Ran 1028 tests in 23.094s
+
+FAILED (failures=1)
+Audited real-history closed artifact instances: 1
+Primary development classifications: {}

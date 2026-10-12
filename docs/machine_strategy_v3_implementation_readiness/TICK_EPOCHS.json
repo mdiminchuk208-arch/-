@@ -1,0 +1,71 @@
+{
+  "status": "STOP_NO_VERIFIED_HISTORICAL_TICK_EPOCHS",
+  "intervals": [
+    {
+      "symbol": "BTCUSDT",
+      "contract_type": "USDT_LINEAR_PERPETUAL",
+      "valid_from": 1640995200,
+      "valid_to": 1764977400,
+      "interval_end_exclusive": true,
+      "tick_size": null,
+      "effective_at": null,
+      "known_at": null,
+      "source_url_or_archive_id": null,
+      "source_hash": null,
+      "evidence_class": "UNPROVEN_COMPLETE_INTERVAL",
+      "verification_status": "UNVERIFIED",
+      "notes": "Dated change notices are evidence leads, not proof of all active epochs, pre-effective publication and unchanged continuity; no later setting/decimal backfill."
+    },
+    {
+      "symbol": "ETHUSDT",
+      "contract_type": "USDT_LINEAR_PERPETUAL",
+      "valid_from": 1640995200,
+      "valid_to": 1764977400,
+      "interval_end_exclusive": true,
+      "tick_size": null,
+      "effective_at": null,
+      "known_at": null,
+      "source_url_or_archive_id": null,
+      "source_hash": null,
+      "evidence_class": "UNPROVEN_COMPLETE_INTERVAL",
+      "verification_status": "UNVERIFIED",
+      "notes": "Dated change notices are evidence leads, not proof of all active epochs, pre-effective publication and unchanged continuity; no later setting/decimal backfill."
+    }
+  ],
+  "verified_core_epochs": [],
+  "development_start": 1672531200,
+  "development_end_exclusive": 1764977400,
+  "verified_development_coverage_seconds": {
+    "BTCUSDT": 0,
+    "ETHUSDT": 0
+  },
+  "notice_claims_not_executable_epochs": [
+    {
+      "symbol": "ETHUSDT",
+      "title_date": "2023-01-06",
+      "page_date": "2023-01-06T07:03:06",
+      "publication_timezone_verified": false,
+      "body_effective_at_UTC": "2023-01-17T08:00:00+00:00",
+      "before_tick": "0.05",
+      "after_tick": "0.01",
+      "archive_capture_at_UTC": "2023-02-05T04:10:38+00:00",
+      "retrieval_receipt": "evidence/eth_tick_notice_arquivo_receipt.json",
+      "source_hash": "43823daf528216e1cc4f55b511b1ea1e68d955820b95af95882fff292314c9a9",
+      "effective_publication_discrepancy": "Archive capture follows stated effective time; pre-effective known_at and applied/unchanged interval not proven."
+    },
+    {
+      "symbol": "BTCUSDT",
+      "title_date": "2023-02-08",
+      "page_date": "2023-02-07T11:02:47",
+      "publication_timezone_verified": false,
+      "body_effective_at_UTC": "2023-02-10T08:00:00+00:00",
+      "before_tick": "0.5",
+      "after_tick": "0.1",
+      "archive_capture_at_UTC": null,
+      "retrieval_receipt": "evidence/btc_current_notice.receipt.json",
+      "source_hash": "c0787c9c5e51f355e7b87cd8cd053427d2c7b6be8193c8a7081e4fa079ce1153",
+      "effective_publication_discrepancy": "Current notice title and page date differ; no contemporary capture/complete continuity proof."
+    }
+  ],
+  "trade_entry_allowed": false
+}

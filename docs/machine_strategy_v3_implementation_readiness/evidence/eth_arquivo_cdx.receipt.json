@@ -1,0 +1,14 @@
+{
+  "url": "https://arquivo.pt/wayback/cdx?url=announcements.bybit.com%2Farticle%2Fchanges-to-tick-size-for-ethusdt-perpetual-contract-2023-01-06--bltb4b6d3ffa3c5206c&output=json",
+  "retrieved_at": "2026-10-12T06:19:15.641914+00:00",
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "private_API": false,
+  "http_status": 200,
+  "response_headers": {
+    "date": "Mon, 12 Oct 2026 06:19:16 GMT",
+    "content-type": "text/x-ndjson"
+  },
+  "body_file": "docs/machine_strategy_v3_implementation_readiness/evidence/eth_arquivo_cdx.body",
+  "body_sha256": "eb1a6bcfe763bf2636b2ffc5ca2fe3cb3622cc4147449bf71302fef3ad2f2771",
+  "bytes": 569
+}

@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "static_admission": {
+    "status": "PASS",
+    "adapter_sha256": "ed4091e385d4b7ed61bbf6680c56806b618bdf74d63a37b73c37d681a8874150",
+    "forbidden_columns": [
+      "drawdown",
+      "equity",
+      "exit_price",
+      "exit_reason",
+      "fees_r",
+      "fill_price",
+      "financial_outcome",
+      "gross_r",
+      "holding_time_bounds",
+      "loss",
+      "mae",
+      "mfe",
+      "net_r",
+      "outcome",
+      "pnl",
+      "slippage_r",
+      "win"
+    ],
+    "forbidden_columns_read": [],
+    "runner_imported_by_adapter": false,
+    "scope": "Direct adapter AST plus separately pinned/reviewed primitive dependencies"
+  },
+  "historical_prefix_future_mutation": [
+    {
+      "status": "PASS",
+      "symbol": "BTCUSDT",
+      "cutoff": 1673136000,
+      "cutoff_UTC": "2023-01-08T00:00:00+00:00",
+      "decision_known_through": 1673136000,
+      "scenarios": [
+        {
+          "scenario": "prefix",
+          "pre_entry_digest": "1aa9536d0f0f6dbe058b73778a159e3b47479cf588cf5a2f316f5497efd34dd7"
+        },
+        {
+          "scenario": "full_future",
+          "pre_entry_digest": "1aa9536d0f0f6dbe058b73778a159e3b47479cf588cf5a2f316f5497efd34dd7"
+        },
+        {
+          "scenario": "mutated_future",
+          "pre_entry_digest": "1aa9536d0f0f6dbe058b73778a159e3b47479cf588cf5a2f316f5497efd34dd7"
+        }
+      ],
+      "historical_position_evaluations": 0,
+      "financial_fields_observed": false,
+      "verified_tick_epochs_supplied": 0,
+      "scope": "Actual complete warmup + first seven development days; full 2022-2025 future index and future-OHLC mutation; all-family positive path tested separately on synthetic fixtures"
+    },
+    {
+      "status": "PASS",
+      "symbol": "ETHUSDT",
+      "cutoff": 1673136000,
+      "cutoff_UTC": "2023-01-08T00:00:00+00:00",
+      "decision_known_through": 1673136000,
+      "scenarios": [
+        {
+          "scenario": "prefix",
+          "pre_entry_digest": "96d529196223224c25fa1f0ee29f75ad450540c32094eed1fd0e550633432cef"
+        },
+        {
+          "scenario": "full_future",
+          "pre_entry_digest": "96d529196223224c25fa1f0ee29f75ad450540c32094eed1fd0e550633432cef"
+        },
+        {
+          "scenario": "mutated_future",
+          "pre_entry_digest": "96d529196223224c25fa1f0ee29f75ad450540c32094eed1fd0e550633432cef"
+        }
+      ],
+      "historical_position_evaluations": 0,
+      "financial_fields_observed": false,
+      "verified_tick_epochs_supplied": 0,
+      "scope": "Actual complete warmup + first seven development days; full 2022-2025 future index and future-OHLC mutation; all-family positive path tested separately on synthetic fixtures"
+    }
+  ],
+  "known_at_validation": "PASS",
+  "historical_outcomes_observed": false
+}

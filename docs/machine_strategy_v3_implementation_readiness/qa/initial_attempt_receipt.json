@@ -1,0 +1,6 @@
+{
+  "initial_failure": "obsolete guard reason assertion; corrected to stronger phase-first reason",
+  "original_log_sha256": "77d72fda57c8c920790296853c4788150c17661b8f524a8a8f4c08ea2ede38df",
+  "product_stdout_suppressed_in_delivery": true,
+  "full_suite_coverage_attempts": "cancelled as redundant slow tracing; full suite separately completed and targeted+historical-prefix coverage retained"
+}

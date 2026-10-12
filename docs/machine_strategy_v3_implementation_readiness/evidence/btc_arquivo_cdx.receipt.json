@@ -1,0 +1,14 @@
+{
+  "url": "https://arquivo.pt/wayback/cdx?url=announcements.bybit.com%2Farticle%2Fchanges-to-tick-size-for-usdt-usdc-perpetual-contracts-2023-02-08--blt80c14139bdd327bc&output=json",
+  "retrieved_at": "2026-10-12T06:19:15.642685+00:00",
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "private_API": false,
+  "http_status": 200,
+  "response_headers": {
+    "date": "Mon, 12 Oct 2026 06:19:17 GMT",
+    "content-type": "text/x-ndjson"
+  },
+  "body_file": "docs/machine_strategy_v3_implementation_readiness/evidence/btc_arquivo_cdx.body",
+  "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "bytes": 0
+}

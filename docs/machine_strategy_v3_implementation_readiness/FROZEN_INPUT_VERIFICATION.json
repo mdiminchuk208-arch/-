@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "start_head": "c6b7340809046df01dab1091e02bc111022c702a",
+  "integrated_policy_head": "ed86bd3b03ffcc1a4f31b3eb82651751e389ff2a",
+  "original_invariance": "PASS",
+  "design": {
+    "path": "docs/machine_strategy_v3_design/freeze_manifest.json",
+    "sha256": "f612b806292844e5d17bee783c9e04879e4a3d32530570a900a467e4ca2e5cc0"
+  },
+  "audit": {
+    "path": "docs/machine_strategy_failure_audit_v1/freeze_manifest.json",
+    "sha256": "9dd7cd7a26ac503c350501a8967c7fed450888aed349542f5592162e993d1201"
+  }
+}

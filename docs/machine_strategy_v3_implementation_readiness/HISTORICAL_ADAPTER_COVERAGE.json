@@ -1,0 +1,135 @@
+{
+  "implementation": "FULL_PRE_ENTRY_ADAPTER_AND_GUARDED_LATER_RUNNER",
+  "families": {
+    "SFP": {
+      "native_TF": [
+        60,
+        240
+      ],
+      "directions": [
+        "LONG",
+        "SHORT"
+      ],
+      "positive_conformance": "SYNTHETIC_MIRRORED",
+      "historical_outcome_execution": false
+    },
+    "OB": {
+      "native_TF": [
+        60,
+        240
+      ],
+      "directions": [
+        "LONG",
+        "SHORT"
+      ],
+      "positive_conformance": "SYNTHETIC_MIRRORED",
+      "historical_outcome_execution": false
+    },
+    "BREAKER": {
+      "native_TF": [
+        60,
+        240
+      ],
+      "directions": [
+        "LONG",
+        "SHORT"
+      ],
+      "positive_conformance": "SYNTHETIC_MIRRORED",
+      "historical_outcome_execution": false
+    },
+    "STB": {
+      "native_TF": [
+        60,
+        240
+      ],
+      "directions": [
+        "LONG",
+        "SHORT"
+      ],
+      "positive_conformance": "SYNTHETIC_MIRRORED",
+      "historical_outcome_execution": false
+    },
+    "RANGE": {
+      "native_TF": [
+        60,
+        240
+      ],
+      "directions": [
+        "LONG",
+        "SHORT"
+      ],
+      "positive_conformance": "SYNTHETIC_MIRRORED",
+      "historical_outcome_execution": false
+    }
+  },
+  "required_surfaces": [
+    "causal states",
+    "POI/FTA/pools",
+    "ATR at formation",
+    "native next-open/reaction known_at",
+    "first eligible test",
+    "physical/POI reservation",
+    "tick WAIT",
+    "structural entry/stop/target",
+    "cost-inclusive modeled feasibility",
+    "order lifecycle",
+    "gap invalidation",
+    "intrabar ambiguity",
+    "EOF censor",
+    "risk/accounting identity"
+  ],
+  "historical_positive_executable_coverage": "STOP_UNVERIFIED_TICKS",
+  "historical_prefix_checks": [
+    {
+      "status": "PASS",
+      "symbol": "BTCUSDT",
+      "cutoff": 1673136000,
+      "cutoff_UTC": "2023-01-08T00:00:00+00:00",
+      "decision_known_through": 1673136000,
+      "scenarios": [
+        {
+          "scenario": "prefix",
+          "pre_entry_digest": "1aa9536d0f0f6dbe058b73778a159e3b47479cf588cf5a2f316f5497efd34dd7"
+        },
+        {
+          "scenario": "full_future",
+          "pre_entry_digest": "1aa9536d0f0f6dbe058b73778a159e3b47479cf588cf5a2f316f5497efd34dd7"
+        },
+        {
+          "scenario": "mutated_future",
+          "pre_entry_digest": "1aa9536d0f0f6dbe058b73778a159e3b47479cf588cf5a2f316f5497efd34dd7"
+        }
+      ],
+      "historical_position_evaluations": 0,
+      "financial_fields_observed": false,
+      "verified_tick_epochs_supplied": 0,
+      "scope": "Actual complete warmup + first seven development days; full 2022-2025 future index and future-OHLC mutation; all-family positive path tested separately on synthetic fixtures"
+    },
+    {
+      "status": "PASS",
+      "symbol": "ETHUSDT",
+      "cutoff": 1673136000,
+      "cutoff_UTC": "2023-01-08T00:00:00+00:00",
+      "decision_known_through": 1673136000,
+      "scenarios": [
+        {
+          "scenario": "prefix",
+          "pre_entry_digest": "96d529196223224c25fa1f0ee29f75ad450540c32094eed1fd0e550633432cef"
+        },
+        {
+          "scenario": "full_future",
+          "pre_entry_digest": "96d529196223224c25fa1f0ee29f75ad450540c32094eed1fd0e550633432cef"
+        },
+        {
+          "scenario": "mutated_future",
+          "pre_entry_digest": "96d529196223224c25fa1f0ee29f75ad450540c32094eed1fd0e550633432cef"
+        }
+      ],
+      "historical_position_evaluations": 0,
+      "financial_fields_observed": false,
+      "verified_tick_epochs_supplied": 0,
+      "scope": "Actual complete warmup + first seven development days; full 2022-2025 future index and future-OHLC mutation; all-family positive path tested separately on synthetic fixtures"
+    }
+  ],
+  "trade_entry_allowed": false
+}

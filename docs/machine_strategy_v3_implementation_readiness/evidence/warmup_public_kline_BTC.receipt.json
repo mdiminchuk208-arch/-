@@ -1,0 +1,8 @@
+{
+  "url": "https://api.bybit.com/v5/market/kline?category=linear&symbol=BTCUSDT&interval=15&start=1764977400000&end=1764979200000&limit=3",
+  "retrieved_at": "2026-10-12T06:19:17.120463+00:00",
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "private_API": false,
+  "error_type": "HTTPError",
+  "error": "HTTP Error 403: Forbidden"
+}

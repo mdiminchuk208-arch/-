@@ -1,0 +1,325 @@
+{
+  "timestamp_OHLC_source_hash_verdict": "PASS_PINNED_LOCAL_REPRESENTATIONS",
+  "historical_exchange_price_grid_verdict": "UNVERIFIED",
+  "independent_exchange_authenticity": "NOT_ESTABLISHED_BEYOND_FROZEN_PUBLIC_SOURCE_PROVENANCE",
+  "sources": [
+    {
+      "path": "data/history/public_research/bybit_mirror/BTCUSDT/15.csv.gz",
+      "sha256": "5d3fe4a4eb1d147c5f5516944bdbc45a21fb483d0bc667b5a92ed206aa8a6fc9",
+      "symbol": "BTCUSDT",
+      "contract_type": "USDT_LINEAR_PERPETUAL",
+      "origin": "PINNED_PUBLIC_HISTORICAL_MIRROR",
+      "contract_identity_evidence": "Frozen source provenance; not independent exchange capture",
+      "first_open": 1640995200,
+      "end_exclusive": 1764977400,
+      "bars": 137758,
+      "UTC_M15_grid": "PASS",
+      "missing_bars": 0,
+      "duplicate_bars": 0,
+      "interpolation": false,
+      "development_first_open": 1672531200,
+      "development_end_exclusive": 1764977400,
+      "warmup_first_open": 1640995200,
+      "development_M15_bars": 102718,
+      "derivations": {
+        "60": {
+          "bars": 34439,
+          "first_open": 1640995200,
+          "end_exclusive": 1764975600,
+          "excluded_incomplete_groups": [
+            {
+              "start": 1764975600,
+              "observed_M15_bars": 2,
+              "expected_M15_bars": 4
+            }
+          ],
+          "content_sha256": "8ba7130a9cd73a039483a296a04d4f532d690364d774116447999c0ad5eeda8d"
+        },
+        "240": {
+          "bars": 8609,
+          "first_open": 1640995200,
+          "end_exclusive": 1764964800,
+          "excluded_incomplete_groups": [
+            {
+              "start": 1764964800,
+              "observed_M15_bars": 14,
+              "expected_M15_bars": 16
+            }
+          ],
+          "content_sha256": "dccae2b3c00124e860d09bf4fbd075a93947ac2679ab1711c0decadc9c0aedc0"
+        },
+        "1440": {
+          "bars": 1434,
+          "first_open": 1640995200,
+          "end_exclusive": 1764892800,
+          "excluded_incomplete_groups": [
+            {
+              "start": 1764892800,
+              "observed_M15_bars": 94,
+              "expected_M15_bars": 96
+            }
+          ],
+          "content_sha256": "a659cb07627979515661c2031b77cb9f97288158eae1c0fcd4885c722f18587f"
+        }
+      },
+      "price_tick_grid_verdict": "UNVERIFIED_NO_HISTORICAL_EPOCHS"
+    },
+    {
+      "path": "data/history/public_research/bybit_mirror/ETHUSDT/15.csv.gz",
+      "sha256": "94c8f3f414ae3bbbe08bc5180f3da88d72c699f8ff88fd8093062078260449f8",
+      "symbol": "ETHUSDT",
+      "contract_type": "USDT_LINEAR_PERPETUAL",
+      "origin": "PINNED_PUBLIC_HISTORICAL_MIRROR",
+      "contract_identity_evidence": "Frozen source provenance; not independent exchange capture",
+      "first_open": 1640995200,
+      "end_exclusive": 1764977400,
+      "bars": 137758,
+      "UTC_M15_grid": "PASS",
+      "missing_bars": 0,
+      "duplicate_bars": 0,
+      "interpolation": false,
+      "development_first_open": 1672531200,
+      "development_end_exclusive": 1764977400,
+      "warmup_first_open": 1640995200,
+      "development_M15_bars": 102718,
+      "derivations": {
+        "60": {
+          "bars": 34439,
+          "first_open": 1640995200,
+          "end_exclusive": 1764975600,
+          "excluded_incomplete_groups": [
+            {
+              "start": 1764975600,
+              "observed_M15_bars": 2,
+              "expected_M15_bars": 4
+            }
+          ],
+          "content_sha256": "748bd030f338cfda2eddae639efdd50644ca2419c06195748f6ac5255ced6676"
+        },
+        "240": {
+          "bars": 8609,
+          "first_open": 1640995200,
+          "end_exclusive": 1764964800,
+          "excluded_incomplete_groups": [
+            {
+              "start": 1764964800,
+              "observed_M15_bars": 14,
+              "expected_M15_bars": 16
+            }
+          ],
+          "content_sha256": "9d17fed55a01a27abb0470e1088352368985a5ede704e8dccabdb9513cf05a76"
+        },
+        "1440": {
+          "bars": 1434,
+          "first_open": 1640995200,
+          "end_exclusive": 1764892800,
+          "excluded_incomplete_groups": [
+            {
+              "start": 1764892800,
+              "observed_M15_bars": 94,
+              "expected_M15_bars": 96
+            }
+          ],
+          "content_sha256": "d4cfe262ed2e204455287ff669944fce9c307a94643aedfc488b125efae0d95d"
+        }
+      },
+      "price_tick_grid_verdict": "UNVERIFIED_NO_HISTORICAL_EPOCHS"
+    }
+  ],
+  "alias_overlap_inventory": [
+    {
+      "path": "data/history/bybit/BTCUSDT/15.csv",
+      "stored_sha256": "c15a595e948ad4d329c8b6044a95665dfbe53b97a2ef2d62df0d5230b8274b21",
+      "underlying_series_id": "BYBIT:NATIVE_2026:BTCUSDT:15",
+      "raw_source_alias": false,
+      "timeframe_minutes": 15,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/history/bybit/BTCUSDT/240.csv",
+      "stored_sha256": "017a82769092847de9409bd71f8c0de2935f932661f1f202549b54453a501f7c",
+      "underlying_series_id": "BYBIT:NATIVE_2026:BTCUSDT:240",
+      "raw_source_alias": false,
+      "timeframe_minutes": 240,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/history/bybit/BTCUSDT/5.csv",
+      "stored_sha256": "5035989c9d85cecb05980946931daed7bc3fcf1e7d4e8cc0cd36498e25550e16",
+      "underlying_series_id": "BYBIT:NATIVE_2026:BTCUSDT:5",
+      "raw_source_alias": false,
+      "timeframe_minutes": 5,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/history/bybit/BTCUSDT/60.csv",
+      "stored_sha256": "711bc9aebbb618f450ac186f1a0a9d06309941c64e3489a5060292cabb502d54",
+      "underlying_series_id": "BYBIT:NATIVE_2026:BTCUSDT:60",
+      "raw_source_alias": false,
+      "timeframe_minutes": 60,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/history/bybit/ETHUSDT/15.csv",
+      "stored_sha256": "c42c68735311d4e7045ddec5c622b6a899d07bce71fec2f3cc21bf4c2f8cf9e0",
+      "underlying_series_id": "BYBIT:NATIVE_2026:ETHUSDT:15",
+      "raw_source_alias": false,
+      "timeframe_minutes": 15,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/history/bybit/ETHUSDT/240.csv",
+      "stored_sha256": "219ecec093e68589ca35ec90c5543fed8cee7a058266978c1d92898c6286d178",
+      "underlying_series_id": "BYBIT:NATIVE_2026:ETHUSDT:240",
+      "raw_source_alias": false,
+      "timeframe_minutes": 240,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/history/bybit/ETHUSDT/5.csv",
+      "stored_sha256": "c0bc583b2af2f1bb28511547e784a0a922e1d1917cdcd44537967276c32c60ac",
+      "underlying_series_id": "BYBIT:NATIVE_2026:ETHUSDT:5",
+      "raw_source_alias": false,
+      "timeframe_minutes": 5,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/history/bybit/ETHUSDT/60.csv",
+      "stored_sha256": "6a68584ba89b7b56c5e1cd09c423c2e48eeb4823ef8c673de10ab457b4e447dc",
+      "underlying_series_id": "BYBIT:NATIVE_2026:ETHUSDT:60",
+      "raw_source_alias": false,
+      "timeframe_minutes": 60,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/history/public_research/bybit_mirror/BTCUSDT/15.csv.gz",
+      "stored_sha256": "5d3fe4a4eb1d147c5f5516944bdbc45a21fb483d0bc667b5a92ed206aa8a6fc9",
+      "underlying_series_id": "BYBIT:PUBLIC_MIRROR:BTCUSDT:15",
+      "raw_source_alias": false,
+      "timeframe_minutes": 15,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/history/public_research/bybit_mirror/BTCUSDT/240.csv.gz",
+      "stored_sha256": "e564bd0d869911a0e566623592a2fcbdc2852527098546dad94980ec55a5df47",
+      "underlying_series_id": "BYBIT:PUBLIC_MIRROR:BTCUSDT:240",
+      "raw_source_alias": false,
+      "timeframe_minutes": 240,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/history/public_research/bybit_mirror/BTCUSDT/60.csv.gz",
+      "stored_sha256": "b9ca9cbb33b6e9f72ab03d2d037159bef928ce6c01edcfe41890d2b9704e8cc4",
+      "underlying_series_id": "BYBIT:PUBLIC_MIRROR:BTCUSDT:60",
+      "raw_source_alias": false,
+      "timeframe_minutes": 60,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/history/public_research/bybit_mirror/ETHUSDT/15.csv.gz",
+      "stored_sha256": "94c8f3f414ae3bbbe08bc5180f3da88d72c699f8ff88fd8093062078260449f8",
+      "underlying_series_id": "BYBIT:PUBLIC_MIRROR:ETHUSDT:15",
+      "raw_source_alias": false,
+      "timeframe_minutes": 15,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/history/public_research/bybit_mirror/ETHUSDT/240.csv.gz",
+      "stored_sha256": "a69e1afa98f66e56e9a126840f226533598b4853148f988dd8b89865cae8d98e",
+      "underlying_series_id": "BYBIT:PUBLIC_MIRROR:ETHUSDT:240",
+      "raw_source_alias": false,
+      "timeframe_minutes": 240,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/history/public_research/bybit_mirror/ETHUSDT/60.csv.gz",
+      "stored_sha256": "1f89f9e0c5bec92772222fb098dceb85ebb3197fbc7921d5c3bbc0032e4771dd",
+      "underlying_series_id": "BYBIT:PUBLIC_MIRROR:ETHUSDT:60",
+      "raw_source_alias": false,
+      "timeframe_minutes": 60,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/history/public_research/bybit_mirror/source_raw/BTCUSDT_240.csv.gz",
+      "stored_sha256": "a777ffabd75032959670525373fb1663d7ab206ee0a31969b3a67c38e6b9baa3",
+      "underlying_series_id": "BYBIT:PUBLIC_MIRROR:BTCUSDT:240",
+      "raw_source_alias": true,
+      "timeframe_minutes": 240,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/history/public_research/bybit_mirror/source_raw/BTCUSDT_60.csv.gz",
+      "stored_sha256": "cd0ef3db3b9f6af2af6d537b81db7c0d4a094650789024de48c1514fe9740581",
+      "underlying_series_id": "BYBIT:PUBLIC_MIRROR:BTCUSDT:60",
+      "raw_source_alias": true,
+      "timeframe_minutes": 60,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/history/public_research/bybit_mirror/source_raw/ETHUSDT_240.csv.gz",
+      "stored_sha256": "09aa3da64680a83eee6b4ac37523e0712878f1b7bb87d4d6d028d4ec3247f1ab",
+      "underlying_series_id": "BYBIT:PUBLIC_MIRROR:ETHUSDT:240",
+      "raw_source_alias": true,
+      "timeframe_minutes": 240,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/history/public_research/bybit_mirror/source_raw/ETHUSDT_60.csv.gz",
+      "stored_sha256": "62c893003069a8b9af0a0e4e084baa55a77f281f3e088122e7007cb08fbab957",
+      "underlying_series_id": "BYBIT:PUBLIC_MIRROR:ETHUSDT:60",
+      "raw_source_alias": true,
+      "timeframe_minutes": 60,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/history/public_research/bybit_mirror/source_raw/bybit_btc_15.gz",
+      "stored_sha256": "5192544084f775ace822f3dd8bce974d87ddeae17fd978ccab52872017189168",
+      "underlying_series_id": "BYBIT:PUBLIC_MIRROR:BTCUSDT:15",
+      "raw_source_alias": true,
+      "timeframe_minutes": 15,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/history/public_research/bybit_mirror/source_raw/bybit_eth_15.gz",
+      "stored_sha256": "54ffe8ee9d2d51e4536d4104e9d569a544759527d4b4c25ca164a41458886c69",
+      "underlying_series_id": "BYBIT:PUBLIC_MIRROR:ETHUSDT:15",
+      "raw_source_alias": true,
+      "timeframe_minutes": 15,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/BTCUSDT/derived_D1.jsonl.gz",
+      "stored_sha256": "904526b2bc67ad83e482d8b75fb60c3ce734e190f6fdd3a27dedc46cc1798fc1",
+      "underlying_series_id": "BYBIT:NATIVE_2026:BTCUSDT:1440",
+      "raw_source_alias": false,
+      "timeframe_minutes": 1440,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/detection/ETHUSDT/derived_D1.jsonl.gz",
+      "stored_sha256": "c00fac1ce54fccbe183280574da90e328a32408aab2ee07afae30e8e1d2d372e",
+      "underlying_series_id": "BYBIT:NATIVE_2026:ETHUSDT:1440",
+      "raw_source_alias": false,
+      "timeframe_minutes": 1440,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/reports/medium_term_2026_10_10/compiled_primary/bybit_2023_2025/detection/BTCUSDT/derived_D1.jsonl.gz",
+      "stored_sha256": "3e44d583b40ca01f01de2eb24bfbed8814dd726001d8ddfd23eb57796db6cb3b",
+      "underlying_series_id": "BYBIT:PUBLIC_MIRROR:BTCUSDT:1440",
+      "raw_source_alias": false,
+      "timeframe_minutes": 1440,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "path": "data/reports/medium_term_2026_10_10/compiled_primary/bybit_2023_2025/detection/ETHUSDT/derived_D1.jsonl.gz",
+      "stored_sha256": "9d4c79090c3a37fdb1fb6ae417b179a9a27d317136c24191aa21d0cc2eef7799",
+      "underlying_series_id": "BYBIT:PUBLIC_MIRROR:ETHUSDT:1440",
+      "raw_source_alias": false,
+      "timeframe_minutes": 1440,
+      "exposure": "EXPOSED_DEVELOPMENT"
+    }
+  ],
+  "aliases_as_independent_evidence": false,
+  "independently_stored_H1_H4_used": false
+}

@@ -1,0 +1,56 @@
+{
+  "status": "STOP_NO_PRISTINE_OOS",
+  "local_exposure": "ALL_92_SERIES_EXPOSED_DEVELOPMENT; old2026TEST not pristine",
+  "illustrative_anchor_UTC": "2026-10-13T00:00:00+00:00",
+  "anchor_is_registration": false,
+  "warmup": [
+    {
+      "symbol": "BTCUSDT",
+      "illustrative_warmup": [
+        1760313600,
+        1791849600
+      ],
+      "missing_local_intervals": [
+        {
+          "from": 1764977400,
+          "to": 1769340600,
+          "end_exclusive": true
+        },
+        {
+          "from": 1790075700,
+          "to": 1791849600,
+          "end_exclusive": true
+        }
+      ],
+      "continuous_365_day_warmup_verified": false
+    },
+    {
+      "symbol": "ETHUSDT",
+      "illustrative_warmup": [
+        1760313600,
+        1791849600
+      ],
+      "missing_local_intervals": [
+        {
+          "from": 1764977400,
+          "to": 1769344200,
+          "end_exclusive": true
+        },
+        {
+          "from": 1790079300,
+          "to": 1791849600,
+          "end_exclusive": true
+        }
+      ],
+      "continuous_365_day_warmup_verified": false
+    }
+  ],
+  "public_gap_acquisition": "BLOCKED_HTTP_403_BOTH_SYMBOLS; immutable receipts retained",
+  "metadata": "STOP_NO_VERIFIED_HISTORICAL_TICK_EPOCHS",
+  "acquisition_procedure": "Unauthenticated GET /v5/market/kline category=linear interval=15, paginate exact start/end, hash raw responses, normalize only closed UTC bars, enforce native identity/duplicate/gap/OHLC checks; archive instruments/dated changes independently. Do not use private API or interpolate.",
+  "prospective_signals_positions_outcomes_generated": false,
+  "can_claim_pristine_OOS": false,
+  "separate_append_only_registration": "Required after complete implementation freeze: exact first UTC D1 OPEN strictly later than max(freeze commit time, registration commit time), BTC/ETH, 365-day evaluation + independently verified 365-day pre-start warmup; no early outcome peeking",
+  "registration_ready": false,
+  "trade_entry_allowed": false
+}

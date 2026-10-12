@@ -1,0 +1,169 @@
+{
+  "status": "PASS_LOCAL_DECLARED_CANONICAL_INTERVAL",
+  "period_end_policy": "Exclusive availability end, no fabricated final M15/H1/H4/D1 bar",
+  "sources": [
+    {
+      "path": "data/history/public_research/bybit_mirror/BTCUSDT/15.csv.gz",
+      "sha256": "5d3fe4a4eb1d147c5f5516944bdbc45a21fb483d0bc667b5a92ed206aa8a6fc9",
+      "symbol": "BTCUSDT",
+      "contract_type": "USDT_LINEAR_PERPETUAL",
+      "origin": "PINNED_PUBLIC_HISTORICAL_MIRROR",
+      "contract_identity_evidence": "Frozen source provenance; not independent exchange capture",
+      "first_open": 1640995200,
+      "end_exclusive": 1764977400,
+      "bars": 137758,
+      "UTC_M15_grid": "PASS",
+      "missing_bars": 0,
+      "duplicate_bars": 0,
+      "interpolation": false,
+      "development_first_open": 1672531200,
+      "development_end_exclusive": 1764977400,
+      "warmup_first_open": 1640995200,
+      "development_M15_bars": 102718,
+      "derivations": {
+        "60": {
+          "bars": 34439,
+          "first_open": 1640995200,
+          "end_exclusive": 1764975600,
+          "excluded_incomplete_groups": [
+            {
+              "start": 1764975600,
+              "observed_M15_bars": 2,
+              "expected_M15_bars": 4
+            }
+          ],
+          "content_sha256": "8ba7130a9cd73a039483a296a04d4f532d690364d774116447999c0ad5eeda8d"
+        },
+        "240": {
+          "bars": 8609,
+          "first_open": 1640995200,
+          "end_exclusive": 1764964800,
+          "excluded_incomplete_groups": [
+            {
+              "start": 1764964800,
+              "observed_M15_bars": 14,
+              "expected_M15_bars": 16
+            }
+          ],
+          "content_sha256": "dccae2b3c00124e860d09bf4fbd075a93947ac2679ab1711c0decadc9c0aedc0"
+        },
+        "1440": {
+          "bars": 1434,
+          "first_open": 1640995200,
+          "end_exclusive": 1764892800,
+          "excluded_incomplete_groups": [
+            {
+              "start": 1764892800,
+              "observed_M15_bars": 94,
+              "expected_M15_bars": 96
+            }
+          ],
+          "content_sha256": "a659cb07627979515661c2031b77cb9f97288158eae1c0fcd4885c722f18587f"
+        }
+      },
+      "price_tick_grid_verdict": "UNVERIFIED_NO_HISTORICAL_EPOCHS"
+    },
+    {
+      "path": "data/history/public_research/bybit_mirror/ETHUSDT/15.csv.gz",
+      "sha256": "94c8f3f414ae3bbbe08bc5180f3da88d72c699f8ff88fd8093062078260449f8",
+      "symbol": "ETHUSDT",
+      "contract_type": "USDT_LINEAR_PERPETUAL",
+      "origin": "PINNED_PUBLIC_HISTORICAL_MIRROR",
+      "contract_identity_evidence": "Frozen source provenance; not independent exchange capture",
+      "first_open": 1640995200,
+      "end_exclusive": 1764977400,
+      "bars": 137758,
+      "UTC_M15_grid": "PASS",
+      "missing_bars": 0,
+      "duplicate_bars": 0,
+      "interpolation": false,
+      "development_first_open": 1672531200,
+      "development_end_exclusive": 1764977400,
+      "warmup_first_open": 1640995200,
+      "development_M15_bars": 102718,
+      "derivations": {
+        "60": {
+          "bars": 34439,
+          "first_open": 1640995200,
+          "end_exclusive": 1764975600,
+          "excluded_incomplete_groups": [
+            {
+              "start": 1764975600,
+              "observed_M15_bars": 2,
+              "expected_M15_bars": 4
+            }
+          ],
+          "content_sha256": "748bd030f338cfda2eddae639efdd50644ca2419c06195748f6ac5255ced6676"
+        },
+        "240": {
+          "bars": 8609,
+          "first_open": 1640995200,
+          "end_exclusive": 1764964800,
+          "excluded_incomplete_groups": [
+            {
+              "start": 1764964800,
+              "observed_M15_bars": 14,
+              "expected_M15_bars": 16
+            }
+          ],
+          "content_sha256": "9d17fed55a01a27abb0470e1088352368985a5ede704e8dccabdb9513cf05a76"
+        },
+        "1440": {
+          "bars": 1434,
+          "first_open": 1640995200,
+          "end_exclusive": 1764892800,
+          "excluded_incomplete_groups": [
+            {
+              "start": 1764892800,
+              "observed_M15_bars": 94,
+              "expected_M15_bars": 96
+            }
+          ],
+          "content_sha256": "d4cfe262ed2e204455287ff669944fce9c307a94643aedfc488b125efae0d95d"
+        }
+      },
+      "price_tick_grid_verdict": "UNVERIFIED_NO_HISTORICAL_EPOCHS"
+    }
+  ],
+  "warmup": [
+    1640995200,
+    1672531200
+  ],
+  "development": [
+    1672531200,
+    1764977400
+  ],
+  "gap_behavior": "WAIT_DATA_GRID_OR_CONTINUITY; no interpolation or overlap fallback",
+  "tick_STOP_map": [
+    {
+      "symbol": "BTCUSDT",
+      "contract_type": "USDT_LINEAR_PERPETUAL",
+      "valid_from": 1640995200,
+      "valid_to": 1764977400,
+      "interval_end_exclusive": true,
+      "tick_size": null,
+      "effective_at": null,
+      "known_at": null,
+      "source_url_or_archive_id": null,
+      "source_hash": null,
+      "evidence_class": "UNPROVEN_COMPLETE_INTERVAL",
+      "verification_status": "UNVERIFIED",
+      "notes": "Dated change notices are evidence leads, not proof of all active epochs, pre-effective publication and unchanged continuity; no later setting/decimal backfill."
+    },
+    {
+      "symbol": "ETHUSDT",
+      "contract_type": "USDT_LINEAR_PERPETUAL",
+      "valid_from": 1640995200,
+      "valid_to": 1764977400,
+      "interval_end_exclusive": true,
+      "tick_size": null,
+      "effective_at": null,
+      "known_at": null,
+      "source_url_or_archive_id": null,
+      "source_hash": null,
+      "evidence_class": "UNPROVEN_COMPLETE_INTERVAL",
+      "verification_status": "UNVERIFIED",
+      "notes": "Dated change notices are evidence leads, not proof of all active epochs, pre-effective publication and unchanged continuity; no later setting/decimal backfill."
+    }
+  ]
+}

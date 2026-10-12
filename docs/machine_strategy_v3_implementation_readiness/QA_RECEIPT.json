@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "tests": 1034,
+  "failed": 0,
+  "skipped": 0,
+  "deterministic_replay_outputs": 9,
+  "replay_sha256": {
+    "HISTORICAL_ADAPTER_SPEC.json": "7728a4fbc4088c7f29525878be72fbd377ee245e11f6de0bca77dbb93a101dd9",
+    "HISTORICAL_ADAPTER_COVERAGE.json": "c8c0c66b34dcb994756222fbc48ff64577ba8a3b35b9acb15592dd91fc4cc01c",
+    "TICK_EPOCHS.json": "d98ae41ab646df480cb44dd4f4e71872aabc5d71c693d392ad8ecbbab3c58307",
+    "DATA_GRID_AUTHENTICITY.json": "55c441d1d5cefa8dffd92b8f452701f2e4ebd595518d19362f2b199b1544263c",
+    "DATA_CONTINUITY_REPORT.json": "fd222ee4cf3deff634db46582ea4ecb4b01b217d68416707ea8100bf6be9aa77",
+    "OUTCOME_GUARD_QA.json": "df81adc13e611480cf411fafbe40080dd0eece3a21a35fde7277b364f71c07ef",
+    "OOS_READINESS.json": "b25a36d92d52dc9f497fdb4febb4047eb24ae62c485ef5c2a2fc8d32b7e4087d",
+    "CAUSALITY_QA.json": "e072ab47868dcc5b8f9093320de436e45500efbeb25aa643531b0aa6bfb1e34d",
+    "FROZEN_INPUT_VERIFICATION.json": "9c86db4d450160b3768350471603283c6ec7e7fd5cc1a0c5e4f0ab50b8951d35"
+  },
+  "code_sha256": {
+    "scripts/machine_strategy_v3_historical_adapter.py": "ed4091e385d4b7ed61bbf6680c56806b618bdf74d63a37b73c37d681a8874150",
+    "scripts/machine_strategy_v3_guarded_runner.py": "d1ac5407902ec22cac1e66a943cc610bcc1023b7c72290e55c09c73a1cffb0b8",
+    "scripts/build_machine_strategy_v3_implementation_readiness.py": "5f3106889da7f10930970ad53e8ec9e0c4adf279989bcf71b29a3d02a20ee3fd",
+    "tests/test_machine_strategy_v3_readiness_conformance.py": "c80a6c28c3e05a5feecbe34a5a2e53c30919b977e3602b18c4ab14b718f57c66",
+    "tests/test_machine_strategy_v3_outcome_guard.py": "48d2562d5d09230b4fa39523e184db3eb2283548b8adcab9d808b370aa552d9c"
+  },
+  "qa_log_sha256": {
+    "docs/machine_strategy_v3_implementation_readiness/qa/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/machine_strategy_v3_implementation_readiness/qa/coverage.log": "bc70775a3336e55703597a715727580cc7c96e2193d1708bb3724eaaccea550d",
+    "docs/machine_strategy_v3_implementation_readiness/qa/format.log": "f114d83b30c5c657ee43a847a45bafccaea255d82673feb87c26d252c61e29c1",
+    "docs/machine_strategy_v3_implementation_readiness/qa/full_unittest.log": "fe2f7c4739513998da850e8670bcefd4ea258de0c7051996267faa0ddee7d1d7",
+    "docs/machine_strategy_v3_implementation_readiness/qa/initial_full_unittest.log": "874d4185f2111d4d64113beba31b616fd8215b1abd104a1d27bb8781bebe3927",
+    "docs/machine_strategy_v3_implementation_readiness/qa/mypy.log": "8228fcc5ce46d42d01caf3cd941f4e9c5f2bcc372bb5b147a2f0572d2dd675a8",
+    "docs/machine_strategy_v3_implementation_readiness/qa/prepare.log": "ae81f8481b761dfbfba66fe0fb67decdefae281f0baf88ccb01543157c3168da",
+    "docs/machine_strategy_v3_implementation_readiness/qa/ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "docs/machine_strategy_v3_implementation_readiness/qa/ruff_fatal.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "docs/machine_strategy_v3_implementation_readiness/qa/targeted_v3.log": "23160c952b432bd8d5a7ef6a52d88c4ca20be04f6c6fa32e4d1ea074def022ec"
+  },
+  "historical_outcome_evaluations": 0,
+  "coverage_percent": 87.417943107221,
+  "coverage_scope": "Frozen contract core, new adapter and guarded runner; synthetic contracts plus actual pre-entry historical prefix/mutation, later financial paths deliberately unexecuted",
+  "frozen_invariance": "PASS",
+  "trade_entry_allowed": false
+}

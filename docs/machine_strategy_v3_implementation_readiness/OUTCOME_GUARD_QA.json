@@ -1,0 +1,138 @@
+{
+  "status": "PASS",
+  "blocked_probes": [
+    {
+      "probe": "public_history",
+      "reason": "IMPLEMENTATION_READINESS_FORBIDS_HISTORICAL_OUTCOMES"
+    },
+    {
+      "probe": "direct_kernel",
+      "reason": "IMPLEMENTATION_READINESS_FORBIDS_HISTORICAL_OUTCOMES"
+    },
+    {
+      "probe": "direct_accounting",
+      "reason": "IMPLEMENTATION_READINESS_FORBIDS_HISTORICAL_OUTCOMES"
+    },
+    {
+      "probe": "current_phase_authorization",
+      "reason": "IMPLEMENTATION_READINESS_FORBIDS_HISTORICAL_OUTCOMES"
+    },
+    {
+      "probe": "forged_fixture",
+      "reason": "INPUTS_DO_NOT_MATCH_REGISTERED_SYNTHETIC_FIXTURE"
+    }
+  ],
+  "synthetic_event_receipts": {
+    "open_stop": {
+      "status": "EXIT_OBSERVED",
+      "trade_entry_allowed": false,
+      "fill_time_bounds": [
+        0,
+        0
+      ],
+      "exit_reason": "FIXED_INITIAL_STOP",
+      "price_evidence_tag": "MODELED_STOP_TRIGGER_PLUS_SLIPPAGE",
+      "event_time_bounds": [
+        0,
+        900
+      ],
+      "holding_time_bounds": {
+        "minimum_seconds": 0,
+        "maximum_seconds": 900,
+        "exact_seconds": null
+      }
+    },
+    "wick_ambiguous": {
+      "status": "WAIT_INTRABAR_ORDER",
+      "trade_entry_allowed": false,
+      "fill_time_bounds": [
+        0,
+        900
+      ],
+      "event_time_bounds": [
+        0,
+        900
+      ]
+    },
+    "prefill_target_gap": {
+      "status": "GAP_INVALIDATED_BEFORE_FILL",
+      "trade_entry_allowed": false,
+      "price_evidence_tag": "OBSERVED_BAR_OPEN"
+    },
+    "filled_then_stop_gap": {
+      "status": "EXIT_OBSERVED",
+      "trade_entry_allowed": false,
+      "fill_time_bounds": [
+        0,
+        900
+      ],
+      "exit_reason": "STOP_GAP_OPEN",
+      "price_evidence_tag": "OBSERVED_BAR_OPEN",
+      "event_time_bounds": [
+        900,
+        900
+      ],
+      "holding_time_bounds": {
+        "minimum_seconds": 0,
+        "maximum_seconds": 900,
+        "exact_seconds": null
+      }
+    },
+    "filled_eof": {
+      "status": "OPEN_CENSORED_EOF",
+      "trade_entry_allowed": false,
+      "fill_time_bounds": [
+        0,
+        900
+      ]
+    },
+    "unfilled_eof": {
+      "status": "ORDER_CENSORED_EOF",
+      "trade_entry_allowed": false
+    },
+    "dual_touch": {
+      "status": "WAIT_INTRABAR_ORDER",
+      "trade_entry_allowed": false,
+      "fill_time_bounds": [
+        0,
+        0
+      ],
+      "event_time_bounds": [
+        0,
+        900
+      ]
+    },
+    "filled_epoch_change": {
+      "status": "UNRESOLVED_METADATA",
+      "trade_entry_allowed": false,
+      "fill_time_bounds": [
+        0,
+        900
+      ],
+      "status_before_uncertainty": "FILLED",
+      "uncertainty_reason": "WAIT_HISTORICAL_TICK_METADATA",
+      "unresolved_since": 900,
+      "observed_through": 900
+    },
+    "filled_data_gap": {
+      "status": "UNRESOLVED_DATA_GAP",
+      "trade_entry_allowed": false,
+      "fill_time_bounds": [
+        0,
+        900
+      ],
+      "status_before_uncertainty": "FILLED",
+      "uncertainty_reason": "WAIT_DATA_GAP",
+      "unresolved_since": 1800,
+      "observed_through": 900
+    }
+  },
+  "counters": {
+    "historical_attempts_blocked": 4,
+    "historical_outcome_evaluations": 0,
+    "synthetic_fixture_runs": 9
+  },
+  "historical_outcomes_run_or_viewed": false,
+  "trade_entry_allowed": false,
+  "guard_limits": "Process-local capability checks enforce ordinary entry paths, not hostile Python monkeypatching; NEXT_TASK phase and committed READY/auth/evidence revalidated at every historical kernel/accounting entry."
+}

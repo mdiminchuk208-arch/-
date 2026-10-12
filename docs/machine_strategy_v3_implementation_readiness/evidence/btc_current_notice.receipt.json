@@ -1,0 +1,14 @@
+{
+  "url": "https://announcements.bybit.com/en/article/changes-to-tick-size-for-usdt-usdc-perpetual-contracts-2023-02-08--blt80c14139bdd327bc/",
+  "retrieved_at": "2026-10-12T06:19:15.642347+00:00",
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "private_API": false,
+  "http_status": 200,
+  "response_headers": {
+    "content-type": "text/html; charset=utf-8",
+    "date": "Mon, 12 Oct 2026 06:19:17 GMT"
+  },
+  "body_file": "docs/machine_strategy_v3_implementation_readiness/evidence/btc_current_notice.body",
+  "body_sha256": "c0787c9c5e51f355e7b87cd8cd053427d2c7b6be8193c8a7081e4fa079ce1153",
+  "bytes": 40044
+}

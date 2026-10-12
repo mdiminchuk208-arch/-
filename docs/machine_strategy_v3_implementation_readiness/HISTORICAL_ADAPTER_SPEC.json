@@ -1,0 +1,28 @@
+{
+  "strategy_version": "MACHINE_STRATEGY_v3",
+  "frozen_design_manifest_sha256": "f612b806292844e5d17bee783c9e04879e4a3d32530570a900a467e4ca2e5cc0",
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT"
+  ],
+  "families": [
+    "SFP",
+    "OB",
+    "BREAKER",
+    "STB",
+    "RANGE"
+  ],
+  "primary": "Pinned native M15 representation only; complete UTC 4/16/96 groups derive H1/H4/D1; no fallback/interpolation",
+  "decision_clock": "Completed H1 close; D1,H4,H1,M15 release order",
+  "adapter_entry_point": "HistoricalAdapter.run",
+  "outcome_entry_point": "run_historical (separate authorized committed READY freeze only)",
+  "new_rule_selection": false,
+  "trade_entry_allowed": false,
+  "operational_clarifications": [
+    "Frozen M15 CONF must be later than reaction; linked BOS may equal reaction according to frozen inherited code.",
+    "H4 range boundary uses nominated formation_bar; native Range later reaction independently required.",
+    "EQ-confirmed range fixed until retirement; old ID never reactivates, new correction may form a new ID.",
+    "Canonical END is data availability end 2025-12-05T23:30Z exclusive; old END+1 inclusive label does not add a missing bar.",
+    "All profit-side FTA candidates retained before passive entry rounding; nearest selection uses executable E."
+  ]
+}
