@@ -1,0 +1,11 @@
+# Strategy explorer — v3 pre-outcome gate
+
+Actual agent `/root/strategy_explorer`, cloud collaboration, configured gpt-6-sol/high instructions. Read-only evidence mapping and independent inventory review; no v3 cases, financial run, parameter scan or API call.
+
+The frozen audit motivates investigation of causal state, economic target capacity, risk units and fill uncertainty; it cannot isolate signal/regime causes or select historical winners. Source anchors S_STRUCTURE/S_BOS/S_CONF, S_FLOW, S_FTA, S_PLAN/S_STOP_FIXED/S_SL_OFF_POOL support concepts. S_ADVERSE_WAIT lacks a source-specified mirrored SHORT algorithm; the symmetric completion remains a machine rule.
+
+Independently counted 92 physical records: 40 native Bybit, 34 public canonical, six raw source representations, 12 derived D1 reports. All 74 canonical hashes/counts match the frozen integrity receipt. All 34 public manifest content hashes/time bounds/counts match; both machine-used D1 records match frozen v2 verification. Native40 contains 993,575 candles, January–September2026. Public Bybit covers2020/2021–December2025, Binance2017–2020 starts throughJanuary2026. v2.x uses the same BTC/ETH2022warmup,2023–December2025 history. The old2026 TEST explicitly says previously inspected, not untouched OOS.
+
+Review found corrections before freeze: raw source H1/H4 representations overlap normalized histories but sometimes differ in OHLCV and initial partial rows, so distinct hashes are preserved and no byte/content-equivalence claim is made; direct exposure evidence must be attached by exchange/cohort rather than blanket unrelated paths. OOS cannot begin before complete implementation/registration freeze; the current contract-core freeze alone is insufficient. Contiguous365day warmup is not presently available across local Bybit gaps. Raw prospective price access can reveal outcomes and must be constrained to logged integrity-only access without candidate strategy state.
+
+These corrections are incorporated into the final exposure/validation artifacts. No verified pristine available OOS exists. Prospective OOS is an unestablished reservation plan only; `STOP_NO_PRISTINE_OOS` remains. Historical adapter and verified tick epochs are prerequisites to the first financial run, not established in this gate. No profitable subgroup or direction/family deletion is proposed.

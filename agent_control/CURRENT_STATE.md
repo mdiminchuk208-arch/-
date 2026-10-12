@@ -1,11 +1,24 @@
 # Current State
 
 Branch: `machine-v3-research`.
+Latest completed gate: MACHINE_STRATEGY_v3 pre-outcome design freeze.
+V3 namespace: `docs/machine_strategy_v3_design/`.
+V3 freeze commit: recorded in the subsequent control-state commit after freeze.
+V3 spec SHA-256: `c3876fa2239268f251454304d66a5828f6928e379c27398d4ded3b9c99786ed8`.
+V3 manifest SHA-256: `f612b806292844e5d17bee783c9e04879e4a3d32530570a900a467e4ca2e5cc0`.
+
+All four project roles actually contributed through cloud collaboration using configured gpt-6-sol/high instructions; native ECC role availability verified separately. ECC verification-loop applied; hooks remain untrusted.999 tests PASS,36 new synthetic methods,90.11% new-core coverage,12 deterministic replay artifacts byte-identical, static/type/compile/Original resume PASS, independent final review PASS. Frozen predecessors preserved; new freeze directly pins 92 data files and 13 cited primary documents.
+
+V3 is a separate machine architecture with symmetric causal states and all five families, verified-grid WAIT, structural stops, nearest-target modeled feasibility, cost-inclusive cash-stop units and explicit OHLC/timestamp uncertainty. No historical P&L tuning, direction/family deletion or portfolio overlay. The implemented scope is a nonfinancial contract core, not a complete historical event adapter. All v3 financial outcomes remain UNKNOWN_NOT_RUN.
+
+First v3 financial backtest ready=false: STOP_HISTORICAL_EVENT_ADAPTER_NOT_IMPLEMENTED and STOP_NO_VERIFIED_HISTORICAL_TICK_EPOCHS. Independent OOS: STOP_NO_PRISTINE_OOS. All 92 inventoried local/native/public/source/derived records are development-exposed; the old2026TEST is not pristine.
+
+Prospective evaluation remains unestablished: first UTC D1 OPEN after MAX(complete implementation pre-outcome freeze commit time,OOS registration commit time); BTC/ETH Bybit, locked365 UTC days,365 day contiguous pre-start warmup, logged integrity-only access with no candidate outcome peeking. Register exact timestamps before first observation. Current partial design freeze cannot start OOS; local warmup gaps and metadata remain unresolved. Later implementation requires its own pre-outcome freeze before financial results. No current production candidate or PAPER/LIVE readiness.
 Failure audit: completed and frozen in `docs/machine_strategy_failure_audit_v1/`.
 Audit commit: `8ca75ed35876d8f5d4d363e9e8808d7bd4417e87`.
 Audit manifest SHA-256: `9dd7cd7a26ac503c350501a8967c7fed450888aed349542f5592162e993d1201`.
 
-ECC project trust/config verification is complete. Actual project config is `/workspace/-/.codex/config.toml`; the initially assumed `/workspace/.codex` path is absent. All four named roles and 348 ECC skills are available. Three analysis roles ran via cloud collaboration with the configured model/instructions; strategy_designer did not run. Hooks remain untrusted.
+ECC project trust/config verification is complete. Actual project config is `/workspace/-/.codex/config.toml`; the initially assumed `/workspace/.codex` path is absent. All four named roles and 348 ECC skills are available. During the failure audit three analysis roles ran and strategy_designer did not run; during v3 design all four roles contributed. Hooks remain untrusted.
 
 Frozen workflow head before v3 research:
 `ba65e91c2b1675f48e80ac785bb3adf89d17bb0b`
@@ -29,7 +42,7 @@ Frozen failure audit conclusions:
 
 QA: 963 tests PASS, static/type/compile checks PASS, 10 generated files byte-identical under independent audit replay, all 14 frozen machine namespaces and original/baseline/source/dataset invariance PASS. Independent review: 498 groups checked, zero mismatches, final PASS. No new historical financial backtest. All actual-history causality proof references are inherited hash-verified receipts; local projection determinism is not a new future-mutation proof.
 
-Next gate: a separate pre-outcome MACHINE_STRATEGY_v3 design investigation is justified after this diagnostic freeze. No v3 strategy has been designed or implemented, no filters fitted to P&L, and SHORT remains enabled in the frozen research definitions. Independent OOS and exchange-realism evidence remain prerequisites for a production claim.
+The audit justified the subsequently completed v3 design gate recorded above. No financial v3 backtest has run, no filters were fitted to P&L, and SHORT remains eligible under mirrored rules. Independent OOS and exchange-realism evidence remain prerequisites for a production claim.
 
 Execution caveats:
 - historical exact tick epochs not proven;

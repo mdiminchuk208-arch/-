@@ -1,0 +1,238 @@
+{
+  "version": "MACHINE_STRATEGY_v3",
+  "status": "PRE_OUTCOME_DESIGN_ONLY",
+  "components": {
+    "DIRECTION_AND_REGIME_SPEC.json": {
+      "rule_id": "M3_STATE",
+      "clock": "Completed H1 CLOSE; advance D1,H4,H1,M15 at equal cutoff in that order; no incomplete bars.",
+      "per_TF_priority": [
+        "UNCERTAIN",
+        "RANGE",
+        "TREND",
+        "TRANSITION"
+      ],
+      "uncertain": "Missing/invalid active CONF leg, dual opposing CONF at same known_at, or incomplete/gapped required prefix => UNCERTAIN.",
+      "range": "Active correction-to-impulse-end fixed range, completed EQ contact and inside CLOSE, latest CLOSE strictly inside boundaries, no later CONF superseding range. CLOSE at or outside either boundary retires range permanently; wick alone does not. Re-entry inside cannot reactivate a retired range.",
+      "trend": "Current and immediately previous confirmed legs same sign, both protected origin and endpoint strictly advance in that sign. Completed CLOSE strictly beyond protected origin invalidates (LONG below/SHORT above); equality or wick alone does not. Two legs is a machine structure convention, not a fitted lookback.",
+      "transition": "Valid active last CONF exists; neither RANGE nor strict two-leg TREND holds. Label its last direction; no predictive future label.",
+      "context_priority": [
+        "ANY_HTF_UNCERTAIN_WAIT",
+        "H4_RANGE",
+        "H4_D1_ALIGNED_TREND",
+        "TRANSITION_ORIGIN_POI"
+      ],
+      "context_names": {
+        "range": "RANGE_CONTEXT",
+        "aligned_trend": "TREND_CONTEXT",
+        "mixed_or_transition": "MIXED_OR_TRANSITION_CONTEXT"
+      },
+      "H4_range": "H1 current leg and M15 confirmation match proposed direction; formation/retest intersects correct fixed H4 boundary. H4 RANGE takes priority over D1 trend, which is still recorded and must be valid.",
+      "trend_admission": "If H4 and D1 are the same TREND_UP or TREND_DOWN, only that direction may enter with H1/M15 matching. Opposite candidate WAIT_H4_D1_TREND_DIRECTION; cannot fall through to transition via a POI. No directional exemption.",
+      "transition_admission": "Only non-RANGE, non-aligned-trend combinations (opposite H4/D1 trends, trend+transition, or two transitions) use transition-origin POI gate: H1 leg/M15 match candidate; same-direction unconsumed confirmed H4/D1 POI intersects formation, known by formation OPEN. Candidate may oppose one HTF direction under this explicit machine convention. Otherwise WAIT.",
+      "all_states_machine_not_source_equivalence": true,
+      "LONG_SHORT_mirrored": true
+    },
+    "RISK_NORMALIZATION_SPEC.json": {
+      "rule_id": "M3_RISK",
+      "prices": "Decimal positive quote/base; zero-origin verified tick lattice; reject NaN/Infinity.",
+      "structural_boundary": "Immutable branch extreme; SFP adds outward SMA14 true range including completed pattern bar and preceding CLOSE. 14 is inherited machine normalization, not source-mandated or re-tuned.",
+      "ATR": "TR=max(H-L,abs(H-prev_close),abs(L-prev_close)); arithmetic mean exactly14 contiguous native-TF TRs ending exactly at pattern_end<=decision. Store immutable ATR at formation; later completed bars cannot drift it. Missing pattern bar/previous close/history => WAIT; no additional ATR risk floor.",
+      "rounding": "LONG entry=floor(raw/t)*t, SHORT entry=ceil(raw/t)*t, still inside POI. Stop first grid price strictly outside immutable boundary, once only; no epsilon. Target first grid price strictly inside nearest FTA, never farther.",
+      "tick_requirement": "symbol + USDT_LINEAR_PERPETUAL contract + literal verified=true + source/effective proof publication known_at <= decision + effective_from <= decision < effective_until; no overlaps; unknown/changed epoch WAIT. Future adapter must independently hash archived source bytes against source_sha256 and prove interval coverage/publication provenance; the pure core only validates schema/digest syntax, not evidence authenticity.",
+      "cost_model": {
+        "entry_fee": "0.0006",
+        "exit_fee": "0.0006",
+        "entry_slippage": "0.0002",
+        "exit_slippage": "0.0002",
+        "status": "PREREGISTERED_MODEL_NOT_HISTORICAL_ACTUAL"
+      },
+      "sign": "d=+1 LONG/-1 SHORT",
+      "cost": "C(F,P)=(f_e+s_e)*F+(f_x+s_x)*P",
+      "cash_stop_unit": "K=d*(F-S)+C(F,S), recomputed at modeled actual fill; strictly positive",
+      "gross": "d*(P-F)/K",
+      "fees": "(f_e*F+f_x*P)/K",
+      "slippage": "(s_e*F+s_x*P)/K",
+      "net": "gross-fees-slippage; MODELED_CASH_STOP_R_EX_FUNDING",
+      "funding": null,
+      "non_gap_stop_identity": "Net_cash_R(S)=-1 exactly; stop gaps can exceed -1",
+      "mandatory_raw_diagnostics": [
+        "raw_price_risk_D",
+        "raw_price_risk_bps",
+        "raw_price_risk_ticks",
+        "cash_stop_unit",
+        "modeled_stop_cost_cash",
+        "stop_cost_share_of_unit",
+        "entry_notional_per_cash_stop_unit",
+        "target_move_D",
+        "target_cost_cash",
+        "target_move_to_cost_ratio"
+      ],
+      "price_risk_R_comparable_to_v2": false,
+      "portfolio_leverage_safety_claim": false,
+      "minimum_risk": "Verified positive tick separation and positive cost-inclusive K; no fitted min ATR/R/percentage hurdle. This normalizes arithmetic, not execution realism or positive expectancy."
+    },
+    "ENTRY_TARGET_EXECUTION_SPEC.json": {
+      "rule_id": "M3_EXEC",
+      "entry_order": "RESTING_LIMIT_ONLY",
+      "expiry_seconds": 3600,
+      "pending_expiry_seconds": 57600,
+      "expiry_provenance": "Inherited16H1pending/1H1order machine convention; no outcome tuning",
+      "fill_price_policy": "CONSERVATIVE_LIMIT_PRICE_NO_OPEN_IMPROVEMENT: F=rounded E for any modeled limit touch. Retain actual modeled fill field; economics recheck uses F.",
+      "before_fill": "Activate only bar OPEN>=decision; expire before OPEN>=expires. OPEN at/beyond stop/target invalidates before testing entry.",
+      "target_inventory": "All completed contextual unconsumed opposing OB/STB/FVG on H1/H4/D1, unswept profit-side strict-swing pools, plus range far-boundary cap. Entry inside opposite POI rejects. Do not use a success score.",
+      "target_priority": "Nearest signed forward raw distance, then canonical ID; retain coincident IDs. Round inward only after selecting nearest; collapsed/unprofitable target rejects without trying farther objects.",
+      "economics": "M=d*(T-E)>C(E,T) strict; edge_cost_ratio=M/C(E,T)>1 is algebraic model-feasibility, not signal edge or calibrated margin.",
+      "adverse_liquidity": "Inherited contextual internal adverse pool lying beyond structural stop rejects; mirrored completion is MACHINE_RULE_PRE_OUTCOME, not source-proven SHORT algorithm.",
+      "entry_bar_ambiguity": "Any wick-only fill plus stop OR target touch => WAIT_INTRABAR_ORDER. OPEN fill: dual touch WAIT; single stop/target touch has interval bounds. No within-bar continuity assumption.",
+      "postfill": "OPEN stop/target gaps execute before wick tests; dual wick touch WAIT; otherwise single touch interval. SFP body invalidation only native completed close, after wick processing.",
+      "metadata_change": "Missing/changed active epoch before an order event => WAIT_HISTORICAL_TICK_METADATA, no new fill or inferred amendment; existing exposure flagged censored/unknown, never invented flat exit.",
+      "time_evidence": "OPEN occurrences [start,start]; wick occurrences [start,end]; observations at completed end. Exit bounds independent of fill observation. Holding duration interval [max(0,exit_low-fill_high),exit_high-fill_low], never realized zero from observation equality.",
+      "unresolved": "Keep entry information but exit/PnL/WIN/LOSS unknown; no imputed zeros. EOF order/open censoring distinct.",
+      "identity": "physical is intentionally the directional bucket (symbol,formation_at,direction): same-time same-direction native formations share a bucket with fixed sibling/TF/ID priority; opposite directions have separate buckets. POI separately reserved at order emission. First eligible OHLC contact consumes at bar.end, occurrence bounds [start,end] or [start,start] if OPEN inside zone; never timestamp wick contact at OPEN. No old bucket/POI retry after loss/expiry/gap; later independent formation/CONF required.",
+      "bar_coverage": "Adapter must advance every contiguous aligned900second bar from decision through active lifetime; last_observed_end is explicit. Missing interior bar=>WAIT_DATA_GAP; EOF/expiry never imply unfilled when coverage is incomplete.",
+      "fill_assumptions": "TOUCH_IMPLIES_FULL_LIMIT_FILL_AT_E and target touch full modeled exit; wick stop MODELED_STOP_TRIGGER_PLUS_SLIPPAGE, not observed exact fill. Grid proof alone does not prove queue, spread, latency, tick order, partial fill, or within-bar gap behavior. No within-bar continuity assumption establishes ordering; modeled trigger prices still need declared execution assumptions.",
+      "adapter_input_contract": {
+        "formation": "symbol/branch/direction/nativeTF60or240/formation_at/native bar OHLC+open/end/geometry IDs; raw geometry and reaction/refinement known_at<=decision; M15 alone cannot originate idea. SFP original_pattern_extreme maps to order.stop_anchor for body invalidation; distinct raw_stop_boundary=original_pattern_extreme plus/minus immutable pattern-end ATR then one outward tick for protective stop. Never pass the buffered boundary as body stop_anchor",
+        "state": "Every active leg current/previous ids, protected origin, endpoint, direction, known_at/end_swing_at; retired/body-broken leg flags; range fixed boundaries, context_id, EQ reaction and invalidation timestamps. Completed simultaneous TF changes visible at same H1 cutoff",
+        "POI": "id,tf,kind,direction,low/high,born_at,origin_bos_id,origin_CONF_known_at,contextual_at_birth,consumed_at/first_touch_bounds. Eligibility starts at first bar OPEN after origin CONF and matching active native context. Native first touch consumes even absent order",
+        "FTA_eligibility": "Decision-time complete H1/H4/D1 inventory: unswept HIGH pools forward LONG/LOW forward SHORT plus confirmed-contextual unconsumed opposite OB/STB/FVG proximal edges. Zone enclosing entry rejects; known_at<=decision. Range far boundary additional cap. Adapter must attach id/kind/tf/known_at/price, optional zone_low/high; preserve all nearest-price IDs and auditable inventory digest",
+        "adverse_pool": "From same complete inventory: internal to active H1 impulse, wrong-side liquidity beyond structural stop (LOW below stop for LONG, HIGH above stop for SHORT) => inherited mirrored adverse rejection; no source-proven SHORT claim",
+        "adapter_status": "Required full historical raw-event/state/inventory adapter is absent in this gate; pure core only checks supplied causal contract fields, not completeness of historical discovery. Missing mandatory geometry/eligibility evidence WAIT, never assume source-valid"
+      },
+      "sibling_priority": [
+        "BREAKER",
+        "STB",
+        "SFP",
+        "OB",
+        "RANGE"
+      ],
+      "TF_priority": [
+        240,
+        60
+      ],
+      "PAPER_enabled": false,
+      "LIVE_enabled": false,
+      "trade_entry_allowed": false
+    },
+    "SETUP_FAMILY_SPEC.json": {
+      "rule_id": "M3_FAMILIES",
+      "all_families_retained": [
+        "SFP",
+        "OB",
+        "BREAKER",
+        "STB",
+        "RANGE"
+      ],
+      "contracts": {
+        "SFP": "Completed H1/H4 strict-swing raid/reclaim; next native OPEN reclaimed, usable only at its CLOSE; later M15 BOS/CONF; new origin-bound OB/FVG wholly inside pattern; proximal edge; pattern extreme±causal ATR14; native body invalidation exit.",
+        "OB": "Raw raid/opposing candle/full engulf; later reaction; M15 BOS/CONF; new origin-bound OB/FVG inside raw OB; proximal edge; raw full extreme boundary.",
+        "BREAKER": "Contextual-at-birth OB; later opposite body break beyond full extreme; M15 opposite BOS/CONF with no intervening reverse BOS; body-zone retest; parent-birth-through-break extreme boundary.",
+        "STB": "Raw manipulation raid/engulf; later matching M15 BOS/CONF; manipulation body midpoint; full manipulation extreme boundary.",
+        "RANGE": "Confirmed impulse plus interior correction; EQ contact/inside CLOSE; first deviation/reclaim then later boundary contact/inside CLOSE; M15 BOS/CONF; boundary entry; deviation extreme; far-boundary FTA cap."
+      },
+      "formation_timeframes": [
+        60,
+        240
+      ],
+      "decision_tf": 60,
+      "refinement_tf": 15,
+      "formation_refinement_inheritance": "Frozen M2 raw geometry/BOS/CONF/first-test selectors except explicit M3 overrides; no source-valid equivalence",
+      "shared_smoothness": "No opposite M15 BOS between reaction and selected CONF; qualitative smoothness is a machine convention.",
+      "refinement_priority": "OB before FVG; latest causal birth then canonical ID; formation/zone IDs and rejected siblings retained",
+      "range_parent_mapping": "Use range on native setup TF. If global H4 RANGE governs admission, local formation must intersect its corresponding boundary; do not silently replace native source range geometry.",
+      "exits": "Full nearest rounded FTA, all families; Range optional20% breakout is unresolved source choice, represented by full same-zone machine exit. No partial ladder or BE, no fixed percentages; Original canonical exits untouched.",
+      "source_validated": false,
+      "decision_branch_selection_based_on_PnL": false
+    }
+  },
+  "validation": {
+    "rule_id": "M3_VALIDATION",
+    "development": {
+      "symbols": [
+        "BTCUSDT",
+        "ETHUSDT"
+      ],
+      "exchange": "BYBIT",
+      "warmup_start": "2022-01-01T00:00:00+00:00",
+      "interval": [
+        "2023-01-01T00:00:00+00:00",
+        "2025-12-05T23:30:00+00:00"
+      ],
+      "status": "EXPOSED_NOT_OOS"
+    },
+    "robustness": {
+      "calendar_partitions": [
+        2023,
+        2024,
+        2025
+      ],
+      "cross_classifications": [
+        "symbol",
+        "direction",
+        "family",
+        "setup_tf",
+        "causal_market_state"
+      ],
+      "cost_multipliers": [
+        "0.5",
+        "1",
+        "2"
+      ],
+      "independence_claim": false,
+      "threshold_selection": false,
+      "partition_boundary": "Exclude decisions or observation intervals crossing partition boundaries; censored/unresolved shown separately, not assigned zero"
+    },
+    "available_untouched_OOS": null,
+    "current_OOS_gate": "STOP_NO_PRISTINE_OOS",
+    "prospective_OOS": {
+      "symbols": [
+        "BTCUSDT",
+        "ETHUSDT"
+      ],
+      "exchange": "BYBIT",
+      "contract": "USDT_LINEAR_PERPETUAL",
+      "TFs": [
+        15,
+        60,
+        240,
+        1440
+      ],
+      "start_rule": "Provisional plan only: first UTC D1 OPEN strictly after MAX(complete implementation pre-outcome freeze commit committer timestamp, append-only OOS registration commit committer timestamp). This contract-core design freeze alone cannot start the OOS clock. Register complete code/spec/data/protocol hashes and resolved start/end before first observation; missed preregistration/embargo => STOP, no post-outcome window shift",
+      "end_rule": "start plus365 UTC days, exclusive",
+      "window_reason": "Fixed four-season calendar evaluation commitment before outcomes, not an entry parameter",
+      "acquisition": "Public completed M15 bars; derive contiguous UTC H1/H4/D1; no privateAPI/orders; metadata epoch announcements archived with publication known_at",
+      "embargo": "Before locked end, no candidate signals, positions, trade labels or equity read, including inference from raw prices. Raw access only logged integrity-only script/role with no strategy-state access: hash/continuity/metadata checks. No interim optimization, early stopping, extension or relabeling after outcome",
+      "warmup": "Exactly365 days pre-start completed bars for state warmup; no pre-start orders/outcomes. Prefix-only state reset/reservation ledger at OOS start",
+      "warmup_current_state": "UNAVAILABLE_CONTIGUOUS: local Bybit public ends2025-12-05, native starts2026-01-25 and ends2026-09-22. Public gap filling needs independent evidence before registration; no interpolation/pretended ready prefix",
+      "training_leakage": "No overlapping underlying OOS candles in development; hashes/copies/content periods checked; no carried development order or position",
+      "readiness": "UNESTABLISHED_FUTURE_PLAN_NOT_EXISTING_PRISTINE_DATA",
+      "missing_data": "No interpolation; gaps/instrument/metadata ambiguity => WAIT and unqualified-OOS report; do not shift window post hoc"
+    },
+    "qualification": "After separate authorization: fixed-spec development financial run, robustness, then locked untouched OOS; positive net ex-funding/PF>1 across declared model and stress reported, dependence-aware uncertainty and concentration disclosed. No production on reused TEST or subgroup alone; funding/actual execution evidence required for exchange-realism claim.",
+    "implementation_scope": "NONFINANCIAL_CONTRACT_CORE; historical family-event adapter/full case runner not implemented in this gate",
+    "first_v3_financial_backtest_ready": false,
+    "first_financial_STOP_reasons": [
+      "HISTORICAL_EVENT_ADAPTER_NOT_IMPLEMENTED",
+      "NO_VERIFIED_HISTORICAL_TICK_EPOCHS"
+    ],
+    "production_candidate": null,
+    "PAPER_enabled": false,
+    "LIVE_enabled": false,
+    "trade_entry_allowed": false
+  },
+  "rule_registry": "RULE_PROVENANCE.json",
+  "failure_audit_sha256": "9dd7cd7a26ac503c350501a8967c7fed450888aed349542f5592162e993d1201",
+  "implementation": {
+    "code": [
+      "scripts/build_machine_strategy_v3_design.py",
+      "scripts/machine_strategy_v3_contracts.py",
+      "tests/test_machine_strategy_v3_contracts.py"
+    ],
+    "scope": "NONFINANCIAL_CONTRACT_CORE; historical family-event adapter/full case runner not implemented in this gate",
+    "historical_case_adapter_implemented": false
+  },
+  "financial_result": "UNKNOWN_NOT_RUN",
+  "outcome_parameters_selected": false,
+  "base": "Independent modeled cases; no portfolio/sizing/leverage/correlation/fallback overlay",
+  "trade_entry_allowed": false
+}

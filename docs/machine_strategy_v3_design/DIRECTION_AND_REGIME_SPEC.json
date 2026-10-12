@@ -1,0 +1,30 @@
+{
+  "rule_id": "M3_STATE",
+  "clock": "Completed H1 CLOSE; advance D1,H4,H1,M15 at equal cutoff in that order; no incomplete bars.",
+  "per_TF_priority": [
+    "UNCERTAIN",
+    "RANGE",
+    "TREND",
+    "TRANSITION"
+  ],
+  "uncertain": "Missing/invalid active CONF leg, dual opposing CONF at same known_at, or incomplete/gapped required prefix => UNCERTAIN.",
+  "range": "Active correction-to-impulse-end fixed range, completed EQ contact and inside CLOSE, latest CLOSE strictly inside boundaries, no later CONF superseding range. CLOSE at or outside either boundary retires range permanently; wick alone does not. Re-entry inside cannot reactivate a retired range.",
+  "trend": "Current and immediately previous confirmed legs same sign, both protected origin and endpoint strictly advance in that sign. Completed CLOSE strictly beyond protected origin invalidates (LONG below/SHORT above); equality or wick alone does not. Two legs is a machine structure convention, not a fitted lookback.",
+  "transition": "Valid active last CONF exists; neither RANGE nor strict two-leg TREND holds. Label its last direction; no predictive future label.",
+  "context_priority": [
+    "ANY_HTF_UNCERTAIN_WAIT",
+    "H4_RANGE",
+    "H4_D1_ALIGNED_TREND",
+    "TRANSITION_ORIGIN_POI"
+  ],
+  "context_names": {
+    "range": "RANGE_CONTEXT",
+    "aligned_trend": "TREND_CONTEXT",
+    "mixed_or_transition": "MIXED_OR_TRANSITION_CONTEXT"
+  },
+  "H4_range": "H1 current leg and M15 confirmation match proposed direction; formation/retest intersects correct fixed H4 boundary. H4 RANGE takes priority over D1 trend, which is still recorded and must be valid.",
+  "trend_admission": "If H4 and D1 are the same TREND_UP or TREND_DOWN, only that direction may enter with H1/M15 matching. Opposite candidate WAIT_H4_D1_TREND_DIRECTION; cannot fall through to transition via a POI. No directional exemption.",
+  "transition_admission": "Only non-RANGE, non-aligned-trend combinations (opposite H4/D1 trends, trend+transition, or two transitions) use transition-origin POI gate: H1 leg/M15 match candidate; same-direction unconsumed confirmed H4/D1 POI intersects formation, known by formation OPEN. Candidate may oppose one HTF direction under this explicit machine convention. Otherwise WAIT.",
+  "all_states_machine_not_source_equivalence": true,
+  "LONG_SHORT_mirrored": true
+}

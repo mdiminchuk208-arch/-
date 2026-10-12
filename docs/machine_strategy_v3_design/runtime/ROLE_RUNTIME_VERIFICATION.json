@@ -1,0 +1,31 @@
+{
+  "runtime": "/workspace/ecc-setup/codex-ecc",
+  "codex_version": "0.159.0-alpha.3",
+  "ecc_version": "2.2.3",
+  "ECC_skills_enabled": 348,
+  "roles_available": [
+    "strategy_explorer",
+    "execution_auditor",
+    "strategy_designer",
+    "backtest_reviewer"
+  ],
+  "roles_actually_used": [
+    "strategy_explorer",
+    "execution_auditor",
+    "strategy_designer",
+    "backtest_reviewer"
+  ],
+  "agent_model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "transport": "cloud collaboration with configured instructions/models",
+  "native_cli_agent_type_launch_claimed": false,
+  "project_config": "/workspace/-/.codex/config.toml",
+  "hooks_activated": false,
+  "trade_entry_allowed": false,
+  "role_instruction_sha256": {
+    "strategy_explorer": "2c2eb0879dde24d09c6c695170160aed1e2641dcfcfab0ea76536b296837618a",
+    "execution_auditor": "512a2238f8446fbdc9a6a5c3ad4731efcd69613f3cd46c517708cf8e7e4b04b6",
+    "strategy_designer": "e67f820afe5afa63501364d893d4355cd0885e680a1fc8299def321054db9ce4",
+    "backtest_reviewer": "e647c1adc97e2e1f93c167ffc1934d81687e77308c64c7efdfb1a958e8ac6d76"
+  }
+}

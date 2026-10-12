@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "reviewer": "backtest_reviewer",
+  "agent": "/root/backtest_reviewer",
+  "transport": "cloud collaboration",
+  "exact_final_review_text": "Final read-only review: PASS for the current pre-outcome design and contract core. The timestamp fix rejects source_known_at=100.9 at decision 100; malformed available metadata waits, while future-known metadata leaves past selection unchanged. All 12 generated outputs match the fresh replay. The matching QA receipt reports 999 tests passed, static admission checks passed, and 90.11% contract-core coverage.\n\nReviewed code hashes: builder a640d086…ef7909e, core d369887f…ff7bb7b1, tests 0df72158…43e07. The seal now checks and pins all 92 inventoried data files, 13 cited primary documents, evidence, and two frozen primitives.\n\nThis PASS covers the nonfinancial design freeze. Historical execution, verified tick evidence, financial results, and untouched OOS remain unavailable. No edits or financial backtest were performed.",
+  "code_sha256": {
+    "scripts/build_machine_strategy_v3_design.py": "a640d086968d87ecb99a82703b2a38eb7ae328bd2f1ebfb154e0e6d78ef7909e",
+    "scripts/machine_strategy_v3_contracts.py": "d369887fe24cd63c2bf178305f3616f56a66c07bb50b79390acc8065ff7bb7b1",
+    "tests/test_machine_strategy_v3_contracts.py": "0df7215889a3ceb778270138d6303778277e71acd2263d80968831e68c343e07"
+  },
+  "generated_sha256": {
+    "MACHINE_STRATEGY_V3_SPEC.md": "7ffaa429e480ea4ded0286584a795cd1acb22472067828e5196991ee901178ad",
+    "MACHINE_STRATEGY_V3_SPEC.json": "c3876fa2239268f251454304d66a5828f6928e379c27398d4ded3b9c99786ed8",
+    "CAUSAL_HYPOTHESES.md": "7e6eb6c1237d26c736fe8225589897db10594130e78cb39505e9b2b6b37ea452",
+    "RULE_PROVENANCE.json": "728d45b4588db572253e18fb5d3286d69657dddd85700a9fc16745ecc4db4622",
+    "DIRECTION_AND_REGIME_SPEC.json": "2f911297ef2bbdf6853b368d0b1a19c3e78c60496ce15099f035d8e55f071e43",
+    "RISK_NORMALIZATION_SPEC.json": "3ca2395dae130d5588d1c912e807774c1d3af0f52d2b1cbe6fdc4d39b6300092",
+    "ENTRY_TARGET_EXECUTION_SPEC.json": "f0e01db2344ec40d355ae3f85fa9b0833678238ac8f056cd9ac9dced980ac46f",
+    "SETUP_FAMILY_SPEC.json": "2a9894998dcd7e5ab5e20bb90bae2446d0479ce020560abcf13747d9dc80c1a4",
+    "DATA_EXPOSURE_INVENTORY.json": "33e0481248a827c2df0fa67f1bdb1354635696fd1f09c790aa66a780009bb353",
+    "VALIDATION_PROTOCOL.md": "d66bd18b488c15549bb4c7e55c91643d220bd60bca124b25946c54c8639cb173",
+    "VALIDATION_PROTOCOL.json": "eaac3ba857b703dc4808240c82bb2168861329a18f61efecba2e6c9e9b7bf045",
+    "FROZEN_INPUT_VERIFICATION.json": "9a9028899924c4f006b8b6bd9b8171cf12c6b4a62718b26fdfa9caa31371a09e"
+  },
+  "QA_tests": 999,
+  "new_core_coverage_percent": 90.11,
+  "financial_result": "UNKNOWN_NOT_RUN",
+  "trade_entry_allowed": false
+}

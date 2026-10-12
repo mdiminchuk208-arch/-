@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "outcome_subscript_reads_in_admission": [],
+  "network_client_imports_new_code": [],
+  "secret_pattern_files": [],
+  "coverage_new_contract_core_percent": 90.11235955056179,
+  "financial_backtest": false,
+  "trade_entry_allowed": false
+}

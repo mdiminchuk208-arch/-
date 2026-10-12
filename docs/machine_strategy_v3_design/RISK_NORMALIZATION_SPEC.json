@@ -1,0 +1,39 @@
+{
+  "rule_id": "M3_RISK",
+  "prices": "Decimal positive quote/base; zero-origin verified tick lattice; reject NaN/Infinity.",
+  "structural_boundary": "Immutable branch extreme; SFP adds outward SMA14 true range including completed pattern bar and preceding CLOSE. 14 is inherited machine normalization, not source-mandated or re-tuned.",
+  "ATR": "TR=max(H-L,abs(H-prev_close),abs(L-prev_close)); arithmetic mean exactly14 contiguous native-TF TRs ending exactly at pattern_end<=decision. Store immutable ATR at formation; later completed bars cannot drift it. Missing pattern bar/previous close/history => WAIT; no additional ATR risk floor.",
+  "rounding": "LONG entry=floor(raw/t)*t, SHORT entry=ceil(raw/t)*t, still inside POI. Stop first grid price strictly outside immutable boundary, once only; no epsilon. Target first grid price strictly inside nearest FTA, never farther.",
+  "tick_requirement": "symbol + USDT_LINEAR_PERPETUAL contract + literal verified=true + source/effective proof publication known_at <= decision + effective_from <= decision < effective_until; no overlaps; unknown/changed epoch WAIT. Future adapter must independently hash archived source bytes against source_sha256 and prove interval coverage/publication provenance; the pure core only validates schema/digest syntax, not evidence authenticity.",
+  "cost_model": {
+    "entry_fee": "0.0006",
+    "exit_fee": "0.0006",
+    "entry_slippage": "0.0002",
+    "exit_slippage": "0.0002",
+    "status": "PREREGISTERED_MODEL_NOT_HISTORICAL_ACTUAL"
+  },
+  "sign": "d=+1 LONG/-1 SHORT",
+  "cost": "C(F,P)=(f_e+s_e)*F+(f_x+s_x)*P",
+  "cash_stop_unit": "K=d*(F-S)+C(F,S), recomputed at modeled actual fill; strictly positive",
+  "gross": "d*(P-F)/K",
+  "fees": "(f_e*F+f_x*P)/K",
+  "slippage": "(s_e*F+s_x*P)/K",
+  "net": "gross-fees-slippage; MODELED_CASH_STOP_R_EX_FUNDING",
+  "funding": null,
+  "non_gap_stop_identity": "Net_cash_R(S)=-1 exactly; stop gaps can exceed -1",
+  "mandatory_raw_diagnostics": [
+    "raw_price_risk_D",
+    "raw_price_risk_bps",
+    "raw_price_risk_ticks",
+    "cash_stop_unit",
+    "modeled_stop_cost_cash",
+    "stop_cost_share_of_unit",
+    "entry_notional_per_cash_stop_unit",
+    "target_move_D",
+    "target_cost_cash",
+    "target_move_to_cost_ratio"
+  ],
+  "price_risk_R_comparable_to_v2": false,
+  "portfolio_leverage_safety_claim": false,
+  "minimum_risk": "Verified positive tick separation and positive cost-inclusive K; no fitted min ATR/R/percentage hurdle. This normalizes arithmetic, not execution realism or positive expectancy."
+}

@@ -1,0 +1,30 @@
+{
+  "rule_id": "M3_FAMILIES",
+  "all_families_retained": [
+    "SFP",
+    "OB",
+    "BREAKER",
+    "STB",
+    "RANGE"
+  ],
+  "contracts": {
+    "SFP": "Completed H1/H4 strict-swing raid/reclaim; next native OPEN reclaimed, usable only at its CLOSE; later M15 BOS/CONF; new origin-bound OB/FVG wholly inside pattern; proximal edge; pattern extreme±causal ATR14; native body invalidation exit.",
+    "OB": "Raw raid/opposing candle/full engulf; later reaction; M15 BOS/CONF; new origin-bound OB/FVG inside raw OB; proximal edge; raw full extreme boundary.",
+    "BREAKER": "Contextual-at-birth OB; later opposite body break beyond full extreme; M15 opposite BOS/CONF with no intervening reverse BOS; body-zone retest; parent-birth-through-break extreme boundary.",
+    "STB": "Raw manipulation raid/engulf; later matching M15 BOS/CONF; manipulation body midpoint; full manipulation extreme boundary.",
+    "RANGE": "Confirmed impulse plus interior correction; EQ contact/inside CLOSE; first deviation/reclaim then later boundary contact/inside CLOSE; M15 BOS/CONF; boundary entry; deviation extreme; far-boundary FTA cap."
+  },
+  "formation_timeframes": [
+    60,
+    240
+  ],
+  "decision_tf": 60,
+  "refinement_tf": 15,
+  "formation_refinement_inheritance": "Frozen M2 raw geometry/BOS/CONF/first-test selectors except explicit M3 overrides; no source-valid equivalence",
+  "shared_smoothness": "No opposite M15 BOS between reaction and selected CONF; qualitative smoothness is a machine convention.",
+  "refinement_priority": "OB before FVG; latest causal birth then canonical ID; formation/zone IDs and rejected siblings retained",
+  "range_parent_mapping": "Use range on native setup TF. If global H4 RANGE governs admission, local formation must intersect its corresponding boundary; do not silently replace native source range geometry.",
+  "exits": "Full nearest rounded FTA, all families; Range optional20% breakout is unresolved source choice, represented by full same-zone machine exit. No partial ladder or BE, no fixed percentages; Original canonical exits untouched.",
+  "source_validated": false,
+  "decision_branch_selection_based_on_PnL": false
+}

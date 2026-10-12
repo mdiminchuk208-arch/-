@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "frozen_machine_inputs": {
+    "status": "PASS",
+    "baseline_commit": "ba65e91c2b1675f48e80ac785bb3adf89d17bb0b",
+    "machine_manifest_sha256": {
+      "docs/machine_strategy_v2_design/freeze_manifest.json": "89f0e38f773a7644a7e544c36c70983b06d454cba3062c737cb407a1fa820875",
+      "docs/machine_strategy_v2_pre_outcome/freeze_manifest.json": "4bb0d1f484161e4db79ad4ebdf4e80dff88186f197b4555dedf82eb901699595",
+      "docs/machine_strategy_v2_result/freeze_manifest.json": "8bc9d44a585548a832ef38ad16bad8e5019d30936cdd1f0a8627ebe269c0862d",
+      "docs/machine_strategy_v2_robustness/freeze_manifest.json": "308dc43892f12299e6215a632e9a61244b8259eda60fef6f87a39965841231b9",
+      "docs/machine_strategy_v2_1_design/freeze_manifest.json": "9f427bd73c76f4524c4d8713edaa501c14ceda9d7621b0c444ce38d6126a20c3",
+      "docs/machine_strategy_v2_1_pre_outcome/freeze_manifest.json": "38fd39a6eb15264e02638c4c2c922aaaaf829586aa9f69e574a3a2e7ee3fc7f7",
+      "docs/machine_strategy_v2_1_result/freeze_manifest.json": "e7bc27ba660eff33ca29b20ad3f85c82b1f87c148902dabca81098c25ac57a52",
+      "docs/machine_strategy_v2_1_robustness/freeze_manifest.json": "b0b73c16e629bc6f091e2fdb93a222b51dee5c8c48baa46b43c3c25a4bb2cdc5",
+      "docs/machine_strategy_v2_2_design/freeze_manifest.json": "911ac7f159d28aebb2f1d4751f5ea8c7570ee5d6c245fb078881aff22bcf2c2a",
+      "docs/machine_strategy_v2_2_pre_outcome/freeze_manifest.json": "38a0b6d8746f3c1ab3b36fca11106b6e80a8db284baaccdd58d71381c66e3a9b",
+      "docs/machine_strategy_v2_2_result/freeze_manifest.json": "25de0e2d0c6d13c6d867d26b9eb1d48a4e1bdd603cde26d7c4952d07ce85da6d",
+      "docs/machine_strategy_v2_2_robustness/freeze_manifest.json": "2e6e937a4c49eda0954663b8cb5899f6bd6cb07187a23151805104378ba8e404",
+      "docs/machine_strategy_preservation/freeze_manifest.json": "5503fdd6393386ceac2c5c73e6afda2943a7d6fb29caefa6e4129d69a265a1d0",
+      "docs/machine_strategy_workflow_report/freeze_manifest.json": "9a9aad338ed0f1c1aeae8316b83bd282c96ffb18c522fcec5f3f0fbe384a0f49"
+    },
+    "original_invariance": {
+      "v3_manifest_sha256": "2ac66c22e51ca21cfa802002a98fdc52d60c1d16c57899cfb2d3aaaf7365055e",
+      "v1_v1_1_v2_v3_recovery_first_result_dataset_hashes": "PASS",
+      "latest_frozen_predecessors": {
+        "docs/original_v1_1_blinded_annotation_v1": {
+          "manifest": "docs/original_v1_1_blinded_annotation_v1/freeze_manifest.json",
+          "sha256": "8f2a7e150802ba6a066592cd9052f82dba1711ec18e45de10eac80b0de8a9ce1",
+          "artifacts": 1333
+        },
+        "docs/original_v1_1_evidence_completion_v4": {
+          "manifest": "docs/original_v1_1_evidence_completion_v4/freeze_manifest.json",
+          "sha256": "ab55a6f99cc6acdd3cc55be23b21f14e8d9fe7768896dc8b521478dca4acde6b",
+          "artifacts": 24
+        },
+        "docs/original_v1_1_execution_metadata_v3": {
+          "manifest": "docs/original_v1_1_execution_metadata_v3/freeze_manifest.json",
+          "sha256": "9320bcbacef61442aa4b5fc4c1d76b03528fc200092ef27af25f6ad6dd2fbf50",
+          "artifacts": 28
+        }
+      }
+    },
+    "pre_outcome_ancestry": {
+      "v2": {
+        "pre_outcome": "c6bf08761800750146dfb99f0c33f4a3c9b29a76",
+        "result": "4c18005a633390d1d6f4105462af44a9fcefc373",
+        "pre_outcome_precedes_result": true
+      },
+      "v2.1": {
+        "pre_outcome": "8d9dbf777af433788825ad0a4ab2cf3b7881ffe6",
+        "result": "a6da596765b8a2c003fed1a4b0b92ec755a6566a",
+        "pre_outcome_precedes_result": true
+      },
+      "v2.2": {
+        "pre_outcome": "84253b63a3ad6f6d72bfb0a8dca5c87a665d577d",
+        "result": "e1b6b00c3534541e6cfa862e4319181cc8c42722",
+        "pre_outcome_precedes_result": true
+      }
+    },
+    "protected_baseline_file_changes": 0,
+    "fresh_historical_financial_run": false
+  },
+  "failure_audit": {
+    "path": "docs/machine_strategy_failure_audit_v1/freeze_manifest.json",
+    "sha256": "9dd7cd7a26ac503c350501a8967c7fed450888aed349542f5592162e993d1201"
+  },
+  "source_and_exposure_evidence_sha256": {
+    "docs/machine_strategy_v2_design/MACHINE_RULE_REGISTRY.csv": "92e2529a78fa26ba6c237a3df6e0d90a4ed243ebf93eb1f1563a7fb9d4f7f39e",
+    "docs/machine_strategy_v2_design/SOURCE_CITATIONS.json": "abbf171213b1a96a39052086b1c0f0678f7b6a67638dfbf3011743cc1546f428",
+    "docs/machine_strategy_v2_pre_outcome/DATASET_VERIFICATION.json": "9a13a5ecc3fc5edbdc0403dd2e64375a1afa5d40396a8eaaebf5dea199ba2fa3",
+    "docs/original_v1_1_execution_metadata_v3/METADATA_EVIDENCE_REPORT.md": "d66ffe62644b55d9483da087cbd809b7883cbbdf07d30847545d637ff7e87e94",
+    "docs/original_v1_1_metadata_recovery_v2/HISTORICAL_METADATA_EVIDENCE_REPORT.md": "2633e195eeb0faccd2c6af072e938e24c7adb937aeeb0804987e562115310343",
+    "data/reports/source_validation_qa_2026_10_09/dataset_integrity.json": "1b76beca84a39c082f84e00bcd262edc31c82e4d65e32bf67a99bd809b8e5cef",
+    "data/reports/robustness_research/bybit_dataset_manifest.json": "0ad19d70b43b1205568ca5236c4bf08b1f53144b5f9f71864fbd86cd5c4d4052",
+    "data/reports/robustness_research/binance_dataset_manifest.json": "3432ea4bec01ed67d8d541f65a2066ae96331b8f43ba29db2ca19dc4fcc27071",
+    "data/reports/robustness_research/bybit_temporal_split.json": "1dccf68b63c0246caffae4e787b80c5d61d0c143cd04c5e1cb1bd80503def13f",
+    "data/reports/robustness_research/binance_temporal_split.json": "08741bc31078eb7d3ebb15988d61e345d7baa6dd89c31a600debf31c7bf01bba",
+    "data/reports/strategy_v2_2026_10_10/split.json": "34de3b8cdb982ccb75f913777659a127cc3816f39b727b796678da8411a88609",
+    "data/reports/strategy_v2_2026_10_10/strategy_v2_final_leakage_audit.json": "56434f9b7bfd673e4d606ff7e55c98e39515537b112bfa14d1defd876d95e8bd",
+    "data/reports/source_bybit_2026_10_09_final/run_lock.json": "ce1cbabcf54bd62d24086ba7a59f4e953adaa369b467b6147eb3f4aed37f454d",
+    "data/reports/source_pdf_native_bybit_2026_10_09/run_lock.json": "ecfd74b89d810871742168e75336407f8c545b648a27987d16fd38bc4cd00c22",
+    "data/reports/source_permitted_physical_bybit_2026_10_10/run_lock.json": "e6e991546b44fb82d56ab93dff119874a1417c3ba71a2cfbc6e89913be92fd75",
+    "data/reports/medium_term_2026_10_10/causal_final/native_bybit_2026/run_lock.json": "5403036d5783db4e24da638c0f18613e297af910cce30216821471aadced1cd5"
+  },
+  "financial_run": false,
+  "trade_entry_allowed": false
+}

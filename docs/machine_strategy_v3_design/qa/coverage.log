@@ -1,0 +1,47 @@
+test_active_order_requires_epoch_for_entire_observed_bar (test_machine_strategy_v3_contracts.LifecycleTests.test_active_order_requires_epoch_for_entire_observed_bar) ... ok
+test_eof_censor_preserves_unknown_exit (test_machine_strategy_v3_contracts.LifecycleTests.test_eof_censor_preserves_unknown_exit) ... ok
+test_expiry_is_known_without_future_tick_proof (test_machine_strategy_v3_contracts.LifecycleTests.test_expiry_is_known_without_future_tick_proof) ... ok
+test_first_test_and_duplicate_reservation (test_machine_strategy_v3_contracts.LifecycleTests.test_first_test_and_duplicate_reservation) ... ok
+test_holding_duration_remains_interval (test_machine_strategy_v3_contracts.LifecycleTests.test_holding_duration_remains_interval) ... ok
+test_intrabar_wait_bounds_open_ordering_and_gap (test_machine_strategy_v3_contracts.LifecycleTests.test_intrabar_wait_bounds_open_ordering_and_gap) ... ok
+test_long_short_reflection_event_statuses (test_machine_strategy_v3_contracts.LifecycleTests.test_long_short_reflection_event_statuses) ... ok
+test_m15_alignment_ohlc_and_tick_grid_are_strict (test_machine_strategy_v3_contracts.LifecycleTests.test_m15_alignment_ohlc_and_tick_grid_are_strict) ... ok
+test_missing_interior_m15_bar_waits_including_at_expiry (test_machine_strategy_v3_contracts.LifecycleTests.test_missing_interior_m15_bar_waits_including_at_expiry) ... ok
+test_sfp_native_close_invalidation_after_wick_checks (test_machine_strategy_v3_contracts.LifecycleTests.test_sfp_native_close_invalidation_after_wick_checks) ... ok
+test_short_intrabar_reflection (test_machine_strategy_v3_contracts.LifecycleTests.test_short_intrabar_reflection) ... ok
+test_epoch_proof_cannot_be_missing_malformed_or_future (test_machine_strategy_v3_contracts.MetadataAndCausalityTests.test_epoch_proof_cannot_be_missing_malformed_or_future) ... ok
+test_epoch_times_reject_fraction_bool_nan_and_malformed_catalogue (test_machine_strategy_v3_contracts.MetadataAndCausalityTests.test_epoch_times_reject_fraction_bool_nan_and_malformed_catalogue) ... ok
+test_future_epoch_append_and_mutation_preserve_past_selection (test_machine_strategy_v3_contracts.MetadataAndCausalityTests.test_future_epoch_append_and_mutation_preserve_past_selection) ... ok
+test_known_at_and_swing_center_are_causal (test_machine_strategy_v3_contracts.MetadataAndCausalityTests.test_known_at_and_swing_center_are_causal) ... ok
+test_nested_known_and_swing_times_require_json_integers (test_machine_strategy_v3_contracts.MetadataAndCausalityTests.test_nested_known_and_swing_times_require_json_integers) ... ok
+test_recursive_input_validation_rejects_outcomes_and_nested_future (test_machine_strategy_v3_contracts.MetadataAndCausalityTests.test_recursive_input_validation_rejects_outcomes_and_nested_future) ... ok
+test_unique_known_verified_epoch_and_edges (test_machine_strategy_v3_contracts.MetadataAndCausalityTests.test_unique_known_verified_epoch_and_edges) ... ok
+test_all_families_raw_price_contracts_both_directions (test_machine_strategy_v3_contracts.PriceAndCostTests.test_all_families_raw_price_contracts_both_directions) ... ok
+test_atr_rejects_invalid_candles_gaps_and_tf (test_machine_strategy_v3_contracts.PriceAndCostTests.test_atr_rejects_invalid_candles_gaps_and_tf) ... ok
+test_atr_uses_exact_completed_prefix (test_machine_strategy_v3_contracts.PriceAndCostTests.test_atr_uses_exact_completed_prefix) ... ok
+test_coincident_nearest_fta_ids_are_all_recorded (test_machine_strategy_v3_contracts.PriceAndCostTests.test_coincident_nearest_fta_ids_are_all_recorded) ... ok
+test_reflection_and_positive_price_tick_scaling (test_machine_strategy_v3_contracts.PriceAndCostTests.test_reflection_and_positive_price_tick_scaling) ... ok
+test_rounded_entry_outside_zone_and_stop_collision (test_machine_strategy_v3_contracts.PriceAndCostTests.test_rounded_entry_outside_zone_and_stop_collision) ... ok
+test_rounding_collision_and_future_fta (test_machine_strategy_v3_contracts.PriceAndCostTests.test_rounding_collision_and_future_fta) ... ok
+test_strict_grid_nearest_target_and_cash_stop_identity (test_machine_strategy_v3_contracts.PriceAndCostTests.test_strict_grid_nearest_target_and_cash_stop_identity) ... ok
+test_tiny_structural_stop_retains_cost_diagnostics (test_machine_strategy_v3_contracts.PriceAndCostTests.test_tiny_structural_stop_retains_cost_diagnostics) ... ok
+test_aligned_opposite_higher_trends_wait_symmetrically (test_machine_strategy_v3_contracts.StateTests.test_aligned_opposite_higher_trends_wait_symmetrically) ... ok
+test_context_precedence_and_symmetry (test_machine_strategy_v3_contracts.StateTests.test_context_precedence_and_symmetry) ... ok
+test_h4_range_requires_live_matching_object (test_machine_strategy_v3_contracts.StateTests.test_h4_range_requires_live_matching_object) ... ok
+test_protected_equality_is_live_range_boundary_equality_retires (test_machine_strategy_v3_contracts.StateTests.test_protected_equality_is_live_range_boundary_equality_retires) ... ok
+test_state_cannot_use_structure_after_latest_close (test_machine_strategy_v3_contracts.StateTests.test_state_cannot_use_structure_after_latest_close) ... ok
+test_total_h4_d1_state_table_both_directions (test_machine_strategy_v3_contracts.StateTests.test_total_h4_d1_state_table_both_directions) ... ok
+test_trend_transition_range_uncertain_mirror (test_machine_strategy_v3_contracts.StateTests.test_trend_transition_range_uncertain_mirror) ... ok
+test_observation_rejects_fractional_bool_and_nan_times (test_machine_strategy_v3_contracts.TimestampIntegrityTests.test_observation_rejects_fractional_bool_and_nan_times) ... ok
+test_other_public_causal_times_are_exact (test_machine_strategy_v3_contracts.TimestampIntegrityTests.test_other_public_causal_times_are_exact) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 0.025s
+
+OK
+Wrote JSON report to /workspace/-/docs/machine_strategy_v3_design/qa/contract_coverage.json
+Name                                       Stmts   Miss  Cover
+--------------------------------------------------------------
+scripts/machine_strategy_v3_contracts.py     445     44    90%
+--------------------------------------------------------------
+TOTAL                                        445     44    90%

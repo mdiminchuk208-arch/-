@@ -1,0 +1,96 @@
+{
+  "code_sha256": {
+    "scripts/build_machine_strategy_v3_design.py": "a640d086968d87ecb99a82703b2a38eb7ae328bd2f1ebfb154e0e6d78ef7909e",
+    "scripts/machine_strategy_v3_contracts.py": "d369887fe24cd63c2bf178305f3616f56a66c07bb50b79390acc8065ff7bb7b1",
+    "tests/test_machine_strategy_v3_contracts.py": "0df7215889a3ceb778270138d6303778277e71acd2263d80968831e68c343e07"
+  },
+  "checks": {
+    "full_unittest": {
+      "commands": [
+        [
+          "/workspace/crypto-bot-venv/bin/python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-v"
+        ]
+      ],
+      "exit_code": 0,
+      "seconds": 22.754
+    },
+    "ruff": {
+      "commands": [
+        [
+          "/workspace/crypto-bot-venv/bin/ruff",
+          "check",
+          "src",
+          "--select",
+          "E9,F63,F7,F82"
+        ],
+        [
+          "/workspace/crypto-bot-venv/bin/ruff",
+          "check",
+          "scripts/build_machine_strategy_v3_design.py",
+          "scripts/machine_strategy_v3_contracts.py",
+          "tests/test_machine_strategy_v3_contracts.py"
+        ],
+        [
+          "/workspace/crypto-bot-venv/bin/ruff",
+          "format",
+          "--check",
+          "scripts/build_machine_strategy_v3_design.py",
+          "scripts/machine_strategy_v3_contracts.py",
+          "tests/test_machine_strategy_v3_contracts.py"
+        ]
+      ],
+      "exit_code": 0,
+      "seconds": 0.023
+    },
+    "compile": {
+      "commands": [
+        [
+          "/workspace/crypto-bot-venv/bin/python",
+          "-m",
+          "compileall",
+          "-q",
+          "src",
+          "tests",
+          "scripts"
+        ]
+      ],
+      "exit_code": 0,
+      "seconds": 0.039
+    },
+    "mypy": {
+      "commands": [
+        [
+          "/workspace/crypto-bot-venv/bin/mypy",
+          "src"
+        ],
+        [
+          "/workspace/crypto-bot-venv/bin/mypy",
+          "--explicit-package-bases",
+          "scripts/machine_strategy_v3_contracts.py",
+          "tests/test_machine_strategy_v3_contracts.py"
+        ]
+      ],
+      "exit_code": 0,
+      "seconds": 0.241
+    },
+    "frozen_parent_resume": {
+      "commands": [
+        [
+          "/workspace/crypto-bot-venv/bin/python",
+          "scripts/verify_original_strategy_spec_v1_1.py",
+          "--resume-existing"
+        ]
+      ],
+      "exit_code": 0,
+      "seconds": 5.299
+    }
+  },
+  "status": "PASS",
+  "new_core_coverage_percent": 90.11235955056179
+}
