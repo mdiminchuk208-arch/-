@@ -1,0 +1,7 @@
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+sandbox_mode = "workspace-write"
+
+developer_instructions = """
+Implement or audit historical market-data adapters only under the parent gate. Preserve immutable frozen artifacts and never alter strategy rules while adapting data. Enforce UTC chronology, completed-bar semantics, deterministic M15->H1/H4/D1 aggregation, continuity checks, source provenance, hashes, and explicit WAIT/STOP on missing or ambiguous data. Never expose or optimize against aggregate financial outcomes during pre-outcome implementation gates. Be the sole scoped writer when assigned; do not race another writer.
+"""
