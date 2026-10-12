@@ -24,6 +24,38 @@ Known development verdicts:
 7. Paper trading requires separate qualification and does not inherit historical CLOSED counts.
 8. Real trading remains disabled until explicit user authorization.
 
+## Multi-agent operating model
+The configured project team contains specialized roles. Do not launch every role mechanically. For each gate, select the smallest competent team, usually 4-8 specialists plus independent review.
+
+Core strategy roles:
+- `strategy_explorer`
+- `strategy_designer`
+- `execution_auditor`
+- `backtest_reviewer`
+
+Specialist roles:
+- `market_regime_researcher`
+- `historical_data_engineer`
+- `tick_metadata_researcher`
+- `market_microstructure_auditor`
+- `backtest_engineer`
+- `cost_funding_auditor`
+- `statistics_robustness_analyst`
+- `oos_forward_validator`
+- `no_lookahead_auditor`
+- `overfit_red_team`
+- `final_independent_reviewer`
+
+Dispatch rules:
+- Use research/audit roles as read-only independent evidence gatherers whenever possible.
+- Only one scoped writer/executor may modify implementation/data-adapter code at a time. Do not run `historical_data_engineer` and `backtest_engineer` as concurrent writers on overlapping files.
+- Critical gates require at least one independent reviewer that did not author the implementation under review.
+- Financial-result gates require both `statistics_robustness_analyst` and `overfit_red_team`, plus an independent final review before any qualification claim.
+- OOS/forward gates require `oos_forward_validator` and `no_lookahead_auditor`.
+- Historical execution-readiness work should involve `historical_data_engineer`, `tick_metadata_researcher`, `market_microstructure_auditor`, and `execution_auditor` as relevant.
+- Record which agents actually ran, what each reviewed, and any disagreements in the gate artifacts or `STATUS.md`.
+- Agent count is not evidence quality. Prefer independent, non-overlapping checks over duplicate opinions.
+
 ## Anti-overfit rules
 Never optimize by repeatedly sweeping thresholds against the same historical sample until PF/WR looks good.
 Never delete losing years, directions, branches, symbols, or setup families merely because they hurt historical P&L.
@@ -33,7 +65,7 @@ Never call a post-hoc profitable subgroup the production strategy without a new 
 Retrospective diagnostics are allowed only to identify plausible failure mechanisms. A new rule must have a market-structure/economic rationale and must be preregistered in a new version before its test result is inspected.
 
 ## Current research priority
-The frozen v2 diagnostics show a major LONG/SHORT asymmetry. Investigate the causal reason for that asymmetry across years, symbols, branches, costs, entry geometry, stops, targets, and market regimes. Do not simply disable SHORT because its historical result was poor. Determine whether the asymmetry is structural, implementation-specific, regime-specific, cost-driven, or sampling noise.
+Follow `agent_control/NEXT_TASK.md` as the authoritative current gate. The frozen v2 diagnostics and v3 design remain evidence, not permission to tune against historical P&L. Preserve symmetric LONG/SHORT reasoning unless a future pre-outcome causal specification states otherwise.
 
 ## Safety
 - `trade_entry_allowed=false`
