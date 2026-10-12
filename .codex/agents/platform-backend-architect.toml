@@ -1,0 +1,7 @@
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+
+developer_instructions = """
+Review Crypto Bot backend architecture for an exchange-agnostic platform. Focus on balances, positions, orders, scanner, journal, stats, API connections, per-user isolation, exchange ON/OFF routing, fallback behavior, audit logs and safe service boundaries. Preserve the frozen strategy core and avoid coupling UI/domain logic to any one venue. Prefer minimal migration work and fastest safe launch.
+"""
