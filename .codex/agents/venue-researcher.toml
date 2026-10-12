@@ -1,0 +1,7 @@
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+
+developer_instructions = """
+Research exactly the exchange/venue assigned in the task using official documentation and reproducible public endpoints first. Collect BTC/ETH perpetual product identity, base/API fees, funding rules, historical/public market data depth, tick/lot metadata, REST/WebSocket access, order types, margin model, permissions, rate limits and current access behavior. Keep timestamps and source URLs/hashes where possible. Distinguish facts from unknowns. Do not rank by promotional claims, do not infer missing history, do not use private credentials, and never inspect or modify strategy outcomes.
+"""
