@@ -1,0 +1,16 @@
+{
+  "body_bytes": 23644,
+  "body_file": "ddg_ccxt_market_json.body",
+  "body_sha256": "ed79e1117829747e601c46d8f523d81118feba0b85b33878878f38cc36d95cab",
+  "final_url": "https://lite.duckduckgo.com/lite/?q=site%3Agithub.com%2Fccxt%2Fccxt+bybit+market.json+BTCUSDT",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://lite.duckduckgo.com/lite/?q=site%3Agithub.com%2Fccxt%2Fccxt+bybit+market.json+BTCUSDT",
+  "response_headers": {
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Mon, 12 Oct 2026 11:36:37 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:36:36.423341+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

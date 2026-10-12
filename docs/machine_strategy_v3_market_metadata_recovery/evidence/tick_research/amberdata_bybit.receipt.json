@@ -1,0 +1,18 @@
+{
+  "body_bytes": 190662,
+  "body_file": "amberdata_bybit.body",
+  "body_sha256": "f0a5572a3ca933c78aafe92bb4b60fd736c90cc1c35b2f4c223367086b85abd7",
+  "final_url": "https://www.amberdata.io/bybit-market-data",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://www.amberdata.io/bybit-market-data",
+  "response_headers": {
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Mon, 12 Oct 2026 11:35:44 GMT",
+    "last-modified": "Thu, 10 Sep 2026 13:59:36 GMT",
+    "link": "<https://www.amberdata.io/hubfs/hub_generated/template_assets/1/66970015266/1789048715938/template_styles.min.css>; rel=preload; as=style,<https://www.amberdata.io/hubfs/hub_generated/template_assets/1/67759945235/1789048720672/template_code-block-styles.min.css>; rel=preload; as=style,<https://www.amberdata.io/hubfs/hub_generated/template_assets/1/190698237236/1789048715912/template_tailwind.min.css>; rel=preload; as=style,<https://www.amberdata.io/hubfs/hub_generated/module_assets/1/66970015111/1743727555998/module_u4m-hero.min.css>; rel=preload; as=style,<https://www.amberdata.io/hubfs/hub_generated/module_assets/1/66970015145/1743727558408/module_u4m-rich-text.min.css>; rel=preload; as=style,<https://www.amberdata.io/hubfs/hub_generated/module_assets/1/66970015101/1743727553385/module_u4m-footer.min.css>; rel=preload; as=style"
+  },
+  "retrieved_at_utc": "2026-10-12T11:35:44.137340+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

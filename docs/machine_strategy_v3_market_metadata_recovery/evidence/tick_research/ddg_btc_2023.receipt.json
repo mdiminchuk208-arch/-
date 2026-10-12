@@ -1,0 +1,16 @@
+{
+  "body_bytes": 25913,
+  "body_file": "ddg_btc_2023.body",
+  "body_sha256": "cf669ca12e64d6160a3bfcd4d219ee0f00f74f7734d2556bdcd6a285e6f2a0e5",
+  "final_url": "https://lite.duckduckgo.com/lite/?q=site%3Aannouncements.bybit.com+BTCUSDT+tick+size+2023",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://lite.duckduckgo.com/lite/?q=site%3Aannouncements.bybit.com+BTCUSDT+tick+size+2023",
+  "response_headers": {
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Mon, 12 Oct 2026 11:29:57 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:29:56.405533+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

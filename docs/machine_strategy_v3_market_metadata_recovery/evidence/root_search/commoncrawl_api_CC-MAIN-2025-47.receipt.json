@@ -1,0 +1,20 @@
+{
+  "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/commoncrawl_api_CC-MAIN-2025-47.body",
+  "body_sha256": "af0f30709d64371a0f03e408742cf5642172781ce9b5492d34e8db2673adac2f",
+  "bytes": 197,
+  "error_class": null,
+  "headers": {
+    "Content-Type": "text/html",
+    "Date": "Mon, 12 Oct 2026 11:36:46 GMT"
+  },
+  "http_status": 503,
+  "id": "commoncrawl_api_CC-MAIN-2025-47",
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "private_API": false,
+  "request_started_at": "2026-10-12T11:36:45.372595+00:00",
+  "result_is_historical_epoch_proof": false,
+  "retrieved_at": "2026-10-12T11:36:46.081371+00:00",
+  "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+  "source_class": "ARCHIVE_INDEX",
+  "url": "https://index.commoncrawl.org/CC-MAIN-2025-47-index?url=api.bybit.com%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=100"
+}

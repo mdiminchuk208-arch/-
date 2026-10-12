@@ -1,0 +1,40 @@
+.......................................................................................................................................................................................................................................................E......F....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+======================================================================
+ERROR: test_no_entry_point_can_load_history_during_readiness (test_machine_strategy_v3_outcome_guard.OutcomeGuardTests.test_no_entry_point_can_load_history_during_readiness)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/-/tests/test_machine_strategy_v3_outcome_guard.py", line 68, in test_no_entry_point_can_load_history_during_readiness
+    call()
+  File "/workspace/-/tests/test_machine_strategy_v3_outcome_guard.py", line 61, in <lambda>
+    lambda: runner.run_historical("BTCUSDT", [], capability),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/scripts/machine_strategy_v3_guarded_runner.py", line 192, in run_historical
+    _authorized(capability)
+  File "/workspace/-/scripts/machine_strategy_v3_guarded_runner.py", line 112, in _authorized
+    sha256(capability.authorization_path.read_bytes()).hexdigest()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/-/missing_auth.json'
+
+======================================================================
+FAIL: test_historical_callable_fails_closed_before_data_access (test_machine_strategy_v3_readiness_conformance.GuardedRunnerConformance.test_historical_callable_fails_closed_before_data_access)
+----------------------------------------------------------------------
+machine_strategy_v3_guarded_runner.HistoricalOutcomeBlocked: NO_COMMITTED_AUTHORIZED_HISTORICAL_CAPABILITY
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/-/tests/test_machine_strategy_v3_readiness_conformance.py", line 957, in test_historical_callable_fails_closed_before_data_access
+    with self.assertRaisesRegex(
+         ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "IMPLEMENTATION_READINESS_FORBIDS_HISTORICAL_OUTCOMES" does not match "NO_COMMITTED_AUTHORIZED_HISTORICAL_CAPABILITY"
+
+----------------------------------------------------------------------
+Ran 1059 tests in 24.927s
+
+FAILED (failures=1, errors=1)

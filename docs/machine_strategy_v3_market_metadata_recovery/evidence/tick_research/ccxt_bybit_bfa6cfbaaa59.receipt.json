@@ -1,0 +1,18 @@
+{
+  "body_bytes": 27699,
+  "body_file": "ccxt_bybit_bfa6cfbaaa59.body",
+  "body_sha256": "ec03683d9b84d30b143e4e0b24b9e16a905e90ec1b9b3ff29579a530811fa261",
+  "final_url": "https://raw.githubusercontent.com/ccxt/ccxt/bfa6cfbaaa59/ts/src/test/static/markets/bybit.json",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://raw.githubusercontent.com/ccxt/ccxt/bfa6cfbaaa59/ts/src/test/static/markets/bybit.json",
+  "response_headers": {
+    "content-length": "27699",
+    "content-type": "text/plain; charset=utf-8",
+    "date": "Mon, 12 Oct 2026 11:37:15 GMT",
+    "etag": "\"b60e6916b97b6905326e13a1e50175239b79b9a7669e3b16e3cbd63ab3fc6967\""
+  },
+  "retrieved_at_utc": "2026-10-12T11:37:15.091424+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

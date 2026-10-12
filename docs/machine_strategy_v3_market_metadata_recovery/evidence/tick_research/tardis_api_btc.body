@@ -1,0 +1,4 @@
+{
+  "code": 10,
+  "message": "Instruments metadata API is available only for active \"pro\" and \"business\" subscriptions."
+}

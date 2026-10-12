@@ -1,0 +1,16 @@
+{
+  "body_bytes": 3,
+  "body_file": "ia_api_v5.body",
+  "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+  "final_url": "https://web.archive.org/cdx/search/cdx?url=api.bybit.com%2Fv5%2Fmarket%2Finstruments-info%2A&output=json&filter=timestamp%3A202%5B2345%5D&collapse=timestamp%3A4",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://web.archive.org/cdx/search/cdx?url=api.bybit.com%2Fv5%2Fmarket%2Finstruments-info%2A&output=json&filter=timestamp%3A202%5B2345%5D&collapse=timestamp%3A4",
+  "response_headers": {
+    "content-type": "application/json",
+    "date": "Mon, 12 Oct 2026 11:35:15 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:35:05.354288+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

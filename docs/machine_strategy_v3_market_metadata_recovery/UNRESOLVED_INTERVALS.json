@@ -1,0 +1,41 @@
+{
+  "development_truncation_authorized": false,
+  "primary_state": "V3_MARKET_METADATA_FROZEN_FINANCIAL_STOP",
+  "prospective_only_collection": {
+    "activated": false,
+    "assessment": "POINT_IN_TIME_CAPTURE_POSSIBLE_IF_PUBLIC_ACCESS_READY; CONTINUOUS_EPOCH_PROOF_NOT_YET_ESTABLISHED",
+    "procedure": "Separate clean append-only registration; unauthenticated linear instruments-info raw bytes and request/response/server timestamps, symbol/contract/tick and filter fields, independent trusted capture/hash chain plus official change/applicability evidence. Preserve uncertain inter-capture intervals; no sample alignment or no-change assumption. No signals/orders/OOS outcome access.",
+    "validation_protocol_changed": false
+  },
+  "shorter_fully_proven_interval": null,
+  "strongest_gap": "No complete causal production-filter/applicability/continuity chain; candidate boundary conflicts remain",
+  "symbols": {
+    "BTCUSDT": [
+      {
+        "valid_from": 1640995200,
+        "valid_to": 1764977400
+      }
+    ],
+    "ETHUSDT": [
+      {
+        "valid_from": 1640995200,
+        "valid_to": 1764977400
+      }
+    ]
+  },
+  "trade_entry_allowed": false,
+  "unresolved_UTC": {
+    "BTCUSDT": [
+      {
+        "from": "2022-01-01T00:00:00+00:00",
+        "to_exclusive": "2025-12-05T23:30:00+00:00"
+      }
+    ],
+    "ETHUSDT": [
+      {
+        "from": "2022-01-01T00:00:00+00:00",
+        "to_exclusive": "2025-12-05T23:30:00+00:00"
+      }
+    ]
+  }
+}

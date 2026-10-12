@@ -1,0 +1,19 @@
+{
+  "body_bytes": 4923,
+  "body_file": "github_ccxt_static_dir.body",
+  "body_sha256": "bf66ccedce7ce78b41ea7c029459a7c535187e9382326fe0116302b4636fb84d",
+  "final_url": "https://api.github.com/repos/ccxt/ccxt/contents/ts/src/test/static",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://api.github.com/repos/ccxt/ccxt/contents/ts/src/test/static",
+  "response_headers": {
+    "content-length": "4923",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Mon, 12 Oct 2026 11:36:49 GMT",
+    "etag": "\"0e7ff1372505023fe27168c7a484f2f43a437073\"",
+    "last-modified": "Mon, 12 Oct 2026 11:10:59 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:36:48.882312+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

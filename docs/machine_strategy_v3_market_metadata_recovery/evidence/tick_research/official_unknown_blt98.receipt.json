@@ -1,0 +1,17 @@
+{
+  "body_bytes": 46168,
+  "body_file": "official_unknown_blt98.body",
+  "body_sha256": "f4380377f7362fadd268297cf9b7eda8ebf3b2ea155a9c5294a442d1c5a88aef",
+  "final_url": "https://announcements.bybit.com/en/article/changes-to-tick-size-for-usdt-usdc-perpetual-contracts-blt98abcdf13050f61e/",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://announcements.bybit.com/article/changes-to-tick-size-for-usdt-usdc-perpetual-contracts-blt98abcdf13050f61e/",
+  "response_headers": {
+    "content-length": "46168",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Mon, 12 Oct 2026 11:33:41 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:33:39.427811+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

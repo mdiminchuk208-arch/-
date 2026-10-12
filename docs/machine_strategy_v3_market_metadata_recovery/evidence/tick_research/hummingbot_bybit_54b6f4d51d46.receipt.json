@@ -1,0 +1,18 @@
+{
+  "body_bytes": 69260,
+  "body_file": "hummingbot_bybit_54b6f4d51d46.body",
+  "body_sha256": "c632703421608deb8aef703f15118efec777dd2a91b19024ce11970a34c4efa6",
+  "final_url": "https://raw.githubusercontent.com/hummingbot/hummingbot/54b6f4d51d46e23b9b9c74ff83f1660b3f6026b3/test/hummingbot/connector/derivative/bybit_perpetual/test_bybit_perpetual_derivative.py",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://raw.githubusercontent.com/hummingbot/hummingbot/54b6f4d51d46e23b9b9c74ff83f1660b3f6026b3/test/hummingbot/connector/derivative/bybit_perpetual/test_bybit_perpetual_derivative.py",
+  "response_headers": {
+    "content-length": "69260",
+    "content-type": "text/plain; charset=utf-8",
+    "date": "Mon, 12 Oct 2026 11:38:20 GMT",
+    "etag": "\"39f319646260dc355e254a1a74c149fd4154627b3a1cefa91a782b00c222241a\""
+  },
+  "retrieved_at_utc": "2026-10-12T11:38:20.236407+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

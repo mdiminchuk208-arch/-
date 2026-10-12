@@ -1,0 +1,16 @@
+{
+  "body_bytes": 14307,
+  "body_file": "ddg_archive_metadata.body",
+  "body_sha256": "8faa98fd68a00db62c93e85a051d0807ce5523ddbfd2c0b786be0835ee19bd99",
+  "final_url": "https://lite.duckduckgo.com/lite/?q=%22BTCUSDT%22+%22tickSize%22+%22Bybit%22+%222022%22+JSON",
+  "http_status": 202,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://lite.duckduckgo.com/lite/?q=%22BTCUSDT%22+%22tickSize%22+%22Bybit%22+%222022%22+JSON",
+  "response_headers": {
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Mon, 12 Oct 2026 11:36:37 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:36:37.761450+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

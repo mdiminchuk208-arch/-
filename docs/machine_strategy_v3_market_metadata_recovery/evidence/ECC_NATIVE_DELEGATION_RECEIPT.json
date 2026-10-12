@@ -1,0 +1,9 @@
+{
+  "fallback": "Cloud collaboration; required auditor roles explicitly performed by historical_data_engineer, final reviewer separate",
+  "hooks_activated": false,
+  "native_model_delegation_attempted": true,
+  "native_named_role_spawned": false,
+  "native_thread_id": "01a12fe0-414f-71a1-885d-507e9e3c234c",
+  "result": "HTTP401_NO_MODEL_AUTHENTICATION",
+  "runtime": "/workspace/ecc-setup/codex-ecc"
+}

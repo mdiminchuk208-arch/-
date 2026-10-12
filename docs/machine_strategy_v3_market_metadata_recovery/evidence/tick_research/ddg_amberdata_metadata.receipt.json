@@ -1,0 +1,16 @@
+{
+  "body_bytes": 23551,
+  "body_file": "ddg_amberdata_metadata.body",
+  "body_sha256": "0f5a7ad91ddfef732fd9077681bc8b9a55c90b485465eff93f877b5ff29df1bb",
+  "final_url": "https://lite.duckduckgo.com/lite/?q=Amberdata+historical+instrument+metadata+bybit+tick+size+changes",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://lite.duckduckgo.com/lite/?q=Amberdata+historical+instrument+metadata+bybit+tick+size+changes",
+  "response_headers": {
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Mon, 12 Oct 2026 11:36:38 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:36:38.060185+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

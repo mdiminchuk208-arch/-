@@ -1,0 +1,16 @@
+{
+  "body_bytes": 14297,
+  "body_file": "ddg_tardis_changes.body",
+  "body_sha256": "49450a6e38c736927a6e24b568e1047f28ef7208bdb0ad13a886876cc9c771e3",
+  "final_url": "https://lite.duckduckgo.com/lite/?q=%22priceIncrement%22+%22BTCUSDT%22+%22bybit%22+%22changes%22",
+  "http_status": 202,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://lite.duckduckgo.com/lite/?q=%22priceIncrement%22+%22BTCUSDT%22+%22bybit%22+%22changes%22",
+  "response_headers": {
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Mon, 12 Oct 2026 11:36:37 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:36:37.445650+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

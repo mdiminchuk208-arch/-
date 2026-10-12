@@ -1,0 +1,16 @@
+{
+  "body_bytes": 25658,
+  "body_file": "ddg_tardis_instruments.body",
+  "body_sha256": "259b99fd5e250e10d4668498fc3dcd2bc60e4c94a44b0b39608527d8cf102f0c",
+  "final_url": "https://lite.duckduckgo.com/lite/?q=Tardis.dev+historical+instrument+metadata+Bybit+tickSize+priceIncrement+changes+API",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://lite.duckduckgo.com/lite/?q=Tardis.dev+historical+instrument+metadata+Bybit+tickSize+priceIncrement+changes+API",
+  "response_headers": {
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Mon, 12 Oct 2026 11:35:30 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:35:29.482485+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

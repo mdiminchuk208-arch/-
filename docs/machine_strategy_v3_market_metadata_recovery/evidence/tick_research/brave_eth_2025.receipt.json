@@ -1,0 +1,17 @@
+{
+  "body_bytes": 73825,
+  "body_file": "brave_eth_2025.body",
+  "body_sha256": "49327e2c97b9163987abbb708d39db6eb2e0acfa6145dff89a758a01a470bf75",
+  "final_url": "https://search.brave.com/search?q=site%3Aannouncements.bybit.com+ETHUSDT+%22tick+size%22+2025",
+  "http_status": 429,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://search.brave.com/search?q=site%3Aannouncements.bybit.com+ETHUSDT+%22tick+size%22+2025",
+  "response_headers": {
+    "content-length": "73825",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Mon, 12 Oct 2026 11:33:20 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:33:20.384120+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

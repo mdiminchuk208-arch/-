@@ -1,0 +1,20 @@
+{
+  "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/arquivo_text_ETHUSDT_tickSize.body",
+  "body_sha256": "2e975040d61ac2e3ea9013881be764e9c0dfc45cd40e1018f9d4d030cc2de1fe",
+  "bytes": 375,
+  "error_class": null,
+  "headers": {
+    "Content-Type": "application/json",
+    "Date": "Mon, 12 Oct 2026 11:36:39 GMT"
+  },
+  "http_status": 200,
+  "id": "arquivo_text_ETHUSDT_tickSize",
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "private_API": false,
+  "request_started_at": "2026-10-12T11:36:39.180461+00:00",
+  "result_is_historical_epoch_proof": false,
+  "retrieved_at": "2026-10-12T11:36:39.648919+00:00",
+  "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+  "source_class": "ARCHIVE_TEXT_INDEX",
+  "url": "https://arquivo.pt/textsearch?q=ETHUSDT+tickSize&siteSearch=announcements.bybit.com&from=20210101000000&to=20251205233000&maxItems=50"
+}

@@ -1,0 +1,16 @@
+{
+  "body_bytes": 8117,
+  "body_file": "ddg_ccxt_static.body",
+  "body_sha256": "831e0d90a100489b110a3839b7adaee5affa8d8339e603b4f4f2f58d907bf923",
+  "final_url": "https://lite.duckduckgo.com/lite/?q=site%3Agithub.com%2Fccxt%2Fccxt+%22BTCUSDT%22+%22tickSize%22+%22bybit%22",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://lite.duckduckgo.com/lite/?q=site%3Agithub.com%2Fccxt%2Fccxt+%22BTCUSDT%22+%22tickSize%22+%22bybit%22",
+  "response_headers": {
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Mon, 12 Oct 2026 11:36:36 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:36:35.293844+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

@@ -1,0 +1,20 @@
+{
+  "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/official_doc_history_2022.body",
+  "body_sha256": "206e98178456330cf58ddd1e04ae2aa0d931ef2111e5ddcbc04278cd747e8963",
+  "bytes": 3321,
+  "error_class": null,
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "Date": "Mon, 12 Oct 2026 11:36:40 GMT"
+  },
+  "http_status": 200,
+  "id": "official_doc_history_2022",
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "private_API": false,
+  "request_started_at": "2026-10-12T11:36:39.351887+00:00",
+  "result_is_historical_epoch_proof": false,
+  "retrieved_at": "2026-10-12T11:36:40.136397+00:00",
+  "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+  "source_class": "OFFICIAL_DOC_GIT_CONTEXT_ONLY",
+  "url": "https://api.github.com/repos/bybit-exchange/docs/commits?path=docs%2Fv5%2Fmarket%2Finstrument.mdx&until=2022-12-05T23%3A30%3A00Z&per_page=1"
+}

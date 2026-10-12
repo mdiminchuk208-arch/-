@@ -1,0 +1,117 @@
+{
+  "actual_exchange_epoch_conflict_proven": false,
+  "conditional_notice_vs_OHLC": {
+    "BTCUSDT": [
+      {
+        "OHLC_modified": false,
+        "arithmetic": "Exact integer ratios of Decimal strings; no context rounding/float tolerance",
+        "bars_checked": 3872,
+        "off_grid_bars": 1,
+        "off_grid_cells": 1,
+        "tick_size": "0.5",
+        "valid_from": 1672531200,
+        "valid_to": 1676016000,
+        "violations": [
+          {
+            "bar_end": 1676016000,
+            "bar_start": 1676015100,
+            "bar_start_UTC": "2023-02-10T07:45:00+00:00",
+            "fields": {
+              "high": "21931.3"
+            }
+          }
+        ]
+      }
+    ],
+    "ETHUSDT": [
+      {
+        "OHLC_modified": false,
+        "arithmetic": "Exact integer ratios of Decimal strings; no context rounding/float tolerance",
+        "bars_checked": 1568,
+        "off_grid_bars": 4,
+        "off_grid_cells": 6,
+        "tick_size": "0.05",
+        "valid_from": 1672531200,
+        "valid_to": 1673942400,
+        "violations": [
+          {
+            "bar_end": 1673939700,
+            "bar_start": 1673938800,
+            "bar_start_UTC": "2023-01-17T07:00:00+00:00",
+            "fields": {
+              "close": "1563.36",
+              "high": "1563.39"
+            }
+          },
+          {
+            "bar_end": 1673940600,
+            "bar_start": 1673939700,
+            "bar_start_UTC": "2023-01-17T07:15:00+00:00",
+            "fields": {
+              "open": "1563.36"
+            }
+          },
+          {
+            "bar_end": 1673941500,
+            "bar_start": 1673940600,
+            "bar_start_UTC": "2023-01-17T07:30:00+00:00",
+            "fields": {
+              "close": "1559.76",
+              "low": "1557.76"
+            }
+          },
+          {
+            "bar_end": 1673942400,
+            "bar_start": 1673941500,
+            "bar_start_UTC": "2023-01-17T07:45:00+00:00",
+            "fields": {
+              "open": "1559.76"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "documentation_vs_fixture_context_check": {
+    "assessment": "Official end-2023 documentation still contains BTC tick0.50 with early-2023 embedded server-time example, whereas later CCXT fixtures contain0.10. Treating Git revision/fixture date as production filter capture creates a false conflict; both are context-only and may be stale. Neither proves an active interval.",
+    "official_document_example": {
+      "commit": "b93bbb189c5dfd6a9839e1a198d41eb4c697e4fb",
+      "commit_time": "2023-12-29T12:27:27+08:00",
+      "document_sha256": "8c4d6941c42966d7d0d397d8c3854c4453d63be0a8c4bb9d5cf1a880fbe14aa8",
+      "effective_from": null,
+      "effective_to": null,
+      "file": "docs/original_v1_1_metadata_recovery_v2/provenance/OFFICIAL_INSTRUMENT_end_2023.mdx",
+      "period_proof": false,
+      "response_projection": [
+        {
+          "admissible_as_historical_interval": false,
+          "base_asset": "BTC",
+          "category": "linear",
+          "contract_type": "LinearPerpetual",
+          "example_server_time": 1672712495660,
+          "minOrderQty": "0.001",
+          "priceScale": "2",
+          "qtyStep": "0.001",
+          "quote_asset": "USDT",
+          "sample_launchTime": "1585526400000",
+          "settle_asset": "USDT",
+          "symbol": "BTCUSDT",
+          "tickSize": "0.50"
+        }
+      ],
+      "snapshot_type": "DOCUMENTATION_EXAMPLE_NOT_PRODUCTION_API_ARCHIVE",
+      "testnet_host_present": true,
+      "version": "end_2023"
+    },
+    "revision_time_equals_exchange_capture": false,
+    "third_party_fixture_sources": [
+      "ccxt_bybit_460503bd48fa",
+      "ccxt_bybit_fbec4993ce01",
+      "ccxt_bybit_bfa6cfbaaa59",
+      "ccxt_bybit_3c7fb16f4fa9"
+    ]
+  },
+  "old_assessment_path": "docs/original_v1_1_metadata_recovery_v2/provenance/OFFICIAL_DOCUMENT_EXAMPLE_ASSESSMENT.json",
+  "old_assessment_sha256": "5aa93436d9294b0041ed37f21f9dc3a679cd333d5014439c00236bfc522c6756",
+  "source_prices_or_epoch_boundaries_changed": false
+}

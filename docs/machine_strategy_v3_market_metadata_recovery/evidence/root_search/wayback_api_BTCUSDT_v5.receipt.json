@@ -1,0 +1,20 @@
+{
+  "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/wayback_api_BTCUSDT_v5.body",
+  "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+  "bytes": 3,
+  "error_class": null,
+  "headers": {
+    "Content-Type": "application/json",
+    "Date": "Mon, 12 Oct 2026 11:36:39 GMT"
+  },
+  "http_status": 200,
+  "id": "wayback_api_BTCUSDT_v5",
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "private_API": false,
+  "request_started_at": "2026-10-12T11:36:24.936194+00:00",
+  "result_is_historical_epoch_proof": false,
+  "retrieved_at": "2026-10-12T11:36:39.662241+00:00",
+  "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+  "source_class": "ARCHIVE_INDEX",
+  "url": "https://web.archive.org/cdx/search/cdx?url=api.bybit.com%2Fv5%2Fmarket%2Finstruments-info%2A&output=json&from=20210101&to=20251205&filter=statuscode%3A200&collapse=digest&limit=200"
+}

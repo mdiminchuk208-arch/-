@@ -1,0 +1,16 @@
+{
+  "body_bytes": 14236,
+  "body_file": "ddg_btc_2025.body",
+  "body_sha256": "53248391729faa5804dc65b06e29f8e7b063bfae82ab55c111d5a4521a371c61",
+  "final_url": "https://lite.duckduckgo.com/lite/?q=site%3Aannouncements.bybit.com+BTCUSDT+tick+size+2025",
+  "http_status": 202,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://lite.duckduckgo.com/lite/?q=site%3Aannouncements.bybit.com+BTCUSDT+tick+size+2025",
+  "response_headers": {
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Mon, 12 Oct 2026 11:29:58 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:29:58.458369+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

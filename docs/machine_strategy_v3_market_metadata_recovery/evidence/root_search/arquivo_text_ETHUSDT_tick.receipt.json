@@ -1,0 +1,20 @@
+{
+  "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/arquivo_text_ETHUSDT_tick.body",
+  "body_sha256": "20d529fd19e4d623256fd970206e12363f05228eb73256e4f9978e2816b07f93",
+  "bytes": 11483,
+  "error_class": null,
+  "headers": {
+    "Content-Type": "application/json",
+    "Date": "Mon, 12 Oct 2026 11:36:37 GMT"
+  },
+  "http_status": 200,
+  "id": "arquivo_text_ETHUSDT_tick",
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "private_API": false,
+  "request_started_at": "2026-10-12T11:36:37.358921+00:00",
+  "result_is_historical_epoch_proof": false,
+  "retrieved_at": "2026-10-12T11:36:38.722907+00:00",
+  "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+  "source_class": "ARCHIVE_TEXT_INDEX",
+  "url": "https://arquivo.pt/textsearch?q=ETHUSDT+tick&siteSearch=announcements.bybit.com&from=20210101000000&to=20251205233000&maxItems=50"
+}

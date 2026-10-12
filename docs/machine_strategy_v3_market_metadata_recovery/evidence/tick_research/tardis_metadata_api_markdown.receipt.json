@@ -1,0 +1,16 @@
+{
+  "body_bytes": 19230,
+  "body_file": "tardis_metadata_api_markdown.body",
+  "body_sha256": "558ad75baef178d324cb74ecd65eb973e1bd73e513a5afddb7a69f8ffde89d31",
+  "final_url": "https://docs.tardis.dev/api/instruments-metadata-api.md",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://docs.tardis.dev/api/instruments-metadata-api.md",
+  "response_headers": {
+    "content-type": "text/plain; charset=utf-8",
+    "date": "Mon, 12 Oct 2026 11:35:52 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:35:51.687436+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

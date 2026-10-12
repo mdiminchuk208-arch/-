@@ -1,0 +1,17 @@
+{
+  "body_bytes": 38634,
+  "body_file": "official_eth_en.body",
+  "body_sha256": "8da5b92771f219598da51742f75ae292498c281a3e80fc45e53d579f60c9023c",
+  "final_url": "https://announcements.bybit.com/en/article/changes-to-tick-size-for-ethusdt-eth-perp-perpetual-contracts-2023-01-06--bltb4b6d3ffa3c5206c/",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://announcements.bybit.com/en/article/changes-to-tick-size-for-ethusdt-eth-perp-perpetual-contracts-2023-01-06--bltb4b6d3ffa3c5206c/",
+  "response_headers": {
+    "content-length": "38634",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Mon, 12 Oct 2026 11:33:43 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:33:43.133910+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

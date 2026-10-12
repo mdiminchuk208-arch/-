@@ -1,0 +1,16 @@
+{
+  "body_bytes": 44990,
+  "body_file": "tardis_data_faq.body",
+  "body_sha256": "a668a4e988217c6bf5d22faef745edae24b0ffbd707ea73cce045ca6409cf74a",
+  "final_url": "https://docs.tardis.dev/faq/data",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://docs.tardis.dev/faq/data",
+  "response_headers": {
+    "content-type": "text/plain; charset=utf-8",
+    "date": "Mon, 12 Oct 2026 11:35:44 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:35:43.463564+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

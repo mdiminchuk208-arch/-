@@ -1,0 +1,12 @@
+{
+  "requested_url": "https://web.archive.org/cdx/search/cdx?url=announcements.bybit.com%2Fen%2Farticle%2Fchanges-to-tick-size-for-usdt-perpetual-contract-2023-02-07--blt80c14139bdd327bc%2F&output=json",
+  "final_url": null,
+  "retrieved_at_utc": "2026-10-12T11:34:30.249364+00:00",
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "http_status": null,
+  "response_headers": {},
+  "body_file": "ia_btc_canonical.body",
+  "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "body_bytes": 0,
+  "network_error": "The read operation timed out"
+}

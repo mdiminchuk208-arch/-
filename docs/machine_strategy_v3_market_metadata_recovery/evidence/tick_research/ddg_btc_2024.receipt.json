@@ -1,0 +1,16 @@
+{
+  "body_bytes": 26037,
+  "body_file": "ddg_btc_2024.body",
+  "body_sha256": "f73777f1bdb8a3eb235bdbab8acd0d4350be144edbc6061cbf44b4c370e77f60",
+  "final_url": "https://lite.duckduckgo.com/lite/?q=site%3Aannouncements.bybit.com+BTCUSDT+tick+size+2024",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://lite.duckduckgo.com/lite/?q=site%3Aannouncements.bybit.com+BTCUSDT+tick+size+2024",
+  "response_headers": {
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Mon, 12 Oct 2026 11:29:58 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:29:57.719156+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

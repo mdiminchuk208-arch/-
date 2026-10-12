@@ -1,0 +1,16 @@
+{
+  "body_bytes": 25713,
+  "body_file": "ddg_btc_2022.body",
+  "body_sha256": "2593eab9b110c19ed913f27f2b71001c2fe91d9efd98265d17bb689e0cd91487",
+  "final_url": "https://lite.duckduckgo.com/lite/?q=site%3Aannouncements.bybit.com+BTCUSDT+tick+size+2022",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://lite.duckduckgo.com/lite/?q=site%3Aannouncements.bybit.com+BTCUSDT+tick+size+2022",
+  "response_headers": {
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Mon, 12 Oct 2026 11:29:56 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:29:55.166157+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

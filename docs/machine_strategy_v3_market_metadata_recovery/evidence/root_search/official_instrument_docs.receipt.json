@@ -1,0 +1,20 @@
+{
+  "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/official_instrument_docs.body",
+  "body_sha256": "e083b9204d0b4a68e2297e94556aa101844e6ac01db1bb9dd827527a183e16f5",
+  "bytes": 226425,
+  "error_class": null,
+  "headers": {
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Mon, 12 Oct 2026 11:36:40 GMT"
+  },
+  "http_status": 200,
+  "id": "official_instrument_docs",
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "private_API": false,
+  "request_started_at": "2026-10-12T11:36:40.392328+00:00",
+  "result_is_historical_epoch_proof": false,
+  "retrieved_at": "2026-10-12T11:36:41.062087+00:00",
+  "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+  "source_class": "CURRENT_DOC_SEMANTICS_ONLY",
+  "url": "https://bybit-exchange.github.io/docs/v5/market/instrument"
+}

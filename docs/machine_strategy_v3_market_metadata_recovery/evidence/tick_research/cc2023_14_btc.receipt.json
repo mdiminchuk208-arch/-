@@ -1,0 +1,16 @@
+{
+  "body_bytes": 82,
+  "body_file": "cc2023_14_btc.body",
+  "body_sha256": "f181759884394c112ac8d7c3eebb23805b71cfd63269dda20f85a874563b4c67",
+  "final_url": "https://index.commoncrawl.org/CC-MAIN-2023-14-index?url=announcements.bybit.com%2F%2Ablt80c14139bdd327bc%2A&output=json",
+  "http_status": 404,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://index.commoncrawl.org/CC-MAIN-2023-14-index?url=announcements.bybit.com%2F%2Ablt80c14139bdd327bc%2A&output=json",
+  "response_headers": {
+    "content-type": "application/json; charset=utf-8",
+    "date": "Mon, 12 Oct 2026 11:32:52 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:32:52.550356+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

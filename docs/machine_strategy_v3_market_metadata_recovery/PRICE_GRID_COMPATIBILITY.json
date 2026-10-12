@@ -1,0 +1,147 @@
+{
+  "VERIFIED_epoch_conflicts": null,
+  "notice_candidate_off_grid_bars_total": 5,
+  "prices_rounded_or_changed": false,
+  "symbols": {
+    "BTCUSDT": {
+      "VERIFIED_epochs_checked": 0,
+      "VERIFIED_price_grid_status": "STOP_NO_VERIFIED_EPOCHS",
+      "alignment_is_epoch_proof": false,
+      "candidate_status": "UNVERIFIED_NOTICE_CLAIM_HYPOTHETICAL_WINDOW",
+      "conditional_contradictions": "Raw OHLC vs assumed old grid until advertised effective time; cannot infer actual boundary or fix prices from these rows",
+      "non_authoritative_notice_consistency": [
+        {
+          "OHLC_modified": false,
+          "arithmetic": "Exact integer ratios of Decimal strings; no context rounding/float tolerance",
+          "bars_checked": 35040,
+          "off_grid_bars": 0,
+          "off_grid_cells": 0,
+          "tick_size": "0.5",
+          "valid_from": 1640995200,
+          "valid_to": 1672531200,
+          "violations": []
+        },
+        {
+          "OHLC_modified": false,
+          "arithmetic": "Exact integer ratios of Decimal strings; no context rounding/float tolerance",
+          "bars_checked": 3872,
+          "off_grid_bars": 1,
+          "off_grid_cells": 1,
+          "tick_size": "0.5",
+          "valid_from": 1672531200,
+          "valid_to": 1676016000,
+          "violations": [
+            {
+              "bar_end": 1676016000,
+              "bar_start": 1676015100,
+              "bar_start_UTC": "2023-02-10T07:45:00+00:00",
+              "fields": {
+                "high": "21931.3"
+              }
+            }
+          ]
+        },
+        {
+          "OHLC_modified": false,
+          "arithmetic": "Exact integer ratios of Decimal strings; no context rounding/float tolerance",
+          "bars_checked": 98846,
+          "off_grid_bars": 0,
+          "off_grid_cells": 0,
+          "tick_size": "0.1",
+          "valid_from": 1676016000,
+          "valid_to": 1764977400,
+          "violations": []
+        }
+      ],
+      "source": {
+        "contract_type": "USDT_LINEAR_PERPETUAL",
+        "path": "data/history/public_research/bybit_mirror/BTCUSDT/15.csv.gz",
+        "sha256": "5d3fe4a4eb1d147c5f5516944bdbc45a21fb483d0bc667b5a92ed206aa8a6fc9",
+        "symbol": "BTCUSDT"
+      }
+    },
+    "ETHUSDT": {
+      "VERIFIED_epochs_checked": 0,
+      "VERIFIED_price_grid_status": "STOP_NO_VERIFIED_EPOCHS",
+      "alignment_is_epoch_proof": false,
+      "candidate_status": "UNVERIFIED_NOTICE_CLAIM_HYPOTHETICAL_WINDOW",
+      "conditional_contradictions": "Raw OHLC vs assumed old grid until advertised effective time; cannot infer actual boundary or fix prices from these rows",
+      "non_authoritative_notice_consistency": [
+        {
+          "OHLC_modified": false,
+          "arithmetic": "Exact integer ratios of Decimal strings; no context rounding/float tolerance",
+          "bars_checked": 35040,
+          "off_grid_bars": 0,
+          "off_grid_cells": 0,
+          "tick_size": "0.05",
+          "valid_from": 1640995200,
+          "valid_to": 1672531200,
+          "violations": []
+        },
+        {
+          "OHLC_modified": false,
+          "arithmetic": "Exact integer ratios of Decimal strings; no context rounding/float tolerance",
+          "bars_checked": 1568,
+          "off_grid_bars": 4,
+          "off_grid_cells": 6,
+          "tick_size": "0.05",
+          "valid_from": 1672531200,
+          "valid_to": 1673942400,
+          "violations": [
+            {
+              "bar_end": 1673939700,
+              "bar_start": 1673938800,
+              "bar_start_UTC": "2023-01-17T07:00:00+00:00",
+              "fields": {
+                "close": "1563.36",
+                "high": "1563.39"
+              }
+            },
+            {
+              "bar_end": 1673940600,
+              "bar_start": 1673939700,
+              "bar_start_UTC": "2023-01-17T07:15:00+00:00",
+              "fields": {
+                "open": "1563.36"
+              }
+            },
+            {
+              "bar_end": 1673941500,
+              "bar_start": 1673940600,
+              "bar_start_UTC": "2023-01-17T07:30:00+00:00",
+              "fields": {
+                "close": "1559.76",
+                "low": "1557.76"
+              }
+            },
+            {
+              "bar_end": 1673942400,
+              "bar_start": 1673941500,
+              "bar_start_UTC": "2023-01-17T07:45:00+00:00",
+              "fields": {
+                "open": "1559.76"
+              }
+            }
+          ]
+        },
+        {
+          "OHLC_modified": false,
+          "arithmetic": "Exact integer ratios of Decimal strings; no context rounding/float tolerance",
+          "bars_checked": 101150,
+          "off_grid_bars": 0,
+          "off_grid_cells": 0,
+          "tick_size": "0.01",
+          "valid_from": 1673942400,
+          "valid_to": 1764977400,
+          "violations": []
+        }
+      ],
+      "source": {
+        "contract_type": "USDT_LINEAR_PERPETUAL",
+        "path": "data/history/public_research/bybit_mirror/ETHUSDT/15.csv.gz",
+        "sha256": "94c8f3f414ae3bbbe08bc5180f3da88d72c699f8ff88fd8093062078260449f8",
+        "symbol": "ETHUSDT"
+      }
+    }
+  }
+}

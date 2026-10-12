@@ -1,0 +1,582 @@
+[
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/current_api_BTCUSDT.body",
+    "body_sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+    "bytes": 96,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "application/json",
+      "Date": "Mon, 12 Oct 2026 11:36:25 GMT"
+    },
+    "http_status": 403,
+    "id": "current_api_BTCUSDT",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:24.935410+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:25.501852+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "CURRENT_CONTEXT_ONLY",
+    "url": "https://api.bybit.com/v5/market/instruments-info?category=linear&symbol=BTCUSDT"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/wayback_api_BTCUSDT_v5.body",
+    "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "bytes": 3,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "application/json",
+      "Date": "Mon, 12 Oct 2026 11:36:39 GMT"
+    },
+    "http_status": 200,
+    "id": "wayback_api_BTCUSDT_v5",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:24.936194+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:39.662241+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "ARCHIVE_INDEX",
+    "url": "https://web.archive.org/cdx/search/cdx?url=api.bybit.com%2Fv5%2Fmarket%2Finstruments-info%2A&output=json&from=20210101&to=20251205&filter=statuscode%3A200&collapse=digest&limit=200"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/arquivo_api_BTCUSDT_v5.body",
+    "body_sha256": "cdd5ed003f13d93221fc2a4496546cd0d27bfe164cb00e4a37c5e096b799a33a",
+    "bytes": 424,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "text/x-ndjson",
+      "Date": "Mon, 12 Oct 2026 11:36:26 GMT"
+    },
+    "http_status": 200,
+    "id": "arquivo_api_BTCUSDT_v5",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:24.936937+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:26.655494+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "ARCHIVE_INDEX",
+    "url": "https://arquivo.pt/wayback/cdx?url=api.bybit.com%2Fv5%2Fmarket%2Finstruments-info%2A&output=json&from=20210101&to=20251205&filter=status%3A200&collapse=digest&limit=200"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/wayback_api_BTCUSDT_v2.body",
+    "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "bytes": 3,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "application/json",
+      "Date": "Mon, 12 Oct 2026 11:36:35 GMT"
+    },
+    "http_status": 200,
+    "id": "wayback_api_BTCUSDT_v2",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:24.937578+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:35.838467+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "ARCHIVE_INDEX",
+    "url": "https://web.archive.org/cdx/search/cdx?url=api.bybit.com%2Fv2%2Fpublic%2Fsymbols%2A&output=json&from=20210101&to=20251205&filter=statuscode%3A200&collapse=digest&limit=200"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/arquivo_api_BTCUSDT_v2.body",
+    "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "text/x-ndjson",
+      "Date": "Mon, 12 Oct 2026 11:36:27 GMT"
+    },
+    "http_status": 200,
+    "id": "arquivo_api_BTCUSDT_v2",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:25.502158+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:27.432479+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "ARCHIVE_INDEX",
+    "url": "https://arquivo.pt/wayback/cdx?url=api.bybit.com%2Fv2%2Fpublic%2Fsymbols%2A&output=json&from=20210101&to=20251205&filter=status%3A200&collapse=digest&limit=200"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/tardis_instrument_BTCUSDT.body",
+    "body_sha256": "a01b54ffabc2509de51150491a5dc03d98e7d698b9b960959ae121a5bd68738e",
+    "bytes": 126,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "application/json",
+      "Date": "Mon, 12 Oct 2026 11:36:33 GMT"
+    },
+    "http_status": 401,
+    "id": "tardis_instrument_BTCUSDT",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:26.655974+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:33.270800+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "THIRD_PARTY_INSTRUMENT_METADATA",
+    "url": "https://api.tardis.dev/v1/instruments/bybit/BTCUSDT"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/arquivo_text_BTCUSDT_tick.body",
+    "body_sha256": "ddd7b672bc6e5b96b393e8e7b7c9d6e8f3191f6f6ab6816de620fd3ca1c16e60",
+    "bytes": 1726,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "application/json",
+      "Date": "Mon, 12 Oct 2026 11:36:27 GMT"
+    },
+    "http_status": 200,
+    "id": "arquivo_text_BTCUSDT_tick",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:27.432728+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:29.379262+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "ARCHIVE_TEXT_INDEX",
+    "url": "https://arquivo.pt/textsearch?q=BTCUSDT+tick&siteSearch=announcements.bybit.com&from=20210101000000&to=20251205233000&maxItems=50"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/arquivo_text_BTCUSDT_priceFilter.body",
+    "body_sha256": "a2f7fb405ca110233c0ef45c701a126ff09cef772a979b42ef4245dbca53ad11",
+    "bytes": 378,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "application/json",
+      "Date": "Mon, 12 Oct 2026 11:36:29 GMT"
+    },
+    "http_status": 200,
+    "id": "arquivo_text_BTCUSDT_priceFilter",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:29.379549+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:29.802518+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "ARCHIVE_TEXT_INDEX",
+    "url": "https://arquivo.pt/textsearch?q=BTCUSDT+priceFilter&siteSearch=announcements.bybit.com&from=20210101000000&to=20251205233000&maxItems=50"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/arquivo_text_BTCUSDT_tickSize.body",
+    "body_sha256": "5121275e2ae5fe177461767094303a4447aefa60fa205749b114f75870b683d7",
+    "bytes": 375,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "application/json",
+      "Date": "Mon, 12 Oct 2026 11:36:29 GMT"
+    },
+    "http_status": 200,
+    "id": "arquivo_text_BTCUSDT_tickSize",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:29.802822+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:30.108141+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "ARCHIVE_TEXT_INDEX",
+    "url": "https://arquivo.pt/textsearch?q=BTCUSDT+tickSize&siteSearch=announcements.bybit.com&from=20210101000000&to=20251205233000&maxItems=50"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/current_api_ETHUSDT.body",
+    "body_sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+    "bytes": 96,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "application/json",
+      "Date": "Mon, 12 Oct 2026 11:36:30 GMT"
+    },
+    "http_status": 403,
+    "id": "current_api_ETHUSDT",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:30.108393+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:30.626651+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "CURRENT_CONTEXT_ONLY",
+    "url": "https://api.bybit.com/v5/market/instruments-info?category=linear&symbol=ETHUSDT"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/wayback_api_ETHUSDT_v5.body",
+    "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "bytes": 3,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "application/json",
+      "Date": "Mon, 12 Oct 2026 11:36:37 GMT"
+    },
+    "http_status": 200,
+    "id": "wayback_api_ETHUSDT_v5",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:30.626984+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:37.358624+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "ARCHIVE_INDEX",
+    "url": "https://web.archive.org/cdx/search/cdx?url=api.bybit.com%2Fv5%2Fmarket%2Finstruments-info%2A&output=json&from=20210101&to=20251205&filter=statuscode%3A200&collapse=digest&limit=200"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/arquivo_api_ETHUSDT_v5.body",
+    "body_sha256": "cdd5ed003f13d93221fc2a4496546cd0d27bfe164cb00e4a37c5e096b799a33a",
+    "bytes": 424,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "text/x-ndjson",
+      "Date": "Mon, 12 Oct 2026 11:36:33 GMT"
+    },
+    "http_status": 200,
+    "id": "arquivo_api_ETHUSDT_v5",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:33.271027+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:34.155942+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "ARCHIVE_INDEX",
+    "url": "https://arquivo.pt/wayback/cdx?url=api.bybit.com%2Fv5%2Fmarket%2Finstruments-info%2A&output=json&from=20210101&to=20251205&filter=status%3A200&collapse=digest&limit=200"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/wayback_api_ETHUSDT_v2.body",
+    "body_sha256": "e084d527921708642a79724e9f0210da659bbc0905c6ce9a3a1f416e4628091c",
+    "bytes": 11832,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "text/html",
+      "Date": "Mon, 12 Oct 2026 11:36:39 GMT"
+    },
+    "http_status": 503,
+    "id": "wayback_api_ETHUSDT_v2",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:34.156336+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:39.351602+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "ARCHIVE_INDEX",
+    "url": "https://web.archive.org/cdx/search/cdx?url=api.bybit.com%2Fv2%2Fpublic%2Fsymbols%2A&output=json&from=20210101&to=20251205&filter=statuscode%3A200&collapse=digest&limit=200"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/arquivo_api_ETHUSDT_v2.body",
+    "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "text/x-ndjson",
+      "Date": "Mon, 12 Oct 2026 11:36:35 GMT"
+    },
+    "http_status": 200,
+    "id": "arquivo_api_ETHUSDT_v2",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:35.838876+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:36.231345+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "ARCHIVE_INDEX",
+    "url": "https://arquivo.pt/wayback/cdx?url=api.bybit.com%2Fv2%2Fpublic%2Fsymbols%2A&output=json&from=20210101&to=20251205&filter=status%3A200&collapse=digest&limit=200"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/tardis_instrument_ETHUSDT.body",
+    "body_sha256": "a01b54ffabc2509de51150491a5dc03d98e7d698b9b960959ae121a5bd68738e",
+    "bytes": 126,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "application/json",
+      "Date": "Mon, 12 Oct 2026 11:36:45 GMT"
+    },
+    "http_status": 401,
+    "id": "tardis_instrument_ETHUSDT",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:36.231854+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:45.372338+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "THIRD_PARTY_INSTRUMENT_METADATA",
+    "url": "https://api.tardis.dev/v1/instruments/bybit/ETHUSDT"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/arquivo_text_ETHUSDT_tick.body",
+    "body_sha256": "20d529fd19e4d623256fd970206e12363f05228eb73256e4f9978e2816b07f93",
+    "bytes": 11483,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "application/json",
+      "Date": "Mon, 12 Oct 2026 11:36:37 GMT"
+    },
+    "http_status": 200,
+    "id": "arquivo_text_ETHUSDT_tick",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:37.358921+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:38.722907+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "ARCHIVE_TEXT_INDEX",
+    "url": "https://arquivo.pt/textsearch?q=ETHUSDT+tick&siteSearch=announcements.bybit.com&from=20210101000000&to=20251205233000&maxItems=50"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/arquivo_text_ETHUSDT_priceFilter.body",
+    "body_sha256": "3846041031c462374d3c96127287a36e5481d1d2cab36da047dd0358510a6c21",
+    "bytes": 378,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "application/json",
+      "Date": "Mon, 12 Oct 2026 11:36:38 GMT"
+    },
+    "http_status": 200,
+    "id": "arquivo_text_ETHUSDT_priceFilter",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:38.723190+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:39.180223+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "ARCHIVE_TEXT_INDEX",
+    "url": "https://arquivo.pt/textsearch?q=ETHUSDT+priceFilter&siteSearch=announcements.bybit.com&from=20210101000000&to=20251205233000&maxItems=50"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/arquivo_text_ETHUSDT_tickSize.body",
+    "body_sha256": "2e975040d61ac2e3ea9013881be764e9c0dfc45cd40e1018f9d4d030cc2de1fe",
+    "bytes": 375,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "application/json",
+      "Date": "Mon, 12 Oct 2026 11:36:39 GMT"
+    },
+    "http_status": 200,
+    "id": "arquivo_text_ETHUSDT_tickSize",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:39.180461+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:39.648919+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "ARCHIVE_TEXT_INDEX",
+    "url": "https://arquivo.pt/textsearch?q=ETHUSDT+tickSize&siteSearch=announcements.bybit.com&from=20210101000000&to=20251205233000&maxItems=50"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/official_doc_history_2022.body",
+    "body_sha256": "206e98178456330cf58ddd1e04ae2aa0d931ef2111e5ddcbc04278cd747e8963",
+    "bytes": 3321,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Mon, 12 Oct 2026 11:36:40 GMT"
+    },
+    "http_status": 200,
+    "id": "official_doc_history_2022",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:39.351887+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:40.136397+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "OFFICIAL_DOC_GIT_CONTEXT_ONLY",
+    "url": "https://api.github.com/repos/bybit-exchange/docs/commits?path=docs%2Fv5%2Fmarket%2Finstrument.mdx&until=2022-12-05T23%3A30%3A00Z&per_page=1"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/official_doc_history_2023.body",
+    "body_sha256": "e0290db3d3be7105e9bf0c4d291f5309f86ab62f2951ab570193ce79e2650a57",
+    "bytes": 3275,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Mon, 12 Oct 2026 11:36:40 GMT"
+    },
+    "http_status": 200,
+    "id": "official_doc_history_2023",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:39.649160+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:40.374521+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "OFFICIAL_DOC_GIT_CONTEXT_ONLY",
+    "url": "https://api.github.com/repos/bybit-exchange/docs/commits?path=docs%2Fv5%2Fmarket%2Finstrument.mdx&until=2023-12-05T23%3A30%3A00Z&per_page=1"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/official_doc_history_2024.body",
+    "body_sha256": "5d22c45c40c7b1ee33265079846363b7cdeb8eb116e6077be74056eebeeebea2",
+    "bytes": 3309,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Mon, 12 Oct 2026 11:36:40 GMT"
+    },
+    "http_status": 200,
+    "id": "official_doc_history_2024",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:39.662486+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:40.392129+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "OFFICIAL_DOC_GIT_CONTEXT_ONLY",
+    "url": "https://api.github.com/repos/bybit-exchange/docs/commits?path=docs%2Fv5%2Fmarket%2Finstrument.mdx&until=2024-12-05T23%3A30%3A00Z&per_page=1"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/official_doc_history_2025.body",
+    "body_sha256": "744ae493b3e674faefd88caa0219510e21102a676cacac26665b9c94e9bd7ad3",
+    "bytes": 4666,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Mon, 12 Oct 2026 11:36:40 GMT"
+    },
+    "http_status": 200,
+    "id": "official_doc_history_2025",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:40.136637+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:40.904178+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "OFFICIAL_DOC_GIT_CONTEXT_ONLY",
+    "url": "https://api.github.com/repos/bybit-exchange/docs/commits?path=docs%2Fv5%2Fmarket%2Finstrument.mdx&until=2025-12-05T23%3A30%3A00Z&per_page=1"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/tardis_exchange_catalog.body",
+    "body_sha256": "4acf326b16180c91b2c6f22346c45bf685177922ed393eb3c320d802b8ebe237",
+    "bytes": 742728,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "application/json",
+      "Date": "Mon, 12 Oct 2026 11:36:40 GMT"
+    },
+    "http_status": 200,
+    "id": "tardis_exchange_catalog",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:40.374922+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:41.224882+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "THIRD_PARTY_INSTRUMENT_METADATA",
+    "url": "https://api.tardis.dev/v1/exchanges/bybit"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/official_instrument_docs.body",
+    "body_sha256": "e083b9204d0b4a68e2297e94556aa101844e6ac01db1bb9dd827527a183e16f5",
+    "bytes": 226425,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "text/html; charset=utf-8",
+      "Date": "Mon, 12 Oct 2026 11:36:40 GMT"
+    },
+    "http_status": 200,
+    "id": "official_instrument_docs",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:40.392328+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:41.062087+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "CURRENT_DOC_SEMANTICS_ONLY",
+    "url": "https://bybit-exchange.github.io/docs/v5/market/instrument"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/tardis_instrument_doc.body",
+    "body_sha256": "558ad75baef178d324cb74ecd65eb973e1bd73e513a5afddb7a69f8ffde89d31",
+    "bytes": 19230,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Date": "Mon, 12 Oct 2026 11:36:41 GMT"
+    },
+    "http_status": 200,
+    "id": "tardis_instrument_doc",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:40.904517+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:41.334848+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "THIRD_PARTY_DOC_SEMANTICS_ONLY",
+    "url": "https://docs.tardis.dev/api/instruments-metadata-api"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/commoncrawl_api_CC-MAIN-2022-49.body",
+    "body_sha256": "2095037b3cdd7f505a1f0da264feb1d93b129a31ff607ac61cbd72404866df35",
+    "bytes": 167,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "text/html",
+      "Date": "Mon, 12 Oct 2026 11:36:51 GMT"
+    },
+    "http_status": 504,
+    "id": "commoncrawl_api_CC-MAIN-2022-49",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:41.062611+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:51.990898+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "ARCHIVE_INDEX",
+    "url": "https://index.commoncrawl.org/CC-MAIN-2022-49-index?url=api.bybit.com%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=100"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/commoncrawl_api_CC-MAIN-2023-06.body",
+    "body_sha256": "2095037b3cdd7f505a1f0da264feb1d93b129a31ff607ac61cbd72404866df35",
+    "bytes": 167,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "text/html",
+      "Date": "Mon, 12 Oct 2026 11:36:51 GMT"
+    },
+    "http_status": 504,
+    "id": "commoncrawl_api_CC-MAIN-2023-06",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:41.225668+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:51.642668+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "ARCHIVE_INDEX",
+    "url": "https://index.commoncrawl.org/CC-MAIN-2023-06-index?url=api.bybit.com%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=100"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/commoncrawl_api_CC-MAIN-2024-51.body",
+    "body_sha256": "2095037b3cdd7f505a1f0da264feb1d93b129a31ff607ac61cbd72404866df35",
+    "bytes": 167,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "text/html",
+      "Date": "Mon, 12 Oct 2026 11:36:51 GMT"
+    },
+    "http_status": 504,
+    "id": "commoncrawl_api_CC-MAIN-2024-51",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:41.335108+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:52.033545+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "ARCHIVE_INDEX",
+    "url": "https://index.commoncrawl.org/CC-MAIN-2024-51-index?url=api.bybit.com%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=100"
+  },
+  {
+    "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/commoncrawl_api_CC-MAIN-2025-47.body",
+    "body_sha256": "af0f30709d64371a0f03e408742cf5642172781ce9b5492d34e8db2673adac2f",
+    "bytes": 197,
+    "error_class": null,
+    "headers": {
+      "Content-Type": "text/html",
+      "Date": "Mon, 12 Oct 2026 11:36:46 GMT"
+    },
+    "http_status": 503,
+    "id": "commoncrawl_api_CC-MAIN-2025-47",
+    "method": "GET_PUBLIC_UNAUTHENTICATED",
+    "private_API": false,
+    "request_started_at": "2026-10-12T11:36:45.372595+00:00",
+    "result_is_historical_epoch_proof": false,
+    "retrieved_at": "2026-10-12T11:36:46.081371+00:00",
+    "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+    "source_class": "ARCHIVE_INDEX",
+    "url": "https://index.commoncrawl.org/CC-MAIN-2025-47-index?url=api.bybit.com%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=100"
+  }
+]

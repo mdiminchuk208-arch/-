@@ -1,0 +1,16 @@
+{
+  "body_bytes": 0,
+  "body_file": "arquivo_eth_slug.body",
+  "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "final_url": "https://arquivo.pt/wayback/cdx?url=announcements.bybit.com%2F%2Abltb4b6d3ffa3c5206c%2A&output=json",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://arquivo.pt/wayback/cdx?url=announcements.bybit.com%2F%2Abltb4b6d3ffa3c5206c%2A&output=json",
+  "response_headers": {
+    "content-type": "text/x-ndjson",
+    "date": "Mon, 12 Oct 2026 11:31:16 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:31:15.183967+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

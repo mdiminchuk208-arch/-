@@ -1,0 +1,17 @@
+{
+  "body_bytes": 167,
+  "body_file": "cc2023_06_eth.body",
+  "body_sha256": "2095037b3cdd7f505a1f0da264feb1d93b129a31ff607ac61cbd72404866df35",
+  "final_url": "https://index.commoncrawl.org/CC-MAIN-2023-06-index?url=announcements.bybit.com%2F%2Abltb4b6d3ffa3c5206c%2A&output=json",
+  "http_status": 504,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://index.commoncrawl.org/CC-MAIN-2023-06-index?url=announcements.bybit.com%2F%2Abltb4b6d3ffa3c5206c%2A&output=json",
+  "response_headers": {
+    "content-length": "167",
+    "content-type": "text/html",
+    "date": "Mon, 12 Oct 2026 11:32:51 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:32:41.506863+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

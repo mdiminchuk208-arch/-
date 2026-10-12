@@ -1,0 +1,35 @@
+{
+  "CSV_columns_used": [
+    "open_time_ms",
+    "symbol",
+    "exchange",
+    "interval",
+    "is_closed",
+    "open",
+    "high",
+    "low",
+    "close"
+  ],
+  "builder_sha256": "b8cf570a0f6ec3fa9a1f76bc19c20928c3f7751bc7b741c695032a90ab984301",
+  "collector_scope": "Separate public-only endpoint/host audit plus receipt URL inventory and private-endpoint negative fixtures; not inferred solely from builder imports",
+  "data_read_allowlist": [
+    "pinned BTC/ETH raw OHLC CSV",
+    "metadata evidence receipts/pages",
+    "source inventory",
+    "frozen manifests and metadata continuity receipt"
+  ],
+  "historical_v3_outcomes_read_or_generated": false,
+  "imports": [
+    "__future__",
+    "datetime",
+    "decimal",
+    "hashlib",
+    "pathlib",
+    "typing",
+    "machine_strategy_research_io",
+    "machine_strategy_research_io"
+  ],
+  "outcome_column_subscript_reads": [],
+  "status": "PASS",
+  "strategy_admission_or_outcome_engine_imported": false
+}

@@ -1,0 +1,16 @@
+{
+  "body_bytes": 21351,
+  "body_file": "ddg_ccxt_archive.body",
+  "body_sha256": "14830da888467cb917863ceeef6805c95f800742779bc3d54144c9648a727740",
+  "final_url": "https://lite.duckduckgo.com/lite/?q=CCXT+historical+market+metadata+archive+Bybit+BTCUSDT+precision+tick+size+daily+snapshots",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://lite.duckduckgo.com/lite/?q=CCXT+historical+market+metadata+archive+Bybit+BTCUSDT+precision+tick+size+daily+snapshots",
+  "response_headers": {
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Mon, 12 Oct 2026 11:35:32 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:35:31.571811+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

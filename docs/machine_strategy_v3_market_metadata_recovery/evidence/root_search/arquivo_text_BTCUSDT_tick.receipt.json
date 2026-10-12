@@ -1,0 +1,20 @@
+{
+  "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/arquivo_text_BTCUSDT_tick.body",
+  "body_sha256": "ddd7b672bc6e5b96b393e8e7b7c9d6e8f3191f6f6ab6816de620fd3ca1c16e60",
+  "bytes": 1726,
+  "error_class": null,
+  "headers": {
+    "Content-Type": "application/json",
+    "Date": "Mon, 12 Oct 2026 11:36:27 GMT"
+  },
+  "http_status": 200,
+  "id": "arquivo_text_BTCUSDT_tick",
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "private_API": false,
+  "request_started_at": "2026-10-12T11:36:27.432728+00:00",
+  "result_is_historical_epoch_proof": false,
+  "retrieved_at": "2026-10-12T11:36:29.379262+00:00",
+  "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+  "source_class": "ARCHIVE_TEXT_INDEX",
+  "url": "https://arquivo.pt/textsearch?q=BTCUSDT+tick&siteSearch=announcements.bybit.com&from=20210101000000&to=20251205233000&maxItems=50"
+}

@@ -1,0 +1,538 @@
+[
+  {
+    "method": "config/read",
+    "cwd": "/workspace/-",
+    "result": {
+      "config": {
+        "projects": {
+          "/workspace/-": {
+            "trust_level": "trusted"
+          },
+          "/workspace": {
+            "trust_level": "trusted"
+          }
+        },
+        "hooks": null,
+        "features": {
+          "network_proxy": null,
+          "multi_agent": true,
+          "plugins": true,
+          "api_key_model_discovery": false,
+          "auth_elicitation": true,
+          "background_paginated_rollout_migration": false,
+          "codex_apps_mcp_2026_07_28": false,
+          "mcp_2026_07_28": false,
+          "memories": false,
+          "mentions_v2": true,
+          "remote_control": false,
+          "remote_plugin": true,
+          "tool_suggest": true,
+          "windows_sandbox_service": false
+        },
+        "agents": {
+          "enabled": null,
+          "max_concurrent_threads_per_session": 10,
+          "max_depth": 1,
+          "default_subagent_model": null,
+          "default_subagent_reasoning_effort": null,
+          "job_max_runtime_seconds": null,
+          "interrupt_message": null,
+          "backtest_engineer": {
+            "description": "Deterministic backtest infrastructure engineer; implements runners only after frozen specs and must not tune from financial outcomes.",
+            "config_file": "/workspace/-/.codex/agents/backtest-engineer.toml",
+            "nickname_candidates": null
+          },
+          "backtest_reviewer": {
+            "description": "Independent reviewer for no-lookahead, leakage, reproducibility, overfit, and metric correctness.",
+            "config_file": "/workspace/-/.codex/agents/backtest-reviewer.toml",
+            "nickname_candidates": null
+          },
+          "cost_funding_auditor": {
+            "description": "Read-only auditor for fees, slippage, funding, cost normalization, and exchange-realism assumptions.",
+            "config_file": "/workspace/-/.codex/agents/cost-funding-auditor.toml",
+            "nickname_candidates": null
+          },
+          "execution_auditor": {
+            "description": "Execution and accounting auditor for LONG/SHORT symmetry, fees, slippage, fills, stops, targets, and metadata assumptions.",
+            "config_file": "/workspace/-/.codex/agents/execution-auditor.toml",
+            "nickname_candidates": null
+          },
+          "final_independent_reviewer": {
+            "description": "Final independent gate reviewer; challenges evidence, reproducibility, safety, and PASS/STOP decisions without modifying strategy rules.",
+            "config_file": "/workspace/-/.codex/agents/final-independent-reviewer.toml",
+            "nickname_candidates": null
+          },
+          "historical_data_engineer": {
+            "description": "Historical market-data adapter engineer for causal bars, aggregation, continuity, provenance, and deterministic event construction.",
+            "config_file": "/workspace/-/.codex/agents/historical-data-engineer.toml",
+            "nickname_candidates": null
+          },
+          "market_microstructure_auditor": {
+            "description": "Read-only market-microstructure auditor for order representation, spread, gaps, partial fills, queue assumptions, and OHLC ambiguity.",
+            "config_file": "/workspace/-/.codex/agents/market-microstructure-auditor.toml",
+            "nickname_candidates": null
+          },
+          "market_regime_researcher": {
+            "description": "Read-only causal market-regime researcher for trend/range/transition/uncertain state definitions and direction symmetry.",
+            "config_file": "/workspace/-/.codex/agents/market-regime-researcher.toml",
+            "nickname_candidates": null
+          },
+          "no_lookahead_auditor": {
+            "description": "Read-only specialist for timestamp causality, future leakage, prefix mutation, field provenance, and outcome isolation.",
+            "config_file": "/workspace/-/.codex/agents/no-lookahead-auditor.toml",
+            "nickname_candidates": null
+          },
+          "oos_forward_validator": {
+            "description": "Read-only OOS/forward-validation auditor for contamination, embargo, preregistration, chronology, and qualification gates.",
+            "config_file": "/workspace/-/.codex/agents/oos-forward-validator.toml",
+            "nickname_candidates": null
+          },
+          "overfit_red_team": {
+            "description": "Independent red-team reviewer focused on hidden tuning, multiple testing, subgroup mining, narrative overfit, and false qualification.",
+            "config_file": "/workspace/-/.codex/agents/overfit-red-team.toml",
+            "nickname_candidates": null
+          },
+          "statistics_robustness_analyst": {
+            "description": "Read-only statistical analyst for uncertainty, concentration, stability, robustness partitions, and sample adequacy.",
+            "config_file": "/workspace/-/.codex/agents/statistics-robustness-analyst.toml",
+            "nickname_candidates": null
+          },
+          "strategy_designer": {
+            "description": "Pre-outcome machine strategy designer. Proposes causally justified rules only after audit evidence is frozen.",
+            "config_file": "/workspace/-/.codex/agents/strategy-designer.toml",
+            "nickname_candidates": null
+          },
+          "strategy_explorer": {
+            "description": "Read-only strategy diagnostics explorer for frozen backtest and robustness artifacts.",
+            "config_file": "/workspace/-/.codex/agents/strategy-explorer.toml",
+            "nickname_candidates": null
+          },
+          "tick_metadata_researcher": {
+            "description": "Read-only researcher for exchange tick-size epochs, instrument metadata provenance, timestamps, and archival evidence.",
+            "config_file": "/workspace/-/.codex/agents/tick-metadata-researcher.toml",
+            "nickname_candidates": null
+          }
+        },
+        "plugins": {
+          "unified-computer-use@openai-bundled": {
+            "enabled": true
+          },
+          "ecc@ecc": {
+            "enabled": true
+          }
+        }
+      },
+      "layers": [
+        {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "disabledReason": null,
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8",
+          "config": {
+            "features": {
+              "multi_agent": true
+            },
+            "agents": {
+              "max_threads": 10,
+              "max_depth": 1,
+              "strategy_explorer": {
+                "description": "Read-only strategy diagnostics explorer for frozen backtest and robustness artifacts.",
+                "config_file": "/workspace/-/.codex/agents/strategy-explorer.toml"
+              },
+              "strategy_designer": {
+                "description": "Pre-outcome machine strategy designer. Proposes causally justified rules only after audit evidence is frozen.",
+                "config_file": "/workspace/-/.codex/agents/strategy-designer.toml"
+              },
+              "backtest_reviewer": {
+                "description": "Independent reviewer for no-lookahead, leakage, reproducibility, overfit, and metric correctness.",
+                "config_file": "/workspace/-/.codex/agents/backtest-reviewer.toml"
+              },
+              "execution_auditor": {
+                "description": "Execution and accounting auditor for LONG/SHORT symmetry, fees, slippage, fills, stops, targets, and metadata assumptions.",
+                "config_file": "/workspace/-/.codex/agents/execution-auditor.toml"
+              },
+              "market_regime_researcher": {
+                "description": "Read-only causal market-regime researcher for trend/range/transition/uncertain state definitions and direction symmetry.",
+                "config_file": "/workspace/-/.codex/agents/market-regime-researcher.toml"
+              },
+              "historical_data_engineer": {
+                "description": "Historical market-data adapter engineer for causal bars, aggregation, continuity, provenance, and deterministic event construction.",
+                "config_file": "/workspace/-/.codex/agents/historical-data-engineer.toml"
+              },
+              "tick_metadata_researcher": {
+                "description": "Read-only researcher for exchange tick-size epochs, instrument metadata provenance, timestamps, and archival evidence.",
+                "config_file": "/workspace/-/.codex/agents/tick-metadata-researcher.toml"
+              },
+              "market_microstructure_auditor": {
+                "description": "Read-only market-microstructure auditor for order representation, spread, gaps, partial fills, queue assumptions, and OHLC ambiguity.",
+                "config_file": "/workspace/-/.codex/agents/market-microstructure-auditor.toml"
+              },
+              "backtest_engineer": {
+                "description": "Deterministic backtest infrastructure engineer; implements runners only after frozen specs and must not tune from financial outcomes.",
+                "config_file": "/workspace/-/.codex/agents/backtest-engineer.toml"
+              },
+              "cost_funding_auditor": {
+                "description": "Read-only auditor for fees, slippage, funding, cost normalization, and exchange-realism assumptions.",
+                "config_file": "/workspace/-/.codex/agents/cost-funding-auditor.toml"
+              },
+              "statistics_robustness_analyst": {
+                "description": "Read-only statistical analyst for uncertainty, concentration, stability, robustness partitions, and sample adequacy.",
+                "config_file": "/workspace/-/.codex/agents/statistics-robustness-analyst.toml"
+              },
+              "oos_forward_validator": {
+                "description": "Read-only OOS/forward-validation auditor for contamination, embargo, preregistration, chronology, and qualification gates.",
+                "config_file": "/workspace/-/.codex/agents/oos-forward-validator.toml"
+              },
+              "no_lookahead_auditor": {
+                "description": "Read-only specialist for timestamp causality, future leakage, prefix mutation, field provenance, and outcome isolation.",
+                "config_file": "/workspace/-/.codex/agents/no-lookahead-auditor.toml"
+              },
+              "overfit_red_team": {
+                "description": "Independent red-team reviewer focused on hidden tuning, multiple testing, subgroup mining, narrative overfit, and false qualification.",
+                "config_file": "/workspace/-/.codex/agents/overfit-red-team.toml"
+              },
+              "final_independent_reviewer": {
+                "description": "Final independent gate reviewer; challenges evidence, reproducibility, safety, and PASS/STOP decisions without modifying strategy rules.",
+                "config_file": "/workspace/-/.codex/agents/final-independent-reviewer.toml"
+              }
+            }
+          }
+        },
+        {
+          "name": {
+            "type": "user",
+            "file": "/workspace/ecc-setup/codex-home/config.toml",
+            "profile": null
+          },
+          "disabledReason": null,
+          "version": "sha256:c4c30631654b7de3c8b1044cb532213c33b029b39e361197ff24bc9cc8b5a7a8",
+          "config": {
+            "features": {
+              "plugins": true,
+              "multi_agent": true
+            },
+            "plugins": {
+              "ecc@ecc": {
+                "enabled": true
+              }
+            },
+            "projects": {
+              "/workspace": {
+                "trust_level": "trusted"
+              },
+              "/workspace/-": {
+                "trust_level": "trusted"
+              }
+            }
+          }
+        },
+        {
+          "name": {
+            "type": "system",
+            "file": "/etc/codex/config.toml"
+          },
+          "disabledReason": null,
+          "version": "sha256:fc917ea045b48d350a364e5a62753f14fe7d2db19bf20830813aed8db1a72d1c",
+          "config": {
+            "plugins": {
+              "unified-computer-use@openai-bundled": {
+                "enabled": true
+              }
+            }
+          }
+        }
+      ],
+      "origins": {
+        "projects./workspace.trust_level": {
+          "name": {
+            "type": "user",
+            "file": "/workspace/ecc-setup/codex-home/config.toml",
+            "profile": null
+          },
+          "version": "sha256:c4c30631654b7de3c8b1044cb532213c33b029b39e361197ff24bc9cc8b5a7a8"
+        },
+        "agents.tick_metadata_researcher.config_file": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.strategy_designer.config_file": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.cost_funding_auditor.config_file": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.cost_funding_auditor.description": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.oos_forward_validator.config_file": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.max_concurrent_threads_per_session": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.tick_metadata_researcher.description": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.no_lookahead_auditor.config_file": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.statistics_robustness_analyst.description": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "plugins.unified-computer-use@openai-bundled.enabled": {
+          "name": {
+            "type": "system",
+            "file": "/etc/codex/config.toml"
+          },
+          "version": "sha256:fc917ea045b48d350a364e5a62753f14fe7d2db19bf20830813aed8db1a72d1c"
+        },
+        "agents.backtest_reviewer.config_file": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.market_microstructure_auditor.description": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.strategy_explorer.config_file": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.strategy_explorer.description": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.final_independent_reviewer.config_file": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.max_depth": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.oos_forward_validator.description": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.no_lookahead_auditor.description": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.strategy_designer.description": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.statistics_robustness_analyst.config_file": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.market_regime_researcher.config_file": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.market_regime_researcher.description": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "features.plugins": {
+          "name": {
+            "type": "user",
+            "file": "/workspace/ecc-setup/codex-home/config.toml",
+            "profile": null
+          },
+          "version": "sha256:c4c30631654b7de3c8b1044cb532213c33b029b39e361197ff24bc9cc8b5a7a8"
+        },
+        "agents.overfit_red_team.config_file": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.historical_data_engineer.description": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "projects./workspace/-.trust_level": {
+          "name": {
+            "type": "user",
+            "file": "/workspace/ecc-setup/codex-home/config.toml",
+            "profile": null
+          },
+          "version": "sha256:c4c30631654b7de3c8b1044cb532213c33b029b39e361197ff24bc9cc8b5a7a8"
+        },
+        "agents.final_independent_reviewer.description": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.backtest_engineer.config_file": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.execution_auditor.description": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.execution_auditor.config_file": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.market_microstructure_auditor.config_file": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.historical_data_engineer.config_file": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.overfit_red_team.description": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "plugins.ecc@ecc.enabled": {
+          "name": {
+            "type": "user",
+            "file": "/workspace/ecc-setup/codex-home/config.toml",
+            "profile": null
+          },
+          "version": "sha256:c4c30631654b7de3c8b1044cb532213c33b029b39e361197ff24bc9cc8b5a7a8"
+        },
+        "agents.backtest_engineer.description": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "agents.backtest_reviewer.description": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        },
+        "features.multi_agent": {
+          "name": {
+            "type": "project",
+            "dotCodexFolder": "/workspace/-/.codex"
+          },
+          "version": "sha256:b699628014eedbe4a0cec64834d336f2dba0bf1de209a152160605585a91b6b8"
+        }
+      }
+    }
+  },
+  {
+    "method": "skills/list",
+    "cwd": "/workspace/-",
+    "ecc_skills": 348,
+    "enabled_ecc_skills": 348,
+    "errors": [],
+    "crypto_research_skills": [
+      {
+        "name": "crypto-strategy-research",
+        "description": "Audit frozen Crypto Bot strategies, preserve causal evidence, and separate diagnosis from pre-outcome strategy design and validation.",
+        "path": "/workspace/-/.agents/skills/crypto-strategy-research/SKILL.md",
+        "scope": "repo",
+        "enabled": true,
+        "pluginId": null
+      }
+    ]
+  }
+]

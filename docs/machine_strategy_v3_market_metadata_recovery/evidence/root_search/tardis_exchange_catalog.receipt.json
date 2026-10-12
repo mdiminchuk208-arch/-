@@ -1,0 +1,20 @@
+{
+  "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/tardis_exchange_catalog.body",
+  "body_sha256": "4acf326b16180c91b2c6f22346c45bf685177922ed393eb3c320d802b8ebe237",
+  "bytes": 742728,
+  "error_class": null,
+  "headers": {
+    "Content-Type": "application/json",
+    "Date": "Mon, 12 Oct 2026 11:36:40 GMT"
+  },
+  "http_status": 200,
+  "id": "tardis_exchange_catalog",
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "private_API": false,
+  "request_started_at": "2026-10-12T11:36:40.374922+00:00",
+  "result_is_historical_epoch_proof": false,
+  "retrieved_at": "2026-10-12T11:36:41.224882+00:00",
+  "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+  "source_class": "THIRD_PARTY_INSTRUMENT_METADATA",
+  "url": "https://api.tardis.dev/v1/exchanges/bybit"
+}

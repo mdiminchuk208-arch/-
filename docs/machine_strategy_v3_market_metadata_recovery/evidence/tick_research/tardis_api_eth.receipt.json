@@ -1,0 +1,17 @@
+{
+  "body_bytes": 126,
+  "body_file": "tardis_api_eth.body",
+  "body_sha256": "a01b54ffabc2509de51150491a5dc03d98e7d698b9b960959ae121a5bd68738e",
+  "final_url": "https://api.tardis.dev/v1/instruments/bybit/ETHUSDT",
+  "http_status": 401,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://api.tardis.dev/v1/instruments/bybit/ETHUSDT",
+  "response_headers": {
+    "content-length": "126",
+    "content-type": "application/json",
+    "date": "Mon, 12 Oct 2026 11:36:26 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:36:14.050925+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

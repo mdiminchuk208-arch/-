@@ -1,0 +1,16 @@
+{
+  "body_bytes": 21907,
+  "body_file": "ddg_instrument_archive.body",
+  "body_sha256": "bcf004573030a97ebc68f262a1e7bf78d4034e04658d067fbd705e647d4d94c3",
+  "final_url": "https://lite.duckduckgo.com/lite/?q=Bybit+historical+instrument+metadata+tickSize+archived+dataset+timestamp+BTCUSDT+ETHUSDT",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://lite.duckduckgo.com/lite/?q=Bybit+historical+instrument+metadata+tickSize+archived+dataset+timestamp+BTCUSDT+ETHUSDT",
+  "response_headers": {
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Mon, 12 Oct 2026 11:35:33 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:35:32.571195+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

@@ -1,0 +1,17 @@
+{
+  "body_bytes": 41001,
+  "body_file": "official_2025may21.body",
+  "body_sha256": "6dccdabd02af03fce738936c5cbfa5eb183fc91c8d51ca578f01ab5f892fa4f7",
+  "final_url": "https://announcements.bybit.com/en/article/change-of-tick-size-for-perpetual-contracts-may-21-2025--blt27ef1143ba173e35/",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://announcements.bybit.com/article/change-of-tick-size-for-perpetual-contracts-may-21-2025--blt27ef1143ba173e35/",
+  "response_headers": {
+    "content-length": "41001",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Mon, 12 Oct 2026 11:33:39 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:33:36.137680+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

@@ -1,0 +1,57 @@
+{
+  "QA_scope": "All assertions under declared phase fixtures; raw current-phase inherited suite remains context-coupled and did not pass",
+  "code_sha256": {
+    "docs/machine_strategy_v3_market_metadata_recovery/evidence/tick_research/build_research_inventory.py": "bbbbd953b741bfcaa831136f81cd67fe6dcc0c2187ff36edb55c9727d7ca42e9",
+    "docs/machine_strategy_v3_market_metadata_recovery/evidence/tick_research/research_fetch.py": "598731faa75f6abbc1547ecf1a0b6c778cc1842e7fe8ee764a9c9b7dbc0ee76c",
+    "docs/machine_strategy_v3_market_metadata_recovery/qa/unittest_phase_runner.py": "f44d9748c2a06e5b8ef7243752ef9baef96d78424ac2637ae3190ab3941fe97c",
+    "scripts/build_machine_strategy_v3_market_metadata_recovery.py": "b8cf570a0f6ec3fa9a1f76bc19c20928c3f7751bc7b741c695032a90ab984301",
+    "scripts/collect_machine_strategy_v3_metadata_evidence.py": "97d56321c30efebe662fbe5e59c1bd0a7eaa4ce8ba4b18884bba2433c69bd76f",
+    "tests/test_machine_strategy_v3_market_metadata_recovery.py": "d3a15a090373ee2a80a625ed203547667db2d586ac4da329970d263d52e5c5df"
+  },
+  "coverage_percent": 83.42391304347827,
+  "current_metadata_negative_guard_tests": "PASS",
+  "deterministic_outputs": 11,
+  "frozen_invariance": "PASS",
+  "historical_v3_outcomes_generated_or_viewed": false,
+  "qa_log_sha256": {
+    "docs/machine_strategy_v3_market_metadata_recovery/qa/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/machine_strategy_v3_market_metadata_recovery/qa/coverage.log": "7fdba57b9d7235a121ba38dc76a261c2f7c43abb6baa317b8af77b7b4a6c26ae",
+    "docs/machine_strategy_v3_market_metadata_recovery/qa/format.log": "ef7d13d02214e98ca902b05257cdbe6a8e84f3b4714508efdc19766460b54209",
+    "docs/machine_strategy_v3_market_metadata_recovery/qa/full_unittest.log": "c327f6b9a608af79a9226e0185c45da5f6f0ecc518fda7ab5e8e2ec66971774f",
+    "docs/machine_strategy_v3_market_metadata_recovery/qa/full_unittest_current_phase.log": "9e8c7d3f19e47b7903cff4ee26303b99f4c47163a5ea959b2df539f7a543bee9",
+    "docs/machine_strategy_v3_market_metadata_recovery/qa/helper_mypy.log": "8228fcc5ce46d42d01caf3cd941f4e9c5f2bcc372bb5b147a2f0572d2dd675a8",
+    "docs/machine_strategy_v3_market_metadata_recovery/qa/initial_full_unittest_current_phase.log": "624389254603c7711ce8c02e4166a91cfed879c559373e33608db539cb555c39",
+    "docs/machine_strategy_v3_market_metadata_recovery/qa/mypy.log": "f9b031e5c45aa702cd4fef028d465551cb20a2c4698e0913c7b00766b20ac4d8",
+    "docs/machine_strategy_v3_market_metadata_recovery/qa/prepare.log": "1700bb6e447e7772bb6e5b6a8ac9a8f3b7378fdb725352a486e7ae8a155cc1dd",
+    "docs/machine_strategy_v3_market_metadata_recovery/qa/ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "docs/machine_strategy_v3_market_metadata_recovery/qa/ruff_fatal.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "docs/machine_strategy_v3_market_metadata_recovery/qa/targeted.log": "9e570a72a9874b9009626fe4634e4d0a29b33e94ff5bca0be59bfb5a01a9714e"
+  },
+  "raw_current_phase": {
+    "errors": 1,
+    "failures": 1,
+    "tests": 1059,
+    "unmodified_suite_passed": false
+  },
+  "replay_sha256": {
+    "docs/machine_strategy_v3_market_metadata_recovery/BTCUSDT_TICK_EPOCHS.json": "4759e4246dedeb4657909de96b706152faf83c0673b6e2dfd6c2031a9fe91528",
+    "docs/machine_strategy_v3_market_metadata_recovery/CROSS_SOURCE_CONTRADICTIONS.json": "0dd3f27666736b3581e3362526a65c721c45c83b629fc632ae2ed8b0d090a6c8",
+    "docs/machine_strategy_v3_market_metadata_recovery/EPOCH_COVERAGE_MAP.json": "c843f2fb5f5a8a5a98dfaee923e773a6556929680741519c995e2aa5dde8c20b",
+    "docs/machine_strategy_v3_market_metadata_recovery/ETHUSDT_TICK_EPOCHS.json": "b29452ae9df12b0df3db0c1f2104217df6ba5cd769f6e082b354a95b5768b349",
+    "docs/machine_strategy_v3_market_metadata_recovery/EVIDENCE_SEARCH_LOG.json": "731f6d395134594ccbfc385ccd43ece5b37bac1c8e3fe783d4d069ef09e331a2",
+    "docs/machine_strategy_v3_market_metadata_recovery/FROZEN_INPUT_VERIFICATION.json": "03038f290ae7c29c24b1fb82e00306b852bec9d007240b6d3273c87813dbc455",
+    "docs/machine_strategy_v3_market_metadata_recovery/PRICE_GRID_COMPATIBILITY.json": "2b69a474c9397d31a536cbe18fe0bbe6a083558546cbc269ef2899e367bf837e",
+    "docs/machine_strategy_v3_market_metadata_recovery/PROVENANCE_TIMELINE.json": "162ddc550252bd7a7c9b9bec631613eb610025a06bd67e0b47100fc5f1a36436",
+    "docs/machine_strategy_v3_market_metadata_recovery/SOURCE_INVENTORY.json": "75af9e51e53f6f205c019f16ac1333d6c48b0bd508e7785184fceacfdb52c6e3",
+    "docs/machine_strategy_v3_market_metadata_recovery/STATIC_OUTCOME_ISOLATION.json": "5eb54e9db61644becd7c99824f8323a7f761882733c1a1b059d13a2cd1d81e98",
+    "docs/machine_strategy_v3_market_metadata_recovery/UNRESOLVED_INTERVALS.json": "bc4bdba9efa1819068d3d670dc25bf67bb4f9cf8a12f62a051191845e91bbe99"
+  },
+  "restored_phase_failures": 0,
+  "retained_response_receipts": 117,
+  "selected_sources": 14,
+  "skipped": 0,
+  "status": "PASS",
+  "targeted_metadata_tests": 28,
+  "tests": 1062,
+  "trade_entry_allowed": false
+}

@@ -1,0 +1,16 @@
+{
+  "body_bytes": 424,
+  "body_file": "arquivo_api_v5.body",
+  "body_sha256": "cdd5ed003f13d93221fc2a4496546cd0d27bfe164cb00e4a37c5e096b799a33a",
+  "final_url": "https://arquivo.pt/wayback/cdx?url=api.bybit.com%2Fv5%2Fmarket%2Finstruments-info%2A&output=json",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://arquivo.pt/wayback/cdx?url=api.bybit.com%2Fv5%2Fmarket%2Finstruments-info%2A&output=json",
+  "response_headers": {
+    "content-type": "text/x-ndjson",
+    "date": "Mon, 12 Oct 2026 11:35:17 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:35:16.059766+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

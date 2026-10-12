@@ -1,0 +1,114 @@
+{
+  "development": [
+    1672531200,
+    1764977400
+  ],
+  "readiness": false,
+  "readiness_requires_exact_complete_coverage_both_symbols": true,
+  "symbols": {
+    "BTCUSDT": {
+      "development": {
+        "complete_verified": false,
+        "end_exclusive": true,
+        "symbol": "BTCUSDT",
+        "total_seconds": 92446200,
+        "unresolved_intervals": [
+          {
+            "valid_from": 1672531200,
+            "valid_to": 1764977400
+          }
+        ],
+        "valid_from": 1672531200,
+        "valid_to": 1764977400,
+        "verified_percent": "0.000000",
+        "verified_seconds": 0
+      },
+      "full": {
+        "complete_verified": false,
+        "end_exclusive": true,
+        "symbol": "BTCUSDT",
+        "total_seconds": 123982200,
+        "unresolved_intervals": [
+          {
+            "valid_from": 1640995200,
+            "valid_to": 1764977400
+          }
+        ],
+        "valid_from": 1640995200,
+        "valid_to": 1764977400,
+        "verified_percent": "0.000000",
+        "verified_seconds": 0
+      },
+      "warmup": {
+        "complete_verified": false,
+        "end_exclusive": true,
+        "symbol": "BTCUSDT",
+        "total_seconds": 31536000,
+        "unresolved_intervals": [
+          {
+            "valid_from": 1640995200,
+            "valid_to": 1672531200
+          }
+        ],
+        "valid_from": 1640995200,
+        "valid_to": 1672531200,
+        "verified_percent": "0.000000",
+        "verified_seconds": 0
+      }
+    },
+    "ETHUSDT": {
+      "development": {
+        "complete_verified": false,
+        "end_exclusive": true,
+        "symbol": "ETHUSDT",
+        "total_seconds": 92446200,
+        "unresolved_intervals": [
+          {
+            "valid_from": 1672531200,
+            "valid_to": 1764977400
+          }
+        ],
+        "valid_from": 1672531200,
+        "valid_to": 1764977400,
+        "verified_percent": "0.000000",
+        "verified_seconds": 0
+      },
+      "full": {
+        "complete_verified": false,
+        "end_exclusive": true,
+        "symbol": "ETHUSDT",
+        "total_seconds": 123982200,
+        "unresolved_intervals": [
+          {
+            "valid_from": 1640995200,
+            "valid_to": 1764977400
+          }
+        ],
+        "valid_from": 1640995200,
+        "valid_to": 1764977400,
+        "verified_percent": "0.000000",
+        "verified_seconds": 0
+      },
+      "warmup": {
+        "complete_verified": false,
+        "end_exclusive": true,
+        "symbol": "ETHUSDT",
+        "total_seconds": 31536000,
+        "unresolved_intervals": [
+          {
+            "valid_from": 1640995200,
+            "valid_to": 1672531200
+          }
+        ],
+        "valid_from": 1640995200,
+        "valid_to": 1672531200,
+        "verified_percent": "0.000000",
+        "verified_seconds": 0
+      }
+    }
+  },
+  "warmup": [
+    1640995200,
+    1672531200
+  ]
+}

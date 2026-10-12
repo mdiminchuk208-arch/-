@@ -1,0 +1,20 @@
+{
+  "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/current_api_BTCUSDT.body",
+  "body_sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+  "bytes": 96,
+  "error_class": null,
+  "headers": {
+    "Content-Type": "application/json",
+    "Date": "Mon, 12 Oct 2026 11:36:25 GMT"
+  },
+  "http_status": 403,
+  "id": "current_api_BTCUSDT",
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "private_API": false,
+  "request_started_at": "2026-10-12T11:36:24.935410+00:00",
+  "result_is_historical_epoch_proof": false,
+  "retrieved_at": "2026-10-12T11:36:25.501852+00:00",
+  "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+  "source_class": "CURRENT_CONTEXT_ONLY",
+  "url": "https://api.bybit.com/v5/market/instruments-info?category=linear&symbol=BTCUSDT"
+}

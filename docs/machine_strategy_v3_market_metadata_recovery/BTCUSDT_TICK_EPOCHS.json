@@ -1,0 +1,51 @@
+{
+  "candidate_epoch_promotion": false,
+  "candidate_intervals": [
+    {
+      "effective_at": null,
+      "end_exclusive": true,
+      "known_at": null,
+      "status_basis": "HYPOTHETICAL_NOTICE_CONSISTENCY_WINDOW; actual start/application/continuity unknown; not counted as coverage",
+      "tick_size": "0.5",
+      "valid_from": 1640995200,
+      "valid_to": 1676016000,
+      "verification_status": "UNVERIFIED"
+    },
+    {
+      "effective_at": 1676016000,
+      "end_exclusive": true,
+      "known_at": null,
+      "status_basis": "Advertised boundary only; actual application/causal knowledge/continuity to end unknown; not counted as coverage",
+      "tick_size": "0.1",
+      "valid_from": 1676016000,
+      "valid_to": 1764977400,
+      "verification_status": "UNVERIFIED"
+    }
+  ],
+  "contract_type": "USDT_LINEAR_PERPETUAL",
+  "epochs": [
+    {
+      "contract_type": "USDT_LINEAR_PERPETUAL",
+      "effective_at": null,
+      "evidence_ids": [],
+      "known_at": null,
+      "reason": "NO_COMPLETE_CAUSALLY_KNOWN_EXECUTABLE_INTERVAL_PROOF",
+      "symbol": "BTCUSDT",
+      "tick_size": null,
+      "valid_from": 1640995200,
+      "valid_to": 1764977400,
+      "verification_status": "UNVERIFIED"
+    }
+  ],
+  "shorter_fully_proven_interval": null,
+  "source_ids": [
+    "official_20230207",
+    "ccxt_bybit_460503bd48fa",
+    "ccxt_bybit_fbec4993ce01",
+    "ccxt_bybit_bfa6cfbaaa59",
+    "ccxt_bybit_3c7fb16f4fa9",
+    "tardis_metadata_api_markdown"
+  ],
+  "symbol": "BTCUSDT",
+  "verified_core_epochs": []
+}

@@ -1,0 +1,19 @@
+{
+  "body_bytes": 8778,
+  "body_file": "hummingbot_path_0.body",
+  "body_sha256": "6a2333d6650221cd339c87f56b253db95ee463dc72f93aaf01de9bd17b2bd289",
+  "final_url": "https://api.github.com/repos/hummingbot/hummingbot/contents/test/hummingbot/connector/derivative/bybit_perpetual",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://api.github.com/repos/hummingbot/hummingbot/contents/test/hummingbot/connector/derivative/bybit_perpetual",
+  "response_headers": {
+    "content-length": "8778",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Mon, 12 Oct 2026 11:37:49 GMT",
+    "etag": "\"06c31cf98f8573c2f2a1c819bcfbcebe56d8ee2a\"",
+    "last-modified": "Mon, 12 Oct 2026 11:19:23 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:37:48.778656+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

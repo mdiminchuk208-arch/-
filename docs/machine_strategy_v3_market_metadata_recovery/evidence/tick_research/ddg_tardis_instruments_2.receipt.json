@@ -1,0 +1,16 @@
+{
+  "body_bytes": 23613,
+  "body_file": "ddg_tardis_instruments_2.body",
+  "body_sha256": "ff5d23dc5822dc58f4db7832d06253be7948a4ee349f4df422f7dcba70858599",
+  "final_url": "https://lite.duckduckgo.com/lite/?q=site%3Adocs.tardis.dev+instruments+priceIncrement+bybit",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://lite.duckduckgo.com/lite/?q=site%3Adocs.tardis.dev+instruments+priceIncrement+bybit",
+  "response_headers": {
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Mon, 12 Oct 2026 11:35:31 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:35:30.711188+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

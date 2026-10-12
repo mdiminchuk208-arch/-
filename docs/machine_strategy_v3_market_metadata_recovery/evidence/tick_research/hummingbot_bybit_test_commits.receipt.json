@@ -1,0 +1,20 @@
+{
+  "body_bytes": 244197,
+  "body_file": "hummingbot_bybit_test_commits.body",
+  "body_sha256": "39394254f8341c5110bc91006afb62ae6fbd63c87536733533f8fb3f340872c3",
+  "final_url": "https://api.github.com/repos/hummingbot/hummingbot/commits?path=test%2Fhummingbot%2Fconnector%2Fderivative%2Fbybit_perpetual%2Ftest_bybit_perpetual_derivative.py&per_page=100",
+  "http_status": 200,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://api.github.com/repos/hummingbot/hummingbot/commits?path=test%2Fhummingbot%2Fconnector%2Fderivative%2Fbybit_perpetual%2Ftest_bybit_perpetual_derivative.py&per_page=100",
+  "response_headers": {
+    "content-length": "244197",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Mon, 12 Oct 2026 11:38:04 GMT",
+    "etag": "\"b3a0ab04a2a67daff84acddfdbe74702ae4f6d2a1bcc1f8115d3257316a20f66\"",
+    "last-modified": "Thu, 21 Aug 2025 18:44:11 GMT",
+    "link": "<https://api.github.com/repositories/179163124/commits?path=test%2Fhummingbot%2Fconnector%2Fderivative%2Fbybit_perpetual%2Ftest_bybit_perpetual_derivative.py&per_page=100&page=2>; rel=\"next\", <https://api.github.com/repositories/179163124/commits?path=test%2Fhummingbot%2Fconnector%2Fderivative%2Fbybit_perpetual%2Ftest_bybit_perpetual_derivative.py&per_page=100&page=2>; rel=\"last\""
+  },
+  "retrieved_at_utc": "2026-10-12T11:38:03.324345+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

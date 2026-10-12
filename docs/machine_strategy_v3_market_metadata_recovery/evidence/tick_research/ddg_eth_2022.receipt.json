@@ -1,0 +1,16 @@
+{
+  "body_bytes": 14231,
+  "body_file": "ddg_eth_2022.body",
+  "body_sha256": "046b994991bc48f45dade6bd9b226eea7e68eb917a62b91095600a9c94102992",
+  "final_url": "https://lite.duckduckgo.com/lite/?q=site%3Aannouncements.bybit.com+ETHUSDT+tick+size+2022",
+  "http_status": 202,
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "network_error": null,
+  "requested_url": "https://lite.duckduckgo.com/lite/?q=site%3Aannouncements.bybit.com+ETHUSDT+tick+size+2022",
+  "response_headers": {
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Mon, 12 Oct 2026 11:29:58 GMT"
+  },
+  "retrieved_at_utc": "2026-10-12T11:29:58.711052+00:00",
+  "sensitive_or_unneeded_headers_retained": false
+}

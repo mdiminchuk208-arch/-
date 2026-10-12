@@ -1,0 +1,20 @@
+{
+  "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/wayback_api_ETHUSDT_v2.body",
+  "body_sha256": "e084d527921708642a79724e9f0210da659bbc0905c6ce9a3a1f416e4628091c",
+  "bytes": 11832,
+  "error_class": null,
+  "headers": {
+    "Content-Type": "text/html",
+    "Date": "Mon, 12 Oct 2026 11:36:39 GMT"
+  },
+  "http_status": 503,
+  "id": "wayback_api_ETHUSDT_v2",
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "private_API": false,
+  "request_started_at": "2026-10-12T11:36:34.156336+00:00",
+  "result_is_historical_epoch_proof": false,
+  "retrieved_at": "2026-10-12T11:36:39.351602+00:00",
+  "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+  "source_class": "ARCHIVE_INDEX",
+  "url": "https://web.archive.org/cdx/search/cdx?url=api.bybit.com%2Fv2%2Fpublic%2Fsymbols%2A&output=json&from=20210101&to=20251205&filter=statuscode%3A200&collapse=digest&limit=200"
+}

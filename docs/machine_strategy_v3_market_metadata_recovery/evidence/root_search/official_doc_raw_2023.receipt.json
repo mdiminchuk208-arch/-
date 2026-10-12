@@ -1,0 +1,20 @@
+{
+  "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/official_doc_raw_2023.body",
+  "body_sha256": "7895f16f6c35732609bcf6cf73751f2b8948a7d5ddd6c700ba682d3e7191cedd",
+  "bytes": 14887,
+  "error_class": null,
+  "headers": {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Date": "Mon, 12 Oct 2026 11:44:01 GMT"
+  },
+  "http_status": 200,
+  "id": "official_doc_raw_2023",
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "private_API": false,
+  "request_started_at": "2026-10-12T11:44:01.415140+00:00",
+  "result_is_historical_epoch_proof": false,
+  "retrieved_at": "2026-10-12T11:44:02.017640+00:00",
+  "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+  "source_class": "OFFICIAL_DOCUMENTATION_EXAMPLE_NOT_PRODUCTION",
+  "url": "https://raw.githubusercontent.com/bybit-exchange/docs/a27313fde7243b4d0781e863e0c85dcbbbcd18ea/docs/v5/market/instrument.mdx"
+}

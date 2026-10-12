@@ -1,0 +1,21 @@
+{
+  "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/arquivo_notice_20230131.body",
+  "body_sha256": "1f61026a0916d08bee38ca2af1a7fe6e4d2394780a0021c6af7097e3d9359e97",
+  "bytes": 69699,
+  "error_class": null,
+  "headers": {
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Mon, 12 Oct 2026 11:38:56 GMT",
+    "Memento-Datetime": "Sun, 05 Feb 2023 04:07:38 GMT"
+  },
+  "http_status": 200,
+  "id": "arquivo_notice_20230131",
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "private_API": false,
+  "request_started_at": "2026-10-12T11:38:55.350593+00:00",
+  "result_is_historical_epoch_proof": false,
+  "retrieved_at": "2026-10-12T11:38:57.022858+00:00",
+  "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+  "source_class": "ARCHIVED_OFFICIAL_NOTICE",
+  "url": "https://arquivo.pt/wayback/20230205040738id_/https://announcements.bybit.com/article/changes-to-tick-size-for-usdt-perpetual-contracts-2023-01-31--blt9ae17c3e17e34f67"
+}

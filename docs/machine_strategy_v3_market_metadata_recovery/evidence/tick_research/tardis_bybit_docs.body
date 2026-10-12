@@ -1,0 +1,165 @@
+> For the complete documentation index, see [llms.txt](https://docs.tardis.dev/llms.txt). Markdown versions of documentation pages are available by appending `.md` to page URLs; this page is available as [Markdown](https://docs.tardis.dev/historical-data-details/bybit.md).
+
+# Bybit Derivatives
+
+Bybit Derivatives historical market data details - available instruments, data coverage and data collection specifics
+
+Bybit Derivatives historical data for **all its inverse contracts** is available since **2019-11-07** (for linear contracts since 2020-05-28).
+
+{% embed url="<https://api.tardis.dev/v1/exchanges/bybit>" %}
+See Bybit Derivatives historical data coverage: available symbols, channels, date ranges and incidents
+{% endembed %}
+
+### Downloadable **CSV** files
+
+Historical CSV datasets for the first day of each month are **available to download without API key**. See [downloadable CSV files documentation](/downloadable-csv-files/overview.md).
+
+{% hint style="info" %}
+Liquidations datasets are available since 2020-12-18.
+{% endhint %}
+
+| data type             | symbol     | date       |                                                                                                      |
+| --------------------- | ---------- | ---------- | ---------------------------------------------------------------------------------------------------- |
+| incremental\_book\_L2 | BTCUSD     | 2020-01-01 | [Download sample](https://datasets.tardis.dev/v1/bybit/incremental_book_L2/2020/01/01/BTCUSD.csv.gz) |
+| trades                | BTCUSD     | 2020-01-01 | [Download sample](https://datasets.tardis.dev/v1/bybit/trades/2020/01/01/BTCUSD.csv.gz)              |
+| quotes                | BTCUSD     | 2020-01-01 | [Download sample](https://datasets.tardis.dev/v1/bybit/quotes/2020/01/01/BTCUSD.csv.gz)              |
+| derivative\_ticker    | BTCUSD     | 2020-01-01 | [Download sample](https://datasets.tardis.dev/v1/bybit/derivative_ticker/2020/01/01/BTCUSD.csv.gz)   |
+| trades                | ETHUSD     | 2020-03-01 | [Download sample](https://datasets.tardis.dev/v1/bybit/trades/2020/03/01/ETHUSD.csv.gz)              |
+| incremental\_book\_L2 | ETHUSD     | 2020-03-01 | [Download sample](https://datasets.tardis.dev/v1/bybit/incremental_book_L2/2020/03/01/ETHUSD.csv.gz) |
+| liquidations          | PERPETUALS | 2021-09-01 | [Download sample](https://datasets.tardis.dev/v1/bybit/liquidations/2021/09/01/PERPETUALS.csv.gz)    |
+
+### API Access and data format
+
+Historical data format is the same as provided by real-time Bybit Derivatives WebSocket API with addition of local timestamps. If you'd like to work with **normalized data format** instead (same format for each exchange) see [downloadable CSV files](/downloadable-csv-files/overview.md) or official [client libs](/api/quickstart.md) that can perform data normalization client-side.
+
+{% tabs %}
+{% tab title="Python" %}
+
+```python
+# pip install tardis-dev
+import asyncio
+from tardis_dev import Channel, replay
+
+async def main():
+    async for local_timestamp, message in replay(
+        exchange="bybit",
+        from_date="2024-01-01",
+        to_date="2024-01-02",
+        filters=[Channel(name="orderbook.50", symbols=["BTCUSD"])],
+        api_key="YOUR_API_KEY",
+    ):
+        # messages as provided by Bybit Derivatives real-time stream
+        print(message)
+
+asyncio.run(main())
+```
+
+See [Python client docs](/python-client/quickstart.md).
+{% endtab %}
+
+{% tab title="Node.js" %}
+
+```javascript
+// npm install tardis-dev
+import { replay } from 'tardis-dev';
+
+const messages = replay({
+  exchange: 'bybit',
+  from: '2024-01-01',
+  to: '2024-01-02',
+  filters: [{ channel: 'orderbook.50', symbols: ['BTCUSD'] }],
+  apiKey: 'YOUR_API_KEY'
+});
+
+// messages as provided by Bybit Derivatives real-time stream
+for await (const { localTimestamp, message } of messages) {
+  console.log(localTimestamp, message);
+}
+```
+
+See [Node.js client docs](/node-client/quickstart.md).
+{% endtab %}
+
+{% tab title="cURL & HTTP API" %}
+
+```bash
+curl --compressed -g 'https://api.tardis.dev/v1/data-feeds/bybit?from=2024-01-01&filters=[{"channel":"orderbook.50","symbols":["BTCUSD"]}]&offset=0'
+```
+
+{% embed url="<https://api.tardis.dev/v1/data-feeds/bybit?from=2024-01-01&filters=[{%22channel%22:%22orderbook.50%22,%22symbols%22:[%22BTCUSD%22]}]&offset=0>" %}
+Example API response for Bybit Derivatives historical market data request
+{% endembed %}
+
+See [HTTP API docs](/api/http-api-reference.md).
+{% endtab %}
+
+{% tab title="cURL & tardis-machine" %}
+
+```bash
+curl -g 'localhost:8000/replay?options={"exchange":"bybit","filters":[{"channel":"orderbook.50","symbols":["BTCUSD"]}],"from":"2024-01-01","to":"2024-01-02"}'
+```
+
+[Tardis-machine](/tardis-machine/quickstart.md) is a locally runnable server that exposes API allowing efficiently requesting historical market data for whole time periods in contrast to [HTTP API](/api/http-api-reference.md) that provides data only in minute by minute slices.
+
+See [tardis-machine](/tardis-machine/quickstart.md) docs.
+{% endtab %}
+{% endtabs %}
+
+### Captured real-time channels
+
+{% embed url="<https://bybit-exchange.github.io/docs/v5/intro>" %}
+See Bybit Derivatives WebSocket API docs providing documentation for each captured channel's format
+{% endembed %}
+
+{% hint style="info" %}
+Click any channel below to see [HTTP API](/api/http-api-reference.md#data-feeds-exchange) response with historical data recorded for it.
+{% endhint %}
+
+* [publicTrade](https://api.tardis.dev/v1/data-feeds/bybit?from=2024-01-01\&filters=\[{%22channel%22:%22publicTrade%22}]) — available since **2023-04-05** Real-time public trade executions stream
+* [orderbook.50](https://api.tardis.dev/v1/data-feeds/bybit?from=2024-01-01\&filters=\[{%22channel%22:%22orderbook.50%22}]) — available since **2023-04-05** Order book snapshots and deltas at depth 50
+* [orderbook.rpi](https://api.tardis.dev/v1/data-feeds/bybit?from=2026-09-01\&filters=\[{%22channel%22:%22orderbook.rpi%22,%22symbols%22:\[%22BTCUSDT%22]}]) — available since **2026-08-19** Order book snapshots and deltas at depth 50 including RPI quotes. Each bid and ask level contains price, non-RPI quantity, and RPI quantity.
+* [orderbook.full](https://api.tardis.dev/v1/data-feeds/bybit?from=2026-09-01\&filters=\[{%22channel%22:%22orderbook.full%22,%22symbols%22:\[%22BTCUSDT%22]}]) — available since **2026-08-19** Full-depth order book snapshots and incremental updates stream. The WebSocket stream provides delta-only updates and excludes RPI orders. Initial snapshots with up to 10,000 levels per side are fetched from the Bybit full order book REST endpoint, stored with `"type":"snapshot"` and `"generated":true`, and validated for overlap with buffered updates using `u` and `seq`.
+* [orderbook.500](https://api.tardis.dev/v1/data-feeds/bybit?from=2024-01-01\&filters=\[{%22channel%22:%22orderbook.500%22}]) — available since **2023-04-05** — available until **2025-09-05** Order book snapshots and deltas at depth 500
+* [orderbook.1000](https://api.tardis.dev/v1/data-feeds/bybit?from=2025-10-01\&filters=\[{%22channel%22:%22orderbook.1000%22,%22symbols%22:\[%22BTCUSDT%22]}]) — available since **2025-09-04** — available until **2026-08-19** Order book snapshots and deltas at depth 1000
+* [orderbook.1](https://api.tardis.dev/v1/data-feeds/bybit?from=2024-01-01\&filters=\[{%22channel%22:%22orderbook.1%22}]) — available since **2023-04-05** Order book snapshots and deltas at depth 1
+* [allLiquidation](https://api.tardis.dev/v1/data-feeds/bybit?from=2025-03-01\&filters=\[{%22channel%22:%22allLiquidation%22}]) — available since **2025-02-25** All liquidation events stream with 500ms push frequency
+* [tickers](https://api.tardis.dev/v1/data-feeds/bybit?from=2024-01-01\&filters=\[{%22channel%22:%22tickers%22}]) — available since **2023-04-05** Ticker snapshots and deltas with 24h stats and reference prices
+* [trade](https://api.tardis.dev/v1/data-feeds/bybit?from=2023-03-01\&filters=\[{%22channel%22:%22trade%22,%22symbols%22:\[%22BTCUSDT%22]}]) — available until **2023-04-05** Public trade executions stream
+* [orderBookL2\_25](https://api.tardis.dev/v1/data-feeds/bybit?from=2023-03-01\&filters=\[{%22channel%22:%22orderBookL2_25%22,%22symbols%22:\[%22BTCUSDT%22]}]) — available until **2023-04-05** Order book snapshots and deltas at depth 25
+* [orderBook\_200](https://api.tardis.dev/v1/data-feeds/bybit?from=2023-03-01\&filters=\[{%22channel%22:%22orderBook_200%22,%22symbols%22:\[%22BTCUSDT%22]}]) — available since **2019-12-23** — available until **2023-04-05** Order book snapshots and deltas at depth 200
+* [liquidation](https://api.tardis.dev/v1/data-feeds/bybit?from=2023-03-01\&filters=\[{%22channel%22:%22liquidation%22,%22symbols%22:\[%22BTCUSDT%22]}]\&offset=50) — available since **2020-11-03** — available until **2023-04-05** Liquidation stream for each symbol, up to one message per second
+* [instrument\_info](https://api.tardis.dev/v1/data-feeds/bybit?from=2023-03-01\&filters=\[{%22channel%22:%22instrument_info%22,%22symbols%22:\[%22BTCUSDT%22]}]) — available until **2023-04-05** Instrument ticker and contract state updates
+* [insurance](https://api.tardis.dev/v1/data-feeds/bybit?from=2022-11-01\&filters=\[{%22channel%22:%22insurance%22}]\&offset=49) — available until **2023-04-05** Insurance fund balance updates
+* [long\_short\_ratio](https://api.tardis.dev/v1/data-feeds/bybit?from=2023-03-01\&filters=\[{%22channel%22:%22long_short_ratio%22}]) — available since **2022-03-20** — available until **2023-04-05** — generated channel Generated global long/short account ratio snapshots from REST account-ratio endpoint using 5min period buckets
+
+### Market data collection details
+
+[Market data collection infrastructure](/faq/general.md#what-is-your-infrastructure-setup) for Bybit Derivatives is located in GCP asia-northeast1 region (Tokyo, Japan) since **2020-05-28**. Before that it was located in GCP europe-west2 region (London, UK).
+
+Real-time market data is captured via **multiple WebSocket connections** to `wss://stream.bybit.com/v5/public`. Before **2023-04-05**, data was captured from `wss://stream.bybit.com/realtime`.
+
+{% hint style="info" %}
+Bybit servers are located in AWS ap-southeast-1 region (Singapore).
+{% endhint %}
+
+
+---
+
+# Agent Instructions
+This documentation is published with GitBook. GitBook is the documentation platform designed so that both humans and AI agents can read, navigate, and reason over technical content effectively. Learn more at gitbook.com.
+
+## Querying This Documentation
+If you need additional information that is not directly available in this page, you can query the documentation by asking a question.
+
+Perform an HTTP GET request on the following URL with the `ask` and `goal` query parameters:
+
+```
+GET https://docs.tardis.dev/historical-data-details/bybit.md?ask=<question>&goal=<user_goal>
+```
+
+`ask` is the immediate question: it should be specific, self-contained, and written in natural language.
+`goal` is what the user is ultimately trying to achieve, the reason they need the answer. Sharing it helps GitBook give you a better, more relevant answer. A goal is most helpful when it describes the outcome the user wants rather than restating the question. For example, with `ask=how do I create an API token`, a goal like `automate deployments from our CI pipeline` lets GitBook tailor the answer to that use case.
+
+The response will contain a direct answer to the question and relevant excerpts and sources from the documentation.
+
+Use this mechanism when the answer is not explicitly present in the current page, you need clarification or additional context, or you want to retrieve related documentation sections.

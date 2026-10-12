@@ -1,0 +1,20 @@
+{
+  "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/arquivo_api_BTCUSDT_v5.body",
+  "body_sha256": "cdd5ed003f13d93221fc2a4496546cd0d27bfe164cb00e4a37c5e096b799a33a",
+  "bytes": 424,
+  "error_class": null,
+  "headers": {
+    "Content-Type": "text/x-ndjson",
+    "Date": "Mon, 12 Oct 2026 11:36:26 GMT"
+  },
+  "http_status": 200,
+  "id": "arquivo_api_BTCUSDT_v5",
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "private_API": false,
+  "request_started_at": "2026-10-12T11:36:24.936937+00:00",
+  "result_is_historical_epoch_proof": false,
+  "retrieved_at": "2026-10-12T11:36:26.655494+00:00",
+  "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+  "source_class": "ARCHIVE_INDEX",
+  "url": "https://arquivo.pt/wayback/cdx?url=api.bybit.com%2Fv5%2Fmarket%2Finstruments-info%2A&output=json&from=20210101&to=20251205&filter=status%3A200&collapse=digest&limit=200"
+}

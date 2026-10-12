@@ -1,0 +1,21 @@
+{
+  "body_path": "docs/machine_strategy_v3_market_metadata_recovery/evidence/root_search/arquivo_production_api_20240524.body",
+  "body_sha256": "cbfa09f27e8ebcac0d71426c99e9a06e99b45ba0fbd1ceec0e663e16567aa745",
+  "bytes": 137,
+  "error_class": null,
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "Date": "Mon, 12 Oct 2026 11:38:55 GMT",
+    "Memento-Datetime": "Fri, 24 May 2024 02:31:34 GMT"
+  },
+  "http_status": 200,
+  "id": "arquivo_production_api_20240524",
+  "method": "GET_PUBLIC_UNAUTHENTICATED",
+  "private_API": false,
+  "request_started_at": "2026-10-12T11:38:54.116229+00:00",
+  "result_is_historical_epoch_proof": false,
+  "retrieved_at": "2026-10-12T11:38:55.350326+00:00",
+  "search_limits": "Bounded index result; miss/error is not absence/continuity proof; no automatic epoch promotion",
+  "source_class": "ARCHIVED_OFFICIAL_API_RESPONSE",
+  "url": "https://arquivo.pt/wayback/20240524023134id_/https://api.bybit.com/v5/market/instruments-info"
+}

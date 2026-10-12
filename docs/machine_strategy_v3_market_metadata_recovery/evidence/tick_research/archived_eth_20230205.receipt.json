@@ -1,0 +1,20 @@
+{
+  "requested_url": "https://arquivo.pt/wayback/20230205041038id_/https://announcements.bybit.com/article/changes-to-tick-size-for-ethusdt-perpetual-contract-2023-01-06--bltb4b6d3ffa3c5206c/",
+  "final_url": null,
+  "retrieved_at_utc": "2026-10-12T06:03:53.511464+00:00",
+  "method": "GET_PUBLIC_UNAUTHENTICATED (frozen prior gate; byte copy)",
+  "http_status": 200,
+  "response_headers": {
+    "date": "Mon, 12 Oct 2026 06:03:54 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "memento-datetime": "Sun, 05 Feb 2023 04:10:38 GMT",
+    "link": "<https://announcements.bybit.com/article/changes-to-tick-size-for-ethusdt-perpetual-contract-2023-01-06--bltb4b6d3ffa3c5206c/>; rel=\"original\", <https://arquivo.pt/wayback/https://announcements.bybit.com/article/changes-to-tick-size-for-ethusdt-perpetual-contract-2023-01-06--bltb4b6d3ffa3c5206c/>; rel=\"timegate\", <https://arquivo.pt/wayback/timemap/link/https://announcements.bybit.com/article/changes-to-tick-size-for-ethusdt-perpetual-contract-2023-01-06--bltb4b6d3ffa3c5206c/>; rel=\"timemap\"; type=\"application/link-format\", <https://arquivo.pt/wayback/20230205041038mp_/https://announcements.bybit.com/article/changes-to-tick-size-for-ethusdt-perpetual-contract-2023-01-06--bltb4b6d3ffa3c5206c/>; rel=\"memento\"; datetime=\"Sun, 05 Feb 2023 04:10:38 GMT\"; collection=\"cdx_folder\""
+  },
+  "body_file": "archived_eth_20230205.body",
+  "body_sha256": "43823daf528216e1cc4f55b511b1ea1e68d955820b95af95882fff292314c9a9",
+  "body_bytes": 42236,
+  "network_error": null,
+  "copied_at_utc": "2026-10-12T11:39:41.039310+00:00",
+  "original_frozen_body_path": "docs/machine_strategy_v3_implementation_readiness/evidence/eth_tick_notice_arquivo_20230205.html",
+  "original_frozen_receipt_path": "docs/machine_strategy_v3_implementation_readiness/evidence/eth_tick_notice_arquivo_receipt.json"
+}
