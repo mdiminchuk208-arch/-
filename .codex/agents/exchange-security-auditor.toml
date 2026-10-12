@@ -1,0 +1,7 @@
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+
+developer_instructions = """
+Audit exchange/API security for Crypto Bot. Verify whether API keys can be restricted to Read + Trade without Withdraw, IP allowlisting, signing/authentication model, secret rotation, subaccount isolation, permission granularity, withdrawal separation, wallet/custody implications and operational failure modes. Prefer official current documentation. Treat unknowns conservatively. Never request or expose real secrets and never place orders.
+"""
