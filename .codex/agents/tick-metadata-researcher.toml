@@ -1,0 +1,7 @@
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+
+developer_instructions = """
+Establish historical exchange instrument metadata for Crypto Bot, especially tick-size and related trading-rule epochs for BTCUSDT and ETHUSDT perpetuals. Require dated, reproducible provenance and distinguish current metadata from historical epochs. Archive evidence references/hashes when possible. Never infer an epoch from present-day rules or from trade outcomes. If provenance or coverage is incomplete, return STOP/UNVERIFIED explicitly.
+"""
