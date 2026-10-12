@@ -1,42 +1,76 @@
 # Current State
 
-Branch: `machine-v3-research`.
-Latest completed gate: MACHINE_STRATEGY_v3 pre-outcome design freeze.
-Current open gate: MACHINE_STRATEGY_v3 implementation readiness freeze.
+Branch: machine-v3-research.
+Latest completed gate: MACHINE_STRATEGY_v3 implementation readiness freeze.
+Decision: V3_IMPLEMENTATION_FROZEN_FINANCIAL_STOP.
+Implementation freeze commit: 43e57ee5c7867dd9421961629746555c8a2e9556.
+Namespace: docs/machine_strategy_v3_implementation_readiness/.
+Manifest SHA-256: d5eb8bd912a0b290679b30969dfa5e8015c4212c07b3263f42c9ca4a34d3a018.
+Adapter SHA-256: ed4091e385d4b7ed61bbf6680c56806b618bdf74d63a37b73c37d681a8874150.
+Runner SHA-256: d1ac5407902ec22cac1e66a943cc610bcc1023b7c72290e55c09c73a1cffb0b8.
+Builder SHA-256: 5f3106889da7f10930970ad53e8ec9e0c4adf279989bcf71b29a3d02a20ee3fd.
 
-V3 namespace: `docs/machine_strategy_v3_design/`.
-V3 freeze commit: `62590f1e09e2fa7516038ba1b3d813b0411d93ab`.
-V3 spec SHA-256: `c3876fa2239268f251454304d66a5828f6928e379c27398d4ded3b9c99786ed8`.
-V3 manifest SHA-256: `f612b806292844e5d17bee783c9e04879e4a3d32530570a900a467e4ca2e5cc0`.
-Published v3 design head before readiness work: `acd9a906b288ce7405c2957ae1825c617a2543e5`.
+Full causal adapter and guarded later runner implemented without frozen strategy
+changes. Five families, LONG/SHORT, causal states/ATR/formation lineage,
+inventories, first-test/reservation and lifecycle uncertainty preserved.
+Review corrected rounded-entry FTA membership, hardened kernel/accounting guards
+and preserved unresolved exposure on metadata change/gap. No additional native
+Breaker retest/filter was added; the frozen retest is the future resting-limit
+entry after M15 CONF. Exact role findings in INDEPENDENT_REVIEW.md.
 
-All four project roles contributed to the v3 design through cloud collaboration. ECC verification-loop applied; hooks remain untrusted. V3 design QA: 999 tests PASS, 90.11% new-core coverage, deterministic replay/resume PASS, static/type/compile PASS, independent reviews PASS. Frozen predecessors preserved. No v3 financial outcomes have been run or viewed.
+QA/review PASS: 1,034 full-suite tests, 71 targeted synthetic tests, no
+failures/skips; 87.42% combined coverage, nine-output replay, actual historical
+prefix/full-future/mutation pre-entry digests, known-at, Ruff/format,
+mypy(--check-untyped-defs), compile and frozen invariance. Four role assessments
+PASS for implementation. Verified externally pinned --resume-existing.
+Historical outcome engine remained blocked: zero v3 position/outcome evaluations,
+no financial result viewed. Positive historical executable coverage cannot be
+claimed while tick evidence is absent; mirrored positive paths are synthetic.
 
-V3 is a separate machine architecture with symmetric causal states and all five families, verified-grid WAIT, structural stops, nearest-target modeled feasibility, cost-inclusive cash-stop units and explicit OHLC/timestamp uncertainty. No historical P&L tuning, direction/family deletion or portfolio overlay is permitted.
+Canonical BTC/ETH M15 local hashes and continuity PASS: 137,758 bars each including
+2022 warmup, 102,718 development bars each. Derived H1/H4/D1 per symbol:
+34,439 / 8,609 / 1,434. Partial edge groups excluded; no interpolation/alias
+fallback. Availability ends 2025-12-05T23:30Z exclusive, not a fabricated final day.
 
-The completed v3 scope is still only a NONFINANCIAL_CONTRACT_CORE. The newly opened readiness task must implement and freeze the full historical event adapter and later-runner infrastructure exactly against the frozen spec, prove development data-grid authenticity/continuity, and establish verified historical price tick epochs. Strategy redesign is not authorized.
+Financial blockers: NO_VERIFIED_HISTORICAL_TICK_EPOCHS and
+HISTORICAL_EXCHANGE_PRICE_GRID_UNVERIFIED. Both BTCUSDT and ETHUSDT UNVERIFIED
+for all development 2023-01-01T00:00Z <= time < 2025-12-05T23:30Z and 2022 warmup.
+Executable epoch coverage zero. A post-effective ETH capture and current BTC
+notice do not prove causally known continuous epochs. Hashes alone authenticate
+bytes, not evidence truth/continuity. First financial backtest ready=false and
+authorized=false in this gate.
 
-Current first-v3-financial-backtest blockers:
-- `HISTORICAL_EVENT_ADAPTER_NOT_IMPLEMENTED`
-- `NO_VERIFIED_HISTORICAL_TICK_EPOCHS`
+OOS STOP_NO_PRISTINE_OOS. All 92 local histories, including old2026TEST, are
+exposed development. Prospective 365-day warmup has exact recorded local gaps;
+public Bybit gap samples returned HTTP 403 for both symbols. No future signals,
+positions or outcomes produced. Formal pristine registration is not ready;
+separate append-only post-freeze registration must establish exact future window,
+verified warmup/metadata before evaluation. Only further append-only preparation
+can be proposed; validation protocol unchanged.
 
-First v3 financial backtest ready=false until both blockers are objectively removed and the complete implementation is frozen. The readiness task itself must NOT run or reveal historical v3 P&L, PF, WR, expectancy, drawdown, MFE/MAE, equity, or case-level financial outcomes.
+Actual core agents contributed: strategy_explorer (mapping), execution_auditor
+(tick provenance), strategy_designer (conformance fixtures), backtest_reviewer
+(guard/causality/anti-overfit). Fresh final reviewers execution_auditor_final,
+strategy_designer_final and backtest_reviewer_final; final explorer assessment
+shared backtest_reviewer_final due thread cap, disclosed in review artifacts.
+ECC 2.2.3 and all 348 skills verified; trusted project /workspace/-/.codex and
+multi_agent/roles verified by native config/read. Hooks inactive; actual agents
+used cloud collaboration, not native CLI agent_type launches. Remote policy
+updates through ed86bd3b03ffcc1a4f31b3eb82651751e389ff2a integrated fast-forward;
+additional configured specialists not claimed as launched. NEXT_TASK unchanged.
 
-Independent OOS remains `STOP_NO_PRISTINE_OOS`. All inventoried local/native/public/source/derived histories are development-exposed; old2026TEST is not pristine. The readiness task may verify acquisition/warmup/metadata continuity for a later prospective OOS registration but may not generate candidate signals or outcomes for that future evaluation. Exact OOS start/end require a separate append-only registration after complete implementation freeze.
+Frozen v3 design: 62590f1e09e2fa7516038ba1b3d813b0411d93ab;
+namespace docs/machine_strategy_v3_design/; spec SHA-256
+c3876fa2239268f251454304d66a5828f6928e379c27398d4ded3b9c99786ed8;
+manifest f612b806292844e5d17bee783c9e04879e4a3d32530570a900a467e4ca2e5cc0.
+Failure audit: 8ca75ed35876d8f5d4d363e9e8808d7bd4417e87;
+manifest 9dd7cd7a26ac503c350501a8967c7fed450888aed349542f5592162e993d1201.
+Original/source/baseline/v2/v2.1/v2.2 preserved; workflow baseline
+ba65e91c2b1675f48e80ac785bb3adf89d17bb0b unchanged.
 
-Failure audit remains frozen in `docs/machine_strategy_failure_audit_v1/` at commit `8ca75ed35876d8f5d4d363e9e8808d7bd4417e87`, manifest SHA-256 `9dd7cd7a26ac503c350501a8967c7fed450888aed349542f5592162e993d1201`.
-
-Frozen workflow head before v3 research: `ba65e91c2b1675f48e80ac785bb3adf89d17bb0b`.
-
-Historical v2 development diagnostics remain reference-only:
-- v2: 223 CLOSED, WR 52.9148%, PF 0.68294, expectancy -0.21520R, Net -47.9898R, MaxDD 78.9546R.
-- v2.1: 83 CLOSED, WR 45.7831%, PF 0.83755, expectancy -0.13665R, Net -11.3418R, MaxDD 29.0633R.
-- v2.2: 39 CLOSED, WR 33.3333%, PF 0.89625, expectancy -0.14008R, Net -5.4633R, MaxDD 23.6498R.
-
-Failure-audit findings remain diagnostic only: v2 SHORT was gross-negative; modeled costs exceeded aggregate gross; nearest-FTA sub-1R geometry and tiny stop denominators were material; no sign/accounting defect was found. These findings cannot be used to mine a profitable subgroup or alter frozen v3 rules during readiness implementation.
-
-ECC project trust/config verification is complete. Actual project config is `/workspace/-/.codex/config.toml`; all four named roles and 348 ECC skills are available. Hooks remain untrusted.
-
+Do not rewrite/regenerate completed readiness namespace or run current NEXT_TASK
+as a financial phase. New evidence must be independently retained/frozen without
+replacing this STOP. No outcome-based tuning or direction/family deletion.
 Production candidate: NONE.
 PAPER_TRADING_READY=false.
 REAL_TRADING_READY=false.
