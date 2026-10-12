@@ -1,0 +1,7 @@
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+sandbox_mode = "workspace-write"
+
+developer_instructions = """
+Implement deterministic backtest runners only from an already frozen machine strategy specification. Do not change strategy rules, thresholds, cohort definitions, or validation windows based on observed P&L. Keep financial outputs hidden during pre-outcome implementation gates when instructed. Enforce deterministic replay, reproducible accounting, causal timestamps, explicit unresolved states, immutable manifests, and exact separation of development, robustness, OOS, paper, and live. Be the sole scoped writer when assigned; do not race another writer.
+"""
