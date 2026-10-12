@@ -1,12 +1,12 @@
 #:schema https://developers.openai.com/codex/config-schema.json
 
-persistent_instructions = "Follow AGENTS.md and agent_control/*.md. Preserve frozen artifacts. Use subagents for evidence gathering and review. Never enable live trading."
+persistent_instructions = "Follow AGENTS.md and agent_control/*.md. Preserve frozen artifacts. Use the smallest competent agent team for each gate, with independent review for critical claims. Never enable live trading."
 
 [features]
 multi_agent = true
 
 [agents]
-max_threads = 6
+max_threads = 10
 max_depth = 1
 
 [agents.strategy_explorer]
@@ -24,3 +24,47 @@ config_file = "agents/backtest-reviewer.toml"
 [agents.execution_auditor]
 description = "Execution and accounting auditor for LONG/SHORT symmetry, fees, slippage, fills, stops, targets, and metadata assumptions."
 config_file = "agents/execution-auditor.toml"
+
+[agents.market_regime_researcher]
+description = "Read-only causal market-regime researcher for trend/range/transition/uncertain state definitions and direction symmetry."
+config_file = "agents/market-regime-researcher.toml"
+
+[agents.historical_data_engineer]
+description = "Historical market-data adapter engineer for causal bars, aggregation, continuity, provenance, and deterministic event construction."
+config_file = "agents/historical-data-engineer.toml"
+
+[agents.tick_metadata_researcher]
+description = "Read-only researcher for exchange tick-size epochs, instrument metadata provenance, timestamps, and archival evidence."
+config_file = "agents/tick-metadata-researcher.toml"
+
+[agents.market_microstructure_auditor]
+description = "Read-only market-microstructure auditor for order representation, spread, gaps, partial fills, queue assumptions, and OHLC ambiguity."
+config_file = "agents/market-microstructure-auditor.toml"
+
+[agents.backtest_engineer]
+description = "Deterministic backtest infrastructure engineer; implements runners only after frozen specs and must not tune from financial outcomes."
+config_file = "agents/backtest-engineer.toml"
+
+[agents.cost_funding_auditor]
+description = "Read-only auditor for fees, slippage, funding, cost normalization, and exchange-realism assumptions."
+config_file = "agents/cost-funding-auditor.toml"
+
+[agents.statistics_robustness_analyst]
+description = "Read-only statistical analyst for uncertainty, concentration, stability, robustness partitions, and sample adequacy."
+config_file = "agents/statistics-robustness-analyst.toml"
+
+[agents.oos_forward_validator]
+description = "Read-only OOS/forward-validation auditor for contamination, embargo, preregistration, chronology, and qualification gates."
+config_file = "agents/oos-forward-validator.toml"
+
+[agents.no_lookahead_auditor]
+description = "Read-only specialist for timestamp causality, future leakage, prefix mutation, field provenance, and outcome isolation."
+config_file = "agents/no-lookahead-auditor.toml"
+
+[agents.overfit_red_team]
+description = "Independent red-team reviewer focused on hidden tuning, multiple testing, subgroup mining, narrative overfit, and false qualification."
+config_file = "agents/overfit-red-team.toml"
+
+[agents.final_independent_reviewer]
+description = "Final independent gate reviewer; challenges evidence, reproducibility, safety, and PASS/STOP decisions without modifying strategy rules."
+config_file = "agents/final-independent-reviewer.toml"
