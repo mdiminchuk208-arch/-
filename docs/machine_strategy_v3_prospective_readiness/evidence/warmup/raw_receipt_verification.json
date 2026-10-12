@@ -1,0 +1,47 @@
+{
+  "receipts": [
+    {
+      "receipt": "bybit_BTCUSDT_first_gap_probe.receipt.json",
+      "raw": "bybit_BTCUSDT_first_gap_probe.raw",
+      "bytes": 96,
+      "sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "pass": true
+    },
+    {
+      "receipt": "bybit_ETHUSDT_first_gap_probe.receipt.json",
+      "raw": "bybit_ETHUSDT_first_gap_probe.raw",
+      "bytes": 96,
+      "sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "pass": true
+    },
+    {
+      "receipt": "bybit_public_archive_probe.receipt.json",
+      "raw": "bybit_public_archive_probe.raw",
+      "bytes": 532,
+      "sha256": "018e5732ddb959b1c446321e87325322549a3d4bccb926bb4dfd94f6e9c74a78",
+      "pass": true
+    },
+    {
+      "receipt": "github_search_bybit_btc_m15.receipt.json",
+      "raw": "github_search_bybit_btc_m15.raw",
+      "bytes": 55,
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "pass": true
+    },
+    {
+      "receipt": "github_search_bybit_kline.receipt.json",
+      "raw": "github_search_bybit_kline.raw",
+      "bytes": 57664,
+      "sha256": "749f5aa9f570dcacd52fdf7bb9e8a1a2cf8239a32303bb377b8d908183c8176f",
+      "pass": true
+    },
+    {
+      "receipt": "github_search_bybit_kline_2026.receipt.json",
+      "raw": "github_search_bybit_kline_2026.raw",
+      "bytes": 55,
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "pass": true
+    }
+  ],
+  "all_pass": true
+}

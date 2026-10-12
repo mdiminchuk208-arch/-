@@ -1,0 +1,37 @@
+{
+  "accessed_input_sha256": {
+    "data/history/bybit/ETHUSDT/15.csv": "c42c68735311d4e7045ddec5c622b6a899d07bce71fec2f3cc21bf4c2f8cf9e0",
+    "data/history/public_research/bybit_mirror/ETHUSDT/15.csv.gz": "94c8f3f414ae3bbbe08bc5180f3da88d72c699f8ff88fd8093062078260449f8"
+  },
+  "assessment": {
+    "complete": false,
+    "conflicts": [],
+    "expected_bars": 35016,
+    "from": 1760313600,
+    "missing_bars": 6795,
+    "missing_intervals": [
+      {
+        "bars": 4852,
+        "from": 1764977400,
+        "to_exclusive": 1769344200
+      },
+      {
+        "bars": 1943,
+        "from": 1790079300,
+        "to_exclusive": 1791828000
+      }
+    ],
+    "overlap_bars": 0,
+    "prefix_sha256": "7386113d66635cf9d38f6c6808ab4338e4aa1f1ce40b5ea2df7c28d8c0dfce54",
+    "present_bars": 28221,
+    "to_exclusive": 1791828000
+  },
+  "candidate_state_access": false,
+  "code_sha256": "53427f9cd57d90aa8926baa0009cb6ce591f1fc722853e5c50f56fdced1f1637",
+  "observed_at": "2026-10-12T18:25:47.649253+00:00",
+  "os_sandbox_established": false,
+  "principal": "standalone_integrity_worker",
+  "purpose": "HASH_CONTINUITY_IDENTITY_OVERLAP_ONLY",
+  "strategy_modules_loaded": false,
+  "symbol": "ETHUSDT"
+}

@@ -1,0 +1,63 @@
+{
+  "365_day_verified": false,
+  "H1_H4_D1_derived": false,
+  "completed_end_exclusive": "2026-10-12T18:00:00Z",
+  "expected_completed_bars": 35016,
+  "illustrative_only": true,
+  "independent_worker_replay": "PASS",
+  "interpolation": false,
+  "interval": [
+    "2025-10-13T00:00:00Z",
+    "2026-10-13T00:00:00Z"
+  ],
+  "snapshot_utc": "2026-10-12T18:10:50Z",
+  "symbols": {
+    "BTCUSDT": {
+      "complete": false,
+      "conflicts": [],
+      "expected_bars": 35016,
+      "from": 1760313600,
+      "missing_bars": 6795,
+      "missing_intervals": [
+        {
+          "bars": 4848,
+          "from": 1764977400,
+          "to_exclusive": 1769340600
+        },
+        {
+          "bars": 1947,
+          "from": 1790075700,
+          "to_exclusive": 1791828000
+        }
+      ],
+      "overlap_bars": 0,
+      "prefix_sha256": "597681e83ee1b5ab919f22fd0a89e8eeeee6dbe521761f87b17b59bee72eef89",
+      "present_bars": 28221,
+      "to_exclusive": 1791828000
+    },
+    "ETHUSDT": {
+      "complete": false,
+      "conflicts": [],
+      "expected_bars": 35016,
+      "from": 1760313600,
+      "missing_bars": 6795,
+      "missing_intervals": [
+        {
+          "bars": 4852,
+          "from": 1764977400,
+          "to_exclusive": 1769344200
+        },
+        {
+          "bars": 1943,
+          "from": 1790079300,
+          "to_exclusive": 1791828000
+        }
+      ],
+      "overlap_bars": 0,
+      "prefix_sha256": "7386113d66635cf9d38f6c6808ab4338e4aa1f1ce40b5ea2df7c28d8c0dfce54",
+      "present_bars": 28221,
+      "to_exclusive": 1791828000
+    }
+  },
+  "unfinished_future_bars": 24
+}

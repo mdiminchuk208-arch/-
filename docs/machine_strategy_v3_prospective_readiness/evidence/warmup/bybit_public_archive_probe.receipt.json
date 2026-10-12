@@ -1,0 +1,21 @@
+{
+  "request_url": "https://public.bybit.com/kline_for_metatrader4/BTCUSDT/",
+  "requested_at_utc": "2026-10-12T18:11:51.444362Z",
+  "completed_at_utc": "2026-10-12T18:11:53.022892Z",
+  "http_status": 200,
+  "error": null,
+  "response_headers_allowlist": {
+    "content-type": "text/html",
+    "content-length": "532",
+    "server": "envoy",
+    "date": "Mon, 12 Oct 2026 18:11:53 GMT",
+    "x-cache": "RefreshHit from cloudfront",
+    "via": "1.1 34705116ba9c0c81a3b4f5eca19b3508.cloudfront.net (CloudFront)"
+  },
+  "raw_path": "bybit_public_archive_probe.raw",
+  "raw_byte_count": 532,
+  "raw_sha256": "018e5732ddb959b1c446321e87325322549a3d4bccb926bb4dfd94f6e9c74a78",
+  "body_read_limit_bytes": 131072,
+  "tls_verification": "stdlib_default_context_enabled",
+  "credentials_used": false
+}

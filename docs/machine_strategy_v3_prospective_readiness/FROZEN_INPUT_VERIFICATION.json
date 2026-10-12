@@ -1,0 +1,23 @@
+{
+  "parents": {
+    "docs/machine_strategy_failure_audit_v1": {
+      "path": "docs/machine_strategy_failure_audit_v1/freeze_manifest.json",
+      "sha256": "9dd7cd7a26ac503c350501a8967c7fed450888aed349542f5592162e993d1201"
+    },
+    "docs/machine_strategy_v3_design": {
+      "path": "docs/machine_strategy_v3_design/freeze_manifest.json",
+      "sha256": "f612b806292844e5d17bee783c9e04879e4a3d32530570a900a467e4ca2e5cc0"
+    },
+    "docs/machine_strategy_v3_implementation_readiness": {
+      "path": "docs/machine_strategy_v3_implementation_readiness/freeze_manifest.json",
+      "sha256": "d5eb8bd912a0b290679b30969dfa5e8015c4212c07b3263f42c9ca4a34d3a018"
+    },
+    "docs/machine_strategy_v3_market_metadata_recovery": {
+      "path": "docs/machine_strategy_v3_market_metadata_recovery/freeze_manifest.json",
+      "sha256": "74c7d32b4e832d01d0d8f1fd6bb56ac7e218730bcb5613f4986a24b339c70e80"
+    }
+  },
+  "start_head": "44b6821d5a209e41aa8279c5fd26645709b34782",
+  "status": "PASS",
+  "strategy_adapter_runner_test_bytes_changed": false
+}

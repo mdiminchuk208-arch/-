@@ -1,0 +1,18 @@
+{
+  "overlap": {
+    "BTCUSDT": {
+      "comparison_scope": "open,high,low,close,volume_base,turnover_quote",
+      "conflicts": [],
+      "exact_decimal_ohlcv_conflict_count": 0,
+      "shared_open_count": 0
+    },
+    "ETHUSDT": {
+      "comparison_scope": "open,high,low,close,volume_base,turnover_quote",
+      "conflicts": [],
+      "exact_decimal_ohlcv_conflict_count": 0,
+      "shared_open_count": 0
+    }
+  },
+  "proof_limit": "Zero shared bars provides no corroboration; zero conflicts is not independent authenticity proof",
+  "source_choice_from_behavior": false
+}

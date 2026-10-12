@@ -1,0 +1,21 @@
+{
+  "request_url": "https://api.github.com/search/repositories?q=bybit+kline&per_page=10&sort=updated",
+  "requested_at_utc": "2026-10-12T18:12:52.551574Z",
+  "completed_at_utc": "2026-10-12T18:12:54.157314Z",
+  "http_status": 200,
+  "error": null,
+  "response_headers_allowlist": {
+    "date": "Mon, 12 Oct 2026 18:12:53 GMT",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "57664",
+    "server": "envoy",
+    "x-ratelimit-limit": "30",
+    "x-ratelimit-remaining": "30",
+    "x-ratelimit-reset": "1791828806"
+  },
+  "raw_path": "github_search_bybit_kline.raw",
+  "raw_byte_count": 57664,
+  "raw_sha256": "749f5aa9f570dcacd52fdf7bb9e8a1a2cf8239a32303bb377b8d908183c8176f",
+  "tls_verification": "stdlib_default_context_enabled",
+  "credentials_used": false
+}

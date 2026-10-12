@@ -1,0 +1,58 @@
+........................................Indexed E2E: 3 signal changes; 2 level evaluations
+BACKTEST: $1170.00 -> equity $1170.00; 1 setups; 0 entries; trade_entry_allowed=false; fingerprint=dd2ed62a1d9ec50c563ce35d19679c0eb6fbf6415209f1e45882959b14e061be
+.Indexed E2E: 3 signal changes; 2 level evaluations
+SHADOW: $1170.00 -> equity $1170.00; 1 setups; 0 entries; trade_entry_allowed=false; fingerprint=fbd4208f6f5e403a527e7cfc05fe6f72cdaeffc6fc4ec1ecdc91d02411d7497d
+......................................................................................................................................................................................................F..........E.......................................F................................................................bybit_2023_2025 enabled independent cases 1 / 1
+.VERIFIED_RESUME data/tmp4t9k_qsj
+.............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................source verified complete exit case reused
+source verified complete exit case reused
+......................................................................................................................................................................................................................................................
+======================================================================
+ERROR: test_no_entry_point_can_load_history_during_readiness (test_machine_strategy_v3_outcome_guard.OutcomeGuardTests.test_no_entry_point_can_load_history_during_readiness)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/-/tests/test_machine_strategy_v3_outcome_guard.py", line 68, in test_no_entry_point_can_load_history_during_readiness
+    call()
+  File "/workspace/-/tests/test_machine_strategy_v3_outcome_guard.py", line 61, in <lambda>
+    lambda: runner.run_historical("BTCUSDT", [], capability),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/scripts/machine_strategy_v3_guarded_runner.py", line 192, in run_historical
+    _authorized(capability)
+  File "/workspace/-/scripts/machine_strategy_v3_guarded_runner.py", line 112, in _authorized
+    sha256(capability.authorization_path.read_bytes()).hexdigest()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/-/missing_auth.json'
+
+======================================================================
+FAIL: test_current_metadata_phase_blocks_public_kernel_accounting_before_history (test_machine_strategy_v3_market_metadata_recovery.ProvenanceTests.test_current_metadata_phase_blocks_public_kernel_accounting_before_history)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/-/tests/test_machine_strategy_v3_market_metadata_recovery.py", line 301, in test_current_metadata_phase_blocks_public_kernel_accounting_before_history
+    self.assertIn(
+AssertionError: 'Historical Market-Metadata Recovery Freeze' not found in '# Next Task — MACHINE_STRATEGY_v3 Prospective Data/Metadata Capture + OOS Registration Readiness Freeze'
+
+======================================================================
+FAIL: test_historical_callable_fails_closed_before_data_access (test_machine_strategy_v3_readiness_conformance.GuardedRunnerConformance.test_historical_callable_fails_closed_before_data_access)
+----------------------------------------------------------------------
+machine_strategy_v3_guarded_runner.HistoricalOutcomeBlocked: NO_COMMITTED_AUTHORIZED_HISTORICAL_CAPABILITY
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/-/tests/test_machine_strategy_v3_readiness_conformance.py", line 957, in test_historical_callable_fails_closed_before_data_access
+    with self.assertRaisesRegex(
+         ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "IMPLEMENTATION_READINESS_FORBIDS_HISTORICAL_OUTCOMES" does not match "NO_COMMITTED_AUTHORIZED_HISTORICAL_CAPABILITY"
+
+----------------------------------------------------------------------
+Ran 1095 tests in 24.334s
+
+FAILED (failures=2, errors=1)
+Audited real-history closed artifact instances: 1
+Primary development classifications: {}

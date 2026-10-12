@@ -1,0 +1,37 @@
+{
+  "accessed_input_sha256": {
+    "data/history/bybit/BTCUSDT/15.csv": "c15a595e948ad4d329c8b6044a95665dfbe53b97a2ef2d62df0d5230b8274b21",
+    "data/history/public_research/bybit_mirror/BTCUSDT/15.csv.gz": "5d3fe4a4eb1d147c5f5516944bdbc45a21fb483d0bc667b5a92ed206aa8a6fc9"
+  },
+  "assessment": {
+    "complete": false,
+    "conflicts": [],
+    "expected_bars": 35016,
+    "from": 1760313600,
+    "missing_bars": 6795,
+    "missing_intervals": [
+      {
+        "bars": 4848,
+        "from": 1764977400,
+        "to_exclusive": 1769340600
+      },
+      {
+        "bars": 1947,
+        "from": 1790075700,
+        "to_exclusive": 1791828000
+      }
+    ],
+    "overlap_bars": 0,
+    "prefix_sha256": "597681e83ee1b5ab919f22fd0a89e8eeeee6dbe521761f87b17b59bee72eef89",
+    "present_bars": 28221,
+    "to_exclusive": 1791828000
+  },
+  "candidate_state_access": false,
+  "code_sha256": "23391a7fd18c102cf8fb68af49be49e7232ff04547d1010437172d057af22431",
+  "observed_at": "2026-10-12T18:19:51.845813+00:00",
+  "os_sandbox_established": false,
+  "principal": "standalone_integrity_worker",
+  "purpose": "HASH_CONTINUITY_IDENTITY_OVERLAP_ONLY",
+  "strategy_modules_loaded": false,
+  "symbol": "BTCUSDT"
+}

@@ -1,0 +1,55 @@
+{
+  "byte_identical_replay_outputs": 10,
+  "code_sha256": {
+    "scripts/build_machine_strategy_v3_prospective_readiness.py": "25f74c821d8887745bcf1876975cd87fd92012a01750e02d858e93d151693ec8",
+    "scripts/collect_machine_strategy_v3_prospective_public.py": "4068eba32b892c1803f383655a26b009ddfe631c4176536952782afaf10e6e8b",
+    "scripts/machine_strategy_v3_prospective_integrity.py": "53427f9cd57d90aa8926baa0009cb6ce591f1fc722853e5c50f56fdced1f1637",
+    "tests/test_machine_strategy_v3_prospective_readiness.py": "c4a66c1f1871109ef45be50f0f4076d969a44913aa8d6db4556d6445c474bcae"
+  },
+  "evidence_response_receipts": 14,
+  "frozen_invariance": "PASS",
+  "full_current_phase_status": "FAIL",
+  "full_errors": 1,
+  "full_failures": 2,
+  "full_skips": 0,
+  "full_test_ids": [
+    "test_no_entry_point_can_load_history_during_readiness (test_machine_strategy_v3_outcome_guard.OutcomeGuardTests.test_no_entry_point_can_load_history_during_readiness)",
+    "test_current_metadata_phase_blocks_public_kernel_accounting_before_history (test_machine_strategy_v3_market_metadata_recovery.ProvenanceTests.test_current_metadata_phase_blocks_public_kernel_accounting_before_history)",
+    "test_historical_callable_fails_closed_before_data_access (test_machine_strategy_v3_readiness_conformance.GuardedRunnerConformance.test_historical_callable_fails_closed_before_data_access)"
+  ],
+  "full_tests": 1096,
+  "historical_v3_outcomes_generated_or_viewed": false,
+  "incidental_legacy_test_stdout_exposure": "One reviewer saw legacy test stdout text without analysis; no v3/OOS candidate outcomes. Safe summaries subsequently restricted to test IDs/counts.",
+  "log_sha256": {
+    "docs/machine_strategy_v3_prospective_readiness/qa/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/machine_strategy_v3_prospective_readiness/qa/format.log": "177f260a5645724013185e4b140c7045cc39e56c0c97b120f5cb23599f85f0de",
+    "docs/machine_strategy_v3_prospective_readiness/qa/full_unittest.log": "8ff1e2f7847a96f2b0a2adcdfe51b2d2b3e13102b6d8312a04b79c521eabe4f6",
+    "docs/machine_strategy_v3_prospective_readiness/qa/full_unittest_before_boundary_tests.log": "b3da004143e8db56be66a7b95306dc0dabb0f9ecd2e584def3b2632aad763d79",
+    "docs/machine_strategy_v3_prospective_readiness/qa/full_unittest_before_final_format.log": "ec6349dbb69122d0af4d961c4d3d9e7a3328b70ae6fd311f3b7abf19e669f604",
+    "docs/machine_strategy_v3_prospective_readiness/qa/full_unittest_before_final_review_fixes.log": "5889310ef3a79ae1159c2d4e729a923a18f1f4318991f4bfa3bc95851e27b859",
+    "docs/machine_strategy_v3_prospective_readiness/qa/full_unittest_initial.log": "452b49ced19cec6c8c2c05c980d24f6bdc2bd052c20e0cb56e4d564519e1a800",
+    "docs/machine_strategy_v3_prospective_readiness/qa/mypy.log": "8228fcc5ce46d42d01caf3cd941f4e9c5f2bcc372bb5b147a2f0572d2dd675a8",
+    "docs/machine_strategy_v3_prospective_readiness/qa/prepare.log": "95cc593947c36e2308e42ee721bb15cfbb00fc86de0b21ab877dd8c043eb9f84",
+    "docs/machine_strategy_v3_prospective_readiness/qa/replay.log": "95cc593947c36e2308e42ee721bb15cfbb00fc86de0b21ab877dd8c043eb9f84",
+    "docs/machine_strategy_v3_prospective_readiness/qa/ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "docs/machine_strategy_v3_prospective_readiness/qa/targeted.log": "a4fc6081a209ca8bbae61546593252bab9a530822eccfdcbea2796de16fa9b3a"
+  },
+  "no_task_byte_injection_or_guard_patching": true,
+  "replay_sha256": {
+    "docs/machine_strategy_v3_prospective_readiness/CONTROL_PLANE_GUARD_QA.json": "7641ef062672c7752f3e94bae340f8e3f7aa69a455ed509c37ae3fb2cda05547",
+    "docs/machine_strategy_v3_prospective_readiness/CURRENT_METADATA_CAPTURE.json": "dd9808ea236c76cd770621c3fab75020fe50ee759b603b18bbd74f9fd40973d7",
+    "docs/machine_strategy_v3_prospective_readiness/FROZEN_INPUT_VERIFICATION.json": "1f18b9a512adae8d59720a7a7c6c845580f15b1016ede098f736c31bec67623b",
+    "docs/machine_strategy_v3_prospective_readiness/OOS_REGISTRATION_READINESS.json": "5f50d0868fb128f376ae623b1d38b2196a18c1f974131b77eca831ba27374520",
+    "docs/machine_strategy_v3_prospective_readiness/PROSPECTIVE_TICK_EPOCH_PROTOCOL.json": "b0b9dbce78fa6791b36a681b9d81a971e016b596ff8aa90ac0f5b3f5d3dff4c1",
+    "docs/machine_strategy_v3_prospective_readiness/RAW_ACCESS_EMBARGO_SPEC.json": "29d843bee536ac831724613267e2bf263c9acc7c9cd761290ff7430ec134fc30",
+    "docs/machine_strategy_v3_prospective_readiness/STATIC_OUTCOME_ISOLATION.json": "ccf5666e11ae3e63c8623878c9c500604abbed62d54a55186e469df22ea16b20",
+    "docs/machine_strategy_v3_prospective_readiness/WARMUP_CONFLICTS.json": "b4850af4efbe270fc76b9334d3efd08a441da26ebbe4b3ab294ba3a911e4deb7",
+    "docs/machine_strategy_v3_prospective_readiness/WARMUP_CONTINUITY.json": "4e6831ace54f0a0f9eb6eda6b5b3ff3385eb3f9f1411a45ff845badb99255bb7",
+    "docs/machine_strategy_v3_prospective_readiness/WARMUP_SOURCE_INVENTORY.json": "af69949bf60f29ee3e07f0925e6d9fca19b5fdb4b37ac4cc8e2fb8a45746e396"
+  },
+  "scope": "OBJECTIVE_STOP_WITH_IMMUTABLE_TEST_CONFLICT",
+  "statement_coverage_percent": 80.28503562945369,
+  "targeted_status": "PASS",
+  "targeted_tests": 34,
+  "trade_entry_allowed": false
+}

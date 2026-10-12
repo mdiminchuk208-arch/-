@@ -1,0 +1,31 @@
+{
+  "allowed": [
+    "logged hash",
+    "closed native M15 continuity",
+    "duplicate/identity/exact overlap checks",
+    "metadata chronology"
+  ],
+  "dynamic_audit_hook_boundary": "deny unexpected file/import/socket/subprocess",
+  "forbidden": [
+    "candidate signals",
+    "positions",
+    "trade labels",
+    "case outcomes",
+    "equity",
+    "interim optimization",
+    "raw-price inference of candidate behavior"
+  ],
+  "invalidation": [
+    "any post-registration material implementation change",
+    "embargo breach",
+    "unresolved gaps/conflicts/metadata",
+    "uncommitted hashes",
+    "date shift after exposure"
+  ],
+  "locked_duration_seconds": 31536000,
+  "orders_or_positions_started": false,
+  "os_filesystem_sandbox": "NOT_ESTABLISHED",
+  "pre_start_warmup_seconds": 31536000,
+  "registration": "STOP until independent OS-level no-state access enforcement exists",
+  "worker": "Fresh standalone integrity process, exact raw-path+hash allowlist; no candidate imports; append-only exclusive-create access records"
+}

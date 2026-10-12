@@ -1,0 +1,29 @@
+{
+  "source": "official_bybit_public_v5_market_kline",
+  "request_url": "https://api.bybit.com/v5/market/kline?category=linear&symbol=BTCUSDT&interval=15&start=1764977400000&end=1764981000000&limit=1000",
+  "request_params": {
+    "category": "linear",
+    "symbol": "BTCUSDT",
+    "interval": "15",
+    "start": "1764977400000",
+    "end": "1764981000000",
+    "limit": "1000"
+  },
+  "requested_at_utc": "2026-10-12T18:11:20.124317Z",
+  "completed_at_utc": "2026-10-12T18:11:21.210784Z",
+  "http_status": 403,
+  "error": "HTTP Error 403: Forbidden",
+  "response_headers_allowlist": {
+    "server": "envoy",
+    "date": "Mon, 12 Oct 2026 18:11:21 GMT",
+    "content-length": "96",
+    "content-type": "application/json",
+    "x-cache": "Error from cloudfront",
+    "via": "1.1 e3f643013e97e8b8d6b5b2c663ee76bc.cloudfront.net (CloudFront)"
+  },
+  "raw_path": "bybit_BTCUSDT_first_gap_probe.raw",
+  "raw_byte_count": 96,
+  "raw_sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+  "tls_verification": "stdlib_default_context_enabled",
+  "credentials_used": false
+}

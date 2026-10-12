@@ -1,0 +1,330 @@
+"""Standalone integrity process: raw data/metadata only, no strategy imports."""
+
+from __future__ import annotations
+
+import argparse
+import csv
+import gzip
+import json
+import os
+import sys
+from datetime import UTC, datetime
+from decimal import Decimal
+from hashlib import sha256
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+DEST = ROOT / "docs/machine_strategy_v3_prospective_readiness"
+SYMBOLS = ("BTCUSDT", "ETHUSDT")
+CONTRACT = "USDT_LINEAR_PERPETUAL"
+DAY = 86400
+PINNED = {
+    "BTCUSDT": {
+        "data/history/public_research/bybit_mirror/BTCUSDT/15.csv.gz": "5d3fe4a4eb1d147c5f5516944bdbc45a21fb483d0bc667b5a92ed206aa8a6fc9",
+        "data/history/bybit/BTCUSDT/15.csv": "c15a595e948ad4d329c8b6044a95665dfbe53b97a2ef2d62df0d5230b8274b21",
+    },
+    "ETHUSDT": {
+        "data/history/public_research/bybit_mirror/ETHUSDT/15.csv.gz": "94c8f3f414ae3bbbe08bc5180f3da88d72c699f8ff88fd8093062078260449f8",
+        "data/history/bybit/ETHUSDT/15.csv": "c42c68735311d4e7045ddec5c622b6a899d07bce71fec2f3cc21bf4c2f8cf9e0",
+    },
+}
+FIELDS = ("open", "high", "low", "close", "volume_base", "turnover_quote")
+
+
+class IntegrityDenied(RuntimeError):
+    pass
+
+
+class HistoricalOutcomeDenied(RuntimeError):
+    pass
+
+
+def deny_historical_execution(authorization=None):
+    """No caller artifact is a financial capability in this infrastructure gate.
+
+    This new facade does not replace, patch or claim to repair the frozen runner.
+    A later financial gate requires a separately reviewed new control version.
+    """
+    raise HistoricalOutcomeDenied("PROSPECTIVE_GATE_HAS_NO_FINANCIAL_CAPABILITY")
+
+
+def exact_int(value):
+    if type(value) is not int:
+        raise ValueError("EXACT_INTEGER_TIME_REQUIRED")
+    return value
+
+
+def timestamp(value):
+    dt = datetime.fromisoformat(value)
+    if dt.tzinfo is None:
+        raise ValueError("UTC_PROVENANCE_REQUIRED")
+    delta = dt.astimezone(UTC) - datetime(1970, 1, 1, tzinfo=UTC)
+    return (
+        Decimal(delta.days * DAY + delta.seconds)
+        + Decimal(delta.microseconds) / 1000000
+    )
+
+
+def utc(value):
+    return datetime.fromtimestamp(exact_int(value), UTC).isoformat()
+
+
+def earliest_boundary(implementation_commit, registration_commit):
+    """Formula only; passing a proposed time cannot create a registration."""
+    pivot = max(exact_int(implementation_commit), exact_int(registration_commit))
+    return (pivot // DAY + 1) * DAY
+
+
+def completed_cutoff(observed_at):
+    return exact_int(observed_at) // 900 * 900
+
+
+def missing_runs(present, start, end):
+    if exact_int(start) % 900 or exact_int(end) % 900 or end < start:
+        raise ValueError("M15_BOUNDARIES_REQUIRED")
+    gaps, begin = [], None
+    for t in range(start, end, 900):
+        if t not in present and begin is None:
+            begin = t
+        if t in present and begin is not None:
+            gaps.append({"from": begin, "to_exclusive": t, "bars": (t - begin) // 900})
+            begin = None
+    if begin is not None:
+        gaps.append({"from": begin, "to_exclusive": end, "bars": (end - begin) // 900})
+    return gaps
+
+
+def read_m15(path, symbol, start, end):
+    """Exact native row checks. Returns only completed prefix; no interpolation."""
+    if symbol not in SYMBOLS:
+        raise ValueError("EXACT_SYMBOL_REQUIRED")
+    missing_runs(set(), start, end)
+    rows = {}
+    opener = gzip.open if Path(path).suffix == ".gz" else open
+    with opener(path, "rt", encoding="utf-8", newline="") as stream:
+        for item in csv.DictReader(stream):
+            raw_t = item["open_time_ms"]
+            if not raw_t.isdigit():
+                raise ValueError("INVALID_NATIVE_M15_TIMESTAMP")
+            t = int(raw_t) // 1000
+            if not start <= t < end:
+                continue
+            if int(raw_t) % 900000:
+                raise ValueError("INVALID_NATIVE_M15_TIMESTAMP")
+            if (
+                item["exchange"],
+                item["symbol"],
+                item["interval"],
+                item["is_closed"],
+            ) != ("BYBIT", symbol, "15", "1"):
+                raise ValueError("NATIVE_IDENTITY_OR_COMPLETION_INVALID")
+            if t in rows:
+                raise ValueError("DUPLICATE_NATIVE_M15")
+            values = tuple(Decimal(item[k]) for k in FIELDS)
+            if not all(v.is_finite() for v in values):
+                raise ValueError("NONFINITE_OHLCV")
+            o, h, low, c, v, turnover = values
+            if (
+                min(o, h, low, c) <= 0
+                or min(v, turnover) < 0
+                or not low <= min(o, c) <= max(o, c) <= h
+            ):
+                raise ValueError("INVALID_OHLCV")
+            rows[t] = values
+    return rows
+
+
+def prefix_summary(sources, start, end):
+    """Compare exact decimals; future input does not affect prefix assessment."""
+    merged: dict[int, tuple[Decimal, ...]] = {}
+    overlaps, conflicts = 0, []
+    for rows in sources:
+        for t, values in rows.items():
+            if not start <= t < end:
+                continue
+            if t in merged:
+                overlaps += 1
+                if merged[t] != values:
+                    conflicts.append(
+                        {
+                            "open_time": t,
+                            "fields": [
+                                k
+                                for k, a, b in zip(
+                                    FIELDS, merged[t], values, strict=True
+                                )
+                                if a != b
+                            ],
+                        }
+                    )
+            else:
+                merged[t] = values
+    prefix_bytes = json.dumps(
+        [(t, [v.as_integer_ratio() for v in merged[t]]) for t in sorted(merged)],
+        separators=(",", ":"),
+    ).encode()
+    gaps = missing_runs(merged, start, end)
+    return {
+        "from": start,
+        "to_exclusive": end,
+        "expected_bars": (end - start) // 900,
+        "present_bars": len(merged),
+        "missing_bars": sum(g["bars"] for g in gaps),
+        "missing_intervals": gaps,
+        "overlap_bars": overlaps,
+        "conflicts": conflicts,
+        "prefix_sha256": sha256(prefix_bytes).hexdigest(),
+        "complete": not gaps and not conflicts,
+    }
+
+
+def selected_instrument(body, status, symbol):
+    if status != 200:
+        return {
+            "verified": False,
+            "reason": "OFFICIAL_METADATA_HTTP_FAILURE",
+            "http_status": status,
+        }
+    payload = json.loads(body)
+    if (
+        type(payload.get("retCode")) is not int
+        or payload["retCode"] != 0
+        or payload.get("result", {}).get("category") != "linear"
+    ):
+        raise ValueError("NO_OFFICIAL_LINEAR_SUCCESS")
+    items = payload["result"]["list"]
+    if len(items) != 1:
+        raise ValueError("UNIQUE_EXACT_INSTRUMENT_REQUIRED")
+    item = items[0]
+    if symbol not in SYMBOLS or (
+        item.get("symbol"),
+        item.get("contractType"),
+        item.get("quoteCoin"),
+        item.get("settleCoin"),
+        item.get("status"),
+    ) != (symbol, "LinearPerpetual", "USDT", "USDT", "Trading"):
+        raise ValueError("WRONG_PRODUCTION_INSTRUMENT")
+    tick = item["priceFilter"]["tickSize"]
+    if type(tick) is not str or not Decimal(tick).is_finite() or Decimal(tick) <= 0:
+        raise ValueError("EXACT_POSITIVE_TICK_REQUIRED")
+    return {
+        "verified": True,
+        "symbol": symbol,
+        "contract": CONTRACT,
+        "tick_size": tick,
+        "price_filter": item["priceFilter"],
+        "proof_scope": "POINT_IN_TIME_PRODUCTION_FILTER_ONLY",
+    }
+
+
+def prospective_observation(
+    selected, request_started, response_completed, *, effective_at=None
+):
+    a, b = timestamp(request_started), timestamp(response_completed)
+    if b < a or effective_at is not None and timestamp(effective_at) > b:
+        raise ValueError("INVALID_CAPTURE_OR_EFFECTIVE_CHRONOLOGY")
+    if not selected.get("verified"):
+        return {"eligibility": "STOP", "epoch_opened": False}
+    return {
+        **selected,
+        "known_at": str(b),
+        "eligibility_from": str(b),
+        "continuous_interval_proven": False,
+        "valid_until": None,
+        "epoch_opened": False,
+    }
+
+
+def install_boundary(read_paths, write_paths):
+    """Deny unexpected file/import/process/network surfaces in a fresh worker.
+
+    CPython audit hooks are an operational boundary, not an OS sandbox against
+    hostile native code. The worker loads no candidate modules/state and has no
+    credentials/order client. OOS registration remains STOP without OS isolation.
+    """
+    reads = {Path(p).resolve() for p in read_paths}
+    writes = {Path(p).resolve() for p in write_paths}
+
+    def check(event, args):
+        if event == "open":
+            raw, _mode, flags = args
+            if type(raw) is int:
+                if raw not in (0, 1, 2):
+                    raise IntegrityDenied("UNAPPROVED_FILE_DESCRIPTOR")
+                return
+            path = Path(raw).resolve()
+            writing = flags & (
+                os.O_WRONLY | os.O_RDWR | os.O_CREAT | os.O_TRUNC | os.O_APPEND
+            )
+            if path not in (writes if writing else reads):
+                raise IntegrityDenied("INTEGRITY_PATH_NOT_ALLOWLISTED")
+        elif event == "import":
+            raise IntegrityDenied("INTEGRITY_NEW_IMPORT_FORBIDDEN")
+        elif event.startswith(("subprocess.", "socket.", "ctypes.")) or event in (
+            "os.system",
+            "os.exec",
+            "os.fork",
+        ):
+            raise IntegrityDenied("INTEGRITY_EXECUTION_SURFACE_FORBIDDEN")
+
+    sys.addaudithook(check)
+
+
+def worker(symbol, start, end, log_path):
+    if symbol not in SYMBOLS:
+        raise ValueError("EXACT_SYMBOL_REQUIRED")
+    observed_at = datetime.now(UTC)
+    if exact_int(end) > completed_cutoff(int(observed_at.timestamp())):
+        raise IntegrityDenied("FUTURE_OR_UNCOMPLETED_CUTOFF")
+    log = Path(log_path).resolve()
+    if not log.is_relative_to(DEST / "evidence/integrity_access"):
+        raise IntegrityDenied("ACCESS_LOG_SCOPE_REQUIRED")
+    log.parent.mkdir(parents=True, exist_ok=True)
+    # Refuse overwrite before installing the file boundary.
+    if log.exists():
+        raise IntegrityDenied("APPEND_ONLY_LOG_EXISTS")
+    paths = {ROOT / p: h for p, h in PINNED[symbol].items()}
+    code_sha = sha256(Path(__file__).read_bytes()).hexdigest()
+    install_boundary(paths, [log])
+    hashes = {}
+    for path, expected in paths.items():
+        actual = sha256(path.read_bytes()).hexdigest()
+        if actual != expected:
+            raise IntegrityDenied("PINNED_RAW_INPUT_CHANGED")
+        hashes[str(path.relative_to(ROOT))] = actual
+    result = prefix_summary(
+        [read_m15(p, symbol, start, end) for p in paths], start, end
+    )
+    record = {
+        "principal": "standalone_integrity_worker",
+        "purpose": "HASH_CONTINUITY_IDENTITY_OVERLAP_ONLY",
+        "code_sha256": code_sha,
+        "symbol": symbol,
+        "accessed_input_sha256": hashes,
+        "observed_at": observed_at.isoformat(),
+        "assessment": result,
+        "strategy_modules_loaded": False,
+        "candidate_state_access": False,
+        "os_sandbox_established": False,
+    }
+    with log.open("x") as stream:
+        stream.write(json.dumps(record, sort_keys=True, indent=2) + "\n")
+    return result
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--symbol", required=True, choices=SYMBOLS)
+    parser.add_argument("--start", required=True, type=int)
+    parser.add_argument("--end", required=True, type=int)
+    parser.add_argument("--access-log", required=True, type=Path)
+    args = parser.parse_args()
+    print(
+        json.dumps(
+            worker(args.symbol, args.start, args.end, args.access_log), sort_keys=True
+        )
+    )
+
+
+if __name__ == "__main__":
+    main()

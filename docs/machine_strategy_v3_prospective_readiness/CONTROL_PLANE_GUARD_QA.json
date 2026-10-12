@@ -1,0 +1,15 @@
+{
+  "frozen_runner_replaced_or_patched": false,
+  "full_current_phase_suite_required": true,
+  "full_suite_status": "UNRESOLVED_IMMUTABLE_FALSE_HEADER_ASSERTIONS",
+  "governance_resolution_needed": "Separately authorize a new active runner/test version and preserve original frozen bytes; current gate cannot revise hash-pinned tests",
+  "immutable_test_paths": [
+    "tests/test_machine_strategy_v3_readiness_conformance.py",
+    "tests/test_machine_strategy_v3_outcome_guard.py",
+    "tests/test_machine_strategy_v3_market_metadata_recovery.py"
+  ],
+  "new_facade": "All missing/invalid/forged/self-declared auth rejected before artifact/data reads; explicit no capability in this gate",
+  "phase_header_dependency": false,
+  "test_byte_injection_skip_or_weakened_assertions": false,
+  "underlying_direct_runner_hardened": false
+}

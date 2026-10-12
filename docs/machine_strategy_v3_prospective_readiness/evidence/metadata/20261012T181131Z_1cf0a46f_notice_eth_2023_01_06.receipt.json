@@ -1,0 +1,29 @@
+{
+  "body_bytes": 38634,
+  "body_path": "machine_strategy_v3_prospective_readiness/evidence/metadata/20261012T181131Z_1cf0a46f_notice_eth_2023_01_06.body",
+  "body_sha256": "ce3b71b43c65ccbda89e89ec84937e5592be45cfdd11b9b17b29a1cc1a2c0fd4",
+  "credentials_used": false,
+  "error_class": null,
+  "historical_epoch_proof": false,
+  "http_status": 200,
+  "id": "20261012T181131Z_1cf0a46f_notice_eth_2023_01_06",
+  "instrument_metadata_verified": false,
+  "method": "GET",
+  "notice_symbol_relevance_verified": false,
+  "redirect_followed": false,
+  "request_headers": {
+    "Accept": "application/json,text/html;q=0.9",
+    "Accept-Encoding": "identity",
+    "User-Agent": "CryptoBot-prospective-metadata-evidence/1.0"
+  },
+  "request_started_at_utc": "2026-10-12T18:11:31.252817Z",
+  "requested_url": "https://announcements.bybit.com/en/article/changes-to-tick-size-for-ethusdt-eth-perp-perpetual-contracts-2023-01-06--bltb4b6d3ffa3c5206c/",
+  "response_headers_allowlist": {
+    "Content-Length": "38634",
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Mon, 12 Oct 2026 18:11:33 GMT"
+  },
+  "response_truncated": false,
+  "retrieved_at_utc": "2026-10-12T18:11:33.409310Z",
+  "source_class": "OFFICIAL_DATED_NOTICE"
+}

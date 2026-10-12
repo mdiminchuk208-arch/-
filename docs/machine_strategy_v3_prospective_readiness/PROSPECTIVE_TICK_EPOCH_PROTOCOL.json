@@ -1,0 +1,17 @@
+{
+  "activated_daemon": false,
+  "between_captures": "UNVERIFIED, even when equal; no assumed unchanged interval",
+  "closing": "Any filter change, ambiguous notice, failure or unknown interval closes eligibility before next decision; changed setting requires post-effective official applied capture",
+  "continuous_coverage_proven": false,
+  "contract": "USDT_LINEAR_PERPETUAL",
+  "freshness": "No retained snapshot alone authorizes a later candidate decision; per-decision causal production validation would require separate complete proof/control gate",
+  "known_at": "Validated response completion UTC, never server Date or request start; no backdating",
+  "notice_monitoring": "Separately append-only capture official index+dated notices, retain issuer publication/effective/retrieval times; search is bounded, not complete change proof",
+  "official_capture_acceptance": "HTTPS production linear instruments-info; retCode0; unique symbol; LinearPerpetual/USDT quote+settle/Trading; positive exact string priceFilter.tickSize",
+  "opening": "Point-in-time capture no earlier than max(proven applied/effective boundary, actual knowledge). No continuous epoch from a snapshot alone",
+  "strategy_decisions_authorized": false,
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT"
+  ]
+}

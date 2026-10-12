@@ -1,0 +1,45 @@
+{
+  "allowed_import_graph": {
+    "scripts/build_machine_strategy_v3_prospective_readiness.py": [
+      "__future__",
+      "argparse",
+      "ast",
+      "hashlib",
+      "json",
+      "machine_strategy_v3_prospective_integrity",
+      "pathlib",
+      "subprocess"
+    ],
+    "scripts/collect_machine_strategy_v3_prospective_public.py": [
+      "__future__",
+      "argparse",
+      "datetime",
+      "hashlib",
+      "json",
+      "pathlib",
+      "urllib.error",
+      "urllib.parse",
+      "urllib.request",
+      "uuid"
+    ],
+    "scripts/machine_strategy_v3_prospective_integrity.py": [
+      "__future__",
+      "argparse",
+      "csv",
+      "datetime",
+      "decimal",
+      "gzip",
+      "hashlib",
+      "json",
+      "os",
+      "pathlib",
+      "sys"
+    ]
+  },
+  "financial_columns_parsed": false,
+  "hostile_native_code_protection_claimed": false,
+  "os_isolation": "NOT_ESTABLISHED; OOS registration STOP",
+  "parent_verification": "HASH_ONLY; manifest schemas only",
+  "runtime_boundary": "Fresh worker denies unallowlisted file/import/socket/subprocess audit events",
+  "strategy_or_state_modules_imported": false
+}

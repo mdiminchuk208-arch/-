@@ -1,0 +1,29 @@
+{
+  "body_bytes": 39291,
+  "body_path": "machine_strategy_v3_prospective_readiness/evidence/metadata/20261012T181058Z_cd8b71d1_notice_2025_02_11.body",
+  "body_sha256": "d0ec050cba2e0035ff04eca11740e18757ae0830f441c6233c3ae15fdd9c6d57",
+  "credentials_used": false,
+  "error_class": null,
+  "historical_epoch_proof": false,
+  "http_status": 200,
+  "id": "20261012T181058Z_cd8b71d1_notice_2025_02_11",
+  "instrument_metadata_verified": false,
+  "method": "GET",
+  "notice_symbol_relevance_verified": false,
+  "redirect_followed": false,
+  "request_headers": {
+    "Accept": "application/json,text/html;q=0.9",
+    "Accept-Encoding": "identity",
+    "User-Agent": "CryptoBot-prospective-metadata-evidence/1.0"
+  },
+  "request_started_at_utc": "2026-10-12T18:11:02.695148Z",
+  "requested_url": "https://announcements.bybit.com/en/article/change-tick-size-for-usdt-perpetual-contract-feb-11-2025--blt7c14627fe7f3f6f6/",
+  "response_headers_allowlist": {
+    "Content-Length": "39291",
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Mon, 12 Oct 2026 18:11:04 GMT"
+  },
+  "response_truncated": false,
+  "retrieved_at_utc": "2026-10-12T18:11:04.751475Z",
+  "source_class": "OFFICIAL_DATED_NOTICE"
+}

@@ -1,0 +1,29 @@
+{
+  "actual_end_exclusive": null,
+  "actual_start": null,
+  "blockers": [
+    "OFFICIAL_CURRENT_INSTRUMENT_CAPTURE_HTTP_403",
+    "WARMUP_CLOSED_NATIVE_M15_GAPS_BOTH_SYMBOLS",
+    "WARMUP_PUBLIC_MIRROR_AUTHENTICITY_UNVERIFIED",
+    "LITERAL_COMPLETED_WARMUP_BEFORE_STRICT_NEXT_START_CONTRADICTION",
+    "FROZEN_ACTIVE_TEST_HEADERS_CONFLICT_WITH_CURRENT_TASK",
+    "NO_OS_LEVEL_STRATEGY_STATE_ISOLATION",
+    "FROZEN_RUNNER_DIRECT_AUTH_DESIGN_REQUIRES_NEW_VERSION"
+  ],
+  "formula": "First UTC D1 open STRICTLY AFTER MAX(implementation freeze committer time, separate registration committer time)",
+  "historical_financial_authorized": false,
+  "illustrative_calculation_only": {
+    "end_exclusive": 1823385600,
+    "proposed_commit_time": 1791828650,
+    "start": 1791849600,
+    "start_utc": "2026-10-13T00:00:00+00:00",
+    "warmup_start": 1760313600
+  },
+  "implementation_commit_time": 1791803481,
+  "ready": false,
+  "registration_commit": null,
+  "registration_created": false,
+  "state": "V3_PROSPECTIVE_READINESS_FROZEN_STOP",
+  "timing_conflict": "Last completed warmup bar closes at start; any commit after its close moves strict next-D1 start. A conditional tail is a possible independently reviewed operational clarification, not adopted here",
+  "trade_entry_allowed": false
+}

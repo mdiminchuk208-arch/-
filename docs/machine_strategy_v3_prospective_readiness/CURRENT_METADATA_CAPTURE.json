@@ -1,0 +1,105 @@
+{
+  "current_tick_epochs": [],
+  "historical_epochs_changed": false,
+  "receipts_verified": [
+    {
+      "body_sha256": "72e603a00b252d8f04da8bef6133356c6a22ab6b07c52e86d3bd46478cafb293",
+      "http_status": 200,
+      "path": "docs/machine_strategy_v3_prospective_readiness/evidence/metadata/20261012T181058Z_cd8b71d1_announcements_index.receipt.json"
+    },
+    {
+      "body_sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "http_status": 403,
+      "path": "docs/machine_strategy_v3_prospective_readiness/evidence/metadata/20261012T181058Z_cd8b71d1_api_btcusdt.receipt.json"
+    },
+    {
+      "body_sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "http_status": 403,
+      "path": "docs/machine_strategy_v3_prospective_readiness/evidence/metadata/20261012T181058Z_cd8b71d1_api_ethusdt.receipt.json"
+    },
+    {
+      "body_sha256": "d0ec050cba2e0035ff04eca11740e18757ae0830f441c6233c3ae15fdd9c6d57",
+      "http_status": 200,
+      "path": "docs/machine_strategy_v3_prospective_readiness/evidence/metadata/20261012T181058Z_cd8b71d1_notice_2025_02_11.receipt.json"
+    },
+    {
+      "body_sha256": "a15e9b3c81c335655a613d1b5e54d6cabfc12b70172f5069d3476f1dfd648638",
+      "http_status": 301,
+      "path": "docs/machine_strategy_v3_prospective_readiness/evidence/metadata/20261012T181058Z_cd8b71d1_notice_2025_05_21.receipt.json"
+    },
+    {
+      "body_sha256": "e0a10b7cbca9daecef597a8540e53b59752e0f8b07341a45d672ec94d7c1b358",
+      "http_status": 200,
+      "path": "docs/machine_strategy_v3_prospective_readiness/evidence/metadata/20261012T181131Z_1cf0a46f_notice_2025_05_21_canonical.receipt.json"
+    },
+    {
+      "body_sha256": "1cdb8af58fdb1e96e5a4fd01206ba3f30729852c1ff81d5fb07dd1046fdd8ae7",
+      "http_status": 200,
+      "path": "docs/machine_strategy_v3_prospective_readiness/evidence/metadata/20261012T181131Z_1cf0a46f_notice_btc_2023_02_07.receipt.json"
+    },
+    {
+      "body_sha256": "ce3b71b43c65ccbda89e89ec84937e5592be45cfdd11b9b17b29a1cc1a2c0fd4",
+      "http_status": 200,
+      "path": "docs/machine_strategy_v3_prospective_readiness/evidence/metadata/20261012T181131Z_1cf0a46f_notice_eth_2023_01_06.receipt.json"
+    },
+    {
+      "body_sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "http_status": 403,
+      "path": "docs/machine_strategy_v3_prospective_readiness/evidence/warmup/bybit_BTCUSDT_first_gap_probe.receipt.json"
+    },
+    {
+      "body_sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "http_status": 403,
+      "path": "docs/machine_strategy_v3_prospective_readiness/evidence/warmup/bybit_ETHUSDT_first_gap_probe.receipt.json"
+    },
+    {
+      "body_sha256": "018e5732ddb959b1c446321e87325322549a3d4bccb926bb4dfd94f6e9c74a78",
+      "http_status": 200,
+      "path": "docs/machine_strategy_v3_prospective_readiness/evidence/warmup/bybit_public_archive_probe.receipt.json"
+    },
+    {
+      "body_sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "http_status": 200,
+      "path": "docs/machine_strategy_v3_prospective_readiness/evidence/warmup/github_search_bybit_btc_m15.receipt.json"
+    },
+    {
+      "body_sha256": "749f5aa9f570dcacd52fdf7bb9e8a1a2cf8239a32303bb377b8d908183c8176f",
+      "http_status": 200,
+      "path": "docs/machine_strategy_v3_prospective_readiness/evidence/warmup/github_search_bybit_kline.receipt.json"
+    },
+    {
+      "body_sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "http_status": 200,
+      "path": "docs/machine_strategy_v3_prospective_readiness/evidence/warmup/github_search_bybit_kline_2026.receipt.json"
+    }
+  ],
+  "symbols": {
+    "BTCUSDT": {
+      "prospective_observation": {
+        "eligibility": "STOP",
+        "epoch_opened": false
+      },
+      "raw_sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "receipt": "docs/machine_strategy_v3_prospective_readiness/evidence/metadata/20261012T181058Z_cd8b71d1_api_btcusdt.receipt.json",
+      "selected_fields": {
+        "http_status": 403,
+        "reason": "OFFICIAL_METADATA_HTTP_FAILURE",
+        "verified": false
+      }
+    },
+    "ETHUSDT": {
+      "prospective_observation": {
+        "eligibility": "STOP",
+        "epoch_opened": false
+      },
+      "raw_sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "receipt": "docs/machine_strategy_v3_prospective_readiness/evidence/metadata/20261012T181058Z_cd8b71d1_api_ethusdt.receipt.json",
+      "selected_fields": {
+        "http_status": 403,
+        "reason": "OFFICIAL_METADATA_HTTP_FAILURE",
+        "verified": false
+      }
+    }
+  },
+  "verdict": "STOP"
+}

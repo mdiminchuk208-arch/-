@@ -1,0 +1,229 @@
+{
+  "acquisition": "Public official native M15 requests only; immutable receipt hashes; no privateAPI or country-block evasion",
+  "raw_source_prices_modified": false,
+  "source_identity": "Row BYBIT/symbol/15/is_closed1 labels checked; public mirror attribution is not independent exchange authenticity",
+  "sources": {
+    "BTCUSDT": {
+      "combined_closed": {
+        "missing_bars": 6795,
+        "missing_runs": [
+          {
+            "bars": 4848,
+            "end_exclusive": "2026-01-25T11:30:00Z",
+            "start": "2025-12-05T23:30:00Z"
+          },
+          {
+            "bars": 1947,
+            "end_exclusive": "2026-10-12T18:00:00Z",
+            "start": "2026-09-22T11:15:00Z"
+          }
+        ],
+        "present_bars": 28221
+      },
+      "native": {
+        "bytes": 2027002,
+        "closed_window_missing_count": 11977,
+        "closed_window_missing_runs": [
+          {
+            "bars": 10030,
+            "end_exclusive": "2026-01-25T11:30:00Z",
+            "start": "2025-10-13T00:00:00Z"
+          },
+          {
+            "bars": 1947,
+            "end_exclusive": "2026-10-12T18:00:00Z",
+            "start": "2026-09-22T11:15:00Z"
+          }
+        ],
+        "closed_window_present_count": 23039,
+        "columns": [
+          "exchange",
+          "symbol",
+          "interval",
+          "open_time_ms",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume_base",
+          "turnover_quote",
+          "is_closed"
+        ],
+        "duplicate_timestamp_count": 0,
+        "first_open": "2026-01-25T11:30:00Z",
+        "future_window_row_count": 0,
+        "identity_counts": [
+          {
+            "count": 23039,
+            "exchange": "BYBIT",
+            "interval": "15",
+            "is_closed": "1",
+            "symbol": "BTCUSDT"
+          }
+        ],
+        "invalid_row_count": 0,
+        "invalid_rows": [],
+        "last_open": "2026-09-22T11:00:00Z",
+        "path": "data/history/bybit/BTCUSDT/15.csv",
+        "rows": 23039,
+        "sha256": "c15a595e948ad4d329c8b6044a95665dfbe53b97a2ef2d62df0d5230b8274b21",
+        "source_order_strict_ascending": true
+      },
+      "public": {
+        "bytes": 5308105,
+        "closed_window_missing_count": 29834,
+        "closed_window_missing_runs": [
+          {
+            "bars": 29834,
+            "end_exclusive": "2026-10-12T18:00:00Z",
+            "start": "2025-12-05T23:30:00Z"
+          }
+        ],
+        "closed_window_present_count": 5182,
+        "columns": [
+          "exchange",
+          "symbol",
+          "interval",
+          "open_time_ms",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume_base",
+          "turnover_quote",
+          "is_closed"
+        ],
+        "duplicate_timestamp_count": 0,
+        "first_open": "2020-03-25T10:30:00Z",
+        "future_window_row_count": 0,
+        "identity_counts": [
+          {
+            "count": 199828,
+            "exchange": "BYBIT",
+            "interval": "15",
+            "is_closed": "1",
+            "symbol": "BTCUSDT"
+          }
+        ],
+        "invalid_row_count": 0,
+        "invalid_rows": [],
+        "last_open": "2025-12-05T23:15:00Z",
+        "path": "data/history/public_research/bybit_mirror/BTCUSDT/15.csv.gz",
+        "rows": 199828,
+        "sha256": "5d3fe4a4eb1d147c5f5516944bdbc45a21fb483d0bc667b5a92ed206aa8a6fc9",
+        "source_order_strict_ascending": true
+      }
+    },
+    "ETHUSDT": {
+      "combined_closed": {
+        "missing_bars": 6795,
+        "missing_runs": [
+          {
+            "bars": 4852,
+            "end_exclusive": "2026-01-25T12:30:00Z",
+            "start": "2025-12-05T23:30:00Z"
+          },
+          {
+            "bars": 1943,
+            "end_exclusive": "2026-10-12T18:00:00Z",
+            "start": "2026-09-22T12:15:00Z"
+          }
+        ],
+        "present_bars": 28221
+      },
+      "native": {
+        "bytes": 2011930,
+        "closed_window_missing_count": 11977,
+        "closed_window_missing_runs": [
+          {
+            "bars": 10034,
+            "end_exclusive": "2026-01-25T12:30:00Z",
+            "start": "2025-10-13T00:00:00Z"
+          },
+          {
+            "bars": 1943,
+            "end_exclusive": "2026-10-12T18:00:00Z",
+            "start": "2026-09-22T12:15:00Z"
+          }
+        ],
+        "closed_window_present_count": 23039,
+        "columns": [
+          "exchange",
+          "symbol",
+          "interval",
+          "open_time_ms",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume_base",
+          "turnover_quote",
+          "is_closed"
+        ],
+        "duplicate_timestamp_count": 0,
+        "first_open": "2026-01-25T12:30:00Z",
+        "future_window_row_count": 0,
+        "identity_counts": [
+          {
+            "count": 23039,
+            "exchange": "BYBIT",
+            "interval": "15",
+            "is_closed": "1",
+            "symbol": "ETHUSDT"
+          }
+        ],
+        "invalid_row_count": 0,
+        "invalid_rows": [],
+        "last_open": "2026-09-22T12:00:00Z",
+        "path": "data/history/bybit/ETHUSDT/15.csv",
+        "rows": 23039,
+        "sha256": "c42c68735311d4e7045ddec5c622b6a899d07bce71fec2f3cc21bf4c2f8cf9e0",
+        "source_order_strict_ascending": true
+      },
+      "public": {
+        "bytes": 4339159,
+        "closed_window_missing_count": 29834,
+        "closed_window_missing_runs": [
+          {
+            "bars": 29834,
+            "end_exclusive": "2026-10-12T18:00:00Z",
+            "start": "2025-12-05T23:30:00Z"
+          }
+        ],
+        "closed_window_present_count": 5182,
+        "columns": [
+          "exchange",
+          "symbol",
+          "interval",
+          "open_time_ms",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume_base",
+          "turnover_quote",
+          "is_closed"
+        ],
+        "duplicate_timestamp_count": 0,
+        "first_open": "2021-03-15T00:00:00Z",
+        "future_window_row_count": 0,
+        "identity_counts": [
+          {
+            "count": 165790,
+            "exchange": "BYBIT",
+            "interval": "15",
+            "is_closed": "1",
+            "symbol": "ETHUSDT"
+          }
+        ],
+        "invalid_row_count": 0,
+        "invalid_rows": [],
+        "last_open": "2025-12-05T23:15:00Z",
+        "path": "data/history/public_research/bybit_mirror/ETHUSDT/15.csv.gz",
+        "rows": 165790,
+        "sha256": "94c8f3f414ae3bbbe08bc5180f3da88d72c699f8ff88fd8093062078260449f8",
+        "source_order_strict_ascending": true
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "body_bytes": 41001,
+  "body_path": "machine_strategy_v3_prospective_readiness/evidence/metadata/20261012T181131Z_1cf0a46f_notice_2025_05_21_canonical.body",
+  "body_sha256": "e0a10b7cbca9daecef597a8540e53b59752e0f8b07341a45d672ec94d7c1b358",
+  "credentials_used": false,
+  "error_class": null,
+  "historical_epoch_proof": false,
+  "http_status": 200,
+  "id": "20261012T181131Z_1cf0a46f_notice_2025_05_21_canonical",
+  "instrument_metadata_verified": false,
+  "method": "GET",
+  "notice_symbol_relevance_verified": false,
+  "redirect_followed": false,
+  "request_headers": {
+    "Accept": "application/json,text/html;q=0.9",
+    "Accept-Encoding": "identity",
+    "User-Agent": "CryptoBot-prospective-metadata-evidence/1.0"
+  },
+  "request_started_at_utc": "2026-10-12T18:11:35.371177Z",
+  "requested_url": "https://announcements.bybit.com/en/article/change-of-tick-size-for-perpetual-contracts-may-21-2025--blt27ef1143ba173e35/",
+  "response_headers_allowlist": {
+    "Content-Length": "41001",
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Mon, 12 Oct 2026 18:11:36 GMT"
+  },
+  "response_truncated": false,
+  "retrieved_at_utc": "2026-10-12T18:11:37.043114Z",
+  "source_class": "OFFICIAL_DATED_NOTICE"
+}
