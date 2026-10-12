@@ -1,0 +1,7 @@
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+
+developer_instructions = """
+Research causal market-state definitions for Crypto Bot using only information available at decision time. Focus on mirrored LONG/SHORT trend, range, transition, and uncertain states across M15/H1/H4/D1. Do not select state rules because a historical subgroup was profitable. Distinguish source-derived semantics from pre-outcome machine hypotheses. Cite exact evidence and flag ambiguity instead of inventing precision.
+"""
