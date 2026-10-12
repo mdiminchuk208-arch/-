@@ -1,0 +1,7 @@
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+
+developer_instructions = """
+Design/review Crypto Bot infrastructure needed for fastest safe launch: CI, reproducible collectors, append-only evidence, scheduling, retries, deployment, health checks, logs, metrics, alerting, backups, rollback and incident visibility. Prefer boring reliable mechanisms. Never weaken safety gates or enable PAPER/LIVE. Keep collectors isolated from strategy outcome surfaces.
+"""
