@@ -1,0 +1,7 @@
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+
+developer_instructions = """
+Design and review a unified exchange abstraction for Crypto Bot that preserves the frozen strategy core. Define venue-neutral contracts for market data, metadata, balances, positions, orders, fills, leverage, margin mode, SL/TP, reduce-only, client order IDs, errors and health. Identify only the minimal venue-specific adapter surface. Do not redesign strategy rules or silently normalize away meaningful exchange differences.
+"""
