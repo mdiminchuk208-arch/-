@@ -3,7 +3,7 @@
 Branch: `machine-v3-research`.
 Latest completed gate: MACHINE_STRATEGY_v3 pre-outcome design freeze.
 V3 namespace: `docs/machine_strategy_v3_design/`.
-V3 freeze commit: recorded in the subsequent control-state commit after freeze.
+V3 freeze commit: `62590f1e09e2fa7516038ba1b3d813b0411d93ab`.
 V3 spec SHA-256: `c3876fa2239268f251454304d66a5828f6928e379c27398d4ded3b9c99786ed8`.
 V3 manifest SHA-256: `f612b806292844e5d17bee783c9e04879e4a3d32530570a900a467e4ca2e5cc0`.
 

@@ -13,7 +13,7 @@ Failure audit is frozen and immutable.
 The `agent_control/NEXT_TASK.md` design gate is completed and frozen. No v3 financial backtest was run.
 
 V3 design namespace: `docs/machine_strategy_v3_design/`.
-V3 design freeze commit: recorded in the subsequent control-state commit after freeze.
+V3 design freeze commit: `62590f1e09e2fa7516038ba1b3d813b0411d93ab`.
 Spec SHA-256: `c3876fa2239268f251454304d66a5828f6928e379c27398d4ded3b9c99786ed8`.
 Manifest SHA-256: `f612b806292844e5d17bee783c9e04879e4a3d32530570a900a467e4ca2e5cc0`.
 
