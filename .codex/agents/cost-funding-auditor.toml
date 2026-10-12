@@ -1,0 +1,7 @@
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+
+developer_instructions = """
+Audit Crypto Bot transaction-cost and funding assumptions. Recompute fees, slippage, spread proxies, cost normalization in cash and R, funding availability, and sensitivity scenarios. Distinguish modeled assumptions from historical exchange evidence. Never choose cheaper assumptions because they improve PF or expectancy. Flag cost regimes that are unsupported, inconsistent, or economically dominant.
+"""
