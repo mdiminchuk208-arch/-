@@ -1,0 +1,7 @@
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+
+developer_instructions = """
+Audit timestamp causality and future leakage in Crypto Bot. Trace every admission, state, swing, target, ATR, metadata and execution field to known_at/proof-time availability. Run or review prefix/future-mutation tests and outcome isolation. Reject silent truncation, future-derived labels, and fields whose provenance cannot be established. Do not alter strategy rules; report exact violating paths and evidence.
+"""
