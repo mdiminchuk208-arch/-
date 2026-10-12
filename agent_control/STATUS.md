@@ -11,7 +11,11 @@ Manifest SHA-256: `b96797ec01575303b6d4c0170f0683554386f53569ef41ad38ed3f91cf7fe
 
 The previously opened Bybit-only Prospective Capture Activation + Control Plane v2 task was not executed and is superseded before implementation by `EXCHANGE_SELECTION_AUDIT_v1` at the user's explicit direction.
 
-Rationale: Bybit public market-data/instrument endpoints are blocked with HTTP403 in the current research environment, historical tick provenance remains unresolved, and the user requires a wider venue search that explicitly prioritizes lower bot/API fees as well as data/API quality. Starting a 365-day Bybit-only prospective clock before selecting the best venue would create avoidable lock-in.
+Project directive: `agent_control/LAUNCH_DIRECTIVE.md` is active. Primary objective is the earliest safe evidence-backed Crypto Bot launch. Frozen `MACHINE_STRATEGY_v3` rules must not be redesigned/tuned during the launch path. Routine sequencing, technical architecture choices, gate creation, and reviewer selection are delegated to the project lead; escalate only user-required external/account/capital/credential/live-authorization choices.
+
+Orchestration was expanded to 22 configured specialist roles with up to 16 parallel threads. Independent venue research should be parallelized using venue-specific `venue_researcher` workers plus cross-venue cost/data/microstructure/API/security auditors. Do not inflate headcount when tasks are not independent. One implementation/writer path at a time; independent reviewers remain read-only.
+
+Rationale for the current gate: Bybit public market-data/instrument endpoints are blocked with HTTP403 in the current research environment, historical tick provenance remains unresolved, and the user requires a wider venue search that explicitly prioritizes lower bot/API fees as well as data/API quality. Starting a 365-day Bybit-only prospective clock before selecting the best venue would create avoidable lock-in.
 
 The open gate audits at minimum OKX, Binance Futures, Hyperliquid, Gate, Bitget, Bybit, KuCoin Futures, BloFin, MEXC, Kraken derivatives/futures, Coinbase International where applicable, and Deribit where applicable.
 
@@ -23,7 +27,7 @@ Primary comparison dimensions: API-specific maker/taker fees and normalized roun
 
 No strategy financial outcome may be run/read. No prospective OOS clock may start until exchange selection is frozen and a later capture-registration gate explicitly opens it.
 
-Required functions: cost_funding_auditor, historical_data_engineer, market_microstructure_auditor, execution_auditor, tick_metadata_researcher, statistics_robustness_analyst, overfit_red_team, final_independent_reviewer.
+Required core functions: cost_funding_auditor, historical_data_engineer, market_microstructure_auditor, execution_auditor, tick_metadata_researcher, statistics_robustness_analyst, overfit_red_team, final_independent_reviewer. Additional configured launch roles may be used when relevant: venue_researcher, api_reliability_auditor, exchange_security_auditor, exchange_adapter_architect, platform_backend_architect, devops_observability_engineer, risk_controls_auditor.
 
 Protected freezes remain immutable:
 - baseline `ba65e91c2b1675f48e80ac785bb3adf89d17bb0b`
