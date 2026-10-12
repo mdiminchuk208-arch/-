@@ -1,12 +1,12 @@
 #:schema https://developers.openai.com/codex/config-schema.json
 
-persistent_instructions = "Follow AGENTS.md and agent_control/*.md. Preserve frozen artifacts. Use the smallest competent agent team for each gate, with independent review for critical claims. Never enable live trading."
+persistent_instructions = "Follow AGENTS.md and agent_control/*.md. Preserve every frozen artifact and frozen strategy rule. Optimize for the fastest safe path to a working Crypto Bot: remove launch blockers, do not redesign/tune MACHINE_STRATEGY_v3 unless a future explicit pre-outcome strategy gate authorizes it. Use the smallest competent team for each gate, but parallelize independent venue/data/infrastructure work aggressively. Require independent review for critical claims. Never enable live trading without the required qualification gates and explicit user authorization."
 
 [features]
 multi_agent = true
 
 [agents]
-max_threads = 10
+max_threads = 16
 max_depth = 1
 
 [agents.strategy_explorer]
@@ -14,7 +14,7 @@ description = "Read-only strategy diagnostics explorer for frozen backtest and r
 config_file = "agents/strategy-explorer.toml"
 
 [agents.strategy_designer]
-description = "Pre-outcome machine strategy designer. Proposes causally justified rules only after audit evidence is frozen."
+description = "Pre-outcome machine strategy designer. Proposes causally justified rules only after audit evidence is frozen; do not use for current launch path unless explicitly authorized."
 config_file = "agents/strategy-designer.toml"
 
 [agents.backtest_reviewer]
@@ -68,3 +68,31 @@ config_file = "agents/overfit-red-team.toml"
 [agents.final_independent_reviewer]
 description = "Final independent gate reviewer; challenges evidence, reproducibility, safety, and PASS/STOP decisions without modifying strategy rules."
 config_file = "agents/final-independent-reviewer.toml"
+
+[agents.venue_researcher]
+description = "Parallel read-only venue researcher. Assign one worker per exchange to collect official fees, product identity, public data/API capability, metadata, order types and access evidence without ranking manipulation."
+config_file = "agents/venue-researcher.toml"
+
+[agents.api_reliability_auditor]
+description = "Read-only auditor for REST/WebSocket availability, latency, rate limits, outage/status behavior, geo/access restrictions and retry/failover semantics."
+config_file = "agents/api-reliability-auditor.toml"
+
+[agents.exchange_security_auditor]
+description = "Read-only exchange/API security auditor for permission granularity, secret handling, IP allowlists, withdrawal separation, signing and operational attack surface."
+config_file = "agents/exchange-security-auditor.toml"
+
+[agents.exchange_adapter_architect]
+description = "Architecture specialist for a unified exchange abstraction and venue adapters; preserves strategy core and prevents exchange-specific leakage into product/domain layers."
+config_file = "agents/exchange-adapter-architect.toml"
+
+[agents.platform_backend_architect]
+description = "Backend/platform architect for balances, positions, orders, scanner, journal, stats, API connections, multi-user isolation and exchange-agnostic service boundaries."
+config_file = "agents/platform-backend-architect.toml"
+
+[agents.devops_observability_engineer]
+description = "Infrastructure specialist for CI, collectors, scheduling, append-only evidence, monitoring, alerting, backups, deployment safety and reproducibility."
+config_file = "agents/devops-observability-engineer.toml"
+
+[agents.risk_controls_auditor]
+description = "Independent safety reviewer for portfolio risk caps, leverage/margin constraints, kill switches, exchange-side protection, duplicate prevention and fail-closed behavior."
+config_file = "agents/risk-controls-auditor.toml"
