@@ -1,0 +1,192 @@
+{
+  "LIVE_enabled": false,
+  "OOS_clock_started": false,
+  "PAPER_enabled": false,
+  "binary_indicator_scoring": "Each confirmed, source-cited indicator=1 point, maximum5. Unknown/contradictory/unverified=0; false=0. Unweighted evidence-missing state retained. No renormalization of weights. Score is not probability or strategy quality.",
+  "candidate_venues": [
+    "okx",
+    "binance_futures",
+    "hyperliquid",
+    "gate",
+    "bitget",
+    "bybit",
+    "kucoin_futures",
+    "blofin",
+    "mexc",
+    "kraken_futures",
+    "coinbase_international",
+    "deribit"
+  ],
+  "cost_scoring": {
+    "above_last_or_missing": 0,
+    "bands_upper_inclusive_bps": [
+      "2",
+      "5",
+      "10",
+      "15",
+      "25"
+    ],
+    "missing_book_or_fee": "0 entire cost criterion; no optimistic price or subjective missing fill",
+    "primary_scenario": "base API taker entry+taker exit; no discounts; equal BTC/ETH and five USD sizes",
+    "scores": [
+      "5",
+      "4",
+      "3",
+      "2",
+      "1"
+    ],
+    "total_cost_bps": "2*taker_fee_bps + median snapshot BUY impact + median snapshot SELL impact, equal size/symbol mean; funding excluded and separately assessed; bid/ask crossing included in impact from mid"
+  },
+  "criterion_rubric": {
+    "execution": {
+      "data": [
+        "exact native BTC/ETH M15 data",
+        "current exact tick/lot metadata",
+        "clock/closed-bar semantics",
+        "reproducible public history pagination/archive",
+        "prospective metadata provenance"
+      ],
+      "funding": [
+        "interval and sign rules",
+        "current formula/caps documented",
+        "reproducible BTC/ETH funding history",
+        "platform surcharge distinguished",
+        "margin/basis/settlement model explicit"
+      ],
+      "orders": [
+        "documented REST+WS/order+fills queries",
+        "isolated margin and leverage controls",
+        "reduce-only plus exchange-side conditional SL/TP",
+        "client order id/idempotency semantics",
+        "documented limits plus testnet/demo"
+      ],
+      "safety": [
+        "trade permission separated from withdraw OR explicit equivalent scoped agent signing",
+        "IP allowlist OR explicitly documented scoped-wallet security",
+        "rate limits and status/maintenance procedures",
+        "custody/signing/key/revocation model documented",
+        "jurisdiction/account applicability documented; not a user-account eligibility claim"
+      ]
+    },
+    "research": {
+      "access": [
+        "public metadata succeeds from research environment",
+        "public book succeeds BOTH symbols at two captures",
+        "public candles/funding succeed",
+        "documented rate limits/clock/retry semantics",
+        "ordinary GitHub-hosted CI probe succeeds"
+      ],
+      "auxiliary": [
+        "funding history endpoint/provenance",
+        "historical trades depth documented",
+        "historical book/depth source documented",
+        "mark/index/premium history",
+        "open-interest history"
+      ],
+      "cost_realism": [
+        "base API fee deterministically documented",
+        "funding sign/interval semantics documented",
+        "book contract units normalized exactly",
+        "two snapshots and all five USD sizes both sides covered",
+        "fee/rebate/promotion limitations documented"
+      ],
+      "documentation": [
+        "official documented schemas/versioning",
+        "UTC timestamp/close semantics",
+        "archive or reproducible pagination examples",
+        "public operational/status/changelog feed",
+        "contract units/margin/funding semantics unambiguous"
+      ],
+      "history": [
+        "exact BTC/ETH perpetual native M15 documented",
+        "pagination/closed timestamp semantics documented",
+        "two-year old M15 sentinel or official archive actually retrieved for BOTH symbols",
+        "reproducible immutable hashes/native identity",
+        "missing-bar semantics documented, no synthetic interpolation"
+      ],
+      "metadata": [
+        "current exact BTC/ETH price-filter identity verified",
+        "tick/lot semantics documented",
+        "official rule-change publication/changelog available",
+        "historical instrument snapshots/epochs recoverable with actual evidence",
+        "prospective causal capture possible without backdating"
+      ]
+    }
+  },
+  "execution_weights": {
+    "cost": 35,
+    "data": 5,
+    "funding": 10,
+    "liquidity": 25,
+    "orders": 15,
+    "safety": 10
+  },
+  "hard_execution_gates": [
+    "base API fee knowable with official current evidence",
+    "required bot order/margin/protection controls verified",
+    "no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly",
+    "product/contract normalization supported",
+    "no severe unresolved endpoint/access restriction"
+  ],
+  "hard_research_gates": [
+    "exact product identity BOTH symbols",
+    "current defensible tick filters BOTH symbols",
+    "two-year old native M15 public sentinel or official archive verified BOTH symbols",
+    "causally known prospective metadata capture possible",
+    "at least one approved environment public access success; severe current geo-block remains penalty"
+  ],
+  "historical_tick_warning": "Research venue selection is not historical executable epoch/backtest readiness; unknown tick intervals stay unknown",
+  "liquidity_scoring": {
+    "above_last_or_missing": 0,
+    "bands_upper_inclusive_bps": [
+      "0.5",
+      "1",
+      "2",
+      "5",
+      "10"
+    ],
+    "metric": "equal BTC/ETH, five sizes and both sides mean of median mid-referenced impacts; at least2 snapshots each symbol; every size fully fillable",
+    "scores": [
+      "5",
+      "4",
+      "3",
+      "2",
+      "1"
+    ]
+  },
+  "missing_data_rule": "Unknown indicator=0, missing fee/book criterion=0; missing hard prerequisite excludes role regardless of score. No redistributed weights or invented values. Ties lexicographic venue slug; report tie, not superiority.",
+  "no_financial_strategy_results": true,
+  "notionals_usd": [
+    "1000",
+    "5000",
+    "10000",
+    "25000",
+    "50000"
+  ],
+  "preregistration_before_collection": true,
+  "research_weights": {
+    "access": 20,
+    "auxiliary": 15,
+    "cost_realism": 10,
+    "documentation": 10,
+    "history": 25,
+    "metadata": 20
+  },
+  "sensitivity": {
+    "cost_weight_percentage_point_shifts": [
+      -5,
+      5
+    ],
+    "promotions": "excluded in primary and sensitivity; report no change",
+    "redistribution": "other execution weights multiplied proportionally to keep total100; no criterion retuning",
+    "snapshot": "remove each one in turn; if fewer than2 remain, liquidity/cost become0, no favorable replacement",
+    "unknown_depth": "hard depth prerequisite remainsfalse when unverified; sensitivity additionally zeroes history score of documentary-only evidence"
+  },
+  "snapshot_sampling": "two separated bounded public books per symbol where possible, using all retained valid captures; median plus worst; not future execution guarantee",
+  "symbols": [
+    "BTC",
+    "ETH"
+  ],
+  "trade_entry_allowed": false,
+  "version": 1
+}

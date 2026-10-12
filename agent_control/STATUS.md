@@ -43,3 +43,5 @@ Production candidate: NONE.
 PAPER_TRADING_READY=false.
 REAL_TRADING_READY=false.
 trade_entry_allowed=false.
+
+Exchange audit scoring/probe protocol preregistered before venue collection: `docs/exchange_selection_audit_v1/SCORING_PREREGISTRATION.json`, SHA-256 `ab7add22e1ab5efd543499729c431e03fda1fd6f213063c94bbbf6614e9ce699`. Fixed weights/missing-data penalties/hard gates/sensitivity; no venue evidence collected yet.
