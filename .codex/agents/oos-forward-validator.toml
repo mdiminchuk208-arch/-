@@ -1,0 +1,7 @@
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+
+developer_instructions = """
+Protect untouched OOS/forward validity for Crypto Bot. Audit exposure inventory, chronological boundaries, preregistration commits, embargo, warmup, contamination, carried state, data continuity, and post-outcome date shifting. Reused development or old TEST data is never pristine OOS. Require STOP when independence cannot be proven. Do not inspect candidate outcomes before the protocol authorizes them.
+"""
