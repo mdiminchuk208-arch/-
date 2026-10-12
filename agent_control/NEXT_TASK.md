@@ -1,151 +1,180 @@
-# Next Task — MACHINE_STRATEGY_v3 Pre-Outcome Design Freeze
+# Next Task — MACHINE_STRATEGY_v3 Implementation Readiness Freeze
 
-The failure audit is frozen and the v3 design gate is open. Do NOT run a new financial backtest yet.
+The v3 design is frozen at `62590f1e09e2fa7516038ba1b3d813b0411d93ab`. Do NOT change strategy rules and do NOT run any historical financial outcome evaluation in this task.
 
 ## Objective
-Design a new deterministic `MACHINE_STRATEGY_v3` architecture that addresses the failure mechanisms identified by the frozen audit without mining historical P&L, selecting profitable subgroups, or simply adding another outcome-fitted filter to v2.x.
+Complete and independently freeze the full causal implementation infrastructure required to execute the already-frozen `MACHINE_STRATEGY_v3` exactly as specified.
 
-This task is DESIGN + SPECIFICATION + NON-FINANCIAL QA only. The full v3 financial result must remain unknown until the specification and implementation are frozen.
+This gate exists to remove the two current first-backtest STOP reasons:
+1. `HISTORICAL_EVENT_ADAPTER_NOT_IMPLEMENTED`
+2. `NO_VERIFIED_HISTORICAL_TICK_EPOCHS`
 
-## Mandatory evidence basis
-Use only the frozen audit and pre-outcome/source/market-structure evidence. Treat the following as diagnostic constraints, not directly selectable rules:
-- v2 SHORT has negative gross before costs across all years and both symbols; do not simply disable SHORT.
-- aggregate gross edge is erased by modeled costs.
-- nearest structural FTA frequently lies inside 1 planned R.
-- tiny structural stop denominators can create unstable R and huge cost/R ratios.
-- no LONG/SHORT sign/accounting bug was found.
-- intrabar timing, historical tick epochs, actual spread/funding, portfolio/margin behavior and untouched OOS remain unresolved.
+If either blocker cannot be removed with evidence, keep the STOP explicitly. Never fabricate metadata, interpolate rules, or weaken the frozen design to force a backtest.
+
+## Immutable inputs
+Treat these as frozen and read-only:
+- `docs/machine_strategy_v3_design/`
+- `docs/machine_strategy_failure_audit_v1/`
+- all Original/source/baseline/v2/v2.1/v2.2 frozen namespaces
+- v3 spec hash `c3876fa2239268f251454304d66a5828f6928e379c27398d4ded3b9c99786ed8`
+- v3 design manifest hash `f612b806292844e5d17bee783c9e04879e4a3d32530570a900a467e4ca2e5cc0`
+
+No rule may be changed because of case counts, outcomes, historical P&L, PF, WR, expectancy, drawdown, MFE/MAE, or subgroup performance.
 
 ## Required multi-agent workflow
-Actually launch and use the configured roles where possible:
-1. `strategy_explorer`: map frozen audit findings to causal design requirements. No rule proposal based only on P&L ranking.
-2. `execution_auditor`: define executable price/risk/cost invariants and symmetry requirements for LONG/SHORT.
-3. `strategy_designer`: propose the v3 architecture and deterministic rules.
-4. `backtest_reviewer`: independently challenge leakage, post-hoc selection, hidden tuning, non-causal fields, asymmetry and unverifiable execution assumptions before freeze.
+Use all relevant project roles:
+1. `strategy_explorer` — map frozen v3 contract requirements to existing historical data/event primitives and identify missing adapter surfaces.
+2. `execution_auditor` — own tick-epoch provenance, price-grid validity, rounding, cost/execution identities, and LONG/SHORT symmetry.
+3. `strategy_designer` — implementation-conformance role only: verify the adapter/runner implements the frozen spec exactly; no strategy redesign.
+4. `backtest_reviewer` — independently review no-lookahead, provenance, hidden tuning, metadata claims, data completeness, and freeze readiness.
 
-Record each role's conclusions under the v3 design namespace.
+Record role outputs under the new readiness namespace.
 
-## v3 architecture questions that must be resolved before freeze
+## A. Full historical event adapter
+Implement the complete deterministic adapter needed to transform verified historical market data into the frozen v3 causal event/state/setup representation.
 
-### A. Direction and market-state architecture
-Create a causal, deterministic market-state/context model that is applied symmetrically to LONG and SHORT.
-- It may use only information known at decision time.
-- It must not be `LONG allowed / SHORT disabled` because v2 historical P&L said so.
-- If directional admission differs, it must arise from the same mirrored market-state logic.
-- Define trend/range/transition/uncertain handling explicitly enough for deterministic implementation.
-- Preserve M15/H1/H4/D1 as the executable timeframe universe unless a new timeframe is justified independently of outcome data.
+Required coverage:
+- BTCUSDT and ETHUSDT Bybit USDT linear perpetual;
+- M15 native input with deterministic contiguous UTC H1/H4/D1 derivation where allowed by the frozen spec;
+- causal market-state generation;
+- all five setup families: SFP, OB, Breaker, STB, Range;
+- POI/FTA/liquidity inventories required by the frozen design;
+- first-test and physical-idea reservation semantics;
+- entry-order representation, gap invalidation, unfilled state, intrabar ambiguity state;
+- structural stop and risk-normalization inputs;
+- target selection and modeled-cost feasibility inputs;
+- exact known-at / source-bar / formation timestamps;
+- deterministic identity/hash generation;
+- explicit WAIT/REJECT reasons for missing, ambiguous, discontinuous, or unverifiable data.
 
-### B. Structural risk normalization
-Redesign stop/risk handling so valid structure cannot produce economically meaningless or numerically unstable denominators.
-- Preserve structural invalidation semantics.
-- Add any minimum executable risk/tick/volatility/cost floor only if it is derived from causal market/execution mechanics, not optimized from historical winners/losses.
-- Define units, rounding, epsilon, ATR/volatility calculation, timestamp availability and LONG/SHORT mirroring.
-- Cases that cannot be represented honestly with available historical execution metadata must WAIT/REJECT explicitly; do not fabricate precision.
+The adapter must not read realized outcome, exit, future path, P&L or performance columns while deciding admission or constructing an order.
 
-### C. Entry/target/FTA economics
-Redesign the relationship between entry, structural stop, nearest opposing liquidity/FTA and modeled transaction cost.
-- Do not move a target farther merely to manufacture R:R.
-- If the nearest causally valid target cannot support an economically executable trade after declared costs, define a deterministic pre-entry WAIT/REJECT condition based on the architecture.
-- Any threshold or safety margin must have an explicit ex-ante rationale and must NOT be chosen by scanning historical PF/WR/Net R.
-- Define target priority and what happens when multiple FTAs/POIs exist.
+## B. Full runner implementation — outcome engine may exist but must not be financially executed
+Implement any remaining runner/execution code required for the later frozen-spec financial backtest, including exit/state transitions, but test it only on synthetic fixtures or deliberately non-financial contract fixtures in this gate.
 
-### D. Setup-family architecture
-Review SFP, OB, Breaker, STB and Range as machine setup families.
-- Do not retain or remove a family because its historical subgroup P&L was good/bad.
-- Keep a family only if its signal, confirmation, entry, invalidation and target semantics can be made causal, deterministic and economically coherent.
-- Branch-specific mechanics are allowed when structurally justified, but must be specified before results.
+Do NOT run the completed runner over historical development cases in a way that reveals aggregate or case-level financial outcomes.
+Do NOT print or inspect historical v3 wins/losses, R, PF, P&L, expectancy, drawdown, MFE/MAE, or equity.
 
-### E. Execution and intrabar ambiguity
-Define exact rules for:
-- limit/market entry representation;
-- unfilled and gap-invalidated setups;
-- same-bar entry/stop/target ambiguity;
-- `WAIT_INTRABAR_ORDER` or conservative alternative;
-- tick/price rounding when historical tick proof is unavailable;
-- fees, slippage and funding treatment;
-- one physical idea / duplicate prevention;
-- first-test/re-entry semantics.
+A static/behavioral guard must make accidental historical outcome evaluation in this gate detectable.
 
-Never convert unknown OHLC intrabar order into invented elapsed-time precision.
+## C. Historical tick-epoch provenance
+Establish price tick-size epochs for BTCUSDT and ETHUSDT over every historical development interval that would be eligible for the first v3 financial run.
 
-### F. Portfolio-independent base
-Keep v3 base-strategy evaluation independent of project-level sizing overlays.
-Do NOT yet apply:
-- 2–5% score sizing;
-- max open risk 6%;
-- leverage policy;
-- correlation portfolio rules;
-- exchange fallback logic.
-These remain later overlays after a base strategy qualifies.
+Evidence hierarchy:
+1. official Bybit dated announcements / rule-change notices;
+2. official archived/static instrument metadata or exchange-maintained historical material with immutable capture/hash and known publication time;
+3. independently archived evidence only when provenance, capture time, and content integrity are explicit.
 
-## Data-exposure / validation protocol
-Before freeze, create a machine-readable dataset exposure inventory covering every period/symbol/timeframe previously used for:
-- source research;
-- v2/v2.1/v2.2 development;
-- old 2026 fitted development work;
-- any audit diagnostics.
+Rules:
+- current `instruments-info` is NOT proof of historical values by itself;
+- publication date, effective date, title date, retrieval date and archive capture date must remain separate fields;
+- do not infer an epoch boundary merely from observed candle decimals;
+- do not backfill unknown periods from later settings;
+- if exact coverage is not provable for a period, mark it `UNVERIFIED` and preserve STOP for that period.
 
-Then preregister:
-1. development dataset(s), already contaminated and usable only for design diagnostics;
-2. robustness partitions;
-3. a genuinely untouched chronological OOS/forward dataset, if one exists;
-4. objective STOP if no pristine OOS can be established.
+For each symbol produce machine-readable intervals with:
+- `valid_from`
+- `valid_to`
+- `tick_size`
+- `effective_at`
+- `known_at`
+- `source_url_or_archive_id`
+- `source_hash`
+- `evidence_class`
+- `verification_status`
+- notes on publication/effective-date discrepancies.
 
-Do not label reused 2026 data OOS merely because v3 has not yet been run on it.
+## D. Data-grid authenticity and completeness
+Verify every historical input series used by the adapter:
+- source identity and content hash;
+- symbol/contract type;
+- UTC timestamps;
+- expected M15 continuity;
+- duplicate/missing bars;
+- H1/H4/D1 derivation rules;
+- source aliases/overlap so duplicate representations are not treated as independent evidence;
+- exact data period eligible for development evaluation.
 
-## Freeze requirements
+Never interpolate missing OHLCV bars.
+If continuity cannot be established, produce explicit WAIT/STOP coverage maps.
+
+## E. OOS readiness preparation — no OOS outcome observation
+Preserve the frozen validation principle: all currently inventoried history is exposed development, and old 2026 TEST data is not untouched OOS.
+
+In this gate:
+- determine whether a contiguous 365-day pre-start warmup can be assembled from independently verified public data for a future prospective OOS registration;
+- verify acquisition procedure, hashes, continuity checks, and metadata coverage;
+- do not generate candidate signals, positions, trade labels or P&L for the prospective OOS period;
+- do not claim a pristine OOS window exists until a separate append-only registration freezes exact future start/end timestamps after the complete implementation freeze;
+- if warmup/data/metadata cannot be made ready, preserve `STOP_NO_PRISTINE_OOS`.
+
+Do NOT silently change the frozen validation protocol. Any necessary non-outcome operational clarification must be explicitly documented, independently reviewed, and re-frozen before observation.
+
+## Required readiness namespace
 Create an immutable namespace such as:
-`docs/machine_strategy_v3_design/`
+`docs/machine_strategy_v3_implementation_readiness/`
 
 Required artifacts:
-- `MACHINE_STRATEGY_V3_SPEC.md`
-- `MACHINE_STRATEGY_V3_SPEC.json`
-- `CAUSAL_HYPOTHESES.md`
-- `RULE_PROVENANCE.json`
-- `DIRECTION_AND_REGIME_SPEC.json`
-- `RISK_NORMALIZATION_SPEC.json`
-- `ENTRY_TARGET_EXECUTION_SPEC.json`
-- `SETUP_FAMILY_SPEC.json`
-- `DATA_EXPOSURE_INVENTORY.json`
-- `VALIDATION_PROTOCOL.md`
+- `IMPLEMENTATION_READINESS_REPORT.md`
+- `HISTORICAL_ADAPTER_SPEC.json`
+- `HISTORICAL_ADAPTER_COVERAGE.json`
+- `TICK_EPOCH_EVIDENCE.md`
+- `TICK_EPOCHS.json`
+- `DATA_GRID_AUTHENTICITY.json`
+- `DATA_CONTINUITY_REPORT.json`
+- `OUTCOME_GUARD_QA.json`
+- `OOS_READINESS.json`
 - `INDEPENDENT_REVIEW.md`
 - `QA_REPORT.md`
 - `freeze_manifest.json`
 
-Every machine rule must be tagged with provenance such as:
-- `SOURCE_DERIVED`
-- `MACHINE_RULE_PRE_OUTCOME`
-- `EXECUTION_SAFETY_RULE`
-- `UNRESOLVED_WAIT_RULE`
+Store immutable evidence receipts/hashes or reproducible retrieval metadata where legally/technically possible. Do not commit secrets or private API credentials.
 
-No rule may be tagged or justified as `historically profitable subgroup`.
-
-## Non-financial implementation QA
-Implementation may be created in this task only if needed to prove determinism and causal executability, but DO NOT produce aggregate financial outcome metrics.
-
-Required checks before freeze:
-- deterministic replay;
-- prefix/future mutation / no-lookahead;
-- LONG/SHORT reflection/symmetry tests where mathematically applicable;
-- timestamp known-at validation;
-- unit/rounding/cost identity tests;
+## Mandatory QA before freeze
+At minimum:
+- deterministic adapter replay;
+- historical input prefix/future-mutation no-lookahead test;
+- known-at timestamp validation;
+- M15→H1/H4/D1 aggregation fixtures;
+- LONG/SHORT reflection/symmetry fixtures;
+- all-five-family synthetic fixtures;
+- tick rounding/epoch boundary fixtures;
+- gap/missing-bar/duplicate-bar tests;
 - intrabar ambiguity tests;
-- frozen namespace invariance;
-- no reads from outcome/P&L columns inside admission logic;
-- static/lint/type/compile tests.
-
-If a test would reveal the aggregate v3 P&L, do not run it until after the pre-outcome freeze commit.
+- first-test/reservation/re-entry tests;
+- cost identity and risk-floor invariants;
+- static scan proving admission/order construction does not read outcome columns;
+- guard proving historical financial evaluation was not executed in this gate;
+- frozen namespace hash invariance;
+- full test suite, Ruff/format, mypy, compile;
+- independent reviewer PASS required for readiness.
 
 ## Decision gate
-At the end of this task, freeze and publish the exact v3 design and implementation state.
-Update `agent_control/STATUS.md` and `CURRENT_STATE.md` with:
-- v3 design freeze commit SHA;
-- spec/manifest hashes;
-- actual agents used;
-- unresolved execution/data risks;
-- exact untouched-OOS plan;
-- whether the system is ready for the first v3 financial backtest.
+At completion, publish one of the following exact states:
 
-Do NOT run that financial backtest in this task.
+### `V3_IMPLEMENTATION_FROZEN_READY_FOR_FIRST_FINANCIAL_BACKTEST`
+Only if ALL are true:
+- full adapter and runner implement frozen v3 deterministically;
+- development data grid is verified for the declared evaluation period;
+- historical tick epochs fully cover that declared period;
+- all QA/review passes;
+- no historical v3 financial outcomes were viewed before freeze.
+
+### `V3_IMPLEMENTATION_FROZEN_FINANCIAL_STOP`
+If any required implementation/data/tick evidence remains unresolved. List exact blockers and affected periods/symbols.
+
+Separately report OOS state. OOS readiness does not need to be complete to freeze implementation, but no production qualification can occur without later pristine OOS/forward validation.
+
+Update `agent_control/STATUS.md` and `CURRENT_STATE.md` with:
+- complete implementation freeze commit SHA;
+- manifest and code/spec hashes;
+- exact tick-epoch coverage verdict;
+- historical adapter/data coverage verdict;
+- actual agents used;
+- QA/review result;
+- whether first development financial backtest is now authorized;
+- whether a separate prospective OOS-registration gate can be opened.
+
+Do NOT run the first financial backtest in this task even if readiness becomes PASS.
 Do NOT enable PAPER or LIVE.
 `trade_entry_allowed=false` remains invariant.
