@@ -1,199 +1,304 @@
-# Next Task — MACHINE_STRATEGY_v3 Prospective Capture Activation + Control Plane v2 Freeze
+# Next Task — EXCHANGE_SELECTION_AUDIT_v1 Freeze
 
-The prospective-readiness gate is frozen at `fdf5b95e34c724ab73e8f3e64d36aed562ad965b` with `V3_PROSPECTIVE_READINESS_FROZEN_STOP`. Preserve that STOP and every prior freeze. Do NOT run historical v3 financial outcomes, do NOT generate OOS signals/trades, and do NOT change strategy rules.
+The previous prospective-readiness gate is frozen at `fdf5b95e34c724ab73e8f3e64d36aed562ad965b` with `V3_PROSPECTIVE_READINESS_FROZEN_STOP`. The previously opened Bybit-only `Prospective Capture Activation + Control Plane v2` task was NOT executed and is superseded before implementation by this exchange-selection gate at the user's explicit direction.
+
+Preserve every prior freeze. Do NOT change strategy rules, do NOT run historical v3 financial outcomes, do NOT generate OOS signals/trades, and do NOT enable PAPER/LIVE.
 
 ## Objective
-Remove the currently removable infrastructure blockers and start a real append-only prospective evidence clock for the frozen v3 strategy.
+Select the strongest venue architecture for Crypto Bot before starting a 365-day prospective evidence clock.
 
-This gate has four goals:
-1. activate a lawful public prospective BTCUSDT/ETHUSDT Bybit data + instrument-metadata collector from an environment where official public endpoints are normally reachable, without VPN/proxy/geolocation spoofing or credentials;
-2. establish append-only provenance/continuity storage that can accumulate a future 365-day warmup;
-3. create a phase-stable Control Plane v2 so active QA no longer depends on old `NEXT_TASK` text while all historical frozen tests remain immutable and auditable;
-4. create a new fail-closed execution authorization gateway with an OS/process isolation boundary, without modifying the frozen v3 adapter/runner.
+The audit must determine, using current official evidence and reproducible public endpoint probes, whether the project should:
+1. keep Bybit as primary validation/execution venue;
+2. switch to another venue;
+3. use one venue for research/validation and a different venue for later execution;
+4. retain multiple secondary/fallback venues.
 
-No PASS in this gate authorizes financial evaluation, PAPER, LIVE, or OOS registration.
+The user explicitly authorizes considering exchanges outside the current Bitget/MEXC/BloFin/Bybit set.
 
-## Immutable inputs
-Read-only/frozen:
-- baseline `ba65e91c2b1675f48e80ac785bb3adf89d17bb0b`
-- failure audit `8ca75ed35876d8f5d4d363e9e8808d7bd4417e87`
-- v3 design `62590f1e09e2fa7516038ba1b3d813b0411d93ab`
-- v3 implementation `43e57ee5c7867dd9421961629746555c8a2e9556`
-- v3 metadata recovery `7e89543ef9b443ac65b64f125c919e885dccf37b`
-- v3 prospective readiness `fdf5b95e34c724ab73e8f3e64d36aed562ad965b`
-- all corresponding frozen namespaces/manifests and the frozen adapter/runner hashes recorded in `STATUS.md`.
+The decision must prioritize **true bot execution cost**, **public data/metadata quality**, **API accessibility/reliability**, **liquidity/slippage**, and **validation integrity**. Do not rank by marketing claims or app-promotional fees.
 
-Historical verified tick coverage remains 0%. Do not reinterpret or backfill it.
+## Candidate universe
+Audit at minimum these venues when the required perpetual product/API exists:
+- OKX
+- Binance Futures
+- Hyperliquid
+- Gate
+- Bitget
+- Bybit
+- KuCoin Futures
+- BloFin
+- MEXC
+- Kraken derivatives/futures
+- Coinbase International / perpetual venue if technically applicable
+- Deribit if product fit is technically applicable
+
+Additional credible venues may be included if discovered. If a venue lacks the required product or cannot satisfy the project's BTC/ETH perpetual workflow, mark `PRODUCT_MISMATCH` with exact evidence instead of forcing it into the ranking.
+
+## Product baseline for apples-to-apples comparison
+Primary symbols:
+- BTC perpetual
+- ETH perpetual
+
+Preferred contract model:
+- linear stablecoin-margined perpetual when available.
+
+If a venue uses materially different settlement/margin conventions, document them and normalize costs carefully. Do not silently compare inverse, coin-margined, DEX and stablecoin-linear products as if identical.
+
+## Frozen scoring model — define before collecting outcomes
+Produce two independent rankings:
+
+### A. Research / Validation Venue Score
+Weights:
+- public historical market-data depth + continuity: **25%**
+- instrument/tick metadata provenance and change-history recoverability: **20%**
+- public API accessibility/reliability/rate limits: **20%**
+- funding/OI/trades/orderbook historical availability: **15%**
+- reproducibility / timestamp semantics / documentation quality: **10%**
+- execution-cost realism available for later simulation: **10%**
+
+### B. Execution Venue Score
+Weights:
+- all-in execution cost: **35%**
+- liquidity / spread / depth / modeled slippage: **25%**
+- API reliability / order types / exchange-side SL-TP / reduce-only / isolated margin: **15%**
+- funding and basis characteristics: **10%**
+- operational/API permissions and safety fit: **10%**
+- public-data/metadata quality: **5%**
+
+Do not change weights after seeing which venue wins. If a criterion cannot be measured, mark it missing and apply the preregistered missing-data rule rather than subjectively redistributing weights.
+
+## A. True fee audit
+For every venue, collect current official fee evidence with retrieval time and immutable hash/receipt where technically possible.
+
+Use the **ordinary API user / base tier** as the default comparison unless the venue has no such tier. Separately report VIP/token/referral/promotional reductions but do not use them in the primary ranking unless they are guaranteed and applicable to automated API trading.
+
+Critically distinguish:
+- web/app fee vs API-specific fee;
+- maker vs taker;
+- standard perpetual vs special/innovation/pre-listing product;
+- exchange fee vs funding transfer;
+- rebates/negative maker fees;
+- fee-token discounts;
+- region/account-specific schedules.
+
+Required normalized scenarios for BTC and ETH:
+1. taker entry + taker exit;
+2. maker entry + taker exit;
+3. maker entry + maker exit where technically realistic;
+4. 50/50 maker-taker blended turnover.
+
+Calculate round-trip fee in:
+- percent of notional;
+- basis points;
+- USD at $1k, $5k, $10k, $25k and $50k notional.
+
+Where API trading has a distinct schedule (for example MEXC), the API schedule controls the bot comparison.
+
+## B. Funding audit
+Funding is not automatically an exchange fee. Preserve sign/direction semantics.
+
+For each venue, document:
+- funding interval rules;
+- current formula/limits if public;
+- historical funding endpoint availability and depth;
+- whether funding histories can be acquired reproducibly for BTC/ETH;
+- any platform surcharge separate from trader-to-trader funding.
+
+Do NOT select a venue based on one current funding print. This gate is architecture selection, not strategy P&L optimization.
+
+## C. Public historical data audit
+Probe official public APIs/documented archives without credentials where possible.
+
+For BTC/ETH perpetuals determine:
+- native M15 candle availability;
+- maximum historical depth;
+- pagination and row limits;
+- missing-bar semantics;
+- start/end timestamp semantics;
+- completed-bar marker if any;
+- trades history availability/depth;
+- orderbook/public depth access;
+- mark/index/premium series;
+- funding history;
+- OI history;
+- instrument metadata including exact tick size/price filters;
+- API changelog / announcements / metadata-change evidence;
+- delisted/archived contract metadata where relevant.
+
+Specifically assess whether the venue can support the project's required **2–3 year backtest evidence path** and future **365-day pristine OOS** without inventing tick epochs.
+
+## D. Live public endpoint accessibility audit
+Run bounded, non-trading probes from:
+1. the current Codex/cloud research environment;
+2. an ordinary GitHub-hosted CI runner if available through repository workflows.
+
+No VPN, proxy, residential routing, geolocation spoofing, private API keys, cookies or account sessions.
+
+For each public endpoint record:
+- URL family (redact only secrets; there should be none);
+- HTTP status;
+- latency sample;
+- rate-limit headers if exposed;
+- response content hash;
+- symbol/product identity;
+- timestamp.
+
+Repeated 403/451/geo blocking is a major reliability penalty for the research venue. Do not evade it.
+
+## E. Liquidity, spread and slippage audit
+Use contemporaneous public order-book snapshots only; no strategy signals.
+
+For BTC and ETH perpetuals, sample multiple UTC times when technically practical and calculate exact executable VWAP/impact for both BUY and SELL at:
+- $1,000
+- $5,000
+- $10,000
+- $25,000
+- $50,000
+
+Report:
+- best bid/ask spread in bps;
+- depth within 1/2/5/10 bps where meaningful;
+- modeled market-order slippage by notional and side;
+- snapshot time/source;
+- caveat that snapshots are not future execution guarantees.
+
+Do not use a single unusually favorable snapshot as the venue score. Use deterministic aggregation (median, and worst observed sample where sample count permits).
+
+## F. Bot execution capability audit
+For each venue verify from current official docs/API schemas:
+- REST + WebSocket availability;
+- isolated margin;
+- leverage controls;
+- reduce-only;
+- exchange-side stop-loss / take-profit or equivalent conditional orders;
+- client order IDs / idempotency;
+- order query / fills / position state;
+- API key permission granularity (Read + Trade without Withdraw where applicable);
+- IP allowlisting where applicable;
+- rate limits;
+- maintenance/status endpoints or operational status feed;
+- testnet/demo availability where applicable.
+
+Do not create private API keys or place orders in this gate.
+
+## G. Venue-model compatibility
+Hyperliquid and any non-CEX/orderbook venue must be assessed on its actual architecture, not forced into CEX assumptions.
+
+Document differences in:
+- custody / wallet signing model;
+- API authentication;
+- fee/rebate mechanics;
+- liquidation/margin engine;
+- data provenance;
+- orderbook/fill semantics;
+- operational dependencies.
+
+A low fee alone does not win if implementation/security/data risks dominate.
+
+## H. Hard exclusion / STOP criteria
+A venue cannot be the primary Research/Validation venue if any of these remain unresolved:
+- no reproducible BTC/ETH perpetual historical candles at required granularity/depth;
+- no defensible current tick/price-filter metadata;
+- public API persistently inaccessible from both approved research environments;
+- ambiguous product identity preventing deterministic normalization;
+- evidence cannot support causally known prospective metadata capture.
+
+A venue cannot be the primary future Execution venue if any of these remain unresolved:
+- bot trading API unavailable or materially incompatible;
+- cannot enforce safe position/order controls required by the project;
+- withdrawal permission cannot be separated from trade permissions where an API-key model is used;
+- fees are not deterministically knowable for the account/API trading class;
+- severe endpoint/access restrictions make reliable operation unreasonable.
+
+## I. Decision format
+Freeze the following outputs separately:
+
+1. `PRIMARY_RESEARCH_VALIDATION_VENUE`
+2. `PRIMARY_EXECUTION_VENUE`
+3. `SECONDARY_EXECUTION_VENUE`
+4. `REFERENCE_BENCHMARK_VENUE`
+5. `REJECTED_OR_DEFERRED_VENUES` with exact reasons
+
+It is valid for the first four roles to name different venues. Do not force one venue to win every category.
+
+Before promotion, perform an independent red-team review asking whether the winner changes under reasonable non-tuned sensitivity tests, for example:
+- fee-cost weight ±5 percentage points with proportional preregistered redistribution;
+- removing one liquidity snapshot;
+- treating unknown historical depth conservatively;
+- excluding promotional fee discounts.
+
+Sensitivity is for robustness of the architecture choice, not for cherry-picking a desired winner.
 
 ## Required specialist workflow
 Required functions:
-1. `historical_data_engineer` — prospective M15 collector, continuity, dedupe, receipts and append-only storage.
-2. `tick_metadata_researcher` — current/future official instrument metadata and dated tick/filter notices.
-3. `oos_forward_validator` — prospective clock, embargo, contamination and future-registration semantics.
-4. `no_lookahead_auditor` — prove collector/control tooling cannot read strategy state or outcomes.
-5. `market_microstructure_auditor` — verify captured metadata proves executable price-grid semantics from its defensible known-at boundary.
-6. `backtest_engineer` — Control Plane v2 / authorization gateway implementation only; no financial backtest.
-7. `final_independent_reviewer` — independent final PASS/STOP seal.
+1. `cost_funding_auditor` — fee/funding normalization lead.
+2. `historical_data_engineer` — historical/public data capability and real endpoint probes.
+3. `market_microstructure_auditor` — spread/depth/slippage and venue execution semantics.
+4. `execution_auditor` — order API, margin, SL/TP, permissions and safety requirements.
+5. `tick_metadata_researcher` — tick/filter metadata and historical/prospective provenance.
+6. `statistics_robustness_analyst` — frozen scoring implementation and sensitivity checks.
+7. `overfit_red_team` — independent challenge to ranking/weights/evidence gaps.
+8. `final_independent_reviewer` — final PASS/STOP seal.
 
-Use `execution_auditor`, `backtest_reviewer`, `overfit_red_team` when useful. Record actual identities/functions; do not claim unused agents.
+Use other configured roles only if materially necessary. Record actual launched identities and role functions.
 
-## A. Activate prospective public capture
-Implement a production-like, append-only collector for:
-- BTCUSDT and ETHUSDT;
-- Bybit USDT linear perpetual;
-- official public instrument metadata including exact `tickSize` / price-filter fields when available;
-- completed native M15 OHLCV bars only;
-- dated official notices that change tick/price filters where technically available.
-
-### Access policy
-- no private API keys, cookies, account session, VPN, proxy, residential routing or geolocation spoofing;
-- do not evade a 403 from the current cloud environment;
-- an ordinary GitHub-hosted Actions runner or other normal project CI runner MAY be used as the collector environment if it reaches the same official public endpoint without any evasion mechanism;
-- if the official endpoint is also unavailable there, retain immutable failure receipts and STOP that source;
-- official alternative endpoints may be used only if documented/normal for public market data, not as a disguised geo-bypass.
-
-### Collector behavior
-- capture raw response bytes, request URL/params, response status/headers needed for provenance, retrieval UTC timestamp and SHA-256;
-- normalize separately; never overwrite raw bytes;
-- capture exact instrument identity and category;
-- fetch enough recent closed M15 bars with overlap to tolerate delayed CI runs, then exact-dedupe by symbol/open-time;
-- never store an unfinished bar as completed;
-- detect missing/duplicate/conflicting bars and never interpolate;
-- use exact decimal representation for prices/filters;
-- collector must not import strategy/adapter/runner modules;
-- collector must not generate signals, states, setups, orders, labels or financial metrics.
-
-Prefer a bounded schedule with overlap and deterministic backfill after transient outages rather than assuming exact cron timing. Keep storage/commit growth reasonable; design a reproducible daily/periodic packing scheme if needed while preserving raw hashes and retrieval chronology.
-
-## B. Append-only capture channel
-Create a separate prospective evidence surface so collector writes cannot conflict with active research work. A dedicated branch such as `machine-v3-prospective-capture` is allowed and preferred.
-
-Requirements:
-- append-only evidence files/receipts;
-- no rewriting prior captures;
-- deterministic index/manifest chain with previous-manifest hash;
-- capture sequence number + retrieval time;
-- provenance for the workflow/code commit that produced each capture;
-- workflow has only the minimum repository permission needed;
-- no secrets other than the normal GitHub workflow token if repository write is necessary;
-- concurrency control prevents races/double writers;
-- failed fetches are evidence too and must not be converted into synthetic success.
-
-Before enabling recurring collection, execute at least one bounded manual/CI capture and independently verify the exact bytes, hashes, identity and no-strategy isolation. If verified, enable the schedule in the final reviewed workflow bytes and record the first defensible prospective capture time `T0`.
-
-`T0` is NOT OOS registration and does not retroactively verify any earlier period.
-
-## C. Warmup accumulation and historical gap policy
-Do not force-fill prior gaps. Continue attempting only independently verifiable public Bybit-specific sources where allowed, but the durable path is prospective accumulation.
-
-Create a machine-readable clock showing:
-- `T0` for each symbol/data surface;
-- current verified contiguous completed-M15 span after T0;
-- exact missing/conflicting intervals;
-- earliest possible date at which a 365-day contiguous warmup could become eligible if collection remains complete;
-- conditions that reset/invalidate the continuity clock.
-
-The frozen OOS registration rule remains unchanged. Do not register OOS in this gate.
-
-## D. Control Plane v2 governance
-Resolve `FROZEN_ACTIVE_TEST_HEADERS_CONFLICT_WITH_CURRENT_TASK` by explicitly versioning active control tests, not by editing frozen test bytes or injecting old task text.
-
-Requirements:
-- preserve old phase-specific tests byte-for-byte as historical evidence;
-- define an append-only active-test registry/manifest with version and hashes;
-- migrate each brittle test to a phase-stable semantic equivalent that checks immutable capabilities/state rather than a prose `NEXT_TASK` header;
-- document one-to-one semantic mapping from legacy assertions to active replacements;
-- active current-phase suite must run honestly without monkeypatching task bytes, skips, xfail, filtered failures or weakened guard semantics;
-- legacy suite remains separately reproducible/auditable and is not falsely called current-phase PASS.
-
-## E. Execution Authorization Gateway v2
-Do not modify the frozen adapter/runner. Add a new outer gateway/version that is the only supported active path for any future historical/OOS execution.
-
-It must:
-- default DENY;
-- reject absent/invalid/forged/stale/wrong-phase authorization before strategy history reads;
-- bind authorization to exact strategy spec, implementation, runner, data/evidence manifest and allowed phase hashes;
-- distinguish `INTEGRITY_ONLY`, `OOS_REGISTERED_EMBARGOED`, `FINANCIAL_EVALUATION_AUTHORIZED`, `PAPER`, and `LIVE` capabilities; only `INTEGRITY_ONLY` is permitted in this gate;
-- ensure `trade_entry_allowed=false` regardless of malformed input;
-- make financial authorization impossible to mint from collector/runtime data alone.
-
-### Isolation
-Add the strongest available OS/process boundary for integrity-only tooling:
-- separate subprocess/process identity/workdir with explicit allowlisted files and environment;
-- no strategy-state path visibility where the host permits it;
-- no network except exact allowlisted public collection endpoints during collection;
-- no shell/subprocess spawning from integrity worker unless explicitly required and audited;
-- prefer OS namespace/container/sandbox primitives if available;
-- if true OS-level isolation is unavailable, prove the strongest enforceable boundary and preserve an explicit STOP for that item rather than claiming equivalent security.
-
-## F. Required namespace
+## Required namespace
 Create immutable namespace:
-`docs/machine_strategy_v3_capture_control_v2/`
+`docs/exchange_selection_audit_v1/`
 
 Required artifacts:
-- `CAPTURE_CONTROL_REPORT.md`
-- `COLLECTOR_SPEC.json`
-- `COLLECTOR_ACCESS_RECEIPTS.json`
-- `CAPTURE_BRANCH_PROTOCOL.json`
-- `PROSPECTIVE_CLOCK.json`
-- `ACTIVE_TEST_GOVERNANCE.json`
-- `LEGACY_TO_ACTIVE_TEST_MAPPING.json`
-- `AUTHORIZATION_GATEWAY_SPEC.json`
-- `ISOLATION_QA.json`
-- `OUTCOME_ISOLATION_QA.json`
+- `EXCHANGE_SELECTION_REPORT.md`
+- `CANDIDATE_UNIVERSE.json`
+- `OFFICIAL_FEE_EVIDENCE.json`
+- `NORMALIZED_FEE_MATRIX.json`
+- `FUNDING_CAPABILITY_MATRIX.json`
+- `PUBLIC_DATA_CAPABILITY_MATRIX.json`
+- `PUBLIC_ENDPOINT_PROBES.json`
+- `LIQUIDITY_SPREAD_SLIPPAGE.json`
+- `EXECUTION_CAPABILITY_MATRIX.json`
+- `METADATA_PROVENANCE_MATRIX.json`
+- `RESEARCH_VENUE_SCORES.json`
+- `EXECUTION_VENUE_SCORES.json`
+- `SENSITIVITY_ANALYSIS.json`
+- `REJECTED_VENUES.json`
 - `INDEPENDENT_REVIEW.md`
 - `QA_REPORT.md`
 - `freeze_manifest.json`
 
-If recurring capture is successfully activated, also retain the exact collector workflow SHA/content hash and first capture manifest/hash/T0. Do not copy prospective raw data into this frozen report namespace if the separate append-only capture branch is the canonical evidence surface; reference its immutable commit/hash instead.
+Retain official URLs, retrieval timestamps and content hashes/receipts. No secrets/private credentials.
 
 ## Mandatory QA
 At minimum:
-- bounded real public capture attempt in the intended collector environment;
-- raw byte/hash replay and normalized-output determinism;
-- exact BTC/ETH contract/category/tick identity checks;
-- closed-M15 cutoff/continuity/dedupe/conflict tests;
-- collector future-mutation/prefix tests;
-- static import graph proving collector/integrity worker does not import strategy/outcome modules;
-- dynamic file-access/read audit proving no strategy-state/outcome reads in integrity mode;
-- active-test-registry hash verification;
-- unmodified new active current-phase suite PASS;
-- separate reproducibility record for legacy frozen tests without mislabeling them current PASS;
-- missing/forged/wrong-hash/wrong-phase auth tests DENY before history read;
-- OS/process isolation escape-negative tests appropriate to the selected mechanism;
-- capture branch race/idempotence tests;
-- frozen namespace/hash invariance;
-- Ruff/format, mypy, compile;
-- independent reviewer PASS required for any ACTIVE decision.
+- deterministic fee normalization tests;
+- bps/USD round-trip calculation tests;
+- API-specific-vs-app-fee precedence tests;
+- maker/taker sign/rebate handling;
+- funding vs trading-fee separation;
+- exact-decimal arithmetic;
+- public endpoint identity checks;
+- orderbook VWAP/slippage unit tests;
+- scoring weights sum to 100% and remain frozen;
+- missing-data penalty deterministic;
+- ranking replay byte-identical;
+- sensitivity analysis deterministic;
+- source/hash verification;
+- frozen v3 namespaces invariant;
+- no strategy signal/outcome/P&L surfaces read;
+- Ruff/format, mypy, compile for new code;
+- final independent reviewer PASS required for venue promotion.
 
 ## Decision gate
-Publish exactly one state:
+Publish exactly one primary state:
 
-### `V3_CAPTURE_CONTROL_FROZEN_ACTIVE`
-Only if:
-- at least one defensible official prospective metadata + M15 capture path is operational for BOTH symbols from a non-evasive public environment;
-- append-only capture storage/manifest chain is verified and recurring collection is activated;
-- a defensible T0 is frozen;
-- Control Plane v2 active suite passes honestly;
-- authorization gateway fails closed;
-- required isolation is implemented and reviewer accepts its exact guarantees/limitations;
-- no strategy outcome was generated/viewed.
+### `EXCHANGE_SELECTION_AUDIT_FROZEN_PASS`
+Only if evidence is sufficient to select a defensible primary research/validation architecture and future execution architecture.
 
-### `V3_CAPTURE_CONTROL_FROZEN_STOP`
-If any critical requirement remains unresolved. List exact blockers and distinguish time-dependent accumulation from engineering failures.
+### `EXCHANGE_SELECTION_AUDIT_FROZEN_STOP`
+If no venue or venue combination meets minimum evidence/access/safety requirements. List exact unresolved blockers.
 
-Even ACTIVE does NOT authorize OOS registration yet. OOS registration can open only after the frozen 365-day warmup prerequisites are objectively satisfied and independently reviewed.
+On PASS, update `agent_control/STATUS.md` and `CURRENT_STATE.md` with the selected venue roles and exact freeze/manifest hashes. The next gate should adapt **data/metadata capture infrastructure first**, without silently changing frozen v3 strategy rules. Any strategy port to a materially different market/product requires an explicit pre-outcome compatibility/version gate before financial evaluation.
 
-Update `agent_control/STATUS.md` and `CURRENT_STATE.md` with:
-- freeze commit/manifest hash;
-- exact collector environment and access verdict;
-- capture branch/workflow commit and T0 if activated;
-- current prospective contiguous duration;
-- active-test/control-plane verdict;
-- isolation/auth-gateway verdict;
-- actual agents used;
-- exact remaining blockers and next eligible gate.
-
-Historical financial backtest remains unauthorized.
+Historical v3 financial backtest remains unauthorized in this audit.
+Do NOT start the 365-day OOS clock on any venue before selection is frozen and its prospective capture protocol is independently registered.
 Do NOT enable PAPER or LIVE.
 `trade_entry_allowed=false` remains invariant.
