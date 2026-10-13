@@ -1,0 +1,359 @@
+{
+  "checkpoint_utc": "2026-10-13T16:58:44.726345Z",
+  "criteria": {
+    "bot_order_api": {
+      "reason": "Official API documentation describes REST order placement, order and position queries, WebSocket order/fill channels, isolated SWAP margin/leverage, reduce-only orders, attached TP/SL or algo orders, and clOrdId. Private/account-specific operation was not tested; conditional net orders carrying both TP and SL execute stop-loss logic only.",
+      "result": "PASS",
+      "source_ids": [
+        "docs_main#order-book-trading-trade-post-place-order",
+        "docs_main#trading-account-rest-api-set-leverage",
+        "docs_main#order-book-trading-algo-trading-post-place-algo-order"
+      ]
+    },
+    "current_tick_price_lot_metadata": {
+      "observed": {
+        "BTC": {
+          "ctMult": "1",
+          "ctVal": "0.01",
+          "ctValCcy": "BTC",
+          "instId": "BTC-USDT-SWAP",
+          "lotSz": "0.01",
+          "maxMktSz": "35000",
+          "minSz": "0.01",
+          "state": "live",
+          "tickSz": "0.1",
+          "upcChg": []
+        },
+        "ETH": {
+          "ctMult": "1",
+          "ctVal": "0.1",
+          "ctValCcy": "ETH",
+          "instId": "ETH-USDT-SWAP",
+          "lotSz": "0.01",
+          "maxMktSz": "90000",
+          "minSz": "0.01",
+          "state": "live",
+          "tickSz": "0.01",
+          "upcChg": []
+        }
+      },
+      "reason": "Official public instrument responses give current live tickSz, lotSz, minSz, ctVal and ctMult for both contracts. Historical tick/filter epochs are unresolved and current filters cannot be backdated.",
+      "result": "PASS",
+      "source_ids": [
+        "instrument_btc",
+        "instrument_eth",
+        "docs_main#public-data-rest-api-get-instruments"
+      ]
+    },
+    "native_m15_history_technical_capability": {
+      "continuity_verified": false,
+      "reason": "Native 15m candles were retrieved now and at 2024-10-13T00:00:00Z for both exact SWAP products; historical sentinel rows had confirm=1. The documented history endpoint paginates earlier with after. These observations establish two-year point reachability and a technically plausible M15 path, but do not prove continuity of every intervening bar, missing-bar semantics, immutable history, or historical tick epochs.",
+      "result": "PASS",
+      "sentinel_open_utc": {
+        "BTC": "2024-10-13T00:00:00Z",
+        "ETH": "2024-10-13T00:00:00Z"
+      },
+      "source_ids": [
+        "m15_btc_now",
+        "m15_eth_now",
+        "m15_btc_old_after",
+        "m15_eth_old_after",
+        "docs_main#order-book-trading-market-data-get-candlesticks-history"
+      ]
+    },
+    "ordinary_api_perpetual_fee": {
+      "api_applicability_verified": false,
+      "illustrative_only": {
+        "maker_percent": "0.02",
+        "taker_percent": "0.05"
+      },
+      "maker_rate": null,
+      "reason": "Current regular-user maker/taker rates applicable to API trading of these SWAP contracts were not established. The official help article says only illustrative Trader A maker 0.02% and taker 0.05%; the captured public fees page exposes a Spot tab. The official symbol guidance points to the private GET /api/v5/account/trade-fee endpoint, which was not called. Illustrative percentages are not adopted as rates.",
+      "result": "UNKNOWN",
+      "source_ids": [
+        "fee_help_en",
+        "fee_page_en",
+        "docs_main#trading-account-rest-api-get-fee-rates",
+        "docs_main#public-data-rest-api-get-instruments"
+      ],
+      "taker_rate": null
+    },
+    "product_identity": {
+      "observed": {
+        "BTC": {
+          "ctMult": "1",
+          "ctType": "linear",
+          "ctVal": "0.01",
+          "ctValCcy": "BTC",
+          "instType": "SWAP",
+          "margin_settlement": "USDT settlement; collateral/account mode varies by account",
+          "state": "live",
+          "symbol": "BTC-USDT-SWAP"
+        },
+        "ETH": {
+          "ctMult": "1",
+          "ctType": "linear",
+          "ctVal": "0.1",
+          "ctValCcy": "ETH",
+          "instType": "SWAP",
+          "margin_settlement": "USDT settlement; collateral/account mode varies by account",
+          "state": "live",
+          "symbol": "ETH-USDT-SWAP"
+        }
+      },
+      "reason": "Live BTC-USDT-SWAP and ETH-USDT-SWAP are identified as linear USDT-settled perpetual SWAP instruments. Exact public instrument identities and contract units were returned for both.",
+      "result": "PASS",
+      "source_ids": [
+        "instrument_btc",
+        "instrument_eth",
+        "docs_main#public-data-rest-api-get-instruments"
+      ]
+    },
+    "public_api_reachability": {
+      "reason": "Public OKX instrument, candle, book, funding-history, server-time and system-status probes from this managed cloud environment returned HTTP 200 and API code 0. This is a point-in-time access check, not an availability guarantee or an account eligibility check.",
+      "result": "PASS",
+      "source_ids": [
+        "instrument_btc",
+        "instrument_eth",
+        "m15_btc_now",
+        "m15_eth_now",
+        "book_btc_1",
+        "book_btc_2",
+        "book_eth_1",
+        "book_eth_2",
+        "funding_history_btc",
+        "funding_history_eth",
+        "server_time",
+        "system_status"
+      ]
+    },
+    "safe_key_scope_and_custody_model": {
+      "reason": "Official API-key documentation separates Trade from Withdraw permissions and supports binding up to 20 IP addresses per key. A trade key need not have Withdraw permission. This is a documented centralized-custody key model; account configuration, jurisdiction eligibility and actual order safeguards remain untested.",
+      "result": "PASS",
+      "source_ids": [
+        "docs_main#overview-api-key-creation-api-key-permissions",
+        "docs_main#overview-api-key-creation-api-key-security"
+      ]
+    }
+  },
+  "document_quotes": {
+    "docs_main#order-book-trading-algo-trading-post-place-algo-order": [
+      "The algo order includes trigger order, oco order, chase order, conditional order, twap order and trailing order.",
+      "only stop-loss logic will be performed and take-profit logic will be ignored."
+    ],
+    "docs_main#order-book-trading-market-data-get-candlesticks-history": [
+      "Retrieve history candlestick charts from recent years(It is last 3 months supported for 1s candlestick).",
+      "after String No Pagination of data to return records earlier than the requested ts",
+      "before String No Pagination of data to return records newer than the requested ts.",
+      "0: K line is uncompleted1: K line is completed"
+    ],
+    "docs_main#order-book-trading-trade-post-place-order": [
+      "For FUTURES/SWAP/OPTION orders, it refers to the number of contracts.",
+      "Notional value = sz \u00d7 ctVal \u00d7 markPx (linear contracts)",
+      "reduceOnly When placing an order with this parameter set to true, it means that the order will reduce the size of the position only"
+    ],
+    "docs_main#overview-api-key-creation-api-key-permissions": [
+      "Trade : Can place and cancel orders, funding transfer, make settings which need write permission",
+      "Withdraw : Can make withdrawals"
+    ],
+    "docs_main#overview-api-key-creation-api-key-security": [
+      "Each API key can bind up to 20 IP addresses"
+    ],
+    "docs_main#public-data-rest-api-get-instruments": [
+      "SWAP: Perpetual Futures",
+      "Face value of one contract. Denomination depends on ctType: for linear contracts, ctVal is in the base currency (e.g., ctVal=0.01 BTC for BTC-USDT-SWAP)",
+      "Users should use this endpoint together with fee rates endpoint to get the trading fee of a specific symbol.",
+      "Instruments REST endpoints and WebSocket channel will update `expTime` once the delisting announcement is published."
+    ],
+    "docs_main#trading-account-rest-api-get-fee-rates": [
+      "GET /api/v5/account/trade-fee",
+      "negative number, which means the rate of commission.",
+      "The Open API will not reflect zero-fee trading."
+    ],
+    "docs_main#trading-account-rest-api-set-leverage": [
+      "Set leverage for `SWAP` instruments under `isolated-margin` trade mode and buy/sell order placement mode at contract level."
+    ],
+    "fee_help_en": [
+      "Trader A (Maker fee: 0.02%; Taker fee: 0.05%)"
+    ],
+    "fee_page_en": [
+      "\"tabName\":\"Spot\""
+    ]
+  },
+  "final_score": null,
+  "provenance": {
+    "audit_namespace": "docs/exchange_selection_audit_v1",
+    "capture_environment": "Codex managed cloud, inherited HTTPS proxy and CA; no cookies, authentication, VPN or alternate routing; no automatic redirect following",
+    "facts_path": "docs/exchange_selection_audit_v1/evidence/okx/FACTS.json",
+    "frozen_manifest_sha256": "06556298d9f8041c493af5225740425cdfc51807566a322e2dd86f944b9c24d5",
+    "mode": "reuse_retained_official_receipts",
+    "no_new_collection_reason": "Existing official receipts were current and valid for bounded Stage 1 triage; original audit namespace has exact-membership freeze.",
+    "research_path": "docs/exchange_selection_audit_v1/evidence/okx/RESEARCH.md",
+    "source_index_path": "docs/exchange_selection_audit_v1/evidence/okx/SOURCE_INDEX.json"
+  },
+  "scope": "OKX only; public official evidence and documentation; no private or order requests",
+  "sources": {
+    "book_btc_1": {
+      "api_code": "0",
+      "http_status": 200,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/book_btc_1.body",
+      "raw_sha256": "73b63445fa77a46d4f633591d3dd2cfba621c0a19ced45d61a8a5d9a74c01a2c",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/book_btc_1.receipt.json",
+      "retrieval_utc": "2026-10-12T20:21:01.523267Z",
+      "url": "https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=400"
+    },
+    "book_btc_2": {
+      "api_code": "0",
+      "http_status": 200,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/book_btc_2.body",
+      "raw_sha256": "827ab70312dccc2170ddb7b3b6b9a2cdbef45a2d0c352ddf023e8defc6940ee9",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/book_btc_2.receipt.json",
+      "retrieval_utc": "2026-10-13T06:26:20.662317Z",
+      "url": "https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=400"
+    },
+    "book_eth_1": {
+      "api_code": "0",
+      "http_status": 200,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/book_eth_1.body",
+      "raw_sha256": "31e1862766484afa7c11705ee01fd56297f2ac8973e19676e9b1c98149b38a98",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/book_eth_1.receipt.json",
+      "retrieval_utc": "2026-10-12T20:21:01.576088Z",
+      "url": "https://www.okx.com/api/v5/market/books?instId=ETH-USDT-SWAP&sz=400"
+    },
+    "book_eth_2": {
+      "api_code": "0",
+      "http_status": 200,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/book_eth_2.body",
+      "raw_sha256": "dc06838c60ade99b3fdaf339742213354ef19d6475e18fc71e5eea95a45737f7",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/book_eth_2.receipt.json",
+      "retrieval_utc": "2026-10-13T06:26:20.704630Z",
+      "url": "https://www.okx.com/api/v5/market/books?instId=ETH-USDT-SWAP&sz=400"
+    },
+    "docs_main": {
+      "api_code": null,
+      "http_status": 200,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/docs_main.body",
+      "raw_sha256": "68eb4619b135c4a4e23500e5cd79f6def0f50eb61ff7b56c1b87f3249d7e474c",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/docs_main.receipt.json",
+      "retrieval_utc": "2026-10-12T20:21:19.020057Z",
+      "url": "https://www.okx.com/docs-v5/en/"
+    },
+    "fee_help_en": {
+      "api_code": null,
+      "http_status": 200,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/fee_help_en.body",
+      "raw_sha256": "f7ea4f2e998864091eefc7a57e4a06caac73aaca32d4e3cb441b181951788ece",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/fee_help_en.receipt.json",
+      "retrieval_utc": "2026-10-12T20:21:37.581095Z",
+      "url": "https://www.okx.com/en-us/help/trading-fee-rules-faq"
+    },
+    "fee_page_en": {
+      "api_code": null,
+      "http_status": 200,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/fee_page_en.body",
+      "raw_sha256": "5d33574b144bc0366ac2d00d641f9a382dc5021d8c502fa1a295dd2fac4be24f",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/fee_page_en.receipt.json",
+      "retrieval_utc": "2026-10-12T20:21:37.252582Z",
+      "url": "https://www.okx.com/en-us/fees"
+    },
+    "funding_history_btc": {
+      "api_code": "0",
+      "http_status": 200,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/funding_history_btc.body",
+      "raw_sha256": "dce0b8a973fbcc64ebc4a2dc9b5b14cd61c7d1a28005a211b6a7a95483f69f00",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/funding_history_btc.receipt.json",
+      "retrieval_utc": "2026-10-12T20:21:37.294509Z",
+      "url": "https://www.okx.com/api/v5/public/funding-rate-history?instId=BTC-USDT-SWAP&limit=2"
+    },
+    "funding_history_eth": {
+      "api_code": "0",
+      "http_status": 200,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/funding_history_eth.body",
+      "raw_sha256": "6b5508aa33b1c5e1edf0084e7b538615bd42c7f91d492827c258194952b605a4",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/funding_history_eth.receipt.json",
+      "retrieval_utc": "2026-10-12T20:21:37.290901Z",
+      "url": "https://www.okx.com/api/v5/public/funding-rate-history?instId=ETH-USDT-SWAP&limit=2"
+    },
+    "instrument_btc": {
+      "api_code": "0",
+      "http_status": 200,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/instrument_btc.body",
+      "raw_sha256": "1a6eeb4c4cc625067010d0110718feaee4a6f03becc60f661b800acb4f5ac4e2",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/instrument_btc.receipt.json",
+      "retrieval_utc": "2026-10-12T20:20:43.640902Z",
+      "url": "https://www.okx.com/api/v5/public/instruments?instType=SWAP&instId=BTC-USDT-SWAP"
+    },
+    "instrument_eth": {
+      "api_code": "0",
+      "http_status": 200,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/instrument_eth.body",
+      "raw_sha256": "5e5de901b73c7236f43fff8e6086cacac133d7d8cdbd02a7c229d865dbde784c",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/instrument_eth.receipt.json",
+      "retrieval_utc": "2026-10-12T20:20:43.738455Z",
+      "url": "https://www.okx.com/api/v5/public/instruments?instType=SWAP&instId=ETH-USDT-SWAP"
+    },
+    "m15_btc_now": {
+      "api_code": "0",
+      "http_status": 200,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/m15_btc_now.body",
+      "raw_sha256": "0693e8f1414143f702ab28c1a33bdb42395e66d1dd2c93074b9508f4715e75f9",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/m15_btc_now.receipt.json",
+      "retrieval_utc": "2026-10-12T20:21:01.491528Z",
+      "url": "https://www.okx.com/api/v5/market/candles?instId=BTC-USDT-SWAP&bar=15m&limit=2"
+    },
+    "m15_btc_old_after": {
+      "api_code": "0",
+      "http_status": 200,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/m15_btc_old_after.body",
+      "raw_sha256": "fb8d3eeaa3cce27a33dd49efb3ffa2b75801a4f88e9073d9cec4e419f8d8837e",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/m15_btc_old_after.receipt.json",
+      "retrieval_utc": "2026-10-12T20:21:01.366889Z",
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=15m&after=1728778500000&limit=2"
+    },
+    "m15_eth_now": {
+      "api_code": "0",
+      "http_status": 200,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/m15_eth_now.body",
+      "raw_sha256": "6347a7c25a3bb90a7d27ecb56cdc2d3046ecaccacbec31a1ddce33542c3df7d3",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/m15_eth_now.receipt.json",
+      "retrieval_utc": "2026-10-12T20:21:01.565625Z",
+      "url": "https://www.okx.com/api/v5/market/candles?instId=ETH-USDT-SWAP&bar=15m&limit=2"
+    },
+    "m15_eth_old_after": {
+      "api_code": "0",
+      "http_status": 200,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/m15_eth_old_after.body",
+      "raw_sha256": "a2cca20b05233dadc31226d068529a41e1ae1736f0b8e61124b18cd26ab17fc6",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/m15_eth_old_after.receipt.json",
+      "retrieval_utc": "2026-10-12T20:21:01.462927Z",
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=ETH-USDT-SWAP&bar=15m&after=1728778500000&limit=2"
+    },
+    "server_time": {
+      "api_code": "0",
+      "http_status": 200,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/server_time.body",
+      "raw_sha256": "29293ec272e92b4e9fca0a418ff6b64196a649e774cfaa95401fa539ef7b71b5",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/server_time.receipt.json",
+      "retrieval_utc": "2026-10-13T06:28:38.285313Z",
+      "url": "https://www.okx.com/api/v5/public/time"
+    },
+    "system_status": {
+      "api_code": "0",
+      "http_status": 200,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/system_status.body",
+      "raw_sha256": "fc24d69479edbb84f22c7d5bd4525349734056ad3baf7a5adf7e553f68c06a3a",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/system_status.receipt.json",
+      "retrieval_utc": "2026-10-13T06:28:38.962985Z",
+      "url": "https://www.okx.com/api/v5/system/status"
+    }
+  },
+  "stage": "Stage 1A hard-gate triage",
+  "stage1_limitations": [
+    "Current ordinary API SWAP fee remains unknown and may require account-applicable evidence.",
+    "Historical M15 point reachability does not establish continuous two-year coverage.",
+    "Historical instrument filter epochs, private controls and account/jurisdiction eligibility remain unverified."
+  ],
+  "status": "COMPLETE_WITH_UNKNOWNS",
+  "trade_entry_allowed": false,
+  "venue": "okx"
+}
