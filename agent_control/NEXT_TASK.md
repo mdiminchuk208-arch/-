@@ -1,107 +1,66 @@
-# Next Task — UNIFIED_EXCHANGE_LAYER_v1 Nonfinancial Freeze
+# Next Task — MACHINE_STRATEGY_v3 Qualification v1
 
-Continue from accepted `EXCHANGE_SELECTION_AUDIT_v1`:
-- freeze commit `ff20ac4bee75d605c0a7f4234fe74bb89a337fbf`
-- manifest SHA-256 `06556298d9f8041c493af5225740425cdfc51807566a322e2dd86f944b9c24d5`
-- decision `EXCHANGE_SELECTION_AUDIT_FROZEN_PASS`
-- reconciliation `agent_control/EXCHANGE_AUDIT_RECONCILIATION.md`
+Platform/site/unified-exchange-layer work is paused by user direction. The active goal is to finish the strategy first.
 
-Selected architecture:
-- research/validation: Bitget
-- future execution: BloFin
-- secondary execution: Kraken Futures
-- benchmark: OKX
+## Current truth
+`MACHINE_STRATEGY_v3` has a frozen design and implementation, but it is NOT yet a qualified trading strategy. Historical financial v3 execution was previously blocked because executable historical metadata/tick provenance and venue/data compatibility were not defensible enough. Therefore frozen/coded != validated/profitable/launch-ready.
 
-Preserve every frozen strategy and audit artifact. Do NOT redesign/tune `MACHINE_STRATEGY_v3`. Do NOT run historical strategy financial outcomes, generate OOS signals/trades, start an OOS clock, use private exchange credentials, place orders, or enable PAPER/LIVE.
+Preserve all frozen v3 strategy rules during this qualification gate. Do not tune rules from newly observed financial outcomes. If the frozen version fails, freeze the failure evidence and open a new explicit strategy-version design gate afterward.
 
 ## Objective
-Build the narrowest venue-neutral exchange/data layer needed to move Crypto Bot toward launch without rewriting the strategy core or website/product surfaces.
+Answer whether frozen `MACHINE_STRATEGY_v3` is a defensible trading candidate using realistic BTC/ETH perpetual data and execution assumptions, before doing platform work.
 
-The layer must provide explicit typed contracts for public market data/metadata and inert account/order/position boundaries, then bind selected venues in later staged batches. Unknown units/epochs/permissions must fail closed rather than be guessed.
+## Venue/data scope
+The original project exchange set remains Bybit, Bitget, BloFin and MEXC. Do not expand the strategy/product venue set merely because the broader architecture audit examined more venues.
 
-## Required architecture
+For validation evidence, prefer Bitget public BTC/ETH USDT perpetual data where it is reproducible and sufficiently documented. Other retained sources may be used only as independent references, not to change the user's intended live venue set.
 
-1. Venue-neutral exact-decimal contracts for:
-   - venue/product identity;
-   - candle/bar with completed/open semantics;
-   - instrument metadata with tick/lot/minimum/current-known-at provenance;
-   - mark/index/funding observations;
-   - orderbook snapshots with explicit price/size units;
-   - timestamp provenance separating exchange event/server time, receipt time, retrieved_at and known_at.
+## Qualification sequence
 
-2. Inert typed contracts for:
-   - account/balance;
-   - order intent/state;
-   - fill;
-   - position;
-   - margin/leverage/protective-order capabilities.
+### Stage A — pre-outcome readiness
+Before any new v3 financial outcome is read:
+1. verify exact frozen v3 spec/runner/code hashes and identify all inputs that affect fills, stops, targets, fees, funding, tick/lot rounding and causality;
+2. define exact BTC/ETH perpetual product identities and validation date range;
+3. verify continuous M15 data path and timestamp/completed-bar semantics;
+4. resolve historical tick/lot/filter treatment. Never backdate current metadata. If historical epochs cannot be recovered, preregister a conservative compatibility rule/version BEFORE financial outcomes or STOP;
+5. freeze fee/slippage/funding assumptions from evidence, not later P&L;
+6. freeze qualification metrics and pass/fail rules before financial execution, reusing already-frozen criteria where they exist instead of inventing post-outcome thresholds;
+7. verify no-lookahead/prefix causality and deterministic replay readiness.
 
-3. Authorization boundary:
-   - private authentication and actual order transport are forbidden in this gate;
-   - any direct private/order execution entrypoint must fail deterministically before network I/O;
-   - `trade_entry_allowed=false`, PAPER=false, LIVE=false enforced at API boundaries, not only UI/CLI wrappers.
+### Stage B — one-shot historical financial validation
+Only after Stage A PASS, explicitly authorize and execute one deterministic frozen-v3 historical validation on the preregistered development period. No parameter search or tuning during/after the run inside this version.
 
-4. Selected-venue compatibility facts must remain explicit:
-   - Bitget primary research;
-   - BloFin future execution with one-way/reduce-only caveat;
-   - Kraken Futures conditional secondary with USD multi-collateral/product differences;
-   - OKX benchmark with ordinary API SWAP fee still unresolved;
-   - no historical tick/filter epochs are to be invented or backdated.
+Report at minimum:
+- CLOSED trades;
+- Winrate;
+- gross/net P&L in R and cash-normalized form where supported;
+- Profit Factor;
+- Expectancy;
+- Avg R:R / payoff;
+- Max Drawdown;
+- max loss streak;
+- fees, slippage and funding contribution;
+- LONG vs SHORT;
+- BTC vs ETH;
+- setup family;
+- market regime where available.
 
-5. Public adapters in later batches must use pinned exchange-audit receipts first and bounded new public probes only when a concrete contract gap requires them. No alternate routing to evade 403/451 restrictions.
+### Stage C — robustness and decision
+Run deterministic robustness checks and independent review. Explicitly test whether apparent edge survives realistic cost and execution sensitivity and whether performance is concentrated in one direction/setup/coin/time slice.
 
-6. Existing website/product surfaces should remain exchange-agnostic behind this layer: Dashboard, Scanner, Portfolio, Journal, Stats, Backtest UI, Settings, alerts, Audit Log, Safe Mode, STOP AUTO TRADING and CLOSE ALL.
+Publish exactly one:
+- `MACHINE_STRATEGY_V3_QUALIFIED_PASS` — only if the frozen v3 demonstrates a defensible positive edge and robustness under the preregistered rules;
+- `MACHINE_STRATEGY_V3_QUALIFIED_FAIL` — freeze exact failure evidence and open a new strategy-version design gate;
+- `MACHINE_STRATEGY_V3_QUALIFICATION_STOP` — if evidence/data/metadata is still insufficient for a fair financial test.
 
-## Required namespace
-Create `docs/unified_exchange_layer_v1/` and progressively populate:
-- `UNIFIED_EXCHANGE_LAYER_SPEC.md`
-- contract/schema registry
-- `VENUE_BINDINGS.json`
-- `COMPATIBILITY_GAPS.json`
-- `PUBLIC_ADAPTER_EVIDENCE.json`
-- `AUTHORIZATION_BOUNDARY.md`
-- `BACKEND_MIGRATION_MAP.md`
-- `CONTROL_PLANE_MIGRATION_PLAN.md`
-- `CAUSALITY_AND_REPLAY_REPORT.md`
-- `INDEPENDENT_REVIEW.md`
-- `QA_REPORT.md`
-- machine-readable QA receipt
-- `freeze_manifest.json`
+PASS does not mean LIVE-ready. It opens pristine OOS/forward validation next.
 
-## QA requirements
-By final freeze, cover at minimum:
-- exact decimal/tick/lot handling;
-- product/unit mismatch rejection;
-- unknown-unit/unknown-epoch fail-closed;
-- completed-bar and known_at causality;
-- timestamp-domain separation;
-- deterministic fixture replay;
-- source/hash consistency;
-- HTTP/application error handling for public adapters;
-- direct private/order calls fail before network side effects;
-- no strategy runner/OOS/PAPER/LIVE invocation;
-- protected frozen artifacts invariant;
-- Ruff/format, mypy and compile for new code;
-- independent reviewer PASS.
+## Safety
+- No platform/site work unless strictly required for strategy validation.
+- No private trading API/order placement.
+- No OOS clock until qualification and separate registration.
+- PAPER=false.
+- LIVE=false.
+- `trade_entry_allowed=false`.
 
-Do not claim inherited full-suite PASS unless actually run and safe; preserve prior documented phase-pinned failures.
-
-## Workflow / allowance policy
-Execution is SERIAL-FIRST:
-- normally one active specialist;
-- hard ceiling two threads, second only for independent verification/review;
-- medium reasoning for routine implementation/collection;
-- high reasoning only for critical final review if needed;
-- narrow context and checkpoint every batch;
-- never launch the full configured agent catalog mechanically.
-
-`agent_control/CURRENT_BATCH.md` is authoritative for the currently allowed subset. Do not execute later stages automatically.
-
-## Decision
-Final gate may publish only:
-- `UNIFIED_EXCHANGE_LAYER_FROZEN_PASS`, or
-- `UNIFIED_EXCHANGE_LAYER_FROZEN_STOP` with exact blockers.
-
-PASS opens a separate venue-specific v3 compatibility freeze. It does NOT authorize financial evaluation, OOS, PAPER or LIVE.
-
-`trade_entry_allowed=false` remains invariant.
+`agent_control/CURRENT_BATCH.md` defines the currently allowed atomic subset. Do not skip ahead automatically.
