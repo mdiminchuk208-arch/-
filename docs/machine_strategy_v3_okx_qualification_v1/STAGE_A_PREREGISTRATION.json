@@ -1,0 +1,69 @@
+{
+  "LIVE": false,
+  "PAPER": false,
+  "costs": {
+    "financial_cost_model_status": "UNRESOLVED_REQUIRES_EVIDENCE_OR_EXPLICIT_VERSIONED_POLICY",
+    "frozen_core_fee_per_leg": "0.0006",
+    "frozen_core_funding": null,
+    "frozen_core_slippage_per_leg": "0.0002",
+    "historical_funding_series_confirmed": false,
+    "ordinary_OKX_API_fee_confirmed": false,
+    "unknown_as_zero_forbidden": true
+  },
+  "date_policy": "Two complete UTC years ending fixed campaign day; exactly365dayswarmup. Calendar-only choice before outcomes; all historical bytes development-exposed, never pristine OOS.",
+  "development_start": "2024-10-13T00:00:00Z",
+  "end_exclusive": "2026-10-13T00:00:00Z",
+  "financial_outcomes_seen": false,
+  "historical_financial_authorized": false,
+  "historical_tick_policy": {
+    "conservative_rule_must_not_be_claimed_exact_frozen_v3_or_source_epoch": true,
+    "current_filters_backdating_forbidden": true,
+    "fake_verified_epoch_forbidden": true,
+    "price_decimals_or_OHLC_gcd_not_epoch_proof": true,
+    "status": "UNRESOLVED"
+  },
+  "metrics_contract": {
+    "drawdown": "Chronological closed-case netR ledger, simultaneousexit tiescanonicalcaseid; not simulated tradableportfolioequity",
+    "risk": "One constant modeled cash-stop unit percase; no compounding/portfolio equity or liquidity/leverage qualification claim",
+    "sample": "All frozen family/coin/direction cases; no removal of adverse groups; pendingexpiry separately, unknownfilledexits blockqualification",
+    "threshold_rationale": "WR user-fixed; other strict fixed capital-protection/sample/concentration targets selected before outcomes, not learned or swept; insufficient sample is FAIL/INCONCLUSIVE, never rule tuning",
+    "win": "CLOSED with net_R>0 after fees,slippage and signedfunding; zeros retained denominator"
+  },
+  "parent_exchange_manifest_sha256": "06556298d9f8041c493af5225740425cdfc51807566a322e2dd86f944b9c24d5",
+  "products": [
+    "BTC-USDT-SWAP",
+    "ETH-USDT-SWAP"
+  ],
+  "protected_code_sha256": {
+    "scripts/machine_strategy_v2_core.py": "d6b0560e7db1691a0fc3de2fd05eb02aeee127e0b1cf105190d896ef61a7ae69",
+    "scripts/machine_strategy_v3_contracts.py": "d369887fe24cd63c2bf178305f3616f56a66c07bb50b79390acc8065ff7bb7b1",
+    "scripts/machine_strategy_v3_guarded_runner.py": "d1ac5407902ec22cac1e66a943cc610bcc1023b7c72290e55c09c73a1cffb0b8",
+    "scripts/machine_strategy_v3_historical_adapter.py": "ed4091e385d4b7ed61bbf6680c56806b618bdf74d63a37b73c37d681a8874150",
+    "scripts/original_v1_1_financial_data.py": "a6c279dc215570c242f80b5df565fa1d37366ce85f79324d302f643359778f3b"
+  },
+  "qualification": {
+    "case_ledger_max_drawdown_R_max": "20",
+    "closed_trades_min": 200,
+    "coin_and_direction_closed_min": 30,
+    "doubled_cost_profit_factor_min": "1.00",
+    "doubled_total_fees_and_slippage_net_positive": true,
+    "each_coin_and_direction_net_positive": true,
+    "filled_unknown_exit_max": 0,
+    "largest_calendar_quarter_profit_share_max": "0.50",
+    "largest_coin_profit_share_max": "0.80",
+    "max_consecutive_net_losses_max": 10,
+    "net_PnL_cash_risk_units_min_exclusive": "0",
+    "net_expectancy_R_min_exclusive": "0",
+    "no_critical_causality_or_integrity_failure": true,
+    "profit_factor_min": "1.20",
+    "wilson_95pct_win_rate_lower_bound_min": "0.60",
+    "win_rate_min": "0.70"
+  },
+  "qualification_policy_class": "PROJECT_POLICY_PRE_OUTCOME_NOT_SOURCE_RULE",
+  "stage_A_ready": false,
+  "strategy_rules_changed": false,
+  "trade_entry_allowed": false,
+  "venue": "OKX",
+  "version": "MACHINE_STRATEGY_v3_OKX_QUALIFICATION_v1_STAGE_A",
+  "warmup_start": "2023-10-14T00:00:00Z"
+}

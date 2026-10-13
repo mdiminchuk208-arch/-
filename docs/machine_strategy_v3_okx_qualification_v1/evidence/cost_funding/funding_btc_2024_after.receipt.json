@@ -1,0 +1,14 @@
+{
+  "url": "https://www.okx.com/api/v5/public/funding-rate-history?instId=BTC-USDT-SWAP&after=1728777600000&limit=2",
+  "retrieval_utc": "2026-10-13T18:05:39.985690+00:00",
+  "method": "GET",
+  "redirect_followed": false,
+  "http_status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "location": null,
+  "truncated": false,
+  "raw_bytes": 31,
+  "raw_sha256": "fc24d69479edbb84f22c7d5bd4525349734056ad3baf7a5adf7e553f68c06a3a",
+  "raw_path": "docs/machine_strategy_v3_okx_qualification_v1/evidence/cost_funding/funding_btc_2024_after.body",
+  "api_code": "0"
+}

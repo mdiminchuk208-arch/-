@@ -1,0 +1,14 @@
+{
+  "url": "https://www.okx.com/priapi/v5/broker/public/trade-data/instruments?instType=SWAP",
+  "retrieval_utc": "2026-10-13T18:06:52.082439+00:00",
+  "method": "GET",
+  "redirect_followed": false,
+  "http_status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "location": null,
+  "truncated": false,
+  "raw_bytes": 8309,
+  "raw_sha256": "91d1c8732c6281b5ffd49d55cfb37d208d074c577b686fb30cca001a7f319870",
+  "raw_path": "docs/machine_strategy_v3_okx_qualification_v1/evidence/cost_funding/okx_archive_swap_instruments.body",
+  "api_code": "0"
+}

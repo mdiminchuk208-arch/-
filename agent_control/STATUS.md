@@ -51,3 +51,9 @@ Production candidate: NONE.
 PAPER_TRADING_READY=false.
 REAL_TRADING_READY=false.
 trade_entry_allowed=false.
+
+## Stage A checkpoint — OKX Qualification v1
+
+Pre-outcome readiness in progress under docs/machine_strategy_v3_okx_qualification_v1/. STAGE_A_PREREGISTRATION.json pins the two complete UTC development years 2024-10-13→2026-10-13, 365-day warmup from 2023-10-14, WR>=70% and other fixed qualification thresholds before any financial outcome. Eleven new public-data integrity tests pass; new collector uses exact Decimal, confirm=1, exclusive historical pagination, continuity rejection, append-only raw receipts and resumable checkpoints. It imports no strategy/outcome runner. Frozen runner is Bybit-bound with fixed modeled fees/slippage and funding=null; no silent OKX substitution or financial authorization. Ordinary OKX API SWAP fee and historical epochs still unresolved. Official historical funding archive lead is being checked with one scoped cost specialist.
+
+Next autonomous action: acquire/verify continuous native OKX M15, recover official funding archive and historical tick/lot treatment; independently audit Stage A, then freeze PASS or exact blockers before financial access. PAPER/LIVE=false; trade_entry_allowed=false.

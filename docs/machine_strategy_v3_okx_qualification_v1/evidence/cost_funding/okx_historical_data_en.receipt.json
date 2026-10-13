@@ -1,0 +1,13 @@
+{
+  "url": "https://www.okx.com/en-us/historical-data",
+  "retrieval_utc": "2026-10-13T18:05:52.705018+00:00",
+  "method": "GET",
+  "redirect_followed": false,
+  "http_status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "location": null,
+  "truncated": false,
+  "raw_bytes": 60027,
+  "raw_sha256": "908e5670392160ea1e3e1d6e1ed6243e10fb79f0abf7238b791c3a82bcfaa184",
+  "raw_path": "docs/machine_strategy_v3_okx_qualification_v1/evidence/cost_funding/okx_historical_data_en.body"
+}

@@ -1,0 +1,13 @@
+{
+  "url": "https://www.okx.com/cdn/assets/okfe/broker-center/assets/brokerHistory-79YS5Hwe.js",
+  "retrieval_utc": "2026-10-13T18:06:16.223019+00:00",
+  "method": "GET",
+  "redirect_followed": false,
+  "http_status": 200,
+  "content_type": "application/javascript",
+  "location": null,
+  "truncated": false,
+  "raw_bytes": 31736,
+  "raw_sha256": "011dca73c164d5ca2e208637cce4e7c5d4009caac80a15e1116a1a25da3cfc40",
+  "raw_path": "docs/machine_strategy_v3_okx_qualification_v1/evidence/cost_funding/okx_historical_data_app_js.body"
+}

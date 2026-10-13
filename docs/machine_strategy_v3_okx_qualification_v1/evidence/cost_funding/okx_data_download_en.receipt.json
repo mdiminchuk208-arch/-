@@ -1,0 +1,13 @@
+{
+  "url": "https://www.okx.com/en-us/data-download",
+  "retrieval_utc": "2026-10-13T18:05:54.005564+00:00",
+  "method": "GET",
+  "redirect_followed": false,
+  "http_status": 404,
+  "content_type": "text/html; charset=utf-8",
+  "location": null,
+  "truncated": false,
+  "raw_bytes": 55692,
+  "raw_sha256": "ce4546f6045e4258c0862dbed3c5f8656b06b3cb414250036e1261738cf9b6b2",
+  "raw_path": "docs/machine_strategy_v3_okx_qualification_v1/evidence/cost_funding/okx_data_download_en.body"
+}
