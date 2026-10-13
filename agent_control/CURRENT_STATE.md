@@ -1,7 +1,7 @@
 # Current State
 
 Branch: `machine-v3-research`.
-Prior full-attempt artifact preserved: **EXCHANGE_SELECTION_AUDIT_v1**. Active task is the newer OKX-only Stage 1A batch; the prior result is not used to bypass that checkpoint/STOP.
+Prior full-attempt artifact preserved: **EXCHANGE_SELECTION_AUDIT_v1**. The newer OKX-only Stage 1A batch is now complete with unknowns; the prior result is not used to bypass that checkpoint/STOP.
 Decision: `EXCHANGE_SELECTION_AUDIT_FROZEN_PASS` — conditional nonfinancial architecture selection only.
 Freeze commit: `ff20ac4bee75d605c0a7f4234fe74bb89a337fbf`.
 Namespace: `docs/exchange_selection_audit_v1/`.
@@ -41,3 +41,5 @@ Protected freezes remain immutable:
 - v3 prospective readiness `fdf5b95e34c724ab73e8f3e64d36aed562ad965b`, manifest `b96797ec01575303b6d4c0170f0683554386f53569ef41ad38ed3f91cf7fe45d`
 - adapter SHA-256 `ed4091e385d4b7ed61bbf6680c56806b618bdf74d63a37b73c37d681a8874150`
 - runner SHA-256 `d1ac5407902ec22cac1e66a943cc610bcc1023b7c72290e55c09c73a1cffb0b8`
+
+Current batch completion: EXCHANGE_SELECTION_AUDIT_V1_STAGE_1A_OKX_COMPLETE. Published checkpoint commit: 0509a0d4a72a41ca9b741f5bc7dabde3f7449465. Six criteria PASS, ordinary API SWAP fee UNKNOWN; root source/hash QA PASS. Durable checkpoint at docs/exchange_selection_checkpoints_v1/okx.json; original exact-membership freeze remains intact. Exactly one new medium venue specialist, no new collection/scores/other venue research. STOP after publication; no automatic next batch or gate.

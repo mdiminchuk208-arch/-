@@ -1,0 +1,24 @@
+{
+  "actual_specialist": "/root/venue_okx_stage1_checkpoint",
+  "all_criterion_source_ids_resolve": true,
+  "context": "narrow, OKX evidence plus triage instructions",
+  "criteria_checked": 7,
+  "historical_continuity_not_claimed": true,
+  "model": "gpt-6-sol",
+  "new_cross_venue_review_run": false,
+  "no_new_network_collection_or_scores": true,
+  "no_private_orders_strategy_outcomes_or_OOS": true,
+  "original_audit_manifest_sha256": "06556298d9f8041c493af5225740425cdfc51807566a322e2dd86f944b9c24d5",
+  "reasoning": "medium",
+  "receipt_HTTP_URL_time_and_raw_SHA_match": true,
+  "results": {
+    "FAIL": 0,
+    "PASS": 6,
+    "UNKNOWN": 1
+  },
+  "role": "venue_researcher",
+  "source_hashes_checked": 17,
+  "status": "PASS_FOR_OKX_STAGE1_CHECKPOINT_STRUCTURE_AND_SOURCE_INTEGRITY",
+  "trade_entry_allowed": false,
+  "unknown_fees_not_substituted": true
+}

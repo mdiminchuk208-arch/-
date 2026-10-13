@@ -1,0 +1,12 @@
+{
+  "artifacts": {
+    "docs/exchange_selection_checkpoints_v1/OKX_STAGE1_QA_RECEIPT.json": "2248ef546d5f11a5af44d79cd00ff8dafddf0bb3acf661d00e20a1dff1626398",
+    "docs/exchange_selection_checkpoints_v1/okx.json": "d0a4e8093af463d97d7d1fa23f98a1ed1dcbe6b2ff9437e2978c4a3bfcface89"
+  },
+  "checkpoint_commit": "0509a0d4a72a41ca9b741f5bc7dabde3f7449465",
+  "checkpoint_location_exception": "outside sealed exact-membership audit namespace to preserve original freeze",
+  "frozen_source_manifest_sha256": "06556298d9f8041c493af5225740425cdfc51807566a322e2dd86f944b9c24d5",
+  "stage": "EXCHANGE_SELECTION_AUDIT_V1_STAGE_1A_OKX",
+  "status": "COMPLETE_WITH_UNKNOWNS",
+  "trade_entry_allowed": false
+}

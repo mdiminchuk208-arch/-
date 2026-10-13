@@ -1,6 +1,6 @@
 # Agent Status
 
-State: EXCHANGE_SELECTION_AUDIT_V1_STAGE_1A_OKX_OPEN
+State: EXCHANGE_SELECTION_AUDIT_V1_STAGE_1A_OKX_COMPLETE
 Branch: `machine-v3-research`.
 
 Latest completed gate: MACHINE_STRATEGY_v3 Prospective Data/Metadata Capture + OOS Registration Readiness Freeze.
@@ -50,3 +50,9 @@ trade_entry_allowed=false.
 Before receipt of remote scope change `4435687`, the resumed older task produced audit freeze commit `ff20ac4bee75d605c0a7f4234fe74bb89a337fbf`, manifest `06556298d9f8041c493af5225740425cdfc51807566a322e2dd86f944b9c24d5`, plus additive timestamp note/review. Its internal decision is conditional architecture PASS, with 30 targeted tests and 18-output replay. These bytes and all prior evidence are preserved. No new ranking/review is run by the current OKX batch, and the prior proposed Unified Exchange Layer gate is NOT open under the newly received batch directive. The full audit result awaits reconciliation with the current serial runbook; no trading or financial authorization follows from it.
 
 The requested checkpoint directory was inside this already-sealed exact-membership namespace. To preserve the immutable freeze, the same OKX checkpoint is stored at `docs/exchange_selection_checkpoints_v1/okx.json`; CURRENT_BATCH records this mechanical location adjustment. No source/scoring rule is changed.
+
+## Completed current batch — STOP
+
+OKX-only checkpoint commit `0509a0d4a72a41ca9b741f5bc7dabde3f7449465` is published with explicit unknowns: six Stage-1 criteria PASS; ordinary API SWAP fee UNKNOWN. Retained illustrative 0.02%/0.05% figures are not adopted as fees. Native old M15 rows establish point reachability, not continuous history or tick epochs. Exactly one new medium-reasoning venue_researcher identity (`/root/venue_okx_stage1_checkpoint`, gpt-6-sol) reused official OKX receipts with narrow context; no new HTTP collection, other-venue research, ranking, cross-venue review or final review was run under this batch. Root verified all seven criteria, cited receipt/raw hashes, HTTP/URL/retrieval fields and unknown handling. Checkpoint/QA/manifest: `docs/exchange_selection_checkpoints_v1/`.
+
+Per CURRENT_BATCH, stop after commit/push; do not begin Binance or Unified Exchange Layer. NEXT_TASK still describes the full audit; further execution waits for the next batch instruction. PAPER/LIVE/private exchange APIs, strategy financial runs and OOS clock remain prohibited; trade_entry_allowed=false.
