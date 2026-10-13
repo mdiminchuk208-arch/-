@@ -10,18 +10,32 @@ The user delegates routine project sequencing, technical architecture choices, g
 ## Immutable strategy rule
 Treat the frozen v3 strategy rules as immutable through the launch path. Venue-specific adaptation may change only exchange/data/execution parameters and adapters under an explicit pre-outcome compatibility freeze. Never tune strategy rules because a venue/backtest result looks better or worse.
 
+## Usage-efficiency policy
+The configured specialist catalog may remain broad, but simultaneous agent use must be economical:
+
+- normal gate target: **4–6 active agents**;
+- hard concurrency ceiling: **8 threads**;
+- never launch agents merely because capacity exists;
+- batch independent venue/source research, then stop those workers before synthesis/review;
+- routine venue/source collection should use **medium reasoning** where configured;
+- **high reasoning** is reserved for key synthesis, statistical/robustness analysis, security/execution audits, red-team review, and final independent review;
+- avoid repeatedly loading large frozen strategy namespaces into venue/data workers unless strictly required;
+- reuse pinned evidence, receipts, hashes, summaries and prior artifacts rather than recollecting/re-reading them without cause;
+- if a smaller competent team can close a gate, prefer it even if a larger team might be marginally faster;
+- preserving Work/Codex allowance is part of launch efficiency: speed means useful progress per allowance, not maximum parallelism.
+
 ## Current gate
 `EXCHANGE_SELECTION_AUDIT_v1` remains the active gate and must finish before any new 365-day prospective capture clock is started.
 
 ### Acceleration policy for the exchange audit
-Parallelize independent research aggressively while keeping synthesis/review independent:
+Parallelize independent research selectively while keeping synthesis/review independent:
 
-- launch separate `venue_researcher` workers for individual venues when practical (OKX, Binance Futures, Hyperliquid, Gate, Bitget, Bybit, KuCoin Futures, BloFin, MEXC, Kraken derivatives/futures, Coinbase International/perpetual venue, Deribit, plus any newly discovered credible candidate);
-- use `cost_funding_auditor`, `historical_data_engineer`, `market_microstructure_auditor`, `execution_auditor`, `tick_metadata_researcher`, `api_reliability_auditor`, and `exchange_security_auditor` for cross-venue verification;
+- use `venue_researcher` workers for grouped or individual venues where this materially improves evidence collection;
+- do not run all venue workers simultaneously by default; keep the normal total active team within 4–6 and never exceed 8;
+- use `cost_funding_auditor`, `historical_data_engineer`, `market_microstructure_auditor`, `execution_auditor`, `tick_metadata_researcher`, `api_reliability_auditor`, and `exchange_security_auditor` for cross-venue verification as needed;
 - use `statistics_robustness_analyst` for deterministic scoring/sensitivity;
 - use `exchange_adapter_architect` and `platform_backend_architect` only to assess migration/architecture cost after objective venue evidence is collected;
 - use `overfit_red_team` and `final_independent_reviewer` as independent challenge/seal;
-- use up to the configured 16 parallel threads when tasks are genuinely independent; do not create agents merely to inflate headcount;
 - one implementation/writer path at a time; reviewers remain read-only.
 
 ## Fixed launch sequence after exchange selection
