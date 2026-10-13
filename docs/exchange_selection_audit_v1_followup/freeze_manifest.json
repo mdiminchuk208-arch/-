@@ -1,0 +1,14 @@
+{
+  "artifacts": {
+    "docs/exchange_selection_audit_v1/freeze_manifest.json": "06556298d9f8041c493af5225740425cdfc51807566a322e2dd86f944b9c24d5",
+    "docs/exchange_selection_audit_v1_followup/INDEPENDENT_TIMESTAMP_REVIEW.md": "f40735591d5c11359819bbdcd479c49324496b8acf07eb58dd8e9664daab6a05",
+    "docs/exchange_selection_audit_v1_followup/TIMESTAMP_SEMANTICS_NOTE.md": "8d188e271ce39ee01f20d1ba1b191e830de5b631f2a7afa24e06c43238227fda"
+  },
+  "audit_freeze_commit": "ff20ac4bee75d605c0a7f4234fe74bb89a337fbf",
+  "audit_manifest_sha256": "06556298d9f8041c493af5225740425cdfc51807566a322e2dd86f944b9c24d5",
+  "decision": "CONDITIONAL_ARCHITECTURE_PASS_UNCHANGED",
+  "financial_or_causal_use_of_Kraken_CI_time_utc_authorized": false,
+  "original_freeze_modified": false,
+  "stage": "EXCHANGE_SELECTION_AUDIT_v1_TIMESTAMP_SEMANTICS_FOLLOWUP",
+  "trade_entry_allowed": false
+}
