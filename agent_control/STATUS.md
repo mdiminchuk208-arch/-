@@ -1,6 +1,6 @@
 # Agent Status
 
-State: EXCHANGE_SELECTION_AUDIT_V1_TASK_OPEN
+State: EXCHANGE_SELECTION_AUDIT_V1_STAGE_1A_OPEN
 Branch: `machine-v3-research`.
 
 Latest completed gate: MACHINE_STRATEGY_v3 Prospective Data/Metadata Capture + OOS Registration Readiness Freeze.
@@ -9,27 +9,37 @@ Prospective freeze commit: `fdf5b95e34c724ab73e8f3e64d36aed562ad965b`.
 Namespace: `docs/machine_strategy_v3_prospective_readiness/`.
 Manifest SHA-256: `b96797ec01575303b6d4c0170f0683554386f53569ef41ad38ed3f91cf7fe45d`.
 
-The previously opened Bybit-only Prospective Capture Activation + Control Plane v2 task was not executed and is superseded before implementation by `EXCHANGE_SELECTION_AUDIT_v1` at the user's explicit direction.
+Primary project directive remains launch-first: earliest safe evidence-backed Crypto Bot launch, with frozen `MACHINE_STRATEGY_v3` rules preserved and no speculative strategy redesign during the launch path.
 
-Project directive: `agent_control/LAUNCH_DIRECTIVE.md` is active. Primary objective is the earliest safe evidence-backed Crypto Bot launch. Frozen `MACHINE_STRATEGY_v3` rules must not be redesigned/tuned during the launch path. Routine sequencing, technical architecture choices, gate creation, and reviewer selection are delegated to the project lead; escalate only user-required external/account/capital/credential/live-authorization choices.
+## Allowance policy
+The orchestration catalog still contains 22 specialist roles, but execution is SERIAL-FIRST:
+- default one active specialist at a time;
+- hard concurrency ceiling two agent threads;
+- second thread only for genuinely independent verification/review;
+- at most one `venue_researcher` at a time;
+- routine collection medium reasoning with narrow context;
+- high reasoning reserved for critical synthesis/audit/red-team/final-review work;
+- durable checkpoints prevent repeated evidence collection.
 
-Orchestration catalog still contains 22 specialist roles, but allowance policy is now SERIAL-FIRST: default one active specialist at a time, hard concurrency ceiling two agent threads, and at most one `venue_researcher` at a time. The second thread is reserved for genuinely independent verification/review, not duplicate collection. Venue/source evidence is processed in small durable batches with narrow context. Routine collection remains medium reasoning where configured; high reasoning remains available for critical synthesis/audit/red-team/final-review work. This supersedes all earlier 4/8/16-thread policies after observed disproportionate Work/Codex allowance consumption.
+This supersedes all earlier 4/8/16-thread policies after observed disproportionate Work/Codex allowance consumption.
 
-The latest cloud run was stopped after excessive allowance consumption. No unfinished cloud result is treated as frozen evidence. Resume the preregistered exchange audit using the serial-first policy and checkpoint after each completed venue/evidence batch.
+## Active exchange-selection gate
+The full frozen requirements remain in `agent_control/NEXT_TASK.md` and the preregistered scoring/probe protocol remains unchanged:
+`docs/exchange_selection_audit_v1/SCORING_PREREGISTRATION.json`, SHA-256 `ab7add22e1ab5efd543499729c431e03fda1fd6f213063c94bbbf6614e9ce699`.
 
-Rationale for the current gate: Bybit public market-data/instrument endpoints are blocked with HTTP403 in the current research environment, historical tick provenance remains unresolved, and the user requires a wider venue search that explicitly prioritizes lower bot/API fees as well as data/API quality. Starting a 365-day Bybit-only prospective clock before selecting the best venue would create avoidable lock-in.
+Execution is now staged by `agent_control/EXCHANGE_AUDIT_RUNBOOK.md` to reduce allowance without weakening final independent verification.
 
-The open gate audits at minimum OKX, Binance Futures, Hyperliquid, Gate, Bitget, Bybit, KuCoin Futures, BloFin, MEXC, Kraken derivatives/futures, Coinbase International where applicable, and Deribit where applicable.
+### Current batch
+`agent_control/CURRENT_BATCH.md` opens Stage 1A only:
+1. OKX hard-gate triage;
+2. Binance Futures hard-gate triage;
+3. one `venue_researcher`, sequentially, medium reasoning;
+4. checkpoint each venue under `docs/exchange_selection_audit_v1/checkpoints/`;
+5. stop after Stage 1A and do not automatically continue into more venues.
 
-The audit must freeze two separate rankings:
-- Research / Validation Venue
-- Future Execution Venue
+If allowance pressure or a blocker appears after OKX, persist the OKX checkpoint and stop rather than repeating work.
 
-Primary comparison dimensions: API-specific maker/taker fees and normalized round-trip cost, funding-data capability, public historical data/tick metadata provenance, public endpoint accessibility, liquidity/spread/depth/slippage, bot order/margin/SL-TP functionality, API permissions/safety, rate limits and operational reliability.
-
-No strategy financial outcome may be run/read. No prospective OOS clock may start until exchange selection is frozen and a later capture-registration gate explicitly opens it.
-
-Required core functions remain available and are invoked sequentially as needed: cost_funding_auditor, historical_data_engineer, market_microstructure_auditor, execution_auditor, tick_metadata_researcher, statistics_robustness_analyst, overfit_red_team, final_independent_reviewer. Additional launch roles remain available only when relevant: venue_researcher, api_reliability_auditor, exchange_security_auditor, exchange_adapter_architect, platform_backend_architect, devops_observability_engineer, risk_controls_auditor.
+No interrupted cloud result is treated as frozen evidence. No strategy financial outcome may be run/read. No prospective OOS clock may start until exchange selection is frozen and a later capture-registration gate explicitly opens it.
 
 Protected freezes remain immutable:
 - baseline `ba65e91c2b1675f48e80ac785bb3adf89d17bb0b`
@@ -45,5 +55,3 @@ Production candidate: NONE.
 PAPER_TRADING_READY=false.
 REAL_TRADING_READY=false.
 trade_entry_allowed=false.
-
-Exchange audit scoring/probe protocol preregistered before venue collection: `docs/exchange_selection_audit_v1/SCORING_PREREGISTRATION.json`, SHA-256 `ab7add22e1ab5efd543499729c431e03fda1fd6f213063c94bbbf6614e9ce699`. Fixed weights/missing-data penalties/hard gates/sensitivity; no interrupted cloud result is being promoted as evidence.
