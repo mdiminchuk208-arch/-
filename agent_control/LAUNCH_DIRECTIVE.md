@@ -10,34 +10,33 @@ The user delegates routine project sequencing, technical architecture choices, g
 ## Immutable strategy rule
 Treat the frozen v3 strategy rules as immutable through the launch path. Venue-specific adaptation may change only exchange/data/execution parameters and adapters under an explicit pre-outcome compatibility freeze. Never tune strategy rules because a venue/backtest result looks better or worse.
 
-## Usage-efficiency policy
-The configured specialist catalog may remain broad, but simultaneous agent use must be economical. Work/Codex allowance is a launch resource and must be protected.
+## Usage-efficiency policy — serial first
+The configured specialist catalog may remain broad, but simultaneous agent use must be minimal. Work/Codex allowance is a launch resource and must be protected.
 
-- normal gate target: **2–3 active agents**;
-- hard concurrency ceiling: **4 threads**;
-- at most **2 venue_researcher workers concurrently**;
-- never launch agents merely because capacity exists;
-- process exchange/source research in small batches, persist/checkpoint evidence, then stop those workers before the next batch;
-- routine venue/source collection should use **medium reasoning** where configured;
-- **high reasoning** is reserved for key synthesis, statistical/robustness analysis, security/execution audits, red-team review, and final independent review;
-- workers must receive the narrowest context needed for their assigned task; do not repeatedly load large frozen strategy/history namespaces into venue/data workers unless strictly required;
-- reuse pinned evidence, receipts, hashes, summaries and prior artifacts rather than recollecting/re-reading them without cause;
-- if a smaller competent team can close a gate, prefer it even if a larger team might be marginally faster;
-- if a task would require more than 4 concurrent roles, split it into sequential batches rather than raising concurrency;
-- checkpoint durable partial results after each batch so an interrupted run resumes from completed evidence instead of repeating it;
-- speed means useful progress per allowance, not maximum parallelism.
+- default: **one active specialist at a time**;
+- hard concurrency ceiling: **2 agent threads**;
+- use the second agent only for genuinely independent verification/review, not duplicate collection;
+- at most **one venue_researcher** runs at a time;
+- process exchange/source research sequentially in small checkpointed batches;
+- routine venue/source collection stays on **medium reasoning** where configured;
+- preserve **high reasoning** for critical synthesis, statistical/robustness analysis, security/execution audit, red-team review and final independent review;
+- workers receive only the narrowest context needed for the current assignment;
+- do not repeatedly load large frozen strategy/history namespaces into collection workers unless strictly required;
+- reuse pinned receipts, hashes, summaries and prior artifacts rather than recollecting/re-reading them without cause;
+- persist durable evidence after each venue/batch so interrupted runs resume without repeating completed work;
+- quality must come from sequential specialist passes and independent verification, not parallel duplication;
+- if a task appears to need more than 2 agents concurrently, split it into sequential phases instead of increasing concurrency;
+- speed means useful validated progress per allowance, not maximum parallelism.
 
 ## Current gate
 `EXCHANGE_SELECTION_AUDIT_v1` remains the active gate and must finish before any new 365-day prospective capture clock is started.
 
-### Acceleration policy for the exchange audit
-Parallelize independent research selectively while keeping synthesis/review independent:
-
-- use no more than two `venue_researcher` workers concurrently; assign small venue batches and persist their receipts before starting the next batch;
-- use `cost_funding_auditor`, `historical_data_engineer`, `market_microstructure_auditor`, `execution_auditor`, `tick_metadata_researcher`, `api_reliability_auditor`, and `exchange_security_auditor` only when their cross-venue verification is actually needed;
-- use `statistics_robustness_analyst` for deterministic scoring/sensitivity after evidence collection;
-- use `exchange_adapter_architect` and `platform_backend_architect` only to assess migration/architecture cost after objective venue evidence is collected;
-- use `overfit_red_team` and `final_independent_reviewer` as independent challenge/seal at the end, not throughout collection;
+### Exchange-audit execution policy
+- run one `venue_researcher` at a time and checkpoint that venue's evidence before moving on;
+- use `cost_funding_auditor`, `historical_data_engineer`, `market_microstructure_auditor`, `execution_auditor`, `tick_metadata_researcher`, `api_reliability_auditor`, and `exchange_security_auditor` sequentially for cross-venue verification only where needed;
+- run `statistics_robustness_analyst` after evidence collection for deterministic scoring/sensitivity;
+- run `exchange_adapter_architect` and `platform_backend_architect` only after objective venue evidence is collected;
+- run `overfit_red_team` and `final_independent_reviewer` only at the final challenge/seal stage;
 - one implementation/writer path at a time; reviewers remain read-only.
 
 ## Fixed launch sequence after exchange selection
@@ -54,7 +53,7 @@ Unless a hard blocker requires a narrower repair gate, proceed in this order:
 9. **LIVE activation** only with explicit user authorization; start conservatively and preserve kill switches.
 
 ## Parallel product work
-Website/backend work may advance in parallel when it does not contaminate strategy validation. Keep Dashboard, Scanner, Portfolio, Journal, Stats, Backtest UI, Settings, Telegram alerts, Audit Log, Safe Mode, STOP AUTO TRADING and CLOSE ALL exchange-agnostic behind the unified exchange layer.
+Website/backend work may advance when it does not contaminate strategy validation, but allowance-heavy agent work should not be parallelized merely for speed. Keep Dashboard, Scanner, Portfolio, Journal, Stats, Backtest UI, Settings, Telegram alerts, Audit Log, Safe Mode, STOP AUTO TRADING and CLOSE ALL exchange-agnostic behind the unified exchange layer.
 
 ## Safety invariants
 - Historical financial v3 execution stays unauthorized until an explicit gate authorizes it.
