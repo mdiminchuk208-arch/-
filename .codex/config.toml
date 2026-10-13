@@ -1,12 +1,12 @@
 #:schema https://developers.openai.com/codex/config-schema.json
 
-persistent_instructions = "Follow AGENTS.md and agent_control/*.md. Preserve every frozen artifact and frozen strategy rule. Optimize for the fastest safe path to a working Crypto Bot: remove launch blockers, do not redesign/tune MACHINE_STRATEGY_v3 unless a future explicit pre-outcome strategy gate authorizes it. Keep all 22 specialist roles available, but for normal gates use only 4-6 active agents and never exceed 8 concurrent threads. Parallelize only genuinely independent work. Use high reasoning only for key synthesis/audit/reviewer roles; use medium reasoning for routine venue/source collection where configured. Require independent review for critical claims. Never enable live trading without the required qualification gates and explicit user authorization."
+persistent_instructions = "Follow AGENTS.md and agent_control/*.md. Preserve every frozen artifact and frozen strategy rule. Optimize for the fastest safe path to a working Crypto Bot: remove launch blockers, do not redesign/tune MACHINE_STRATEGY_v3 unless a future explicit pre-outcome strategy gate authorizes it. Keep all 22 specialist roles available, but use only 2-3 active agents for normal work and never exceed 4 concurrent threads. For venue collection, run at most 2 venue_researcher workers concurrently and process venues in small batches. Parallelize only genuinely independent work. Keep worker context narrow: do not reread frozen strategy/history artifacts unless strictly required. Use high reasoning only for key synthesis/audit/reviewer roles; use medium reasoning for routine venue/source collection where configured. Checkpoint durable evidence after each small batch so interrupted runs do not repeat completed research. Require independent review for critical claims. Never enable live trading without the required qualification gates and explicit user authorization."
 
 [features]
 multi_agent = true
 
 [agents]
-max_threads = 8
+max_threads = 4
 max_depth = 1
 
 [agents.strategy_explorer]
