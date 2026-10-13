@@ -1,0 +1,53 @@
+{
+  "version": "MACHINE_STRATEGY_v3_OKX_COMPATIBILITY_v1",
+  "venue": "OKX",
+  "products": ["BTC-USDT-SWAP", "ETH-USDT-SWAP"],
+  "cost_policy_class": "FROZEN_PROJECT_MODEL_NOT_VERIFIED_HISTORICAL_ACCOUNT_FEE",
+  "source_inputs": {
+    "stage_A_manifest_sha256": "e8733326e85b6082a33f11ec001066d33bc345bcded6acda26b54cd56ddeb9f0",
+    "native_M15": "Exactly sealed Stage-A official OKX inputs; no recollection, refetch, Bybit series, or development-window change",
+    "BTC_funding_csv": "docs/machine_strategy_v3_okx_qualification_v1/evidence/cost_funding/BTC_USDT_SWAP_funding_development_prereg_20241013_20261013exclusive.csv",
+    "BTC_funding_csv_sha256": "8a60f74d288c0d050af547536e47758cc048aaeb2fc2a35da6c260e3937bef71",
+    "ETH_funding_csv": "docs/machine_strategy_v3_okx_qualification_v1/evidence/cost_funding/ETH_USDT_SWAP_funding_development_prereg_20241013_20261013exclusive.csv",
+    "ETH_funding_csv_sha256": "6f250ebaf375d3bd810b2669f243cba513eaffaf0293e1891188c3cef0243952",
+    "funding_rows_per_product": 2190,
+    "funding_window": "2024-10-13T00:00:00Z through 2026-10-12T16:00:00Z inclusive; development end 2026-10-13T00:00:00Z exclusive",
+    "rate_kind": "actual signed historical realized settlement rates, source verified in Stage A",
+    "historical_mark_prices_verified": false
+  },
+  "cost_columns": {
+    "base": {"fee_per_leg": "0.0006", "slippage_per_leg": "0.0002", "total_per_leg": "0.0008"},
+    "doubled": {"fee_per_leg": "0.0012", "slippage_per_leg": "0.0004", "total_per_leg": "0.0016"}
+  },
+  "risk_and_quantity": {
+    "desired_base_coin_per_case": "1",
+    "contract_base_quantity": "ctVal*ctMult",
+    "contracts": "floor((1/(ctVal*ctMult))/scenario_lotSz)*scenario_lotSz, requiring >= scenario_minSz and >0",
+    "modeled_base_coin_quantity": "contracts*ctVal*ctMult",
+    "entry_notional_USDT": "modeled_base_coin_quantity*entry_limit_price",
+    "exit_notional_USDT": "modeled_base_coin_quantity*exit_observed_or_trigger_price",
+    "fixed_R_cash_denominator_USDT": "abs(E_ref-S_ref)+0.0008*(E_ref+S_ref), per one base coin from emitted reference-grid order; unchanged by scenario, fill, funding and doubled costs",
+    "portfolio_claim": false
+  },
+  "closed_cash_formula": {
+    "direction_d": "LONG=+1; SHORT=-1",
+    "gross_USDT": "d*Q*(exit_price-entry_price)",
+    "fee_USDT": "fee_rate*Q*(entry_price+exit_price)",
+    "slippage_USDT": "slippage_rate*Q*(entry_price+exit_price)",
+    "net_USDT": "gross_USDT-fee_USDT-slippage_USDT+signed_funding_cash_USDT",
+    "net_R": "net_USDT/fixed_R_cash_denominator_USDT",
+    "price_convention": "Entry touch executes at limit; stop/target executes at protected trigger; gap executes at exact observed open; native SFP close executes at exact observed close. Slippage is a separate modeled cash debit, not a second price adjustment."
+  },
+  "funding": {
+    "settlement_selection": "Use only actual sealed rows t with a feasible open position at t; no forecast, current cap, fixed-schedule inference or rate in a pre-entry decision.",
+    "cash_formula_each_USDT": "-d*actual_signed_rate(t)*Q*proxy_price(t); positive rate debits LONG and credits SHORT",
+    "proxy_price": "exact positive finite close of the sealed native M15 bar ending at settlement t; this is a modeled settlement-mark proxy, not verified historical OKX mark price",
+    "timestamp_boundary": "When fill or exit occurrence can equal settlement t, do not presume ordering. Enumerate exposure/flat states consistent with fill_time_bounds, exit_time_bounds, fill-before-exit, all actual settlement timestamps and other observed events; select the minimum total signed funding cash among coherent feasible timelines. A debit is included and an uncertain credit excluded where feasible.",
+    "uncertain_wick_time": "Open event has [bar_start,bar_start]; wick fill/exit has [bar_start,bar_end]; native close has [bar_end,bar_end]. Observation-at bar end does not collapse a wick occurrence interval.",
+    "missing_row_or_proxy": "UNRESOLVED_FUNDING_PRICE_OR_COVERAGE, qualification STOP; never substitute zero",
+    "unfilled": "No funding charged or credited to an order that is unfilled in that scenario",
+    "filled_EOF": "No invented terminal exit; unknown filled outcome forces STOP",
+    "doubling": "Historical signed funding rate/cash is unchanged in doubled fee/slippage column"
+  },
+  "later_verified_costs": "If an applicable true account fee/slippage exceeds the frozen doubled envelope, requalification is required before Paper or LIVE. This model does not claim that the envelope bounds unverified true exchange costs."
+}

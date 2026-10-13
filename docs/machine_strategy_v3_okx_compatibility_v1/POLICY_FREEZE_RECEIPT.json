@@ -1,0 +1,14 @@
+{
+  "files_sha256": {
+    "docs/machine_strategy_v3_okx_compatibility_v1/COMPATIBILITY_POLICY.md": "ebb6a99fdeffc9fc826f9f84925d9209d9e9f519eb4eeeadd636e4121bdc5738",
+    "docs/machine_strategy_v3_okx_compatibility_v1/COMPATIBILITY_PREREGISTRATION.json": "77be9ae699e9c98054d210dbcd10c770e65e33a016dc8745625dabbf93f7d206",
+    "docs/machine_strategy_v3_okx_compatibility_v1/COST_FUNDING_BINDING.json": "f758882a0d9727317ce1b0f9b10c99ae3471c631b26d653826c3a1ea8d780162",
+    "docs/machine_strategy_v3_okx_compatibility_v1/QUANTIZATION_STRESS_POLICY.json": "659db3625415753600c29f08a3164eebb13c569ee8422f14d39523d63e46f2f4"
+  },
+  "historical_financial_authorized": false,
+  "historical_financial_outcomes_generated": false,
+  "implementation_started": false,
+  "parent_stage_A_manifest_sha256": "e8733326e85b6082a33f11ec001066d33bc345bcded6acda26b54cd56ddeb9f0",
+  "stage": "PRE_OUTCOME_COMPATIBILITY_POLICY_FROZEN",
+  "trade_entry_allowed": false
+}

@@ -1,0 +1,71 @@
+{
+  "version": "MACHINE_STRATEGY_v3_OKX_COMPATIBILITY_v1",
+  "policy_class": "SYNTHETIC_COMPATIBILITY_ASSUMPTION_NOT_HISTORICAL_OKX_EPOCH",
+  "historical_verified": false,
+  "source_reference": {
+    "btc_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/instrument_btc.body",
+    "btc_sha256": "1a6eeb4c4cc625067010d0110718feaee4a6f03becc60f661b800acb4f5ac4e2",
+    "eth_path": "docs/exchange_selection_audit_v1/evidence/okx/raw/instrument_eth.body",
+    "eth_sha256": "5e5de901b73c7236f43fff8e6086cacac133d7d8cdbd02a7c229d865dbde784c",
+    "snapshot_scope": "current public OKX instrument fields retrieved 2026-10-12, reference scale only"
+  },
+  "products": {
+    "BTC-USDT-SWAP": {
+      "instType": "SWAP",
+      "ctType": "linear",
+      "settleCcy": "USDT",
+      "ctVal": "0.01",
+      "ctValCcy": "BTC",
+      "ctMult": "1",
+      "reference_tickSz": "0.1",
+      "reference_lotSz": "0.01",
+      "reference_minSz": "0.01"
+    },
+    "ETH-USDT-SWAP": {
+      "instType": "SWAP",
+      "ctType": "linear",
+      "settleCcy": "USDT",
+      "ctVal": "0.1",
+      "ctValCcy": "ETH",
+      "ctMult": "1",
+      "reference_tickSz": "0.01",
+      "reference_lotSz": "0.01",
+      "reference_minSz": "0.01"
+    }
+  },
+  "scenario_generation": {
+    "price_tick_multipliers": ["1", "5", "20"],
+    "contract_lot_and_minimum_multipliers": ["1", "100", "700"],
+    "cartesian_product": true,
+    "scenario_ids_in_order": [
+      "P01_Q001", "P01_Q100", "P01_Q700",
+      "P05_Q001", "P05_Q100", "P05_Q700",
+      "P20_Q001", "P20_Q100", "P20_Q700"
+    ],
+    "reference_scenario_id": "P01_Q001",
+    "scenario_tick_formula": "reference_tickSz * price_tick_multiplier",
+    "scenario_lot_formula": "reference_lotSz * contract_lot_and_minimum_multiplier",
+    "scenario_minimum_formula": "reference_minSz * contract_lot_and_minimum_multiplier",
+    "examples": {
+      "BTC-USDT-SWAP": {"ticks": ["0.1", "0.5", "2.0"], "lots_and_minima_contracts": ["0.01", "1", "7"]},
+      "ETH-USDT-SWAP": {"ticks": ["0.01", "0.05", "0.20"], "lots_and_minima_contracts": ["0.01", "1", "7"]}
+    }
+  },
+  "rounding": {
+    "arithmetic": "exact decimal; no binary float or epsilon; positive finite prices only",
+    "LONG_entry": "floor(raw_entry/tick)*tick",
+    "SHORT_entry": "ceil(raw_entry/tick)*tick",
+    "LONG_stop": "largest grid point strictly below raw_stop_boundary",
+    "SHORT_stop": "smallest grid point strictly above raw_stop_boundary",
+    "LONG_target": "largest grid point strictly below frozen nearest raw FTA",
+    "SHORT_target": "smallest grid point strictly above frozen nearest raw FTA",
+    "quantity_contracts": "floor((1/(ctVal*ctMult))/scenario_lot)*scenario_lot; reject if below scenario_minimum or zero",
+    "size_intent_base_coin": "1",
+    "finite_price_rule": "Every raw/order/observed OHLC and funding valuation price must be finite and >0; invalid data unresolved/STOP",
+    "observed_candle_rule": "Use original OHLC as decimal values; observed native candles are not required to lie on any synthetic order grid and must never be rounded to that grid"
+  },
+  "candidate_selection": "One common reference-grid protected-v3 candidate catalog and reservation order; each stress scenario re-plans only the selected candidate's execution geometry and never chooses a sibling, farther FTA, alternate POI, or replacement case.",
+  "scenario_ineligibility": "Record exact reason and case ID; never remove case. Any eligibility disagreement is COMPATIBILITY_DISAGREEMENT and qualification STOP.",
+  "status_aggregation": "All nine scenarios and both cost columns mandatory. Only all-scenarios finite CLOSED cases enter metrics; choose minimum scenario net_R per case and per cost column, tie by scenario ID. Different valid CLOSED exit types or funding exposures are comparable. Any filled unknown/EOF, unresolved, or eligibility/fill/CLOSED-versus-non-CLOSED disagreement forces qualification STOP; preserve worst valid CLOSED diagnostic without declaring a real CLOSED trade.",
+  "bound_claim": "No finite scenario family proves a blanket conservative bound against unverified historical OKX grids, contract changes, liquidity, latency, or true account fees."
+}

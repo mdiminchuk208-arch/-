@@ -1,0 +1,80 @@
+{
+  "version": "MACHINE_STRATEGY_v3_OKX_COMPATIBILITY_v1",
+  "status": "PRE_OUTCOME_POLICY_ONLY_NOT_READY",
+  "policy_class": "MODELED_OKX_HISTORICAL_COMPATIBILITY_NOT_EXACT_HISTORICAL_MICROSTRUCTURE",
+  "parent_stage_A": {
+    "version": "MACHINE_STRATEGY_v3_OKX_QUALIFICATION_v1_STAGE_A",
+    "decision": "MACHINE_STRATEGY_V3_QUALIFICATION_STOP",
+    "freeze_commit": "5a63716e0a042d8b1778581ae0d513d6314fb188",
+    "manifest_sha256": "e8733326e85b6082a33f11ec001066d33bc345bcded6acda26b54cd56ddeb9f0",
+    "preregistration_path": "docs/machine_strategy_v3_okx_qualification_v1/STAGE_A_PREREGISTRATION.json",
+    "preregistration_unchanged": true
+  },
+  "protected_strategy": {
+    "strategy_rules_changed": false,
+    "scripts/machine_strategy_v2_core.py": "d6b0560e7db1691a0fc3de2fd05eb02aeee127e0b1cf105190d896ef61a7ae69",
+    "scripts/machine_strategy_v3_contracts.py": "d369887fe24cd63c2bf178305f3616f56a66c07bb50b79390acc8065ff7bb7b1",
+    "scripts/machine_strategy_v3_guarded_runner.py": "d1ac5407902ec22cac1e66a943cc610bcc1023b7c72290e55c09c73a1cffb0b8",
+    "scripts/machine_strategy_v3_historical_adapter.py": "ed4091e385d4b7ed61bbf6680c56806b618bdf74d63a37b73c37d681a8874150",
+    "scripts/original_v1_1_financial_data.py": "a6c279dc215570c242f80b5df565fa1d37366ce85f79324d302f643359778f3b"
+  },
+  "scope": {
+    "venue": "OKX",
+    "products": ["BTC-USDT-SWAP", "ETH-USDT-SWAP"],
+    "warmup_start": "2023-10-14T00:00:00Z",
+    "development_start": "2024-10-13T00:00:00Z",
+    "development_end_exclusive": "2026-10-13T00:00:00Z",
+    "native_M15_bars_per_product": 105120,
+    "funding_settlements_per_product": 2190,
+    "source_input_policy": "Read and hash-check sealed Stage-A inputs exactly. No recollection, date changes, new source epochs or financial data access before READY."
+  },
+  "compatibility_files": [
+    "COMPATIBILITY_POLICY.md",
+    "QUANTIZATION_STRESS_POLICY.json",
+    "COST_FUNDING_BINDING.json"
+  ],
+  "candidate_catalog": "Common reference-model protected-v3 catalog fixed before scenario execution; all emitted cases retained and all rejected/pending/sibling diagnostics retained. Fixed sibling priority and physical/POI reservation, no scenario replacement.",
+  "quantization": {
+    "historical_epoch_claim": false,
+    "reference_fields_are_current_only": true,
+    "scenario_count_per_product": 9,
+    "scenario_order": ["P01_Q001", "P01_Q100", "P01_Q700", "P05_Q001", "P05_Q100", "P05_Q700", "P20_Q001", "P20_Q100", "P20_Q700"],
+    "minimum_closed_result_per_case_and_cost_column": true,
+    "qualification_stop_on_eligibility_fill_exit_disagreement_or_unresolved": true,
+    "native_OHLC_rounded_to_synthetic_grid": false
+  },
+  "costs": {
+    "base_fee_per_leg": "0.0006",
+    "base_slippage_per_leg": "0.0002",
+    "doubled_fee_per_leg": "0.0012",
+    "doubled_slippage_per_leg": "0.0004",
+    "actual_signed_funding": true,
+    "funding_mark_proxy": "sealed M15 close at settlement, modeled; historical OKX mark unverified",
+    "fixed_reference_R_denominator": true,
+    "ordinary_historical_account_API_SWAP_fee_verified": false
+  },
+  "qualification_unchanged": {
+    "win_rate_min": "0.70",
+    "closed_trades_min": 200,
+    "profit_factor_min": "1.20",
+    "net_expectancy_R_min_exclusive": "0",
+    "net_PnL_cash_risk_units_min_exclusive": "0",
+    "doubled_cost_profit_factor_min": "1.00",
+    "doubled_total_fees_and_slippage_net_positive": true,
+    "case_ledger_max_drawdown_R_max": "20",
+    "max_consecutive_net_losses_max": 10,
+    "coin_and_direction_closed_min": 30,
+    "each_coin_and_direction_net_positive": true,
+    "wilson_95pct_win_rate_lower_bound_min": "0.60",
+    "largest_calendar_quarter_profit_share_max": "0.50",
+    "largest_coin_profit_share_max": "0.80",
+    "filled_unknown_exit_max": 0,
+    "no_critical_causality_or_integrity_failure": true
+  },
+  "financial_outcomes_seen_at_policy_design": false,
+  "historical_financial_authorized_before_READY": false,
+  "next_gate": "Commit and independently freeze all policy bytes before a new versioned OKX runner may load historical candidate exits or generate financial results.",
+  "LIVE": false,
+  "PAPER": false,
+  "trade_entry_allowed": false
+}

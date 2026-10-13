@@ -58,3 +58,7 @@ OOS not registered.
 PAPER_TRADING_READY=false.
 REAL_TRADING_READY=false.
 trade_entry_allowed=false.
+
+## Compatibility policy checkpoint
+
+One execution_auditor identity /root/okx_compatibility_policy_execution_auditor designed the pre-outcome model in docs/machine_strategy_v3_okx_compatibility_v1/. Nine scenarios: price grid multipliers1/5/20 × lot/minimum multipliers1/100/700; one fixed reference candidate catalog/reservation, fixed reference risk denominator, all states retained, worst CLOSED value and STOP for eligibility/fill/closure disagreement or unresolved fills. Actual signed funding uses a declared M15 settlement-close proxy and coherent adverse timing, never a signal input. All Stage-A numeric thresholds unchanged. Policy bytes are frozen before implementation; no historical financial outputs or READY authorization. Next: implement versioned guarded binding, independent causality/QA/final READY review. PAPER/LIVE=false; trade_entry_allowed=false.
