@@ -75,3 +75,7 @@ PASS does not mean LIVE-ready. It opens pristine OOS/forward validation next, wh
 - `trade_entry_allowed=false`.
 
 `agent_control/CURRENT_BATCH.md` defines the currently allowed atomic subset. Do not skip ahead automatically.
+
+## Resume checkpoint
+
+Stage A v1 is frozen STOP at `5a63716e0a042d8b1778581ae0d513d6314fb188`, manifest `e8733326e85b6082a33f11ec001066d33bc345bcded6acda26b54cd56ddeb9f0`. Completed candles/funding must be reused. Exact restart action and source barriers are recorded in CURRENT_STATE.md and STAGE_A_REPORT.md. No Stage-B financial authorization follows from data acquisition alone. Preserve this freeze and use a new readiness-repair namespace for later source proof or a defensible separately versioned compatibility treatment. The WR>=70% autonomous campaign remains the objective; no platform work, strategy redesign to bypass missing evidence, OOS clock or PAPER/LIVE activation.

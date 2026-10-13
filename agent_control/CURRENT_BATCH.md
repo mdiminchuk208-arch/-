@@ -42,3 +42,7 @@ Do not ask the user about routine parameters, strategy versions, tests, sequenci
 No platform/site work until the strategy reaches the platform-reconnection milestone except code strictly necessary to validate the strategy. No private exchange trading API or live orders during historical/OOS validation. PAPER and LIVE remain controlled by their qualification gates. `trade_entry_allowed=false` until explicitly advanced.
 
 If allowance forces the cloud run to stop, persist the exact checkpoint, next action and version state, push it, and exit cleanly. On the next run resume from that checkpoint rather than restarting research.
+
+## Resume checkpoint
+
+Stage A v1 is frozen STOP at `5a63716e0a042d8b1778581ae0d513d6314fb188`, manifest `e8733326e85b6082a33f11ec001066d33bc345bcded6acda26b54cd56ddeb9f0`. Completed candles/funding must be reused. Exact restart action and source barriers are recorded in CURRENT_STATE.md and STAGE_A_REPORT.md. No Stage-B financial authorization follows from data acquisition alone. Preserve this freeze and use a new readiness-repair namespace for later source proof or a defensible separately versioned compatibility treatment. The WR>=70% autonomous campaign remains the objective; no platform work, strategy redesign to bypass missing evidence, OOS clock or PAPER/LIVE activation.
