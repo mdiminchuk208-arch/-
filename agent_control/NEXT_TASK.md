@@ -21,6 +21,11 @@ Primary data source must be official/public OKX market-data endpoints and retain
 
 The existing OKX checkpoint already establishes current public reachability and product identity, but ordinary API SWAP fee applicability and historical tick/filter epochs remain unresolved. Those are Stage-A readiness items, not permission to invent values.
 
+## Hard user qualification target
+Before any new financial outcome is read, preregister **Win Rate >= 70%** as a hard target for strategy qualification. A strategy version below 70% does not pass the user's target and must move to a new explicit version after failure evidence is frozen.
+
+Do not optimize only for Win Rate. PASS also requires positive net expectancy and positive net P&L after realistic costs, acceptable drawdown/loss streak, sufficient sample size, no critical leakage, and robustness across relevant slices. The 70% target must later survive OOS/forward validation and Paper Trading; an in-sample-only 70% is insufficient for platform reconnection.
+
 ## Qualification sequence
 
 ### Stage A — pre-outcome readiness
@@ -30,7 +35,7 @@ Before any new v3 financial outcome is read:
 3. verify reproducible continuous native OKX M15 history and timestamp/completed-bar semantics;
 4. resolve historical tick/lot/filter treatment. Never backdate current OKX metadata. If historical epochs cannot be recovered, preregister a conservative compatibility rule/version BEFORE financial outcomes or STOP;
 5. freeze fee/slippage/funding assumptions from defensible OKX evidence before seeing P&L. Unknown ordinary API fee must remain unknown until resolved or handled by a preregistered conservative rule;
-6. freeze qualification metrics and pass/fail rules before financial execution, reusing already-frozen criteria where they exist instead of inventing post-outcome thresholds;
+6. freeze qualification metrics and pass/fail rules before financial execution. `Win Rate >= 70%` is mandatory; all other numeric thresholds must also be preregistered before outcomes;
 7. verify no-lookahead/prefix causality and deterministic replay readiness.
 
 ### Stage B — one-shot historical financial validation
@@ -55,11 +60,11 @@ Report at minimum:
 Run deterministic robustness checks and independent review. Explicitly test whether apparent edge survives realistic cost and execution sensitivity and whether performance is concentrated in one direction/setup/coin/time slice.
 
 Publish exactly one:
-- `MACHINE_STRATEGY_V3_QUALIFIED_PASS` — only if the frozen v3 demonstrates a defensible positive edge and robustness under the preregistered rules;
+- `MACHINE_STRATEGY_V3_QUALIFIED_PASS` — only if the frozen v3 reaches Win Rate >=70% AND demonstrates positive net edge and robustness under all preregistered rules;
 - `MACHINE_STRATEGY_V3_QUALIFIED_FAIL` — freeze exact failure evidence and open a new strategy-version design gate;
 - `MACHINE_STRATEGY_V3_QUALIFICATION_STOP` — if OKX evidence/data/metadata is still insufficient for a fair financial test.
 
-PASS does not mean LIVE-ready. It opens pristine OOS/forward validation next.
+PASS does not mean LIVE-ready. It opens pristine OOS/forward validation next, where the 70% target remains active.
 
 ## Safety
 - No platform/site work unless strictly required for strategy validation.
