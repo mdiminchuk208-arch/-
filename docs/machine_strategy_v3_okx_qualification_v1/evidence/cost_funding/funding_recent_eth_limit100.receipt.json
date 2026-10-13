@@ -1,0 +1,16 @@
+{
+  "url": "https://www.okx.com/api/v5/public/funding-rate-history?instId=ETH-USDT-SWAP&limit=100",
+  "retrieval_utc": "2026-10-13T18:13:44.854859+00:00",
+  "method": "GET",
+  "redirect_followed": false,
+  "request_auth": false,
+  "request_cookies": false,
+  "http_status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "location": null,
+  "truncated": false,
+  "raw_bytes": 19598,
+  "raw_sha256": "1b87474cde6bedbf5c8f6c5909b5b6492ed71a3cec2f17b0c0b32c46e7f386ab",
+  "raw_path": "docs/machine_strategy_v3_okx_qualification_v1/evidence/cost_funding/funding_recent_eth_limit100.body",
+  "api_code": "0"
+}

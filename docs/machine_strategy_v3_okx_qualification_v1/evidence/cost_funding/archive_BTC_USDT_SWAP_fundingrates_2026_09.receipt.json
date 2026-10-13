@@ -1,0 +1,17 @@
+{
+  "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202609/BTC-USDT-SWAP-fundingrates-2026-09.zip?v=1001",
+  "retrieval_utc": "2026-10-13T18:12:08.015072+00:00",
+  "method": "GET",
+  "redirect_followed": false,
+  "source_index": "archive_funding_index_2026_04_2026_09.receipt.json",
+  "filename": "BTC-USDT-SWAP-fundingrates-2026-09.zip",
+  "request_auth": false,
+  "request_cookies": false,
+  "http_status": 200,
+  "content_type": "application/zip",
+  "location": null,
+  "truncated": false,
+  "raw_bytes": 1253,
+  "raw_sha256": "ce5a600e578678a73294a316592afea9cc2a7f0702bf15d56eb0c9ee68fa5a65",
+  "raw_path": "docs/machine_strategy_v3_okx_qualification_v1/evidence/cost_funding/archive_BTC_USDT_SWAP_fundingrates_2026_09.zip"
+}

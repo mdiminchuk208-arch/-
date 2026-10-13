@@ -1,0 +1,19 @@
+{
+  "after_ms": 1723539600000,
+  "body_bytes": 29206,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 18:18:34 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": 371.668,
+  "method": "GET",
+  "private_API": false,
+  "product": "ETH-USDT-SWAP",
+  "raw_path": "docs/machine_strategy_v3_okx_qualification_v1/evidence/candles/ETH-USDT-SWAP/1723539600000.body",
+  "raw_sha256": "f23748cd80166533f7eabcea559e04fe66f144d7e4a8997a898b32ce672db03f",
+  "request_started_at": "2026-10-13T18:18:34.283185+00:00",
+  "response_completed_at": "2026-10-13T18:18:34.654854+00:00",
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/market/history-candles?instId=ETH-USDT-SWAP&bar=15m&after=1723539600000&limit=300"
+}

@@ -1,0 +1,15 @@
+{
+  "url": "https://www.okx.com/cdn/assets/okfe/trade-pages/assets/okex-fees-C3q3JJrx.js",
+  "retrieval_utc": "2026-10-13T18:14:36.348602+00:00",
+  "method": "GET",
+  "redirect_followed": false,
+  "request_auth": false,
+  "request_cookies": false,
+  "http_status": 200,
+  "content_type": "application/javascript",
+  "location": null,
+  "truncated": false,
+  "raw_bytes": 1266,
+  "raw_sha256": "be5c7139b2e2a71b4c25a2349d1a03f1ccda1757c7d51ceba4f07aae8551f3b1",
+  "raw_path": "docs/machine_strategy_v3_okx_qualification_v1/evidence/cost_funding/okx_fees_page_js.body"
+}

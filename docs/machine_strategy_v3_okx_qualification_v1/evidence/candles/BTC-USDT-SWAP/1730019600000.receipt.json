@@ -1,0 +1,19 @@
+{
+  "after_ms": 1730019600000,
+  "body_bytes": 28896,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 18:14:29 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": 378.835,
+  "method": "GET",
+  "private_API": false,
+  "product": "BTC-USDT-SWAP",
+  "raw_path": "docs/machine_strategy_v3_okx_qualification_v1/evidence/candles/BTC-USDT-SWAP/1730019600000.body",
+  "raw_sha256": "bdc51bafae8f3a7fa07deb3b979d760096b9fde590c80ba75c6bea50e8b88c6c",
+  "request_started_at": "2026-10-13T18:14:28.979071+00:00",
+  "response_completed_at": "2026-10-13T18:14:29.357906+00:00",
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=15m&after=1730019600000&limit=300"
+}

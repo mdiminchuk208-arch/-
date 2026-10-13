@@ -1,0 +1,40 @@
+{
+  "Stage_B_authorized": false,
+  "actual_historical_API_latency": "NOT_VERIFIED_MODEL_AT_COMPLETED_CLOSE",
+  "byte_identical_readiness_replay": true,
+  "financial_outcome_evaluations": 0,
+  "frozen_strategy_code_unchanged": true,
+  "full_inherited_suite": "NOT_RUN_NOT_CLAIMED_PASS",
+  "funding_rows_source_matched_total": 4380,
+  "native_bars_verified_total": 210240,
+  "new_code_modules": 3,
+  "parent_manifest_resume": "PASS",
+  "pinned_bytes": {
+    "docs/machine_strategy_v3_okx_qualification_v1/STAGE_A_READINESS.json": "f685a9f6ceb2e7d09d7660117c071aba19074390be392f101267e6ce12a36875",
+    "docs/machine_strategy_v3_okx_qualification_v1/qa/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/machine_strategy_v3_okx_qualification_v1/qa/format.log": "ef7d13d02214e98ca902b05257cdbe6a8e84f3b4714508efdc19766460b54209",
+    "docs/machine_strategy_v3_okx_qualification_v1/qa/mypy.log": "8228fcc5ce46d42d01caf3cd941f4e9c5f2bcc372bb5b147a2f0572d2dd675a8",
+    "docs/machine_strategy_v3_okx_qualification_v1/qa/parent_resume.log": "338e93ee98a4c55f0060fcaa0c7bb1d3b9ff0ca077daa82d5c9d78452fc04ac0",
+    "docs/machine_strategy_v3_okx_qualification_v1/qa/prepare.log": "65d780f4ee275f22384a1870eff97c60096f4e9101acb5442cf67afd7d4e02ab",
+    "docs/machine_strategy_v3_okx_qualification_v1/qa/replay.log": "455044b884d737a372f22ccd42ae7ca3bbc8b2cf582d68faa46e341060e9975e",
+    "docs/machine_strategy_v3_okx_qualification_v1/qa/ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "docs/machine_strategy_v3_okx_qualification_v1/qa/tests.log": "908fa51076293525b136506e93e784d98f1c407f4b33f8a0d158e9fdb849167b",
+    "scripts/okx_qualification_data_v1.py": "f481445caf4e3ba42566267dc7ac288e9e98f080643bcadca3938db5d21e3ecd",
+    "scripts/okx_v3_input_bridge_v1.py": "4a8bace066f1a0973ec5a2c63246bcfa77719e7381de2d666415097e20528048",
+    "scripts/verify_okx_stage_a_v1.py": "2713951a0f525a669579ab62e63eb38644d9c94fc4958072ce4b396f411fde0b",
+    "tests/test_okx_qualification_data_v1.py": "93a9837440fe754c73e6f77157de1134a437b5686ac2ac5822c3f0969d3cadac",
+    "tests/test_okx_v3_input_bridge_v1.py": "392afbaabc098c5892aadedfb5e899b95ff68438580d7e8dfe65921b6dd203f8",
+    "tests/test_verify_okx_stage_a_v1.py": "9c9448f80582cf54e800369da784a4b0ce5d657b318ea51ef435f635b33107ab"
+  },
+  "scope": "Nonfinancial OKX acquisition/input integrity; strategy readiness remains STOP",
+  "source_receipts_verified": 774,
+  "static_checks": [
+    "Ruff",
+    "format",
+    "mypy",
+    "compile"
+  ],
+  "status": "PASS",
+  "tests_passed": 24,
+  "trade_entry_allowed": false
+}

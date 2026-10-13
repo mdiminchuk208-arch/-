@@ -1,0 +1,16 @@
+{
+  "url": "https://www.okx.com/v3/users/support/common/fee/display-config?includeEvents=true",
+  "retrieval_utc": "2026-10-13T18:15:07.870972+00:00",
+  "method": "GET",
+  "redirect_followed": false,
+  "request_auth": false,
+  "request_cookies": false,
+  "http_status": 200,
+  "content_type": "application/json",
+  "location": null,
+  "truncated": false,
+  "raw_bytes": 396,
+  "raw_sha256": "4dcb0fd10497a377d868395ae4198f38d22c6b0114b75dd44838aeef9f0b43e0",
+  "raw_path": "docs/machine_strategy_v3_okx_qualification_v1/evidence/cost_funding/okx_fee_display_config_public.body",
+  "api_code": 0
+}

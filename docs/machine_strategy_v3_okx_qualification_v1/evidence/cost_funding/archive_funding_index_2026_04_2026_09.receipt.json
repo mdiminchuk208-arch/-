@@ -1,0 +1,31 @@
+{
+  "url": "https://www.okx.com/priapi/v5/broker/public/trade-data/download-link",
+  "retrieval_utc": "2026-10-13T18:11:36.200226+00:00",
+  "method": "POST",
+  "request_json": {
+    "module": "3",
+    "instType": "SWAP",
+    "instQueryParam": {
+      "instFamilyList": [
+        "BTC-USDT",
+        "ETH-USDT"
+      ]
+    },
+    "dateQuery": {
+      "dateAggrType": "monthly",
+      "begin": "1775001600000",
+      "end": "1788220800000"
+    }
+  },
+  "redirect_followed": false,
+  "request_auth": false,
+  "request_cookies": false,
+  "http_status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "location": null,
+  "truncated": false,
+  "raw_bytes": 3134,
+  "raw_sha256": "5df58d0ac0727979f014b9ce2cfe9cdf44da37a851b60a6ad75bb73f58b9295c",
+  "raw_path": "docs/machine_strategy_v3_okx_qualification_v1/evidence/cost_funding/archive_funding_index_2026_04_2026_09.body",
+  "api_code": "0"
+}

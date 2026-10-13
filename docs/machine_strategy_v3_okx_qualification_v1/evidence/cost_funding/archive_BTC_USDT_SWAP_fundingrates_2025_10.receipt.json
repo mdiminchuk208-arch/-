@@ -1,0 +1,17 @@
+{
+  "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202510/BTC-USDT-SWAP-fundingrates-2025-10.zip?v=1001",
+  "retrieval_utc": "2026-10-13T18:13:21.566341+00:00",
+  "method": "GET",
+  "redirect_followed": false,
+  "source_index": "archive_funding_index_2025_10_2026_03_retry1.receipt.json",
+  "filename": "BTC-USDT-SWAP-fundingrates-2025-10.zip",
+  "request_auth": false,
+  "request_cookies": false,
+  "http_status": 200,
+  "content_type": "application/zip",
+  "location": null,
+  "truncated": false,
+  "raw_bytes": 1237,
+  "raw_sha256": "0f8b4b0320ec74a42d93ea456913464abcfd52933ed316c11a44a1e48b6508ff",
+  "raw_path": "docs/machine_strategy_v3_okx_qualification_v1/evidence/cost_funding/archive_BTC_USDT_SWAP_fundingrates_2025_10.zip"
+}

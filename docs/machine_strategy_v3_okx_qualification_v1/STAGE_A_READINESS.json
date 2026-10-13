@@ -1,0 +1,84 @@
+{
+  "LIVE": false,
+  "PAPER": false,
+  "Stage_B_authorized": false,
+  "blockers": [
+    "NO_VERIFIED_HISTORICAL_OKX_TICK_LOT_FILTER_EPOCHS",
+    "ORDINARY_ACCOUNT_APPLICABLE_OKX_API_SWAP_FEE_UNKNOWN",
+    "EXACT_FROZEN_V3_OUTCOME_RUNNER_REMAINS_BYBIT_BOUND_AND_EX_FUNDING"
+  ],
+  "conservative_epoch_fabrication_forbidden": true,
+  "data": {
+    "BTC-USDT-SWAP": {
+      "derived": {
+        "14400": {
+          "bars": 6570,
+          "content_sha256": "5fa305be03b17ac513db23633f48ba0c16395ce8885bb3cac0fb579704fe0da7",
+          "omitted_groups": 0
+        },
+        "3600": {
+          "bars": 26280,
+          "content_sha256": "8f5e214f6625de15a992c86e9316161dc7bd962c0902331270ead7a1394a7183",
+          "omitted_groups": 0
+        },
+        "86400": {
+          "bars": 1095,
+          "content_sha256": "73fab7883fcd17a9af983e66c9958d1412393591372f8914f48460b3cc10e211",
+          "omitted_groups": 0
+        }
+      },
+      "funding": {
+        "cash_valuation_model_not_implemented": true,
+        "future_interval_not_assumed": true,
+        "gaps": 0,
+        "historical_observed_interval_hours": 8,
+        "rows": 2190,
+        "series_sha256": "8a60f74d288c0d050af547536e47758cc048aaeb2fc2a35da6c260e3937bef71",
+        "source_matched": true
+      },
+      "gaps": 0,
+      "native_M15_bars": 105120,
+      "native_replay_identical": true
+    },
+    "ETH-USDT-SWAP": {
+      "derived": {
+        "14400": {
+          "bars": 6570,
+          "content_sha256": "83eb4da0b10628f95351f35d381f01eca94ebe6e29ffd802de95e9ee145ac324",
+          "omitted_groups": 0
+        },
+        "3600": {
+          "bars": 26280,
+          "content_sha256": "a48df0c6e9f7988a98a4774e24f8df628d22c3fdfd7d49a855e5b85c2a9ae6a7",
+          "omitted_groups": 0
+        },
+        "86400": {
+          "bars": 1095,
+          "content_sha256": "52e7150b9f2c5dd8271fb43fc51d37c8ce8699e2468908e76ad90a5ada280977",
+          "omitted_groups": 0
+        }
+      },
+      "funding": {
+        "cash_valuation_model_not_implemented": true,
+        "future_interval_not_assumed": true,
+        "gaps": 0,
+        "historical_observed_interval_hours": 8,
+        "rows": 2190,
+        "series_sha256": "6f250ebaf375d3bd810b2669f243cba513eaffaf0293e1891188c3cef0243952",
+        "source_matched": true
+      },
+      "gaps": 0,
+      "native_M15_bars": 105120,
+      "native_replay_identical": true
+    }
+  },
+  "decision": "MACHINE_STRATEGY_V3_QUALIFICATION_STOP",
+  "financial_outcome_evaluations": 0,
+  "frozen_strategy_code_unchanged": true,
+  "historical_actual_API_latency_not_proved": true,
+  "qualification_WR_target": "0.70",
+  "source_receipts_verified": 774,
+  "stage": "A",
+  "strategy_not_financially_failed_or_qualified": true,
+  "trade_entry_allowed": false
+}

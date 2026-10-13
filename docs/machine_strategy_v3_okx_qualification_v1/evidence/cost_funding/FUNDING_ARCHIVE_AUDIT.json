@@ -1,0 +1,522 @@
+{
+  "requested_development_start_ms_inclusive": 1728777600000,
+  "retrieved_complete_through_ms_inclusive": 1791907200000,
+  "series_scope": "funding inputs only; no strategy trades/outcomes",
+  "archive_file_count": 48,
+  "receipt_hash_failures": [],
+  "symbols": {
+    "BTC": {
+      "archive_months_present": [
+        "2024-10",
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01",
+        "2026-02",
+        "2026-03",
+        "2026-04",
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08",
+        "2026-09"
+      ],
+      "archive_rows": 2190,
+      "archive_first_ms": 1727712000000,
+      "archive_last_ms": 1790755200000,
+      "archive_gap_hours_counts": {
+        "8": 2189
+      },
+      "api_rows": 100,
+      "api_overlap_count": 60,
+      "api_overlap_mismatch_count": 0,
+      "combined_scope_rows": 2193,
+      "combined_first_ms": 1728777600000,
+      "combined_last_ms": 1791907200000,
+      "combined_gap_hours_counts": {
+        "8": 2192
+      },
+      "combined_csv": "BTC_USDT_SWAP_funding_development_20241013_20261013.csv",
+      "combined_sha256": "5260662f061e6fe038bb374972c9457573b464c804e294d414221bbddf01922d",
+      "month_stats": [
+        {
+          "file_month": "2024-10",
+          "rows": 93,
+          "first_ms": 1727712000000,
+          "last_ms": 1730361600000,
+          "csv_sha256": "fa8951d847f71224c9b8daf08f1e3620b73d591367d0e060b58ab1414ac7dfc3",
+          "zip_sha256": "2e97979946ca8b82684f151b98283f65b55277d5e881e65ba717f50421cbebe6"
+        },
+        {
+          "file_month": "2024-11",
+          "rows": 90,
+          "first_ms": 1730390400000,
+          "last_ms": 1732953600000,
+          "csv_sha256": "54be08d5606f583469cb8a911d0199c0af5a2b9d6b5d18856a01b1c6596243cf",
+          "zip_sha256": "b26c61aafdba9053797b51abab8713cfbfdc5b376e6698c885409f524abb14fe"
+        },
+        {
+          "file_month": "2024-12",
+          "rows": 93,
+          "first_ms": 1732982400000,
+          "last_ms": 1735632000000,
+          "csv_sha256": "816170bc3f53a40102873cc03413e9c5cade21e377d5d1a9c6c1784f0f2bb02d",
+          "zip_sha256": "d0cf5d9a2defce408e294406e3336ded42dca64565c8b1c8810d927e7fc0cc4a"
+        },
+        {
+          "file_month": "2025-01",
+          "rows": 93,
+          "first_ms": 1735660800000,
+          "last_ms": 1738310400000,
+          "csv_sha256": "d1f82b09c4f78bf125371203ed3b922c5fd89cce809ea2186c878a043911dd5c",
+          "zip_sha256": "ba80672aaaa85623de417839a4e4da74c1f4ad7575cb9c29b127e5d0a7e540ff"
+        },
+        {
+          "file_month": "2025-02",
+          "rows": 84,
+          "first_ms": 1738339200000,
+          "last_ms": 1740729600000,
+          "csv_sha256": "2a790bcedfad3c1f805d87f8685c724f61c89f11ed69eaaf1fb5f74469ad245b",
+          "zip_sha256": "b0b383c70c59e787fe49878de71a6337b8fbea80aff1cec3c5df2f3b39d6811e"
+        },
+        {
+          "file_month": "2025-03",
+          "rows": 93,
+          "first_ms": 1740758400000,
+          "last_ms": 1743408000000,
+          "csv_sha256": "438cc541d0338ffa327dc54d2dccd0d045edb0b483a91e1f6993ed623d60690d",
+          "zip_sha256": "af5777e0c8a2e1a3b42b30bf7660ae95cb8cab657a721ad73dd8a36ade55e6c2"
+        },
+        {
+          "file_month": "2025-04",
+          "rows": 90,
+          "first_ms": 1743436800000,
+          "last_ms": 1746000000000,
+          "csv_sha256": "65b00fb2d478bf2abcce4629a84b0abff16830b10d987b7928526eb8d3626153",
+          "zip_sha256": "20d53688abb825a4d337adf676011ab6574a78b358ae42c64f73c9c707b31a58"
+        },
+        {
+          "file_month": "2025-05",
+          "rows": 93,
+          "first_ms": 1746028800000,
+          "last_ms": 1748678400000,
+          "csv_sha256": "0bd4e1517f701e627be8537fbbb67a485d289e4dce049d77a1af3a3156806448",
+          "zip_sha256": "8e14d8e10fa030e9971bd1339f2f49ff1d47cc1c94591e835f5b1ba39a3e50f7"
+        },
+        {
+          "file_month": "2025-06",
+          "rows": 90,
+          "first_ms": 1748707200000,
+          "last_ms": 1751270400000,
+          "csv_sha256": "75261f706284cde712697ce7a94e9c39f150183810ddad0ef9cc8c09168b4bd7",
+          "zip_sha256": "7d9c0081d864be097539ee6021ace42709fdadce148cd5cabde12ee3603b9a2a"
+        },
+        {
+          "file_month": "2025-07",
+          "rows": 93,
+          "first_ms": 1751299200000,
+          "last_ms": 1753948800000,
+          "csv_sha256": "ee8b66a7167e4a900b346389bf2669a1e8a8674b0ef919c83fded83aa5c3ce80",
+          "zip_sha256": "2a3e346fdf88d6f864187af77bdbebe6d344b0c4eb29c950170c4d1447996cd7"
+        },
+        {
+          "file_month": "2025-08",
+          "rows": 93,
+          "first_ms": 1753977600000,
+          "last_ms": 1756627200000,
+          "csv_sha256": "5abd3937711486d076ab20e154e66efb60f2cb04db3da290da15fb3cfc5f280e",
+          "zip_sha256": "61b5a9ba5cb039a8ca4210d7da1242c9d54178b2d1715b002a60b8474deee84f"
+        },
+        {
+          "file_month": "2025-09",
+          "rows": 90,
+          "first_ms": 1756656000000,
+          "last_ms": 1759219200000,
+          "csv_sha256": "eba98b535f068f6766a307f287dab84a07b58612f03d7a20d70e4b8448864e29",
+          "zip_sha256": "dfa52059846715ce2dad12f7d7e19b1e1e9b892918bfdc1649d3b769289f86db"
+        },
+        {
+          "file_month": "2025-10",
+          "rows": 93,
+          "first_ms": 1759248000000,
+          "last_ms": 1761897600000,
+          "csv_sha256": "1d33c258341da01c564c72866ece49f9e2a0be4613370d61715a71f6988aed9c",
+          "zip_sha256": "0f8b4b0320ec74a42d93ea456913464abcfd52933ed316c11a44a1e48b6508ff"
+        },
+        {
+          "file_month": "2025-11",
+          "rows": 90,
+          "first_ms": 1761926400000,
+          "last_ms": 1764489600000,
+          "csv_sha256": "4593cae735a699ed3b8ddda4c65d57182a81877ee3ef26ec84414c109945fad4",
+          "zip_sha256": "63841ef6c22cc4f9f0ceb5806097f396dd4e9688c73daf96aa0c81079eb6af34"
+        },
+        {
+          "file_month": "2025-12",
+          "rows": 93,
+          "first_ms": 1764518400000,
+          "last_ms": 1767168000000,
+          "csv_sha256": "29d7ed426628f08db2bc061f231a79849829c54f293de32a83567b9b3d505aa9",
+          "zip_sha256": "cc2da7d9a5309f30d1ad51c6e3768d842aa26edbd6e815180d65358579c6baea"
+        },
+        {
+          "file_month": "2026-01",
+          "rows": 93,
+          "first_ms": 1767196800000,
+          "last_ms": 1769846400000,
+          "csv_sha256": "82c3891eeb45c55d5ab3e6653f81647c7de4faeb10572cb0364e4470e1b0ebc8",
+          "zip_sha256": "950c317f3bcc039d9619e7ce8bcd3ecd9ab98e9225f6d2399834863b8d33acd3"
+        },
+        {
+          "file_month": "2026-02",
+          "rows": 84,
+          "first_ms": 1769875200000,
+          "last_ms": 1772265600000,
+          "csv_sha256": "4e30566c36f26fa31a4d61e2c1eeabc778f74927237e0b892247f6db71c2ff62",
+          "zip_sha256": "1d38823ac86f7ffcba41d68809ee4eb401d6b08cb0620285e86ad98e151e319e"
+        },
+        {
+          "file_month": "2026-03",
+          "rows": 93,
+          "first_ms": 1772294400000,
+          "last_ms": 1774944000000,
+          "csv_sha256": "764549f355fc77b6ecacb54881880e05a438e036641b42a7043f65d83a02f6e9",
+          "zip_sha256": "56c6d567c67f8ffb2ab3302679829a2ee54e001eb30b6ebc0e90ecd4092b0441"
+        },
+        {
+          "file_month": "2026-04",
+          "rows": 90,
+          "first_ms": 1774972800000,
+          "last_ms": 1777536000000,
+          "csv_sha256": "50fa4cf1c3e91d656b3872cf427413e4683110e9d87f8bd16ae9d49a2bb5c32a",
+          "zip_sha256": "af12d2b6b53a19f1fa04fce3a1b2f0d69f6f21cf3f190d58de8b7824a2ea6d92"
+        },
+        {
+          "file_month": "2026-05",
+          "rows": 93,
+          "first_ms": 1777564800000,
+          "last_ms": 1780214400000,
+          "csv_sha256": "da3c806907a3d20c6875440247ccff65ad9aa4e6774a7865e577cee6b0b126e2",
+          "zip_sha256": "40215f2064a024caaeda10eb9b851b6cec120246d37269ef3df8c51803ae17fd"
+        },
+        {
+          "file_month": "2026-06",
+          "rows": 90,
+          "first_ms": 1780243200000,
+          "last_ms": 1782806400000,
+          "csv_sha256": "832162968b5ac27917af222b022ad13069a9954bdb2caf530b0e0a2ca5006a7c",
+          "zip_sha256": "99b10cf9290831055a6cd46a33ced6b8784041949219aad5654448d3425710e4"
+        },
+        {
+          "file_month": "2026-07",
+          "rows": 93,
+          "first_ms": 1782835200000,
+          "last_ms": 1785484800000,
+          "csv_sha256": "0863a2268f2d80b0fdb63a10bd4a8768408c27b08fcfa66a5aa84a6571d61777",
+          "zip_sha256": "ff589201cc39e79558645766b914426607418ea68fa8ad8649b5c614d16c31dd"
+        },
+        {
+          "file_month": "2026-08",
+          "rows": 93,
+          "first_ms": 1785513600000,
+          "last_ms": 1788163200000,
+          "csv_sha256": "4e8b899dee318687a4a6b774576ef2282616bd6f680be0117ce8c7f057729833",
+          "zip_sha256": "d3efe1c8f7cc04f7de45f4e3372bef5756dda310edc46403a84150534c75518e"
+        },
+        {
+          "file_month": "2026-09",
+          "rows": 90,
+          "first_ms": 1788192000000,
+          "last_ms": 1790755200000,
+          "csv_sha256": "2087a35254996a57e0b7d1830ff15f5d5a1ae5f33b1ec79e30b38e21c8cb3fb9",
+          "zip_sha256": "ce5a600e578678a73294a316592afea9cc2a7f0702bf15d56eb0c9ee68fa5a65"
+        }
+      ],
+      "api_post_archive_extension_rows": 40,
+      "api_utc_october_rows": 39,
+      "preregistered_development": {
+        "start_ms_inclusive": 1728777600000,
+        "end_ms_exclusive": 1791849600000,
+        "rows": 2190,
+        "first_ms": 1728777600000,
+        "last_ms": 1791820800000,
+        "gap_hours": 8,
+        "duplicate_timestamp_count": 0,
+        "sign_counts": {
+          "positive": 1764,
+          "negative": 426
+        },
+        "csv": "BTC_USDT_SWAP_funding_development_prereg_20241013_20261013exclusive.csv",
+        "sha256": "8a60f74d288c0d050af547536e47758cc048aaeb2fc2a35da6c260e3937bef71"
+      }
+    },
+    "ETH": {
+      "archive_months_present": [
+        "2024-10",
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01",
+        "2026-02",
+        "2026-03",
+        "2026-04",
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08",
+        "2026-09"
+      ],
+      "archive_rows": 2190,
+      "archive_first_ms": 1727712000000,
+      "archive_last_ms": 1790755200000,
+      "archive_gap_hours_counts": {
+        "8": 2189
+      },
+      "api_rows": 100,
+      "api_overlap_count": 60,
+      "api_overlap_mismatch_count": 0,
+      "combined_scope_rows": 2193,
+      "combined_first_ms": 1728777600000,
+      "combined_last_ms": 1791907200000,
+      "combined_gap_hours_counts": {
+        "8": 2192
+      },
+      "combined_csv": "ETH_USDT_SWAP_funding_development_20241013_20261013.csv",
+      "combined_sha256": "597c8a22a6a7ceb1767bca26b56a93cb4e5d67bcd5cab862178ee98ecec8c64c",
+      "month_stats": [
+        {
+          "file_month": "2024-10",
+          "rows": 93,
+          "first_ms": 1727712000000,
+          "last_ms": 1730361600000,
+          "csv_sha256": "183cc8d803aa52a7995d1a3550fc11beb2f23e84aa815f13b040d465cd154647",
+          "zip_sha256": "ddfb9af304c4060880500234e24c02e8ac924e78e7abfbd2dfb85349da944915"
+        },
+        {
+          "file_month": "2024-11",
+          "rows": 90,
+          "first_ms": 1730390400000,
+          "last_ms": 1732953600000,
+          "csv_sha256": "64d96b009a1cb9fa785b3ff692a85da72a23fb9e9aabdefa80422b1c0383aeac",
+          "zip_sha256": "89a5b4031181c3e794ef445e2be27c5d04957ecb85c6b88f34791755dc7eaf37"
+        },
+        {
+          "file_month": "2024-12",
+          "rows": 93,
+          "first_ms": 1732982400000,
+          "last_ms": 1735632000000,
+          "csv_sha256": "109185cb7eb8548728c4c4511807545093b049191f6233bd9e42bff9df0f4f22",
+          "zip_sha256": "5651cc9970d4d69bbdabdc2287ef9566dff094e740afb9fd351af7d8f44343e8"
+        },
+        {
+          "file_month": "2025-01",
+          "rows": 93,
+          "first_ms": 1735660800000,
+          "last_ms": 1738310400000,
+          "csv_sha256": "2d06ad760d8d7e101cd5f9641dd8601303edf16372e76914ef1648970ad7e800",
+          "zip_sha256": "c1abfdddcfdf6fe37e12cb172b3ee516da68d6338235554879a653f816ae3b3f"
+        },
+        {
+          "file_month": "2025-02",
+          "rows": 84,
+          "first_ms": 1738339200000,
+          "last_ms": 1740729600000,
+          "csv_sha256": "715df71dc094c2b50cd69a360278a3c18fd7be89521acfbe7001407d03c76c14",
+          "zip_sha256": "826c226e4cd16709c97dfdc46acc4ac94e3dce94871681772b2d47bcb401f5dc"
+        },
+        {
+          "file_month": "2025-03",
+          "rows": 93,
+          "first_ms": 1740758400000,
+          "last_ms": 1743408000000,
+          "csv_sha256": "21724107784f0b53dadaabc90a152158aebd2b51c57381e2cab2271119e1bec6",
+          "zip_sha256": "b5125a36cb5b01e926dff4abff52819efc5823e9804f2612ecdf403f7f0f7df8"
+        },
+        {
+          "file_month": "2025-04",
+          "rows": 90,
+          "first_ms": 1743436800000,
+          "last_ms": 1746000000000,
+          "csv_sha256": "74aeadd2a83d74d43f3c016f260614ff37ef6b6d00cd32b5732cc7f281937335",
+          "zip_sha256": "f1a29593b5ae5947361609b3011fd358de411d383daa7a65a52e344f0c8b1964"
+        },
+        {
+          "file_month": "2025-05",
+          "rows": 93,
+          "first_ms": 1746028800000,
+          "last_ms": 1748678400000,
+          "csv_sha256": "6052764347280cd79fbfff4209976fad8f1f4aa28b147429329f460d2e9d90da",
+          "zip_sha256": "aac0cdf5b2a2297926fa16d16e0f093463b3df3a5cea346e1dc3e5c9e495483f"
+        },
+        {
+          "file_month": "2025-06",
+          "rows": 90,
+          "first_ms": 1748707200000,
+          "last_ms": 1751270400000,
+          "csv_sha256": "da1842c0b14b790eeb863a5b27e2bbc66a6eeafa404c59e73c137c2bf46d2cda",
+          "zip_sha256": "f22b51be857973900ac52dc3f89c9cd0d9e9277420dc4c3eb311998ff4741137"
+        },
+        {
+          "file_month": "2025-07",
+          "rows": 93,
+          "first_ms": 1751299200000,
+          "last_ms": 1753948800000,
+          "csv_sha256": "6ef8a73bc69c173fb76b542f050d08ef6f66b9bffc1344538e646dcf297ee5cb",
+          "zip_sha256": "d0aa7a136c2bcf0dae5fb726d9a7ffa21d9c4beb9899fd9da6634d65d27e244e"
+        },
+        {
+          "file_month": "2025-08",
+          "rows": 93,
+          "first_ms": 1753977600000,
+          "last_ms": 1756627200000,
+          "csv_sha256": "6d7e5e883de9510fea4094baf7410b568c062f476a7a7772a66f6569bc92ecd3",
+          "zip_sha256": "4986d973ba8cb2663fe759a211054129c6373fd14b5318ebea3f041929faf5db"
+        },
+        {
+          "file_month": "2025-09",
+          "rows": 90,
+          "first_ms": 1756656000000,
+          "last_ms": 1759219200000,
+          "csv_sha256": "5270d047c56e4c03f26023a4758dbe31cfd88933cf750969471d1eb16588016f",
+          "zip_sha256": "611f5732d53339dc311b1e1f26beabcec14b76328bd4fb76acab77266ba728e2"
+        },
+        {
+          "file_month": "2025-10",
+          "rows": 93,
+          "first_ms": 1759248000000,
+          "last_ms": 1761897600000,
+          "csv_sha256": "abd8f4cf9bdd8b9eed0171478deb4170c29a3db4abee4e7b495e1e110edc8116",
+          "zip_sha256": "1eabb36a3db56c5ba4636272b03e125547b4d7b789db808f41b889f718a884e1"
+        },
+        {
+          "file_month": "2025-11",
+          "rows": 90,
+          "first_ms": 1761926400000,
+          "last_ms": 1764489600000,
+          "csv_sha256": "7b83d47579b85bef4c44d0f3627f73eb7d3f4b2ebf28a1e269fb585e39d4552e",
+          "zip_sha256": "cef6c1d69bd96e91d66cb211f03d2bf9f370fc8d3e50c2a69758d3fd6847d2ea"
+        },
+        {
+          "file_month": "2025-12",
+          "rows": 93,
+          "first_ms": 1764518400000,
+          "last_ms": 1767168000000,
+          "csv_sha256": "e70cd6ce949d839154eca67a66bc46b6e38460e67ae8153560a23998b87c6359",
+          "zip_sha256": "99d4a571761c1fe239f1c6f2d966c6e1acdec8faab4a383377782597b37300ff"
+        },
+        {
+          "file_month": "2026-01",
+          "rows": 93,
+          "first_ms": 1767196800000,
+          "last_ms": 1769846400000,
+          "csv_sha256": "63a491b13a1641188c9df3fe6d10f1b4d817475b75bc94c9c57d3161e4f3628d",
+          "zip_sha256": "d094993940d725b6c7dfbef1883abe1a4ee61070f64ff0bca31d06169519dae7"
+        },
+        {
+          "file_month": "2026-02",
+          "rows": 84,
+          "first_ms": 1769875200000,
+          "last_ms": 1772265600000,
+          "csv_sha256": "34ae7c0c602d5f13dae0be49da058d8bf45444feb8cdf8568033bae929c8fe94",
+          "zip_sha256": "17bba29df94ca75ba8546009517b2d4734f8d21ff65e0b17bb641bf0dc7407b3"
+        },
+        {
+          "file_month": "2026-03",
+          "rows": 93,
+          "first_ms": 1772294400000,
+          "last_ms": 1774944000000,
+          "csv_sha256": "a8af6b7df6cec0961ef58f15227977e7966f416bb5dc1966a0dfa54d653a1256",
+          "zip_sha256": "255d073db855ab900d18a9c4123a2ebb1f4066b67184355dce6b3dba79ac2fad"
+        },
+        {
+          "file_month": "2026-04",
+          "rows": 90,
+          "first_ms": 1774972800000,
+          "last_ms": 1777536000000,
+          "csv_sha256": "46ffb91c1523febafde1b815b6de70319d2da895d298e3e696eeffd8643ec9f2",
+          "zip_sha256": "b53c5604d6bd7da01f7647c44b451bd4c8a323a672199c95e1939e93278f7100"
+        },
+        {
+          "file_month": "2026-05",
+          "rows": 93,
+          "first_ms": 1777564800000,
+          "last_ms": 1780214400000,
+          "csv_sha256": "0af3a0d8b651e31374f1b19fc2ea153eafe099ddba2096f42e4e9b1f2e38efce",
+          "zip_sha256": "e3d94ba123507b55d93339a6df5f42d5c2a70ddec35b515c552cbd7f3ba5a22a"
+        },
+        {
+          "file_month": "2026-06",
+          "rows": 90,
+          "first_ms": 1780243200000,
+          "last_ms": 1782806400000,
+          "csv_sha256": "29294b5aa5e959462318c91b43a4ca3236063b7e7f87aa2ea3746669d191c476",
+          "zip_sha256": "3d0cd86f6e2a4ca8c9fcdd3ba0bb2d0f6e8dee7bbda8560fc88ecf96019f35f7"
+        },
+        {
+          "file_month": "2026-07",
+          "rows": 93,
+          "first_ms": 1782835200000,
+          "last_ms": 1785484800000,
+          "csv_sha256": "060e6f402e22e6ee7a5f87ae86ae100308c54c9604f996c1967a3c4c65fb9961",
+          "zip_sha256": "21ca20817e1bfb2203a593f92b6aa491e9299cdd0e588e73b8f0b2b31a3a4291"
+        },
+        {
+          "file_month": "2026-08",
+          "rows": 93,
+          "first_ms": 1785513600000,
+          "last_ms": 1788163200000,
+          "csv_sha256": "57dfb64b49ef8733a91ead879c92d6013415a20870c36b17f1193912adf37563",
+          "zip_sha256": "40b3d541784d52ec716df55b5fa9d68f9b99e97e60f2591cd38715473c9104a0"
+        },
+        {
+          "file_month": "2026-09",
+          "rows": 90,
+          "first_ms": 1788192000000,
+          "last_ms": 1790755200000,
+          "csv_sha256": "c2c960071d52a086f908d2b8abb31ca04ea3ec21d282bed817b98df164a5e443",
+          "zip_sha256": "ad47af2ea264612e4a5d9a559a0bb544a1f8129db435af175aecb86e338fe650"
+        }
+      ],
+      "api_post_archive_extension_rows": 40,
+      "api_utc_october_rows": 39,
+      "preregistered_development": {
+        "start_ms_inclusive": 1728777600000,
+        "end_ms_exclusive": 1791849600000,
+        "rows": 2190,
+        "first_ms": 1728777600000,
+        "last_ms": 1791820800000,
+        "gap_hours": 8,
+        "duplicate_timestamp_count": 0,
+        "sign_counts": {
+          "positive": 1623,
+          "negative": 567
+        },
+        "csv": "ETH_USDT_SWAP_funding_development_prereg_20241013_20261013exclusive.csv",
+        "sha256": "6f250ebaf375d3bd810b2669f243cba513eaffaf0293e1891188c3cef0243952"
+      }
+    }
+  },
+  "preregistered_development_end_ms_exclusive": 1791849600000
+}

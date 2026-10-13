@@ -1,0 +1,17 @@
+{
+  "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202606/ETH-USDT-SWAP-fundingrates-2026-06.zip?v=1001",
+  "retrieval_utc": "2026-10-13T18:12:22.055771+00:00",
+  "method": "GET",
+  "redirect_followed": false,
+  "source_index": "archive_funding_index_2026_04_2026_09.receipt.json",
+  "filename": "ETH-USDT-SWAP-fundingrates-2026-06.zip",
+  "request_auth": false,
+  "request_cookies": false,
+  "http_status": 200,
+  "content_type": "application/zip",
+  "location": null,
+  "truncated": false,
+  "raw_bytes": 1332,
+  "raw_sha256": "3d0cd86f6e2a4ca8c9fcdd3ba0bb2d0f6e8dee7bbda8560fc88ecf96019f35f7",
+  "raw_path": "docs/machine_strategy_v3_okx_qualification_v1/evidence/cost_funding/archive_ETH_USDT_SWAP_fundingrates_2026_06.zip"
+}
