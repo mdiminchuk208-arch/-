@@ -1,0 +1,18 @@
+{
+  "url": "https://support.deribit.com/hc/en-us/articles/25944746248989-Fees",
+  "request_start_utc": "2026-10-13T06:35:12.941436+00:00",
+  "completion_utc": "2026-10-13T06:35:13.390155+00:00",
+  "latency_ms": 448.9,
+  "http_status": 200,
+  "sha256": "ffc67ce20795930a2ecb622288c349c3b1d65ba837a2260b78f8e17b4fd417c8",
+  "bytes": 92248,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:35:13 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "x-request-id": "a49674d62e0566dd-DFW",
+    "cf-ray": "a49c52ae4c25a424-DFW"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/fees_article.bin"
+}

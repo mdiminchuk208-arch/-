@@ -1,0 +1,20 @@
+{
+  "id": "hl_docs_history",
+  "venue": "hyperliquid",
+  "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/historical-data.md",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-13T06:28:52.462117+00:00",
+  "completed_utc": "2026-10-13T06:28:53.323515+00:00",
+  "latency_ms": 861.6,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:28:53 GMT",
+    "content-type": "text/plain; charset=utf-8"
+  },
+  "raw_path": "raw/hl_docs_history.bin",
+  "raw_sha256": "b9ba8cc7be9949cb9911d09014b2577381deacdf1ea844a7a58dbf73b0cd11ae",
+  "raw_bytes": 2331,
+  "truncated": false
+}

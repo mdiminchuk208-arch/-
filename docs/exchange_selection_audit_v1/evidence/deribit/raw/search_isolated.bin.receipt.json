@@ -1,0 +1,18 @@
+{
+  "url": "https://support.deribit.com/hc/en-us/search?query=isolated+margin",
+  "request_start_utc": "2026-10-13T06:34:51.554127+00:00",
+  "completion_utc": "2026-10-13T06:34:53.499799+00:00",
+  "latency_ms": 1946.0,
+  "http_status": 200,
+  "sha256": "2c00c26e62075e1ebd0d04210bde46d75f35833fbd96c57bf21396b3bdabd19a",
+  "bytes": 77237,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:34:53 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "x-request-id": "5b954da8-e252-41e9-ac8d-b95301f58e9b",
+    "cf-ray": "a49c522d2cf243ba-DFW"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/search_isolated.bin"
+}

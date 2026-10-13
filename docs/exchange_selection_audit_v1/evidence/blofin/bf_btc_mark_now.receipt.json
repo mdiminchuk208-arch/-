@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c4bcecff42c62-DFW",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:30:31 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 681.8,
+  "method": "GET",
+  "raw_length": 161,
+  "raw_path": "bf_btc_mark_now.raw",
+  "raw_sha256": "f759fed355d71a64917e505f776ff497b230c938617336f31ddb13fbf95097d1",
+  "request_start_utc": "2026-10-13T06:30:31.091260+00:00",
+  "retrieval_utc": "2026-10-13T06:30:31.772773+00:00",
+  "source_id": "bf_btc_mark_now",
+  "status": 200,
+  "truncated": false,
+  "url": "https://openapi.blofin.com/api/v1/market/mark-price-candles?instId=BTC-USDT&bar=15m&limit=2"
+}

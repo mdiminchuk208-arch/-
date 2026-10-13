@@ -1,0 +1,21 @@
+{
+  "id": "hl_eth_funding",
+  "venue": "hyperliquid",
+  "url": "https://api.hyperliquid.xyz/info",
+  "method": "POST",
+  "request_body": "{\"type\":\"fundingHistory\",\"coin\":\"ETH\",\"startTime\":1791750075462}",
+  "started_utc": "2026-10-12T20:21:15.723612+00:00",
+  "completed_utc": "2026-10-12T20:21:16.709956+00:00",
+  "latency_ms": 986.57,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "content-type": "application/json",
+    "content-length": "2172",
+    "date": "Mon, 12 Oct 2026 20:21:16 GMT"
+  },
+  "raw_path": "raw/hl_eth_funding.bin",
+  "raw_sha256": "1b74ca7cc6605633756ab54ce2e147258aa76564a938ce5ab77b0f509997598f",
+  "raw_bytes": 2172,
+  "truncated": false
+}

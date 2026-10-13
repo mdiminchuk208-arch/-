@@ -1,0 +1,457 @@
+{
+  "ranking": [
+    {
+      "all_in_cost_bps": null,
+      "eligible": true,
+      "hard_gate_failures": [],
+      "points": {
+        "access": 5,
+        "auxiliary": 3,
+        "cost_realism": 2,
+        "documentation": 4,
+        "history": 5,
+        "metadata": 4
+      },
+      "score": "82",
+      "score_rational": [
+        "82",
+        "1"
+      ],
+      "venue": "bitget"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": true,
+      "hard_gate_failures": [],
+      "points": {
+        "access": 4,
+        "auxiliary": 4,
+        "cost_realism": 4,
+        "documentation": 5,
+        "history": 4,
+        "metadata": 4
+      },
+      "score": "82",
+      "score_rational": [
+        "82",
+        "1"
+      ],
+      "venue": "okx"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": false,
+          "note": "Contradicted or currently unavailable: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "kc_btc_contract",
+            "kc_docs_contract_en",
+            "kc_docs_intro",
+            "kc_docs_klines_en",
+            "kc_btc_m15_now_ms",
+            "kc_eth_m15_now_ms",
+            "kc_btc_m15_old_ms",
+            "kc_eth_m15_old_ms",
+            "kc_docs_open_interest",
+            "kc_eth_contract",
+            "kc_btc_book_1",
+            "kc_btc_book_2",
+            "kc_docs_fullbook",
+            "kc_eth_book_1",
+            "kc_eth_book_2"
+          ]
+        }
+      ],
+      "points": {
+        "access": 5,
+        "auxiliary": 3,
+        "cost_realism": 4,
+        "documentation": 3,
+        "history": 3,
+        "metadata": 4
+      },
+      "score": "74",
+      "score_rational": [
+        "74",
+        "1"
+      ],
+      "venue": "kucoin_futures"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": true,
+      "hard_gate_failures": [],
+      "points": {
+        "access": 4,
+        "auxiliary": 2,
+        "cost_realism": 4,
+        "documentation": 3,
+        "history": 4,
+        "metadata": 3
+      },
+      "score": "68",
+      "score_rational": [
+        "68",
+        "1"
+      ],
+      "venue": "blofin"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": true,
+      "hard_gate_failures": [],
+      "points": {
+        "access": 4,
+        "auxiliary": 2,
+        "cost_realism": 5,
+        "documentation": 4,
+        "history": 3,
+        "metadata": 3
+      },
+      "score": "67",
+      "score_rational": [
+        "67",
+        "1"
+      ],
+      "venue": "deribit"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": true,
+      "hard_gate_failures": [],
+      "points": {
+        "access": 5,
+        "auxiliary": 2,
+        "cost_realism": 2,
+        "documentation": 3,
+        "history": 3,
+        "metadata": 4
+      },
+      "score": "67",
+      "score_rational": [
+        "67",
+        "1"
+      ],
+      "venue": "kraken_futures"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": false,
+          "note": "Contradicted or currently unavailable: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "gate_btc_contract",
+            "gate_docs_zip",
+            "gate_btc_m15_now",
+            "gate_eth_m15_now",
+            "gate_btc_m15_old",
+            "gate_eth_m15_old",
+            "gate_btc_oi",
+            "gate_eth_oi",
+            "gate_btc_book_1",
+            "gate_btc_book_2",
+            "gate_eth_book_1",
+            "gate_eth_book_2",
+            "gate_eth_contract"
+          ]
+        }
+      ],
+      "points": {
+        "access": 4,
+        "auxiliary": 2,
+        "cost_realism": 3,
+        "documentation": 3,
+        "history": 2,
+        "metadata": 4
+      },
+      "score": "60",
+      "score_rational": [
+        "60",
+        "1"
+      ],
+      "venue": "gate"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": false,
+          "note": "Contradicted or currently unavailable: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "hl_meta",
+            "hl_docs_contracts",
+            "hl_docs_info",
+            "hl_btc_m15_now",
+            "hl_eth_m15_now",
+            "hl_btc_m15_old",
+            "hl_eth_m15_old",
+            "hl_docs_history",
+            "hl_btc_book_1",
+            "hl_btc_book_2",
+            "hl_eth_book_1",
+            "hl_eth_book_2",
+            "hl_docs_tick"
+          ]
+        }
+      ],
+      "points": {
+        "access": 4,
+        "auxiliary": 2,
+        "cost_realism": 5,
+        "documentation": 3,
+        "history": 2,
+        "metadata": 3
+      },
+      "score": "60",
+      "score_rational": [
+        "60",
+        "1"
+      ],
+      "venue": "hyperliquid"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": false,
+          "note": "Contradicted or currently unavailable: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "instrument_btc",
+            "docs_api",
+            "m15_btc_now",
+            "m15_eth_now",
+            "m15_btc_old",
+            "m15_eth_old",
+            "m15_btc_2026_jan",
+            "m15_eth_2026_jan",
+            "m15_btc_2026_may",
+            "m15_eth_2026_may",
+            "trades_btc",
+            "trades_eth",
+            "index_btc_old",
+            "fair_btc_old",
+            "ticker_btc",
+            "ticker_eth"
+          ]
+        }
+      ],
+      "points": {
+        "access": 4,
+        "auxiliary": 2,
+        "cost_realism": 3,
+        "documentation": 3,
+        "history": 2,
+        "metadata": 4
+      },
+      "score": "60",
+      "score_rational": [
+        "60",
+        "1"
+      ],
+      "venue": "mexc"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": false,
+          "note": "Both instruments are PAUSED and current candles empty, so a pristine current prospective capture is not established.",
+          "source_ids": [
+            "instruments",
+            "docs_concepts_instruments_md",
+            "docs_channels_md",
+            "m15old_btc",
+            "m15old_eth",
+            "candles_btc_now",
+            "candles_eth_now",
+            "btc_quote",
+            "eth_quote",
+            "docs_candle_md",
+            "docs_instrument_md",
+            "changelog"
+          ]
+        }
+      ],
+      "points": {
+        "access": 1,
+        "auxiliary": 2,
+        "cost_realism": 1,
+        "documentation": 3,
+        "history": 3,
+        "metadata": 3
+      },
+      "score": "45",
+      "score_rational": [
+        "45",
+        "1"
+      ],
+      "venue": "coinbase_international"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": null,
+          "note": "Unverified: exact product identity BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "bybit:bybit_docs_instrument",
+            "bybit:BTCUSDT_instrument",
+            "bybit:bybit_docs_kline",
+            "bybit:bybit_docs_oi",
+            "bybit:BTCUSDT_m15now",
+            "bybit:ETHUSDT_m15now",
+            "bybit:BTCUSDT_m15old",
+            "bybit:ETHUSDT_m15old",
+            "bybit:ETHUSDT_instrument"
+          ]
+        },
+        {
+          "confirmed": null,
+          "note": "Unverified: current defensible tick filters BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "bybit:bybit_docs_instrument",
+            "bybit:BTCUSDT_instrument",
+            "bybit:bybit_docs_kline",
+            "bybit:bybit_docs_oi",
+            "bybit:BTCUSDT_m15now",
+            "bybit:ETHUSDT_m15now",
+            "bybit:BTCUSDT_m15old",
+            "bybit:ETHUSDT_m15old",
+            "bybit:ETHUSDT_instrument"
+          ]
+        },
+        {
+          "confirmed": null,
+          "note": "Unverified: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "bybit:bybit_docs_instrument",
+            "bybit:BTCUSDT_instrument",
+            "bybit:bybit_docs_kline",
+            "bybit:bybit_docs_oi",
+            "bybit:BTCUSDT_m15now",
+            "bybit:ETHUSDT_m15now",
+            "bybit:BTCUSDT_m15old",
+            "bybit:ETHUSDT_m15old",
+            "bybit:ETHUSDT_instrument"
+          ]
+        },
+        {
+          "confirmed": null,
+          "note": "Unverified: causally known prospective metadata capture possible. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "bybit:bybit_docs_instrument",
+            "bybit:BTCUSDT_instrument",
+            "bybit:bybit_docs_kline",
+            "bybit:bybit_docs_oi",
+            "bybit:BTCUSDT_m15now",
+            "bybit:ETHUSDT_m15now",
+            "bybit:BTCUSDT_m15old",
+            "bybit:ETHUSDT_m15old",
+            "bybit:ETHUSDT_instrument"
+          ]
+        },
+        {
+          "confirmed": false,
+          "note": "Contradicted or currently unavailable: at least one approved environment public access success; severe current geo-block remains penalty. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "evidence/ci/bybit/d76e4927a9b3d2a8bc548aa2.receipt.json",
+            "evidence/ci/bybit/89b32808f5958902fcd1b107.receipt.json",
+            "evidence/ci/bybit/bd8787019204e3ba2091128d.receipt.json"
+          ]
+        }
+      ],
+      "points": {
+        "access": 0,
+        "auxiliary": 2,
+        "cost_realism": 2,
+        "documentation": 3,
+        "history": 0,
+        "metadata": 1
+      },
+      "score": "20",
+      "score_rational": [
+        "20",
+        "1"
+      ],
+      "venue": "bybit"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": null,
+          "note": "Unverified: exact product identity BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "docs_exchange_info_new",
+            "exchange_info"
+          ]
+        },
+        {
+          "confirmed": null,
+          "note": "Unverified: current defensible tick filters BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "docs_exchange_info_new",
+            "exchange_info"
+          ]
+        },
+        {
+          "confirmed": null,
+          "note": "Unverified: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "docs_exchange_info_new",
+            "exchange_info"
+          ]
+        },
+        {
+          "confirmed": null,
+          "note": "Unverified: causally known prospective metadata capture possible. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "docs_exchange_info_new",
+            "exchange_info"
+          ]
+        },
+        {
+          "confirmed": false,
+          "note": "Contradicted or currently unavailable: at least one approved environment public access success; severe current geo-block remains penalty. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "evidence/ci/binance_futures/72f75aebb719799980d1048c.receipt.json",
+            "evidence/ci/binance_futures/253a8ab7760bf920bdbf0b35.receipt.json",
+            "evidence/ci/binance_futures/105e4930d5963a2e49d86520.receipt.json"
+          ]
+        }
+      ],
+      "points": {
+        "access": 0,
+        "auxiliary": 1,
+        "cost_realism": 0,
+        "documentation": 1,
+        "history": 0,
+        "metadata": 0
+      },
+      "score": "5",
+      "score_rational": [
+        "5",
+        "1"
+      ],
+      "venue": "binance_futures"
+    }
+  ],
+  "score_probability_claimed": false,
+  "weights": {
+    "access": 20,
+    "auxiliary": 15,
+    "cost_realism": 10,
+    "documentation": 10,
+    "history": 25,
+    "metadata": 20
+  }
+}

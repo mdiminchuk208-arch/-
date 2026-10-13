@@ -1,0 +1,20 @@
+{
+  "id": "gate_docs_fee",
+  "venue": "gate",
+  "url": "https://www.gate.com/help/futures/futures-operation/22062",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-12T20:21:25.871493+00:00",
+  "completed_utc": "2026-10-12T20:21:27.668310+00:00",
+  "latency_ms": 1797.11,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "date": "Mon, 12 Oct 2026 20:21:27 GMT"
+  },
+  "raw_path": "raw/gate_docs_fee.bin",
+  "raw_sha256": "7f406c50d7eec10ce3682d78e7ab480e3f9cbef503e27e4a2d6b7ec7e7a28ced",
+  "raw_bytes": 333545,
+  "truncated": false
+}

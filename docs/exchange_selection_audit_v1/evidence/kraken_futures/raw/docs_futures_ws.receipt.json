@@ -1,0 +1,18 @@
+{
+  "source_id": "docs_futures_ws",
+  "url": "https://docs.kraken.com/exchange/guides/futures/websockets",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:31:06.881972+00:00",
+  "response_utc": "2026-10-13T06:31:07.264233+00:00",
+  "latency_ms": 382,
+  "http_status": 200,
+  "sha256": "1fed9694a55bfb9f2361618a420d705df5cec5b6ded86bf1f22dbcb3f9bd91ec",
+  "bytes": 457827,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:31:06 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_futures_ws.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

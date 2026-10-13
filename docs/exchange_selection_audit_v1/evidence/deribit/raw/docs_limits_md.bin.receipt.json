@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.deribit.com/articles/rate-limits.md",
+  "request_start_utc": "2026-10-13T06:31:57.505955+00:00",
+  "completion_utc": "2026-10-13T06:31:58.540118+00:00",
+  "latency_ms": 1034.4,
+  "http_status": 200,
+  "sha256": "fa7f604d9e93215f47dd6f7b8dd6c0f9be954c987ff636c1afb54ae489e50a6f",
+  "bytes": 18914,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4ded7833a40c-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:31:58 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_limits_md.bin"
+}

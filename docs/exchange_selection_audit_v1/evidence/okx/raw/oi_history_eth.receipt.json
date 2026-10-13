@@ -1,0 +1,18 @@
+{
+  "body_bytes": 203,
+  "error": null,
+  "headers": {
+    "content-type": "application/json;charset=UTF-8",
+    "date": "Tue, 13 Oct 2026 06:28:11 GMT"
+  },
+  "id": "oi_history_eth",
+  "latency_ms": 1085.74,
+  "method": "GET",
+  "raw_path": "raw/oi_history_eth.body",
+  "request_utc": "2026-10-13T06:28:10.814451Z",
+  "retrieval_utc": "2026-10-13T06:28:11.899980Z",
+  "sha256": "a086efda5d95a8a037a3e458958e1b5571d57080c0501d1ee0a166b8311b19f3",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/rubik/stat/contracts/open-interest-history?instId=ETH-USDT-SWAP&period=15m&limit=2"
+}

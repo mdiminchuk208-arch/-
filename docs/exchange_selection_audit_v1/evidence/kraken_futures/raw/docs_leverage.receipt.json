@@ -1,0 +1,18 @@
+{
+  "source_id": "docs_leverage",
+  "url": "https://docs.kraken.com/api-reference/multi-collateral/set-leverage-settings",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:30:19.716490+00:00",
+  "response_utc": "2026-10-13T06:30:20.968790+00:00",
+  "latency_ms": 1252,
+  "http_status": 200,
+  "sha256": "431f998614ff2f34af7f7efb265c3fc6a8b4c420129d3fe42369cb63f72adbb3",
+  "bytes": 531227,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:30:20 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_leverage.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

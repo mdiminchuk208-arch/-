@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c4bd17e3645ef-DFW",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:30:32 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1100.3,
+  "method": "GET",
+  "raw_length": 1147,
+  "raw_path": "bf_eth_trades.raw",
+  "raw_sha256": "dca6140cd1e336e98e300e2928965bac1090008ede0f3e040762f2a62a4ab348",
+  "request_start_utc": "2026-10-13T06:30:31.097116+00:00",
+  "retrieval_utc": "2026-10-13T06:30:32.197207+00:00",
+  "source_id": "bf_eth_trades",
+  "status": 200,
+  "truncated": false,
+  "url": "https://openapi.blofin.com/api/v1/market/trades?instId=ETH-USDT&limit=10"
+}

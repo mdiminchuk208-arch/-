@@ -1,0 +1,21 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:39:02 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "227.059",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 3570,
+  "raw_file": "c6afe14e029afd57e26f2c73.body",
+  "raw_sha256": "9c61fc68594c819a0af10f09163b21fd4a5599ab76fc4d7d69085ed6aeffd732",
+  "request_started_at": "2026-10-13T06:39:02.661410+00:00",
+  "response_completed_at": "2026-10-13T06:39:02.888322+00:00",
+  "source_kind": "book_BTC_second",
+  "truncated": false,
+  "url": "https://api.bitget.com/api/v2/mix/market/merge-depth?symbol=BTCUSDT&productType=USDT-FUTURES&precision=scale0&limit=100"
+}

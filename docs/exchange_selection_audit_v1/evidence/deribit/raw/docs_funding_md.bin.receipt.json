@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.deribit.com/api-reference/market-data/public-get_funding_rate_history.md",
+  "request_start_utc": "2026-10-13T06:30:48.394563+00:00",
+  "completion_utc": "2026-10-13T06:30:49.558027+00:00",
+  "latency_ms": 1163.6,
+  "http_status": 200,
+  "sha256": "9f1a41429af624b66a4030a41665a45ba63022502e3c922578e8aed1f4cd1175",
+  "bytes": 7598,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4c3e4febb87b-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:49 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_funding_md.bin"
+}

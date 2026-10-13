@@ -1,0 +1,17 @@
+{
+  "url": "https://bybit-exchange.github.io/docs/v5/market/orderbook",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:26:52.576914+00:00",
+  "request_end_utc": "2026-10-13T06:26:53.715046+00:00",
+  "latency_ms": 1138.52,
+  "status": 200,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "max-age=600",
+    "date": "Tue, 13 Oct 2026 06:26:53 GMT"
+  },
+  "sha256": "a079f2d3d7c3c5988c9f2800d33b22d5d7d44bd93129dc91413d824161c3d996",
+  "bytes": 75789,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_orderbook.html",
+  "error": null
+}

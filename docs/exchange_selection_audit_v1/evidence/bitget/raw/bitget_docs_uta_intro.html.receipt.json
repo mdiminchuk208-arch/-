@@ -1,0 +1,17 @@
+{
+  "url": "https://www.bitget.com/docs/uta/uta-intro",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:26:52.444091+00:00",
+  "request_end_utc": "2026-10-13T06:26:53.860586+00:00",
+  "latency_ms": 1416.75,
+  "status": 200,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:26:53 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "no-cache,no-cache"
+  },
+  "sha256": "9d8fd2ad39b80908687898834996ca3dcd3bf9bdb4368fc91fe2c8d87c69ba74",
+  "bytes": 44385,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_uta_intro.html",
+  "error": null
+}

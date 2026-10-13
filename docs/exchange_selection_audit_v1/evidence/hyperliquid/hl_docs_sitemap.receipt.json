@@ -1,0 +1,20 @@
+{
+  "id": "hl_docs_sitemap",
+  "venue": "hyperliquid",
+  "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/sitemap.md",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-13T06:28:43.246195+00:00",
+  "completed_utc": "2026-10-13T06:28:43.606705+00:00",
+  "latency_ms": 360.81,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:28:43 GMT",
+    "content-type": "text/plain; charset=utf-8"
+  },
+  "raw_path": "raw/hl_docs_sitemap.bin",
+  "raw_sha256": "1c712a65803e2be8cda816d62167cfd41770cd6f1ab4e1c7ded8e79f1faa3071",
+  "raw_bytes": 21219,
+  "truncated": false
+}

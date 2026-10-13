@@ -1,0 +1,20 @@
+{
+  "id": "gate_fee_schedule",
+  "venue": "gate",
+  "url": "https://www.gate.com/fee",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-13T06:26:42.810257+00:00",
+  "completed_utc": "2026-10-13T06:26:44.860466+00:00",
+  "latency_ms": 2050.69,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:26:44 GMT"
+  },
+  "raw_path": "raw/gate_fee_schedule.bin",
+  "raw_sha256": "3126ccaa39280fef303c26a60c612370205e404ea493a1e283757aec12d952e0",
+  "raw_bytes": 138517,
+  "truncated": false
+}

@@ -1,0 +1,18 @@
+{
+  "body_bytes": 150,
+  "error": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:28:11 GMT"
+  },
+  "id": "mark_history_btc",
+  "latency_ms": 1034.95,
+  "method": "GET",
+  "raw_path": "raw/mark_history_btc.body",
+  "request_utc": "2026-10-13T06:28:10.850474Z",
+  "retrieval_utc": "2026-10-13T06:28:11.885234Z",
+  "sha256": "47587af77cd44027eb35a7651aabf8e4fefcff877760f73a5f8bf6058c04db56",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=15m&limit=2"
+}

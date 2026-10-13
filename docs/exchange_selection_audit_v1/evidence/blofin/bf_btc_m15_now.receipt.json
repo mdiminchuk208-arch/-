@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c473988f48d34-DFW",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:27:23 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1264.7,
+  "method": "GET",
+  "raw_length": 970,
+  "raw_path": "bf_btc_m15_now.raw",
+  "raw_sha256": "1f3b93c9559daa9d074839276e60feba0b3f009aad4f07f207bf761dfaa1e989",
+  "request_start_utc": "2026-10-13T06:27:22.778238+00:00",
+  "retrieval_utc": "2026-10-13T06:27:24.042836+00:00",
+  "source_id": "bf_btc_m15_now",
+  "status": 200,
+  "truncated": false,
+  "url": "https://openapi.blofin.com/api/v1/market/candles?instId=BTC-USDT&bar=15m&limit=10"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "gate_eth_book_2",
+  "venue": "gate",
+  "url": "https://api.gateio.ws/api/v4/futures/usdt/order_book?contract=ETH_USDT&limit=100&with_id=true",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-13T06:26:42.807767+00:00",
+  "completed_utc": "2026-10-13T06:26:44.534912+00:00",
+  "latency_ms": 1727.35,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:26:44 GMT",
+    "content-type": "application/json",
+    "content-length": "4722",
+    "x-gate-ratelimit-requests-remain": "199",
+    "x-gate-ratelimit-limit": "200",
+    "x-gate-ratelimit-reset-timestamp": "1791872804"
+  },
+  "raw_path": "raw/gate_eth_book_2.bin",
+  "raw_sha256": "c5bd1c3a355c28f66614ab900290ce3b1ae74f7df627593a8ae3d95cbaeb29be",
+  "raw_bytes": 4722,
+  "truncated": false
+}

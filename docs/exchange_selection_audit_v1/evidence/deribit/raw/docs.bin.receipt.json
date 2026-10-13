@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.deribit.com/",
+  "request_start_utc": "2026-10-13T06:28:54.796533+00:00",
+  "completion_utc": "2026-10-13T06:28:56.416408+00:00",
+  "latency_ms": 1620.5,
+  "http_status": 200,
+  "sha256": "de531bbb35a851a088bda096bab2a1545b4ac4101029c10b1f891d4240a101a9",
+  "bytes": 1048576,
+  "truncated": true,
+  "headers": {
+    "cf-ray": "a49c4977de7ccf37-CMH",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:28:55 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs.bin"
+}

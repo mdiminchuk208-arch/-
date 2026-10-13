@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c4dd9d93ef08a-DFW",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:31:55 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1209.1,
+  "method": "GET",
+  "raw_length": 532778,
+  "raw_path": "kc_docs_intro.raw",
+  "raw_sha256": "e206168570357a34bcfaed11f46d47d7e03bd3b348f88a6c420167a706ba8d0a",
+  "request_start_utc": "2026-10-13T06:31:55.106562+00:00",
+  "retrieval_utc": "2026-10-13T06:31:56.314699+00:00",
+  "source_id": "kc_docs_intro",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.kucoin.com/docs-new/rest/futures-trading/introduction?lang=en_US&"
+}

@@ -1,0 +1,18 @@
+{
+  "body_bytes": 280,
+  "error": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:28:11 GMT"
+  },
+  "id": "trades_history_eth",
+  "latency_ms": 949.34,
+  "method": "GET",
+  "raw_path": "raw/trades_history_eth.body",
+  "request_utc": "2026-10-13T06:28:10.820020Z",
+  "retrieval_utc": "2026-10-13T06:28:11.769159Z",
+  "sha256": "ac851915a0b4b39850bf0bf02a10bd4ee4b1b47ac33980eef019902223fdf3d9",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/market/history-trades?instId=ETH-USDT-SWAP&limit=2"
+}

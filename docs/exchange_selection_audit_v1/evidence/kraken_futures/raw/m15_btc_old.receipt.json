@@ -1,0 +1,19 @@
+{
+  "source_id": "m15_btc_old",
+  "url": "https://futures.kraken.com/api/charts/v1/trade/PF_XBTUSD/15m?from=1728777600&to=1728864000",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:28:20.312045+00:00",
+  "response_utc": "2026-10-13T06:28:21.274492+00:00",
+  "latency_ms": 962,
+  "http_status": 200,
+  "sha256": "d6d3c8a437c011731c32e712cfcca3add7a21087d37da596e6278847cb5ccfec",
+  "bytes": 10081,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:28:21 GMT",
+    "content-type": "application/json",
+    "content-length": "10081",
+    "server": "envoy"
+  },
+  "raw_path": "raw/m15_btc_old.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

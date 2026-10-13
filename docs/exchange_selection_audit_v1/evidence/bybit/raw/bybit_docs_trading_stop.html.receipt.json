@@ -1,0 +1,17 @@
+{
+  "url": "https://bybit-exchange.github.io/docs/v5/position/trading-stop",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:29:11.823321+00:00",
+  "request_end_utc": "2026-10-13T06:29:13.017067+00:00",
+  "latency_ms": 1193.94,
+  "status": 200,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "max-age=600",
+    "date": "Tue, 13 Oct 2026 06:29:12 GMT"
+  },
+  "sha256": "194c7d0c09ec877637840716649c9290f90bf6e296a8538b34ea583819923009",
+  "bytes": 90402,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_trading_stop.html",
+  "error": null
+}

@@ -1,0 +1,18 @@
+{
+  "body_bytes": 524,
+  "error": null,
+  "headers": {
+    "content-type": "application/json;charset=UTF-8",
+    "date": "Mon, 12 Oct 2026 20:21:37 GMT"
+  },
+  "id": "funding_btc",
+  "latency_ms": 515.43,
+  "method": "GET",
+  "raw_path": "raw/funding_btc.body",
+  "request_utc": "2026-10-12T20:21:36.744897Z",
+  "retrieval_utc": "2026-10-12T20:21:37.260242Z",
+  "sha256": "c6550aa7c85233fa33a4e3005c7703ae8c4a55d9e4f809bec23c43756db8cf8d",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/public/funding-rate?instId=BTC-USDT-SWAP"
+}

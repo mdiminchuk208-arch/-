@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.deribit.com/api-reference/market-data/public-get_contract_size.md",
+  "request_start_utc": "2026-10-13T06:31:58.633961+00:00",
+  "completion_utc": "2026-10-13T06:31:59.811863+00:00",
+  "latency_ms": 1178.1,
+  "http_status": 200,
+  "sha256": "281943df1354393d738e0d9df3a78b14c4b2fa107df918c5869e617cd30e303c",
+  "bytes": 7133,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4df47907d945-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:31:59 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_contract_size_md.bin"
+}

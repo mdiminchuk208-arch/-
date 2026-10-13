@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c4c638c2d2526-DFW",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:56 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1814.2,
+  "method": "GET",
+  "raw_length": 677474,
+  "raw_path": "kc_docs_open_interest.raw",
+  "raw_sha256": "bc8dc44195515b7b4b094447b87df39dc7c1e625a5b535edb93414d3e74e02db",
+  "request_start_utc": "2026-10-13T06:30:54.636721+00:00",
+  "retrieval_utc": "2026-10-13T06:30:56.450553+00:00",
+  "source_id": "kc_docs_open_interest",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.kucoin.com/docs-new/v2/rest/ua/get-futures-open-interest?lang=en_US&"
+}

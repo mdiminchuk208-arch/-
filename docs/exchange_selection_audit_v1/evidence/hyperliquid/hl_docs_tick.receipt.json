@@ -1,0 +1,20 @@
+{
+  "id": "hl_docs_tick",
+  "venue": "hyperliquid",
+  "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/tick-and-lot-size",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-12T20:21:25.769277+00:00",
+  "completed_utc": "2026-10-12T20:21:26.398212+00:00",
+  "latency_ms": 629.2,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:26 GMT",
+    "content-type": "text/plain; charset=utf-8"
+  },
+  "raw_path": "raw/hl_docs_tick.bin",
+  "raw_sha256": "1114a12bc134c7d0e004002e67a3103bb7835f13ec34329d5409c1f895830a10",
+  "raw_bytes": 1561,
+  "truncated": false
+}

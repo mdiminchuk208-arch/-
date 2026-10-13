@@ -1,0 +1,16 @@
+{
+  "url": "https://api.international.coinbase.com/api/v1/fee-rate-tiers",
+  "request_start_utc": "2026-10-13T06:30:16.195164+00:00",
+  "completion_utc": "2026-10-13T06:30:17.716787+00:00",
+  "latency_ms": 1521.8,
+  "http_status": 403,
+  "sha256": "733a73ba5eec8339e705f21f6ea203bf1452a2f2da6ab7aab028ff4ffe45468e",
+  "bytes": 59,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:30:17 GMT",
+    "content-type": "application/json"
+  },
+  "error": "HTTP Error 403: Forbidden",
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/fee_tiers.bin"
+}

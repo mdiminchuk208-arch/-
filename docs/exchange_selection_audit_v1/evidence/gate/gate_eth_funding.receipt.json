@@ -1,0 +1,24 @@
+{
+  "id": "gate_eth_funding",
+  "venue": "gate",
+  "url": "https://api.gateio.ws/api/v4/futures/usdt/funding_rate?contract=ETH_USDT&limit=2",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-12T20:21:15.866872+00:00",
+  "completed_utc": "2026-10-12T20:21:16.854827+00:00",
+  "latency_ms": 988.14,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:16 GMT",
+    "content-type": "application/json",
+    "content-length": "64",
+    "x-gate-ratelimit-requests-remain": "199",
+    "x-gate-ratelimit-limit": "200",
+    "x-gate-ratelimit-reset-timestamp": "1791836476"
+  },
+  "raw_path": "raw/gate_eth_funding.bin",
+  "raw_sha256": "84766b6d86a6f780bc9e37b3461f890e3b39ec89d3bb9bf8c14fd1e538798049",
+  "raw_bytes": 64,
+  "truncated": false
+}

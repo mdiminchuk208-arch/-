@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c469c4b8bb815-DFW",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:26:58 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1435.6,
+  "method": "GET",
+  "raw_length": 228917,
+  "raw_path": "bf_instruments.raw",
+  "raw_sha256": "73f73c7f18107379d68dc2e2dd6707f9ed58761a9f461fdda2d0419a31c4edf0",
+  "request_start_utc": "2026-10-13T06:26:57.837595+00:00",
+  "retrieval_utc": "2026-10-13T06:26:59.272721+00:00",
+  "source_id": "bf_instruments",
+  "status": 200,
+  "truncated": false,
+  "url": "https://openapi.blofin.com/api/v1/market/instruments?instType=SWAP"
+}

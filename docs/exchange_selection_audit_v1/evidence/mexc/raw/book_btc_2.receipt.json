@@ -1,0 +1,19 @@
+{
+  "source_id": "book_btc_2",
+  "url": "https://contract.mexc.com/api/v1/contract/depth/BTC_USDT?limit=100",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:28:07.948599+00:00",
+  "response_utc": "2026-10-13T06:28:09.130868+00:00",
+  "latency_ms": 1182,
+  "http_status": 200,
+  "sha256": "8838a1f43c56bffdc86698990904eeafb32aed0d28d9fe53d896f19a355e238f",
+  "bytes": 3388,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:28:09 GMT",
+    "content-length": "3388",
+    "server": "envoy"
+  },
+  "raw_path": "raw/book_btc_2.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

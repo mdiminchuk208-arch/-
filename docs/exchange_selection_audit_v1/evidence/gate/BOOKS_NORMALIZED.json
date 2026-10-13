@@ -1,0 +1,3258 @@
+[
+  {
+    "source_id": "gate_btc_book_1",
+    "symbol": "BTC",
+    "source_time": 1791836462.725,
+    "unit_rule": "contracts * quanto_multiplier",
+    "unit_source_ids": [
+      "gate_docs_zip",
+      "gate_btc_contract"
+    ],
+    "bids": [
+      {
+        "price": "83011.6",
+        "base_quantity": "2.9168"
+      },
+      {
+        "price": "83011.5",
+        "base_quantity": "0.0603"
+      },
+      {
+        "price": "83009.2",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83009",
+        "base_quantity": "0.0004"
+      },
+      {
+        "price": "83008.6",
+        "base_quantity": "0.0060"
+      },
+      {
+        "price": "83007.8",
+        "base_quantity": "0.0048"
+      },
+      {
+        "price": "83007.6",
+        "base_quantity": "0.0002"
+      },
+      {
+        "price": "83007.5",
+        "base_quantity": "0.0236"
+      },
+      {
+        "price": "83007.3",
+        "base_quantity": "0.0026"
+      },
+      {
+        "price": "83007.2",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83007.1",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83007",
+        "base_quantity": "0.0121"
+      },
+      {
+        "price": "83006.9",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83006.8",
+        "base_quantity": "0.0002"
+      },
+      {
+        "price": "83006.7",
+        "base_quantity": "0.0603"
+      },
+      {
+        "price": "83005.5",
+        "base_quantity": "0.0307"
+      },
+      {
+        "price": "83005.4",
+        "base_quantity": "0.0002"
+      },
+      {
+        "price": "83005.3",
+        "base_quantity": "0.0603"
+      },
+      {
+        "price": "83005.2",
+        "base_quantity": "0.0031"
+      },
+      {
+        "price": "83003.3",
+        "base_quantity": "0.0603"
+      },
+      {
+        "price": "83003.2",
+        "base_quantity": "0.0642"
+      },
+      {
+        "price": "83002.5",
+        "base_quantity": "0.0024"
+      },
+      {
+        "price": "83002.3",
+        "base_quantity": "0.0419"
+      },
+      {
+        "price": "83002.2",
+        "base_quantity": "1.0894"
+      },
+      {
+        "price": "83002.1",
+        "base_quantity": "0.0002"
+      },
+      {
+        "price": "83002",
+        "base_quantity": "0.0050"
+      },
+      {
+        "price": "83001.3",
+        "base_quantity": "0.0031"
+      },
+      {
+        "price": "83001",
+        "base_quantity": "0.0031"
+      },
+      {
+        "price": "83000.9",
+        "base_quantity": "0.0002"
+      },
+      {
+        "price": "83000.8",
+        "base_quantity": "0.0117"
+      },
+      {
+        "price": "83000.5",
+        "base_quantity": "5.8661"
+      },
+      {
+        "price": "83000.4",
+        "base_quantity": "1.0273"
+      },
+      {
+        "price": "83000.3",
+        "base_quantity": "0.0462"
+      },
+      {
+        "price": "83000.1",
+        "base_quantity": "0.0031"
+      },
+      {
+        "price": "83000",
+        "base_quantity": "0.0030"
+      },
+      {
+        "price": "82999",
+        "base_quantity": "0.0669"
+      },
+      {
+        "price": "82997.1",
+        "base_quantity": "0.0241"
+      },
+      {
+        "price": "82996.7",
+        "base_quantity": "0.0307"
+      },
+      {
+        "price": "82996",
+        "base_quantity": "0.0031"
+      },
+      {
+        "price": "82995.8",
+        "base_quantity": "0.0110"
+      },
+      {
+        "price": "82995.3",
+        "base_quantity": "0.0199"
+      },
+      {
+        "price": "82995",
+        "base_quantity": "0.7000"
+      },
+      {
+        "price": "82994.1",
+        "base_quantity": "0.9861"
+      },
+      {
+        "price": "82994",
+        "base_quantity": "0.0665"
+      },
+      {
+        "price": "82993.7",
+        "base_quantity": "0.0060"
+      },
+      {
+        "price": "82993.6",
+        "base_quantity": "0.0061"
+      },
+      {
+        "price": "82992.5",
+        "base_quantity": "6.7215"
+      },
+      {
+        "price": "82992.1",
+        "base_quantity": "0.1113"
+      },
+      {
+        "price": "82991.9",
+        "base_quantity": "0.0143"
+      },
+      {
+        "price": "82991.5",
+        "base_quantity": "0.0694"
+      },
+      {
+        "price": "82991.3",
+        "base_quantity": "0.0070"
+      },
+      {
+        "price": "82991",
+        "base_quantity": "0.0060"
+      },
+      {
+        "price": "82990.8",
+        "base_quantity": "0.0994"
+      },
+      {
+        "price": "82990.7",
+        "base_quantity": "0.0012"
+      },
+      {
+        "price": "82990.6",
+        "base_quantity": "0.0060"
+      },
+      {
+        "price": "82990.3",
+        "base_quantity": "0.0010"
+      },
+      {
+        "price": "82990.2",
+        "base_quantity": "0.5037"
+      },
+      {
+        "price": "82990",
+        "base_quantity": "0.0010"
+      },
+      {
+        "price": "82989.7",
+        "base_quantity": "0.0726"
+      },
+      {
+        "price": "82989.5",
+        "base_quantity": "0.0079"
+      },
+      {
+        "price": "82989.4",
+        "base_quantity": "0.0191"
+      },
+      {
+        "price": "82988.3",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "82988",
+        "base_quantity": "0.7000"
+      },
+      {
+        "price": "82987.8",
+        "base_quantity": "0.0081"
+      },
+      {
+        "price": "82987.4",
+        "base_quantity": "0.0050"
+      },
+      {
+        "price": "82986.8",
+        "base_quantity": "1.2474"
+      },
+      {
+        "price": "82986.7",
+        "base_quantity": "1.1355"
+      },
+      {
+        "price": "82986.5",
+        "base_quantity": "0.0605"
+      },
+      {
+        "price": "82986.3",
+        "base_quantity": "0.0130"
+      },
+      {
+        "price": "82985.5",
+        "base_quantity": "0.0665"
+      },
+      {
+        "price": "82985.4",
+        "base_quantity": "0.0050"
+      },
+      {
+        "price": "82985",
+        "base_quantity": "6.7215"
+      },
+      {
+        "price": "82984.7",
+        "base_quantity": "0.0050"
+      },
+      {
+        "price": "82984.6",
+        "base_quantity": "0.0040"
+      },
+      {
+        "price": "82984.4",
+        "base_quantity": "0.0145"
+      },
+      {
+        "price": "82984.3",
+        "base_quantity": "0.0220"
+      },
+      {
+        "price": "82983",
+        "base_quantity": "0.7000"
+      },
+      {
+        "price": "82982",
+        "base_quantity": "0.0012"
+      },
+      {
+        "price": "82981.7",
+        "base_quantity": "0.0031"
+      },
+      {
+        "price": "82981.2",
+        "base_quantity": "0.0121"
+      },
+      {
+        "price": "82981.1",
+        "base_quantity": "0.0307"
+      },
+      {
+        "price": "82980.9",
+        "base_quantity": "0.0031"
+      },
+      {
+        "price": "82980.7",
+        "base_quantity": "0.0191"
+      },
+      {
+        "price": "82980.6",
+        "base_quantity": "0.0100"
+      },
+      {
+        "price": "82980",
+        "base_quantity": "0.0120"
+      },
+      {
+        "price": "82979.5",
+        "base_quantity": "0.0642"
+      },
+      {
+        "price": "82978.9",
+        "base_quantity": "0.0070"
+      },
+      {
+        "price": "82978.8",
+        "base_quantity": "0.0070"
+      },
+      {
+        "price": "82978.6",
+        "base_quantity": "0.0070"
+      },
+      {
+        "price": "82977.3",
+        "base_quantity": "1.1355"
+      },
+      {
+        "price": "82975.9",
+        "base_quantity": "0.7207"
+      },
+      {
+        "price": "82975.7",
+        "base_quantity": "0.2559"
+      },
+      {
+        "price": "82975.6",
+        "base_quantity": "0.0020"
+      },
+      {
+        "price": "82975.4",
+        "base_quantity": "0.0031"
+      },
+      {
+        "price": "82975.3",
+        "base_quantity": "0.0668"
+      },
+      {
+        "price": "82974.9",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "82974.6",
+        "base_quantity": "0.0006"
+      },
+      {
+        "price": "82974.2",
+        "base_quantity": "0.0032"
+      },
+      {
+        "price": "82974.1",
+        "base_quantity": "0.0102"
+      },
+      {
+        "price": "82972.6",
+        "base_quantity": "0.0090"
+      }
+    ],
+    "asks": [
+      {
+        "price": "83011.7",
+        "base_quantity": "1.6201"
+      },
+      {
+        "price": "83011.8",
+        "base_quantity": "0.0015"
+      },
+      {
+        "price": "83011.9",
+        "base_quantity": "0.0002"
+      },
+      {
+        "price": "83014.7",
+        "base_quantity": "0.0235"
+      },
+      {
+        "price": "83015.4",
+        "base_quantity": "0.0002"
+      },
+      {
+        "price": "83015.5",
+        "base_quantity": "0.1576"
+      },
+      {
+        "price": "83016.8",
+        "base_quantity": "0.0603"
+      },
+      {
+        "price": "83016.9",
+        "base_quantity": "0.1905"
+      },
+      {
+        "price": "83017.1",
+        "base_quantity": "0.2792"
+      },
+      {
+        "price": "83017.2",
+        "base_quantity": "0.3204"
+      },
+      {
+        "price": "83018",
+        "base_quantity": "0.0146"
+      },
+      {
+        "price": "83018.9",
+        "base_quantity": "0.0060"
+      },
+      {
+        "price": "83019",
+        "base_quantity": "0.0146"
+      },
+      {
+        "price": "83019.2",
+        "base_quantity": "0.3031"
+      },
+      {
+        "price": "83019.3",
+        "base_quantity": "0.0010"
+      },
+      {
+        "price": "83019.8",
+        "base_quantity": "0.0142"
+      },
+      {
+        "price": "83020",
+        "base_quantity": "0.0146"
+      },
+      {
+        "price": "83020.5",
+        "base_quantity": "0.0120"
+      },
+      {
+        "price": "83020.6",
+        "base_quantity": "0.0090"
+      },
+      {
+        "price": "83021.9",
+        "base_quantity": "1.0633"
+      },
+      {
+        "price": "83022",
+        "base_quantity": "6.0445"
+      },
+      {
+        "price": "83022.2",
+        "base_quantity": "1.0188"
+      },
+      {
+        "price": "83022.3",
+        "base_quantity": "0.0002"
+      },
+      {
+        "price": "83024.5",
+        "base_quantity": "0.0603"
+      },
+      {
+        "price": "83024.8",
+        "base_quantity": "0.0080"
+      },
+      {
+        "price": "83026.2",
+        "base_quantity": "0.0653"
+      },
+      {
+        "price": "83027.7",
+        "base_quantity": "0.0893"
+      },
+      {
+        "price": "83027.8",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83027.9",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83028",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83028.1",
+        "base_quantity": "0.2951"
+      },
+      {
+        "price": "83028.4",
+        "base_quantity": "0.0602"
+      },
+      {
+        "price": "83029.6",
+        "base_quantity": "0.0054"
+      },
+      {
+        "price": "83029.9",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83030",
+        "base_quantity": "1.0876"
+      },
+      {
+        "price": "83030.1",
+        "base_quantity": "5.9394"
+      },
+      {
+        "price": "83030.2",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83030.4",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83030.5",
+        "base_quantity": "0.0321"
+      },
+      {
+        "price": "83030.6",
+        "base_quantity": "0.0698"
+      },
+      {
+        "price": "83031.2",
+        "base_quantity": "0.0232"
+      },
+      {
+        "price": "83031.5",
+        "base_quantity": "1.1274"
+      },
+      {
+        "price": "83031.7",
+        "base_quantity": "0.0070"
+      },
+      {
+        "price": "83032.1",
+        "base_quantity": "0.0729"
+      },
+      {
+        "price": "83033.3",
+        "base_quantity": "0.0455"
+      },
+      {
+        "price": "83033.9",
+        "base_quantity": "0.0012"
+      },
+      {
+        "price": "83034.1",
+        "base_quantity": "0.0012"
+      },
+      {
+        "price": "83034.2",
+        "base_quantity": "0.1481"
+      },
+      {
+        "price": "83034.8",
+        "base_quantity": "0.0671"
+      },
+      {
+        "price": "83035.1",
+        "base_quantity": "0.0307"
+      },
+      {
+        "price": "83035.2",
+        "base_quantity": "0.0605"
+      },
+      {
+        "price": "83035.4",
+        "base_quantity": "0.0060"
+      },
+      {
+        "price": "83035.5",
+        "base_quantity": "0.0050"
+      },
+      {
+        "price": "83035.7",
+        "base_quantity": "0.0050"
+      },
+      {
+        "price": "83036",
+        "base_quantity": "0.0012"
+      },
+      {
+        "price": "83037.2",
+        "base_quantity": "0.0024"
+      },
+      {
+        "price": "83037.3",
+        "base_quantity": "0.0096"
+      },
+      {
+        "price": "83037.5",
+        "base_quantity": "1.0849"
+      },
+      {
+        "price": "83038",
+        "base_quantity": "0.0091"
+      },
+      {
+        "price": "83038.2",
+        "base_quantity": "5.9394"
+      },
+      {
+        "price": "83039.2",
+        "base_quantity": "0.0050"
+      },
+      {
+        "price": "83039.8",
+        "base_quantity": "0.2528"
+      },
+      {
+        "price": "83040",
+        "base_quantity": "0.0010"
+      },
+      {
+        "price": "83040.4",
+        "base_quantity": "0.0130"
+      },
+      {
+        "price": "83040.6",
+        "base_quantity": "0.0718"
+      },
+      {
+        "price": "83040.8",
+        "base_quantity": "0.0050"
+      },
+      {
+        "price": "83041",
+        "base_quantity": "1.0032"
+      },
+      {
+        "price": "83041.1",
+        "base_quantity": "0.0149"
+      },
+      {
+        "price": "83041.4",
+        "base_quantity": "0.1266"
+      },
+      {
+        "price": "83044",
+        "base_quantity": "0.7000"
+      },
+      {
+        "price": "83044.7",
+        "base_quantity": "0.0110"
+      },
+      {
+        "price": "83044.9",
+        "base_quantity": "0.0013"
+      },
+      {
+        "price": "83045",
+        "base_quantity": "0.0090"
+      },
+      {
+        "price": "83045.5",
+        "base_quantity": "0.9078"
+      },
+      {
+        "price": "83045.6",
+        "base_quantity": "0.0668"
+      },
+      {
+        "price": "83045.7",
+        "base_quantity": "5.9394"
+      },
+      {
+        "price": "83046.4",
+        "base_quantity": "0.0043"
+      },
+      {
+        "price": "83047",
+        "base_quantity": "0.0050"
+      },
+      {
+        "price": "83047.6",
+        "base_quantity": "0.0110"
+      },
+      {
+        "price": "83048.1",
+        "base_quantity": "0.0060"
+      },
+      {
+        "price": "83049.1",
+        "base_quantity": "0.0020"
+      },
+      {
+        "price": "83049.4",
+        "base_quantity": "0.0061"
+      },
+      {
+        "price": "83049.8",
+        "base_quantity": "0.0668"
+      },
+      {
+        "price": "83050",
+        "base_quantity": "1.1474"
+      },
+      {
+        "price": "83050.7",
+        "base_quantity": "0.0307"
+      },
+      {
+        "price": "83050.9",
+        "base_quantity": "0.0031"
+      },
+      {
+        "price": "83051.6",
+        "base_quantity": "0.0003"
+      },
+      {
+        "price": "83052.5",
+        "base_quantity": "0.0102"
+      },
+      {
+        "price": "83052.6",
+        "base_quantity": "0.0012"
+      },
+      {
+        "price": "83052.8",
+        "base_quantity": "1.0787"
+      },
+      {
+        "price": "83053.3",
+        "base_quantity": "5.9444"
+      },
+      {
+        "price": "83053.6",
+        "base_quantity": "0.0041"
+      },
+      {
+        "price": "83055",
+        "base_quantity": "0.0646"
+      },
+      {
+        "price": "83055.3",
+        "base_quantity": "0.0700"
+      },
+      {
+        "price": "83055.4",
+        "base_quantity": "0.0573"
+      },
+      {
+        "price": "83055.5",
+        "base_quantity": "0.0070"
+      },
+      {
+        "price": "83055.9",
+        "base_quantity": "0.0031"
+      },
+      {
+        "price": "83056",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83056.5",
+        "base_quantity": "0.0031"
+      },
+      {
+        "price": "83057.3",
+        "base_quantity": "0.0050"
+      }
+    ]
+  },
+  {
+    "source_id": "gate_btc_book_2",
+    "symbol": "BTC",
+    "source_time": 1791872804.297,
+    "unit_rule": "contracts * quanto_multiplier",
+    "unit_source_ids": [
+      "gate_docs_zip",
+      "gate_btc_contract"
+    ],
+    "bids": [
+      {
+        "price": "83636.6",
+        "base_quantity": "4.2319"
+      },
+      {
+        "price": "83635.4",
+        "base_quantity": "0.0598"
+      },
+      {
+        "price": "83634.7",
+        "base_quantity": "0.0059"
+      },
+      {
+        "price": "83634.5",
+        "base_quantity": "0.0119"
+      },
+      {
+        "price": "83633.2",
+        "base_quantity": "0.0023"
+      },
+      {
+        "price": "83633.1",
+        "base_quantity": "0.0621"
+      },
+      {
+        "price": "83633",
+        "base_quantity": "0.3397"
+      },
+      {
+        "price": "83631.5",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83631.4",
+        "base_quantity": "0.0119"
+      },
+      {
+        "price": "83630.7",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83630.6",
+        "base_quantity": "0.0598"
+      },
+      {
+        "price": "83630.4",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83630.3",
+        "base_quantity": "0.0119"
+      },
+      {
+        "price": "83630.2",
+        "base_quantity": "0.0027"
+      },
+      {
+        "price": "83630",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83629.9",
+        "base_quantity": "0.0002"
+      },
+      {
+        "price": "83629.8",
+        "base_quantity": "0.0746"
+      },
+      {
+        "price": "83629.7",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83629.6",
+        "base_quantity": "0.0002"
+      },
+      {
+        "price": "83629.5",
+        "base_quantity": "0.3927"
+      },
+      {
+        "price": "83628.7",
+        "base_quantity": "0.0060"
+      },
+      {
+        "price": "83626.7",
+        "base_quantity": "0.0038"
+      },
+      {
+        "price": "83626.2",
+        "base_quantity": "0.0307"
+      },
+      {
+        "price": "83626.1",
+        "base_quantity": "0.0119"
+      },
+      {
+        "price": "83625.8",
+        "base_quantity": "0.0234"
+      },
+      {
+        "price": "83625.7",
+        "base_quantity": "0.8050"
+      },
+      {
+        "price": "83625.6",
+        "base_quantity": "0.0288"
+      },
+      {
+        "price": "83625.5",
+        "base_quantity": "4.8040"
+      },
+      {
+        "price": "83625.1",
+        "base_quantity": "0.0050"
+      },
+      {
+        "price": "83625",
+        "base_quantity": "0.7000"
+      },
+      {
+        "price": "83624.9",
+        "base_quantity": "0.0473"
+      },
+      {
+        "price": "83624.8",
+        "base_quantity": "0.0100"
+      },
+      {
+        "price": "83624.7",
+        "base_quantity": "0.0239"
+      },
+      {
+        "price": "83624.6",
+        "base_quantity": "0.0649"
+      },
+      {
+        "price": "83623.2",
+        "base_quantity": "0.0140"
+      },
+      {
+        "price": "83622.9",
+        "base_quantity": "0.0011"
+      },
+      {
+        "price": "83622.7",
+        "base_quantity": "0.0607"
+      },
+      {
+        "price": "83622.4",
+        "base_quantity": "0.0090"
+      },
+      {
+        "price": "83622.1",
+        "base_quantity": "0.0023"
+      },
+      {
+        "price": "83622",
+        "base_quantity": "0.1425"
+      },
+      {
+        "price": "83621.9",
+        "base_quantity": "0.0119"
+      },
+      {
+        "price": "83620.8",
+        "base_quantity": "0.0059"
+      },
+      {
+        "price": "83620.6",
+        "base_quantity": "0.0050"
+      },
+      {
+        "price": "83619.2",
+        "base_quantity": "0.1425"
+      },
+      {
+        "price": "83618.7",
+        "base_quantity": "0.0601"
+      },
+      {
+        "price": "83618.4",
+        "base_quantity": "0.2509"
+      },
+      {
+        "price": "83618.3",
+        "base_quantity": "0.0002"
+      },
+      {
+        "price": "83618",
+        "base_quantity": "0.7846"
+      },
+      {
+        "price": "83617.9",
+        "base_quantity": "4.3914"
+      },
+      {
+        "price": "83617.8",
+        "base_quantity": "1.2568"
+      },
+      {
+        "price": "83617.7",
+        "base_quantity": "0.1425"
+      },
+      {
+        "price": "83617.6",
+        "base_quantity": "0.0119"
+      },
+      {
+        "price": "83616.9",
+        "base_quantity": "0.0307"
+      },
+      {
+        "price": "83616",
+        "base_quantity": "0.7000"
+      },
+      {
+        "price": "83615.9",
+        "base_quantity": "0.2367"
+      },
+      {
+        "price": "83615.5",
+        "base_quantity": "0.0011"
+      },
+      {
+        "price": "83614.6",
+        "base_quantity": "0.0090"
+      },
+      {
+        "price": "83614",
+        "base_quantity": "1.0000"
+      },
+      {
+        "price": "83613.8",
+        "base_quantity": "0.1537"
+      },
+      {
+        "price": "83613.7",
+        "base_quantity": "0.0645"
+      },
+      {
+        "price": "83613.4",
+        "base_quantity": "0.0179"
+      },
+      {
+        "price": "83612.8",
+        "base_quantity": "0.0110"
+      },
+      {
+        "price": "83612.6",
+        "base_quantity": "0.0043"
+      },
+      {
+        "price": "83611.5",
+        "base_quantity": "0.0011"
+      },
+      {
+        "price": "83611.4",
+        "base_quantity": "0.0399"
+      },
+      {
+        "price": "83611.3",
+        "base_quantity": "0.0050"
+      },
+      {
+        "price": "83611",
+        "base_quantity": "0.1292"
+      },
+      {
+        "price": "83610.6",
+        "base_quantity": "0.0060"
+      },
+      {
+        "price": "83610.2",
+        "base_quantity": "0.0784"
+      },
+      {
+        "price": "83610",
+        "base_quantity": "0.0040"
+      },
+      {
+        "price": "83609.5",
+        "base_quantity": "0.0670"
+      },
+      {
+        "price": "83609.2",
+        "base_quantity": "0.8777"
+      },
+      {
+        "price": "83608.7",
+        "base_quantity": "0.0050"
+      },
+      {
+        "price": "83608.6",
+        "base_quantity": "0.0050"
+      },
+      {
+        "price": "83608.4",
+        "base_quantity": "0.0050"
+      },
+      {
+        "price": "83607.5",
+        "base_quantity": "0.0030"
+      },
+      {
+        "price": "83607.1",
+        "base_quantity": "0.0070"
+      },
+      {
+        "price": "83607",
+        "base_quantity": "0.0799"
+      },
+      {
+        "price": "83605.9",
+        "base_quantity": "0.0050"
+      },
+      {
+        "price": "83605.6",
+        "base_quantity": "0.0569"
+      },
+      {
+        "price": "83605.3",
+        "base_quantity": "6.5410"
+      },
+      {
+        "price": "83605",
+        "base_quantity": "0.0119"
+      },
+      {
+        "price": "83604.8",
+        "base_quantity": "0.0120"
+      },
+      {
+        "price": "83604.3",
+        "base_quantity": "0.2424"
+      },
+      {
+        "price": "83604.2",
+        "base_quantity": "0.0060"
+      },
+      {
+        "price": "83604.1",
+        "base_quantity": "0.0526"
+      },
+      {
+        "price": "83603.8",
+        "base_quantity": "0.0065"
+      },
+      {
+        "price": "83603.1",
+        "base_quantity": "1.9139"
+      },
+      {
+        "price": "83602.9",
+        "base_quantity": "0.0060"
+      },
+      {
+        "price": "83602.6",
+        "base_quantity": "0.0781"
+      },
+      {
+        "price": "83601.9",
+        "base_quantity": "0.3241"
+      },
+      {
+        "price": "83600.8",
+        "base_quantity": "0.0119"
+      },
+      {
+        "price": "83600",
+        "base_quantity": "0.0081"
+      },
+      {
+        "price": "83599.8",
+        "base_quantity": "0.0458"
+      },
+      {
+        "price": "83599.6",
+        "base_quantity": "0.8748"
+      },
+      {
+        "price": "83598.9",
+        "base_quantity": "0.0307"
+      },
+      {
+        "price": "83598.7",
+        "base_quantity": "0.0012"
+      },
+      {
+        "price": "83598.5",
+        "base_quantity": "0.0033"
+      },
+      {
+        "price": "83598.3",
+        "base_quantity": "0.0120"
+      },
+      {
+        "price": "83598.2",
+        "base_quantity": "0.0189"
+      }
+    ],
+    "asks": [
+      {
+        "price": "83636.7",
+        "base_quantity": "0.6748"
+      },
+      {
+        "price": "83637.2",
+        "base_quantity": "0.0002"
+      },
+      {
+        "price": "83638.9",
+        "base_quantity": "0.0167"
+      },
+      {
+        "price": "83639",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83639.1",
+        "base_quantity": "0.0300"
+      },
+      {
+        "price": "83639.6",
+        "base_quantity": "0.0509"
+      },
+      {
+        "price": "83639.7",
+        "base_quantity": "0.1197"
+      },
+      {
+        "price": "83639.8",
+        "base_quantity": "0.0517"
+      },
+      {
+        "price": "83641.5",
+        "base_quantity": "0.0119"
+      },
+      {
+        "price": "83641.7",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83641.8",
+        "base_quantity": "0.0812"
+      },
+      {
+        "price": "83642.4",
+        "base_quantity": "0.0754"
+      },
+      {
+        "price": "83643.5",
+        "base_quantity": "0.0011"
+      },
+      {
+        "price": "83643.6",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83643.9",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83644",
+        "base_quantity": "0.7395"
+      },
+      {
+        "price": "83644.1",
+        "base_quantity": "4.6361"
+      },
+      {
+        "price": "83645.2",
+        "base_quantity": "0.0059"
+      },
+      {
+        "price": "83646",
+        "base_quantity": "0.0119"
+      },
+      {
+        "price": "83646.2",
+        "base_quantity": "0.0119"
+      },
+      {
+        "price": "83646.6",
+        "base_quantity": "0.0855"
+      },
+      {
+        "price": "83646.8",
+        "base_quantity": "0.0830"
+      },
+      {
+        "price": "83647.2",
+        "base_quantity": "0.0598"
+      },
+      {
+        "price": "83647.3",
+        "base_quantity": "0.0951"
+      },
+      {
+        "price": "83647.4",
+        "base_quantity": "0.1694"
+      },
+      {
+        "price": "83647.6",
+        "base_quantity": "0.0870"
+      },
+      {
+        "price": "83648.4",
+        "base_quantity": "0.0027"
+      },
+      {
+        "price": "83648.5",
+        "base_quantity": "0.0900"
+      },
+      {
+        "price": "83649.5",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83649.6",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83649.7",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83649.8",
+        "base_quantity": "0.0599"
+      },
+      {
+        "price": "83649.9",
+        "base_quantity": "0.0027"
+      },
+      {
+        "price": "83650.1",
+        "base_quantity": "0.0288"
+      },
+      {
+        "price": "83650.5",
+        "base_quantity": "0.0119"
+      },
+      {
+        "price": "83650.8",
+        "base_quantity": "0.0649"
+      },
+      {
+        "price": "83650.9",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83651",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83651.1",
+        "base_quantity": "0.1425"
+      },
+      {
+        "price": "83651.3",
+        "base_quantity": "0.0239"
+      },
+      {
+        "price": "83651.7",
+        "base_quantity": "0.9263"
+      },
+      {
+        "price": "83651.8",
+        "base_quantity": "5.8429"
+      },
+      {
+        "price": "83652.1",
+        "base_quantity": "0.1425"
+      },
+      {
+        "price": "83653.8",
+        "base_quantity": "0.0048"
+      },
+      {
+        "price": "83654.7",
+        "base_quantity": "0.0119"
+      },
+      {
+        "price": "83654.9",
+        "base_quantity": "0.2000"
+      },
+      {
+        "price": "83655",
+        "base_quantity": "0.2089"
+      },
+      {
+        "price": "83655.8",
+        "base_quantity": "0.0194"
+      },
+      {
+        "price": "83655.9",
+        "base_quantity": "0.0307"
+      },
+      {
+        "price": "83656.4",
+        "base_quantity": "0.0141"
+      },
+      {
+        "price": "83656.8",
+        "base_quantity": "0.0023"
+      },
+      {
+        "price": "83656.9",
+        "base_quantity": "0.0155"
+      },
+      {
+        "price": "83658.1",
+        "base_quantity": "0.0011"
+      },
+      {
+        "price": "83658.7",
+        "base_quantity": "0.0011"
+      },
+      {
+        "price": "83658.9",
+        "base_quantity": "0.0119"
+      },
+      {
+        "price": "83659.2",
+        "base_quantity": "0.0664"
+      },
+      {
+        "price": "83660",
+        "base_quantity": "0.0010"
+      },
+      {
+        "price": "83660.3",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83661.2",
+        "base_quantity": "0.0126"
+      },
+      {
+        "price": "83663.2",
+        "base_quantity": "0.0119"
+      },
+      {
+        "price": "83663.4",
+        "base_quantity": "0.0664"
+      },
+      {
+        "price": "83664",
+        "base_quantity": "0.7749"
+      },
+      {
+        "price": "83665",
+        "base_quantity": "0.0001"
+      },
+      {
+        "price": "83665.8",
+        "base_quantity": "0.0059"
+      },
+      {
+        "price": "83665.9",
+        "base_quantity": "5.0968"
+      },
+      {
+        "price": "83666.5",
+        "base_quantity": "0.0307"
+      },
+      {
+        "price": "83667.1",
+        "base_quantity": "0.0030"
+      },
+      {
+        "price": "83667.4",
+        "base_quantity": "0.0119"
+      },
+      {
+        "price": "83668.4",
+        "base_quantity": "0.0660"
+      },
+      {
+        "price": "83668.9",
+        "base_quantity": "0.0584"
+      },
+      {
+        "price": "83670",
+        "base_quantity": "0.7010"
+      },
+      {
+        "price": "83671.3",
+        "base_quantity": "0.0045"
+      },
+      {
+        "price": "83671.6",
+        "base_quantity": "0.0119"
+      },
+      {
+        "price": "83673.1",
+        "base_quantity": "0.7573"
+      },
+      {
+        "price": "83673.5",
+        "base_quantity": "4.7615"
+      },
+      {
+        "price": "83674.3",
+        "base_quantity": "0.0403"
+      },
+      {
+        "price": "83674.6",
+        "base_quantity": "0.0644"
+      },
+      {
+        "price": "83674.8",
+        "base_quantity": "0.0012"
+      },
+      {
+        "price": "83676.2",
+        "base_quantity": "0.0900"
+      },
+      {
+        "price": "83677.7",
+        "base_quantity": "0.0119"
+      },
+      {
+        "price": "83678.6",
+        "base_quantity": "0.0307"
+      },
+      {
+        "price": "83678.8",
+        "base_quantity": "0.0644"
+      },
+      {
+        "price": "83679",
+        "base_quantity": "0.7000"
+      },
+      {
+        "price": "83679.5",
+        "base_quantity": "0.0050"
+      },
+      {
+        "price": "83679.8",
+        "base_quantity": "0.0050"
+      },
+      {
+        "price": "83679.9",
+        "base_quantity": "0.2509"
+      },
+      {
+        "price": "83680",
+        "base_quantity": "0.0010"
+      },
+      {
+        "price": "83680.6",
+        "base_quantity": "0.1425"
+      },
+      {
+        "price": "83681",
+        "base_quantity": "0.7451"
+      },
+      {
+        "price": "83681.1",
+        "base_quantity": "4.7615"
+      },
+      {
+        "price": "83681.8",
+        "base_quantity": "0.0090"
+      },
+      {
+        "price": "83681.9",
+        "base_quantity": "2.0546"
+      },
+      {
+        "price": "83682",
+        "base_quantity": "0.0119"
+      },
+      {
+        "price": "83682.4",
+        "base_quantity": "0.0050"
+      },
+      {
+        "price": "83682.7",
+        "base_quantity": "0.0011"
+      },
+      {
+        "price": "83682.8",
+        "base_quantity": "0.0048"
+      },
+      {
+        "price": "83683",
+        "base_quantity": "0.0660"
+      },
+      {
+        "price": "83683.2",
+        "base_quantity": "0.0020"
+      },
+      {
+        "price": "83683.3",
+        "base_quantity": "0.7303"
+      },
+      {
+        "price": "83683.8",
+        "base_quantity": "0.1425"
+      }
+    ]
+  },
+  {
+    "source_id": "gate_eth_book_1",
+    "symbol": "ETH",
+    "source_time": 1791836462.727,
+    "unit_rule": "contracts * quanto_multiplier",
+    "unit_source_ids": [
+      "gate_docs_zip",
+      "gate_eth_contract"
+    ],
+    "bids": [
+      {
+        "price": "2523.08",
+        "base_quantity": "80.61"
+      },
+      {
+        "price": "2523.01",
+        "base_quantity": "2.41"
+      },
+      {
+        "price": "2522.9",
+        "base_quantity": "3.00"
+      },
+      {
+        "price": "2522.83",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2522.82",
+        "base_quantity": "0.20"
+      },
+      {
+        "price": "2522.81",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2522.8",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2522.79",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2522.78",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2522.77",
+        "base_quantity": "0.83"
+      },
+      {
+        "price": "2522.76",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2522.75",
+        "base_quantity": "0.33"
+      },
+      {
+        "price": "2522.73",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2522.72",
+        "base_quantity": "0.23"
+      },
+      {
+        "price": "2522.64",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2522.63",
+        "base_quantity": "4.49"
+      },
+      {
+        "price": "2522.62",
+        "base_quantity": "19.05"
+      },
+      {
+        "price": "2522.6",
+        "base_quantity": "0.84"
+      },
+      {
+        "price": "2522.58",
+        "base_quantity": "0.19"
+      },
+      {
+        "price": "2522.55",
+        "base_quantity": "0.25"
+      },
+      {
+        "price": "2522.53",
+        "base_quantity": "2.10"
+      },
+      {
+        "price": "2522.52",
+        "base_quantity": "0.73"
+      },
+      {
+        "price": "2522.51",
+        "base_quantity": "0.19"
+      },
+      {
+        "price": "2522.5",
+        "base_quantity": "0.21"
+      },
+      {
+        "price": "2522.47",
+        "base_quantity": "0.85"
+      },
+      {
+        "price": "2522.43",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2522.42",
+        "base_quantity": "3.78"
+      },
+      {
+        "price": "2522.41",
+        "base_quantity": "18.57"
+      },
+      {
+        "price": "2522.4",
+        "base_quantity": "0.03"
+      },
+      {
+        "price": "2522.39",
+        "base_quantity": "0.29"
+      },
+      {
+        "price": "2522.35",
+        "base_quantity": "1.19"
+      },
+      {
+        "price": "2522.34",
+        "base_quantity": "0.93"
+      },
+      {
+        "price": "2522.32",
+        "base_quantity": "0.94"
+      },
+      {
+        "price": "2522.3",
+        "base_quantity": "6.06"
+      },
+      {
+        "price": "2522.26",
+        "base_quantity": "0.39"
+      },
+      {
+        "price": "2522.25",
+        "base_quantity": "0.27"
+      },
+      {
+        "price": "2522.24",
+        "base_quantity": "5.67"
+      },
+      {
+        "price": "2522.23",
+        "base_quantity": "20.01"
+      },
+      {
+        "price": "2522.2",
+        "base_quantity": "0.52"
+      },
+      {
+        "price": "2522.17",
+        "base_quantity": "0.19"
+      },
+      {
+        "price": "2522.16",
+        "base_quantity": "1.12"
+      },
+      {
+        "price": "2522.15",
+        "base_quantity": "8.72"
+      },
+      {
+        "price": "2522.13",
+        "base_quantity": "0.20"
+      },
+      {
+        "price": "2522.12",
+        "base_quantity": "0.22"
+      },
+      {
+        "price": "2522.11",
+        "base_quantity": "0.19"
+      },
+      {
+        "price": "2522.1",
+        "base_quantity": "0.61"
+      },
+      {
+        "price": "2522.08",
+        "base_quantity": "3.75"
+      },
+      {
+        "price": "2522.07",
+        "base_quantity": "18.80"
+      },
+      {
+        "price": "2522.04",
+        "base_quantity": "0.65"
+      },
+      {
+        "price": "2522.02",
+        "base_quantity": "0.11"
+      },
+      {
+        "price": "2522.01",
+        "base_quantity": "1.05"
+      },
+      {
+        "price": "2522",
+        "base_quantity": "4.51"
+      },
+      {
+        "price": "2521.99",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2521.98",
+        "base_quantity": "12.48"
+      },
+      {
+        "price": "2521.97",
+        "base_quantity": "53.93"
+      },
+      {
+        "price": "2521.96",
+        "base_quantity": "0.25"
+      },
+      {
+        "price": "2521.95",
+        "base_quantity": "0.03"
+      },
+      {
+        "price": "2521.94",
+        "base_quantity": "3.26"
+      },
+      {
+        "price": "2521.92",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2521.9",
+        "base_quantity": "18.85"
+      },
+      {
+        "price": "2521.85",
+        "base_quantity": "0.93"
+      },
+      {
+        "price": "2521.84",
+        "base_quantity": "1.29"
+      },
+      {
+        "price": "2521.83",
+        "base_quantity": "0.83"
+      },
+      {
+        "price": "2521.82",
+        "base_quantity": "1.03"
+      },
+      {
+        "price": "2521.8",
+        "base_quantity": "3.08"
+      },
+      {
+        "price": "2521.79",
+        "base_quantity": "0.19"
+      },
+      {
+        "price": "2521.77",
+        "base_quantity": "0.35"
+      },
+      {
+        "price": "2521.76",
+        "base_quantity": "2.95"
+      },
+      {
+        "price": "2521.74",
+        "base_quantity": "0.48"
+      },
+      {
+        "price": "2521.73",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2521.72",
+        "base_quantity": "0.04"
+      },
+      {
+        "price": "2521.71",
+        "base_quantity": "18.11"
+      },
+      {
+        "price": "2521.7",
+        "base_quantity": "0.04"
+      },
+      {
+        "price": "2521.67",
+        "base_quantity": "0.83"
+      },
+      {
+        "price": "2521.65",
+        "base_quantity": "0.22"
+      },
+      {
+        "price": "2521.63",
+        "base_quantity": "0.10"
+      },
+      {
+        "price": "2521.61",
+        "base_quantity": "1.46"
+      },
+      {
+        "price": "2521.6",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2521.57",
+        "base_quantity": "0.33"
+      },
+      {
+        "price": "2521.54",
+        "base_quantity": "19.16"
+      },
+      {
+        "price": "2521.51",
+        "base_quantity": "0.31"
+      },
+      {
+        "price": "2521.5",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2521.49",
+        "base_quantity": "0.13"
+      },
+      {
+        "price": "2521.48",
+        "base_quantity": "0.73"
+      },
+      {
+        "price": "2521.47",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2521.46",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2521.44",
+        "base_quantity": "0.32"
+      },
+      {
+        "price": "2521.43",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2521.42",
+        "base_quantity": "0.11"
+      },
+      {
+        "price": "2521.41",
+        "base_quantity": "0.19"
+      },
+      {
+        "price": "2521.4",
+        "base_quantity": "0.96"
+      },
+      {
+        "price": "2521.39",
+        "base_quantity": "0.85"
+      },
+      {
+        "price": "2521.38",
+        "base_quantity": "18.11"
+      },
+      {
+        "price": "2521.36",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2521.34",
+        "base_quantity": "0.17"
+      },
+      {
+        "price": "2521.32",
+        "base_quantity": "0.66"
+      },
+      {
+        "price": "2521.31",
+        "base_quantity": "1.96"
+      },
+      {
+        "price": "2521.3",
+        "base_quantity": "0.19"
+      },
+      {
+        "price": "2521.28",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2521.27",
+        "base_quantity": "1.09"
+      }
+    ],
+    "asks": [
+      {
+        "price": "2523.09",
+        "base_quantity": "59.11"
+      },
+      {
+        "price": "2523.32",
+        "base_quantity": "1.36"
+      },
+      {
+        "price": "2523.35",
+        "base_quantity": "1.98"
+      },
+      {
+        "price": "2523.36",
+        "base_quantity": "3.20"
+      },
+      {
+        "price": "2523.4",
+        "base_quantity": "3.86"
+      },
+      {
+        "price": "2523.44",
+        "base_quantity": "0.69"
+      },
+      {
+        "price": "2523.49",
+        "base_quantity": "0.84"
+      },
+      {
+        "price": "2523.52",
+        "base_quantity": "3.82"
+      },
+      {
+        "price": "2523.54",
+        "base_quantity": "1.00"
+      },
+      {
+        "price": "2523.58",
+        "base_quantity": "0.44"
+      },
+      {
+        "price": "2523.59",
+        "base_quantity": "1.90"
+      },
+      {
+        "price": "2523.62",
+        "base_quantity": "0.84"
+      },
+      {
+        "price": "2523.66",
+        "base_quantity": "0.19"
+      },
+      {
+        "price": "2523.69",
+        "base_quantity": "3.99"
+      },
+      {
+        "price": "2523.7",
+        "base_quantity": "3.17"
+      },
+      {
+        "price": "2523.72",
+        "base_quantity": "1.20"
+      },
+      {
+        "price": "2523.73",
+        "base_quantity": "3.01"
+      },
+      {
+        "price": "2523.74",
+        "base_quantity": "0.31"
+      },
+      {
+        "price": "2523.76",
+        "base_quantity": "0.37"
+      },
+      {
+        "price": "2523.81",
+        "base_quantity": "11.32"
+      },
+      {
+        "price": "2523.82",
+        "base_quantity": "17.66"
+      },
+      {
+        "price": "2523.83",
+        "base_quantity": "2.46"
+      },
+      {
+        "price": "2523.84",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2523.85",
+        "base_quantity": "0.47"
+      },
+      {
+        "price": "2523.87",
+        "base_quantity": "2.84"
+      },
+      {
+        "price": "2523.89",
+        "base_quantity": "0.93"
+      },
+      {
+        "price": "2523.9",
+        "base_quantity": "0.92"
+      },
+      {
+        "price": "2523.91",
+        "base_quantity": "5.20"
+      },
+      {
+        "price": "2523.97",
+        "base_quantity": "5.14"
+      },
+      {
+        "price": "2523.98",
+        "base_quantity": "3.10"
+      },
+      {
+        "price": "2524",
+        "base_quantity": "29.01"
+      },
+      {
+        "price": "2524.03",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2524.04",
+        "base_quantity": "0.85"
+      },
+      {
+        "price": "2524.06",
+        "base_quantity": "1.78"
+      },
+      {
+        "price": "2524.07",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2524.08",
+        "base_quantity": "3.94"
+      },
+      {
+        "price": "2524.09",
+        "base_quantity": "3.90"
+      },
+      {
+        "price": "2524.15",
+        "base_quantity": "0.10"
+      },
+      {
+        "price": "2524.16",
+        "base_quantity": "18.21"
+      },
+      {
+        "price": "2524.17",
+        "base_quantity": "0.83"
+      },
+      {
+        "price": "2524.2",
+        "base_quantity": "6.04"
+      },
+      {
+        "price": "2524.21",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2524.22",
+        "base_quantity": "3.13"
+      },
+      {
+        "price": "2524.24",
+        "base_quantity": "0.51"
+      },
+      {
+        "price": "2524.3",
+        "base_quantity": "1.75"
+      },
+      {
+        "price": "2524.33",
+        "base_quantity": "17.89"
+      },
+      {
+        "price": "2524.36",
+        "base_quantity": "0.93"
+      },
+      {
+        "price": "2524.42",
+        "base_quantity": "0.03"
+      },
+      {
+        "price": "2524.46",
+        "base_quantity": "1.03"
+      },
+      {
+        "price": "2524.47",
+        "base_quantity": "3.41"
+      },
+      {
+        "price": "2524.48",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2524.49",
+        "base_quantity": "18.16"
+      },
+      {
+        "price": "2524.52",
+        "base_quantity": "0.19"
+      },
+      {
+        "price": "2524.54",
+        "base_quantity": "0.25"
+      },
+      {
+        "price": "2524.55",
+        "base_quantity": "1.22"
+      },
+      {
+        "price": "2524.57",
+        "base_quantity": "0.19"
+      },
+      {
+        "price": "2524.58",
+        "base_quantity": "0.49"
+      },
+      {
+        "price": "2524.6",
+        "base_quantity": "0.92"
+      },
+      {
+        "price": "2524.62",
+        "base_quantity": "4.81"
+      },
+      {
+        "price": "2524.66",
+        "base_quantity": "17.89"
+      },
+      {
+        "price": "2524.68",
+        "base_quantity": "1.23"
+      },
+      {
+        "price": "2524.69",
+        "base_quantity": "2.83"
+      },
+      {
+        "price": "2524.71",
+        "base_quantity": "0.31"
+      },
+      {
+        "price": "2524.74",
+        "base_quantity": "0.93"
+      },
+      {
+        "price": "2524.76",
+        "base_quantity": "7.04"
+      },
+      {
+        "price": "2524.77",
+        "base_quantity": "3.52"
+      },
+      {
+        "price": "2524.78",
+        "base_quantity": "0.39"
+      },
+      {
+        "price": "2524.8",
+        "base_quantity": "28.24"
+      },
+      {
+        "price": "2524.82",
+        "base_quantity": "17.89"
+      },
+      {
+        "price": "2524.83",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2524.84",
+        "base_quantity": "0.19"
+      },
+      {
+        "price": "2524.86",
+        "base_quantity": "0.19"
+      },
+      {
+        "price": "2524.9",
+        "base_quantity": "1.97"
+      },
+      {
+        "price": "2524.91",
+        "base_quantity": "8.91"
+      },
+      {
+        "price": "2524.92",
+        "base_quantity": "0.39"
+      },
+      {
+        "price": "2524.93",
+        "base_quantity": "0.92"
+      },
+      {
+        "price": "2524.95",
+        "base_quantity": "0.82"
+      },
+      {
+        "price": "2524.99",
+        "base_quantity": "3.16"
+      },
+      {
+        "price": "2525",
+        "base_quantity": "18.41"
+      },
+      {
+        "price": "2525.01",
+        "base_quantity": "0.27"
+      },
+      {
+        "price": "2525.02",
+        "base_quantity": "0.04"
+      },
+      {
+        "price": "2525.04",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2525.05",
+        "base_quantity": "1.28"
+      },
+      {
+        "price": "2525.08",
+        "base_quantity": "0.88"
+      },
+      {
+        "price": "2525.12",
+        "base_quantity": "3.57"
+      },
+      {
+        "price": "2525.13",
+        "base_quantity": "2.00"
+      },
+      {
+        "price": "2525.15",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2525.16",
+        "base_quantity": "0.51"
+      },
+      {
+        "price": "2525.17",
+        "base_quantity": "18.21"
+      },
+      {
+        "price": "2525.2",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2525.21",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2525.25",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2525.27",
+        "base_quantity": "0.86"
+      },
+      {
+        "price": "2525.28",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2525.31",
+        "base_quantity": "0.97"
+      },
+      {
+        "price": "2525.33",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2525.34",
+        "base_quantity": "18.82"
+      },
+      {
+        "price": "2525.38",
+        "base_quantity": "0.19"
+      },
+      {
+        "price": "2525.4",
+        "base_quantity": "0.10"
+      },
+      {
+        "price": "2525.42",
+        "base_quantity": "0.15"
+      }
+    ]
+  },
+  {
+    "source_id": "gate_eth_book_2",
+    "symbol": "ETH",
+    "source_time": 1791872804.32,
+    "unit_rule": "contracts * quanto_multiplier",
+    "unit_source_ids": [
+      "gate_docs_zip",
+      "gate_eth_contract"
+    ],
+    "bids": [
+      {
+        "price": "2530.03",
+        "base_quantity": "108.22"
+      },
+      {
+        "price": "2530",
+        "base_quantity": "1.55"
+      },
+      {
+        "price": "2529.99",
+        "base_quantity": "2.84"
+      },
+      {
+        "price": "2529.97",
+        "base_quantity": "2.48"
+      },
+      {
+        "price": "2529.9",
+        "base_quantity": "0.75"
+      },
+      {
+        "price": "2529.76",
+        "base_quantity": "1.07"
+      },
+      {
+        "price": "2529.73",
+        "base_quantity": "0.05"
+      },
+      {
+        "price": "2529.72",
+        "base_quantity": "1.50"
+      },
+      {
+        "price": "2529.71",
+        "base_quantity": "3.98"
+      },
+      {
+        "price": "2529.69",
+        "base_quantity": "3.37"
+      },
+      {
+        "price": "2529.68",
+        "base_quantity": "0.06"
+      },
+      {
+        "price": "2529.61",
+        "base_quantity": "4.49"
+      },
+      {
+        "price": "2529.6",
+        "base_quantity": "0.73"
+      },
+      {
+        "price": "2529.58",
+        "base_quantity": "0.86"
+      },
+      {
+        "price": "2529.57",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2529.56",
+        "base_quantity": "21.52"
+      },
+      {
+        "price": "2529.55",
+        "base_quantity": "1.98"
+      },
+      {
+        "price": "2529.54",
+        "base_quantity": "0.10"
+      },
+      {
+        "price": "2529.53",
+        "base_quantity": "0.60"
+      },
+      {
+        "price": "2529.52",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2529.51",
+        "base_quantity": "3.65"
+      },
+      {
+        "price": "2529.47",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2529.46",
+        "base_quantity": "0.31"
+      },
+      {
+        "price": "2529.45",
+        "base_quantity": "0.34"
+      },
+      {
+        "price": "2529.44",
+        "base_quantity": "0.03"
+      },
+      {
+        "price": "2529.42",
+        "base_quantity": "0.35"
+      },
+      {
+        "price": "2529.41",
+        "base_quantity": "3.95"
+      },
+      {
+        "price": "2529.4",
+        "base_quantity": "6.00"
+      },
+      {
+        "price": "2529.39",
+        "base_quantity": "20.27"
+      },
+      {
+        "price": "2529.37",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2529.36",
+        "base_quantity": "1.21"
+      },
+      {
+        "price": "2529.31",
+        "base_quantity": "2.59"
+      },
+      {
+        "price": "2529.28",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2529.27",
+        "base_quantity": "0.10"
+      },
+      {
+        "price": "2529.25",
+        "base_quantity": "0.10"
+      },
+      {
+        "price": "2529.24",
+        "base_quantity": "3.37"
+      },
+      {
+        "price": "2529.22",
+        "base_quantity": "2.89"
+      },
+      {
+        "price": "2529.21",
+        "base_quantity": "19.27"
+      },
+      {
+        "price": "2529.18",
+        "base_quantity": "0.09"
+      },
+      {
+        "price": "2529.13",
+        "base_quantity": "0.85"
+      },
+      {
+        "price": "2529.1",
+        "base_quantity": "2.25"
+      },
+      {
+        "price": "2529.09",
+        "base_quantity": "4.16"
+      },
+      {
+        "price": "2529.08",
+        "base_quantity": "3.45"
+      },
+      {
+        "price": "2529.07",
+        "base_quantity": "0.19"
+      },
+      {
+        "price": "2529.02",
+        "base_quantity": "21.78"
+      },
+      {
+        "price": "2529.01",
+        "base_quantity": "3.35"
+      },
+      {
+        "price": "2529",
+        "base_quantity": "2.79"
+      },
+      {
+        "price": "2528.95",
+        "base_quantity": "0.03"
+      },
+      {
+        "price": "2528.93",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2528.92",
+        "base_quantity": "8.69"
+      },
+      {
+        "price": "2528.91",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2528.9",
+        "base_quantity": "0.19"
+      },
+      {
+        "price": "2528.89",
+        "base_quantity": "0.25"
+      },
+      {
+        "price": "2528.87",
+        "base_quantity": "1.16"
+      },
+      {
+        "price": "2528.83",
+        "base_quantity": "8.85"
+      },
+      {
+        "price": "2528.82",
+        "base_quantity": "2.21"
+      },
+      {
+        "price": "2528.81",
+        "base_quantity": "0.03"
+      },
+      {
+        "price": "2528.8",
+        "base_quantity": "24.02"
+      },
+      {
+        "price": "2528.79",
+        "base_quantity": "0.09"
+      },
+      {
+        "price": "2528.78",
+        "base_quantity": "0.98"
+      },
+      {
+        "price": "2528.77",
+        "base_quantity": "0.27"
+      },
+      {
+        "price": "2528.74",
+        "base_quantity": "0.82"
+      },
+      {
+        "price": "2528.73",
+        "base_quantity": "0.10"
+      },
+      {
+        "price": "2528.72",
+        "base_quantity": "0.26"
+      },
+      {
+        "price": "2528.71",
+        "base_quantity": "0.99"
+      },
+      {
+        "price": "2528.66",
+        "base_quantity": "0.19"
+      },
+      {
+        "price": "2528.65",
+        "base_quantity": "3.33"
+      },
+      {
+        "price": "2528.64",
+        "base_quantity": "22.32"
+      },
+      {
+        "price": "2528.61",
+        "base_quantity": "0.85"
+      },
+      {
+        "price": "2528.6",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2528.59",
+        "base_quantity": "0.12"
+      },
+      {
+        "price": "2528.58",
+        "base_quantity": "0.73"
+      },
+      {
+        "price": "2528.56",
+        "base_quantity": "0.48"
+      },
+      {
+        "price": "2528.52",
+        "base_quantity": "0.12"
+      },
+      {
+        "price": "2528.51",
+        "base_quantity": "0.10"
+      },
+      {
+        "price": "2528.5",
+        "base_quantity": "11.57"
+      },
+      {
+        "price": "2528.49",
+        "base_quantity": "53.18"
+      },
+      {
+        "price": "2528.48",
+        "base_quantity": "19.80"
+      },
+      {
+        "price": "2528.47",
+        "base_quantity": "0.51"
+      },
+      {
+        "price": "2528.45",
+        "base_quantity": "3.25"
+      },
+      {
+        "price": "2528.41",
+        "base_quantity": "28.20"
+      },
+      {
+        "price": "2528.38",
+        "base_quantity": "0.10"
+      },
+      {
+        "price": "2528.37",
+        "base_quantity": "1.20"
+      },
+      {
+        "price": "2528.35",
+        "base_quantity": "0.97"
+      },
+      {
+        "price": "2528.33",
+        "base_quantity": "0.14"
+      },
+      {
+        "price": "2528.32",
+        "base_quantity": "0.04"
+      },
+      {
+        "price": "2528.31",
+        "base_quantity": "4.12"
+      },
+      {
+        "price": "2528.3",
+        "base_quantity": "18.85"
+      },
+      {
+        "price": "2528.27",
+        "base_quantity": "0.98"
+      },
+      {
+        "price": "2528.25",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2528.24",
+        "base_quantity": "0.19"
+      },
+      {
+        "price": "2528.22",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2528.21",
+        "base_quantity": "11.86"
+      },
+      {
+        "price": "2528.2",
+        "base_quantity": "1.92"
+      },
+      {
+        "price": "2528.19",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2528.17",
+        "base_quantity": "0.82"
+      },
+      {
+        "price": "2528.14",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2528.13",
+        "base_quantity": "3.25"
+      },
+      {
+        "price": "2528.12",
+        "base_quantity": "18.85"
+      },
+      {
+        "price": "2528.07",
+        "base_quantity": "0.73"
+      }
+    ],
+    "asks": [
+      {
+        "price": "2530.04",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2530.12",
+        "base_quantity": "1.63"
+      },
+      {
+        "price": "2530.28",
+        "base_quantity": "0.05"
+      },
+      {
+        "price": "2530.29",
+        "base_quantity": "1.42"
+      },
+      {
+        "price": "2530.3",
+        "base_quantity": "9.51"
+      },
+      {
+        "price": "2530.33",
+        "base_quantity": "0.24"
+      },
+      {
+        "price": "2530.34",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2530.38",
+        "base_quantity": "0.48"
+      },
+      {
+        "price": "2530.42",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2530.43",
+        "base_quantity": "0.86"
+      },
+      {
+        "price": "2530.45",
+        "base_quantity": "4.13"
+      },
+      {
+        "price": "2530.46",
+        "base_quantity": "10.75"
+      },
+      {
+        "price": "2530.5",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2530.51",
+        "base_quantity": "0.76"
+      },
+      {
+        "price": "2530.52",
+        "base_quantity": "0.18"
+      },
+      {
+        "price": "2530.54",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2530.55",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2530.56",
+        "base_quantity": "5.39"
+      },
+      {
+        "price": "2530.57",
+        "base_quantity": "1.75"
+      },
+      {
+        "price": "2530.59",
+        "base_quantity": "3.83"
+      },
+      {
+        "price": "2530.65",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2530.69",
+        "base_quantity": "6.55"
+      },
+      {
+        "price": "2530.71",
+        "base_quantity": "20.65"
+      },
+      {
+        "price": "2530.77",
+        "base_quantity": "2.64"
+      },
+      {
+        "price": "2530.78",
+        "base_quantity": "3.25"
+      },
+      {
+        "price": "2530.79",
+        "base_quantity": "6.80"
+      },
+      {
+        "price": "2530.8",
+        "base_quantity": "0.03"
+      },
+      {
+        "price": "2530.81",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2530.82",
+        "base_quantity": "0.86"
+      },
+      {
+        "price": "2530.83",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2530.86",
+        "base_quantity": "3.91"
+      },
+      {
+        "price": "2530.88",
+        "base_quantity": "26.28"
+      },
+      {
+        "price": "2530.89",
+        "base_quantity": "0.40"
+      },
+      {
+        "price": "2530.9",
+        "base_quantity": "6.00"
+      },
+      {
+        "price": "2530.96",
+        "base_quantity": "4.38"
+      },
+      {
+        "price": "2531",
+        "base_quantity": "1.18"
+      },
+      {
+        "price": "2531.02",
+        "base_quantity": "2.06"
+      },
+      {
+        "price": "2531.04",
+        "base_quantity": "3.15"
+      },
+      {
+        "price": "2531.05",
+        "base_quantity": "19.41"
+      },
+      {
+        "price": "2531.11",
+        "base_quantity": "1.35"
+      },
+      {
+        "price": "2531.12",
+        "base_quantity": "0.42"
+      },
+      {
+        "price": "2531.14",
+        "base_quantity": "3.39"
+      },
+      {
+        "price": "2531.16",
+        "base_quantity": "0.22"
+      },
+      {
+        "price": "2531.19",
+        "base_quantity": "3.26"
+      },
+      {
+        "price": "2531.2",
+        "base_quantity": "8.91"
+      },
+      {
+        "price": "2531.21",
+        "base_quantity": "19.41"
+      },
+      {
+        "price": "2531.26",
+        "base_quantity": "0.57"
+      },
+      {
+        "price": "2531.27",
+        "base_quantity": "0.86"
+      },
+      {
+        "price": "2531.28",
+        "base_quantity": "0.49"
+      },
+      {
+        "price": "2531.3",
+        "base_quantity": "0.28"
+      },
+      {
+        "price": "2531.32",
+        "base_quantity": "3.39"
+      },
+      {
+        "price": "2531.33",
+        "base_quantity": "0.19"
+      },
+      {
+        "price": "2531.37",
+        "base_quantity": "11.16"
+      },
+      {
+        "price": "2531.38",
+        "base_quantity": "19.41"
+      },
+      {
+        "price": "2531.4",
+        "base_quantity": "0.86"
+      },
+      {
+        "price": "2531.43",
+        "base_quantity": "53.11"
+      },
+      {
+        "price": "2531.5",
+        "base_quantity": "4.38"
+      },
+      {
+        "price": "2531.52",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2531.53",
+        "base_quantity": "3.10"
+      },
+      {
+        "price": "2531.54",
+        "base_quantity": "19.41"
+      },
+      {
+        "price": "2531.67",
+        "base_quantity": "0.19"
+      },
+      {
+        "price": "2531.68",
+        "base_quantity": "3.40"
+      },
+      {
+        "price": "2531.69",
+        "base_quantity": "3.59"
+      },
+      {
+        "price": "2531.7",
+        "base_quantity": "19.42"
+      },
+      {
+        "price": "2531.77",
+        "base_quantity": "0.34"
+      },
+      {
+        "price": "2531.78",
+        "base_quantity": "0.02"
+      },
+      {
+        "price": "2531.79",
+        "base_quantity": "0.03"
+      },
+      {
+        "price": "2531.84",
+        "base_quantity": "3.46"
+      },
+      {
+        "price": "2531.85",
+        "base_quantity": "0.86"
+      },
+      {
+        "price": "2531.86",
+        "base_quantity": "19.41"
+      },
+      {
+        "price": "2531.87",
+        "base_quantity": "3.39"
+      },
+      {
+        "price": "2531.94",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2531.96",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2531.97",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2531.98",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2531.99",
+        "base_quantity": "0.99"
+      },
+      {
+        "price": "2532",
+        "base_quantity": "6.62"
+      },
+      {
+        "price": "2532.01",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2532.02",
+        "base_quantity": "0.84"
+      },
+      {
+        "price": "2532.03",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2532.04",
+        "base_quantity": "4.01"
+      },
+      {
+        "price": "2532.05",
+        "base_quantity": "7.92"
+      },
+      {
+        "price": "2532.06",
+        "base_quantity": "19.41"
+      },
+      {
+        "price": "2532.08",
+        "base_quantity": "0.02"
+      },
+      {
+        "price": "2532.09",
+        "base_quantity": "0.01"
+      },
+      {
+        "price": "2532.1",
+        "base_quantity": "1.16"
+      },
+      {
+        "price": "2532.11",
+        "base_quantity": "0.54"
+      },
+      {
+        "price": "2532.14",
+        "base_quantity": "0.31"
+      },
+      {
+        "price": "2532.15",
+        "base_quantity": "1.12"
+      },
+      {
+        "price": "2532.17",
+        "base_quantity": "9.94"
+      },
+      {
+        "price": "2532.18",
+        "base_quantity": "0.21"
+      },
+      {
+        "price": "2532.2",
+        "base_quantity": "0.02"
+      },
+      {
+        "price": "2532.21",
+        "base_quantity": "0.04"
+      },
+      {
+        "price": "2532.22",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2532.24",
+        "base_quantity": "0.06"
+      },
+      {
+        "price": "2532.26",
+        "base_quantity": "47.58"
+      },
+      {
+        "price": "2532.27",
+        "base_quantity": "0.00"
+      },
+      {
+        "price": "2532.28",
+        "base_quantity": "0.03"
+      },
+      {
+        "price": "2532.3",
+        "base_quantity": "0.31"
+      },
+      {
+        "price": "2532.31",
+        "base_quantity": "0.03"
+      }
+    ]
+  }
+]

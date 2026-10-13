@@ -1,0 +1,18 @@
+{
+  "body_bytes": 222,
+  "error": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Mon, 12 Oct 2026 20:21:01 GMT"
+  },
+  "id": "m15_btc_old_after",
+  "latency_ms": 246.77,
+  "method": "GET",
+  "raw_path": "raw/m15_btc_old_after.body",
+  "request_utc": "2026-10-12T20:21:01.120305Z",
+  "retrieval_utc": "2026-10-12T20:21:01.366889Z",
+  "sha256": "fb8d3eeaa3cce27a33dd49efb3ffa2b75801a4f88e9073d9cec4e419f8d8837e",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=15m&after=1728778500000&limit=2"
+}

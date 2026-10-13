@@ -1,0 +1,1386 @@
+{
+  "binance_futures": {
+    "facts": {
+      "archive": null,
+      "book_history": null,
+      "closure": null,
+      "mark_index": null,
+      "native_m15": null,
+      "oi_history": null,
+      "oldest_actual_m15_sample_utc": null,
+      "pagination": null,
+      "source_ids": [
+        "docs_exchange_info_new",
+        "exchange_info"
+      ],
+      "trades": null
+    },
+    "hard_research": [
+      {
+        "confirmed": null,
+        "note": "Unverified: exact product identity BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "docs_exchange_info_new",
+          "exchange_info"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: current defensible tick filters BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "docs_exchange_info_new",
+          "exchange_info"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "docs_exchange_info_new",
+          "exchange_info"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: causally known prospective metadata capture possible. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "docs_exchange_info_new",
+          "exchange_info"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: at least one approved environment public access success; severe current geo-block remains penalty. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "evidence/ci/binance_futures/72f75aebb719799980d1048c.receipt.json",
+          "evidence/ci/binance_futures/253a8ab7760bf920bdbf0b35.receipt.json",
+          "evidence/ci/binance_futures/105e4930d5963a2e49d86520.receipt.json"
+        ]
+      }
+    ],
+    "two_year_sample_is_not_continuity": true
+  },
+  "bitget": {
+    "facts": {
+      "archive": "official futures candlestick and depth download center documented; actual archive file continuity unverified",
+      "book_history": "official depth download link mentioned; actual date coverage unverified",
+      "closure": "historical endpoint only finished candles; current endpoint may include forming bar per sample",
+      "mark_index": "historical mark and index candle endpoints documented",
+      "missing_bar_semantics": "empty array for no data documented; no interpolation",
+      "native_m15": true,
+      "oi_history": "current OI endpoint verified; historical OI endpoint not located",
+      "oldest_actual_m15_sample_utc": "2024-10-13T00:00:00+00:00 for both symbols; earliest available overall unknown",
+      "pagination": "history-candles maximum 200 rows; explicit startTime/endTime; current candles endpoint has shorter 15m history window of 52 days",
+      "source_ids": [
+        "bitget:bitget_detail_market",
+        "bitget:BTCUSDT_m15now",
+        "bitget:ETHUSDT_m15now",
+        "bitget:BTCUSDT_m15old",
+        "bitget:ETHUSDT_m15old",
+        "bitget:bitget_docs_download",
+        "bitget:BTCUSDT_oi",
+        "bitget:ETHUSDT_oi"
+      ],
+      "trades": "history transactions documented; actual depth/retention unverified"
+    },
+    "hard_research": [
+      {
+        "confirmed": true,
+        "note": "Confirmed: exact product identity BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bitget:BTCUSDT_instrument",
+          "bitget:bitget_detail_market",
+          "bitget:BTCUSDT_m15now",
+          "bitget:ETHUSDT_m15now",
+          "bitget:BTCUSDT_m15old",
+          "bitget:ETHUSDT_m15old",
+          "bitget:bitget_docs_download",
+          "bitget:BTCUSDT_oi",
+          "bitget:ETHUSDT_oi",
+          "bitget:bitget_BTC_merge_book",
+          "bitget:BTCUSDT_merge_book2",
+          "bitget:bitget_detail_trade",
+          "bitget:bitget_ETH_merge_book",
+          "bitget:ETHUSDT_merge_book2",
+          "bitget:bitget_docs_classic_changelog",
+          "bitget:ETHUSDT_instrument"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: current defensible tick filters BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bitget:BTCUSDT_instrument",
+          "bitget:bitget_detail_market",
+          "bitget:BTCUSDT_m15now",
+          "bitget:ETHUSDT_m15now",
+          "bitget:BTCUSDT_m15old",
+          "bitget:ETHUSDT_m15old",
+          "bitget:bitget_docs_download",
+          "bitget:BTCUSDT_oi",
+          "bitget:ETHUSDT_oi",
+          "bitget:bitget_BTC_merge_book",
+          "bitget:BTCUSDT_merge_book2",
+          "bitget:bitget_detail_trade",
+          "bitget:bitget_ETH_merge_book",
+          "bitget:ETHUSDT_merge_book2",
+          "bitget:bitget_docs_classic_changelog",
+          "bitget:ETHUSDT_instrument"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bitget:BTCUSDT_instrument",
+          "bitget:bitget_detail_market",
+          "bitget:BTCUSDT_m15now",
+          "bitget:ETHUSDT_m15now",
+          "bitget:BTCUSDT_m15old",
+          "bitget:ETHUSDT_m15old",
+          "bitget:bitget_docs_download",
+          "bitget:BTCUSDT_oi",
+          "bitget:ETHUSDT_oi",
+          "bitget:bitget_BTC_merge_book",
+          "bitget:BTCUSDT_merge_book2",
+          "bitget:bitget_detail_trade",
+          "bitget:bitget_ETH_merge_book",
+          "bitget:ETHUSDT_merge_book2",
+          "bitget:bitget_docs_classic_changelog",
+          "bitget:ETHUSDT_instrument"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: causally known prospective metadata capture possible. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bitget:BTCUSDT_instrument",
+          "bitget:bitget_detail_market",
+          "bitget:BTCUSDT_m15now",
+          "bitget:ETHUSDT_m15now",
+          "bitget:BTCUSDT_m15old",
+          "bitget:ETHUSDT_m15old",
+          "bitget:bitget_docs_download",
+          "bitget:BTCUSDT_oi",
+          "bitget:ETHUSDT_oi",
+          "bitget:bitget_BTC_merge_book",
+          "bitget:BTCUSDT_merge_book2",
+          "bitget:bitget_detail_trade",
+          "bitget:bitget_ETH_merge_book",
+          "bitget:ETHUSDT_merge_book2",
+          "bitget:bitget_docs_classic_changelog",
+          "bitget:ETHUSDT_instrument"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: at least one approved environment public access success; severe current geo-block remains penalty. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "evidence/ci/bitget/cece15754ead8696dada616e.receipt.json",
+          "evidence/ci/bitget/3f2d1407106305de34fa7f0b.receipt.json",
+          "evidence/ci/bitget/13833796109ae386dfea6d60.receipt.json"
+        ]
+      }
+    ],
+    "two_year_sample_is_not_continuity": true
+  },
+  "blofin": {
+    "facts": {
+      "archive": null,
+      "book_history": null,
+      "closure": "ts is opening timestamp, confirm=1 complete and confirm=0 incomplete",
+      "mark_index": "public index and mark-price M15 candles documented; BTC present sample retrieved",
+      "native_m15": true,
+      "oi_history": null,
+      "old_sentinel_2024_10_13": {
+        "BTC": "2024-10-13T00:00:00Z candle confirm=1",
+        "ETH": "2024-10-13T00:00:00Z candle confirm=1"
+      },
+      "oldest_actual_m15_sample_utc": "2024-10-12T21:45:00Z",
+      "pagination": "after returns earlier than timestamp, before newer; maximum 1440 candles/request",
+      "source_ids": [
+        "bf_api_docs",
+        "bf_btc_m15_now",
+        "bf_eth_m15_now",
+        "bf_btc_m15_old_direct",
+        "bf_eth_m15_old_direct",
+        "bf_btc_trades",
+        "bf_eth_trades",
+        "bf_btc_index_now",
+        "bf_btc_mark_now",
+        "bf_btc_oi",
+        "bf_eth_oi"
+      ],
+      "trades": "public recent trades max 100 documented and tested; historical trade endpoint not public in captured docs"
+    },
+    "hard_research": [
+      {
+        "confirmed": true,
+        "note": "Confirmed: exact product identity BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bf_instruments",
+          "bf_api_docs",
+          "bf_btc_m15_now",
+          "bf_eth_m15_now",
+          "bf_btc_m15_old_direct",
+          "bf_eth_m15_old_direct",
+          "bf_btc_trades",
+          "bf_eth_trades",
+          "bf_btc_index_now",
+          "bf_btc_mark_now",
+          "bf_btc_oi",
+          "bf_eth_oi",
+          "bf_btc_book_1",
+          "bf_btc_book_2",
+          "bf_eth_book_1",
+          "bf_eth_book_2"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: current defensible tick filters BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bf_instruments",
+          "bf_api_docs",
+          "bf_btc_m15_now",
+          "bf_eth_m15_now",
+          "bf_btc_m15_old_direct",
+          "bf_eth_m15_old_direct",
+          "bf_btc_trades",
+          "bf_eth_trades",
+          "bf_btc_index_now",
+          "bf_btc_mark_now",
+          "bf_btc_oi",
+          "bf_eth_oi",
+          "bf_btc_book_1",
+          "bf_btc_book_2",
+          "bf_eth_book_1",
+          "bf_eth_book_2"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bf_instruments",
+          "bf_api_docs",
+          "bf_btc_m15_now",
+          "bf_eth_m15_now",
+          "bf_btc_m15_old_direct",
+          "bf_eth_m15_old_direct",
+          "bf_btc_trades",
+          "bf_eth_trades",
+          "bf_btc_index_now",
+          "bf_btc_mark_now",
+          "bf_btc_oi",
+          "bf_eth_oi",
+          "bf_btc_book_1",
+          "bf_btc_book_2",
+          "bf_eth_book_1",
+          "bf_eth_book_2"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: causally known prospective metadata capture possible. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bf_instruments",
+          "bf_api_docs",
+          "bf_btc_m15_now",
+          "bf_eth_m15_now",
+          "bf_btc_m15_old_direct",
+          "bf_eth_m15_old_direct",
+          "bf_btc_trades",
+          "bf_eth_trades",
+          "bf_btc_index_now",
+          "bf_btc_mark_now",
+          "bf_btc_oi",
+          "bf_eth_oi",
+          "bf_btc_book_1",
+          "bf_btc_book_2",
+          "bf_eth_book_1",
+          "bf_eth_book_2"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: at least one approved environment public access success; severe current geo-block remains penalty. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "evidence/ci/blofin/db9f55d79541a6338da42154.receipt.json",
+          "evidence/ci/blofin/2cbb8a34e28ae7c8aa6d109f.receipt.json",
+          "evidence/ci/blofin/b202c3b80f80e4ce1805e3b6.receipt.json"
+        ]
+      }
+    ],
+    "two_year_sample_is_not_continuity": true
+  },
+  "bybit": {
+    "facts": {
+      "archive": null,
+      "book_history": null,
+      "closure": null,
+      "mark_index": "documented endpoint families, live availability unverified",
+      "native_m15": "documented interval 15, current symbols and live bars unverified",
+      "oi_history": "documented /v5/market/open-interest; live availability unverified",
+      "oldest_actual_m15_sample_utc": null,
+      "pagination": "GET /v5/market/kline start/end/limit; exact observed history unavailable due 403",
+      "source_ids": [
+        "bybit:bybit_docs_kline",
+        "bybit:bybit_docs_oi",
+        "bybit:BTCUSDT_m15now",
+        "bybit:ETHUSDT_m15now",
+        "bybit:BTCUSDT_m15old",
+        "bybit:ETHUSDT_m15old"
+      ],
+      "trades": null
+    },
+    "hard_research": [
+      {
+        "confirmed": null,
+        "note": "Unverified: exact product identity BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bybit:bybit_docs_instrument",
+          "bybit:BTCUSDT_instrument",
+          "bybit:bybit_docs_kline",
+          "bybit:bybit_docs_oi",
+          "bybit:BTCUSDT_m15now",
+          "bybit:ETHUSDT_m15now",
+          "bybit:BTCUSDT_m15old",
+          "bybit:ETHUSDT_m15old",
+          "bybit:ETHUSDT_instrument"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: current defensible tick filters BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bybit:bybit_docs_instrument",
+          "bybit:BTCUSDT_instrument",
+          "bybit:bybit_docs_kline",
+          "bybit:bybit_docs_oi",
+          "bybit:BTCUSDT_m15now",
+          "bybit:ETHUSDT_m15now",
+          "bybit:BTCUSDT_m15old",
+          "bybit:ETHUSDT_m15old",
+          "bybit:ETHUSDT_instrument"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bybit:bybit_docs_instrument",
+          "bybit:BTCUSDT_instrument",
+          "bybit:bybit_docs_kline",
+          "bybit:bybit_docs_oi",
+          "bybit:BTCUSDT_m15now",
+          "bybit:ETHUSDT_m15now",
+          "bybit:BTCUSDT_m15old",
+          "bybit:ETHUSDT_m15old",
+          "bybit:ETHUSDT_instrument"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: causally known prospective metadata capture possible. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bybit:bybit_docs_instrument",
+          "bybit:BTCUSDT_instrument",
+          "bybit:bybit_docs_kline",
+          "bybit:bybit_docs_oi",
+          "bybit:BTCUSDT_m15now",
+          "bybit:ETHUSDT_m15now",
+          "bybit:BTCUSDT_m15old",
+          "bybit:ETHUSDT_m15old",
+          "bybit:ETHUSDT_instrument"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: at least one approved environment public access success; severe current geo-block remains penalty. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "evidence/ci/bybit/d76e4927a9b3d2a8bc548aa2.receipt.json",
+          "evidence/ci/bybit/89b32808f5958902fcd1b107.receipt.json",
+          "evidence/ci/bybit/bd8787019204e3ba2091128d.receipt.json"
+        ]
+      }
+    ],
+    "two_year_sample_is_not_continuity": true
+  },
+  "coinbase_international": {
+    "facts": {
+      "archive": null,
+      "book_history": null,
+      "closure": "start identifies open time; no completed-bar flag; latest current-window responses {} while markets paused",
+      "mark_index": "quote endpoint returns mark/index, but last timestamp is 2026-10-01T09:00:29Z for both; historical index candles documented separately",
+      "native_m15": true,
+      "oi_history": "current instrument open_interest field stale; historical OI endpoint not located",
+      "oldest_actual_m15_sample_utc": "2024-10-13T00:00:00Z",
+      "pagination": "GET /api/v1/instruments/{instrument}/candles with ISO start/end, granularity=FIFTEEN_MINUTE; no row limit documented in retrieved schema",
+      "source_ids": [
+        "m15old_btc",
+        "m15old_eth",
+        "candles_btc_now",
+        "candles_eth_now",
+        "btc_quote",
+        "eth_quote",
+        "docs_candle_md",
+        "docs_channels_md",
+        "docs_instrument_md"
+      ],
+      "trades": "MATCH WebSocket real-time; public historical trades endpoint not located in official INTX REST index"
+    },
+    "hard_research": [
+      {
+        "confirmed": true,
+        "note": "Confirmed: exact product identity BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instruments",
+          "docs_concepts_instruments_md",
+          "docs_channels_md",
+          "m15old_btc",
+          "m15old_eth",
+          "candles_btc_now",
+          "candles_eth_now",
+          "btc_quote",
+          "eth_quote",
+          "docs_candle_md",
+          "docs_instrument_md",
+          "changelog"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: current defensible tick filters BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instruments",
+          "docs_concepts_instruments_md",
+          "docs_channels_md",
+          "m15old_btc",
+          "m15old_eth",
+          "candles_btc_now",
+          "candles_eth_now",
+          "btc_quote",
+          "eth_quote",
+          "docs_candle_md",
+          "docs_instrument_md",
+          "changelog"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instruments",
+          "docs_concepts_instruments_md",
+          "docs_channels_md",
+          "m15old_btc",
+          "m15old_eth",
+          "candles_btc_now",
+          "candles_eth_now",
+          "btc_quote",
+          "eth_quote",
+          "docs_candle_md",
+          "docs_instrument_md",
+          "changelog"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Both instruments are PAUSED and current candles empty, so a pristine current prospective capture is not established.",
+        "source_ids": [
+          "instruments",
+          "docs_concepts_instruments_md",
+          "docs_channels_md",
+          "m15old_btc",
+          "m15old_eth",
+          "candles_btc_now",
+          "candles_eth_now",
+          "btc_quote",
+          "eth_quote",
+          "docs_candle_md",
+          "docs_instrument_md",
+          "changelog"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Public current instrument metadata succeeded in cloud and CI, although both markets are PAUSED and books unavailable.",
+        "source_ids": [
+          "evidence/ci/coinbase_international/adc104e7f2dcccf71b5063f0.receipt.json",
+          "evidence/ci/coinbase_international/ed4936f3771597e242a62186.receipt.json",
+          "evidence/ci/coinbase_international/0b02f0bb1c91c44f69e483d6.receipt.json"
+        ]
+      }
+    ],
+    "two_year_sample_is_not_continuity": true
+  },
+  "deribit": {
+    "facts": {
+      "archive": null,
+      "book_history": null,
+      "closure": "ticks are candle timestamps; no explicit completed-bar flag in retrieved schema; exclude ongoing last bar by clock",
+      "mark_index": "Current book contains mark/index; get_mark_price_history returned [] for tested current windows and docs indicate WS-only; historical series for these products unverified",
+      "native_m15": true,
+      "oi_history": null,
+      "oldest_actual_m15_sample_utc": "2024-10-13T00:00:00Z",
+      "pagination": "GET tradingview_chart_data start_timestamp/end_timestamp, resolution=15; response ticks array; practical row/range cap not verified",
+      "source_ids": [
+        "docs_candles_md",
+        "btc_m15now",
+        "eth_m15now",
+        "btc_m15old",
+        "eth_m15old",
+        "docs_trades_md",
+        "docs_historical_trades_md",
+        "btc_trades_old",
+        "eth_trades_old",
+        "btc_book1",
+        "eth_book1",
+        "mark_btc",
+        "mark_eth"
+      ],
+      "trades": "current last trades available; 2024-10-13 time-window probes returned empty for both despite positive candle volumes, so old trade depth unverified/limited"
+    },
+    "hard_research": [
+      {
+        "confirmed": true,
+        "note": "Confirmed: exact product identity BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "usdc_instruments",
+          "docs_instruments_md",
+          "docs_candles_md",
+          "btc_m15now",
+          "eth_m15now",
+          "btc_m15old",
+          "eth_m15old",
+          "docs_trades_md",
+          "docs_historical_trades_md",
+          "btc_trades_old",
+          "eth_trades_old",
+          "btc_book1",
+          "eth_book1",
+          "mark_btc",
+          "mark_eth",
+          "btc_book2"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: current defensible tick filters BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "usdc_instruments",
+          "docs_instruments_md",
+          "docs_candles_md",
+          "btc_m15now",
+          "eth_m15now",
+          "btc_m15old",
+          "eth_m15old",
+          "docs_trades_md",
+          "docs_historical_trades_md",
+          "btc_trades_old",
+          "eth_trades_old",
+          "btc_book1",
+          "eth_book1",
+          "mark_btc",
+          "mark_eth",
+          "btc_book2"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "usdc_instruments",
+          "docs_instruments_md",
+          "docs_candles_md",
+          "btc_m15now",
+          "eth_m15now",
+          "btc_m15old",
+          "eth_m15old",
+          "docs_trades_md",
+          "docs_historical_trades_md",
+          "btc_trades_old",
+          "eth_trades_old",
+          "btc_book1",
+          "eth_book1",
+          "mark_btc",
+          "mark_eth",
+          "btc_book2"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: causally known prospective metadata capture possible. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "usdc_instruments",
+          "docs_instruments_md",
+          "docs_candles_md",
+          "btc_m15now",
+          "eth_m15now",
+          "btc_m15old",
+          "eth_m15old",
+          "docs_trades_md",
+          "docs_historical_trades_md",
+          "btc_trades_old",
+          "eth_trades_old",
+          "btc_book1",
+          "eth_book1",
+          "mark_btc",
+          "mark_eth",
+          "btc_book2"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: at least one approved environment public access success; severe current geo-block remains penalty. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "evidence/ci/deribit/07483d36de7b366bf100f2ab.receipt.json",
+          "evidence/ci/deribit/3937de1a2faf746b90505d1b.receipt.json",
+          "evidence/ci/deribit/2a7643e34fed1ca65e09cbdd.receipt.json"
+        ]
+      }
+    ],
+    "two_year_sample_is_not_continuity": true
+  },
+  "gate": {
+    "facts": {
+      "archive": null,
+      "book_history": null,
+      "closure": "t is candle timestamp seconds; no completed flag verified, filter by clock",
+      "mark_index": "mark_/index_ candle prefixes and premium_index documented; history depth unverified",
+      "native_m15": true,
+      "oi_history": "GET contract_stats open_interest current samples succeeded; history depth unverified",
+      "oldest_actual_m15_sample_utc": "2026-10-12T18:15:00+00:00",
+      "pagination": "GET /futures/usdt/candlesticks from/to seconds, max 2000 points/query, recent 10000-point window observed",
+      "source_ids": [
+        "gate_docs_zip",
+        "gate_btc_m15_now",
+        "gate_eth_m15_now",
+        "gate_btc_m15_old",
+        "gate_eth_m15_old",
+        "gate_btc_oi",
+        "gate_eth_oi"
+      ],
+      "trades": "public trades endpoint documented; history depth unverified"
+    },
+    "hard_research": [
+      {
+        "confirmed": true,
+        "note": "Confirmed: exact product identity BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "gate_btc_contract",
+          "gate_docs_zip",
+          "gate_btc_m15_now",
+          "gate_eth_m15_now",
+          "gate_btc_m15_old",
+          "gate_eth_m15_old",
+          "gate_btc_oi",
+          "gate_eth_oi",
+          "gate_btc_book_1",
+          "gate_btc_book_2",
+          "gate_eth_book_1",
+          "gate_eth_book_2",
+          "gate_eth_contract"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: current defensible tick filters BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "gate_btc_contract",
+          "gate_docs_zip",
+          "gate_btc_m15_now",
+          "gate_eth_m15_now",
+          "gate_btc_m15_old",
+          "gate_eth_m15_old",
+          "gate_btc_oi",
+          "gate_eth_oi",
+          "gate_btc_book_1",
+          "gate_btc_book_2",
+          "gate_eth_book_1",
+          "gate_eth_book_2",
+          "gate_eth_contract"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "gate_btc_contract",
+          "gate_docs_zip",
+          "gate_btc_m15_now",
+          "gate_eth_m15_now",
+          "gate_btc_m15_old",
+          "gate_eth_m15_old",
+          "gate_btc_oi",
+          "gate_eth_oi",
+          "gate_btc_book_1",
+          "gate_btc_book_2",
+          "gate_eth_book_1",
+          "gate_eth_book_2",
+          "gate_eth_contract"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: causally known prospective metadata capture possible. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "gate_btc_contract",
+          "gate_docs_zip",
+          "gate_btc_m15_now",
+          "gate_eth_m15_now",
+          "gate_btc_m15_old",
+          "gate_eth_m15_old",
+          "gate_btc_oi",
+          "gate_eth_oi",
+          "gate_btc_book_1",
+          "gate_btc_book_2",
+          "gate_eth_book_1",
+          "gate_eth_book_2",
+          "gate_eth_contract"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: at least one approved environment public access success; severe current geo-block remains penalty. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "evidence/ci/gate/ea0c3a29bcc6f8d2697992d9.receipt.json",
+          "evidence/ci/gate/a6e760c58783f8f21a7809cb.receipt.json",
+          "evidence/ci/gate/9bfa24fe7b1be3a6c6c61f80.receipt.json"
+        ]
+      }
+    ],
+    "two_year_sample_is_not_continuity": true
+  },
+  "hyperliquid": {
+    "facts": {
+      "archive": "official S3 book/context archive, explicitly no candle dataset",
+      "book_history": "S3 l2Book snapshots; monthly uploads may be missing",
+      "closure": "t open, T inclusive end; response has no explicit completed flag, filter by clock",
+      "mark_index": "current mark/oracle in asset contexts; historical series unverified",
+      "native_m15": true,
+      "oi_history": "current openInterest in asset contexts; history unverified",
+      "oldest_actual_m15_sample_utc": "2026-10-12T18:15:00+00:00",
+      "pagination": "POST /info candleSnapshot, last 5000 candles only; time range responses generally cap 500 entries",
+      "source_ids": [
+        "hl_docs_info",
+        "hl_btc_m15_now",
+        "hl_eth_m15_now",
+        "hl_btc_m15_old",
+        "hl_eth_m15_old",
+        "hl_docs_history",
+        "hl_meta"
+      ],
+      "trades": "official S3 node fills/trades; depth/continuity unverified"
+    },
+    "hard_research": [
+      {
+        "confirmed": true,
+        "note": "Confirmed: exact product identity BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "hl_meta",
+          "hl_docs_contracts",
+          "hl_docs_info",
+          "hl_btc_m15_now",
+          "hl_eth_m15_now",
+          "hl_btc_m15_old",
+          "hl_eth_m15_old",
+          "hl_docs_history",
+          "hl_btc_book_1",
+          "hl_btc_book_2",
+          "hl_eth_book_1",
+          "hl_eth_book_2",
+          "hl_docs_tick"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: current defensible tick filters BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "hl_meta",
+          "hl_docs_contracts",
+          "hl_docs_info",
+          "hl_btc_m15_now",
+          "hl_eth_m15_now",
+          "hl_btc_m15_old",
+          "hl_eth_m15_old",
+          "hl_docs_history",
+          "hl_btc_book_1",
+          "hl_btc_book_2",
+          "hl_eth_book_1",
+          "hl_eth_book_2",
+          "hl_docs_tick"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "hl_meta",
+          "hl_docs_contracts",
+          "hl_docs_info",
+          "hl_btc_m15_now",
+          "hl_eth_m15_now",
+          "hl_btc_m15_old",
+          "hl_eth_m15_old",
+          "hl_docs_history",
+          "hl_btc_book_1",
+          "hl_btc_book_2",
+          "hl_eth_book_1",
+          "hl_eth_book_2",
+          "hl_docs_tick"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: causally known prospective metadata capture possible. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "hl_meta",
+          "hl_docs_contracts",
+          "hl_docs_info",
+          "hl_btc_m15_now",
+          "hl_eth_m15_now",
+          "hl_btc_m15_old",
+          "hl_eth_m15_old",
+          "hl_docs_history",
+          "hl_btc_book_1",
+          "hl_btc_book_2",
+          "hl_eth_book_1",
+          "hl_eth_book_2",
+          "hl_docs_tick"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: at least one approved environment public access success; severe current geo-block remains penalty. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "evidence/ci/hyperliquid/cd7569da92238944b9c3cf31.receipt.json",
+          "evidence/ci/hyperliquid/8af845fd48a05f6df1767efc.receipt.json",
+          "evidence/ci/hyperliquid/7458a09d8bffc1670e031968.receipt.json"
+        ]
+      }
+    ],
+    "two_year_sample_is_not_continuity": true
+  },
+  "kraken_futures": {
+    "facts": {
+      "archive": "Old sentinel accessible through official charts API; no immutable bulk archive or missing-bar policy proven.",
+      "book_history": null,
+      "closure": null,
+      "mark_index": "Old 2024-10-13 mark 15m candles retrieved for both; current ticker markPrice/indexPrice.",
+      "native_m15": true,
+      "oi_history": "Current ticker openInterest exists, historical OI unverified.",
+      "oldest_actual_m15_sample_utc": "2024-10-13T00:00:00+00:00 (bounded sentinel, not earliest available)",
+      "pagination": "Charts GET /api/charts/v1/trade/{symbol}/15m?from=<epoch seconds>&to=<epoch seconds>; both endpoints inclusively returned 97 bars for 24h window. Long-range continuity/pagination limits not yet audited.",
+      "source_ids": [
+        "m15_btc_old",
+        "m15_eth_old",
+        "m15_btc_now",
+        "m15_eth_now",
+        "docs_general_history",
+        "trade_history_btc",
+        "trade_history_eth",
+        "chart_mark_btc_old",
+        "chart_mark_eth_old",
+        "ticker_btc",
+        "ticker_eth"
+      ],
+      "trades": "Current public /derivatives/api/v3/history returned 100 trade rows for each symbol; deeper history unverified.",
+      "two_year_sentinel": {
+        "BTC": "97 actual 15m candles from 2024-10-13T00:00Z through 2024-10-14T00:00Z inclusive",
+        "ETH": "97 actual 15m candles from 2024-10-13T00:00Z through 2024-10-14T00:00Z inclusive"
+      }
+    },
+    "hard_research": [
+      {
+        "confirmed": true,
+        "note": "Confirmed: exact product identity BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instruments",
+          "docs_instruments_new",
+          "docs_leverage",
+          "m15_btc_old",
+          "m15_eth_old",
+          "m15_btc_now",
+          "m15_eth_now",
+          "docs_general_history",
+          "trade_history_btc",
+          "trade_history_eth",
+          "chart_mark_btc_old",
+          "chart_mark_eth_old",
+          "ticker_btc",
+          "ticker_eth",
+          "book_btc_1",
+          "book_btc_2"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: current defensible tick filters BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instruments",
+          "docs_instruments_new",
+          "docs_leverage",
+          "m15_btc_old",
+          "m15_eth_old",
+          "m15_btc_now",
+          "m15_eth_now",
+          "docs_general_history",
+          "trade_history_btc",
+          "trade_history_eth",
+          "chart_mark_btc_old",
+          "chart_mark_eth_old",
+          "ticker_btc",
+          "ticker_eth",
+          "book_btc_1",
+          "book_btc_2"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instruments",
+          "docs_instruments_new",
+          "docs_leverage",
+          "m15_btc_old",
+          "m15_eth_old",
+          "m15_btc_now",
+          "m15_eth_now",
+          "docs_general_history",
+          "trade_history_btc",
+          "trade_history_eth",
+          "chart_mark_btc_old",
+          "chart_mark_eth_old",
+          "ticker_btc",
+          "ticker_eth",
+          "book_btc_1",
+          "book_btc_2"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: causally known prospective metadata capture possible. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instruments",
+          "docs_instruments_new",
+          "docs_leverage",
+          "m15_btc_old",
+          "m15_eth_old",
+          "m15_btc_now",
+          "m15_eth_now",
+          "docs_general_history",
+          "trade_history_btc",
+          "trade_history_eth",
+          "chart_mark_btc_old",
+          "chart_mark_eth_old",
+          "ticker_btc",
+          "ticker_eth",
+          "book_btc_1",
+          "book_btc_2"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: at least one approved environment public access success; severe current geo-block remains penalty. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "evidence/ci/kraken_futures/c1da37ef043f49968cb95fb2.receipt.json",
+          "evidence/ci/kraken_futures/6aaa168e47d606679a03ae6b.receipt.json",
+          "evidence/ci/kraken_futures/be03e6089913c6846e1d979a.receipt.json"
+        ]
+      }
+    ],
+    "two_year_sample_is_not_continuity": true
+  },
+  "kucoin_futures": {
+    "facts": {
+      "archive": null,
+      "book_history": null,
+      "closure": "Candle opening timestamps; no explicit confirm field; docs warn missing intervals if no ticks",
+      "mark_index": "current mark/index fields in contract; historical depth unknown",
+      "native_m15": true,
+      "oi_history": "UTA historical OI docs say starting 2025-12-29 and intraday retention 7d; cross-API applicability unverified",
+      "old_sentinel_2024_10_13": {
+        "BTC": "HTTP 200, code 200000, data []",
+        "ETH": "HTTP 200, code 200000, data []"
+      },
+      "oldest_actual_m15_sample_utc": "2026-10-13T04:30:00Z",
+      "pagination": "from/to millisecond window, maximum 500 bars/request",
+      "source_ids": [
+        "kc_docs_klines_en",
+        "kc_btc_m15_now_ms",
+        "kc_eth_m15_now_ms",
+        "kc_btc_m15_old_ms",
+        "kc_eth_m15_old_ms",
+        "kc_docs_open_interest",
+        "kc_btc_contract",
+        "kc_eth_contract"
+      ],
+      "trades": "public recent trade history documented; historical depth unknown"
+    },
+    "hard_research": [
+      {
+        "confirmed": true,
+        "note": "Confirmed: exact product identity BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "kc_btc_contract",
+          "kc_docs_contract_en",
+          "kc_docs_intro",
+          "kc_docs_klines_en",
+          "kc_btc_m15_now_ms",
+          "kc_eth_m15_now_ms",
+          "kc_btc_m15_old_ms",
+          "kc_eth_m15_old_ms",
+          "kc_docs_open_interest",
+          "kc_eth_contract",
+          "kc_btc_book_1",
+          "kc_btc_book_2",
+          "kc_docs_fullbook",
+          "kc_eth_book_1",
+          "kc_eth_book_2"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: current defensible tick filters BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "kc_btc_contract",
+          "kc_docs_contract_en",
+          "kc_docs_intro",
+          "kc_docs_klines_en",
+          "kc_btc_m15_now_ms",
+          "kc_eth_m15_now_ms",
+          "kc_btc_m15_old_ms",
+          "kc_eth_m15_old_ms",
+          "kc_docs_open_interest",
+          "kc_eth_contract",
+          "kc_btc_book_1",
+          "kc_btc_book_2",
+          "kc_docs_fullbook",
+          "kc_eth_book_1",
+          "kc_eth_book_2"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "kc_btc_contract",
+          "kc_docs_contract_en",
+          "kc_docs_intro",
+          "kc_docs_klines_en",
+          "kc_btc_m15_now_ms",
+          "kc_eth_m15_now_ms",
+          "kc_btc_m15_old_ms",
+          "kc_eth_m15_old_ms",
+          "kc_docs_open_interest",
+          "kc_eth_contract",
+          "kc_btc_book_1",
+          "kc_btc_book_2",
+          "kc_docs_fullbook",
+          "kc_eth_book_1",
+          "kc_eth_book_2"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: causally known prospective metadata capture possible. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "kc_btc_contract",
+          "kc_docs_contract_en",
+          "kc_docs_intro",
+          "kc_docs_klines_en",
+          "kc_btc_m15_now_ms",
+          "kc_eth_m15_now_ms",
+          "kc_btc_m15_old_ms",
+          "kc_eth_m15_old_ms",
+          "kc_docs_open_interest",
+          "kc_eth_contract",
+          "kc_btc_book_1",
+          "kc_btc_book_2",
+          "kc_docs_fullbook",
+          "kc_eth_book_1",
+          "kc_eth_book_2"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: at least one approved environment public access success; severe current geo-block remains penalty. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "evidence/ci/kucoin_futures/0e69b85c7081f5ad5fff3b9a.receipt.json",
+          "evidence/ci/kucoin_futures/737bb2c32a80b85dc32430f1.receipt.json",
+          "evidence/ci/kucoin_futures/e7c1a75f8f72a9f59da3aad8.receipt.json"
+        ]
+      }
+    ],
+    "two_year_sample_is_not_continuity": true
+  },
+  "mexc": {
+    "facts": {
+      "archive": null,
+      "book_history": null,
+      "closure": null,
+      "mark_index": "Current index/fair price API and K-line endpoints documented; BTC old index/fair probes returned empty arrays.",
+      "native_m15": true,
+      "oi_history": null,
+      "oldest_actual_m15_sample_utc": "2026-01-01T00:00:00+00:00 (among bounded probes only; not earliest available)",
+      "pagination": "start/end seconds, Min15; max 2000 per request per official docs; larger ranges need repeated requests.",
+      "source_ids": [
+        "docs_api",
+        "m15_btc_now",
+        "m15_eth_now",
+        "m15_btc_old",
+        "m15_eth_old",
+        "m15_btc_2026_jan",
+        "m15_eth_2026_jan",
+        "m15_btc_2026_may",
+        "m15_eth_2026_may",
+        "trades_btc",
+        "trades_eth",
+        "index_btc_old",
+        "fair_btc_old",
+        "ticker_btc",
+        "ticker_eth"
+      ],
+      "trades": "Current /contract/deals/{symbol} returned BTC/ETH; historical depth unverified.",
+      "two_year_sentinel": {
+        "BTC": "empty data.time at 2024-10-13T00:00Z",
+        "ETH": "empty data.time at 2024-10-13T00:00Z"
+      }
+    },
+    "hard_research": [
+      {
+        "confirmed": true,
+        "note": "Confirmed: exact product identity BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instrument_btc",
+          "docs_api",
+          "m15_btc_now",
+          "m15_eth_now",
+          "m15_btc_old",
+          "m15_eth_old",
+          "m15_btc_2026_jan",
+          "m15_eth_2026_jan",
+          "m15_btc_2026_may",
+          "m15_eth_2026_may",
+          "trades_btc",
+          "trades_eth",
+          "index_btc_old",
+          "fair_btc_old",
+          "ticker_btc",
+          "ticker_eth"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: current defensible tick filters BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instrument_btc",
+          "docs_api",
+          "m15_btc_now",
+          "m15_eth_now",
+          "m15_btc_old",
+          "m15_eth_old",
+          "m15_btc_2026_jan",
+          "m15_eth_2026_jan",
+          "m15_btc_2026_may",
+          "m15_eth_2026_may",
+          "trades_btc",
+          "trades_eth",
+          "index_btc_old",
+          "fair_btc_old",
+          "ticker_btc",
+          "ticker_eth"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instrument_btc",
+          "docs_api",
+          "m15_btc_now",
+          "m15_eth_now",
+          "m15_btc_old",
+          "m15_eth_old",
+          "m15_btc_2026_jan",
+          "m15_eth_2026_jan",
+          "m15_btc_2026_may",
+          "m15_eth_2026_may",
+          "trades_btc",
+          "trades_eth",
+          "index_btc_old",
+          "fair_btc_old",
+          "ticker_btc",
+          "ticker_eth"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: causally known prospective metadata capture possible. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instrument_btc",
+          "docs_api",
+          "m15_btc_now",
+          "m15_eth_now",
+          "m15_btc_old",
+          "m15_eth_old",
+          "m15_btc_2026_jan",
+          "m15_eth_2026_jan",
+          "m15_btc_2026_may",
+          "m15_eth_2026_may",
+          "trades_btc",
+          "trades_eth",
+          "index_btc_old",
+          "fair_btc_old",
+          "ticker_btc",
+          "ticker_eth"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: at least one approved environment public access success; severe current geo-block remains penalty. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "evidence/ci/mexc/d82ed1c8f00fe0623259196c.receipt.json",
+          "evidence/ci/mexc/c99576a12c94b3ca23559617.receipt.json",
+          "evidence/ci/mexc/d518624afe9b4643839bf018.receipt.json"
+        ]
+      }
+    ],
+    "two_year_sample_is_not_continuity": true
+  },
+  "okx": {
+    "facts": {
+      "archive": null,
+      "book_history": null,
+      "closure": "ts is open timestamp; confirm=1 completed, 0 uncompleted",
+      "mark_index": "public history-mark-price-candles and history-index-candles retrieved BTC two rows each; ETH not probed",
+      "native_m15": true,
+      "oi_history": "GET /api/v5/rubik/stat/contracts/open-interest-history 15m succeeded for BTC/ETH; docs limit latest 1,440 rows; 2024 sentinel returned empty both",
+      "oldest_actual_m15_sample_utc": {
+        "BTC": "2024-10-13T00:00:00Z",
+        "ETH": "2024-10-13T00:00:00Z"
+      },
+      "pagination": "history-candles after=earlier than ts; before=newer than ts; limit applies; two-year old sentinel retrieved both symbols",
+      "source_ids": [
+        "m15_btc_now",
+        "m15_eth_now",
+        "m15_btc_old_after",
+        "m15_eth_old_after",
+        "docs_main#order-book-trading-market-data-get-candlesticks-history",
+        "trades_history_btc",
+        "trades_history_eth",
+        "docs_main#order-book-trading-market-data-get-trades-history",
+        "mark_history_btc",
+        "index_history_btc",
+        "oi_history_btc",
+        "oi_history_eth",
+        "oi_history_old_btc",
+        "oi_history_old_eth",
+        "docs_main#trading-statistics-rest-api-get-contract-open-interest-history"
+      ],
+      "trades": "GET /api/v5/market/history-trades succeeded both symbols; official docs limit to last three months"
+    },
+    "hard_research": [
+      {
+        "confirmed": true,
+        "note": "Confirmed: exact product identity BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instrument_btc",
+          "docs_main#public-data-rest-api-get-instruments",
+          "m15_btc_now",
+          "m15_eth_now",
+          "m15_btc_old_after",
+          "m15_eth_old_after",
+          "docs_main#order-book-trading-market-data-get-candlesticks-history",
+          "trades_history_btc",
+          "trades_history_eth",
+          "docs_main#order-book-trading-market-data-get-trades-history",
+          "mark_history_btc",
+          "index_history_btc",
+          "oi_history_btc",
+          "oi_history_eth",
+          "oi_history_old_btc",
+          "oi_history_old_eth"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: current defensible tick filters BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instrument_btc",
+          "docs_main#public-data-rest-api-get-instruments",
+          "m15_btc_now",
+          "m15_eth_now",
+          "m15_btc_old_after",
+          "m15_eth_old_after",
+          "docs_main#order-book-trading-market-data-get-candlesticks-history",
+          "trades_history_btc",
+          "trades_history_eth",
+          "docs_main#order-book-trading-market-data-get-trades-history",
+          "mark_history_btc",
+          "index_history_btc",
+          "oi_history_btc",
+          "oi_history_eth",
+          "oi_history_old_btc",
+          "oi_history_old_eth"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instrument_btc",
+          "docs_main#public-data-rest-api-get-instruments",
+          "m15_btc_now",
+          "m15_eth_now",
+          "m15_btc_old_after",
+          "m15_eth_old_after",
+          "docs_main#order-book-trading-market-data-get-candlesticks-history",
+          "trades_history_btc",
+          "trades_history_eth",
+          "docs_main#order-book-trading-market-data-get-trades-history",
+          "mark_history_btc",
+          "index_history_btc",
+          "oi_history_btc",
+          "oi_history_eth",
+          "oi_history_old_btc",
+          "oi_history_old_eth"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: causally known prospective metadata capture possible. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instrument_btc",
+          "docs_main#public-data-rest-api-get-instruments",
+          "m15_btc_now",
+          "m15_eth_now",
+          "m15_btc_old_after",
+          "m15_eth_old_after",
+          "docs_main#order-book-trading-market-data-get-candlesticks-history",
+          "trades_history_btc",
+          "trades_history_eth",
+          "docs_main#order-book-trading-market-data-get-trades-history",
+          "mark_history_btc",
+          "index_history_btc",
+          "oi_history_btc",
+          "oi_history_eth",
+          "oi_history_old_btc",
+          "oi_history_old_eth"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: at least one approved environment public access success; severe current geo-block remains penalty. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "evidence/ci/okx/b294104a888931fd65c10672.receipt.json",
+          "evidence/ci/okx/38632c60138cb52a4e93c874.receipt.json",
+          "evidence/ci/okx/179029842e39f741b5f866ab.receipt.json"
+        ]
+      }
+    ],
+    "two_year_sample_is_not_continuity": true
+  }
+}

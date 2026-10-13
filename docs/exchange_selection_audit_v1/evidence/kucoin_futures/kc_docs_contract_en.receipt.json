@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c48ef8e99a014-DFW",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:28:34 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 2009.7,
+  "method": "GET",
+  "raw_length": 695913,
+  "raw_path": "kc_docs_contract_en.raw",
+  "raw_sha256": "344324de9055c7204114f3ab2dc5af38f1842fe34afe22045da4c7cb7cb7e34c",
+  "request_start_utc": "2026-10-13T06:28:33.148287+00:00",
+  "retrieval_utc": "2026-10-13T06:28:35.157604+00:00",
+  "source_id": "kc_docs_contract_en",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.kucoin.com/docs-new/rest/futures-trading/market-data/get-symbol?lang=en_US&"
+}

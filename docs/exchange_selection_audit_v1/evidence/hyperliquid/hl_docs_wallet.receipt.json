@@ -1,0 +1,20 @@
+{
+  "id": "hl_docs_wallet",
+  "venue": "hyperliquid",
+  "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/nonces-and-api-wallets.md",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-13T06:26:42.776531+00:00",
+  "completed_utc": "2026-10-13T06:26:43.888865+00:00",
+  "latency_ms": 1112.51,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:26:43 GMT",
+    "content-type": "text/plain; charset=utf-8"
+  },
+  "raw_path": "raw/hl_docs_wallet.bin",
+  "raw_sha256": "e63b1672b6d05dddc9b61e327c16e769024140e32482d5627f037c1eafe9b6c2",
+  "raw_bytes": 4342,
+  "truncated": false
+}

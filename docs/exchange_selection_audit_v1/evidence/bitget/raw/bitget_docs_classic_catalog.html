@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>API Documentation - Bitget API</title>
+<script src="/docs-static/no-sidebar-boot.js"></script>
+<link rel="stylesheet" crossorigin href="/docs-static/assets/GraphiQL-CUPUdpLP.css">
+<link rel="stylesheet" crossorigin href="/docs-static/assets/entry-BOhXhMVt.css">
+<link rel="preload" as="image" href="/docs-static/logo.png">
+<script type="module" crossorigin src="/docs-static/assets/entry.client-Cn63a3lQ.js"></script>
+<link rel="icon" href="/docs-static/favicon.ico">
+<link rel="canonical" href="https://www.bitget.com/docs/classic/catalog">
+<link rel="alternate" hreflang="en" href="https://www.bitget.com/docs/classic/catalog">
+<link rel="alternate" hreflang="zh-CN" href="https://www.bitget.com/zh-CN/docs/classic/catalog">
+<link rel="alternate" hreflang="x-default" href="https://www.bitget.com/docs/classic/catalog">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bitget API">
+<meta property="og:url" content="https://www.bitget.com/docs/classic/catalog">
+<meta property="og:image" content="https://img.bitgetimg.com/video/open_graph_new.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img.bitgetimg.com/video/open_graph_new.png"></head>
+  <body>
+    <div id="root"><link rel="preload" as="image" href="/docs-static/logo.png"/><script>(function(){
+  var KEY="docs-theme";
+  function norm(v){v=String(v||"").toLowerCase().trim();
+    if(v==="black"||v==="dark")return "dark";
+    if(v==="white"||v==="light")return "light";return "";}
+  var ext="";
+  try{var q=new URLSearchParams(location.search);if(q.has("appTheme"))ext=q.get("appTheme");}catch(e){}
+  if(!ext){try{ext=sessionStorage.getItem("docs-theme-rt")||"";if(ext)sessionStorage.removeItem("docs-theme-rt");}catch(e){}}
+  if(!ext){try{var m=document.cookie.match(/(?:^|;\s*)theme=([^;]*)/);if(m)ext=m[1];}catch(e){}}
+  if(!ext){try{var c=JSON.parse(localStorage.getItem("BITGET_LOCAL_CACHE")||"null");
+    if(c&&typeof c==="object"&&c.global_theme)ext=c.global_theme;}catch(e){}}
+  var val=norm(ext);
+  if(val){try{localStorage.setItem(KEY,val);}catch(e){}}
+})();</script><script>(function(){
+  try{
+    var lang="";
+    try{lang=new URLSearchParams(location.search).get("language")||"";}catch(e){}
+    if(!lang){try{lang=sessionStorage.getItem("docs-lang-rt")||"";if(lang)sessionStorage.removeItem("docs-lang-rt");}catch(e){}}
+    if(!/zh[_-]?cn/i.test(lang))return;
+    var path=location.pathname;
+    if(path==="/zh-CN"||path.indexOf("/zh-CN/")===0)return;
+    var rest=path.replace(/^\/en(?=\/|$)/,"")||"/";
+    var next="/zh-CN"+rest;
+    var params=new URLSearchParams(location.search);
+    params.delete("language");
+    var search=params.toString();if(search)search="?"+search;
+    location.replace(next+search+(location.hash||""));
+  }catch(e){}
+})();</script><script>((e, i, s, u, m, a, l, h) => {
+	let d = document.documentElement, w = ["light", "dark"];
+	function p(n) {
+		(Array.isArray(e) ? e : [e]).forEach((y) => {
+			let k = y === "class", S = k && a ? m.map((f) => a[f] || f) : m;
+			k ? (d.classList.remove(...S), d.classList.add(a && a[n] ? a[n] : n)) : d.setAttribute(y, n);
+		}), R(n);
+	}
+	function R(n) {
+		h && w.includes(n) && (d.style.colorScheme = n);
+	}
+	function c() {
+		return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+	}
+	if (u) p(u);
+	else try {
+		let n = localStorage.getItem(i) || s;
+		p(l && n === "system" ? c() : n);
+	} catch (n) {}
+})("class","docs-theme","system",null,["light","dark"],null,true,true)</script><header class="doc-header sticky lg:top-0 z-10 bg-background/80 backdrop-blur w-full" data-pagefind-ignore="all"><style>:root { --banner-height: 0px; }</style><div class="inset-shadow-[0_-1px_0_0_var(--border)] doc-header__bar relative"><div class="absolute w-0 left-0 right-0 bottom-[-1px] h-[2px] bg-primary transition-all duration-300 ease-in-out" style="opacity:0;width:0"></div><div class="max-w-screen-2xl mx-auto flex lg:grid lg:grid-cols-[1fr_auto_1fr] gap-2 items-center justify-between h-(--top-header-height) px-4 lg:px-8 border-transparent"><div class="flex items-center gap-4 min-w-0 justify-self-start"><a class="shrink-0" href="/docs/uta/Introduction" data-discover="true"><div class="flex items-center gap-3.5"><img src="/docs-static/logo.png" alt="Bitget API" style="width:104px" class="max-h-(--top-header-height) dark:hidden"/><img src="/docs-static/logo.png" alt="Bitget API" style="width:104px" class="max-h-(--top-header-height) hidden dark:block"/></div></a></div><div class="flex items-center justify-center"><div class="flex lg:hidden"><button type="button" class="relative w-full md:w-56 flex items-center border bg-clip-padding h-8 rounded-lg px-3 pr-14 text-sm transition-all border-input text-muted-foreground bg-background hover:bg-muted/50 hover:text-foreground shadow-xs outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:ring-3 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50"><div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:14px;height:14px"><path d="M17.135 16.135a8 8 0 10-2.18 1.82L18.5 21.5l2-2-3.365-3.365zM16.5 11a5.5 5.5 0 11-11 0 5.5 5.5 0 0111 0z"></path></svg>Search</div></button><!--$--><!--/$--></div></div><div class="flex items-center gap-2 justify-self-end"><div class="flex lg:hidden justify-self-end"><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-_R_f96n9_" data-state="closed" class="lg:hidden" aria-label="Open navigation menu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:22px;height:22px"><path d="M10 9.999h4v4h-4v-4zm7 0h4v4h-4v-4zm-14 0h4v4H3v-4z"></path></svg></button><div class="absolute w-0 left-0 right-0 bottom-[-1px] h-[2px] bg-primary transition-all duration-300 ease-in-out" style="opacity:0;width:0"></div></div><div class="doc-header__end hidden lg:flex items-center text-sm gap-2"><div class="min-w-0"></div><div><button type="button" class="relative w-full md:w-56 flex items-center border bg-clip-padding h-8 rounded-lg px-3 pr-14 text-sm transition-all border-input text-muted-foreground bg-background hover:bg-muted/50 hover:text-foreground shadow-xs outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:ring-3 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50"><div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:14px;height:14px"><path d="M17.135 16.135a8 8 0 10-2.18 1.82L18.5 21.5l2-2-3.365-3.365zM16.5 11a5.5 5.5 0 11-11 0 5.5 5.5 0 0111 0z"></path></svg>Search</div></button><!--$--><!--/$--></div><div class="flex shrink-0 items-center gap-[16px]"><div class="doc-account-switch hidden shrink-0 lg:inline-flex" role="group" aria-label="Account"><a class="doc-account-switch__item" href="/docs/uta/catalog" data-discover="true">UTA</a><a class="doc-account-switch__item" aria-current="page" href="/docs/classic/catalog" data-discover="true">Classic</a></div><a href="https://www.bitget.com/legacy-docs/uta/intro" target="_blank" rel="noopener noreferrer" aria-label="Legacy Doc" class="inline-flex h-8 shrink-0 items-center gap-[8px] whitespace-nowrap rounded-[8px] bg-[#252629] px-2.5 text-sm font-medium text-current transition-colors hover:bg-[#1f2023] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><span>Legacy Doc</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:16px;height:16px"><path d="M17.655 16.829l-2.405-.142V9.476l-9.828 9.829-1.697-1.697 9.829-9.829-7.284-.07.071-2.334h11.314v11.455z"></path></svg></a><div class="relative shrink-0"><button type="button" class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px] text-current transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" aria-label="More" aria-haspopup="menu" aria-expanded="false" aria-controls="_R_1sn96n9_"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:16px;height:16px"><path d="M10 9.999h4v4h-4v-4zm7 0h4v4h-4v-4zm-14 0h4v4H3v-4z"></path></svg></button></div></div></div></div></div></div><div class="doc-header__tabs hidden lg:block inset-shadow-[0_-1px_0_0_var(--border)]"><div class="max-w-screen-2xl mx-auto border-transparent relative"><div class="doc-topnav items-center justify-between px-8 h-(--top-nav-height) hidden lg:flex text-sm relative"><nav class="text-sm"><ul class="flex flex-row items-center gap-8"><li><a class="doc-topnav__item flex items-center gap-2 lg:py-3.5 font-medium -mb-px transition duration-150 delay-75 relative text-foreground/75 hover:text-foreground" href="/docs/classic/Introduction" data-discover="true"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" class="align-[-0.125em]" aria-hidden="true"><path d="M4.5 20.3841L19.5 20.4034V6.95713L16.2929 3.75L4.5 3.75027V20.3841ZM15.8018 11H7.5918V9.00003H15.8018V11ZM7.5918 15.0001V13.0001H13.8467V15.0001H7.5918Z"></path></svg>Overview</a></li><li><a aria-current="page" class="doc-topnav__item flex items-center gap-2 lg:py-3.5 font-medium -mb-px transition duration-150 delay-75 relative doc-topnav__item--active text-foreground after:content-[&#x27;&#x27;] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:[view-transition-name:top-nav-underline]" href="/docs/classic/catalog" data-discover="true"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" class="align-[-0.125em]" aria-hidden="true"><path d="M21 3.90039V20.1006H3V3.89941C3 3.89941 19.3605 3.90039 21 3.90039ZM5.5 12L9.31836 15.8184L10.5908 14.5459L8.0459 12L10.5908 9.4541L9.31836 8.18164L5.5 12ZM13.4102 9.4541L15.9561 12L13.4102 14.5459L14.6826 15.8184L18.501 12L14.6826 8.18164L13.4102 9.4541Z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>API Documentation</a></li><li><a class="doc-topnav__item flex items-center gap-2 lg:py-3.5 font-medium -mb-px transition duration-150 delay-75 relative text-foreground/75 hover:text-foreground" href="/docs/classic/websocket/intro" data-discover="true"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" class="align-[-0.125em]" aria-hidden="true"><path d="M7.55176 13.1221C7.79958 16.0488 9.01043 18.8212 11.0088 20.999C6.83517 20.5461 3.51387 17.2697 3 13.1221H7.55176Z"></path><path d="M21 13.1221C20.4861 17.2701 17.1644 20.5467 12.9902 20.999C14.9889 18.8212 16.2004 16.0491 16.4482 13.1221H21Z"></path><path d="M14.1885 13.1221C13.9819 15.1401 13.2248 17.0625 12 18.6797C10.7752 17.0625 10.0181 15.1401 9.81152 13.1221H14.1885Z"></path><path d="M11.0088 3C9.01023 5.17807 7.79933 7.95079 7.55176 10.8779H3C3.51358 6.72997 6.83492 3.45289 11.0088 3Z"></path><path d="M12 5.31836C13.2254 6.93602 13.9822 8.85902 14.1885 10.8779H9.81152C10.0178 8.85906 10.7747 6.936 12 5.31836Z"></path><path d="M12.9902 3C17.1647 3.45238 20.4864 6.72958 21 10.8779H16.4482C16.2006 7.95052 14.9891 5.17816 12.9902 3Z"></path></svg>WebSocket</a></li><li><a class="doc-topnav__item flex items-center gap-2 lg:py-3.5 font-medium -mb-px transition duration-150 delay-75 relative text-foreground/75 hover:text-foreground" href="/docs/classic/agent-hub" data-discover="true"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" class="align-[-0.125em]" aria-hidden="true"><path d="M3.79753 6.5H7.29959L4.08165 11.9658L7.29959 17.4316H3.79753L0.57959 11.9658L3.79753 6.5Z"></path><path d="M20.2005 6.5H16.7L19.9166 11.9658L16.7 17.4316H20.2005L23.4171 11.9658L20.2005 6.5Z"></path><path d="M10.7 11.9502C10.7 12.9167 9.91648 13.7002 8.94998 13.7002C7.98348 13.7002 7.19998 12.9167 7.19998 11.9502C7.19998 10.9837 7.98348 10.2002 8.94998 10.2002C9.91648 10.2002 10.7 10.9837 10.7 11.9502Z"></path><path d="M16.7996 11.9502C16.7996 12.9167 16.0161 13.7002 15.0496 13.7002C14.0831 13.7002 13.2996 12.9167 13.2996 11.9502C13.2996 10.9837 14.0831 10.2002 15.0496 10.2002C16.0161 10.2002 16.7996 10.9837 16.7996 11.9502Z"></path></svg>Agent Hub</a></li><li><a class="doc-topnav__item flex items-center gap-2 lg:py-3.5 font-medium -mb-px transition duration-150 delay-75 relative text-foreground/75 hover:text-foreground" href="/docs/classic/sdk/overview" data-discover="true"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" class="align-[-0.125em]" aria-hidden="true"><path d="M12 2.5L20.4263 7.37837V17.1351L12.887 21.5V11.7453L4.45887 6.86592L12 2.5ZM3.57373 8.40327V17.1351L11.113 21.5V12.7681L3.57373 8.40327Z"></path></svg>SDK</a></li><li><a class="doc-topnav__item flex items-center gap-2 lg:py-3.5 font-medium -mb-px transition duration-150 delay-75 relative text-foreground/75 hover:text-foreground" href="/docs/classic/changelog/2026-09" data-discover="true"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" class="align-[-0.125em]" aria-hidden="true"><path d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3ZM7.79688 11.7305L9.06836 13.0029L11.1006 10.9707V16.4727H12.8994V10.9697L14.9316 13.0029L16.2041 11.7305L12 7.52734L7.79688 11.7305Z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>Changelog</a></li></ul></nav></div></div></div></header><div role="status" aria-live="polite" aria-hidden="true" style="pointer-events:none;position:fixed;inset-inline:0;top:calc(var(--header-height, 64px) + 12px);z-index:200;display:flex;justify-content:center;transition:opacity 200ms ease, transform 200ms ease;opacity:0;transform:translateY(-8px)"><div style="border-radius:8px;padding:10px 16px;font-size:14px;font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,0.18);background:var(--foreground, #111);color:var(--background, #fff)">Copied to clipboard</div></div><div class="grid max-w-screen-2xl w-full lg:mx-auto [&amp;:has(&gt;:only-child)]:grid-rows-1 grid-rows-[0_min-content_1fr] lg:grid-rows-[min-content_1fr] grid-cols-1 transition-[grid-template-columns] duration-200 ease-out motion-reduce:transition-none lg:grid-cols-[var(--side-nav-width)_1fr]"><!--$?--><template id="B:0"></template><div class="col-span-full row-span-full grid place-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader-circle animate-spin" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg></div><!--/$--></div><script>window.__staticRouterHydrationData = JSON.parse("{\"loaderData\":{},\"actionData\":null,\"errors\":null}");</script><script>requestAnimationFrame(function(){$RT=performance.now()});</script><div hidden id="S:0"><main data-pagefind-body="true" class="doc-main min-w-0 px-4 lg:pe-8 lg:px-8 col-span-full"><style>
+        .api-guide {
+          max-width: 1120px;
+          margin: 0 auto;
+          padding: 40px 0px 16px;
+          color: var(--ds-color-text-primary);
+          font-family: var(--doc-font-sans, "Bitget Pulse", system-ui, sans-serif);
+        }
+        .api-guide__title {
+          margin: 0;
+          font-size: 32px;
+          font-weight: 600;
+          line-height: 1.2;
+          color: var(--ds-color-text-primary);
+        }
+        .api-guide__subtitle {
+          margin: 12px 0 0;
+          max-width: 720px;
+          font-size: 14px;
+          line-height: 1.4;
+          color: var(--ds-color-text-secondary);
+        }
+        .api-guide__toolbar {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          /* UED 24256888-3：搜索/tab 行到上方标题保持 40px */
+          margin-top: 40px;
+        }
+        .api-guide__filters {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+        .api-guide__pill {
+          border: none;
+          background: transparent;
+          color: var(--ds-color-text-tertiary);
+          border-radius: 12px;
+          padding: 8px 12px;
+          /* UED 24256888-1：tab 文字 14px，不是 16px */
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 1.4;
+          cursor: pointer;
+          position: relative;
+          transition: color 0.15s ease, background-color 0.15s ease;
+        }
+        .api-guide__pill.is-active {
+          background: var(--ds-color-background-secondary);
+          color: var(--ds-color-text-primary);
+        }
+        .api-guide__pill:hover {
+          color: var(--ds-color-text-primary);
+          background: var(--ds-color-background-secondary);
+          /*
+           * 加粗用 text-shadow 描边而非 font-weight：字重 400→600 会让拉丁文 tab
+           * （P2P / Reality / Stock+）宽出 1~2px，整排 tab 本来就贴着换行阈值，
+           * 一变宽右侧搜索框就会在「同行」和「下一行」之间反复跳。
+           * text-shadow 不参与布局，hover 前后宽度完全一致。
+           */
+          text-shadow: 0.02em 0 0 currentColor, -0.02em 0 0 currentColor;
+        }
+        .api-guide__search-field {
+          position: relative;
+          display: flex;
+          align-items: center;
+          min-width: 200px;
+          flex: 0 1 240px;
+        }
+        .api-guide__search-icon {
+          position: absolute;
+          inset-inline-start: 12px;
+          pointer-events: none;
+          color: var(--ds-color-text-tertiary);
+        }
+        /* UED 24256888-2：搜索框去掉描边，只留灰底 */
+        .api-guide__search {
+          width: 100%;
+          border: none;
+          border-radius: 12px;
+          padding: 8px 12px 8px 36px;
+          font-size: 14px;
+          background: var(--ds-color-background-secondary);
+          color: var(--ds-color-text-primary);
+          outline: none;
+          box-sizing: border-box;
+        }
+        .api-guide__section {
+          margin-top: 44px;
+          padding-top: 0;
+          border-top: none;
+        }
+        /* UED 24256888-3：搜索/tab 行到下方内容保持 40px（分组之间仍是 44px） */
+        .api-guide__toolbar + .api-guide__section {
+          margin-top: 40px;
+          border-top: none;
+        }
+        .api-guide__section-title {
+          margin: 0 0 16px;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 1.4;
+          color: var(--ds-color-text-primary);
+        }
+        .api-guide__grid {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 24px;
+          align-items: stretch;
+        }
+        @media (max-width: 960px) {
+          .api-guide__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (max-width: 768px) {
+          .api-guide__toolbar {
+            flex-direction: column;
+            align-items: stretch;
+          }
+          .api-guide__filters {
+            width: 100%;
+          }
+          .api-guide__search-field {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            flex: 1 1 auto;
+          }
+        }
+        @media (max-width: 640px) {
+          .api-guide__grid {
+            grid-template-columns: 1fr;
+            /* 单列时按内容高度展示，避免短描述卡片被拉伸留白 */
+            align-items: start;
+          }
+        }
+        .api-guide__card {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          min-height: 0;
+          padding: 16px;
+          border: 1px solid var(--ds-color-border-subtle);
+          border-radius: 12px;
+          background: var(--ds-color-background-base);
+          text-decoration: none;
+          color: inherit;
+          transition: border-color 0.15s ease, background-color 0.15s ease;
+        }
+        .api-guide__card:hover {
+          border-color: var(--ds-color-border-strong);
+          background: var(--ds-color-background-secondary);
+        }
+        .api-guide__card-head {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 12px;
+        }
+        .api-guide__card-title {
+          margin: 0;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 1.4;
+          color: var(--ds-color-text-primary);
+          /*
+           * UED 24257259：标题按 2 行锁定高度（超出省略）。中英文标题长度不同，
+           * 换行行数不同会让同一列的卡片忽高忽低，锁 2 行后所有卡片同高。
+           */
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .api-guide__card-count {
+          flex-shrink: 0;
+          font-size: 12px;
+          color: var(--ds-color-text-tertiary);
+          white-space: nowrap;
+        }
+        .api-guide__card-desc {
+          margin: 0;
+          font-size: 14px;
+          line-height: 1.4;
+          color: var(--ds-color-text-secondary);
+          /*
+           * 描述最多 4 行；不设 min-height，短文案按实际行数收缩。
+           * 多列时 grid stretch 会让同行卡片等高（取该行最高内容）。
+           */
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .api-guide__empty {
+          margin-top: 40px;
+          text-align: center;
+          color: var(--ds-color-text-secondary);
+        }
+        
+        :root[data-api-tab="common"] .api-guide__section:not([data-tab="common"]) {
+          display: none;
+        }
+        /* 被藏起来的分组仍占着「toolbar 紧邻兄弟」的位置，得手动补 40px，
+           否则 hydration 后目标分组变成相邻兄弟时会有 4px 抖动。 */
+        :root[data-api-tab="common"] .api-guide__section[data-tab="common"] {
+          margin-top: 40px;
+        }
+        :root[data-api-tab="common"] .api-guide__pill[data-tab="common"] {
+          background: var(--ds-color-background-secondary);
+          color: var(--ds-color-text-primary);
+        }
+        :root[data-api-tab="common"] .api-guide__pill:not([data-tab="common"]) {
+          background: transparent;
+          color: var(--ds-color-text-tertiary);
+        }
+
+        :root[data-api-tab="spot"] .api-guide__section:not([data-tab="spot"]) {
+          display: none;
+        }
+        /* 被藏起来的分组仍占着「toolbar 紧邻兄弟」的位置，得手动补 40px，
+           否则 hydration 后目标分组变成相邻兄弟时会有 4px 抖动。 */
+        :root[data-api-tab="spot"] .api-guide__section[data-tab="spot"] {
+          margin-top: 40px;
+        }
+        :root[data-api-tab="spot"] .api-guide__pill[data-tab="spot"] {
+          background: var(--ds-color-background-secondary);
+          color: var(--ds-color-text-primary);
+        }
+        :root[data-api-tab="spot"] .api-guide__pill:not([data-tab="spot"]) {
+          background: transparent;
+          color: var(--ds-color-text-tertiary);
+        }
+
+        :root[data-api-tab="contract"] .api-guide__section:not([data-tab="contract"]) {
+          display: none;
+        }
+        /* 被藏起来的分组仍占着「toolbar 紧邻兄弟」的位置，得手动补 40px，
+           否则 hydration 后目标分组变成相邻兄弟时会有 4px 抖动。 */
+        :root[data-api-tab="contract"] .api-guide__section[data-tab="contract"] {
+          margin-top: 40px;
+        }
+        :root[data-api-tab="contract"] .api-guide__pill[data-tab="contract"] {
+          background: var(--ds-color-background-secondary);
+          color: var(--ds-color-text-primary);
+        }
+        :root[data-api-tab="contract"] .api-guide__pill:not([data-tab="contract"]) {
+          background: transparent;
+          color: var(--ds-color-text-tertiary);
+        }
+
+        :root[data-api-tab="margin"] .api-guide__section:not([data-tab="margin"]) {
+          display: none;
+        }
+        /* 被藏起来的分组仍占着「toolbar 紧邻兄弟」的位置，得手动补 40px，
+           否则 hydration 后目标分组变成相邻兄弟时会有 4px 抖动。 */
+        :root[data-api-tab="margin"] .api-guide__section[data-tab="margin"] {
+          margin-top: 40px;
+        }
+        :root[data-api-tab="margin"] .api-guide__pill[data-tab="margin"] {
+          background: var(--ds-color-background-secondary);
+          color: var(--ds-color-text-primary);
+        }
+        :root[data-api-tab="margin"] .api-guide__pill:not([data-tab="margin"]) {
+          background: transparent;
+          color: var(--ds-color-text-tertiary);
+        }
+
+        :root[data-api-tab="copytrading"] .api-guide__section:not([data-tab="copytrading"]) {
+          display: none;
+        }
+        /* 被藏起来的分组仍占着「toolbar 紧邻兄弟」的位置，得手动补 40px，
+           否则 hydration 后目标分组变成相邻兄弟时会有 4px 抖动。 */
+        :root[data-api-tab="copytrading"] .api-guide__section[data-tab="copytrading"] {
+          margin-top: 40px;
+        }
+        :root[data-api-tab="copytrading"] .api-guide__pill[data-tab="copytrading"] {
+          background: var(--ds-color-background-secondary);
+          color: var(--ds-color-text-primary);
+        }
+        :root[data-api-tab="copytrading"] .api-guide__pill:not([data-tab="copytrading"]) {
+          background: transparent;
+          color: var(--ds-color-text-tertiary);
+        }
+
+        :root[data-api-tab="tax"] .api-guide__section:not([data-tab="tax"]) {
+          display: none;
+        }
+        /* 被藏起来的分组仍占着「toolbar 紧邻兄弟」的位置，得手动补 40px，
+           否则 hydration 后目标分组变成相邻兄弟时会有 4px 抖动。 */
+        :root[data-api-tab="tax"] .api-guide__section[data-tab="tax"] {
+          margin-top: 40px;
+        }
+        :root[data-api-tab="tax"] .api-guide__pill[data-tab="tax"] {
+          background: var(--ds-color-background-secondary);
+          color: var(--ds-color-text-primary);
+        }
+        :root[data-api-tab="tax"] .api-guide__pill:not([data-tab="tax"]) {
+          background: transparent;
+          color: var(--ds-color-text-tertiary);
+        }
+
+        :root[data-api-tab="p2p"] .api-guide__section:not([data-tab="p2p"]) {
+          display: none;
+        }
+        /* 被藏起来的分组仍占着「toolbar 紧邻兄弟」的位置，得手动补 40px，
+           否则 hydration 后目标分组变成相邻兄弟时会有 4px 抖动。 */
+        :root[data-api-tab="p2p"] .api-guide__section[data-tab="p2p"] {
+          margin-top: 40px;
+        }
+        :root[data-api-tab="p2p"] .api-guide__pill[data-tab="p2p"] {
+          background: var(--ds-color-background-secondary);
+          color: var(--ds-color-text-primary);
+        }
+        :root[data-api-tab="p2p"] .api-guide__pill:not([data-tab="p2p"]) {
+          background: transparent;
+          color: var(--ds-color-text-tertiary);
+        }
+
+        :root[data-api-tab="affiliate"] .api-guide__section:not([data-tab="affiliate"]) {
+          display: none;
+        }
+        /* 被藏起来的分组仍占着「toolbar 紧邻兄弟」的位置，得手动补 40px，
+           否则 hydration 后目标分组变成相邻兄弟时会有 4px 抖动。 */
+        :root[data-api-tab="affiliate"] .api-guide__section[data-tab="affiliate"] {
+          margin-top: 40px;
+        }
+        :root[data-api-tab="affiliate"] .api-guide__pill[data-tab="affiliate"] {
+          background: var(--ds-color-background-secondary);
+          color: var(--ds-color-text-primary);
+        }
+        :root[data-api-tab="affiliate"] .api-guide__pill:not([data-tab="affiliate"]) {
+          background: transparent;
+          color: var(--ds-color-text-tertiary);
+        }
+
+        :root[data-api-tab="broker"] .api-guide__section:not([data-tab="broker"]) {
+          display: none;
+        }
+        /* 被藏起来的分组仍占着「toolbar 紧邻兄弟」的位置，得手动补 40px，
+           否则 hydration 后目标分组变成相邻兄弟时会有 4px 抖动。 */
+        :root[data-api-tab="broker"] .api-guide__section[data-tab="broker"] {
+          margin-top: 40px;
+        }
+        :root[data-api-tab="broker"] .api-guide__pill[data-tab="broker"] {
+          background: var(--ds-color-background-secondary);
+          color: var(--ds-color-text-primary);
+        }
+        :root[data-api-tab="broker"] .api-guide__pill:not([data-tab="broker"]) {
+          background: transparent;
+          color: var(--ds-color-text-tertiary);
+        }
+
+        :root[data-api-tab="instloan"] .api-guide__section:not([data-tab="instloan"]) {
+          display: none;
+        }
+        /* 被藏起来的分组仍占着「toolbar 紧邻兄弟」的位置，得手动补 40px，
+           否则 hydration 后目标分组变成相邻兄弟时会有 4px 抖动。 */
+        :root[data-api-tab="instloan"] .api-guide__section[data-tab="instloan"] {
+          margin-top: 40px;
+        }
+        :root[data-api-tab="instloan"] .api-guide__pill[data-tab="instloan"] {
+          background: var(--ds-color-background-secondary);
+          color: var(--ds-color-text-primary);
+        }
+        :root[data-api-tab="instloan"] .api-guide__pill:not([data-tab="instloan"]) {
+          background: transparent;
+          color: var(--ds-color-text-tertiary);
+        }
+
+        :root[data-api-tab="earn"] .api-guide__section:not([data-tab="earn"]) {
+          display: none;
+        }
+        /* 被藏起来的分组仍占着「toolbar 紧邻兄弟」的位置，得手动补 40px，
+           否则 hydration 后目标分组变成相邻兄弟时会有 4px 抖动。 */
+        :root[data-api-tab="earn"] .api-guide__section[data-tab="earn"] {
+          margin-top: 40px;
+        }
+        :root[data-api-tab="earn"] .api-guide__pill[data-tab="earn"] {
+          background: var(--ds-color-background-secondary);
+          color: var(--ds-color-text-primary);
+        }
+        :root[data-api-tab="earn"] .api-guide__pill:not([data-tab="earn"]) {
+          background: transparent;
+          color: var(--ds-color-text-tertiary);
+        }
+      </style><div class="api-guide"><h1 class="api-guide__title">API Documentation</h1><p class="api-guide__subtitle">Browse REST APIs by product line, or search to find exactly what you need.</p><div class="api-guide__toolbar"><div class="api-guide__filters" role="tablist" aria-label="API Documentation"><button type="button" role="tab" data-tab="all" aria-selected="true" class="api-guide__pill is-active">ALL</button><button type="button" role="tab" data-tab="common" aria-selected="false" class="api-guide__pill">Public</button><button type="button" role="tab" data-tab="spot" aria-selected="false" class="api-guide__pill">Spot</button><button type="button" role="tab" data-tab="contract" aria-selected="false" class="api-guide__pill">Futures</button><button type="button" role="tab" data-tab="margin" aria-selected="false" class="api-guide__pill">Margin</button><button type="button" role="tab" data-tab="copytrading" aria-selected="false" class="api-guide__pill">Copy Trading</button><button type="button" role="tab" data-tab="tax" aria-selected="false" class="api-guide__pill">Tax</button><button type="button" role="tab" data-tab="p2p" aria-selected="false" class="api-guide__pill">P2P</button><button type="button" role="tab" data-tab="affiliate" aria-selected="false" class="api-guide__pill">Affiliate</button><button type="button" role="tab" data-tab="broker" aria-selected="false" class="api-guide__pill">Broker</button><button type="button" role="tab" data-tab="instloan" aria-selected="false" class="api-guide__pill">Inst Loan</button><button type="button" role="tab" data-tab="earn" aria-selected="false" class="api-guide__pill">Earn</button></div><div class="api-guide__search-field"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="api-guide__search-icon" style="width:16px;height:16px"><path d="M17.135 16.135a8 8 0 10-2.18 1.82L18.5 21.5l2-2-3.365-3.365zM16.5 11a5.5 5.5 0 11-11 0 5.5 5.5 0 0111 0z"></path></svg><input class="api-guide__search" type="search" placeholder="Search APIs…" aria-label="Search APIs…" value=""/></div></div><section class="api-guide__section" data-tab="common"><h2 class="api-guide__section-title">Public</h2><div class="api-guide__grid"><a class="api-guide__card" href="/docs/catalog/classic-common-notice" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Notice</h3><span class="api-guide__card-count">1 endpoints</span></div><p class="api-guide__card-desc">Query platform announcements.</p></a><a class="api-guide__card" href="/docs/catalog/classic-common-apidata" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Trading Insights</h3><span class="api-guide__card-count">11 endpoints</span></div><p class="api-guide__card-desc">Long/short ratios, fund flow, and margin data.</p></a><a class="api-guide__card" href="/docs/catalog/classic-common-public" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Public Config</h3><span class="api-guide__card-count">3 endpoints</span></div><p class="api-guide__card-desc">Server time and trade rate.</p></a><a class="api-guide__card" href="/docs/catalog/classic-common-account" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Assets</h3><span class="api-guide__card-count">3 endpoints</span></div><p class="api-guide__card-desc">All-account balance, bot assets, and funding assets.</p></a><a class="api-guide__card" href="/docs/catalog/classic-common-vsubaccount" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Virtual Subaccount</h3><span class="api-guide__card-count">8 endpoints</span></div><p class="api-guide__card-desc">Create, modify, and query virtual sub-accounts and API keys.</p></a></div></section><section class="api-guide__section" data-tab="spot"><h2 class="api-guide__section-title">Spot</h2><div class="api-guide__grid"><a class="api-guide__card" href="/docs/catalog/classic-spot-market" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Market</h3><span class="api-guide__card-count">11 endpoints</span></div><p class="api-guide__card-desc">Symbols, tickers, order book, candles, trades, and coin info.</p></a><a class="api-guide__card" href="/docs/catalog/classic-spot-account" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Account</h3><span class="api-guide__card-count">21 endpoints</span></div><p class="api-guide__card-desc">Assets, bills, deposit, withdrawal, transfer, and sub-account management.</p></a><a class="api-guide__card" href="/docs/catalog/classic-spot-bgb-convert" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">BGB Convert</h3><span class="api-guide__card-count">3 endpoints</span></div><p class="api-guide__card-desc">Convert small balances to BGB and query records.</p></a><a class="api-guide__card" href="/docs/catalog/classic-spot-trade" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Trade</h3><span class="api-guide__card-count">11 endpoints</span></div><p class="api-guide__card-desc">Place, cancel, and query orders and fills.</p></a><a class="api-guide__card" href="/docs/catalog/classic-spot-convert" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Convert</h3><span class="api-guide__card-count">4 endpoints</span></div><p class="api-guide__card-desc">Quoted price, trade, and convert history.</p></a><a class="api-guide__card" href="/docs/catalog/classic-spot-plan" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Trigger</h3><span class="api-guide__card-count">7 endpoints</span></div><p class="api-guide__card-desc">Place, modify, cancel, and query trigger orders.</p></a></div></section><section class="api-guide__section" data-tab="contract"><h2 class="api-guide__section-title">Futures</h2><div class="api-guide__grid"><a class="api-guide__card" href="/docs/catalog/classic-contract-market" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Market</h3><span class="api-guide__card-count">20 endpoints</span></div><p class="api-guide__card-desc">Tickers, candles, order book, funding rate, and fee rates.</p></a><a class="api-guide__card" href="/docs/catalog/classic-contract-account" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Account</h3><span class="api-guide__card-count">20 endpoints</span></div><p class="api-guide__card-desc">Assets, bills, leverage, margin mode, and position mode settings.</p></a><a class="api-guide__card" href="/docs/catalog/classic-contract-trade" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Trade</h3><span class="api-guide__card-count">13 endpoints</span></div><p class="api-guide__card-desc">Place, modify, cancel, and query orders and fills.</p></a><a class="api-guide__card" href="/docs/catalog/classic-contract-plan" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Trigger</h3><span class="api-guide__card-count">9 endpoints</span></div><p class="api-guide__card-desc">Place, modify, cancel, and query trigger and TP/SL orders.</p></a><a class="api-guide__card" href="/docs/catalog/classic-contract-position" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Position</h3><span class="api-guide__card-count">5 endpoints</span></div><p class="api-guide__card-desc">Query current, historical, and ADL-ranked positions.</p></a></div></section><section class="api-guide__section" data-tab="margin"><h2 class="api-guide__section-title">Margin</h2><div class="api-guide__grid"><a class="api-guide__card" href="/docs/catalog/classic-margin-cross-account" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Cross Account</h3><span class="api-guide__card-count">10 endpoints</span></div><p class="api-guide__card-desc">Cross margin borrow, repay, and assets.</p></a><a class="api-guide__card" href="/docs/catalog/classic-margin-cross-trade" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Cross Trade</h3><span class="api-guide__card-count">8 endpoints</span></div><p class="api-guide__card-desc">Place, cancel, and query cross margin orders and fills.</p></a><a class="api-guide__card" href="/docs/catalog/classic-margin-cross-record" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Cross Records</h3><span class="api-guide__card-count">5 endpoints</span></div><p class="api-guide__card-desc">Cross margin loan, repay, interest, and liquidation records.</p></a><a class="api-guide__card" href="/docs/catalog/classic-margin-isolated-account" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Isolated Account</h3><span class="api-guide__card-count">10 endpoints</span></div><p class="api-guide__card-desc">Isolated margin borrow, repay, and assets.</p></a><a class="api-guide__card" href="/docs/catalog/classic-margin-isolated-trade" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Isolated Trade</h3><span class="api-guide__card-count">8 endpoints</span></div><p class="api-guide__card-desc">Place, cancel, and query isolated margin orders and fills.</p></a><a class="api-guide__card" href="/docs/catalog/classic-margin-isolated-record" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Isolated Records</h3><span class="api-guide__card-count">5 endpoints</span></div><p class="api-guide__card-desc">Isolated margin loan, repay, interest, and liquidation records.</p></a><a class="api-guide__card" href="/docs/catalog/classic-margin-common" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Common</h3><span class="api-guide__card-count">2 endpoints</span></div><p class="api-guide__card-desc">Margin interest rates and supported currencies.</p></a></div></section><section class="api-guide__section" data-tab="copytrading"><h2 class="api-guide__section-title">Copy Trading</h2><div class="api-guide__grid"><a class="api-guide__card" href="/docs/catalog/classic-copytrading-spot-trader" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Spot Trader</h3><span class="api-guide__card-count">12 endpoints</span></div><p class="api-guide__card-desc">Spot copy trading trader endpoints.</p></a><a class="api-guide__card" href="/docs/catalog/classic-copytrading-spot-follower" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Spot Follower</h3><span class="api-guide__card-count">10 endpoints</span></div><p class="api-guide__card-desc">Spot copy trading follower endpoints.</p></a><a class="api-guide__card" href="/docs/catalog/classic-copytrading-future-trader" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Futures Trader</h3><span class="api-guide__card-count">15 endpoints</span></div><p class="api-guide__card-desc">Futures copy trading trader endpoints.</p></a><a class="api-guide__card" href="/docs/catalog/classic-copytrading-future-follower" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Futures Follower</h3><span class="api-guide__card-count">10 endpoints</span></div><p class="api-guide__card-desc">Futures copy trading follower endpoints.</p></a></div></section><section class="api-guide__section" data-tab="tax"><h2 class="api-guide__section-title">Tax</h2><div class="api-guide__grid"><a class="api-guide__card" href="/docs/catalog/classic-tax-tax-records" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Tax Records</h3><span class="api-guide__card-count">4 endpoints</span></div><p class="api-guide__card-desc">Futures, margin, P2P, and spot transaction records for tax reporting.</p></a></div></section><section class="api-guide__section" data-tab="p2p"><h2 class="api-guide__section-title">P2P</h2><div class="api-guide__grid"><a class="api-guide__card" href="/docs/catalog/classic-p2p-p2p" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">P2P</h3><span class="api-guide__card-count">4 endpoints</span></div><p class="api-guide__card-desc">P2P merchant information, advert list, and order list.</p></a></div></section><section class="api-guide__section" data-tab="affiliate"><h2 class="api-guide__section-title">Affiliate</h2><div class="api-guide__grid"><a class="api-guide__card" href="/docs/catalog/classic-affiliate-customer-info" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Customer Info</h3><span class="api-guide__card-count">8 endpoints</span></div><p class="api-guide__card-desc">Affiliate customer list, assets, KYC, commission, and trade volume.</p></a></div></section><section class="api-guide__section" data-tab="broker"><h2 class="api-guide__section-title">Broker</h2><div class="api-guide__grid"><a class="api-guide__card" href="/docs/catalog/classic-broker-apikey" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Subaccount API Key</h3><span class="api-guide__card-count">4 endpoints</span></div><p class="api-guide__card-desc">Create, modify, delete, and query subaccount API keys.</p></a><a class="api-guide__card" href="/docs/catalog/classic-broker-commission" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Commission</h3><span class="api-guide__card-count">3 endpoints</span></div><p class="api-guide__card-desc">Order commission, total commission, and rebate info.</p></a><a class="api-guide__card" href="/docs/catalog/classic-broker-subaccount" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Subaccount</h3><span class="api-guide__card-count">17 endpoints</span></div><p class="api-guide__card-desc">Broker subaccount management, deposit/withdrawal, and transfer.</p></a></div></section><section class="api-guide__section" data-tab="instloan"><h2 class="api-guide__section-title">Inst Loan</h2><div class="api-guide__grid"><a class="api-guide__card" href="/docs/catalog/classic-instloan-account" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Account</h3><span class="api-guide__card-count">4 endpoints</span></div><p class="api-guide__card-desc">Risk unit, LTV, and transferred amount from spot account.</p></a><a class="api-guide__card" href="/docs/catalog/classic-instloan-orders" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Orders</h3><span class="api-guide__card-count">2 endpoints</span></div><p class="api-guide__card-desc">Institutional loan and repayment orders.</p></a><a class="api-guide__card" href="/docs/catalog/classic-instloan-public" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Public</h3><span class="api-guide__card-count">3 endpoints</span></div><p class="api-guide__card-desc">Institutional loan products, symbols, and margin coins.</p></a></div></section><section class="api-guide__section" data-tab="earn"><h2 class="api-guide__section-title">Earn</h2><div class="api-guide__grid"><a class="api-guide__card" href="/docs/catalog/earn-classic-elite" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">On-chain Elite</h3><span class="api-guide__card-count">8 endpoints</span></div><p class="api-guide__card-desc">Classic account on-chain Elite product, subscription, redemption, and record APIs.</p></a><a class="api-guide__card" href="/docs/catalog/earn-classic-savings" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Savings</h3><span class="api-guide__card-count">9 endpoints</span></div><p class="api-guide__card-desc">Classic account savings product, subscription, redemption, and record APIs.</p></a><a class="api-guide__card" href="/docs/catalog/earn-classic-sharkfin" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">SharkFin</h3><span class="api-guide__card-count">7 endpoints</span></div><p class="api-guide__card-desc">Classic account SharkFin product, subscription, and record APIs.</p></a><a class="api-guide__card" href="/docs/catalog/earn-classic-loan" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Loan</h3><span class="api-guide__card-count">11 endpoints</span></div><p class="api-guide__card-desc">Classic account C2C loan, borrow, repay, pledge, and liquidation record APIs.</p></a><a class="api-guide__card" href="/docs/catalog/earn-classic-account" data-discover="true"><div class="api-guide__card-head"><h3 class="api-guide__card-title">Earn Account</h3><span class="api-guide__card-count">1 endpoints</span></div><p class="api-guide__card-desc">Classic account earn account assets API.</p></a></div></section></div></main></div><script>$RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b<a.length;b+=2){var c=a[b],e=a[b+1];null!==e.parentNode&&e.parentNode.removeChild(e);var f=c.parentNode;if(f){var g=c.previousSibling,h=0;do{if(c&&8===c.nodeType){var d=c.data;if("/$"===d||"/&"===d)if(0===h)break;else h--;else"$"!==d&&"$?"!==d&&"$~"!==d&&"$!"!==d&&"&"!==d||h++}d=c.nextSibling;f.removeChild(c);c=d}while(c);for(;e.firstChild;)f.insertBefore(e.firstChild,c);g.data="$";g._reactRetry&&requestAnimationFrame(g._reactRetry)}}a.length=0};
+$RC=function(a,b){if(b=document.getElementById(b))(a=document.getElementById(a))?(a.previousSibling.data="$~",$RB.push(a,b),2===$RB.length&&("number"!==typeof $RT?requestAnimationFrame($RV.bind(null,$RB)):(a=performance.now(),setTimeout($RV.bind(null,$RB),2300>a&&2E3<a?2300-a:$RT+300-a)))):b.parentNode.removeChild(b)};$RC("B:0","S:0")</script></div>
+  <script>window.ZUDOKU_DATA={"mutations":[],"queries":[{"dehydratedAt":1791635823891,"state":{"dataUpdateCount":0,"dataUpdatedAt":0,"error":null,"errorUpdateCount":0,"errorUpdatedAt":0,"fetchFailureCount":0,"fetchFailureReason":null,"fetchMeta":null,"isInvalidated":false,"status":"pending","fetchStatus":"idle"},"queryKey":["zuplo-build-check",null,"/__zuplo/docs"],"queryHash":"[\"zuplo-build-check\",null,\"/__zuplo/docs\"]"},{"dehydratedAt":1791635823891,"state":{"dataUpdateCount":0,"dataUpdatedAt":0,"error":null,"errorUpdateCount":0,"errorUpdatedAt":0,"fetchFailureCount":0,"fetchFailureReason":null,"fetchMeta":null,"isInvalidated":false,"status":"pending","fetchStatus":"idle"},"queryKey":["refresh-user-profile"],"queryHash":"[\"refresh-user-profile\"]"},{"dehydratedAt":1791635823891,"state":{"dataUpdateCount":0,"dataUpdatedAt":0,"error":null,"errorUpdateCount":0,"errorUpdatedAt":0,"fetchFailureCount":0,"fetchFailureReason":null,"fetchMeta":null,"isInvalidated":false,"status":"pending","fetchStatus":"idle"},"queryKey":["pagefind",null],"queryHash":"[\"pagefind\",null]"},{"dehydratedAt":1791635823891,"state":{"dataUpdateCount":0,"dataUpdatedAt":0,"error":null,"errorUpdateCount":0,"errorUpdatedAt":0,"fetchFailureCount":0,"fetchFailureReason":null,"fetchMeta":null,"isInvalidated":false,"status":"pending","fetchStatus":"idle"},"queryKey":["pagefind-search","",false],"queryHash":"[\"pagefind-search\",\"\",false]"},{"dehydratedAt":1791635823891,"state":{"data":[],"dataUpdateCount":1,"dataUpdatedAt":1791635823887,"error":null,"errorUpdateCount":0,"errorUpdatedAt":0,"fetchFailureCount":0,"fetchFailureReason":null,"fetchMeta":null,"isInvalidated":false,"status":"success","fetchStatus":"idle"},"queryKey":["plugin-navigation","/docs/classic/catalog",false],"queryHash":"[\"plugin-navigation\",\"/docs/classic/catalog\",false]"}]}</script></body>
+</html>

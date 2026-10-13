@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.deribit.com/api-reference/market-data/public-get_order_book.md",
+  "request_start_utc": "2026-10-13T06:30:48.402228+00:00",
+  "completion_utc": "2026-10-13T06:30:49.712566+00:00",
+  "latency_ms": 1310.6,
+  "http_status": 200,
+  "sha256": "8e4fa4a41a02ec720bc150d60d841cab0c2573cb87f92e6b07798b963898b191",
+  "bytes": 20020,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4c3f59fea0d6-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:49 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_book_md.bin"
+}

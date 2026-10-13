@@ -1,0 +1,21 @@
+{
+  "id": "gate_futures_sdk_docs",
+  "venue": "gate",
+  "url": "https://raw.githubusercontent.com/gateio/gateapi-python/master/docs/FuturesApi.md",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-13T06:27:57.658124+00:00",
+  "completed_utc": "2026-10-13T06:27:58.953354+00:00",
+  "latency_ms": 1295.5,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "content-type": "text/plain; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:27:58 GMT",
+    "content-length": "149578"
+  },
+  "raw_path": "raw/gate_futures_sdk_docs.bin",
+  "raw_sha256": "2446085a0e3ce842de170b6a94c61ba8a8913acb975032a694db428ce54b169b",
+  "raw_bytes": 149578,
+  "truncated": false
+}

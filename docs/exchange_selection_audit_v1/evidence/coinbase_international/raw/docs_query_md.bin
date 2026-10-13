@@ -1,0 +1,373 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://docs.cdp.coinbase.com/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Get order details
+
+> Retrieves a single order. The order retrieved can be either active or inactive.
+
+<Tabs groupId="programming-language">
+  <Tab value="Java" title="Java">
+    ```java theme={null}
+    OrdersService ordersService = IntxServiceFactory.createOrdersService(client);
+    GetOrderRequest request = new GetOrderRequest.Builder()
+        .id("order_id")
+        .build();
+    GetOrderResponse response = ordersService.getOrder(request);
+    ```
+
+    For more information, please visit the [INTX Java SDK](https://github.com/coinbase-samples/intx-sdk-java).
+  </Tab>
+
+  <Tab value=".NET" title=".NET">
+    ```cs theme={null}
+    var ordersService = new OrdersService(client);
+    var request = new GetOrderRequest(
+        Id: "order_id",
+    );
+    var response = ordersService.GetOrder(request);
+    ```
+
+    For more information, please visit the [INTX .NET SDK](https://github.com/coinbase-samples/intx-sdk-dotnet).
+  </Tab>
+
+  <Tab value="Go" title="Go">
+    ```go theme={null}
+    ordersSvc := orders.NewOrdersService(client)
+    request := &orders.GetOrderRequest{
+        Id: "order_id",
+    }
+    response, err := ordersSvc.GetOrder(context.Background(), request)
+    ```
+
+    For more information, please visit the [INTX Go SDK](https://github.com/coinbase-samples/intx-sdk-go).
+  </Tab>
+
+  <Tab value="Python" title="Python">
+    ```python theme={null}
+    client = IntxClient()
+    request = GetOrderRequest(
+        id="order_id",
+    )
+    response = client.get_order(request)
+    ```
+
+    For more information, please visit the [INTX Python SDK](https://github.com/coinbase-samples/intx-sdk-py).
+  </Tab>
+
+  <Tab value="Typescript" title="TS/JS">
+    ```js theme={null}
+    const ordersService = new OrdersService(client);
+
+    ordersService.getOrder({
+        portfolio: 'PORTFOLIO_ID_HERE',
+        id: 'ORDER_ID_HERE'
+    }).then(async (response) => {
+        console.log('Order: ', response);
+    })
+    ```
+
+    For more information, please visit the [INTX TS SDK](https://github.com/coinbase-samples/intx-sdk-ts).
+  </Tab>
+
+  <Tab value="CLI" title="CLI">
+    ```
+    intxctl get-order --help
+    ```
+
+    For more information, please visit the [INTX CLI](https://github.com/coinbase-samples/intx-cli).
+  </Tab>
+</Tabs>
+
+
+## OpenAPI
+
+````yaml GET /api/v1/orders/{id}
+openapi: 3.0.3
+info:
+  title: REST API
+  description: >
+    # Welcome to Coinbase INTX API
+
+    ## Introduction
+
+    The INTX APIs allow institutions to trade and manage orders on the
+    International Exchange. The following API pages detail various REST API
+    endpoints we offer.
+
+    ## Getting Started
+
+    To get started, please visit one of the following pages:
+
+    - [Quickstart](/international-exchange/introduction/quickstart)
+
+    -
+    [Overview](/api-reference/international-exchange-api/rest-api/introduction)
+
+    -
+    [Authentication](/api-reference/international-exchange-api/rest-api/authentication)
+
+    - [Rate Limits](/international-exchange/introduction/rate-limits-overview)
+
+    ## FIX API
+
+    - [FIX API reference](/international-exchange/fix-api/fix-api-overview)
+
+    ## WebSocket API
+
+    - [WebSocket API
+    reference](/international-exchange/websocket-feed/websocket-overview)
+  version: '1.0'
+servers:
+  - url: https://api.international.coinbase.com
+security: []
+paths:
+  /api/v1/orders/{id}:
+    get:
+      tags:
+        - Orders
+      summary: Get order details
+      description: >-
+        Retrieves a single order. The order retrieved can be either active or
+        inactive.
+      operationId: getOrder
+      parameters:
+        - name: id
+          in: path
+          description: The exchange order ID of the order (not the client order ID)
+          required: true
+          schema:
+            type: string
+        - name: portfolio
+          in: query
+          required: true
+          description: >-
+            Identifies the portfolio by UUID (e.g.,
+            `892e8c7c-e979-4cad-b61b-55a197932cf1`) or portfolio ID (e.g.,
+            `5189861793641175`)
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Order found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResult_v1'
+        '400':
+          description: Invalid attribute
+      security:
+        - auth_client_id: []
+          auth_passphrase: []
+          auth_signature: []
+          auth_timestamp: []
+components:
+  schemas:
+    OrderResult_v1:
+      type: object
+      properties:
+        order_id:
+          description: A unique identifier assigned by the exchange
+          type: string
+          example: 43877033468085760
+        client_order_id:
+          description: A unique identifier assigned by the client
+          type: string
+          example: ABC123
+        side:
+          $ref: '#/components/schemas/OrderSide'
+        instrument_id:
+          description: >-
+            The unique identifier of the instrument the order wants to transact
+            in
+          type: string
+          example: 2562519737567269
+        instrument_uuid:
+          description: The UUID of the instrument the order wants to transact in
+          type: string
+          format: uuid
+          example: 359f66d8-4235-47c3-9733-0fbfe2cfaa0a
+        symbol:
+          description: The name of the instrument the order wants to transact in
+          type: string
+          example: BTC-PERP
+        portfolio_id:
+          description: The unique identifier of the portfolio the order was submitted under
+          type: string
+          format: string
+          example: 1724343681801273
+        portfolio_uuid:
+          description: The UUID of the portfolio the order was submitted under
+          type: string
+          format: uuid
+          example: b80ec69b-1229-4bcf-a6a8-c506ffd74c20
+        type:
+          $ref: '#/components/schemas/OrderType'
+        price:
+          description: >-
+            The max or min price limit in quote asset units to buy or sell at
+            (respectively). Only used for limit and stop limit order types.
+          type: string
+          example: 20215.53
+        stop_price:
+          description: The market price that activates a stop order
+          type: string
+          example: 20015.53
+        stop_limit_price:
+          description: >-
+            The limit price at which the TP/SL stop leg order will be placed.
+            Only used for TP/SL order type.
+          type: string
+          example: 20015.53
+        size:
+          description: The amount in base asset units
+          type: string
+          example: 1.5423
+        tif:
+          $ref: '#/components/schemas/TimeInForce'
+        expire_time:
+          description: >-
+            The expiration time for orders with the time in force set to GTT.
+            Uses ISO-8601 format (e.g., 2023-03-16T23:59:53Z).
+          type: string
+          format: date-time
+          example: '2023-03-16T23:59:53.000Z'
+        stp_mode:
+          $ref: '#/components/schemas/SelfTradePreventionMode'
+        event_type:
+          $ref: '#/components/schemas/OrderEventType'
+        event_time:
+          type: string
+          format: date-time
+          example: '2023-03-16T23:59:53.000Z'
+        submit_time:
+          type: string
+          format: date-time
+          example: '2023-03-16T23:59:53.000Z'
+        order_status:
+          $ref: '#/components/schemas/OrderStatus'
+        leaves_qty:
+          description: The amount of the order remaining open on the exchange
+          type: string
+        exec_qty:
+          description: The traded quantity on the order
+          type: string
+        avg_price:
+          description: The average price that the order has traded at so far
+          type: string
+        fee:
+          description: The exchange fee affiliated with the trade (only for trade events)
+          type: string
+        post_only:
+          description: >-
+            Indicates that the order was submitted with the `post_only`
+            instruction
+          type: boolean
+        close_only:
+          description: >-
+            Indicates that the order was submitted with the `close_only`
+            instruction
+          type: boolean
+        algo_strategy:
+          $ref: '#/components/schemas/AlgoStrategy'
+        text:
+          description: A text message that gets populated for canceled orders
+          type: string
+          example: client cancel
+    OrderSide:
+      description: The side of the transaction
+      type: string
+      enum:
+        - BUY
+        - SELL
+      example: BUY
+    OrderType:
+      description: The type of the order
+      type: string
+      enum:
+        - LIMIT
+        - MARKET
+        - STOP_LIMIT
+        - STOP
+        - TAKE_PROFIT_STOP_LOSS
+      example: LIMIT
+    TimeInForce:
+      description: >-
+        The time in force applied to an order. A Good Till Cancel (GTC) can last
+        up to 30 days. An Immediate or Cancel (IOC) attempts to fill as much of
+        the order as possible and/or cancels immediately when no resting orders
+        meet or improve the order's price limit. A Fill or Kill (FOK) is
+        canceled without filling if it does not completely fill immediately.
+        This will not be populated for assignments
+      type: string
+      enum:
+        - GTC
+        - IOC
+        - GTT
+        - FOK
+      example: GTC
+    SelfTradePreventionMode:
+      description: >-
+        Specifies the behavior for self match handling. None disables the
+        functionality, new cancels the newest order, and both cancels both
+      type: string
+      enum:
+        - NONE
+        - AGGRESSING
+        - RESTING
+        - BOTH
+        - DECREMENT_AND_CANCEL
+      example: AGGRESSING
+    OrderEventType:
+      description: The most recent type of event that happened to the order
+      type: string
+      enum:
+        - NEW
+        - TRADE
+        - CANCELED
+        - REPLACED
+        - PENDING_CANCEL
+        - REJECTED
+        - PENDING_NEW
+        - EXPIRED
+        - PENDING_REPLACE
+        - STOP_TRIGGERED
+      example: TRADE
+    OrderStatus:
+      description: The type of the order
+      type: string
+      enum:
+        - WORKING
+        - DONE
+      example: WORKING
+    AlgoStrategy:
+      description: Specifies the algorithmic trading strategy for the order
+      type: string
+      enum:
+        - TWAP
+      example: TWAP
+  securitySchemes:
+    auth_client_id:
+      type: apiKey
+      name: CB-ACCESS-KEY
+      in: header
+      description: The Client ID that owns the API Key for the request
+    auth_passphrase:
+      type: apiKey
+      name: CB-ACCESS-PASSPHRASE
+      in: header
+      description: The pass phrase affiliated with the API Key
+    auth_signature:
+      type: apiKey
+      name: CB-ACCESS-SIGN
+      in: header
+      description: >-
+        A HMAC SHA-256 signature using the API Key secret on the string
+        TIMESTAMP, METHOD, REQUEST_PATH, BODY
+    auth_timestamp:
+      type: apiKey
+      name: CB-ACCESS-TIMESTAMP
+      in: header
+      description: The timestamp of when the request is being made
+
+````

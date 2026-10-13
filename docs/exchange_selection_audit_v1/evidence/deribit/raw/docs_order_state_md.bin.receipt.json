@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.deribit.com/api-reference/trading/private-get_order_state.md",
+  "request_start_utc": "2026-10-13T06:31:58.657045+00:00",
+  "completion_utc": "2026-10-13T06:31:59.681668+00:00",
+  "latency_ms": 1024.8,
+  "http_status": 200,
+  "sha256": "09e6d3dfd2c60d7655362410ebfed271427ee279c7c7278cad0e0089295915d3",
+  "bytes": 23072,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4df48d90f814-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:31:59 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_order_state_md.bin"
+}

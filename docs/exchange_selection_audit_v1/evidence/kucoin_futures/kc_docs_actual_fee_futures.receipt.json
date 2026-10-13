@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c520c4f93d2c8-DFW",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:34:47 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1173.2,
+  "method": "GET",
+  "raw_length": 660783,
+  "raw_path": "kc_docs_actual_fee_futures.raw",
+  "raw_sha256": "609cdf7ee0e3028a099212c68abaa95ae0371cfc837869b288cd9acb275c079a",
+  "request_start_utc": "2026-10-13T06:34:46.719295+00:00",
+  "retrieval_utc": "2026-10-13T06:34:47.892139+00:00",
+  "source_id": "kc_docs_actual_fee_futures",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.kucoin.com/docs-new/rest/account-info/trade-fee/get-actual-fee-futures?lang=en_US&"
+}

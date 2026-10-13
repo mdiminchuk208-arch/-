@@ -1,0 +1,16 @@
+{
+  "url": "https://api.bitget.com/api/v2/mix/market/open-interest?symbol=ETHUSDT&productType=USDT-FUTURES",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:21:08.206574+00:00",
+  "request_end_utc": "2026-10-12T20:21:08.933407+00:00",
+  "latency_ms": 727.0,
+  "status": 200,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:08 GMT",
+    "content-type": "application/json"
+  },
+  "sha256": "b6695494e9f259128b0c2cdcb48cc968fd2d8a2497053a603688efff6210f836",
+  "bytes": 160,
+  "raw_path": "evidence/bitget/raw/ETHUSDT_oi.bin",
+  "error": null
+}

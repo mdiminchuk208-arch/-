@@ -1,0 +1,17 @@
+{
+  "url": "https://www.bybit.com/en/help-center/article/How-to-Calculate-Trading-Fees",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:21:28.058643+00:00",
+  "request_end_utc": "2026-10-12T20:21:29.547671+00:00",
+  "latency_ms": 1489.42,
+  "status": 200,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "private, must-revalidate, max-age=60",
+    "date": "Mon, 12 Oct 2026 20:21:29 GMT"
+  },
+  "sha256": "6ec6213addd35c32c2a26203a842ae029239885540eb75e5fa028dae11bfaf62",
+  "bytes": 104474,
+  "raw_path": "evidence/bybit/raw/bybit_docs_fee2.html",
+  "error": null
+}

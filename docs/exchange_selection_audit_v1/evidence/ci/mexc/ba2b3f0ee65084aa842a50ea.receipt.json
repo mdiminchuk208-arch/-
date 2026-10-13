@@ -1,0 +1,22 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-length": "3462",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:39:03 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "191.211",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 3462,
+  "raw_file": "ba2b3f0ee65084aa842a50ea.body",
+  "raw_sha256": "7e9f054db999c93fc3587edeb77c58057a0ce2f25fc24baf300857c05fc1aadc",
+  "request_started_at": "2026-10-13T06:39:03.261009+00:00",
+  "response_completed_at": "2026-10-13T06:39:03.452104+00:00",
+  "source_kind": "book_ETH_second",
+  "truncated": false,
+  "url": "https://contract.mexc.com/api/v1/contract/depth/ETH_USDT?limit=100"
+}

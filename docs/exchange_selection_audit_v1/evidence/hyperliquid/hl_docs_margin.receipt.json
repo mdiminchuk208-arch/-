@@ -1,0 +1,20 @@
+{
+  "id": "hl_docs_margin",
+  "venue": "hyperliquid",
+  "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/margining.md",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-13T06:26:42.843029+00:00",
+  "completed_utc": "2026-10-13T06:26:43.944780+00:00",
+  "latency_ms": 1101.94,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:26:43 GMT",
+    "content-type": "text/plain; charset=utf-8"
+  },
+  "raw_path": "raw/hl_docs_margin.bin",
+  "raw_sha256": "95891a47102caca3171f406873178efc0d456ecda5636ed89fd5dc797f6c90a7",
+  "raw_bytes": 3823,
+  "truncated": false
+}

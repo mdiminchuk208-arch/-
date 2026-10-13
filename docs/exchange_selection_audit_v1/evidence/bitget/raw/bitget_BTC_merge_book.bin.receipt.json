@@ -1,0 +1,16 @@
+{
+  "url": "https://api.bitget.com/api/v2/mix/market/merge-depth?symbol=BTCUSDT&productType=USDT-FUTURES&precision=scale0&limit=100",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:28:20.909342+00:00",
+  "request_end_utc": "2026-10-13T06:28:22.000941+00:00",
+  "latency_ms": 1091.76,
+  "status": 200,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:28:21 GMT",
+    "content-type": "application/json"
+  },
+  "sha256": "7788c70ac99baf06fe08ba045b7c61b796cf87c9ef7bcd5c8f60cb53a898b4f9",
+  "bytes": 3567,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_BTC_merge_book.bin",
+  "error": null
+}

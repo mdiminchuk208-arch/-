@@ -1,0 +1,19 @@
+{
+  "source_id": "charts_info",
+  "url": "https://futures.kraken.com/api/charts/v1/",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:29:14.755415+00:00",
+  "response_utc": "2026-10-13T06:29:15.660010+00:00",
+  "latency_ms": 904,
+  "http_status": 200,
+  "sha256": "b0c3b79fa958cad8b4284c818c132eb123169b524bddca6eaeb702d647d95090",
+  "bytes": 23,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:29:15 GMT",
+    "content-type": "application/json",
+    "content-length": "23",
+    "server": "envoy"
+  },
+  "raw_path": "raw/charts_info.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

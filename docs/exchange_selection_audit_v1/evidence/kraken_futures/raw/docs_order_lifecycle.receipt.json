@@ -1,0 +1,18 @@
+{
+  "source_id": "docs_order_lifecycle",
+  "url": "https://docs.kraken.com/exchange/guides/general/order-lifecycle",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:31:10.321538+00:00",
+  "response_utc": "2026-10-13T06:31:10.567265+00:00",
+  "latency_ms": 245,
+  "http_status": 200,
+  "sha256": "2c9327dc61406c78681591b1d89f76456d48c5ed1fe99dbf4b7a830dec35c235",
+  "bytes": 541531,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:31:10 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_order_lifecycle.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

@@ -1,0 +1,18 @@
+{
+  "body_bytes": 189,
+  "error": null,
+  "headers": {
+    "content-type": "application/json;charset=UTF-8",
+    "date": "Mon, 12 Oct 2026 20:21:36 GMT"
+  },
+  "id": "oi_btc",
+  "latency_ms": 240.18,
+  "method": "GET",
+  "raw_path": "raw/oi_btc.body",
+  "request_utc": "2026-10-12T20:21:36.760381Z",
+  "retrieval_utc": "2026-10-12T20:21:37.000372Z",
+  "sha256": "5656ec2b565bdf1cdbcc6cb5f765656d7ed40a51328ae874a28f206f659f975d",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/public/open-interest?instType=SWAP&instId=BTC-USDT-SWAP"
+}

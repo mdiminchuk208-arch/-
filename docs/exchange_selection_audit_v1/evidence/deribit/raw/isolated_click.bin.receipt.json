@@ -1,0 +1,19 @@
+{
+  "url": "https://support.deribit.com/hc/en-us/search/click?data=BAh7DjoHaWRsKwgdoDi9mBc6D2FjY291bnRfaWRpAxCQJToJdHlwZUkiDGFydGljbGUGOgZFVDoIdXJsSSJeaHR0cHM6Ly9zdXBwb3J0LmRlcmliaXQuY29tL2hjL2VuLXVzL2FydGljbGVzLzI1OTQ0Nzc3MDcyNjY5LUlzb2xhdGVkLW1hcmdpbi1hdmFpbGFiaWxpdHkGOwhUOg5zZWFyY2hfaWRJIilkZTZlMjAyMy01NDA0LTRkN2EtODFlZi1jNDAwMzAzMGJmMDIGOwhGOglyYW5raQY6C2xvY2FsZUkiCmVuLXVzBjsIVDoKcXVlcnlJIhRpc29sYXRlZCBtYXJnaW4GOwhUOhJyZXN1bHRzX2NvdW50aWI%3D--0cb1d2a0de853e89ab2c0744a62ad506a2f956be",
+  "request_start_utc": "2026-10-13T06:35:06.347550+00:00",
+  "completion_utc": "2026-10-13T06:35:07.825501+00:00",
+  "latency_ms": 1478.1,
+  "http_status": 301,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "bytes": 0,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:35:07 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "location": "https://support.deribit.com/hc/en-us/articles/25944777072669-Isolated-margin-availability",
+    "x-request-id": "fc7e7a81-8601-4604-9608-4b61d8a21d68",
+    "cf-ray": "a49c5289788e8703-DFW"
+  },
+  "error": "HTTP Error 301: Moved Permanently",
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/isolated_click.bin"
+}

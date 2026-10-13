@@ -1,0 +1,18 @@
+{
+  "body_bytes": 21825,
+  "error": null,
+  "headers": {
+    "content-type": "application/json;charset=UTF-8",
+    "date": "Tue, 13 Oct 2026 06:26:20 GMT"
+  },
+  "id": "book_btc_2",
+  "latency_ms": 1075.69,
+  "method": "GET",
+  "raw_path": "raw/book_btc_2.body",
+  "request_utc": "2026-10-13T06:26:19.586831Z",
+  "retrieval_utc": "2026-10-13T06:26:20.662317Z",
+  "sha256": "827ab70312dccc2170ddb7b3b6b9a2cdbef45a2d0c352ddf023e8defc6940ee9",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=400"
+}

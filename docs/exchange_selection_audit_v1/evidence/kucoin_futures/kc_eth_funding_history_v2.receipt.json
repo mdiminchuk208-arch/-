@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c48a71cd4bd3d-DFW",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:28:22 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 351.8,
+  "method": "GET",
+  "raw_length": 37,
+  "raw_path": "kc_eth_funding_history_v2.raw",
+  "raw_sha256": "134e605e33cc8b1b8d020259cfec3bb5bd936c800ea167c9c637a084ab721cb5",
+  "request_start_utc": "2026-10-13T06:28:22.167042+00:00",
+  "retrieval_utc": "2026-10-13T06:28:22.518638+00:00",
+  "source_id": "kc_eth_funding_history_v2",
+  "status": 400,
+  "truncated": false,
+  "url": "https://api-futures.kucoin.com/api/v1/contract/funding-rates?symbol=ETHUSDTM"
+}

@@ -1,0 +1,19 @@
+{
+  "source_id": "fair_btc_old",
+  "url": "https://contract.mexc.com/api/v1/contract/kline/fair_price/BTC_USDT?interval=Min15&start=1728777600&end=1728864000",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:32:26.154068+00:00",
+  "response_utc": "2026-10-13T06:32:26.457092+00:00",
+  "latency_ms": 303,
+  "http_status": 200,
+  "sha256": "73955ef44781aa99ebc7ede373ea6a413470116f8263771d34a3027284b52084",
+  "bytes": 161,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:32:26 GMT",
+    "content-length": "161",
+    "server": "envoy"
+  },
+  "raw_path": "raw/fair_btc_old.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

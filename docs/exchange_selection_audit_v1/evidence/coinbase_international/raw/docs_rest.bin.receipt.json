@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.cdp.coinbase.com/intx/reference/introduction",
+  "request_start_utc": "2026-10-13T06:28:15.828371+00:00",
+  "completion_utc": "2026-10-13T06:28:17.238468+00:00",
+  "latency_ms": 1410.3,
+  "http_status": 404,
+  "sha256": "419ddc7f6c8605a7f951535249a6e2592fb04de307de6541bba74ebc0a071ba7",
+  "bytes": 119199,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c48843c3924ce-CMH",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:28:16 GMT"
+  },
+  "error": "HTTP Error 404: Not Found",
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_rest.bin"
+}

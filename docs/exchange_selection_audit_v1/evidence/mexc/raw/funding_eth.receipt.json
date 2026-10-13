@@ -1,0 +1,19 @@
+{
+  "source_id": "funding_eth",
+  "url": "https://contract.mexc.com/api/v1/contract/funding_rate/history?symbol=ETH_USDT&page_num=1&page_size=5",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:22:07.939114+00:00",
+  "response_utc": "2026-10-12T20:22:08.198027+00:00",
+  "latency_ms": 258,
+  "http_status": 200,
+  "sha256": "3404cfa4a943fc05181fefd3ef169dd6cbe92cb8c4e814d7816df3d48cfeb4b4",
+  "bytes": 558,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Mon, 12 Oct 2026 20:22:08 GMT",
+    "content-length": "558",
+    "server": "envoy"
+  },
+  "raw_path": "raw/funding_eth.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

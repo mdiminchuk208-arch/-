@@ -1,0 +1,18 @@
+{
+  "source_id": "docs_send_order",
+  "url": "https://docs.kraken.com/api-reference/order-management/send-order",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:30:16.553573+00:00",
+  "response_utc": "2026-10-13T06:30:18.439980+00:00",
+  "latency_ms": 1886,
+  "http_status": 200,
+  "sha256": "55e60e092119660055686539ad4530b83364118744a3c4cfac22a98570dc2898",
+  "bytes": 646231,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:30:17 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_send_order.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

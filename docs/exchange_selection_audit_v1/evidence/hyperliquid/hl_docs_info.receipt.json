@@ -1,0 +1,20 @@
+{
+  "id": "hl_docs_info",
+  "venue": "hyperliquid",
+  "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-12T20:21:25.766165+00:00",
+  "completed_utc": "2026-10-12T20:21:26.490344+00:00",
+  "latency_ms": 724.57,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:26 GMT",
+    "content-type": "text/plain; charset=utf-8"
+  },
+  "raw_path": "raw/hl_docs_info.bin",
+  "raw_sha256": "f4228fc7734af5dbf420e5bdf2b25c248a5b5287035ab2d8a645dc14ce64f0bd",
+  "raw_bytes": 55013,
+  "truncated": false
+}

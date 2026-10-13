@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c48a57bf8f432-DFW",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:28:22 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 310.7,
+  "method": "GET",
+  "raw_length": 557,
+  "raw_path": "kc_eth_m15_now_ms.raw",
+  "raw_sha256": "e061e4c5f779dcdbff597e128eb0e585537c7ce142e5034413ac063806b5adba",
+  "request_start_utc": "2026-10-13T06:28:21.958385+00:00",
+  "retrieval_utc": "2026-10-13T06:28:22.268897+00:00",
+  "source_id": "kc_eth_m15_now_ms",
+  "status": 200,
+  "truncated": false,
+  "url": "https://api-futures.kucoin.com/api/v1/kline/query?symbol=ETHUSDTM&granularity=15&from=1791865701646&to=1791872901646"
+}

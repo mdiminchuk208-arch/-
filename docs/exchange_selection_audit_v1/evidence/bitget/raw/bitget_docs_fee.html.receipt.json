@@ -1,0 +1,16 @@
+{
+  "url": "https://www.bitget.com/support/articles/12560603813004",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:21:28.000255+00:00",
+  "request_end_utc": "2026-10-12T20:21:28.821025+00:00",
+  "latency_ms": 820.95,
+  "status": 404,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:28 GMT",
+    "content-type": "text/html; charset=utf-8"
+  },
+  "sha256": "2ba68bb8f2eff57b7bccd3a5907ca3811ab6ac98a861298430d69d4708069e9b",
+  "bytes": 37189,
+  "raw_path": "evidence/bitget/raw/bitget_docs_fee.html",
+  "error": null
+}

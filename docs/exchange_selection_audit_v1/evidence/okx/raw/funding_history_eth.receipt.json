@@ -1,0 +1,18 @@
+{
+  "body_bytes": 428,
+  "error": null,
+  "headers": {
+    "content-type": "application/json;charset=UTF-8",
+    "date": "Mon, 12 Oct 2026 20:21:37 GMT"
+  },
+  "id": "funding_history_eth",
+  "latency_ms": 420.41,
+  "method": "GET",
+  "raw_path": "raw/funding_history_eth.body",
+  "request_utc": "2026-10-12T20:21:36.870688Z",
+  "retrieval_utc": "2026-10-12T20:21:37.290901Z",
+  "sha256": "6b5508aa33b1c5e1edf0084e7b538615bd42c7f91d492827c258194952b605a4",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/public/funding-rate-history?instId=ETH-USDT-SWAP&limit=2"
+}

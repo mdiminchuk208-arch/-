@@ -1,0 +1,18 @@
+{
+  "source_id": "docs_instrument_status",
+  "url": "https://docs.kraken.com/api-reference/instrument-details/get-instrument-status-list",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:30:22.658709+00:00",
+  "response_utc": "2026-10-13T06:30:22.927644+00:00",
+  "latency_ms": 268,
+  "http_status": 200,
+  "sha256": "f4906297ad9ad8804f138135030e317904c2bf14e7d2516a0f7de37e7b786638",
+  "bytes": 524854,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:30:22 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_instrument_status.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c48ed4af51e3c-DFW",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:28:33 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1432.7,
+  "method": "GET",
+  "raw_length": 669599,
+  "raw_path": "kc_docs_klines_en.raw",
+  "raw_sha256": "3eeaa421ea9bc45e974b9f3c724e0ec991e4ee9e90300640e8eb3e808c5a83cb",
+  "request_start_utc": "2026-10-13T06:28:33.142532+00:00",
+  "retrieval_utc": "2026-10-13T06:28:34.574920+00:00",
+  "source_id": "kc_docs_klines_en",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.kucoin.com/docs-new/rest/futures-trading/market-data/get-klines?lang=en_US&"
+}

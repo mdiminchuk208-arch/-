@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c47900ef1f81d-DFW",
+    "content-type": "text/html",
+    "date": "Tue, 13 Oct 2026 06:27:37 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1708.2,
+  "method": "GET",
+  "raw_length": 873437,
+  "raw_path": "bf_api_docs.raw",
+  "raw_sha256": "0d046c7694d2c6a4adcff0582221bd01184a2f01c41e8f78b3a0f5e409bbd37e",
+  "request_start_utc": "2026-10-13T06:27:36.873187+00:00",
+  "retrieval_utc": "2026-10-13T06:27:38.580964+00:00",
+  "source_id": "bf_api_docs",
+  "status": 200,
+  "truncated": false,
+  "url": "https://docs.blofin.com/index.html"
+}

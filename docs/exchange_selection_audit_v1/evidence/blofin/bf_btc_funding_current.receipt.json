@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c4739b864c456-DFW",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:27:23 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1368.1,
+  "method": "GET",
+  "raw_length": 220,
+  "raw_path": "bf_btc_funding_current.raw",
+  "raw_sha256": "bb97eaebc8f487e8861630eebe071778844eee0639040ea4241e0cc69b432057",
+  "request_start_utc": "2026-10-13T06:27:22.696188+00:00",
+  "retrieval_utc": "2026-10-13T06:27:24.064121+00:00",
+  "source_id": "bf_btc_funding_current",
+  "status": 200,
+  "truncated": false,
+  "url": "https://openapi.blofin.com/api/v1/market/funding-rate?instId=BTC-USDT"
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "docs_futures_intro_new",
+  "url": "https://docs.kraken.com/exchange/guides/futures/introduction",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:30:48.704372+00:00",
+  "response_utc": "2026-10-13T06:30:48.966341+00:00",
+  "latency_ms": 261,
+  "http_status": 200,
+  "sha256": "4874f268843b43bf6f6c6fd939e80af8798619af9d90d5c7f8b738a7580dc1f7",
+  "bytes": 474688,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:30:48 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_futures_intro_new.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

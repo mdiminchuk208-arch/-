@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.cdp.coinbase.com/international-exchange/introduction/rate-limits-overview.md",
+  "request_start_utc": "2026-10-13T06:30:15.107911+00:00",
+  "completion_utc": "2026-10-13T06:30:16.123590+00:00",
+  "latency_ms": 1015.9,
+  "http_status": 200,
+  "sha256": "3a6c65dc40367e8f7badf2085a7d94433ff8e009390cfc525ffbcdb78da0641d",
+  "bytes": 1435,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4b6d2e8c24f4-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:15 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_limits_md.bin"
+}

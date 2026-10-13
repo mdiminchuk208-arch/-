@@ -1,0 +1,17 @@
+{
+  "url": "https://www.bitget.com/docs/uta/data-download-center",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:27:29.891396+00:00",
+  "request_end_utc": "2026-10-13T06:27:30.891390+00:00",
+  "latency_ms": 1000.27,
+  "status": 200,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:27:30 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "no-cache,no-cache"
+  },
+  "sha256": "9cad6ca7abf241cd8c2ba4b12cc551c154a6bd722536fa63d2df1e827c3bec5a",
+  "bytes": 59211,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_download.html",
+  "error": null
+}

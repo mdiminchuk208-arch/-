@@ -1,0 +1,18 @@
+{
+  "body_bytes": 150,
+  "error": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:28:11 GMT"
+  },
+  "id": "index_history_btc",
+  "latency_ms": 1039.66,
+  "method": "GET",
+  "raw_path": "raw/index_history_btc.body",
+  "request_utc": "2026-10-13T06:28:10.818492Z",
+  "retrieval_utc": "2026-10-13T06:28:11.857959Z",
+  "sha256": "f002caac54085bccfaa138cc9c0ac240895d4666eb0ab339c347a7f31fd7dd59",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/market/history-index-candles?instId=BTC-USDT&bar=15m&limit=2"
+}

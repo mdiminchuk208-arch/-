@@ -1,0 +1,18 @@
+{
+  "url": "https://support.deribit.com/hc/en-us/search?query=trading+fees",
+  "request_start_utc": "2026-10-13T06:34:53.557578+00:00",
+  "completion_utc": "2026-10-13T06:34:55.180944+00:00",
+  "latency_ms": 1623.6,
+  "http_status": 200,
+  "sha256": "16cb20cef4fa2be831855879a2c09470dbcbf3427fe96ea26fe40bdf7bd5b1f6",
+  "bytes": 78383,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:34:54 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "x-request-id": "cd876045-5b78-4bcc-bc8b-1a0f71555a8e",
+    "cf-ray": "a49c52353a78367c-DFW"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/search_fees.bin"
+}

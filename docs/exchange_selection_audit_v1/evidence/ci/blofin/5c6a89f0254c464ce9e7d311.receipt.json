@@ -1,0 +1,21 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:39:03 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "208.762",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 3545,
+  "raw_file": "5c6a89f0254c464ce9e7d311.body",
+  "raw_sha256": "cd1bac7270a690551dec660b3d7c4f83b25b319c64a20d67cd09c3b27a91b8e9",
+  "request_started_at": "2026-10-13T06:39:03.106401+00:00",
+  "response_completed_at": "2026-10-13T06:39:03.315049+00:00",
+  "source_kind": "book_BTC_second",
+  "truncated": false,
+  "url": "https://openapi.blofin.com/api/v1/market/books?instId=BTC-USDT&size=100"
+}

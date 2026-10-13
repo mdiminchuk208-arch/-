@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.deribit.com/llms.txt",
+  "request_start_utc": "2026-10-13T06:30:48.406950+00:00",
+  "completion_utc": "2026-10-13T06:30:49.564851+00:00",
+  "latency_ms": 1158.1,
+  "http_status": 200,
+  "sha256": "80c7730f34310f27b64ed5beb739592b61be022d66891cafc06c3352d80a921a",
+  "bytes": 1715,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4c3eb8852f31-CMH",
+    "content-type": "text/plain; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:49 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/llms.bin"
+}

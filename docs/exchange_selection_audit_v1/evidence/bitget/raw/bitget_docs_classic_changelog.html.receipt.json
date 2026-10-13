@@ -1,0 +1,17 @@
+{
+  "url": "https://www.bitget.com/docs/classic/changelog/2026-09",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:30:20.379520+00:00",
+  "request_end_utc": "2026-10-13T06:30:21.607405+00:00",
+  "latency_ms": 1228.09,
+  "status": 200,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:30:21 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "no-cache,no-cache"
+  },
+  "sha256": "26085443a213d97ea26cea76f92c412c20d8f9f3d508084595137c7af44f94b7",
+  "bytes": 46046,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_classic_changelog.html",
+  "error": null
+}

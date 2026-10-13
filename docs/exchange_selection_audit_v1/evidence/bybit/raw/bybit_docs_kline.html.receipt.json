@@ -1,0 +1,17 @@
+{
+  "url": "https://bybit-exchange.github.io/docs/v5/market/kline",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:26:52.580084+00:00",
+  "request_end_utc": "2026-10-13T06:26:53.861356+00:00",
+  "latency_ms": 1281.71,
+  "status": 200,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "max-age=600",
+    "date": "Tue, 13 Oct 2026 06:26:53 GMT"
+  },
+  "sha256": "2a510503cbad846d10394e57c01aa0a02e9d0aa2869c9fb089d649812408f37d",
+  "bytes": 82078,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_kline.html",
+  "error": null
+}

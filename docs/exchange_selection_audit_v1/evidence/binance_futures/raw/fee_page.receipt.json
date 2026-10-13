@@ -1,0 +1,18 @@
+{
+  "body_bytes": 94117,
+  "error": null,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "date": "Mon, 12 Oct 2026 20:21:18 GMT"
+  },
+  "id": "fee_page",
+  "latency_ms": 902.86,
+  "method": "GET",
+  "raw_path": "raw/fee_page.body",
+  "request_utc": "2026-10-12T20:21:17.840311Z",
+  "retrieval_utc": "2026-10-12T20:21:18.742795Z",
+  "sha256": "4ed8c4fb8ad25dd54dec253bcd55de160468f4f8e226398f2589788afd8aa50c",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.binance.com/en/fee/futureFee"
+}

@@ -1,0 +1,692 @@
+{
+  "venue": "bybit",
+  "environment": "Codex managed cloud /workspace/-; inherited HTTPS proxy and CA, TLS verification enabled; no authentication or cookies",
+  "receipt_count": 35,
+  "sources": [
+    {
+      "id": "bybit:BTCUSDT_book1",
+      "url": "https://api.bybit.com/v5/market/orderbook?category=linear&symbol=BTCUSDT&limit=200",
+      "method": "GET",
+      "status": 403,
+      "request_start_utc": "2026-10-12T20:21:08.453014+00:00",
+      "request_end_utc": "2026-10-12T20:21:09.227828+00:00",
+      "latency_ms": 774.98,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:09 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "bytes": 96,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/BTCUSDT_book1.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/BTCUSDT_book1.bin.receipt.json",
+      "original_raw_path": "evidence/bybit/raw/BTCUSDT_book1.bin",
+      "error": null
+    },
+    {
+      "id": "bybit:BTCUSDT_funding",
+      "url": "https://api.bybit.com/v5/market/funding/history?category=linear&symbol=BTCUSDT&limit=2",
+      "method": "GET",
+      "status": 403,
+      "request_start_utc": "2026-10-12T20:21:08.431235+00:00",
+      "request_end_utc": "2026-10-12T20:21:09.262512+00:00",
+      "latency_ms": 831.42,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:09 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "bytes": 96,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/BTCUSDT_funding.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/BTCUSDT_funding.bin.receipt.json",
+      "original_raw_path": "evidence/bybit/raw/BTCUSDT_funding.bin",
+      "error": null
+    },
+    {
+      "id": "bybit:BTCUSDT_instrument",
+      "url": "https://api.bybit.com/v5/market/instruments-info?category=linear&symbol=BTCUSDT",
+      "method": "GET",
+      "status": 403,
+      "request_start_utc": "2026-10-12T20:21:08.427582+00:00",
+      "request_end_utc": "2026-10-12T20:21:09.353456+00:00",
+      "latency_ms": 926.02,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:09 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "bytes": 96,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/BTCUSDT_instrument.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/BTCUSDT_instrument.bin.receipt.json",
+      "original_raw_path": "evidence/bybit/raw/BTCUSDT_instrument.bin",
+      "error": null
+    },
+    {
+      "id": "bybit:BTCUSDT_m15now",
+      "url": "https://api.bybit.com/v5/market/kline?category=linear&symbol=BTCUSDT&interval=15&limit=2",
+      "method": "GET",
+      "status": 403,
+      "request_start_utc": "2026-10-12T20:21:08.441827+00:00",
+      "request_end_utc": "2026-10-12T20:21:09.228286+00:00",
+      "latency_ms": 786.55,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:09 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "bytes": 96,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/BTCUSDT_m15now.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/BTCUSDT_m15now.bin.receipt.json",
+      "original_raw_path": "evidence/bybit/raw/BTCUSDT_m15now.bin",
+      "error": null
+    },
+    {
+      "id": "bybit:BTCUSDT_m15old",
+      "url": "https://api.bybit.com/v5/market/kline?category=linear&symbol=BTCUSDT&interval=15&start=1728777600000&end=1728778500000&limit=2",
+      "method": "GET",
+      "status": 403,
+      "request_start_utc": "2026-10-12T20:21:08.461452+00:00",
+      "request_end_utc": "2026-10-12T20:21:09.352405+00:00",
+      "latency_ms": 891.06,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:09 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "bytes": 96,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/BTCUSDT_m15old.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/BTCUSDT_m15old.bin.receipt.json",
+      "original_raw_path": "evidence/bybit/raw/BTCUSDT_m15old.bin",
+      "error": null
+    },
+    {
+      "id": "bybit:BTCUSDT_oi",
+      "url": "https://api.bybit.com/v5/market/open-interest?category=linear&symbol=BTCUSDT&intervalTime=15min&limit=2",
+      "method": "GET",
+      "status": 403,
+      "request_start_utc": "2026-10-12T20:21:08.455661+00:00",
+      "request_end_utc": "2026-10-12T20:21:09.381288+00:00",
+      "latency_ms": 925.77,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:09 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "bytes": 96,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/BTCUSDT_oi.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/BTCUSDT_oi.bin.receipt.json",
+      "original_raw_path": "evidence/bybit/raw/BTCUSDT_oi.bin",
+      "error": null
+    },
+    {
+      "id": "bybit:ETHUSDT_book1",
+      "url": "https://api.bybit.com/v5/market/orderbook?category=linear&symbol=ETHUSDT&limit=200",
+      "method": "GET",
+      "status": 403,
+      "request_start_utc": "2026-10-12T20:21:08.520367+00:00",
+      "request_end_utc": "2026-10-12T20:21:09.333612+00:00",
+      "latency_ms": 813.45,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:09 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "bytes": 96,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/ETHUSDT_book1.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/ETHUSDT_book1.bin.receipt.json",
+      "original_raw_path": "evidence/bybit/raw/ETHUSDT_book1.bin",
+      "error": null
+    },
+    {
+      "id": "bybit:ETHUSDT_funding",
+      "url": "https://api.bybit.com/v5/market/funding/history?category=linear&symbol=ETHUSDT&limit=2",
+      "method": "GET",
+      "status": 403,
+      "request_start_utc": "2026-10-12T20:21:08.521805+00:00",
+      "request_end_utc": "2026-10-12T20:21:09.282242+00:00",
+      "latency_ms": 760.6,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:09 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "bytes": 96,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/ETHUSDT_funding.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/ETHUSDT_funding.bin.receipt.json",
+      "original_raw_path": "evidence/bybit/raw/ETHUSDT_funding.bin",
+      "error": null
+    },
+    {
+      "id": "bybit:ETHUSDT_instrument",
+      "url": "https://api.bybit.com/v5/market/instruments-info?category=linear&symbol=ETHUSDT",
+      "method": "GET",
+      "status": 403,
+      "request_start_utc": "2026-10-12T20:21:08.338212+00:00",
+      "request_end_utc": "2026-10-12T20:21:09.233803+00:00",
+      "latency_ms": 895.75,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:09 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "bytes": 96,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/ETHUSDT_instrument.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/ETHUSDT_instrument.bin.receipt.json",
+      "original_raw_path": "evidence/bybit/raw/ETHUSDT_instrument.bin",
+      "error": null
+    },
+    {
+      "id": "bybit:ETHUSDT_m15now",
+      "url": "https://api.bybit.com/v5/market/kline?category=linear&symbol=ETHUSDT&interval=15&limit=2",
+      "method": "GET",
+      "status": 403,
+      "request_start_utc": "2026-10-12T20:21:08.459965+00:00",
+      "request_end_utc": "2026-10-12T20:21:09.352046+00:00",
+      "latency_ms": 892.25,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:09 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "bytes": 96,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/ETHUSDT_m15now.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/ETHUSDT_m15now.bin.receipt.json",
+      "original_raw_path": "evidence/bybit/raw/ETHUSDT_m15now.bin",
+      "error": null
+    },
+    {
+      "id": "bybit:ETHUSDT_m15old",
+      "url": "https://api.bybit.com/v5/market/kline?category=linear&symbol=ETHUSDT&interval=15&start=1728777600000&end=1728778500000&limit=2",
+      "method": "GET",
+      "status": 403,
+      "request_start_utc": "2026-10-12T20:21:08.492746+00:00",
+      "request_end_utc": "2026-10-12T20:21:09.234478+00:00",
+      "latency_ms": 741.87,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:09 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "bytes": 96,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/ETHUSDT_m15old.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/ETHUSDT_m15old.bin.receipt.json",
+      "original_raw_path": "evidence/bybit/raw/ETHUSDT_m15old.bin",
+      "error": null
+    },
+    {
+      "id": "bybit:ETHUSDT_oi",
+      "url": "https://api.bybit.com/v5/market/open-interest?category=linear&symbol=ETHUSDT&intervalTime=15min&limit=2",
+      "method": "GET",
+      "status": 403,
+      "request_start_utc": "2026-10-12T20:21:08.540820+00:00",
+      "request_end_utc": "2026-10-12T20:21:09.400248+00:00",
+      "latency_ms": 859.56,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:09 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+      "bytes": 96,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/ETHUSDT_oi.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/ETHUSDT_oi.bin.receipt.json",
+      "original_raw_path": "evidence/bybit/raw/ETHUSDT_oi.bin",
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_api_key",
+      "url": "https://www.bybit.com/en/help-center/article/How-to-Create-Your-API-Key",
+      "method": "GET",
+      "status": 301,
+      "request_start_utc": "2026-10-13T06:26:52.615055+00:00",
+      "request_end_utc": "2026-10-13T06:26:53.857250+00:00",
+      "latency_ms": 1242.36,
+      "headers": {
+        "location": "/en/help-center/article/How-to-create-your-API-key",
+        "cache-control": "max-age=60",
+        "date": "Tue, 13 Oct 2026 06:26:53 GMT"
+      },
+      "sha256": "d2115c2778299610e0fc3d3a4e2d278780d3ec871ff041dba63cdfadc84f69a6",
+      "bytes": 50,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_api_key.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_api_key.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_api_key_final",
+      "url": "https://www.bybit.com/en/help-center/article/How-to-create-your-API-key",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:29:19.301517+00:00",
+      "request_end_utc": "2026-10-13T06:29:21.078561+00:00",
+      "latency_ms": 1777.26,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "private, must-revalidate, max-age=60",
+        "date": "Tue, 13 Oct 2026 06:29:20 GMT"
+      },
+      "sha256": "c7db7a4043d05eb2cba201b9317d13de42461071cf0ced9b26b87e672b0e234a",
+      "bytes": 133934,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_api_key_final.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_api_key_final.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_api_permission",
+      "url": "https://www.bybit.com/en/help-center/article/Introduction-to-API-Key",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:30:20.370962+00:00",
+      "request_end_utc": "2026-10-13T06:30:22.351187+00:00",
+      "latency_ms": 1980.52,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "private, must-revalidate, max-age=60",
+        "date": "Tue, 13 Oct 2026 06:30:22 GMT"
+      },
+      "sha256": "95d7762e513c3b50e40afe2e4ca7e9954a2b3856db174668e2db8d11f40ba479",
+      "bytes": 104455,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_api_permission.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_api_permission.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_apikey_create",
+      "url": "https://bybit-exchange.github.io/docs/v5/user/create-sub-api",
+      "method": "GET",
+      "status": 404,
+      "request_start_utc": "2026-10-13T06:30:34.416708+00:00",
+      "request_end_utc": "2026-10-13T06:30:35.324892+00:00",
+      "latency_ms": 908.38,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:35 GMT"
+      },
+      "sha256": "c58e628c413967f2ece8e12e019f0e8ace07094ef17bf4c3f5dcdd1435cc99cc",
+      "bytes": 15680,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_apikey_create.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_apikey_create.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_apikey_info",
+      "url": "https://bybit-exchange.github.io/docs/v5/user/apikey-info",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:30:34.411456+00:00",
+      "request_end_utc": "2026-10-13T06:30:35.509109+00:00",
+      "latency_ms": 1097.83,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "max-age=600",
+        "date": "Tue, 13 Oct 2026 06:30:35 GMT"
+      },
+      "sha256": "f4b23e04f00533fa37d2a8a4c3a06913a5a8a049d23bb9bfb9d7f78696cd5a89",
+      "bytes": 83340,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_apikey_info.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_apikey_info.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_demo",
+      "url": "https://bybit-exchange.github.io/docs/v5/demo",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:30:34.415087+00:00",
+      "request_end_utc": "2026-10-13T06:30:35.443307+00:00",
+      "latency_ms": 1028.41,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "max-age=600",
+        "date": "Tue, 13 Oct 2026 06:30:35 GMT"
+      },
+      "sha256": "e3d6f23a68c6bc3e53b7c2db68ca643a42d9df1885670e97ba9d15dfa8c0d242",
+      "bytes": 58981,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_demo.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_demo.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_executions",
+      "url": "https://bybit-exchange.github.io/docs/v5/execution/list",
+      "method": "GET",
+      "status": 404,
+      "request_start_utc": "2026-10-13T06:29:11.811843+00:00",
+      "request_end_utc": "2026-10-13T06:29:12.678546+00:00",
+      "latency_ms": 866.87,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:29:12 GMT"
+      },
+      "sha256": "c58e628c413967f2ece8e12e019f0e8ace07094ef17bf4c3f5dcdd1435cc99cc",
+      "bytes": 15680,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_executions.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_executions.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_fee",
+      "url": "https://www.bybit.com/en/help-center/article/Trading-Fee-Structure",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-12T20:21:28.030470+00:00",
+      "request_end_utc": "2026-10-12T20:21:29.126167+00:00",
+      "latency_ms": 1096.01,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "private, must-revalidate, max-age=60",
+        "date": "Mon, 12 Oct 2026 20:21:28 GMT"
+      },
+      "sha256": "81eca4b65afc6c6ad9af3f09b3a85fac8c0515969cd716de0794302ec2d988e8",
+      "bytes": 420781,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_fee.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_fee.html.receipt.json",
+      "original_raw_path": "evidence/bybit/raw/bybit_docs_fee.html",
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_fee2",
+      "url": "https://www.bybit.com/en/help-center/article/How-to-Calculate-Trading-Fees",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-12T20:21:28.058643+00:00",
+      "request_end_utc": "2026-10-12T20:21:29.547671+00:00",
+      "latency_ms": 1489.42,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "private, must-revalidate, max-age=60",
+        "date": "Mon, 12 Oct 2026 20:21:29 GMT"
+      },
+      "sha256": "6ec6213addd35c32c2a26203a842ae029239885540eb75e5fa028dae11bfaf62",
+      "bytes": 104474,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_fee2.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_fee2.html.receipt.json",
+      "original_raw_path": "evidence/bybit/raw/bybit_docs_fee2.html",
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_funding",
+      "url": "https://bybit-exchange.github.io/docs/v5/market/history-fund-rate",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:26:52.579493+00:00",
+      "request_end_utc": "2026-10-13T06:26:53.641076+00:00",
+      "latency_ms": 1061.94,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "max-age=600",
+        "date": "Tue, 13 Oct 2026 06:26:53 GMT"
+      },
+      "sha256": "d94d41e1a67931d099a28b360ee3757c130aa5907fbe9a812ca19baec19278f2",
+      "bytes": 74227,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_funding.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_funding.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_guide",
+      "url": "https://bybit-exchange.github.io/docs/v5/guide",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:29:11.933957+00:00",
+      "request_end_utc": "2026-10-13T06:29:12.920013+00:00",
+      "latency_ms": 986.19,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "max-age=600",
+        "date": "Tue, 13 Oct 2026 06:29:12 GMT"
+      },
+      "sha256": "ed289ad932bbf7e5e88431afca522d0a33e6080c292f2b12751bd76ff190a1b5",
+      "bytes": 58162,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_guide.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_guide.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_instrument",
+      "url": "https://bybit-exchange.github.io/docs/v5/market/instrument",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-12T20:21:27.977206+00:00",
+      "request_end_utc": "2026-10-12T20:21:28.598543+00:00",
+      "latency_ms": 621.64,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "max-age=600",
+        "date": "Mon, 12 Oct 2026 20:21:28 GMT"
+      },
+      "sha256": "e083b9204d0b4a68e2297e94556aa101844e6ac01db1bb9dd827527a183e16f5",
+      "bytes": 226425,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_instrument.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_instrument.html.receipt.json",
+      "original_raw_path": "evidence/bybit/raw/bybit_docs_instrument.html",
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_isolated",
+      "url": "https://bybit-exchange.github.io/docs/v5/position/cross-isolate",
+      "method": "GET",
+      "status": 404,
+      "request_start_utc": "2026-10-13T06:29:11.931110+00:00",
+      "request_end_utc": "2026-10-13T06:29:12.802682+00:00",
+      "latency_ms": 871.73,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:29:12 GMT"
+      },
+      "sha256": "c58e628c413967f2ece8e12e019f0e8ace07094ef17bf4c3f5dcdd1435cc99cc",
+      "bytes": 15680,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_isolated.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_isolated.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_kline",
+      "url": "https://bybit-exchange.github.io/docs/v5/market/kline",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:26:52.580084+00:00",
+      "request_end_utc": "2026-10-13T06:26:53.861356+00:00",
+      "latency_ms": 1281.71,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "max-age=600",
+        "date": "Tue, 13 Oct 2026 06:26:53 GMT"
+      },
+      "sha256": "2a510503cbad846d10394e57c01aa0a02e9d0aa2869c9fb089d649812408f37d",
+      "bytes": 82078,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_kline.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_kline.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_leverage",
+      "url": "https://bybit-exchange.github.io/docs/v5/position/leverage",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:29:11.795180+00:00",
+      "request_end_utc": "2026-10-13T06:29:12.752772+00:00",
+      "latency_ms": 957.82,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "max-age=600",
+        "date": "Tue, 13 Oct 2026 06:29:12 GMT"
+      },
+      "sha256": "85ea7b901b59494300c7bf307032ccbe67e0e5f9222c07ffae08269986993ad6",
+      "bytes": 69241,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_leverage.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_leverage.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_oi",
+      "url": "https://bybit-exchange.github.io/docs/v5/market/open-interest",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:26:52.581143+00:00",
+      "request_end_utc": "2026-10-13T06:26:53.655494+00:00",
+      "latency_ms": 1074.86,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "max-age=600",
+        "date": "Tue, 13 Oct 2026 06:26:53 GMT"
+      },
+      "sha256": "5f1e9c703adc973344807db1e013f302cb13fec497536ec7ac8eaf2e476f0539",
+      "bytes": 83265,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_oi.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_oi.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_order",
+      "url": "https://bybit-exchange.github.io/docs/v5/order/create-order",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-12T20:21:28.034297+00:00",
+      "request_end_utc": "2026-10-12T20:21:28.614044+00:00",
+      "latency_ms": 579.91,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "max-age=600",
+        "date": "Mon, 12 Oct 2026 20:21:28 GMT"
+      },
+      "sha256": "78e30008c0891f39944b08b2a65229b9eff6dbe5e76361f9979814cd0cb0b5e5",
+      "bytes": 152423,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_order.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_order.html.receipt.json",
+      "original_raw_path": "evidence/bybit/raw/bybit_docs_order.html",
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_orderbook",
+      "url": "https://bybit-exchange.github.io/docs/v5/market/orderbook",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:26:52.576914+00:00",
+      "request_end_utc": "2026-10-13T06:26:53.715046+00:00",
+      "latency_ms": 1138.52,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "max-age=600",
+        "date": "Tue, 13 Oct 2026 06:26:53 GMT"
+      },
+      "sha256": "a079f2d3d7c3c5988c9f2800d33b22d5d7d44bd93129dc91413d824161c3d996",
+      "bytes": 75789,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_orderbook.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_orderbook.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_position",
+      "url": "https://bybit-exchange.github.io/docs/v5/position",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:26:52.602902+00:00",
+      "request_end_utc": "2026-10-13T06:26:53.788450+00:00",
+      "latency_ms": 1185.93,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "max-age=600",
+        "date": "Tue, 13 Oct 2026 06:26:53 GMT"
+      },
+      "sha256": "da66b6ad46dced1d3b7083189f7a2fb94b3c94099d1e96d05777aa76068e9e32",
+      "bytes": 92207,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_position.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_position.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_rate_limit",
+      "url": "https://bybit-exchange.github.io/docs/v5/rate-limit",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:29:11.928409+00:00",
+      "request_end_utc": "2026-10-13T06:29:12.788878+00:00",
+      "latency_ms": 860.64,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "max-age=600",
+        "date": "Tue, 13 Oct 2026 06:29:12 GMT"
+      },
+      "sha256": "1bb66b1e75994d70646919228d9120fc2c611ae70b9d47f90c0324a8a200c244",
+      "bytes": 62516,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_rate_limit.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_rate_limit.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_realtime_order",
+      "url": "https://bybit-exchange.github.io/docs/v5/order/open-order",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:29:11.824924+00:00",
+      "request_end_utc": "2026-10-13T06:29:12.954429+00:00",
+      "latency_ms": 1129.9,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "max-age=600",
+        "date": "Tue, 13 Oct 2026 06:29:12 GMT"
+      },
+      "sha256": "5c363073241cd6d465e5044e148dab9be232f01d28ef7713c835301e27c2f506",
+      "bytes": 99595,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_realtime_order.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_realtime_order.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_trading_stop",
+      "url": "https://bybit-exchange.github.io/docs/v5/position/trading-stop",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:29:11.823321+00:00",
+      "request_end_utc": "2026-10-13T06:29:13.017067+00:00",
+      "latency_ms": 1193.94,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "max-age=600",
+        "date": "Tue, 13 Oct 2026 06:29:12 GMT"
+      },
+      "sha256": "194c7d0c09ec877637840716649c9290f90bf6e296a8538b34ea583819923009",
+      "bytes": 90402,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_trading_stop.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_trading_stop.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bybit:bybit_docs_ws_order",
+      "url": "https://bybit-exchange.github.io/docs/v5/websocket/private/order",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:29:11.816930+00:00",
+      "request_end_utc": "2026-10-13T06:29:12.913411+00:00",
+      "latency_ms": 1096.67,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "max-age=600",
+        "date": "Tue, 13 Oct 2026 06:29:12 GMT"
+      },
+      "sha256": "4935641dd0c4524b1713c0aba4e81d2f77490438c467f80f2b610ec3b251eceb",
+      "bytes": 75383,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_ws_order.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_ws_order.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    }
+  ]
+}

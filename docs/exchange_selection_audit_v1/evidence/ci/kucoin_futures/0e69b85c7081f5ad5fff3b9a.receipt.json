@@ -1,0 +1,21 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:39:00 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "370.112",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 1426918,
+  "raw_file": "0e69b85c7081f5ad5fff3b9a.body",
+  "raw_sha256": "95cdc2b393b2861d90426caf348ce169660adce1cb926a6f4859d2388ffbf1d4",
+  "request_started_at": "2026-10-13T06:38:59.857617+00:00",
+  "response_completed_at": "2026-10-13T06:39:00.228484+00:00",
+  "source_kind": "instruments",
+  "truncated": false,
+  "url": "https://api-futures.kucoin.com/api/v1/contracts/active"
+}

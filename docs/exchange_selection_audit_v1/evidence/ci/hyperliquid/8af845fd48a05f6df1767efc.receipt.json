@@ -1,0 +1,25 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-length": "1567",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:38:58 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "211.503",
+  "method": "POST",
+  "payload": {
+    "coin": "BTC",
+    "type": "l2Book"
+  },
+  "private_api": false,
+  "raw_bytes": 1567,
+  "raw_file": "8af845fd48a05f6df1767efc.body",
+  "raw_sha256": "fa3937f9746e5341db2b7001fa2dafc96ba74b9032e38067af09ce07fb3b3c84",
+  "request_started_at": "2026-10-13T06:38:58.853209+00:00",
+  "response_completed_at": "2026-10-13T06:38:59.064620+00:00",
+  "source_kind": "book_BTC",
+  "truncated": false,
+  "url": "https://api.hyperliquid.xyz/info"
+}

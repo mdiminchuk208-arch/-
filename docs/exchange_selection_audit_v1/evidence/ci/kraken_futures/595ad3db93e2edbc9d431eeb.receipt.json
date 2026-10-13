@@ -1,0 +1,21 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:39:03 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "144.257",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 18034,
+  "raw_file": "595ad3db93e2edbc9d431eeb.body",
+  "raw_sha256": "730cba4cdd8041250788d69679205976c0e62677a3690ca5d4da25d973d86723",
+  "request_started_at": "2026-10-13T06:39:03.356152+00:00",
+  "response_completed_at": "2026-10-13T06:39:03.500288+00:00",
+  "source_kind": "book_ETH_second",
+  "truncated": false,
+  "url": "https://futures.kraken.com/derivatives/api/v3/orderbook?symbol=PF_ETHUSD"
+}

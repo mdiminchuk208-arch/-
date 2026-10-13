@@ -1,0 +1,17 @@
+{
+  "url": "https://www.bitget.com/docs/catalog/classic-contract-account/classic-contract-account",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:29:02.053636+00:00",
+  "request_end_utc": "2026-10-13T06:29:03.874464+00:00",
+  "latency_ms": 1821.44,
+  "status": 200,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:29:03 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "no-cache,no-cache"
+  },
+  "sha256": "92459a488c93f282ba364d3f2fe5dc23fe2699e895f028fae61f2e813b8ad472",
+  "bytes": 910896,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_detail_account.html",
+  "error": null
+}

@@ -1,0 +1,22 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-length": "224",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:38:58 GMT"
+  },
+  "http_status": 451,
+  "latency_ms": "52.058",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 224,
+  "raw_file": "105e4930d5963a2e49d86520.body",
+  "raw_sha256": "79c1db471a4cdc1c8565b5dfc52e0ed2d29962738ee4d28597696fcd0920e348",
+  "request_started_at": "2026-10-13T06:38:58.693950+00:00",
+  "response_completed_at": "2026-10-13T06:38:58.745921+00:00",
+  "source_kind": "book_ETH",
+  "truncated": false,
+  "url": "https://fapi.binance.com/fapi/v1/depth?symbol=ETHUSDT&limit=100"
+}

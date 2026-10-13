@@ -1,0 +1,16 @@
+{
+  "url": "https://api.international.coinbase.com/api/v1/instruments/BTC-PERP/funding?result_limit=10",
+  "request_start_utc": "2026-10-13T06:32:40.692506+00:00",
+  "completion_utc": "2026-10-13T06:32:42.186977+00:00",
+  "latency_ms": 1494.8,
+  "http_status": 200,
+  "sha256": "8610b2d12b4d173ee7915ddec47f42b974373e4494e24491101a36e11dc34fb3",
+  "bytes": 1301,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:32:42 GMT",
+    "content-type": "application/json"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/btc_funding.bin"
+}

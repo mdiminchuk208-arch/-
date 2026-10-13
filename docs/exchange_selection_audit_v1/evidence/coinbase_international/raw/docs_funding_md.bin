@@ -1,0 +1,195 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://docs.cdp.coinbase.com/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Get historical funding rates
+
+> Retrieves the historical funding rates for a specific instrument.
+
+<Tabs groupId="programming-language">
+  <Tab value="Java" title="Java">
+    ```java theme={null}
+    InstrumentsService instrumentsService = IntxServiceFactory.createInstrumentsService(client);
+    GetHistoricalFundingRatesRequest request = new GetHistoricalFundingRatesRequest.Builder()
+        .instrumentId("BTC-PERP")
+        .build();
+    GetHistoricalFundingRatesResponse response = instrumentsService.getHistoricalFundingRates(request);
+    ```
+
+    For more information, please visit the [INTX Java SDK](https://github.com/coinbase-samples/intx-sdk-java).
+  </Tab>
+
+  <Tab value=".NET" title=".NET">
+    ```cs theme={null}
+    var instrumentsService = new InstrumentsService(client);
+    var request = new GetHistoricalFundingRatesRequest(
+        InstrumentId: "BTC-PERP",
+    );
+    var response = instrumentsService.GetHistoricalFundingRates(request);
+    ```
+
+    For more information, please visit the [INTX .NET SDK](https://github.com/coinbase-samples/intx-sdk-dotnet).
+  </Tab>
+
+  <Tab value="Go" title="Go">
+    ```go theme={null}
+    instrumentsSvc := instruments.NewInstrumentsService(client)
+    request := &instruments.GetHistoricalFundingRequest{
+        InstrumentId: "BTC-PERP",
+    }
+    response, err := instrumentsSvc.GetHistoricalFunding(context.Background(), request)
+    ```
+
+    For more information, please visit the [INTX Go SDK](https://github.com/coinbase-samples/intx-sdk-go).
+  </Tab>
+
+  <Tab value="Python" title="Python">
+    ```python theme={null}
+    client = IntxClient()
+    request = GetHistoricalFundingRatesRequest(
+        instrument_id="BTC-PERP",
+    )
+    response = client.get_historical_funding_rates(request)
+    ```
+
+    For more information, please visit the [INTX Python SDK](https://github.com/coinbase-samples/intx-sdk-py).
+  </Tab>
+
+  <Tab value="Typescript" title="TS/JS">
+    ```js theme={null}
+    const instrumentsService = new InstrumentsService(client);
+
+    instrumentsService.getHistoricalFundingRates({
+        instrument: 'ETH-PERP',
+    }).then(async (response) => {
+        console.log('Historical Funding Rates: ', response);
+    })
+    ```
+
+    For more information, please visit the [INTX TS SDK](https://github.com/coinbase-samples/intx-sdk-ts).
+  </Tab>
+
+  <Tab value="CLI" title="CLI">
+    ```
+    intxctl get-historical-funding-rates --help
+    ```
+
+    For more information, please visit the [INTX CLI](https://github.com/coinbase-samples/intx-cli).
+  </Tab>
+</Tabs>
+
+
+## OpenAPI
+
+````yaml GET /api/v1/instruments/{instrument}/funding
+openapi: 3.0.3
+info:
+  title: REST API
+  description: >
+    # Welcome to Coinbase INTX API
+
+    ## Introduction
+
+    The INTX APIs allow institutions to trade and manage orders on the
+    International Exchange. The following API pages detail various REST API
+    endpoints we offer.
+
+    ## Getting Started
+
+    To get started, please visit one of the following pages:
+
+    - [Quickstart](/international-exchange/introduction/quickstart)
+
+    -
+    [Overview](/api-reference/international-exchange-api/rest-api/introduction)
+
+    -
+    [Authentication](/api-reference/international-exchange-api/rest-api/authentication)
+
+    - [Rate Limits](/international-exchange/introduction/rate-limits-overview)
+
+    ## FIX API
+
+    - [FIX API reference](/international-exchange/fix-api/fix-api-overview)
+
+    ## WebSocket API
+
+    - [WebSocket API
+    reference](/international-exchange/websocket-feed/websocket-overview)
+  version: '1.0'
+servers:
+  - url: https://api.international.coinbase.com
+security: []
+paths:
+  /api/v1/instruments/{instrument}/funding:
+    get:
+      tags:
+        - Instruments
+      summary: Get historical funding rates
+      description: Retrieves the historical funding rates for a specific instrument.
+      operationId: getInstrumentFunding
+      parameters:
+        - name: instrument
+          in: path
+          description: >-
+            Identifies the instrument by name (e.g., `BTC-PERP`), UUID (e.g.,
+            `ce55a827-f04a-45c0-9d9b-8bbdb9b48065`), or instrument ID (e.g.,
+            `7149252043835013`)
+          required: true
+          schema:
+            type: string
+        - name: result_limit
+          in: query
+          description: >-
+            The number of results to return (defaults to 25 with a max supported
+            value of 100)
+          required: false
+          schema:
+            type: integer
+            example: 30
+        - name: result_offset
+          in: query
+          description: The number of results from the beginning to skip past
+          required: false
+          schema:
+            type: integer
+            example: 50
+      responses:
+        '200':
+          description: Funding Rates list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InstrumentFunding_v1'
+        '400':
+          description: Invalid attribute
+components:
+  schemas:
+    InstrumentFunding_v1:
+      type: object
+      properties:
+        instrument_id:
+          description: >-
+            The unique identifier of the instrument for which the funding rate
+            applies
+          type: string
+          example: 14thr7ft-1-0
+        funding_rate:
+          description: >-
+            The final funding rate based on the state of the rolling calculation
+            at the `event_time`.
+          type: string
+          example: 0.1543
+        mark_price:
+          description: The current mark price value used in risk and margin calculations
+          type: string
+          example: 20000.63
+        event_time:
+          description: >-
+            The time that the final funding rate was determined. Uses ISO-8601
+            format (e.g., 2023-03-16T23:59:53Z)
+          type: string
+          format: date-time
+          example: '2023-03-16T23:59:53.000Z'
+
+````

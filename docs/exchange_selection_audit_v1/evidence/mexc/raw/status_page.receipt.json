@@ -1,0 +1,21 @@
+{
+  "source_id": "status_page",
+  "url": "https://www.mexc.com/support/announcements",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:30:24.077464+00:00",
+  "response_utc": "2026-10-13T06:30:25.708417+00:00",
+  "latency_ms": 1630,
+  "http_status": 404,
+  "sha256": "1848eddaf9f0b10b0ca5fcc05f9c6fb4ddf153679da9902d3c647deb7c4b220d",
+  "bytes": 154488,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "x-ratelimit-limit": "10",
+    "x-ratelimit-remaining": "9",
+    "x-ratelimit-reset": "0",
+    "date": "Tue, 13 Oct 2026 06:30:25 GMT",
+    "server": "envoy"
+  },
+  "raw_path": "raw/status_page.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

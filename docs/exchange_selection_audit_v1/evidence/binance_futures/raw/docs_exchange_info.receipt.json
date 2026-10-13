@@ -1,0 +1,18 @@
+{
+  "body_bytes": 138,
+  "error": null,
+  "headers": {
+    "content-type": "text/html",
+    "date": "Mon, 12 Oct 2026 20:20:43 GMT"
+  },
+  "id": "docs_exchange_info",
+  "latency_ms": 983.77,
+  "method": "GET",
+  "raw_path": "raw/docs_exchange_info.body",
+  "request_utc": "2026-10-12T20:20:43.068812Z",
+  "retrieval_utc": "2026-10-12T20:20:44.052451Z",
+  "sha256": "753e0dd54f28c4f7009b9c0b18a68aed175416bd8b7d134858264586eaac56f0",
+  "status": 302,
+  "truncated": false,
+  "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Exchange-Information"
+}

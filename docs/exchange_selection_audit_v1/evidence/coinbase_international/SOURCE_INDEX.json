@@ -1,0 +1,769 @@
+{
+  "environment": "Codex managed cloud research executor, inherited HTTPS proxy and TLS CA",
+  "sources": {
+    "api_root": {
+      "bytes": 76,
+      "completion_utc": "2026-10-13T06:28:54.743663+00:00",
+      "error": "HTTP Error 404: Not Found",
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:54 GMT"
+      },
+      "http_status": 404,
+      "latency_ms": 1528.2,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/api_root.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/api_root.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:53.215628+00:00",
+      "sha256": "60a6bcb2cb93dedfa5488fde79269886120f83bbad4253c713e94ce928f361aa",
+      "truncated": false,
+      "url": "https://api.international.coinbase.com/api/v1/"
+    },
+    "book_btc1": {
+      "bytes": 101,
+      "completion_utc": "2026-10-13T06:28:54.762304+00:00",
+      "error": "HTTP Error 404: Not Found",
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:54 GMT"
+      },
+      "http_status": 404,
+      "latency_ms": 1540.8,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/book_btc1.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/book_btc1.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:53.221655+00:00",
+      "sha256": "6076fc1b1a6d1be76685339b9a9c2c0e90e94eafd2b886c0e733c5f7be452e16",
+      "truncated": false,
+      "url": "https://api.international.coinbase.com/api/v1/instruments/BTC-PERP/book?depth=100"
+    },
+    "book_eth1": {
+      "bytes": 101,
+      "completion_utc": "2026-10-13T06:28:54.715124+00:00",
+      "error": "HTTP Error 404: Not Found",
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:54 GMT"
+      },
+      "http_status": 404,
+      "latency_ms": 1497.7,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/book_eth1.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/book_eth1.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:53.217608+00:00",
+      "sha256": "d4eb8011dba147a7d012685bf64604e900792383b21f4c57497a02a277e3b2e2",
+      "truncated": false,
+      "url": "https://api.international.coinbase.com/api/v1/instruments/ETH-PERP/book?depth=100"
+    },
+    "btc_funding": {
+      "bytes": 1301,
+      "completion_utc": "2026-10-13T06:32:42.186977+00:00",
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:32:42 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1494.8,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/btc_funding.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/btc_funding.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:32:40.692506+00:00",
+      "sha256": "8610b2d12b4d173ee7915ddec47f42b974373e4494e24491101a36e11dc34fb3",
+      "truncated": false,
+      "url": "https://api.international.coinbase.com/api/v1/instruments/BTC-PERP/funding?result_limit=10"
+    },
+    "btc_quote": {
+      "bytes": 332,
+      "completion_utc": "2026-10-13T06:32:42.206031+00:00",
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:32:42 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1511.2,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/btc_quote.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/btc_quote.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:32:40.695004+00:00",
+      "sha256": "9221326906e9160c86347e2cb05618f09156979172e3a0c5dc275d611a5c213a",
+      "truncated": false,
+      "url": "https://api.international.coinbase.com/api/v1/instruments/BTC-PERP/quote"
+    },
+    "candles_btc_now": {
+      "bytes": 2,
+      "completion_utc": "2026-10-13T06:28:54.883499+00:00",
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:54 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1665.3,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/candles_btc_now.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/candles_btc_now.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:53.218356+00:00",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "truncated": false,
+      "url": "https://api.international.coinbase.com/api/v1/instruments/BTC-PERP/candles?granularity=FIFTEEN_MINUTE&start=2026-10-13T04:00:00Z&end=2026-10-13T06:00:00Z"
+    },
+    "candles_eth_now": {
+      "bytes": 2,
+      "completion_utc": "2026-10-13T06:28:56.266493+00:00",
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:56 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1506.4,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/candles_eth_now.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/candles_eth_now.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:54.760196+00:00",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "truncated": false,
+      "url": "https://api.international.coinbase.com/api/v1/instruments/ETH-PERP/candles?granularity=FIFTEEN_MINUTE&start=2026-10-13T04:00:00Z&end=2026-10-13T06:00:00Z"
+    },
+    "changelog": {
+      "bytes": 1048576,
+      "completion_utc": "2026-10-13T06:29:22.888544+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4a1dc89e122e-CMH",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:29:22 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1429.3,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/changelog.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/changelog.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:29:21.459992+00:00",
+      "sha256": "af0fa423e00287bf4b20991d03382b83719a1653447cdced46f7b19c1627cc32",
+      "truncated": true,
+      "url": "https://docs.cdp.coinbase.com/international-exchange/changes/changelog"
+    },
+    "concept_instruments": {
+      "bytes": 1022963,
+      "completion_utc": "2026-10-13T06:29:21.397428+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4a148a4cdbb4-CMH",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:29:20 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1507.4,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/concept_instruments.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/concept_instruments.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:29:19.890650+00:00",
+      "sha256": "d52b0af5ab5a419a8986eb9084a507a35377fccb7062bc5daa8fc719fcce0b70",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/international-exchange/concepts/instruments"
+    },
+    "concept_portfolios": {
+      "bytes": 1048576,
+      "completion_utc": "2026-10-13T06:29:21.439524+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4a147af32a9c-CMH",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:29:20 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1545.7,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/concept_portfolios.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/concept_portfolios.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:29:19.894608+00:00",
+      "sha256": "8fadd22969f43167e65ac95785982dd4148f25d1bebeb303f2a121a2225f5b54",
+      "truncated": true,
+      "url": "https://docs.cdp.coinbase.com/international-exchange/concepts/portfolios"
+    },
+    "concept_trading": {
+      "bytes": 1048576,
+      "completion_utc": "2026-10-13T06:29:21.466488+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4a14ba8cdbb4-CMH",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:29:20 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1580.1,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/concept_trading.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/concept_trading.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:29:19.886974+00:00",
+      "sha256": "6ee3e7c92c03b1620cf008e82f4ea7c56dd3396794d6c46e8fbb3c300f2bf956",
+      "truncated": true,
+      "url": "https://docs.cdp.coinbase.com/international-exchange/concepts/trading"
+    },
+    "docs_api": {
+      "bytes": 119208,
+      "completion_utc": "2026-10-13T06:28:17.605731+00:00",
+      "error": "HTTP Error 404: Not Found",
+      "headers": {
+        "cf-ray": "a49c4885da4ef49c-CMH",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:28:16 GMT"
+      },
+      "http_status": 404,
+      "latency_ms": 1528.1,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_api.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_api.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:16.078096+00:00",
+      "sha256": "fc960ff5173f01b9ace2ec595ca957a8774072e20bc14cf9da85c5629d9b476d",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/intx/reference/get-instruments"
+    },
+    "docs_auth_md": {
+      "bytes": 5521,
+      "completion_utc": "2026-10-13T06:30:16.895302+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4b723a332e5c-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:16 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 956.5,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_auth_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_auth_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:15.938986+00:00",
+      "sha256": "f6ee09230286bb1fae68f6628dc402d29af65e9f649802a36821e690ece939b8",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/api-reference/international-exchange-api/rest-api/authentication.md"
+    },
+    "docs_candle_md": {
+      "bytes": 6320,
+      "completion_utc": "2026-10-13T06:30:14.889706+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4b65aeffc892-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:14 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1010.8,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_candle_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_candle_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:13.879050+00:00",
+      "sha256": "03e5c4971f9ad4dadced10b2163ed625e074319ba86b7507ec9a7824becd68f0",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/api-reference/international-exchange-api/rest-api/instruments/get-aggegated-candles.md"
+    },
+    "docs_channels_md": {
+      "bytes": 14988,
+      "completion_utc": "2026-10-13T06:30:15.889913+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4b6bfb490abb-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:15 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 952.8,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_channels_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_channels_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:14.937335+00:00",
+      "sha256": "91fa11d269b7f3bd39e61b5766c5f3cacf9559d9f759507447b3a9a91a1d6f2d",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/international-exchange/websocket-feed/channels.md"
+    },
+    "docs_concepts_instruments_md": {
+      "bytes": 6347,
+      "completion_utc": "2026-10-13T06:30:17.276098+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4b73bcd32e5c-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:16 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1099.1,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_concepts_instruments_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_concepts_instruments_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:16.177163+00:00",
+      "sha256": "8e3d6de556b25bf547bcc81523ff3f418ed61b4f8366a9ce5b82bd33ab114b7f",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/international-exchange/concepts/instruments.md"
+    },
+    "docs_concepts_trade_md": {
+      "bytes": 5535,
+      "completion_utc": "2026-10-13T06:30:15.946116+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4b6c6afa610f-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:15 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 936.1,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_concepts_trade_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_concepts_trade_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:15.010105+00:00",
+      "sha256": "36c110bcdf3e007291324ade064cef2c066ff36ce6e1fc071a06720ad9a7377d",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/international-exchange/concepts/trading.md"
+    },
+    "docs_fee_md": {
+      "bytes": 4765,
+      "completion_utc": "2026-10-13T06:29:45.584790+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4aade84514c2-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:29:45 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1140.6,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_fee_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_fee_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:29:44.444369+00:00",
+      "sha256": "983f6b08a755b9afe66b2731a056ade1e7be147ed1ac76370e11ccd626ed95f3",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/api-reference/international-exchange-api/rest-api/fee-rates/list-fee-rate-tiers.md"
+    },
+    "docs_funding_md": {
+      "bytes": 6105,
+      "completion_utc": "2026-10-13T06:30:15.055866+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4b658d3bd319-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:14 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1182.7,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_funding_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_funding_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:13.873322+00:00",
+      "sha256": "f22b03570935b35399dd10b86c29cb69165d2f3698ad24e79971a7833c4a4f8b",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/api-reference/international-exchange-api/rest-api/instruments/get-historical-funding-rate.md"
+    },
+    "docs_instrument_md": {
+      "bytes": 15936,
+      "completion_utc": "2026-10-13T06:30:14.873359+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4b657e41b87b-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:14 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 991.3,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_instrument_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_instrument_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:13.882290+00:00",
+      "sha256": "47c7838fd020bd167dd6f81eb717247efbbe03192d609a035ce01ab5e894ca66",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/api-reference/international-exchange-api/rest-api/instruments/get-instrument-details.md"
+    },
+    "docs_limits_md": {
+      "bytes": 1435,
+      "completion_utc": "2026-10-13T06:30:16.123590+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4b6d2e8c24f4-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:15 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1015.9,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_limits_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_limits_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:15.107911+00:00",
+      "sha256": "3a6c65dc40367e8f7badf2085a7d94433ff8e009390cfc525ffbcdb78da0641d",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/international-exchange/introduction/rate-limits-overview.md"
+    },
+    "docs_order_md": {
+      "bytes": 15684,
+      "completion_utc": "2026-10-13T06:30:14.958140+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4b656d9f70f3-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:14 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1085.1,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_order_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_order_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:13.873215+00:00",
+      "sha256": "ce3696c22f7f1a99ef19c0831e568fe0d143ed24f8f15261752b335794f4836b",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/api-reference/international-exchange-api/rest-api/orders/create-order.md"
+    },
+    "docs_portfolio_fees_md": {
+      "bytes": 5476,
+      "completion_utc": "2026-10-13T06:30:15.881009+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4b6bcb1d8305-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:15 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 960.5,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_portfolio_fees_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_portfolio_fees_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:14.920642+00:00",
+      "sha256": "05e27798bc0f972c762b920f044f3ec08f0c321b17665d5d23f930c3411fed7a",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/api-reference/international-exchange-api/rest-api/portfolios/list-portfolio-fee-rates.md"
+    },
+    "docs_portfolios_md": {
+      "bytes": 8600,
+      "completion_utc": "2026-10-13T06:30:17.105917+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4b72ba66a691-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:16 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1115.1,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_portfolios_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_portfolios_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:15.990991+00:00",
+      "sha256": "abc4076083c65ba2736f1d0cf249559d2fe2b20298d7a1ac4fdf53166f9e82ad",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/international-exchange/concepts/portfolios.md"
+    },
+    "docs_query_md": {
+      "bytes": 11293,
+      "completion_utc": "2026-10-13T06:30:14.964949+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4b65c8315c4f-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:14 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1081.6,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_query_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_query_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:13.883467+00:00",
+      "sha256": "6f975abdab5eefea10c5fcd46bd620e9fb99383277f0a9b2aed3be7dd8771b0e",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/api-reference/international-exchange-api/rest-api/orders/get-order-details.md"
+    },
+    "docs_rest": {
+      "bytes": 119199,
+      "completion_utc": "2026-10-13T06:28:17.238468+00:00",
+      "error": "HTTP Error 404: Not Found",
+      "headers": {
+        "cf-ray": "a49c48843c3924ce-CMH",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:28:16 GMT"
+      },
+      "http_status": 404,
+      "latency_ms": 1410.3,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_rest.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_rest.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:15.828371+00:00",
+      "sha256": "419ddc7f6c8605a7f951535249a6e2592fb04de307de6541bba74ebc0a071ba7",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/intx/reference/introduction"
+    },
+    "docs_sandbox_md": {
+      "bytes": 1727,
+      "completion_utc": "2026-10-13T06:30:16.340005+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4b6e0fd55c4f-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:15 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 414.4,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_sandbox_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_sandbox_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:15.925868+00:00",
+      "sha256": "8a1894061c73e0ea1ed2c3a1aa21c0b532043e4099c693c777100c75500e3468",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/international-exchange/introduction/sandbox.md"
+    },
+    "docs_sitemap": {
+      "bytes": 572534,
+      "completion_utc": "2026-10-13T06:28:56.255108+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c496dd908d945-CMH",
+        "content-type": "text/xml",
+        "date": "Tue, 13 Oct 2026 06:28:54 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 3039.4,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_sitemap.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_sitemap.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:53.216049+00:00",
+      "sha256": "615477773bf8818380cae3134e1293407033a27d09883581afcff85a1df23a9a",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/sitemap.xml"
+    },
+    "docs_systems_md": {
+      "bytes": 759,
+      "completion_utc": "2026-10-13T06:33:42.429921+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c5076eb2bb6ed-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:33:42 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 998.5,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_systems_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_systems_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:33:41.431540+00:00",
+      "sha256": "c791570f06f57106570ab63158f1789ea5b18993765d20273f96f149626f58c0",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/international-exchange/introduction/systems-operations.md"
+    },
+    "docs_tpsl_md": {
+      "bytes": 2700,
+      "completion_utc": "2026-10-13T06:30:16.141094+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4b6c7a6dc892-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:15 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1130.1,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_tpsl_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_tpsl_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:15.011106+00:00",
+      "sha256": "ea35bd7edb46bb8762767dc02d172b2e79ed4446a157483264ce63d7ad5eb0eb",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/international-exchange/fix-api/tpsl-orders.md"
+    },
+    "eth_funding": {
+      "bytes": 1316,
+      "completion_utc": "2026-10-13T06:32:42.206511+00:00",
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:32:42 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1511.8,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/eth_funding.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/eth_funding.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:32:40.694996+00:00",
+      "sha256": "8a3cda2a0b2d93b61bdeed7460e91b7d3528dbbaaa396ee11fa636d5165f9779",
+      "truncated": false,
+      "url": "https://api.international.coinbase.com/api/v1/instruments/ETH-PERP/funding?result_limit=10"
+    },
+    "eth_quote": {
+      "bytes": 340,
+      "completion_utc": "2026-10-13T06:32:42.203917+00:00",
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:32:42 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1508.1,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/eth_quote.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/eth_quote.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:32:40.696262+00:00",
+      "sha256": "c413e782d576d80aba16ed8d42456c7d26641f82aa0d1edc556ca24eed236f1e",
+      "truncated": false,
+      "url": "https://api.international.coinbase.com/api/v1/instruments/ETH-PERP/quote"
+    },
+    "fee_page": {
+      "bytes": 60,
+      "completion_utc": "2026-10-13T06:32:41.594936+00:00",
+      "error": "HTTP Error 302: Found",
+      "headers": {
+        "cf-ray": "a49c4efade5ee20a-DFW",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:32:41 GMT",
+        "location": "/de/international-exchange/fees"
+      },
+      "http_status": 302,
+      "latency_ms": 896.5,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/fee_page.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/fee_page.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:32:40.698622+00:00",
+      "sha256": "7aec81a20be082e7e49d1cc17b5ba869202fe095d5dacd4df0881e56c05bf5d9",
+      "truncated": false,
+      "url": "https://www.coinbase.com/international-exchange/fees"
+    },
+    "fee_tiers": {
+      "bytes": 59,
+      "completion_utc": "2026-10-13T06:30:17.716787+00:00",
+      "error": "HTTP Error 403: Forbidden",
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:30:17 GMT"
+      },
+      "http_status": 403,
+      "latency_ms": 1521.8,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/fee_tiers.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/fee_tiers.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:16.195164+00:00",
+      "sha256": "733a73ba5eec8339e705f21f6ea203bf1452a2f2da6ab7aab028ff4ffe45468e",
+      "truncated": false,
+      "url": "https://api.international.coinbase.com/api/v1/fee-rate-tiers"
+    },
+    "instruments": {
+      "bytes": 447711,
+      "completion_utc": "2026-10-12T20:21:49.781585+00:00",
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Mon, 12 Oct 2026 20:21:49 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1740.9,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/instruments.json",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/instruments.json.receipt.json",
+      "request_start_utc": "2026-10-12T20:21:48.041847+00:00",
+      "sha256": "0f34464650ccc1e275ea84153ca3d4f86bfb2b3fa02d91640a8ff2e5a4858fe0",
+      "truncated": false,
+      "url": "https://api.international.coinbase.com/api/v1/instruments"
+    },
+    "limits": {
+      "bytes": 943203,
+      "completion_utc": "2026-10-13T06:29:21.563107+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4a14bf1521ca-CMH",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:29:20 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1673.0,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/limits.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/limits.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:29:19.890646+00:00",
+      "sha256": "03cbd44d44d87ae91404a193ecf1bc0765763865851d4661171f172ddffb6ecc",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/international-exchange/introduction/rate-limits-overview"
+    },
+    "m15old_btc": {
+      "bytes": 1086,
+      "completion_utc": "2026-10-13T06:29:22.118647+00:00",
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:29:21 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 511.1,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/m15old_btc.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/m15old_btc.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:29:21.607675+00:00",
+      "sha256": "e8d17bf9f926a7d1f1d8ef4abb983806ef478535ae6c67660b204b9bcb7ee35c",
+      "truncated": false,
+      "url": "https://api.international.coinbase.com/api/v1/instruments/BTC-PERP/candles?granularity=FIFTEEN_MINUTE&start=2024-10-13T00:00:00Z&end=2024-10-13T02:00:00Z"
+    },
+    "m15old_eth": {
+      "bytes": 1105,
+      "completion_utc": "2026-10-13T06:29:23.970295+00:00",
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:29:23 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1805.3,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/m15old_eth.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/m15old_eth.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:29:22.165102+00:00",
+      "sha256": "53041326d93959dbcb737985b62ab112f8392f4305bc6b65e2e795fe3107a968",
+      "truncated": false,
+      "url": "https://api.international.coinbase.com/api/v1/instruments/ETH-PERP/candles?granularity=FIFTEEN_MINUTE&start=2024-10-13T00:00:00Z&end=2024-10-13T02:00:00Z"
+    },
+    "quickstart": {
+      "bytes": 1018413,
+      "completion_utc": "2026-10-13T06:29:23.004311+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4a1e8b845e44-CMH",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:29:22 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1510.7,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/quickstart.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/quickstart.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:29:21.493851+00:00",
+      "sha256": "80737cd5132a6c71b588d091fd3bb413b3a417693c0aaea16029165831c70c74",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/international-exchange/introduction/quickstart"
+    },
+    "sandbox": {
+      "bytes": 936091,
+      "completion_utc": "2026-10-13T06:29:21.372688+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4a14ad58d319-CMH",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:29:20 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1478.6,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/sandbox.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/sandbox.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:29:19.894607+00:00",
+      "sha256": "553657e547e33f220b603745705e881d35969d22e75f662ab287056d59160faf",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/international-exchange/introduction/sandbox"
+    },
+    "status": {
+      "bytes": 167,
+      "completion_utc": "2026-10-13T06:33:41.953937+00:00",
+      "error": "HTTP Error 301: Moved Permanently",
+      "headers": {
+        "cf-ray": "a49c50747cff6c43-DFW",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Tue, 13 Oct 2026 06:33:41 GMT",
+        "location": "https://status.coinbase.com/"
+      },
+      "http_status": 301,
+      "latency_ms": 838.4,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/status.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/status.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:33:41.115665+00:00",
+      "sha256": "446a6087825fa73eadb045e5a2e9e2adf7df241b571228187728191d961dda1f",
+      "truncated": false,
+      "url": "https://cdpstatus.coinbase.com/"
+    },
+    "systems": {
+      "bytes": 923229,
+      "completion_utc": "2026-10-13T06:29:22.868490+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4a1df8d2122e-CMH",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:29:22 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1442.6,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/systems.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/systems.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:29:21.426377+00:00",
+      "sha256": "aa8fd8c5607245b1dcdad0437e2278c58659ed302bb192927b06b19e4452e43f",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/international-exchange/introduction/systems-operations"
+    },
+    "welcome": {
+      "bytes": 917042,
+      "completion_utc": "2026-10-13T06:29:23.043680+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4a1e28960abb-CMH",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:29:22 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1522.2,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/welcome.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/welcome.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:29:21.521950+00:00",
+      "sha256": "1ae8eb02dcf8fe7559e1b6e240951aacda774389facec10318f95325a0b7eda9",
+      "truncated": false,
+      "url": "https://docs.cdp.coinbase.com/international-exchange/introduction/welcome"
+    }
+  },
+  "venue": "coinbase_international"
+}

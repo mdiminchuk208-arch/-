@@ -1,0 +1,16 @@
+{
+  "url": "https://api.bitget.com/api/v2/mix/market/candles?symbol=ETHUSDT&productType=USDT-FUTURES&granularity=15m&limit=2",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:21:08.048656+00:00",
+  "request_end_utc": "2026-10-12T20:21:09.266987+00:00",
+  "latency_ms": 1218.44,
+  "status": 200,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:09 GMT",
+    "content-type": "application/json"
+  },
+  "sha256": "d52272dfd8e185126e7500767fc10b9ffcd8da903de6b295d3bd1dcfa72c69d3",
+  "bytes": 235,
+  "raw_path": "evidence/bitget/raw/ETHUSDT_m15now.bin",
+  "error": null
+}

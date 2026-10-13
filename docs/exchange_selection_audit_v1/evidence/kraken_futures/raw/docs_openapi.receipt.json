@@ -1,0 +1,18 @@
+{
+  "source_id": "docs_openapi",
+  "url": "https://docs.kraken.com/openapi/futures-rest.yaml",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:32:22.106686+00:00",
+  "response_utc": "2026-10-13T06:32:23.498134+00:00",
+  "latency_ms": 1391,
+  "http_status": 200,
+  "sha256": "671859c6d4a7e53a9a0b57e29a3d345574b0ca5b57b612442426347bcff6a432",
+  "bytes": 255248,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:32:23 GMT",
+    "content-type": "text/yaml",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_openapi.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

@@ -1,0 +1,21 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:38:58 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "403.776",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 536881,
+  "raw_file": "b294104a888931fd65c10672.body",
+  "raw_sha256": "6e3e42c5527c078542afb4612c5dfb5a7c801e62014f1cd6efd1dea31ba5bf66",
+  "request_started_at": "2026-10-13T06:38:58.454455+00:00",
+  "response_completed_at": "2026-10-13T06:38:58.858434+00:00",
+  "source_kind": "instruments",
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/public/instruments?instType=SWAP"
+}

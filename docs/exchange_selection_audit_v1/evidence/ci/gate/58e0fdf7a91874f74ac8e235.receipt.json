@@ -1,0 +1,22 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-length": "4768",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:39:03 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "659.077",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 4768,
+  "raw_file": "58e0fdf7a91874f74ac8e235.body",
+  "raw_sha256": "9ed2a64018bb67278b8aa28e87f3ff00876f3cd51b279c21f8ec7618a4121de2",
+  "request_started_at": "2026-10-13T06:39:02.569655+00:00",
+  "response_completed_at": "2026-10-13T06:39:03.228543+00:00",
+  "source_kind": "book_BTC_second",
+  "truncated": false,
+  "url": "https://api.gateio.ws/api/v4/futures/usdt/order_book?contract=BTC_USDT&limit=100"
+}

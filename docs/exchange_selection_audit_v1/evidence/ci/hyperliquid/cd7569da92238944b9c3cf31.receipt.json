@@ -1,0 +1,24 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-length": "17628",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:38:58 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "241.348",
+  "method": "POST",
+  "payload": {
+    "type": "meta"
+  },
+  "private_api": false,
+  "raw_bytes": 17628,
+  "raw_file": "cd7569da92238944b9c3cf31.body",
+  "raw_sha256": "aa725f96351e898c95ab7cbc4062208200ea4fa7346478a10f60748e928b82e5",
+  "request_started_at": "2026-10-13T06:38:58.746365+00:00",
+  "response_completed_at": "2026-10-13T06:38:58.987536+00:00",
+  "source_kind": "instruments",
+  "truncated": false,
+  "url": "https://api.hyperliquid.xyz/info"
+}

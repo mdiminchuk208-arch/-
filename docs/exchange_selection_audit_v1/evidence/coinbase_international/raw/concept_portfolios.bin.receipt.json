@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.cdp.coinbase.com/international-exchange/concepts/portfolios",
+  "request_start_utc": "2026-10-13T06:29:19.894608+00:00",
+  "completion_utc": "2026-10-13T06:29:21.439524+00:00",
+  "latency_ms": 1545.7,
+  "http_status": 200,
+  "sha256": "8fadd22969f43167e65ac95785982dd4148f25d1bebeb303f2a121a2225f5b54",
+  "bytes": 1048576,
+  "truncated": true,
+  "headers": {
+    "cf-ray": "a49c4a147af32a9c-CMH",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:29:20 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/concept_portfolios.bin"
+}

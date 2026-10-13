@@ -1,0 +1,204 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://docs.cdp.coinbase.com/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Get aggregated candles data per instrument
+
+> Retrieves a list of aggregated candles data for a given instrument, granularity and time range
+
+<Tabs groupId="programming-language">
+  <Tab value="Java" title="Java">
+    ```java theme={null}
+    InstrumentsService instrumentsService = IntxServiceFactory.createInstrumentsService(client);
+    GetAggregatedCandlesRequest request = new GetAggregatedCandlesRequest.Builder()
+        .instrumentId("BTC-PERP")
+        .granularity("ONE_DAY")
+        .start("2024-01-01T00:00:00Z")
+        .build();
+    GetAggregatedCandlesResponse response = instrumentsService.getAggregatedCandles(request);
+    ```
+
+    For more information, please visit the [INTX Java SDK](https://github.com/coinbase-samples/intx-sdk-java).
+  </Tab>
+
+  <Tab value=".NET" title=".NET">
+    ```cs theme={null}
+    var instrumentsService = new InstrumentsService(client);
+    var request = new GetAggregatedCandlesRequest(
+        InstrumentId: "BTC-PERP",
+        Granularity: "ONE_DAY",
+        Start: "2024-01-01T00:00:00Z",
+    );
+    var response = instrumentsService.GetAggregatedCandles(request);
+    ```
+
+    For more information, please visit the [INTX .NET SDK](https://github.com/coinbase-samples/intx-sdk-dotnet).
+  </Tab>
+
+  <Tab value="Python" title="Python">
+    ```python theme={null}
+    client = IntxClient()
+    request = GetAggregatedCandlesRequest(
+        instrument_id="BTC-PERP",
+        granularity="ONE_DAY",
+        start="2024-01-01T00:00:00Z",
+    )
+    response = client.get_aggregated_candles(request)
+    ```
+
+    For more information, please visit the [INTX Python SDK](https://github.com/coinbase-samples/intx-sdk-py).
+  </Tab>
+
+  <Tab value="Typescript" title="TS/JS">
+    ```js theme={null}
+    const instrumentsService = new InstrumentsService(client);
+
+    instrumentsService.getAggregatedCandles({
+        instrumentId: 'BTC-PERP',
+        granularity: 'ONE_DAY',
+        start: '2024-01-01T00:00:00Z',
+    }).then(async (response) => {
+        console.log('Aggregated Candles: ', response);
+    })
+    ```
+
+    For more information, please visit the [INTX TS SDK](https://github.com/coinbase-samples/intx-sdk-ts).
+  </Tab>
+</Tabs>
+
+
+## OpenAPI
+
+````yaml GET /api/v1/instruments/{instrument}/candles
+openapi: 3.0.3
+info:
+  title: REST API
+  description: >
+    # Welcome to Coinbase INTX API
+
+    ## Introduction
+
+    The INTX APIs allow institutions to trade and manage orders on the
+    International Exchange. The following API pages detail various REST API
+    endpoints we offer.
+
+    ## Getting Started
+
+    To get started, please visit one of the following pages:
+
+    - [Quickstart](/international-exchange/introduction/quickstart)
+
+    -
+    [Overview](/api-reference/international-exchange-api/rest-api/introduction)
+
+    -
+    [Authentication](/api-reference/international-exchange-api/rest-api/authentication)
+
+    - [Rate Limits](/international-exchange/introduction/rate-limits-overview)
+
+    ## FIX API
+
+    - [FIX API reference](/international-exchange/fix-api/fix-api-overview)
+
+    ## WebSocket API
+
+    - [WebSocket API
+    reference](/international-exchange/websocket-feed/websocket-overview)
+  version: '1.0'
+servers:
+  - url: https://api.international.coinbase.com
+security: []
+paths:
+  /api/v1/instruments/{instrument}/candles:
+    get:
+      tags:
+        - Instruments
+      summary: Get aggregated candles data per instrument
+      description: >-
+        Retrieves a list of aggregated candles data for a given instrument,
+        granularity and time range
+      operationId: getInstrumentCandles
+      parameters:
+        - name: instrument
+          in: path
+          description: Identifies the instrument by name (e.g., `BTC-PERP`)
+          required: true
+          schema:
+            type: string
+        - name: granularity
+          in: query
+          description: >-
+            The aggregation period of the candles data. End timestamp in ISO
+            8601 timestamp format (e.g. 2024-03-01T00:00:00Z).
+          required: true
+          schema:
+            type: string
+            enum:
+              - ONE_DAY
+              - SIX_HOUR
+              - TWO_HOUR
+              - ONE_HOUR
+              - THIRTY_MINUTE
+              - FIFTEEN_MINUTE
+              - FIVE_MINUTE
+              - ONE_MINUTE
+        - name: start
+          in: query
+          description: >-
+            Start timestamp in ISO 8601 timestamp format (e.g.
+            `2024-03-01T00:00:00Z`)
+          required: true
+          schema:
+            type: string
+        - name: end
+          in: query
+          description: >-
+            End timestamp in ISO 8601 timestamp format (e.g.
+            `2024-03-01T00:00:00Z`)
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Instrument list
+          content:
+            application/json:
+              schema:
+                properties:
+                  aggregations:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/InstrumentCandlesAggregation_v1'
+        '400':
+          description: Invalid attribute
+components:
+  schemas:
+    InstrumentCandlesAggregation_v1:
+      type: object
+      properties:
+        start:
+          description: The start time of the aggregation
+          type: string
+          example: '2024-04-23T00:00:00Z'
+        open:
+          description: The opening price at the start of the aggregation time period
+          type: string
+          example: '62884.4'
+        high:
+          description: The maximum price in the aggregation time period
+          type: string
+          example: '64710.6'
+        low:
+          description: The minimum price in the aggregation time period
+          type: string
+          example: '62884.4'
+        close:
+          description: The closing price at the end of the aggregation time period
+          type: string
+          example: '63508.4'
+        volume:
+          description: The total trading volume during the aggregation time period
+          type: string
+          example: '3253.9983'
+
+````

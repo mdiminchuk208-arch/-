@@ -1,0 +1,18 @@
+{
+  "source_id": "trade_history_eth",
+  "url": "https://futures.kraken.com/derivatives/api/v3/history?symbol=PF_ETHUSD",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:30:52.528580+00:00",
+  "response_utc": "2026-10-13T06:30:53.447632+00:00",
+  "latency_ms": 919,
+  "http_status": 200,
+  "sha256": "583159c0b28fa22ce24b101c9739adb84a22145e2c742f82311f495a63a5f318",
+  "bytes": 18169,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:30:53 GMT",
+    "content-type": "application/json",
+    "server": "envoy"
+  },
+  "raw_path": "raw/trade_history_eth.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

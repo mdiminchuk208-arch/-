@@ -1,0 +1,16 @@
+{
+  "url": "https://api.international.coinbase.com/api/v1/instruments/ETH-PERP/funding?result_limit=10",
+  "request_start_utc": "2026-10-13T06:32:40.694996+00:00",
+  "completion_utc": "2026-10-13T06:32:42.206511+00:00",
+  "latency_ms": 1511.8,
+  "http_status": 200,
+  "sha256": "8a3cda2a0b2d93b61bdeed7460e91b7d3528dbbaaa396ee11fa636d5165f9779",
+  "bytes": 1316,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:32:42 GMT",
+    "content-type": "application/json"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/eth_funding.bin"
+}

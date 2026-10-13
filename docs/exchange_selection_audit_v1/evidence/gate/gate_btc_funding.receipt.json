@@ -1,0 +1,24 @@
+{
+  "id": "gate_btc_funding",
+  "venue": "gate",
+  "url": "https://api.gateio.ws/api/v4/futures/usdt/funding_rate?contract=BTC_USDT&limit=2",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-12T20:21:15.882922+00:00",
+  "completed_utc": "2026-10-12T20:21:17.058175+00:00",
+  "latency_ms": 1175.45,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:16 GMT",
+    "content-type": "application/json",
+    "content-length": "65",
+    "x-gate-ratelimit-requests-remain": "198",
+    "x-gate-ratelimit-limit": "200",
+    "x-gate-ratelimit-reset-timestamp": "1791836476"
+  },
+  "raw_path": "raw/gate_btc_funding.bin",
+  "raw_sha256": "e2b32e625d13b3b9d8e44b74eadcfc68607001891f93eea0c8640ee6de1483e0",
+  "raw_bytes": 65,
+  "truncated": false
+}

@@ -1,0 +1,16 @@
+{
+  "url": "https://api.international.coinbase.com/api/v1/instruments/ETH-PERP/candles?granularity=FIFTEEN_MINUTE&start=2026-10-13T04:00:00Z&end=2026-10-13T06:00:00Z",
+  "request_start_utc": "2026-10-13T06:28:54.760196+00:00",
+  "completion_utc": "2026-10-13T06:28:56.266493+00:00",
+  "latency_ms": 1506.4,
+  "http_status": 200,
+  "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "bytes": 2,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:28:56 GMT",
+    "content-type": "application/json"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/candles_eth_now.bin"
+}

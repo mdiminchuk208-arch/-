@@ -9,11 +9,12 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import UTC, datetime
 from hashlib import sha256
 from pathlib import Path
+from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import parse_qs, urlparse
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
-PROBES = {
+PROBES: dict[str, list[tuple[Any, ...]]] = {
     "okx": [
         ("instruments", "https://www.okx.com/api/v5/public/instruments?instType=SWAP"),
         (

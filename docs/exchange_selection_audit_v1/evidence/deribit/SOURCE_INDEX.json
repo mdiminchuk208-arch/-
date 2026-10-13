@@ -1,0 +1,1022 @@
+{
+  "environment": "Codex managed cloud research executor, inherited HTTPS proxy and TLS CA",
+  "sources": {
+    "btc_book1": {
+      "bytes": 4109,
+      "completion_utc": "2026-10-13T06:28:15.146548+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c487918b1da10-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:15 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 419.1,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/btc_book1.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/btc_book1.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:14.727603+00:00",
+      "sha256": "6d8fc6514af2e941413af5b8cddaa5d6d7db094d76122eddd9df752f47068a56",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_order_book?instrument_name=BTC_USDC-PERPETUAL&depth=100"
+    },
+    "btc_book2": {
+      "bytes": 4083,
+      "completion_utc": "2026-10-13T06:28:55.085547+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4972cedcda10-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:54 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 277.6,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/btc_book2.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/btc_book2.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:54.808093+00:00",
+      "sha256": "86346f3889ee7d0674e3fc32b12ececf4e1a2f4e236eb3d6e43d1a990594d8d5",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_order_book?instrument_name=BTC_USDC-PERPETUAL&depth=100"
+    },
+    "btc_funding": {
+      "bytes": 3707,
+      "completion_utc": "2026-10-13T06:28:15.783499+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c487cffc40ce7-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:15 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1063.0,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/btc_funding.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/btc_funding.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:14.720648+00:00",
+      "sha256": "f0fd6e228c6900d35d08b3d6bba0518f8c73f8f72eff390b999820cc8e9a911a",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_funding_rate_history?instrument_name=BTC_USDC-PERPETUAL&start_timestamp=1791763200000&end_timestamp=1791849600000"
+    },
+    "btc_instruments": {
+      "bytes": 10894,
+      "completion_utc": "2026-10-12T20:21:47.997837+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a498d01deefd5d06-DFW",
+        "content-type": "application/json",
+        "date": "Mon, 12 Oct 2026 20:21:47 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 697.7,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/btc_instruments.json",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/btc_instruments.json.receipt.json",
+      "request_start_utc": "2026-10-12T20:21:47.300321+00:00",
+      "sha256": "2675d69466c7bc80b6cf121b303ffe56b7db4f2dc45db0442a8b6613419400e2",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_instruments?currency=BTC&kind=future&expired=false"
+    },
+    "btc_m15now": {
+      "bytes": 1006,
+      "completion_utc": "2026-10-13T06:28:15.730358+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c487ccc8dee0c-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:15 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1007.8,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/btc_m15now.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/btc_m15now.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:14.722676+00:00",
+      "sha256": "eab8f094ffbd9d52623b51536142c76d4f8218043c7f37d1e7b6ef1b153c3a38",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_tradingview_chart_data?instrument_name=BTC_USDC-PERPETUAL&start_timestamp=1791840000000&end_timestamp=1791849600000&resolution=15"
+    },
+    "btc_m15old": {
+      "bytes": 739,
+      "completion_utc": "2026-10-13T06:28:15.669010+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c487c69e0ddb0-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:15 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 943.7,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/btc_m15old.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/btc_m15old.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:14.725497+00:00",
+      "sha256": "a2b06c90f72bf81c2cea3b1e010c65dcf7e701498e3e28b84a52d490b2d14330",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_tradingview_chart_data?instrument_name=BTC_USDC-PERPETUAL&start_timestamp=1728777600000&end_timestamp=1728784800000&resolution=15"
+    },
+    "btc_trades": {
+      "bytes": 1771,
+      "completion_utc": "2026-10-13T06:28:15.663835+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c487c69e2ddb0-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:15 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 933.4,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/btc_trades.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/btc_trades.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:14.730588+00:00",
+      "sha256": "4dfcc8c151907a4e7bd7382c2d5baa3191d7b5ee2d0d7d024133c5e97fdb77e5",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_last_trades_by_instrument?instrument_name=BTC_USDC-PERPETUAL&count=5"
+    },
+    "btc_trades_old": {
+      "bytes": 135,
+      "completion_utc": "2026-10-13T06:35:38.438961+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c534badd2da10-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:35:38 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 603.9,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/btc_trades_old.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/btc_trades_old.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:35:37.835392+00:00",
+      "sha256": "7071755b032fcbb12e069e6c9badd743922540c1f3c507283b70e5137c50b282",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_last_trades_by_instrument_and_time?instrument_name=BTC_USDC-PERPETUAL&start_timestamp=1728777600000&end_timestamp=1728778500000&count=10"
+    },
+    "docs": {
+      "bytes": 1048576,
+      "completion_utc": "2026-10-13T06:28:56.416408+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4977de7ccf37-CMH",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:28:55 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1620.5,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:54.796533+00:00",
+      "sha256": "de531bbb35a851a088bda096bab2a1545b4ac4101029c10b1f891d4240a101a9",
+      "truncated": true,
+      "url": "https://docs.deribit.com/"
+    },
+    "docs_access_scope_md": {
+      "bytes": 4999,
+      "completion_utc": "2026-10-13T06:32:42.714037+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4f0198350abb-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:32:42 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1069.8,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_access_scope_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_access_scope_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:32:41.644641+00:00",
+      "sha256": "d1e1986551d36b211f4c523fdf964020917932e52dc414ddee05b37ff2343564",
+      "truncated": false,
+      "url": "https://docs.deribit.com/articles/access-scope.md"
+    },
+    "docs_auth_md": {
+      "bytes": 21095,
+      "completion_utc": "2026-10-13T06:31:58.680689+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4ded8910f8bb-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:31:58 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1174.9,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_auth_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_auth_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:31:57.506004+00:00",
+      "sha256": "6e92676c6aa2d97982e536ac2d8ffd5037927adeace1b4bdc7f87b8b495c6bb8",
+      "truncated": false,
+      "url": "https://docs.deribit.com/articles/authentication.md"
+    },
+    "docs_book_md": {
+      "bytes": 20020,
+      "completion_utc": "2026-10-13T06:30:49.712566+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4c3f59fea0d6-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:49 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1310.6,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_book_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_book_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:48.402228+00:00",
+      "sha256": "8e4fa4a41a02ec720bc150d60d841cab0c2573cb87f92e6b07798b963898b191",
+      "truncated": false,
+      "url": "https://docs.deribit.com/api-reference/market-data/public-get_order_book.md"
+    },
+    "docs_buy_md": {
+      "bytes": 47801,
+      "completion_utc": "2026-10-13T06:30:50.783431+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4c45e8f1b86e-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:50 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1168.6,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_buy_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_buy_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:49.615086+00:00",
+      "sha256": "77800926bf14ed454dc647e1653a3e2a5a494e1a328e7211a88d179f91869a16",
+      "truncated": false,
+      "url": "https://docs.deribit.com/api-reference/trading/private-buy.md"
+    },
+    "docs_cancel_md": {
+      "bytes": 20720,
+      "completion_utc": "2026-10-13T06:30:50.822652+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4c462fc9a23e-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:50 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1011.1,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_cancel_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_cancel_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:49.811680+00:00",
+      "sha256": "a8bfc5c1c41e57f5b5a35da26439ed895719fbc11423c063081c307a170c6f80",
+      "truncated": false,
+      "url": "https://docs.deribit.com/api-reference/trading/private-cancel.md"
+    },
+    "docs_candles_md": {
+      "bytes": 9756,
+      "completion_utc": "2026-10-13T06:30:49.677011+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4c3f2afc2e5c-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:49 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1273.0,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_candles_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_candles_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:48.404196+00:00",
+      "sha256": "a2995395550d131380515d76a7e4d5dc216bc7a32274394ba9a8e5018ef1103d",
+      "truncated": false,
+      "url": "https://docs.deribit.com/api-reference/market-data/public-get_tradingview_chart_data.md"
+    },
+    "docs_contract_size_md": {
+      "bytes": 7133,
+      "completion_utc": "2026-10-13T06:31:59.811863+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4df47907d945-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:31:59 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1178.1,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_contract_size_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_contract_size_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:31:58.633961+00:00",
+      "sha256": "281943df1354393d738e0d9df3a78b14c4b2fa107df918c5869e617cd30e303c",
+      "truncated": false,
+      "url": "https://docs.deribit.com/api-reference/market-data/public-get_contract_size.md"
+    },
+    "docs_data_md": {
+      "bytes": 23874,
+      "completion_utc": "2026-10-13T06:31:58.580584+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4dedbeed3191-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:31:58 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1074.8,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_data_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_data_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:31:57.506051+00:00",
+      "sha256": "d04401a3fb774f03c16e8e6df80ffd506b496d59ec866614a2fb9b36176d5eae",
+      "truncated": false,
+      "url": "https://docs.deribit.com/articles/market-data-collection-best-practices.md"
+    },
+    "docs_edit_md": {
+      "bytes": 38477,
+      "completion_utc": "2026-10-13T06:30:50.805702+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4c45fab76e2a-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:50 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1035.2,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_edit_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_edit_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:49.770688+00:00",
+      "sha256": "8a333f0382fed8e8fe7c1827ae060e557495eb5b811304fd3e58b03b9df06906",
+      "truncated": false,
+      "url": "https://docs.deribit.com/api-reference/trading/private-edit.md"
+    },
+    "docs_funding_md": {
+      "bytes": 7598,
+      "completion_utc": "2026-10-13T06:30:49.558027+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4c3e4febb87b-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:49 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1163.6,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_funding_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_funding_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:48.394563+00:00",
+      "sha256": "9f1a41429af624b66a4030a41665a45ba63022502e3c922578e8aed1f4cd1175",
+      "truncated": false,
+      "url": "https://docs.deribit.com/api-reference/market-data/public-get_funding_rate_history.md"
+    },
+    "docs_historical_trades_md": {
+      "bytes": 12843,
+      "completion_utc": "2026-10-13T06:32:43.235074+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4f04dddaf814-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:32:43 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 977.2,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_historical_trades_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_historical_trades_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:32:42.258044+00:00",
+      "sha256": "199077187aed2de94e72ba9d4ae00ff18c4c2d3e8ad979a25184bebf1d305c5e",
+      "truncated": false,
+      "url": "https://docs.deribit.com/api-reference/market-data/public-get_last_trades_by_instrument_and_time.md"
+    },
+    "docs_index": {
+      "bytes": 8161,
+      "completion_utc": "2026-10-13T06:31:40.310595+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4d7749252a7e-CMH",
+        "content-type": "text/plain; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:31:39 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1752.8,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_index.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_index.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:31:38.558153+00:00",
+      "sha256": "b0900745e49de86f30c4fc705e7925dd4a2ac84619a405c862b21c58a1bc7992",
+      "truncated": false,
+      "url": "https://docs.deribit.com/_llms/production.txt"
+    },
+    "docs_instruments_md": {
+      "bytes": 30201,
+      "completion_utc": "2026-10-13T06:30:49.744736+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4c3f59b62f31-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:49 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1340.7,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_instruments_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_instruments_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:48.404246+00:00",
+      "sha256": "dafa54d23081be33179744c26fa647ad13c197e8a7a6e6792faa943464e58e5a",
+      "truncated": false,
+      "url": "https://docs.deribit.com/api-reference/market-data/public-get_instruments.md"
+    },
+    "docs_keys_md": {
+      "bytes": 8964,
+      "completion_utc": "2026-10-13T06:31:59.153421+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4ded6ab0f4e0-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:31:58 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1647.7,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_keys_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_keys_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:31:57.505951+00:00",
+      "sha256": "b432d9b6ba0b349b6879bee878e2305fec077e866d4c6e1948e99ea40a7ca610",
+      "truncated": false,
+      "url": "https://docs.deribit.com/articles/creating-api-key.md"
+    },
+    "docs_limits_md": {
+      "bytes": 18914,
+      "completion_utc": "2026-10-13T06:31:58.540118+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4ded7833a40c-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:31:58 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1034.4,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_limits_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_limits_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:31:57.505955+00:00",
+      "sha256": "fa7f604d9e93215f47dd6f7b8dd6c0f9be954c987ff636c1afb54ae489e50a6f",
+      "truncated": false,
+      "url": "https://docs.deribit.com/articles/rate-limits.md"
+    },
+    "docs_mark_md": {
+      "bytes": 6398,
+      "completion_utc": "2026-10-13T06:32:43.281162+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4f051c59f25b-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:32:43 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1032.5,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_mark_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_mark_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:32:42.249020+00:00",
+      "sha256": "21d70436b07ed782f731765631e2103a9cb1c08e8590d15e5f2c779bff0e3d49",
+      "truncated": false,
+      "url": "https://docs.deribit.com/api-reference/market-data/public-get_mark_price_history.md"
+    },
+    "docs_order_state_md": {
+      "bytes": 23072,
+      "completion_utc": "2026-10-13T06:31:59.681668+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4df48d90f814-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:31:59 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1024.8,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_order_state_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_order_state_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:31:58.657045+00:00",
+      "sha256": "09e6d3dfd2c60d7655362410ebfed271427ee279c7c7278cad0e0089295915d3",
+      "truncated": false,
+      "url": "https://docs.deribit.com/api-reference/trading/private-get_order_state.md"
+    },
+    "docs_orders_md": {
+      "bytes": 45186,
+      "completion_utc": "2026-10-13T06:31:58.599716+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4ded5d95386c-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:31:58 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1088.0,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_orders_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_orders_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:31:57.511890+00:00",
+      "sha256": "b3d273b397659afd1174c6d2ed2a429e841900e3670e885a528c5448946738df",
+      "truncated": false,
+      "url": "https://docs.deribit.com/articles/order-management-best-practices.md"
+    },
+    "docs_position_md": {
+      "bytes": 10971,
+      "completion_utc": "2026-10-13T06:32:00.250661+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4df7b918a40c-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:31:59 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1045.5,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_position_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_position_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:31:59.205628+00:00",
+      "sha256": "14d53ec0e1a1e7e318e35dffcc9266f0873f9f46603efb4d170160f90f5d41c7",
+      "truncated": false,
+      "url": "https://docs.deribit.com/api-reference/account-management/private-get_position.md"
+    },
+    "docs_sell_md": {
+      "bytes": 48073,
+      "completion_utc": "2026-10-13T06:30:50.928855+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4c45b81a86cd-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:50 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1190.1,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_sell_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_sell_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:49.738958+00:00",
+      "sha256": "b6c5c14199ef5b9221094dd6af5f59d1c430e0fd64af32abee6e570065775544",
+      "truncated": false,
+      "url": "https://docs.deribit.com/api-reference/trading/private-sell.md"
+    },
+    "docs_test_md": {
+      "bytes": 656,
+      "completion_utc": "2026-10-13T06:31:59.808514+00:00",
+      "error": "HTTP Error 404: Not Found",
+      "headers": {
+        "cf-ray": "a49c4df3e99c8a31-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:31:59 GMT"
+      },
+      "http_status": 404,
+      "latency_ms": 1205.5,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_test_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_test_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:31:58.603206+00:00",
+      "sha256": "79bb609bdb64c5d48d2e26dc4b38354887ecbcf77ef6533f18588f2dd8cca492",
+      "truncated": false,
+      "url": "https://docs.deribit.com/articles/testnet.md"
+    },
+    "docs_trades_md": {
+      "bytes": 12990,
+      "completion_utc": "2026-10-13T06:30:50.716701+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4c45adce4e12-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:50 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1109.2,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_trades_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_trades_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:49.607722+00:00",
+      "sha256": "eb9c06defed29b3c04799ccdef4ddbc5d16bfbed196d6d4e27460f931c83504a",
+      "truncated": false,
+      "url": "https://docs.deribit.com/api-reference/market-data/public-get_last_trades_by_instrument.md"
+    },
+    "docs_user_trades_md": {
+      "bytes": 21983,
+      "completion_utc": "2026-10-13T06:31:59.823615+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4df4abf20acb-CMH",
+        "content-type": "text/markdown; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:31:59 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1093.0,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_user_trades_md.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_user_trades_md.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:31:58.730807+00:00",
+      "sha256": "a6949780d1496cbd272fdf36c180674de0941b9c5431e19a331df1dde5f71985",
+      "truncated": false,
+      "url": "https://docs.deribit.com/api-reference/trading/private-get_user_trades_by_instrument.md"
+    },
+    "eth_book1": {
+      "bytes": 4098,
+      "completion_utc": "2026-10-13T06:28:15.771020+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c487cffc90ce7-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:15 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 576.9,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/eth_book1.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/eth_book1.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:15.194285+00:00",
+      "sha256": "937a1b4ba08a8927fe12657fa699e3f6f9f02d708f416753c23036d00c1f0e69",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_order_book?instrument_name=ETH_USDC-PERPETUAL&depth=100"
+    },
+    "eth_book2": {
+      "bytes": 4095,
+      "completion_utc": "2026-10-13T06:28:55.875880+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c49779b1ae9a0-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:55 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 945.6,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/eth_book2.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/eth_book2.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:54.930475+00:00",
+      "sha256": "9ab9fa4441810817cfa6b97a33a0de7459017e475da212d52a29f91759fa6a37",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_order_book?instrument_name=ETH_USDC-PERPETUAL&depth=100"
+    },
+    "eth_funding": {
+      "bytes": 3628,
+      "completion_utc": "2026-10-13T06:28:16.074487+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c487edb7e1deb-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:15 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 293.3,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/eth_funding.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/eth_funding.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:15.781285+00:00",
+      "sha256": "8d2cef19ee9ff669964c62dd2eb388e089b04e4b3449be2212db8617b2372c80",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_funding_rate_history?instrument_name=ETH_USDC-PERPETUAL&start_timestamp=1791763200000&end_timestamp=1791849600000"
+    },
+    "eth_instruments": {
+      "bytes": 10845,
+      "completion_utc": "2026-10-13T06:27:49.048230+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c47d609241deb-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:27:48 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1053.3,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/eth_instruments.json",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/eth_instruments.json.receipt.json",
+      "request_start_utc": "2026-10-13T06:27:47.995037+00:00",
+      "sha256": "3bb3aa57a4605ef149fab48f94e61a99d3215566f88ffd82c38762a2ab0032e9",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_instruments?currency=ETH&kind=future&expired=false"
+    },
+    "eth_m15now": {
+      "bytes": 1039,
+      "completion_utc": "2026-10-13T06:28:16.025567+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c487e9fa4da10-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:15 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 303.5,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/eth_m15now.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/eth_m15now.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:15.722218+00:00",
+      "sha256": "24abcba2874fc6777b7deaa066d7ab48a4104833cd272cacd7453b31b70bf555",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_tradingview_chart_data?instrument_name=ETH_USDC-PERPETUAL&start_timestamp=1791840000000&end_timestamp=1791849600000&resolution=15"
+    },
+    "eth_m15old": {
+      "bytes": 699,
+      "completion_utc": "2026-10-13T06:28:16.042542+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c487ebfbeda10-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:15 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 314.6,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/eth_m15old.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/eth_m15old.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:15.728055+00:00",
+      "sha256": "9877d40b2ee8207abc0f5565fd9fc755ab8528c861597b8b96f66d887342fdf2",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_tradingview_chart_data?instrument_name=ETH_USDC-PERPETUAL&start_timestamp=1728777600000&end_timestamp=1728784800000&resolution=15"
+    },
+    "eth_trades": {
+      "bytes": 1762,
+      "completion_utc": "2026-10-13T06:28:16.730929+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c488318b9436b-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:16 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 912.0,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/eth_trades.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/eth_trades.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:15.819074+00:00",
+      "sha256": "052b27ad42f845eff0c6c7cdad052adea4af3f550aa06db4b565fae20209c814",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_last_trades_by_instrument?instrument_name=ETH_USDC-PERPETUAL&count=5"
+    },
+    "eth_trades_old": {
+      "bytes": 135,
+      "completion_utc": "2026-10-13T06:35:39.085523+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c534fbdaeee0c-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:35:38 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 603.7,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/eth_trades_old.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/eth_trades_old.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:35:38.481960+00:00",
+      "sha256": "ffbf41237949ce4e4001de65159431f8ed837a047d45394228d95587f1d30c11",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_last_trades_by_instrument_and_time?instrument_name=ETH_USDC-PERPETUAL&start_timestamp=1728777600000&end_timestamp=1728778500000&count=10"
+    },
+    "fees_article": {
+      "bytes": 92248,
+      "completion_utc": "2026-10-13T06:35:13.390155+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c52ae4c25a424-DFW",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:35:13 GMT",
+        "x-request-id": "a49674d62e0566dd-DFW"
+      },
+      "http_status": 200,
+      "latency_ms": 448.9,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/fees_article.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/fees_article.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:35:12.941436+00:00",
+      "sha256": "ffc67ce20795930a2ecb622288c349c3b1d65ba837a2260b78f8e17b4fd417c8",
+      "truncated": false,
+      "url": "https://support.deribit.com/hc/en-us/articles/25944746248989-Fees"
+    },
+    "fees_click": {
+      "bytes": 0,
+      "completion_utc": "2026-10-13T06:35:08.574545+00:00",
+      "error": "HTTP Error 301: Moved Permanently",
+      "headers": {
+        "cf-ray": "a49c5290280fa424-DFW",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:35:08 GMT",
+        "location": "https://support.deribit.com/hc/en-us/articles/25944746248989-Fees",
+        "x-request-id": "7747d5f5-5560-4a20-80f6-54b9b85809e5"
+      },
+      "http_status": 301,
+      "latency_ms": 705.8,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/fees_click.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/fees_click.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:35:07.868849+00:00",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "truncated": false,
+      "url": "https://support.deribit.com/hc/en-us/search/click?data=BAh7DjoHaWRsKwgdS2K7mBc6D2FjY291bnRfaWRpAxCQJToJdHlwZUkiDGFydGljbGUGOgZFVDoIdXJsSSJGaHR0cHM6Ly9zdXBwb3J0LmRlcmliaXQuY29tL2hjL2VuLXVzL2FydGljbGVzLzI1OTQ0NzQ2MjQ4OTg5LUZlZXMGOwhUOg5zZWFyY2hfaWRJIilkMmFhYzljZS02NjFmLTRiZjEtYTYzNy1kOTMyMmQzZWNjZjEGOwhGOglyYW5raQY6C2xvY2FsZUkiCmVuLXVzBjsIVDoKcXVlcnlJIhF0cmFkaW5nIGZlZXMGOwhUOhJyZXN1bHRzX2NvdW50aQGi--26a3abb142948b64a143c8a7472b250c1dc2d896"
+    },
+    "funding_click": {
+      "bytes": 0,
+      "completion_utc": "2026-10-13T06:34:01.317907+00:00",
+      "error": "HTTP Error 301: Moved Permanently",
+      "headers": {
+        "cf-ray": "a49c50ebdaf2367c-DFW",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:34:01 GMT",
+        "location": "https://support.deribit.com/hc/en-us/articles/31424939178397-Funding-Specifications",
+        "x-request-id": "613e5809-1d45-4a20-8ec4-37268a35edf6"
+      },
+      "http_status": 301,
+      "latency_ms": 1238.8,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/funding_click.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/funding_click.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:34:00.079265+00:00",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "truncated": false,
+      "url": "https://support.deribit.com/hc/en-us/search/click?data=BAh7DjoHaWRsKwidOVawlBw6D2FjY291bnRfaWRpAxCQJToJdHlwZUkiDGFydGljbGUGOgZFVDoIdXJsSSJYaHR0cHM6Ly9zdXBwb3J0LmRlcmliaXQuY29tL2hjL2VuLXVzL2FydGljbGVzLzMxNDI0OTM5MTc4Mzk3LUZ1bmRpbmctU3BlY2lmaWNhdGlvbnMGOwhUOg5zZWFyY2hfaWRJIikxNWE3MzYzOC1kMjdlLTQyMzMtOTY4NC04NmRjOTk0MjE2NGMGOwhGOglyYW5raQY6C2xvY2FsZUkiCmVuLXVzBjsIVDoKcXVlcnlJIgxmdW5kaW5nBjsIVDoScmVzdWx0c19jb3VudGlJ--11197008b5d48de08866ab79a5c39bece360b4f6"
+    },
+    "funding_old_btc": {
+      "bytes": 3787,
+      "completion_utc": "2026-10-13T06:33:41.477436+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c507089cddd07-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:33:41 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1045.4,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/funding_old_btc.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/funding_old_btc.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:33:40.432220+00:00",
+      "sha256": "705311f2bc8dc807dbcb1f38a5e19ec59c38b7e86360a7bbaf9e05c7f4b1d434",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_funding_rate_history?instrument_name=BTC_USDC-PERPETUAL&start_timestamp=1728777600000&end_timestamp=1728864000000"
+    },
+    "funding_old_eth": {
+      "bytes": 3740,
+      "completion_utc": "2026-10-13T06:33:41.069876+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c506e0aaaddb0-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:33:40 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 637.9,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/funding_old_eth.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/funding_old_eth.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:33:40.432366+00:00",
+      "sha256": "ba75123434551d4fb66fde64b2e00518af44a598b26b5d7faf58a0f9d6cd19a3",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_funding_rate_history?instrument_name=ETH_USDC-PERPETUAL&start_timestamp=1728777600000&end_timestamp=1728864000000"
+    },
+    "funding_spec": {
+      "bytes": 76816,
+      "completion_utc": "2026-10-13T06:34:10.368665+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c5123dbde6bf6-DFW",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:34:10 GMT",
+        "x-request-id": "a49a2f82ec5e6c4d-DUB"
+      },
+      "http_status": 200,
+      "latency_ms": 1200.0,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/funding_spec.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/funding_spec.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:34:09.168897+00:00",
+      "sha256": "5d9024f4bd40022bf00d11a8e4f39b706d84b7f42ee0213dcbb14c29367c4310",
+      "truncated": false,
+      "url": "https://support.deribit.com/hc/en-us/articles/31424939178397-Funding-Specifications"
+    },
+    "isolated_article": {
+      "bytes": 63236,
+      "completion_utc": "2026-10-13T06:35:12.895756+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c52a96b0043ba-DFW",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:35:12 GMT",
+        "x-request-id": "43f284c5-e67c-40cf-9cab-e47d0d1a42f9"
+      },
+      "http_status": 200,
+      "latency_ms": 704.8,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/isolated_article.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/isolated_article.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:35:12.191180+00:00",
+      "sha256": "badd2f47089b59fdec55b11da076c0682078cac3c5ee09fe45b1d049c810db58",
+      "truncated": false,
+      "url": "https://support.deribit.com/hc/en-us/articles/25944777072669-Isolated-margin-availability"
+    },
+    "isolated_click": {
+      "bytes": 0,
+      "completion_utc": "2026-10-13T06:35:07.825501+00:00",
+      "error": "HTTP Error 301: Moved Permanently",
+      "headers": {
+        "cf-ray": "a49c5289788e8703-DFW",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:35:07 GMT",
+        "location": "https://support.deribit.com/hc/en-us/articles/25944777072669-Isolated-margin-availability",
+        "x-request-id": "fc7e7a81-8601-4604-9608-4b61d8a21d68"
+      },
+      "http_status": 301,
+      "latency_ms": 1478.1,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/isolated_click.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/isolated_click.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:35:06.347550+00:00",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "truncated": false,
+      "url": "https://support.deribit.com/hc/en-us/search/click?data=BAh7DjoHaWRsKwgdoDi9mBc6D2FjY291bnRfaWRpAxCQJToJdHlwZUkiDGFydGljbGUGOgZFVDoIdXJsSSJeaHR0cHM6Ly9zdXBwb3J0LmRlcmliaXQuY29tL2hjL2VuLXVzL2FydGljbGVzLzI1OTQ0Nzc3MDcyNjY5LUlzb2xhdGVkLW1hcmdpbi1hdmFpbGFiaWxpdHkGOwhUOg5zZWFyY2hfaWRJIilkZTZlMjAyMy01NDA0LTRkN2EtODFlZi1jNDAwMzAzMGJmMDIGOwhGOglyYW5raQY6C2xvY2FsZUkiCmVuLXVzBjsIVDoKcXVlcnlJIhRpc29sYXRlZCBtYXJnaW4GOwhUOhJyZXN1bHRzX2NvdW50aWI%3D--0cb1d2a0de853e89ab2c0744a62ad506a2f956be"
+    },
+    "llms": {
+      "bytes": 1715,
+      "completion_utc": "2026-10-13T06:30:49.564851+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4c3eb8852f31-CMH",
+        "content-type": "text/plain; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:30:49 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1158.1,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/llms.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/llms.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:48.406950+00:00",
+      "sha256": "80c7730f34310f27b64ed5beb739592b61be022d66891cafc06c3352d80a921a",
+      "truncated": false,
+      "url": "https://docs.deribit.com/llms.txt"
+    },
+    "mark_btc": {
+      "bytes": 108,
+      "completion_utc": "2026-10-13T06:33:41.377583+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c50701aa969c0-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:33:41 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 952.5,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/mark_btc.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/mark_btc.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:33:40.425279+00:00",
+      "sha256": "99abffe7f8ecb5432faba76f8c3fe263512f06264f96355db3aea5a052f292ab",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_mark_price_history?instrument_name=BTC_USDC-PERPETUAL&start_timestamp=1791840000000&end_timestamp=1791849600000"
+    },
+    "mark_eth": {
+      "bytes": 108,
+      "completion_utc": "2026-10-13T06:33:41.394428+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c5070399a61f3-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:33:41 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 962.2,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/mark_eth.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/mark_eth.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:33:40.432365+00:00",
+      "sha256": "aae21295d76f16d678fab9d42f276adc06b02366fba224beb8f76458a96b9068",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_mark_price_history?instrument_name=ETH_USDC-PERPETUAL&start_timestamp=1791840000000&end_timestamp=1791849600000"
+    },
+    "search_fees": {
+      "bytes": 78383,
+      "completion_utc": "2026-10-13T06:34:55.180944+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c52353a78367c-DFW",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:34:54 GMT",
+        "x-request-id": "cd876045-5b78-4bcc-bc8b-1a0f71555a8e"
+      },
+      "http_status": 200,
+      "latency_ms": 1623.6,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/search_fees.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/search_fees.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:34:53.557578+00:00",
+      "sha256": "16cb20cef4fa2be831855879a2c09470dbcbf3427fe96ea26fe40bdf7bd5b1f6",
+      "truncated": false,
+      "url": "https://support.deribit.com/hc/en-us/search?query=trading+fees"
+    },
+    "search_funding": {
+      "bytes": 77157,
+      "completion_utc": "2026-10-13T06:33:42.300244+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c50717e93a424-DFW",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:33:42 GMT",
+        "x-request-id": "fcf7bdcd-13ee-49dd-bc0a-4a9bf0e39b2f"
+      },
+      "http_status": 200,
+      "latency_ms": 1756.4,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/search_funding.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/search_funding.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:33:40.544051+00:00",
+      "sha256": "ddae8a3a591745501834325d5597b2234007cd8031e61f25f668432692bc6709",
+      "truncated": false,
+      "url": "https://support.deribit.com/hc/en-us/search?query=funding"
+    },
+    "search_isolated": {
+      "bytes": 77237,
+      "completion_utc": "2026-10-13T06:34:53.499799+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c522d2cf243ba-DFW",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:34:53 GMT",
+        "x-request-id": "5b954da8-e252-41e9-ac8d-b95301f58e9b"
+      },
+      "http_status": 200,
+      "latency_ms": 1946.0,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/search_isolated.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/search_isolated.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:34:51.554127+00:00",
+      "sha256": "2c00c26e62075e1ebd0d04210bde46d75f35833fbd96c57bf21396b3bdabd19a",
+      "truncated": false,
+      "url": "https://support.deribit.com/hc/en-us/search?query=isolated+margin"
+    },
+    "status": {
+      "bytes": 0,
+      "completion_utc": "2026-10-13T06:33:40.499402+00:00",
+      "error": "URLError(OSError('Tunnel connection failed: 403 Forbidden'))",
+      "headers": {},
+      "http_status": null,
+      "latency_ms": 64.2,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/status.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/status.bin.receipt.json",
+      "request_start_utc": "2026-10-13T06:33:40.435363+00:00",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "truncated": false,
+      "url": "https://status.deribit.com/"
+    },
+    "usdc_instruments": {
+      "bytes": 169086,
+      "completion_utc": "2026-10-13T06:27:47.951070+00:00",
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c47cd8d3bda10-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:27:47 GMT"
+      },
+      "http_status": 200,
+      "latency_ms": 1310.6,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/usdc_instruments.json",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/usdc_instruments.json.receipt.json",
+      "request_start_utc": "2026-10-13T06:27:46.640679+00:00",
+      "sha256": "24d302fe0af04a8efb0b97b934ad8ed4253ef65b3623484fdfbc2994df19448f",
+      "truncated": false,
+      "url": "https://www.deribit.com/api/v2/public/get_instruments?currency=USDC&kind=future&expired=false"
+    }
+  },
+  "venue": "deribit"
+}

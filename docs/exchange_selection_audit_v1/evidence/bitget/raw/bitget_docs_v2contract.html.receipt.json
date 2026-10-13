@@ -1,0 +1,13 @@
+{
+  "url": "https://docs.bitget.com/api-doc/contract/market/Get-All-Symbols-Contracts",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:26:52.428222+00:00",
+  "request_end_utc": "2026-10-13T06:26:52.501661+00:00",
+  "latency_ms": 73.63,
+  "status": null,
+  "headers": {},
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "bytes": 0,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_v2contract.html",
+  "error": "URLError(OSError('Tunnel connection failed: 403 Forbidden'))"
+}

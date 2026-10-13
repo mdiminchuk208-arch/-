@@ -1,0 +1,1144 @@
+{
+  "venue": "kraken_futures",
+  "sources": {
+    "api_docs_root": {
+      "source_id": "api_docs_root",
+      "url": "https://docs.kraken.com/api/docs/futures-api/",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:27.735291+00:00",
+      "response_utc": "2026-10-13T06:28:29.234416+00:00",
+      "latency_ms": 1499,
+      "http_status": 308,
+      "sha256": "d43c24417690a11a92924044ee5137cb6cd44a3c41273fc08e8c766993015002",
+      "bytes": 55,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:29 GMT",
+        "content-type": "application/json",
+        "location": "/api/docs/futures-api",
+        "server": "envoy"
+      },
+      "raw_path": "raw/api_docs_root.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "book_btc_1": {
+      "source_id": "book_btc_1",
+      "url": "https://futures.kraken.com/derivatives/api/v3/orderbook?symbol=PF_XBTUSD",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:14.317739+00:00",
+      "response_utc": "2026-10-13T06:28:15.392120+00:00",
+      "latency_ms": 1074,
+      "http_status": 200,
+      "sha256": "0c03b49580cdbe887c474ea51075534d2ce81a0161552d3d1f36b0b87d6447d8",
+      "bytes": 51798,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:15 GMT",
+        "content-type": "application/json",
+        "server": "envoy"
+      },
+      "raw_path": "raw/book_btc_1.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "book_btc_2": {
+      "source_id": "book_btc_2",
+      "url": "https://futures.kraken.com/derivatives/api/v3/orderbook?symbol=PF_XBTUSD",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:16.410331+00:00",
+      "response_utc": "2026-10-13T06:28:17.399332+00:00",
+      "latency_ms": 989,
+      "http_status": 200,
+      "sha256": "d6613996771d0b37d44b8f08d7a293688f4115953f415e2c1209b92a10989711",
+      "bytes": 51855,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:17 GMT",
+        "content-type": "application/json",
+        "server": "envoy"
+      },
+      "raw_path": "raw/book_btc_2.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "book_btc_3": {
+      "source_id": "book_btc_3",
+      "url": "https://futures.kraken.com/derivatives/api/v3/orderbook?symbol=PF_XBTUSD",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:53.448251+00:00",
+      "response_utc": "2026-10-13T06:30:53.729827+00:00",
+      "latency_ms": 281,
+      "http_status": 200,
+      "sha256": "c94532155094910e7c68b9e379dc0cfd22b0849d0a40ca784b7aaf5b801adef7",
+      "bytes": 51971,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:53 GMT",
+        "content-type": "application/json",
+        "server": "envoy"
+      },
+      "raw_path": "raw/book_btc_3.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "book_eth_1": {
+      "source_id": "book_eth_1",
+      "url": "https://futures.kraken.com/derivatives/api/v3/orderbook?symbol=PF_ETHUSD",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:15.392694+00:00",
+      "response_utc": "2026-10-13T06:28:16.409853+00:00",
+      "latency_ms": 1017,
+      "http_status": 200,
+      "sha256": "f5c26356a68381e49983c5931150c26198167338d9570e1ef76163f556969b53",
+      "bytes": 18444,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:16 GMT",
+        "content-type": "application/json",
+        "server": "envoy"
+      },
+      "raw_path": "raw/book_eth_1.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "book_eth_2": {
+      "source_id": "book_eth_2",
+      "url": "https://futures.kraken.com/derivatives/api/v3/orderbook?symbol=PF_ETHUSD",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:17.400062+00:00",
+      "response_utc": "2026-10-13T06:28:18.401856+00:00",
+      "latency_ms": 1001,
+      "http_status": 200,
+      "sha256": "e1b1269eebc1caf3be0131164963bb989098ab40e9498ea54136468388cd160e",
+      "bytes": 18462,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:18 GMT",
+        "content-type": "application/json",
+        "server": "envoy"
+      },
+      "raw_path": "raw/book_eth_2.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "book_eth_3": {
+      "source_id": "book_eth_3",
+      "url": "https://futures.kraken.com/derivatives/api/v3/orderbook?symbol=PF_ETHUSD",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:53.730577+00:00",
+      "response_utc": "2026-10-13T06:30:54.956580+00:00",
+      "latency_ms": 1226,
+      "http_status": 200,
+      "sha256": "45979434fcf5ef5f35dcf5fcf201c81a14aa99264f7f8514fe29d9f1df9d4385",
+      "bytes": 18382,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:54 GMT",
+        "content-type": "application/json",
+        "server": "envoy"
+      },
+      "raw_path": "raw/book_eth_3.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "chart_mark_btc_old": {
+      "source_id": "chart_mark_btc_old",
+      "url": "https://futures.kraken.com/api/charts/v1/mark/PF_XBTUSD/15m?from=1728777600&to=1728864000",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:32:23.498984+00:00",
+      "response_utc": "2026-10-13T06:32:24.526391+00:00",
+      "latency_ms": 1027,
+      "http_status": 200,
+      "sha256": "ada93693d742768e61d695cc330e0882cddea896c87c15a1d5610e186f62f2b7",
+      "bytes": 13579,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:32:24 GMT",
+        "content-type": "application/json",
+        "content-length": "13579",
+        "server": "envoy"
+      },
+      "raw_path": "raw/chart_mark_btc_old.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "chart_mark_eth_old": {
+      "source_id": "chart_mark_eth_old",
+      "url": "https://futures.kraken.com/api/charts/v1/mark/PF_ETHUSD/15m?from=1728777600&to=1728864000",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:32:24.526912+00:00",
+      "response_utc": "2026-10-13T06:32:25.548332+00:00",
+      "latency_ms": 1021,
+      "http_status": 200,
+      "sha256": "bc7ce433478abacbdc8bf60b20b7cd2766f5b52ea95151675b3d9f9fca21af63",
+      "bytes": 13568,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:32:25 GMT",
+        "content-type": "application/json",
+        "content-length": "13568",
+        "server": "envoy"
+      },
+      "raw_path": "raw/chart_mark_eth_old.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "charts_info": {
+      "source_id": "charts_info",
+      "url": "https://futures.kraken.com/api/charts/v1/",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:29:14.755415+00:00",
+      "response_utc": "2026-10-13T06:29:15.660010+00:00",
+      "latency_ms": 904,
+      "http_status": 200,
+      "sha256": "b0c3b79fa958cad8b4284c818c132eb123169b524bddca6eaeb702d647d95090",
+      "bytes": 23,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:29:15 GMT",
+        "content-type": "application/json",
+        "content-length": "23",
+        "server": "envoy"
+      },
+      "raw_path": "raw/charts_info.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "charts_trade_resolutions": {
+      "source_id": "charts_trade_resolutions",
+      "url": "https://futures.kraken.com/api/charts/v1/trade",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:29:44.338621+00:00",
+      "response_utc": "2026-10-13T06:29:45.335064+00:00",
+      "latency_ms": 996,
+      "http_status": 200,
+      "sha256": "bbaac9bcbab33c55c8df548cef156460d121740a5f2eccbbe45cf96fc39456ec",
+      "bytes": 11324,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:29:45 GMT",
+        "content-type": "application/json",
+        "content-length": "11324",
+        "server": "envoy"
+      },
+      "raw_path": "raw/charts_trade_resolutions.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_charts": {
+      "source_id": "docs_charts",
+      "url": "https://docs.kraken.com/api/docs/futures-api/charts/get-ohlc",
+      "method": "GET",
+      "request_start_utc": "2026-10-12T20:22:13.532218+00:00",
+      "response_utc": "2026-10-12T20:22:15.217834+00:00",
+      "latency_ms": 1685,
+      "http_status": 404,
+      "sha256": "8b6baa50fd714dec266db4044f8f3da54a0103234f697390ff4a6b4c44648253",
+      "bytes": 115311,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:22:15 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_charts.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_client_ids": {
+      "source_id": "docs_client_ids",
+      "url": "https://docs.kraken.com/exchange/guides/general/clordid",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:31:09.117881+00:00",
+      "response_utc": "2026-10-13T06:31:10.320606+00:00",
+      "latency_ms": 1202,
+      "http_status": 200,
+      "sha256": "6b718416a74cf714462f25ca27797ad6ea495225c70306db2d4d1a6f225c6103",
+      "bytes": 464580,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:31:09 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_client_ids.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_fee_schedule": {
+      "source_id": "docs_fee_schedule",
+      "url": "https://docs.kraken.com/api-reference/fee-schedules/get-fee-schedules",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:23.819877+00:00",
+      "response_utc": "2026-10-13T06:30:24.076623+00:00",
+      "latency_ms": 256,
+      "http_status": 200,
+      "sha256": "34bdd8a26be4fb7b20407c2ec3450a0ec91844123208cbe40f671f777a86434d",
+      "bytes": 526827,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:23 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_fee_schedule.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_funding": {
+      "source_id": "docs_funding",
+      "url": "https://docs.kraken.com/api/docs/futures-api/trading/get-historical-funding-rates",
+      "method": "GET",
+      "request_start_utc": "2026-10-12T20:22:15.218579+00:00",
+      "response_utc": "2026-10-12T20:22:15.842674+00:00",
+      "latency_ms": 624,
+      "http_status": 404,
+      "sha256": "e106842e63aabc9b5870a07d4051937d49e4809ae86a4351d3c83b5de11a4b28",
+      "bytes": 115374,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:22:15 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_funding.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_funding_history": {
+      "source_id": "docs_funding_history",
+      "url": "https://docs.kraken.com/api-reference/historical-funding-rates/historical-funding-rates",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:18.441019+00:00",
+      "response_utc": "2026-10-13T06:30:19.715565+00:00",
+      "latency_ms": 1274,
+      "http_status": 200,
+      "sha256": "195cb6b17cddd7fe6c1eaa1a9b0a7fdb7afde37a3f002bc415a028e6366ef3bd",
+      "bytes": 533425,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:19 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_funding_history.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_funding_new": {
+      "source_id": "docs_funding_new",
+      "url": "https://docs.kraken.com/api-reference/market-data/get-historical-funding-rates",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:29:12.484227+00:00",
+      "response_utc": "2026-10-13T06:29:13.209649+00:00",
+      "latency_ms": 725,
+      "http_status": 404,
+      "sha256": "b72a5b31e263cc79cbd3fa42e2248c9471d0b6860d56b798473817fd1586e0b4",
+      "bytes": 115196,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:29:13 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_funding_new.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_futures_guide": {
+      "source_id": "docs_futures_guide",
+      "url": "https://docs.kraken.com/exchange/guides/futures/",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:15.084530+00:00",
+      "response_utc": "2026-10-13T06:30:16.552797+00:00",
+      "latency_ms": 1468,
+      "http_status": 307,
+      "sha256": "d977b36219064e171ca2faa282f7044baff800dd29aae85b3605f5d97981e210",
+      "bytes": 111841,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:16 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "111841",
+        "location": "/exchange/guides/futures/introduction",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_futures_guide.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_futures_intro": {
+      "source_id": "docs_futures_intro",
+      "url": "https://docs.kraken.com/api/docs/guides/futures-introduction",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:29:13.210358+00:00",
+      "response_utc": "2026-10-13T06:29:14.286721+00:00",
+      "latency_ms": 1076,
+      "http_status": 308,
+      "sha256": "773a66be6de90b06b31fad69378445792f7ecb7e39acf6b83f11b9e7e672b8ec",
+      "bytes": 111884,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:29:14 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "111884",
+        "location": "/exchange/guides/futures/introduction",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_futures_intro.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_futures_intro_new": {
+      "source_id": "docs_futures_intro_new",
+      "url": "https://docs.kraken.com/exchange/guides/futures/introduction",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:48.704372+00:00",
+      "response_utc": "2026-10-13T06:30:48.966341+00:00",
+      "latency_ms": 261,
+      "http_status": 200,
+      "sha256": "4874f268843b43bf6f6c6fd939e80af8798619af9d90d5c7f8b738a7580dc1f7",
+      "bytes": 474688,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:48 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_futures_intro_new.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_futures_limits": {
+      "source_id": "docs_futures_limits",
+      "url": "https://docs.kraken.com/exchange/guides/futures/ratelimits",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:31:07.265485+00:00",
+      "response_utc": "2026-10-13T06:31:07.489718+00:00",
+      "latency_ms": 224,
+      "http_status": 200,
+      "sha256": "cb37421671014b5c97e159af7d09dc39e6e517e44ee08cf82f92bb7fa667c7ed",
+      "bytes": 433488,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:31:07 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_futures_limits.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_futures_rest": {
+      "source_id": "docs_futures_rest",
+      "url": "https://docs.kraken.com/exchange/guides/futures/rest",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:31:06.645972+00:00",
+      "response_utc": "2026-10-13T06:31:06.880823+00:00",
+      "latency_ms": 234,
+      "http_status": 200,
+      "sha256": "c7b1b0d6327365bac8c014a183d151394a0fd04181b14f7dde25a3fd674b8048",
+      "bytes": 484710,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:31:06 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_futures_rest.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_futures_root": {
+      "source_id": "docs_futures_root",
+      "url": "https://docs.kraken.com/api/docs/futures-api",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:29:14.287529+00:00",
+      "response_utc": "2026-10-13T06:29:14.754706+00:00",
+      "latency_ms": 467,
+      "http_status": 404,
+      "sha256": "8766e857a2a3908adc4bace28d4721bca6b0afcaf6ab6504dbb3d4d1c3f4b56c",
+      "bytes": 115255,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:29:14 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_futures_root.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_futures_ws": {
+      "source_id": "docs_futures_ws",
+      "url": "https://docs.kraken.com/exchange/guides/futures/websockets",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:31:06.881972+00:00",
+      "response_utc": "2026-10-13T06:31:07.264233+00:00",
+      "latency_ms": 382,
+      "http_status": 200,
+      "sha256": "1fed9694a55bfb9f2361618a420d705df5cec5b6ded86bf1f22dbcb3f9bd91ec",
+      "bytes": 457827,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:31:06 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_futures_ws.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_general_history": {
+      "source_id": "docs_general_history",
+      "url": "https://docs.kraken.com/exchange/guides/general/historical-data",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:31:07.490648+00:00",
+      "response_utc": "2026-10-13T06:31:08.870299+00:00",
+      "latency_ms": 1379,
+      "http_status": 200,
+      "sha256": "81e0d6fb9d829f703d016e0eb34b5d51cf26f76107cc60b44f2d6260c80d34eb",
+      "bytes": 548288,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:31:08 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_general_history.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_index": {
+      "source_id": "docs_index",
+      "url": "https://docs.kraken.com/llms.txt",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:29:42.641068+00:00",
+      "response_utc": "2026-10-13T06:29:44.338086+00:00",
+      "latency_ms": 1697,
+      "http_status": 200,
+      "sha256": "6adee1317c2db36dd79366c0ebfb0c48c0df76b6dbdb9572ba5f5baeddc43b14",
+      "bytes": 4501,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:29:44 GMT",
+        "content-type": "text/plain; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_index.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_instrument_status": {
+      "source_id": "docs_instrument_status",
+      "url": "https://docs.kraken.com/api-reference/instrument-details/get-instrument-status-list",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:22.658709+00:00",
+      "response_utc": "2026-10-13T06:30:22.927644+00:00",
+      "latency_ms": 268,
+      "http_status": 200,
+      "sha256": "f4906297ad9ad8804f138135030e317904c2bf14e7d2516a0f7de37e7b786638",
+      "bytes": 524854,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:22 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_instrument_status.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_instruments": {
+      "source_id": "docs_instruments",
+      "url": "https://docs.kraken.com/api/docs/futures-api/trading/get-instruments",
+      "method": "GET",
+      "request_start_utc": "2026-10-12T20:22:11.459061+00:00",
+      "response_utc": "2026-10-12T20:22:12.497018+00:00",
+      "latency_ms": 1037,
+      "http_status": 308,
+      "sha256": "646b683ea49f89b0848c92b5406f874f3566e1d8173cad8ead088cf4cb41c761",
+      "bytes": 111967,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:22:12 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "111967",
+        "location": "/api-reference/instrument-details/get-instruments",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_instruments.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_instruments_canonical": {
+      "source_id": "docs_instruments_canonical",
+      "url": "https://docs.kraken.com/api/docs/futures-api/trading/get-instruments/",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:26.257495+00:00",
+      "response_utc": "2026-10-13T06:28:27.734489+00:00",
+      "latency_ms": 1477,
+      "http_status": 308,
+      "sha256": "646b683ea49f89b0848c92b5406f874f3566e1d8173cad8ead088cf4cb41c761",
+      "bytes": 111967,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:27 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "111967",
+        "location": "/api-reference/instrument-details/get-instruments",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_instruments_canonical.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_instruments_new": {
+      "source_id": "docs_instruments_new",
+      "url": "https://docs.kraken.com/api-reference/instrument-details/get-instruments",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:29:09.629496+00:00",
+      "response_utc": "2026-10-13T06:29:11.273083+00:00",
+      "latency_ms": 1643,
+      "http_status": 200,
+      "sha256": "4fb3bfc78550d189d4d6c5920a92c37e06c308f64fed576c5f7285907d3d8c0c",
+      "bytes": 633100,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:29:10 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_instruments_new.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_key_permissions": {
+      "source_id": "docs_key_permissions",
+      "url": "https://docs.kraken.com/exchange/guides/rest/api-keys",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:31:08.871275+00:00",
+      "response_utc": "2026-10-13T06:31:09.112665+00:00",
+      "latency_ms": 241,
+      "http_status": 200,
+      "sha256": "6c3b669b75529b71181007fca431e7a6a95ae78ac0c6f34949e0db23e4ba7f95",
+      "bytes": 457792,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:31:08 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_key_permissions.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_leverage": {
+      "source_id": "docs_leverage",
+      "url": "https://docs.kraken.com/api-reference/multi-collateral/set-leverage-settings",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:19.716490+00:00",
+      "response_utc": "2026-10-13T06:30:20.968790+00:00",
+      "latency_ms": 1252,
+      "http_status": 200,
+      "sha256": "431f998614ff2f34af7f7efb265c3fc6a8b4c420129d3fe42369cb63f72adbb3",
+      "bytes": 531227,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:20 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_leverage.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_openapi": {
+      "source_id": "docs_openapi",
+      "url": "https://docs.kraken.com/openapi/futures-rest.yaml",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:32:22.106686+00:00",
+      "response_utc": "2026-10-13T06:32:23.498134+00:00",
+      "latency_ms": 1391,
+      "http_status": 200,
+      "sha256": "671859c6d4a7e53a9a0b57e29a3d345574b0ca5b57b612442426347bcff6a432",
+      "bytes": 255248,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:32:23 GMT",
+        "content-type": "text/yaml",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_openapi.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_order_lifecycle": {
+      "source_id": "docs_order_lifecycle",
+      "url": "https://docs.kraken.com/exchange/guides/general/order-lifecycle",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:31:10.321538+00:00",
+      "response_utc": "2026-10-13T06:31:10.567265+00:00",
+      "latency_ms": 245,
+      "http_status": 200,
+      "sha256": "2c9327dc61406c78681591b1d89f76456d48c5ed1fe99dbf4b7a830dec35c235",
+      "bytes": 541531,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:31:10 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_order_lifecycle.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_order_status": {
+      "source_id": "docs_order_status",
+      "url": "https://docs.kraken.com/api-reference/order-management/get-specific-orders-status",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:20.969623+00:00",
+      "response_utc": "2026-10-13T06:30:22.374615+00:00",
+      "latency_ms": 1405,
+      "http_status": 200,
+      "sha256": "f09934d505b3d952acac728ae22db38c8a3dd727c90ec0815a63169acbedd4a8",
+      "bytes": 555877,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:21 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_order_status.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_orderbook_new": {
+      "source_id": "docs_orderbook_new",
+      "url": "https://docs.kraken.com/api-reference/market-data/get-orderbook",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:29:11.274311+00:00",
+      "response_utc": "2026-10-13T06:29:12.483168+00:00",
+      "latency_ms": 1208,
+      "http_status": 200,
+      "sha256": "77ed83bec1aa96b7143a67d1befc51401fff799842ad7cc7e1af9a21fb25969b",
+      "bytes": 527988,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:29:11 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_orderbook_new.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_send_order": {
+      "source_id": "docs_send_order",
+      "url": "https://docs.kraken.com/api-reference/order-management/send-order",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:16.553573+00:00",
+      "response_utc": "2026-10-13T06:30:18.439980+00:00",
+      "latency_ms": 1886,
+      "http_status": 200,
+      "sha256": "55e60e092119660055686539ad4530b83364118744a3c4cfac22a98570dc2898",
+      "bytes": 646231,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:17 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_send_order.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_ticker": {
+      "source_id": "docs_ticker",
+      "url": "https://docs.kraken.com/api-reference/market-data/get-tickers",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:22.928506+00:00",
+      "response_utc": "2026-10-13T06:30:23.818882+00:00",
+      "latency_ms": 890,
+      "http_status": 200,
+      "sha256": "a860bc75cdf8f1ebe1e6813d95dfbd9bc2cb51470f3daa944f45d6bf8d66f5cc",
+      "bytes": 556129,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:22 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_ticker.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_trade_history": {
+      "source_id": "docs_trade_history",
+      "url": "https://docs.kraken.com/api-reference/market-data/get-trade-history",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:22.375634+00:00",
+      "response_utc": "2026-10-13T06:30:22.657516+00:00",
+      "latency_ms": 281,
+      "http_status": 200,
+      "sha256": "c42b7df6026cfa7f108c0fa2c80daa7d015bd5a037674df70bef7bb178977903",
+      "bytes": 544048,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:22 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_trade_history.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_ws_checksum": {
+      "source_id": "docs_ws_checksum",
+      "url": "https://docs.kraken.com/exchange/guides/websockets/book-checksum-v1",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:31:10.568305+00:00",
+      "response_utc": "2026-10-13T06:31:10.803219+00:00",
+      "latency_ms": 234,
+      "http_status": 200,
+      "sha256": "8825456ac026e403bc26576a6394ad25c717a46e018f8d6890e52bbea61bb1b0",
+      "bytes": 481414,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:31:10 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/docs_ws_checksum.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "fees_page": {
+      "source_id": "fees_page",
+      "url": "https://www.kraken.com/features/fee-schedule",
+      "method": "GET",
+      "request_start_utc": "2026-10-12T20:22:12.497641+00:00",
+      "response_utc": "2026-10-12T20:22:13.530378+00:00",
+      "latency_ms": 1032,
+      "http_status": 200,
+      "sha256": "480475c3b7803ed1486fe69d5ef1d1b35ee58f091d785fba9319b9dbf1059839",
+      "bytes": 1375558,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:22:13 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "server": "envoy"
+      },
+      "raw_path": "raw/fees_page.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "funding_btc": {
+      "source_id": "funding_btc",
+      "url": "https://futures.kraken.com/derivatives/api/v3/historicalfundingrates?symbol=PF_XBTUSD",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:24.410455+00:00",
+      "response_utc": "2026-10-13T06:28:25.349620+00:00",
+      "latency_ms": 939,
+      "http_status": 404,
+      "sha256": "3e7bca729e76efdbba3e423f8031322c9026c41b25511bf8339716be639358a9",
+      "bytes": 127,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:25 GMT",
+        "content-type": "application/json",
+        "server": "envoy"
+      },
+      "raw_path": "raw/funding_btc.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "funding_eth": {
+      "source_id": "funding_eth",
+      "url": "https://futures.kraken.com/derivatives/api/v3/historicalfundingrates?symbol=PF_ETHUSD",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:25.350132+00:00",
+      "response_utc": "2026-10-13T06:28:26.257050+00:00",
+      "latency_ms": 906,
+      "http_status": 404,
+      "sha256": "3340e7e2f3c71adc6602683aa2c315bf219e6102a6e02f1e90d61f8f64d7a657",
+      "bytes": 127,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:26 GMT",
+        "content-type": "application/json",
+        "server": "envoy"
+      },
+      "raw_path": "raw/funding_eth.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "funding_v3_btc": {
+      "source_id": "funding_v3_btc",
+      "url": "https://futures.kraken.com/derivatives/api/v3/historical-funding-rates?symbol=PF_XBTUSD",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:48.967415+00:00",
+      "response_utc": "2026-10-13T06:30:50.475052+00:00",
+      "latency_ms": 1507,
+      "http_status": 200,
+      "sha256": "1f7aaa26d7db2f475e3b799e12e418170cebd96abdd2c38356090f4d0b88f314",
+      "bytes": 1027418,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:49 GMT",
+        "content-type": "application/json",
+        "server": "envoy"
+      },
+      "raw_path": "raw/funding_v3_btc.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "funding_v3_eth": {
+      "source_id": "funding_v3_eth",
+      "url": "https://futures.kraken.com/derivatives/api/v3/historical-funding-rates?symbol=PF_ETHUSD",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:50.476577+00:00",
+      "response_utc": "2026-10-13T06:30:51.992658+00:00",
+      "latency_ms": 1516,
+      "http_status": 200,
+      "sha256": "2a89306ab0449e7a6c68fdde612e13ddb30dfa7f979e4ce0a250c2919b6455fc",
+      "bytes": 1027827,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:51 GMT",
+        "content-type": "application/json",
+        "server": "envoy"
+      },
+      "raw_path": "raw/funding_v3_eth.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "funding_v4_btc": {
+      "source_id": "funding_v4_btc",
+      "url": "https://futures.kraken.com/derivatives/api/v4/historicalfundingrates?symbol=PF_XBTUSD",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:29:15.660458+00:00",
+      "response_utc": "2026-10-13T06:29:17.235831+00:00",
+      "latency_ms": 1575,
+      "http_status": 200,
+      "sha256": "c068dcfa548d8be092419a756eddef2b4c97081d02b68cacb269dec314685587",
+      "bytes": 1027418,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:29:16 GMT",
+        "content-type": "application/json",
+        "server": "envoy"
+      },
+      "raw_path": "raw/funding_v4_btc.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "funding_v4_eth": {
+      "source_id": "funding_v4_eth",
+      "url": "https://futures.kraken.com/derivatives/api/v4/historicalfundingrates?symbol=PF_ETHUSD",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:29:17.237208+00:00",
+      "response_utc": "2026-10-13T06:29:18.805499+00:00",
+      "latency_ms": 1568,
+      "http_status": 200,
+      "sha256": "defcdf8a41f0d3ed19bf5d93c537a8c04f368671c8d49d931e465bdc0428c6e3",
+      "bytes": 1027827,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:29:18 GMT",
+        "content-type": "application/json",
+        "server": "envoy"
+      },
+      "raw_path": "raw/funding_v4_eth.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "instruments": {
+      "source_id": "instruments",
+      "url": "https://futures.kraken.com/derivatives/api/v3/instruments",
+      "method": "GET",
+      "request_start_utc": "2026-10-12T20:22:10.272511+00:00",
+      "response_utc": "2026-10-12T20:22:11.457499+00:00",
+      "latency_ms": 1185,
+      "http_status": 200,
+      "sha256": "4e91a454e4b2acb441cabffe45ca870f9b79a678527eeafa8a7533380089dd65",
+      "bytes": 849383,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:22:10 GMT",
+        "content-type": "application/json",
+        "server": "envoy"
+      },
+      "raw_path": "raw/instruments.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "m15_btc_now": {
+      "source_id": "m15_btc_now",
+      "url": "https://futures.kraken.com/api/charts/v1/trade/PF_XBTUSD/15m?from=1791676800&to=1791763200",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:22.266476+00:00",
+      "response_utc": "2026-10-13T06:28:23.441061+00:00",
+      "latency_ms": 1174,
+      "http_status": 200,
+      "sha256": "7b8716712b189785a26eac212c0066b4d294c07273a6960b2da7d8dda0552f10",
+      "bytes": 10401,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:23 GMT",
+        "content-type": "application/json",
+        "content-length": "10401",
+        "server": "envoy"
+      },
+      "raw_path": "raw/m15_btc_now.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "m15_btc_old": {
+      "source_id": "m15_btc_old",
+      "url": "https://futures.kraken.com/api/charts/v1/trade/PF_XBTUSD/15m?from=1728777600&to=1728864000",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:20.312045+00:00",
+      "response_utc": "2026-10-13T06:28:21.274492+00:00",
+      "latency_ms": 962,
+      "http_status": 200,
+      "sha256": "d6d3c8a437c011731c32e712cfcca3add7a21087d37da596e6278847cb5ccfec",
+      "bytes": 10081,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:21 GMT",
+        "content-type": "application/json",
+        "content-length": "10081",
+        "server": "envoy"
+      },
+      "raw_path": "raw/m15_btc_old.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "m15_eth_now": {
+      "source_id": "m15_eth_now",
+      "url": "https://futures.kraken.com/api/charts/v1/trade/PF_ETHUSD/15m?from=1791676800&to=1791763200",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:23.441543+00:00",
+      "response_utc": "2026-10-13T06:28:24.409717+00:00",
+      "latency_ms": 968,
+      "http_status": 200,
+      "sha256": "b4f112231c3c396aeed86baedd3631920d46485eac3cbf0ec6133e3e404c36ef",
+      "bytes": 10761,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:24 GMT",
+        "content-type": "application/json",
+        "content-length": "10761",
+        "server": "envoy"
+      },
+      "raw_path": "raw/m15_eth_now.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "m15_eth_old": {
+      "source_id": "m15_eth_old",
+      "url": "https://futures.kraken.com/api/charts/v1/trade/PF_ETHUSD/15m?from=1728777600&to=1728864000",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:21.274995+00:00",
+      "response_utc": "2026-10-13T06:28:22.266020+00:00",
+      "latency_ms": 991,
+      "http_status": 200,
+      "sha256": "17317f0d8a1bfdd01b76edf8f6b9920afef5a2fcffaef69a29c21c3c47447256",
+      "bytes": 10358,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:22 GMT",
+        "content-type": "application/json",
+        "content-length": "10358",
+        "server": "envoy"
+      },
+      "raw_path": "raw/m15_eth_old.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "status_page": {
+      "source_id": "status_page",
+      "url": "https://status.kraken.com/",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:29.234842+00:00",
+      "response_utc": "2026-10-13T06:28:31.113278+00:00",
+      "latency_ms": 1878,
+      "http_status": 200,
+      "sha256": "e5f30fd7018107dacfca7b9254196c6b00cb354534bb1c5370b581b63d197573",
+      "bytes": 834241,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:28:30 GMT",
+        "server": "envoy"
+      },
+      "raw_path": "raw/status_page.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "support_futures_specs": {
+      "source_id": "support_futures_specs",
+      "url": "https://support.kraken.com/articles/360022835672-futures-contract-specifications",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:34:29.143186+00:00",
+      "response_utc": "2026-10-13T06:34:30.416233+00:00",
+      "latency_ms": 1273,
+      "http_status": 404,
+      "sha256": "19f13b487c49796a7e47e0335203de8c921ec5594325a21592fea46593b15262",
+      "bytes": 8898,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:34:30 GMT",
+        "content-type": "text/html",
+        "server": "envoy"
+      },
+      "raw_path": "raw/support_futures_specs.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "support_search_pf": {
+      "source_id": "support_search_pf",
+      "url": "https://support.kraken.com/hc/en-us/search?query=PF_XBTUSD%20contract%20size",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:32:56.220693+00:00",
+      "response_utc": "2026-10-13T06:32:57.048959+00:00",
+      "latency_ms": 828,
+      "http_status": 308,
+      "sha256": "590a535b09bcbcc188c579b8f5467b765b867e486bbc2cb808e75cbb95003c8d",
+      "bytes": 132,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:32:56 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://support.kraken.com/en-us/search?query=multi-collateral%20futures%20contract%20size",
+        "server": "envoy"
+      },
+      "raw_path": "raw/support_search_pf.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "support_search_pf_canonical": {
+      "source_id": "support_search_pf_canonical",
+      "url": "https://support.kraken.com/en-us/search?query=PF_XBTUSD%20contract%20size",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:34:28.180605+00:00",
+      "response_utc": "2026-10-13T06:34:29.142213+00:00",
+      "latency_ms": 961,
+      "http_status": 301,
+      "sha256": "e174e0eb80cbef583d57faef56701cd083461706442e479257d889ac380c426f",
+      "bytes": 132,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:34:29 GMT",
+        "content-type": "text/html",
+        "location": "https://support.kraken.com/search?query=PF_XBTUSD%20contract%20size",
+        "server": "envoy"
+      },
+      "raw_path": "raw/support_search_pf_canonical.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "support_search_size": {
+      "source_id": "support_search_size",
+      "url": "https://support.kraken.com/hc/en-us/search?query=multi-collateral%20futures%20contract%20size",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:32:55.230827+00:00",
+      "response_utc": "2026-10-13T06:32:56.220208+00:00",
+      "latency_ms": 989,
+      "http_status": 308,
+      "sha256": "590a535b09bcbcc188c579b8f5467b765b867e486bbc2cb808e75cbb95003c8d",
+      "bytes": 132,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:32:56 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://support.kraken.com/en-us/search?query=multi-collateral%20futures%20contract%20size",
+        "server": "envoy"
+      },
+      "raw_path": "raw/support_search_size.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "support_search_size_canonical": {
+      "source_id": "support_search_size_canonical",
+      "url": "https://support.kraken.com/en-us/search?query=multi-collateral%20futures%20contract%20size",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:34:27.179135+00:00",
+      "response_utc": "2026-10-13T06:34:28.180078+00:00",
+      "latency_ms": 1000,
+      "http_status": 301,
+      "sha256": "e174e0eb80cbef583d57faef56701cd083461706442e479257d889ac380c426f",
+      "bytes": 132,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:34:28 GMT",
+        "content-type": "text/html",
+        "location": "https://support.kraken.com/search?query=multi-collateral%20futures%20contract%20size",
+        "server": "envoy"
+      },
+      "raw_path": "raw/support_search_size_canonical.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "ticker_btc": {
+      "source_id": "ticker_btc",
+      "url": "https://futures.kraken.com/derivatives/api/v3/tickers?symbol=PF_XBTUSD",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:18.402419+00:00",
+      "response_utc": "2026-10-13T06:28:19.372110+00:00",
+      "latency_ms": 969,
+      "http_status": 200,
+      "sha256": "0fefebccd55848dbcee5aa7e69f48a55cca9ae102dfaa160081cd2fd6883871e",
+      "bytes": 698,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:19 GMT",
+        "content-type": "application/json",
+        "content-length": "698",
+        "server": "envoy"
+      },
+      "raw_path": "raw/ticker_btc.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "ticker_eth": {
+      "source_id": "ticker_eth",
+      "url": "https://futures.kraken.com/derivatives/api/v3/tickers?symbol=PF_ETHUSD",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:19.372598+00:00",
+      "response_utc": "2026-10-13T06:28:20.311531+00:00",
+      "latency_ms": 938,
+      "http_status": 200,
+      "sha256": "f412dd86b4a844afb72c7088f95343b6003c9a6b29227e980d9430db6aa24f50",
+      "bytes": 676,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:20 GMT",
+        "content-type": "application/json",
+        "content-length": "676",
+        "server": "envoy"
+      },
+      "raw_path": "raw/ticker_eth.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "trade_history_btc": {
+      "source_id": "trade_history_btc",
+      "url": "https://futures.kraken.com/derivatives/api/v3/history?symbol=PF_XBTUSD",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:51.993905+00:00",
+      "response_utc": "2026-10-13T06:30:52.528102+00:00",
+      "latency_ms": 534,
+      "http_status": 200,
+      "sha256": "8a70dc023effe7c7a2ba4c2decf441502b4f03d80d208931a204970b182232be",
+      "bytes": 18314,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:52 GMT",
+        "content-type": "application/json",
+        "server": "envoy"
+      },
+      "raw_path": "raw/trade_history_btc.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "trade_history_eth": {
+      "source_id": "trade_history_eth",
+      "url": "https://futures.kraken.com/derivatives/api/v3/history?symbol=PF_ETHUSD",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:52.528580+00:00",
+      "response_utc": "2026-10-13T06:30:53.447632+00:00",
+      "latency_ms": 919,
+      "http_status": 200,
+      "sha256": "583159c0b28fa22ce24b101c9739adb84a22145e2c742f82311f495a63a5f318",
+      "bytes": 18169,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:53 GMT",
+        "content-type": "application/json",
+        "server": "envoy"
+      },
+      "raw_path": "raw/trade_history_eth.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    }
+  }
+}

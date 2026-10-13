@@ -1,0 +1,17 @@
+{
+  "url": "https://bybit-exchange.github.io/docs/v5/user/apikey-info",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:30:34.411456+00:00",
+  "request_end_utc": "2026-10-13T06:30:35.509109+00:00",
+  "latency_ms": 1097.83,
+  "status": 200,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "max-age=600",
+    "date": "Tue, 13 Oct 2026 06:30:35 GMT"
+  },
+  "sha256": "f4b23e04f00533fa37d2a8a4c3a06913a5a8a049d23bb9bfb9d7f78696cd5a89",
+  "bytes": 83340,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_apikey_info.html",
+  "error": null
+}

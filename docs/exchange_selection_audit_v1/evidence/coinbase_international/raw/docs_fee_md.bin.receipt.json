@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.cdp.coinbase.com/api-reference/international-exchange-api/rest-api/fee-rates/list-fee-rate-tiers.md",
+  "request_start_utc": "2026-10-13T06:29:44.444369+00:00",
+  "completion_utc": "2026-10-13T06:29:45.584790+00:00",
+  "latency_ms": 1140.6,
+  "http_status": 200,
+  "sha256": "983f6b08a755b9afe66b2731a056ade1e7be147ed1ac76370e11ccd626ed95f3",
+  "bytes": 4765,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4aade84514c2-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:29:45 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_fee_md.bin"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "hl_docs_funding",
+  "venue": "hyperliquid",
+  "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/funding",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-12T20:21:25.878451+00:00",
+  "completed_utc": "2026-10-12T20:21:26.576002+00:00",
+  "latency_ms": 697.69,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:26 GMT",
+    "content-type": "text/plain; charset=utf-8"
+  },
+  "raw_path": "raw/hl_docs_funding.bin",
+  "raw_sha256": "126d1a0489517bad351787542d555a0de25339c69fd544a0d8d283ae172d234c",
+  "raw_bytes": 4777,
+  "truncated": false
+}

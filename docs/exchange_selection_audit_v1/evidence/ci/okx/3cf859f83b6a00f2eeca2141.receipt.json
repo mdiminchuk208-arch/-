@@ -1,0 +1,21 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-type": "application/json;charset=UTF-8",
+    "date": "Tue, 13 Oct 2026 06:39:02 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "334.508",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 22438,
+  "raw_file": "3cf859f83b6a00f2eeca2141.body",
+  "raw_sha256": "c670b0376780bbb6ac09bc7da46d24547c5029f02731f6cc873b681ebeb723ac",
+  "request_started_at": "2026-10-13T06:39:02.326590+00:00",
+  "response_completed_at": "2026-10-13T06:39:02.660975+00:00",
+  "source_kind": "book_ETH_second",
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/market/books?instId=ETH-USDT-SWAP&sz=400"
+}

@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c469c1953d230-DFW",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:26:58 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1040.9,
+  "method": "GET",
+  "raw_length": 25274,
+  "raw_path": "kc_btc_book_1.raw",
+  "raw_sha256": "e74bab2a55afce4d4c8d92c3d42ae0f58ab6a2f7dce4539cf49fc37dcda5b9db",
+  "request_start_utc": "2026-10-13T06:26:57.819480+00:00",
+  "retrieval_utc": "2026-10-13T06:26:58.860141+00:00",
+  "source_id": "kc_btc_book_1",
+  "status": 200,
+  "truncated": false,
+  "url": "https://api-futures.kucoin.com/api/v1/level2/snapshot?symbol=XBTUSDTM"
+}

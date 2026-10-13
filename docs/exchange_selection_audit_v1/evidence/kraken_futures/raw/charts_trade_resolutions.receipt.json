@@ -1,0 +1,19 @@
+{
+  "source_id": "charts_trade_resolutions",
+  "url": "https://futures.kraken.com/api/charts/v1/trade",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:29:44.338621+00:00",
+  "response_utc": "2026-10-13T06:29:45.335064+00:00",
+  "latency_ms": 996,
+  "http_status": 200,
+  "sha256": "bbaac9bcbab33c55c8df548cef156460d121740a5f2eccbbe45cf96fc39456ec",
+  "bytes": 11324,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:29:45 GMT",
+    "content-type": "application/json",
+    "content-length": "11324",
+    "server": "envoy"
+  },
+  "raw_path": "raw/charts_trade_resolutions.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

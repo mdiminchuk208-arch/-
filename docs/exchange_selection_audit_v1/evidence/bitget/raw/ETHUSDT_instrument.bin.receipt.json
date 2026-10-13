@@ -1,0 +1,16 @@
+{
+  "url": "https://api.bitget.com/api/v2/mix/market/contracts?productType=USDT-FUTURES&symbol=ETHUSDT",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:21:08.205194+00:00",
+  "request_end_utc": "2026-10-12T20:21:08.895002+00:00",
+  "latency_ms": 689.96,
+  "status": 200,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:08 GMT",
+    "content-type": "application/json"
+  },
+  "sha256": "8a95dc42bad0718fe12d8965d90b59140203ed94fd814cfd8c93d157c563579c",
+  "bytes": 829,
+  "raw_path": "evidence/bitget/raw/ETHUSDT_instrument.bin",
+  "error": null
+}

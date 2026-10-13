@@ -1,0 +1,19 @@
+{
+  "url": "https://support.deribit.com/hc/en-us/search/click?data=BAh7DjoHaWRsKwidOVawlBw6D2FjY291bnRfaWRpAxCQJToJdHlwZUkiDGFydGljbGUGOgZFVDoIdXJsSSJYaHR0cHM6Ly9zdXBwb3J0LmRlcmliaXQuY29tL2hjL2VuLXVzL2FydGljbGVzLzMxNDI0OTM5MTc4Mzk3LUZ1bmRpbmctU3BlY2lmaWNhdGlvbnMGOwhUOg5zZWFyY2hfaWRJIikxNWE3MzYzOC1kMjdlLTQyMzMtOTY4NC04NmRjOTk0MjE2NGMGOwhGOglyYW5raQY6C2xvY2FsZUkiCmVuLXVzBjsIVDoKcXVlcnlJIgxmdW5kaW5nBjsIVDoScmVzdWx0c19jb3VudGlJ--11197008b5d48de08866ab79a5c39bece360b4f6",
+  "request_start_utc": "2026-10-13T06:34:00.079265+00:00",
+  "completion_utc": "2026-10-13T06:34:01.317907+00:00",
+  "latency_ms": 1238.8,
+  "http_status": 301,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "bytes": 0,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:34:01 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "location": "https://support.deribit.com/hc/en-us/articles/31424939178397-Funding-Specifications",
+    "x-request-id": "613e5809-1d45-4a20-8ec4-37268a35edf6",
+    "cf-ray": "a49c50ebdaf2367c-DFW"
+  },
+  "error": "HTTP Error 301: Moved Permanently",
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/funding_click.bin"
+}

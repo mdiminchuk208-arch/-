@@ -1,0 +1,20 @@
+{
+  "id": "hl_docs_contracts",
+  "venue": "hyperliquid",
+  "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/contract-specifications.md",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-13T06:27:57.793664+00:00",
+  "completed_utc": "2026-10-13T06:27:59.095875+00:00",
+  "latency_ms": 1302.49,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:27:58 GMT",
+    "content-type": "text/plain; charset=utf-8"
+  },
+  "raw_path": "raw/hl_docs_contracts.bin",
+  "raw_sha256": "59ef08be4b7e3d7cc0f4245abd4f133d743a983820df5b2ef0ce1ceb6af50ea3",
+  "raw_bytes": 5192,
+  "truncated": false
+}

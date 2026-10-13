@@ -1,0 +1,18 @@
+{
+  "source_id": "docs_futures_limits",
+  "url": "https://docs.kraken.com/exchange/guides/futures/ratelimits",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:31:07.265485+00:00",
+  "response_utc": "2026-10-13T06:31:07.489718+00:00",
+  "latency_ms": 224,
+  "http_status": 200,
+  "sha256": "cb37421671014b5c97e159af7d09dc39e6e517e44ee08cf82f92bb7fa667c7ed",
+  "bytes": 433488,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:31:07 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_futures_limits.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "book_eth_1",
+  "url": "https://futures.kraken.com/derivatives/api/v3/orderbook?symbol=PF_ETHUSD",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:28:15.392694+00:00",
+  "response_utc": "2026-10-13T06:28:16.409853+00:00",
+  "latency_ms": 1017,
+  "http_status": 200,
+  "sha256": "f5c26356a68381e49983c5931150c26198167338d9570e1ef76163f556969b53",
+  "bytes": 18444,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:28:16 GMT",
+    "content-type": "application/json",
+    "server": "envoy"
+  },
+  "raw_path": "raw/book_eth_1.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

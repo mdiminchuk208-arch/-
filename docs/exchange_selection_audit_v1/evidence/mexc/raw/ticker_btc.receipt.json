@@ -1,0 +1,19 @@
+{
+  "source_id": "ticker_btc",
+  "url": "https://contract.mexc.com/api/v1/contract/ticker?symbol=BTC_USDT",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:28:10.160150+00:00",
+  "response_utc": "2026-10-13T06:28:11.719409+00:00",
+  "latency_ms": 1559,
+  "http_status": 200,
+  "sha256": "192b02bee7fc50b0685c47029b221ccba76338b9b074e6bb50b05d7cd69c10ce",
+  "bytes": 581,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:28:11 GMT",
+    "content-length": "581",
+    "server": "envoy"
+  },
+  "raw_path": "raw/ticker_btc.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

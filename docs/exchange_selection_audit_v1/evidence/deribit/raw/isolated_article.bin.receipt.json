@@ -1,0 +1,18 @@
+{
+  "url": "https://support.deribit.com/hc/en-us/articles/25944777072669-Isolated-margin-availability",
+  "request_start_utc": "2026-10-13T06:35:12.191180+00:00",
+  "completion_utc": "2026-10-13T06:35:12.895756+00:00",
+  "latency_ms": 704.8,
+  "http_status": 200,
+  "sha256": "badd2f47089b59fdec55b11da076c0682078cac3c5ee09fe45b1d049c810db58",
+  "bytes": 63236,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:35:12 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "x-request-id": "43f284c5-e67c-40cf-9cab-e47d0d1a42f9",
+    "cf-ray": "a49c52a96b0043ba-DFW"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/isolated_article.bin"
+}

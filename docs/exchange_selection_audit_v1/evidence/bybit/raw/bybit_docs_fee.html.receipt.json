@@ -1,0 +1,17 @@
+{
+  "url": "https://www.bybit.com/en/help-center/article/Trading-Fee-Structure",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:21:28.030470+00:00",
+  "request_end_utc": "2026-10-12T20:21:29.126167+00:00",
+  "latency_ms": 1096.01,
+  "status": 200,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "private, must-revalidate, max-age=60",
+    "date": "Mon, 12 Oct 2026 20:21:28 GMT"
+  },
+  "sha256": "81eca4b65afc6c6ad9af3f09b3a85fac8c0515969cd716de0794302ec2d988e8",
+  "bytes": 420781,
+  "raw_path": "evidence/bybit/raw/bybit_docs_fee.html",
+  "error": null
+}

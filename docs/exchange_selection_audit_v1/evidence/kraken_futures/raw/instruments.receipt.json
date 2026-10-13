@@ -1,0 +1,18 @@
+{
+  "source_id": "instruments",
+  "url": "https://futures.kraken.com/derivatives/api/v3/instruments",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:22:10.272511+00:00",
+  "response_utc": "2026-10-12T20:22:11.457499+00:00",
+  "latency_ms": 1185,
+  "http_status": 200,
+  "sha256": "4e91a454e4b2acb441cabffe45ca870f9b79a678527eeafa8a7533380089dd65",
+  "bytes": 849383,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:22:10 GMT",
+    "content-type": "application/json",
+    "server": "envoy"
+  },
+  "raw_path": "raw/instruments.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

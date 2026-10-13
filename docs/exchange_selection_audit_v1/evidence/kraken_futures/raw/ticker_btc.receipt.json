@@ -1,0 +1,19 @@
+{
+  "source_id": "ticker_btc",
+  "url": "https://futures.kraken.com/derivatives/api/v3/tickers?symbol=PF_XBTUSD",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:28:18.402419+00:00",
+  "response_utc": "2026-10-13T06:28:19.372110+00:00",
+  "latency_ms": 969,
+  "http_status": 200,
+  "sha256": "0fefebccd55848dbcee5aa7e69f48a55cca9ae102dfaa160081cd2fd6883871e",
+  "bytes": 698,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:28:19 GMT",
+    "content-type": "application/json",
+    "content-length": "698",
+    "server": "envoy"
+  },
+  "raw_path": "raw/ticker_btc.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

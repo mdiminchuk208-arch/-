@@ -1,0 +1,18 @@
+{
+  "body_bytes": 1557062,
+  "error": null,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "date": "Mon, 12 Oct 2026 20:21:37 GMT"
+  },
+  "id": "docs_exchange_info_new",
+  "latency_ms": 1789.51,
+  "method": "GET",
+  "raw_path": "raw/docs_exchange_info_new.body",
+  "request_utc": "2026-10-12T20:21:36.753137Z",
+  "retrieval_utc": "2026-10-12T20:21:38.542123Z",
+  "sha256": "bc31b525aaf8d365ca1f27c107c93b14a651f1742134c65dfc2cb4ee3ee48232",
+  "status": 200,
+  "truncated": false,
+  "url": "https://developers.binance.com/en/docs/catalog/core-trading-derivatives-trading-usd-s-m-futures/api/rest-api/market-data#exchange-information"
+}

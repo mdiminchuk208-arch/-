@@ -1,0 +1,21 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://docs.cdp.coinbase.com/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# International Exchange Systems & Operations
+
+## Availability Zones
+
+The infrastructure for the International Exchange is hosted in **AP-NORTHEAST-1 (AWS)** within the following availability zones.
+
+<Warning>
+  The following information is subject to change without notification, and there is no guarantee that it will remain static over time.
+</Warning>
+
+| Product | Availability Zone ID |
+| :- | :- |
+| FIX Order Gateways | apne1-az1 |
+| Order Entry Gateway | apne1-az1 |
+| Trade Engine | apne1-az1 |
+| Web Socket Market Data | apne1-az1 |
+| FIX Market Data | apne1-az1 |

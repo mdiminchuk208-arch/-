@@ -1,0 +1,17 @@
+{
+  "url": "https://www.bybit.com/en/help-center/article/Introduction-to-API-Key",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:30:20.370962+00:00",
+  "request_end_utc": "2026-10-13T06:30:22.351187+00:00",
+  "latency_ms": 1980.52,
+  "status": 200,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "private, must-revalidate, max-age=60",
+    "date": "Tue, 13 Oct 2026 06:30:22 GMT"
+  },
+  "sha256": "95d7762e513c3b50e40afe2e4ca7e9954a2b3856db174668e2db8d11f40ba479",
+  "bytes": 104455,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_api_permission.html",
+  "error": null
+}

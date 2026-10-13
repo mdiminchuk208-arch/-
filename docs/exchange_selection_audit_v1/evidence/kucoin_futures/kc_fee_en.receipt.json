@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c48ebd971bd3d-DFW",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:28:33 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 732.9,
+  "method": "GET",
+  "raw_length": 102821,
+  "raw_path": "kc_fee_en.raw",
+  "raw_sha256": "812bddef42dc2986c7f03ef560334a4da65a819af4a73f6941cbd2edf9d08b71",
+  "request_start_utc": "2026-10-13T06:28:33.154184+00:00",
+  "retrieval_utc": "2026-10-13T06:28:33.886856+00:00",
+  "source_id": "kc_fee_en",
+  "status": 404,
+  "truncated": false,
+  "url": "https://www.kucoin.com/vip/fee?lang=en_US&"
+}

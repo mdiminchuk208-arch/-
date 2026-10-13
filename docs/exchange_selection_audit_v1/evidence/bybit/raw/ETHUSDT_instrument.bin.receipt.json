@@ -1,0 +1,16 @@
+{
+  "url": "https://api.bybit.com/v5/market/instruments-info?category=linear&symbol=ETHUSDT",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:21:08.338212+00:00",
+  "request_end_utc": "2026-10-12T20:21:09.233803+00:00",
+  "latency_ms": 895.75,
+  "status": 403,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:09 GMT",
+    "content-type": "application/json"
+  },
+  "sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+  "bytes": 96,
+  "raw_path": "evidence/bybit/raw/ETHUSDT_instrument.bin",
+  "error": null
+}

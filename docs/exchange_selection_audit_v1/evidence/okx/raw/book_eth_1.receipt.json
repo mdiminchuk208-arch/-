@@ -1,0 +1,18 @@
+{
+  "body_bytes": 22405,
+  "error": null,
+  "headers": {
+    "content-type": "application/json;charset=UTF-8",
+    "date": "Mon, 12 Oct 2026 20:21:01 GMT"
+  },
+  "id": "book_eth_1",
+  "latency_ms": 362.71,
+  "method": "GET",
+  "raw_path": "raw/book_eth_1.body",
+  "request_utc": "2026-10-12T20:21:01.213519Z",
+  "retrieval_utc": "2026-10-12T20:21:01.576088Z",
+  "sha256": "31e1862766484afa7c11705ee01fd56297f2ac8973e19676e9b1c98149b38a98",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/market/books?instId=ETH-USDT-SWAP&sz=400"
+}

@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c4c635a90f08a-DFW",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:55 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1813.9,
+  "method": "GET",
+  "raw_length": 665768,
+  "raw_path": "kc_docs_fullbook.raw",
+  "raw_sha256": "9a30ce2a8c12e6ba8ec9c129f5ae007e86c20dc1f0f875545d906605e39afa40",
+  "request_start_utc": "2026-10-13T06:30:54.573609+00:00",
+  "retrieval_utc": "2026-10-13T06:30:56.387201+00:00",
+  "source_id": "kc_docs_fullbook",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.kucoin.com/docs-new/rest/futures-trading/market-data/get-full-orderbook?lang=en_US&"
+}

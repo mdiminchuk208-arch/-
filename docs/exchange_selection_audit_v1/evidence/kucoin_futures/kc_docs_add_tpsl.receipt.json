@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c4c638c272526-DFW",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:55 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1727.8,
+  "method": "GET",
+  "raw_length": 678995,
+  "raw_path": "kc_docs_add_tpsl.raw",
+  "raw_sha256": "80dfa90fb1a0fa7a4193b1dd4725c0eba56092ef814154a99eec5da4614e2d66",
+  "request_start_utc": "2026-10-13T06:30:54.595696+00:00",
+  "retrieval_utc": "2026-10-13T06:30:56.323106+00:00",
+  "source_id": "kc_docs_add_tpsl",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.kucoin.com/docs-new/rest/futures-trading/orders/add-take-profit-and-stop-loss-order?lang=en_US&"
+}

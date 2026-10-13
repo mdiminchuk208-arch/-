@@ -1,0 +1,21 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:39:00 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "160.295",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 51651,
+  "raw_file": "6aaa168e47d606679a03ae6b.body",
+  "raw_sha256": "3da11f85e4d5f983323af38b484b83d0411cec2eaff08faa74deeea0f83f3a7e",
+  "request_started_at": "2026-10-13T06:39:00.700507+00:00",
+  "response_completed_at": "2026-10-13T06:39:00.860645+00:00",
+  "source_kind": "book_BTC",
+  "truncated": false,
+  "url": "https://futures.kraken.com/derivatives/api/v3/orderbook?symbol=PF_XBTUSD"
+}

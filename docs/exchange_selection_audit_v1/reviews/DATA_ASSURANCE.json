@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "reviewer_identity": "/root/exchange_data_tick_microstructure_auditor_v1",
+  "roles_performed_by_one_identity": [
+    "historical_data_engineer",
+    "tick_metadata_researcher",
+    "market_microstructure_auditor"
+  ],
+  "basis": [
+    "SCORING_PREREGISTRATION.json at commit 055bcc2",
+    "12 venue FACTS.json and SOURCE_INDEX.json files and retained raw responses",
+    "evidence/ci/PROBE_SUMMARY.json and CI_BOOK_NORMALIZATION.json",
+    "LIQUIDITY_SPREAD_SLIPPAGE.json",
+    "SOURCE_HASH_VERIFICATION.json"
+  ],
+  "historical_continuity_verified_for_any_venue": false,
+  "historical_tick_filter_epochs_verified_for_any_venue": false,
+  "historical_v3_executable_backtest_ready": false,
+  "venues": {
+    "binance_futures": {"old_native_m15_both_actual": false, "current_filters_both_verified": false, "current_product_active_verified": false, "book_units_confirmed": false, "valid_book_samples_per_symbol": 0, "data_tick_research_prerequisites_observed": false, "reason": "Cloud and CI public API HTTP451."},
+    "bitget": {"old_native_m15_both_actual": true, "current_filters_both_verified": true, "current_product_active_verified": true, "book_units_confirmed": false, "valid_book_samples_per_symbol": 4, "data_tick_research_prerequisites_observed": true, "reason": "Merge-depth Quantity has no explicit base-unit statement; book liquidity and cost remain conditional, ranked criteria zero."},
+    "blofin": {"old_native_m15_both_actual": true, "current_filters_both_verified": true, "current_product_active_verified": true, "book_units_confirmed": true, "valid_book_samples_per_symbol": 4, "data_tick_research_prerequisites_observed": true, "reason": "Direct candles old sentinel works; history-candles route API404 inside HTTP200 is not counted."},
+    "bybit": {"old_native_m15_both_actual": false, "current_filters_both_verified": false, "current_product_active_verified": false, "book_units_confirmed": false, "valid_book_samples_per_symbol": 0, "data_tick_research_prerequisites_observed": false, "reason": "Cloud and CI public API HTTP403."},
+    "coinbase_international": {"old_native_m15_both_actual": true, "current_filters_both_verified": true, "current_product_active_verified": false, "book_units_confirmed": false, "valid_book_samples_per_symbol": 0, "data_tick_research_prerequisites_observed": false, "reason": "Both required products PAUSED; current candles empty, CI books HTTP404, live prospective capture unverified."},
+    "deribit": {"old_native_m15_both_actual": true, "current_filters_both_verified": true, "current_product_active_verified": true, "book_units_confirmed": true, "valid_book_samples_per_symbol": 4, "data_tick_research_prerequisites_observed": true, "reason": "Official linear-perpetual book/order amount is underlying base coin; USDC product compatibility remains separate."},
+    "gate": {"old_native_m15_both_actual": false, "current_filters_both_verified": true, "current_product_active_verified": true, "book_units_confirmed": true, "valid_book_samples_per_symbol": 4, "data_tick_research_prerequisites_observed": false, "reason": "Old native candles rejected HTTP400 as too old; zero-size book levels omitted."},
+    "hyperliquid": {"old_native_m15_both_actual": false, "current_filters_both_verified": true, "current_product_active_verified": true, "book_units_confirmed": true, "valid_book_samples_per_symbol": 4, "data_tick_research_prerequisites_observed": false, "reason": "Old candleSnapshot empty; current price grid is price-dependent five-significant-figure rule, not fixed tick."},
+    "kraken_futures": {"old_native_m15_both_actual": true, "current_filters_both_verified": true, "current_product_active_verified": true, "book_units_confirmed": false, "valid_book_samples_per_symbol": 5, "data_tick_research_prerequisites_observed": true, "reason": "PF book size currency not explicit in official docs; ranked book cost/liquidity zero and bids require descending price sort."},
+    "kucoin_futures": {"old_native_m15_both_actual": false, "current_filters_both_verified": true, "current_product_active_verified": true, "book_units_confirmed": true, "valid_book_samples_per_symbol": 4, "data_tick_research_prerequisites_observed": false, "reason": "Millisecond-correct old candle data empty; one CI ETH $50000 BUY insufficient visible 20-level depth, complete-size liquidity criterion zero."},
+    "mexc": {"old_native_m15_both_actual": false, "current_filters_both_verified": true, "current_product_active_verified": true, "book_units_confirmed": true, "valid_book_samples_per_symbol": 5, "data_tick_research_prerequisites_observed": false, "reason": "HTTP200 old candle data.time empty for both products."},
+    "okx": {"old_native_m15_both_actual": true, "current_filters_both_verified": true, "current_product_active_verified": true, "book_units_confirmed": true, "valid_book_samples_per_symbol": 4, "data_tick_research_prerequisites_observed": true, "reason": "Old after-cursor rows exact; complete intervening continuity and historical filters remain unverified."}
+  }
+}

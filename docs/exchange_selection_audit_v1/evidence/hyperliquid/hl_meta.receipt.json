@@ -1,0 +1,21 @@
+{
+  "id": "hl_meta",
+  "venue": "hyperliquid",
+  "url": "https://api.hyperliquid.xyz/info",
+  "method": "POST",
+  "request_body": "{\"type\":\"metaAndAssetCtxs\"}",
+  "started_utc": "2026-10-12T20:20:42.267830+00:00",
+  "completed_utc": "2026-10-12T20:20:42.877330+00:00",
+  "latency_ms": 609.74,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "content-type": "application/json",
+    "content-length": "72227",
+    "date": "Mon, 12 Oct 2026 20:20:42 GMT"
+  },
+  "raw_path": "raw/hl_meta.bin",
+  "raw_sha256": "4f339268050234644ab10294c2d3659e2fcac5c9b77ecffdf6faaea13ab6e8c9",
+  "raw_bytes": 72227,
+  "truncated": false
+}

@@ -1,0 +1,19 @@
+{
+  "source_id": "funding_current_btc",
+  "url": "https://contract.mexc.com/api/v1/contract/funding_rate/BTC_USDT",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:29:45.335630+00:00",
+  "response_utc": "2026-10-13T06:29:46.425389+00:00",
+  "latency_ms": 1089,
+  "http_status": 200,
+  "sha256": "b7124ceb0fb39a15f0c104de7c33c1c171bda27a5b70338d8fa44f96b5fd84ca",
+  "bytes": 239,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:29:46 GMT",
+    "content-length": "239",
+    "server": "envoy"
+  },
+  "raw_path": "raw/funding_current_btc.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

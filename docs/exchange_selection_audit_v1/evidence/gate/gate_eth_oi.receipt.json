@@ -1,0 +1,24 @@
+{
+  "id": "gate_eth_oi",
+  "venue": "gate",
+  "url": "https://api.gateio.ws/api/v4/futures/usdt/contract_stats?contract=ETH_USDT&limit=2",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-12T20:21:15.871253+00:00",
+  "completed_utc": "2026-10-12T20:21:16.960843+00:00",
+  "latency_ms": 1089.78,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:16 GMT",
+    "content-type": "application/json",
+    "content-length": "607",
+    "x-gate-ratelimit-requests-remain": "198",
+    "x-gate-ratelimit-limit": "200",
+    "x-gate-ratelimit-reset-timestamp": "1791836476"
+  },
+  "raw_path": "raw/gate_eth_oi.bin",
+  "raw_sha256": "5c42cbc25824326a657d4ccf24a0787bcd6077d1fb60fb6c7a9883603d490e0c",
+  "raw_bytes": 607,
+  "truncated": false
+}

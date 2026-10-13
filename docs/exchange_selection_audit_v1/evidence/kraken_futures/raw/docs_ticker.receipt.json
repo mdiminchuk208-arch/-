@@ -1,0 +1,18 @@
+{
+  "source_id": "docs_ticker",
+  "url": "https://docs.kraken.com/api-reference/market-data/get-tickers",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:30:22.928506+00:00",
+  "response_utc": "2026-10-13T06:30:23.818882+00:00",
+  "latency_ms": 890,
+  "http_status": 200,
+  "sha256": "a860bc75cdf8f1ebe1e6813d95dfbd9bc2cb51470f3daa944f45d6bf8d66f5cc",
+  "bytes": 556129,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:30:22 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_ticker.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

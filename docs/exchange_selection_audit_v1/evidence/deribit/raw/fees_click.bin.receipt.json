@@ -1,0 +1,19 @@
+{
+  "url": "https://support.deribit.com/hc/en-us/search/click?data=BAh7DjoHaWRsKwgdS2K7mBc6D2FjY291bnRfaWRpAxCQJToJdHlwZUkiDGFydGljbGUGOgZFVDoIdXJsSSJGaHR0cHM6Ly9zdXBwb3J0LmRlcmliaXQuY29tL2hjL2VuLXVzL2FydGljbGVzLzI1OTQ0NzQ2MjQ4OTg5LUZlZXMGOwhUOg5zZWFyY2hfaWRJIilkMmFhYzljZS02NjFmLTRiZjEtYTYzNy1kOTMyMmQzZWNjZjEGOwhGOglyYW5raQY6C2xvY2FsZUkiCmVuLXVzBjsIVDoKcXVlcnlJIhF0cmFkaW5nIGZlZXMGOwhUOhJyZXN1bHRzX2NvdW50aQGi--26a3abb142948b64a143c8a7472b250c1dc2d896",
+  "request_start_utc": "2026-10-13T06:35:07.868849+00:00",
+  "completion_utc": "2026-10-13T06:35:08.574545+00:00",
+  "latency_ms": 705.8,
+  "http_status": 301,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "bytes": 0,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:35:08 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "location": "https://support.deribit.com/hc/en-us/articles/25944746248989-Fees",
+    "x-request-id": "7747d5f5-5560-4a20-80f6-54b9b85809e5",
+    "cf-ray": "a49c5290280fa424-DFW"
+  },
+  "error": "HTTP Error 301: Moved Permanently",
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/fees_click.bin"
+}

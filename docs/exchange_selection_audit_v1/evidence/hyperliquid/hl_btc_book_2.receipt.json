@@ -1,0 +1,21 @@
+{
+  "id": "hl_btc_book_2",
+  "venue": "hyperliquid",
+  "url": "https://api.hyperliquid.xyz/info",
+  "method": "POST",
+  "request_body": "{\"type\":\"l2Book\",\"coin\":\"BTC\"}",
+  "started_utc": "2026-10-13T06:26:42.635212+00:00",
+  "completed_utc": "2026-10-13T06:26:43.638807+00:00",
+  "latency_ms": 1003.76,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "content-type": "application/json",
+    "content-length": "1572",
+    "date": "Tue, 13 Oct 2026 06:26:43 GMT"
+  },
+  "raw_path": "raw/hl_btc_book_2.bin",
+  "raw_sha256": "90784dbb258f53e0c1dce1af1d90e36b9f0c85fe4e4ec1884665c22ca3365488",
+  "raw_bytes": 1572,
+  "truncated": false
+}

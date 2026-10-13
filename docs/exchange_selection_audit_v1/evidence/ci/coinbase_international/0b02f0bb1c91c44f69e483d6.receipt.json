@@ -1,0 +1,23 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-length": "101",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:39:01 GMT",
+    "etag": "3411222845"
+  },
+  "http_status": 404,
+  "latency_ms": "661.583",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 101,
+  "raw_file": "0b02f0bb1c91c44f69e483d6.body",
+  "raw_sha256": "d4eb8011dba147a7d012685bf64604e900792383b21f4c57497a02a277e3b2e2",
+  "request_started_at": "2026-10-13T06:39:00.985087+00:00",
+  "response_completed_at": "2026-10-13T06:39:01.646446+00:00",
+  "source_kind": "book_ETH",
+  "truncated": false,
+  "url": "https://api.international.coinbase.com/api/v1/instruments/ETH-PERP/book?depth=100"
+}

@@ -1,0 +1,16 @@
+{
+  "url": "https://api.bitget.com/api/v2/mix/market/orderbook?symbol=ETHUSDT&productType=USDT-FUTURES&limit=100",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:26:57.628236+00:00",
+  "request_end_utc": "2026-10-13T06:26:58.725357+00:00",
+  "latency_ms": 1097.45,
+  "status": 200,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:26:58 GMT",
+    "content-type": "application/json"
+  },
+  "sha256": "f2124f3d0631b3c0d17540f1b909260042a4b72c5368cd88f0ca5d5114c4fdb7",
+  "bytes": 6820,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/ETHUSDT_book2.bin",
+  "error": null
+}

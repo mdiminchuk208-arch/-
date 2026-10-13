@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c48a75903f04e-DFW",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:28:22 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 333.6,
+  "method": "GET",
+  "raw_length": 3822,
+  "raw_path": "bf_eth_book_2.raw",
+  "raw_sha256": "2ea638f026d831998c67fb476fd567a42c185b48acecfc361bd1b9fb0d1dc9c2",
+  "request_start_utc": "2026-10-13T06:28:22.229336+00:00",
+  "retrieval_utc": "2026-10-13T06:28:22.562744+00:00",
+  "source_id": "bf_eth_book_2",
+  "status": 200,
+  "truncated": false,
+  "url": "https://openapi.blofin.com/api/v1/market/books?instId=ETH-USDT&size=100"
+}

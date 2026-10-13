@@ -1,0 +1,18 @@
+{
+  "source_id": "funding_v4_btc",
+  "url": "https://futures.kraken.com/derivatives/api/v4/historicalfundingrates?symbol=PF_XBTUSD",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:29:15.660458+00:00",
+  "response_utc": "2026-10-13T06:29:17.235831+00:00",
+  "latency_ms": 1575,
+  "http_status": 200,
+  "sha256": "c068dcfa548d8be092419a756eddef2b4c97081d02b68cacb269dec314685587",
+  "bytes": 1027418,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:29:16 GMT",
+    "content-type": "application/json",
+    "server": "envoy"
+  },
+  "raw_path": "raw/funding_v4_btc.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

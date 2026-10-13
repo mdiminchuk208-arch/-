@@ -1,0 +1,16 @@
+{
+  "url": "https://api.bitget.com/api/v2/mix/market/merge-depth?symbol=ETHUSDT&productType=USDT-FUTURES&precision=scale0&limit=100",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:28:51.072443+00:00",
+  "request_end_utc": "2026-10-13T06:28:51.490041+00:00",
+  "latency_ms": 417.77,
+  "status": 200,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:28:51 GMT",
+    "content-type": "application/json"
+  },
+  "sha256": "95324a04d8dee964fdd6a61f8e5d0b7904da4240864dc2b7f6afcc06d6b44c86",
+  "bytes": 3288,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/ETHUSDT_merge_book2.bin",
+  "error": null
+}

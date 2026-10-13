@@ -1,0 +1,104 @@
+{
+  "book_normalization": null,
+  "data": {
+    "archive": null,
+    "book_history": null,
+    "closure": null,
+    "mark_index": null,
+    "native_m15": null,
+    "oi_history": null,
+    "oldest_actual_m15_sample_utc": null,
+    "pagination": null,
+    "source_ids": [
+      "docs_exchange_info_new",
+      "exchange_info"
+    ],
+    "trades": null
+  },
+  "execution": {
+    "client_order_id": null,
+    "custody": null,
+    "demo": "Developer catalog advertises testnet URL; untested",
+    "ip_allowlist": null,
+    "isolated_margin": null,
+    "key_permissions_no_withdraw": null,
+    "leverage": null,
+    "queries": null,
+    "rate_limits": "Developer catalog mentions IP weight; live endpoint restrictions prevent verification here",
+    "reduce_only": null,
+    "rest_ws": "REST developer catalog retrieved; WebSocket and private behavior not independently checked",
+    "signing": null,
+    "sl_tp": null,
+    "source_ids": [
+      "docs_exchange_info_new"
+    ],
+    "status_feed": null
+  },
+  "fees": {
+    "api_specific": null,
+    "base_tier": null,
+    "discounts_separate": null,
+    "literal_quote": null,
+    "maker_rate": null,
+    "source_ids": [
+      "fee_page"
+    ],
+    "taker_rate": null,
+    "unresolved": "Official fee page raw body was captured, but no current base-tier USDⓈ-M API maker/taker schedule was verified in server response. No remembered fee substituted."
+  },
+  "funding": {
+    "formula": null,
+    "history_depth": null,
+    "history_endpoint": "documented in developer catalog; live access not probed after restricted-location response",
+    "intervals": null,
+    "sign": null,
+    "source_ids": [
+      "docs_exchange_info_new"
+    ],
+    "surcharge": null
+  },
+  "hard_exec_blockers": [
+    "Live public API HTTP 451 from current cloud environment.",
+    "Current base API fee and account control eligibility unverified."
+  ],
+  "hard_research_blockers": [
+    "Live public API HTTP 451 from current cloud environment; BTC/ETH exact product, tick filters and two-year M15 sentinel unverified."
+  ],
+  "limitations": [
+    "Official fapi.binance.com/fapi/v1/exchangeInfo returned HTTP 451 with restricted-location text. No alternate API host, route or geo workaround attempted.",
+    "No live BTC/ETH product identity, filters, candles, books, funding, open interest or fee applicability established.",
+    "Developer documentation examples are schema illustrations, not live product evidence.",
+    "Fee page response was gzip-encoded and did not establish the base API perpetual fee schedule."
+  ],
+  "metadata": {
+    "causal_prospective": null,
+    "change_history": null,
+    "current_filters": null,
+    "historical_epochs": null,
+    "source_ids": [
+      "docs_exchange_info_new",
+      "exchange_info"
+    ]
+  },
+  "products": {
+    "BTC": {
+      "identity_source_ids": [
+        "docs_exchange_info_new",
+        "exchange_info"
+      ],
+      "margin_settlement": null,
+      "model": "USDⓈ-M futures docs show PERPETUAL product class; live BTC identity not verified",
+      "symbol": null
+    },
+    "ETH": {
+      "identity_source_ids": [
+        "docs_exchange_info_new",
+        "exchange_info"
+      ],
+      "margin_settlement": null,
+      "model": "USDⓈ-M futures docs show PERPETUAL product class; live ETH identity not verified",
+      "symbol": null
+    }
+  },
+  "venue": "binance_futures"
+}

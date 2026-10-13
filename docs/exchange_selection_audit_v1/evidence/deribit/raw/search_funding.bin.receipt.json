@@ -1,0 +1,18 @@
+{
+  "url": "https://support.deribit.com/hc/en-us/search?query=funding",
+  "request_start_utc": "2026-10-13T06:33:40.544051+00:00",
+  "completion_utc": "2026-10-13T06:33:42.300244+00:00",
+  "latency_ms": 1756.4,
+  "http_status": 200,
+  "sha256": "ddae8a3a591745501834325d5597b2234007cd8031e61f25f668432692bc6709",
+  "bytes": 77157,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:33:42 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "x-request-id": "fcf7bdcd-13ee-49dd-bc0a-4a9bf0e39b2f",
+    "cf-ray": "a49c50717e93a424-DFW"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/search_funding.bin"
+}

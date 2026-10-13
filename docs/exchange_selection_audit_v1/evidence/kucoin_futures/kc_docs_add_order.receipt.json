@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c4c636e00f7c2-DFW",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:55 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1957.4,
+  "method": "GET",
+  "raw_length": 681745,
+  "raw_path": "kc_docs_add_order.raw",
+  "raw_sha256": "c70198b7099f8d7690bd389e8f4a524ba699145567321a19acee0cf012d888e9",
+  "request_start_utc": "2026-10-13T06:30:54.585369+00:00",
+  "retrieval_utc": "2026-10-13T06:30:56.542473+00:00",
+  "source_id": "kc_docs_add_order",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.kucoin.com/docs-new/rest/futures-trading/orders/add-order?lang=en_US&"
+}

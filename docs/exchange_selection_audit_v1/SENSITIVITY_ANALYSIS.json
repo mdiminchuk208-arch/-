@@ -1,0 +1,2856 @@
+{
+  "base_roles": {
+    "LIVE_enabled": false,
+    "OOS_registered_or_started": false,
+    "PAPER_enabled": false,
+    "PRIMARY_EXECUTION_VENUE": "blofin",
+    "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+    "REFERENCE_BENCHMARK_VENUE": "okx",
+    "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+    "actual_account_eligibility_verified": false,
+    "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+    "historical_backtest_ready": false,
+    "trade_entry_allowed": false
+  },
+  "cost_weight_shifts": [
+    {
+      "ranking": [
+        {
+          "all_in_cost_bps": "7.025726406117107471",
+          "eligible": false,
+          "hard_gate_failures": [
+            {
+              "confirmed": false,
+              "note": "Required isolated position control and leverage behavior not verified. A dedicated subaccount is not automatic equivalence.",
+              "source_ids": [
+                "usdc_instruments",
+                "docs_instruments_md",
+                "fees_article",
+                "docs_buy_md",
+                "docs_sell_md",
+                "docs_orders_md",
+                "docs_order_state_md",
+                "docs_user_trades_md",
+                "docs_position_md",
+                "docs_keys_md",
+                "docs_access_scope_md",
+                "docs_auth_md",
+                "docs_limits_md",
+                "isolated_article",
+                "status"
+              ]
+            }
+          ],
+          "points": {
+            "cost": 3,
+            "data": 4,
+            "funding": 5,
+            "liquidity": 5,
+            "orders": 3,
+            "safety": 3
+          },
+          "score": "76.153846153846153846",
+          "score_rational": [
+            "990",
+            "13"
+          ],
+          "venue": "deribit"
+        },
+        {
+          "all_in_cost_bps": "9.280706990684755144",
+          "eligible": false,
+          "hard_gate_failures": [
+            {
+              "confirmed": null,
+              "note": "Agent-signer authority over external movement/withdrawal is unresolved; one same-address action does not prove all scopes.",
+              "source_ids": [
+                "hl_docs_fees",
+                "hl_docs_exchange",
+                "hl_docs_wallet",
+                "hl_docs_signing",
+                "hl_docs_margin",
+                "hl_docs_limits",
+                "hl_docs_info"
+              ]
+            }
+          ],
+          "points": {
+            "cost": 3,
+            "data": 4,
+            "funding": 5,
+            "liquidity": 5,
+            "orders": 4,
+            "safety": 1
+          },
+          "score": "75.076923076923076923",
+          "score_rational": [
+            "976",
+            "13"
+          ],
+          "venue": "hyperliquid"
+        },
+        {
+          "all_in_cost_bps": "12.12725964327464574",
+          "eligible": true,
+          "hard_gate_failures": [],
+          "points": {
+            "cost": 2,
+            "data": 5,
+            "funding": 2,
+            "liquidity": 5,
+            "orders": 5,
+            "safety": 3
+          },
+          "score": "71.230769230769230769",
+          "score_rational": [
+            "926",
+            "13"
+          ],
+          "venue": "blofin"
+        },
+        {
+          "all_in_cost_bps": null,
+          "eligible": false,
+          "hard_gate_failures": [
+            {
+              "confirmed": false,
+              "note": "Current ordinary API SWAP fee is unverified; retrieved 2/5 bps help text is illustrative and exposed SSR table is Spot.",
+              "source_ids": [
+                "fee_page_en",
+                "fee_help_en",
+                "docs_main#trading-account-rest-api-get-fee-rates",
+                "docs_main",
+                "docs_main#trading-account-rest-api-set-leverage",
+                "docs_main#order-book-trading-trade-post-place-order",
+                "docs_main#order-book-trading-algo-trading-post-place-algo-order",
+                "docs_main#overview-api-key-creation-api-key-permissions",
+                "docs_main#overview-api-key-creation-api-key-security",
+                "system_status",
+                "server_time"
+              ]
+            }
+          ],
+          "points": {
+            "cost": 0,
+            "data": 5,
+            "funding": 3,
+            "liquidity": 5,
+            "orders": 5,
+            "safety": 4
+          },
+          "score": "63.538461538461538462",
+          "score_rational": [
+            "826",
+            "13"
+          ],
+          "venue": "okx"
+        },
+        {
+          "all_in_cost_bps": null,
+          "eligible": false,
+          "hard_gate_failures": [
+            {
+              "confirmed": false,
+              "note": "Public contract maker/taker fields do not prove ordinary API-account fee; authenticated futures fee endpoint is required.",
+              "source_ids": [
+                "gate_btc_contract",
+                "gate_eth_contract",
+                "gate_docs_zip",
+                "gate_fee_schedule",
+                "gate_docs_api",
+                "gate_status"
+              ]
+            }
+          ],
+          "points": {
+            "cost": 0,
+            "data": 4,
+            "funding": 2,
+            "liquidity": 5,
+            "orders": 5,
+            "safety": 3
+          },
+          "score": "58.153846153846153846",
+          "score_rational": [
+            "756",
+            "13"
+          ],
+          "venue": "gate"
+        },
+        {
+          "all_in_cost_bps": null,
+          "eligible": false,
+          "hard_gate_failures": [
+            {
+              "confirmed": false,
+              "note": "Public 0/2 bps instrument fields do not prove ordinary API-account fee; tiered fee route is private.",
+              "source_ids": [
+                "instrument_btc",
+                "instrument_eth",
+                "docs_api",
+                "fees_page"
+              ]
+            },
+            {
+              "confirmed": false,
+              "note": "Contradicted or currently unavailable: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "instrument_btc",
+                "instrument_eth",
+                "docs_api",
+                "fees_page"
+              ]
+            }
+          ],
+          "points": {
+            "cost": 0,
+            "data": 4,
+            "funding": 2,
+            "liquidity": 5,
+            "orders": 5,
+            "safety": 1
+          },
+          "score": "53.846153846153846154",
+          "score_rational": [
+            "700",
+            "13"
+          ],
+          "venue": "mexc"
+        },
+        {
+          "all_in_cost_bps": null,
+          "eligible": true,
+          "hard_gate_failures": [],
+          "points": {
+            "cost": 0,
+            "data": 4,
+            "funding": 2,
+            "liquidity": 0,
+            "orders": 5,
+            "safety": 3
+          },
+          "score": "31.230769230769230769",
+          "score_rational": [
+            "406",
+            "13"
+          ],
+          "venue": "kraken_futures"
+        },
+        {
+          "all_in_cost_bps": null,
+          "eligible": true,
+          "hard_gate_failures": [],
+          "points": {
+            "cost": 0,
+            "data": 4,
+            "funding": 2,
+            "liquidity": 0,
+            "orders": 5,
+            "safety": 3
+          },
+          "score": "31.230769230769230769",
+          "score_rational": [
+            "406",
+            "13"
+          ],
+          "venue": "kucoin_futures"
+        },
+        {
+          "all_in_cost_bps": null,
+          "eligible": true,
+          "hard_gate_failures": [],
+          "points": {
+            "cost": 0,
+            "data": 5,
+            "funding": 2,
+            "liquidity": 0,
+            "orders": 5,
+            "safety": 2
+          },
+          "score": "30.153846153846153846",
+          "score_rational": [
+            "392",
+            "13"
+          ],
+          "venue": "bitget"
+        },
+        {
+          "all_in_cost_bps": null,
+          "eligible": false,
+          "hard_gate_failures": [
+            {
+              "confirmed": null,
+              "note": "Unverified: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "bybit:bybit_docs_fee",
+                "bybit:bybit_docs_order",
+                "bybit:bybit_docs_trading_stop",
+                "bybit:bybit_docs_leverage",
+                "bybit:bybit_docs_apikey_info",
+                "bybit:bybit_docs_rate_limit",
+                "bybit:bybit_docs_guide",
+                "bybit:bybit_docs_demo",
+                "bybit:bybit_docs_ws_order",
+                "bybit:bybit_docs_realtime_order",
+                "bybit:bybit_docs_position"
+              ]
+            },
+            {
+              "confirmed": null,
+              "note": "Unverified: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "bybit:bybit_docs_fee",
+                "bybit:bybit_docs_order",
+                "bybit:bybit_docs_trading_stop",
+                "bybit:bybit_docs_leverage",
+                "bybit:bybit_docs_apikey_info",
+                "bybit:bybit_docs_rate_limit",
+                "bybit:bybit_docs_guide",
+                "bybit:bybit_docs_demo",
+                "bybit:bybit_docs_ws_order",
+                "bybit:bybit_docs_realtime_order",
+                "bybit:bybit_docs_position"
+              ]
+            },
+            {
+              "confirmed": false,
+              "note": "Repeated cloud and ordinary GitHub CI public API responses are HTTP 403 country block.",
+              "source_ids": [
+                "bybit:bybit_docs_fee",
+                "bybit:bybit_docs_order",
+                "bybit:bybit_docs_trading_stop",
+                "bybit:bybit_docs_leverage",
+                "bybit:bybit_docs_apikey_info",
+                "bybit:bybit_docs_rate_limit",
+                "bybit:bybit_docs_guide",
+                "bybit:bybit_docs_demo",
+                "bybit:bybit_docs_ws_order",
+                "bybit:bybit_docs_realtime_order",
+                "bybit:bybit_docs_position"
+              ]
+            }
+          ],
+          "points": {
+            "cost": 0,
+            "data": 0,
+            "funding": 2,
+            "liquidity": 0,
+            "orders": 4,
+            "safety": 3
+          },
+          "score": "23.692307692307692308",
+          "score_rational": [
+            "308",
+            "13"
+          ],
+          "venue": "bybit"
+        },
+        {
+          "all_in_cost_bps": null,
+          "eligible": false,
+          "hard_gate_failures": [
+            {
+              "confirmed": false,
+              "note": "Contradicted or currently unavailable: base API fee knowable with official current evidence. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "docs_fee_md",
+                "docs_portfolio_fees_md",
+                "fee_tiers",
+                "docs_order_md",
+                "docs_query_md",
+                "docs_portfolios_md",
+                "docs_sandbox_md",
+                "docs_auth_md",
+                "docs_limits_md",
+                "docs_systems_md",
+                "docs_tpsl_md"
+              ]
+            },
+            {
+              "confirmed": false,
+              "note": "Contradicted or currently unavailable: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "docs_fee_md",
+                "docs_portfolio_fees_md",
+                "fee_tiers",
+                "docs_order_md",
+                "docs_query_md",
+                "docs_portfolios_md",
+                "docs_sandbox_md",
+                "docs_auth_md",
+                "docs_limits_md",
+                "docs_systems_md",
+                "docs_tpsl_md"
+              ]
+            },
+            {
+              "confirmed": false,
+              "note": "Contradicted or currently unavailable: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "docs_fee_md",
+                "docs_portfolio_fees_md",
+                "fee_tiers",
+                "docs_order_md",
+                "docs_query_md",
+                "docs_portfolios_md",
+                "docs_sandbox_md",
+                "docs_auth_md",
+                "docs_limits_md",
+                "docs_systems_md",
+                "docs_tpsl_md"
+              ]
+            },
+            {
+              "confirmed": false,
+              "note": "Both required products PAUSED; public book endpoints 404 and fee-tier request 403.",
+              "source_ids": [
+                "docs_fee_md",
+                "docs_portfolio_fees_md",
+                "fee_tiers",
+                "docs_order_md",
+                "docs_query_md",
+                "docs_portfolios_md",
+                "docs_sandbox_md",
+                "docs_auth_md",
+                "docs_limits_md",
+                "docs_systems_md",
+                "docs_tpsl_md"
+              ]
+            }
+          ],
+          "points": {
+            "cost": 0,
+            "data": 3,
+            "funding": 2,
+            "liquidity": 0,
+            "orders": 2,
+            "safety": 2
+          },
+          "score": "18.307692307692307692",
+          "score_rational": [
+            "238",
+            "13"
+          ],
+          "venue": "coinbase_international"
+        },
+        {
+          "all_in_cost_bps": null,
+          "eligible": false,
+          "hard_gate_failures": [
+            {
+              "confirmed": null,
+              "note": "Unverified: base API fee knowable with official current evidence. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "fee_page",
+                "docs_exchange_info_new"
+              ]
+            },
+            {
+              "confirmed": null,
+              "note": "Unverified: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "fee_page",
+                "docs_exchange_info_new"
+              ]
+            },
+            {
+              "confirmed": null,
+              "note": "Unverified: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "fee_page",
+                "docs_exchange_info_new"
+              ]
+            },
+            {
+              "confirmed": null,
+              "note": "Unverified: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "fee_page",
+                "docs_exchange_info_new"
+              ]
+            },
+            {
+              "confirmed": false,
+              "note": "Repeated cloud and ordinary GitHub CI public API responses are HTTP 451 restricted location.",
+              "source_ids": [
+                "fee_page",
+                "docs_exchange_info_new"
+              ]
+            }
+          ],
+          "points": {
+            "cost": 0,
+            "data": 0,
+            "funding": 0,
+            "liquidity": 0,
+            "orders": 0,
+            "safety": 0
+          },
+          "score": "0",
+          "score_rational": [
+            "0",
+            "1"
+          ],
+          "venue": "binance_futures"
+        }
+      ],
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "shift": -5,
+      "weights": {
+        "cost": "30",
+        "data": "5.384615384615384615",
+        "funding": "10.769230769230769231",
+        "liquidity": "26.923076923076923077",
+        "orders": "16.153846153846153846",
+        "safety": "10.769230769230769231"
+      }
+    },
+    {
+      "ranking": [
+        {
+          "all_in_cost_bps": "7.025726406117107471",
+          "eligible": false,
+          "hard_gate_failures": [
+            {
+              "confirmed": false,
+              "note": "Required isolated position control and leverage behavior not verified. A dedicated subaccount is not automatic equivalence.",
+              "source_ids": [
+                "usdc_instruments",
+                "docs_instruments_md",
+                "fees_article",
+                "docs_buy_md",
+                "docs_sell_md",
+                "docs_orders_md",
+                "docs_order_state_md",
+                "docs_user_trades_md",
+                "docs_position_md",
+                "docs_keys_md",
+                "docs_access_scope_md",
+                "docs_auth_md",
+                "docs_limits_md",
+                "isolated_article",
+                "status"
+              ]
+            }
+          ],
+          "points": {
+            "cost": 3,
+            "data": 4,
+            "funding": 5,
+            "liquidity": 5,
+            "orders": 3,
+            "safety": 3
+          },
+          "score": "73.846153846153846154",
+          "score_rational": [
+            "960",
+            "13"
+          ],
+          "venue": "deribit"
+        },
+        {
+          "all_in_cost_bps": "9.280706990684755144",
+          "eligible": false,
+          "hard_gate_failures": [
+            {
+              "confirmed": null,
+              "note": "Agent-signer authority over external movement/withdrawal is unresolved; one same-address action does not prove all scopes.",
+              "source_ids": [
+                "hl_docs_fees",
+                "hl_docs_exchange",
+                "hl_docs_wallet",
+                "hl_docs_signing",
+                "hl_docs_margin",
+                "hl_docs_limits",
+                "hl_docs_info"
+              ]
+            }
+          ],
+          "points": {
+            "cost": 3,
+            "data": 4,
+            "funding": 5,
+            "liquidity": 5,
+            "orders": 4,
+            "safety": 1
+          },
+          "score": "72.923076923076923077",
+          "score_rational": [
+            "948",
+            "13"
+          ],
+          "venue": "hyperliquid"
+        },
+        {
+          "all_in_cost_bps": "12.12725964327464574",
+          "eligible": true,
+          "hard_gate_failures": [],
+          "points": {
+            "cost": 2,
+            "data": 5,
+            "funding": 2,
+            "liquidity": 5,
+            "orders": 5,
+            "safety": 3
+          },
+          "score": "66.769230769230769231",
+          "score_rational": [
+            "868",
+            "13"
+          ],
+          "venue": "blofin"
+        },
+        {
+          "all_in_cost_bps": null,
+          "eligible": false,
+          "hard_gate_failures": [
+            {
+              "confirmed": false,
+              "note": "Current ordinary API SWAP fee is unverified; retrieved 2/5 bps help text is illustrative and exposed SSR table is Spot.",
+              "source_ids": [
+                "fee_page_en",
+                "fee_help_en",
+                "docs_main#trading-account-rest-api-get-fee-rates",
+                "docs_main",
+                "docs_main#trading-account-rest-api-set-leverage",
+                "docs_main#order-book-trading-trade-post-place-order",
+                "docs_main#order-book-trading-algo-trading-post-place-algo-order",
+                "docs_main#overview-api-key-creation-api-key-permissions",
+                "docs_main#overview-api-key-creation-api-key-security",
+                "system_status",
+                "server_time"
+              ]
+            }
+          ],
+          "points": {
+            "cost": 0,
+            "data": 5,
+            "funding": 3,
+            "liquidity": 5,
+            "orders": 5,
+            "safety": 4
+          },
+          "score": "54.461538461538461538",
+          "score_rational": [
+            "708",
+            "13"
+          ],
+          "venue": "okx"
+        },
+        {
+          "all_in_cost_bps": null,
+          "eligible": false,
+          "hard_gate_failures": [
+            {
+              "confirmed": false,
+              "note": "Public contract maker/taker fields do not prove ordinary API-account fee; authenticated futures fee endpoint is required.",
+              "source_ids": [
+                "gate_btc_contract",
+                "gate_eth_contract",
+                "gate_docs_zip",
+                "gate_fee_schedule",
+                "gate_docs_api",
+                "gate_status"
+              ]
+            }
+          ],
+          "points": {
+            "cost": 0,
+            "data": 4,
+            "funding": 2,
+            "liquidity": 5,
+            "orders": 5,
+            "safety": 3
+          },
+          "score": "49.846153846153846154",
+          "score_rational": [
+            "648",
+            "13"
+          ],
+          "venue": "gate"
+        },
+        {
+          "all_in_cost_bps": null,
+          "eligible": false,
+          "hard_gate_failures": [
+            {
+              "confirmed": false,
+              "note": "Public 0/2 bps instrument fields do not prove ordinary API-account fee; tiered fee route is private.",
+              "source_ids": [
+                "instrument_btc",
+                "instrument_eth",
+                "docs_api",
+                "fees_page"
+              ]
+            },
+            {
+              "confirmed": false,
+              "note": "Contradicted or currently unavailable: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "instrument_btc",
+                "instrument_eth",
+                "docs_api",
+                "fees_page"
+              ]
+            }
+          ],
+          "points": {
+            "cost": 0,
+            "data": 4,
+            "funding": 2,
+            "liquidity": 5,
+            "orders": 5,
+            "safety": 1
+          },
+          "score": "46.153846153846153846",
+          "score_rational": [
+            "600",
+            "13"
+          ],
+          "venue": "mexc"
+        },
+        {
+          "all_in_cost_bps": null,
+          "eligible": true,
+          "hard_gate_failures": [],
+          "points": {
+            "cost": 0,
+            "data": 4,
+            "funding": 2,
+            "liquidity": 0,
+            "orders": 5,
+            "safety": 3
+          },
+          "score": "26.769230769230769231",
+          "score_rational": [
+            "348",
+            "13"
+          ],
+          "venue": "kraken_futures"
+        },
+        {
+          "all_in_cost_bps": null,
+          "eligible": true,
+          "hard_gate_failures": [],
+          "points": {
+            "cost": 0,
+            "data": 4,
+            "funding": 2,
+            "liquidity": 0,
+            "orders": 5,
+            "safety": 3
+          },
+          "score": "26.769230769230769231",
+          "score_rational": [
+            "348",
+            "13"
+          ],
+          "venue": "kucoin_futures"
+        },
+        {
+          "all_in_cost_bps": null,
+          "eligible": true,
+          "hard_gate_failures": [],
+          "points": {
+            "cost": 0,
+            "data": 5,
+            "funding": 2,
+            "liquidity": 0,
+            "orders": 5,
+            "safety": 2
+          },
+          "score": "25.846153846153846154",
+          "score_rational": [
+            "336",
+            "13"
+          ],
+          "venue": "bitget"
+        },
+        {
+          "all_in_cost_bps": null,
+          "eligible": false,
+          "hard_gate_failures": [
+            {
+              "confirmed": null,
+              "note": "Unverified: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "bybit:bybit_docs_fee",
+                "bybit:bybit_docs_order",
+                "bybit:bybit_docs_trading_stop",
+                "bybit:bybit_docs_leverage",
+                "bybit:bybit_docs_apikey_info",
+                "bybit:bybit_docs_rate_limit",
+                "bybit:bybit_docs_guide",
+                "bybit:bybit_docs_demo",
+                "bybit:bybit_docs_ws_order",
+                "bybit:bybit_docs_realtime_order",
+                "bybit:bybit_docs_position"
+              ]
+            },
+            {
+              "confirmed": null,
+              "note": "Unverified: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "bybit:bybit_docs_fee",
+                "bybit:bybit_docs_order",
+                "bybit:bybit_docs_trading_stop",
+                "bybit:bybit_docs_leverage",
+                "bybit:bybit_docs_apikey_info",
+                "bybit:bybit_docs_rate_limit",
+                "bybit:bybit_docs_guide",
+                "bybit:bybit_docs_demo",
+                "bybit:bybit_docs_ws_order",
+                "bybit:bybit_docs_realtime_order",
+                "bybit:bybit_docs_position"
+              ]
+            },
+            {
+              "confirmed": false,
+              "note": "Repeated cloud and ordinary GitHub CI public API responses are HTTP 403 country block.",
+              "source_ids": [
+                "bybit:bybit_docs_fee",
+                "bybit:bybit_docs_order",
+                "bybit:bybit_docs_trading_stop",
+                "bybit:bybit_docs_leverage",
+                "bybit:bybit_docs_apikey_info",
+                "bybit:bybit_docs_rate_limit",
+                "bybit:bybit_docs_guide",
+                "bybit:bybit_docs_demo",
+                "bybit:bybit_docs_ws_order",
+                "bybit:bybit_docs_realtime_order",
+                "bybit:bybit_docs_position"
+              ]
+            }
+          ],
+          "points": {
+            "cost": 0,
+            "data": 0,
+            "funding": 2,
+            "liquidity": 0,
+            "orders": 4,
+            "safety": 3
+          },
+          "score": "20.307692307692307692",
+          "score_rational": [
+            "264",
+            "13"
+          ],
+          "venue": "bybit"
+        },
+        {
+          "all_in_cost_bps": null,
+          "eligible": false,
+          "hard_gate_failures": [
+            {
+              "confirmed": false,
+              "note": "Contradicted or currently unavailable: base API fee knowable with official current evidence. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "docs_fee_md",
+                "docs_portfolio_fees_md",
+                "fee_tiers",
+                "docs_order_md",
+                "docs_query_md",
+                "docs_portfolios_md",
+                "docs_sandbox_md",
+                "docs_auth_md",
+                "docs_limits_md",
+                "docs_systems_md",
+                "docs_tpsl_md"
+              ]
+            },
+            {
+              "confirmed": false,
+              "note": "Contradicted or currently unavailable: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "docs_fee_md",
+                "docs_portfolio_fees_md",
+                "fee_tiers",
+                "docs_order_md",
+                "docs_query_md",
+                "docs_portfolios_md",
+                "docs_sandbox_md",
+                "docs_auth_md",
+                "docs_limits_md",
+                "docs_systems_md",
+                "docs_tpsl_md"
+              ]
+            },
+            {
+              "confirmed": false,
+              "note": "Contradicted or currently unavailable: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "docs_fee_md",
+                "docs_portfolio_fees_md",
+                "fee_tiers",
+                "docs_order_md",
+                "docs_query_md",
+                "docs_portfolios_md",
+                "docs_sandbox_md",
+                "docs_auth_md",
+                "docs_limits_md",
+                "docs_systems_md",
+                "docs_tpsl_md"
+              ]
+            },
+            {
+              "confirmed": false,
+              "note": "Both required products PAUSED; public book endpoints 404 and fee-tier request 403.",
+              "source_ids": [
+                "docs_fee_md",
+                "docs_portfolio_fees_md",
+                "fee_tiers",
+                "docs_order_md",
+                "docs_query_md",
+                "docs_portfolios_md",
+                "docs_sandbox_md",
+                "docs_auth_md",
+                "docs_limits_md",
+                "docs_systems_md",
+                "docs_tpsl_md"
+              ]
+            }
+          ],
+          "points": {
+            "cost": 0,
+            "data": 3,
+            "funding": 2,
+            "liquidity": 0,
+            "orders": 2,
+            "safety": 2
+          },
+          "score": "15.692307692307692308",
+          "score_rational": [
+            "204",
+            "13"
+          ],
+          "venue": "coinbase_international"
+        },
+        {
+          "all_in_cost_bps": null,
+          "eligible": false,
+          "hard_gate_failures": [
+            {
+              "confirmed": null,
+              "note": "Unverified: base API fee knowable with official current evidence. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "fee_page",
+                "docs_exchange_info_new"
+              ]
+            },
+            {
+              "confirmed": null,
+              "note": "Unverified: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "fee_page",
+                "docs_exchange_info_new"
+              ]
+            },
+            {
+              "confirmed": null,
+              "note": "Unverified: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "fee_page",
+                "docs_exchange_info_new"
+              ]
+            },
+            {
+              "confirmed": null,
+              "note": "Unverified: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+              "source_ids": [
+                "fee_page",
+                "docs_exchange_info_new"
+              ]
+            },
+            {
+              "confirmed": false,
+              "note": "Repeated cloud and ordinary GitHub CI public API responses are HTTP 451 restricted location.",
+              "source_ids": [
+                "fee_page",
+                "docs_exchange_info_new"
+              ]
+            }
+          ],
+          "points": {
+            "cost": 0,
+            "data": 0,
+            "funding": 0,
+            "liquidity": 0,
+            "orders": 0,
+            "safety": 0
+          },
+          "score": "0",
+          "score_rational": [
+            "0",
+            "1"
+          ],
+          "venue": "binance_futures"
+        }
+      ],
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "shift": 5,
+      "weights": {
+        "cost": "40",
+        "data": "4.615384615384615385",
+        "funding": "9.230769230769230769",
+        "liquidity": "23.076923076923076923",
+        "orders": "13.846153846153846154",
+        "safety": "9.230769230769230769"
+      }
+    }
+  ],
+  "primary_execution_changed_under_snapshot_removal": false,
+  "promotions": "Already excluded in all primary/sensitivity fee matrices; no guaranteed discount used",
+  "remove_snapshot": [
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "book_btc_1",
+      "venue": "okx"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "book_btc_2",
+      "venue": "okx"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/okx/38632c60138cb52a4e93c874.receipt.json",
+      "venue": "okx"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/okx/6bdb1febc8af7fb37cf14989.receipt.json",
+      "venue": "okx"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "book_eth_1",
+      "venue": "okx"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "book_eth_2",
+      "venue": "okx"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/okx/179029842e39f741b5f866ab.receipt.json",
+      "venue": "okx"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/okx/3cf859f83b6a00f2eeca2141.receipt.json",
+      "venue": "okx"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "hl_btc_book_1",
+      "venue": "hyperliquid"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "hl_btc_book_2",
+      "venue": "hyperliquid"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/hyperliquid/8af845fd48a05f6df1767efc.receipt.json",
+      "venue": "hyperliquid"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/hyperliquid/fc14efd106187515571905d3.receipt.json",
+      "venue": "hyperliquid"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "hl_eth_book_1",
+      "venue": "hyperliquid"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "hl_eth_book_2",
+      "venue": "hyperliquid"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/hyperliquid/7458a09d8bffc1670e031968.receipt.json",
+      "venue": "hyperliquid"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/hyperliquid/c0dcaed299857ddd6364dc73.receipt.json",
+      "venue": "hyperliquid"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "gate_btc_book_1",
+      "venue": "gate"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "gate_btc_book_2",
+      "venue": "gate"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/gate/a6e760c58783f8f21a7809cb.receipt.json",
+      "venue": "gate"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/gate/58e0fdf7a91874f74ac8e235.receipt.json",
+      "venue": "gate"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "gate_eth_book_1",
+      "venue": "gate"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "gate_eth_book_2",
+      "venue": "gate"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/gate/9bfa24fe7b1be3a6c6c61f80.receipt.json",
+      "venue": "gate"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/gate/672fb4c410cf66d16dfcfe19.receipt.json",
+      "venue": "gate"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "bitget:bitget_BTC_merge_book",
+      "venue": "bitget"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "bitget:BTCUSDT_merge_book2",
+      "venue": "bitget"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "evidence/ci/bitget/3f2d1407106305de34fa7f0b.receipt.json",
+      "venue": "bitget"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "evidence/ci/bitget/c6afe14e029afd57e26f2c73.receipt.json",
+      "venue": "bitget"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "bitget:bitget_ETH_merge_book",
+      "venue": "bitget"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "bitget:ETHUSDT_merge_book2",
+      "venue": "bitget"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "evidence/ci/bitget/13833796109ae386dfea6d60.receipt.json",
+      "venue": "bitget"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "evidence/ci/bitget/4ea9491a93a7b4254b92c8f9.receipt.json",
+      "venue": "bitget"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "kc_btc_book_1",
+      "venue": "kucoin_futures"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "kc_btc_book_2",
+      "venue": "kucoin_futures"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "evidence/ci/kucoin_futures/737bb2c32a80b85dc32430f1.receipt.json",
+      "venue": "kucoin_futures"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "evidence/ci/kucoin_futures/043ff799e36cc1b0c995041d.receipt.json",
+      "venue": "kucoin_futures"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "kc_eth_book_1",
+      "venue": "kucoin_futures"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "kc_eth_book_2",
+      "venue": "kucoin_futures"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kucoin_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/kucoin_futures/e7c1a75f8f72a9f59da3aad8.receipt.json",
+      "venue": "kucoin_futures"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "evidence/ci/kucoin_futures/0005d16549d01c6aa76a11ee.receipt.json",
+      "venue": "kucoin_futures"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "bf_btc_book_1",
+      "venue": "blofin"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "bf_btc_book_2",
+      "venue": "blofin"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/blofin/2cbb8a34e28ae7c8aa6d109f.receipt.json",
+      "venue": "blofin"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/blofin/5c6a89f0254c464ce9e7d311.receipt.json",
+      "venue": "blofin"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "bf_eth_book_1",
+      "venue": "blofin"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "bf_eth_book_2",
+      "venue": "blofin"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/blofin/b202c3b80f80e4ce1805e3b6.receipt.json",
+      "venue": "blofin"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/blofin/dc0d2de3ab5317101fd534a0.receipt.json",
+      "venue": "blofin"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "book_btc_1",
+      "venue": "mexc"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "book_btc_2",
+      "venue": "mexc"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "book_btc_3",
+      "venue": "mexc"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/mexc/c99576a12c94b3ca23559617.receipt.json",
+      "venue": "mexc"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/mexc/60525e7f2608547a60dcd337.receipt.json",
+      "venue": "mexc"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "book_eth_1",
+      "venue": "mexc"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "book_eth_2",
+      "venue": "mexc"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "book_eth_3",
+      "venue": "mexc"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/mexc/d518624afe9b4643839bf018.receipt.json",
+      "venue": "mexc"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/mexc/ba2b3f0ee65084aa842a50ea.receipt.json",
+      "venue": "mexc"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "book_btc_1",
+      "venue": "kraken_futures"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "book_btc_2",
+      "venue": "kraken_futures"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "book_btc_3",
+      "venue": "kraken_futures"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "evidence/ci/kraken_futures/6aaa168e47d606679a03ae6b.receipt.json",
+      "venue": "kraken_futures"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "evidence/ci/kraken_futures/5593dcbddf5f3250dec917d3.receipt.json",
+      "venue": "kraken_futures"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "book_eth_1",
+      "venue": "kraken_futures"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "book_eth_2",
+      "venue": "kraken_futures"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "book_eth_3",
+      "venue": "kraken_futures"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "evidence/ci/kraken_futures/be03e6089913c6846e1d979a.receipt.json",
+      "venue": "kraken_futures"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": false,
+      "source_removed": "evidence/ci/kraken_futures/595ad3db93e2edbc9d431eeb.receipt.json",
+      "venue": "kraken_futures"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "btc_book1",
+      "venue": "deribit"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "btc_book2",
+      "venue": "deribit"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/deribit/3937de1a2faf746b90505d1b.receipt.json",
+      "venue": "deribit"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/deribit/30d70642bccbe8d89253ad49.receipt.json",
+      "venue": "deribit"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "eth_book1",
+      "venue": "deribit"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "eth_book2",
+      "venue": "deribit"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/deribit/2a7643e34fed1ca65e09cbdd.receipt.json",
+      "venue": "deribit"
+    },
+    {
+      "roles": {
+        "LIVE_enabled": false,
+        "OOS_registered_or_started": false,
+        "PAPER_enabled": false,
+        "PRIMARY_EXECUTION_VENUE": "blofin",
+        "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+        "REFERENCE_BENCHMARK_VENUE": "okx",
+        "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+        "actual_account_eligibility_verified": false,
+        "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+        "historical_backtest_ready": false,
+        "trade_entry_allowed": false
+      },
+      "scoring_usable_after_removal": true,
+      "source_removed": "evidence/ci/deribit/f535c924909d9f1992a80315.receipt.json",
+      "venue": "deribit"
+    }
+  ],
+  "unknown_depth": [
+    {
+      "all_in_cost_bps": null,
+      "eligible": true,
+      "hard_gate_failures": [],
+      "points": {
+        "access": 4,
+        "auxiliary": 4,
+        "cost_realism": 4,
+        "documentation": 5,
+        "history": 4,
+        "metadata": 4
+      },
+      "score": "82",
+      "score_rational": [
+        "82",
+        "1"
+      ],
+      "venue": "okx"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": null,
+          "note": "Unverified: exact product identity BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "docs_exchange_info_new",
+            "exchange_info"
+          ]
+        },
+        {
+          "confirmed": null,
+          "note": "Unverified: current defensible tick filters BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "docs_exchange_info_new",
+            "exchange_info"
+          ]
+        },
+        {
+          "confirmed": null,
+          "note": "Unverified: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "docs_exchange_info_new",
+            "exchange_info"
+          ]
+        },
+        {
+          "confirmed": null,
+          "note": "Unverified: causally known prospective metadata capture possible. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "docs_exchange_info_new",
+            "exchange_info"
+          ]
+        },
+        {
+          "confirmed": false,
+          "note": "Contradicted or currently unavailable: at least one approved environment public access success; severe current geo-block remains penalty. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "evidence/ci/binance_futures/72f75aebb719799980d1048c.receipt.json",
+            "evidence/ci/binance_futures/253a8ab7760bf920bdbf0b35.receipt.json",
+            "evidence/ci/binance_futures/105e4930d5963a2e49d86520.receipt.json"
+          ]
+        }
+      ],
+      "points": {
+        "access": 0,
+        "auxiliary": 1,
+        "cost_realism": 0,
+        "documentation": 1,
+        "history": 0,
+        "metadata": 0
+      },
+      "score": "5",
+      "score_rational": [
+        "5",
+        "1"
+      ],
+      "venue": "binance_futures"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": false,
+          "note": "Contradicted or currently unavailable: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "hl_meta",
+            "hl_docs_contracts",
+            "hl_docs_info",
+            "hl_btc_m15_now",
+            "hl_eth_m15_now",
+            "hl_btc_m15_old",
+            "hl_eth_m15_old",
+            "hl_docs_history",
+            "hl_btc_book_1",
+            "hl_btc_book_2",
+            "hl_eth_book_1",
+            "hl_eth_book_2",
+            "hl_docs_tick"
+          ]
+        }
+      ],
+      "points": {
+        "access": 4,
+        "auxiliary": 2,
+        "cost_realism": 5,
+        "documentation": 3,
+        "history": 0,
+        "metadata": 3
+      },
+      "score": "50",
+      "score_rational": [
+        "50",
+        "1"
+      ],
+      "venue": "hyperliquid"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": false,
+          "note": "Contradicted or currently unavailable: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "gate_btc_contract",
+            "gate_docs_zip",
+            "gate_btc_m15_now",
+            "gate_eth_m15_now",
+            "gate_btc_m15_old",
+            "gate_eth_m15_old",
+            "gate_btc_oi",
+            "gate_eth_oi",
+            "gate_btc_book_1",
+            "gate_btc_book_2",
+            "gate_eth_book_1",
+            "gate_eth_book_2",
+            "gate_eth_contract"
+          ]
+        }
+      ],
+      "points": {
+        "access": 4,
+        "auxiliary": 2,
+        "cost_realism": 3,
+        "documentation": 3,
+        "history": 0,
+        "metadata": 4
+      },
+      "score": "50",
+      "score_rational": [
+        "50",
+        "1"
+      ],
+      "venue": "gate"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": true,
+      "hard_gate_failures": [],
+      "points": {
+        "access": 5,
+        "auxiliary": 3,
+        "cost_realism": 2,
+        "documentation": 4,
+        "history": 5,
+        "metadata": 4
+      },
+      "score": "82",
+      "score_rational": [
+        "82",
+        "1"
+      ],
+      "venue": "bitget"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": null,
+          "note": "Unverified: exact product identity BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "bybit:bybit_docs_instrument",
+            "bybit:BTCUSDT_instrument",
+            "bybit:bybit_docs_kline",
+            "bybit:bybit_docs_oi",
+            "bybit:BTCUSDT_m15now",
+            "bybit:ETHUSDT_m15now",
+            "bybit:BTCUSDT_m15old",
+            "bybit:ETHUSDT_m15old",
+            "bybit:ETHUSDT_instrument"
+          ]
+        },
+        {
+          "confirmed": null,
+          "note": "Unverified: current defensible tick filters BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "bybit:bybit_docs_instrument",
+            "bybit:BTCUSDT_instrument",
+            "bybit:bybit_docs_kline",
+            "bybit:bybit_docs_oi",
+            "bybit:BTCUSDT_m15now",
+            "bybit:ETHUSDT_m15now",
+            "bybit:BTCUSDT_m15old",
+            "bybit:ETHUSDT_m15old",
+            "bybit:ETHUSDT_instrument"
+          ]
+        },
+        {
+          "confirmed": null,
+          "note": "Unverified: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "bybit:bybit_docs_instrument",
+            "bybit:BTCUSDT_instrument",
+            "bybit:bybit_docs_kline",
+            "bybit:bybit_docs_oi",
+            "bybit:BTCUSDT_m15now",
+            "bybit:ETHUSDT_m15now",
+            "bybit:BTCUSDT_m15old",
+            "bybit:ETHUSDT_m15old",
+            "bybit:ETHUSDT_instrument"
+          ]
+        },
+        {
+          "confirmed": null,
+          "note": "Unverified: causally known prospective metadata capture possible. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "bybit:bybit_docs_instrument",
+            "bybit:BTCUSDT_instrument",
+            "bybit:bybit_docs_kline",
+            "bybit:bybit_docs_oi",
+            "bybit:BTCUSDT_m15now",
+            "bybit:ETHUSDT_m15now",
+            "bybit:BTCUSDT_m15old",
+            "bybit:ETHUSDT_m15old",
+            "bybit:ETHUSDT_instrument"
+          ]
+        },
+        {
+          "confirmed": false,
+          "note": "Contradicted or currently unavailable: at least one approved environment public access success; severe current geo-block remains penalty. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "evidence/ci/bybit/d76e4927a9b3d2a8bc548aa2.receipt.json",
+            "evidence/ci/bybit/89b32808f5958902fcd1b107.receipt.json",
+            "evidence/ci/bybit/bd8787019204e3ba2091128d.receipt.json"
+          ]
+        }
+      ],
+      "points": {
+        "access": 0,
+        "auxiliary": 2,
+        "cost_realism": 2,
+        "documentation": 3,
+        "history": 0,
+        "metadata": 1
+      },
+      "score": "20",
+      "score_rational": [
+        "20",
+        "1"
+      ],
+      "venue": "bybit"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": false,
+          "note": "Contradicted or currently unavailable: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "kc_btc_contract",
+            "kc_docs_contract_en",
+            "kc_docs_intro",
+            "kc_docs_klines_en",
+            "kc_btc_m15_now_ms",
+            "kc_eth_m15_now_ms",
+            "kc_btc_m15_old_ms",
+            "kc_eth_m15_old_ms",
+            "kc_docs_open_interest",
+            "kc_eth_contract",
+            "kc_btc_book_1",
+            "kc_btc_book_2",
+            "kc_docs_fullbook",
+            "kc_eth_book_1",
+            "kc_eth_book_2"
+          ]
+        }
+      ],
+      "points": {
+        "access": 5,
+        "auxiliary": 3,
+        "cost_realism": 4,
+        "documentation": 3,
+        "history": 0,
+        "metadata": 4
+      },
+      "score": "59",
+      "score_rational": [
+        "59",
+        "1"
+      ],
+      "venue": "kucoin_futures"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": true,
+      "hard_gate_failures": [],
+      "points": {
+        "access": 4,
+        "auxiliary": 2,
+        "cost_realism": 4,
+        "documentation": 3,
+        "history": 4,
+        "metadata": 3
+      },
+      "score": "68",
+      "score_rational": [
+        "68",
+        "1"
+      ],
+      "venue": "blofin"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": false,
+          "note": "Contradicted or currently unavailable: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "instrument_btc",
+            "docs_api",
+            "m15_btc_now",
+            "m15_eth_now",
+            "m15_btc_old",
+            "m15_eth_old",
+            "m15_btc_2026_jan",
+            "m15_eth_2026_jan",
+            "m15_btc_2026_may",
+            "m15_eth_2026_may",
+            "trades_btc",
+            "trades_eth",
+            "index_btc_old",
+            "fair_btc_old",
+            "ticker_btc",
+            "ticker_eth"
+          ]
+        }
+      ],
+      "points": {
+        "access": 4,
+        "auxiliary": 2,
+        "cost_realism": 3,
+        "documentation": 3,
+        "history": 0,
+        "metadata": 4
+      },
+      "score": "50",
+      "score_rational": [
+        "50",
+        "1"
+      ],
+      "venue": "mexc"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": true,
+      "hard_gate_failures": [],
+      "points": {
+        "access": 5,
+        "auxiliary": 2,
+        "cost_realism": 2,
+        "documentation": 3,
+        "history": 3,
+        "metadata": 4
+      },
+      "score": "67",
+      "score_rational": [
+        "67",
+        "1"
+      ],
+      "venue": "kraken_futures"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": false,
+          "note": "Both instruments are PAUSED and current candles empty, so a pristine current prospective capture is not established.",
+          "source_ids": [
+            "instruments",
+            "docs_concepts_instruments_md",
+            "docs_channels_md",
+            "m15old_btc",
+            "m15old_eth",
+            "candles_btc_now",
+            "candles_eth_now",
+            "btc_quote",
+            "eth_quote",
+            "docs_candle_md",
+            "docs_instrument_md",
+            "changelog"
+          ]
+        }
+      ],
+      "points": {
+        "access": 1,
+        "auxiliary": 2,
+        "cost_realism": 1,
+        "documentation": 3,
+        "history": 3,
+        "metadata": 3
+      },
+      "score": "45",
+      "score_rational": [
+        "45",
+        "1"
+      ],
+      "venue": "coinbase_international"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": true,
+      "hard_gate_failures": [],
+      "points": {
+        "access": 4,
+        "auxiliary": 2,
+        "cost_realism": 5,
+        "documentation": 4,
+        "history": 3,
+        "metadata": 3
+      },
+      "score": "67",
+      "score_rational": [
+        "67",
+        "1"
+      ],
+      "venue": "deribit"
+    }
+  ],
+  "unknown_depth_roles": {
+    "LIVE_enabled": false,
+    "OOS_registered_or_started": false,
+    "PAPER_enabled": false,
+    "PRIMARY_EXECUTION_VENUE": "blofin",
+    "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+    "REFERENCE_BENCHMARK_VENUE": "okx",
+    "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+    "actual_account_eligibility_verified": false,
+    "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+    "historical_backtest_ready": false,
+    "trade_entry_allowed": false
+  }
+}

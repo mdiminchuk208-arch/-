@@ -1,0 +1,21 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:38:59 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "336.901",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 640090,
+  "raw_file": "cece15754ead8696dada616e.body",
+  "raw_sha256": "8f7003c960990d895ac864bf27ce752e60431c0064ca393b355a5514b99d7e35",
+  "request_started_at": "2026-10-13T06:38:59.073099+00:00",
+  "response_completed_at": "2026-10-13T06:38:59.409725+00:00",
+  "source_kind": "instruments",
+  "truncated": false,
+  "url": "https://api.bitget.com/api/v2/mix/market/contracts?productType=USDT-FUTURES"
+}

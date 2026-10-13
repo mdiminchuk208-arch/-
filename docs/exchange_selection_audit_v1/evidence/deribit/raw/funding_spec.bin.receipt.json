@@ -1,0 +1,18 @@
+{
+  "url": "https://support.deribit.com/hc/en-us/articles/31424939178397-Funding-Specifications",
+  "request_start_utc": "2026-10-13T06:34:09.168897+00:00",
+  "completion_utc": "2026-10-13T06:34:10.368665+00:00",
+  "latency_ms": 1200.0,
+  "http_status": 200,
+  "sha256": "5d9024f4bd40022bf00d11a8e4f39b706d84b7f42ee0213dcbb14c29367c4310",
+  "bytes": 76816,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:34:10 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "x-request-id": "a49a2f82ec5e6c4d-DUB",
+    "cf-ray": "a49c5123dbde6bf6-DFW"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/funding_spec.bin"
+}

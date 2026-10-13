@@ -1,0 +1,594 @@
+{
+  "binance_futures": {
+    "execution_reasons": [
+      {
+        "confirmed": null,
+        "note": "Unverified: base API fee knowable with official current evidence. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "fee_page",
+          "docs_exchange_info_new"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "fee_page",
+          "docs_exchange_info_new"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "fee_page",
+          "docs_exchange_info_new"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "fee_page",
+          "docs_exchange_info_new"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Repeated cloud and ordinary GitHub CI public API responses are HTTP 451 restricted location.",
+        "source_ids": [
+          "fee_page",
+          "docs_exchange_info_new"
+        ]
+      }
+    ],
+    "other_limitations": [
+      "Official fapi.binance.com/fapi/v1/exchangeInfo returned HTTP 451 with restricted-location text. No alternate API host, route or geo workaround attempted.",
+      "No live BTC/ETH product identity, filters, candles, books, funding, open interest or fee applicability established.",
+      "Developer documentation examples are schema illustrations, not live product evidence.",
+      "Fee page response was gzip-encoded and did not establish the base API perpetual fee schedule."
+    ],
+    "research_reasons": [
+      {
+        "confirmed": null,
+        "note": "Unverified: exact product identity BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "docs_exchange_info_new",
+          "exchange_info"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: current defensible tick filters BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "docs_exchange_info_new",
+          "exchange_info"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "docs_exchange_info_new",
+          "exchange_info"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: causally known prospective metadata capture possible. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "docs_exchange_info_new",
+          "exchange_info"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: at least one approved environment public access success; severe current geo-block remains penalty. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "evidence/ci/binance_futures/72f75aebb719799980d1048c.receipt.json",
+          "evidence/ci/binance_futures/253a8ab7760bf920bdbf0b35.receipt.json",
+          "evidence/ci/binance_futures/105e4930d5963a2e49d86520.receipt.json"
+        ]
+      }
+    ]
+  },
+  "bitget": {
+    "execution_reasons": [],
+    "other_limitations": [
+      "No current account-specific fee verification.",
+      "No complete historical tick epochs.",
+      "Depth quantity base-unit interpretation links two official schemas; depth description itself omits unit.",
+      "Only two point-in-time books per symbol; no sustained latency or fill quality study.",
+      "Cloud access success does not prove GitHub CI access or account/jurisdiction eligibility."
+    ],
+    "research_reasons": []
+  },
+  "blofin": {
+    "execution_reasons": [],
+    "other_limitations": [
+      "Regular fee table is published and does not exclude API trading, but account-specific tier/rebates remain private",
+      "Historical instrument tick/filter epochs are absent; delisted final metadata does not recover live past epochs",
+      "No public historical orderbook or OI history established",
+      "Reduce-only is ignored in hedge mode; execution would require one-way mode",
+      "Old M15 samples prove point retrieval, not two-year continuity"
+    ],
+    "research_reasons": []
+  },
+  "bybit": {
+    "execution_reasons": [
+      {
+        "confirmed": null,
+        "note": "Unverified: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bybit:bybit_docs_fee",
+          "bybit:bybit_docs_order",
+          "bybit:bybit_docs_trading_stop",
+          "bybit:bybit_docs_leverage",
+          "bybit:bybit_docs_apikey_info",
+          "bybit:bybit_docs_rate_limit",
+          "bybit:bybit_docs_guide",
+          "bybit:bybit_docs_demo",
+          "bybit:bybit_docs_ws_order",
+          "bybit:bybit_docs_realtime_order",
+          "bybit:bybit_docs_position"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bybit:bybit_docs_fee",
+          "bybit:bybit_docs_order",
+          "bybit:bybit_docs_trading_stop",
+          "bybit:bybit_docs_leverage",
+          "bybit:bybit_docs_apikey_info",
+          "bybit:bybit_docs_rate_limit",
+          "bybit:bybit_docs_guide",
+          "bybit:bybit_docs_demo",
+          "bybit:bybit_docs_ws_order",
+          "bybit:bybit_docs_realtime_order",
+          "bybit:bybit_docs_position"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Repeated cloud and ordinary GitHub CI public API responses are HTTP 403 country block.",
+        "source_ids": [
+          "bybit:bybit_docs_fee",
+          "bybit:bybit_docs_order",
+          "bybit:bybit_docs_trading_stop",
+          "bybit:bybit_docs_leverage",
+          "bybit:bybit_docs_apikey_info",
+          "bybit:bybit_docs_rate_limit",
+          "bybit:bybit_docs_guide",
+          "bybit:bybit_docs_demo",
+          "bybit:bybit_docs_ws_order",
+          "bybit:bybit_docs_realtime_order",
+          "bybit:bybit_docs_position"
+        ]
+      }
+    ],
+    "other_limitations": [
+      "No public API payloads from this cloud due repeated country 403; official docs are not live metadata or books.",
+      "GitHub CI access is a separate probe by root; no alternate hosts or geographic route attempted.",
+      "VIP0 fee table applies to ordinary perpetual trades; actual API account fee remains to verify."
+    ],
+    "research_reasons": [
+      {
+        "confirmed": null,
+        "note": "Unverified: exact product identity BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bybit:bybit_docs_instrument",
+          "bybit:BTCUSDT_instrument",
+          "bybit:bybit_docs_kline",
+          "bybit:bybit_docs_oi",
+          "bybit:BTCUSDT_m15now",
+          "bybit:ETHUSDT_m15now",
+          "bybit:BTCUSDT_m15old",
+          "bybit:ETHUSDT_m15old",
+          "bybit:ETHUSDT_instrument"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: current defensible tick filters BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bybit:bybit_docs_instrument",
+          "bybit:BTCUSDT_instrument",
+          "bybit:bybit_docs_kline",
+          "bybit:bybit_docs_oi",
+          "bybit:BTCUSDT_m15now",
+          "bybit:ETHUSDT_m15now",
+          "bybit:BTCUSDT_m15old",
+          "bybit:ETHUSDT_m15old",
+          "bybit:ETHUSDT_instrument"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bybit:bybit_docs_instrument",
+          "bybit:BTCUSDT_instrument",
+          "bybit:bybit_docs_kline",
+          "bybit:bybit_docs_oi",
+          "bybit:BTCUSDT_m15now",
+          "bybit:ETHUSDT_m15now",
+          "bybit:BTCUSDT_m15old",
+          "bybit:ETHUSDT_m15old",
+          "bybit:ETHUSDT_instrument"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: causally known prospective metadata capture possible. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bybit:bybit_docs_instrument",
+          "bybit:BTCUSDT_instrument",
+          "bybit:bybit_docs_kline",
+          "bybit:bybit_docs_oi",
+          "bybit:BTCUSDT_m15now",
+          "bybit:ETHUSDT_m15now",
+          "bybit:BTCUSDT_m15old",
+          "bybit:ETHUSDT_m15old",
+          "bybit:ETHUSDT_instrument"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: at least one approved environment public access success; severe current geo-block remains penalty. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "evidence/ci/bybit/d76e4927a9b3d2a8bc548aa2.receipt.json",
+          "evidence/ci/bybit/89b32808f5958902fcd1b107.receipt.json",
+          "evidence/ci/bybit/bd8787019204e3ba2091128d.receipt.json"
+        ]
+      }
+    ]
+  },
+  "coinbase_international": {
+    "execution_reasons": [
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: base API fee knowable with official current evidence. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "docs_fee_md",
+          "docs_portfolio_fees_md",
+          "fee_tiers",
+          "docs_order_md",
+          "docs_query_md",
+          "docs_portfolios_md",
+          "docs_sandbox_md",
+          "docs_auth_md",
+          "docs_limits_md",
+          "docs_systems_md",
+          "docs_tpsl_md"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "docs_fee_md",
+          "docs_portfolio_fees_md",
+          "fee_tiers",
+          "docs_order_md",
+          "docs_query_md",
+          "docs_portfolios_md",
+          "docs_sandbox_md",
+          "docs_auth_md",
+          "docs_limits_md",
+          "docs_systems_md",
+          "docs_tpsl_md"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "docs_fee_md",
+          "docs_portfolio_fees_md",
+          "fee_tiers",
+          "docs_order_md",
+          "docs_query_md",
+          "docs_portfolios_md",
+          "docs_sandbox_md",
+          "docs_auth_md",
+          "docs_limits_md",
+          "docs_systems_md",
+          "docs_tpsl_md"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Both required products PAUSED; public book endpoints 404 and fee-tier request 403.",
+        "source_ids": [
+          "docs_fee_md",
+          "docs_portfolio_fees_md",
+          "fee_tiers",
+          "docs_order_md",
+          "docs_query_md",
+          "docs_portfolios_md",
+          "docs_sandbox_md",
+          "docs_auth_md",
+          "docs_limits_md",
+          "docs_systems_md",
+          "docs_tpsl_md"
+        ]
+      }
+    ],
+    "other_limitations": [
+      "Both matching perpetuals are PAUSED in the retrieved instrument list; quote and funding data stop 2026-10-01.",
+      "Two attempted REST /book requests returned 404; official docs provide authenticated LEVEL2 WebSocket, but no valid contemporary book snapshot was obtained.",
+      "Current M15 calls returned HTTP200 with empty {} for both symbols; 2024-10-13 M15 history exists.",
+      "Fee tier endpoint returned 403 ip not allowed from this cloud environment; no geographic routing change attempted."
+    ],
+    "research_reasons": [
+      {
+        "confirmed": false,
+        "note": "Both instruments are PAUSED and current candles empty, so a pristine current prospective capture is not established.",
+        "source_ids": [
+          "instruments",
+          "docs_concepts_instruments_md",
+          "docs_channels_md",
+          "m15old_btc",
+          "m15old_eth",
+          "candles_btc_now",
+          "candles_eth_now",
+          "btc_quote",
+          "eth_quote",
+          "docs_candle_md",
+          "docs_instrument_md",
+          "changelog"
+        ]
+      }
+    ]
+  },
+  "deribit": {
+    "execution_reasons": [
+      {
+        "confirmed": false,
+        "note": "Required isolated position control and leverage behavior not verified. A dedicated subaccount is not automatic equivalence.",
+        "source_ids": [
+          "usdc_instruments",
+          "docs_instruments_md",
+          "fees_article",
+          "docs_buy_md",
+          "docs_sell_md",
+          "docs_orders_md",
+          "docs_order_state_md",
+          "docs_user_trades_md",
+          "docs_position_md",
+          "docs_keys_md",
+          "docs_access_scope_md",
+          "docs_auth_md",
+          "docs_limits_md",
+          "isolated_article",
+          "status"
+        ]
+      }
+    ],
+    "other_limitations": [
+      "Two 40-second-separated book samples per symbol are contemporaneous diagnostics, not future fill guarantees.",
+      "Historical M15 sentinel demonstrates endpoint depth at one date; missing-bar continuity and tick epochs remain unverified.",
+      "Old trade time-window API returned no trades for both symbols despite candle volume; do not infer full historical trade availability.",
+      "Position-level isolated margin unavailable; only subaccount partitioning documented."
+    ],
+    "research_reasons": []
+  },
+  "gate": {
+    "execution_reasons": [
+      {
+        "confirmed": false,
+        "note": "Public contract maker/taker fields do not prove ordinary API-account fee; authenticated futures fee endpoint is required.",
+        "source_ids": [
+          "gate_btc_contract",
+          "gate_eth_contract",
+          "gate_docs_zip",
+          "gate_fee_schedule",
+          "gate_docs_api",
+          "gate_status"
+        ]
+      }
+    ],
+    "other_limitations": [
+      "Two-year old BTC/ETH native M15 requests rejected with 10000 recent point limit; no official archived M15 retrieved.",
+      "Ordinary account/base-tier API fee not proven; public market contract fee fields are not account fee proof.",
+      "Historical tick/contract multiplier epochs not recovered.",
+      "2024 funding history request rejected with 180-day from limit.",
+      "Two book samples separated in time are diagnostic, not execution guarantee."
+    ],
+    "research_reasons": [
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "gate_btc_contract",
+          "gate_docs_zip",
+          "gate_btc_m15_now",
+          "gate_eth_m15_now",
+          "gate_btc_m15_old",
+          "gate_eth_m15_old",
+          "gate_btc_oi",
+          "gate_eth_oi",
+          "gate_btc_book_1",
+          "gate_btc_book_2",
+          "gate_eth_book_1",
+          "gate_eth_book_2",
+          "gate_eth_contract"
+        ]
+      }
+    ]
+  },
+  "hyperliquid": {
+    "execution_reasons": [
+      {
+        "confirmed": null,
+        "note": "Agent-signer authority over external movement/withdrawal is unresolved; one same-address action does not prove all scopes.",
+        "source_ids": [
+          "hl_docs_fees",
+          "hl_docs_exchange",
+          "hl_docs_wallet",
+          "hl_docs_signing",
+          "hl_docs_margin",
+          "hl_docs_limits",
+          "hl_docs_info"
+        ]
+      }
+    ],
+    "other_limitations": [
+      "2024-10-13 BTC and ETH native M15 requests returned [] despite HTTP 200; official archive explicitly lacks candles.",
+      "Historical tick/size metadata epochs not retrieved.",
+      "Agent wallet external withdrawal/transfer restriction and IP allowlist not proven; do not assume CEX-style trade-only permission.",
+      "Two book samples separated in time are diagnostic, not execution guarantee."
+    ],
+    "research_reasons": [
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "hl_meta",
+          "hl_docs_contracts",
+          "hl_docs_info",
+          "hl_btc_m15_now",
+          "hl_eth_m15_now",
+          "hl_btc_m15_old",
+          "hl_eth_m15_old",
+          "hl_docs_history",
+          "hl_btc_book_1",
+          "hl_btc_book_2",
+          "hl_eth_book_1",
+          "hl_eth_book_2",
+          "hl_docs_tick"
+        ]
+      }
+    ]
+  },
+  "kraken_futures": {
+    "execution_reasons": [],
+    "other_limitations": [
+      "PF_XBTUSD/PF_ETHUSD are USD-quoted flexible futures, not USDT-settled perpetuals; instrument API separately lists inverse PI contracts.",
+      "Book base-quantity normalization uses PF contractSize=1 plus product base/quote and orderbook size schema; Kraken docs do not explicitly spell out PF orderbook size denomination in a single sentence. Treat cost score as contingent on this unit interpretation.",
+      "Two-year M15 sentinel succeeds, but full two-to-three-year continuity and tick/filter epochs are not proven.",
+      "No individual account/jurisdiction eligibility or actual fee tier verified.",
+      "Three close-time book snapshots are a limited diagnostic, not execution guarantee."
+    ],
+    "research_reasons": []
+  },
+  "kucoin_futures": {
+    "execution_reasons": [],
+    "other_limitations": [
+      "2024-10-13 native M15 sentinel empty for BOTH BTC/ETH despite HTTP 200; no two-year candle proof",
+      "Actual account/API fee can only be confirmed by private query or applicable published tier schedule",
+      "IP binding not independently documented in captured sources",
+      "Historical tick/filter epochs not retrieved; prospective capture possible only from now",
+      "Books are contemporaneous snapshots, not guaranteed future fills"
+    ],
+    "research_reasons": [
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "kc_btc_contract",
+          "kc_docs_contract_en",
+          "kc_docs_intro",
+          "kc_docs_klines_en",
+          "kc_btc_m15_now_ms",
+          "kc_eth_m15_now_ms",
+          "kc_btc_m15_old_ms",
+          "kc_eth_m15_old_ms",
+          "kc_docs_open_interest",
+          "kc_eth_contract",
+          "kc_btc_book_1",
+          "kc_btc_book_2",
+          "kc_docs_fullbook",
+          "kc_eth_book_1",
+          "kc_eth_book_2"
+        ]
+      }
+    ]
+  },
+  "mexc": {
+    "execution_reasons": [
+      {
+        "confirmed": false,
+        "note": "Public 0/2 bps instrument fields do not prove ordinary API-account fee; tiered fee route is private.",
+        "source_ids": [
+          "instrument_btc",
+          "instrument_eth",
+          "docs_api",
+          "fees_page"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instrument_btc",
+          "instrument_eth",
+          "docs_api",
+          "fees_page"
+        ]
+      }
+    ],
+    "other_limitations": [
+      "Ordinary account API fee is unresolved despite public instrument rate fields.",
+      "Two-year native M15 sentinel is empty for both BTC and ETH; historical archive/continuity unverified.",
+      "No private credentials or account eligibility checked.",
+      "Three contemporaneous orderbooks are diagnostic only; first two are separated by hours due task interruption."
+    ],
+    "research_reasons": [
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: two-year old native M15 public sentinel or official archive verified BOTH symbols. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instrument_btc",
+          "docs_api",
+          "m15_btc_now",
+          "m15_eth_now",
+          "m15_btc_old",
+          "m15_eth_old",
+          "m15_btc_2026_jan",
+          "m15_eth_2026_jan",
+          "m15_btc_2026_may",
+          "m15_eth_2026_may",
+          "trades_btc",
+          "trades_eth",
+          "index_btc_old",
+          "fair_btc_old",
+          "ticker_btc",
+          "ticker_eth"
+        ]
+      }
+    ]
+  },
+  "okx": {
+    "execution_reasons": [
+      {
+        "confirmed": false,
+        "note": "Current ordinary API SWAP fee is unverified; retrieved 2/5 bps help text is illustrative and exposed SSR table is Spot.",
+        "source_ids": [
+          "fee_page_en",
+          "fee_help_en",
+          "docs_main#trading-account-rest-api-get-fee-rates",
+          "docs_main",
+          "docs_main#trading-account-rest-api-set-leverage",
+          "docs_main#order-book-trading-trade-post-place-order",
+          "docs_main#order-book-trading-algo-trading-post-place-algo-order",
+          "docs_main#overview-api-key-creation-api-key-permissions",
+          "docs_main#overview-api-key-creation-api-key-security",
+          "system_status",
+          "server_time"
+        ]
+      }
+    ],
+    "other_limitations": [
+      "Current public base API SWAP fee unverified.",
+      "Historical tick epochs not recovered; current filters cannot be backdated.",
+      "Native two-year M15 samples show point reachability, not continuity or missing-bar semantics.",
+      "Funding history is documented at up to three months, leaving multi-year funding provenance unresolved.",
+      "Book samples are contemporaneous diagnostics only.",
+      "No account, private API, demo or order capability tested."
+    ],
+    "research_reasons": []
+  }
+}

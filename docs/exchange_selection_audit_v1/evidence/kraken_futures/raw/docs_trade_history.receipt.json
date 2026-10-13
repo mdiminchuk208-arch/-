@@ -1,0 +1,18 @@
+{
+  "source_id": "docs_trade_history",
+  "url": "https://docs.kraken.com/api-reference/market-data/get-trade-history",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:30:22.375634+00:00",
+  "response_utc": "2026-10-13T06:30:22.657516+00:00",
+  "latency_ms": 281,
+  "http_status": 200,
+  "sha256": "c42b7df6026cfa7f108c0fa2c80daa7d015bd5a037674df70bef7bb178977903",
+  "bytes": 544048,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:30:22 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_trade_history.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

@@ -1,0 +1,21 @@
+{
+  "source_id": "support_search_api_fee",
+  "url": "https://www.mexc.com/support/search?keyword=API%20futures%20fee",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:29:21.137490+00:00",
+  "response_utc": "2026-10-13T06:29:23.119037+00:00",
+  "latency_ms": 1981,
+  "http_status": 200,
+  "sha256": "62cbfa73cc28b6c7977b4c76b3639b71a8f4391a65fb3f77482d187d08a0c3ad",
+  "bytes": 440722,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "x-ratelimit-limit": "10",
+    "x-ratelimit-remaining": "9",
+    "x-ratelimit-reset": "0",
+    "date": "Tue, 13 Oct 2026 06:29:22 GMT",
+    "server": "envoy"
+  },
+  "raw_path": "raw/support_search_api_fee.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

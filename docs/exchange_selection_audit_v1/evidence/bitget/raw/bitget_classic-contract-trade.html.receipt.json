@@ -1,0 +1,17 @@
+{
+  "url": "https://www.bitget.com/docs/catalog/classic-contract-trade",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:27:46.711576+00:00",
+  "request_end_utc": "2026-10-13T06:27:47.774929+00:00",
+  "latency_ms": 1063.57,
+  "status": 200,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:27:47 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "no-cache,no-cache"
+  },
+  "sha256": "cb87ed316175c7e3ee5cb3d54f2d16142fd2cee382ec9ed478e0dbe3ca705f50",
+  "bytes": 42142,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_classic-contract-trade.html",
+  "error": null
+}

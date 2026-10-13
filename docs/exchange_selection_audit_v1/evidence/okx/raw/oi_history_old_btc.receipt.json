@@ -1,0 +1,18 @@
+{
+  "body_bytes": 31,
+  "error": null,
+  "headers": {
+    "content-type": "application/json;charset=UTF-8",
+    "date": "Tue, 13 Oct 2026 06:28:39 GMT"
+  },
+  "id": "oi_history_old_btc",
+  "latency_ms": 1183.99,
+  "method": "GET",
+  "raw_path": "raw/oi_history_old_btc.body",
+  "request_utc": "2026-10-13T06:28:37.976316Z",
+  "retrieval_utc": "2026-10-13T06:28:39.160117Z",
+  "sha256": "fc24d69479edbb84f22c7d5bd4525349734056ad3baf7a5adf7e553f68c06a3a",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/rubik/stat/contracts/open-interest-history?instId=BTC-USDT-SWAP&period=15m&end=1728777600000&limit=2"
+}

@@ -1,0 +1,17 @@
+{
+  "url": "https://www.deribit.com/api/v2/public/get_last_trades_by_instrument?instrument_name=ETH_USDC-PERPETUAL&count=5",
+  "request_start_utc": "2026-10-13T06:28:15.819074+00:00",
+  "completion_utc": "2026-10-13T06:28:16.730929+00:00",
+  "latency_ms": 912.0,
+  "http_status": 200,
+  "sha256": "052b27ad42f845eff0c6c7cdad052adea4af3f550aa06db4b565fae20209c814",
+  "bytes": 1762,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:28:16 GMT",
+    "content-type": "application/json",
+    "cf-ray": "a49c488318b9436b-DFW"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/eth_trades.bin"
+}

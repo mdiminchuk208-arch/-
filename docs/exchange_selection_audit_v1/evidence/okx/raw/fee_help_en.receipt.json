@@ -1,0 +1,18 @@
+{
+  "body_bytes": 190438,
+  "error": null,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "date": "Mon, 12 Oct 2026 20:21:37 GMT"
+  },
+  "id": "fee_help_en",
+  "latency_ms": 724.4,
+  "method": "GET",
+  "raw_path": "raw/fee_help_en.body",
+  "request_utc": "2026-10-12T20:21:36.857056Z",
+  "retrieval_utc": "2026-10-12T20:21:37.581095Z",
+  "sha256": "f7ea4f2e998864091eefc7a57e4a06caac73aaca32d4e3cb441b181951788ece",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.okx.com/en-us/help/trading-fee-rules-faq"
+}

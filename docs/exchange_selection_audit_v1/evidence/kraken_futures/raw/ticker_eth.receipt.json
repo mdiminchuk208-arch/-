@@ -1,0 +1,19 @@
+{
+  "source_id": "ticker_eth",
+  "url": "https://futures.kraken.com/derivatives/api/v3/tickers?symbol=PF_ETHUSD",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:28:19.372598+00:00",
+  "response_utc": "2026-10-13T06:28:20.311531+00:00",
+  "latency_ms": 938,
+  "http_status": 200,
+  "sha256": "f412dd86b4a844afb72c7088f95343b6003c9a6b29227e980d9430db6aa24f50",
+  "bytes": 676,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:28:20 GMT",
+    "content-type": "application/json",
+    "content-length": "676",
+    "server": "envoy"
+  },
+  "raw_path": "raw/ticker_eth.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

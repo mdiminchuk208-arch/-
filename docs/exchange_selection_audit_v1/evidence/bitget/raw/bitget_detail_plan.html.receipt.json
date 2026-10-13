@@ -1,0 +1,17 @@
+{
+  "url": "https://www.bitget.com/docs/catalog/classic-contract-plan/classic-contract-plan",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:27:55.089574+00:00",
+  "request_end_utc": "2026-10-13T06:27:56.400390+00:00",
+  "latency_ms": 1311.33,
+  "status": 200,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:27:55 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "no-cache,no-cache"
+  },
+  "sha256": "5899f1a86e81ca04c2bec751e1167ebbd6dd234c9ee6551fd4edee30576fb016",
+  "bytes": 590199,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_detail_plan.html",
+  "error": null
+}

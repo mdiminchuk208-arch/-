@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.deribit.com/articles/authentication.md",
+  "request_start_utc": "2026-10-13T06:31:57.506004+00:00",
+  "completion_utc": "2026-10-13T06:31:58.680689+00:00",
+  "latency_ms": 1174.9,
+  "http_status": 200,
+  "sha256": "6e92676c6aa2d97982e536ac2d8ffd5037927adeace1b4bdc7f87b8b495c6bb8",
+  "bytes": 21095,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4ded8910f8bb-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:31:58 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_auth_md.bin"
+}

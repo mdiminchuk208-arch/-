@@ -1,0 +1,17 @@
+{
+  "url": "https://bybit-exchange.github.io/docs/v5/position/leverage",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:29:11.795180+00:00",
+  "request_end_utc": "2026-10-13T06:29:12.752772+00:00",
+  "latency_ms": 957.82,
+  "status": 200,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "max-age=600",
+    "date": "Tue, 13 Oct 2026 06:29:12 GMT"
+  },
+  "sha256": "85ea7b901b59494300c7bf307032ccbe67e0e5f9222c07ffae08269986993ad6",
+  "bytes": 69241,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_leverage.html",
+  "error": null
+}

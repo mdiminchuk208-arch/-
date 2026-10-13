@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.deribit.com/api-reference/trading/private-buy.md",
+  "request_start_utc": "2026-10-13T06:30:49.615086+00:00",
+  "completion_utc": "2026-10-13T06:30:50.783431+00:00",
+  "latency_ms": 1168.6,
+  "http_status": 200,
+  "sha256": "77800926bf14ed454dc647e1653a3e2a5a494e1a328e7211a88d179f91869a16",
+  "bytes": 47801,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4c45e8f1b86e-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:50 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_buy_md.bin"
+}

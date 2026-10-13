@@ -1,0 +1,24 @@
+{
+  "id": "gate_btc_oi",
+  "venue": "gate",
+  "url": "https://api.gateio.ws/api/v4/futures/usdt/contract_stats?contract=BTC_USDT&limit=2",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-12T20:21:15.866997+00:00",
+  "completed_utc": "2026-10-12T20:21:16.833104+00:00",
+  "latency_ms": 966.37,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:16 GMT",
+    "content-type": "application/json",
+    "content-length": "611",
+    "x-gate-ratelimit-requests-remain": "199",
+    "x-gate-ratelimit-limit": "200",
+    "x-gate-ratelimit-reset-timestamp": "1791836476"
+  },
+  "raw_path": "raw/gate_btc_oi.bin",
+  "raw_sha256": "e822dd8a149f2d3a6fdcd712e50271bc78ca982df3a5363aed98b5017ca29d98",
+  "raw_bytes": 611,
+  "truncated": false
+}

@@ -1,0 +1,18 @@
+{
+  "body_bytes": 224,
+  "error": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Mon, 12 Oct 2026 20:20:43 GMT"
+  },
+  "id": "exchange_info",
+  "latency_ms": 592.78,
+  "method": "GET",
+  "raw_path": "raw/exchange_info.body",
+  "request_utc": "2026-10-12T20:20:43.048871Z",
+  "retrieval_utc": "2026-10-12T20:20:43.641532Z",
+  "sha256": "79c1db471a4cdc1c8565b5dfc52e0ed2d29962738ee4d28597696fcd0920e348",
+  "status": 451,
+  "truncated": false,
+  "url": "https://fapi.binance.com/fapi/v1/exchangeInfo"
+}

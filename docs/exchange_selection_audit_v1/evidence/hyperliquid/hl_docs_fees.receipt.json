@@ -1,0 +1,20 @@
+{
+  "id": "hl_docs_fees",
+  "venue": "hyperliquid",
+  "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-12T20:21:25.784295+00:00",
+  "completed_utc": "2026-10-12T20:21:26.287692+00:00",
+  "latency_ms": 503.78,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:26 GMT",
+    "content-type": "text/plain; charset=utf-8"
+  },
+  "raw_path": "raw/hl_docs_fees.bin",
+  "raw_sha256": "75e55504b1b887a89e1668a9544d09b013242747bcc29f8648a5410142a71258",
+  "raw_bytes": 12174,
+  "truncated": false
+}

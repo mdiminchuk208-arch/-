@@ -1,0 +1,17 @@
+{
+  "url": "https://www.deribit.com/api/v2/public/get_instruments?currency=ETH&kind=future&expired=false",
+  "request_start_utc": "2026-10-13T06:27:47.995037+00:00",
+  "completion_utc": "2026-10-13T06:27:49.048230+00:00",
+  "latency_ms": 1053.3,
+  "http_status": 200,
+  "sha256": "3bb3aa57a4605ef149fab48f94e61a99d3215566f88ffd82c38762a2ab0032e9",
+  "bytes": 10845,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:27:48 GMT",
+    "content-type": "application/json",
+    "cf-ray": "a49c47d609241deb-DFW"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/eth_instruments.json"
+}

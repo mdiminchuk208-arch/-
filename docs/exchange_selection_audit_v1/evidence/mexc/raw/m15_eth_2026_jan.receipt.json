@@ -1,0 +1,19 @@
+{
+  "source_id": "m15_eth_2026_jan",
+  "url": "https://contract.mexc.com/api/v1/contract/kline/ETH_USDT?interval=Min15&start=1767225600&end=1767312000",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:32:58.038479+00:00",
+  "response_utc": "2026-10-13T06:32:58.361806+00:00",
+  "latency_ms": 323,
+  "http_status": 200,
+  "sha256": "a450fad8a435a9a8f9fd5f1cf24348b3acb01b3ab83de85a70765417ed58b57b",
+  "bytes": 9404,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:32:58 GMT",
+    "content-length": "9404",
+    "server": "envoy"
+  },
+  "raw_path": "raw/m15_eth_2026_jan.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

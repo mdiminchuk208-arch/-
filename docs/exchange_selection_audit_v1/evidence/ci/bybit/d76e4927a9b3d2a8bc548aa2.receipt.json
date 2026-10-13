@@ -1,0 +1,22 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-length": "96",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:38:59 GMT"
+  },
+  "http_status": 403,
+  "latency_ms": "105.449",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 96,
+  "raw_file": "d76e4927a9b3d2a8bc548aa2.body",
+  "raw_sha256": "7ef856c945703d5772f1b1f2a8c65913247c9b0769302b10facfe14fa1e2083c",
+  "request_started_at": "2026-10-13T06:38:59.644608+00:00",
+  "response_completed_at": "2026-10-13T06:38:59.749988+00:00",
+  "source_kind": "instruments",
+  "truncated": false,
+  "url": "https://api.bybit.com/v5/market/instruments-info?category=linear&symbol=BTCUSDT"
+}

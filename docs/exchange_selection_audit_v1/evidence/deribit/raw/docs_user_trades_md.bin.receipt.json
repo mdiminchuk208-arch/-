@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.deribit.com/api-reference/trading/private-get_user_trades_by_instrument.md",
+  "request_start_utc": "2026-10-13T06:31:58.730807+00:00",
+  "completion_utc": "2026-10-13T06:31:59.823615+00:00",
+  "latency_ms": 1093.0,
+  "http_status": 200,
+  "sha256": "a6949780d1496cbd272fdf36c180674de0941b9c5431e19a331df1dde5f71985",
+  "bytes": 21983,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4df4abf20acb-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:31:59 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_user_trades_md.bin"
+}

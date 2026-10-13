@@ -1,0 +1,20 @@
+{
+  "id": "hl_docs_trading",
+  "venue": "hyperliquid",
+  "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/overview.md",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-13T06:26:42.751460+00:00",
+  "completed_utc": "2026-10-13T06:26:45.307580+00:00",
+  "latency_ms": 2556.32,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:26:45 GMT",
+    "content-type": "text/plain; charset=utf-8"
+  },
+  "raw_path": "raw/hl_docs_trading.bin",
+  "raw_sha256": "a23001b8e01d5e387910bb70646b5002ac81a4c62381d842656bd8869c274a68",
+  "raw_bytes": 2329,
+  "truncated": false
+}

@@ -1,0 +1,993 @@
+{
+  "venue": "bitget",
+  "environment": "Codex managed cloud /workspace/-; inherited HTTPS proxy and CA, TLS verification enabled; no authentication or cookies",
+  "receipt_count": 51,
+  "sources": [
+    {
+      "id": "bitget:BTCUSDT_book1",
+      "url": "https://api.bitget.com/api/v2/mix/market/orderbook?symbol=BTCUSDT&productType=USDT-FUTURES&limit=100",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-12T20:21:08.024158+00:00",
+      "request_end_utc": "2026-10-12T20:21:08.897204+00:00",
+      "latency_ms": 873.24,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:08 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "5bd762f412b6726c8cfe862a931c659f4e1d0600e0c5ddb558784c3c24a24ceb",
+      "bytes": 6658,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/BTCUSDT_book1.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/BTCUSDT_book1.bin.receipt.json",
+      "original_raw_path": "evidence/bitget/raw/BTCUSDT_book1.bin",
+      "error": null
+    },
+    {
+      "id": "bitget:BTCUSDT_book2",
+      "url": "https://api.bitget.com/api/v2/mix/market/orderbook?symbol=BTCUSDT&productType=USDT-FUTURES&limit=100",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:26:57.625278+00:00",
+      "request_end_utc": "2026-10-13T06:26:58.691111+00:00",
+      "latency_ms": 1066.04,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:26:58 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "676166bf8aaf97dfd32e501fc383d071673aca413d5695a27521b76349a1fc16",
+      "bytes": 6662,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/BTCUSDT_book2.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/BTCUSDT_book2.bin.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:BTCUSDT_funding",
+      "url": "https://api.bitget.com/api/v2/mix/market/history-fund-rate?symbol=BTCUSDT&productType=USDT-FUTURES&pageSize=2&pageNo=1",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-12T20:21:08.175834+00:00",
+      "request_end_utc": "2026-10-12T20:21:08.774596+00:00",
+      "latency_ms": 598.98,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:08 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "b8114b24fe6481a2eeeecb3f82ec7ef6cf477c4b8d5dfd5f25e601cc1e0abb0d",
+      "bytes": 221,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/BTCUSDT_funding.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/BTCUSDT_funding.bin.receipt.json",
+      "original_raw_path": "evidence/bitget/raw/BTCUSDT_funding.bin",
+      "error": null
+    },
+    {
+      "id": "bitget:BTCUSDT_instrument",
+      "url": "https://api.bitget.com/api/v2/mix/market/contracts?productType=USDT-FUTURES&symbol=BTCUSDT",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-12T20:21:08.052835+00:00",
+      "request_end_utc": "2026-10-12T20:21:08.922870+00:00",
+      "latency_ms": 870.18,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:08 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "4e9a24c0949fe9dd1515f44888100cdfca5f2c8e2d47383b8f2ac79fdbe1dcfc",
+      "bytes": 832,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/BTCUSDT_instrument.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/BTCUSDT_instrument.bin.receipt.json",
+      "original_raw_path": "evidence/bitget/raw/BTCUSDT_instrument.bin",
+      "error": null
+    },
+    {
+      "id": "bitget:BTCUSDT_m15now",
+      "url": "https://api.bitget.com/api/v2/mix/market/candles?symbol=BTCUSDT&productType=USDT-FUTURES&granularity=15m&limit=2",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-12T20:21:08.048842+00:00",
+      "request_end_utc": "2026-10-12T20:21:08.905378+00:00",
+      "latency_ms": 856.74,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:08 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "8e437a4a80de0061b47689ed444eb85b112e517b9dec1e5fca9cc1c0e0fc994d",
+      "bytes": 231,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/BTCUSDT_m15now.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/BTCUSDT_m15now.bin.receipt.json",
+      "original_raw_path": "evidence/bitget/raw/BTCUSDT_m15now.bin",
+      "error": null
+    },
+    {
+      "id": "bitget:BTCUSDT_m15old",
+      "url": "https://api.bitget.com/api/v2/mix/market/history-candles?symbol=BTCUSDT&productType=USDT-FUTURES&granularity=15m&startTime=1728777600000&endTime=1728778500000&limit=2",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-12T20:21:08.071964+00:00",
+      "request_end_utc": "2026-10-12T20:21:08.789246+00:00",
+      "latency_ms": 717.42,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:08 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "7f12981a67ec502b37d4053037b3e9087c9e52572987500ffa233d9bdd4647c9",
+      "bytes": 153,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/BTCUSDT_m15old.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/BTCUSDT_m15old.bin.receipt.json",
+      "original_raw_path": "evidence/bitget/raw/BTCUSDT_m15old.bin",
+      "error": null
+    },
+    {
+      "id": "bitget:BTCUSDT_merge_book2",
+      "url": "https://api.bitget.com/api/v2/mix/market/merge-depth?symbol=BTCUSDT&productType=USDT-FUTURES&precision=scale0&limit=100",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:28:51.080308+00:00",
+      "request_end_utc": "2026-10-13T06:28:52.136292+00:00",
+      "latency_ms": 1056.15,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:52 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "9f07883e58255d758165a52e71982687da3119589941bee9f4daa00119bb30f3",
+      "bytes": 3571,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/BTCUSDT_merge_book2.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/BTCUSDT_merge_book2.bin.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:BTCUSDT_oi",
+      "url": "https://api.bitget.com/api/v2/mix/market/open-interest?symbol=BTCUSDT&productType=USDT-FUTURES",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-12T20:21:08.159925+00:00",
+      "request_end_utc": "2026-10-12T20:21:09.154290+00:00",
+      "latency_ms": 994.59,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:09 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "03bf353799cae1511a062514604e261517185bc82c741ca385fc9c95d5eea90c",
+      "bytes": 160,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/BTCUSDT_oi.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/BTCUSDT_oi.bin.receipt.json",
+      "original_raw_path": "evidence/bitget/raw/BTCUSDT_oi.bin",
+      "error": null
+    },
+    {
+      "id": "bitget:ETHUSDT_book1",
+      "url": "https://api.bitget.com/api/v2/mix/market/orderbook?symbol=ETHUSDT&productType=USDT-FUTURES&limit=100",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-12T20:21:08.180642+00:00",
+      "request_end_utc": "2026-10-12T20:21:08.878124+00:00",
+      "latency_ms": 697.67,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:08 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "b2d760d1da1dbf1a91666ac77466c51d8d4b37412b8f34d1d80de1e757233ef3",
+      "bytes": 6788,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/ETHUSDT_book1.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/ETHUSDT_book1.bin.receipt.json",
+      "original_raw_path": "evidence/bitget/raw/ETHUSDT_book1.bin",
+      "error": null
+    },
+    {
+      "id": "bitget:ETHUSDT_book2",
+      "url": "https://api.bitget.com/api/v2/mix/market/orderbook?symbol=ETHUSDT&productType=USDT-FUTURES&limit=100",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:26:57.628236+00:00",
+      "request_end_utc": "2026-10-13T06:26:58.725357+00:00",
+      "latency_ms": 1097.45,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:26:58 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "f2124f3d0631b3c0d17540f1b909260042a4b72c5368cd88f0ca5d5114c4fdb7",
+      "bytes": 6820,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/ETHUSDT_book2.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/ETHUSDT_book2.bin.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:ETHUSDT_funding",
+      "url": "https://api.bitget.com/api/v2/mix/market/history-fund-rate?symbol=ETHUSDT&productType=USDT-FUTURES&pageSize=2&pageNo=1",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-12T20:21:08.175451+00:00",
+      "request_end_utc": "2026-10-12T20:21:08.994557+00:00",
+      "latency_ms": 819.35,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:08 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "3836fbf5a492e7cf64040963981e05b47890d9bc2c4a24b77678b3955016573b",
+      "bytes": 222,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/ETHUSDT_funding.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/ETHUSDT_funding.bin.receipt.json",
+      "original_raw_path": "evidence/bitget/raw/ETHUSDT_funding.bin",
+      "error": null
+    },
+    {
+      "id": "bitget:ETHUSDT_instrument",
+      "url": "https://api.bitget.com/api/v2/mix/market/contracts?productType=USDT-FUTURES&symbol=ETHUSDT",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-12T20:21:08.205194+00:00",
+      "request_end_utc": "2026-10-12T20:21:08.895002+00:00",
+      "latency_ms": 689.96,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:08 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "8a95dc42bad0718fe12d8965d90b59140203ed94fd814cfd8c93d157c563579c",
+      "bytes": 829,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/ETHUSDT_instrument.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/ETHUSDT_instrument.bin.receipt.json",
+      "original_raw_path": "evidence/bitget/raw/ETHUSDT_instrument.bin",
+      "error": null
+    },
+    {
+      "id": "bitget:ETHUSDT_m15now",
+      "url": "https://api.bitget.com/api/v2/mix/market/candles?symbol=ETHUSDT&productType=USDT-FUTURES&granularity=15m&limit=2",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-12T20:21:08.048656+00:00",
+      "request_end_utc": "2026-10-12T20:21:09.266987+00:00",
+      "latency_ms": 1218.44,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:09 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "d52272dfd8e185126e7500767fc10b9ffcd8da903de6b295d3bd1dcfa72c69d3",
+      "bytes": 235,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/ETHUSDT_m15now.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/ETHUSDT_m15now.bin.receipt.json",
+      "original_raw_path": "evidence/bitget/raw/ETHUSDT_m15now.bin",
+      "error": null
+    },
+    {
+      "id": "bitget:ETHUSDT_m15old",
+      "url": "https://api.bitget.com/api/v2/mix/market/history-candles?symbol=ETHUSDT&productType=USDT-FUTURES&granularity=15m&startTime=1728777600000&endTime=1728778500000&limit=2",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-12T20:21:08.479467+00:00",
+      "request_end_utc": "2026-10-12T20:21:09.269378+00:00",
+      "latency_ms": 790.0,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:09 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "4371cbea82d79e9ba024598b13a7374e75a15682281a5b782ddc563a23111c9a",
+      "bytes": 151,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/ETHUSDT_m15old.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/ETHUSDT_m15old.bin.receipt.json",
+      "original_raw_path": "evidence/bitget/raw/ETHUSDT_m15old.bin",
+      "error": null
+    },
+    {
+      "id": "bitget:ETHUSDT_merge_book2",
+      "url": "https://api.bitget.com/api/v2/mix/market/merge-depth?symbol=ETHUSDT&productType=USDT-FUTURES&precision=scale0&limit=100",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:28:51.072443+00:00",
+      "request_end_utc": "2026-10-13T06:28:51.490041+00:00",
+      "latency_ms": 417.77,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:51 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "95324a04d8dee964fdd6a61f8e5d0b7904da4240864dc2b7f6afcc06d6b44c86",
+      "bytes": 3288,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/ETHUSDT_merge_book2.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/ETHUSDT_merge_book2.bin.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:ETHUSDT_oi",
+      "url": "https://api.bitget.com/api/v2/mix/market/open-interest?symbol=ETHUSDT&productType=USDT-FUTURES",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-12T20:21:08.206574+00:00",
+      "request_end_utc": "2026-10-12T20:21:08.933407+00:00",
+      "latency_ms": 727.0,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:08 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "b6695494e9f259128b0c2cdcb48cc968fd2d8a2497053a603688efff6210f836",
+      "bytes": 160,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/ETHUSDT_oi.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/ETHUSDT_oi.bin.receipt.json",
+      "original_raw_path": "evidence/bitget/raw/ETHUSDT_oi.bin",
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_BTC_merge_book",
+      "url": "https://api.bitget.com/api/v2/mix/market/merge-depth?symbol=BTCUSDT&productType=USDT-FUTURES&precision=scale0&limit=100",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:28:20.909342+00:00",
+      "request_end_utc": "2026-10-13T06:28:22.000941+00:00",
+      "latency_ms": 1091.76,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:21 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "7788c70ac99baf06fe08ba045b7c61b796cf87c9ef7bcd5c8f60cb53a898b4f9",
+      "bytes": 3567,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_BTC_merge_book.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_BTC_merge_book.bin.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_ETH_merge_book",
+      "url": "https://api.bitget.com/api/v2/mix/market/merge-depth?symbol=ETHUSDT&productType=USDT-FUTURES&precision=scale0&limit=100",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:28:20.907487+00:00",
+      "request_end_utc": "2026-10-13T06:28:22.059739+00:00",
+      "latency_ms": 1152.43,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:21 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "20b1e14d9ed5b1ef11ec491df5edb889c6a8f7845b2bdf518e1c87542df1bd96",
+      "bytes": 3303,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_ETH_merge_book.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_ETH_merge_book.bin.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_classic-contract-account",
+      "url": "https://www.bitget.com/docs/catalog/classic-contract-account",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:28:55.331325+00:00",
+      "request_end_utc": "2026-10-13T06:28:55.793139+00:00",
+      "latency_ms": 461.99,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:55 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "884a81e50ab8ea884f9d8d2edb9cb9c5d966cbd3c80ee5d583a2541cb9143b8f",
+      "bytes": 50075,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_classic-contract-account.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_classic-contract-account.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_classic-contract-market",
+      "url": "https://www.bitget.com/docs/catalog/classic-contract-market",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:27:46.703970+00:00",
+      "request_end_utc": "2026-10-13T06:27:47.096868+00:00",
+      "latency_ms": 393.14,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:27:46 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "d5466950f48b0c837edc892e5831a83d65bd302347ec0c29d0c5e660f1463309",
+      "bytes": 50011,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_classic-contract-market.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_classic-contract-market.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_classic-contract-plan",
+      "url": "https://www.bitget.com/docs/catalog/classic-contract-plan",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:27:46.714422+00:00",
+      "request_end_utc": "2026-10-13T06:27:47.776092+00:00",
+      "latency_ms": 1061.87,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:27:47 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "21fb9cb972db54d66c253db17d47d012e92c9d134d86208026a67b697a65e832",
+      "bytes": 39289,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_classic-contract-plan.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_classic-contract-plan.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_classic-contract-position",
+      "url": "https://www.bitget.com/docs/catalog/classic-contract-position",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:27:46.718599+00:00",
+      "request_end_utc": "2026-10-13T06:27:47.134726+00:00",
+      "latency_ms": 416.43,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:27:46 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "b104f2e722706013f18917de6031bb5b01801b85db40c77ceeaba08e06cabe8f",
+      "bytes": 34909,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_classic-contract-position.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_classic-contract-position.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_classic-contract-trade",
+      "url": "https://www.bitget.com/docs/catalog/classic-contract-trade",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:27:46.711576+00:00",
+      "request_end_utc": "2026-10-13T06:27:47.774929+00:00",
+      "latency_ms": 1063.57,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:27:47 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "cb87ed316175c7e3ee5cb3d54f2d16142fd2cee382ec9ed478e0dbe3ca705f50",
+      "bytes": 42142,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_classic-contract-trade.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_classic-contract-trade.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_detail_account",
+      "url": "https://www.bitget.com/docs/catalog/classic-contract-account/classic-contract-account",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:29:02.053636+00:00",
+      "request_end_utc": "2026-10-13T06:29:03.874464+00:00",
+      "latency_ms": 1821.44,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:29:03 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "92459a488c93f282ba364d3f2fe5dc23fe2699e895f028fae61f2e813b8ad472",
+      "bytes": 910896,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_detail_account.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_detail_account.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_detail_market",
+      "url": "https://www.bitget.com/docs/catalog/classic-contract-market/classic-contract-market",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:27:55.083451+00:00",
+      "request_end_utc": "2026-10-13T06:27:55.910602+00:00",
+      "latency_ms": 827.57,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:27:55 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "0f037a7b6bc5010aae40d914f1b06e26e4aec28b3bb5f49bc6793c1e6203445b",
+      "bytes": 984958,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_detail_market.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_detail_market.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_detail_plan",
+      "url": "https://www.bitget.com/docs/catalog/classic-contract-plan/classic-contract-plan",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:27:55.089574+00:00",
+      "request_end_utc": "2026-10-13T06:27:56.400390+00:00",
+      "latency_ms": 1311.33,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:27:55 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "5899f1a86e81ca04c2bec751e1167ebbd6dd234c9ee6551fd4edee30576fb016",
+      "bytes": 590199,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_detail_plan.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_detail_plan.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_detail_position",
+      "url": "https://www.bitget.com/docs/catalog/classic-contract-position/classic-contract-position",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:27:55.107700+00:00",
+      "request_end_utc": "2026-10-13T06:27:56.188292+00:00",
+      "latency_ms": 1080.9,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:27:55 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "6f1b9c8e82b83f1379e8f6308c640cf7912b2b0fde511f12f7f186d950ecc934",
+      "bytes": 330836,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_detail_position.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_detail_position.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_detail_trade",
+      "url": "https://www.bitget.com/docs/catalog/classic-contract-trade/classic-contract-trade",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:27:55.089328+00:00",
+      "request_end_utc": "2026-10-13T06:27:56.291261+00:00",
+      "latency_ms": 1202.45,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:27:55 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "c955af04bd82800028237d48df3b65c4cefab2532a2e5195ed5df723fe621bba",
+      "bytes": 812123,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_detail_trade.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_detail_trade.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_docs_book",
+      "url": "https://www.bitget.com/api-doc/contract/market/Get-Merge-Depth",
+      "method": "GET",
+      "status": 301,
+      "request_start_utc": "2026-10-12T20:21:27.980285+00:00",
+      "request_end_utc": "2026-10-12T20:21:29.011634+00:00",
+      "latency_ms": 1031.54,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:28 GMT",
+        "content-type": "text/html",
+        "location": "https://www.bitget.com/docs/uta/uta-intro"
+      },
+      "sha256": "87a9323ac85ce28867d5d7ce590c8f29b8d1a999961fca71bb33adef48683691",
+      "bytes": 166,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_book.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_book.html.receipt.json",
+      "original_raw_path": "evidence/bitget/raw/bitget_docs_book.html",
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_docs_catalog",
+      "url": "https://www.bitget.com/docs/uta/catalog",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:27:29.890551+00:00",
+      "request_end_utc": "2026-10-13T06:27:30.285805+00:00",
+      "latency_ms": 395.51,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:27:30 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "6044af41b42b83c9f593526b2c2aaa79cdb9522583971b2e7d2148b91c2998f0",
+      "bytes": 37172,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_catalog.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_catalog.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_docs_changelog",
+      "url": "https://www.bitget.com/docs/uta/changelog/2026-10",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:27:29.887799+00:00",
+      "request_end_utc": "2026-10-13T06:27:31.068881+00:00",
+      "latency_ms": 1181.33,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:27:30 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "8d03d1b1ee0a31b61004e932c402aecac64aa3dd7696d3bc36704326745737ad",
+      "bytes": 37160,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_changelog.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_changelog.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_docs_classic",
+      "url": "https://www.bitget.com/docs/classic/Introduction",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:27:29.886468+00:00",
+      "request_end_utc": "2026-10-13T06:27:31.229155+00:00",
+      "latency_ms": 1342.87,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:27:31 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "075aaf15f35c63031e295d3a272bbffbc0aa386318235f6ebeec1f40fdee3af8",
+      "bytes": 73703,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_classic.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_classic.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_docs_classic_catalog",
+      "url": "https://www.bitget.com/docs/classic/catalog",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:27:38.677342+00:00",
+      "request_end_utc": "2026-10-13T06:27:39.185415+00:00",
+      "latency_ms": 508.34,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:27:38 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "4e55661263c8abb4a4c43d382a470eabba99d12fb4f182995476a6f6b41b8642",
+      "bytes": 50885,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_classic_catalog.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_classic_catalog.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_docs_classic_changelog",
+      "url": "https://www.bitget.com/docs/classic/changelog/2026-09",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:30:20.379520+00:00",
+      "request_end_utc": "2026-10-13T06:30:21.607405+00:00",
+      "latency_ms": 1228.09,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:21 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "26085443a213d97ea26cea76f92c412c20d8f9f3d508084595137c7af44f94b7",
+      "bytes": 46046,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_classic_changelog.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_classic_changelog.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_docs_contracts",
+      "url": "https://www.bitget.com/api-doc/contract/market/Get-All-Symbols-Contracts",
+      "method": "GET",
+      "status": 301,
+      "request_start_utc": "2026-10-12T20:21:28.050224+00:00",
+      "request_end_utc": "2026-10-12T20:21:28.668316+00:00",
+      "latency_ms": 618.24,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:28 GMT",
+        "content-type": "text/html",
+        "location": "https://www.bitget.com/docs/uta/uta-intro"
+      },
+      "sha256": "87a9323ac85ce28867d5d7ce590c8f29b8d1a999961fca71bb33adef48683691",
+      "bytes": 166,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_contracts.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_contracts.html.receipt.json",
+      "original_raw_path": "evidence/bitget/raw/bitget_docs_contracts.html",
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_docs_contracts2",
+      "url": "https://www.bitget.com/api-doc/contract/market/Get-All-Symbols-Contracts",
+      "method": "GET",
+      "status": 301,
+      "request_start_utc": "2026-10-12T20:21:27.946818+00:00",
+      "request_end_utc": "2026-10-12T20:21:28.809934+00:00",
+      "latency_ms": 863.27,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:28 GMT",
+        "content-type": "text/html",
+        "location": "https://www.bitget.com/docs/uta/uta-intro"
+      },
+      "sha256": "87a9323ac85ce28867d5d7ce590c8f29b8d1a999961fca71bb33adef48683691",
+      "bytes": 166,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_contracts2.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_contracts2.html.receipt.json",
+      "original_raw_path": "evidence/bitget/raw/bitget_docs_contracts2.html",
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_docs_demo",
+      "url": "https://www.bitget.com/docs/classic/demo-trading",
+      "method": "GET",
+      "status": 404,
+      "request_start_utc": "2026-10-13T06:30:34.412785+00:00",
+      "request_end_utc": "2026-10-13T06:30:35.474633+00:00",
+      "latency_ms": 1062.11,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:35 GMT",
+        "content-type": "text/html; charset=utf-8"
+      },
+      "sha256": "8603afc16b09e4d70930f36f38489c29ff44da2b98b9a08a516bddbab17aa9de",
+      "bytes": 16,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_demo.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_demo.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_docs_demo_rest",
+      "url": "https://www.bitget.com/docs/classic/demo-trading/rest-api",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:30:41.965432+00:00",
+      "request_end_utc": "2026-10-13T06:30:42.361576+00:00",
+      "latency_ms": 396.4,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:42 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "9c9bb9bd230cf5b7e5c38d4417b582b07be571ce3401d2aa0f331f2062423221",
+      "bytes": 40739,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_demo_rest.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_demo_rest.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_docs_download",
+      "url": "https://www.bitget.com/docs/uta/data-download-center",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:27:29.891396+00:00",
+      "request_end_utc": "2026-10-13T06:27:30.891390+00:00",
+      "latency_ms": 1000.27,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:27:30 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "9cad6ca7abf241cd8c2ba4b12cc551c154a6bd722536fa63d2df1e827c3bec5a",
+      "bytes": 59211,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_download.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_download.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_docs_faq",
+      "url": "https://www.bitget.com/docs/classic/faq",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:30:20.362498+00:00",
+      "request_end_utc": "2026-10-13T06:30:22.042149+00:00",
+      "latency_ms": 1679.81,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:21 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "d708df77f5987f8dc209b7244e7547359d99048255e38e42bbcda911c744430c",
+      "bytes": 41559,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_faq.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_faq.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_docs_fee",
+      "url": "https://www.bitget.com/support/articles/12560603813004",
+      "method": "GET",
+      "status": 404,
+      "request_start_utc": "2026-10-12T20:21:28.000255+00:00",
+      "request_end_utc": "2026-10-12T20:21:28.821025+00:00",
+      "latency_ms": 820.95,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:28 GMT",
+        "content-type": "text/html; charset=utf-8"
+      },
+      "sha256": "2ba68bb8f2eff57b7bccd3a5907ca3811ab6ac98a861298430d69d4708069e9b",
+      "bytes": 37189,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_fee.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_fee.html.receipt.json",
+      "original_raw_path": "evidence/bitget/raw/bitget_docs_fee.html",
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_docs_fee2",
+      "url": "https://www.bitget.com/fee",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-12T20:21:27.947910+00:00",
+      "request_end_utc": "2026-10-12T20:21:28.976531+00:00",
+      "latency_ms": 1028.81,
+      "headers": {
+        "date": "Mon, 12 Oct 2026 20:21:28 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache"
+      },
+      "sha256": "ed0248cf5f3f5fd4fe7d371071f56f2b74eae1475025c91454b81c9de020c692",
+      "bytes": 179671,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_fee2.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_fee2.html.receipt.json",
+      "original_raw_path": "evidence/bitget/raw/bitget_docs_fee2.html",
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_docs_order",
+      "url": "https://www.bitget.com/docs/uta/trade/place-order",
+      "method": "GET",
+      "status": 404,
+      "request_start_utc": "2026-10-13T06:26:52.443603+00:00",
+      "request_end_utc": "2026-10-13T06:26:53.659535+00:00",
+      "latency_ms": 1216.36,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:26:53 GMT",
+        "content-type": "text/html; charset=utf-8"
+      },
+      "sha256": "8603afc16b09e4d70930f36f38489c29ff44da2b98b9a08a516bddbab17aa9de",
+      "bytes": 16,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_order.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_order.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_docs_quickstart",
+      "url": "https://www.bitget.com/docs/uta/quick-start",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:27:29.902265+00:00",
+      "request_end_utc": "2026-10-13T06:27:30.860428+00:00",
+      "latency_ms": 958.42,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:27:30 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "0602eb3665ef33f75e7f241b15bd9a485f4a8f86df59ef552e885210f0f32f1b",
+      "bytes": 173779,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_quickstart.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_quickstart.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_docs_rest_api",
+      "url": "https://www.bitget.com/docs/classic/rest-api",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:30:20.354011+00:00",
+      "request_end_utc": "2026-10-13T06:30:22.015459+00:00",
+      "latency_ms": 1661.63,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:21 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "fd0f43d53c175b3de899d7dcd0c5f4a972d0b748697f0d546de4a879b1cbb656",
+      "bytes": 114725,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_rest_api.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_rest_api.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_docs_uta_intro",
+      "url": "https://www.bitget.com/docs/uta/uta-intro",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:26:52.444091+00:00",
+      "request_end_utc": "2026-10-13T06:26:53.860586+00:00",
+      "latency_ms": 1416.75,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:26:53 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "9d8fd2ad39b80908687898834996ca3dcd3bf9bdb4368fc91fe2c8d87c69ba74",
+      "bytes": 44385,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_uta_intro.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_uta_intro.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_docs_v2book",
+      "url": "https://docs.bitget.com/api-doc/contract/market/Get-Order-Book",
+      "method": "GET",
+      "status": null,
+      "request_start_utc": "2026-10-13T06:26:52.416945+00:00",
+      "request_end_utc": "2026-10-13T06:26:52.479008+00:00",
+      "latency_ms": 62.22,
+      "headers": {},
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_v2book.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_v2book.html.receipt.json",
+      "original_raw_path": null,
+      "error": "URLError(OSError('Tunnel connection failed: 403 Forbidden'))"
+    },
+    {
+      "id": "bitget:bitget_docs_v2candles",
+      "url": "https://docs.bitget.com/api-doc/contract/market/Get-History-Candle-Data",
+      "method": "GET",
+      "status": null,
+      "request_start_utc": "2026-10-13T06:26:52.432641+00:00",
+      "request_end_utc": "2026-10-13T06:26:52.460236+00:00",
+      "latency_ms": 27.75,
+      "headers": {},
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_v2candles.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_v2candles.html.receipt.json",
+      "original_raw_path": null,
+      "error": "URLError(OSError('Tunnel connection failed: 403 Forbidden'))"
+    },
+    {
+      "id": "bitget:bitget_docs_v2contract",
+      "url": "https://docs.bitget.com/api-doc/contract/market/Get-All-Symbols-Contracts",
+      "method": "GET",
+      "status": null,
+      "request_start_utc": "2026-10-13T06:26:52.428222+00:00",
+      "request_end_utc": "2026-10-13T06:26:52.501661+00:00",
+      "latency_ms": 73.63,
+      "headers": {},
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_v2contract.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_v2contract.html.receipt.json",
+      "original_raw_path": null,
+      "error": "URLError(OSError('Tunnel connection failed: 403 Forbidden'))"
+    },
+    {
+      "id": "bitget:bitget_docs_ws_intro",
+      "url": "https://www.bitget.com/docs/classic/websocket/intro",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:30:20.367709+00:00",
+      "request_end_utc": "2026-10-13T06:30:21.754478+00:00",
+      "latency_ms": 1387.15,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:30:21 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-cache,no-cache"
+      },
+      "sha256": "254d4585bc229060cdcba33bc6459a79f113ac5ae8095437d1ea3b82f5de0db8",
+      "bytes": 102305,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_ws_intro.html",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_ws_intro.html.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    },
+    {
+      "id": "bitget:bitget_vip_fee",
+      "url": "https://api.bitget.com/api/v2/mix/market/vip-fee-rate",
+      "method": "GET",
+      "status": 200,
+      "request_start_utc": "2026-10-13T06:28:20.913988+00:00",
+      "request_end_utc": "2026-10-13T06:28:22.050219+00:00",
+      "latency_ms": 1136.38,
+      "headers": {
+        "date": "Tue, 13 Oct 2026 06:28:21 GMT",
+        "content-type": "application/json"
+      },
+      "sha256": "874c4d74479c7fd8843e5c4bf14c3b96c46a8e17249033742cbd165dd7391a95",
+      "bytes": 1244,
+      "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_vip_fee.bin",
+      "receipt_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_vip_fee.bin.receipt.json",
+      "original_raw_path": null,
+      "error": null
+    }
+  ]
+}

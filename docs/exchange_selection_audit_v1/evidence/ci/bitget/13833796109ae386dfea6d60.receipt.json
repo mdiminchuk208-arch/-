@@ -1,0 +1,21 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:38:59 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "220.344",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 3293,
+  "raw_file": "13833796109ae386dfea6d60.body",
+  "raw_sha256": "9a98aa37bee3d24ca556bd0332fb7992f6b95f000a3840f3ccbe0e4a59a380ad",
+  "request_started_at": "2026-10-13T06:38:59.631606+00:00",
+  "response_completed_at": "2026-10-13T06:38:59.851804+00:00",
+  "source_kind": "book_ETH",
+  "truncated": false,
+  "url": "https://api.bitget.com/api/v2/mix/market/merge-depth?symbol=ETHUSDT&productType=USDT-FUTURES&precision=scale0&limit=100"
+}

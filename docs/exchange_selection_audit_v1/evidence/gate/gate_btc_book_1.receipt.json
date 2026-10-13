@@ -1,0 +1,24 @@
+{
+  "id": "gate_btc_book_1",
+  "venue": "gate",
+  "url": "https://api.gateio.ws/api/v4/futures/usdt/order_book?contract=BTC_USDT&limit=100&with_id=true",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-12T20:21:01.744743+00:00",
+  "completed_utc": "2026-10-12T20:21:02.842293+00:00",
+  "latency_ms": 1097.68,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:02 GMT",
+    "content-type": "application/json",
+    "content-length": "4771",
+    "x-gate-ratelimit-requests-remain": "199",
+    "x-gate-ratelimit-limit": "200",
+    "x-gate-ratelimit-reset-timestamp": "1791836462"
+  },
+  "raw_path": "raw/gate_btc_book_1.bin",
+  "raw_sha256": "316f11ddcdaeb5871fa41dcd18623a63ac15200e99a8515b12a840303634bba1",
+  "raw_bytes": 4771,
+  "truncated": false
+}

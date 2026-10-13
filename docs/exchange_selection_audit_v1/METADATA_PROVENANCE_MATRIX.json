@@ -1,0 +1,327 @@
+{
+  "binance_futures": {
+    "facts": {
+      "causal_prospective": null,
+      "change_history": null,
+      "current_filters": null,
+      "historical_epochs": null,
+      "source_ids": [
+        "docs_exchange_info_new",
+        "exchange_info"
+      ]
+    },
+    "historical_epochs_verified": false,
+    "prospective_only_no_backdating": true
+  },
+  "bitget": {
+    "facts": {
+      "causal_prospective": "current instrument endpoint can be timestamped and hashed for prospective metadata capture",
+      "change_history": "official Classic API changelog available, not proof of complete symbol-specific tick epochs",
+      "current_filters": {
+        "BTC": {
+          "maxMarketOrderQty": "220",
+          "maxOrderQty": "1200",
+          "minTradeNum": "0.0001",
+          "minTradeUSDT": "5",
+          "priceEndStep": "1",
+          "pricePlace": "1",
+          "sizeMultiplier": "0.0001",
+          "volumePlace": "4"
+        },
+        "ETH": {
+          "maxMarketOrderQty": "1900",
+          "maxOrderQty": "9900",
+          "minTradeNum": "0.01",
+          "minTradeUSDT": "5",
+          "priceEndStep": "1",
+          "pricePlace": "2",
+          "sizeMultiplier": "0.01",
+          "volumePlace": "2"
+        }
+      },
+      "historical_epochs": null,
+      "source_ids": [
+        "bitget:bitget_detail_market",
+        "bitget:bitget_docs_classic_changelog",
+        "bitget:BTCUSDT_instrument",
+        "bitget:ETHUSDT_instrument"
+      ]
+    },
+    "historical_epochs_verified": false,
+    "prospective_only_no_backdating": true
+  },
+  "blofin": {
+    "facts": {
+      "causal_prospective": "Public GET market/instruments can be timestamped/hashes prospectively",
+      "change_history": "Official instruments-history returns delisted instrument final metadata, not live historical epochs",
+      "current_filters": {
+        "BTC": {
+          "lot_contracts": "0.1",
+          "multiplier_base": "0.001",
+          "tick": "0.1"
+        },
+        "ETH": {
+          "lot_contracts": "0.1",
+          "multiplier_base": "0.01",
+          "tick": "0.01"
+        }
+      },
+      "historical_epochs": null,
+      "source_ids": [
+        "bf_instruments",
+        "bf_api_docs"
+      ]
+    },
+    "historical_epochs_verified": false,
+    "prospective_only_no_backdating": true
+  },
+  "bybit": {
+    "facts": {
+      "causal_prospective": "conceptual instruments-info endpoint documented but cloud capture currently blocked",
+      "change_history": "API documentation changelog available; no current live contract fields",
+      "current_filters": null,
+      "historical_epochs": null,
+      "source_ids": [
+        "bybit:bybit_docs_instrument",
+        "bybit:BTCUSDT_instrument",
+        "bybit:ETHUSDT_instrument"
+      ]
+    },
+    "historical_epochs_verified": false,
+    "prospective_only_no_backdating": true
+  },
+  "coinbase_international": {
+    "facts": {
+      "causal_prospective": "technically possible via INSTRUMENTS subscription, but both current instruments PAUSED and live capture unverified",
+      "change_history": "official INTX changelog and INSTRUMENTS WebSocket with last_update_time documented; exact historic tick/filter epochs not recovered",
+      "current_filters": {
+        "BTC": {
+          "base_asset_multiplier": "1.0",
+          "base_increment": "0.0001",
+          "min_quantity": "0.0001",
+          "quote_increment": "0.1",
+          "state": "PAUSED"
+        },
+        "ETH": {
+          "base_asset_multiplier": "1.0",
+          "base_increment": "0.0001",
+          "min_quantity": "0.0001",
+          "quote_increment": "0.01",
+          "state": "PAUSED"
+        }
+      },
+      "historical_epochs": null,
+      "source_ids": [
+        "instruments",
+        "docs_channels_md",
+        "changelog"
+      ]
+    },
+    "historical_epochs_verified": false,
+    "prospective_only_no_backdating": true
+  },
+  "deribit": {
+    "facts": {
+      "causal_prospective": true,
+      "change_history": "Official API docs and instrument-state subscription exist; exact historical filter change log not recovered",
+      "current_filters": {
+        "BTC": {
+          "contract_size_base": "0.0001",
+          "min_trade_amount_base": "0.0001",
+          "tick_size": "0.1"
+        },
+        "ETH": {
+          "contract_size_base": "0.0001",
+          "min_trade_amount_base": "0.0001",
+          "tick_size": "0.01"
+        }
+      },
+      "historical_epochs": null,
+      "source_ids": [
+        "usdc_instruments",
+        "docs_instruments_md",
+        "docs_data_md"
+      ]
+    },
+    "historical_epochs_verified": false,
+    "prospective_only_no_backdating": true
+  },
+  "gate": {
+    "facts": {
+      "causal_prospective": true,
+      "change_history": "API changelog and current config_change_time field; exact historical values not recovered",
+      "current_filters": {
+        "BTC": {
+          "config_change_time": 1788234002,
+          "enable_decimal": false,
+          "mark_price_round": "0.01",
+          "order_price_round": "0.1",
+          "order_size_min": 1,
+          "quanto_multiplier": "0.0001"
+        },
+        "ETH": {
+          "config_change_time": 1788234058,
+          "enable_decimal": true,
+          "mark_price_round": "0.01",
+          "order_price_round": "0.01",
+          "order_size_min": 0,
+          "quanto_multiplier": "0.01"
+        }
+      },
+      "historical_epochs": null,
+      "source_ids": [
+        "gate_btc_contract",
+        "gate_eth_contract",
+        "gate_docs_zip"
+      ]
+    },
+    "historical_epochs_verified": false,
+    "prospective_only_no_backdating": true
+  },
+  "hyperliquid": {
+    "facts": {
+      "causal_prospective": true,
+      "change_history": null,
+      "current_filters": {
+        "BTC": {
+          "price_rule": "maximum 5 significant figures and at most 6-szDecimals=1 decimal place; integer price always allowed",
+          "szDecimals": 5
+        },
+        "ETH": {
+          "price_rule": "maximum 5 significant figures and at most 6-szDecimals=2 decimal places; integer price always allowed",
+          "szDecimals": 4
+        }
+      },
+      "historical_epochs": null,
+      "source_ids": [
+        "hl_meta",
+        "hl_docs_tick",
+        "hl_docs_contracts"
+      ]
+    },
+    "historical_epochs_verified": false,
+    "prospective_only_no_backdating": true
+  },
+  "kraken_futures": {
+    "facts": {
+      "causal_prospective": true,
+      "change_history": "Official docs changelog exists; exact historical PF tick epochs not retrieved.",
+      "current_filters": {
+        "BTC": {
+          "contract_size": "1",
+          "tick_size": "1",
+          "trade_precision_digits": 4
+        },
+        "ETH": {
+          "contract_size": "1",
+          "tick_size": "0.1",
+          "trade_precision_digits": 3
+        }
+      },
+      "historical_epochs": null,
+      "source_ids": [
+        "instruments",
+        "docs_instruments_new",
+        "docs_openapi",
+        "docs_instrument_status"
+      ]
+    },
+    "historical_epochs_verified": false,
+    "prospective_only_no_backdating": true
+  },
+  "kucoin_futures": {
+    "facts": {
+      "causal_prospective": "Current public GET contracts/{symbol} can be timestamped/hashes prospectively",
+      "change_history": "Official API change log exists; exact BTC/ETH filter-change history not retrieved",
+      "current_filters": {
+        "BTC": {
+          "lot_contracts": "1",
+          "multiplier_base": "0.001",
+          "tick": "0.1"
+        },
+        "ETH": {
+          "lot_contracts": "1",
+          "multiplier_base": "0.01",
+          "tick": "0.01"
+        }
+      },
+      "historical_epochs": null,
+      "source_ids": [
+        "kc_btc_contract",
+        "kc_eth_contract",
+        "kc_docs_contract_en"
+      ]
+    },
+    "historical_epochs_verified": false,
+    "prospective_only_no_backdating": true
+  },
+  "mexc": {
+    "facts": {
+      "causal_prospective": true,
+      "change_history": "Official API update log exists, but historical instrument filter epochs not observed.",
+      "current_filters": {
+        "BTC": {
+          "contract_size_base": "0.0001",
+          "minimum_contracts": "1",
+          "price_unit": "0.1",
+          "volume_unit_contracts": "1"
+        },
+        "ETH": {
+          "contract_size_base": "0.01",
+          "minimum_contracts": "1",
+          "price_unit": "0.01",
+          "volume_unit_contracts": "1"
+        }
+      },
+      "historical_epochs": null,
+      "source_ids": [
+        "instrument_btc",
+        "instrument_eth",
+        "docs_api",
+        "api_changelog"
+      ]
+    },
+    "historical_epochs_verified": false,
+    "prospective_only_no_backdating": true
+  },
+  "okx": {
+    "facts": {
+      "causal_prospective": "public REST instruments plus documented instruments WS can record future changes with reception timestamps; operational collector not implemented in this audit",
+      "change_history": "public instruments response includes upcChg (empty now); docs describe instrument REST/WS change publication, but no historical full tick epochs obtained",
+      "current_filters": {
+        "BTC": {
+          "ctMult": "1",
+          "ctVal": "0.01",
+          "ctValCcy": "BTC",
+          "instId": "BTC-USDT-SWAP",
+          "lotSz": "0.01",
+          "maxMktSz": "35000",
+          "minSz": "0.01",
+          "state": "live",
+          "tickSz": "0.1",
+          "upcChg": []
+        },
+        "ETH": {
+          "ctMult": "1",
+          "ctVal": "0.1",
+          "ctValCcy": "ETH",
+          "instId": "ETH-USDT-SWAP",
+          "lotSz": "0.01",
+          "maxMktSz": "90000",
+          "minSz": "0.01",
+          "state": "live",
+          "tickSz": "0.01",
+          "upcChg": []
+        }
+      },
+      "historical_epochs": null,
+      "source_ids": [
+        "instrument_btc",
+        "instrument_eth",
+        "docs_main#public-data-rest-api-get-instruments"
+      ]
+    },
+    "historical_epochs_verified": false,
+    "prospective_only_no_backdating": true
+  }
+}

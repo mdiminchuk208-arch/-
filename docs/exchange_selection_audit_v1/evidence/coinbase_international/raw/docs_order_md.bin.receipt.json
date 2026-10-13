@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.cdp.coinbase.com/api-reference/international-exchange-api/rest-api/orders/create-order.md",
+  "request_start_utc": "2026-10-13T06:30:13.873215+00:00",
+  "completion_utc": "2026-10-13T06:30:14.958140+00:00",
+  "latency_ms": 1085.1,
+  "http_status": 200,
+  "sha256": "ce3696c22f7f1a99ef19c0831e568fe0d143ed24f8f15261752b335794f4836b",
+  "bytes": 15684,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4b656d9f70f3-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:14 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_order_md.bin"
+}

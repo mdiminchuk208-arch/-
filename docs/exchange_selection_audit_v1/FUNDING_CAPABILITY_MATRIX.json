@@ -1,0 +1,195 @@
+{
+  "binance_futures": {
+    "formula": null,
+    "history_depth": null,
+    "history_endpoint": "documented in developer catalog; live access not probed after restricted-location response",
+    "intervals": null,
+    "sign": null,
+    "source_ids": [
+      "docs_exchange_info_new"
+    ],
+    "surcharge": null
+  },
+  "bitget": {
+    "formula": null,
+    "history_depth": "pageSize maximum 100 per official docs; full retention unknown",
+    "history_endpoint": "GET /api/v2/mix/market/history-fund-rate",
+    "intervals": "8 hours in both product fundInterval fields",
+    "sign": null,
+    "source_ids": [
+      "bitget:bitget_detail_market",
+      "bitget:BTCUSDT_funding",
+      "bitget:ETHUSDT_funding",
+      "bitget:BTCUSDT_instrument",
+      "bitget:ETHUSDT_instrument"
+    ],
+    "surcharge": null
+  },
+  "blofin": {
+    "formula": null,
+    "history_depth": "Recent historical funding retrieved both symbols; older depth not probed",
+    "history_endpoint": "GET /api/v1/market/funding-rate-history?instId=...",
+    "intervals": "8 hour current fundingInterval/fundingIntervalUnit on both symbols",
+    "sign": null,
+    "source_ids": [
+      "bf_btc_funding_current",
+      "bf_eth_funding_current",
+      "bf_btc_funding_history_v2",
+      "bf_eth_funding_history_v2",
+      "bf_api_docs"
+    ],
+    "surcharge": null
+  },
+  "bybit": {
+    "formula": null,
+    "history_depth": "endpoint documented but all cloud probes 403",
+    "history_endpoint": "GET /v5/market/funding/history",
+    "intervals": "per-symbol fundingInterval field documented, current BTC/ETH values unavailable",
+    "sign": null,
+    "source_ids": [
+      "bybit:bybit_docs_funding",
+      "bybit:bybit_docs_instrument",
+      "bybit:BTCUSDT_funding",
+      "bybit:ETHUSDT_funding"
+    ],
+    "surcharge": null
+  },
+  "coinbase_international": {
+    "formula": null,
+    "history_depth": "Endpoint returned latest 10 BTC/ETH records ending 2026-10-01; two-year funding depth not probed",
+    "history_endpoint": "GET /api/v1/instruments/{instrument}/funding?result_limit<=100&result_offset=...",
+    "intervals": "Instrument funding_interval 3600000000000 nanoseconds = 1 hour; last captured funding record 2026-10-01T09:00:00Z",
+    "sign": "Docs say periodic transfers between longs and shorts; payer sign convention not retrieved",
+    "source_ids": [
+      "instruments",
+      "btc_funding",
+      "eth_funding",
+      "docs_funding_md",
+      "docs_concepts_instruments_md"
+    ],
+    "surcharge": null
+  },
+  "deribit": {
+    "formula": "Premium=(Mark-Index)/Index; uncapped=max(0.025%,Premium)+min(-0.025%,Premium); USDC perpetual cap shown +/-5%; payment=rate*position_size*(elapsed/8h).",
+    "history_depth": "Actual BTC and ETH 2024-10-13 hourly records retrieved; continuity beyond samples unverified.",
+    "history_endpoint": "/api/v2/public/get_funding_rate_history?instrument_name=...&start_timestamp=...&end_timestamp=...",
+    "intervals": "Continuously calculated and paid/received; quoted as 8-hour interest rate; cash balance settled daily at 08:00 UTC. Historical endpoint returns hourly interest_1h and interest_8h observations.",
+    "sign": "Positive: long pays short. Negative: short pays long.",
+    "source_ids": [
+      "funding_spec",
+      "docs_funding_md",
+      "btc_funding",
+      "eth_funding",
+      "funding_old_btc",
+      "funding_old_eth"
+    ],
+    "surcharge": "None: venue says it charges no fee on funding, transfers between holders."
+  },
+  "gate": {
+    "formula": null,
+    "history_depth": "recent BTC/ETH records retrieved; 2024-10-13 from rejected with 180-day limit",
+    "history_endpoint": "GET /futures/usdt/funding_rate?contract=...",
+    "intervals": "28800 seconds (8h) in both live contracts",
+    "sign": null,
+    "source_ids": [
+      "gate_btc_contract",
+      "gate_eth_contract",
+      "gate_btc_funding",
+      "gate_eth_funding",
+      "gate_btc_funding_old",
+      "gate_eth_funding_old",
+      "gate_docs_zip"
+    ],
+    "surcharge": null
+  },
+  "hyperliquid": {
+    "formula": "8h F = Average Premium Index + clamp(interest rate - Premium Index, -0.0005, 0.0005); paid hourly at 1/8 computed rate",
+    "history_depth": "2024-10-13 BTC and ETH hourly samples retrieved; continuity not established",
+    "history_endpoint": "POST /info fundingHistory",
+    "intervals": "hourly",
+    "sign": "positive: longs pay shorts; negative: shorts pay longs",
+    "source_ids": [
+      "hl_docs_funding",
+      "hl_btc_funding",
+      "hl_eth_funding",
+      "hl_btc_funding_old",
+      "hl_eth_funding_old"
+    ],
+    "surcharge": "none on funding per docs"
+  },
+  "kraken_futures": {
+    "formula": null,
+    "history_depth": {
+      "BTC_oldest_observed_utc": "2025-10-06T08:00:00Z",
+      "ETH_oldest_observed_utc": "2025-10-06T08:00:00Z",
+      "claim": "Endpoint returned 8,919 ascending hourly rows per product (roughly one year), not two-year funding continuity.",
+      "count_each": 8919
+    },
+    "history_endpoint": "GET /derivatives/api/v3/historical-funding-rates?symbol=PF_XBTUSD or PF_ETHUSD",
+    "intervals": "Retrieved PF_XBTUSD/PF_ETHUSD historical rates are hourly (adjacent timestamps one hour apart); old docs example has 4-hour entries, so product/time-specific schedule matters.",
+    "sign": null,
+    "source_ids": [
+      "funding_v3_btc",
+      "funding_v3_eth",
+      "docs_funding_history",
+      "docs_openapi",
+      "ticker_btc",
+      "ticker_eth"
+    ],
+    "surcharge": null
+  },
+  "kucoin_futures": {
+    "formula": null,
+    "history_depth": "2024-10-13+ range returns nonempty BTC/ETH funding; request result cap/complete continuity unverified",
+    "history_endpoint": "GET /api/v1/contract/funding-rates?symbol=...&from=...&to=...",
+    "intervals": "currentFundingRateGranularity=28800000 ms (8h) in both live contracts",
+    "sign": null,
+    "source_ids": [
+      "kc_btc_contract",
+      "kc_eth_contract",
+      "kc_btc_funding_current",
+      "kc_eth_funding_current",
+      "kc_btc_funding_old",
+      "kc_eth_funding_old",
+      "kc_docs_funding_history"
+    ],
+    "surcharge": null
+  },
+  "mexc": {
+    "formula": null,
+    "history_depth": {
+      "BTC_oldest_observed_utc": "2025-04-21T16:00:00+00:00",
+      "ETH_oldest_observed_utc": "2025-04-21T16:00:00+00:00",
+      "claim": "Last currently reported page=324 at page_size=5; no earlier continuity proven."
+    },
+    "history_endpoint": "GET /api/v1/contract/funding_rate/history?symbol=...&page_num=...&page_size=...",
+    "intervals": "Current BTC/ETH collectCycle=8 hours; retrieved historical rows also collectCycle=8.",
+    "sign": null,
+    "source_ids": [
+      "funding_current_btc",
+      "funding_current_eth",
+      "funding_btc",
+      "funding_eth",
+      "funding_btc_last",
+      "funding_eth_last",
+      "docs_api"
+    ],
+    "surcharge": null
+  },
+  "okx": {
+    "formula": "formulaType=withRate in live BTC/ETH response; numerical current formula/caps not independently validated from this evidence",
+    "history_depth": "official documentation: up to three months; current BTC/ETH samples retrieved",
+    "history_endpoint": "GET /api/v5/public/funding-rate-history",
+    "intervals": "variable; live BTC/ETH fundingTime and nextFundingTime each showed 8 hours at capture, not a universal rule",
+    "sign": "positive projected rate: longs pay shorts; negative: shorts pay longs",
+    "source_ids": [
+      "funding_btc",
+      "funding_eth",
+      "funding_history_btc",
+      "funding_history_eth",
+      "docs_main#public-data-rest-api-get-funding-rate",
+      "docs_main#public-data-rest-api-get-funding-rate-history"
+    ],
+    "surcharge": null
+  }
+}

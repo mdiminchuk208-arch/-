@@ -1,0 +1,117 @@
+{
+  "capture_environment": "Codex managed cloud, inherited HTTPS proxy and CA; no cookies, authentication, VPN or alternate routing; no automatic redirect following",
+  "document_quotes": {
+    "docs_exchange_info_new": [
+      "https://fapi.binance.com",
+      "pricePrecision",
+      "please do not use it as tickSize",
+      "PRICE_FILTER"
+    ],
+    "exchange_info": [
+      "Service unavailable from a restricted location according to 'b. Eligibility'"
+    ]
+  },
+  "sources": [
+    {
+      "body_bytes": 138,
+      "error": null,
+      "headers": {
+        "content-type": "text/html",
+        "date": "Mon, 12 Oct 2026 20:20:43 GMT"
+      },
+      "id": "docs_exchange_info",
+      "latency_ms": 983.77,
+      "method": "GET",
+      "raw_path": "raw/docs_exchange_info.body",
+      "receipt_path": "raw/docs_exchange_info.receipt.json",
+      "request_utc": "2026-10-12T20:20:43.068812Z",
+      "response_code": null,
+      "retrieval_utc": "2026-10-12T20:20:44.052451Z",
+      "sha256": "753e0dd54f28c4f7009b9c0b18a68aed175416bd8b7d134858264586eaac56f0",
+      "status": 302,
+      "truncated": false,
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Exchange-Information"
+    },
+    {
+      "body_bytes": 1557062,
+      "error": null,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Mon, 12 Oct 2026 20:21:37 GMT"
+      },
+      "id": "docs_exchange_info_new",
+      "latency_ms": 1789.51,
+      "method": "GET",
+      "raw_path": "raw/docs_exchange_info_new.body",
+      "receipt_path": "raw/docs_exchange_info_new.receipt.json",
+      "request_utc": "2026-10-12T20:21:36.753137Z",
+      "response_code": null,
+      "retrieval_utc": "2026-10-12T20:21:38.542123Z",
+      "sha256": "bc31b525aaf8d365ca1f27c107c93b14a651f1742134c65dfc2cb4ee3ee48232",
+      "status": 200,
+      "truncated": false,
+      "url": "https://developers.binance.com/en/docs/catalog/core-trading-derivatives-trading-usd-s-m-futures/api/rest-api/market-data#exchange-information"
+    },
+    {
+      "body_bytes": 138,
+      "error": null,
+      "headers": {
+        "content-type": "text/html",
+        "date": "Mon, 12 Oct 2026 20:21:18 GMT"
+      },
+      "id": "docs_fee",
+      "latency_ms": 911.99,
+      "method": "GET",
+      "raw_path": "raw/docs_fee.body",
+      "receipt_path": "raw/docs_fee.receipt.json",
+      "request_utc": "2026-10-12T20:21:17.849399Z",
+      "response_code": null,
+      "retrieval_utc": "2026-10-12T20:21:18.761218Z",
+      "sha256": "753e0dd54f28c4f7009b9c0b18a68aed175416bd8b7d134858264586eaac56f0",
+      "status": 302,
+      "truncated": false,
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Account-Information-V3"
+    },
+    {
+      "body_bytes": 224,
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Mon, 12 Oct 2026 20:20:43 GMT"
+      },
+      "id": "exchange_info",
+      "latency_ms": 592.78,
+      "method": "GET",
+      "raw_path": "raw/exchange_info.body",
+      "receipt_path": "raw/exchange_info.receipt.json",
+      "request_utc": "2026-10-12T20:20:43.048871Z",
+      "response_code": null,
+      "retrieval_utc": "2026-10-12T20:20:43.641532Z",
+      "sha256": "79c1db471a4cdc1c8565b5dfc52e0ed2d29962738ee4d28597696fcd0920e348",
+      "status": 451,
+      "truncated": false,
+      "url": "https://fapi.binance.com/fapi/v1/exchangeInfo"
+    },
+    {
+      "body_bytes": 94117,
+      "error": null,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Mon, 12 Oct 2026 20:21:18 GMT"
+      },
+      "id": "fee_page",
+      "latency_ms": 902.86,
+      "method": "GET",
+      "raw_path": "raw/fee_page.body",
+      "receipt_path": "raw/fee_page.receipt.json",
+      "request_utc": "2026-10-12T20:21:17.840311Z",
+      "response_code": null,
+      "retrieval_utc": "2026-10-12T20:21:18.742795Z",
+      "sha256": "4ed8c4fb8ad25dd54dec253bcd55de160468f4f8e226398f2589788afd8aa50c",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.binance.com/en/fee/futureFee"
+    }
+  ],
+  "venue": "binance_futures"
+}

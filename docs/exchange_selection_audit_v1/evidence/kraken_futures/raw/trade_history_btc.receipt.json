@@ -1,0 +1,18 @@
+{
+  "source_id": "trade_history_btc",
+  "url": "https://futures.kraken.com/derivatives/api/v3/history?symbol=PF_XBTUSD",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:30:51.993905+00:00",
+  "response_utc": "2026-10-13T06:30:52.528102+00:00",
+  "latency_ms": 534,
+  "http_status": 200,
+  "sha256": "8a70dc023effe7c7a2ba4c2decf441502b4f03d80d208931a204970b182232be",
+  "bytes": 18314,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:30:52 GMT",
+    "content-type": "application/json",
+    "server": "envoy"
+  },
+  "raw_path": "raw/trade_history_btc.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

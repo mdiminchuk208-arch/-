@@ -1,0 +1,21 @@
+{
+  "id": "hl_eth_m15_now",
+  "venue": "hyperliquid",
+  "url": "https://api.hyperliquid.xyz/info",
+  "method": "POST",
+  "request_body": "{\"type\":\"candleSnapshot\",\"req\":{\"coin\":\"ETH\",\"interval\":\"15m\",\"startTime\":1791829275462,\"endTime\":1791836475462}}",
+  "started_utc": "2026-10-12T20:21:15.659781+00:00",
+  "completed_utc": "2026-10-12T20:21:16.203941+00:00",
+  "latency_ms": 544.28,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "content-type": "application/json",
+    "content-length": "1202",
+    "date": "Mon, 12 Oct 2026 20:21:16 GMT"
+  },
+  "raw_path": "raw/hl_eth_m15_now.bin",
+  "raw_sha256": "ad5ba1268f08c8958dfa79bbcf388dbcd58b417e9b0db2029303f4f98894983c",
+  "raw_bytes": 1202,
+  "truncated": false
+}

@@ -1,0 +1,27 @@
+# Hyperliquid public evidence, 2026-10-12 to 2026-10-13 UTC
+
+All IDs resolve through `SOURCE_INDEX.json` to exact official URLs, UTC requests, status, filtered response headers, raw paths, and SHA-256. `FACTS.json` contains machine-readable findings and four complete normalized BTC/ETH book observations. Only public `POST /info` types were called. No trading action or account endpoint was called.
+
+## Product, fees, and funding
+
+The current `/info` `metaAndAssetCtxs` response (`hl_meta`) lists `BTC` (`szDecimals=5`, maxLeverage 40) and `ETH` (`szDecimals=4`, maxLeverage 25). Official contract specs (`hl_docs_contracts`) state: “USDC margining, USDT denominated linear contracts”; “no conversions with the USDC/USDT exchange rate are applied, so these contracts are technically quanto contracts”; and “Contract | 1 unit of underlying spot asset.” Thus a book `sz` is underlying BTC or ETH. This differs economically from a USDT collateral/settlement CEX perp even if the displayed oracle price is USDT denominated.
+
+Official fee table (`hl_docs_fees`) states under “Perps fee tiers”: “Tier | 14d weighted volume ($) | Taker | Maker” and base row `0 | [no minimum] | 0.045% | 0.015%`. Rates as fractions are taker `0.00045`, maker `0.00015`. The same page says “For each user, there is one fee tier across all assets, including perps, HIP-3 perps, and spot.” Volume, referral, staking, aligned-quote, and HIP-3 differences are separate; standard BTC/ETH base rates are the ordinary default estimate. No distinct API-only schedule is stated in this source.
+
+Funding docs (`hl_docs_funding`) state “Funding is purely peer-to-peer and no fees are collected on the payments”; “The funding rate on Hyperliquid is paid every hour”; positive funding means long pays short, negative the reverse. They give 8-hour formula `F = Average Premium Index (P) + clamp (interest rate - Premium Index (P), -0.0005, 0.0005)` paid hourly at one eighth. `hl_btc_funding` and `hl_eth_funding` retrieved recent hourly rows; `hl_btc_funding_old` and `hl_eth_funding_old` each retrieved 24 rows around 2024-10-13. Historical continuity and all applicable cap epochs remain unverified.
+
+## Historical data and tick provenance
+
+Official info docs (`hl_docs_info`) say “Only the most recent 5000 candles are available” and support `15m`. Current native BTC/ETH `15m` responses succeeded (`hl_btc_m15_now`, `hl_eth_m15_now`), with `s`, `i`, `t`, `T` identity fields. Both 2024-10-13 sentinels returned HTTP 200 with raw `[]` (`hl_btc_m15_old`, `hl_eth_m15_old`), so HTTP success is not historical-bar evidence. Official archive docs (`hl_docs_history`) say “No other historical data sets are provided via S3 (e.g. candles or spot asset data)” and warn monthly asset uploads can be missing. The archive documents historical L2 books, asset contexts, fills, and node data; actual historical snapshots/epochs were not downloaded. A two-year native M15 path therefore remains blocked.
+
+The tick rule (`hl_docs_tick`) is **price dependent**: “Prices can have up to 5 significant figures, but no more than `MAX_DECIMALS - szDecimals` decimal places where `MAX_DECIMALS` is 6 for perps ... Integer prices are always allowed.” Current BTC allows at most 1 decimal place, ETH at most 2, additionally constrained by 5 significant figures; neither has a single fixed tick across all prices. Size increments follow `szDecimals`. No historical `szDecimals`/price-rule change epochs were recovered, so current precision must not be backdated.
+
+## Books, execution, and safety
+
+`hl_btc_book_1`, `hl_eth_book_1` (2026-10-12 20:21 UTC) and `hl_btc_book_2`, `hl_eth_book_2` (2026-10-13 06:26 UTC) each have 20 bid and 20 ask levels. `BOOKS_NORMALIZED.json` and `FACTS.json.books` retain every level as exact decimal price and base quantity, with exchange timestamp and source ID. These are limited contemporaneous diagnostics.
+
+Official exchange docs (`hl_docs_exchange`) define order `r` as reduceOnly; trigger order types with `triggerPx` and `tpsl` (`tp`/`sl`); optional `cloid` as a 128-bit hex string; `updateLeverage` with `isCross`; and `updateIsolatedMargin`. Margin docs (`hl_docs_margin`) say isolated margin is supported. Info docs describe order/fill/position queries. Rate docs (`hl_docs_limits`) specify 1,200 weighted REST requests per IP per minute, `l2Book` weight 2, `candleSnapshot` weight 20 plus returned items, plus address-level action limits. Testnet is referenced in exchange schemas. None of these private operations were invoked.
+
+The trust model requires separate review. Official API wallet docs (`hl_docs_wallet`) say a master account can approve an agent wallet “to sign on behalf of the master account or any of the sub-accounts” and describe deregistration, expiration, nonce pruning, and replay risk after address reuse. Signing docs (`hl_docs_signing`) distinguish L1 actions from user-signed actions. Exchange docs contain transfer and withdrawal actions, but retrieved official text did **not** establish a sufficiently explicit external-withdrawal restriction for an agent key, or an IP allowlist equivalent. `FACTS.json` leaves trade-only/withdrawal separation unknown. Do not equate an agent signer with a CEX key that is provably disabled for withdrawals.
+
+Research blocker: missing two-year native M15 evidence for both symbols. Execution safety blocker: prove the exact agent signer withdrawal/transfer scope before role promotion. No GitHub-hosted CI probe was run by this worker.

@@ -1,0 +1,1219 @@
+{
+  "binance_futures": {
+    "account_jurisdiction_requires_later_user_check": true,
+    "facts": {
+      "client_order_id": null,
+      "custody": null,
+      "demo": "Developer catalog advertises testnet URL; untested",
+      "ip_allowlist": null,
+      "isolated_margin": null,
+      "key_permissions_no_withdraw": null,
+      "leverage": null,
+      "queries": null,
+      "rate_limits": "Developer catalog mentions IP weight; live endpoint restrictions prevent verification here",
+      "reduce_only": null,
+      "rest_ws": "REST developer catalog retrieved; WebSocket and private behavior not independently checked",
+      "signing": null,
+      "sl_tp": null,
+      "source_ids": [
+        "docs_exchange_info_new"
+      ],
+      "status_feed": null
+    },
+    "hard_execution": [
+      {
+        "confirmed": null,
+        "note": "Unverified: base API fee knowable with official current evidence. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "fee_page",
+          "docs_exchange_info_new"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "fee_page",
+          "docs_exchange_info_new"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "fee_page",
+          "docs_exchange_info_new"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "fee_page",
+          "docs_exchange_info_new"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Repeated cloud and ordinary GitHub CI public API responses are HTTP 451 restricted location.",
+        "source_ids": [
+          "fee_page",
+          "docs_exchange_info_new"
+        ]
+      }
+    ]
+  },
+  "bitget": {
+    "account_jurisdiction_requires_later_user_check": true,
+    "facts": {
+      "client_order_id": "clientOid supported for order query; exact replay/idempotency guarantee unverified",
+      "custody": "centralized exchange account",
+      "demo": "Classic demo trading REST guide available",
+      "ip_allowlist": "withdrawals require IP allowlist; trading-key IP binding configuration not proven",
+      "isolated_margin": "change margin mode endpoint documented; place order marginMode isolated",
+      "key_permissions_no_withdraw": "Read-Only, Trade, Transfer, Withdraw permissions listed separately; trade-only without Withdraw supported by schema",
+      "leverage": "change leverage endpoint documented",
+      "queries": "order detail/history/fills and position endpoints documented",
+      "rate_limits": "place-order 10 requests/second/UID; market endpoints generally 20/s/IP; 429 described",
+      "reduce_only": "place order reduceOnly YES/NO in one-way mode",
+      "rest_ws": "Official Classic REST and public/private WebSocket documented",
+      "signing": "HMAC/API key documented",
+      "sl_tp": "presetStopLossPrice/presetStopSurplusPrice and conditional plan order endpoints documented",
+      "source_ids": [
+        "bitget:bitget_docs_rest_api",
+        "bitget:bitget_docs_ws_intro",
+        "bitget:bitget_detail_trade",
+        "bitget:bitget_detail_plan",
+        "bitget:bitget_detail_account",
+        "bitget:bitget_detail_position",
+        "bitget:bitget_docs_demo_rest",
+        "bitget:bitget_detail_market"
+      ],
+      "status_feed": null
+    },
+    "hard_execution": [
+      {
+        "confirmed": true,
+        "note": "Confirmed: base API fee knowable with official current evidence. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bitget:BTCUSDT_instrument",
+          "bitget:ETHUSDT_instrument",
+          "bitget:bitget_detail_market",
+          "bitget:bitget_docs_rest_api",
+          "bitget:bitget_docs_ws_intro",
+          "bitget:bitget_detail_trade",
+          "bitget:bitget_detail_plan",
+          "bitget:bitget_detail_account",
+          "bitget:bitget_detail_position",
+          "bitget:bitget_docs_demo_rest"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bitget:BTCUSDT_instrument",
+          "bitget:ETHUSDT_instrument",
+          "bitget:bitget_detail_market",
+          "bitget:bitget_docs_rest_api",
+          "bitget:bitget_docs_ws_intro",
+          "bitget:bitget_detail_trade",
+          "bitget:bitget_detail_plan",
+          "bitget:bitget_detail_account",
+          "bitget:bitget_detail_position",
+          "bitget:bitget_docs_demo_rest"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bitget:BTCUSDT_instrument",
+          "bitget:ETHUSDT_instrument",
+          "bitget:bitget_detail_market",
+          "bitget:bitget_docs_rest_api",
+          "bitget:bitget_docs_ws_intro",
+          "bitget:bitget_detail_trade",
+          "bitget:bitget_detail_plan",
+          "bitget:bitget_detail_account",
+          "bitget:bitget_detail_position",
+          "bitget:bitget_docs_demo_rest"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bitget:BTCUSDT_instrument",
+          "bitget:ETHUSDT_instrument",
+          "bitget:bitget_detail_market",
+          "bitget:bitget_docs_rest_api",
+          "bitget:bitget_docs_ws_intro",
+          "bitget:bitget_detail_trade",
+          "bitget:bitget_detail_plan",
+          "bitget:bitget_detail_account",
+          "bitget:bitget_detail_position",
+          "bitget:bitget_docs_demo_rest"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: no severe unresolved endpoint/access restriction. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bitget:BTCUSDT_instrument",
+          "bitget:ETHUSDT_instrument",
+          "bitget:bitget_detail_market",
+          "bitget:bitget_docs_rest_api",
+          "bitget:bitget_docs_ws_intro",
+          "bitget:bitget_detail_trade",
+          "bitget:bitget_detail_plan",
+          "bitget:bitget_detail_account",
+          "bitget:bitget_detail_position",
+          "bitget:bitget_docs_demo_rest"
+        ]
+      }
+    ]
+  },
+  "blofin": {
+    "account_jurisdiction_requires_later_user_check": true,
+    "facts": {
+      "client_order_id": "clientOrderId up to 32 characters; GET order-detail by clientOrderId",
+      "custody": "centralized exchange key/secret/passphrase and exchange account",
+      "demo": "demo-trading REST and WebSocket hosts documented",
+      "ip_allowlist": "Up to 20 IP addresses per API key; unbound keys expire after 90 days",
+      "isolated_margin": "POST /api/v1/account/set-margin-mode isolated; order marginMode isolated",
+      "key_permissions_no_withdraw": "Docs list READ, TRADE, TRANSFER as distinct key permissions; TRADE places/cancels orders and views history; no withdraw permission listed in this API model",
+      "leverage": "POST /api/v1/account/set-leverage, marginMode isolated supported",
+      "queries": "GET order-detail, active/history/trade history; private WS order channel documented",
+      "rate_limits": "HTTP 429 documented; endpoint numeric quotas not fully extracted",
+      "reduce_only": "Order and TPSL reduceOnly available in one-way mode; ignored under hedge mode",
+      "rest_ws": "Official REST and public/private WebSocket docs",
+      "signing": "HMAC-SHA256 signing with timestamp and nonce",
+      "sl_tp": "Order may attach TP/SL; separate POST /api/v1/trade/order-tpsl",
+      "source_ids": [
+        "bf_api_docs"
+      ],
+      "status_feed": null
+    },
+    "hard_execution": [
+      {
+        "confirmed": true,
+        "note": "Confirmed: base API fee knowable with official current evidence. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bf_fee_page",
+          "bf_api_docs"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bf_fee_page",
+          "bf_api_docs"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bf_fee_page",
+          "bf_api_docs"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bf_fee_page",
+          "bf_api_docs"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: no severe unresolved endpoint/access restriction. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bf_fee_page",
+          "bf_api_docs"
+        ]
+      }
+    ]
+  },
+  "bybit": {
+    "account_jurisdiction_requires_later_user_check": true,
+    "facts": {
+      "client_order_id": "orderLinkId customizable; replay guarantee unverified",
+      "custody": "centralized exchange account",
+      "demo": "Demo Trading Service and testnet documented",
+      "ip_allowlist": "API key info has ips field; ability to bind IP described but not configured",
+      "isolated_margin": "isolated mode described in leverage docs; account-specific UTA mode applicability unverified",
+      "key_permissions_no_withdraw": "API key info schema separates ContractTrade Order/Position from Wallet Withdraw permissions",
+      "leverage": "set-leverage endpoint documented",
+      "queries": "open/closed order and position queries documented",
+      "rate_limits": "official V5 rate-limit table and X-BAPI headers documented",
+      "reduce_only": "reduceOnly documented in order creation",
+      "rest_ws": "REST and private WebSocket documented",
+      "signing": "API key/HMAC documented",
+      "sl_tp": "trading-stop endpoint and tpslMode documented",
+      "source_ids": [
+        "bybit:bybit_docs_order",
+        "bybit:bybit_docs_trading_stop",
+        "bybit:bybit_docs_leverage",
+        "bybit:bybit_docs_apikey_info",
+        "bybit:bybit_docs_rate_limit",
+        "bybit:bybit_docs_guide",
+        "bybit:bybit_docs_demo",
+        "bybit:bybit_docs_ws_order",
+        "bybit:bybit_docs_realtime_order",
+        "bybit:bybit_docs_position"
+      ],
+      "status_feed": null
+    },
+    "hard_execution": [
+      {
+        "confirmed": true,
+        "note": "Confirmed: base API fee knowable with official current evidence. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bybit:bybit_docs_fee",
+          "bybit:bybit_docs_order",
+          "bybit:bybit_docs_trading_stop",
+          "bybit:bybit_docs_leverage",
+          "bybit:bybit_docs_apikey_info",
+          "bybit:bybit_docs_rate_limit",
+          "bybit:bybit_docs_guide",
+          "bybit:bybit_docs_demo",
+          "bybit:bybit_docs_ws_order",
+          "bybit:bybit_docs_realtime_order",
+          "bybit:bybit_docs_position"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bybit:bybit_docs_fee",
+          "bybit:bybit_docs_order",
+          "bybit:bybit_docs_trading_stop",
+          "bybit:bybit_docs_leverage",
+          "bybit:bybit_docs_apikey_info",
+          "bybit:bybit_docs_rate_limit",
+          "bybit:bybit_docs_guide",
+          "bybit:bybit_docs_demo",
+          "bybit:bybit_docs_ws_order",
+          "bybit:bybit_docs_realtime_order",
+          "bybit:bybit_docs_position"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bybit:bybit_docs_fee",
+          "bybit:bybit_docs_order",
+          "bybit:bybit_docs_trading_stop",
+          "bybit:bybit_docs_leverage",
+          "bybit:bybit_docs_apikey_info",
+          "bybit:bybit_docs_rate_limit",
+          "bybit:bybit_docs_guide",
+          "bybit:bybit_docs_demo",
+          "bybit:bybit_docs_ws_order",
+          "bybit:bybit_docs_realtime_order",
+          "bybit:bybit_docs_position"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Unverified: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "bybit:bybit_docs_fee",
+          "bybit:bybit_docs_order",
+          "bybit:bybit_docs_trading_stop",
+          "bybit:bybit_docs_leverage",
+          "bybit:bybit_docs_apikey_info",
+          "bybit:bybit_docs_rate_limit",
+          "bybit:bybit_docs_guide",
+          "bybit:bybit_docs_demo",
+          "bybit:bybit_docs_ws_order",
+          "bybit:bybit_docs_realtime_order",
+          "bybit:bybit_docs_position"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Repeated cloud and ordinary GitHub CI public API responses are HTTP 403 country block.",
+        "source_ids": [
+          "bybit:bybit_docs_fee",
+          "bybit:bybit_docs_order",
+          "bybit:bybit_docs_trading_stop",
+          "bybit:bybit_docs_leverage",
+          "bybit:bybit_docs_apikey_info",
+          "bybit:bybit_docs_rate_limit",
+          "bybit:bybit_docs_guide",
+          "bybit:bybit_docs_demo",
+          "bybit:bybit_docs_ws_order",
+          "bybit:bybit_docs_realtime_order",
+          "bybit:bybit_docs_position"
+        ]
+      }
+    ]
+  },
+  "coinbase_international": {
+    "account_jurisdiction_requires_later_user_check": true,
+    "facts": {
+      "client_order_id": "client_order_id required in Create Order schema, uniqueness/idempotency semantics unverified",
+      "custody": "institutional custodial exchange/portfolios; account and jurisdiction eligibility not evaluated",
+      "demo": "Sandbox exists but onboarding through Coinbase Account Team",
+      "ip_allowlist": "Sandbox docs permit up to 30 IPs per API key; production also mentioned, but no key created",
+      "isolated_margin": "portfolio segregation documented; per-position isolated margin not verified",
+      "key_permissions_no_withdraw": "Sandbox docs list View, Transfer, Trade independently; View+Trade excluding Transfer possible in UI, production account applicability unverified",
+      "leverage": "base_imf/default_imf and portfolio margin override documented; direct leverage setter not verified",
+      "queries": "Get Order Details, open orders, portfolio fills and positions documented",
+      "rate_limits": "40 REST requests/s per API key; 800 FIX msg/s/key; account 4000 msg/s; 10 WS connection attempts per 30 s",
+      "reduce_only": null,
+      "rest_ws": "REST orders plus authenticated market-data WebSocket documented",
+      "signing": "HMAC-SHA256 CB-ACCESS-SIGN over timestamp+method+requestPath+body, plus passphrase/key headers",
+      "sl_tp": "REST TAKE_PROFIT_STOP_LOSS, STOP and STOP_LIMIT documented; FIX TPSL conditional legs documented",
+      "source_ids": [
+        "docs_order_md",
+        "docs_query_md",
+        "docs_portfolios_md",
+        "docs_sandbox_md",
+        "docs_auth_md",
+        "docs_limits_md",
+        "docs_systems_md",
+        "docs_tpsl_md"
+      ],
+      "status_feed": "official systems page links status.coinbase.com (redirect from cdpstatus); component-specific INTX status unverified"
+    },
+    "hard_execution": [
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: base API fee knowable with official current evidence. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "docs_fee_md",
+          "docs_portfolio_fees_md",
+          "fee_tiers",
+          "docs_order_md",
+          "docs_query_md",
+          "docs_portfolios_md",
+          "docs_sandbox_md",
+          "docs_auth_md",
+          "docs_limits_md",
+          "docs_systems_md",
+          "docs_tpsl_md"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "docs_fee_md",
+          "docs_portfolio_fees_md",
+          "fee_tiers",
+          "docs_order_md",
+          "docs_query_md",
+          "docs_portfolios_md",
+          "docs_sandbox_md",
+          "docs_auth_md",
+          "docs_limits_md",
+          "docs_systems_md",
+          "docs_tpsl_md"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "docs_fee_md",
+          "docs_portfolio_fees_md",
+          "fee_tiers",
+          "docs_order_md",
+          "docs_query_md",
+          "docs_portfolios_md",
+          "docs_sandbox_md",
+          "docs_auth_md",
+          "docs_limits_md",
+          "docs_systems_md",
+          "docs_tpsl_md"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "docs_fee_md",
+          "docs_portfolio_fees_md",
+          "fee_tiers",
+          "docs_order_md",
+          "docs_query_md",
+          "docs_portfolios_md",
+          "docs_sandbox_md",
+          "docs_auth_md",
+          "docs_limits_md",
+          "docs_systems_md",
+          "docs_tpsl_md"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Both required products PAUSED; public book endpoints 404 and fee-tier request 403.",
+        "source_ids": [
+          "docs_fee_md",
+          "docs_portfolio_fees_md",
+          "fee_tiers",
+          "docs_order_md",
+          "docs_query_md",
+          "docs_portfolios_md",
+          "docs_sandbox_md",
+          "docs_auth_md",
+          "docs_limits_md",
+          "docs_systems_md",
+          "docs_tpsl_md"
+        ]
+      }
+    ]
+  },
+  "deribit": {
+    "account_jurisdiction_requires_later_user_check": true,
+    "facts": {
+      "client_order_id": "User-defined label up to 64 characters, can group multiple orders; uniqueness/idempotency not documented",
+      "custody": "custodial CEX account/subaccounts with exchange margin/settlement",
+      "demo": "test.deribit.com API console/test environment documented",
+      "ip_allowlist": true,
+      "isolated_margin": "Only via dedicated subaccount; official support says default standard margin pools same-asset position margins",
+      "key_permissions_no_withdraw": "trade:read_write can be granted with wallet:read or wallet:none; wallet:read_write is withdrawal scope",
+      "leverage": "instrument max_leverage/max_non_default_leverage present; explicit per-position leverage setter not verified",
+      "queries": "get_order_state, get_user_trades_by_instrument, get_position documented",
+      "rate_limits": "credit-based per-subaccount; get_instruments sustained 1 request/sec, burst 50; 10028 on exhaustion",
+      "reduce_only": true,
+      "rest_ws": "JSON-RPC over REST and WebSocket documented",
+      "signing": "OAuth-style client credentials or client_signature HMAC with timestamp/nonce; API key/token scopes",
+      "sl_tp": "Stop-loss/take-profit trigger orders and linked OCO/OTOCO documented",
+      "source_ids": [
+        "docs_buy_md",
+        "docs_sell_md",
+        "docs_orders_md",
+        "docs_order_state_md",
+        "docs_user_trades_md",
+        "docs_position_md",
+        "docs_keys_md",
+        "docs_access_scope_md",
+        "docs_auth_md",
+        "docs_limits_md",
+        "isolated_article",
+        "status"
+      ],
+      "status_feed": "status.deribit.com probe failed proxy tunnel 403; public operational feed unverified"
+    },
+    "hard_execution": [
+      {
+        "confirmed": true,
+        "note": "Confirmed: base API fee knowable with official current evidence. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "usdc_instruments",
+          "docs_instruments_md",
+          "fees_article",
+          "docs_buy_md",
+          "docs_sell_md",
+          "docs_orders_md",
+          "docs_order_state_md",
+          "docs_user_trades_md",
+          "docs_position_md",
+          "docs_keys_md",
+          "docs_access_scope_md",
+          "docs_auth_md",
+          "docs_limits_md",
+          "isolated_article",
+          "status"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Required isolated position control and leverage behavior not verified. A dedicated subaccount is not automatic equivalence.",
+        "source_ids": [
+          "usdc_instruments",
+          "docs_instruments_md",
+          "fees_article",
+          "docs_buy_md",
+          "docs_sell_md",
+          "docs_orders_md",
+          "docs_order_state_md",
+          "docs_user_trades_md",
+          "docs_position_md",
+          "docs_keys_md",
+          "docs_access_scope_md",
+          "docs_auth_md",
+          "docs_limits_md",
+          "isolated_article",
+          "status"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "usdc_instruments",
+          "docs_instruments_md",
+          "fees_article",
+          "docs_buy_md",
+          "docs_sell_md",
+          "docs_orders_md",
+          "docs_order_state_md",
+          "docs_user_trades_md",
+          "docs_position_md",
+          "docs_keys_md",
+          "docs_access_scope_md",
+          "docs_auth_md",
+          "docs_limits_md",
+          "isolated_article",
+          "status"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "usdc_instruments",
+          "docs_instruments_md",
+          "fees_article",
+          "docs_buy_md",
+          "docs_sell_md",
+          "docs_orders_md",
+          "docs_order_state_md",
+          "docs_user_trades_md",
+          "docs_position_md",
+          "docs_keys_md",
+          "docs_access_scope_md",
+          "docs_auth_md",
+          "docs_limits_md",
+          "isolated_article",
+          "status"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: no severe unresolved endpoint/access restriction. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "usdc_instruments",
+          "docs_instruments_md",
+          "fees_article",
+          "docs_buy_md",
+          "docs_sell_md",
+          "docs_orders_md",
+          "docs_order_state_md",
+          "docs_user_trades_md",
+          "docs_position_md",
+          "docs_keys_md",
+          "docs_access_scope_md",
+          "docs_auth_md",
+          "docs_limits_md",
+          "isolated_article",
+          "status"
+        ]
+      }
+    ]
+  },
+  "gate": {
+    "account_jurisdiction_requires_later_user_check": true,
+    "facts": {
+      "client_order_id": "order text custom ID t- prefix, <=28 additional bytes; pending-order query support; strict idempotency unverified",
+      "custody": "centralized exchange account USDT futures collateral",
+      "demo": "official TestNet base URL documented",
+      "ip_allowlist": true,
+      "isolated_margin": true,
+      "key_permissions_no_withdraw": true,
+      "leverage": true,
+      "queries": "GET orders/orders_timerange, trades, positions documented; private calls not probed",
+      "rate_limits": "response X-Gate-RateLimit-* headers; futures order endpoints 100 requests/second documented, per endpoint limits vary",
+      "reduce_only": true,
+      "rest_ws": true,
+      "signing": "APIv4 HMAC SHA512 key/secret; key permissions by business category and read/write; no credentials used",
+      "sl_tp": true,
+      "source_ids": [
+        "gate_docs_zip",
+        "gate_docs_api",
+        "gate_status"
+      ],
+      "status_feed": "API changelog and announcements pages; operational status feed unverified"
+    },
+    "hard_execution": [
+      {
+        "confirmed": false,
+        "note": "Public contract maker/taker fields do not prove ordinary API-account fee; authenticated futures fee endpoint is required.",
+        "source_ids": [
+          "gate_btc_contract",
+          "gate_eth_contract",
+          "gate_docs_zip",
+          "gate_fee_schedule",
+          "gate_docs_api",
+          "gate_status"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "gate_btc_contract",
+          "gate_eth_contract",
+          "gate_docs_zip",
+          "gate_fee_schedule",
+          "gate_docs_api",
+          "gate_status"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "gate_btc_contract",
+          "gate_eth_contract",
+          "gate_docs_zip",
+          "gate_fee_schedule",
+          "gate_docs_api",
+          "gate_status"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "gate_btc_contract",
+          "gate_eth_contract",
+          "gate_docs_zip",
+          "gate_fee_schedule",
+          "gate_docs_api",
+          "gate_status"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: no severe unresolved endpoint/access restriction. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "gate_btc_contract",
+          "gate_eth_contract",
+          "gate_docs_zip",
+          "gate_fee_schedule",
+          "gate_docs_api",
+          "gate_status"
+        ]
+      }
+    ]
+  },
+  "hyperliquid": {
+    "account_jurisdiction_requires_later_user_check": true,
+    "facts": {
+      "client_order_id": "optional 128-bit hex cloid; uniqueness/idempotency behavior not fully documented",
+      "custody": "wallet/onchain collateral and validator orderbook; external-withdrawal separation of agent signer unresolved from retrieved docs",
+      "demo": "testnet referenced in exchange API",
+      "ip_allowlist": null,
+      "isolated_margin": true,
+      "key_permissions_no_withdraw": null,
+      "leverage": true,
+      "queries": "public info orderStatus/userFills/clearinghouseState documented; private account data not probed",
+      "rate_limits": "1200 weighted REST requests/IP/min; l2Book weight 2, candleSnapshot weight 20 plus items; address limits apply to actions",
+      "reduce_only": true,
+      "rest_ws": true,
+      "signing": "approved API/agent wallets sign on behalf of master; two signing schemes; revocation/pruning/nonce reuse risk documented",
+      "sl_tp": true,
+      "source_ids": [
+        "hl_docs_exchange",
+        "hl_docs_wallet",
+        "hl_docs_signing",
+        "hl_docs_margin",
+        "hl_docs_limits",
+        "hl_docs_info"
+      ],
+      "status_feed": null
+    },
+    "hard_execution": [
+      {
+        "confirmed": true,
+        "note": "Confirmed: base API fee knowable with official current evidence. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "hl_docs_fees",
+          "hl_docs_exchange",
+          "hl_docs_wallet",
+          "hl_docs_signing",
+          "hl_docs_margin",
+          "hl_docs_limits",
+          "hl_docs_info"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "hl_docs_fees",
+          "hl_docs_exchange",
+          "hl_docs_wallet",
+          "hl_docs_signing",
+          "hl_docs_margin",
+          "hl_docs_limits",
+          "hl_docs_info"
+        ]
+      },
+      {
+        "confirmed": null,
+        "note": "Agent-signer authority over external movement/withdrawal is unresolved; one same-address action does not prove all scopes.",
+        "source_ids": [
+          "hl_docs_fees",
+          "hl_docs_exchange",
+          "hl_docs_wallet",
+          "hl_docs_signing",
+          "hl_docs_margin",
+          "hl_docs_limits",
+          "hl_docs_info"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "hl_docs_fees",
+          "hl_docs_exchange",
+          "hl_docs_wallet",
+          "hl_docs_signing",
+          "hl_docs_margin",
+          "hl_docs_limits",
+          "hl_docs_info"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: no severe unresolved endpoint/access restriction. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "hl_docs_fees",
+          "hl_docs_exchange",
+          "hl_docs_wallet",
+          "hl_docs_signing",
+          "hl_docs_margin",
+          "hl_docs_limits",
+          "hl_docs_info"
+        ]
+      }
+    ]
+  },
+  "kraken_futures": {
+    "account_jurisdiction_requires_later_user_check": true,
+    "facts": {
+      "client_order_id": "cliOrdId globally unique per documented Send order; separate generic cl_ord_id guide is mainly spot/FIX. Retry/idempotency guarantees beyond active-order uniqueness unverified.",
+      "custody": "CEX multi-collateral Futures account; no user eligibility asserted.",
+      "demo": "demo-futures.kraken.com documented separate demo environment.",
+      "ip_allowlist": "Generic Kraken API key guide recommends IP whitelisting; direct Futures-key scope/applicability unverified.",
+      "isolated_margin": true,
+      "key_permissions_no_withdraw": "Derivatives key General API Full Access explicitly excludes withdrawals; Withdrawal API has separate No Access/Full Access.",
+      "leverage": true,
+      "queries": "Open orders, order status, fills, positions in official API docs.",
+      "rate_limits": "Derivatives cost budget up to 500 per 10 seconds; public endpoints do not consume cost, per official Futures guide.",
+      "reduce_only": true,
+      "rest_ws": true,
+      "signing": "Derivatives REST APIKey + Authent HMAC-SHA512 over SHA256 digest.",
+      "sl_tp": "Send order supports stp, take_profit, trailing_stop with triggerSignal mark/index/last.",
+      "source_ids": [
+        "docs_index",
+        "docs_futures_intro_new",
+        "docs_send_order",
+        "docs_leverage",
+        "docs_futures_limits",
+        "docs_futures_rest",
+        "docs_order_status",
+        "docs_key_permissions",
+        "status_page"
+      ],
+      "status_feed": "status.kraken.com public operational page retrieved."
+    },
+    "hard_execution": [
+      {
+        "confirmed": true,
+        "note": "Confirmed: base API fee knowable with official current evidence. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "fees_page",
+          "docs_fee_schedule",
+          "docs_index",
+          "docs_futures_intro_new",
+          "docs_send_order",
+          "docs_leverage",
+          "docs_futures_limits",
+          "docs_futures_rest",
+          "docs_order_status",
+          "docs_key_permissions",
+          "status_page"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "fees_page",
+          "docs_fee_schedule",
+          "docs_index",
+          "docs_futures_intro_new",
+          "docs_send_order",
+          "docs_leverage",
+          "docs_futures_limits",
+          "docs_futures_rest",
+          "docs_order_status",
+          "docs_key_permissions",
+          "status_page"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "fees_page",
+          "docs_fee_schedule",
+          "docs_index",
+          "docs_futures_intro_new",
+          "docs_send_order",
+          "docs_leverage",
+          "docs_futures_limits",
+          "docs_futures_rest",
+          "docs_order_status",
+          "docs_key_permissions",
+          "status_page"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "fees_page",
+          "docs_fee_schedule",
+          "docs_index",
+          "docs_futures_intro_new",
+          "docs_send_order",
+          "docs_leverage",
+          "docs_futures_limits",
+          "docs_futures_rest",
+          "docs_order_status",
+          "docs_key_permissions",
+          "status_page"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: no severe unresolved endpoint/access restriction. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "fees_page",
+          "docs_fee_schedule",
+          "docs_index",
+          "docs_futures_intro_new",
+          "docs_send_order",
+          "docs_leverage",
+          "docs_futures_limits",
+          "docs_futures_rest",
+          "docs_order_status",
+          "docs_key_permissions",
+          "status_page"
+        ]
+      }
+    ]
+  },
+  "kucoin_futures": {
+    "account_jurisdiction_requires_later_user_check": true,
+    "facts": {
+      "client_order_id": "Add Order clientOid; Get Order By ClientOid in official docs navigation",
+      "custody": "centralized exchange account/API key; account security setup untested",
+      "demo": null,
+      "ip_allowlist": null,
+      "isolated_margin": "POST /api/v2/position/changeMarginMode ISOLATED",
+      "key_permissions_no_withdraw": "Futures order endpoint requires Futures permission; withdrawal endpoint requires separate Withdrawal permission",
+      "leverage": "Add Order request includes leverage; contract max 125 BTC/100 ETH",
+      "queries": "Official docs navigation contains Get Order By OrderId/ClientOid, open/closed orders and trade history",
+      "rate_limits": "Documented per-endpoint weights e.g. symbol 3, klines 3, funding history 5, add order 2; global bucket not captured",
+      "reduce_only": "Add Order reduceOnly documented",
+      "rest_ws": "REST order plus documented futures public/private WebSocket nav; WebSocket health untested",
+      "signing": "KC-API signed request with HMAC-SHA256/headers",
+      "sl_tp": "POST /api/v1/st-orders documents triggerStopUpPrice and triggerStopDownPrice",
+      "source_ids": [
+        "kc_docs_add_order",
+        "kc_docs_add_tpsl",
+        "kc_docs_switch_margin",
+        "kc_docs_status",
+        "kc_status",
+        "kc_docs_auth",
+        "kc_docs_withdraw"
+      ],
+      "status_feed": "GET /api/v1/status, observed open"
+    },
+    "hard_execution": [
+      {
+        "confirmed": true,
+        "note": "Confirmed: base API fee knowable with official current evidence. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "kc_btc_contract",
+          "kc_eth_contract",
+          "kc_docs_contract_en",
+          "kc_docs_actual_fee_futures",
+          "kc_docs_add_order",
+          "kc_docs_add_tpsl",
+          "kc_docs_switch_margin",
+          "kc_docs_status",
+          "kc_status",
+          "kc_docs_auth",
+          "kc_docs_withdraw"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "kc_btc_contract",
+          "kc_eth_contract",
+          "kc_docs_contract_en",
+          "kc_docs_actual_fee_futures",
+          "kc_docs_add_order",
+          "kc_docs_add_tpsl",
+          "kc_docs_switch_margin",
+          "kc_docs_status",
+          "kc_status",
+          "kc_docs_auth",
+          "kc_docs_withdraw"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Official Add Order page labels api-permission Futures; official Withdraw (V3) page labels api-permission Withdrawal. A Futures-only key need not have Withdrawal permission; no key was created.",
+        "source_ids": [
+          "kc_btc_contract",
+          "kc_eth_contract",
+          "kc_docs_contract_en",
+          "kc_docs_actual_fee_futures",
+          "kc_docs_add_order",
+          "kc_docs_add_tpsl",
+          "kc_docs_switch_margin",
+          "kc_docs_status",
+          "kc_status",
+          "kc_docs_auth",
+          "kc_docs_withdraw"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "kc_btc_contract",
+          "kc_eth_contract",
+          "kc_docs_contract_en",
+          "kc_docs_actual_fee_futures",
+          "kc_docs_add_order",
+          "kc_docs_add_tpsl",
+          "kc_docs_switch_margin",
+          "kc_docs_status",
+          "kc_status",
+          "kc_docs_auth",
+          "kc_docs_withdraw"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: no severe unresolved endpoint/access restriction. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "kc_btc_contract",
+          "kc_eth_contract",
+          "kc_docs_contract_en",
+          "kc_docs_actual_fee_futures",
+          "kc_docs_add_order",
+          "kc_docs_add_tpsl",
+          "kc_docs_switch_margin",
+          "kc_docs_status",
+          "kc_status",
+          "kc_docs_auth",
+          "kc_docs_withdraw"
+        ]
+      }
+    ]
+  },
+  "mexc": {
+    "account_jurisdiction_requires_later_user_check": true,
+    "facts": {
+      "client_order_id": "externalOid documented; uniqueness/idempotent retry semantics unverified.",
+      "custody": "CEX account; account eligibility unknown.",
+      "demo": null,
+      "ip_allowlist": null,
+      "isolated_margin": true,
+      "key_permissions_no_withdraw": null,
+      "leverage": true,
+      "queries": "Order history, open orders, fills, position state documented.",
+      "rate_limits": "Public depth/kline/funding 20 requests/2s; contract detail 1/5s in official docs.",
+      "reduce_only": "Documented for one-way positions; two-way positions reject reduceOnly parameter.",
+      "rest_ws": true,
+      "signing": "API key Access/Secret; signed private requests documented.",
+      "sl_tp": "stopLossPrice/takeProfitPrice fields documented on order placement.",
+      "source_ids": [
+        "docs_api",
+        "instrument_btc",
+        "instrument_eth"
+      ],
+      "status_feed": null
+    },
+    "hard_execution": [
+      {
+        "confirmed": false,
+        "note": "Public 0/2 bps instrument fields do not prove ordinary API-account fee; tiered fee route is private.",
+        "source_ids": [
+          "instrument_btc",
+          "instrument_eth",
+          "docs_api",
+          "fees_page"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instrument_btc",
+          "instrument_eth",
+          "docs_api",
+          "fees_page"
+        ]
+      },
+      {
+        "confirmed": false,
+        "note": "Contradicted or currently unavailable: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instrument_btc",
+          "instrument_eth",
+          "docs_api",
+          "fees_page"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instrument_btc",
+          "instrument_eth",
+          "docs_api",
+          "fees_page"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: no severe unresolved endpoint/access restriction. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "instrument_btc",
+          "instrument_eth",
+          "docs_api",
+          "fees_page"
+        ]
+      }
+    ]
+  },
+  "okx": {
+    "account_jurisdiction_requires_later_user_check": true,
+    "facts": {
+      "client_order_id": "clOrdId is unique among currently pending orders, not a durable global idempotency guarantee",
+      "custody": "centralized exchange account; user account eligibility and collateral arrangements untested",
+      "demo": "official docs list Demo Trading Services; untested",
+      "ip_allowlist": "docs recommend binding up to 20 IP addresses to API key",
+      "isolated_margin": "documented for eligible SWAP futures account mode; account-specific availability untested",
+      "key_permissions_no_withdraw": "docs distinguish read_only, trade and withdraw permissions; key creation/account-specific behavior untested",
+      "leverage": "POST /api/v5/account/set-leverage documented; private behavior untested",
+      "queries": "GET order details/list/history, transaction details and positions in official docs; private behavior untested",
+      "rate_limits": "documented per endpoint; books 40 requests/2s by IP, history candles 20/2s by IP, place order 60/2s per user+instrument (subject to additional limits)",
+      "reduce_only": "reduceOnly documented for FUTURES/SWAP net mode; private behavior untested",
+      "rest_ws": "Official docs list REST market/order/account and WebSocket order, fills and instruments channels; private behavior untested",
+      "signing": "REST API key/passphrase/signature documented; no private key used",
+      "sl_tp": "attached TP/SL and POST /api/v5/trade/order-algo documented; docs warn conditional net TP+SL together executes stop-loss logic only",
+      "source_ids": [
+        "docs_main",
+        "docs_main#trading-account-rest-api-set-leverage",
+        "docs_main#order-book-trading-trade-post-place-order",
+        "docs_main#order-book-trading-algo-trading-post-place-algo-order",
+        "docs_main#overview-api-key-creation-api-key-permissions",
+        "docs_main#overview-api-key-creation-api-key-security",
+        "system_status",
+        "server_time"
+      ],
+      "status_feed": "GET /api/v5/system/status public endpoint returned code 0 and empty data at capture"
+    },
+    "hard_execution": [
+      {
+        "confirmed": false,
+        "note": "Current ordinary API SWAP fee is unverified; retrieved 2/5 bps help text is illustrative and exposed SSR table is Spot.",
+        "source_ids": [
+          "fee_page_en",
+          "fee_help_en",
+          "docs_main#trading-account-rest-api-get-fee-rates",
+          "docs_main",
+          "docs_main#trading-account-rest-api-set-leverage",
+          "docs_main#order-book-trading-trade-post-place-order",
+          "docs_main#order-book-trading-algo-trading-post-place-algo-order",
+          "docs_main#overview-api-key-creation-api-key-permissions",
+          "docs_main#overview-api-key-creation-api-key-security",
+          "system_status",
+          "server_time"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "fee_page_en",
+          "fee_help_en",
+          "docs_main#trading-account-rest-api-get-fee-rates",
+          "docs_main",
+          "docs_main#trading-account-rest-api-set-leverage",
+          "docs_main#order-book-trading-trade-post-place-order",
+          "docs_main#order-book-trading-algo-trading-post-place-algo-order",
+          "docs_main#overview-api-key-creation-api-key-permissions",
+          "docs_main#overview-api-key-creation-api-key-security",
+          "system_status",
+          "server_time"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "fee_page_en",
+          "fee_help_en",
+          "docs_main#trading-account-rest-api-get-fee-rates",
+          "docs_main",
+          "docs_main#trading-account-rest-api-set-leverage",
+          "docs_main#order-book-trading-trade-post-place-order",
+          "docs_main#order-book-trading-algo-trading-post-place-algo-order",
+          "docs_main#overview-api-key-creation-api-key-permissions",
+          "docs_main#overview-api-key-creation-api-key-security",
+          "system_status",
+          "server_time"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "fee_page_en",
+          "fee_help_en",
+          "docs_main#trading-account-rest-api-get-fee-rates",
+          "docs_main",
+          "docs_main#trading-account-rest-api-set-leverage",
+          "docs_main#order-book-trading-trade-post-place-order",
+          "docs_main#order-book-trading-algo-trading-post-place-algo-order",
+          "docs_main#overview-api-key-creation-api-key-permissions",
+          "docs_main#overview-api-key-creation-api-key-security",
+          "system_status",
+          "server_time"
+        ]
+      },
+      {
+        "confirmed": true,
+        "note": "Confirmed: no severe unresolved endpoint/access restriction. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+        "source_ids": [
+          "fee_page_en",
+          "fee_help_en",
+          "docs_main#trading-account-rest-api-get-fee-rates",
+          "docs_main",
+          "docs_main#trading-account-rest-api-set-leverage",
+          "docs_main#order-book-trading-trade-post-place-order",
+          "docs_main#order-book-trading-algo-trading-post-place-algo-order",
+          "docs_main#overview-api-key-creation-api-key-permissions",
+          "docs_main#overview-api-key-creation-api-key-security",
+          "system_status",
+          "server_time"
+        ]
+      }
+    ]
+  }
+}

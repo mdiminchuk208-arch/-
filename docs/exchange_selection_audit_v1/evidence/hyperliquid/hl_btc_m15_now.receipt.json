@@ -1,0 +1,21 @@
+{
+  "id": "hl_btc_m15_now",
+  "venue": "hyperliquid",
+  "url": "https://api.hyperliquid.xyz/info",
+  "method": "POST",
+  "request_body": "{\"type\":\"candleSnapshot\",\"req\":{\"coin\":\"BTC\",\"interval\":\"15m\",\"startTime\":1791829275462,\"endTime\":1791836475462}}",
+  "started_utc": "2026-10-12T20:21:15.730667+00:00",
+  "completed_utc": "2026-10-12T20:21:16.026913+00:00",
+  "latency_ms": 296.52,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "content-type": "application/json",
+    "content-length": "1249",
+    "date": "Mon, 12 Oct 2026 20:21:15 GMT"
+  },
+  "raw_path": "raw/hl_btc_m15_now.bin",
+  "raw_sha256": "f9adaa2bfaee2ee857eda38864ed118a97eda9ade5cf393e5875729410601596",
+  "raw_bytes": 1249,
+  "truncated": false
+}

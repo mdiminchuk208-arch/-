@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c520c2d637bd4-DFW",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:34:47 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1682.6,
+  "method": "GET",
+  "raw_length": 670372,
+  "raw_path": "kc_docs_withdraw.raw",
+  "raw_sha256": "a11ccdbcbd44e9167eae68ba4929d839d9e67cb866235d4454cd03f2d6975fe4",
+  "request_start_utc": "2026-10-13T06:34:46.721168+00:00",
+  "retrieval_utc": "2026-10-13T06:34:48.403443+00:00",
+  "source_id": "kc_docs_withdraw",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.kucoin.com/docs-new/rest/account-info/withdrawals/withdraw-v3?lang=en_US&"
+}

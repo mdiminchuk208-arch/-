@@ -1,0 +1,20 @@
+{
+  "id": "hl_docs_perps",
+  "venue": "hyperliquid",
+  "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/perpetuals.md",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-13T06:27:57.789867+00:00",
+  "completed_utc": "2026-10-13T06:27:59.192497+00:00",
+  "latency_ms": 1402.9,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:27:59 GMT",
+    "content-type": "text/plain; charset=utf-8"
+  },
+  "raw_path": "raw/hl_docs_perps.bin",
+  "raw_sha256": "350d5ad3362a0155283f1d65d0fa056dfc13900669fbb8117911377f015dcf81",
+  "raw_bytes": 2343,
+  "truncated": false
+}

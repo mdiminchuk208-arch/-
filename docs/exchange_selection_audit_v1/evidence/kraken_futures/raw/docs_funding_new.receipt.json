@@ -1,0 +1,18 @@
+{
+  "source_id": "docs_funding_new",
+  "url": "https://docs.kraken.com/api-reference/market-data/get-historical-funding-rates",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:29:12.484227+00:00",
+  "response_utc": "2026-10-13T06:29:13.209649+00:00",
+  "latency_ms": 725,
+  "http_status": 404,
+  "sha256": "b72a5b31e263cc79cbd3fa42e2248c9471d0b6860d56b798473817fd1586e0b4",
+  "bytes": 115196,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:29:13 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_funding_new.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

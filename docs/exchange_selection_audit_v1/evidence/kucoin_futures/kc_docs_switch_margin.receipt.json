@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c4b281c53d2c8-DFW",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:05 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1491.3,
+  "method": "GET",
+  "raw_length": 666710,
+  "raw_path": "kc_docs_switch_margin.raw",
+  "raw_sha256": "46f4d1e8fe898e878973c86b5780217c1382d8fe59991d188769475fadda2a2b",
+  "request_start_utc": "2026-10-13T06:30:04.420571+00:00",
+  "retrieval_utc": "2026-10-13T06:30:05.911294+00:00",
+  "source_id": "kc_docs_switch_margin",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.kucoin.com/docs-new/rest/futures-trading/positions/switch-margin-mode?lang=en_US&"
+}

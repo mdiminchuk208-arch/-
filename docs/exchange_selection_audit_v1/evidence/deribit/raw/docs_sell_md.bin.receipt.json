@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.deribit.com/api-reference/trading/private-sell.md",
+  "request_start_utc": "2026-10-13T06:30:49.738958+00:00",
+  "completion_utc": "2026-10-13T06:30:50.928855+00:00",
+  "latency_ms": 1190.1,
+  "http_status": 200,
+  "sha256": "b6c5c14199ef5b9221094dd6af5f59d1c430e0fd64af32abee6e570065775544",
+  "bytes": 48073,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4c45b81a86cd-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:50 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_sell_md.bin"
+}

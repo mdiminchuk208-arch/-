@@ -1,0 +1,698 @@
+[
+  {
+    "source_id": "hl_btc_book_1",
+    "symbol": "BTC",
+    "source_time": 1791836461511,
+    "unit_rule": "base asset",
+    "unit_source_ids": [
+      "hl_docs_contracts",
+      "hl_docs_info"
+    ],
+    "bids": [
+      {
+        "price": "83025.0",
+        "base_quantity": "10.06885"
+      },
+      {
+        "price": "83024.0",
+        "base_quantity": "0.00049"
+      },
+      {
+        "price": "83023.0",
+        "base_quantity": "0.03698"
+      },
+      {
+        "price": "83022.0",
+        "base_quantity": "0.00015"
+      },
+      {
+        "price": "83021.0",
+        "base_quantity": "1.00645"
+      },
+      {
+        "price": "83020.0",
+        "base_quantity": "1.98434"
+      },
+      {
+        "price": "83019.0",
+        "base_quantity": "0.82561"
+      },
+      {
+        "price": "83018.0",
+        "base_quantity": "0.43326"
+      },
+      {
+        "price": "83017.0",
+        "base_quantity": "0.22176"
+      },
+      {
+        "price": "83016.0",
+        "base_quantity": "2.81311"
+      },
+      {
+        "price": "83015.0",
+        "base_quantity": "2.0906"
+      },
+      {
+        "price": "83014.0",
+        "base_quantity": "0.71246"
+      },
+      {
+        "price": "83013.0",
+        "base_quantity": "1.28982"
+      },
+      {
+        "price": "83012.0",
+        "base_quantity": "9.66583"
+      },
+      {
+        "price": "83011.0",
+        "base_quantity": "6.19808"
+      },
+      {
+        "price": "83010.0",
+        "base_quantity": "2.95194"
+      },
+      {
+        "price": "83009.0",
+        "base_quantity": "2.59726"
+      },
+      {
+        "price": "83008.0",
+        "base_quantity": "4.11327"
+      },
+      {
+        "price": "83007.0",
+        "base_quantity": "6.16594"
+      },
+      {
+        "price": "83006.0",
+        "base_quantity": "2.00913"
+      }
+    ],
+    "asks": [
+      {
+        "price": "83026.0",
+        "base_quantity": "10.23155"
+      },
+      {
+        "price": "83027.0",
+        "base_quantity": "0.56288"
+      },
+      {
+        "price": "83028.0",
+        "base_quantity": "1.53437"
+      },
+      {
+        "price": "83029.0",
+        "base_quantity": "2.10149"
+      },
+      {
+        "price": "83030.0",
+        "base_quantity": "1.32561"
+      },
+      {
+        "price": "83031.0",
+        "base_quantity": "2.23622"
+      },
+      {
+        "price": "83032.0",
+        "base_quantity": "0.77612"
+      },
+      {
+        "price": "83033.0",
+        "base_quantity": "1.14355"
+      },
+      {
+        "price": "83034.0",
+        "base_quantity": "2.10156"
+      },
+      {
+        "price": "83035.0",
+        "base_quantity": "1.58032"
+      },
+      {
+        "price": "83036.0",
+        "base_quantity": "1.10835"
+      },
+      {
+        "price": "83037.0",
+        "base_quantity": "5.69613"
+      },
+      {
+        "price": "83038.0",
+        "base_quantity": "0.61871"
+      },
+      {
+        "price": "83039.0",
+        "base_quantity": "3.0808"
+      },
+      {
+        "price": "83040.0",
+        "base_quantity": "2.1151"
+      },
+      {
+        "price": "83041.0",
+        "base_quantity": "5.37794"
+      },
+      {
+        "price": "83042.0",
+        "base_quantity": "9.41111"
+      },
+      {
+        "price": "83043.0",
+        "base_quantity": "2.23204"
+      },
+      {
+        "price": "83044.0",
+        "base_quantity": "4.07984"
+      },
+      {
+        "price": "83045.0",
+        "base_quantity": "0.88698"
+      }
+    ]
+  },
+  {
+    "source_id": "hl_btc_book_2",
+    "symbol": "BTC",
+    "source_time": 1791872802681,
+    "unit_rule": "base asset",
+    "unit_source_ids": [
+      "hl_docs_contracts",
+      "hl_docs_info"
+    ],
+    "bids": [
+      {
+        "price": "83651.0",
+        "base_quantity": "0.74209"
+      },
+      {
+        "price": "83647.0",
+        "base_quantity": "0.02192"
+      },
+      {
+        "price": "83646.0",
+        "base_quantity": "0.00015"
+      },
+      {
+        "price": "83645.0",
+        "base_quantity": "0.02213"
+      },
+      {
+        "price": "83644.0",
+        "base_quantity": "0.00014"
+      },
+      {
+        "price": "83643.0",
+        "base_quantity": "0.00879"
+      },
+      {
+        "price": "83642.0",
+        "base_quantity": "0.006"
+      },
+      {
+        "price": "83641.0",
+        "base_quantity": "0.006"
+      },
+      {
+        "price": "83640.0",
+        "base_quantity": "0.04186"
+      },
+      {
+        "price": "83639.0",
+        "base_quantity": "1.16795"
+      },
+      {
+        "price": "83638.0",
+        "base_quantity": "0.8322"
+      },
+      {
+        "price": "83637.0",
+        "base_quantity": "1.03749"
+      },
+      {
+        "price": "83636.0",
+        "base_quantity": "2.24462"
+      },
+      {
+        "price": "83635.0",
+        "base_quantity": "0.62823"
+      },
+      {
+        "price": "83634.0",
+        "base_quantity": "5.3495"
+      },
+      {
+        "price": "83633.0",
+        "base_quantity": "0.60602"
+      },
+      {
+        "price": "83632.0",
+        "base_quantity": "9.06877"
+      },
+      {
+        "price": "83631.0",
+        "base_quantity": "0.87921"
+      },
+      {
+        "price": "83630.0",
+        "base_quantity": "3.34039"
+      },
+      {
+        "price": "83629.0",
+        "base_quantity": "1.11831"
+      }
+    ],
+    "asks": [
+      {
+        "price": "83652.0",
+        "base_quantity": "32.28865"
+      },
+      {
+        "price": "83653.0",
+        "base_quantity": "3.25178"
+      },
+      {
+        "price": "83654.0",
+        "base_quantity": "1.31391"
+      },
+      {
+        "price": "83655.0",
+        "base_quantity": "0.79703"
+      },
+      {
+        "price": "83656.0",
+        "base_quantity": "2.89333"
+      },
+      {
+        "price": "83657.0",
+        "base_quantity": "1.88117"
+      },
+      {
+        "price": "83658.0",
+        "base_quantity": "14.53422"
+      },
+      {
+        "price": "83659.0",
+        "base_quantity": "3.80862"
+      },
+      {
+        "price": "83660.0",
+        "base_quantity": "2.50606"
+      },
+      {
+        "price": "83661.0",
+        "base_quantity": "10.66391"
+      },
+      {
+        "price": "83662.0",
+        "base_quantity": "0.84069"
+      },
+      {
+        "price": "83663.0",
+        "base_quantity": "1.2558"
+      },
+      {
+        "price": "83664.0",
+        "base_quantity": "3.78727"
+      },
+      {
+        "price": "83665.0",
+        "base_quantity": "6.22592"
+      },
+      {
+        "price": "83666.0",
+        "base_quantity": "1.11025"
+      },
+      {
+        "price": "83667.0",
+        "base_quantity": "0.79431"
+      },
+      {
+        "price": "83668.0",
+        "base_quantity": "16.48633"
+      },
+      {
+        "price": "83669.0",
+        "base_quantity": "1.3192"
+      },
+      {
+        "price": "83670.0",
+        "base_quantity": "0.3003"
+      },
+      {
+        "price": "83671.0",
+        "base_quantity": "15.36324"
+      }
+    ]
+  },
+  {
+    "source_id": "hl_eth_book_1",
+    "symbol": "ETH",
+    "source_time": 1791836461511,
+    "unit_rule": "base asset",
+    "unit_source_ids": [
+      "hl_docs_contracts",
+      "hl_docs_info"
+    ],
+    "bids": [
+      {
+        "price": "2523.4",
+        "base_quantity": "4.9936"
+      },
+      {
+        "price": "2523.2",
+        "base_quantity": "16.1264"
+      },
+      {
+        "price": "2523.1",
+        "base_quantity": "38.6919"
+      },
+      {
+        "price": "2523.0",
+        "base_quantity": "29.4787"
+      },
+      {
+        "price": "2522.9",
+        "base_quantity": "9.6798"
+      },
+      {
+        "price": "2522.8",
+        "base_quantity": "62.7888"
+      },
+      {
+        "price": "2522.7",
+        "base_quantity": "119.364"
+      },
+      {
+        "price": "2522.6",
+        "base_quantity": "189.8667"
+      },
+      {
+        "price": "2522.5",
+        "base_quantity": "152.1077"
+      },
+      {
+        "price": "2522.4",
+        "base_quantity": "344.4387"
+      },
+      {
+        "price": "2522.3",
+        "base_quantity": "444.1279"
+      },
+      {
+        "price": "2522.2",
+        "base_quantity": "338.2245"
+      },
+      {
+        "price": "2522.1",
+        "base_quantity": "341.5655"
+      },
+      {
+        "price": "2522.0",
+        "base_quantity": "217.6807"
+      },
+      {
+        "price": "2521.9",
+        "base_quantity": "221.503"
+      },
+      {
+        "price": "2521.8",
+        "base_quantity": "183.5486"
+      },
+      {
+        "price": "2521.7",
+        "base_quantity": "546.9846"
+      },
+      {
+        "price": "2521.6",
+        "base_quantity": "506.7258"
+      },
+      {
+        "price": "2521.5",
+        "base_quantity": "294.6458"
+      },
+      {
+        "price": "2521.4",
+        "base_quantity": "182.0006"
+      }
+    ],
+    "asks": [
+      {
+        "price": "2523.5",
+        "base_quantity": "670.4709"
+      },
+      {
+        "price": "2523.6",
+        "base_quantity": "271.1766"
+      },
+      {
+        "price": "2523.7",
+        "base_quantity": "177.4267"
+      },
+      {
+        "price": "2523.8",
+        "base_quantity": "237.3819"
+      },
+      {
+        "price": "2523.9",
+        "base_quantity": "251.3109"
+      },
+      {
+        "price": "2524.0",
+        "base_quantity": "319.5865"
+      },
+      {
+        "price": "2524.1",
+        "base_quantity": "483.7521"
+      },
+      {
+        "price": "2524.2",
+        "base_quantity": "326.7315"
+      },
+      {
+        "price": "2524.3",
+        "base_quantity": "204.5077"
+      },
+      {
+        "price": "2524.4",
+        "base_quantity": "230.816"
+      },
+      {
+        "price": "2524.5",
+        "base_quantity": "453.9484"
+      },
+      {
+        "price": "2524.6",
+        "base_quantity": "159.8307"
+      },
+      {
+        "price": "2524.7",
+        "base_quantity": "50.5938"
+      },
+      {
+        "price": "2524.8",
+        "base_quantity": "37.0673"
+      },
+      {
+        "price": "2524.9",
+        "base_quantity": "170.7109"
+      },
+      {
+        "price": "2525.0",
+        "base_quantity": "483.9068"
+      },
+      {
+        "price": "2525.1",
+        "base_quantity": "207.8835"
+      },
+      {
+        "price": "2525.2",
+        "base_quantity": "82.3508"
+      },
+      {
+        "price": "2525.3",
+        "base_quantity": "290.3602"
+      },
+      {
+        "price": "2525.4",
+        "base_quantity": "202.2694"
+      }
+    ]
+  },
+  {
+    "source_id": "hl_eth_book_2",
+    "symbol": "ETH",
+    "source_time": 1791872802681,
+    "unit_rule": "base asset",
+    "unit_source_ids": [
+      "hl_docs_contracts",
+      "hl_docs_info"
+    ],
+    "bids": [
+      {
+        "price": "2530.1",
+        "base_quantity": "67.7051"
+      },
+      {
+        "price": "2530.0",
+        "base_quantity": "16.6411"
+      },
+      {
+        "price": "2529.9",
+        "base_quantity": "72.558"
+      },
+      {
+        "price": "2529.8",
+        "base_quantity": "57.0706"
+      },
+      {
+        "price": "2529.7",
+        "base_quantity": "171.3751"
+      },
+      {
+        "price": "2529.6",
+        "base_quantity": "85.1913"
+      },
+      {
+        "price": "2529.5",
+        "base_quantity": "229.8793"
+      },
+      {
+        "price": "2529.4",
+        "base_quantity": "125.8575"
+      },
+      {
+        "price": "2529.3",
+        "base_quantity": "425.9166"
+      },
+      {
+        "price": "2529.2",
+        "base_quantity": "191.4964"
+      },
+      {
+        "price": "2529.1",
+        "base_quantity": "260.6962"
+      },
+      {
+        "price": "2529.0",
+        "base_quantity": "190.8343"
+      },
+      {
+        "price": "2528.9",
+        "base_quantity": "218.9153"
+      },
+      {
+        "price": "2528.8",
+        "base_quantity": "393.3927"
+      },
+      {
+        "price": "2528.7",
+        "base_quantity": "148.6854"
+      },
+      {
+        "price": "2528.6",
+        "base_quantity": "393.377"
+      },
+      {
+        "price": "2528.5",
+        "base_quantity": "70.4631"
+      },
+      {
+        "price": "2528.4",
+        "base_quantity": "96.017"
+      },
+      {
+        "price": "2528.3",
+        "base_quantity": "206.8971"
+      },
+      {
+        "price": "2528.2",
+        "base_quantity": "454.3953"
+      }
+    ],
+    "asks": [
+      {
+        "price": "2530.2",
+        "base_quantity": "110.3693"
+      },
+      {
+        "price": "2530.3",
+        "base_quantity": "47.7506"
+      },
+      {
+        "price": "2530.4",
+        "base_quantity": "83.3721"
+      },
+      {
+        "price": "2530.5",
+        "base_quantity": "55.8583"
+      },
+      {
+        "price": "2530.6",
+        "base_quantity": "131.3264"
+      },
+      {
+        "price": "2530.7",
+        "base_quantity": "121.8624"
+      },
+      {
+        "price": "2530.8",
+        "base_quantity": "169.624"
+      },
+      {
+        "price": "2530.9",
+        "base_quantity": "271.9425"
+      },
+      {
+        "price": "2531.0",
+        "base_quantity": "296.7931"
+      },
+      {
+        "price": "2531.1",
+        "base_quantity": "96.6992"
+      },
+      {
+        "price": "2531.2",
+        "base_quantity": "190.8647"
+      },
+      {
+        "price": "2531.3",
+        "base_quantity": "530.0701"
+      },
+      {
+        "price": "2531.4",
+        "base_quantity": "89.3051"
+      },
+      {
+        "price": "2531.5",
+        "base_quantity": "153.1206"
+      },
+      {
+        "price": "2531.6",
+        "base_quantity": "140.0572"
+      },
+      {
+        "price": "2531.7",
+        "base_quantity": "212.6033"
+      },
+      {
+        "price": "2531.8",
+        "base_quantity": "491.2384"
+      },
+      {
+        "price": "2531.9",
+        "base_quantity": "122.925"
+      },
+      {
+        "price": "2532.0",
+        "base_quantity": "133.4088"
+      },
+      {
+        "price": "2532.1",
+        "base_quantity": "40.6773"
+      }
+    ]
+  }
+]

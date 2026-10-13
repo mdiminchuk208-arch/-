@@ -1,0 +1,20 @@
+{
+  "id": "hl_docs_signing",
+  "venue": "hyperliquid",
+  "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/signing.md",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-13T06:27:57.683276+00:00",
+  "completed_utc": "2026-10-13T06:27:58.535260+00:00",
+  "latency_ms": 852.24,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:27:58 GMT",
+    "content-type": "text/plain; charset=utf-8"
+  },
+  "raw_path": "raw/hl_docs_signing.bin",
+  "raw_sha256": "c81b9086c339402ca552ce2ecfba62eeaccf432e58cd110947bcf8d7c4ddcbec",
+  "raw_bytes": 1898,
+  "truncated": false
+}

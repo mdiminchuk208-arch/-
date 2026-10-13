@@ -1,0 +1,18 @@
+{
+  "source_id": "docs_fee_schedule",
+  "url": "https://docs.kraken.com/api-reference/fee-schedules/get-fee-schedules",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:30:23.819877+00:00",
+  "response_utc": "2026-10-13T06:30:24.076623+00:00",
+  "latency_ms": 256,
+  "http_status": 200,
+  "sha256": "34bdd8a26be4fb7b20407c2ec3450a0ec91844123208cbe40f671f777a86434d",
+  "bytes": 526827,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:30:23 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_fee_schedule.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

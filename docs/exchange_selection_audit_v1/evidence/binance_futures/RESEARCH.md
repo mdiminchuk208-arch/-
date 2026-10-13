@@ -1,0 +1,9 @@
+# Binance Futures venue evidence
+
+Captured from the managed cloud environment on 2026-10-12 UTC through its inherited HTTPS proxy and CA. `SOURCE_INDEX.json` contains official URL, request/retrieval times, HTTP status, raw SHA-256, and receipt path for each source ID. No account, private API, order, VPN, or alternate API host was used.
+
+`exchange_info` called the official USDⓈ-M Futures `https://fapi.binance.com/fapi/v1/exchangeInfo` public endpoint and received **HTTP 451** with the literal response: `Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms.` Public API probing stopped for this venue at that restriction. In particular, live BTC/ETH product identities, price filters, native `15m` now/October 2024 sentinel, books, funding, and open interest were not observed.
+
+The official developer catalog `docs_exchange_info_new` was retrievable. It documents the `PERPETUAL` contract type and warns that `pricePrecision` should not be used as `tickSize`; the actual public `PRICE_FILTER` would be needed for current ticks. Documentation examples do not establish that both exact products are currently live. The older developer URLs (`docs_exchange_info`, `docs_fee`) returned HTTP 302 and were not automatically followed; the current catalog was requested separately after identifying its official redirect location.
+
+The official `fee_page` response was captured as raw gzip bytes. It did not provide a verified current base-tier maker/taker rate for automated USDⓈ-M perpetual trading in the server response. Both rates are `null` in `FACTS.json`; no remembered schedule or web promotion was used. The 451 access restriction prevents current book-based execution-cost and two-year research verification from this environment. An ordinary GitHub-hosted CI result is outside this worker's evidence and remains unknown here.

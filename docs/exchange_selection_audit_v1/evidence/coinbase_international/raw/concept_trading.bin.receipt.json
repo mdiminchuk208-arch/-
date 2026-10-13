@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.cdp.coinbase.com/international-exchange/concepts/trading",
+  "request_start_utc": "2026-10-13T06:29:19.886974+00:00",
+  "completion_utc": "2026-10-13T06:29:21.466488+00:00",
+  "latency_ms": 1580.1,
+  "http_status": 200,
+  "sha256": "6ee3e7c92c03b1620cf008e82f4ea7c56dd3396794d6c46e8fbb3c300f2bf956",
+  "bytes": 1048576,
+  "truncated": true,
+  "headers": {
+    "cf-ray": "a49c4a14ba8cdbb4-CMH",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:29:20 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/concept_trading.bin"
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "docs_client_ids",
+  "url": "https://docs.kraken.com/exchange/guides/general/clordid",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:31:09.117881+00:00",
+  "response_utc": "2026-10-13T06:31:10.320606+00:00",
+  "latency_ms": 1202,
+  "http_status": 200,
+  "sha256": "6b718416a74cf714462f25ca27797ad6ea495225c70306db2d4d1a6f225c6103",
+  "bytes": 464580,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:31:09 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_client_ids.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

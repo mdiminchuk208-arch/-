@@ -1,0 +1,18 @@
+{
+  "source_id": "fees_page",
+  "url": "https://www.kraken.com/features/fee-schedule",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:22:12.497641+00:00",
+  "response_utc": "2026-10-12T20:22:13.530378+00:00",
+  "latency_ms": 1032,
+  "http_status": 200,
+  "sha256": "480475c3b7803ed1486fe69d5ef1d1b35ee58f091d785fba9319b9dbf1059839",
+  "bytes": 1375558,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:22:13 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "raw_path": "raw/fees_page.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

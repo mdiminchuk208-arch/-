@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c473528a7b815-DFW",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:27:23 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 757.9,
+  "method": "GET",
+  "raw_length": 976,
+  "raw_path": "bf_eth_m15_now.raw",
+  "raw_sha256": "8e10847b09e60f20743bdbb3e04534d6b6b1f8d5abf5a42c01992aacc905f920",
+  "request_start_utc": "2026-10-13T06:27:22.579732+00:00",
+  "retrieval_utc": "2026-10-13T06:27:23.337532+00:00",
+  "source_id": "bf_eth_m15_now",
+  "status": 200,
+  "truncated": false,
+  "url": "https://openapi.blofin.com/api/v1/market/candles?instId=ETH-USDT&bar=15m&limit=10"
+}

@@ -1,0 +1,16 @@
+{
+  "url": "https://api.bitget.com/api/v2/mix/market/history-fund-rate?symbol=ETHUSDT&productType=USDT-FUTURES&pageSize=2&pageNo=1",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:21:08.175451+00:00",
+  "request_end_utc": "2026-10-12T20:21:08.994557+00:00",
+  "latency_ms": 819.35,
+  "status": 200,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:08 GMT",
+    "content-type": "application/json"
+  },
+  "sha256": "3836fbf5a492e7cf64040963981e05b47890d9bc2c4a24b77678b3955016573b",
+  "bytes": 222,
+  "raw_path": "evidence/bitget/raw/ETHUSDT_funding.bin",
+  "error": null
+}

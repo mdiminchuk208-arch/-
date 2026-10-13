@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.cdp.coinbase.com/international-exchange/concepts/instruments.md",
+  "request_start_utc": "2026-10-13T06:30:16.177163+00:00",
+  "completion_utc": "2026-10-13T06:30:17.276098+00:00",
+  "latency_ms": 1099.1,
+  "http_status": 200,
+  "sha256": "8e3d6de556b25bf547bcc81523ff3f418ed61b4f8366a9ce5b82bd33ab114b7f",
+  "bytes": 6347,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4b73bcd32e5c-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:16 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_concepts_instruments_md.bin"
+}

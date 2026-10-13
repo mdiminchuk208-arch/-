@@ -1,0 +1,21 @@
+{
+  "id": "hl_btc_funding",
+  "venue": "hyperliquid",
+  "url": "https://api.hyperliquid.xyz/info",
+  "method": "POST",
+  "request_body": "{\"type\":\"fundingHistory\",\"coin\":\"BTC\",\"startTime\":1791750075462}",
+  "started_utc": "2026-10-12T20:21:15.677858+00:00",
+  "completed_utc": "2026-10-12T20:21:16.202667+00:00",
+  "latency_ms": 525.35,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "content-type": "application/json",
+    "content-length": "2160",
+    "date": "Mon, 12 Oct 2026 20:21:16 GMT"
+  },
+  "raw_path": "raw/hl_btc_funding.bin",
+  "raw_sha256": "a752562d310b1c37b32e209589cea7a57e167a1d64322e922631596435a9531b",
+  "raw_bytes": 2160,
+  "truncated": false
+}

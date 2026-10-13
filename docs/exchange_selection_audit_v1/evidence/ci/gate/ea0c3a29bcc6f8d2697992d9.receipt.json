@@ -1,0 +1,22 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-length": "1337755",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:38:59 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "2173.108",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 1337755,
+  "raw_file": "ea0c3a29bcc6f8d2697992d9.body",
+  "raw_sha256": "69ff10ca0f9a464d903e77964a4aab4ca2cbe0a5f8b8d0ae90047b68600724bd",
+  "request_started_at": "2026-10-13T06:38:58.862913+00:00",
+  "response_completed_at": "2026-10-13T06:39:01.035338+00:00",
+  "source_kind": "instruments",
+  "truncated": false,
+  "url": "https://api.gateio.ws/api/v4/futures/usdt/contracts"
+}

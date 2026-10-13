@@ -1,0 +1,24 @@
+{
+  "id": "gate_btc_m15_now",
+  "venue": "gate",
+  "url": "https://api.gateio.ws/api/v4/futures/usdt/candlesticks?contract=BTC_USDT&interval=15m&from=1791829275&to=1791836475",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-12T20:21:15.808098+00:00",
+  "completed_utc": "2026-10-12T20:21:17.103304+00:00",
+  "latency_ms": 1295.38,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:16 GMT",
+    "content-type": "application/json",
+    "content-length": "969",
+    "x-gate-ratelimit-requests-remain": "199",
+    "x-gate-ratelimit-limit": "200",
+    "x-gate-ratelimit-reset-timestamp": "1791836476"
+  },
+  "raw_path": "raw/gate_btc_m15_now.bin",
+  "raw_sha256": "8596e041a5123cdd29839b2477abf9e7a5e68494a54470b28d0e2a7bdb28ca5a",
+  "raw_bytes": 969,
+  "truncated": false
+}

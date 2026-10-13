@@ -1,0 +1,16 @@
+{
+  "url": "https://www.bitget.com/docs/classic/demo-trading",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:30:34.412785+00:00",
+  "request_end_utc": "2026-10-13T06:30:35.474633+00:00",
+  "latency_ms": 1062.11,
+  "status": 404,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:30:35 GMT",
+    "content-type": "text/html; charset=utf-8"
+  },
+  "sha256": "8603afc16b09e4d70930f36f38489c29ff44da2b98b9a08a516bddbab17aa9de",
+  "bytes": 16,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_demo.html",
+  "error": null
+}

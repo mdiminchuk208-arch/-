@@ -1,0 +1,17 @@
+{
+  "url": "https://www.bitget.com/docs/catalog/classic-contract-market/classic-contract-market",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:27:55.083451+00:00",
+  "request_end_utc": "2026-10-13T06:27:55.910602+00:00",
+  "latency_ms": 827.57,
+  "status": 200,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:27:55 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "no-cache,no-cache"
+  },
+  "sha256": "0f037a7b6bc5010aae40d914f1b06e26e4aec28b3bb5f49bc6793c1e6203445b",
+  "bytes": 984958,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_detail_market.html",
+  "error": null
+}

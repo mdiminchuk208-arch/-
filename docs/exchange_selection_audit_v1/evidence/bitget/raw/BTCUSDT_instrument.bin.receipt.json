@@ -1,0 +1,16 @@
+{
+  "url": "https://api.bitget.com/api/v2/mix/market/contracts?productType=USDT-FUTURES&symbol=BTCUSDT",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:21:08.052835+00:00",
+  "request_end_utc": "2026-10-12T20:21:08.922870+00:00",
+  "latency_ms": 870.18,
+  "status": 200,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:08 GMT",
+    "content-type": "application/json"
+  },
+  "sha256": "4e9a24c0949fe9dd1515f44888100cdfca5f2c8e2d47383b8f2ac79fdbe1dcfc",
+  "bytes": 832,
+  "raw_path": "evidence/bitget/raw/BTCUSDT_instrument.bin",
+  "error": null
+}

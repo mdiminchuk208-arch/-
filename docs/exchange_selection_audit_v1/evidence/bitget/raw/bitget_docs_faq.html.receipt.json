@@ -1,0 +1,17 @@
+{
+  "url": "https://www.bitget.com/docs/classic/faq",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:30:20.362498+00:00",
+  "request_end_utc": "2026-10-13T06:30:22.042149+00:00",
+  "latency_ms": 1679.81,
+  "status": 200,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:30:21 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "no-cache,no-cache"
+  },
+  "sha256": "d708df77f5987f8dc209b7244e7547359d99048255e38e42bbcda911c744430c",
+  "bytes": 41559,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_faq.html",
+  "error": null
+}

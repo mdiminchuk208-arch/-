@@ -1,0 +1,16 @@
+{
+  "url": "https://api.international.coinbase.com/api/v1/instruments/ETH-PERP/book?depth=100",
+  "request_start_utc": "2026-10-13T06:28:53.217608+00:00",
+  "completion_utc": "2026-10-13T06:28:54.715124+00:00",
+  "latency_ms": 1497.7,
+  "http_status": 404,
+  "sha256": "d4eb8011dba147a7d012685bf64604e900792383b21f4c57497a02a277e3b2e2",
+  "bytes": 101,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:28:54 GMT",
+    "content-type": "application/json"
+  },
+  "error": "HTTP Error 404: Not Found",
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/book_eth1.bin"
+}

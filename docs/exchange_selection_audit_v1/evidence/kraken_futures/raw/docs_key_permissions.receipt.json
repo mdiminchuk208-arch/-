@@ -1,0 +1,18 @@
+{
+  "source_id": "docs_key_permissions",
+  "url": "https://docs.kraken.com/exchange/guides/rest/api-keys",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:31:08.871275+00:00",
+  "response_utc": "2026-10-13T06:31:09.112665+00:00",
+  "latency_ms": 241,
+  "http_status": 200,
+  "sha256": "6c3b669b75529b71181007fca431e7a6a95ae78ac0c6f34949e0db23e4ba7f95",
+  "bytes": 457792,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:31:08 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_key_permissions.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

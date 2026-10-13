@@ -1,0 +1,836 @@
+{
+  "venue": "hyperliquid",
+  "products": {
+    "BTC": {
+      "symbol": "BTC",
+      "margin": "USDC",
+      "settle": "USDC",
+      "oracle_denominated": "USDT",
+      "model": "linear perp with USDT-denominated price/PnL counted in USDC; technically quanto without FX conversion",
+      "szDecimals": 5,
+      "source_ids": [
+        "hl_meta",
+        "hl_docs_contracts"
+      ]
+    },
+    "ETH": {
+      "symbol": "ETH",
+      "margin": "USDC",
+      "settle": "USDC",
+      "oracle_denominated": "USDT",
+      "model": "linear perp with USDT-denominated price/PnL counted in USDC; technically quanto without FX conversion",
+      "szDecimals": 4,
+      "source_ids": [
+        "hl_meta",
+        "hl_docs_contracts"
+      ]
+    }
+  },
+  "fees": {
+    "maker_rate": "0.00015",
+    "taker_rate": "0.00045",
+    "api_specific": false,
+    "base_tier": "Tier 0 perpetual base rate",
+    "source_ids": [
+      "hl_docs_fees"
+    ],
+    "literal_quote": "| 0    |                         | 0.045%    | 0.015% |",
+    "discounts_separate": "14-day volume tiers, referral, aligned quote assets and HIP-3 exceptions excluded; BTC/ETH are standard crypto perps",
+    "unresolved": "No explicit statement that API trades have a distinct schedule; general perpetual schedule applied provisionally to API trading."
+  },
+  "funding": {
+    "intervals": "hourly",
+    "formula": "8h F = Average Premium Index + clamp(interest rate - Premium Index, -0.0005, 0.0005); paid hourly at 1/8 computed rate",
+    "sign": "positive: longs pay shorts; negative: shorts pay longs",
+    "history_endpoint": "POST /info fundingHistory",
+    "history_depth": "2024-10-13 BTC and ETH hourly samples retrieved; continuity not established",
+    "surcharge": "none on funding per docs",
+    "source_ids": [
+      "hl_docs_funding",
+      "hl_btc_funding",
+      "hl_eth_funding",
+      "hl_btc_funding_old",
+      "hl_eth_funding_old"
+    ]
+  },
+  "data": {
+    "native_m15": true,
+    "oldest_actual_m15_sample_utc": "2026-10-12T18:15:00+00:00",
+    "pagination": "POST /info candleSnapshot, last 5000 candles only; time range responses generally cap 500 entries",
+    "closure": "t open, T inclusive end; response has no explicit completed flag, filter by clock",
+    "archive": "official S3 book/context archive, explicitly no candle dataset",
+    "trades": "official S3 node fills/trades; depth/continuity unverified",
+    "book_history": "S3 l2Book snapshots; monthly uploads may be missing",
+    "mark_index": "current mark/oracle in asset contexts; historical series unverified",
+    "oi_history": "current openInterest in asset contexts; history unverified",
+    "source_ids": [
+      "hl_docs_info",
+      "hl_btc_m15_now",
+      "hl_eth_m15_now",
+      "hl_btc_m15_old",
+      "hl_eth_m15_old",
+      "hl_docs_history",
+      "hl_meta"
+    ]
+  },
+  "metadata": {
+    "current_filters": {
+      "BTC": {
+        "szDecimals": 5,
+        "price_rule": "maximum 5 significant figures and at most 6-szDecimals=1 decimal place; integer price always allowed"
+      },
+      "ETH": {
+        "szDecimals": 4,
+        "price_rule": "maximum 5 significant figures and at most 6-szDecimals=2 decimal places; integer price always allowed"
+      }
+    },
+    "change_history": null,
+    "historical_epochs": null,
+    "causal_prospective": true,
+    "source_ids": [
+      "hl_meta",
+      "hl_docs_tick",
+      "hl_docs_contracts"
+    ]
+  },
+  "execution": {
+    "rest_ws": true,
+    "isolated_margin": true,
+    "leverage": true,
+    "reduce_only": true,
+    "sl_tp": true,
+    "client_order_id": "optional 128-bit hex cloid; uniqueness/idempotency behavior not fully documented",
+    "queries": "public info orderStatus/userFills/clearinghouseState documented; private account data not probed",
+    "key_permissions_no_withdraw": null,
+    "ip_allowlist": null,
+    "status_feed": null,
+    "rate_limits": "1200 weighted REST requests/IP/min; l2Book weight 2, candleSnapshot weight 20 plus items; address limits apply to actions",
+    "demo": "testnet referenced in exchange API",
+    "signing": "approved API/agent wallets sign on behalf of master; two signing schemes; revocation/pruning/nonce reuse risk documented",
+    "custody": "wallet/onchain collateral and validator orderbook; external-withdrawal separation of agent signer unresolved from retrieved docs",
+    "source_ids": [
+      "hl_docs_exchange",
+      "hl_docs_wallet",
+      "hl_docs_signing",
+      "hl_docs_margin",
+      "hl_docs_limits",
+      "hl_docs_info"
+    ]
+  },
+  "books": {
+    "BTC": [
+      {
+        "bids": [
+          [
+            "83025.0",
+            "10.06885"
+          ],
+          [
+            "83024.0",
+            "0.00049"
+          ],
+          [
+            "83023.0",
+            "0.03698"
+          ],
+          [
+            "83022.0",
+            "0.00015"
+          ],
+          [
+            "83021.0",
+            "1.00645"
+          ],
+          [
+            "83020.0",
+            "1.98434"
+          ],
+          [
+            "83019.0",
+            "0.82561"
+          ],
+          [
+            "83018.0",
+            "0.43326"
+          ],
+          [
+            "83017.0",
+            "0.22176"
+          ],
+          [
+            "83016.0",
+            "2.81311"
+          ],
+          [
+            "83015.0",
+            "2.0906"
+          ],
+          [
+            "83014.0",
+            "0.71246"
+          ],
+          [
+            "83013.0",
+            "1.28982"
+          ],
+          [
+            "83012.0",
+            "9.66583"
+          ],
+          [
+            "83011.0",
+            "6.19808"
+          ],
+          [
+            "83010.0",
+            "2.95194"
+          ],
+          [
+            "83009.0",
+            "2.59726"
+          ],
+          [
+            "83008.0",
+            "4.11327"
+          ],
+          [
+            "83007.0",
+            "6.16594"
+          ],
+          [
+            "83006.0",
+            "2.00913"
+          ]
+        ],
+        "asks": [
+          [
+            "83026.0",
+            "10.23155"
+          ],
+          [
+            "83027.0",
+            "0.56288"
+          ],
+          [
+            "83028.0",
+            "1.53437"
+          ],
+          [
+            "83029.0",
+            "2.10149"
+          ],
+          [
+            "83030.0",
+            "1.32561"
+          ],
+          [
+            "83031.0",
+            "2.23622"
+          ],
+          [
+            "83032.0",
+            "0.77612"
+          ],
+          [
+            "83033.0",
+            "1.14355"
+          ],
+          [
+            "83034.0",
+            "2.10156"
+          ],
+          [
+            "83035.0",
+            "1.58032"
+          ],
+          [
+            "83036.0",
+            "1.10835"
+          ],
+          [
+            "83037.0",
+            "5.69613"
+          ],
+          [
+            "83038.0",
+            "0.61871"
+          ],
+          [
+            "83039.0",
+            "3.0808"
+          ],
+          [
+            "83040.0",
+            "2.1151"
+          ],
+          [
+            "83041.0",
+            "5.37794"
+          ],
+          [
+            "83042.0",
+            "9.41111"
+          ],
+          [
+            "83043.0",
+            "2.23204"
+          ],
+          [
+            "83044.0",
+            "4.07984"
+          ],
+          [
+            "83045.0",
+            "0.88698"
+          ]
+        ],
+        "source_id": "hl_btc_book_1",
+        "time_utc": "2026-10-12T20:21:01.511000+00:00",
+        "units_proof_id": [
+          "hl_docs_contracts",
+          "hl_docs_info"
+        ]
+      },
+      {
+        "bids": [
+          [
+            "83651.0",
+            "0.74209"
+          ],
+          [
+            "83647.0",
+            "0.02192"
+          ],
+          [
+            "83646.0",
+            "0.00015"
+          ],
+          [
+            "83645.0",
+            "0.02213"
+          ],
+          [
+            "83644.0",
+            "0.00014"
+          ],
+          [
+            "83643.0",
+            "0.00879"
+          ],
+          [
+            "83642.0",
+            "0.006"
+          ],
+          [
+            "83641.0",
+            "0.006"
+          ],
+          [
+            "83640.0",
+            "0.04186"
+          ],
+          [
+            "83639.0",
+            "1.16795"
+          ],
+          [
+            "83638.0",
+            "0.8322"
+          ],
+          [
+            "83637.0",
+            "1.03749"
+          ],
+          [
+            "83636.0",
+            "2.24462"
+          ],
+          [
+            "83635.0",
+            "0.62823"
+          ],
+          [
+            "83634.0",
+            "5.3495"
+          ],
+          [
+            "83633.0",
+            "0.60602"
+          ],
+          [
+            "83632.0",
+            "9.06877"
+          ],
+          [
+            "83631.0",
+            "0.87921"
+          ],
+          [
+            "83630.0",
+            "3.34039"
+          ],
+          [
+            "83629.0",
+            "1.11831"
+          ]
+        ],
+        "asks": [
+          [
+            "83652.0",
+            "32.28865"
+          ],
+          [
+            "83653.0",
+            "3.25178"
+          ],
+          [
+            "83654.0",
+            "1.31391"
+          ],
+          [
+            "83655.0",
+            "0.79703"
+          ],
+          [
+            "83656.0",
+            "2.89333"
+          ],
+          [
+            "83657.0",
+            "1.88117"
+          ],
+          [
+            "83658.0",
+            "14.53422"
+          ],
+          [
+            "83659.0",
+            "3.80862"
+          ],
+          [
+            "83660.0",
+            "2.50606"
+          ],
+          [
+            "83661.0",
+            "10.66391"
+          ],
+          [
+            "83662.0",
+            "0.84069"
+          ],
+          [
+            "83663.0",
+            "1.2558"
+          ],
+          [
+            "83664.0",
+            "3.78727"
+          ],
+          [
+            "83665.0",
+            "6.22592"
+          ],
+          [
+            "83666.0",
+            "1.11025"
+          ],
+          [
+            "83667.0",
+            "0.79431"
+          ],
+          [
+            "83668.0",
+            "16.48633"
+          ],
+          [
+            "83669.0",
+            "1.3192"
+          ],
+          [
+            "83670.0",
+            "0.3003"
+          ],
+          [
+            "83671.0",
+            "15.36324"
+          ]
+        ],
+        "source_id": "hl_btc_book_2",
+        "time_utc": "2026-10-13T06:26:42.681000+00:00",
+        "units_proof_id": [
+          "hl_docs_contracts",
+          "hl_docs_info"
+        ]
+      }
+    ],
+    "ETH": [
+      {
+        "bids": [
+          [
+            "2523.4",
+            "4.9936"
+          ],
+          [
+            "2523.2",
+            "16.1264"
+          ],
+          [
+            "2523.1",
+            "38.6919"
+          ],
+          [
+            "2523.0",
+            "29.4787"
+          ],
+          [
+            "2522.9",
+            "9.6798"
+          ],
+          [
+            "2522.8",
+            "62.7888"
+          ],
+          [
+            "2522.7",
+            "119.364"
+          ],
+          [
+            "2522.6",
+            "189.8667"
+          ],
+          [
+            "2522.5",
+            "152.1077"
+          ],
+          [
+            "2522.4",
+            "344.4387"
+          ],
+          [
+            "2522.3",
+            "444.1279"
+          ],
+          [
+            "2522.2",
+            "338.2245"
+          ],
+          [
+            "2522.1",
+            "341.5655"
+          ],
+          [
+            "2522.0",
+            "217.6807"
+          ],
+          [
+            "2521.9",
+            "221.503"
+          ],
+          [
+            "2521.8",
+            "183.5486"
+          ],
+          [
+            "2521.7",
+            "546.9846"
+          ],
+          [
+            "2521.6",
+            "506.7258"
+          ],
+          [
+            "2521.5",
+            "294.6458"
+          ],
+          [
+            "2521.4",
+            "182.0006"
+          ]
+        ],
+        "asks": [
+          [
+            "2523.5",
+            "670.4709"
+          ],
+          [
+            "2523.6",
+            "271.1766"
+          ],
+          [
+            "2523.7",
+            "177.4267"
+          ],
+          [
+            "2523.8",
+            "237.3819"
+          ],
+          [
+            "2523.9",
+            "251.3109"
+          ],
+          [
+            "2524.0",
+            "319.5865"
+          ],
+          [
+            "2524.1",
+            "483.7521"
+          ],
+          [
+            "2524.2",
+            "326.7315"
+          ],
+          [
+            "2524.3",
+            "204.5077"
+          ],
+          [
+            "2524.4",
+            "230.816"
+          ],
+          [
+            "2524.5",
+            "453.9484"
+          ],
+          [
+            "2524.6",
+            "159.8307"
+          ],
+          [
+            "2524.7",
+            "50.5938"
+          ],
+          [
+            "2524.8",
+            "37.0673"
+          ],
+          [
+            "2524.9",
+            "170.7109"
+          ],
+          [
+            "2525.0",
+            "483.9068"
+          ],
+          [
+            "2525.1",
+            "207.8835"
+          ],
+          [
+            "2525.2",
+            "82.3508"
+          ],
+          [
+            "2525.3",
+            "290.3602"
+          ],
+          [
+            "2525.4",
+            "202.2694"
+          ]
+        ],
+        "source_id": "hl_eth_book_1",
+        "time_utc": "2026-10-12T20:21:01.511000+00:00",
+        "units_proof_id": [
+          "hl_docs_contracts",
+          "hl_docs_info"
+        ]
+      },
+      {
+        "bids": [
+          [
+            "2530.1",
+            "67.7051"
+          ],
+          [
+            "2530.0",
+            "16.6411"
+          ],
+          [
+            "2529.9",
+            "72.558"
+          ],
+          [
+            "2529.8",
+            "57.0706"
+          ],
+          [
+            "2529.7",
+            "171.3751"
+          ],
+          [
+            "2529.6",
+            "85.1913"
+          ],
+          [
+            "2529.5",
+            "229.8793"
+          ],
+          [
+            "2529.4",
+            "125.8575"
+          ],
+          [
+            "2529.3",
+            "425.9166"
+          ],
+          [
+            "2529.2",
+            "191.4964"
+          ],
+          [
+            "2529.1",
+            "260.6962"
+          ],
+          [
+            "2529.0",
+            "190.8343"
+          ],
+          [
+            "2528.9",
+            "218.9153"
+          ],
+          [
+            "2528.8",
+            "393.3927"
+          ],
+          [
+            "2528.7",
+            "148.6854"
+          ],
+          [
+            "2528.6",
+            "393.377"
+          ],
+          [
+            "2528.5",
+            "70.4631"
+          ],
+          [
+            "2528.4",
+            "96.017"
+          ],
+          [
+            "2528.3",
+            "206.8971"
+          ],
+          [
+            "2528.2",
+            "454.3953"
+          ]
+        ],
+        "asks": [
+          [
+            "2530.2",
+            "110.3693"
+          ],
+          [
+            "2530.3",
+            "47.7506"
+          ],
+          [
+            "2530.4",
+            "83.3721"
+          ],
+          [
+            "2530.5",
+            "55.8583"
+          ],
+          [
+            "2530.6",
+            "131.3264"
+          ],
+          [
+            "2530.7",
+            "121.8624"
+          ],
+          [
+            "2530.8",
+            "169.624"
+          ],
+          [
+            "2530.9",
+            "271.9425"
+          ],
+          [
+            "2531.0",
+            "296.7931"
+          ],
+          [
+            "2531.1",
+            "96.6992"
+          ],
+          [
+            "2531.2",
+            "190.8647"
+          ],
+          [
+            "2531.3",
+            "530.0701"
+          ],
+          [
+            "2531.4",
+            "89.3051"
+          ],
+          [
+            "2531.5",
+            "153.1206"
+          ],
+          [
+            "2531.6",
+            "140.0572"
+          ],
+          [
+            "2531.7",
+            "212.6033"
+          ],
+          [
+            "2531.8",
+            "491.2384"
+          ],
+          [
+            "2531.9",
+            "122.925"
+          ],
+          [
+            "2532.0",
+            "133.4088"
+          ],
+          [
+            "2532.1",
+            "40.6773"
+          ]
+        ],
+        "source_id": "hl_eth_book_2",
+        "time_utc": "2026-10-13T06:26:42.681000+00:00",
+        "units_proof_id": [
+          "hl_docs_contracts",
+          "hl_docs_info"
+        ]
+      }
+    ]
+  },
+  "quotes": {
+    "contract": "Hyperliquid has one main style of margining for perpetual contracts: USDC margining, USDT denominated linear contracts.",
+    "contract_unit": "Contract | 1 unit of underlying spot asset",
+    "fee": "| 0    |                         | 0.045%    | 0.015% |",
+    "tick": "Prices can have up to 5 significant figures, but no more than `MAX_DECIMALS - szDecimals` decimal places where `MAX_DECIMALS` is 6 for perps and 8 for spot. Integer prices are always allowed, regardless of the number of significant figures.",
+    "history": "Only the most recent 5000 candles are available",
+    "archive": "No other historical data sets are provided via S3 (e.g. candles or spot asset data).",
+    "wallet": "A master account can approve API wallets to sign on behalf of the master account or any of the sub-accounts."
+  },
+  "limitations": [
+    "2024-10-13 BTC and ETH native M15 requests returned [] despite HTTP 200; official archive explicitly lacks candles.",
+    "Historical tick/size metadata epochs not retrieved.",
+    "Agent wallet external withdrawal/transfer restriction and IP allowlist not proven; do not assume CEX-style trade-only permission.",
+    "Two book samples separated in time are diagnostic, not execution guarantee."
+  ],
+  "hard_research_blockers": [
+    "two-year old native M15 sentinel absent for BTC and ETH; no official candle archive verified",
+    "historical metadata epochs unknown"
+  ],
+  "hard_exec_blockers": [
+    "agent signer withdrawal/transfer scope not proven safe from retrieved official docs"
+  ]
+}

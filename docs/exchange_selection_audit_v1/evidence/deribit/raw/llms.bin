@@ -1,0 +1,27 @@
+# Deribit API Documentation
+
+- [Production (341 pages)](https://docs.deribit.com/_llms/production.txt): Documentation for Production.
+- [Upcoming (342 pages)](https://docs.deribit.com/_llms/upcoming.txt): Documentation for Upcoming.
+
+## OpenAPI Specs
+
+- [deribit_openapi](/specifications/deribit_openapi.json)
+- [starbase_rest_openapi](/specifications/starbase_rest_openapi.json)
+- [deribit_upcoming_openapi](/specifications/deribit_upcoming_openapi.json)
+
+## AsyncAPI Specs
+
+- [deribit_asyncapi](/specifications/deribit_asyncapi.json)
+- [deribit_upcoming_asyncapi](/specifications/deribit_upcoming_asyncapi.json)
+- [deribit_asyncapi_upcoming](/specifications/deribit_asyncapi_upcoming.json)
+
+> The links below point to documentation indexes. Follow each `/_llms/` index recursively until you reach documentation pages.
+
+## Indexes
+
+- [Production (341 pages)](https://docs.deribit.com/_llms/production.txt): Documentation for Production.
+- [Production / API Reference (310 pages)](https://docs.deribit.com/_llms/production/api-reference.txt): Documentation for Production / API Reference.
+- [Production / API Reference / JSON-RPC API (188 pages)](https://docs.deribit.com/_llms/production/api-reference/json-rpc-api.txt): Documentation for Production / API Reference / JSON-RPC API.
+- [Upcoming (342 pages)](https://docs.deribit.com/_llms/upcoming.txt): Documentation for Upcoming.
+- [Upcoming / API Reference (311 pages)](https://docs.deribit.com/_llms/upcoming/api-reference.txt): Documentation for Upcoming / API Reference.
+- [Upcoming / API Reference / JSON-RPC API (189 pages)](https://docs.deribit.com/_llms/upcoming/api-reference/json-rpc-api.txt): Documentation for Upcoming / API Reference / JSON-RPC API.

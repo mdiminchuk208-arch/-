@@ -1,0 +1,68 @@
+{
+  "checks": {
+    "18_output_byte_identical_replay": "PASS",
+    "API_fee_precedence_and_missing_penalty": "PASS",
+    "Ruff_format": "PASS",
+    "book_VWAP_units_sorting_depth_and_lot_companion": "PASS",
+    "compile_src_scripts_tests": "PASS",
+    "fee_bps_USD_exact_arithmetic": "PASS",
+    "fixed_weights_tie_break_and_sensitivity": "PASS",
+    "maker_taker_rebate_and_funding_separation": "PASS",
+    "mypy_3_new_modules": "PASS",
+    "parent_frozen_hash_invariance": "PASS",
+    "raw_hash_length_chronology_and_safe_header_checks": "PASS"
+  },
+  "code_sha256": {
+    ".github/workflows/exchange-public-venue-probes.yml": "035eda62569cf81b9965088600653af66ebcb6908077910dad519f7699860f97",
+    "scripts/build_exchange_selection_audit_v1.py": "c1aff7ca4221a16d7ee1fa984506b0524a03dec81f181a5a8c5a1502028fd8f9",
+    "scripts/exchange_selection_math.py": "74ac87814cb62d0638bb5ed038b57591404da9bc98cd66c9912eee408f008e9a",
+    "scripts/exchange_selection_public_capture.py": "a47db77269476c8ef54422e825fd5e01d2d72c8559a09630e9487350d35299f8",
+    "tests/test_exchange_selection_audit_v1.py": "344a8e1e7098a802ab2f57b8432e11d9a5964dcf487fe24a45e02f8690bffc47"
+  },
+  "coverage_includes_targeted_tests_and_nonfinancial_synthesis": true,
+  "coverage_percent": 84.7942754919499,
+  "coverage_scope": [
+    "exchange_selection_math",
+    "build_exchange_selection_audit_v1"
+  ],
+  "historical_tick_epochs_verified": false,
+  "log_sha256": {
+    "docs/exchange_selection_audit_v1/qa/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/exchange_selection_audit_v1/qa/coverage.json": "727e9e7637def28fa2e94241ebf361adad91fc9cafcda7cad575bd48aeb3ea98",
+    "docs/exchange_selection_audit_v1/qa/format.log": "177f260a5645724013185e4b140c7045cc39e56c0c97b120f5cb23599f85f0de",
+    "docs/exchange_selection_audit_v1/qa/mypy.log": "8228fcc5ce46d42d01caf3cd941f4e9c5f2bcc372bb5b147a2f0572d2dd675a8",
+    "docs/exchange_selection_audit_v1/qa/prepare.log": "990f8fcfd28dedb1f321b8e0a71e5d61264bffd048731f5b2e46948535112710",
+    "docs/exchange_selection_audit_v1/qa/replay.log": "990f8fcfd28dedb1f321b8e0a71e5d61264bffd048731f5b2e46948535112710",
+    "docs/exchange_selection_audit_v1/qa/ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "docs/exchange_selection_audit_v1/qa/targeted.log": "71b3ee0e1728feb2153a3bc003b19d88f0e20b26ea7c6a2c7aab51ead3dc24fc"
+  },
+  "no_strategy_financial_outcome_surfaces_read_or_generated": true,
+  "parent_artifacts_verified": 606,
+  "replay_outputs": 18,
+  "replay_sha256": {
+    "docs/exchange_selection_audit_v1/CANDIDATE_UNIVERSE.json": "4245945a50ae4e3bab4bee84da485c501ae0b2316ee38622713cc670ee2084e2",
+    "docs/exchange_selection_audit_v1/CI_BOOK_NORMALIZATION.json": "b2d4029a684ca20f1ece098419b0ec995ef8c6040735067047ab1e6a7fb4deb3",
+    "docs/exchange_selection_audit_v1/EXECUTION_CAPABILITY_MATRIX.json": "93fcc04381640df68bc28a2c2324296796d76d95a72d9746f03114898488c6c2",
+    "docs/exchange_selection_audit_v1/EXECUTION_VENUE_SCORES.json": "ff07b77c988d543f474f3884d1434112502837bc1bb8eb812e304c41778250c4",
+    "docs/exchange_selection_audit_v1/FROZEN_INPUT_VERIFICATION.json": "da3bd1371cbcbf675042858eafb59606da47b504dbc5e2d7d8368060432821ee",
+    "docs/exchange_selection_audit_v1/FUNDING_CAPABILITY_MATRIX.json": "f22d8383676ce1ba6a578d9d2d9f49003c967c8814c69f1c8c91669b13666183",
+    "docs/exchange_selection_audit_v1/LIQUIDITY_SPREAD_SLIPPAGE.json": "942a88221a0019ccbd3e819ab43c60b856466717d8b9d8367f348eb44b4ae642",
+    "docs/exchange_selection_audit_v1/LOT_GRID_VWAP.json": "126ef6c1e4bf839844d09336a05768b5c3cbb8526e29d23c577744194e885fb6",
+    "docs/exchange_selection_audit_v1/METADATA_PROVENANCE_MATRIX.json": "8e9dec9acd28431823fa9d320cf1c89882b000f337cdb07824c94503a598b061",
+    "docs/exchange_selection_audit_v1/NORMALIZED_FEE_MATRIX.json": "9c4d0005a161fb4c91628f225a3f53211ddd8d7a70b857a9d301735840454cf3",
+    "docs/exchange_selection_audit_v1/OFFICIAL_FEE_EVIDENCE.json": "08f026c960b90acea5c82ad06b26c1feaab00d26be55ce90d859b5f4fe4cd272",
+    "docs/exchange_selection_audit_v1/PUBLIC_DATA_CAPABILITY_MATRIX.json": "07bc57d8372b5de18e9a29072e0ff08de3677424636e2a47f887690fcf60ea19",
+    "docs/exchange_selection_audit_v1/PUBLIC_ENDPOINT_PROBES.json": "00b91d52ba65155fac870caaae797e7fc45f9d1ece5e59435727a3a774181677",
+    "docs/exchange_selection_audit_v1/REJECTED_VENUES.json": "4c648218694d7b6e1cc741a7b2815aa678d01168edd0cf2dbc400b3e9ca8f60e",
+    "docs/exchange_selection_audit_v1/RESEARCH_VENUE_SCORES.json": "680a6e5f18b8bfa7509ce54a292b809bb275671ca5d8221971b673f899e01c5f",
+    "docs/exchange_selection_audit_v1/SENSITIVITY_ANALYSIS.json": "fcf32b6a285d6166dae1f9eb97202c8abd802902d1308cd9046605dd7d8e3080",
+    "docs/exchange_selection_audit_v1/SOURCE_HASH_VERIFICATION.json": "1f86e58cd927acfa0ba27dd1e47bbdfc94628154f8fd1d316cc14e0ded63c643",
+    "docs/exchange_selection_audit_v1/VENUE_ROLE_DECISIONS.json": "7d53cd1d5691cfa763454f5d25ed451965e0fc0ad179b057f0a3c6753ebdece1"
+  },
+  "scope": "New nonfinancial exchange-selection audit only; inherited full suite not rerun or claimed PASS",
+  "source_receipts_verified": 503,
+  "status": "PASS",
+  "strategy_rules_changed": false,
+  "tests_passed": 30,
+  "trade_entry_allowed": false
+}

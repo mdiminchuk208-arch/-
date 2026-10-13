@@ -1,0 +1,21 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:39:01 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "127.081",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 169084,
+  "raw_file": "07483d36de7b366bf100f2ab.body",
+  "raw_sha256": "95c9ccdc32d0732ce5f9278c503147ca848db7c2259be20939b9aec5c682f082",
+  "request_started_at": "2026-10-13T06:39:01.037460+00:00",
+  "response_completed_at": "2026-10-13T06:39:01.164388+00:00",
+  "source_kind": "instruments",
+  "truncated": false,
+  "url": "https://www.deribit.com/api/v2/public/get_instruments?currency=USDC&kind=future&expired=false"
+}

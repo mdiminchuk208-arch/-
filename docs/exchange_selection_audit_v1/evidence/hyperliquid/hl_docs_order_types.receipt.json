@@ -1,0 +1,20 @@
+{
+  "id": "hl_docs_order_types",
+  "venue": "hyperliquid",
+  "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/order-types.md",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-13T06:28:43.257262+00:00",
+  "completed_utc": "2026-10-13T06:28:44.438438+00:00",
+  "latency_ms": 1181.39,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:28:44 GMT",
+    "content-type": "text/plain; charset=utf-8"
+  },
+  "raw_path": "raw/hl_docs_order_types.bin",
+  "raw_sha256": "9153f790a0d45f6de7334bad6c98f880241577c4168b66d661d6204dafae3512",
+  "raw_bytes": 4926,
+  "truncated": false
+}

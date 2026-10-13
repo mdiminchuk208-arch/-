@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.cdp.coinbase.com/international-exchange/websocket-feed/channels.md",
+  "request_start_utc": "2026-10-13T06:30:14.937335+00:00",
+  "completion_utc": "2026-10-13T06:30:15.889913+00:00",
+  "latency_ms": 952.8,
+  "http_status": 200,
+  "sha256": "91fa11d269b7f3bd39e61b5766c5f3cacf9559d9f759507447b3a9a91a1d6f2d",
+  "bytes": 14988,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4b6bfb490abb-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:15 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_channels_md.bin"
+}

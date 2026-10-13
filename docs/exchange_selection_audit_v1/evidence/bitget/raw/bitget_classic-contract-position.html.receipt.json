@@ -1,0 +1,17 @@
+{
+  "url": "https://www.bitget.com/docs/catalog/classic-contract-position",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:27:46.718599+00:00",
+  "request_end_utc": "2026-10-13T06:27:47.134726+00:00",
+  "latency_ms": 416.43,
+  "status": 200,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:27:46 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "no-cache,no-cache"
+  },
+  "sha256": "b104f2e722706013f18917de6031bb5b01801b85db40c77ceeaba08e06cabe8f",
+  "bytes": 34909,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_classic-contract-position.html",
+  "error": null
+}

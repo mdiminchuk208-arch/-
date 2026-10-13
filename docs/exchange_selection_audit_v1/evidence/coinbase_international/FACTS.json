@@ -1,0 +1,174 @@
+{
+  "books": {
+    "BTC": [],
+    "ETH": []
+  },
+  "data": {
+    "archive": null,
+    "book_history": null,
+    "closure": "start identifies open time; no completed-bar flag; latest current-window responses {} while markets paused",
+    "mark_index": "quote endpoint returns mark/index, but last timestamp is 2026-10-01T09:00:29Z for both; historical index candles documented separately",
+    "native_m15": true,
+    "oi_history": "current instrument open_interest field stale; historical OI endpoint not located",
+    "oldest_actual_m15_sample_utc": "2024-10-13T00:00:00Z",
+    "pagination": "GET /api/v1/instruments/{instrument}/candles with ISO start/end, granularity=FIFTEEN_MINUTE; no row limit documented in retrieved schema",
+    "source_ids": [
+      "m15old_btc",
+      "m15old_eth",
+      "candles_btc_now",
+      "candles_eth_now",
+      "btc_quote",
+      "eth_quote",
+      "docs_candle_md",
+      "docs_channels_md",
+      "docs_instrument_md"
+    ],
+    "trades": "MATCH WebSocket real-time; public historical trades endpoint not located in official INTX REST index"
+  },
+  "execution": {
+    "client_order_id": "client_order_id required in Create Order schema, uniqueness/idempotency semantics unverified",
+    "custody": "institutional custodial exchange/portfolios; account and jurisdiction eligibility not evaluated",
+    "demo": "Sandbox exists but onboarding through Coinbase Account Team",
+    "ip_allowlist": "Sandbox docs permit up to 30 IPs per API key; production also mentioned, but no key created",
+    "isolated_margin": "portfolio segregation documented; per-position isolated margin not verified",
+    "key_permissions_no_withdraw": "Sandbox docs list View, Transfer, Trade independently; View+Trade excluding Transfer possible in UI, production account applicability unverified",
+    "leverage": "base_imf/default_imf and portfolio margin override documented; direct leverage setter not verified",
+    "queries": "Get Order Details, open orders, portfolio fills and positions documented",
+    "rate_limits": "40 REST requests/s per API key; 800 FIX msg/s/key; account 4000 msg/s; 10 WS connection attempts per 30 s",
+    "reduce_only": null,
+    "rest_ws": "REST orders plus authenticated market-data WebSocket documented",
+    "signing": "HMAC-SHA256 CB-ACCESS-SIGN over timestamp+method+requestPath+body, plus passphrase/key headers",
+    "sl_tp": "REST TAKE_PROFIT_STOP_LOSS, STOP and STOP_LIMIT documented; FIX TPSL conditional legs documented",
+    "source_ids": [
+      "docs_order_md",
+      "docs_query_md",
+      "docs_portfolios_md",
+      "docs_sandbox_md",
+      "docs_auth_md",
+      "docs_limits_md",
+      "docs_systems_md",
+      "docs_tpsl_md"
+    ],
+    "status_feed": "official systems page links status.coinbase.com (redirect from cdpstatus); component-specific INTX status unverified"
+  },
+  "fees": {
+    "api_specific": "official list fee tiers API is documented, but current public call returned 403 ip not allowed; portfolio actual schedule requires authenticated account",
+    "base_tier": null,
+    "discounts_separate": "regular vs liquidity-program and portfolio VIP/manual overrides documented, actual rates unverified",
+    "literal_quote": "GET /api/v1/fee-rate-tiers; observed response {\"title\":\"ip not allowed\",\"status\":403,\"error\":\"FORBIDDEN\"}",
+    "maker_rate": null,
+    "source_ids": [
+      "docs_fee_md",
+      "docs_portfolio_fees_md",
+      "fee_tiers"
+    ],
+    "taker_rate": null,
+    "unresolved": "No current ordinary API base tier numeric fee verified; do not fill from OpenAPI example numbers or marketing/app rates."
+  },
+  "funding": {
+    "formula": null,
+    "history_depth": "Endpoint returned latest 10 BTC/ETH records ending 2026-10-01; two-year funding depth not probed",
+    "history_endpoint": "GET /api/v1/instruments/{instrument}/funding?result_limit<=100&result_offset=...",
+    "intervals": "Instrument funding_interval 3600000000000 nanoseconds = 1 hour; last captured funding record 2026-10-01T09:00:00Z",
+    "sign": "Docs say periodic transfers between longs and shorts; payer sign convention not retrieved",
+    "source_ids": [
+      "instruments",
+      "btc_funding",
+      "eth_funding",
+      "docs_funding_md",
+      "docs_concepts_instruments_md"
+    ],
+    "surcharge": null
+  },
+  "hard_execution_blockers": [
+    "Both required products PAUSED; no current tradeable book evidence.",
+    "Ordinary base API fee unknowable from permitted public route: fee-rate-tiers HTTP403 ip not allowed.",
+    "Reduce-only and per-position isolated margin not verified."
+  ],
+  "hard_research_blockers": [
+    "Both current products PAUSED and current M15 empty, preventing live/pristine BTC+ETH capture.",
+    "No validated current public book depth for either symbol.",
+    "Historical tick/filter epochs unverified."
+  ],
+  "limitations": [
+    "Both matching perpetuals are PAUSED in the retrieved instrument list; quote and funding data stop 2026-10-01.",
+    "Two attempted REST /book requests returned 404; official docs provide authenticated LEVEL2 WebSocket, but no valid contemporary book snapshot was obtained.",
+    "Current M15 calls returned HTTP200 with empty {} for both symbols; 2024-10-13 M15 history exists.",
+    "Fee tier endpoint returned 403 ip not allowed from this cloud environment; no geographic routing change attempted."
+  ],
+  "metadata": {
+    "causal_prospective": "technically possible via INSTRUMENTS subscription, but both current instruments PAUSED and live capture unverified",
+    "change_history": "official INTX changelog and INSTRUMENTS WebSocket with last_update_time documented; exact historic tick/filter epochs not recovered",
+    "current_filters": {
+      "BTC": {
+        "base_asset_multiplier": "1.0",
+        "base_increment": "0.0001",
+        "min_quantity": "0.0001",
+        "quote_increment": "0.1",
+        "state": "PAUSED"
+      },
+      "ETH": {
+        "base_asset_multiplier": "1.0",
+        "base_increment": "0.0001",
+        "min_quantity": "0.0001",
+        "quote_increment": "0.01",
+        "state": "PAUSED"
+      }
+    },
+    "historical_epochs": null,
+    "source_ids": [
+      "instruments",
+      "docs_channels_md",
+      "changelog"
+    ]
+  },
+  "products": {
+    "BTC": {
+      "base": "BTC",
+      "base_asset_multiplier": "1.0",
+      "base_increment": "0.0001",
+      "funding_interval_ns": "3600000000000",
+      "instrument_id": "149264167780483072",
+      "instrument_type": "PERP",
+      "instrument_uuid": "b3469e0b-222c-4f8a-9f68-1f9e44d7e5e0",
+      "last_embedded_quote_utc": "2026-10-01T09:00:29.114Z",
+      "min_notional_value": "10",
+      "min_quantity": "0.0001",
+      "model": "linear USDC-quoted perpetual, base_asset_multiplier 1.0",
+      "quote": "USDC",
+      "quote_increment": "0.1",
+      "settlement": "USDC (documentation/portfolio collateral; instrument response quote USDC)",
+      "source_ids": [
+        "instruments",
+        "docs_concepts_instruments_md",
+        "docs_channels_md"
+      ],
+      "state": "PAUSED",
+      "symbol": "BTC-PERP"
+    },
+    "ETH": {
+      "base": "ETH",
+      "base_asset_multiplier": "1.0",
+      "base_increment": "0.0001",
+      "funding_interval_ns": "3600000000000",
+      "instrument_id": "149264164756389888",
+      "instrument_type": "PERP",
+      "instrument_uuid": "e9360798-6a10-45d6-af05-67c30eb91e2d",
+      "last_embedded_quote_utc": "2026-10-01T09:00:29.114Z",
+      "min_notional_value": "10",
+      "min_quantity": "0.0001",
+      "model": "linear USDC-quoted perpetual, base_asset_multiplier 1.0",
+      "quote": "USDC",
+      "quote_increment": "0.01",
+      "settlement": "USDC (documentation/portfolio collateral; instrument response quote USDC)",
+      "source_ids": [
+        "instruments",
+        "docs_concepts_instruments_md",
+        "docs_channels_md"
+      ],
+      "state": "PAUSED",
+      "symbol": "ETH-PERP"
+    }
+  },
+  "venue": "coinbase_international"
+}

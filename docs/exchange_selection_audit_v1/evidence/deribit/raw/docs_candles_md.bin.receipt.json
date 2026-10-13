@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.deribit.com/api-reference/market-data/public-get_tradingview_chart_data.md",
+  "request_start_utc": "2026-10-13T06:30:48.404196+00:00",
+  "completion_utc": "2026-10-13T06:30:49.677011+00:00",
+  "latency_ms": 1273.0,
+  "http_status": 200,
+  "sha256": "a2995395550d131380515d76a7e4d5dc216bc7a32274394ba9a8e5018ef1103d",
+  "bytes": 9756,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4c3f2afc2e5c-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:49 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_candles_md.bin"
+}

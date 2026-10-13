@@ -1,0 +1,19 @@
+{
+  "source_id": "docs_api",
+  "url": "https://mexcdevelop.github.io/apidocs/contract_v1_en/",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:22:08.199045+00:00",
+  "response_utc": "2026-10-12T20:22:08.855283+00:00",
+  "latency_ms": 656,
+  "http_status": 200,
+  "sha256": "57ebc13fea788a1c568c8aeabfdf50acc0c9f5b5a882af4855837d53499940e3",
+  "bytes": 316221,
+  "headers": {
+    "server": "envoy",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Mon, 12 Oct 2026 20:22:08 GMT",
+    "content-length": "316221"
+  },
+  "raw_path": "raw/docs_api.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

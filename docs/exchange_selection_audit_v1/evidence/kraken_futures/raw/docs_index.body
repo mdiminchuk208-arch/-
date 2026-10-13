@@ -1,0 +1,80 @@
+# Kraken Developers
+
+Kraken provides APIs for three distinct platforms: Exchange (Spot and Derivatives trading), Institutional (OTC, custody, prime brokerage), and Embed (B2B white-label integration).
+
+## Exchange
+
+Spot and Derivatives trading via REST, WebSocket, and FIX 4.4.
+
+- Spot REST: https://api.kraken.com — market data, order entry, account management, funding, Earn
+- Affiliate REST: https://api.kraken.com — referred-user activity, CPA progress, and payout history for approved KOL partners (`GET /affiliate/v1/daily-activity`, `GET /affiliate/v1/cpa-progress`, `GET /affiliate/v1/payout-history`)
+- Spot WebSocket v2 (recommended): wss://ws.kraken.com/v2 — real-time channels: book, ticker, trade, executions, balances, level3
+- Spot WebSocket v1 (legacy): wss://ws.kraken.com
+- Derivatives REST: https://futures.kraken.com/derivatives/api/v3
+- Derivatives WebSocket (streaming only): wss://futures.kraken.com/ws/v1
+- Unified FIX 4.4: colo-london.vip-ws.kraken.com — covers both Spot and Derivatives in one session
+
+Authentication: Spot REST uses HMAC-SHA512 (API-Key + API-Sign headers). WebSocket uses a token obtained from GetWebSocketsToken REST endpoint. FIX uses SenderCompID + password in Logon message. Derivatives REST uses APIKey + Authent headers (HMAC-SHA512 via SHA256 intermediate hash).
+
+Key concepts: cl_ord_id (client order identifiers), atomic amends (in-place order modification), cancel-on-disconnect (FIX only), L3 market data (individual orders in book), CRC32 checksums for book validation.
+
+Rate limits: Spot REST has a call counter (max 15-20 depending on tier). Trading engine has per-pair counters with decay. Derivatives has cost-per-request budget (500/10s).
+
+Colocation: Direct cross-connect at Equinix London (~200μs). Beeks Financial Cloud (~200μs). AWS London (~2ms).
+
+## Institutional
+
+APIs for institutions managing large positions or client assets.
+
+- Custody REST: digital asset custody, deposits, withdrawals
+- OTC REST: block trade execution off the order book
+- Prime FIX: institutional FIX connectivity for order management
+- Prime WebSocket: real-time streaming for prime brokerage
+
+Access requires onboarding through a Kraken Account Manager.
+
+## Embed
+
+B2B APIs for integrating Kraken financial infrastructure into third-party products under their own brand.
+
+- Embed REST: white-label trading and account management
+- Ramp REST: fiat on-ramp and off-ramp
+- Pay REST: crypto payment acceptance and sending
+- OAuth REST: OAuth 2.0 authorization on behalf of Kraken users
+
+Access requires B2B partner approval.
+
+## Developer tooling
+
+### kraken-cli
+A compiled binary CLI (no runtime dependencies) for Spot and Derivatives trading from the terminal. Written in Rust.
+- 151 commands across REST, WebSocket, and account management
+- Covers: Spot REST, Derivatives REST, Spot WebSocket v2, Derivatives WebSocket v1, L3 order book
+- Paper trading: test strategies against live prices without auth or capital (spot and futures)
+- Built-in MCP server: exposes all commands as tools for LLM agents via stdio
+- 50 agent skills: pre-built task sequences for common trading workflows
+- Install: `curl --proto '=https' --tlsv1.2 -LsSf https://github.com/krakenfx/kraken-cli/releases/latest/download/kraken-cli-installer.sh | sh`
+- GitHub: https://github.com/krakenfx/kraken-cli
+
+### MCP server
+kraken-cli ships a built-in MCP server exposing all 151 commands as tools for LLM agents (Claude, Cursor, Codex CLI, etc.).
+- Start: `kraken mcp stdio`
+- Configure in Claude Code: add `{"mcpServers":{"kraken":{"command":"kraken","args":["mcp","stdio"]}}}`
+- All commands support structured JSON output and consistent exit codes
+- Docs: /home/sdks
+
+### api-go (official Go SDK)
+Official Go module for Spot and Derivatives REST and WebSocket APIs.
+- Install: `go get github.com/krakenfx/api-go/v2/...`
+- Covers: REST (public + authenticated), WebSocket (public + private), order management, real-time book with CRC32 checksum validation
+- GitHub: https://github.com/krakenfx/api-go
+
+## Docs structure
+
+- Exchange guides: /exchange/guides/{general,rest,websockets,fix,futures}/
+- Exchange API reference: /exchange/api-reference/{unified-fix,spot-websocket-v1,spot-websocket-v2,futures-websocket}/
+- Spot REST API reference: auto-generated from OpenAPI at /api-reference/
+- Derivatives REST API reference: auto-generated from OpenAPI at /api-reference/
+- Institutional guides: /institutional/guides/
+- Embed guides: /embed/guides/
+- SDKs and CLI: /home/sdks

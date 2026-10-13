@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c473a4b2af04e-DFW",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:27:24 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1403.2,
+  "method": "GET",
+  "raw_length": 139,
+  "raw_path": "bf_eth_oi.raw",
+  "raw_sha256": "8c4282c2a4840665667defde9f80d362eba887c1580b138a874fb838c2bb1e75",
+  "request_start_utc": "2026-10-13T06:27:22.755273+00:00",
+  "retrieval_utc": "2026-10-13T06:27:24.158264+00:00",
+  "source_id": "bf_eth_oi",
+  "status": 200,
+  "truncated": false,
+  "url": "https://openapi.blofin.com/api/v1/market/open-interest?instId=ETH-USDT"
+}

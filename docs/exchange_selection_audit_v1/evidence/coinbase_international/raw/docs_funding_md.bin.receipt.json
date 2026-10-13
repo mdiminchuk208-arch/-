@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.cdp.coinbase.com/api-reference/international-exchange-api/rest-api/instruments/get-historical-funding-rate.md",
+  "request_start_utc": "2026-10-13T06:30:13.873322+00:00",
+  "completion_utc": "2026-10-13T06:30:15.055866+00:00",
+  "latency_ms": 1182.7,
+  "http_status": 200,
+  "sha256": "f22b03570935b35399dd10b86c29cb69165d2f3698ad24e79971a7833c4a4f8b",
+  "bytes": 6105,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4b658d3bd319-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:14 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_funding_md.bin"
+}

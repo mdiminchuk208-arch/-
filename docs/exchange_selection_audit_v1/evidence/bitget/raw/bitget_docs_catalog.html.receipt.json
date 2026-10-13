@@ -1,0 +1,17 @@
+{
+  "url": "https://www.bitget.com/docs/uta/catalog",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:27:29.890551+00:00",
+  "request_end_utc": "2026-10-13T06:27:30.285805+00:00",
+  "latency_ms": 395.51,
+  "status": 200,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:27:30 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "no-cache,no-cache"
+  },
+  "sha256": "6044af41b42b83c9f593526b2c2aaa79cdb9522583971b2e7d2148b91c2998f0",
+  "bytes": 37172,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_catalog.html",
+  "error": null
+}

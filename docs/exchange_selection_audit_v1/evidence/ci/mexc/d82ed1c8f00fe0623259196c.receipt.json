@@ -1,0 +1,21 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:39:00 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "381.585",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 2312771,
+  "raw_file": "d82ed1c8f00fe0623259196c.body",
+  "raw_sha256": "e588ffa905f91c2c638d49b3df6f7433d06449ea06649d418f420d18b93459f9",
+  "request_started_at": "2026-10-13T06:39:00.388947+00:00",
+  "response_completed_at": "2026-10-13T06:39:00.769857+00:00",
+  "source_kind": "instruments",
+  "truncated": false,
+  "url": "https://contract.mexc.com/api/v1/contract/detail"
+}

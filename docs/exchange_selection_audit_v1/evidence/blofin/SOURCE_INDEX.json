@@ -1,0 +1,552 @@
+{
+  "environment": "Codex managed cloud; inherited HTTPS proxy and CA, no credentials",
+  "sources": [
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c47900ef1f81d-DFW",
+        "content-type": "text/html",
+        "date": "Tue, 13 Oct 2026 06:27:37 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 1708.2,
+      "method": "GET",
+      "raw_length": 873437,
+      "raw_path": "bf_api_docs.raw",
+      "raw_sha256": "0d046c7694d2c6a4adcff0582221bd01184a2f01c41e8f78b3a0f5e409bbd37e",
+      "receipt_path": "bf_api_docs.receipt.json",
+      "request_start_utc": "2026-10-13T06:27:36.873187+00:00",
+      "retrieval_utc": "2026-10-13T06:27:38.580964+00:00",
+      "source_id": "bf_api_docs",
+      "status": 200,
+      "truncated": false,
+      "url": "https://docs.blofin.com/index.html"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c469caf6b4ac0-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:26:58 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 1064.3,
+      "method": "GET",
+      "raw_length": 739,
+      "raw_path": "bf_btc_book_1.raw",
+      "raw_sha256": "a4a103961e7a7812c9634959628bc85eb0119c7fa4d3442b5c13f5fbb6faccb1",
+      "receipt_path": "bf_btc_book_1.receipt.json",
+      "request_start_utc": "2026-10-13T06:26:57.875938+00:00",
+      "retrieval_utc": "2026-10-13T06:26:58.940049+00:00",
+      "source_id": "bf_btc_book_1",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/books?instId=BTC-USDT&size=20"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c48a6b8b4f04e-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:22 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 313.2,
+      "method": "GET",
+      "raw_length": 3507,
+      "raw_path": "bf_btc_book_2.raw",
+      "raw_sha256": "bd7e48ed63bd9cfdeb1dbc49882037f703566dc276a853971abb48d8133ba89a",
+      "receipt_path": "bf_btc_book_2.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:22.147948+00:00",
+      "retrieval_utc": "2026-10-13T06:28:22.460928+00:00",
+      "source_id": "bf_btc_book_2",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/books?instId=BTC-USDT&size=100"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4739b864c456-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:27:23 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 1368.1,
+      "method": "GET",
+      "raw_length": 220,
+      "raw_path": "bf_btc_funding_current.raw",
+      "raw_sha256": "bb97eaebc8f487e8861630eebe071778844eee0639040ea4241e0cc69b432057",
+      "receipt_path": "bf_btc_funding_current.receipt.json",
+      "request_start_utc": "2026-10-13T06:27:22.696188+00:00",
+      "retrieval_utc": "2026-10-13T06:27:24.064121+00:00",
+      "source_id": "bf_btc_funding_current",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/funding-rate?instId=BTC-USDT"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c473918742c62-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:27:23 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 1431.5,
+      "method": "GET",
+      "raw_length": 32,
+      "raw_path": "bf_btc_funding_history.raw",
+      "raw_sha256": "6568e3edd388643c20c9e19c48937d0c9674ec2f85c086e6d17c0dc07d360fbc",
+      "receipt_path": "bf_btc_funding_history.receipt.json",
+      "request_start_utc": "2026-10-13T06:27:22.546957+00:00",
+      "retrieval_utc": "2026-10-13T06:27:23.978364+00:00",
+      "source_id": "bf_btc_funding_history",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/history-funding-rate?instId=BTC-USDT&limit=10"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c48a75af0b815-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:22 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 435.2,
+      "method": "GET",
+      "raw_length": 807,
+      "raw_path": "bf_btc_funding_history_v2.raw",
+      "raw_sha256": "eb7ff1f1b52db2b65626d9696921f02d4459fb0238e6936e3437d07a05673edb",
+      "receipt_path": "bf_btc_funding_history_v2.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:22.157699+00:00",
+      "retrieval_utc": "2026-10-13T06:28:22.592742+00:00",
+      "source_id": "bf_btc_funding_history_v2",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/funding-rate-history?instId=BTC-USDT&limit=10"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4bd10a5927c3-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:30:31 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 1020.3,
+      "method": "GET",
+      "raw_length": 159,
+      "raw_path": "bf_btc_index_now.raw",
+      "raw_sha256": "8b3f8a5e261fbda5cfee6dcf896cc72d1f08a4c570c6b6812d32e2310e21ac8a",
+      "receipt_path": "bf_btc_index_now.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:31.091789+00:00",
+      "retrieval_utc": "2026-10-13T06:30:32.111900+00:00",
+      "source_id": "bf_btc_index_now",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/index-candles?instId=BTC-USDT&bar=15m&limit=2"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c473988f48d34-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:27:23 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 1264.7,
+      "method": "GET",
+      "raw_length": 970,
+      "raw_path": "bf_btc_m15_now.raw",
+      "raw_sha256": "1f3b93c9559daa9d074839276e60feba0b3f009aad4f07f207bf761dfaa1e989",
+      "receipt_path": "bf_btc_m15_now.receipt.json",
+      "request_start_utc": "2026-10-13T06:27:22.778238+00:00",
+      "retrieval_utc": "2026-10-13T06:27:24.042836+00:00",
+      "source_id": "bf_btc_m15_now",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/candles?instId=BTC-USDT&bar=15m&limit=10"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c473988f38d34-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:27:23 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 1371.4,
+      "method": "GET",
+      "raw_length": 32,
+      "raw_path": "bf_btc_m15_old.raw",
+      "raw_sha256": "6568e3edd388643c20c9e19c48937d0c9674ec2f85c086e6d17c0dc07d360fbc",
+      "receipt_path": "bf_btc_m15_old.receipt.json",
+      "request_start_utc": "2026-10-13T06:27:22.659101+00:00",
+      "retrieval_utc": "2026-10-13T06:27:24.030245+00:00",
+      "source_id": "bf_btc_m15_old",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/history-candles?instId=BTC-USDT&bar=15m&after=1728777600000&limit=20"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c48a769362c62-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:22 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 500.4,
+      "method": "GET",
+      "raw_length": 982,
+      "raw_path": "bf_btc_m15_old_direct.raw",
+      "raw_sha256": "1cfc879274cf88497554a4f1a45b1cf55e7e4bad277eba2690bc98c236814528",
+      "receipt_path": "bf_btc_m15_old_direct.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:22.188473+00:00",
+      "retrieval_utc": "2026-10-13T06:28:22.688632+00:00",
+      "source_id": "bf_btc_m15_old_direct",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/candles?instId=BTC-USDT&bar=15m&after=1728778500000&limit=10"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4bcecff42c62-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:30:31 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 681.8,
+      "method": "GET",
+      "raw_length": 161,
+      "raw_path": "bf_btc_mark_now.raw",
+      "raw_sha256": "f759fed355d71a64917e505f776ff497b230c938617336f31ddb13fbf95097d1",
+      "receipt_path": "bf_btc_mark_now.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:31.091260+00:00",
+      "retrieval_utc": "2026-10-13T06:30:31.772773+00:00",
+      "source_id": "bf_btc_mark_now",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/mark-price-candles?instId=BTC-USDT&bar=15m&limit=2"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c473918772c62-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:27:23 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 1275.7,
+      "method": "GET",
+      "raw_length": 139,
+      "raw_path": "bf_btc_oi.raw",
+      "raw_sha256": "b09d94ef81e8b379ddc8a89e8d09529b7066942cad20a2b23b2129800d733b27",
+      "receipt_path": "bf_btc_oi.receipt.json",
+      "request_start_utc": "2026-10-13T06:27:22.700079+00:00",
+      "retrieval_utc": "2026-10-13T06:27:23.975380+00:00",
+      "source_id": "bf_btc_oi",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/open-interest?instId=BTC-USDT"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4bd189416b76-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:30:32 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 1096.0,
+      "method": "GET",
+      "raw_length": 1148,
+      "raw_path": "bf_btc_trades.raw",
+      "raw_sha256": "ce72a78ccc9851439b8732e2aede76d973e291c513841378c8e1e51d311d4c03",
+      "receipt_path": "bf_btc_trades.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:31.112914+00:00",
+      "retrieval_utc": "2026-10-13T06:30:32.208608+00:00",
+      "source_id": "bf_btc_trades",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/trades?instId=BTC-USDT&limit=10"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c478fda2044bc-DFW",
+        "content-type": "text/html",
+        "date": "Tue, 13 Oct 2026 06:27:37 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 1076.0,
+      "method": "GET",
+      "raw_length": 551,
+      "raw_path": "bf_docs_index.raw",
+      "raw_sha256": "1abb0b6530890f6b2656b5a40be85c275dd675be0777680a5b1e2b7cde0c9020",
+      "receipt_path": "bf_docs_index.receipt.json",
+      "request_start_utc": "2026-10-13T06:27:36.852326+00:00",
+      "retrieval_utc": "2026-10-13T06:27:37.928077+00:00",
+      "source_id": "bf_docs_index",
+      "status": 503,
+      "truncated": false,
+      "url": "https://blofin.com/docs/"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c469caf6e4ac0-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:26:58 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 1050.9,
+      "method": "GET",
+      "raw_length": 799,
+      "raw_path": "bf_eth_book_1.raw",
+      "raw_sha256": "4d15f7940602ff534e6607965b22b205f1c98f52ee623ed3192e8d91a6ee8802",
+      "receipt_path": "bf_eth_book_1.receipt.json",
+      "request_start_utc": "2026-10-13T06:26:57.890623+00:00",
+      "retrieval_utc": "2026-10-13T06:26:58.941351+00:00",
+      "source_id": "bf_eth_book_1",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/books?instId=ETH-USDT&size=20"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c48a75903f04e-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:22 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 333.6,
+      "method": "GET",
+      "raw_length": 3822,
+      "raw_path": "bf_eth_book_2.raw",
+      "raw_sha256": "2ea638f026d831998c67fb476fd567a42c185b48acecfc361bd1b9fb0d1dc9c2",
+      "receipt_path": "bf_eth_book_2.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:22.229336+00:00",
+      "retrieval_utc": "2026-10-13T06:28:22.562744+00:00",
+      "source_id": "bf_eth_book_2",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/books?instId=ETH-USDT&size=100"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c473a5d9c66f5-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:27:24 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 1394.5,
+      "method": "GET",
+      "raw_length": 222,
+      "raw_path": "bf_eth_funding_current.raw",
+      "raw_sha256": "053561728365d27d519671cf814b030f9af381e11357cdc28a3c857d818e697e",
+      "receipt_path": "bf_eth_funding_current.receipt.json",
+      "request_start_utc": "2026-10-13T06:27:22.776383+00:00",
+      "retrieval_utc": "2026-10-13T06:27:24.170639+00:00",
+      "source_id": "bf_eth_funding_current",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/funding-rate?instId=ETH-USDT"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4739cd7d4758-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:27:23 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 1325.4,
+      "method": "GET",
+      "raw_length": 32,
+      "raw_path": "bf_eth_funding_history.raw",
+      "raw_sha256": "6568e3edd388643c20c9e19c48937d0c9674ec2f85c086e6d17c0dc07d360fbc",
+      "receipt_path": "bf_eth_funding_history.receipt.json",
+      "request_start_utc": "2026-10-13T06:27:22.755998+00:00",
+      "retrieval_utc": "2026-10-13T06:27:24.081228+00:00",
+      "source_id": "bf_eth_funding_history",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/history-funding-rate?instId=ETH-USDT&limit=10"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c48a89a4c4758-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:22 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 563.1,
+      "method": "GET",
+      "raw_length": 807,
+      "raw_path": "bf_eth_funding_history_v2.raw",
+      "raw_sha256": "0e12d76147f917d2175a8788ba257abca202d66ceac5e838170aa14680b99cfa",
+      "receipt_path": "bf_eth_funding_history_v2.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:22.232048+00:00",
+      "retrieval_utc": "2026-10-13T06:28:22.794959+00:00",
+      "source_id": "bf_eth_funding_history_v2",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/funding-rate-history?instId=ETH-USDT&limit=10"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c473528a7b815-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:27:23 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 757.9,
+      "method": "GET",
+      "raw_length": 976,
+      "raw_path": "bf_eth_m15_now.raw",
+      "raw_sha256": "8e10847b09e60f20743bdbb3e04534d6b6b1f8d5abf5a42c01992aacc905f920",
+      "receipt_path": "bf_eth_m15_now.receipt.json",
+      "request_start_utc": "2026-10-13T06:27:22.579732+00:00",
+      "retrieval_utc": "2026-10-13T06:27:23.337532+00:00",
+      "source_id": "bf_eth_m15_now",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/candles?instId=ETH-USDT&bar=15m&limit=10"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c47360c384ac0-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:27:23 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 728.6,
+      "method": "GET",
+      "raw_length": 32,
+      "raw_path": "bf_eth_m15_old.raw",
+      "raw_sha256": "6568e3edd388643c20c9e19c48937d0c9674ec2f85c086e6d17c0dc07d360fbc",
+      "receipt_path": "bf_eth_m15_old.receipt.json",
+      "request_start_utc": "2026-10-13T06:27:22.744096+00:00",
+      "retrieval_utc": "2026-10-13T06:27:23.472455+00:00",
+      "source_id": "bf_eth_m15_old",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/history-candles?instId=ETH-USDT&bar=15m&after=1728777600000&limit=20"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c48a87a224758-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:22 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 607.1,
+      "method": "GET",
+      "raw_length": 985,
+      "raw_path": "bf_eth_m15_old_direct.raw",
+      "raw_sha256": "c9bda5d7ee7a86a6085c021ca7724364983dfd2c014a56d4ae89f8355f3edbff",
+      "receipt_path": "bf_eth_m15_old_direct.receipt.json",
+      "request_start_utc": "2026-10-13T06:28:22.219802+00:00",
+      "retrieval_utc": "2026-10-13T06:28:22.826672+00:00",
+      "source_id": "bf_eth_m15_old_direct",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/candles?instId=ETH-USDT&bar=15m&after=1728778500000&limit=10"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c473a4b2af04e-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:27:24 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 1403.2,
+      "method": "GET",
+      "raw_length": 139,
+      "raw_path": "bf_eth_oi.raw",
+      "raw_sha256": "8c4282c2a4840665667defde9f80d362eba887c1580b138a874fb838c2bb1e75",
+      "receipt_path": "bf_eth_oi.receipt.json",
+      "request_start_utc": "2026-10-13T06:27:22.755273+00:00",
+      "retrieval_utc": "2026-10-13T06:27:24.158264+00:00",
+      "source_id": "bf_eth_oi",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/open-interest?instId=ETH-USDT"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c4bd17e3645ef-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:30:32 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 1100.3,
+      "method": "GET",
+      "raw_length": 1147,
+      "raw_path": "bf_eth_trades.raw",
+      "raw_sha256": "dca6140cd1e336e98e300e2928965bac1090008ede0f3e040762f2a62a4ab348",
+      "receipt_path": "bf_eth_trades.receipt.json",
+      "request_start_utc": "2026-10-13T06:30:31.097116+00:00",
+      "retrieval_utc": "2026-10-13T06:30:32.197207+00:00",
+      "source_id": "bf_eth_trades",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/trades?instId=ETH-USDT&limit=10"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c47908823e976-DFW",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:27:38 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 1792.3,
+      "method": "GET",
+      "raw_length": 264463,
+      "raw_path": "bf_fee_page.raw",
+      "raw_sha256": "8553269aeb1ac53d2b2e09afd965e19fc604cda89e8c67e43770edd1c769837f",
+      "receipt_path": "bf_fee_page.receipt.json",
+      "request_start_utc": "2026-10-13T06:27:36.942050+00:00",
+      "retrieval_utc": "2026-10-13T06:27:38.734176+00:00",
+      "source_id": "bf_fee_page",
+      "status": 200,
+      "truncated": false,
+      "url": "https://blofin.com/fees"
+    },
+    {
+      "error": null,
+      "headers": {
+        "cf-ray": "a49c469c4b8bb815-DFW",
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:26:58 GMT",
+        "server": "envoy"
+      },
+      "latency_ms": 1435.6,
+      "method": "GET",
+      "raw_length": 228917,
+      "raw_path": "bf_instruments.raw",
+      "raw_sha256": "73f73c7f18107379d68dc2e2dd6707f9ed58761a9f461fdda2d0419a31c4edf0",
+      "receipt_path": "bf_instruments.receipt.json",
+      "request_start_utc": "2026-10-13T06:26:57.837595+00:00",
+      "retrieval_utc": "2026-10-13T06:26:59.272721+00:00",
+      "source_id": "bf_instruments",
+      "status": 200,
+      "truncated": false,
+      "url": "https://openapi.blofin.com/api/v1/market/instruments?instType=SWAP"
+    }
+  ],
+  "venue": "blofin"
+}

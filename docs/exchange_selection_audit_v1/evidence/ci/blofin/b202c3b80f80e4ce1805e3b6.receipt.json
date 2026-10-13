@@ -1,0 +1,21 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:39:00 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "220.580",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 3801,
+  "raw_file": "b202c3b80f80e4ce1805e3b6.body",
+  "raw_sha256": "5037a1d8bbb3af22aef68b6ebde1216e47a6ff348a9c355d526e8a8ed3caec32",
+  "request_started_at": "2026-10-13T06:39:00.230337+00:00",
+  "response_completed_at": "2026-10-13T06:39:00.450824+00:00",
+  "source_kind": "book_ETH",
+  "truncated": false,
+  "url": "https://openapi.blofin.com/api/v1/market/books?instId=ETH-USDT&size=100"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "gate_docs_zip",
+  "venue": "gate",
+  "url": "https://www.gate.com/docs/developers/downloads/gate-api-v4-markdown.zip",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-13T06:27:57.667431+00:00",
+  "completed_utc": "2026-10-13T06:28:00.432285+00:00",
+  "latency_ms": 2765.57,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "content-type": "application/zip",
+    "content-length": "1493270",
+    "date": "Tue, 13 Oct 2026 06:27:59 GMT"
+  },
+  "raw_path": "raw/gate_docs_zip.bin",
+  "raw_sha256": "a5f218a3335a1ee46e079d0dcdbd02d24c702ffa5e6283108dbb07d0ed4e0791",
+  "raw_bytes": 1493270,
+  "truncated": false
+}

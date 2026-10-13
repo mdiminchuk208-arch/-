@@ -1,0 +1,21 @@
+{
+  "source_id": "fees_page",
+  "url": "https://www.mexc.com/fee",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:22:08.856043+00:00",
+  "response_utc": "2026-10-12T20:22:10.271595+00:00",
+  "latency_ms": 1415,
+  "http_status": 200,
+  "sha256": "5893a611590b981fe9e45dd9b041b050148c0fd97fc02a24e950dcc8aa3afc85",
+  "bytes": 305152,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "x-ratelimit-limit": "10",
+    "x-ratelimit-remaining": "9",
+    "x-ratelimit-reset": "0",
+    "date": "Mon, 12 Oct 2026 20:22:10 GMT",
+    "server": "envoy"
+  },
+  "raw_path": "raw/fees_page.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

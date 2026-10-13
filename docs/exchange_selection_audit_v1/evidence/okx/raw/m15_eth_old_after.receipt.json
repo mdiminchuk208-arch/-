@@ -1,0 +1,18 @@
+{
+  "body_bytes": 222,
+  "error": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Mon, 12 Oct 2026 20:21:01 GMT"
+  },
+  "id": "m15_eth_old_after",
+  "latency_ms": 326.94,
+  "method": "GET",
+  "raw_path": "raw/m15_eth_old_after.body",
+  "request_utc": "2026-10-12T20:21:01.136174Z",
+  "retrieval_utc": "2026-10-12T20:21:01.462927Z",
+  "sha256": "a2cca20b05233dadc31226d068529a41e1ae1736f0b8e61124b18cd26ab17fc6",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/market/history-candles?instId=ETH-USDT-SWAP&bar=15m&after=1728778500000&limit=2"
+}

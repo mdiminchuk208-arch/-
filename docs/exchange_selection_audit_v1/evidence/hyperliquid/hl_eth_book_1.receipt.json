@@ -1,0 +1,21 @@
+{
+  "id": "hl_eth_book_1",
+  "venue": "hyperliquid",
+  "url": "https://api.hyperliquid.xyz/info",
+  "method": "POST",
+  "request_body": "{\"type\":\"l2Book\",\"coin\":\"ETH\"}",
+  "started_utc": "2026-10-12T20:21:01.738754+00:00",
+  "completed_utc": "2026-10-12T20:21:02.269550+00:00",
+  "latency_ms": 531.07,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "content-type": "application/json",
+    "content-length": "1590",
+    "date": "Mon, 12 Oct 2026 20:21:02 GMT"
+  },
+  "raw_path": "raw/hl_eth_book_1.bin",
+  "raw_sha256": "657b4f305cca66e68c607bbee8cd4401ef4d69255b6ef1cb118bba00f2040096",
+  "raw_bytes": 1590,
+  "truncated": false
+}

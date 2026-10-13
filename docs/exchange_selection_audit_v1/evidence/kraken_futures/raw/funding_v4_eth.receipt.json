@@ -1,0 +1,18 @@
+{
+  "source_id": "funding_v4_eth",
+  "url": "https://futures.kraken.com/derivatives/api/v4/historicalfundingrates?symbol=PF_ETHUSD",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:29:17.237208+00:00",
+  "response_utc": "2026-10-13T06:29:18.805499+00:00",
+  "latency_ms": 1568,
+  "http_status": 200,
+  "sha256": "defcdf8a41f0d3ed19bf5d93c537a8c04f368671c8d49d931e465bdc0428c6e3",
+  "bytes": 1027827,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:29:18 GMT",
+    "content-type": "application/json",
+    "server": "envoy"
+  },
+  "raw_path": "raw/funding_v4_eth.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

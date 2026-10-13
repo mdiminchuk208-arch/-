@@ -1,0 +1,16 @@
+{
+  "url": "https://api.international.coinbase.com/api/v1/instruments/BTC-PERP/book?depth=100",
+  "request_start_utc": "2026-10-13T06:28:53.221655+00:00",
+  "completion_utc": "2026-10-13T06:28:54.762304+00:00",
+  "latency_ms": 1540.8,
+  "http_status": 404,
+  "sha256": "6076fc1b1a6d1be76685339b9a9c2c0e90e94eafd2b886c0e733c5f7be452e16",
+  "bytes": 101,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:28:54 GMT",
+    "content-type": "application/json"
+  },
+  "error": "HTTP Error 404: Not Found",
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/book_btc1.bin"
+}

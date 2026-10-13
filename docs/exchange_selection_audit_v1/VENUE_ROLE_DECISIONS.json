@@ -1,0 +1,13 @@
+{
+  "LIVE_enabled": false,
+  "OOS_registered_or_started": false,
+  "PAPER_enabled": false,
+  "PRIMARY_EXECUTION_VENUE": "blofin",
+  "PRIMARY_RESEARCH_VALIDATION_VENUE": "bitget",
+  "REFERENCE_BENCHMARK_VENUE": "okx",
+  "SECONDARY_EXECUTION_VENUE": "kraken_futures",
+  "actual_account_eligibility_verified": false,
+  "decision": "EXCHANGE_SELECTION_AUDIT_FROZEN_PASS",
+  "historical_backtest_ready": false,
+  "trade_entry_allowed": false
+}

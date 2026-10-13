@@ -1,0 +1,175 @@
+{
+  "binance_futures": {
+    "api_specific": null,
+    "base_tier": null,
+    "discounts_separate": null,
+    "literal_quote": null,
+    "maker_rate": null,
+    "source_ids": [
+      "fee_page"
+    ],
+    "taker_rate": null,
+    "unresolved": "Official fee page raw body was captured, but no current base-tier USD\u24c8-M API maker/taker schedule was verified in server response. No remembered fee substituted."
+  },
+  "bitget": {
+    "api_specific": false,
+    "base_tier": "public current BTC/ETH USDT-FUTURES instrument parameters, treated as ordinary product comparison rate; actual account rate requires private verification",
+    "discounts_separate": {
+      "VIP1": {
+        "maker_rate": "0.00019",
+        "source_id": "bitget:bitget_vip_fee",
+        "taker_rate": "0.0006"
+      }
+    },
+    "literal_quote": "makerFeeRate: \"0.0002\"; takerFeeRate: \"0.0006\" (both product responses); official contract schema: \"makerFeeRate Maker rate\" and \"takerFeeRate Taker rate\"",
+    "maker_rate": "0.0002",
+    "source_ids": [
+      "bitget:BTCUSDT_instrument",
+      "bitget:ETHUSDT_instrument",
+      "bitget:bitget_detail_market"
+    ],
+    "taker_rate": "0.0006",
+    "unresolved": [
+      "Whether an individual API account receives these public instrument rates or a different account-specific rate; no authenticated fee query made."
+    ]
+  },
+  "blofin": {
+    "api_specific": false,
+    "base_tier": true,
+    "discounts_separate": "VIP tiers and app or marketing promotions excluded; VIP4/5 distinguish non-API trading volume thresholds, not Regular fee rate.",
+    "literal_quote": "Regular | 0.0200% | 0.0600% (Futures fee table); VIP 4: \u2265 200,000,000 (Non-API Trading \u2265 160,000,000)",
+    "maker_rate": "0.0002",
+    "source_ids": [
+      "bf_fee_page",
+      "bf_api_docs"
+    ],
+    "taker_rate": "0.0006",
+    "unresolved": "Account-specific VIP/rebates cannot be verified without private account; published Regular tier has no API exclusion."
+  },
+  "bybit": {
+    "api_specific": false,
+    "base_tier": "VIP 0 perpetual and futures table; current account-specific fee and region/product exceptions unverified",
+    "discounts_separate": "VIP1+ and Pro/Market Maker tiers shown separately on official fee page",
+    "literal_quote": "VIP 0 ... Perpetual & Futures Contracts Trading ... Taker Fee Rate 0.0550% Maker Fee Rate 0.0200%",
+    "maker_rate": "0.0002",
+    "source_ids": [
+      "bybit:bybit_docs_fee"
+    ],
+    "taker_rate": "0.00055",
+    "unresolved": [
+      "Public API fee query is inaccessible from cloud; authenticated account rate not checked."
+    ]
+  },
+  "coinbase_international": {
+    "api_specific": "official list fee tiers API is documented, but current public call returned 403 ip not allowed; portfolio actual schedule requires authenticated account",
+    "base_tier": null,
+    "discounts_separate": "regular vs liquidity-program and portfolio VIP/manual overrides documented, actual rates unverified",
+    "literal_quote": "GET /api/v1/fee-rate-tiers; observed response {\"title\":\"ip not allowed\",\"status\":403,\"error\":\"FORBIDDEN\"}",
+    "maker_rate": null,
+    "source_ids": [
+      "docs_fee_md",
+      "docs_portfolio_fees_md",
+      "fee_tiers"
+    ],
+    "taker_rate": null,
+    "unresolved": "No current ordinary API base tier numeric fee verified; do not fill from OpenAPI example numbers or marketing/app rates."
+  },
+  "deribit": {
+    "api_specific": "public instrument maker_commission/taker_commission agree with official Standard perpetual/futures schedule; no distinct bot API schedule found",
+    "base_tier": "Standard, criteria None",
+    "discounts_separate": "VIP1 through VIP7, including negative maker rebates at VIP4+; excluded from ordinary base comparison",
+    "literal_quote": "Standard | None | Perpetuals and futures | Fees in bps (maker/taker) | 1.5 / 3.5",
+    "maker_rate": "0.00015",
+    "source_ids": [
+      "usdc_instruments",
+      "docs_instruments_md",
+      "fees_article"
+    ],
+    "taker_rate": "0.00035",
+    "unresolved": "Actual account tier, broker/SMA fee or jurisdiction applicability require account confirmation; public standard used for ordinary comparison"
+  },
+  "gate": {
+    "api_specific": null,
+    "base_tier": null,
+    "discounts_separate": "Current public contract market fields are maker_fee_rate=-0.0001, taker_fee_rate=0.00075 for BTC/ETH. Authenticated GET /futures/{settle}/fee is documented as market trading fee query. Account/base-tier/API applicability unresolved.",
+    "literal_quote": "|maker_fee_rate|string|false|none|Maker fee rate, negative values indicate rebates| |taker_fee_rate|string|false|none|Taker fee rate|",
+    "maker_rate": null,
+    "source_ids": [
+      "gate_btc_contract",
+      "gate_eth_contract",
+      "gate_docs_zip",
+      "gate_fee_schedule"
+    ],
+    "taker_rate": null,
+    "unresolved": "Ordinary base-tier API fee not proven publicly; do not treat per-contract field or generic website fee as account API rate."
+  },
+  "hyperliquid": {
+    "api_specific": false,
+    "base_tier": "Tier 0 perpetual base rate",
+    "discounts_separate": "14-day volume tiers, referral, aligned quote assets and HIP-3 exceptions excluded; BTC/ETH are standard crypto perps",
+    "literal_quote": "| 0    |                         | 0.045%    | 0.015% |",
+    "maker_rate": "0.00015",
+    "source_ids": [
+      "hl_docs_fees"
+    ],
+    "taker_rate": "0.00045",
+    "unresolved": "No explicit statement that API trades have a distinct schedule; general perpetual schedule applied provisionally to API trading."
+  },
+  "kraken_futures": {
+    "api_specific": false,
+    "base_tier": "Futures Tier 1, $0+ spot qualifying volume or < $5M futures volume; applicability to an individual jurisdiction/account unverified.",
+    "discounts_separate": "Higher futures/spot volume tiers separately documented; not used.",
+    "literal_quote": "\"Tier 1 < $5M $0+ N/A 0.02% 0.05% 0.4% 0.8%\" under Futures Maker (%) and Futures Taker (%).",
+    "maker_rate": "0.0002",
+    "source_ids": [
+      "fees_page",
+      "docs_fee_schedule"
+    ],
+    "taker_rate": "0.0005",
+    "unresolved": "The public Tier 1 table is the ordinary Futures schedule and no separate API tariff was found. Actual account tier, jurisdiction eligibility and fee charged need account-specific verification. Deprecated fee schedule API warns actual charged fees require authenticated Spot GetTradeVolume."
+  },
+  "kucoin_futures": {
+    "api_specific": false,
+    "base_tier": true,
+    "discounts_separate": "Actual account tier/rebates require private fee-rate query; none applied.",
+    "literal_quote": "makerFeeRate: 2.0E-4; takerFeeRate: 6.0E-4 (public futures contract API/documentation, both contracts)",
+    "maker_rate": "0.0002",
+    "source_ids": [
+      "kc_btc_contract",
+      "kc_eth_contract",
+      "kc_docs_contract_en",
+      "kc_docs_actual_fee_futures"
+    ],
+    "taker_rate": "0.0006",
+    "unresolved": "Public instrument rates may differ from actual account fee; official private futures Get Actual Fee endpoint returns actual trading-pair rates."
+  },
+  "mexc": {
+    "api_specific": null,
+    "base_tier": null,
+    "discounts_separate": "MEXC fee webpage advertises selected 0-Fee Fest pairs and MX token fee deduction; these are promotional/app/account-dependent and not substituted for ordinary API fee.",
+    "literal_quote": "Public instrument fields: BTC_USDT and ETH_USDT makerFeeRate=0, takerFeeRate=0.0002. Official API docs: \"Gets the user's current trading fee rate\" via GET api/v1/private/account/tiered_fee_rate (Trade reading permission).",
+    "maker_rate": null,
+    "source_ids": [
+      "instrument_btc",
+      "instrument_eth",
+      "docs_api",
+      "fees_page"
+    ],
+    "taker_rate": null,
+    "unresolved": "No public official ordinary API-account fee schedule established; private account-specific tiered_fee_rate cannot be queried in this public-only audit. Public contract fee fields do not prove actual bot-account fee."
+  },
+  "okx": {
+    "api_specific": null,
+    "base_tier": "unresolved for applicable API SWAP account",
+    "discounts_separate": "The help article percentage is an example, not a verified current regular-user API fee. The captured en-us fee page SSR table labels its exposed fee tab Spot; not used for perpetuals. VIP/incentive/zero-fee rates excluded.",
+    "literal_quote": "GET /api/v5/account/trade-fee; Trader A (Maker fee: 0.02%; Taker fee: 0.05%)",
+    "maker_rate": null,
+    "source_ids": [
+      "fee_page_en",
+      "fee_help_en",
+      "docs_main#trading-account-rest-api-get-fee-rates"
+    ],
+    "taker_rate": null,
+    "unresolved": "No public current regular-user SWAP rate with verified API applicability; account trade-fee endpoint requires authentication and was not called."
+  }
+}

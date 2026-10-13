@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c4bcdac967bd4-DFW",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:30:31 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 625.0,
+  "method": "GET",
+  "raw_length": 2926,
+  "raw_path": "kc_btc_funding_valid.raw",
+  "raw_sha256": "70c165ad8e0287f439fc2989bbe9898f24a66eb00e53c5252688c231950d091d",
+  "request_start_utc": "2026-10-13T06:30:30.942062+00:00",
+  "retrieval_utc": "2026-10-13T06:30:31.566856+00:00",
+  "source_id": "kc_btc_funding_valid",
+  "status": 200,
+  "truncated": false,
+  "url": "https://api-futures.kucoin.com/api/v1/contract/funding-rates?symbol=XBTUSDTM&from=1790663430654&to=1791873030654"
+}

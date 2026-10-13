@@ -1,0 +1,676 @@
+{
+  "venue": "mexc",
+  "sources": {
+    "api_changelog": {
+      "source_id": "api_changelog",
+      "url": "https://mexcdevelop.github.io/apidocs/contract_v1_en/#update-log",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:12.936539+00:00",
+      "response_utc": "2026-10-13T06:28:14.315942+00:00",
+      "latency_ms": 1379,
+      "http_status": 200,
+      "sha256": "57ebc13fea788a1c568c8aeabfdf50acc0c9f5b5a882af4855837d53499940e3",
+      "bytes": 316221,
+      "headers": {
+        "server": "envoy",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 13 Oct 2026 06:28:13 GMT",
+        "content-length": "316221"
+      },
+      "raw_path": "raw/api_changelog.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "book_btc_1": {
+      "source_id": "book_btc_1",
+      "url": "https://contract.mexc.com/api/v1/contract/depth/BTC_USDT?limit=100",
+      "method": "GET",
+      "request_start_utc": "2026-10-12T20:22:06.251647+00:00",
+      "response_utc": "2026-10-12T20:22:06.896673+00:00",
+      "latency_ms": 645,
+      "http_status": 200,
+      "sha256": "0e68c32cec0c491e3cb50d75b31376a71c09e80d80908df2bc338999a99ee73b",
+      "bytes": 3515,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Mon, 12 Oct 2026 20:22:06 GMT",
+        "content-length": "3515",
+        "server": "envoy"
+      },
+      "raw_path": "raw/book_btc_1.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "book_btc_2": {
+      "source_id": "book_btc_2",
+      "url": "https://contract.mexc.com/api/v1/contract/depth/BTC_USDT?limit=100",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:07.948599+00:00",
+      "response_utc": "2026-10-13T06:28:09.130868+00:00",
+      "latency_ms": 1182,
+      "http_status": 200,
+      "sha256": "8838a1f43c56bffdc86698990904eeafb32aed0d28d9fe53d896f19a355e238f",
+      "bytes": 3388,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:09 GMT",
+        "content-length": "3388",
+        "server": "envoy"
+      },
+      "raw_path": "raw/book_btc_2.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "book_btc_3": {
+      "source_id": "book_btc_3",
+      "url": "https://contract.mexc.com/api/v1/contract/depth/BTC_USDT?limit=100",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:54.957106+00:00",
+      "response_utc": "2026-10-13T06:30:56.040072+00:00",
+      "latency_ms": 1082,
+      "http_status": 200,
+      "sha256": "32f8d2711d8c26d8d1a6a2cfcbf1fdb0ef6d578c6abfb902d8ccb534bbe8d3e2",
+      "bytes": 3481,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:30:55 GMT",
+        "content-length": "3481",
+        "server": "envoy"
+      },
+      "raw_path": "raw/book_btc_3.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "book_eth_1": {
+      "source_id": "book_eth_1",
+      "url": "https://contract.mexc.com/api/v1/contract/depth/ETH_USDT?limit=100",
+      "method": "GET",
+      "request_start_utc": "2026-10-12T20:22:06.897311+00:00",
+      "response_utc": "2026-10-12T20:22:07.410078+00:00",
+      "latency_ms": 512,
+      "http_status": 200,
+      "sha256": "f77b827ae07687208015353c36918977ae9128a19992657ebb82b5b6392d173e",
+      "bytes": 3414,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Mon, 12 Oct 2026 20:22:07 GMT",
+        "content-length": "3414",
+        "server": "envoy"
+      },
+      "raw_path": "raw/book_eth_1.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "book_eth_2": {
+      "source_id": "book_eth_2",
+      "url": "https://contract.mexc.com/api/v1/contract/depth/ETH_USDT?limit=100",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:09.131362+00:00",
+      "response_utc": "2026-10-13T06:28:10.159580+00:00",
+      "latency_ms": 1028,
+      "http_status": 200,
+      "sha256": "905dc9cc8eb9e628b812a57785a10c304245e6dadd68dd36ff5f0fe07f38610f",
+      "bytes": 3468,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:10 GMT",
+        "content-length": "3468",
+        "server": "envoy"
+      },
+      "raw_path": "raw/book_eth_2.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "book_eth_3": {
+      "source_id": "book_eth_3",
+      "url": "https://contract.mexc.com/api/v1/contract/depth/ETH_USDT?limit=100",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:56.040598+00:00",
+      "response_utc": "2026-10-13T06:30:56.342110+00:00",
+      "latency_ms": 301,
+      "http_status": 200,
+      "sha256": "52d2069045e43357b3ff8801ae3ce94579374b89dd13a16afe3a9e59bb619b54",
+      "bytes": 3449,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:30:56 GMT",
+        "content-length": "3449",
+        "server": "envoy"
+      },
+      "raw_path": "raw/book_eth_3.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "docs_api": {
+      "source_id": "docs_api",
+      "url": "https://mexcdevelop.github.io/apidocs/contract_v1_en/",
+      "method": "GET",
+      "request_start_utc": "2026-10-12T20:22:08.199045+00:00",
+      "response_utc": "2026-10-12T20:22:08.855283+00:00",
+      "latency_ms": 656,
+      "http_status": 200,
+      "sha256": "57ebc13fea788a1c568c8aeabfdf50acc0c9f5b5a882af4855837d53499940e3",
+      "bytes": 316221,
+      "headers": {
+        "server": "envoy",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Mon, 12 Oct 2026 20:22:08 GMT",
+        "content-length": "316221"
+      },
+      "raw_path": "raw/docs_api.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "fair_btc_old": {
+      "source_id": "fair_btc_old",
+      "url": "https://contract.mexc.com/api/v1/contract/kline/fair_price/BTC_USDT?interval=Min15&start=1728777600&end=1728864000",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:32:26.154068+00:00",
+      "response_utc": "2026-10-13T06:32:26.457092+00:00",
+      "latency_ms": 303,
+      "http_status": 200,
+      "sha256": "73955ef44781aa99ebc7ede373ea6a413470116f8263771d34a3027284b52084",
+      "bytes": 161,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:32:26 GMT",
+        "content-length": "161",
+        "server": "envoy"
+      },
+      "raw_path": "raw/fair_btc_old.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "fees_page": {
+      "source_id": "fees_page",
+      "url": "https://www.mexc.com/fee",
+      "method": "GET",
+      "request_start_utc": "2026-10-12T20:22:08.856043+00:00",
+      "response_utc": "2026-10-12T20:22:10.271595+00:00",
+      "latency_ms": 1415,
+      "http_status": 200,
+      "sha256": "5893a611590b981fe9e45dd9b041b050148c0fd97fc02a24e950dcc8aa3afc85",
+      "bytes": 305152,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-ratelimit-limit": "10",
+        "x-ratelimit-remaining": "9",
+        "x-ratelimit-reset": "0",
+        "date": "Mon, 12 Oct 2026 20:22:10 GMT",
+        "server": "envoy"
+      },
+      "raw_path": "raw/fees_page.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "funding_btc": {
+      "source_id": "funding_btc",
+      "url": "https://contract.mexc.com/api/v1/contract/funding_rate/history?symbol=BTC_USDT&page_num=1&page_size=5",
+      "method": "GET",
+      "request_start_utc": "2026-10-12T20:22:07.410614+00:00",
+      "response_utc": "2026-10-12T20:22:07.938636+00:00",
+      "latency_ms": 528,
+      "http_status": 200,
+      "sha256": "20625871ae9ba257b14994178da9d0672e06aa1c1c2cfc4ddcaa231a991556fc",
+      "bytes": 557,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Mon, 12 Oct 2026 20:22:07 GMT",
+        "content-length": "557",
+        "server": "envoy"
+      },
+      "raw_path": "raw/funding_btc.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "funding_btc_last": {
+      "source_id": "funding_btc_last",
+      "url": "https://contract.mexc.com/api/v1/contract/funding_rate/history?symbol=BTC_USDT&page_num=324&page_size=5",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:32:20.483208+00:00",
+      "response_utc": "2026-10-13T06:32:21.079062+00:00",
+      "latency_ms": 595,
+      "http_status": 200,
+      "sha256": "5ded07c1807fd2ae4b2d44b882e8ac39839dc8b5ddfbc2ae21862890edf9888d",
+      "bytes": 472,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:32:20 GMT",
+        "content-length": "472",
+        "server": "envoy"
+      },
+      "raw_path": "raw/funding_btc_last.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "funding_current_btc": {
+      "source_id": "funding_current_btc",
+      "url": "https://contract.mexc.com/api/v1/contract/funding_rate/BTC_USDT",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:29:45.335630+00:00",
+      "response_utc": "2026-10-13T06:29:46.425389+00:00",
+      "latency_ms": 1089,
+      "http_status": 200,
+      "sha256": "b7124ceb0fb39a15f0c104de7c33c1c171bda27a5b70338d8fa44f96b5fd84ca",
+      "bytes": 239,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:29:46 GMT",
+        "content-length": "239",
+        "server": "envoy"
+      },
+      "raw_path": "raw/funding_current_btc.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "funding_current_eth": {
+      "source_id": "funding_current_eth",
+      "url": "https://contract.mexc.com/api/v1/contract/funding_rate/ETH_USDT",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:29:46.425917+00:00",
+      "response_utc": "2026-10-13T06:29:47.615515+00:00",
+      "latency_ms": 1189,
+      "http_status": 200,
+      "sha256": "6d3c93e378eb32d04ee1d0693015cd01e1c5dad1aeb622284b210067497362d4",
+      "bytes": 238,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:29:47 GMT",
+        "content-length": "238",
+        "server": "envoy"
+      },
+      "raw_path": "raw/funding_current_eth.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "funding_eth": {
+      "source_id": "funding_eth",
+      "url": "https://contract.mexc.com/api/v1/contract/funding_rate/history?symbol=ETH_USDT&page_num=1&page_size=5",
+      "method": "GET",
+      "request_start_utc": "2026-10-12T20:22:07.939114+00:00",
+      "response_utc": "2026-10-12T20:22:08.198027+00:00",
+      "latency_ms": 258,
+      "http_status": 200,
+      "sha256": "3404cfa4a943fc05181fefd3ef169dd6cbe92cb8c4e814d7816df3d48cfeb4b4",
+      "bytes": 558,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Mon, 12 Oct 2026 20:22:08 GMT",
+        "content-length": "558",
+        "server": "envoy"
+      },
+      "raw_path": "raw/funding_eth.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "funding_eth_last": {
+      "source_id": "funding_eth_last",
+      "url": "https://contract.mexc.com/api/v1/contract/funding_rate/history?symbol=ETH_USDT&page_num=324&page_size=5",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:32:21.079560+00:00",
+      "response_utc": "2026-10-13T06:32:22.106238+00:00",
+      "latency_ms": 1026,
+      "http_status": 200,
+      "sha256": "49854d9ecffceb70d9a9dd752304323659d93ec52982309b9d4ad18ebff1644a",
+      "bytes": 471,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:32:21 GMT",
+        "content-length": "471",
+        "server": "envoy"
+      },
+      "raw_path": "raw/funding_eth_last.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "index_btc_old": {
+      "source_id": "index_btc_old",
+      "url": "https://contract.mexc.com/api/v1/contract/kline/index_price/BTC_USDT?interval=Min15&start=1728777600&end=1728864000",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:32:25.549018+00:00",
+      "response_utc": "2026-10-13T06:32:26.153338+00:00",
+      "latency_ms": 604,
+      "http_status": 200,
+      "sha256": "73955ef44781aa99ebc7ede373ea6a413470116f8263771d34a3027284b52084",
+      "bytes": 161,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:32:26 GMT",
+        "content-length": "161",
+        "server": "envoy"
+      },
+      "raw_path": "raw/index_btc_old.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "instrument_btc": {
+      "source_id": "instrument_btc",
+      "url": "https://contract.mexc.com/api/v1/contract/detail?symbol=BTC_USDT",
+      "method": "GET",
+      "request_start_utc": "2026-10-12T20:22:01.344040+00:00",
+      "response_utc": "2026-10-12T20:22:02.758465+00:00",
+      "latency_ms": 1414,
+      "http_status": 200,
+      "sha256": "efd99eefbeab68ddc31c7c99a65d28f5d8577fca9725d8dfefe1291878ac82b7",
+      "bytes": 2387,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Mon, 12 Oct 2026 20:22:02 GMT",
+        "content-length": "2387",
+        "server": "envoy"
+      },
+      "raw_path": "raw/instrument_btc.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "instrument_eth": {
+      "source_id": "instrument_eth",
+      "url": "https://contract.mexc.com/api/v1/contract/detail?symbol=ETH_USDT",
+      "method": "GET",
+      "request_start_utc": "2026-10-12T20:22:02.759112+00:00",
+      "response_utc": "2026-10-12T20:22:03.930996+00:00",
+      "latency_ms": 1171,
+      "http_status": 200,
+      "sha256": "bb3174273b5ae9d8da5c508d0aa76d18369de423fdbf504bc6ddbe5ecf96b02b",
+      "bytes": 2382,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Mon, 12 Oct 2026 20:22:03 GMT",
+        "content-length": "2382",
+        "server": "envoy"
+      },
+      "raw_path": "raw/instrument_eth.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "m15_btc_2025": {
+      "source_id": "m15_btc_2025",
+      "url": "https://contract.mexc.com/api/v1/contract/kline/BTC_USDT?interval=Min15&start=1760313600&end=1760400000",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:29:18.806902+00:00",
+      "response_utc": "2026-10-13T06:29:20.072231+00:00",
+      "latency_ms": 1265,
+      "http_status": 200,
+      "sha256": "73955ef44781aa99ebc7ede373ea6a413470116f8263771d34a3027284b52084",
+      "bytes": 161,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:29:19 GMT",
+        "content-length": "161",
+        "server": "envoy"
+      },
+      "raw_path": "raw/m15_btc_2025.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "m15_btc_2026_jan": {
+      "source_id": "m15_btc_2026_jan",
+      "url": "https://contract.mexc.com/api/v1/contract/kline/BTC_USDT?interval=Min15&start=1767225600&end=1767312000",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:32:57.049411+00:00",
+      "response_utc": "2026-10-13T06:32:58.038007+00:00",
+      "latency_ms": 988,
+      "http_status": 200,
+      "sha256": "691426266478139e8e3cdd4cc24ceb342cb1b0206e59a307c3f06a7b5fe8d538",
+      "bytes": 10003,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:32:57 GMT",
+        "content-length": "10003",
+        "server": "envoy"
+      },
+      "raw_path": "raw/m15_btc_2026_jan.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "m15_btc_2026_may": {
+      "source_id": "m15_btc_2026_may",
+      "url": "https://contract.mexc.com/api/v1/contract/kline/BTC_USDT?interval=Min15&start=1780272000&end=1780358400",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:25.709071+00:00",
+      "response_utc": "2026-10-13T06:30:26.219509+00:00",
+      "latency_ms": 510,
+      "http_status": 200,
+      "sha256": "518e9b2336f0b0e72b52fca424d4c4984e138732fde833012963a722e6cd2b73",
+      "bytes": 10178,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:30:26 GMT",
+        "content-length": "10178",
+        "server": "envoy"
+      },
+      "raw_path": "raw/m15_btc_2026_may.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "m15_btc_now": {
+      "source_id": "m15_btc_now",
+      "url": "https://contract.mexc.com/api/v1/contract/kline/BTC_USDT?interval=Min15&start=1791676800&end=1791763200",
+      "method": "GET",
+      "request_start_utc": "2026-10-12T20:22:03.931467+00:00",
+      "response_utc": "2026-10-12T20:22:04.834364+00:00",
+      "latency_ms": 902,
+      "http_status": 200,
+      "sha256": "950f36bb792286c5b5294595ee204ca5cc7ff09af7c236312a2aee66939dbf45",
+      "bytes": 9893,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Mon, 12 Oct 2026 20:22:04 GMT",
+        "content-length": "9893",
+        "server": "envoy"
+      },
+      "raw_path": "raw/m15_btc_now.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "m15_btc_old": {
+      "source_id": "m15_btc_old",
+      "url": "https://contract.mexc.com/api/v1/contract/kline/BTC_USDT?interval=Min15&start=1728777600&end=1728864000",
+      "method": "GET",
+      "request_start_utc": "2026-10-12T20:22:05.412378+00:00",
+      "response_utc": "2026-10-12T20:22:05.991464+00:00",
+      "latency_ms": 579,
+      "http_status": 200,
+      "sha256": "73955ef44781aa99ebc7ede373ea6a413470116f8263771d34a3027284b52084",
+      "bytes": 161,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Mon, 12 Oct 2026 20:22:05 GMT",
+        "content-length": "161",
+        "server": "envoy"
+      },
+      "raw_path": "raw/m15_btc_old.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "m15_eth_2025": {
+      "source_id": "m15_eth_2025",
+      "url": "https://contract.mexc.com/api/v1/contract/kline/ETH_USDT?interval=Min15&start=1760313600&end=1760400000",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:29:20.072681+00:00",
+      "response_utc": "2026-10-13T06:29:21.136388+00:00",
+      "latency_ms": 1063,
+      "http_status": 200,
+      "sha256": "73955ef44781aa99ebc7ede373ea6a413470116f8263771d34a3027284b52084",
+      "bytes": 161,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:29:21 GMT",
+        "content-length": "161",
+        "server": "envoy"
+      },
+      "raw_path": "raw/m15_eth_2025.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "m15_eth_2026_jan": {
+      "source_id": "m15_eth_2026_jan",
+      "url": "https://contract.mexc.com/api/v1/contract/kline/ETH_USDT?interval=Min15&start=1767225600&end=1767312000",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:32:58.038479+00:00",
+      "response_utc": "2026-10-13T06:32:58.361806+00:00",
+      "latency_ms": 323,
+      "http_status": 200,
+      "sha256": "a450fad8a435a9a8f9fd5f1cf24348b3acb01b3ab83de85a70765417ed58b57b",
+      "bytes": 9404,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:32:58 GMT",
+        "content-length": "9404",
+        "server": "envoy"
+      },
+      "raw_path": "raw/m15_eth_2026_jan.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "m15_eth_2026_may": {
+      "source_id": "m15_eth_2026_may",
+      "url": "https://contract.mexc.com/api/v1/contract/kline/ETH_USDT?interval=Min15&start=1780272000&end=1780358400",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:26.220051+00:00",
+      "response_utc": "2026-10-13T06:30:27.294141+00:00",
+      "latency_ms": 1074,
+      "http_status": 200,
+      "sha256": "37e994ae558f260feffe6a8829b01ddd8053789a1f7c614cb93799ae3ecd0aa3",
+      "bytes": 9755,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:30:27 GMT",
+        "content-length": "9755",
+        "server": "envoy"
+      },
+      "raw_path": "raw/m15_eth_2026_may.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "m15_eth_now": {
+      "source_id": "m15_eth_now",
+      "url": "https://contract.mexc.com/api/v1/contract/kline/ETH_USDT?interval=Min15&start=1791676800&end=1791763200",
+      "method": "GET",
+      "request_start_utc": "2026-10-12T20:22:04.834914+00:00",
+      "response_utc": "2026-10-12T20:22:05.411776+00:00",
+      "latency_ms": 576,
+      "http_status": 200,
+      "sha256": "7444a9e7c28435c31f45c24c9aaa063964a10ee631263d08c15fa24f47b23e5a",
+      "bytes": 9493,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Mon, 12 Oct 2026 20:22:05 GMT",
+        "content-length": "9493",
+        "server": "envoy"
+      },
+      "raw_path": "raw/m15_eth_now.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "m15_eth_old": {
+      "source_id": "m15_eth_old",
+      "url": "https://contract.mexc.com/api/v1/contract/kline/ETH_USDT?interval=Min15&start=1728777600&end=1728864000",
+      "method": "GET",
+      "request_start_utc": "2026-10-12T20:22:05.991914+00:00",
+      "response_utc": "2026-10-12T20:22:06.251198+00:00",
+      "latency_ms": 259,
+      "http_status": 200,
+      "sha256": "73955ef44781aa99ebc7ede373ea6a413470116f8263771d34a3027284b52084",
+      "bytes": 161,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Mon, 12 Oct 2026 20:22:06 GMT",
+        "content-length": "161",
+        "server": "envoy"
+      },
+      "raw_path": "raw/m15_eth_old.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "status_page": {
+      "source_id": "status_page",
+      "url": "https://www.mexc.com/support/announcements",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:30:24.077464+00:00",
+      "response_utc": "2026-10-13T06:30:25.708417+00:00",
+      "latency_ms": 1630,
+      "http_status": 404,
+      "sha256": "1848eddaf9f0b10b0ca5fcc05f9c6fb4ddf153679da9902d3c647deb7c4b220d",
+      "bytes": 154488,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-ratelimit-limit": "10",
+        "x-ratelimit-remaining": "9",
+        "x-ratelimit-reset": "0",
+        "date": "Tue, 13 Oct 2026 06:30:25 GMT",
+        "server": "envoy"
+      },
+      "raw_path": "raw/status_page.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "support_search_api_fee": {
+      "source_id": "support_search_api_fee",
+      "url": "https://www.mexc.com/support/search?keyword=API%20futures%20fee",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:29:21.137490+00:00",
+      "response_utc": "2026-10-13T06:29:23.119037+00:00",
+      "latency_ms": 1981,
+      "http_status": 200,
+      "sha256": "62cbfa73cc28b6c7977b4c76b3639b71a8f4391a65fb3f77482d187d08a0c3ad",
+      "bytes": 440722,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-ratelimit-limit": "10",
+        "x-ratelimit-remaining": "9",
+        "x-ratelimit-reset": "0",
+        "date": "Tue, 13 Oct 2026 06:29:22 GMT",
+        "server": "envoy"
+      },
+      "raw_path": "raw/support_search_api_fee.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "ticker_btc": {
+      "source_id": "ticker_btc",
+      "url": "https://contract.mexc.com/api/v1/contract/ticker?symbol=BTC_USDT",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:10.160150+00:00",
+      "response_utc": "2026-10-13T06:28:11.719409+00:00",
+      "latency_ms": 1559,
+      "http_status": 200,
+      "sha256": "192b02bee7fc50b0685c47029b221ccba76338b9b074e6bb50b05d7cd69c10ce",
+      "bytes": 581,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:11 GMT",
+        "content-length": "581",
+        "server": "envoy"
+      },
+      "raw_path": "raw/ticker_btc.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "ticker_eth": {
+      "source_id": "ticker_eth",
+      "url": "https://contract.mexc.com/api/v1/contract/ticker?symbol=ETH_USDT",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:28:11.720374+00:00",
+      "response_utc": "2026-10-13T06:28:12.936088+00:00",
+      "latency_ms": 1215,
+      "http_status": 200,
+      "sha256": "2e3eadc6dcce4b2baef5f33a444095ffd2ecbac17fd5cdbfdf2c466525e8c90f",
+      "bytes": 578,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:12 GMT",
+        "content-length": "578",
+        "server": "envoy"
+      },
+      "raw_path": "raw/ticker_eth.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "trades_btc": {
+      "source_id": "trades_btc",
+      "url": "https://contract.mexc.com/api/v1/contract/deals/BTC_USDT",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:29:47.616152+00:00",
+      "response_utc": "2026-10-13T06:29:47.992319+00:00",
+      "latency_ms": 376,
+      "http_status": 200,
+      "sha256": "4be6a1413032a0ddfcc3bd6fcf89e797f10322c860c9e0c416bf3dd9d0f76fa9",
+      "bytes": 9716,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:29:47 GMT",
+        "content-length": "9716",
+        "server": "envoy"
+      },
+      "raw_path": "raw/trades_btc.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    },
+    "trades_eth": {
+      "source_id": "trades_eth",
+      "url": "https://contract.mexc.com/api/v1/contract/deals/ETH_USDT",
+      "method": "GET",
+      "request_start_utc": "2026-10-13T06:29:47.992806+00:00",
+      "response_utc": "2026-10-13T06:29:48.290525+00:00",
+      "latency_ms": 297,
+      "http_status": 200,
+      "sha256": "011abda6b1dcc6292ebc692b34ab13344042fe2dbb077c2fd51d4ea5c6060871",
+      "bytes": 9655,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:29:48 GMT",
+        "content-length": "9655",
+        "server": "envoy"
+      },
+      "raw_path": "raw/trades_eth.body",
+      "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+    }
+  }
+}

@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <!-- v28047 -->
+
+
+  <title>Isolated margin availability  &ndash; Deribit Support</title>
+
+  
+
+  <meta name="description" content="By default, all accounts on Deribit use a segregated standard margin (S:SM) system. With this margin system, the entire balance of a..." /><meta property="og:image" content="https://support.deribit.com/hc/theming_assets/01K2MB5FFX5C69X0YHPP12ZQ83" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Deribit Support" />
+<meta property="og:title" content="Isolated margin availability " />
+<meta property="og:description" content="By default, all accounts on Deribit use a segregated standard margin (S:SM) system. With this margin system, the entire balance of a particular asset will be used as margin for positions in that as..." />
+<meta property="og:url" content="https://support.deribit.com/hc/en-us/articles/25944777072669-Isolated-margin-availability" />
+<link rel="canonical" href="https://support.deribit.com/hc/en-us/articles/25944777072669-Isolated-margin-availability">
+<link rel="alternate" hreflang="en-us" href="https://support.deribit.com/hc/en-us/articles/25944777072669-Isolated-margin-availability">
+<link rel="alternate" hreflang="es" href="https://support.deribit.com/hc/es/articles/25944777072669-Disponibilidad-de-margen-aislada">
+<link rel="alternate" hreflang="x-default" href="https://support.deribit.com/hc/en-us/articles/25944777072669-Isolated-margin-availability">
+<link rel="alternate" hreflang="zh-cn" href="https://support.deribit.com/hc/zh-cn/articles/25944777072669-%E9%80%90%E4%BB%93%E4%BF%9D%E8%AF%81%E9%87%91%E5%8F%AF%E7%94%A8%E6%80%A7">
+
+  <link rel="stylesheet" href="//static.zdassets.com/hc/assets/application-b925b7498ff4356827db8a6064e91e2b.css" media="all" id="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="/hc/theming_assets/2461712/360001528132/style.css?digest=39386468459549">
+
+  <link rel="icon" type="image/x-icon" href="/hc/theming_assets/01K2MB5ZEXEMW7VZHF7TAG534D">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VEF1HM9W2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8VEF1HM9W2');
+</script>
+
+
+  <!-- Start cookieyes banner -->
+<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/d8b4a0e56b2eb2d36e4cabd4/script.js"></script>
+<!-- End cookieyes banner -->
+<title>Deribit Support - Knowledge Base & Assistance.</title>
+<meta name="description" content="Explore FAQs, troubleshooting tips, and step-by-step articles on trading, deposits, withdrawals, security, and more. Your go-to knowledge base for seamless support.">
+
+<meta property="og:url" content="https://support.deribit.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Deribit Support - Knowledge Base & Assistance.">
+<meta property="og:description" content="Explore FAQs, troubleshooting tips, and step-by-step articles on trading, deposits, withdrawals, security, and more. Your go-to knowledge base for seamless support.">
+<meta property="og:image" content="https://insights.deribit.com/assets_drb/fea-shr-kb-2.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="deribit.com">
+<meta property="twitter:url" content="https://support.deribit.com/">
+<meta name="twitter:title" content="Deribit Support - Knowledge Base & Assistance.">
+<meta name="twitter:description" content="Explore FAQs, troubleshooting tips, and step-by-step articles on trading, deposits, withdrawals, security, and more. Your go-to knowledge base for seamless support.">
+<meta name="twitter:image" content="https://insights.deribit.com/assets_drb/fea-shr-kb-2.jpg">
+
+<meta property="og:url" content="https://support.deribit.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="Explore FAQs, troubleshooting tips, and step-by-step articles on trading, deposits, withdrawals, security, and more. Your go-to knowledge base for seamless support." />
+<meta property="og:image" content="https://insights.deribit.com/assets_drb/fea-shr-kb-2.jpg" />
+
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
+<script src="/hc/theming_assets/01JPM7NSWTXMW5P8DTTEDF9SQP"></script>
+<script src="/hc/theming_assets/01JPM7NPJK1WEKVT7MBDEQQX8P"></script>
+<script src="/hc/theming_assets/01JPM7NR2YWQMMEH9X3EGCAWST"></script>
+<script src="/hc/theming_assets/01JPM7NSD9QFAAZ2HQ1D46WAF4"></script>
+<script src="/hc/theming_assets/01JPM7NS3TJA84PCYZ1JKDQBZZ"></script>
+<script src="/hc/theming_assets/01JPM7NRSWVXFJVHC6BAQREG01"></script>
+<script src="/hc/theming_assets/01JPM7NRTBJ77W606DMFX3YAFE"></script>
+<script src="/hc/theming_assets/01JPM7NTK0WQ790E81WYB3377F"></script>
+<link href="/hc/theming_assets/01JPM7NTEH6P18TBQAK339TYWF" rel="stylesheet" type="text/css" />
+<link href="/hc/theming_assets/01JPM7NR0DT39BC3MWM43ADKZH" rel="stylesheet" type="text/css" />
+<link href="/hc/theming_assets/01JPM7NQK9NNGV3WF8EWGTFKME" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/androidstudio.min.css"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+<script type="text/javascript">window.Theme = Object.assign(window.Theme || {}, { assets: {}, locale: "en-us", signedIn: false });</script>
+<script type="text/javascript" src="/hc/theming_assets/01JPM7NTMXF19KVSDJT8PA1PQ9"></script>
+
+
+<link rel="stylesheet" href="/hc/theming_assets/01JPM7NSMK0ATZ4BS1NE47PF90">
+<link rel="stylesheet" href="/hc/theming_assets/01JPM7NRNRZVCTX17PKFXSBZ1D">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"><link rel="stylesheet" href="/hc/theming_assets/01JPM7NQAN503MDAZ49361ZH6Z"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+
+<style id="settings-styles">
+  
+  
+</style>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+
+
+
+
+
+
+  
+</head>
+<body class="">
+  
+  
+  
+
+  <a class="sr-only sr-only-focusable" tabindex="1" href="#page-container">
+  Skip to main content
+</a>
+
+<div class="layout flex flex-1 flex-column" x-data="Widgets.mobileMenu">
+
+  
+  <header class="header relative flex flex-column fixed-header" x-data="Widgets.header({ isFixed: true, isSticky: false })">
+    <nav class="navbar container flex-1 py-4 align-items-start"">
+
+      
+      <a href="/hc/en-us" class="navbar-brand mr-auto">
+        <img class="block img-fluid" id="logo" src="/hc/theming_assets/01K2MB5FFX5C69X0YHPP12ZQ83" alt="Deribit Support Help Center home page">
+          <span class="navbar-tagline mx-3 white-space-no-wrap lg:font-size-lg">
+              Deribit Support
+            </span>
+        </a>
+
+      
+      <button class="navbar-toggle ml-2 xl:hidden"
+        x-ref="toggle"
+        :aria-expanded="isOpen && 'true'"
+        @click="toggle"
+        @keydown.escape="toggle">
+        <span></span>
+        <span class="sr-only">Toggle navigation menu</span>
+      </button>
+
+      
+        <div class="backdrop xl:hidden"
+          x-cloak
+          x-show="isOpen"
+          @click="close"
+          x-transition:enter="transition-fast"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="transition-fast"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0">
+        </div>
+      
+
+      
+      <div class="nav menu menu-slide-in menu-links-right xl:flex xl:align-items-center xl:font-size-md xl:menu-expanded xl:justify-content-end"
+        x-cloak
+        x-show="isOpen"
+        :class="{ 'text-header': isOpen }"
+        x-transition:enter="transition-fast"
+        x-transition:enter-start="translate-x-full"
+        x-transition:enter-end="translate-x-0"
+        x-transition:leave="transition-fast"
+        x-transition:leave-start="translate-x-0 text-header"
+        x-transition:leave-end="translate-x-full text-header">
+
+        
+          <div class="search search-sm search-translucent flex blur text-base mx-5 mb-4 flex-first xl:flex-1 xl:ml-6 xl:mb-0" x-data="Widgets.search">
+              
+                <form role="search" class="form-field flex-1 mb-0" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get"><input type="hidden" name="utf8" value="&#x2713;" autocomplete="off" /><input type="search" name="query" id="query" placeholder="Search questions, articles, keywords" autocomplete="off" aria-label="Search questions, articles, keywords" /></form>
+              
+            <svg class="search-icon fill-current transition" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" aria-hidden="true">
+              <use xlink:href="#icon-search" />
+            </svg>
+          </div>
+        
+
+        
+          <a class="nav-link header-link" href="https://www.deribit.com/" x-data="link">
+
+Go to Deribit.com
+
+
+
+
+
+          </a>
+        
+          <a class="nav-link header-link" href="/hc/articles/27729880883357" x-data="link">
+            
+Contact
+
+
+
+
+
+          </a>
+        
+          <a class="nav-link header-link btn858" href="/hc/requests/new" x-data="link">
+
+Submit a request
+
+
+
+
+
+          </a>
+        
+          
+        
+
+        
+          <a class="nav-link btn34245" rel="nofollow" data-auth-action="signin" title="Opens a dialog" role="button" href="/hc/en-us/signin?return_to=https%3A%2F%2Fsupport.deribit.com%2Fhc%2Fen-us%2Farticles%2F25944777072669-Isolated-margin-availability">
+            Sign in
+          </a>
+        <label class="theme-toggle">
+  <input type="checkbox" id="themeSwitch" />
+  <span class="slider"></span>
+</label>
+        
+        
+  <div class="relative" x-data="Widgets.dropdown" @click.away="close">
+    <button class="nav-link not-a-button h-full flex items-center justify-center btn-lang" aria-haspopup="true" :aria-expanded="isExpanded" x-ref="toggle">
+      <!-- Globe Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+    </button>
+
+    <div class="z-dropdown mt-2 bg-white xl:absolute xl:border xl:border-radius xl:shadow-md xl:min-w-dropdown" x-ref="menu" x-cloak x-show="isExpanded">
+      <div class="py-2 font-size-sm text-left">
+        <!-- Include the current language as the first item -->
+        <span class="dropdown-item font-bold cursor-default" aria-current="true">
+          English (United States)
+        </span>
+      
+
+        <!-- List all alternative locales -->
+        
+          <a class="dropdown-item hover:font-bold" href="/hc/change_language/es?return_to=%2Fhc%2Fes%2Farticles%2F25944777072669-Disponibilidad-de-margen-aislada" dir="ltr" rel="nofollow">
+            Español
+          </a>
+        
+          <a class="dropdown-item hover:font-bold" href="/hc/change_language/zh-cn?return_to=%2Fhc%2Fzh-cn%2Farticles%2F25944777072669-%25E9%2580%2590%25E4%25BB%2593%25E4%25BF%259D%25E8%25AF%2581%25E9%2587%2591%25E5%258F%25AF%25E7%2594%25A8%25E6%2580%25A7" dir="ltr" rel="nofollow">
+            简体中文
+          </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    </nav>
+
+    
+    
+
+  </header> 
+
+
+
+
+
+  <main role="main">
+    <div class="container-brdc" id="page-container">
+  <div class="breadcrumbs-content"><ol class="breadcrumbs">
+  
+    <li title="Deribit Support">
+      
+        <a href="/hc/en-us">Deribit Support</a>
+      
+    </li>
+  
+    <li title="Exchange">
+      
+        <a href="/hc/en-us/categories/25937446683677-Exchange">Exchange</a>
+      
+    </li>
+  
+    <li title="Margin">
+      
+        <a href="/hc/en-us/sections/25944714381085-Margin">Margin</a>
+      
+    </li>
+  
+</ol>
+</div>
+  </div>
+<div class="container" id="page-container">
+  
+  <div class="row row-lg lg:h-screen" style="margin-top: -125px; padding-top: 125px;">
+
+    
+    <article class="lg:col lg:h-full lg:overflow-scroll" id="article-column" itemscope itemtype="http://schema.org/Article">
+
+      
+      <header class="mb-5">
+        <h1 class="font-size-4xl lg:font-size-5xl lg:mt-6" title="Isolated margin availability " itemprop="name">
+          Isolated margin availability 
+          
+        </h1>
+
+        
+        <div class="flex">
+          <div class="media">
+            
+            
+              <div class="media-body font-size-md align-self-center">
+                
+                <ul class="list-divider">
+                  
+                    <li class="text-gray-600 okt">
+                      
+                        Updated
+                        <time datetime="2025-03-18T12:03:57Z" title="2025-03-18T12:03:57Z" data-datetime="relative">March 18, 2025 12:03</time>
+                      
+                    </li>
+                  
+                  
+                </ul>
+              </div>
+            
+
+            
+            
+
+          </div>
+        </div>
+
+      </header>
+
+      
+      <section class="content" itemprop="articleBody">
+
+        
+        <div lang="en" dir="ltr" class="section top-level-topic zd-article section" xml:lang="en">
+<p>By default, all accounts on Deribit use a <span class="bold"><strong>segregated</strong></span> <span class="bold"><strong>standard margin</strong></span> (S:SM) system. With this margin system, the entire balance of a particular asset will be used as margin for positions in that asset, and each position shares that same pool of margin with each other. Note that this margin sharing does <span class="bold"><strong>not</strong></span> apply to long option positions unless <span class="bold"><strong>portfolio margin</strong></span> is enabled. Also note that the sharing of the same pool of margin in the standard margin system does not imply any offsetting of margin requirements. For offsetting margin requirements (e.g. a long call vs a short call), portfolio margin must be enabled.</p>
+<p>As an example of how the shared margin works, imagine an account with one long future and one short future in the same asset but with a different expiry date. Profits on one position can offset losses on the other automatically, without the need to manage how much margin is assigned to each position separately. As long as the margin balance of the account remains higher than the combined maintenance margin requirements, the positions can remain open.</p>
+<p>Some other platforms have a system called isolated margin. An isolated margin system would set aside a specific amount of margin that is only to be used for a single position. This position and the margin used for it would be isolated from the rest of the account and any other positions. On Deribit, the only way to assign a specific amount of margin to a specific position is to isolate that margin and position in its own subaccount.</p>
+<p>For traders who prefer to isolate positions, or even groups of positions, and assign specific portions of their capital to them, Deribit provides traders with the ability to <a class="link linktype-component linktextconsumer" href="/document/preview/12168#UUID-2b634036-5235-07c4-f6c9-a06a58629a90">create multiple subaccounts</a> within the same master account.</p>
+<div xmlns:xinfo="http://ns.expertinfo.se/cms/xmlns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:util="http://www.paligo.net/xsl1/functions/utility" class="glossary-definitions" style="display:none!important;"></div>
+</div>
+
+
+        
+        
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+
+      
+        <div
+          class="my-6"
+          data-element="article-navigation"
+          data-template="article-navigation"
+          data-next-title="Next"
+          data-previous-title="Previous">
+        </div>
+      
+      
+
+      
+      <footer class="row my-6 hidden">
+        
+        
+      </footer>
+
+      
+      
+
+      
+            <div
+              data-element="template"
+              data-template="call-to-action">
+            </div>
+          
+      <div class="page-footer"></div>
+
+    </article>
+
+    
+    <aside class="relative flex-first lg:col lg:h-full lg:overflow-y-scroll lg:mr-6 lg:max-w-12 lg:border-right lg:border-2 lg:border-right">
+
+      
+      
+          <div
+            data-element="navigation"
+            data-template="sidebar-navigation">
+          </div>
+        </aside>
+
+    
+ 
+    <aside class="md:col md:max-w-13" x-data="{ tableOfContents: false }">
+      <div :class="{ 'sticky top-0': tableOfContents }" @table-of-contents:render.camel="tableOfContents = $event.target.children.length > 0">
+
+        
+          <div class="hidden lg:block"
+            data-element="table-of-contents"
+            data-template="sidebar-table-of-contents"
+            data-selector=".content h2">
+          </div>
+        
+  <section class="related-articles">
+    
+      <h2 class="related-articles-title">Related articles</h2>
+    
+    <ul>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJ2gOr2YFzoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCB2gOL2YFzoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJGL2hjL2VuLXVzL2FydGljbGVzLzI1OTQ0Nzc3MjAzODY5LUNyb3NzLWNvbGxhdGVyYWwtc3BlY2lmaWNhdGlvbnMGOwhUOglyYW5raQY%3D--046d5bb3f99773c6ec4b23dcb769186d6639e5c7" rel="nofollow">Cross collateral specifications</a>
+        </li>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJ0nQ7%2BYFzoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCB2gOL2YFzoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSI9L2hjL2VuLXVzL2FydGljbGVzLzI1OTQ0ODExMzE3MTQ5LU1hcmdpbi10eXBlcy1hbmQtdXNhZ2UGOwhUOglyYW5raQc%3D--e81b56cc9829437c047845166d228f3f90ced220" rel="nofollow">Margin types and usage</a>
+        </li>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJ2uP7%2BYFzoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCB2gOL2YFzoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSI1L2hjL2VuLXVzL2FydGljbGVzLzI1OTQ0ODExMDg5NTY1LVdoYXQtaXMtbWFyZ2luBjsIVDoJcmFua2kI--69a1a6af863d28d4fa730fe284f8a50f0f72d871" rel="nofollow">What is margin?</a>
+        </li>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCB3d%2BruYFzoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCB2gOL2YFzoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSI3L2hjL2VuLXVzL2FydGljbGVzLzI1OTQ0NzU2MjQ3ODM3LVBvcnRmb2xpby1NYXJnaW4GOwhUOglyYW5raQk%3D--a5755294ac203995af7afe0f85ce325f6bf54e96" rel="nofollow">Portfolio Margin</a>
+        </li>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCB1hRr%2BYFzoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCB2gOL2YFzoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSI2L2hjL2VuLXVzL2FydGljbGVzLzI1OTQ0ODExNTI4NDc3LVN0YW5kYXJkLU1hcmdpbgY7CFQ6CXJhbmtpCg%3D%3D--ff9bab5eeeebfd8a2e90d0f8376a7bf7e69dd598" rel="nofollow">Standard Margin</a>
+        </li>
+      
+    </ul>
+  </section>
+
+
+          <div data-recent-articles></div> </div>
+    </aside>
+
+  </div> 
+</div> 
+
+<script type="text/javascript">document.documentElement.classList.add('article-page', 'article-' + 25944777072669)</script>
+
+
+
+  </main>
+
+  
+  
+  <div class="page-footer">
+    <script type="text/javascript">
+      ready(function() {
+        var footer = document.querySelectorAll('.page-footer');
+        if (footer.length) Util.renderTemplate(footer[0], 'footer');
+      })
+    </script>
+  </div>
+
+</div> 
+
+
+<script type="text/javascript" src="/hc/theming_assets/01JPM7NTX5EANH6K1J9SWTG4RY" defer></script>
+<script type="text/javascript" src="/hc/theming_assets/01JPM7NQDBY9REEB3S8N1RGRF4" defer></script>
+<script type="text/javascript" src="/hc/theming_assets/01JPM7NS70VFA9XR7VJRZNBJHM" defer></script>
+<script type="text/javascript" src="/hc/theming_assets/01JPM7NQ5FNH5E8MR89G89B8ST" defer></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/combine/npm/alpinejs@3.13.0/dist/cdn.min.js,npm/jquery@3.5.1/dist/jquery.min.js,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js,npm/plyr@~3.6.4/dist/plyr.polyfilled.min.js" defer>
+</script>
+<script type="text/javascript" src="/hc/theming_assets/01JPM7NTQT0A20822GRMG0QAQ5" defer></script><script type="text/javascript" src="/hc/theming_assets/01JPM7NPQH06YGHKATERCMAB2V" defer></script><script type="text/javascript" src="/hc/theming_assets/01JPM7NQNZMD6841YX755KEB0H" defer></script><script type="text/javascript" src="/hc/theming_assets/01JPM7NTC1GFCVBGX6WY0BVZ7G" defer></script>
+
+
+<script type="text/template" id="tmpl-footer">
+  <footer class="footer border-top">
+    <div class="container py-6 px-0">
+      <nav class="nav font-size-md justify-content-center">
+
+        
+          <div class="relative" x-data="Widgets.dropdown" @click.away="close">
+            <button class="nav-link not-a-button h-full" aria-haspopup="true" :aria-expanded="isExpanded" x-ref="toggle">
+              <svg class="svg-icon mr-1 fill-current hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <use xlink:href="#icon-locales" />
+              </svg>
+              English (United States)
+              <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" aria-hidden="true" :class="{ 'rotate-180': isExpanded }">
+                <use xlink:href="#icon-chevron-down" />
+              </svg>
+            </button>
+            <div class="z-dropdown absolute my-2 bg-white border border-radius shadow-md min-w-dropdown" x-ref="menu" x-cloak x-show="isExpanded">
+              <div class="py-2 font-size-sm text-left">
+                
+                  <a class="dropdown-item" href="/hc/change_language/es?return_to=%2Fhc%2Fes%2Farticles%2F25944777072669-Disponibilidad-de-margen-aislada" dir="ltr" rel="nofollow">
+                    Español
+                  </a>
+                
+                  <a class="dropdown-item" href="/hc/change_language/zh-cn?return_to=%2Fhc%2Fzh-cn%2Farticles%2F25944777072669-%25E9%2580%2590%25E4%25BB%2593%25E4%25BF%259D%25E8%25AF%2581%25E9%2587%2591%25E5%258F%25AF%25E7%2594%25A8%25E6%2580%25A7" dir="ltr" rel="nofollow">
+                    简体中文
+                  </a>
+                
+              </div>
+            </div>
+          </div>
+        
+          <a class="nav-link" href="https://x.com/DeribitOfficial" target="_blank">
+            <svg class="svg-icon fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14.095479,10.316482L22.286354,1h-1.940718l-7.115352,8.087682L7.551414,1H1l8.589488,12.231093L1,23h1.940717  l7.509372-8.542861L16.448587,23H23L14.095479,10.316482z M11.436522,13.338465l-0.871624-1.218704l-6.924311-9.68815h2.981339  l5.58978,7.82155l0.867949,1.218704l7.26506,10.166271h-2.981339L11.436522,13.338465z"/>
+            </svg>
+          </a>
+        
+          <a class="nav-link" href="https://www.linkedin.com/company/deribit/" target="_blank">
+            <svg class="svg-icon fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" aria-hidden="true">
+              <path d="M10.8 0A1.2 1.2 0 0112 1.2v9.6a1.2 1.2 0 01-1.2 1.2H1.2A1.2 1.2 0 010 10.8V1.2A1.2 1.2 0 011.2 0h9.6zM8.09 4.356a1.87 1.87 0 00-1.598.792l-.085.133h-.024v-.783H4.676v5.727h1.778V7.392c0-.747.142-1.47 1.068-1.47.913 0 .925.854.925 1.518v2.785h1.778V7.084l-.005-.325c-.05-1.38-.456-2.403-2.13-2.403zm-4.531.142h-1.78v5.727h1.78V4.498zm-.89-2.846a1.032 1.032 0 100 2.064 1.032 1.032 0 000-2.064z"></path>
+            </svg>
+          </a>
+        
+          <a class="nav-link" href="https://www.youtube.com/Deribit" target="_blank">
+            <svg class="svg-icon fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" aria-hidden="true">
+              <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path>
+            </svg>
+          </a>
+        
+          <a class="nav-link" href="https://www.deribit.com/" target="_blank">
+            <span class="sr-only">Zendesk </span>© 2026 Deribit
+          </a>
+        </nav>
+    </div>
+  </footer> 
+</script>
+
+
+      <script type="text/template" id="tmpl-popular-keywords">
+        <div class="flex flex-first flex-wrap mt-5 mb-4 justify-content-center"
+          x-data="Widgets.popularKeywords"
+          x-init="parseKeywords('<%= keywords %>')"><div class="flex flex-wrap align-items-center">
+            <template x-for="(keyword, index) in keywords" :key="index">
+              <div class="flex align-items-center m-1">
+                <a class="inline-block text-inherit badge bg-translucent blur text-inherit rounded px-3 py-2"
+                  :href="keyword.html_url"
+                  :title="keyword.title"
+                  x-text="keyword.title">
+                </a>
+              </div>
+            </template>
+          </div>
+        </div>
+      </script>
+    
+
+    <script type="text/template" id="tmpl-call-to-action">
+      <div class="cta relative mt-6 bg-center bg-cover" >
+        <div class="container relative z-10 py-6">
+          <div class="max-w-lg mx-auto text-center">
+            
+             
+ <h3 class="h2 md:font-size-3xl">
+               Can't find what you're looking for?</h3>
+            <p>Get in touch. Create a ticket.</p>
+
+
+
+
+
+            
+            
+            <a class="button button-primary button-lg my-4" href="/hc/en-us/requests/new">
+              
+                Submit a request
+              
+            </a>
+          </div>
+        </div>
+        <div class="absolute-top left-0 z-0 w-full h-full cta"></div>
+      </div>
+    </script>
+  
+<svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+  <symbol id="icon-search">
+    <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
+    <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
+  </symbol>
+  <symbol id="icon-lock">
+    <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1"/>
+    <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5"/>
+  </symbol>
+  <symbol id="icon-star">
+    <polygon points="213 325 81 405 116 255 0 154 153 141 213 0 273 141 426 154 310 255 345 405"></polygon>
+  </symbol>
+  <symbol id="icon-chevron-down">
+    <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
+  </symbol>
+  <symbol id="icon-agent">
+    <path fill="currentColor" d="M6 0C2.7 0 0 2.7 0 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm2.3 7H3.7c-.3 0-.4-.3-.3-.5C3.9 7.6 4.9 7 6 7s2.1.6 2.6 1.5c.1.2 0 .5-.3.5z"/>
+  </symbol>
+  </svg>
+
+<script type="text/javascript">
+  Theme.assets['notification'] = "/hc/theming_assets/01M39DM4YQZTAR5MRKA22YWRG0";
+  Theme.alternativeLocales = [{ name: "Español", url: "/hc/change_language/es?return_to=%2Fhc%2Fes%2Farticles%2F25944777072669-Disponibilidad-de-margen-aislada", direction: "ltr" },{ name: "简体中文", url: "/hc/change_language/zh-cn?return_to=%2Fhc%2Fzh-cn%2Farticles%2F25944777072669-%25E9%2580%2590%25E4%25BB%2593%25E4%25BF%259D%25E8%25AF%2581%25E9%2587%2591%25E5%258F%25AF%25E7%2594%25A8%25E6%2580%25A7", direction: "ltr" }];
+
+  </script>
+
+
+
+
+                          
+
+<template id="tmpl-sidebar-navigation">
+  <div class="border-top border-bottom my-5 lg:border-transparent" x-data="toggle({ isOpen: false })" @collapse:show.stop="open" @collapse:hide.stop="close">
+
+    
+    <h3 class="flex align-items-center justify-content-between my-4 font-size-lg cursor-pointer lg:hidden okit" data-toggle="collapse" data-target="#sidebar-navigation" aria-controls="sidebar-navigation" aria-expanded="false">
+      Categories
+      <svg class="fill-current pointer-events-none ml-3" :class="isOpen && 'rotate-180'" width="14px" viewBox="0 0 40 20" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20,19.5 C19.4,19.5 18.9,19.3 18.4,18.9 L1.4,4.9 C0.3,4 0.2,2.4 1.1,1.4 C2,0.3 3.6,0.2 4.6,1.1 L20,13.8 L35.5,1.1 C36.6,0.2 38.1,0.4 39,1.4 C39.9,2.5 39.7,4 38.7,4.9 L21.7,18.9 C21.1,19.3 20.5,19.5 20,19.5 Z" fill-rule="nonzero"></path>
+      </svg>
+    </h3>
+
+    <div class="collapse lg:expand lg:flex-column" id="sidebar-navigation">
+      <ul class="list-unstyled font-size-lg w-full">
+        <% categories.forEach(function(category, index) { %>
+          <li class="font-semibold" x-data="toggle({ isOpen: <%= !!category.isActive %> })" @collapse:show.stop="open" @collapse:hide.stop="close">
+
+            
+            <div class="flex justify-content-between align-items-center">
+              <a class="flex-1 py-3 category-lft-nav text-inherit" :class="{ 'text-inherit': !isOpen }" href="<%= category.html_url %>">
+                <%= category.name %>
+              </a>
+              <button class="p-2 ml-1 not-a-button border-radius transition cursor-pointer hover:bg-gray-200 hidden lg:block" :class="{ 'is-active': isOpen }" :aria-expanded="isOpen" data-toggle="collapse" data-target="#category-<%= category.id %>">
+                <svg class="text-inherit fill-current pointer-events-none" :class="{ 'rotate-180': isOpen }" width="12px" height="12px" viewBox="0 0 324 190" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M162,190 C156,190 150,187 146,183 L7,38 C-2,29 -2,15 7,7 C16,-2 30,-2 39,7 L162,135 L285,7 C293,-2 308,-2 317,7 C326,15 326,29 317,38 L178,183 C174,187 168,190 162,190 Z"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="hidden lg:block">
+              
+              <%= partial('partial-article-list-sections', {
+                id: 'category-' + category.id,
+                parentId: '#sidebar-navigation',
+                sections: category.sections,
+                activeCategoryId: activeCategoryId,
+                activeSectionId: activeSectionId,
+                activeArticleId: activeArticleId,
+                partial: partial
+              }) %>
+            </div>
+          </li>
+        <% }); %>
+      </ul>
+    </div>
+  </div>
+</template>
+
+
+<template id="tmpl-partial-article-list-sections">
+  <% if (sections.length) { %>
+    <ul class="list-none pl-3 mb-0 font-size-base collapse" id="<%= id %>" :class="{ 'is-visible': isOpen }" data-parent="<%= parentId %>">
+      <% sections.forEach(function(section) { %>
+        <li class="font-medium" x-data="toggle({ isOpen: <%= !!section.isActive %> })" @collapse:show.stop="open" @collapse:hide.stop="close">
+
+          
+          <div class="flex justify-content-between align-items-center okok">
+            <a class="flex-1 py-2 text-inherit font-semibold" :class="{ 'text-inherit': !isOpen }" href="<%= section.html_url %>">
+              <%= section.name %>
+            </a>
+            <button class="p-2 ml-1 not-a-button border-radius transition cursor-pointer hover:bg-gray-200" :class="{ 'is-active': isOpen }" :aria-expanded="isOpen" data-toggle="collapse" data-target="#section-<%= section.id %>">
+              <svg class="text-inherit fill-current pointer-events-none" :class="{ 'rotate-180': isOpen }" width="12px" height="12px" viewBox="0 0 324 190" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M162,190 C156,190 150,187 146,183 L7,38 C-2,29 -2,15 7,7 C16,-2 30,-2 39,7 L162,135 L285,7 C293,-2 308,-2 317,7 C326,15 326,29 317,38 L178,183 C174,187 168,190 162,190 Z"></path>
+              </svg>
+            </button>
+          </div>
+
+          
+          <%= partial('partial-article-list-sections', {
+            id: 'section-' + section.id,
+            parentId: '#' + id,
+            sections: section.sections,
+            activeCategoryId: activeCategoryId,
+            activeSectionId: activeSectionId,
+            activeArticleId: activeArticleId,
+            partial: partial
+          }) %>
+
+          
+          <% if (section.articles.length) { %>
+            <ul class="list-none font-size-md pl-0 mb-0 collapse" :class="{ 'is-visible': isOpen }" id="section-<%= section.id %>" data-parent="#<%= id %>">
+              <% section.articles.forEach(function(article) { %>
+                <li>
+                  <a class="block px-3 py-2 text-inherit border-radius transition<% if (article.isActive) { %> bg-gray-100<% } %>" href="<%= article.html_url %>">
+                    <%= article.title %>
+                  </a>
+                </li>
+              <% }); %>
+            </ul>
+          <% } %>
+
+        </li>
+      <% }); %>
+    </ul>
+  <% } %>
+</template>
+                  
+
+
+<template id="tmpl-partial-article-list-sections">
+  <% if (sections.length) { %>
+    <ul class="list-none pl-3 mb-0 font-size-base collapse" id="<%= id %>" :class="{ 'is-visible': isOpen }" data-parent="<%= parentId %>">
+      <% sections.forEach(function(section) { %>
+        <li class="font-medium" x-data="toggle({ isOpen: <%= !!section.isActive %> })" @collapse:show.stop="open" @collapse:hide.stop="close">
+
+          
+          <div class="flex justify-content-between align-items-center">
+            <a class="flex-1 py-2 text-inherit font-semibold" :class="{ 'text-inherit': !isOpen }" href="<%= section.html_url %>">
+              <%= section.name %>
+            </a>
+            <button class="p-2 ml-1 not-a-button border-radius transition cursor-pointer hover:bg-gray-200" :class="{ 'is-active': isOpen }" :aria-expanded="isOpen" data-toggle="collapse" data-target="#section-<%= section.id %>">
+              <svg class="text-inherit fill-current pointer-events-none" :class="{ 'rotate-180': isOpen }" width="12px" height="12px" viewBox="0 0 324 190" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M162,190 C156,190 150,187 146,183 L7,38 C-2,29 -2,15 7,7 C16,-2 30,-2 39,7 L162,135 L285,7 C293,-2 308,-2 317,7 C326,15 326,29 317,38 L178,183 C174,187 168,190 162,190 Z"></path>
+              </svg>
+            </button>
+          </div>
+
+          
+          <%= partial('partial-article-list-sections', {
+            id: 'section-' + section.id,
+            parentId: '#' + id,
+            sections: section.sections,
+            activeCategoryId: activeCategoryId,
+            activeSectionId: activeSectionId,
+            activeArticleId: activeArticleId,
+            partial: partial
+          }) %>
+
+          
+          <% if (section.articles.length) { %>
+            <ul class="list-none font-size-md pl-0 mb-0 collapse" :class="{ 'is-visible': isOpen }" id="section-<%= section.id %>" data-parent="#<%= id %>">
+              <% section.articles.forEach(function(article) { %>
+                <li>
+                  <a class="block px-3 py-2 text-inherit border-radius transition<% if (article.isActive) { %> bg-gray-100<% } %>" href="<%= article.html_url %>">
+                    <%= article.title %>
+                  </a>
+                </li>
+              <% }); %>
+            </ul>
+          <% } %>
+
+        </li>
+      <% }); %>
+    </ul>
+  <% } %>
+</template>
+
+  <template id="tmpl-article-navigation">
+    <% if (previousArticle || nextArticle) { %>
+      <div class="border-top border-bottom my-6 overflow-hidden">
+        <div class="row">
+          <% if (previousArticle) { %>
+            <div class="col pb-5 border-right">
+              <h4 class="mb-2 font-medium">
+                Previous
+              </h4>
+              <a class="text-gray-700 link-stretched" href="<%= previousArticle.html_url %>">
+                <%= previousArticle.title %>
+              </a>
+            </div>
+          <% } %>
+          <% if (nextArticle) { %>
+            <div class="col pb-5 text-right<% if (!previousArticle) { %> sm:col-offset-6<% } %>">
+              <h4 class="mb-2 font-medium">
+                Next
+              </h4>
+              <a class="text-gray-700 link-stretched" href="<%= nextArticle.html_url %>">
+                <%= nextArticle.title %>
+              </a>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    <% } %>
+  </template>
+
+        
+        <script type="text/template" id="tmpl-sidebar-table-of-contents">
+          <% if (allItems.length > 1) { %>
+            <div class="sticky top-0 pt-4 -mt-4"
+              data-spy="scroll"
+              data-scroll-element="#article-column"
+              data-offset="20px">
+              <h3 class="lg:block py-3 lg:uppercase lg:font-bold lg:text-gray-600 lg:tracking-wide lg:font-size-md lg:mt-6 lg:mb-1">
+                
+                  In this article
+                
+              </h3>
+              <ol class="nav nav-pills flex-column font-size-md">
+                <% allItems.forEach(function(item) { %>
+                  <li class="nav-item">
+                    <a class="nav-link border-radius" href="<%= item.html_url %>">
+                      <%= item.name %>
+                    </a>
+                  </li>
+                <% }); %>
+              </ol>
+            </div>
+          <% } %>
+        </script>
+      
+    
+  
+  
+
+
+
+
+
+<script type="text/template" id="tmpl-article-list">
+  <% var maxSections =  5 %>
+  <div class="border-top border-bottom lg:border-transparent my-5 lg:my-4" x-data="toggle({ isOpen: false })" @collapse:show.stop="open" @collapse:hide.stop="close">
+
+    
+    <h3 class="flex align-items-center justify-content-between my-2 font-size-lg lg:hidden">
+      Toggle navigation menu
+      <button class="not-a-button p-2 bg-gray-100 border-radius cursor-pointer hover:bg-gray-200 lg:hidden" :aria-expanded="isOpen" data-toggle="collapse" data-target="#sidebar-navigation" aria-controls="sidebar-navigation">
+        <svg class="svg-icon pointer-events-none" viewBox="0 0 15 26" xmlns="http://www.w3.org/2000/svg" :class="{ 'rotate-90': isOpen }">
+          <polygon fill-rule="nonzero" points="11.5799999 13 0.2928932 24.2928932 1.7071068 25.7071068 14.4142136 13 1.7071068 0.29289322 0.2928932 1.70710678"></polygon>
+        </svg>
+      </button>
+    </h3>
+
+    <div class="collapse lg:expand lg:flex-column" id="sidebar-navigation">
+      <% categories.forEach(function(category, index) { %>
+        <% if (category.id === activeCategoryId) { %>
+          <%= partial('partial-article-list-sections', {
+            id: 'category-' + category.id,
+            parent: category,
+            sections: category.sections,
+            activeCategoryId: activeCategoryId,
+            activeSectionId: activeSectionId,
+            activeArticleId: activeArticleId,
+            maxSections: maxSections,
+            partial: partial
+          }) %>
+        <% } %>
+      <% }) %>
+    </div>
+  </div>
+</script>
+
+
+<script type="text/template" id="tmpl-section-list">
+  <% var maxSections =  5 %>
+  <div class="border-top border-bottom lg:border-transparent my-5 lg:my-4" x-data="toggle({ isOpen: false })" @collapse:show.stop="open" @collapse:hide.stop="close">
+
+    
+    <h3 class="flex align-items-center justify-content-between my-2 font-size-lg lg:hidden">
+      Toggle navigation menu
+      <button class="not-a-button p-2 bg-gray-100 border-radius cursor-pointer hover:bg-gray-200 lg:hidden" :aria-expanded="isOpen" data-toggle="collapse" data-target="#sidebar-navigation" aria-controls="sidebar-navigation">
+        <svg class="svg-icon pointer-events-none" viewBox="0 0 15 26" xmlns="http://www.w3.org/2000/svg" :class="{ 'rotate-90': isOpen }">
+          <polygon fill-rule="nonzero" points="11.5799999 13 0.2928932 24.2928932 1.7071068 25.7071068 14.4142136 13 1.7071068 0.29289322 0.2928932 1.70710678"></polygon>
+        </svg>
+      </button>
+    </h3>
+
+    <div class="collapse lg:expand lg:flex-column" id="sidebar-navigation">
+      <ul class="list-unstyled m-0 py-0">
+        <% categories.forEach(function(category, index) { %>
+          <li x-data="toggle({ isOpen: <%= category.id == activeCategoryId %> })" @collapse:show.stop="open" @collapse:hide.stop="close">
+            <h3 class="flex justify-content-between align-items-center my-0 hidden lg:block py-2 lg:uppercase lg:font-bold lg:text-gray-600 lg:tracking-wide lg:font-size-md lg:mt-5 lg:mb-1">
+              <a class="flex-1 text-inherit" href="<%= category.html_url %>">
+                <%= category.name %>
+              </a>
+              <button class="not-a-button p-2 bg-gray-100 border-radius cursor-pointer hover:bg-gray-200 lg:hidden" :aria-expanded="isOpen" data-toggle="collapse" data-target="#category-<%= category.id %>">
+                <svg class="svg-icon pointer-events-none" viewBox="0 0 15 26" xmlns="http://www.w3.org/2000/svg" :class="{ 'rotate-90': isOpen }">
+                  <polygon fill-rule="nonzero" points="11.5799999 13 0.2928932 24.2928932 1.7071068 25.7071068 14.4142136 13 1.7071068 0.29289322 0.2928932 1.70710678"></polygon>
+                </svg>
+              </button>
+            </h3>
+            <%= partial('partial-section-list-sections', {
+              id: 'category-' + category.id,
+              parent: category,
+              sections: category.sections,
+              activeCategoryId: activeCategoryId,
+              activeSectionId: activeSectionId,
+              activeArticleId: activeArticleId,
+              maxSections: maxSections,
+              partial: partial
+            }) %>
+          </li>
+        <% }); %>
+      </ul>
+    </div>
+  </div>
+</script>
+
+
+<script type="text/template" id="tmpl-category-list">
+  <div class="border-top border-bottom lg:border-transparent my-5 lg:my-4" x-data="toggle({ isOpen: false })" @collapse:show.stop="open" @collapse:hide.stop="close">
+
+    
+    <h3 class="flex align-items-center justify-content-between my-2 font-size-lg lg:hidden">
+      Toggle navigation menu
+      <button class="not-a-button p-2 bg-gray-100 border-radius cursor-pointer hover:bg-gray-200 lg:hidden" :aria-expanded="isOpen" data-toggle="collapse" data-target="#sidebar-navigation" aria-controls="sidebar-navigation">
+        <svg class="svg-icon pointer-events-none" viewBox="0 0 15 26" xmlns="http://www.w3.org/2000/svg" :class="{ 'rotate-90': isOpen }">
+          <polygon fill-rule="nonzero" points="11.5799999 13 0.2928932 24.2928932 1.7071068 25.7071068 14.4142136 13 1.7071068 0.29289322 0.2928932 1.70710678"></polygon>
+        </svg>
+      </button>
+    </h3>
+
+    <div class="collapse lg:expand lg:flex-column" id="sidebar-navigation">
+      <h3 class="hidden lg:block py-2 lg:uppercase lg:font-bold lg:text-gray-600 lg:tracking-wide lg:font-size-md lg:mb-1">
+        <a class="text-inherit" href="/hc/en-us">
+          Categories
+        </a>
+      </h3>
+      <ul class="list-unstyled">
+        <% categories.forEach(function(category) { %>
+          <li class="lg:font-size-md">
+            <a class="block py-2 text-inherit<% if (category.id == activeCategoryId) { %> text-primary font-semibold<% } %>" href="<%= category.html_url %>">
+              <%= category.name %>
+            </a>
+          </li>
+        <% }); %>
+      </ul>
+    </div>
+  </div>
+</script>
+
+
+
+
+<script type="text/template" id="tmpl-partial-article-list-sections">
+  <% var isSubsection = parent.hasOwnProperty('parent_section_id'); %>
+  <% if (sections.length) { %>
+    <ul class="list-<% if (isSubsection) { %>none mb-2 border-left border-left-4 -ml-1 <% } else { %>unstyled mb-0<% } %> collapse lg:expand lg:flex-column" id="<%= id %>" :class="{ 'is-visible': isOpen }">
+      <% sections.forEach(function(section) { %>
+        <li class="lg:font-size-md" x-data="toggle({ isOpen: <%= section.id == activeSectionId %> })" @collapse:show.stop="open" @collapse:hide.stop="close">
+
+          
+          <% if (isSubsection) { %>
+            <div class="lg:font-size-md">
+              <a class="block py-2 text-inherit<% if (section.id == activeSectionId) { %> text-primary font-semibold<% } %>" href="<%= section.html_url %>">
+                <%= section.name %>
+              </a>
+            </div>
+          <% } else { %>
+            <div class="flex justify-content-between align-items-center">
+              <h3 class="flex-1 py-2 my-2 <% if (isSubsection) { %>font-size-base<% } else { %>font-size-lg lg:uppercase lg:font-bold lg:text-gray-600 lg:tracking-wide lg:font-size-md lg:mt-5 lg:mb-1<% } %>">
+                <a class="text-inherit" href="<%= section.html_url %>">
+                  <%= section.name %>
+                </a>
+              </h3>
+              <button class="not-a-button p-2 bg-gray-100 border-radius cursor-pointer hover:bg-gray-200 lg:hidden" :aria-expanded="isOpen" data-toggle="collapse" data-target="#section-<%= section.id %>">
+                <svg class="svg-icon pointer-events-none" viewBox="0 0 15 26" xmlns="http://www.w3.org/2000/svg" :class="{ 'rotate-90': isOpen }">
+                  <polygon fill-rule="nonzero" points="11.5799999 13 0.2928932 24.2928932 1.7071068 25.7071068 14.4142136 13 1.7071068 0.29289322 0.2928932 1.70710678"></polygon>
+                </svg>
+              </button>
+            </div>
+          <% } %>
+
+          
+          <%= partial('partial-article-list-sections', {
+            id: 'section-' + section.id,
+            parent: section,
+            sections: section.sections,
+            activeCategoryId: activeCategoryId,
+            activeSectionId: activeSectionId,
+            activeArticleId: activeArticleId,
+            maxSections: maxSections,
+            partial: partial
+          }) %>
+
+          
+          <% if (section.articles.length && !isSubsection) { %>
+            <ul class="list-unstyled collapse lg:expand lg:flex-column mb-0" :class="{ 'is-visible': isOpen }" id="section-<%= section.id %>" data-parent="#<%= id %>">
+              <% section.articles.forEach(function(article) { %>
+                <li class="lg:font-size-md">
+                  <a class="block py-2 text-inherit<% if (article.id === activeArticleId) { %> text-primary font-semibold<% } %>" href="<%= article.html_url %>">
+                    <%= article.title %>
+                  </a>
+                </li>
+              <% }); %>
+            </ul>
+          <% } %>
+
+        </li>
+      <% }); %>
+    </ul>
+  <% } %>
+</script>
+
+
+<script type="text/template" id="tmpl-partial-section-list-sections">
+  <% var isSubsection = parent.hasOwnProperty('parent_section_id'); %>
+  <% if (sections.length) { %>
+    <ul class="list-unstyled collapse lg:expand lg:flex-column<% if (isSubsection) { %> pl-4 mb-0<% } %>" id="<%= id %>" :class="{ 'is-visible': isOpen }">
+      <% sections.slice(0, maxSections).forEach(function(section) { %>
+        <li class="lg:font-size-md" x-data="toggle({ isOpen: <%= section.id == activeSectionId %> })" @collapse:show.stop="open" @collapse:hide.stop="close">
+          <a class="block py-2 text-inherit<% if (section.id == activeSectionId) { %> text-primary font-semibold<% } %>" href="<%= section.html_url %>">
+            <%= section.name %>
+          </a>
+          <%= partial('partial-section-list-sections', {
+            id: 'section-' + section.id,
+            parent: section,
+            sections: section.sections,
+            activeCategoryId: activeCategoryId,
+            activeSectionId: activeSectionId,
+            activeArticleId: activeArticleId,
+            maxSections: maxSections,
+            partial: partial
+          }) %>
+        </li>
+      <% }); %>
+      <% if (sections.length > maxSections) { %>
+        <li>
+          <a class="block py-2 text-inherit" href="<%= parent.html_url %>">
+            See more
+          </a>
+        </li>
+      <% } %>
+    </ul>
+  <% } %>
+</script>
+        
+        <template id="tmpl-content-blocks">
+  <% var getColumnClasses = function(columnNumber) {
+    var classNames = 'col-12';
+    if (columnNumber >= 2) classNames += ' md:col-4';
+    if (columnNumber >= 3) classNames += ' lg:col-4';
+    if (columnNumber >= 4) classNames += ' xl:col-3';
+    return classNames;
+  } %>
+  <div class="container text-<%= alignment %>">
+      <h2 class="flex align-items-baseline mt-6" x-data="{ src: Theme.assets['content-blocks-heading'] }">
+        <template x-if="src">
+          <img class="svg-icon mr-2" src="/hc/theming_assets/01JPM7NQDK9GNQ3E7NVVMBY8JZ" alt="" aria-hidden="true" :src="src" />
+        </template>
+          Categories
+        </h2>
+    <ul class="list-unstyled row row-sm">
+      <% (categories.length > 1 ? categories : sections).forEach(function(block, index) { %>
+        <li class="mb-5 text-<%= alignment %> <%= getColumnClasses(numberColumns) %>">
+          <div class="card p-5 h-full bg-white transition hover:border-<%= color %>">
+            <div class="media align-items-center text-<%= alignment %><% if (alignment === 'center') { %> flex-column<% } %>">
+              <% if (imageHeight) { %>
+                <a class="flex p-5 mx-3 align-items-center justify-content-center link-stretched circle transition <% if (alignment === 'left' ) { %>md:mr-5<% } else { %>align-self-center<% } %> bg-gray-100 hover:bg-gray-200" href="<%= block.html_url %>">
+                  <img class="svg-icon fill-current font-size-3xl bottom-0" alt="" src="<%= images[index] || images[0] %>" style="height: <%= imageHeight %>; width: auto;" />
+                </a>
+              <% } %>
+              <div class="media-body">
+                <% if (block.name) { %>
+                  <h2 class="mt-4 mb-2">
+                    <% if (!imageHeight) { %>
+                      <a class="text-inherit hover:text-inherit hover:underline" href="<%= block.html_url %>">
+                        <%= block.name %>
+                      </a>
+                    <% } else { %>
+                      <%= block.name %>
+                    <% } %>
+                  </h2>
+                <% } %>
+                <% if (block.description) { %>
+                  <p class="font-size-lg text-gray-600">
+                    <%= block.description %>
+                  </p>
+               <% } %>
+              </div>
+            </div>
+          </div>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</template>
+
+
+  <!-- / -->
+
+  
+  <script src="//static.zdassets.com/hc/assets/en-us.a5709607bfec18187ffb.js"></script>
+  
+
+  <script type="text/javascript">
+  /*
+
+    Greetings sourcecode lurker!
+
+    This is for internal Zendesk and legacy usage,
+    we don't support or guarantee any of these values
+    so please don't build stuff on top of them.
+
+  */
+
+  HelpCenter = {};
+  HelpCenter.account = {"subdomain":"deribit","environment":"production","name":"Deribit Customer Care"};
+  HelpCenter.user = {"identifier":"da39a3ee5e6b4b0d3255bfef95601890afd80709","email":null,"name":"","role":"anonymous","avatar_url":"https://assets.zendesk.com/hc/assets/default_avatar.png","is_admin":false,"external_id":null,"organizations":[],"groups":[]};
+  HelpCenter.internal = {"asset_url":"//static.zdassets.com/hc/assets/","web_widget_asset_composer_url":"https://static.zdassets.com/ekr/snippet.js","current_session":{"locale":"en-us","csrf_token":null,"shared_csrf_token":null},"usage_tracking":{"event":"article_viewed","data":"BAh7CDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoPYXJ0aWNsZV9pZGwrCB2gOL2YFzoKX21ldGF7DDoPYWNjb3VudF9pZGkDEJAlOhNoZWxwX2NlbnRlcl9pZGwrCA9/sdFTADoNYnJhbmRfaWRsKwhEYcPRUwA6DHVzZXJfaWQwOhN1c2VyX3JvbGVfbmFtZUkiDkFOT05ZTU9VUwY7BlQ7AEkiCmVuLXVzBjsGVDoaYW5vbnltb3VzX3RyYWNraW5nX2lkMA==--29ba1d4d7e43be7280641b1afd80e6b32ee9351a","url":"https://support.deribit.com/hc/activity"},"current_record_id":"25944777072669","current_record_url":"/hc/en-us/articles/25944777072669-Isolated-margin-availability","current_record_title":"Isolated margin availability ","current_text_direction":"ltr","current_brand_id":360001528132,"current_brand_name":"Deribit Customer Care","current_brand_url":"https://deribit.zendesk.com","current_brand_active":true,"current_path":"/hc/en-us/articles/25944777072669-Isolated-margin-availability","show_autocomplete_breadcrumbs":true,"user_info_changing_enabled":false,"has_user_profiles_enabled":false,"has_end_user_attachments":true,"user_aliases_enabled":false,"has_anonymous_kb_voting":true,"has_multi_language_help_center":true,"show_at_mentions":false,"embeddables_config":{"embeddables_web_widget":false,"embeddables_help_center_auth_enabled":false,"embeddables_connect_ipms":false},"answer_bot_subdomain":"static","gather_plan_state":"subscribed","has_article_verification":true,"has_gather":true,"has_ckeditor":false,"has_community_enabled":false,"has_community_badges":true,"has_community_post_content_tagging":false,"has_gather_content_tags":true,"has_guide_content_tags":true,"has_user_segments":true,"has_answer_bot_web_form_enabled":false,"has_garden_modals":false,"has_auth_email_less_sso":false,"theming_cookie_key":"hc-da39a3ee5e6b4b0d3255bfef95601890afd80709-2-preview","is_preview":false,"has_search_settings_in_plan":true,"theming_api_version":2,"theming_settings":{"color_primary":"rgba(0, 207, 190, 1)","color_primary_inverse":"#fff","color_secondary":"rgba(91, 102, 231, 1)","color_secondary_inverse":"#fff","color_tertiary":"rgba(91, 102, 231, 1)","color_tertiary_inverse":"#fff","color_heading":"rgba(4, 5, 7, 1)","color_text":"rgba(4, 5, 7, 1)","color_link":"rgba(0, 207, 190, 1)","color_border":"rgba(215, 215, 215, 1)","color_outline":"rgba(4, 5, 7, 1)","color_gray_100":"rgba(245, 245, 245, 1)","color_gray_200":"rgba(245, 245, 245, 1)","color_gray_600":"rgba(174, 174, 174, 1)","bg_color":"rgba(255, 255, 255, 1)","heading_font":"'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif","text_font":"'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif","base_font_size":"15px","favicon":"/hc/theming_assets/01K2MB5ZEXEMW7VZHF7TAG534D","logo":"/hc/theming_assets/01K2MB5FFX5C69X0YHPP12ZQ83","logo_height":"32px","tagline":"Deribit Support","homepage_background_image":"/hc/theming_assets/01K2MAVEYCHHFCVQWCFXQN9DY3","community_background_image":"/hc/theming_assets/01JPM7NWV9WYA6N6EVDMMJRV7P","content_block_1_image":"/hc/theming_assets/01M39DM85SRN0NX3PP02NF102E","content_block_2_image":"/hc/theming_assets/01M39DM8F7PA36A0ZHC4DK250X","content_block_3_image":"/hc/theming_assets/01M39DM8RWR2VWJ3GPVB0D5C8J","content_block_4_image":"/hc/theming_assets/01M39DM9362N3NE472FZ5B2SVA","content_block_5_image":"/hc/theming_assets/01M39DM9362N3NE472FZ5B2SVA","content_block_6_image":"/hc/theming_assets/01M39DM9362N3NE472FZ5B2SVA","content_block_7_image":"/hc/theming_assets/01M39DM9362N3NE472FZ5B2SVA","content_block_8_image":"/hc/theming_assets/01M39DM9362N3NE472FZ5B2SVA","custom_block_1_image":"/hc/theming_assets/01M39DMA76107RAXP3WHJF3ECK","custom_block_2_image":"/hc/theming_assets/01M39DMAGMDVBDEBPFRBHB4RBB","custom_block_3_image":"/hc/theming_assets/01M39DMAV0ZRRA8BXZVDWYQVWG","custom_block_4_image":"/hc/theming_assets/01M39DMB4KSHAQXE2BKHCQ6ZNQ","contact_block_1_image":"/hc/theming_assets/01M39DMBEFPBDZZ5X41R65610H","contact_block_2_image":"/hc/theming_assets/01M39DMBR29XGC9RB56JNGF781","contact_block_3_image":"/hc/theming_assets/01M39DMC2BV2X0JQGFFZWEN8D6","contact_block_4_image":"/hc/theming_assets/01M39DMB4KSHAQXE2BKHCQ6ZNQ","cta_block_image":"/hc/theming_assets/01JPM7P265DAQPEJ95KT48D7TS","header_search_style":"inline","instant_search":true,"scoped_kb_search":true,"scoped_community_search":true,"search_placeholder":"Search questions, articles, keywords","header_layout":"links-right","fixed_header":true,"nav_style":"slide-in","nav_breakpoint":"xl","full_width_header":false,"header_height":"125px","color_header_link":"rgba(255, 255, 255, 1)","color_header_link_fixed":"rgba(255, 255, 255, 1)","bg_color_header":"rgba(4, 5, 7, 1)","header_link_1_text":"Go to Deribit.com","header_link_1_url":"https://www.deribit.com/","header_link_2_text":"Contact","header_link_2_url":"/hc/articles/27729880883357","header_link_3_text":"Submit a request","header_link_3_url":"/hc/requests/new","show_submit_a_request_link":false,"category_dropdown_style":"none","notification_location":"none","notification_content":"https://status.deribit.com/","color_notification":"#fff","bg_color_notification":"rgba(153, 69, 255, 1)","boxed_layout":false,"bg_color_boxed":"#F7F7F7","home_page_content":"home","hero_heading":"How can we assist you? ","color_hero_heading":"#fefefe","hero_text":"","color_hero_text":"#fefefe","hero_image_style":"overlay","bg_color_hero":"rgba(4, 5, 7, 1)","bg_color_secondary_hero":"rgba(59, 122, 255, 1)","bg_gradient_hero":"linear","hero_content_alignment":"center","hero_element_shape":"none","popular_keywords_style":"badges","popular_keywords_heading":"","popular_keywords":"Register, Account, Verification, Security, DVOL Futures, Spot, Futures, Perpetuals, Options","promoted_videos_heading":"","promoted_video_ids":"","recent_activity":"none","custom_block_style":"none","color_custom_blocks":"white","bg_color_custom_blocks":"#fff","custom_blocks_heading":"Quick links","number_custom_blocks":"2","number_custom_block_columns":"3","custom_block_alignment":"left","custom_block_image_height":"24px","custom_block_1_title":"Getting started","custom_block_1_description":"Discover everything you need to know to start your journey","custom_block_1_url":"#","custom_block_2_title":"Community","custom_block_2_description":"Share knowledge with other users in our community forum","custom_block_2_url":"#","custom_block_3_title":"Submit a request","custom_block_3_description":"Get in touch with our helpful customer service team","custom_block_3_url":"#","custom_block_4_title":"Announcements","custom_block_4_description":"Keep up to date with the latest information","custom_block_4_url":"#","content_block_style":"none","color_content_blocks":"white","bg_color_content_blocks":"rgba(247, 250, 252, 1)","content_blocks_heading":"Categories","number_content_block_columns":"3","content_block_alignment":"left","content_block_image_height":"24px","article_list_style":"3-bordered","article_list_columns":"1","article_list_excerpt":0,"promoted_article_style":"icon","promoted_article_list_style":"none","promoted_article_list_position":"before","promoted_articles_heading":"","promoted_article_list_columns":"2","promoted_articles_alignment":"left","promoted_article_list_excerpt":0,"contact_block_style":"none","color_contact_blocks":"white","contact_blocks_heading":"Can't find what you're looking for? Get in touch!","number_contact_blocks":"3","number_contact_block_columns":"3","contact_block_image_height":"24px","contact_block_1_title":"","contact_block_1_description":"","contact_block_1_url":"","contact_block_2_title":"","contact_block_2_description":"","contact_block_2_url":"","contact_block_3_title":"Follow us","contact_block_3_description":"Stay up to date with the latest news and information","contact_block_3_url":"https://www.twitter.com","contact_block_4_title":"Subscribe","contact_block_4_description":"Discover video tutorials covering a variety of topics","contact_block_4_url":"https://www.youtube.com","cta_style":"banner","cta_location":"internal","cta_element_heading":"Can't find what you're looking for?","color_heading_cta":"#212121","cta_element_body":"","color_text_cta":"#383838","cta_element_link_text":"","bg_color_cta":"#f7fafc","subsection_style":"list","category_sidebar":"custom","section_sidebar":"custom","show_follow_section":false,"article_metadata":"date-start","show_follow_article":false,"table_of_contents_style":"sidebar-right","table_of_contents_heading":"In this article","article_navigation_style":"standard","next_article_title":"Next","previous_article_title":"Previous","show_article_voting":false,"show_article_sharing":false,"share_title":"Share this","show_recently_viewed_articles":false,"show_related_articles":false,"show_article_comments":false,"article_sidebar":"custom","note_title":"Note","color_note":"#61a5ff","warning_title":"Warning","color_warning":"#ef526e","enable_lightboxes":true,"enable_video_player":true,"form_list_style":"standard","form_tip":"Providing as much information as possible in your request will allow us to help you faster","community_image_style":"standard","show_recent_activity_community":true,"show_follow_topic":true,"show_follow_post":true,"show_post_sharing":true,"footer_layout":"links-center","footer_shape":"none","color_footer_link":"#4A5568","bg_color_footer":"#fff","footer_link_1_text":"","footer_link_1_url":"","footer_link_2_text":"","footer_link_2_url":"","footer_link_3_text":"","footer_link_3_url":"","facebook_link":"","twitter_link":"https://x.com/DeribitOfficial","linkedin_link":"https://www.linkedin.com/company/deribit/","instagram_link":"","youtube_link":"https://www.youtube.com/Deribit","show_credit_link":true,"use_translations":false},"has_pci_credit_card_custom_field":true,"help_center_restricted":false,"is_assuming_someone_else":false,"flash_messages":[],"user_photo_editing_enabled":true,"user_preferred_locale":"en-us","base_locale":"en-us","login_url":"https://deribit.zendesk.com/access?locale=en-us\u0026brand_id=360001528132\u0026return_to=https%3A%2F%2Fsupport.deribit.com%2Fhc%2Fen-us%2Farticles%2F25944777072669-Isolated-margin-availability","has_alternate_templates":true,"has_custom_statuses_enabled":true,"has_hc_generative_answers_setting_enabled":true,"has_suggested_initial_questions_enabled":false,"has_contentful_eap":false,"has_contentful_eap_eligible":false,"has_pdf_ingestion_eap":true,"has_pdf_ingestion_eap_eligible":true,"has_guide_saas_management":false,"has_knowledge_category_translation_modal":false,"has_guide_service_catalog":true,"has_csat_reverse_2_scale_in_mobile":false,"has_unified_navigation":true,"has_unified_navigation_eap_access":true,"has_knowledge_locale_display_names":true,"has_csat_bet365_branding":false,"has_csat_flora":false,"has_csat_theming_integration_phase_1":false,"has_help_center_gen_search_follow_up_conversation":true,"chat_page_renderable":false,"version":"v28047","dev_mode":false};
+</script>
+
+  
+  
+  <script src="//static.zdassets.com/hc/assets/hc_enduser-531128d2460bc122105c2275e55abaf2.js"></script>
+  <script type="text/javascript" src="/hc/theming_assets/2461712/360001528132/script.js?digest=39386468459549"></script>
+  
+</body>
+</html>

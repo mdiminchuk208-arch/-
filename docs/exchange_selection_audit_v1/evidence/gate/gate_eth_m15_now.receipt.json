@@ -1,0 +1,24 @@
+{
+  "id": "gate_eth_m15_now",
+  "venue": "gate",
+  "url": "https://api.gateio.ws/api/v4/futures/usdt/candlesticks?contract=ETH_USDT&interval=15m&from=1791829275&to=1791836475",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-12T20:21:15.849385+00:00",
+  "completed_utc": "2026-10-12T20:21:17.072290+00:00",
+  "latency_ms": 1223.07,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:16 GMT",
+    "content-type": "application/json",
+    "content-length": "961",
+    "x-gate-ratelimit-requests-remain": "198",
+    "x-gate-ratelimit-limit": "200",
+    "x-gate-ratelimit-reset-timestamp": "1791836476"
+  },
+  "raw_path": "raw/gate_eth_m15_now.bin",
+  "raw_sha256": "0cf2da47ee6ffe6a786c7c4a1022fc57b1989c95aec4f300915e22d0fd8748b8",
+  "raw_bytes": 961,
+  "truncated": false
+}

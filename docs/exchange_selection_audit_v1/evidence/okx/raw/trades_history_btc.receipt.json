@@ -1,0 +1,18 @@
+{
+  "body_bytes": 279,
+  "error": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:28:11 GMT"
+  },
+  "id": "trades_history_btc",
+  "latency_ms": 922.72,
+  "method": "GET",
+  "raw_path": "raw/trades_history_btc.body",
+  "request_utc": "2026-10-13T06:28:10.865867Z",
+  "retrieval_utc": "2026-10-13T06:28:11.788391Z",
+  "sha256": "5374add5966072d5057ace1aca62572df5d88e8cd4c4eb1aa7a6c5b7bbf43e00",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/market/history-trades?instId=BTC-USDT-SWAP&limit=2"
+}

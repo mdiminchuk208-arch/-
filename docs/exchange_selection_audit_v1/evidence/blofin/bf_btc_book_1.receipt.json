@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c469caf6b4ac0-DFW",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:26:58 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1064.3,
+  "method": "GET",
+  "raw_length": 739,
+  "raw_path": "bf_btc_book_1.raw",
+  "raw_sha256": "a4a103961e7a7812c9634959628bc85eb0119c7fa4d3442b5c13f5fbb6faccb1",
+  "request_start_utc": "2026-10-13T06:26:57.875938+00:00",
+  "retrieval_utc": "2026-10-13T06:26:58.940049+00:00",
+  "source_id": "bf_btc_book_1",
+  "status": 200,
+  "truncated": false,
+  "url": "https://openapi.blofin.com/api/v1/market/books?instId=BTC-USDT&size=20"
+}

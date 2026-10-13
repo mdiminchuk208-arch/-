@@ -1,0 +1,18 @@
+{
+  "body_bytes": 31,
+  "error": null,
+  "headers": {
+    "content-type": "application/json;charset=UTF-8",
+    "date": "Tue, 13 Oct 2026 06:28:38 GMT"
+  },
+  "id": "system_status",
+  "latency_ms": 989.79,
+  "method": "GET",
+  "raw_path": "raw/system_status.body",
+  "request_utc": "2026-10-13T06:28:37.973392Z",
+  "retrieval_utc": "2026-10-13T06:28:38.962985Z",
+  "sha256": "fc24d69479edbb84f22c7d5bd4525349734056ad3baf7a5adf7e553f68c06a3a",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/system/status"
+}

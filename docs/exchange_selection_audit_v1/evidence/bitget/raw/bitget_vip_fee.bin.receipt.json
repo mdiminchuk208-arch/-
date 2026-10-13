@@ -1,0 +1,16 @@
+{
+  "url": "https://api.bitget.com/api/v2/mix/market/vip-fee-rate",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:28:20.913988+00:00",
+  "request_end_utc": "2026-10-13T06:28:22.050219+00:00",
+  "latency_ms": 1136.38,
+  "status": 200,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:28:21 GMT",
+    "content-type": "application/json"
+  },
+  "sha256": "874c4d74479c7fd8843e5c4bf14c3b96c46a8e17249033742cbd165dd7391a95",
+  "bytes": 1244,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_vip_fee.bin",
+  "error": null
+}

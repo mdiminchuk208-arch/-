@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c4bcddeeed2c8-DFW",
+    "content-type": "text/plain; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:31 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 893.1,
+  "method": "GET",
+  "raw_length": 51,
+  "raw_path": "kc_status.raw",
+  "raw_sha256": "b8b811823630f4e8d6e2bc2ee845321bd7d93510abcd64ec5992b91d0a3b99b6",
+  "request_start_utc": "2026-10-13T06:30:30.974582+00:00",
+  "retrieval_utc": "2026-10-13T06:30:31.867309+00:00",
+  "source_id": "kc_status",
+  "status": 200,
+  "truncated": false,
+  "url": "https://api-futures.kucoin.com/api/v1/status"
+}

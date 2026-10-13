@@ -1,0 +1,18 @@
+{
+  "url": "https://cdpstatus.coinbase.com/",
+  "request_start_utc": "2026-10-13T06:33:41.115665+00:00",
+  "completion_utc": "2026-10-13T06:33:41.953937+00:00",
+  "latency_ms": 838.4,
+  "http_status": 301,
+  "sha256": "446a6087825fa73eadb045e5a2e9e2adf7df241b571228187728191d961dda1f",
+  "bytes": 167,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:33:41 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "location": "https://status.coinbase.com/",
+    "cf-ray": "a49c50747cff6c43-DFW"
+  },
+  "error": "HTTP Error 301: Moved Permanently",
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/status.bin"
+}

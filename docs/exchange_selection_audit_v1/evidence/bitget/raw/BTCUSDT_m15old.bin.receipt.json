@@ -1,0 +1,16 @@
+{
+  "url": "https://api.bitget.com/api/v2/mix/market/history-candles?symbol=BTCUSDT&productType=USDT-FUTURES&granularity=15m&startTime=1728777600000&endTime=1728778500000&limit=2",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:21:08.071964+00:00",
+  "request_end_utc": "2026-10-12T20:21:08.789246+00:00",
+  "latency_ms": 717.42,
+  "status": 200,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:08 GMT",
+    "content-type": "application/json"
+  },
+  "sha256": "7f12981a67ec502b37d4053037b3e9087c9e52572987500ffa233d9bdd4647c9",
+  "bytes": 153,
+  "raw_path": "evidence/bitget/raw/BTCUSDT_m15old.bin",
+  "error": null
+}

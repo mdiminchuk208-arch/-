@@ -1,0 +1,18 @@
+{
+  "body_bytes": 65943,
+  "error": null,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "date": "Mon, 12 Oct 2026 20:21:37 GMT"
+  },
+  "id": "fee_page_en",
+  "latency_ms": 384.75,
+  "method": "GET",
+  "raw_path": "raw/fee_page_en.body",
+  "request_utc": "2026-10-12T20:21:36.868065Z",
+  "retrieval_utc": "2026-10-12T20:21:37.252582Z",
+  "sha256": "5d33574b144bc0366ac2d00d641f9a382dc5021d8c502fa1a295dd2fac4be24f",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.okx.com/en-us/fees"
+}

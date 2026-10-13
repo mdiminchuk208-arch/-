@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c4bd189416b76-DFW",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:30:32 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1096.0,
+  "method": "GET",
+  "raw_length": 1148,
+  "raw_path": "bf_btc_trades.raw",
+  "raw_sha256": "ce72a78ccc9851439b8732e2aede76d973e291c513841378c8e1e51d311d4c03",
+  "request_start_utc": "2026-10-13T06:30:31.112914+00:00",
+  "retrieval_utc": "2026-10-13T06:30:32.208608+00:00",
+  "source_id": "bf_btc_trades",
+  "status": 200,
+  "truncated": false,
+  "url": "https://openapi.blofin.com/api/v1/market/trades?instId=BTC-USDT&limit=10"
+}

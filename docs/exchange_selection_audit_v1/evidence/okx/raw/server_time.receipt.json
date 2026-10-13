@@ -1,0 +1,18 @@
+{
+  "body_bytes": 53,
+  "error": null,
+  "headers": {
+    "content-type": "application/json;charset=UTF-8",
+    "date": "Tue, 13 Oct 2026 06:28:38 GMT"
+  },
+  "id": "server_time",
+  "latency_ms": 306.3,
+  "method": "GET",
+  "raw_path": "raw/server_time.body",
+  "request_utc": "2026-10-13T06:28:37.979217Z",
+  "retrieval_utc": "2026-10-13T06:28:38.285313Z",
+  "sha256": "29293ec272e92b4e9fca0a418ff6b64196a649e774cfaa95401fa539ef7b71b5",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/public/time"
+}

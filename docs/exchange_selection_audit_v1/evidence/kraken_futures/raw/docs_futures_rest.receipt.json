@@ -1,0 +1,18 @@
+{
+  "source_id": "docs_futures_rest",
+  "url": "https://docs.kraken.com/exchange/guides/futures/rest",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:31:06.645972+00:00",
+  "response_utc": "2026-10-13T06:31:06.880823+00:00",
+  "latency_ms": 234,
+  "http_status": 200,
+  "sha256": "c7b1b0d6327365bac8c014a183d151394a0fd04181b14f7dde25a3fd674b8048",
+  "bytes": 484710,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:31:06 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_futures_rest.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

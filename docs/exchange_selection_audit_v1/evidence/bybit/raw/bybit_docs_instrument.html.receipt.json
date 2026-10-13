@@ -1,0 +1,17 @@
+{
+  "url": "https://bybit-exchange.github.io/docs/v5/market/instrument",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:21:27.977206+00:00",
+  "request_end_utc": "2026-10-12T20:21:28.598543+00:00",
+  "latency_ms": 621.64,
+  "status": 200,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "max-age=600",
+    "date": "Mon, 12 Oct 2026 20:21:28 GMT"
+  },
+  "sha256": "e083b9204d0b4a68e2297e94556aa101844e6ac01db1bb9dd827527a183e16f5",
+  "bytes": 226425,
+  "raw_path": "evidence/bybit/raw/bybit_docs_instrument.html",
+  "error": null
+}

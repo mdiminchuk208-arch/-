@@ -1,0 +1,17 @@
+{
+  "url": "https://www.bitget.com/fee",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:21:27.947910+00:00",
+  "request_end_utc": "2026-10-12T20:21:28.976531+00:00",
+  "latency_ms": 1028.81,
+  "status": 200,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:28 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "no-cache"
+  },
+  "sha256": "ed0248cf5f3f5fd4fe7d371071f56f2b74eae1475025c91454b81c9de020c692",
+  "bytes": 179671,
+  "raw_path": "evidence/bitget/raw/bitget_docs_fee2.html",
+  "error": null
+}

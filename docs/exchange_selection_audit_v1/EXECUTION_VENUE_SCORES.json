@@ -1,0 +1,491 @@
+{
+  "future_architecture_only": true,
+  "ranking": [
+    {
+      "all_in_cost_bps": "7.025726406117107471",
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": false,
+          "note": "Required isolated position control and leverage behavior not verified. A dedicated subaccount is not automatic equivalence.",
+          "source_ids": [
+            "usdc_instruments",
+            "docs_instruments_md",
+            "fees_article",
+            "docs_buy_md",
+            "docs_sell_md",
+            "docs_orders_md",
+            "docs_order_state_md",
+            "docs_user_trades_md",
+            "docs_position_md",
+            "docs_keys_md",
+            "docs_access_scope_md",
+            "docs_auth_md",
+            "docs_limits_md",
+            "isolated_article",
+            "status"
+          ]
+        }
+      ],
+      "points": {
+        "cost": 3,
+        "data": 4,
+        "funding": 5,
+        "liquidity": 5,
+        "orders": 3,
+        "safety": 3
+      },
+      "score": "75",
+      "score_rational": [
+        "75",
+        "1"
+      ],
+      "venue": "deribit"
+    },
+    {
+      "all_in_cost_bps": "9.280706990684755144",
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": null,
+          "note": "Agent-signer authority over external movement/withdrawal is unresolved; one same-address action does not prove all scopes.",
+          "source_ids": [
+            "hl_docs_fees",
+            "hl_docs_exchange",
+            "hl_docs_wallet",
+            "hl_docs_signing",
+            "hl_docs_margin",
+            "hl_docs_limits",
+            "hl_docs_info"
+          ]
+        }
+      ],
+      "points": {
+        "cost": 3,
+        "data": 4,
+        "funding": 5,
+        "liquidity": 5,
+        "orders": 4,
+        "safety": 1
+      },
+      "score": "74",
+      "score_rational": [
+        "74",
+        "1"
+      ],
+      "venue": "hyperliquid"
+    },
+    {
+      "all_in_cost_bps": "12.12725964327464574",
+      "eligible": true,
+      "hard_gate_failures": [],
+      "points": {
+        "cost": 2,
+        "data": 5,
+        "funding": 2,
+        "liquidity": 5,
+        "orders": 5,
+        "safety": 3
+      },
+      "score": "69",
+      "score_rational": [
+        "69",
+        "1"
+      ],
+      "venue": "blofin"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": false,
+          "note": "Current ordinary API SWAP fee is unverified; retrieved 2/5 bps help text is illustrative and exposed SSR table is Spot.",
+          "source_ids": [
+            "fee_page_en",
+            "fee_help_en",
+            "docs_main#trading-account-rest-api-get-fee-rates",
+            "docs_main",
+            "docs_main#trading-account-rest-api-set-leverage",
+            "docs_main#order-book-trading-trade-post-place-order",
+            "docs_main#order-book-trading-algo-trading-post-place-algo-order",
+            "docs_main#overview-api-key-creation-api-key-permissions",
+            "docs_main#overview-api-key-creation-api-key-security",
+            "system_status",
+            "server_time"
+          ]
+        }
+      ],
+      "points": {
+        "cost": 0,
+        "data": 5,
+        "funding": 3,
+        "liquidity": 5,
+        "orders": 5,
+        "safety": 4
+      },
+      "score": "59",
+      "score_rational": [
+        "59",
+        "1"
+      ],
+      "venue": "okx"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": false,
+          "note": "Public contract maker/taker fields do not prove ordinary API-account fee; authenticated futures fee endpoint is required.",
+          "source_ids": [
+            "gate_btc_contract",
+            "gate_eth_contract",
+            "gate_docs_zip",
+            "gate_fee_schedule",
+            "gate_docs_api",
+            "gate_status"
+          ]
+        }
+      ],
+      "points": {
+        "cost": 0,
+        "data": 4,
+        "funding": 2,
+        "liquidity": 5,
+        "orders": 5,
+        "safety": 3
+      },
+      "score": "54",
+      "score_rational": [
+        "54",
+        "1"
+      ],
+      "venue": "gate"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": false,
+          "note": "Public 0/2 bps instrument fields do not prove ordinary API-account fee; tiered fee route is private.",
+          "source_ids": [
+            "instrument_btc",
+            "instrument_eth",
+            "docs_api",
+            "fees_page"
+          ]
+        },
+        {
+          "confirmed": false,
+          "note": "Contradicted or currently unavailable: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "instrument_btc",
+            "instrument_eth",
+            "docs_api",
+            "fees_page"
+          ]
+        }
+      ],
+      "points": {
+        "cost": 0,
+        "data": 4,
+        "funding": 2,
+        "liquidity": 5,
+        "orders": 5,
+        "safety": 1
+      },
+      "score": "50",
+      "score_rational": [
+        "50",
+        "1"
+      ],
+      "venue": "mexc"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": true,
+      "hard_gate_failures": [],
+      "points": {
+        "cost": 0,
+        "data": 4,
+        "funding": 2,
+        "liquidity": 0,
+        "orders": 5,
+        "safety": 3
+      },
+      "score": "29",
+      "score_rational": [
+        "29",
+        "1"
+      ],
+      "venue": "kraken_futures"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": true,
+      "hard_gate_failures": [],
+      "points": {
+        "cost": 0,
+        "data": 4,
+        "funding": 2,
+        "liquidity": 0,
+        "orders": 5,
+        "safety": 3
+      },
+      "score": "29",
+      "score_rational": [
+        "29",
+        "1"
+      ],
+      "venue": "kucoin_futures"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": true,
+      "hard_gate_failures": [],
+      "points": {
+        "cost": 0,
+        "data": 5,
+        "funding": 2,
+        "liquidity": 0,
+        "orders": 5,
+        "safety": 2
+      },
+      "score": "28",
+      "score_rational": [
+        "28",
+        "1"
+      ],
+      "venue": "bitget"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": null,
+          "note": "Unverified: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "bybit:bybit_docs_fee",
+            "bybit:bybit_docs_order",
+            "bybit:bybit_docs_trading_stop",
+            "bybit:bybit_docs_leverage",
+            "bybit:bybit_docs_apikey_info",
+            "bybit:bybit_docs_rate_limit",
+            "bybit:bybit_docs_guide",
+            "bybit:bybit_docs_demo",
+            "bybit:bybit_docs_ws_order",
+            "bybit:bybit_docs_realtime_order",
+            "bybit:bybit_docs_position"
+          ]
+        },
+        {
+          "confirmed": null,
+          "note": "Unverified: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "bybit:bybit_docs_fee",
+            "bybit:bybit_docs_order",
+            "bybit:bybit_docs_trading_stop",
+            "bybit:bybit_docs_leverage",
+            "bybit:bybit_docs_apikey_info",
+            "bybit:bybit_docs_rate_limit",
+            "bybit:bybit_docs_guide",
+            "bybit:bybit_docs_demo",
+            "bybit:bybit_docs_ws_order",
+            "bybit:bybit_docs_realtime_order",
+            "bybit:bybit_docs_position"
+          ]
+        },
+        {
+          "confirmed": false,
+          "note": "Repeated cloud and ordinary GitHub CI public API responses are HTTP 403 country block.",
+          "source_ids": [
+            "bybit:bybit_docs_fee",
+            "bybit:bybit_docs_order",
+            "bybit:bybit_docs_trading_stop",
+            "bybit:bybit_docs_leverage",
+            "bybit:bybit_docs_apikey_info",
+            "bybit:bybit_docs_rate_limit",
+            "bybit:bybit_docs_guide",
+            "bybit:bybit_docs_demo",
+            "bybit:bybit_docs_ws_order",
+            "bybit:bybit_docs_realtime_order",
+            "bybit:bybit_docs_position"
+          ]
+        }
+      ],
+      "points": {
+        "cost": 0,
+        "data": 0,
+        "funding": 2,
+        "liquidity": 0,
+        "orders": 4,
+        "safety": 3
+      },
+      "score": "22",
+      "score_rational": [
+        "22",
+        "1"
+      ],
+      "venue": "bybit"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": false,
+          "note": "Contradicted or currently unavailable: base API fee knowable with official current evidence. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "docs_fee_md",
+            "docs_portfolio_fees_md",
+            "fee_tiers",
+            "docs_order_md",
+            "docs_query_md",
+            "docs_portfolios_md",
+            "docs_sandbox_md",
+            "docs_auth_md",
+            "docs_limits_md",
+            "docs_systems_md",
+            "docs_tpsl_md"
+          ]
+        },
+        {
+          "confirmed": false,
+          "note": "Contradicted or currently unavailable: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "docs_fee_md",
+            "docs_portfolio_fees_md",
+            "fee_tiers",
+            "docs_order_md",
+            "docs_query_md",
+            "docs_portfolios_md",
+            "docs_sandbox_md",
+            "docs_auth_md",
+            "docs_limits_md",
+            "docs_systems_md",
+            "docs_tpsl_md"
+          ]
+        },
+        {
+          "confirmed": false,
+          "note": "Contradicted or currently unavailable: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "docs_fee_md",
+            "docs_portfolio_fees_md",
+            "fee_tiers",
+            "docs_order_md",
+            "docs_query_md",
+            "docs_portfolios_md",
+            "docs_sandbox_md",
+            "docs_auth_md",
+            "docs_limits_md",
+            "docs_systems_md",
+            "docs_tpsl_md"
+          ]
+        },
+        {
+          "confirmed": false,
+          "note": "Both required products PAUSED; public book endpoints 404 and fee-tier request 403.",
+          "source_ids": [
+            "docs_fee_md",
+            "docs_portfolio_fees_md",
+            "fee_tiers",
+            "docs_order_md",
+            "docs_query_md",
+            "docs_portfolios_md",
+            "docs_sandbox_md",
+            "docs_auth_md",
+            "docs_limits_md",
+            "docs_systems_md",
+            "docs_tpsl_md"
+          ]
+        }
+      ],
+      "points": {
+        "cost": 0,
+        "data": 3,
+        "funding": 2,
+        "liquidity": 0,
+        "orders": 2,
+        "safety": 2
+      },
+      "score": "17",
+      "score_rational": [
+        "17",
+        "1"
+      ],
+      "venue": "coinbase_international"
+    },
+    {
+      "all_in_cost_bps": null,
+      "eligible": false,
+      "hard_gate_failures": [
+        {
+          "confirmed": null,
+          "note": "Unverified: base API fee knowable with official current evidence. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "fee_page",
+            "docs_exchange_info_new"
+          ]
+        },
+        {
+          "confirmed": null,
+          "note": "Unverified: required bot order/margin/protection controls verified. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "fee_page",
+            "docs_exchange_info_new"
+          ]
+        },
+        {
+          "confirmed": null,
+          "note": "Unverified: no withdraw permission needed where key model; equivalent scoped wallet evaluated explicitly. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "fee_page",
+            "docs_exchange_info_new"
+          ]
+        },
+        {
+          "confirmed": null,
+          "note": "Unverified: product/contract normalization supported. See cited retained official responses and venue FACTS.json; point samples do not prove continuous historical coverage or live account readiness.",
+          "source_ids": [
+            "fee_page",
+            "docs_exchange_info_new"
+          ]
+        },
+        {
+          "confirmed": false,
+          "note": "Repeated cloud and ordinary GitHub CI public API responses are HTTP 451 restricted location.",
+          "source_ids": [
+            "fee_page",
+            "docs_exchange_info_new"
+          ]
+        }
+      ],
+      "points": {
+        "cost": 0,
+        "data": 0,
+        "funding": 0,
+        "liquidity": 0,
+        "orders": 0,
+        "safety": 0
+      },
+      "score": "0",
+      "score_rational": [
+        "0",
+        "1"
+      ],
+      "venue": "binance_futures"
+    }
+  ],
+  "weights": {
+    "cost": 35,
+    "data": 5,
+    "funding": 10,
+    "liquidity": 25,
+    "orders": 15,
+    "safety": 10
+  }
+}

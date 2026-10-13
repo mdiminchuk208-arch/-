@@ -1,0 +1,17 @@
+# Independent exchange-selection review record
+
+Five independent cross-venue/final reviewer identities were actually used, distinct from six paired-venue evidence workers and the root implementation author. Role sharing is explicit:
+
+| Actual reviewer | Functions | Key independent conclusion | Detail |
+| --- | --- | --- | --- |
+| exchange_cost_execution_auditor_v1 | cost_funding_auditor, execution_auditor, scoped exchange_security_auditor | All four fee scenarios for seven known schedules match; funding stays separate. KuCoin Futures/Withdrawal permission proof resolves its provisional safety exclusion. Deribit isolated control and Hyperliquid signer scope remain unresolved. | `reviews/cost_execution_auditor.md` |
+| exchange_data_tick_microstructure_auditor_v1 | historical_data_engineer, tick_metadata_researcher, market_microstructure_auditor | Old native M15 points establish reachability, not continuity; historical tick epochs remain unknown. Exact book units and multipliers must be proven. | `reviews/data_tick_microstructure_auditor.md` |
+| exchange_statistics_robustness_v1 | statistics_robustness_analyst | Independent rational replay of 24 score rows, hard gates and both cost-weight shifts has no mismatch. All 76 removals retain BloFin primary; documented lot-grid companion does not rerank. | `reviews/statistics_robustness_analyst.md`, `reviews/SCORING_ASSESSMENTS.json` |
+| exchange_overfit_red_team_v1 | overfit_red_team | Preregistration precedes observations, unknowns stay penalized, higher raw scorers remain hard-excluded. Primaries stable; secondary switches Kraken→KuCoin in 1/76 removal cases and must be disclosed. | `reviews/overfit_red_team.md` |
+| exchange_final_independent_reviewer_v1 | final_independent_reviewer | Fresh reviewer who did not author code, collect evidence or set indicator judgments. Final acceptance and exact scope are recorded in its own signed-role review; the freeze requires its PASS marker. | `reviews/final_independent_reviewer.md` |
+
+Material review corrections were incorporated before freezing: all valid cloud **and** CI books are pooled under the preregistered all-samples rule; provisional local-only prose is superseded by final appendices. Bitget/Kraken book denomination is not proved, so book-derived cost/liquidity scores are zero. KuCoin's one shallow ETH CI book is retained and causes incomplete required-grid coverage, not an exchange-wide illiquidity claim. Its withdrawal permission separation is proved independently, so it is execution-eligible but tied at 29 with Kraken. Deribit base-quantity docs resolve book units, but a subaccount does not establish isolated-position equivalence. Zero-size book levels are omitted conservatively, without introducing depth. The fixed score, tie-break, fees and strategy rules were not tuned to favor a winner.
+
+Research Bitget/OKX score 82 tie; secondary Kraken/KuCoin score 29 tie. Both lexicographic selections are explicitly disclosed. BloFin remains the highest eligible primary execution architecture. This review approves conditional architecture selection only: actual account/jurisdiction, fee tier, collateral/mode, retry and protective-order verification remain future gates. Historical v3 financial evaluation, PAPER/LIVE, private APIs, orders and the OOS clock remain unauthorized; `trade_entry_allowed=false`.
+
+The final reviewer marker is authoritative for the seal. No aggregate review can substitute for it. All reviews are frozen byte-for-byte together with the evidence and final QA receipt.

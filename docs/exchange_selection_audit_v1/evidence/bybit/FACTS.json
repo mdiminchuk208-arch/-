@@ -1,0 +1,159 @@
+{
+  "venue": "bybit",
+  "products": {
+    "BTC": {
+      "symbol": null,
+      "requested_symbol": "BTCUSDT",
+      "base": "BTC",
+      "quote": "USDT",
+      "margin_coins": null,
+      "settlement": null,
+      "model": "linear USDT perpetual documented but current live identity unavailable",
+      "status": null,
+      "identity_source_ids": [
+        "bybit:bybit_docs_instrument",
+        "bybit:BTCUSDT_instrument"
+      ],
+      "filters": null,
+      "m15_old_start_utc": null
+    },
+    "ETH": {
+      "symbol": null,
+      "requested_symbol": "ETHUSDT",
+      "base": "ETH",
+      "quote": "USDT",
+      "margin_coins": null,
+      "settlement": null,
+      "model": "linear USDT perpetual documented but current live identity unavailable",
+      "status": null,
+      "identity_source_ids": [
+        "bybit:bybit_docs_instrument",
+        "bybit:ETHUSDT_instrument"
+      ],
+      "filters": null,
+      "m15_old_start_utc": null
+    }
+  },
+  "fees": {
+    "maker_rate": "0.0002",
+    "taker_rate": "0.00055",
+    "api_specific": false,
+    "base_tier": "VIP 0 perpetual and futures table; current account-specific fee and region/product exceptions unverified",
+    "source_ids": [
+      "bybit:bybit_docs_fee"
+    ],
+    "literal_quote": "VIP 0 ... Perpetual & Futures Contracts Trading ... Taker Fee Rate 0.0550% Maker Fee Rate 0.0200%",
+    "discounts_separate": "VIP1+ and Pro/Market Maker tiers shown separately on official fee page",
+    "unresolved": [
+      "Public API fee query is inaccessible from cloud; authenticated account rate not checked."
+    ]
+  },
+  "funding": {
+    "intervals": "per-symbol fundingInterval field documented, current BTC/ETH values unavailable",
+    "formula": null,
+    "sign": null,
+    "history_endpoint": "GET /v5/market/funding/history",
+    "history_depth": "endpoint documented but all cloud probes 403",
+    "surcharge": null,
+    "source_ids": [
+      "bybit:bybit_docs_funding",
+      "bybit:bybit_docs_instrument",
+      "bybit:BTCUSDT_funding",
+      "bybit:ETHUSDT_funding"
+    ]
+  },
+  "data": {
+    "native_m15": "documented interval 15, current symbols and live bars unverified",
+    "oldest_actual_m15_sample_utc": null,
+    "pagination": "GET /v5/market/kline start/end/limit; exact observed history unavailable due 403",
+    "closure": null,
+    "archive": null,
+    "trades": null,
+    "book_history": null,
+    "mark_index": "documented endpoint families, live availability unverified",
+    "oi_history": "documented /v5/market/open-interest; live availability unverified",
+    "source_ids": [
+      "bybit:bybit_docs_kline",
+      "bybit:bybit_docs_oi",
+      "bybit:BTCUSDT_m15now",
+      "bybit:ETHUSDT_m15now",
+      "bybit:BTCUSDT_m15old",
+      "bybit:ETHUSDT_m15old"
+    ]
+  },
+  "metadata": {
+    "current_filters": null,
+    "change_history": "API documentation changelog available; no current live contract fields",
+    "historical_epochs": null,
+    "causal_prospective": "conceptual instruments-info endpoint documented but cloud capture currently blocked",
+    "source_ids": [
+      "bybit:bybit_docs_instrument",
+      "bybit:BTCUSDT_instrument",
+      "bybit:ETHUSDT_instrument"
+    ]
+  },
+  "books": {
+    "BTC": [],
+    "ETH": []
+  },
+  "execution": {
+    "rest_ws": "REST and private WebSocket documented",
+    "isolated_margin": "isolated mode described in leverage docs; account-specific UTA mode applicability unverified",
+    "leverage": "set-leverage endpoint documented",
+    "reduce_only": "reduceOnly documented in order creation",
+    "sl_tp": "trading-stop endpoint and tpslMode documented",
+    "client_order_id": "orderLinkId customizable; replay guarantee unverified",
+    "queries": "open/closed order and position queries documented",
+    "key_permissions_no_withdraw": "API key info schema separates ContractTrade Order/Position from Wallet Withdraw permissions",
+    "ip_allowlist": "API key info has ips field; ability to bind IP described but not configured",
+    "status_feed": null,
+    "rate_limits": "official V5 rate-limit table and X-BAPI headers documented",
+    "demo": "Demo Trading Service and testnet documented",
+    "signing": "API key/HMAC documented",
+    "custody": "centralized exchange account",
+    "source_ids": [
+      "bybit:bybit_docs_order",
+      "bybit:bybit_docs_trading_stop",
+      "bybit:bybit_docs_leverage",
+      "bybit:bybit_docs_apikey_info",
+      "bybit:bybit_docs_rate_limit",
+      "bybit:bybit_docs_guide",
+      "bybit:bybit_docs_demo",
+      "bybit:bybit_docs_ws_order",
+      "bybit:bybit_docs_realtime_order",
+      "bybit:bybit_docs_position"
+    ]
+  },
+  "access": {
+    "cloud_public_api_status": 403,
+    "body_literal": "error:The Amazon CloudFront distribution is configured to block access from your country",
+    "affected": "Both BTCUSDT and ETHUSDT instrument, M15 now/old, orderbook, funding history and OI on official api.bybit.com",
+    "source_ids": [
+      "bybit:BTCUSDT_instrument",
+      "bybit:ETHUSDT_instrument",
+      "bybit:BTCUSDT_m15now",
+      "bybit:ETHUSDT_m15now",
+      "bybit:BTCUSDT_m15old",
+      "bybit:ETHUSDT_m15old",
+      "bybit:BTCUSDT_book1",
+      "bybit:ETHUSDT_book1",
+      "bybit:BTCUSDT_funding",
+      "bybit:ETHUSDT_funding",
+      "bybit:BTCUSDT_oi",
+      "bybit:ETHUSDT_oi"
+    ]
+  },
+  "limitations": [
+    "No public API payloads from this cloud due repeated country 403; official docs are not live metadata or books.",
+    "GitHub CI access is a separate probe by root; no alternate hosts or geographic route attempted.",
+    "VIP0 fee table applies to ordinary perpetual trades; actual API account fee remains to verify."
+  ],
+  "hard_research_blockers": [
+    "Current BTC/ETH instrument identity and tick filters inaccessible from cloud.",
+    "Two-year M15 sentinel not retrieved for either symbol.",
+    "No live public books; CI outcome pending."
+  ],
+  "hard_exec_blockers": [
+    "Severe unresolved cloud API country restriction prevents reliable operation from this environment."
+  ]
+}

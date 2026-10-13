@@ -1,0 +1,497 @@
+{
+  "preregistration_sha256": "ab7add22e1ab5efd543499729c431e03fda1fd6f213063c94bbbf6614e9ce699",
+  "products": {
+    "binance_futures": {
+      "BTC": {
+        "identity_source_ids": [
+          "docs_exchange_info_new",
+          "exchange_info"
+        ],
+        "margin_settlement": null,
+        "model": "USD\u24c8-M futures docs show PERPETUAL product class; live BTC identity not verified",
+        "symbol": null
+      },
+      "ETH": {
+        "identity_source_ids": [
+          "docs_exchange_info_new",
+          "exchange_info"
+        ],
+        "margin_settlement": null,
+        "model": "USD\u24c8-M futures docs show PERPETUAL product class; live ETH identity not verified",
+        "symbol": null
+      }
+    },
+    "bitget": {
+      "BTC": {
+        "base": "BTC",
+        "filters": {
+          "maxMarketOrderQty": "220",
+          "maxOrderQty": "1200",
+          "minTradeNum": "0.0001",
+          "minTradeUSDT": "5",
+          "priceEndStep": "1",
+          "pricePlace": "1",
+          "sizeMultiplier": "0.0001",
+          "volumePlace": "4"
+        },
+        "fund_interval_hours": "8",
+        "funding_latest_times_utc": [
+          "2026-10-12T16:00:00+00:00",
+          "2026-10-12T08:00:00+00:00"
+        ],
+        "identity_source_ids": [
+          "bitget:BTCUSDT_instrument",
+          "bitget:bitget_detail_market"
+        ],
+        "m15_now_start_utc": [
+          "2026-10-12T20:00:00+00:00",
+          "2026-10-12T20:15:00+00:00"
+        ],
+        "m15_old_source_id": "bitget:BTCUSDT_m15old",
+        "m15_old_start_utc": [
+          "2024-10-13T00:00:00+00:00"
+        ],
+        "makerFeeRate_observed": "0.0002",
+        "margin_coins": [
+          "USDT"
+        ],
+        "model": "perpetual",
+        "open_interest_size_observed": "33862.050400000003",
+        "quote": "USDT",
+        "settlement": "USDT linear perpetual per USDT-FUTURES API product type; settlement coin not explicit in returned contract fields",
+        "status": "normal",
+        "symbol": "BTCUSDT",
+        "takerFeeRate_observed": "0.0006"
+      },
+      "ETH": {
+        "base": "ETH",
+        "filters": {
+          "maxMarketOrderQty": "1900",
+          "maxOrderQty": "9900",
+          "minTradeNum": "0.01",
+          "minTradeUSDT": "5",
+          "priceEndStep": "1",
+          "pricePlace": "2",
+          "sizeMultiplier": "0.01",
+          "volumePlace": "2"
+        },
+        "fund_interval_hours": "8",
+        "funding_latest_times_utc": [
+          "2026-10-12T16:00:00+00:00",
+          "2026-10-12T08:00:00+00:00"
+        ],
+        "identity_source_ids": [
+          "bitget:ETHUSDT_instrument",
+          "bitget:bitget_detail_market"
+        ],
+        "m15_now_start_utc": [
+          "2026-10-12T20:00:00+00:00",
+          "2026-10-12T20:15:00+00:00"
+        ],
+        "m15_old_source_id": "bitget:ETHUSDT_m15old",
+        "m15_old_start_utc": [
+          "2024-10-13T00:00:00+00:00"
+        ],
+        "makerFeeRate_observed": "0.0002",
+        "margin_coins": [
+          "USDT"
+        ],
+        "model": "perpetual",
+        "open_interest_size_observed": "761727.78000000008",
+        "quote": "USDT",
+        "settlement": "USDT linear perpetual per USDT-FUTURES API product type; settlement coin not explicit in returned contract fields",
+        "status": "normal",
+        "symbol": "ETHUSDT",
+        "takerFeeRate_observed": "0.0006"
+      }
+    },
+    "blofin": {
+      "BTC": {
+        "base": "BTC",
+        "literal_quote": {
+          "contractType": "linear",
+          "contractValue": "0.001",
+          "instId": "BTC-USDT",
+          "instType": "SWAP",
+          "lotSize": "0.1",
+          "settleCurrency": "USDT",
+          "state": "live",
+          "tickSize": "0.1"
+        },
+        "lot_size_contracts": "0.1",
+        "max_leverage": "150",
+        "min_size_contracts": "0.1",
+        "model": "linear USDT-settled SWAP",
+        "multiplier_base_per_contract": "0.001",
+        "quote": "USDT",
+        "settle": "USDT",
+        "source_ids": [
+          "bf_instruments",
+          "bf_api_docs"
+        ],
+        "state": "live",
+        "symbol": "BTC-USDT",
+        "tick_size_quote": "0.1"
+      },
+      "ETH": {
+        "base": "ETH",
+        "literal_quote": {
+          "contractType": "linear",
+          "contractValue": "0.01",
+          "instId": "ETH-USDT",
+          "instType": "SWAP",
+          "lotSize": "0.1",
+          "settleCurrency": "USDT",
+          "state": "live",
+          "tickSize": "0.01"
+        },
+        "lot_size_contracts": "0.1",
+        "max_leverage": "150",
+        "min_size_contracts": "0.1",
+        "model": "linear USDT-settled SWAP",
+        "multiplier_base_per_contract": "0.01",
+        "quote": "USDT",
+        "settle": "USDT",
+        "source_ids": [
+          "bf_instruments",
+          "bf_api_docs"
+        ],
+        "state": "live",
+        "symbol": "ETH-USDT",
+        "tick_size_quote": "0.01"
+      }
+    },
+    "bybit": {
+      "BTC": {
+        "base": "BTC",
+        "filters": null,
+        "identity_source_ids": [
+          "bybit:bybit_docs_instrument",
+          "bybit:BTCUSDT_instrument"
+        ],
+        "m15_old_start_utc": null,
+        "margin_coins": null,
+        "model": "linear USDT perpetual documented but current live identity unavailable",
+        "quote": "USDT",
+        "requested_symbol": "BTCUSDT",
+        "settlement": null,
+        "status": null,
+        "symbol": null
+      },
+      "ETH": {
+        "base": "ETH",
+        "filters": null,
+        "identity_source_ids": [
+          "bybit:bybit_docs_instrument",
+          "bybit:ETHUSDT_instrument"
+        ],
+        "m15_old_start_utc": null,
+        "margin_coins": null,
+        "model": "linear USDT perpetual documented but current live identity unavailable",
+        "quote": "USDT",
+        "requested_symbol": "ETHUSDT",
+        "settlement": null,
+        "status": null,
+        "symbol": null
+      }
+    },
+    "coinbase_international": {
+      "BTC": {
+        "base": "BTC",
+        "base_asset_multiplier": "1.0",
+        "base_increment": "0.0001",
+        "funding_interval_ns": "3600000000000",
+        "instrument_id": "149264167780483072",
+        "instrument_type": "PERP",
+        "instrument_uuid": "b3469e0b-222c-4f8a-9f68-1f9e44d7e5e0",
+        "last_embedded_quote_utc": "2026-10-01T09:00:29.114Z",
+        "min_notional_value": "10",
+        "min_quantity": "0.0001",
+        "model": "linear USDC-quoted perpetual, base_asset_multiplier 1.0",
+        "quote": "USDC",
+        "quote_increment": "0.1",
+        "settlement": "USDC (documentation/portfolio collateral; instrument response quote USDC)",
+        "source_ids": [
+          "instruments",
+          "docs_concepts_instruments_md",
+          "docs_channels_md"
+        ],
+        "state": "PAUSED",
+        "symbol": "BTC-PERP"
+      },
+      "ETH": {
+        "base": "ETH",
+        "base_asset_multiplier": "1.0",
+        "base_increment": "0.0001",
+        "funding_interval_ns": "3600000000000",
+        "instrument_id": "149264164756389888",
+        "instrument_type": "PERP",
+        "instrument_uuid": "e9360798-6a10-45d6-af05-67c30eb91e2d",
+        "last_embedded_quote_utc": "2026-10-01T09:00:29.114Z",
+        "min_notional_value": "10",
+        "min_quantity": "0.0001",
+        "model": "linear USDC-quoted perpetual, base_asset_multiplier 1.0",
+        "quote": "USDC",
+        "quote_increment": "0.01",
+        "settlement": "USDC (documentation/portfolio collateral; instrument response quote USDC)",
+        "source_ids": [
+          "instruments",
+          "docs_concepts_instruments_md",
+          "docs_channels_md"
+        ],
+        "state": "PAUSED",
+        "symbol": "ETH-PERP"
+      }
+    },
+    "deribit": {
+      "BTC": {
+        "base": "BTC",
+        "contract_size_base": "0.0001",
+        "future_type": "linear",
+        "instrument_type": "linear",
+        "is_active": true,
+        "lot_size_fee_count": "1",
+        "min_trade_amount_base": "0.0001",
+        "model": "linear USDC-settled perpetual",
+        "quote": "USDC",
+        "settlement": "USDC",
+        "settlement_period": "perpetual",
+        "source_ids": [
+          "usdc_instruments",
+          "docs_instruments_md"
+        ],
+        "state": "open",
+        "symbol": "BTC_USDC-PERPETUAL",
+        "tick_size": "0.1"
+      },
+      "ETH": {
+        "base": "ETH",
+        "contract_size_base": "0.0001",
+        "future_type": "linear",
+        "instrument_type": "linear",
+        "is_active": true,
+        "lot_size_fee_count": "10",
+        "min_trade_amount_base": "0.0001",
+        "model": "linear USDC-settled perpetual",
+        "quote": "USDC",
+        "settlement": "USDC",
+        "settlement_period": "perpetual",
+        "source_ids": [
+          "usdc_instruments",
+          "docs_instruments_md"
+        ],
+        "state": "open",
+        "symbol": "ETH_USDC-PERPETUAL",
+        "tick_size": "0.01"
+      }
+    },
+    "gate": {
+      "BTC": {
+        "contract_multiplier": "0.0001",
+        "margin": "USDT",
+        "model": "direct linear USDT-settled perpetual",
+        "settle": "USDT",
+        "source_ids": [
+          "gate_btc_contract",
+          "gate_docs_zip"
+        ],
+        "symbol": "BTC_USDT"
+      },
+      "ETH": {
+        "contract_multiplier": "0.01",
+        "margin": "USDT",
+        "model": "direct linear USDT-settled perpetual",
+        "settle": "USDT",
+        "source_ids": [
+          "gate_eth_contract",
+          "gate_docs_zip"
+        ],
+        "symbol": "ETH_USDT"
+      }
+    },
+    "hyperliquid": {
+      "BTC": {
+        "margin": "USDC",
+        "model": "linear perp with USDT-denominated price/PnL counted in USDC; technically quanto without FX conversion",
+        "oracle_denominated": "USDT",
+        "settle": "USDC",
+        "source_ids": [
+          "hl_meta",
+          "hl_docs_contracts"
+        ],
+        "symbol": "BTC",
+        "szDecimals": 5
+      },
+      "ETH": {
+        "margin": "USDC",
+        "model": "linear perp with USDT-denominated price/PnL counted in USDC; technically quanto without FX conversion",
+        "oracle_denominated": "USDT",
+        "settle": "USDC",
+        "source_ids": [
+          "hl_meta",
+          "hl_docs_contracts"
+        ],
+        "symbol": "ETH",
+        "szDecimals": 4
+      }
+    },
+    "kraken_futures": {
+      "BTC": {
+        "base": "BTC",
+        "contract_size_base": "1",
+        "identity_source_ids": [
+          "instruments",
+          "docs_instruments_new",
+          "docs_leverage"
+        ],
+        "margin": "multi-collateral; isolated or cross via leveragepreferences; account/jurisdiction eligibility unknown",
+        "model": "USD-quoted flexible_futures perpetual; distinct from PI_* inverse coin-settled contracts; not USDT linear",
+        "quote": "USD",
+        "settle": null,
+        "symbol": "PF_XBTUSD"
+      },
+      "ETH": {
+        "base": "ETH",
+        "contract_size_base": "1",
+        "identity_source_ids": [
+          "instruments",
+          "docs_instruments_new",
+          "docs_leverage"
+        ],
+        "margin": "multi-collateral; isolated or cross via leveragepreferences; account/jurisdiction eligibility unknown",
+        "model": "USD-quoted flexible_futures perpetual; distinct from PI_* inverse coin-settled contracts; not USDT linear",
+        "quote": "USD",
+        "settle": null,
+        "symbol": "PF_ETHUSD"
+      }
+    },
+    "kucoin_futures": {
+      "BTC": {
+        "base": "XBT",
+        "literal_quote": {
+          "isInverse": false,
+          "lotSize": 1,
+          "multiplier": "0.001",
+          "settleCurrency": "USDT",
+          "symbol": "XBTUSDTM",
+          "tickSize": "0.1"
+        },
+        "lot_size_contracts": "1",
+        "max_leverage": "125",
+        "model": "linear USDT-settled perpetual",
+        "multiplier_base_per_contract": "0.001",
+        "quote": "USDT",
+        "settle": "USDT",
+        "source_ids": [
+          "kc_btc_contract",
+          "kc_docs_contract_en",
+          "kc_docs_intro"
+        ],
+        "state": "Open",
+        "symbol": "XBTUSDTM",
+        "tick_size_quote": "0.1"
+      },
+      "ETH": {
+        "base": "ETH",
+        "literal_quote": {
+          "isInverse": false,
+          "lotSize": 1,
+          "multiplier": "0.01",
+          "settleCurrency": "USDT",
+          "symbol": "ETHUSDTM",
+          "tickSize": "0.01"
+        },
+        "lot_size_contracts": "1",
+        "max_leverage": "100",
+        "model": "linear USDT-settled perpetual",
+        "multiplier_base_per_contract": "0.01",
+        "quote": "USDT",
+        "settle": "USDT",
+        "source_ids": [
+          "kc_eth_contract",
+          "kc_docs_contract_en",
+          "kc_docs_intro"
+        ],
+        "state": "Open",
+        "symbol": "ETHUSDTM",
+        "tick_size_quote": "0.01"
+      }
+    },
+    "mexc": {
+      "BTC": {
+        "api_allowed_public_field": true,
+        "base": "BTC",
+        "contract_size_base": "0.0001",
+        "identity_source_ids": [
+          "instrument_btc",
+          "docs_api"
+        ],
+        "margin": "USDT; isolated and cross permitted by positionOpenType=3",
+        "model": "linear USDT-settled perpetual",
+        "quote": "USDT",
+        "settle": "USDT",
+        "symbol": "BTC_USDT"
+      },
+      "ETH": {
+        "api_allowed_public_field": true,
+        "base": "ETH",
+        "contract_size_base": "0.01",
+        "identity_source_ids": [
+          "instrument_eth",
+          "docs_api"
+        ],
+        "margin": "USDT; isolated and cross permitted by positionOpenType=3",
+        "model": "linear USDT-settled perpetual",
+        "quote": "USDT",
+        "settle": "USDT",
+        "symbol": "ETH_USDT"
+      }
+    },
+    "okx": {
+      "BTC": {
+        "ctMult": "1",
+        "ctType": "linear",
+        "ctVal": "0.01",
+        "ctValCcy": "BTC",
+        "identity_source_ids": [
+          "instrument_btc",
+          "docs_main#public-data-rest-api-get-instruments"
+        ],
+        "instType": "SWAP",
+        "margin_settlement": "USDT settlement; collateral/account mode varies by account",
+        "model": "linear perpetual swap",
+        "state": "live",
+        "symbol": "BTC-USDT-SWAP"
+      },
+      "ETH": {
+        "ctMult": "1",
+        "ctType": "linear",
+        "ctVal": "0.1",
+        "ctValCcy": "ETH",
+        "identity_source_ids": [
+          "instrument_eth",
+          "docs_main#public-data-rest-api-get-instruments"
+        ],
+        "instType": "SWAP",
+        "margin_settlement": "USDT settlement; collateral/account mode varies by account",
+        "model": "linear perpetual swap",
+        "state": "live",
+        "symbol": "ETH-USDT-SWAP"
+      }
+    }
+  },
+  "venues": [
+    "okx",
+    "binance_futures",
+    "hyperliquid",
+    "gate",
+    "bitget",
+    "bybit",
+    "kucoin_futures",
+    "blofin",
+    "mexc",
+    "kraken_futures",
+    "coinbase_international",
+    "deribit"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "url": "https://bybit-exchange.github.io/docs/v5/rate-limit",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:29:11.928409+00:00",
+  "request_end_utc": "2026-10-13T06:29:12.788878+00:00",
+  "latency_ms": 860.64,
+  "status": 200,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "max-age=600",
+    "date": "Tue, 13 Oct 2026 06:29:12 GMT"
+  },
+  "sha256": "1bb66b1e75994d70646919228d9120fc2c611ae70b9d47f90c0324a8a200c244",
+  "bytes": 62516,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_rate_limit.html",
+  "error": null
+}

@@ -1,0 +1,20 @@
+{
+  "id": "gate_status",
+  "venue": "gate",
+  "url": "https://www.gate.com/announcements",
+  "method": "GET",
+  "request_body": null,
+  "started_utc": "2026-10-13T06:28:43.248195+00:00",
+  "completed_utc": "2026-10-13T06:28:46.368272+00:00",
+  "latency_ms": 3120.33,
+  "status": 200,
+  "error": null,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:28:45 GMT"
+  },
+  "raw_path": "raw/gate_status.bin",
+  "raw_sha256": "9633513fa7742df797348187e01b1500bd371beebcadbd682d372e278160a570",
+  "raw_bytes": 279071,
+  "truncated": false
+}

@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.cdp.coinbase.com/international-exchange/introduction/sandbox.md",
+  "request_start_utc": "2026-10-13T06:30:15.925868+00:00",
+  "completion_utc": "2026-10-13T06:30:16.340005+00:00",
+  "latency_ms": 414.4,
+  "http_status": 200,
+  "sha256": "8a1894061c73e0ea1ed2c3a1aa21c0b532043e4099c693c777100c75500e3468",
+  "bytes": 1727,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4b6e0fd55c4f-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:15 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_sandbox_md.bin"
+}

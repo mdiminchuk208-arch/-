@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.cdp.coinbase.com/international-exchange/introduction/welcome",
+  "request_start_utc": "2026-10-13T06:29:21.521950+00:00",
+  "completion_utc": "2026-10-13T06:29:23.043680+00:00",
+  "latency_ms": 1522.2,
+  "http_status": 200,
+  "sha256": "1ae8eb02dcf8fe7559e1b6e240951aacda774389facec10318f95325a0b7eda9",
+  "bytes": 917042,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4a1e28960abb-CMH",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:29:22 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/welcome.bin"
+}

@@ -1,0 +1,18 @@
+{
+  "body_bytes": 1117,
+  "error": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Mon, 12 Oct 2026 20:20:43 GMT"
+  },
+  "id": "instrument_btc",
+  "latency_ms": 604.29,
+  "method": "GET",
+  "raw_path": "raw/instrument_btc.body",
+  "request_utc": "2026-10-12T20:20:43.036835Z",
+  "retrieval_utc": "2026-10-12T20:20:43.640902Z",
+  "sha256": "1a6eeb4c4cc625067010d0110718feaee4a6f03becc60f661b800acb4f5ac4e2",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.okx.com/api/v5/public/instruments?instType=SWAP&instId=BTC-USDT-SWAP"
+}

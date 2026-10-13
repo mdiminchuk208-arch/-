@@ -1,0 +1,17 @@
+{
+  "url": "https://www.bitget.com/docs/classic/demo-trading/rest-api",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:30:41.965432+00:00",
+  "request_end_utc": "2026-10-13T06:30:42.361576+00:00",
+  "latency_ms": 396.4,
+  "status": 200,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:30:42 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "no-cache,no-cache"
+  },
+  "sha256": "9c9bb9bd230cf5b7e5c38d4417b582b07be571ce3401d2aa0f331f2062423221",
+  "bytes": 40739,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_demo_rest.html",
+  "error": null
+}

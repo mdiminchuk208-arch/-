@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.cdp.coinbase.com/international-exchange/introduction/systems-operations",
+  "request_start_utc": "2026-10-13T06:29:21.426377+00:00",
+  "completion_utc": "2026-10-13T06:29:22.868490+00:00",
+  "latency_ms": 1442.6,
+  "http_status": 200,
+  "sha256": "aa8fd8c5607245b1dcdad0437e2278c58659ed302bb192927b06b19e4452e43f",
+  "bytes": 923229,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4a1df8d2122e-CMH",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:29:22 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/systems.bin"
+}

@@ -1,0 +1,22 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-length": "638",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:39:03 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "215.753",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 638,
+  "raw_file": "0005d16549d01c6aa76a11ee.body",
+  "raw_sha256": "52f860b91950ae6c2c059b2667aa52061b8cacd80152397712f026bb92e7e4ca",
+  "request_started_at": "2026-10-13T06:39:02.890368+00:00",
+  "response_completed_at": "2026-10-13T06:39:03.105989+00:00",
+  "source_kind": "book_ETH_second",
+  "truncated": false,
+  "url": "https://api-futures.kucoin.com/api/v1/level2/depth20?symbol=ETHUSDTM"
+}

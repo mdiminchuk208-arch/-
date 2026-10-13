@@ -1,0 +1,18 @@
+{
+  "url": "https://www.coinbase.com/international-exchange/fees",
+  "request_start_utc": "2026-10-13T06:32:40.698622+00:00",
+  "completion_utc": "2026-10-13T06:32:41.594936+00:00",
+  "latency_ms": 896.5,
+  "http_status": 302,
+  "sha256": "7aec81a20be082e7e49d1cc17b5ba869202fe095d5dacd4df0881e56c05bf5d9",
+  "bytes": 60,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:32:41 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "location": "/de/international-exchange/fees",
+    "cf-ray": "a49c4efade5ee20a-DFW"
+  },
+  "error": "HTTP Error 302: Found",
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/fee_page.bin"
+}

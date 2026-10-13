@@ -1,0 +1,18 @@
+{
+  "source_id": "docs_general_history",
+  "url": "https://docs.kraken.com/exchange/guides/general/historical-data",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:31:07.490648+00:00",
+  "response_utc": "2026-10-13T06:31:08.870299+00:00",
+  "latency_ms": 1379,
+  "http_status": 200,
+  "sha256": "81e0d6fb9d829f703d016e0eb34b5d51cf26f76107cc60b44f2d6260c80d34eb",
+  "bytes": 548288,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:31:08 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_general_history.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

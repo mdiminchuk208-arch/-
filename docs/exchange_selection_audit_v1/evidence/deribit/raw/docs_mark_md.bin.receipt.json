@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.deribit.com/api-reference/market-data/public-get_mark_price_history.md",
+  "request_start_utc": "2026-10-13T06:32:42.249020+00:00",
+  "completion_utc": "2026-10-13T06:32:43.281162+00:00",
+  "latency_ms": 1032.5,
+  "http_status": 200,
+  "sha256": "21d70436b07ed782f731765631e2103a9cb1c08e8590d15e5f2c779bff0e3d49",
+  "bytes": 6398,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4f051c59f25b-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:32:43 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_mark_md.bin"
+}

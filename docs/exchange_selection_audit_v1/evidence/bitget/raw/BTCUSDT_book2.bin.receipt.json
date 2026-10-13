@@ -1,0 +1,16 @@
+{
+  "url": "https://api.bitget.com/api/v2/mix/market/orderbook?symbol=BTCUSDT&productType=USDT-FUTURES&limit=100",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:26:57.625278+00:00",
+  "request_end_utc": "2026-10-13T06:26:58.691111+00:00",
+  "latency_ms": 1066.04,
+  "status": 200,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:26:58 GMT",
+    "content-type": "application/json"
+  },
+  "sha256": "676166bf8aaf97dfd32e501fc383d071673aca413d5695a27521b76349a1fc16",
+  "bytes": 6662,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/BTCUSDT_book2.bin",
+  "error": null
+}

@@ -1,0 +1,16 @@
+{
+  "url": "https://api.international.coinbase.com/api/v1/instruments/BTC-PERP/quote",
+  "request_start_utc": "2026-10-13T06:37:47.256480+00:00",
+  "completion_utc": "2026-10-13T06:37:48.870962+00:00",
+  "latency_ms": 1614.6,
+  "http_status": 200,
+  "sha256": "9221326906e9160c86347e2cb05618f09156979172e3a0c5dc275d611a5c213a",
+  "bytes": 332,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:37:48 GMT",
+    "content-type": "application/json"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/btc_quote2.bin"
+}

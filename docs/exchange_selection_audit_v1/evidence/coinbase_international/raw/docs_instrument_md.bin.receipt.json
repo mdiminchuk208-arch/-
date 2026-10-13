@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.cdp.coinbase.com/api-reference/international-exchange-api/rest-api/instruments/get-instrument-details.md",
+  "request_start_utc": "2026-10-13T06:30:13.882290+00:00",
+  "completion_utc": "2026-10-13T06:30:14.873359+00:00",
+  "latency_ms": 991.3,
+  "http_status": 200,
+  "sha256": "47c7838fd020bd167dd6f81eb717247efbbe03192d609a035ce01ab5e894ca66",
+  "bytes": 15936,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4b657e41b87b-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:14 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/docs_instrument_md.bin"
+}

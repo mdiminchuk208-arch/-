@@ -1,0 +1,16 @@
+{
+  "url": "https://api.bitget.com/api/v2/mix/market/history-fund-rate?symbol=BTCUSDT&productType=USDT-FUTURES&pageSize=2&pageNo=1",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:21:08.175834+00:00",
+  "request_end_utc": "2026-10-12T20:21:08.774596+00:00",
+  "latency_ms": 598.98,
+  "status": 200,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:08 GMT",
+    "content-type": "application/json"
+  },
+  "sha256": "b8114b24fe6481a2eeeecb3f82ec7ef6cf477c4b8d5dfd5f25e601cc1e0abb0d",
+  "bytes": 221,
+  "raw_path": "evidence/bitget/raw/BTCUSDT_funding.bin",
+  "error": null
+}

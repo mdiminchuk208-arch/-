@@ -1,0 +1,19 @@
+{
+  "source_id": "api_changelog",
+  "url": "https://mexcdevelop.github.io/apidocs/contract_v1_en/#update-log",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:28:12.936539+00:00",
+  "response_utc": "2026-10-13T06:28:14.315942+00:00",
+  "latency_ms": 1379,
+  "http_status": 200,
+  "sha256": "57ebc13fea788a1c568c8aeabfdf50acc0c9f5b5a882af4855837d53499940e3",
+  "bytes": 316221,
+  "headers": {
+    "server": "envoy",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:28:13 GMT",
+    "content-length": "316221"
+  },
+  "raw_path": "raw/api_changelog.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

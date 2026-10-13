@@ -1,0 +1,17 @@
+{
+  "url": "https://bybit-exchange.github.io/docs/v5/position",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:26:52.602902+00:00",
+  "request_end_utc": "2026-10-13T06:26:53.788450+00:00",
+  "latency_ms": 1185.93,
+  "status": 200,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "max-age=600",
+    "date": "Tue, 13 Oct 2026 06:26:53 GMT"
+  },
+  "sha256": "da66b6ad46dced1d3b7083189f7a2fb94b3c94099d1e96d05777aa76068e9e32",
+  "bytes": 92207,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_position.html",
+  "error": null
+}

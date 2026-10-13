@@ -1,0 +1,450 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://docs.cdp.coinbase.com/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Get instrument details
+
+> Retrieves market information for a specific instrument.
+
+<Tabs groupId="programming-language">
+  <Tab value="Java" title="Java">
+    ```java theme={null}
+    InstrumentsService instrumentsService = IntxServiceFactory.createInstrumentsService(client);
+    GetInstrumentRequest request = new GetInstrumentRequest.Builder()
+        .instrumentId("BTC-PERP")
+        .build();
+    GetInstrumentResponse response = instrumentsService.getInstrument(request);
+    ```
+
+    For more information, please visit the [INTX Java SDK](https://github.com/coinbase-samples/intx-sdk-java).
+  </Tab>
+
+  <Tab value=".NET" title=".NET">
+    ```cs theme={null}
+    var instrumentsService = new InstrumentsService(client);
+    var request = new GetInstrumentRequest(
+        InstrumentId: "BTC-PERP",
+    );
+    var response = instrumentsService.GetInstrument(request);
+    ```
+
+    For more information, please visit the [INTX .NET SDK](https://github.com/coinbase-samples/intx-sdk-dotnet).
+  </Tab>
+
+  <Tab value="Go" title="Go">
+    ```go theme={null}
+    instrumentsSvc := instruments.NewInstrumentsService(client)
+    request := &instruments.GetInstrumentRequest{
+        InstrumentId: "BTC-PERP",
+    }
+    response, err := instrumentsSvc.GetInstrument(context.Background(), request)
+    ```
+
+    For more information, please visit the [INTX Go SDK](https://github.com/coinbase-samples/intx-sdk-go).
+  </Tab>
+
+  <Tab value="Python" title="Python">
+    ```python theme={null}
+    client = IntxClient()
+    request = GetInstrumentDetailsRequest(
+        instrument_id="BTC-PERP",
+    )
+    response = client.get_instrument_details(request)
+    ```
+
+    For more information, please visit the [INTX Python SDK](https://github.com/coinbase-samples/intx-sdk-py).
+  </Tab>
+
+  <Tab value="Typescript" title="TS/JS">
+    ```js theme={null}
+    const instrumentsService = new InstrumentsService(client);
+
+    instrumentsService.getInstrument({
+        instrumentId: 'ETH-PERP',
+    }).then(async (response) => {
+        console.log('Instrument: ', response);
+    })
+    ```
+
+    For more information, please visit the [INTX TS SDK](https://github.com/coinbase-samples/intx-sdk-ts).
+  </Tab>
+
+  <Tab value="CLI" title="CLI">
+    ```
+    intxctl get-instrument-details --help
+    ```
+
+    For more information, please visit the [INTX CLI](https://github.com/coinbase-samples/intx-cli).
+  </Tab>
+</Tabs>
+
+
+## OpenAPI
+
+````yaml GET /api/v1/instruments/{instrument}
+openapi: 3.0.3
+info:
+  title: REST API
+  description: >
+    # Welcome to Coinbase INTX API
+
+    ## Introduction
+
+    The INTX APIs allow institutions to trade and manage orders on the
+    International Exchange. The following API pages detail various REST API
+    endpoints we offer.
+
+    ## Getting Started
+
+    To get started, please visit one of the following pages:
+
+    - [Quickstart](/international-exchange/introduction/quickstart)
+
+    -
+    [Overview](/api-reference/international-exchange-api/rest-api/introduction)
+
+    -
+    [Authentication](/api-reference/international-exchange-api/rest-api/authentication)
+
+    - [Rate Limits](/international-exchange/introduction/rate-limits-overview)
+
+    ## FIX API
+
+    - [FIX API reference](/international-exchange/fix-api/fix-api-overview)
+
+    ## WebSocket API
+
+    - [WebSocket API
+    reference](/international-exchange/websocket-feed/websocket-overview)
+  version: '1.0'
+servers:
+  - url: https://api.international.coinbase.com
+security: []
+paths:
+  /api/v1/instruments/{instrument}:
+    get:
+      tags:
+        - Instruments
+      summary: Get instrument details
+      description: Retrieves market information for a specific instrument.
+      operationId: getInstrument
+      parameters:
+        - name: instrument
+          in: path
+          description: >-
+            Identifies the instrument by name (e.g., `BTC-USDC`), UUID (e.g.,
+            `ce55a827-f04a-45c0-9d9b-8bbdb9b48065`), or instrument ID (e.g.,
+            `7149252043835013`)
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Instrument
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Instrument_v1'
+        '400':
+          description: Invalid attribute
+components:
+  schemas:
+    Instrument_v1:
+      type: object
+      properties:
+        instrument_id:
+          description: A unique integer identifier to represent the instrument
+          type: string
+          example: 22653087021498350
+        instrument_uuid:
+          description: A UUID to represent the instrument
+          type: string
+          format: uuid
+          example: 97645486-8058-4d98-aa1e-5ab2685d09c8
+        symbol:
+          description: A human readable representation of the instrument
+          type: string
+          example: BTC-USDC
+        type:
+          $ref: '#/components/schemas/InstrumentType'
+        mode:
+          $ref: '#/components/schemas/InstrumentMode'
+        base_asset_id:
+          description: The identifier of the base asset
+          type: string
+          example: 2919822098049565
+        base_asset_uuid:
+          description: A UUID to represent the base asset
+          type: string
+          format: uuid
+          example: 592a8039-db3e-45ed-b752-ffd1983eead2
+        base_asset_name:
+          description: The name of the base asset
+          type: string
+          example: BTC
+        quote_asset_id:
+          description: The identifier of the quote asset
+          type: string
+          example: 45922259775510770
+        quote_asset_uuid:
+          description: A UUID to represent the quote asset
+          type: string
+          format: uuid
+          example: a96dc949-7650-4a70-8227-955366a22297
+        quote_asset_name:
+          description: The name of the quote asset
+          type: string
+          example: USDC
+        base_increment:
+          description: The minimum allowed quantity change of the base asset
+          type: string
+          example: 0.000001
+        quote_increment:
+          description: The minimum allowed price change of the quote asset
+          type: string
+          example: 0.01
+        price_band_percent:
+          description: The max percentage from BBO permitted for order placement
+          type: number
+          format: double
+          example: 0.02
+        market_order_percent:
+          description: The percentage from BBO used to price bound market orders
+          type: number
+          format: double
+          example: 0.015
+        qty_24hr:
+          description: The qty traded over the last 24hr period
+          type: string
+          example: 4318.12
+        notional_24hr:
+          description: >-
+            The notional amount in USDC traded over the last 24hr period. For
+            spot instruments which route orders to Coinbase exchange this field
+            is not set, set to "", or 0
+          type: string
+          example: 86362400
+        avg_daily_qty:
+          description: The 30 day average daily traded qty updated daily
+          type: string
+          example: 5741.531
+        avg_daily_notional:
+          description: >-
+            The 30 day average daily traded notional amount in USDC updated
+            daily. For spot instruments which route orders to Coinbase exchange
+            this field is not set, set to "", or 0
+          type: string
+          example: 109430620
+        previous_day_qty:
+          description: >-
+            The traded qty in the previous day (It gets disseminated daily
+            around 12am UTC.)
+          type: string
+          example: 5741.531
+        open_interest:
+          description: The total number of active positions held by traders
+          type: string
+          example: 100
+        position_limit_qty:
+          description: The max qty allowed for a position
+          type: string
+        position_limit_adq_pct:
+          description: The max percentage of ADQ allowed for a position
+          type: number
+          format: double
+          example: 0.03
+        position_notional_limit:
+          description: The max notional value allowed for a position
+          type: string
+          example: '57509393.1183'
+        open_interest_notional_limit:
+          description: The total notional value of active positions held by traders
+          type: string
+          example: '299974395.974'
+        replacement_cost:
+          description: The replacement cost used in the margin calculations
+          type: string
+          example: 421.31
+        base_imf:
+          description: >-
+            The margin requirement corresponding to maximum allowed leverage
+            when trading on margin
+          type: number
+          format: double
+          example: 0.1
+        default_imf:
+          description: >-
+            The margin requirement needed to exceed the high leverage position
+            restrictions
+          type: number
+          format: double
+          example: 0.2
+        min_notional_value:
+          description: The smallest notional amount in USDC allowed to place an order
+          type: string
+          example: 10
+        min_quantity:
+          description: The smallest quantity of the base asset needed to place an order
+          type: string
+          example: 0.0001
+        funding_interval:
+          description: The amount of time in nanoseconds between funding intervals
+          type: string
+          example: 36000000000
+        trading_state:
+          $ref: '#/components/schemas/InstrumentTradingState'
+        quote:
+          $ref: '#/components/schemas/InstrumentQuote_v1'
+        base_asset_multiplier:
+          description: The multiply factor to indicate the number of units in one contract
+          type: string
+          example: 1
+        underlying_type:
+          description: >-
+            The type of the underlying asset. Value can be INDEX when underlying
+            asset represents an index, SPOT when underlying asset is a spot,
+            EQUITY for equity single stock, EQUITY_ETF for equity ETF,
+            EQUITY_INDEX for equity custom basket or index, COMMOD for
+            commodity, COMMOD_INDEX for commodity index, COMMOD_ETF for
+            commodity ETF, or PREIPO for pre-IPO equity.
+          type: string
+          example: SPOT
+        rfq_maker_fee_rate:
+          description: The fee rate charged for RFQ quotes.
+          type: string
+          example: 0.01
+        execution_exchange:
+          description: >-
+            The exchange which orders rest and match on. The value is
+            `COINBASE_INTERNATIONAL_EXCHANGE` for all instruments except for
+            spot instruments which route orders to Coinbase Exchange, in which
+            case the value is `COINBASE_EXCHANGE`
+          type: string
+          example: COINBASE_INTERNATIONAL_EXCHANGE
+    InstrumentType:
+      description: The type of instrument
+      type: string
+      enum:
+        - SPOT
+        - PERP
+      example: PERP
+    InstrumentMode:
+      description: The mode of instrument
+      type: string
+      enum:
+        - STANDARD
+        - PRE_LAUNCH
+        - PRE_LAUNCH_CONVERTING
+      example: STANDARD
+    InstrumentTradingState:
+      description: An market level status affecting all trading within the market
+      type: string
+      enum:
+        - TRADING
+        - PAUSED
+        - HALT
+        - DELISTED
+        - EXTERNAL
+        - AUCTION_MODE
+        - CANCEL_ONLY
+        - POST_ONLY
+        - LIMIT_ONLY
+        - TRADING_DISABLED
+        - CANCEL_ONLY_ENFORCED_BY_COINBASE_INTERNATIONAL_EXCHANGE
+        - COINBASE_EXCHANGE_UNREACHABLE
+      example: TRADING
+    InstrumentQuote_v1:
+      type: object
+      properties:
+        best_bid_price:
+          description: >-
+            The highest buy order price resting on the book. For spot
+            instruments which route orders to Coinbase Exchange, this field may
+            be temporarily set to 0 if REST API cannot reach Coinbase Exchange;
+            in a future release the field will not be populated if Coinbase
+            Exchange is unreachable.
+          type: string
+          example: 20000.5
+        best_bid_size:
+          description: >-
+            The total amount available at the best bid price. For spot
+            instruments which route orders to Coinbase Exchange, this field may
+            be temporarily set to 0 if REST API cannot reach Coinbase Exchange;
+            in a future release the field will not be populated if Coinbase
+            Exchange is unreachable
+          type: string
+          example: 3.541424
+        best_ask_price:
+          description: >-
+            The lowest sell order price resting on the book. For spot
+            instruments which route orders to Coinbase Exchange, this field may
+            be temporarily set to 0 if REST API cannot reach Coinbase Exchange;
+            in a future release the field will not be populated if Coinbase
+            Exchange is unreachable
+          type: string
+          example: 20001.75
+        best_ask_size:
+          description: >-
+            The total amount available at the best ask price. For spot
+            instruments which route orders to Coinbase Exchange, this field may
+            be temporarily set to 0 if REST API cannot reach Coinbase Exchange;
+            in a future release the field will not be populated if Coinbase
+            Exchange is unreachable
+          type: string
+          example: 2.8754
+        trade_price:
+          description: >-
+            The price of the most recent trade. For spot instruments which route
+            orders to Coinbase Exchange, this field may be temporarily set to 0
+            if REST API cannot reach Coinbase Exchange; in a future release the
+            field will not be populated if Coinbase Exchange is unreachable
+          type: string
+          example: 20000.63
+        trade_qty:
+          description: >-
+            The size of the most recent trade. For spot instruments which route
+            orders to Coinbase Exchange, this field may be temporarily set to 0
+            if REST API cannot reach Coinbase Exchange; in a future release the
+            field will not be populated if Coinbase Exchange is unreachable
+          type: string
+          example: 0.73
+        index_price:
+          description: >-
+            For perpetual futures only, the index price used for the funding
+            process
+          type: string
+          example: 20001.45
+        mark_price:
+          description: The current mark price value used in risk and margin calculations
+          type: string
+          example: 20000.63
+        settlement_price:
+          description: The most recent settlement price value
+          type: string
+          example: 20000.23
+        limit_up:
+          description: >-
+            The max price the book allows buy orders to trade. For spot
+            instruments which route orders to Coinbase Exchange this field is
+            not set, set to "", or 0
+          type: string
+          example: 21056.35
+        limit_down:
+          description: >-
+            The min price the book allows sell orders to trade. For spot
+            instruments which route orders to Coinbase Exchange this field is
+            not set, set to "", or 0
+          type: string
+          example: 19531.5
+        predicted_funding:
+          description: >-
+            The predicted funding rate based on the current state of a rolling
+            calculation
+          type: string
+          example: 0.1543
+        timestamp:
+          description: The timestamp of the last quote update
+          type: string
+          format: date-time
+
+````

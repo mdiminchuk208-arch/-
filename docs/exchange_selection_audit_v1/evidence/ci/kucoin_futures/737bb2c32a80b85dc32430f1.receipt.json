@@ -1,0 +1,22 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-length": "632",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:39:00 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "281.016",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 632,
+  "raw_file": "737bb2c32a80b85dc32430f1.body",
+  "raw_sha256": "65da1c335d37419a138e7151ab98c0dfb347c73c7822219c626d246f914df0a3",
+  "request_started_at": "2026-10-13T06:38:59.863164+00:00",
+  "response_completed_at": "2026-10-13T06:39:00.144127+00:00",
+  "source_kind": "book_BTC",
+  "truncated": false,
+  "url": "https://api-futures.kucoin.com/api/v1/level2/depth20?symbol=XBTUSDTM"
+}

@@ -1,0 +1,19 @@
+{
+  "source_id": "support_search_size",
+  "url": "https://support.kraken.com/hc/en-us/search?query=multi-collateral%20futures%20contract%20size",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:32:55.230827+00:00",
+  "response_utc": "2026-10-13T06:32:56.220208+00:00",
+  "latency_ms": 989,
+  "http_status": 308,
+  "sha256": "590a535b09bcbcc188c579b8f5467b765b867e486bbc2cb808e75cbb95003c8d",
+  "bytes": 132,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:32:56 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "location": "https://support.kraken.com/en-us/search?query=multi-collateral%20futures%20contract%20size",
+    "server": "envoy"
+  },
+  "raw_path": "raw/support_search_size.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

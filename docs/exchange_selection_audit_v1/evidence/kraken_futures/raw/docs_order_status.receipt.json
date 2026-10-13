@@ -1,0 +1,18 @@
+{
+  "source_id": "docs_order_status",
+  "url": "https://docs.kraken.com/api-reference/order-management/get-specific-orders-status",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:30:20.969623+00:00",
+  "response_utc": "2026-10-13T06:30:22.374615+00:00",
+  "latency_ms": 1405,
+  "http_status": 200,
+  "sha256": "f09934d505b3d952acac728ae22db38c8a3dd727c90ec0815a63169acbedd4a8",
+  "bytes": 555877,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:30:21 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_order_status.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

@@ -1,0 +1,16 @@
+{
+  "url": "https://api.international.coinbase.com/api/v1/instruments/ETH-PERP/quote",
+  "request_start_utc": "2026-10-13T06:32:40.696262+00:00",
+  "completion_utc": "2026-10-13T06:32:42.203917+00:00",
+  "latency_ms": 1508.1,
+  "http_status": 200,
+  "sha256": "c413e782d576d80aba16ed8d42456c7d26641f82aa0d1edc556ca24eed236f1e",
+  "bytes": 340,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:32:42 GMT",
+    "content-type": "application/json"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/eth_quote.bin"
+}

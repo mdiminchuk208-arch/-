@@ -1,0 +1,21 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:39:00 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "184.852",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 849383,
+  "raw_file": "c1da37ef043f49968cb95fb2.body",
+  "raw_sha256": "4aabc85b2e3f1bade559efee773398678fbb756d54480012a3a914945f63e950",
+  "request_started_at": "2026-10-13T06:39:00.699455+00:00",
+  "response_completed_at": "2026-10-13T06:39:00.884019+00:00",
+  "source_kind": "instruments",
+  "truncated": false,
+  "url": "https://futures.kraken.com/derivatives/api/v3/instruments"
+}

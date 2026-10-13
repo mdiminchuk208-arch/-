@@ -1,0 +1,17 @@
+{
+  "url": "https://www.deribit.com/api/v2/public/get_order_book?instrument_name=BTC_USDC-PERPETUAL&depth=100",
+  "request_start_utc": "2026-10-13T06:28:14.727603+00:00",
+  "completion_utc": "2026-10-13T06:28:15.146548+00:00",
+  "latency_ms": 419.1,
+  "http_status": 200,
+  "sha256": "6d8fc6514af2e941413af5b8cddaa5d6d7db094d76122eddd9df752f47068a56",
+  "bytes": 4109,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:28:15 GMT",
+    "content-type": "application/json",
+    "cf-ray": "a49c487918b1da10-DFW"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/btc_book1.bin"
+}

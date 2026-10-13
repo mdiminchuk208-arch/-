@@ -1,0 +1,21 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:39:03 GMT"
+  },
+  "http_status": 200,
+  "latency_ms": "121.093",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 4089,
+  "raw_file": "30d70642bccbe8d89253ad49.body",
+  "raw_sha256": "697535170bab5e7f33486dcf2f91502b39be7827025482ed924fd1cbf85be966",
+  "request_started_at": "2026-10-13T06:39:03.427615+00:00",
+  "response_completed_at": "2026-10-13T06:39:03.548622+00:00",
+  "source_kind": "book_BTC_second",
+  "truncated": false,
+  "url": "https://www.deribit.com/api/v2/public/get_order_book?instrument_name=BTC_USDC-PERPETUAL&depth=100"
+}

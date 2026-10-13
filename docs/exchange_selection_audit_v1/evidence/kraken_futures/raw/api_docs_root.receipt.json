@@ -1,0 +1,19 @@
+{
+  "source_id": "api_docs_root",
+  "url": "https://docs.kraken.com/api/docs/futures-api/",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:28:27.735291+00:00",
+  "response_utc": "2026-10-13T06:28:29.234416+00:00",
+  "latency_ms": 1499,
+  "http_status": 308,
+  "sha256": "d43c24417690a11a92924044ee5137cb6cd44a3c41273fc08e8c766993015002",
+  "bytes": 55,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:28:29 GMT",
+    "content-type": "application/json",
+    "location": "/api/docs/futures-api",
+    "server": "envoy"
+  },
+  "raw_path": "raw/api_docs_root.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

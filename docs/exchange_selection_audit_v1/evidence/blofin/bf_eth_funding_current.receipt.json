@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c473a5d9c66f5-DFW",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:27:24 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1394.5,
+  "method": "GET",
+  "raw_length": 222,
+  "raw_path": "bf_eth_funding_current.raw",
+  "raw_sha256": "053561728365d27d519671cf814b030f9af381e11357cdc28a3c857d818e697e",
+  "request_start_utc": "2026-10-13T06:27:22.776383+00:00",
+  "retrieval_utc": "2026-10-13T06:27:24.170639+00:00",
+  "source_id": "bf_eth_funding_current",
+  "status": 200,
+  "truncated": false,
+  "url": "https://openapi.blofin.com/api/v1/market/funding-rate?instId=ETH-USDT"
+}

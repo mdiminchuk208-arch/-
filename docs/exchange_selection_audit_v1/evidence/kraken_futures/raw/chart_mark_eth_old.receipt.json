@@ -1,0 +1,19 @@
+{
+  "source_id": "chart_mark_eth_old",
+  "url": "https://futures.kraken.com/api/charts/v1/mark/PF_ETHUSD/15m?from=1728777600&to=1728864000",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:32:24.526912+00:00",
+  "response_utc": "2026-10-13T06:32:25.548332+00:00",
+  "latency_ms": 1021,
+  "http_status": 200,
+  "sha256": "bc7ce433478abacbdc8bf60b20b7cd2766f5b52ea95151675b3d9f9fca21af63",
+  "bytes": 13568,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:32:25 GMT",
+    "content-type": "application/json",
+    "content-length": "13568",
+    "server": "envoy"
+  },
+  "raw_path": "raw/chart_mark_eth_old.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

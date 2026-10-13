@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c4b2afb181234-DFW",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:05 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 2184.9,
+  "method": "GET",
+  "raw_length": 716607,
+  "raw_path": "kc_docs_funding_history.raw",
+  "raw_sha256": "6f2e1feee58b9414f71439ed7f0a3283edea44e2b5c185db3e74c3748673ceda",
+  "request_start_utc": "2026-10-13T06:30:04.405427+00:00",
+  "retrieval_utc": "2026-10-13T06:30:06.589863+00:00",
+  "source_id": "kc_docs_funding_history",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.kucoin.com/docs-new/rest/futures-trading/funding-fees/get-public-funding-history?lang=en_US&"
+}

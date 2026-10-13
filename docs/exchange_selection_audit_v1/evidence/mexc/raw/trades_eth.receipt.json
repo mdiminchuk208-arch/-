@@ -1,0 +1,19 @@
+{
+  "source_id": "trades_eth",
+  "url": "https://contract.mexc.com/api/v1/contract/deals/ETH_USDT",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:29:47.992806+00:00",
+  "response_utc": "2026-10-13T06:29:48.290525+00:00",
+  "latency_ms": 297,
+  "http_status": 200,
+  "sha256": "011abda6b1dcc6292ebc692b34ab13344042fe2dbb077c2fd51d4ea5c6060871",
+  "bytes": 9655,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:29:48 GMT",
+    "content-length": "9655",
+    "server": "envoy"
+  },
+  "raw_path": "raw/trades_eth.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

@@ -1,0 +1,19 @@
+{
+  "source_id": "m15_btc_old",
+  "url": "https://contract.mexc.com/api/v1/contract/kline/BTC_USDT?interval=Min15&start=1728777600&end=1728864000",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:22:05.412378+00:00",
+  "response_utc": "2026-10-12T20:22:05.991464+00:00",
+  "latency_ms": 579,
+  "http_status": 200,
+  "sha256": "73955ef44781aa99ebc7ede373ea6a413470116f8263771d34a3027284b52084",
+  "bytes": 161,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Mon, 12 Oct 2026 20:22:05 GMT",
+    "content-length": "161",
+    "server": "envoy"
+  },
+  "raw_path": "raw/m15_btc_old.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

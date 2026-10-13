@@ -1,0 +1,13 @@
+{
+  "url": "https://status.deribit.com/",
+  "request_start_utc": "2026-10-13T06:33:40.435363+00:00",
+  "completion_utc": "2026-10-13T06:33:40.499402+00:00",
+  "latency_ms": 64.2,
+  "http_status": null,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "bytes": 0,
+  "truncated": false,
+  "headers": {},
+  "error": "URLError(OSError('Tunnel connection failed: 403 Forbidden'))",
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/status.bin"
+}

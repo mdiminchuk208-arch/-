@@ -1,0 +1,20 @@
+{
+  "source_id": "docs_instruments",
+  "url": "https://docs.kraken.com/api/docs/futures-api/trading/get-instruments",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:22:11.459061+00:00",
+  "response_utc": "2026-10-12T20:22:12.497018+00:00",
+  "latency_ms": 1037,
+  "http_status": 308,
+  "sha256": "646b683ea49f89b0848c92b5406f874f3566e1d8173cad8ead088cf4cb41c761",
+  "bytes": 111967,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:22:12 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "content-length": "111967",
+    "location": "/api-reference/instrument-details/get-instruments",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_instruments.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

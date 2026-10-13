@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.deribit.com/api-reference/trading/private-cancel.md",
+  "request_start_utc": "2026-10-13T06:30:49.811680+00:00",
+  "completion_utc": "2026-10-13T06:30:50.822652+00:00",
+  "latency_ms": 1011.1,
+  "http_status": 200,
+  "sha256": "a8bfc5c1c41e57f5b5a35da26439ed895719fbc11423c063081c307a170c6f80",
+  "bytes": 20720,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4c462fc9a23e-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:50 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_cancel_md.bin"
+}

@@ -1,0 +1,729 @@
+{
+  "capture_environment": "Codex managed cloud, inherited HTTPS proxy and CA; no cookies, authentication, VPN or alternate routing; no automatic redirect following",
+  "document_quotes": {
+    "docs_main#order-book-trading-algo-trading-post-place-algo-order": [
+      "The algo order includes trigger order, oco order, chase order, conditional order, twap order and trailing order.",
+      "only stop-loss logic will be performed and take-profit logic will be ignored."
+    ],
+    "docs_main#order-book-trading-market-data-get-candlesticks-history": [
+      "Retrieve history candlestick charts from recent years(It is last 3 months supported for 1s candlestick).",
+      "after String No Pagination of data to return records earlier than the requested ts",
+      "before String No Pagination of data to return records newer than the requested ts.",
+      "0: K line is uncompleted1: K line is completed"
+    ],
+    "docs_main#order-book-trading-market-data-get-order-book": [
+      "\"10\" is the quantity at the price (number of contracts for derivatives, quantity in base currency for Spot and Spot Margin)",
+      "Order book depth per side. Maximum 400, e.g. 400 bids + 400 asks"
+    ],
+    "docs_main#order-book-trading-market-data-get-trades-history": [
+      "Retrieve the recent transactions of an instrument from the last 3 months with pagination."
+    ],
+    "docs_main#order-book-trading-trade-post-place-order": [
+      "For FUTURES/SWAP/OPTION orders, it refers to the number of contracts.",
+      "Notional value = sz × ctVal × markPx (linear contracts)",
+      "reduceOnly When placing an order with this parameter set to true, it means that the order will reduce the size of the position only"
+    ],
+    "docs_main#overview-api-key-creation-api-key-permissions": [
+      "Trade : Can place and cancel orders, funding transfer, make settings which need write permission",
+      "Withdraw : Can make withdrawals"
+    ],
+    "docs_main#overview-api-key-creation-api-key-security": [
+      "Each API key can bind up to 20 IP addresses"
+    ],
+    "docs_main#public-data-rest-api-get-funding-rate": [
+      "positive = long positions pay short positions at the next fundingTime; negative = short positions pay long positions.",
+      "users should focus on the difference between `fundingTime` and `nextFundingTime` fields to determine the funding fee interval of a contract."
+    ],
+    "docs_main#public-data-rest-api-get-funding-rate-history": [
+      "This endpoint can return data up to three months.",
+      "realizedRate String Actual funding rate"
+    ],
+    "docs_main#public-data-rest-api-get-instruments": [
+      "SWAP: Perpetual Futures",
+      "Face value of one contract. Denomination depends on ctType: for linear contracts, ctVal is in the base currency (e.g., ctVal=0.01 BTC for BTC-USDT-SWAP)",
+      "Users should use this endpoint together with fee rates endpoint to get the trading fee of a specific symbol.",
+      "Instruments REST endpoints and WebSocket channel will update `expTime` once the delisting announcement is published."
+    ],
+    "docs_main#trading-account-rest-api-get-fee-rates": [
+      "GET /api/v5/account/trade-fee",
+      "negative number, which means the rate of commission.",
+      "The Open API will not reflect zero-fee trading."
+    ],
+    "docs_main#trading-account-rest-api-set-leverage": [
+      "Set leverage for `SWAP` instruments under `isolated-margin` trade mode and buy/sell order placement mode at contract level."
+    ],
+    "docs_main#trading-statistics-rest-api-get-contract-open-interest-history": [
+      "This endpoint can retrieve the latest 1,440 data entries.",
+      "for other periods, the data time range is up to early February 2024."
+    ],
+    "fee_help_en": [
+      "Trader A (Maker fee: 0.02%; Taker fee: 0.05%)"
+    ],
+    "fee_page_en": [
+      "\"tabName\":\"Spot\""
+    ]
+  },
+  "sources": [
+    {
+      "body_bytes": 21851,
+      "error": null,
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Mon, 12 Oct 2026 20:21:01 GMT"
+      },
+      "id": "book_btc_1",
+      "latency_ms": 394.92,
+      "method": "GET",
+      "raw_path": "raw/book_btc_1.body",
+      "receipt_path": "raw/book_btc_1.receipt.json",
+      "request_utc": "2026-10-12T20:21:01.128538Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-12T20:21:01.523267Z",
+      "sha256": "73b63445fa77a46d4f633591d3dd2cfba621c0a19ced45d61a8a5d9a74c01a2c",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=400"
+    },
+    {
+      "body_bytes": 21825,
+      "error": null,
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Tue, 13 Oct 2026 06:26:20 GMT"
+      },
+      "id": "book_btc_2",
+      "latency_ms": 1075.69,
+      "method": "GET",
+      "raw_path": "raw/book_btc_2.body",
+      "receipt_path": "raw/book_btc_2.receipt.json",
+      "request_utc": "2026-10-13T06:26:19.586831Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-13T06:26:20.662317Z",
+      "sha256": "827ab70312dccc2170ddb7b3b6b9a2cdbef45a2d0c352ddf023e8defc6940ee9",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/market/books?instId=BTC-USDT-SWAP&sz=400"
+    },
+    {
+      "body_bytes": 22405,
+      "error": null,
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Mon, 12 Oct 2026 20:21:01 GMT"
+      },
+      "id": "book_eth_1",
+      "latency_ms": 362.71,
+      "method": "GET",
+      "raw_path": "raw/book_eth_1.body",
+      "receipt_path": "raw/book_eth_1.receipt.json",
+      "request_utc": "2026-10-12T20:21:01.213519Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-12T20:21:01.576088Z",
+      "sha256": "31e1862766484afa7c11705ee01fd56297f2ac8973e19676e9b1c98149b38a98",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/market/books?instId=ETH-USDT-SWAP&sz=400"
+    },
+    {
+      "body_bytes": 22420,
+      "error": null,
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Tue, 13 Oct 2026 06:26:20 GMT"
+      },
+      "id": "book_eth_2",
+      "latency_ms": 1110.76,
+      "method": "GET",
+      "raw_path": "raw/book_eth_2.body",
+      "receipt_path": "raw/book_eth_2.receipt.json",
+      "request_utc": "2026-10-13T06:26:19.594120Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-13T06:26:20.704630Z",
+      "sha256": "dc06838c60ade99b3fdaf339742213354ef19d6475e18fc71e5eea95a45737f7",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/market/books?instId=ETH-USDT-SWAP&sz=400"
+    },
+    {
+      "body_bytes": 5276205,
+      "error": null,
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 12 Oct 2026 20:21:18 GMT"
+      },
+      "id": "docs_main",
+      "latency_ms": 1199.64,
+      "method": "GET",
+      "raw_path": "raw/docs_main.body",
+      "receipt_path": "raw/docs_main.receipt.json",
+      "request_utc": "2026-10-12T20:21:17.822281Z",
+      "response_code": null,
+      "retrieval_utc": "2026-10-12T20:21:19.020057Z",
+      "sha256": "68eb4619b135c4a4e23500e5cd79f6def0f50eb61ff7b56c1b87f3249d7e474c",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/docs-v5/en/"
+    },
+    {
+      "body_bytes": 68,
+      "error": null,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Mon, 12 Oct 2026 20:21:18 GMT"
+      },
+      "id": "fee_help",
+      "latency_ms": 601.0,
+      "method": "GET",
+      "raw_path": "raw/fee_help.body",
+      "receipt_path": "raw/fee_help.receipt.json",
+      "request_utc": "2026-10-12T20:21:17.857126Z",
+      "response_code": null,
+      "retrieval_utc": "2026-10-12T20:21:18.457941Z",
+      "sha256": "b0826078c63ac5ada68e12685a993e0289330721182db714396768b02fca77e1",
+      "status": 302,
+      "truncated": false,
+      "url": "https://www.okx.com/help/trading-fee-rules-faq"
+    },
+    {
+      "body_bytes": 190438,
+      "error": null,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Mon, 12 Oct 2026 20:21:37 GMT"
+      },
+      "id": "fee_help_en",
+      "latency_ms": 724.4,
+      "method": "GET",
+      "raw_path": "raw/fee_help_en.body",
+      "receipt_path": "raw/fee_help_en.receipt.json",
+      "request_utc": "2026-10-12T20:21:36.857056Z",
+      "response_code": null,
+      "retrieval_utc": "2026-10-12T20:21:37.581095Z",
+      "sha256": "f7ea4f2e998864091eefc7a57e4a06caac73aaca32d4e3cb441b181951788ece",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/en-us/help/trading-fee-rules-faq"
+    },
+    {
+      "body_bytes": 46,
+      "error": null,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Mon, 12 Oct 2026 20:21:18 GMT"
+      },
+      "id": "fee_page",
+      "latency_ms": 574.82,
+      "method": "GET",
+      "raw_path": "raw/fee_page.body",
+      "receipt_path": "raw/fee_page.receipt.json",
+      "request_utc": "2026-10-12T20:21:17.838145Z",
+      "response_code": null,
+      "retrieval_utc": "2026-10-12T20:21:18.412703Z",
+      "sha256": "9776dbfb97e5d3899005db67d2c2982df5ec846d2b607353bf3d6197d9bebb95",
+      "status": 302,
+      "truncated": false,
+      "url": "https://www.okx.com/fees"
+    },
+    {
+      "body_bytes": 65943,
+      "error": null,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Mon, 12 Oct 2026 20:21:37 GMT"
+      },
+      "id": "fee_page_en",
+      "latency_ms": 384.75,
+      "method": "GET",
+      "raw_path": "raw/fee_page_en.body",
+      "receipt_path": "raw/fee_page_en.receipt.json",
+      "request_utc": "2026-10-12T20:21:36.868065Z",
+      "response_code": null,
+      "retrieval_utc": "2026-10-12T20:21:37.252582Z",
+      "sha256": "5d33574b144bc0366ac2d00d641f9a382dc5021d8c502fa1a295dd2fac4be24f",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/en-us/fees"
+    },
+    {
+      "body_bytes": 524,
+      "error": null,
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Mon, 12 Oct 2026 20:21:37 GMT"
+      },
+      "id": "funding_btc",
+      "latency_ms": 515.43,
+      "method": "GET",
+      "raw_path": "raw/funding_btc.body",
+      "receipt_path": "raw/funding_btc.receipt.json",
+      "request_utc": "2026-10-12T20:21:36.744897Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-12T20:21:37.260242Z",
+      "sha256": "c6550aa7c85233fa33a4e3005c7703ae8c4a55d9e4f809bec23c43756db8cf8d",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/public/funding-rate?instId=BTC-USDT-SWAP"
+    },
+    {
+      "body_bytes": 522,
+      "error": null,
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Tue, 13 Oct 2026 06:26:20 GMT"
+      },
+      "id": "funding_eth",
+      "latency_ms": 1034.49,
+      "method": "GET",
+      "raw_path": "raw/funding_eth.body",
+      "receipt_path": "raw/funding_eth.receipt.json",
+      "request_utc": "2026-10-13T06:26:19.607094Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-13T06:26:20.641416Z",
+      "sha256": "14d93a2ce6d7b54a6998414f7f53e66bfb1f3e74b0d432c1c2bd9ac2d7ad7f17",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/public/funding-rate?instId=ETH-USDT-SWAP"
+    },
+    {
+      "body_bytes": 424,
+      "error": null,
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Mon, 12 Oct 2026 20:21:37 GMT"
+      },
+      "id": "funding_history_btc",
+      "latency_ms": 512.11,
+      "method": "GET",
+      "raw_path": "raw/funding_history_btc.body",
+      "receipt_path": "raw/funding_history_btc.receipt.json",
+      "request_utc": "2026-10-12T20:21:36.782575Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-12T20:21:37.294509Z",
+      "sha256": "dce0b8a973fbcc64ebc4a2dc9b5b14cd61c7d1a28005a211b6a7a95483f69f00",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/public/funding-rate-history?instId=BTC-USDT-SWAP&limit=2"
+    },
+    {
+      "body_bytes": 428,
+      "error": null,
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Mon, 12 Oct 2026 20:21:37 GMT"
+      },
+      "id": "funding_history_eth",
+      "latency_ms": 420.41,
+      "method": "GET",
+      "raw_path": "raw/funding_history_eth.body",
+      "receipt_path": "raw/funding_history_eth.receipt.json",
+      "request_utc": "2026-10-12T20:21:36.870688Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-12T20:21:37.290901Z",
+      "sha256": "6b5508aa33b1c5e1edf0084e7b538615bd42c7f91d492827c258194952b605a4",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/public/funding-rate-history?instId=ETH-USDT-SWAP&limit=2"
+    },
+    {
+      "body_bytes": 150,
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:11 GMT"
+      },
+      "id": "index_history_btc",
+      "latency_ms": 1039.66,
+      "method": "GET",
+      "raw_path": "raw/index_history_btc.body",
+      "receipt_path": "raw/index_history_btc.receipt.json",
+      "request_utc": "2026-10-13T06:28:10.818492Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-13T06:28:11.857959Z",
+      "sha256": "f002caac54085bccfaa138cc9c0ac240895d4666eb0ab339c347a7f31fd7dd59",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/market/history-index-candles?instId=BTC-USDT&bar=15m&limit=2"
+    },
+    {
+      "body_bytes": 1117,
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Mon, 12 Oct 2026 20:20:43 GMT"
+      },
+      "id": "instrument_btc",
+      "latency_ms": 604.29,
+      "method": "GET",
+      "raw_path": "raw/instrument_btc.body",
+      "receipt_path": "raw/instrument_btc.receipt.json",
+      "request_utc": "2026-10-12T20:20:43.036835Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-12T20:20:43.640902Z",
+      "sha256": "1a6eeb4c4cc625067010d0110718feaee4a6f03becc60f661b800acb4f5ac4e2",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/public/instruments?instType=SWAP&instId=BTC-USDT-SWAP"
+    },
+    {
+      "body_bytes": 1116,
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Mon, 12 Oct 2026 20:20:43 GMT"
+      },
+      "id": "instrument_eth",
+      "latency_ms": 684.17,
+      "method": "GET",
+      "raw_path": "raw/instrument_eth.body",
+      "receipt_path": "raw/instrument_eth.receipt.json",
+      "request_utc": "2026-10-12T20:20:43.054631Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-12T20:20:43.738455Z",
+      "sha256": "5e5de901b73c7236f43fff8e6086cacac133d7d8cdbd02a7c229d865dbde784c",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/public/instruments?instType=SWAP&instId=ETH-USDT-SWAP"
+    },
+    {
+      "body_bytes": 230,
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Mon, 12 Oct 2026 20:21:01 GMT"
+      },
+      "id": "m15_btc_now",
+      "latency_ms": 362.38,
+      "method": "GET",
+      "raw_path": "raw/m15_btc_now.body",
+      "receipt_path": "raw/m15_btc_now.receipt.json",
+      "request_utc": "2026-10-12T20:21:01.129363Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-12T20:21:01.491528Z",
+      "sha256": "0693e8f1414143f702ab28c1a33bdb42395e66d1dd2c93074b9508f4715e75f9",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/market/candles?instId=BTC-USDT-SWAP&bar=15m&limit=2"
+    },
+    {
+      "body_bytes": 222,
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Mon, 12 Oct 2026 20:21:01 GMT"
+      },
+      "id": "m15_btc_old_after",
+      "latency_ms": 246.77,
+      "method": "GET",
+      "raw_path": "raw/m15_btc_old_after.body",
+      "receipt_path": "raw/m15_btc_old_after.receipt.json",
+      "request_utc": "2026-10-12T20:21:01.120305Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-12T20:21:01.366889Z",
+      "sha256": "fb8d3eeaa3cce27a33dd49efb3ffa2b75801a4f88e9073d9cec4e419f8d8837e",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=15m&after=1728778500000&limit=2"
+    },
+    {
+      "body_bytes": 232,
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:26:20 GMT"
+      },
+      "id": "m15_btc_old_before",
+      "latency_ms": 1039.69,
+      "method": "GET",
+      "raw_path": "raw/m15_btc_old_before.body",
+      "receipt_path": "raw/m15_btc_old_before.receipt.json",
+      "request_utc": "2026-10-13T06:26:19.594240Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-13T06:26:20.633643Z",
+      "sha256": "39864fd3a0d9f33aaa74873b2cdf0f57f8ee15a9febc274a98e41458d802c036",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=15m&before=1728777600000&limit=2"
+    },
+    {
+      "body_bytes": 228,
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Mon, 12 Oct 2026 20:21:01 GMT"
+      },
+      "id": "m15_eth_now",
+      "latency_ms": 446.12,
+      "method": "GET",
+      "raw_path": "raw/m15_eth_now.body",
+      "receipt_path": "raw/m15_eth_now.receipt.json",
+      "request_utc": "2026-10-12T20:21:01.119812Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-12T20:21:01.565625Z",
+      "sha256": "6347a7c25a3bb90a7d27ecb56cdc2d3046ecaccacbec31a1ddce33542c3df7d3",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/market/candles?instId=ETH-USDT-SWAP&bar=15m&limit=2"
+    },
+    {
+      "body_bytes": 222,
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Mon, 12 Oct 2026 20:21:01 GMT"
+      },
+      "id": "m15_eth_old_after",
+      "latency_ms": 326.94,
+      "method": "GET",
+      "raw_path": "raw/m15_eth_old_after.body",
+      "receipt_path": "raw/m15_eth_old_after.receipt.json",
+      "request_utc": "2026-10-12T20:21:01.136174Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-12T20:21:01.462927Z",
+      "sha256": "a2cca20b05233dadc31226d068529a41e1ae1736f0b8e61124b18cd26ab17fc6",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=ETH-USDT-SWAP&bar=15m&after=1728778500000&limit=2"
+    },
+    {
+      "body_bytes": 233,
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:26:20 GMT"
+      },
+      "id": "m15_eth_old_before",
+      "latency_ms": 1003.5,
+      "method": "GET",
+      "raw_path": "raw/m15_eth_old_before.body",
+      "receipt_path": "raw/m15_eth_old_before.receipt.json",
+      "request_utc": "2026-10-13T06:26:19.631261Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-13T06:26:20.634617Z",
+      "sha256": "cc67316a2859ffd778a5a63bb84cc7dda62f8177fbc8810b1ed4bbaea454d07b",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=ETH-USDT-SWAP&bar=15m&before=1728777600000&limit=2"
+    },
+    {
+      "body_bytes": 150,
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:11 GMT"
+      },
+      "id": "mark_history_btc",
+      "latency_ms": 1034.95,
+      "method": "GET",
+      "raw_path": "raw/mark_history_btc.body",
+      "receipt_path": "raw/mark_history_btc.receipt.json",
+      "request_utc": "2026-10-13T06:28:10.850474Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-13T06:28:11.885234Z",
+      "sha256": "47587af77cd44027eb35a7651aabf8e4fefcff877760f73a5f8bf6058c04db56",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=15m&limit=2"
+    },
+    {
+      "body_bytes": 189,
+      "error": null,
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Mon, 12 Oct 2026 20:21:36 GMT"
+      },
+      "id": "oi_btc",
+      "latency_ms": 240.18,
+      "method": "GET",
+      "raw_path": "raw/oi_btc.body",
+      "receipt_path": "raw/oi_btc.receipt.json",
+      "request_utc": "2026-10-12T20:21:36.760381Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-12T20:21:37.000372Z",
+      "sha256": "5656ec2b565bdf1cdbcc6cb5f765656d7ed40a51328ae874a28f206f659f975d",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/public/open-interest?instType=SWAP&instId=BTC-USDT-SWAP"
+    },
+    {
+      "body_bytes": 186,
+      "error": null,
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Mon, 12 Oct 2026 20:21:37 GMT"
+      },
+      "id": "oi_eth",
+      "latency_ms": 537.9,
+      "method": "GET",
+      "raw_path": "raw/oi_eth.body",
+      "receipt_path": "raw/oi_eth.receipt.json",
+      "request_utc": "2026-10-12T20:21:36.764233Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-12T20:21:37.301967Z",
+      "sha256": "ad973d864b347b3d49fa00b1fed19f46fdd32acea062a6309e4065b5885bd79d",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/public/open-interest?instType=SWAP&instId=ETH-USDT-SWAP"
+    },
+    {
+      "body_bytes": 207,
+      "error": null,
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Tue, 13 Oct 2026 06:28:11 GMT"
+      },
+      "id": "oi_history_btc",
+      "latency_ms": 1127.08,
+      "method": "GET",
+      "raw_path": "raw/oi_history_btc.body",
+      "receipt_path": "raw/oi_history_btc.receipt.json",
+      "request_utc": "2026-10-13T06:28:10.802213Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-13T06:28:11.929090Z",
+      "sha256": "35bd47de6a77c210783c439fde0b76a011190739ad2c813d4690b6960ce4dd62",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/rubik/stat/contracts/open-interest-history?instId=BTC-USDT-SWAP&period=15m&limit=2"
+    },
+    {
+      "body_bytes": 203,
+      "error": null,
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Tue, 13 Oct 2026 06:28:11 GMT"
+      },
+      "id": "oi_history_eth",
+      "latency_ms": 1085.74,
+      "method": "GET",
+      "raw_path": "raw/oi_history_eth.body",
+      "receipt_path": "raw/oi_history_eth.receipt.json",
+      "request_utc": "2026-10-13T06:28:10.814451Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-13T06:28:11.899980Z",
+      "sha256": "a086efda5d95a8a037a3e458958e1b5571d57080c0501d1ee0a166b8311b19f3",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/rubik/stat/contracts/open-interest-history?instId=ETH-USDT-SWAP&period=15m&limit=2"
+    },
+    {
+      "body_bytes": 31,
+      "error": null,
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Tue, 13 Oct 2026 06:28:39 GMT"
+      },
+      "id": "oi_history_old_btc",
+      "latency_ms": 1183.99,
+      "method": "GET",
+      "raw_path": "raw/oi_history_old_btc.body",
+      "receipt_path": "raw/oi_history_old_btc.receipt.json",
+      "request_utc": "2026-10-13T06:28:37.976316Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-13T06:28:39.160117Z",
+      "sha256": "fc24d69479edbb84f22c7d5bd4525349734056ad3baf7a5adf7e553f68c06a3a",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/rubik/stat/contracts/open-interest-history?instId=BTC-USDT-SWAP&period=15m&end=1728777600000&limit=2"
+    },
+    {
+      "body_bytes": 31,
+      "error": null,
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Tue, 13 Oct 2026 06:28:38 GMT"
+      },
+      "id": "oi_history_old_eth",
+      "latency_ms": 414.02,
+      "method": "GET",
+      "raw_path": "raw/oi_history_old_eth.body",
+      "receipt_path": "raw/oi_history_old_eth.receipt.json",
+      "request_utc": "2026-10-13T06:28:37.959682Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-13T06:28:38.373518Z",
+      "sha256": "fc24d69479edbb84f22c7d5bd4525349734056ad3baf7a5adf7e553f68c06a3a",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/rubik/stat/contracts/open-interest-history?instId=ETH-USDT-SWAP&period=15m&end=1728777600000&limit=2"
+    },
+    {
+      "body_bytes": 53,
+      "error": null,
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Tue, 13 Oct 2026 06:28:38 GMT"
+      },
+      "id": "server_time",
+      "latency_ms": 306.3,
+      "method": "GET",
+      "raw_path": "raw/server_time.body",
+      "receipt_path": "raw/server_time.receipt.json",
+      "request_utc": "2026-10-13T06:28:37.979217Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-13T06:28:38.285313Z",
+      "sha256": "29293ec272e92b4e9fca0a418ff6b64196a649e774cfaa95401fa539ef7b71b5",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/public/time"
+    },
+    {
+      "body_bytes": 31,
+      "error": null,
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Tue, 13 Oct 2026 06:28:38 GMT"
+      },
+      "id": "system_status",
+      "latency_ms": 989.79,
+      "method": "GET",
+      "raw_path": "raw/system_status.body",
+      "receipt_path": "raw/system_status.receipt.json",
+      "request_utc": "2026-10-13T06:28:37.973392Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-13T06:28:38.962985Z",
+      "sha256": "fc24d69479edbb84f22c7d5bd4525349734056ad3baf7a5adf7e553f68c06a3a",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/system/status"
+    },
+    {
+      "body_bytes": 279,
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:11 GMT"
+      },
+      "id": "trades_history_btc",
+      "latency_ms": 922.72,
+      "method": "GET",
+      "raw_path": "raw/trades_history_btc.body",
+      "receipt_path": "raw/trades_history_btc.receipt.json",
+      "request_utc": "2026-10-13T06:28:10.865867Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-13T06:28:11.788391Z",
+      "sha256": "5374add5966072d5057ace1aca62572df5d88e8cd4c4eb1aa7a6c5b7bbf43e00",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/market/history-trades?instId=BTC-USDT-SWAP&limit=2"
+    },
+    {
+      "body_bytes": 280,
+      "error": null,
+      "headers": {
+        "content-type": "application/json",
+        "date": "Tue, 13 Oct 2026 06:28:11 GMT"
+      },
+      "id": "trades_history_eth",
+      "latency_ms": 949.34,
+      "method": "GET",
+      "raw_path": "raw/trades_history_eth.body",
+      "receipt_path": "raw/trades_history_eth.receipt.json",
+      "request_utc": "2026-10-13T06:28:10.820020Z",
+      "response_code": "0",
+      "retrieval_utc": "2026-10-13T06:28:11.769159Z",
+      "sha256": "ac851915a0b4b39850bf0bf02a10bd4ee4b1b47ac33980eef019902223fdf3d9",
+      "status": 200,
+      "truncated": false,
+      "url": "https://www.okx.com/api/v5/market/history-trades?instId=ETH-USDT-SWAP&limit=2"
+    }
+  ],
+  "venue": "okx"
+}

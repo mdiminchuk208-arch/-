@@ -1,0 +1,17 @@
+{
+  "url": "https://www.bybit.com/en/help-center/article/How-to-create-your-API-key",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:29:19.301517+00:00",
+  "request_end_utc": "2026-10-13T06:29:21.078561+00:00",
+  "latency_ms": 1777.26,
+  "status": 200,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "private, must-revalidate, max-age=60",
+    "date": "Tue, 13 Oct 2026 06:29:20 GMT"
+  },
+  "sha256": "c7db7a4043d05eb2cba201b9317d13de42461071cf0ced9b26b87e672b0e234a",
+  "bytes": 133934,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_api_key_final.html",
+  "error": null
+}

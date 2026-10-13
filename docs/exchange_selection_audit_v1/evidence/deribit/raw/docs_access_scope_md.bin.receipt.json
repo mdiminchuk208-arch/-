@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.deribit.com/articles/access-scope.md",
+  "request_start_utc": "2026-10-13T06:32:41.644641+00:00",
+  "completion_utc": "2026-10-13T06:32:42.714037+00:00",
+  "latency_ms": 1069.8,
+  "http_status": 200,
+  "sha256": "d1e1986551d36b211f4c523fdf964020917932e52dc414ddee05b37ff2343564",
+  "bytes": 4999,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4f0198350abb-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:32:42 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_access_scope_md.bin"
+}

@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c48a89a4c4758-DFW",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:28:22 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 563.1,
+  "method": "GET",
+  "raw_length": 807,
+  "raw_path": "bf_eth_funding_history_v2.raw",
+  "raw_sha256": "0e12d76147f917d2175a8788ba257abca202d66ceac5e838170aa14680b99cfa",
+  "request_start_utc": "2026-10-13T06:28:22.232048+00:00",
+  "retrieval_utc": "2026-10-13T06:28:22.794959+00:00",
+  "source_id": "bf_eth_funding_history_v2",
+  "status": 200,
+  "truncated": false,
+  "url": "https://openapi.blofin.com/api/v1/market/funding-rate-history?instId=ETH-USDT&limit=10"
+}

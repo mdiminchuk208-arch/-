@@ -1,0 +1,17 @@
+{
+  "url": "https://www.bitget.com/docs/classic/Introduction",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:27:29.886468+00:00",
+  "request_end_utc": "2026-10-13T06:27:31.229155+00:00",
+  "latency_ms": 1342.87,
+  "status": 200,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:27:31 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "no-cache,no-cache"
+  },
+  "sha256": "075aaf15f35c63031e295d3a272bbffbc0aa386318235f6ebeec1f40fdee3af8",
+  "bytes": 73703,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bitget/raw/bitget_docs_classic.html",
+  "error": null
+}

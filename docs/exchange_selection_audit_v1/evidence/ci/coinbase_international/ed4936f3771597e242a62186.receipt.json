@@ -1,0 +1,23 @@
+{
+  "environment": "GITHUB_HOSTED_CI",
+  "error_class": null,
+  "headers": {
+    "content-length": "101",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 06:39:01 GMT",
+    "etag": "3381469493"
+  },
+  "http_status": 404,
+  "latency_ms": "680.431",
+  "method": "GET",
+  "payload": null,
+  "private_api": false,
+  "raw_bytes": 101,
+  "raw_file": "ed4936f3771597e242a62186.body",
+  "raw_sha256": "6076fc1b1a6d1be76685339b9a9c2c0e90e94eafd2b886c0e733c5f7be452e16",
+  "request_started_at": "2026-10-13T06:39:00.885192+00:00",
+  "response_completed_at": "2026-10-13T06:39:01.565464+00:00",
+  "source_kind": "book_BTC",
+  "truncated": false,
+  "url": "https://api.international.coinbase.com/api/v1/instruments/BTC-PERP/book?depth=100"
+}

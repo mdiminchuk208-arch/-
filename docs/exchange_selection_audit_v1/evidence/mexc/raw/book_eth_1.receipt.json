@@ -1,0 +1,19 @@
+{
+  "source_id": "book_eth_1",
+  "url": "https://contract.mexc.com/api/v1/contract/depth/ETH_USDT?limit=100",
+  "method": "GET",
+  "request_start_utc": "2026-10-12T20:22:06.897311+00:00",
+  "response_utc": "2026-10-12T20:22:07.410078+00:00",
+  "latency_ms": 512,
+  "http_status": 200,
+  "sha256": "f77b827ae07687208015353c36918977ae9128a19992657ebb82b5b6392d173e",
+  "bytes": 3414,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Mon, 12 Oct 2026 20:22:07 GMT",
+    "content-length": "3414",
+    "server": "envoy"
+  },
+  "raw_path": "raw/book_eth_1.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

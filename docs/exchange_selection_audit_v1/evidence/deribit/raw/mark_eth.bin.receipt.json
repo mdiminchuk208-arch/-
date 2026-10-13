@@ -1,0 +1,17 @@
+{
+  "url": "https://www.deribit.com/api/v2/public/get_mark_price_history?instrument_name=ETH_USDC-PERPETUAL&start_timestamp=1791840000000&end_timestamp=1791849600000",
+  "request_start_utc": "2026-10-13T06:33:40.432365+00:00",
+  "completion_utc": "2026-10-13T06:33:41.394428+00:00",
+  "latency_ms": 962.2,
+  "http_status": 200,
+  "sha256": "aae21295d76f16d678fab9d42f276adc06b02366fba224beb8f76458a96b9068",
+  "bytes": 108,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:33:41 GMT",
+    "content-type": "application/json",
+    "cf-ray": "a49c5070399a61f3-DFW"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/mark_eth.bin"
+}

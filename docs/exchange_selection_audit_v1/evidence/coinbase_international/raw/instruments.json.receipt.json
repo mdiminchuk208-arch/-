@@ -1,0 +1,16 @@
+{
+  "url": "https://api.international.coinbase.com/api/v1/instruments",
+  "request_start_utc": "2026-10-12T20:21:48.041847+00:00",
+  "completion_utc": "2026-10-12T20:21:49.781585+00:00",
+  "latency_ms": 1740.9,
+  "http_status": 200,
+  "sha256": "0f34464650ccc1e275ea84153ca3d4f86bfb2b3fa02d91640a8ff2e5a4858fe0",
+  "bytes": 447711,
+  "truncated": false,
+  "headers": {
+    "date": "Mon, 12 Oct 2026 20:21:49 GMT",
+    "content-type": "application/json"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/coinbase_international/raw/instruments.json"
+}

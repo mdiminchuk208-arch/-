@@ -1,0 +1,18 @@
+{
+  "source_id": "support_futures_specs",
+  "url": "https://support.kraken.com/articles/360022835672-futures-contract-specifications",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:34:29.143186+00:00",
+  "response_utc": "2026-10-13T06:34:30.416233+00:00",
+  "latency_ms": 1273,
+  "http_status": 404,
+  "sha256": "19f13b487c49796a7e47e0335203de8c921ec5594325a21592fea46593b15262",
+  "bytes": 8898,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:34:30 GMT",
+    "content-type": "text/html",
+    "server": "envoy"
+  },
+  "raw_path": "raw/support_futures_specs.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

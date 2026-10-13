@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.deribit.com/articles/market-data-collection-best-practices.md",
+  "request_start_utc": "2026-10-13T06:31:57.506051+00:00",
+  "completion_utc": "2026-10-13T06:31:58.580584+00:00",
+  "latency_ms": 1074.8,
+  "http_status": 200,
+  "sha256": "d04401a3fb774f03c16e8e6df80ffd506b496d59ec866614a2fb9b36176d5eae",
+  "bytes": 23874,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4dedbeed3191-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:31:58 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_data_md.bin"
+}

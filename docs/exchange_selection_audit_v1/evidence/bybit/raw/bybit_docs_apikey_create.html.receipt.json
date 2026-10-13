@@ -1,0 +1,16 @@
+{
+  "url": "https://bybit-exchange.github.io/docs/v5/user/create-sub-api",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:30:34.416708+00:00",
+  "request_end_utc": "2026-10-13T06:30:35.324892+00:00",
+  "latency_ms": 908.38,
+  "status": 404,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:35 GMT"
+  },
+  "sha256": "c58e628c413967f2ece8e12e019f0e8ace07094ef17bf4c3f5dcdd1435cc99cc",
+  "bytes": 15680,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/bybit/raw/bybit_docs_apikey_create.html",
+  "error": null
+}

@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c47908823e976-DFW",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:27:38 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1792.3,
+  "method": "GET",
+  "raw_length": 264463,
+  "raw_path": "bf_fee_page.raw",
+  "raw_sha256": "8553269aeb1ac53d2b2e09afd965e19fc604cda89e8c67e43770edd1c769837f",
+  "request_start_utc": "2026-10-13T06:27:36.942050+00:00",
+  "retrieval_utc": "2026-10-13T06:27:38.734176+00:00",
+  "source_id": "bf_fee_page",
+  "status": 200,
+  "truncated": false,
+  "url": "https://blofin.com/fees"
+}

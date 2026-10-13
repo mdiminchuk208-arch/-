@@ -1,0 +1,165 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://docs.cdp.coinbase.com/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# List fee rate tiers
+
+> Return all the fee rate tiers.
+
+<Tabs groupId="programming-language">
+  <Tab value="Java" title="Java">
+    ```java theme={null}
+    FeeRatesService feeRatesService = IntxServiceFactory.createFeeRatesService(client);
+    GetFeeRateTiersResponse response = feeRatesService.getFeeRateTiers();
+    ```
+
+    For more information, please visit the [INTX Java SDK](https://github.com/coinbase-samples/intx-sdk-java).
+  </Tab>
+
+  <Tab value=".NET" title=".NET">
+    ```cs theme={null}
+    var feeRatesService = new FeeRatesService(client);
+    var response = feeRatesService.GetFeeRateTiers();
+    ```
+
+    For more information, please visit the [INTX .NET SDK](https://github.com/coinbase-samples/intx-sdk-dotnet).
+  </Tab>
+
+  <Tab value="Python" title="Python">
+    ```python theme={null}
+    client = IntxClient()
+    request = ListFeeRateTiersRequest()
+    response = client.list_fee_rate_tiers(request)
+    ```
+
+    For more information, please visit the [INTX Python SDK](https://github.com/coinbase-samples/intx-sdk-py).
+  </Tab>
+
+  <Tab value="Typescript" title="TS/JS">
+    ```js theme={null}
+    const feeRatesService = new FeeRatesService(client);
+
+    feeRatesService.listFeeRateTiers().then(async (response) => {
+        console.log('Fee Rate Tiers: ', response);
+    })
+    ```
+
+    For more information, please visit the [INTX TS SDK](https://github.com/coinbase-samples/intx-sdk-ts).
+  </Tab>
+</Tabs>
+
+
+## OpenAPI
+
+````yaml GET /api/v1/fee-rate-tiers
+openapi: 3.0.3
+info:
+  title: REST API
+  description: >
+    # Welcome to Coinbase INTX API
+
+    ## Introduction
+
+    The INTX APIs allow institutions to trade and manage orders on the
+    International Exchange. The following API pages detail various REST API
+    endpoints we offer.
+
+    ## Getting Started
+
+    To get started, please visit one of the following pages:
+
+    - [Quickstart](/international-exchange/introduction/quickstart)
+
+    -
+    [Overview](/api-reference/international-exchange-api/rest-api/introduction)
+
+    -
+    [Authentication](/api-reference/international-exchange-api/rest-api/authentication)
+
+    - [Rate Limits](/international-exchange/introduction/rate-limits-overview)
+
+    ## FIX API
+
+    - [FIX API reference](/international-exchange/fix-api/fix-api-overview)
+
+    ## WebSocket API
+
+    - [WebSocket API
+    reference](/international-exchange/websocket-feed/websocket-overview)
+  version: '1.0'
+servers:
+  - url: https://api.international.coinbase.com
+security: []
+paths:
+  /api/v1/fee-rate-tiers:
+    get:
+      tags:
+        - Fee Rates
+      summary: List fee rate tiers
+      description: Return all the fee rate tiers.
+      operationId: getFeeRateTiers
+      responses:
+        '200':
+          description: Fee rate tiers list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FeeRateTier_v1'
+components:
+  schemas:
+    FeeRateTier_v1:
+      type: object
+      properties:
+        fee_tier_type:
+          $ref: '#/components/schemas/FeeTierType'
+        instrument_type:
+          $ref: '#/components/schemas/InstrumentType'
+        fee_tier_id:
+          description: Fee tier id
+          type: string
+          example: 1
+        fee_tier_name:
+          description: Name for the fee rate tier
+          type: string
+          example: Public Tier 1
+        maker_fee_rate:
+          description: The fee rate charged for order making liquidity
+          type: string
+          example: 0.02
+        taker_fee_rate:
+          description: The fee rate charged for orders taking liquidity
+          type: string
+          example: 0.04
+        min_balance:
+          description: The minimum USDC balance required to qualify for the fee tier
+          type: string
+          example: 1000
+        min_volume:
+          description: >-
+            The minimum 30 days volume required to qualify for the fee tier. For
+            liquidity program tiers, this is the percentage of volume
+          type: string
+          example: 1000
+        require_balance_and_volume:
+          description: >-
+            Whether the fee tier requires both a minimum balance and volume to
+            qualify
+          type: boolean
+    FeeTierType:
+      description: The type of fee tier
+      type: string
+      enum:
+        - REGULAR
+        - LIQUIDITY_PROGRAM
+      example: LIQUIDITY_PROGRAM
+    InstrumentType:
+      description: The type of instrument
+      type: string
+      enum:
+        - SPOT
+        - PERP
+      example: PERP
+
+````

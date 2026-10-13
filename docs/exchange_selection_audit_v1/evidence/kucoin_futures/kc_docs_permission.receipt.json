@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c4b2a7d7c2cbd-DFW",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:05 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1518.2,
+  "method": "GET",
+  "raw_length": 177383,
+  "raw_path": "kc_docs_permission.raw",
+  "raw_sha256": "4e3fcc737c895689dc71e8061d754bd2191ddf501e5dd120e81922b0d1ea9e8a",
+  "request_start_utc": "2026-10-13T06:30:04.418804+00:00",
+  "retrieval_utc": "2026-10-13T06:30:05.936822+00:00",
+  "source_id": "kc_docs_permission",
+  "status": 404,
+  "truncated": false,
+  "url": "https://www.kucoin.com/docs-new/api-introduction/authentication?lang=en_US&"
+}

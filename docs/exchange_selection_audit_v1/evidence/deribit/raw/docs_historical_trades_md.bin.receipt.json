@@ -1,0 +1,17 @@
+{
+  "url": "https://docs.deribit.com/api-reference/market-data/public-get_last_trades_by_instrument_and_time.md",
+  "request_start_utc": "2026-10-13T06:32:42.258044+00:00",
+  "completion_utc": "2026-10-13T06:32:43.235074+00:00",
+  "latency_ms": 977.2,
+  "http_status": 200,
+  "sha256": "199077187aed2de94e72ba9d4ae00ff18c4c2d3e8ad979a25184bebf1d305c5e",
+  "bytes": 12843,
+  "truncated": false,
+  "headers": {
+    "cf-ray": "a49c4f04dddaf814-CMH",
+    "content-type": "text/markdown; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:32:43 GMT"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/docs_historical_trades_md.bin"
+}

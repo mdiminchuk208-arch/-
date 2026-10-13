@@ -1,0 +1,18 @@
+{
+  "source_id": "docs_instruments_new",
+  "url": "https://docs.kraken.com/api-reference/instrument-details/get-instruments",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:29:09.629496+00:00",
+  "response_utc": "2026-10-13T06:29:11.273083+00:00",
+  "latency_ms": 1643,
+  "http_status": 200,
+  "sha256": "4fb3bfc78550d189d4d6c5920a92c37e06c308f64fed576c5f7285907d3d8c0c",
+  "bytes": 633100,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:29:10 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_instruments_new.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

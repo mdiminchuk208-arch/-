@@ -1,0 +1,18 @@
+{
+  "source_id": "book_btc_1",
+  "url": "https://futures.kraken.com/derivatives/api/v3/orderbook?symbol=PF_XBTUSD",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:28:14.317739+00:00",
+  "response_utc": "2026-10-13T06:28:15.392120+00:00",
+  "latency_ms": 1074,
+  "http_status": 200,
+  "sha256": "0c03b49580cdbe887c474ea51075534d2ce81a0161552d3d1f36b0b87d6447d8",
+  "bytes": 51798,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:28:15 GMT",
+    "content-type": "application/json",
+    "server": "envoy"
+  },
+  "raw_path": "raw/book_btc_1.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

@@ -1,0 +1,17 @@
+{
+  "url": "https://www.deribit.com/api/v2/public/get_funding_rate_history?instrument_name=ETH_USDC-PERPETUAL&start_timestamp=1791763200000&end_timestamp=1791849600000",
+  "request_start_utc": "2026-10-13T06:28:15.781285+00:00",
+  "completion_utc": "2026-10-13T06:28:16.074487+00:00",
+  "latency_ms": 293.3,
+  "http_status": 200,
+  "sha256": "8d2cef19ee9ff669964c62dd2eb388e089b04e4b3449be2212db8617b2372c80",
+  "bytes": 3628,
+  "truncated": false,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:28:15 GMT",
+    "content-type": "application/json",
+    "cf-ray": "a49c487edb7e1deb-DFW"
+  },
+  "error": null,
+  "raw_path": "docs/exchange_selection_audit_v1/evidence/deribit/raw/eth_funding.bin"
+}

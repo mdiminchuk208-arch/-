@@ -1,0 +1,18 @@
+{
+  "source_id": "docs_orderbook_new",
+  "url": "https://docs.kraken.com/api-reference/market-data/get-orderbook",
+  "method": "GET",
+  "request_start_utc": "2026-10-13T06:29:11.274311+00:00",
+  "response_utc": "2026-10-13T06:29:12.483168+00:00",
+  "latency_ms": 1208,
+  "http_status": 200,
+  "sha256": "77ed83bec1aa96b7143a67d1befc51401fff799842ad7cc7e1af9a21fb25969b",
+  "bytes": 527988,
+  "headers": {
+    "date": "Tue, 13 Oct 2026 06:29:11 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "raw_path": "raw/docs_orderbook_new.body",
+  "environment": "Codex managed cloud, inherited proxy/CA/TLS, no cookies/auth, no redirects"
+}

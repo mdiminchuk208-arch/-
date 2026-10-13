@@ -1,0 +1,20 @@
+{
+  "error": null,
+  "headers": {
+    "cf-ray": "a49c4b2a7d782cbd-DFW",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 06:30:05 GMT",
+    "server": "envoy"
+  },
+  "latency_ms": 1881.6,
+  "method": "GET",
+  "raw_length": 660245,
+  "raw_path": "kc_docs_status.raw",
+  "raw_sha256": "82ad3f6d47aef16d3fc88663c7087133ef5068b1f671b97266a3789190cb97db",
+  "request_start_utc": "2026-10-13T06:30:04.439481+00:00",
+  "retrieval_utc": "2026-10-13T06:30:06.320789+00:00",
+  "source_id": "kc_docs_status",
+  "status": 200,
+  "truncated": false,
+  "url": "https://www.kucoin.com/docs-new/rest/futures-trading/market-data/get-service-status?lang=en_US&"
+}
