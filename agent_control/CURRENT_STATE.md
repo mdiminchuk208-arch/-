@@ -3,55 +3,54 @@
 Branch: `machine-v3-research`.
 
 ## User priority
-Strategy first. Platform/site/unified-exchange-layer work is paused until the strategy has a defensible validation result.
+Strategy first. Platform/site/integration work is paused until the strategy has a defensible validation result.
 
 ## MACHINE_STRATEGY_v3 status
-`MACHINE_STRATEGY_v3` design and implementation are frozen and reproducible enough to inspect/test, but the strategy is NOT yet qualified as a trading candidate.
+`MACHINE_STRATEGY_v3` design and implementation are frozen, but the strategy is NOT yet qualified as a trading candidate.
 
 Known facts:
 - frozen v3 design exists;
 - frozen v3 implementation/runner exists;
 - prior implementation/readiness QA passed substantial deterministic tests;
 - no accepted historical v3 financial qualification result exists yet;
-- historical tick/filter provenance and executable historical data compatibility have been unresolved blockers;
-- current metadata must not be silently backdated;
 - no OOS clock has started;
 - PAPER/LIVE are still off.
 
-Therefore: v3 is **coded/frozen, not finished as a validated strategy**.
+Therefore: v3 is coded/frozen, not finished as a validated strategy.
+
+## Selected venue for strategy and future trading path
+The project has already selected **OKX** from the exchange-analysis direction that compared OKX / Kraken / Deribit / Hyperliquid.
+
+Use OKX as the primary venue for:
+- strategy market data;
+- historical validation inputs;
+- metadata/cost/funding assumptions where evidence is defensible;
+- the future trading integration target unless a later explicit evidence-based reselection gate changes it.
+
+Primary products:
+- BTC-USDT-SWAP
+- ETH-USDT-SWAP
+
+Backtesting is executed by the project's own deterministic Python runner in the repository, not by an exchange website. Primary market inputs come from official/public OKX data and retained OKX evidence.
+
+Existing OKX evidence establishes current public reachability, exact product identity, current instrument metadata, native 15m point reachability, books and funding-history access. It does NOT yet establish complete historical continuity, historical tick/filter epochs or exact ordinary API SWAP fee applicability. Those are the active qualification-readiness items.
 
 ## Why rules stay frozen during the next test
-The next step is not to randomly improve v3 before testing. That would create post-hoc tuning/overfit risk. First run a preregistered fair validation of the frozen version. If it fails, preserve the failure evidence and then design a new explicit strategy version (v3.1/v4) before another financial evaluation.
+The next step is not to change v3 before seeing a fair result. First run a preregistered validation of the frozen version. If it fails, preserve the failure evidence and then design a new explicit strategy version (v3.1/v4) before another financial evaluation.
 
 ## Active gate
 `MACHINE_STRATEGY_v3 Qualification v1`.
 
 Current Stage A1 is pre-outcome readiness:
 - pin exact frozen strategy inputs/hashes;
-- establish BTC/ETH validation data path, preferably Bitget public USDT perpetual data;
-- verify continuous M15/timestamp/completed-bar semantics;
+- establish continuous OKX BTC/ETH native M15 data path and completed-bar/timestamp semantics;
 - resolve historical tick/lot/filter treatment without backdating current metadata;
-- freeze fees/slippage/funding assumptions;
+- freeze OKX fees/slippage/funding assumptions;
 - freeze qualification metrics/pass-fail rules;
 - verify no-lookahead/deterministic replay readiness;
 - STOP before reading new financial outcomes.
 
-If Stage A1 PASSes, the next gate is the one-shot historical financial validation of frozen v3. If v3 fails that validation/robustness gate, the next work becomes strategy redesign, not platform work.
-
-## Venue scope
-The original project live/execution set remains:
-- Bybit
-- Bitget
-- BloFin
-- MEXC
-
-A broader exchange audit was performed and is retained as research evidence, but its additional venues are not automatically part of the user's live plan. Bitget may be used as the public research/validation source because its retained evidence is more accessible; that does not force Bitget to be the only live exchange.
-
-## Preserved exchange-selection research
-`EXCHANGE_SELECTION_AUDIT_v1` remains frozen as conditional nonfinancial research:
-- freeze commit `ff20ac4bee75d605c0a7f4234fe74bb89a337fbf`
-- manifest SHA-256 `06556298d9f8041c493af5225740425cdfc51807566a322e2dd86f944b9c24d5`
-- final marker `FINAL_REVIEW_PASS_FOR_EXCHANGE_SELECTION`
+If Stage A1 PASSes, the next gate is the one-shot historical financial validation of frozen v3 on OKX. If v3 fails that validation/robustness gate, the next work becomes strategy redesign, not platform work.
 
 ## Safety state
 Production candidate: NONE.
