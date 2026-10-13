@@ -1,7 +1,7 @@
 # Current State
 
 Branch: `machine-v3-research`.
-Latest completed gate: **EXCHANGE_SELECTION_AUDIT_v1**.
+Prior full-attempt artifact preserved: **EXCHANGE_SELECTION_AUDIT_v1**. Active task is the newer OKX-only Stage 1A batch; the prior result is not used to bypass that checkpoint/STOP.
 Decision: `EXCHANGE_SELECTION_AUDIT_FROZEN_PASS` — conditional nonfinancial architecture selection only.
 Freeze commit: `ff20ac4bee75d605c0a7f4234fe74bb89a337fbf`.
 Namespace: `docs/exchange_selection_audit_v1/`.
@@ -21,7 +21,9 @@ An additive independently reviewed timestamp follow-up is at `docs/exchange_sele
 
 The predecessor prospective gate remains `V3_PROSPECTIVE_READINESS_FROZEN_STOP`: historical verified tick epochs still absent at all venues, full historical continuity not proved, warmup/authenticity/control-isolation/authorization blockers preserved. Current filters must never be backdated. Actual account/jurisdiction, fee tier, one-way protective behavior, retry semantics and collateral compatibility are unverified. Architecture selection does not clear these gates.
 
-Next gate: `UNIFIED_EXCHANGE_LAYER_v1 Nonfinancial Freeze` in NEXT_TASK.md. Public data/metadata adapters and inert account/order/position contracts first, with every private/order invocation denied before network I/O. Then explicit venue-specific v3 compatibility freeze, verified data/metadata, and only separately authorized financial validation. No OOS clock starts here.
+Active batch: `agent_control/CURRENT_BATCH.md` — OKX only, one medium-reasoning venue_researcher using retained receipts, checkpoint at `docs/exchange_selection_checkpoints_v1/okx.json`, commit/push and STOP. No new ranking, cross-venue review or other venue research in this batch. The earlier Unified Exchange Layer proposal is preserved in `docs/control_plane_proposals/unified_exchange_layer_v1_NOT_OPEN.md` but is NOT open. NEXT_TASK retains full exchange-audit requirements; EXCHANGE_AUDIT_RUNBOOK and CURRENT_BATCH constrain the next execution.
+
+Current allowance policy from remote `4435687`: serial-first, one active specialist, hard two-thread ceiling with second only for independent verification, one venue collector, medium routine reasoning. Existing frozen evidence is reused. The latest remote scope supersedes earlier 4/16-thread and automatic-next-gate controls.
 
 Production candidate: NONE.
 Historical financial v3 backtest ready=false and authorized=false.
