@@ -1,29 +1,49 @@
 # Current State
 
 Branch: `machine-v3-research`.
-Prior full-attempt artifact preserved: **EXCHANGE_SELECTION_AUDIT_v1**. The newer OKX-only Stage 1A batch is now complete with unknowns; the prior result is not used to bypass that checkpoint/STOP.
-Decision: `EXCHANGE_SELECTION_AUDIT_FROZEN_PASS` — conditional nonfinancial architecture selection only.
+
+## Completed exchange-selection gate
+
+`EXCHANGE_SELECTION_AUDIT_v1` is accepted as the authoritative completed nonfinancial architecture-selection gate.
+
+Decision: `EXCHANGE_SELECTION_AUDIT_FROZEN_PASS`.
 Freeze commit: `ff20ac4bee75d605c0a7f4234fe74bb89a337fbf`.
 Namespace: `docs/exchange_selection_audit_v1/`.
 Manifest SHA-256: `06556298d9f8041c493af5225740425cdfc51807566a322e2dd86f944b9c24d5`.
+Final independent marker: `FINAL_REVIEW_PASS_FOR_EXCHANGE_SELECTION`.
+Reconciliation record: `agent_control/EXCHANGE_AUDIT_RECONCILIATION.md`.
 
-Frozen roles:
-- PRIMARY_RESEARCH_VALIDATION_VENUE=bitget (82, tied with OKX; preregistered lexicographic tie-break).
-- PRIMARY_EXECUTION_VENUE=blofin (69, highest eligible).
-- SECONDARY_EXECUTION_VENUE=kraken_futures (29, tied with KuCoin; lexicographic tie-break).
-- REFERENCE_BENCHMARK_VENUE=okx (82).
+Frozen venue roles:
+- PRIMARY_RESEARCH_VALIDATION_VENUE=Bitget (research score 82; tied with OKX, preregistered lexicographic tie-break).
+- PRIMARY_EXECUTION_VENUE=BloFin (execution score 69, highest eligible).
+- SECONDARY_EXECUTION_VENUE=Kraken Futures (29; tied with KuCoin and sensitive in 1/76 leave-one-snapshot cases).
+- REFERENCE_BENCHMARK_VENUE=OKX (research score 82).
 
-Bitget/BloFin primaries survive both cost-weight ±5 shifts and all 76 snapshot removals. Secondary changes Kraken→KuCoin in 1/76 when the thin ETH CI book is omitted; this observation remains retained. Bitget/Kraken book-size units are unproven and cost/liquidity scores are zero. KuCoin's required visible-depth grid is incomplete. Higher raw execution scorers Deribit/Hyperliquid remain hard-excluded for isolated-control/signer-scope uncertainty. Fee unknowns/promotions are not treated as base API rates.
+Audit QA: 30 targeted tests PASS; 18 derived JSON outputs replay byte-identically; 503 response receipts and 606 predecessor hashes verified; targeted math/synthesis coverage ~84.79%; final independent reviewer PASS. The inherited full suite was not rerun or claimed PASS.
 
-QA: 30 targeted tests PASS; math/synthesis coverage 84.7943%; Ruff/format, mypy and compile PASS; 18 JSON outputs byte-identical replay; 503 raw receipts and 606 predecessor artifact hashes verified. Final independent marker is retained. The inherited full suite was not rerun or claimed PASS; phase-dependent header-test conflict remains preserved.
+The later OKX-only checkpoint is additive evidence at `docs/exchange_selection_checkpoints_v1/okx.json`, commit `0509a0d4a72a41ca9b741f5bc7dabde3f7449465`: six Stage-1 criteria PASS; ordinary API SWAP fee remains UNKNOWN. It does not alter the frozen venue roles.
 
-An additive independently reviewed timestamp follow-up is at `docs/exchange_selection_audit_v1_followup/`: four Kraken CI normalized time_utc fields are receipt completion, not exchange server/event time. Raw ISO serverTime remains retained. Scratch substitution changes no sample count, scores or roles, so conditional architecture PASS remains valid. Those fields are prohibited as causal/financial event times. New unified contracts must separate exchange server time, any actual event time, receipt clocks and known_at. Original audit bytes/manifest remain unchanged.
+## Preserved limitations
 
-The predecessor prospective gate remains `V3_PROSPECTIVE_READINESS_FROZEN_STOP`: historical verified tick epochs still absent at all venues, full historical continuity not proved, warmup/authenticity/control-isolation/authorization blockers preserved. Current filters must never be backdated. Actual account/jurisdiction, fee tier, one-way protective behavior, retry semantics and collateral compatibility are unverified. Architecture selection does not clear these gates.
+- Architecture selection is not trading readiness.
+- No venue has verified historical tick/filter epochs.
+- Full continuous 2–3-year executable history remains unproved.
+- Current metadata must never be backdated into historical execution.
+- Actual account/jurisdiction eligibility, account fee tier, collateral/mode, idempotency and protective-order behavior remain unverified.
+- Bitget/Kraken book-unit caveats remain preserved.
+- BloFin future execution requires one-way/reduce-only compatibility verification.
+- Historical v3 financial execution remains unauthorized.
+- OOS clock has not started.
 
-Active batch: `agent_control/CURRENT_BATCH.md` — OKX only, one medium-reasoning venue_researcher using retained receipts, checkpoint at `docs/exchange_selection_checkpoints_v1/okx.json`, commit/push and STOP. No new ranking, cross-venue review or other venue research in this batch. The earlier Unified Exchange Layer proposal is preserved in `docs/control_plane_proposals/unified_exchange_layer_v1_NOT_OPEN.md` but is NOT open. NEXT_TASK retains full exchange-audit requirements; EXCHANGE_AUDIT_RUNBOOK and CURRENT_BATCH constrain the next execution.
+## Active gate
 
-Current allowance policy from remote `4435687`: serial-first, one active specialist, hard two-thread ceiling with second only for independent verification, one venue collector, medium routine reasoning. Existing frozen evidence is reused. The latest remote scope supersedes earlier 4/16-thread and automatic-next-gate controls.
+`UNIFIED_EXCHANGE_LAYER_v1` is now open as a nonfinancial infrastructure gate.
+
+Goal: preserve the frozen strategy core and website/product surfaces while adding venue-neutral market-data/metadata/account/order/position contracts and selected-venue adapters behind a fail-closed authorization boundary.
+
+Execution is serial-first. `agent_control/CURRENT_BATCH.md` opens only Stage 1A: typed contract core plus deterministic disabled private/order boundary. One `exchange_adapter_architect`, medium reasoning, narrow context, STOP after commit/push. Later batches will add public Bitget/BloFin bindings, benchmark/secondary bindings, backend migration, independent review and final freeze.
+
+## Safety state
 
 Production candidate: NONE.
 Historical financial v3 backtest ready=false and authorized=false.
@@ -32,14 +52,4 @@ PAPER_TRADING_READY=false.
 REAL_TRADING_READY=false.
 trade_entry_allowed=false.
 
-Protected freezes remain immutable:
-- baseline `ba65e91c2b1675f48e80ac785bb3adf89d17bb0b`
-- failure audit `8ca75ed35876d8f5d4d363e9e8808d7bd4417e87`
-- v3 design `62590f1e09e2fa7516038ba1b3d813b0411d93ab`
-- v3 implementation `43e57ee5c7867dd9421961629746555c8a2e9556`
-- v3 metadata recovery `7e89543ef9b443ac65b64f125c919e885dccf37b`
-- v3 prospective readiness `fdf5b95e34c724ab73e8f3e64d36aed562ad965b`, manifest `b96797ec01575303b6d4c0170f0683554386f53569ef41ad38ed3f91cf7fe45d`
-- adapter SHA-256 `ed4091e385d4b7ed61bbf6680c56806b618bdf74d63a37b73c37d681a8874150`
-- runner SHA-256 `d1ac5407902ec22cac1e66a943cc610bcc1023b7c72290e55c09c73a1cffb0b8`
-
-Current batch completion: EXCHANGE_SELECTION_AUDIT_V1_STAGE_1A_OKX_COMPLETE. Published checkpoint commit: 0509a0d4a72a41ca9b741f5bc7dabde3f7449465. Six criteria PASS, ordinary API SWAP fee UNKNOWN; root source/hash QA PASS. Durable checkpoint at docs/exchange_selection_checkpoints_v1/okx.json; original exact-membership freeze remains intact. Exactly one new medium venue specialist, no new collection/scores/other venue research. STOP after publication; no automatic next batch or gate.
+Protected freezes remain immutable, including v3 design/implementation, metadata recovery, prospective readiness, exchange-selection audit and all earlier historical gates.
