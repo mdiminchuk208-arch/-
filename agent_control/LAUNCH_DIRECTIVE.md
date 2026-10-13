@@ -11,18 +11,21 @@ The user delegates routine project sequencing, technical architecture choices, g
 Treat the frozen v3 strategy rules as immutable through the launch path. Venue-specific adaptation may change only exchange/data/execution parameters and adapters under an explicit pre-outcome compatibility freeze. Never tune strategy rules because a venue/backtest result looks better or worse.
 
 ## Usage-efficiency policy
-The configured specialist catalog may remain broad, but simultaneous agent use must be economical:
+The configured specialist catalog may remain broad, but simultaneous agent use must be economical. Work/Codex allowance is a launch resource and must be protected.
 
-- normal gate target: **4–6 active agents**;
-- hard concurrency ceiling: **8 threads**;
+- normal gate target: **2–3 active agents**;
+- hard concurrency ceiling: **4 threads**;
+- at most **2 venue_researcher workers concurrently**;
 - never launch agents merely because capacity exists;
-- batch independent venue/source research, then stop those workers before synthesis/review;
+- process exchange/source research in small batches, persist/checkpoint evidence, then stop those workers before the next batch;
 - routine venue/source collection should use **medium reasoning** where configured;
 - **high reasoning** is reserved for key synthesis, statistical/robustness analysis, security/execution audits, red-team review, and final independent review;
-- avoid repeatedly loading large frozen strategy namespaces into venue/data workers unless strictly required;
+- workers must receive the narrowest context needed for their assigned task; do not repeatedly load large frozen strategy/history namespaces into venue/data workers unless strictly required;
 - reuse pinned evidence, receipts, hashes, summaries and prior artifacts rather than recollecting/re-reading them without cause;
 - if a smaller competent team can close a gate, prefer it even if a larger team might be marginally faster;
-- preserving Work/Codex allowance is part of launch efficiency: speed means useful progress per allowance, not maximum parallelism.
+- if a task would require more than 4 concurrent roles, split it into sequential batches rather than raising concurrency;
+- checkpoint durable partial results after each batch so an interrupted run resumes from completed evidence instead of repeating it;
+- speed means useful progress per allowance, not maximum parallelism.
 
 ## Current gate
 `EXCHANGE_SELECTION_AUDIT_v1` remains the active gate and must finish before any new 365-day prospective capture clock is started.
@@ -30,12 +33,11 @@ The configured specialist catalog may remain broad, but simultaneous agent use m
 ### Acceleration policy for the exchange audit
 Parallelize independent research selectively while keeping synthesis/review independent:
 
-- use `venue_researcher` workers for grouped or individual venues where this materially improves evidence collection;
-- do not run all venue workers simultaneously by default; keep the normal total active team within 4–6 and never exceed 8;
-- use `cost_funding_auditor`, `historical_data_engineer`, `market_microstructure_auditor`, `execution_auditor`, `tick_metadata_researcher`, `api_reliability_auditor`, and `exchange_security_auditor` for cross-venue verification as needed;
-- use `statistics_robustness_analyst` for deterministic scoring/sensitivity;
+- use no more than two `venue_researcher` workers concurrently; assign small venue batches and persist their receipts before starting the next batch;
+- use `cost_funding_auditor`, `historical_data_engineer`, `market_microstructure_auditor`, `execution_auditor`, `tick_metadata_researcher`, `api_reliability_auditor`, and `exchange_security_auditor` only when their cross-venue verification is actually needed;
+- use `statistics_robustness_analyst` for deterministic scoring/sensitivity after evidence collection;
 - use `exchange_adapter_architect` and `platform_backend_architect` only to assess migration/architecture cost after objective venue evidence is collected;
-- use `overfit_red_team` and `final_independent_reviewer` as independent challenge/seal;
+- use `overfit_red_team` and `final_independent_reviewer` as independent challenge/seal at the end, not throughout collection;
 - one implementation/writer path at a time; reviewers remain read-only.
 
 ## Fixed launch sequence after exchange selection
