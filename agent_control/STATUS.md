@@ -1,36 +1,52 @@
 # Agent Status
 
-State: MACHINE_STRATEGY_V3_QUALIFICATION_STAGE_A1_OPEN
+State: STRATEGY_AUTONOMY_TO_PLATFORM_RECONNECT_ACTIVE
 Branch: `machine-v3-research`.
 
-User priority is explicit: finish/qualify the strategy first; platform/site/integration work is deferred.
+User priority is explicit: the project lead owns the strategy loop end-to-end. Do not require routine user steering. The next user-facing milestone is strategy qualification sufficient to reopen platform reconnection planning.
 
 ## Strategy truth
-`MACHINE_STRATEGY_v3` has frozen design and implementation artifacts, but it is NOT yet a qualified trading strategy and is NOT launch-ready. Frozen/coded means the rules and implementation are available for testing. It does not mean profitability, robustness, OOS qualification, paper readiness or live readiness has been established.
+`MACHINE_STRATEGY_v3` is coded/frozen but not yet qualified. The project must determine whether v3 can meet the hard launch target and, if not, autonomously freeze its failure evidence and move to a new explicit version.
 
-The reason v3 rules are not casually changed now is anti-overfit discipline: first test the frozen version honestly. If it fails, freeze the failure evidence and then open a new explicit strategy-version design gate rather than tuning v3 after seeing results.
+## Hard user target
+A promoted strategy version must achieve:
+- Win Rate >= 70% on the applicable qualification sample;
+- positive net expectancy after realistic fees/slippage/funding;
+- positive net P&L;
+- the preregistered Profit Factor/drawdown/loss-streak and robustness requirements;
+- no critical leakage/lookahead;
+- survival of OOS/forward validation and Paper qualification.
+
+The 70% target is not waived for a strong in-sample result. It remains required on OOS/forward and Paper qualification samples.
 
 ## Selected venue
-The current strategy path uses **OKX** as the selected validation/trading architecture target from the OKX / Kraken / Deribit / Hyperliquid comparison direction.
-
+OKX is the active strategy/data/trading target unless a later evidence-based reselection gate explicitly changes it.
 Primary products:
 - BTC-USDT-SWAP
 - ETH-USDT-SWAP
 
-Backtesting runs in the repository with our deterministic Python runner. Market inputs come from official/public OKX data and retained OKX evidence. Existing OKX checkpoint confirms current public reachability, product identity, current metadata, funding/book/candle access; ordinary API SWAP fee applicability and historical tick/filter epochs remain readiness items.
+Backtesting uses the repository's deterministic Python runner with official/public OKX data and retained OKX evidence.
 
-## Active gate
-`MACHINE_STRATEGY_v3 Qualification v1`.
+## Active campaign
+`agent_control/CURRENT_BATCH.md` now defines the autonomous serial strategy campaign:
+1. finish v3 readiness;
+2. one-shot historical validation;
+3. robustness/failure audit;
+4. if failed, freeze evidence and create a new explicit strategy version;
+5. repeat until a robust candidate qualifies or a genuine user-required blocker appears;
+6. pristine OOS/forward validation;
+7. Paper qualification (minimum 200 CLOSED + 30 calendar days plus metrics);
+8. only then reopen platform reconnection planning.
 
-Current batch `agent_control/CURRENT_BATCH.md` is Stage A1 readiness only: verify frozen inputs, validate continuous OKX M15 data/timestamps, resolve historical tick/filter treatment without backdating current metadata, freeze OKX cost/funding/slippage model and qualification rules, and STOP before new financial outcomes.
-
-Platform/site/unified exchange layer implementation is paused.
+No routine user confirmation is required between these steps.
 
 ## Allowance policy
-SERIAL-FIRST: one active specialist by default, hard ceiling two threads, second only for independent verification/review, medium reasoning for routine work, narrow context, checkpoint every batch.
+SERIAL-FIRST: normally one specialist at a time; hard ceiling two threads, second only for independent review. Medium reasoning for routine engineering/data work; High reserved for critical statistical/red-team/final review. Checkpoint/push after each stage/version and resume rather than repeat if allowance ends.
 
-Historical financial v3 backtest ready=false and authorized=false until Stage A readiness PASS opens the one-shot validation gate.
-OOS registration: none.
+Platform/site/integration implementation is paused until the strategy reaches the platform-reconnection milestone.
+
+Historical financial v3 backtest remains unauthorized until readiness prerequisites are frozen, after which the campaign may open the one-shot validation gate without asking the user for routine approval.
+OOS registration: none yet.
 Production candidate: NONE.
 PAPER_TRADING_READY=false.
 REAL_TRADING_READY=false.
