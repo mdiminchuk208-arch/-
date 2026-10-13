@@ -1,0 +1,30 @@
+name: Exchange public venue probes
+
+on:
+  push:
+    branches: [machine-v3-research]
+    paths:
+      - scripts/exchange_selection_public_capture.py
+      - .github/workflows/exchange-public-venue-probes.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-probes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Bounded public probes without exchange secrets or orders
+        run: python scripts/exchange_selection_public_capture.py --environment GITHUB_HOSTED_CI --output public-venue-evidence
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: public-venue-evidence
+          path: public-venue-evidence/
+          retention-days: 30

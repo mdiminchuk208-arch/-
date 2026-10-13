@@ -47,3 +47,5 @@ Production candidate: NONE.
 PAPER_TRADING_READY=false.
 REAL_TRADING_READY=false.
 trade_entry_allowed=false.
+
+Exchange audit in progress: scoring/missing-data rules committed before evidence at `055bcc2`; bounded public-only GitHub-hosted probe infrastructure added. No strategy/OOS/order execution.
