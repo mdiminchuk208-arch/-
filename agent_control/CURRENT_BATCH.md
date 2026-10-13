@@ -1,36 +1,44 @@
-# Current Batch — MACHINE_STRATEGY_v3 Qualification Stage A1
+# Current Campaign — STRATEGY_AUTONOMY_TO_PLATFORM_RECONNECT
 
-Execute only this batch, commit/push, then STOP. Do not continue automatically into financial outcome execution.
+This replaces manual stage-by-stage user steering. The project lead owns the strategy loop end-to-end. Do not stop to ask the user routine questions. The next user-facing milestone is a strategy that has completed historical qualification, robustness, pristine OOS/forward validation and Paper qualification strongly enough to reopen platform reconnection planning.
 
-## Goal
-Make frozen `MACHINE_STRATEGY_v3` honestly testable on OKX. This is strategy work, not platform work.
+## Non-negotiable target
+A promoted strategy version must achieve **Win Rate >= 70%** on the applicable qualification sample and must also have positive net expectancy and positive net P&L after realistic fees/slippage/funding. Win Rate alone is insufficient. The 70% target must survive OOS/forward and Paper; do not waive it because in-sample results were strong.
 
-Use exactly one specialist: `backtest_engineer` (or the closest configured deterministic backtest/data specialist if role routing requires). No parallel subagents. Medium reasoning. Narrow context only.
+## Venue and products
+Use OKX as the strategy venue.
+- BTC-USDT-SWAP
+- ETH-USDT-SWAP
 
-## Required work
-1. Verify and record the exact frozen v3 design/implementation/runner hashes currently intended for qualification.
-2. Inspect only the strategy inputs and execution assumptions needed for a fair BTC/ETH historical run: candles, timestamps, completed bars, tick/lot/filter rounding, fees, slippage, funding and fill ambiguity.
-3. Bind the qualification plan to official OKX `BTC-USDT-SWAP` and `ETH-USDT-SWAP` public data. Do not build a general platform adapter.
-4. Determine whether reproducible continuous native OKX M15 history for the intended development period is available and whether historical tick/filter treatment is defensible.
-5. If historical tick/filter epochs are unavailable, DO NOT backdate current metadata. Produce the narrowest preregistered compatibility proposal needed for a fair future financial run, before reading any new v3 financial outcomes.
-6. Resolve/freeze the OKX cost model before outcomes: ordinary API trading fee applicability, slippage calibration and funding treatment. If an exact ordinary API fee cannot be proven publicly, preserve UNKNOWN and preregister a conservative treatment or STOP; never silently use illustrative marketing/help examples as exact fees.
-7. Freeze the exact qualification date range, metrics and deterministic pass/fail rules by reusing existing frozen requirements where available. Do not choose thresholds after seeing outcomes.
-8. Add focused no-lookahead/data-causality checks needed for the later financial run.
+Use official/public OKX data and retained OKX evidence. Backtesting runs in the repository's deterministic Python runner. Do not substitute another venue without a separately frozen evidence-based reselection gate.
 
-## Required Stage-A1 artifacts
-Create `docs/machine_strategy_v3_qualification_v1/` with at least:
-- `READINESS_REPORT.md`
-- `FROZEN_INPUTS.json`
-- `DATA_METADATA_READINESS.json`
-- `COST_MODEL_PREREGISTRATION.json`
-- `QUALIFICATION_RULES.json`
-- `STAGE_A1_QA_REPORT.md`
+## Autonomous serial workflow
+Operate SERIAL-FIRST to protect allowance: normally exactly one active specialist; hard ceiling two threads, with the second only for genuine independent review. Checkpoint and push after every stage/version so an interrupted run can resume without repeating work.
 
-## Decision for this batch
-Publish exactly one:
-- `V3_QUALIFICATION_STAGE_A1_PASS` — all OKX prerequisites are explicit enough to open one-shot financial validation next;
-- `V3_QUALIFICATION_STAGE_A1_STOP` — list exact missing OKX data/metadata/cost/causality blockers.
+1. Complete v3 Stage-A readiness: exact frozen inputs/hashes, continuous M15/timestamps, historical tick/filter treatment, cost/funding/slippage preregistration, no-lookahead readiness, qualification rules including WR>=70%.
+2. If readiness has a technical/data blocker that can be solved without user credentials/capital/legal choice, solve it autonomously and re-run readiness. Do not ask the user.
+3. When readiness passes, execute the one-shot frozen-v3 historical validation.
+4. Run failure/robustness analysis with the appropriate specialist roles sequentially.
+5. If v3 fails any hard criterion — including WR<70%, non-positive net expectancy/P&L, unacceptable preregistered drawdown/loss-streak, leakage or robustness failure — freeze the complete failure evidence.
+6. Open a NEW explicit strategy version (v3.1/v4/etc.) before evaluating its financial outcomes. Use strategy_explorer/strategy_designer only after the prior failure is frozen. Make causal, evidence-backed changes; do not post-hoc patch the failed version.
+7. Preregister the new version, validate deterministically, backtest once, audit robustness, and repeat the version loop until a candidate passes or a genuine hard evidence blocker requires user action.
+8. After historical/robust qualification, independently register and run pristine OOS/forward validation. WR>=70% and positive net edge remain required.
+9. After OOS qualification, proceed to Paper qualification using the existing minimum of 200 CLOSED trades + 30 calendar days plus required risk/performance metrics. WR>=70% and positive net edge remain required.
+10. Only after Paper qualification reopen platform reconnection planning and prepare the user-facing final strategy result.
 
-Do NOT run/read new v3 financial outcomes in Stage A1. Do NOT tune strategy rules. Do NOT build website/backend/unified exchange layer. Do NOT place orders or use private APIs. PAPER=false, LIVE=false, `trade_entry_allowed=false`.
+## Specialist routing
+Use the configured specialist catalog by function, not all at once:
+- historical_data_engineer / backtest_engineer — data and deterministic runs;
+- cost_funding_auditor / market_microstructure_auditor / execution_auditor — realism and costs;
+- no_lookahead_auditor — causal integrity;
+- statistics_robustness_analyst / market_regime_researcher — robustness/failure localization;
+- strategy_explorer / strategy_designer — only for a new version after failure freeze;
+- overfit_red_team / final_independent_reviewer — promotion challenge and seal.
 
-STOP after commit/push.
+## User escalation
+Do not ask the user about routine parameters, strategy versions, tests, sequencing, repairs or whether to continue after a failed version. Escalate only if blocked by something that inherently requires the user: credentials/secrets, legal/account/jurisdiction decision, real capital, irreversible external action, or explicit LIVE authorization.
+
+## Safety
+No platform/site work until the strategy reaches the platform-reconnection milestone except code strictly necessary to validate the strategy. No private exchange trading API or live orders during historical/OOS validation. PAPER and LIVE remain controlled by their qualification gates. `trade_entry_allowed=false` until explicitly advanced.
+
+If allowance forces the cloud run to stop, persist the exact checkpoint, next action and version state, push it, and exit cleanly. On the next run resume from that checkpoint rather than restarting research.
