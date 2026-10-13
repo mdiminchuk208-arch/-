@@ -1,81 +1,116 @@
-# Next Task — MACHINE_STRATEGY_v3 Qualification v1
+# Next Task — MACHINE_STRATEGY_v3 OKX Compatibility Repair v1
 
-Platform/site/unified-exchange-layer work is paused by user direction. The active goal is to finish the strategy first.
+The autonomous strategy campaign remains active. Stage A v1 is frozen STOP at commit `5a63716e0a042d8b1778581ae0d513d6314fb188`, manifest `e8733326e85b6082a33f11ec001066d33bc345bcded6acda26b54cd56ddeb9f0`.
 
-## Current truth
-`MACHINE_STRATEGY_v3` has a frozen design and implementation, but it is NOT yet a qualified trading strategy. Historical financial v3 execution was previously blocked because executable historical metadata/tick provenance and venue/data compatibility were not defensible enough. Therefore frozen/coded != validated/profitable/launch-ready.
+Do not rebuild or recollect the sealed Stage-A candles/funding namespace. Reuse it exactly.
 
-Preserve all frozen v3 strategy rules during this qualification gate. Do not tune rules from newly observed financial outcomes. If the frozen version fails, freeze the failure evidence and open a new explicit strategy-version design gate afterward.
+## Why this repair exists
+Stage A proved the OKX BTC/ETH M15 and funding path, but exact historical OKX tick/lot/filter epochs and ordinary historical account-applicable API SWAP fees are not publicly verified. This is a source-evidence barrier, not a strategy P&L result.
+
+The independent Stage-A review explicitly permits a separately versioned compatibility policy before outcomes. This repair must create that policy without pretending synthetic assumptions are historical OKX facts.
 
 ## Objective
-Answer whether frozen `MACHINE_STRATEGY_v3` is a defensible trading candidate using realistic BTC/ETH perpetual data and execution assumptions, before doing platform work.
+Create a defensible, explicitly modeled **MACHINE_STRATEGY_v3_OKX_COMPATIBILITY_v1** execution/financial binding that preserves the frozen v3 signal logic but removes the impossible requirement to claim unknown historical exchange filters as verified epochs.
 
-## Validation venue and data source
-The project has selected **OKX** as the primary venue for v3 strategy qualification.
+Only after this compatibility policy is fully preregistered, independently reviewed and frozen may Stage-B financial outcomes be generated.
 
-Primary products:
-- `BTC-USDT-SWAP`
-- `ETH-USDT-SWAP`
+## Non-negotiable strategy boundary
+Protected v3 signal/decision logic remains immutable. Do not change setup definitions, trend/range classification, entry signal rules, stop/target intent, score logic or trade selection because no financial outcome has yet been seen.
 
-Primary data source must be official/public OKX market-data endpoints and retained OKX evidence where reproducible. Use native 15-minute candles for the strategy timeline, official instrument metadata for current tick/lot/product identity, funding history where required, and public order-book observations for execution-cost/slippage calibration. Do not substitute another exchange merely because it is easier unless a later explicit STOP/reselection gate is opened.
+The compatibility version may change only venue/execution modeling needed to evaluate frozen signals on OKX:
+- price/quantity quantization treatment;
+- venue identity binding;
+- fee/slippage/funding cash accounting;
+- fill/rounding ambiguity handling;
+- timestamp/known-at plumbing.
 
-The existing OKX checkpoint already establishes current public reachability and product identity, but ordinary API SWAP fee applicability and historical tick/filter epochs remain unresolved. Those are Stage-A readiness items, not permission to invent values.
+All changes must be frozen before financial output access.
 
-## Hard user qualification target
-Before any new financial outcome is read, preregister **Win Rate >= 70%** as a hard target for strategy qualification. A strategy version below 70% does not pass the user's target and must move to a new explicit version after failure evidence is frozen.
+## Historical tick/filter compatibility policy
+Do NOT backdate current OKX filters and do NOT fabricate `verified=true` epochs.
 
-Do not optimize only for Win Rate. PASS also requires positive net expectancy and positive net P&L after realistic costs, acceptable drawdown/loss streak, sufficient sample size, no critical leakage, and robustness across relevant slices. The 70% target must later survive OOS/forward validation and Paper Trading; an in-sample-only 70% is insufficient for platform reconnection.
+Instead implement a modeled stress family whose values are explicitly labeled synthetic compatibility assumptions, not historical exchange truth.
 
-## Qualification sequence
+Required principles:
+1. Use the documented current OKX tick/lot/contract fields only as a scale/reference, never as a historical claim.
+2. Predefine multiple adverse quantization scenarios before outcomes, including intentionally coarser price/size grids than the current grid.
+3. Evaluate each candidate trade under all preregistered quantization scenarios and use the **worst financial result / most adverse valid execution state** for qualification. Never choose the scenario that improves the trade.
+4. If scenario disagreement makes a trade outcome or eligibility unresolved, retain it as unresolved/adverse according to a preregistered deterministic rule; do not silently discard losing/ambiguous cases.
+5. Preserve all original candidate cases so the modeled compatibility layer cannot improve Win Rate by selectively removing adverse groups.
+6. Record clearly that this historical run is a conservative compatibility model, not an exact historical OKX microstructure reconstruction.
 
-### Stage A — pre-outcome readiness
-Before any new v3 financial outcome is read:
-1. verify exact frozen v3 spec/runner/code hashes and identify all inputs that affect fills, stops, targets, fees, funding, tick/lot rounding and causality;
-2. bind exact OKX BTC-USDT-SWAP / ETH-USDT-SWAP product identities and freeze the validation date range;
-3. verify reproducible continuous native OKX M15 history and timestamp/completed-bar semantics;
-4. resolve historical tick/lot/filter treatment. Never backdate current OKX metadata. If historical epochs cannot be recovered, preregister a conservative compatibility rule/version BEFORE financial outcomes or STOP;
-5. freeze fee/slippage/funding assumptions from defensible OKX evidence before seeing P&L. Unknown ordinary API fee must remain unknown until resolved or handled by a preregistered conservative rule;
-6. freeze qualification metrics and pass/fail rules before financial execution. `Win Rate >= 70%` is mandatory; all other numeric thresholds must also be preregistered before outcomes;
-7. verify no-lookahead/prefix causality and deterministic replay readiness.
+The compatibility designer must freeze the exact scenario ladder and ambiguity rule before outcome generation. No parameter sweep after P&L access.
 
-### Stage B — one-shot historical financial validation
-Only after Stage A PASS, explicitly authorize and execute one deterministic frozen-v3 historical validation on the preregistered OKX development period. No parameter search or tuning during/after the run inside this version.
+## Cost model
+Reuse the existing preregistered project policy rather than inventing post-outcome thresholds:
+- frozen core fee model: 0.0006 per leg;
+- frozen core slippage model: 0.0002 per leg;
+- actual signed OKX funding from the sealed Stage-A historical funding series;
+- mandatory doubled-total-fees-and-slippage sensitivity already preregistered in Stage A;
+- promotion requires doubled-cost net P&L positive and doubled-cost Profit Factor >= 1.00, in addition to the base qualification requirements.
 
-Report at minimum:
-- CLOSED trades;
-- Winrate;
-- gross/net P&L in R and cash-normalized form where supported;
-- Profit Factor;
-- Expectancy;
-- Avg R:R / payoff;
-- Max Drawdown;
-- max loss streak;
-- fees, slippage and funding contribution;
-- LONG vs SHORT;
-- BTC vs ETH;
-- setup family;
-- market regime where available.
+The 6bp/2bp model must be labeled a model, not a proven historical OKX account rate. The doubled-cost stress is the mandatory robustness envelope while exact historical account fees remain unavailable. If later verified applicable costs exceed the frozen envelope, requalification is required before Paper/LIVE.
 
-### Stage C — robustness and decision
-Run deterministic robustness checks and independent review. Explicitly test whether apparent edge survives realistic cost and execution sensitivity and whether performance is concentrated in one direction/setup/coin/time slice.
+## OKX financial binding
+Create a new versioned runner/adapter/binding. Do not mutate frozen v3 runner/adapter bytes.
 
+The new binding must:
+- consume the sealed official OKX BTC-USDT-SWAP / ETH-USDT-SWAP M15 inputs;
+- preserve deterministic H1/H4/D1 derivation and completed-bar causality;
+- bind venue identity as OKX, never BYBIT;
+- account for actual signed funding settlements while positions are open using the frozen historical funding series;
+- apply base and doubled-cost scenarios deterministically;
+- implement the preregistered quantization stress family/worst-case rule;
+- preserve intrabar ambiguity policy and no-lookahead rules;
+- generate no output until preregistration integrity checks pass.
+
+## Existing qualification thresholds remain frozen
+Use the previously preregistered Stage-A thresholds without relaxation:
+- Win Rate >= 70%;
+- CLOSED trades >= 200;
+- Profit Factor >= 1.20 base;
+- net expectancy R > 0;
+- net P&L > 0;
+- doubled-cost PF >= 1.00 and doubled-cost net positive;
+- max case-ledger drawdown <= 20R;
+- max consecutive net losses <= 10;
+- each coin+direction >=30 CLOSED and net positive;
+- Wilson 95% lower bound >=0.60;
+- largest quarter profit share <=0.50;
+- largest coin profit share <=0.80;
+- zero filled unknown exits;
+- no critical causality/integrity failure.
+
+Do not weaken criteria after outcomes.
+
+## Compatibility repair workflow
+Use one specialist at a time.
+1. `execution_auditor` or `backtest_engineer`: design the exact synthetic quantization stress policy and venue/funding binding without P&L access.
+2. Root implements new versioned compatibility code/tests only after policy text/JSON is frozen in a pre-outcome commit.
+3. `no_lookahead_auditor` independently checks causality and that no financial outputs were accessed during design.
+4. `final_independent_reviewer` verifies policy, code hashes, deterministic replay and authorization boundary.
+5. If PASS, freeze `MACHINE_STRATEGY_V3_OKX_COMPATIBILITY_V1_READY` and immediately open the one-shot Stage-B financial validation under the autonomous campaign if allowance remains.
+6. If STOP, solve the narrow technical issue autonomously; do not ask the user unless credentials/legal/capital are inherently required.
+
+## Required namespace
+Create a new immutable namespace:
+`docs/machine_strategy_v3_okx_compatibility_v1/`
+
+At minimum:
+- `COMPATIBILITY_POLICY.md`
+- `COMPATIBILITY_PREREGISTRATION.json`
+- `QUANTIZATION_STRESS_POLICY.json`
+- `COST_FUNDING_BINDING.json`
+- `CAUSALITY_REPORT.md`
+- `QA_REPORT.md`
+- `INDEPENDENT_REVIEW.md`
+- `freeze_manifest.json`
+
+## Decision
 Publish exactly one:
-- `MACHINE_STRATEGY_V3_QUALIFIED_PASS` — only if the frozen v3 reaches Win Rate >=70% AND demonstrates positive net edge and robustness under all preregistered rules;
-- `MACHINE_STRATEGY_V3_QUALIFIED_FAIL` — freeze exact failure evidence and open a new strategy-version design gate;
-- `MACHINE_STRATEGY_V3_QUALIFICATION_STOP` — if OKX evidence/data/metadata is still insufficient for a fair financial test.
+- `MACHINE_STRATEGY_V3_OKX_COMPATIBILITY_V1_READY`
+- `MACHINE_STRATEGY_V3_OKX_COMPATIBILITY_V1_STOP`
 
-PASS does not mean LIVE-ready. It opens pristine OOS/forward validation next, where the 70% target remains active.
+READY authorizes only the preregistered one-shot historical financial validation. It does not authorize OOS, PAPER or LIVE.
 
-## Safety
-- No platform/site work unless strictly required for strategy validation.
-- No private trading API/order placement.
-- No OOS clock until qualification and separate registration.
-- PAPER=false.
-- LIVE=false.
-- `trade_entry_allowed=false`.
-
-`agent_control/CURRENT_BATCH.md` defines the currently allowed atomic subset. Do not skip ahead automatically.
-
-## Resume checkpoint
-
-Stage A v1 is frozen STOP at `5a63716e0a042d8b1778581ae0d513d6314fb188`, manifest `e8733326e85b6082a33f11ec001066d33bc345bcded6acda26b54cd56ddeb9f0`. Completed candles/funding must be reused. Exact restart action and source barriers are recorded in CURRENT_STATE.md and STAGE_A_REPORT.md. No Stage-B financial authorization follows from data acquisition alone. Preserve this freeze and use a new readiness-repair namespace for later source proof or a defensible separately versioned compatibility treatment. The WR>=70% autonomous campaign remains the objective; no platform work, strategy redesign to bypass missing evidence, OOS clock or PAPER/LIVE activation.
+PAPER=false. LIVE=false. `trade_entry_allowed=false`.
