@@ -1,24 +1,57 @@
-# Current Batch — Exchange Audit Stage 1A-OKX
+# Current Batch — UNIFIED_EXCHANGE_LAYER_v1 Stage 1A
 
-Execute only this batch, then stop and report/checkpoint the result. Do not continue automatically into Binance or any other venue.
+Execute only this batch, commit/push, then STOP. Do not continue automatically into venue adapters or later stages.
 
-## Task
-Perform Stage 1 low-cost hard-gate triage from `agent_control/EXCHANGE_AUDIT_RUNBOOK.md` for exactly one venue:
-- **OKX**
+## Scope
+Build the venue-neutral contract core and deterministic fail-closed authorization boundary only.
 
-Use exactly one `venue_researcher`. No parallel subagents. Medium reasoning. Narrow context only: the exchange-audit preregistration, runbook, venue worker contract, and current batch. Do not load frozen strategy/history artifacts unless a specific triage criterion strictly requires them.
+Use exactly one `exchange_adapter_architect` specialist. No parallel subagents. Medium reasoning. Narrow context: `agent_control/NEXT_TASK.md`, accepted exchange-selection role decisions, timestamp follow-up, existing relevant exchange/v3 contract interfaces, and this batch. Do not load or inspect historical strategy financial outputs.
 
-Create/update exactly this durable checkpoint:
-- `docs/exchange_selection_checkpoints_v1/okx.json`
+## Required work
 
-The checkpoint must contain official/current evidence for the seven Stage-1 triage criteria, retrieval timestamps, source URLs, public endpoint status where probed, hashes/receipts where feasible, and explicit PASS/FAIL/UNKNOWN with reason.
+1. Inspect the existing code structure and add the narrowest new versioned module/package for unified exchange contracts without modifying frozen `MACHINE_STRATEGY_v3` modules.
 
-Do not calculate final scores. Do not launch cross-venue specialist audits. Do not run red-team/final review. Do not research Binance or another venue in this cloud run.
+2. Implement typed exact-decimal contracts for at least:
+   - Venue/Product identity;
+   - Candle/bar with completed flag and open/event/known-at provenance;
+   - Instrument metadata with tick size, lot size, minimums, unit semantics and current-known-at provenance;
+   - Mark/index/funding observation;
+   - Orderbook snapshot with explicit price and size units;
+   - Timestamp provenance separating exchange event/server time, retrieved/receipt time and known_at.
 
-After the OKX checkpoint is committed and pushed, update `agent_control/STATUS.md` to `EXCHANGE_SELECTION_AUDIT_V1_STAGE_1A_OKX_COMPLETE` and STOP. If an environment/access blocker prevents completion, persist the evidence gathered, record the blocker in the checkpoint/status, push, and STOP rather than retrying broadly.
+3. Implement inert typed private-domain contracts for:
+   - account/balance;
+   - order intent/state;
+   - fill;
+   - position;
+   - margin/leverage/protective-order capability descriptors.
 
-All frozen v3/PAPER/LIVE invariants remain unchanged; `trade_entry_allowed=false`.
+4. Implement a deterministic authorization boundary so any private/order execution entrypoint fails before network I/O while:
+   - `trade_entry_allowed=false`;
+   - PAPER=false;
+   - LIVE=false.
 
-## Preservation-safe checkpoint location
+Do not create usable signing/auth clients and do not call any private exchange API.
 
-The original requested path was `docs/exchange_selection_audit_v1/checkpoints/okx.json`. During publication, remote batch instructions arrived after the prior full-attempt namespace had been sealed with exact membership (manifest SHA-256 `06556298d9f8041c493af5225740425cdfc51807566a322e2dd86f944b9c24d5`). Adding a file there would invalidate the preserved freeze. The physical checkpoint therefore uses `docs/exchange_selection_checkpoints_v1/okx.json`. This location-only adaptation preserves all batch criteria, one medium venue worker, reuse rules and STOP boundary. It does not promote the earlier full-attempt result or open the proposed next gate.
+5. Add focused tests for:
+   - exact Decimal preservation;
+   - product/unit mismatch rejection;
+   - unknown unit/epoch fail-closed;
+   - timestamp-domain separation and known_at ordering;
+   - incomplete-bar handling;
+   - direct private/order invocation denied with zero network side effects.
+
+6. Create/update only Stage-1A documentation under `docs/unified_exchange_layer_v1/`:
+   - `STAGE1A_CONTRACT_CORE.md`
+   - `AUTHORIZATION_BOUNDARY.md`
+   - `STAGE1A_QA_RECEIPT.json`
+
+Record files changed, tests run and exact PASS/STOP. Reuse frozen exchange audit facts; no new venue research or HTTP probes in this batch.
+
+## Mandatory stop conditions
+
+STOP after Stage 1A commit/push. Do not implement Bitget/BloFin/OKX/Kraken adapters yet. Do not touch strategy rules. Do not run historical v3 financial execution, OOS, PAPER or LIVE.
+
+If implementation exposes a blocker, publish an honest Stage-1A STOP with the narrowest blocker and completed safe artifacts rather than widening scope.
+
+`trade_entry_allowed=false` remains invariant.
