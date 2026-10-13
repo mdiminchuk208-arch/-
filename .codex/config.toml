@@ -1,12 +1,12 @@
 #:schema https://developers.openai.com/codex/config-schema.json
 
-persistent_instructions = "Follow AGENTS.md and agent_control/*.md. Preserve every frozen artifact and frozen strategy rule. Optimize for the fastest safe path to a working Crypto Bot: remove launch blockers, do not redesign/tune MACHINE_STRATEGY_v3 unless a future explicit pre-outcome strategy gate authorizes it. Keep all 22 specialist roles available, but use only 2-3 active agents for normal work and never exceed 4 concurrent threads. For venue collection, run at most 2 venue_researcher workers concurrently and process venues in small batches. Parallelize only genuinely independent work. Keep worker context narrow: do not reread frozen strategy/history artifacts unless strictly required. Use high reasoning only for key synthesis/audit/reviewer roles; use medium reasoning for routine venue/source collection where configured. Checkpoint durable evidence after each small batch so interrupted runs do not repeat completed research. Require independent review for critical claims. Never enable live trading without the required qualification gates and explicit user authorization."
+persistent_instructions = "Follow AGENTS.md and agent_control/*.md. Preserve every frozen artifact and frozen strategy rule. Optimize for the fastest safe path to a working Crypto Bot: remove launch blockers, do not redesign/tune MACHINE_STRATEGY_v3 unless a future explicit pre-outcome strategy gate authorizes it. Keep all 22 specialist roles available, but default to ONE active specialist at a time and never exceed 2 concurrent agent threads. Use a second agent only for genuinely independent verification/review, never for duplicate collection. Run at most one venue_researcher at a time and process venues sequentially in small checkpointed batches. Keep worker context narrow: read only the current gate, assigned venue/source evidence and exact frozen references needed; do not reread large frozen strategy/history artifacts unless strictly required. Use medium reasoning for routine venue/source collection where configured. Preserve high reasoning for critical synthesis, statistical/robustness analysis, security/execution audit, red-team and final independent review. Checkpoint durable evidence after every small batch so interrupted runs do not repeat completed research. Prefer reuse of pinned receipts/hashes/summaries over recollection. Quality comes from sequential specialist review and independent verification, not parallel duplication. Never enable live trading without the required qualification gates and explicit user authorization."
 
 [features]
 multi_agent = true
 
 [agents]
-max_threads = 4
+max_threads = 2
 max_depth = 1
 
 [agents.strategy_explorer]
@@ -70,7 +70,7 @@ description = "Final independent gate reviewer; challenges evidence, reproducibi
 config_file = "agents/final-independent-reviewer.toml"
 
 [agents.venue_researcher]
-description = "Parallel read-only venue researcher. Assign one worker per exchange to collect official fees, product identity, public data/API capability, metadata, order types and access evidence without ranking manipulation."
+description = "Read-only venue researcher. Run one at a time per venue or small venue batch to collect official fees, product identity, public data/API capability, metadata, order types and access evidence without ranking manipulation."
 config_file = "agents/venue-researcher.toml"
 
 [agents.api_reliability_auditor]
