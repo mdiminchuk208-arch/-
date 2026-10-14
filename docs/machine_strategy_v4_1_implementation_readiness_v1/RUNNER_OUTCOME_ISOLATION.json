@@ -1,0 +1,36 @@
+{
+  "version": "MACHINE_STRATEGY_v4.1",
+  "state": "IMPLEMENTATION_IN_PROGRESS",
+  "historical_financial_authorized": false,
+  "historical_position_simulation_authorized": false,
+  "catalog_count_selection_authorized": false,
+  "trade_entry_allowed": false,
+  "allowed_now": [
+    "sealed public OKX source verification",
+    "completed causal source/state/selected-POI lifecycle adapter checks",
+    "prefix/future-mutation/deterministic replay with finance-engine trap",
+    "registered synthetic execution/funding/accounting fixtures",
+    "Decimal50 design/execution construction and canonical transport tests"
+  ],
+  "forbidden_until_external_implementation_READY": [
+    "historical v4/v4.1 fills",
+    "historical v4/v4.1 exits",
+    "historical case-level PnL or R",
+    "WR",
+    "PF",
+    "expectancy",
+    "drawdown",
+    "equity",
+    "MFE/MAE",
+    "PAPER",
+    "LIVE"
+  ],
+  "code_guards": {
+    "pure_contract_block": "scripts/machine_strategy_v4_1_contracts.py::assert_financial_execution_blocked",
+    "preproposal_inventory": "scripts/machine_strategy_v4_1_selected_poi_inventory.py contains no position/outcome runner import",
+    "required_future_runner_rule": "A distinct guarded v4_1 runner may execute historical financial paths only after exact externally pinned IMPLEMENTATION_FREEZE_MANIFEST READY bytes and a separately named one-shot financial authorization gate."
+  },
+  "qualification_thresholds_unchanged": true,
+  "win_rate_min": 0.70,
+  "production_candidate": null
+}
