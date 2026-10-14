@@ -1,0 +1,78 @@
+{
+  "version": "MACHINE_STRATEGY_v4.1",
+  "state": "IMPLEMENTATION_IN_PROGRESS",
+  "financial_validation_authorized": false,
+  "trade_entry_allowed": false,
+  "sealed_market_scope": {
+    "venue": "OKX",
+    "products": ["BTC-USDT-SWAP", "ETH-USDT-SWAP"],
+    "native_M15_rows": 210240,
+    "signed_funding_rows": 4380,
+    "history_classification": "EXPOSED_DEVELOPMENT_NOT_PRISTINE_OOS"
+  },
+  "components": {
+    "RAW_DISCOVERY": {
+      "status": "PINNED_INHERITED_PRIMITIVES_ONLY",
+      "authority": "frozen v3 raw discovery/state primitives where v4/v4.1 did not override semantics",
+      "must_not_import_financial_outcomes": true
+    },
+    "HTF_STATE_H1_H4_D1": {
+      "status": "PINNED_INHERITED_PRIMITIVES_PENDING_FULL_PREFIX_REPLAY",
+      "causal_requirement": "completed bars only; equal-cutoff advancement explicit"
+    },
+    "M15_REFINEMENT": {
+      "status": "PINNED_INHERITED_PRIMITIVES_PLUS_V4_APPROACH_PENDING_FULL_PREFIX_REPLAY",
+      "causal_requirement": "completed M15 only; no future mutation dependence"
+    },
+    "SELECTED_POI_IDENTITY": {
+      "status": "IMPLEMENTED_DISTINCT_V4_1_PATH",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::selected_poi_identity",
+      "families": ["SFP", "OB", "STB", "BREAKER", "RANGE"]
+    },
+    "PREPROPOSAL_POI_INVENTORY": {
+      "status": "IMPLEMENTED_SOURCE_ONLY_COMPONENT",
+      "code": "scripts/machine_strategy_v4_1_selected_poi_inventory.py::SelectedPoiInventory",
+      "financial_outputs": false
+    },
+    "FIRST_ADMISSIBLE_ELIGIBILITY": {
+      "status": "IMPLEMENTED_COMPONENT_PENDING_HISTORICAL_BINDING",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::latch_eligibility",
+      "clock": "completed M15 cutoff"
+    },
+    "NATIVE_FIRST_TEST_PUBLICATION": {
+      "status": "IMPLEMENTED_COMPONENT_PENDING_HISTORICAL_BINDING",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::native_contact",
+      "clock": "native OPEN eligibility; publication at native CLOSE"
+    },
+    "RANGE_REACTION_EXEMPTION": {
+      "status": "IMPLEMENTED_COMPONENT_PENDING_FAMILY_REPLAY",
+      "rule": "mandatory boundary reaction cannot self-consume; subsequent eligible contact consumes"
+    },
+    "H1_PROPOSAL_RESERVATION": {
+      "status": "IMPLEMENTED_COMPONENT_PENDING_FULL_ADAPTER_BINDING",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::register_emission"
+    },
+    "EVERY_M15_PENDING_ORDER_LIFECYCLE": {
+      "status": "NOT_YET_FULLY_BOUND_V4_1",
+      "required_before_READY": true
+    },
+    "NINE_SCENARIO_EXECUTION_BINDING": {
+      "status": "V4_PROTOTYPE_EXISTS_BUT_V4_1_REBIND_REQUIRED",
+      "historical_execution_allowed_now": false
+    },
+    "SIGNED_FUNDING_BINDING": {
+      "status": "SYNTHETIC_GUARD_QA_STILL_REQUIRED",
+      "historical_financial_execution_allowed_now": false
+    },
+    "FULL_PERIOD_PREFIX_FUTURE_MUTATION_REPLAY": {
+      "status": "NOT_YET_EXECUTED_ON_CURRENT_V4_1_BYTES",
+      "required_before_READY": true
+    },
+    "INDEPENDENT_IMPLEMENTATION_REVIEW": {
+      "status": "NOT_YET_RUN_ON_COMPLETE_V4_1_IMPLEMENTATION",
+      "required_before_READY": true
+    }
+  },
+  "ready": false,
+  "historical_financial_run_allowed": false
+}
