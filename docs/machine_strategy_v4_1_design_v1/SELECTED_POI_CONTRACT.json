@@ -1,0 +1,98 @@
+{
+  "version": "MACHINE_STRATEGY_v4.1",
+  "normative": true,
+  "classification": "PROJECT_POLICY_WITH_TECHNICAL_IDENTITY_NORMALIZATION",
+  "financial_validation_authorized": false,
+  "common": {
+    "required_fields": [
+      "formation_id",
+      "source_parent_id",
+      "selected_poi_id",
+      "selected_poi_kind",
+      "selected_poi_native_tf",
+      "origin_conf_id",
+      "origin_conf_known_at",
+      "reaction_required_at",
+      "eligibility_at",
+      "emission_decision_at"
+    ],
+    "eligibility_rule": "eligibility_at=max(all completed family prerequisites); no backdating",
+    "context_rule": "required completed context must be admissible at eligibility_at; otherwise WAIT_CONTEXT_FOR_POI_ELIGIBILITY prospectively",
+    "first_test_rule": "first native bar OPEN>=eligibility_at whose OHLC intersects selected POI; contact is known at that bar CLOSE",
+    "pre_emission_consumption": "eligible contact completed before emission => REJECT_SELECTED_POI_PRECONSUMED",
+    "reservation_is_consumption": false,
+    "same_bar_ordering": [
+      "apply state known before OPEN",
+      "evaluate already-active order execution",
+      "publish native contact at CLOSE",
+      "consume for subsequent OPENs"
+    ],
+    "retroactive_close_cancel_allowed": false,
+    "same_physical_poi_retry_allowed": false
+  },
+  "families": {
+    "SFP": {
+      "selected_poi_kind": "REFINED_M15_POI",
+      "identity": "existing selected refined M15 OB/FVG id",
+      "native_tf": 15,
+      "origin_conf": "selected refined POI own origin BOS/CONF",
+      "reaction_required_at": "parent SFP reaction known_at",
+      "eligibility_at": "max(zone_born_at, origin_conf_known_at, reaction_required_at)",
+      "required_event_exemption": "all prerequisites before eligibility only",
+      "parent_consumption_equals_selected_consumption": false
+    },
+    "OB": {
+      "selected_poi_kind": "REFINED_M15_POI",
+      "identity": "existing selected refined M15 OB/FVG id",
+      "native_tf": 15,
+      "origin_conf": "selected refined POI own origin BOS/CONF",
+      "reaction_required_at": "parent OB reaction known_at",
+      "eligibility_at": "max(zone_born_at, origin_conf_known_at, reaction_required_at)",
+      "required_event_exemption": "parent reaction is not selected refined-POI consumption",
+      "parent_consumption_equals_selected_consumption": false
+    },
+    "STB": {
+      "selected_poi_kind": "STB_BODY",
+      "identity": "H(M4_1_STB_BODY,formation_id,body_low,body_high)",
+      "native_tf": "setup native H1/H4",
+      "origin_conf": "selected causal same-direction M15 CONF",
+      "reaction_required_at": "formation_known_at",
+      "eligibility_at": "max(formation_known_at, origin_conf_known_at)",
+      "required_event_exemption": "manipulation/formation bar cannot consume generated STB body",
+      "full_parent_consumption_equals_selected_consumption": false,
+      "parent_structural_invalidation": "inherited full manipulation structural-anchor rule only"
+    },
+    "BREAKER": {
+      "selected_poi_kind": "BREAKER_BODY",
+      "identity": "H(M4_1_BREAKER_BODY,parent_ob_id,breaker_formation_known_at,direction)",
+      "native_tf": "setup native H1/H4",
+      "origin_conf": "selected same-direction M15 CONF after breaker creation",
+      "reaction_required_at": "completed native opposite body-break creating breaker",
+      "eligibility_at": "max(breaker_formation_known_at, origin_conf_known_at)",
+      "required_event_exemption": "breaker-creation break cannot consume object that is created by that event",
+      "pre_creation_parent_contacts_consume_breaker": false
+    },
+    "RANGE": {
+      "selected_poi_kind": "RANGE_BOUNDARY",
+      "identity": "H(M4_1_RANGE_BOUNDARY,range_id,direction,boundary_price)",
+      "native_tf": "source range native H1/H4",
+      "origin_conf": "selected same-direction M15 CONF after required boundary reaction",
+      "reaction_required_at": "completed mandatory later boundary-reaction CLOSE",
+      "eligibility_at": "max(reaction_required_at, origin_conf_known_at)",
+      "required_event_exemption": "mandatory boundary reaction is explicitly exempt from selected-POI consumption",
+      "subsequent_contact_consumes": true,
+      "source_range_retirement_separate": true
+    }
+  },
+  "deadline": {
+    "anchor": "formation_known_at",
+    "seconds": 57600,
+    "active_interval": "[emission_decision_at, formation_known_at+57600)",
+    "eligibility_after_deadline": "terminal EXPIRED_PENDING; no emission"
+  },
+  "safety": {
+    "trade_entry_allowed": false,
+    "PAPER": false,
+    "LIVE": false
+  }
+}
