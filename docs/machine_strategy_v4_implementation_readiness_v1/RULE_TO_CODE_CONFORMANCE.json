@@ -1,0 +1,58 @@
+{
+  "version": "MACHINE_STRATEGY_v4",
+  "state": "IMPLEMENTATION_IN_PROGRESS",
+  "design_manifest_sha256": "b9452dea092c0d186d2ac164c044f2fad0d865becf9904791caebbf7b477273b",
+  "financial_validation_authorized": false,
+  "rules": {
+    "M4_APPROACH": {
+      "design": "docs/machine_strategy_v4_design_v1/ENTRY_EXIT_CONTRACT.json#approach",
+      "code": "scripts/machine_strategy_v4_readiness_core.py::classify_approach",
+      "status": "IMPLEMENTED_PURE_CONTRACT_PENDING_EXECUTED_QA",
+      "must_not_fallback_to_v3": true
+    },
+    "FTA_DECISION_LIFECYCLE": {
+      "design": "docs/machine_strategy_v4_design_v1/ENTRY_EXIT_CONTRACT.json#FTA",
+      "code": "scripts/machine_strategy_v4_readiness_core.py::target_lifecycle_ok",
+      "status": "IMPLEMENTED_PURE_CONTRACT_PENDING_ADAPTER_BINDING",
+      "must_not_select_farther_fta": true
+    },
+    "H04_EXECUTABLE_ZONE": {
+      "design": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json#executable_zone",
+      "code": "scripts/machine_strategy_v4_readiness_core.py::executable_plan",
+      "status": "IMPLEMENTED_PURE_CONTRACT_PENDING_NINE_SCENARIO_BINDING",
+      "structural_zone_preserved_separately": true
+    },
+    "H05_STRUCTURAL_PAYOFF": {
+      "design": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json#payoff",
+      "code": "scripts/machine_strategy_v4_readiness_core.py::planned_payoff_gate",
+      "status": "IMPLEMENTED_PURE_CONTRACT_PENDING_ADAPTER_BINDING",
+      "future_funding_used_for_admission": false
+    },
+    "PARENT_LIFETIME": {
+      "design": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json#lifetime",
+      "code": "scripts/machine_strategy_v4_readiness_core.py::pending_alive",
+      "status": "IMPLEMENTED_PURE_CONTRACT_PENDING_EVENT_LOOP_BINDING",
+      "deadline_seconds": 57600,
+      "fixed_3600_expiry": false
+    },
+    "H00_TELEMETRY": {
+      "design": "docs/machine_strategy_v4_design_v1/MACHINE_STRATEGY_V4_SPEC.md#V4_TELEMETRY_OBSERVER",
+      "code": "scripts/machine_strategy_v4_readiness_core.py::GateTelemetry",
+      "status": "IMPLEMENTED_SCHEMA_GUARD_PENDING_APPEND_ONLY_SINK",
+      "outcome_fields_forbidden": true
+    },
+    "RAW_DISCOVERY_AND_STATE": {
+      "design": "inherited only where explicitly pinned by v4 design",
+      "code": "future scripts/machine_strategy_v4_historical_adapter.py over pinned v3/raw components",
+      "status": "NOT_YET_BOUND",
+      "financial_outcome_imports_allowed": false
+    },
+    "FUNDING_AND_REALIZED_EXECUTION": {
+      "design": "docs/machine_strategy_v4_design_v1/ENTRY_EXIT_CONTRACT.json#exits.funding",
+      "code": "future v4 guarded runner; synthetic fixtures before implementation freeze",
+      "status": "NOT_YET_IMPLEMENTED",
+      "historical_case_finance_allowed_now": false
+    }
+  },
+  "trade_entry_allowed": false
+}
