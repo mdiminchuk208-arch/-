@@ -1,0 +1,64 @@
+{
+  "version": "MACHINE_STRATEGY_v4.1",
+  "state": "IMPLEMENTATION_IN_PROGRESS",
+  "design_publication": "96e76edf0e526c588cf87a665da681f577cca77a",
+  "design_manifest_sha256": "4074c337be4800e54682a5ad1ddfd9015e35ce16f4fe2742fc4d12b4bb415790",
+  "financial_validation_authorized": false,
+  "trade_entry_allowed": false,
+  "rules": {
+    "CANONICAL_SELECTED_POI_IDENTITY": {
+      "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/common/H_normalization and /families",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::physical_identity/selected_poi_identity",
+      "status": "IMPLEMENTED_PENDING_EXECUTED_QA",
+      "notes": "SFP/OB retain opaque refined IDs; STB/BREAKER/RANGE use distinct v4.1 generated handles."
+    },
+    "FIRST_ADMISSIBLE_M15_ELIGIBILITY": {
+      "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/common/eligibility_rule",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::latch_eligibility + scripts/machine_strategy_v4_1_selected_poi_inventory.py::SelectedPoiInventory.latch_m15",
+      "status": "IMPLEMENTED_PURE_LATCH_PENDING_HISTORICAL_ADAPTER_BINDING",
+      "notes": "Latch is monotonic; later proposal CONF cannot reset origin CONF or eligibility."
+    },
+    "NATIVE_FIRST_TEST_CLOCK": {
+      "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/common/contact_clock,/native_context_rule,/partial_native_interval",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::native_contact + SelectedPoiInventory.observe_native_bar",
+      "status": "IMPLEMENTED_PURE_CLOCK_PENDING_REAL_PREFIX_REPLAY",
+      "notes": "OPEN before eligibility is wholly ineligible; contact is published at native CLOSE."
+    },
+    "RANGE_REQUIRED_REACTION_EXEMPTION": {
+      "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/families/RANGE",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::native_contact",
+      "status": "IMPLEMENTED_PENDING_FAMILY_ADAPTER_BINDING",
+      "notes": "Required boundary reaction cannot self-consume; later eligible contact can consume."
+    },
+    "PRE_EMISSION_CONSUMPTION": {
+      "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/common/pre_emission_consumption",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::register_emission",
+      "status": "IMPLEMENTED_PENDING_EQUAL_CUTOFF_PRODUCTION_QA",
+      "notes": "Contact known_at <= emission rejects before reservation."
+    },
+    "DECIMAL50_DESIGN_SCOPE": {
+      "design": "docs/machine_strategy_v4_1_design_v1/ARITHMETIC_SCOPE_CONTRACT.json#/design_scope",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::design_decimal/canonical_decimal/payoff_equality_passes",
+      "status": "IMPLEMENTED_PENDING_EXECUTED_REPEATING_DECIMAL_QA",
+      "notes": "ROUND_HALF_EVEN precision50; no float/epsilon."
+    },
+    "DECIMAL50_TO_80_TRANSPORT": {
+      "design": "docs/machine_strategy_v4_1_design_v1/ARITHMETIC_SCOPE_CONTRACT.json#/boundary_contract",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::transport_design_value_to_ledger/ledger_decimal",
+      "status": "IMPLEMENTED_PENDING_LEDGER_BINDING_QA",
+      "notes": "Ledger parses canonical design strings and may not rebuild design geometry."
+    },
+    "PREPROPOSAL_INVENTORY": {
+      "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/common/preproposal_inventory",
+      "code": "scripts/machine_strategy_v4_1_selected_poi_inventory.py::SelectedPoiInventory",
+      "status": "IMPLEMENTED_SOURCE_ONLY_COMPONENT_PENDING_FULL_ADAPTER_INTEGRATION",
+      "notes": "No trade signal or financial output is emitted by inventory."
+    },
+    "HISTORICAL_V4_1_POSITION_ENGINE": {
+      "design": "agent_control/V4_1_IMPLEMENTATION_READINESS_WORK_ORDER.md",
+      "code": "NOT_AUTHORIZED_IN_THIS_GATE",
+      "status": "BLOCKED_BY_GATE",
+      "notes": "Implementation readiness must freeze before any historical v4.1 fill/exit/finance run."
+    }
+  }
+}
