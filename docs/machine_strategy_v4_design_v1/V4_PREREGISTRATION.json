@@ -1,0 +1,81 @@
+{
+  "version": "MACHINE_STRATEGY_v4",
+  "state": "DESIGN_DRAFT_COMPLETE_REVIEW_PENDING",
+  "design_outcome_isolation": {
+    "v3_development_history_exposed": true,
+    "v4_financial_outcomes_seen": false,
+    "v4_financial_validation_authorized": false,
+    "parameter_sweep_allowed": false,
+    "alternative_rule_pnl_comparison_allowed": false,
+    "profitable_slice_selection_allowed": false
+  },
+  "venue": "OKX",
+  "products": ["BTC-USDT-SWAP", "ETH-USDT-SWAP"],
+  "inherited_data": {
+    "native_m15": "sealed official OKX Stage-A dataset",
+    "funding": "sealed signed actual historical OKX funding series",
+    "development_period": "[2024-10-13T00:00:00Z,2026-10-13T00:00:00Z)",
+    "warmup_start": "2023-10-14T00:00:00Z"
+  },
+  "adopted_v4_changes": [
+    "H01 three-state structural approach contract",
+    "H02 completed-close FTA lifecycle invalidation",
+    "H03 event-driven resting-order lifetime with inherited 16h parent ceiling",
+    "H04 structural/executable-zone separation with one-grid technical envelope",
+    "H05 nearest-FTA >=1R doubled-cost risk-parity gate",
+    "H00 outcome-blind gate telemetry"
+  ],
+  "fixed_numeric_design_choices": {
+    "technical_execution_envelope_grid_units_each_side": 1,
+    "minimum_net_target_R_under_doubled_fee_slippage": "1.0",
+    "parent_pending_max_seconds": 57600,
+    "fee_per_leg_base": "0.0006",
+    "slippage_per_leg_base": "0.0002"
+  },
+  "numeric_choice_rationale": {
+    "one_grid_envelope": "minimal representation unit tied to active compatibility grid, not selected from PnL",
+    "one_R_payoff": "risk-unit parity: planned structural winner must cover one complete modeled stop unit under adverse doubled costs, not selected from exposed cases",
+    "parent_pending_16h": "inherited pre-existing v3 machine ceiling, not retuned"
+  },
+  "qualification": {
+    "win_rate_min": "0.70",
+    "closed_trades_min": 200,
+    "profit_factor_min": "1.20",
+    "net_expectancy_R_min_exclusive": "0",
+    "net_PnL_min_exclusive": "0",
+    "doubled_cost_profit_factor_min": "1.00",
+    "doubled_cost_net_positive": true,
+    "case_ledger_max_drawdown_R_max": "20",
+    "max_consecutive_net_losses_max": 10,
+    "each_coin_direction_closed_min": 30,
+    "each_coin_direction_net_positive": true,
+    "wilson_95pct_win_rate_lower_bound_min": "0.60",
+    "largest_calendar_quarter_profit_share_max": "0.50",
+    "largest_coin_profit_share_max": "0.80",
+    "filled_unknown_exit_max": 0,
+    "no_critical_causality_or_integrity_failure": true
+  },
+  "implementation_requirements": [
+    "new versioned v4 code paths; no mutation of frozen v3 bytes",
+    "deterministic LONG/SHORT mirrors",
+    "all gate decisions use known_at causal fields only",
+    "telemetry cannot influence strategy decisions",
+    "all preregistered compatibility scenarios evaluated",
+    "actual signed funding included only after exposure begins",
+    "base and doubled-cost ledgers both emitted",
+    "no financial output until design freeze and implementation readiness PASS"
+  ],
+  "future_validation": {
+    "development_run": "one-shot only after implementation readiness",
+    "oos": "must be separately registered pristine future/untreated interval after historical qualification",
+    "paper": "minimum 200 CLOSED plus 30 calendar days after OOS qualification",
+    "platform_reconnect": "only after Paper qualification"
+  },
+  "safety": {
+    "PAPER": false,
+    "LIVE": false,
+    "trade_entry_allowed": false,
+    "private_exchange_api_allowed": false,
+    "platform_work_allowed": false
+  }
+}
