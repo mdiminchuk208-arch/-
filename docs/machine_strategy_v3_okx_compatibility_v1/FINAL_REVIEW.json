@@ -1,0 +1,29 @@
+{
+  "code_sha256": {
+    "scripts/build_okx_v3_compatibility_v1.py": "32acfb9f6e5b6979f3dc7c1c8f12797ee417e6ac323fa5b691a7cad70f765a7f",
+    "scripts/okx_v3_compatibility_binding_v1.py": "325d11606391ace7a409e0a7f908e3805af74589f98e3f369a40abbb9a55bccc",
+    "scripts/okx_v3_compatibility_runner_v1.py": "38bc9392acba6fb1179141eb3f1f8a89a5f44f793bc43f6a4338f9be87269f7f",
+    "tests/test_okx_v3_compatibility_v1.py": "7af6f98f25ef111c9221e0b456c6f143770a8a5de72386d06d6cca4d671a0de7"
+  },
+  "decision": "FINAL_COMPATIBILITY_READY_REVIEW_PASS",
+  "disclosure": "Earlier negative CLI --run-historical-once with allzero READY hash rejected COMMITTED_READY_MANIFEST_REQUIRED before source/output. No actualfinancialevaluation. Reviewer acknowledged flag invocation exceeded assigned flag restriction.",
+  "historical_financial_evaluations": 0,
+  "historical_financial_namespace_absent": true,
+  "implementation_author": false,
+  "independent_checks": [
+    "Policy files/receipt match23f275ca",
+    "Protected strategy pins",
+    "StageA externallypinned resume",
+    "30compatibilitytests PASS",
+    "8QAcommands/loghashes",
+    "9toy replays",
+    "Causality PASS",
+    "Commit/ancestry/namespace/control/output/checkpoint guards inspected"
+  ],
+  "limits": [
+    "One emittedcandidate nonempty prefixfixture, not every branch",
+    "Synthetic grids/markproxy/modeled fees do not establish actual historical execution facts"
+  ],
+  "reviewer": "/root/okx_compatibility_final_independent_reviewer",
+  "role": "final_independent_reviewer"
+}
