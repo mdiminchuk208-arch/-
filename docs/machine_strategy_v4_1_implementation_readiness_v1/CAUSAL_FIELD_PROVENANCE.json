@@ -1,0 +1,91 @@
+{
+  "version": "MACHINE_STRATEGY_v4.1",
+  "state": "IMPLEMENTATION_IN_PROGRESS",
+  "financial_validation_authorized": false,
+  "fields": {
+    "formation_id": {
+      "source": "completed family formation event",
+      "known_at": "formation_known_at",
+      "mutable_after_registration": false
+    },
+    "source_parent_id": {
+      "source": "completed native parent structure/range/OB identity",
+      "known_at": "no later than selected object registration",
+      "mutable_after_registration": false
+    },
+    "selected_poi_id": {
+      "source": "SFP/OB inherited refined POI opaque ID; STB/BREAKER/RANGE deterministic v4.1 generated handle",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::selected_poi_identity",
+      "mutable_after_registration": false
+    },
+    "selected_poi_native_tf": {
+      "source": "frozen v4.1 family contract",
+      "values": {"SFP": 15, "OB": 15, "STB": "setup H1/H4", "BREAKER": "setup H1/H4", "RANGE": "source H1/H4"}
+    },
+    "reaction_required_at": {
+      "source": "completed family prerequisite event",
+      "notes": "RANGE mandatory boundary reaction is exempt from self-consumption"
+    },
+    "origin_conf_id": {
+      "source": "first admissible completed-M15 eligibility cutoff",
+      "notes": "SFP/OB retain refined origin binding; generated STB/BREAKER/RANGE latch first causal M4 confirmation",
+      "may_reset_from_later_proposal_conf": false
+    },
+    "origin_conf_known_at": {
+      "source": "completed M15 confirmation timestamp",
+      "future_data_allowed": false
+    },
+    "eligibility_at": {
+      "source": "first completed M15 cutoff satisfying family prerequisites + M4 gate + completed context",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::latch_eligibility",
+      "may_backdate": false,
+      "may_reset": false
+    },
+    "native_contact_open": {
+      "source": "selected native TF bar OPEN",
+      "rule": "OPEN must be >= eligibility_at; bar opened before eligibility is wholly ineligible"
+    },
+    "native_contact_known_at": {
+      "source": "selected native TF bar CLOSE",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::native_contact",
+      "may_retroactively_cancel_earlier_valid_fill": false
+    },
+    "emission_decision_at": {
+      "source": "H1 proposal decision after completed contacts at equal cutoff",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::register_emission"
+    },
+    "proposal_selected_conf_id": {
+      "source": "current proposal-time inherited M4 confirmation",
+      "notes": "stored separately from origin_conf_id; never rebases selected physical POI"
+    },
+    "parent_deadline_at": {
+      "source": "formation_known_at + 57600",
+      "interval": "half-open; no emission/fill at or after deadline"
+    },
+    "design_decimal_values": {
+      "source": "frozen design/execution arithmetic",
+      "precision": 50,
+      "rounding": "ROUND_HALF_EVEN",
+      "serialization": "canonical decimal string"
+    },
+    "ledger_decimal_values": {
+      "source": "canonical design strings plus direct source funding decimal strings",
+      "precision": 80,
+      "rounding": "ROUND_HALF_EVEN",
+      "may_recompute_design_geometry": false
+    },
+    "financial_outcomes": {
+      "source": "NOT AVAILABLE IN THIS GATE",
+      "may_feed_strategy_or_adapter_state": false
+    }
+  },
+  "prohibited_provenance": [
+    "future bar state",
+    "historical WR/PF/PnL",
+    "MFE/MAE",
+    "outcome-selected confirmation",
+    "post-fill state used to change admission",
+    "backdated current OKX metadata"
+  ],
+  "trade_entry_allowed": false
+}
