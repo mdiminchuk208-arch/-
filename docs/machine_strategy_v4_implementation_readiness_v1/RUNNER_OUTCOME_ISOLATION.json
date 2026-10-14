@@ -1,0 +1,38 @@
+{
+  "version": "MACHINE_STRATEGY_v4",
+  "state": "IMPLEMENTATION_READINESS_PRE_FINANCIAL",
+  "design_manifest_sha256": "b9452dea092c0d186d2ac164c044f2fad0d865becf9904791caebbf7b477273b",
+  "historical_financial_authorized": false,
+  "historical_fill_exit_simulation_allowed": false,
+  "historical_case_level_financial_output_allowed": false,
+  "allowed_before_freeze": [
+    "sealed source-byte verification",
+    "native/derived bar continuity checks",
+    "causal feature and adapter construction",
+    "prefix/future-mutation checks",
+    "synthetic execution/accounting fixtures",
+    "telemetry isolation tests",
+    "deterministic replay and guard-negative tests"
+  ],
+  "forbidden_before_freeze": [
+    "historical v4 PnL",
+    "historical v4 win rate",
+    "historical v4 profit factor",
+    "historical v4 expectancy",
+    "historical v4 drawdown",
+    "historical v4 case-level MFE/MAE",
+    "historical v4 filled/closed trade outcome inspection"
+  ],
+  "required_to_open_financial_gate": [
+    "complete historical adapter coverage",
+    "complete nine-scenario guarded runner",
+    "production conformance tests executed",
+    "prefix and future-mutation PASS",
+    "independent no-lookahead review PASS",
+    "independent execution/funding review PASS",
+    "externally pinned IMPLEMENTATION_FREEZE_MANIFEST.json"
+  ],
+  "PAPER": false,
+  "LIVE": false,
+  "trade_entry_allowed": false
+}
