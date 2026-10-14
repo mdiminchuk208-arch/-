@@ -1,0 +1,61 @@
+{
+  "rules": [
+    {
+      "causal_rationale": "Corrective classification when structural idea intact; no automatic valid/profitable claim",
+      "classification": "PROJECT_POLICY",
+      "historical_PnL_selection": false,
+      "hypothesis": "H01",
+      "normative_pointer": "ENTRY_EXIT_CONTRACT.json#/approach",
+      "rule_id": "M4_APPROACH",
+      "source_concept_refs": [
+        "S_OB_APPROACH",
+        "S_CONF"
+      ],
+      "source_selector_equivalence": false
+    },
+    {
+      "causal_rationale": "Do not reserve target already completed; E_ref-relative nearest immutable FTA",
+      "classification": "PROJECT_POLICY",
+      "historical_PnL_selection": false,
+      "hypothesis": "H02",
+      "normative_pointer": "ENTRY_EXIT_CONTRACT.json#/FTA",
+      "rule_id": "M4_FTA_LIFECYCLE",
+      "source_concept_refs": [
+        "S_FTA"
+      ],
+      "source_selector_equivalence": false
+    },
+    {
+      "causal_rationale": "Pending only, known structural lifecycle, half-open original formation+16h safety cap",
+      "classification": "PROJECT_POLICY",
+      "historical_PnL_selection": false,
+      "hypothesis": "H03",
+      "normative_pointer": "EXECUTION_CONTRACT.json#/lifetime",
+      "rule_id": "M4_LIFETIME",
+      "source_concept_refs": [],
+      "source_selector_equivalence": false
+    },
+    {
+      "causal_rationale": "One planned base stop unit parity at doubled fee/slippage; not empirical optimum",
+      "classification": "PROJECT_POLICY",
+      "historical_PnL_selection": false,
+      "hypothesis": "H05",
+      "normative_pointer": "EXECUTION_CONTRACT.json#/payoff",
+      "rule_id": "M4_PAYOFF",
+      "source_concept_refs": [],
+      "source_selector_equivalence": false
+    },
+    {
+      "causal_rationale": "All inherited qualification thresholds unchanged",
+      "classification": "PROJECT_POLICY",
+      "historical_PnL_selection": false,
+      "hypothesis": null,
+      "normative_pointer": "QUALIFICATION_PREREGISTRATION.json#/qualification",
+      "rule_id": "M4_QUALIFICATION",
+      "source_concept_refs": [],
+      "source_selector_equivalence": false
+    }
+  ],
+  "source_rule_equivalence": false,
+  "version": "MACHINE_STRATEGY_v4"
+}

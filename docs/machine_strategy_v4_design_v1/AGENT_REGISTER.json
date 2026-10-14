@@ -1,0 +1,33 @@
+{
+  "ECC_plugin": "ecc@ecc 2.2.3 enabled; hooks inactive",
+  "ECC_runtime": "/workspace/ecc-setup/codex-ecc",
+  "agents": [
+    {
+      "decision": "PASS",
+      "identity": "/root/v4_design_execution_review",
+      "receipt": "docs/machine_strategy_v4_design_v1/reviews/EXECUTION_REVIEW.json",
+      "role": "execution_auditor"
+    },
+    {
+      "decision": "PASS",
+      "identity": "/root/v4_design_causality_review",
+      "receipt": "docs/machine_strategy_v4_design_v1/reviews/BACKTEST_REVIEW.json",
+      "role": "backtest_reviewer"
+    },
+    {
+      "decision": "PASS",
+      "identity": "/root/v4_design_final_independent_review",
+      "receipt": "docs/machine_strategy_v4_design_v1/reviews/FINAL_INDEPENDENT_REVIEW.json",
+      "role": "final_independent_reviewer"
+    }
+  ],
+  "design_draft_origin": "Previously published draft at ef88fce620f2ca8347d9079a3b06e3d0c71a6781 reused; no restart",
+  "dispatch": "SERIAL_ROOT_PLUS_ONE_SPECIALIST",
+  "financial_validation_authorized": false,
+  "interruption": "An execution reviewer turn hit usage limit; resumed later and completed exact latest-byte acceptance",
+  "new_trade_evaluations": 0,
+  "role_launch_mechanism": "Cloud collaboration tools using project TOML role/model profiles; no native CLI model launch claimed",
+  "root_sole_writer": true,
+  "strategy_designer_launched_in_this_review_gate": false,
+  "trade_entry_allowed": false
+}

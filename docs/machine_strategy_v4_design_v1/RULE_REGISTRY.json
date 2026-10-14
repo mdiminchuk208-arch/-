@@ -1,0 +1,170 @@
+{
+  "hypotheses_disposition": {
+    "H00": "ADOPT_AS_PRE_OUTCOME_MACHINE_CONTRACT; profit effect unproven",
+    "H01": "ADOPT_AS_PRE_OUTCOME_MACHINE_CONTRACT; profit effect unproven",
+    "H02": "ADOPT_AS_PRE_OUTCOME_MACHINE_CONTRACT; profit effect unproven",
+    "H03": "ADOPT_AS_PRE_OUTCOME_MACHINE_CONTRACT; profit effect unproven",
+    "H04": "ADOPT_AS_PRE_OUTCOME_MACHINE_CONTRACT; profit effect unproven",
+    "H05": "ADOPT_AS_PRE_OUTCOME_MACHINE_CONTRACT; profit effect unproven"
+  },
+  "rules": [
+    {
+      "causal_rationale": "Completed contiguous bars, uncertainty retained; no future data",
+      "classification": "INHERITED_MACHINE_RULE",
+      "historical_PnL_selection": false,
+      "hypothesis": null,
+      "normative_pointer": "EXECUTION_CONTRACT.json#/bar_event_priority",
+      "rule_id": "M4_DATA",
+      "source_concept_refs": [
+        "S_STRUCTURE",
+        "S_CONF"
+      ],
+      "source_selector_equivalence": false
+    },
+    {
+      "causal_rationale": "H4 RANGE priority, aligned trend and transition-origin POI mirror",
+      "classification": "INHERITED_MACHINE_RULE",
+      "historical_PnL_selection": false,
+      "hypothesis": null,
+      "normative_pointer": "docs/machine_strategy_v3_design/DIRECTION_AND_REGIME_SPEC.json",
+      "rule_id": "M4_STATE",
+      "source_concept_refs": [
+        "S_STRUCTURE",
+        "S_CONF",
+        "S_FLOW"
+      ],
+      "source_selector_equivalence": false
+    },
+    {
+      "causal_rationale": "Five H1/H4 families, inherited raw geometry; separate immutable anchors",
+      "classification": "INHERITED_MACHINE_RULE",
+      "historical_PnL_selection": false,
+      "hypothesis": null,
+      "normative_pointer": "ENTRY_EXIT_CONTRACT.json#/families",
+      "rule_id": "M4_FAMILIES",
+      "source_concept_refs": [
+        "S_OB_FORMATION",
+        "S_BREAKER_FORMATION",
+        "S_SFP_FORMATION",
+        "S_STB_FORMATION",
+        "S_RANGE_FORMATION"
+      ],
+      "source_selector_equivalence": false
+    },
+    {
+      "causal_rationale": "Corrective classification when structural idea intact; no automatic valid/profitable claim",
+      "classification": "PROJECT_POLICY",
+      "historical_PnL_selection": false,
+      "hypothesis": "H01",
+      "normative_pointer": "ENTRY_EXIT_CONTRACT.json#/approach",
+      "rule_id": "M4_APPROACH",
+      "source_concept_refs": [
+        "S_OB_APPROACH",
+        "S_CONF"
+      ],
+      "source_selector_equivalence": false
+    },
+    {
+      "causal_rationale": "Do not reserve target already completed; E_ref-relative nearest immutable FTA",
+      "classification": "PROJECT_POLICY",
+      "historical_PnL_selection": false,
+      "hypothesis": "H02",
+      "normative_pointer": "ENTRY_EXIT_CONTRACT.json#/FTA",
+      "rule_id": "M4_FTA_LIFECYCLE",
+      "source_concept_refs": [
+        "S_FTA"
+      ],
+      "source_selector_equivalence": false
+    },
+    {
+      "causal_rationale": "Pending only, known structural lifecycle, half-open original formation+16h safety cap",
+      "classification": "PROJECT_POLICY",
+      "historical_PnL_selection": false,
+      "hypothesis": "H03",
+      "normative_pointer": "EXECUTION_CONTRACT.json#/lifetime",
+      "rule_id": "M4_LIFETIME",
+      "source_concept_refs": [],
+      "source_selector_equivalence": false
+    },
+    {
+      "causal_rationale": "One-grid representation of selected POI, explicit raw-POI-outside limit fill policy",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "historical_PnL_selection": false,
+      "hypothesis": "H04",
+      "normative_pointer": "EXECUTION_CONTRACT.json#/executable_zone",
+      "rule_id": "M4_EXECUTABLE_ZONE",
+      "source_concept_refs": [
+        "S_OB_DIRECT_ENTRY",
+        "S_STB_ENTRY"
+      ],
+      "source_selector_equivalence": false
+    },
+    {
+      "causal_rationale": "One planned base stop unit parity at doubled fee/slippage; not empirical optimum",
+      "classification": "PROJECT_POLICY",
+      "historical_PnL_selection": false,
+      "hypothesis": "H05",
+      "normative_pointer": "EXECUTION_CONTRACT.json#/payoff",
+      "rule_id": "M4_PAYOFF",
+      "source_concept_refs": [],
+      "source_selector_equivalence": false
+    },
+    {
+      "causal_rationale": "Per-origin causal gate exposure/first pass/repeated WAIT; no readback",
+      "classification": "OBSERVER_ONLY",
+      "historical_PnL_selection": false,
+      "hypothesis": "H00",
+      "normative_pointer": "TELEMETRY_SCHEMA.json",
+      "rule_id": "M4_TELEMETRY",
+      "source_concept_refs": [],
+      "source_selector_equivalence": false
+    },
+    {
+      "causal_rationale": "Full nearest FTA, protective stop, SFP native body exit; no added BE/partial choice",
+      "classification": "INHERITED_MACHINE_RULE",
+      "historical_PnL_selection": false,
+      "hypothesis": null,
+      "normative_pointer": "ENTRY_EXIT_CONTRACT.json#/exits",
+      "rule_id": "M4_EXITS",
+      "source_concept_refs": [
+        "S_FTA_EXIT_OPTIONS",
+        "S_SFP_BODY_EXIT",
+        "S_STOP_FIXED"
+      ],
+      "source_selector_equivalence": false
+    },
+    {
+      "causal_rationale": "No same physical bucket or selected POI revival",
+      "classification": "INHERITED_MACHINE_RULE",
+      "historical_PnL_selection": false,
+      "hypothesis": null,
+      "normative_pointer": "ENTRY_EXIT_CONTRACT.json#/reentry",
+      "rule_id": "M4_REENTRY",
+      "source_concept_refs": [],
+      "source_selector_equivalence": false
+    },
+    {
+      "causal_rationale": "All scenarios retained, adverse aggregation/fixed U/actual funding after exposure unchanged except explicit v4 overrides",
+      "classification": "INHERITED_MACHINE_RULE",
+      "historical_PnL_selection": false,
+      "hypothesis": null,
+      "normative_pointer": "EXECUTION_CONTRACT.json#/compatibility",
+      "rule_id": "M4_COMPATIBILITY",
+      "source_concept_refs": [],
+      "source_selector_equivalence": false
+    },
+    {
+      "causal_rationale": "All inherited qualification thresholds unchanged",
+      "classification": "PROJECT_POLICY",
+      "historical_PnL_selection": false,
+      "hypothesis": null,
+      "normative_pointer": "QUALIFICATION_PREREGISTRATION.json#/qualification",
+      "rule_id": "M4_QUALIFICATION",
+      "source_concept_refs": [],
+      "source_selector_equivalence": false
+    }
+  ],
+  "source_reference_index": "INHERITED_INPUTS_AND_SOURCE_CITATIONS.json#/source_concepts",
+  "source_validated": false,
+  "version": "MACHINE_STRATEGY_v4"
+}

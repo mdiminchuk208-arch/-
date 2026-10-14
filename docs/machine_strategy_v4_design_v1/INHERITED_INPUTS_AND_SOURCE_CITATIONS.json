@@ -1,0 +1,457 @@
+{
+  "financial_outputs_read_for_design_selection": false,
+  "frozen_original_canonical_exits_unchanged": true,
+  "inherited_input_sha256": {
+    "data/source_materials/cryptology_2026_10_09/06.clean.txt": "ad70ddbe23b29b1f0bce9638ffb34b9cd98f04fbf1efcb42eaa52cb5b94aa5c6",
+    "data/source_materials/cryptology_2026_10_09/16.clean.txt": "3dfe171ff6d8d9ac90b65683871be5db562c2d8248b5032a648f4ff2c476ac8f",
+    "data/source_materials/cryptology_2026_10_09/19.clean.txt": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+    "data/source_materials/primary_pdf_2026_10_09/SW11.pdf": "ffc65d95bbc1e22186cbddd061befb93e8143f3a5075c985165ecfe7b054f681",
+    "data/source_materials/primary_pdf_2026_10_09/SW11.txt": "e913f457f2711b756b9df901563848ec97b8fdb6e4c2e7e4c4890743e80e9b6f",
+    "data/source_materials/primary_pdf_2026_10_09/SW12.pdf": "1a17dfb7deb3b227b2bf386b88be341a99ad034b1950e0310c6c450e3f22369b",
+    "data/source_materials/primary_pdf_2026_10_09/SW12.txt": "62ab3f7ee0af368471373d900ba64420e12c7b54f1ffc6c6a44d5cf469c34a54",
+    "data/source_materials/primary_pdf_2026_10_09/SW22.pdf": "ebac736d847b270c64ba38586c2f2a2a8685328d90eb7f6c9ada1bedd3a4d50b",
+    "data/source_materials/primary_pdf_2026_10_09/SW22.txt": "5c4e68bbd18e4797a4e5b50e417ef002a5bbb5b6c7bc374f23b362463f85b2f5",
+    "data/source_materials/primary_pdf_2026_10_09/SW5.pdf": "be8e14fbe03b0effbf4496eac104d30849e37e7f3db2fb92d4db1f942ace55ba",
+    "data/source_materials/primary_pdf_2026_10_09/SW5.txt": "5c655505788c181a808940863814a68d979a85cec0c20dcb3766cdf51075e656",
+    "data/source_materials/primary_pdf_2026_10_09/SW9.pdf": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+    "data/source_materials/primary_pdf_2026_10_09/SW9.txt": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+    "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]10. Боковое движение.docx": "628cb1caa97138bc5470687e3743127cd147ac20c5cb39144345764be537e631",
+    "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]8. Торговые инструменты (Base).docx": "88d40f60f201de5ffe7da6591b59c6fd88a1fd7f9c64c281a2f099d84f52ac23",
+    "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+    "docs/machine_strategy_v3_design/DIRECTION_AND_REGIME_SPEC.json": "2f911297ef2bbdf6853b368d0b1a19c3e78c60496ce15099f035d8e55f071e43",
+    "docs/machine_strategy_v3_design/ENTRY_TARGET_EXECUTION_SPEC.json": "f0e01db2344ec40d355ae3f85fa9b0833678238ac8f056cd9ac9dced980ac46f",
+    "docs/machine_strategy_v3_design/RISK_NORMALIZATION_SPEC.json": "3ca2395dae130d5588d1c912e807774c1d3af0f52d2b1cbe6fdc4d39b6300092",
+    "docs/machine_strategy_v3_design/RULE_PROVENANCE.json": "728d45b4588db572253e18fb5d3286d69657dddd85700a9fc16745ecc4db4622",
+    "docs/machine_strategy_v3_design/SETUP_FAMILY_SPEC.json": "2a9894998dcd7e5ab5e20bb90bae2446d0479ce020560abcf13747d9dc80c1a4",
+    "docs/machine_strategy_v3_design/freeze_manifest.json": "f612b806292844e5d17bee783c9e04879e4a3d32530570a900a467e4ca2e5cc0",
+    "docs/machine_strategy_v3_okx_compatibility_v1/CAUSALITY_REPORT.md": "30fb21b68fb8c044e11e2e7093d528df1cf0cd985f8e7c4d7b45353bdcdc3c96",
+    "docs/machine_strategy_v3_okx_compatibility_v1/COMPATIBILITY_POLICY.md": "ebb6a99fdeffc9fc826f9f84925d9209d9e9f519eb4eeeadd636e4121bdc5738",
+    "docs/machine_strategy_v3_okx_compatibility_v1/COMPATIBILITY_PREREGISTRATION.json": "77be9ae699e9c98054d210dbcd10c770e65e33a016dc8745625dabbf93f7d206",
+    "docs/machine_strategy_v3_okx_compatibility_v1/COST_FUNDING_BINDING.json": "f758882a0d9727317ce1b0f9b10c99ae3471c631b26d653826c3a1ea8d780162",
+    "docs/machine_strategy_v3_okx_compatibility_v1/POLICY_FREEZE_RECEIPT.json": "dcd8b0bc279afe8979dffd7532fcc5c358cfd9e867018bd59ac546cd6062e9d7",
+    "docs/machine_strategy_v3_okx_compatibility_v1/QUANTIZATION_STRESS_POLICY.json": "659db3625415753600c29f08a3164eebb13c569ee8422f14d39523d63e46f2f4",
+    "docs/original_strategy_spec_v1/original_strategy_rule_registry_v1.json": "99547a9b7060614e5a4cfd0e6f371e9f33f0e397cad209592e5fc25e5bf25dd6",
+    "docs/original_strategy_spec_v1/source_conflict_registry.json": "79e3c992042302a7fe922a84a7b8b4cf0554e6609ebd55df2af741b75adcd00a",
+    "docs/original_strategy_spec_v1/source_permitted_variants.json": "dbe3be0e4a51901612f5d98882b91019d8108cc01d3e1eba4cb7f72089a36f24",
+    "scripts/machine_strategy_v2_core.py": "d6b0560e7db1691a0fc3de2fd05eb02aeee127e0b1cf105190d896ef61a7ae69",
+    "scripts/machine_strategy_v3_contracts.py": "d369887fe24cd63c2bf178305f3616f56a66c07bb50b79390acc8065ff7bb7b1",
+    "scripts/machine_strategy_v3_historical_adapter.py": "ed4091e385d4b7ed61bbf6680c56806b618bdf74d63a37b73c37d681a8874150",
+    "scripts/okx_v3_compatibility_binding_v1.py": "325d11606391ace7a409e0a7f908e3805af74589f98e3f369a40abbb9a55bccc",
+    "scripts/okx_v3_compatibility_runner_v1.py": "38bc9392acba6fb1179141eb3f1f8a89a5f44f793bc43f6a4338f9be87269f7f"
+  },
+  "retained_material_source_variants": [
+    "SW9 permits direct and conservative OB entries without universal precedence",
+    "SW9 permits full or partial exits at FTA",
+    "SFP all TF source-valid; H1+ preferred, v4 H1/H4 only is project scope",
+    "Conservative OB M1-M15 permitted; M15-only is inherited machine choice",
+    "Smooth structural approach lacks unique numerical source definition",
+    "Branch priority, re-entry and TF ladder are machine conventions"
+  ],
+  "review_start_commit": "ef88fce620f2ca8347d9079a3b06e3d0c71a6781",
+  "source_citations_are_not_machine_selector_equivalence": true,
+  "source_concepts": [
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p2–3",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+          "source_id": "SW5",
+          "source_sha256": "be8e14fbe03b0effbf4496eac104d30849e37e7f3db2fb92d4db1f942ace55ba",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+          "text_sha256": "5c655505788c181a808940863814a68d979a85cec0c20dcb3766cdf51075e656"
+        },
+        {
+          "page_or_paragraph": "word/document.xml:P0053–P0073",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_id": "19",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a"
+        }
+      ],
+      "literal_meaning": "HH/HL вверх, LH/LL вниз; структура — фундамент анализа.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_STRUCTURE"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p4–5",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+          "source_id": "SW5",
+          "source_sha256": "be8e14fbe03b0effbf4496eac104d30849e37e7f3db2fb92d4db1f942ace55ba",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+          "text_sha256": "5c655505788c181a808940863814a68d979a85cec0c20dcb3766cdf51075e656"
+        },
+        {
+          "page_or_paragraph": "word/document.xml:P0088–P0100",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_id": "19",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a"
+        }
+      ],
+      "literal_meaning": "BOS пробивает ключевой HL/LH с закреплением тела; новая структура развивается после слома.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_BOS"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p6–7",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+          "source_id": "SW5",
+          "source_sha256": "be8e14fbe03b0effbf4496eac104d30849e37e7f3db2fb92d4db1f942ace55ba",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+          "text_sha256": "5c655505788c181a808940863814a68d979a85cec0c20dcb3766cdf51075e656"
+        }
+      ],
+      "literal_meaning": "CONF — обновление ключевого экстремума новой структуры; консервативно искать вход после CONF.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_CONF"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p5–6",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+          "source_id": "SW22",
+          "source_sha256": "ebac736d847b270c64ba38586c2f2a2a8685328d90eb7f6c9ada1bedd3a4d50b",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+          "text_sha256": "5c4e68bbd18e4797a4e5b50e417ef002a5bbb5b6c7bc374f23b362463f85b2f5"
+        }
+      ],
+      "literal_meaning": "Актуальный Order Flow сочетает структуру, работу с ликвидностью и доставку в global POI.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_FLOW"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p2–2",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_id": "SW9",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3"
+        }
+      ],
+      "literal_meaning": "Свеча снимает ликвидность, затем агрессивная импульсная свеча поглощает её; BOS и HTF POI обязательны.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_OB_FORMATION"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p3–3",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_id": "SW9",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3"
+        }
+      ],
+      "literal_meaning": "Лимит на верхней LONG/нижней SHORT границе OB или внутри зоны.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_OB_DIRECT_ENTRY"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p4–6",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_id": "SW9",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3"
+        }
+      ],
+      "literal_meaning": "HTF OB 15M–1D «и т.д.»; переключение на меньший TF 1–15M.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_OB_CONS_TF"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p4–4",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_id": "SW9",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3"
+        }
+      ],
+      "literal_meaning": "Ожидать плавный структурный подход в HTF OB.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_OB_APPROACH"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p7–8",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_id": "SW9",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3"
+        }
+      ],
+      "literal_meaning": "OB импульсно пробит цельным движением без проторговки; новый HH/LL, слом структуры.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_BREAKER_FORMATION"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "word/document.xml:P0068–P0083",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]8. Торговые инструменты (Base).docx",
+          "source_id": "16",
+          "source_sha256": "88d40f60f201de5ffe7da6591b59c6fd88a1fd7f9c64c281a2f099d84f52ac23",
+          "text": "data/source_materials/cryptology_2026_10_09/16.clean.txt",
+          "text_sha256": "3dfe171ff6d8d9ac90b65683871be5db562c2d8248b5032a648f4ff2c476ac8f"
+        },
+        {
+          "page_or_paragraph": "word/document.xml:P0157–P0162",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_id": "19",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a"
+        }
+      ],
+      "literal_meaning": "External structural/range liquidity raid, reclaim body CLOSE, следующая OPEN на reclaimed стороне.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_SFP_FORMATION"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "word/document.xml:P0102–P0106",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]8. Торговые инструменты (Base).docx",
+          "source_id": "16",
+          "source_sha256": "88d40f60f201de5ffe7da6591b59c6fd88a1fd7f9c64c281a2f099d84f52ac23",
+          "text": "data/source_materials/cryptology_2026_10_09/16.clean.txt",
+          "text_sha256": "3dfe171ff6d8d9ac90b65683871be5db562c2d8248b5032a648f4ff2c476ac8f"
+        },
+        {
+          "page_or_paragraph": "word/document.xml:P0161–P0162",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_id": "19",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a"
+        }
+      ],
+      "literal_meaning": "SFP на любом TF, H1+ предпочтительно; нужен liquidity context.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_SFP_TF"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "word/document.xml:P0084–P0087",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]8. Торговые инструменты (Base).docx",
+          "source_id": "16",
+          "source_sha256": "88d40f60f201de5ffe7da6591b59c6fd88a1fd7f9c64c281a2f099d84f52ac23",
+          "text": "data/source_materials/cryptology_2026_10_09/16.clean.txt",
+          "text_sha256": "3dfe171ff6d8d9ac90b65683871be5db562c2d8248b5032a648f4ff2c476ac8f"
+        }
+      ],
+      "literal_meaning": "После formation можно перейти на LTF, дождаться BOS и искать entry.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_SFP_REFINE"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p12–13",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW12.pdf",
+          "source_id": "SW12",
+          "source_sha256": "1a17dfb7deb3b227b2bf386b88be341a99ad034b1950e0310c6c450e3f22369b",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+          "text_sha256": "62ab3f7ee0af368471373d900ba64420e12c7b54f1ffc6c6a44d5cf469c34a54"
+        }
+      ],
+      "literal_meaning": "ATR расстояние отсчитывается от extreme SFP; защитный ордер не переставляется.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_SFP_STOP"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p13–13",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW12.pdf",
+          "source_id": "SW12",
+          "source_sha256": "1a17dfb7deb3b227b2bf386b88be341a99ad034b1950e0310c6c450e3f22369b",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+          "text_sha256": "62ab3f7ee0af368471373d900ba64420e12c7b54f1ffc6c6a44d5cf469c34a54"
+        }
+      ],
+      "literal_meaning": "Закрыть, если свеча закрылась за SFP minimum/maximum; паттерн неактуален.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_SFP_BODY_EXIT"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p2–3",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+          "source_id": "SW22",
+          "source_sha256": "ebac736d847b270c64ba38586c2f2a2a8685328d90eb7f6c9ada1bedd3a4d50b",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+          "text_sha256": "5c4e68bbd18e4797a4e5b50e417ef002a5bbb5b6c7bc374f23b362463f85b2f5"
+        }
+      ],
+      "literal_meaning": "STB/BTS: основной тренд, raid, полное поглощение манипуляции, BOS либо CONF.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_STB_FORMATION"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p3–4",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+          "source_id": "SW22",
+          "source_sha256": "ebac736d847b270c64ba38586c2f2a2a8685328d90eb7f6c9ada1bedd3a4d50b",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+          "text_sha256": "5c4e68bbd18e4797a4e5b50e417ef002a5bbb5b6c7bc374f23b362463f85b2f5"
+        }
+      ],
+      "literal_meaning": "Entry upper LONG/lower SHORT edge либо 0.5 STB/BTS; mitigation/Premium Discount.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_STB_ENTRY"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "word/document.xml:P0037–P0072",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]10. Боковое движение.docx",
+          "source_id": "06",
+          "source_sha256": "628cb1caa97138bc5470687e3743127cd147ac20c5cb39144345764be537e631",
+          "text": "data/source_materials/cryptology_2026_10_09/06.clean.txt",
+          "text_sha256": "ad70ddbe23b29b1f0bce9638ffb34b9cd98f04fbf1efcb42eaa52cb5b94aa5c6"
+        },
+        {
+          "page_or_paragraph": "word/document.xml:P0122–P0128",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/Методичка.docx",
+          "source_id": "19",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a"
+        }
+      ],
+      "literal_meaning": "Impulse конец и correction конец задают границы; реакция на 0.5; неясный range пропустить.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_RANGE_FORMATION"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "word/document.xml:P0119–P0121",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]10. Боковое движение.docx",
+          "source_id": "06",
+          "source_sha256": "628cb1caa97138bc5470687e3743127cd147ac20c5cb39144345764be537e631",
+          "text": "data/source_materials/cryptology_2026_10_09/06.clean.txt",
+          "text_sha256": "ad70ddbe23b29b1f0bce9638ffb34b9cd98f04fbf1efcb42eaa52cb5b94aa5c6"
+        }
+      ],
+      "literal_meaning": "80% всегда внутри у границы, 20% можно оставить на true breakout.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_RANGE_EXIT"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p11–13",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_id": "SW9",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3"
+        },
+        {
+          "page_or_paragraph": "p16–16",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_id": "SW9",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3"
+        }
+      ],
+      "literal_meaning": "Первая opposing POI/проблемная зона; тренд и контртренд; старший contextual TF.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_FTA"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p11–11",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_id": "SW9",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3"
+        },
+        {
+          "page_or_paragraph": "p16–16",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_id": "SW9",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3"
+        }
+      ],
+      "literal_meaning": "FTA допускает full либо partial close, в том числе countertrend.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_FTA_EXIT_OPTIONS"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p8–8",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW11.pdf",
+          "source_id": "SW11",
+          "source_sha256": "ffc65d95bbc1e22186cbddd061befb93e8143f3a5075c985165ecfe7b054f681",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+          "text_sha256": "e913f457f2711b756b9df901563848ec97b8fdb6e4c2e7e4c4890743e80e9b6f"
+        },
+        {
+          "page_or_paragraph": "p13–13",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW12.pdf",
+          "source_id": "SW12",
+          "source_sha256": "1a17dfb7deb3b227b2bf386b88be341a99ad034b1950e0310c6c450e3f22369b",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+          "text_sha256": "62ab3f7ee0af368471373d900ba64420e12c7b54f1ffc6c6a44d5cf469c34a54"
+        }
+      ],
+      "literal_meaning": "Первичный запрет переносить стоп, SFP явно fixed stop.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_STOP_FIXED"
+    }
+  ],
+  "source_validated": false,
+  "v4_full_FTA_exit_no_BE_is_inherited_machine_policy": true,
+  "version": "MACHINE_STRATEGY_v4"
+}

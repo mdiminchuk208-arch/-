@@ -1,22 +1,6 @@
 {
-  "version": "MACHINE_STRATEGY_v4",
-  "state": "DESIGN_DRAFT_COMPLETE_REVIEW_PENDING",
-  "design_outcome_isolation": {
-    "v3_development_history_exposed": true,
-    "v4_financial_outcomes_seen": false,
-    "v4_financial_validation_authorized": false,
-    "parameter_sweep_allowed": false,
-    "alternative_rule_pnl_comparison_allowed": false,
-    "profitable_slice_selection_allowed": false
-  },
-  "venue": "OKX",
-  "products": ["BTC-USDT-SWAP", "ETH-USDT-SWAP"],
-  "inherited_data": {
-    "native_m15": "sealed official OKX Stage-A dataset",
-    "funding": "sealed signed actual historical OKX funding series",
-    "development_period": "[2024-10-13T00:00:00Z,2026-10-13T00:00:00Z)",
-    "warmup_start": "2023-10-14T00:00:00Z"
-  },
+  "acceptance_authority": "DESIGN_FREEZE_MANIFEST.json only after independent review PASS",
+  "admission_override": "doubled-cost parity ONCE per scenario in both reporting columns; v3 base-only rule explicitly superseded only for v4",
   "adopted_v4_changes": [
     "H01 three-state structural approach contract",
     "H02 completed-close FTA lifecycle invalidation",
@@ -25,35 +9,26 @@
     "H05 nearest-FTA >=1R doubled-cost risk-parity gate",
     "H00 outcome-blind gate telemetry"
   ],
+  "design_outcome_isolation": {
+    "alternative_rule_pnl_comparison_allowed": false,
+    "parameter_sweep_allowed": false,
+    "profitable_slice_selection_allowed": false,
+    "v3_development_history_exposed": true,
+    "v4_financial_outcomes_seen": false,
+    "v4_financial_validation_authorized": false
+  },
   "fixed_numeric_design_choices": {
-    "technical_execution_envelope_grid_units_each_side": 1,
+    "fee_per_leg_base": "0.0006",
     "minimum_net_target_R_under_doubled_fee_slippage": "1.0",
     "parent_pending_max_seconds": 57600,
-    "fee_per_leg_base": "0.0006",
-    "slippage_per_leg_base": "0.0002"
+    "slippage_per_leg_base": "0.0002",
+    "technical_execution_envelope_grid_units_each_side": 1
   },
-  "numeric_choice_rationale": {
-    "one_grid_envelope": "minimal representation unit tied to active compatibility grid, not selected from PnL",
-    "one_R_payoff": "risk-unit parity: planned structural winner must cover one complete modeled stop unit under adverse doubled costs, not selected from exposed cases",
-    "parent_pending_16h": "inherited pre-existing v3 machine ceiling, not retuned"
-  },
-  "qualification": {
-    "win_rate_min": "0.70",
-    "closed_trades_min": 200,
-    "profit_factor_min": "1.20",
-    "net_expectancy_R_min_exclusive": "0",
-    "net_PnL_min_exclusive": "0",
-    "doubled_cost_profit_factor_min": "1.00",
-    "doubled_cost_net_positive": true,
-    "case_ledger_max_drawdown_R_max": "20",
-    "max_consecutive_net_losses_max": 10,
-    "each_coin_direction_closed_min": 30,
-    "each_coin_direction_net_positive": true,
-    "wilson_95pct_win_rate_lower_bound_min": "0.60",
-    "largest_calendar_quarter_profit_share_max": "0.50",
-    "largest_coin_profit_share_max": "0.80",
-    "filled_unknown_exit_max": 0,
-    "no_critical_causality_or_integrity_failure": true
+  "future_validation": {
+    "development_run": "one-shot only after implementation readiness",
+    "oos": "must be separately registered pristine future/untreated interval after historical qualification",
+    "paper": "minimum 200 CLOSED plus 30 calendar days after OOS qualification",
+    "platform_reconnect": "only after Paper qualification"
   },
   "implementation_requirements": [
     "new versioned v4 code paths; no mutation of frozen v3 bytes",
@@ -65,17 +40,53 @@
     "base and doubled-cost ledgers both emitted",
     "no financial output until design freeze and implementation readiness PASS"
   ],
-  "future_validation": {
-    "development_run": "one-shot only after implementation readiness",
-    "oos": "must be separately registered pristine future/untreated interval after historical qualification",
-    "paper": "minimum 200 CLOSED plus 30 calendar days after OOS qualification",
-    "platform_reconnect": "only after Paper qualification"
+  "inherited_data": {
+    "development_period": "[2024-10-13T00:00:00Z,2026-10-13T00:00:00Z)",
+    "funding": "sealed signed actual historical OKX funding series",
+    "native_m15": "sealed official OKX Stage-A dataset",
+    "warmup_start": "2023-10-14T00:00:00Z"
+  },
+  "lifetime_boundary": "formation_known_at+57600, active half-open interval, no emission/fill at OPEN>=deadline",
+  "normative_contracts": [
+    "ENTRY_EXIT_CONTRACT.json",
+    "EXECUTION_CONTRACT.json"
+  ],
+  "numeric_choice_rationale": {
+    "one_R_payoff": "risk-unit parity: planned structural winner must cover one complete modeled stop unit under adverse doubled costs, not selected from exposed cases",
+    "one_grid_envelope": "minimal representation unit tied to active compatibility grid, not selected from PnL",
+    "parent_pending_16h": "inherited pre-existing v3 machine ceiling, not retuned"
+  },
+  "payoff_denominator": "planned scenario K_s base-cost per coin; qualification U fixed reference per coin",
+  "products": [
+    "BTC-USDT-SWAP",
+    "ETH-USDT-SWAP"
+  ],
+  "qualification": {
+    "case_ledger_max_drawdown_R_max": "20",
+    "closed_trades_min": 200,
+    "doubled_cost_net_positive": true,
+    "doubled_cost_profit_factor_min": "1.00",
+    "each_coin_direction_closed_min": 30,
+    "each_coin_direction_net_positive": true,
+    "filled_unknown_exit_max": 0,
+    "largest_calendar_quarter_profit_share_max": "0.50",
+    "largest_coin_profit_share_max": "0.80",
+    "max_consecutive_net_losses_max": 10,
+    "net_PnL_min_exclusive": "0",
+    "net_expectancy_R_min_exclusive": "0",
+    "no_critical_causality_or_integrity_failure": true,
+    "profit_factor_min": "1.20",
+    "wilson_95pct_win_rate_lower_bound_min": "0.60",
+    "win_rate_min": "0.70"
   },
   "safety": {
-    "PAPER": false,
     "LIVE": false,
-    "trade_entry_allowed": false,
+    "PAPER": false,
+    "platform_work_allowed": false,
     "private_exchange_api_allowed": false,
-    "platform_work_allowed": false
-  }
+    "trade_entry_allowed": false
+  },
+  "state": "PRE_OUTCOME_DESIGN_REVIEW_CANDIDATE",
+  "venue": "OKX",
+  "version": "MACHINE_STRATEGY_v4"
 }

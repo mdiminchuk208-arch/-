@@ -1,0 +1,116 @@
+{
+  "POI_ownership": {
+    "before_emission": "already consumed selected entry POI or another owner => reject; ordinary raw OB parent reaction consumption is not selected refined POI retirement",
+    "identity": "entry_POI_id immutable at emission; own reservation is exclusive ownership, not native first-test consumption",
+    "native_contact_clock": "selected POI native TF first eligible contact is observed at that native bar CLOSE, never backdated wick to OPEN; all inputs must be available at current event cutoff",
+    "outside_POI_contact": "One-grid-normalized E contact alone is sufficient modeled fill, even without raw structural POI contact; mark this explicitly. Source validity and observed queue fill not asserted.",
+    "own_active_order_contact": "An own active pending order executes from its bar-OPEN snapshot first. A current bar contact/consumption first known at CLOSE cannot pre-cancel that same bar fill. If still unfilled at contact known_at, retire prospectively before next OPEN. No new retry.",
+    "parent_source_consumption": "Only independently defined true source retirement matters; expected formation/reaction or own ownership never self-cancels order"
+  },
+  "bar_event_priority": [
+    "0 validate full observed prefix/contiguous raw M15; uncertainty => UNKNOWN/STOP",
+    "1 apply already known completed lifecycle retirement and deadline before OPEN to PENDING only",
+    "2 inherited OPEN stop/target gap safeguard before pending fill; filled OPEN gaps execute first",
+    "3 inherited limit touch and wick stop/target ambiguity; never round native OHLC or assume intrabar continuity",
+    "4 native CLOSE SFP body exit for exposure if wick rules did not already exit/mark unknown",
+    "5 publish completed TF states/POI contacts/FTA and context changes; retire remaining PENDING before next OPEN",
+    "6 at H1 cutoff only, evaluate new origins/proposals using completed states; reserve by inherited sibling/TF/ID priority"
+  ],
+  "compatibility": {
+    "TF_priority": [
+      240,
+      60
+    ],
+    "adverse_financial_rule": "minimum valid CLOSED cash/U separately in each cost column; ties lexical scenario ID; diagnostic partial closure not qualifying",
+    "all_scenarios": [
+      "P01_Q001",
+      "P01_Q100",
+      "P01_Q700",
+      "P05_Q001",
+      "P05_Q100",
+      "P05_Q700",
+      "P20_Q001",
+      "P20_Q100",
+      "P20_Q700"
+    ],
+    "metadata_truth": "synthetic model, never verified historical tick epoch; unknown account fee/mark/fill reality retained",
+    "parent_policy": "docs/machine_strategy_v3_okx_compatibility_v1/COMPATIBILITY_POLICY.md except explicit H04/H05/lifetime overrides",
+    "quantity": "V=ctVal*ctMult; N=floor((1/V)/lot)*lot; reject N<=0 or N<minimum; Q=N*V<=1",
+    "reservation_order": [
+      "BREAKER",
+      "STB",
+      "SFP",
+      "OB",
+      "RANGE"
+    ],
+    "state_disagreement": "eligibility/fill/CLOSED-vs-non-CLOSED disagreement => COMPATIBILITY_DISAGREEMENT/STOP; all cases retained",
+    "stress_policy": "docs/machine_strategy_v3_okx_compatibility_v1/QUANTIZATION_STRESS_POLICY.json unchanged",
+    "touch_fill": "full modeled limit fill at E, no OPEN improvement; execution-model assumption not observed order"
+  },
+  "executable_zone": {
+    "LONG_entry": "floor(raw_entry/t)*t",
+    "LONG_stop": "(ceil(protective_boundary/t)-1)*t",
+    "LONG_target": "(ceil(raw_FTA/t)-1)*t",
+    "SHORT_entry": "ceil(raw_entry/t)*t",
+    "SHORT_stop": "(floor(protective_boundary/t)+1)*t",
+    "SHORT_target": "(floor(raw_FTA/t)+1)*t",
+    "entry_outside_structural_POI_allowed": "Yes, if inside one-grid executable envelope and all geometry/economics pass. Limit contact can fill without native structural POI contact. This is an explicit modeled representation policy, not proof of source entry or observed historical exchange execution.",
+    "geometry": "0<S<E<T LONG or 0<T<E<S SHORT; raw_entry inside selected zone; opposing-zone and adverse-pool checks remain",
+    "high": "selected_zone_high+t",
+    "low": "selected_zone_low-t",
+    "raw_entry_must_be_inside_structural_zone": true,
+    "sides_inclusive": true,
+    "structural_zone": "selected entry POI range, not full raw family formation. SFP/OB use selected refined M15 POI; BREAKER body, STB body, RANGE zero-width native boundary",
+    "tick": "active positive finite synthetic scenario tick t; zero origin"
+  },
+  "lifetime": {
+    "anchor": "formation_known_at from original inherited raw event, not decision or reservation time",
+    "data_gap": "UNKNOWN_DATA_GAP/STOP; do not label unfilled or infer flat exit if exposure/fill is uncertain",
+    "deadline_seconds_after_anchor": 57600,
+    "no_extension_from_wait_or_emission": true,
+    "no_fixed_3600_expiry": true,
+    "order_active_interval": "[emission_decision,formation_known_at+57600)",
+    "pending_discovery_legacy": "v3 discovery expires at decision>deadline. v4 retains the same 16h duration but makes executable availability half-open: no new order at decision>=deadline and pending order expires before bar OPEN>=deadline. This exact-boundary clarification is PROJECT_POLICY, not an unchanged v3 comparison claim.",
+    "pending_retire_if": [
+      "native structural anchor strict CLOSE break",
+      "source range permanent retirement or true source invalidation, not expected parent reaction/breaker creation",
+      "HTF/H1/M15 context no longer admissible",
+      "selected entry POI consumed before current bar OPEN or invalidated; own reservation is not consumption",
+      "new opposite M15 BOS/CONF after frozen selected CONF; refinement no longer fresh",
+      "completed mark reaches scenario target or selected FTA object retires",
+      "parent deadline at OPEN"
+    ],
+    "recheck_clocks": "For every M15 bar OPEN, use completed D1/H4/H1/M15 states available <=OPEN, equal-cutoff advance D1,H4,H1,M15. No new signals between H1 decisions. Evaluate same inherited context admission for fixed formation/direction; no geometry amendments.",
+    "scope": "PENDING only; after fill use inherited position exits",
+    "terminal_retirement_never_reactivated": true
+  },
+  "normative": true,
+  "payoff": {
+    "actual_fee_slippage_reporting": "base and doubled execution costs on identical scenario event path; retain exact fixed-U cash accounting, actual signed funding and adverse minima policy",
+    "admit": "N2_s>=K_s with equality passing; no future funding estimate",
+    "arithmetic": "exact Decimal, precision 50 with ROUND_HALF_EVEN; no epsilon or float",
+    "base_cost_per_leg_c": "0.0008",
+    "base_fee_each_leg": "0.0006",
+    "base_slippage_each_leg": "0.0002",
+    "cost": "C_base(E,P)=0.0008*(E+P); C_double(E,P)=0.0016*(E+P)",
+    "d": "1 LONG / -1 SHORT",
+    "planned_nearest_target_net_N2_s": "d*(T_s-E_s)-C_double(E_s,T_s) per one base coin; target is inward rounded, never raw FTA",
+    "planned_net_target_R_doubled_cost": "N2_s/K_s; a design feasibility ratio, NOT the common qualification R denominator",
+    "planned_stop_unit_K_s": "d*(E_s-S_s)+C_base(E_s,S_s) per one base coin, positive and constant for that scenario plan",
+    "qualification_U": "U=abs(E_ref-S_ref)+0.0008*(E_ref+S_ref) per one base coin fixed at P01_Q001 emission, unchanged in every scenario and cost column. U is not K_s outside reference; no multiplication by Q_s, no recalculation from exit/doubled costs.",
+    "quantity_treatment": "Risk parity is per base coin; Q_s>0 multiplies numerator and stop unit equally so cancels. Lot/minimum eligibility remains separately mandatory. Do not divide gate numerator by Q-adjusted or doubled K.",
+    "reference_catalog": "Only reference P01_Q001 pass emits case once. All raw origins and rejected plans logged. Selected family/POI/FTA/raw geometry remain frozen. All nine scenario plans recheck H04/H05 and inherited checks; failures/disagreements cannot erase case or replace sibling.",
+    "reference_pre_emission_target_lifecycle": "Completed mark must be before both raw FTA and inward reference target T_ref; test before catalog reservation; stress scenario checks T_s completion independently and retains case on failure."
+  },
+  "rule_overrides": {
+    "H04": "Overrides inherited rounded-entry-inside-selected-POI and original-zone execution representability checks ONLY. Does not modify raw formation, refined-POI discovery/containment, first-test eligibility, opposing zone, stop/target/adverse-liquidity geometry, or historical metadata truth.",
+    "H05": "Overrides inherited base-only positive-margin admission with fixed doubled-cost planned risk-parity admission. Same gate is evaluated ONCE per scenario, independent of base/doubled reporting column; no cost-column-specific catalog. Frozen v3 policy itself is unchanged."
+  },
+  "safety": {
+    "LIVE": false,
+    "PAPER": false,
+    "financial_validation_authorized": false,
+    "trade_entry_allowed": false
+  },
+  "version": "MACHINE_STRATEGY_v4"
+}

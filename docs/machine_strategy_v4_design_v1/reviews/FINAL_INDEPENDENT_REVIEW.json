@@ -1,0 +1,35 @@
+{
+  "QA_tests_independently_run": 28,
+  "checks": [
+    "26 tested file hashes / 8 QA log hashes / 36 inherited pins / 8 opening input pins zero mismatches",
+    "All H00-H05 causal classification, five families and LONG/SHORT mirrors retained",
+    "Raw and inward target lifecycle before reservation, immutable reference E FTA identity across stress plans",
+    "Family native anchors, pending-only prospective retirement, parent deadline and ownership explicit",
+    "Planned scenario K_s vs fixed U reporting and exact inherited funding ambiguity handling",
+    "No outcome-sweep, profitable slice selection, predecessor modification or historical v4 financial artifacts found"
+  ],
+  "core_sha256": {
+    "DECISION_TREE.json": "3b106120b9a22721c2d7a0ee02089947389c8988698e46baf4a0380c66daa143",
+    "ENTRY_EXIT_CONTRACT.json": "871bee8f416c96a7fa3c81e467a48e02689a3f4ec0fe85dcfdbf56145e5a4ef2",
+    "EXECUTION_CONTRACT.json": "c9b9d36cc8209ade1837d0c7d617ce04efa60b7369b46c1f99fde544ed4f2d58",
+    "QA_RECEIPT.json": "8d558b79ca8bdb009fca757416e413760da21b635e8a2c6d3ef90f25bb2b5ca8",
+    "RULE_REGISTRY.json": "21f39930e9aa91dcb9ba830c1bd7665fc3641c7d44636728f6ee9a47c6ec2f9b",
+    "TELEMETRY_SCHEMA.json": "79d7c80e906f6de20398dc994b108b56c63564232dfd64f9846acfefbe61ec44",
+    "V4_PREREGISTRATION.json": "19dca576a63e65d7273405b3cd65a5cc9b89a3fc9da6ebd1027cbadae67072e0"
+  },
+  "decision": "PASS",
+  "exact_gate_decision": "MACHINE_STRATEGY_V4_DESIGN_PASS",
+  "financial_validation_authorized": false,
+  "identity": "/root/v4_design_final_independent_review",
+  "implementation_author": false,
+  "limitations": [
+    "Synthetic reference checks do not prove production adapter behavior",
+    "Historical OKX grid/fee/queue/fill/mark assumptions remain unverified",
+    "Full production prefix/future-mutation/replay and funding binding belong to implementation readiness"
+  ],
+  "permits_design_freeze": true,
+  "permits_separate_implementation_readiness": true,
+  "role": "final_independent_reviewer",
+  "scope": "DESIGN_ONLY",
+  "trade_entry_allowed": false
+}

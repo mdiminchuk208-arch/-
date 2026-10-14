@@ -1,0 +1,6 @@
+tf,role,new_idea_allowed,observation_clock
+D1,context and FTA,false,completed D1 end
+H4,setup and context and FTA,true,completed H4 end
+H1,setup and decision and context and FTA,true,completed H1 end
+M15,confirmation and execution observation,false,completed M15 end; OPEN occurrence with observation end
+M1-M5,source-permitted alternatives deferred,false,no v4 data path

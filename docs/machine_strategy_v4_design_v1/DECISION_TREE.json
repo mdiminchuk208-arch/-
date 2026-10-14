@@ -1,7 +1,125 @@
 {
-  "version": "MACHINE_STRATEGY_v4",
-  "state": "DESIGN_DRAFT_COMPLETE_REVIEW_PENDING",
+  "acceptance_authority": "DESIGN_FREEZE_MANIFEST.json only after independent review PASS",
   "financial_validation_authorized": false,
+  "gates": {
+    "approach_state": {
+      "action": {
+        "APPROACH_CLEAN": "CONTINUE",
+        "APPROACH_CORRECTIVE": "CONTINUE_TO_CONTEXT",
+        "APPROACH_INVALID": "REJECT"
+      },
+      "causal_selector": "ENTRY_EXIT_CONTRACT.json#/approach; opposing events through decision, later opposite WAIT, equality dual WAIT",
+      "clean": "reaction then same-direction M15 CONF without intervening opposite BOS/CONF",
+      "corrective": "opposite BOS/CONF allowed while structural boundary remains intact; final selected M15 CONF must return to candidate direction before decision",
+      "invalid": "positively observed native family structural break/source retirement; missing evidence/CONF is WAIT while alive",
+      "states": [
+        "APPROACH_CLEAN",
+        "APPROACH_CORRECTIVE",
+        "APPROACH_INVALID"
+      ]
+    },
+    "completed_data_integrity": {
+      "fail": "WAIT_DATA_GAP_OR_CAUSALITY",
+      "pass": "all required native/derived completed bars contiguous and known_at<=decision"
+    },
+    "entry_geometry": {
+      "completed_target_check": "latest completed M15 close <T_ref LONG / >T_ref SHORT before catalog reservation; equality/beyond EXECUTABLE_TARGET_ALREADY_COMPLETED; each stress applies T_s comparison without case removal",
+      "fail": "REJECT_UNREPRESENTABLE_EXECUTABLE_ZONE",
+      "order_type": "RESTING_LIMIT_ONLY",
+      "quantization": {
+        "LONG": "floor(raw_entry/tick)*tick",
+        "SHORT": "ceil(raw_entry/tick)*tick"
+      },
+      "raw_entry": "inherited family/source-permitted proximal structural price",
+      "structural_zone": "selected entry POI per ENTRY_EXIT_CONTRACT.json#/families",
+      "technical_execution_envelope": "structural zone expanded by exactly one active grid unit per side"
+    },
+    "execution": {
+      "compatibility_scenarios": "all preregistered scenarios",
+      "eligibility_disagreement": "UNRESOLVED/STOP according to compatibility policy",
+      "open_improvement": false,
+      "same_bar_ambiguity": "WAIT/UNKNOWN if OHLC cannot prove event ordering",
+      "scenario_selection": "worst/adverse only"
+    },
+    "exit_and_accounting": {
+      "cost_columns": [
+        "base",
+        "doubled_fee_slippage"
+      ],
+      "funding": "actual signed historical funding while open",
+      "protective_stop": "family structural stop inherited from v3",
+      "qualification": "frozen project thresholds unchanged",
+      "sfp_body_invalidation": "retained",
+      "target": "nearest structural FTA"
+    },
+    "formation_discovery": {
+      "fail": "WAIT_OR_REJECT_SOURCE_GEOMETRY",
+      "families": [
+        "SFP",
+        "OB",
+        "BREAKER",
+        "STB",
+        "RANGE"
+      ],
+      "pass": "valid causal source/family geometry"
+    },
+    "fta_lifecycle": {
+      "decision_mark_rule": {
+        "LONG": "latest completed M15 close < selected FTA",
+        "SHORT": "latest completed M15 close > selected FTA"
+      },
+      "fail": "FTA_ALREADY_COMPLETED",
+      "farther_fta_fallback": false,
+      "selection": "nearest signed-forward raw FTA price relative to reference-grid rounded E_ref, then canonical ID; frozen ID in all stress scenarios; never skip raw-entry gap target"
+    },
+    "htf_context": {
+      "fail": "WAIT_CONTEXT",
+      "pass": "candidate direction admissible under inherited v3 HTF state contract",
+      "priority": [
+        "ANY_HTF_UNCERTAIN_WAIT",
+        "H4_RANGE",
+        "H4_D1_ALIGNED_TREND",
+        "TRANSITION_ORIGIN_POI"
+      ],
+      "symmetry": true
+    },
+    "payoff_gate": {
+      "cost_assumption": "doubled total fee+slippage",
+      "cost_column_selection": "one doubled-cost admission check independent of reporting column; common reference catalog",
+      "fail": "REJECT_INSUFFICIENT_STRUCTURAL_PAYOFF",
+      "farther_fta_fallback": false,
+      "funding_used_for_admission": false,
+      "required": "[d*(T_s-E_s)-0.0016*(E_s+T_s)] / [d*(E_s-S_s)+0.0008*(E_s+S_s)] >= 1.0",
+      "stop_unit": "scenario-local per-base-coin K_s at base costs; qualification reporting fixed reference U unchanged",
+      "target": "nearest FTA"
+    },
+    "refinement_and_poi": {
+      "fail": "WAIT_OR_REJECT_POI",
+      "pass": "valid same-direction causal refinement and unconsumed eligible POI"
+    },
+    "reservation_and_order": {
+      "cancel_if": [
+        "source retired/consumed",
+        "structural close-through",
+        "HTF context no longer admissible",
+        "POI/refinement consumed or invalid",
+        "completed close reaches/passes selected FTA",
+        "data/metadata integrity STOP",
+        "parent pending ceiling reached"
+      ],
+      "fixed_1h_expiry": false,
+      "lifetime": "event-driven structural validity, capped by inherited 16h parent pending ceiling",
+      "normative_order": "EXECUTION_CONTRACT.json#/bar_event_priority; lifecycle PENDING only, half-open deadline formation_known_at+57600"
+    },
+    "structural_invalidation": {
+      "fail": "REJECT_STRUCTURAL_INVALIDATION",
+      "pass": "completed price has not closed through immutable family invalidation boundary"
+    }
+  },
+  "normative_contracts": [
+    "ENTRY_EXIT_CONTRACT.json",
+    "EXECUTION_CONTRACT.json"
+  ],
   "root": [
     "completed_data_integrity",
     "formation_discovery",
@@ -16,102 +134,12 @@
     "execution",
     "exit_and_accounting"
   ],
-  "gates": {
-    "completed_data_integrity": {
-      "pass": "all required native/derived completed bars contiguous and known_at<=decision",
-      "fail": "WAIT_DATA_GAP_OR_CAUSALITY"
-    },
-    "formation_discovery": {
-      "families": ["SFP", "OB", "BREAKER", "STB", "RANGE"],
-      "pass": "valid causal source/family geometry",
-      "fail": "WAIT_OR_REJECT_SOURCE_GEOMETRY"
-    },
-    "approach_state": {
-      "states": ["APPROACH_CLEAN", "APPROACH_CORRECTIVE", "APPROACH_INVALID"],
-      "clean": "reaction then same-direction M15 CONF without intervening opposite BOS/CONF",
-      "corrective": "opposite BOS/CONF allowed while structural boundary remains intact; final selected M15 CONF must return to candidate direction before decision",
-      "invalid": "structural close-through, source retirement/consumption, missing causal evidence, or no same-direction CONF before retirement",
-      "action": {
-        "APPROACH_CLEAN": "CONTINUE",
-        "APPROACH_CORRECTIVE": "CONTINUE_TO_CONTEXT",
-        "APPROACH_INVALID": "REJECT"
-      }
-    },
-    "htf_context": {
-      "priority": ["ANY_HTF_UNCERTAIN_WAIT", "H4_RANGE", "H4_D1_ALIGNED_TREND", "TRANSITION_ORIGIN_POI"],
-      "symmetry": true,
-      "pass": "candidate direction admissible under inherited v3 HTF state contract",
-      "fail": "WAIT_CONTEXT"
-    },
-    "refinement_and_poi": {
-      "pass": "valid same-direction causal refinement and unconsumed eligible POI",
-      "fail": "WAIT_OR_REJECT_POI"
-    },
-    "structural_invalidation": {
-      "pass": "completed price has not closed through immutable family invalidation boundary",
-      "fail": "REJECT_STRUCTURAL_INVALIDATION"
-    },
-    "fta_lifecycle": {
-      "selection": "nearest valid signed-forward structural FTA only",
-      "decision_mark_rule": {
-        "LONG": "latest completed M15 close < selected FTA",
-        "SHORT": "latest completed M15 close > selected FTA"
-      },
-      "fail": "FTA_ALREADY_COMPLETED",
-      "farther_fta_fallback": false
-    },
-    "entry_geometry": {
-      "order_type": "RESTING_LIMIT_ONLY",
-      "raw_entry": "inherited family/source-permitted proximal structural price",
-      "technical_execution_envelope": "structural zone expanded by exactly one active grid unit per side",
-      "quantization": {
-        "LONG": "floor(raw_entry/tick)*tick",
-        "SHORT": "ceil(raw_entry/tick)*tick"
-      },
-      "fail": "REJECT_UNREPRESENTABLE_EXECUTABLE_ZONE"
-    },
-    "payoff_gate": {
-      "stop_unit": "cost-inclusive modeled cash stop unit K",
-      "target": "nearest FTA",
-      "cost_assumption": "doubled total fee+slippage",
-      "required": "net_target_R_doubled_cost >= 1.0",
-      "funding_used_for_admission": false,
-      "fail": "REJECT_INSUFFICIENT_STRUCTURAL_PAYOFF",
-      "farther_fta_fallback": false
-    },
-    "reservation_and_order": {
-      "lifetime": "event-driven structural validity, capped by inherited 16h parent pending ceiling",
-      "fixed_1h_expiry": false,
-      "cancel_if": [
-        "source retired/consumed",
-        "structural close-through",
-        "HTF context no longer admissible",
-        "POI/refinement consumed or invalid",
-        "completed close reaches/passes selected FTA",
-        "data/metadata integrity STOP",
-        "parent pending ceiling reached"
-      ]
-    },
-    "execution": {
-      "compatibility_scenarios": "all preregistered scenarios",
-      "scenario_selection": "worst/adverse only",
-      "open_improvement": false,
-      "same_bar_ambiguity": "WAIT/UNKNOWN if OHLC cannot prove event ordering",
-      "eligibility_disagreement": "UNRESOLVED/STOP according to compatibility policy"
-    },
-    "exit_and_accounting": {
-      "target": "nearest structural FTA",
-      "protective_stop": "family structural stop inherited from v3",
-      "sfp_body_invalidation": "retained",
-      "funding": "actual signed historical funding while open",
-      "cost_columns": ["base", "doubled_fee_slippage"],
-      "qualification": "frozen project thresholds unchanged"
-    }
-  },
   "safety": {
-    "PAPER": false,
     "LIVE": false,
-    "trade_entry_allowed": false,
-    "OOS_registered": false
-  }
+    "OOS_registered": false,
+    "PAPER": false,
+    "trade_entry_allowed": false
+  },
+  "state": "PRE_OUTCOME_DESIGN_REVIEW_CANDIDATE",
+  "version": "MACHINE_STRATEGY_v4"
 }

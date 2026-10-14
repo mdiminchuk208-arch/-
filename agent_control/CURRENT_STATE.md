@@ -25,9 +25,13 @@ Accounting QA (99 cases / 366 scenario-column checks), completed-segment resume 
 
 ## Current gate
 
-MACHINE_STRATEGY_V4_DESIGN_GATE_OPEN. Failure diagnosis was independently frozen and published in `54419daa29e7e68d6f692daee9cf2132203393ef`. Follow NEXT_TASK.md and docs/machine_strategy_v4_design_v1/DESIGN_GATE_PROTOCOL.md for a separate pre-outcome v4 design. All conditional hypotheses remain unadopted; no v4 implementation or financial evaluation has occurred. Complete design freeze before opening implementation readiness; this opening authorizes neither a financial run nor qualification.
+MACHINE_STRATEGY_V4_DESIGN_PASS. Independently reviewed design frozen with external manifest `b9452dea092c0d186d2ac164c044f2fad0d865becf9904791caebbf7b477273b` at docs/machine_strategy_v4_design_v1/DESIGN_FREEZE_MANIFEST.json; positive verified reuse PASS. Implementation has not started; financial/OOS/PAPER/LIVE qualification remains absent.
 
-ECC ecc@ecc 2.2.3 enabled via /workspace/ecc-setup/codex-ecc; hooks inactive. The four actual diagnosis specialists and review scopes are in the failure audit AGENT_REGISTER.json. Synthetic grids/costs/mark proxies remain assumptions; exact per-origin WAIT transitions are unresolved. v3 and all earlier frozen evidence remain immutable, trade_entry_allowed=false, OOS/PAPER/LIVE/private API/orders/platform work prohibited.
+Twenty-eight synthetic reference design tests, eight QA commands, byte-identical hash-only verification replay and three serial independent specialist roles PASS. Source/policy ambiguities are retained, not optimized by outcomes; immutable inherited input pins36. Actual identities, initial STOP resolutions and limitations are preserved in the v4 namespace.
+
+Next gate after publication is separately named v4 implementation readiness. It must prove actual historical adapter/runner completeness, production prefix/future-mutation/replay and exact funding binding before complete implementation freeze. No historical v4 financial result may be generated or viewed in that gate. Financial validation requires its own later authorization.
+
+ECC ecc@ecc 2.2.3 enabled; hooks inactive. trade_entry_allowed=false; no OOS execution, PAPER/LIVE/private API/orders/platform work. v3 and every earlier frozen result remain unchanged.
 
 ## Causal failure audit completed
 
@@ -38,3 +42,7 @@ Verified mechanisms:11947 unique raw formations/9569 physical buckets;10511 term
 Exact per-origin WAIT transitions remain unavailable from saved aggregate logs; bounds/evidence gaps are explicit. Distinct context fields:18 admission context origins versus20 selected H1 impulses. Eight new synthetic boundary tests, sixQA commands and byte-identical diagnostic replay PASS. Strategy explorer, execution auditor, backtest reviewer and fresh final independent reviewer all completed serially; no designer ran before freeze.
 
 Conditional hypotheses justify opening MACHINE_STRATEGY_v4 design-only after this audit publication. No numeric parameter or profitable subgroup has been selected; no new financial/OOS/PAPER/LIVE/private API/orders permission. trade_entry_allowed=false.
+
+## v4 diagnosis-to-design transition
+
+The H00-H05 contracts have now been adopted as separately versioned pre-outcome machine choices and independently accepted; earlier audit/opening paragraphs describe historical milestones. Their economic effect remains untested. Source full/partial exit and OB/TF/approach alternatives remain explicitly unresolved as source authority.

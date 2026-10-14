@@ -1,84 +1,87 @@
 {
-  "version": "MACHINE_STRATEGY_v4",
   "entries": [
     {
-      "rule": "HTF state/context architecture",
-      "classification": "INHERITED_MACHINE_RULE",
-      "source": "MACHINE_STRATEGY_v3 frozen specification",
-      "changed": false
-    },
-    {
-      "rule": "SFP/OB/BREAKER/STB/RANGE setup families",
-      "classification": "INHERITED_SOURCE_ALIGNED_MACHINE_RULE",
-      "source": "MACHINE_STRATEGY_v3 frozen specification",
-      "changed": false
-    },
-    {
-      "rule": "APPROACH_CLEAN/CORRECTIVE/INVALID",
-      "classification": "PROJECT_POLICY",
-      "source": "Frozen v3 failure audit H01",
-      "changed": true,
-      "authority_limit": "Not a SOURCE_RULE. Designed to avoid mechanically terminal pre-context veto while preserving structural invalidation."
-    },
-    {
-      "rule": "completed-close FTA lifecycle invalidation",
-      "classification": "PROJECT_POLICY",
-      "source": "Frozen v3 failure audit H02",
-      "changed": true,
-      "authority_limit": "Uses completed information only; never chooses farther FTA after invalidation."
-    },
-    {
-      "rule": "event-driven order lifetime",
-      "classification": "PROJECT_POLICY",
-      "source": "Frozen v3 failure audit H03",
-      "changed": true,
-      "authority_limit": "No claim that longer lifetime is source-mandated or profitable. Existing 16h parent ceiling retained without retuning."
-    },
-    {
-      "rule": "one-grid executable envelope around immutable structural zone",
-      "classification": "TECHNICAL_NORMALIZATION",
-      "source": "Frozen v3 failure audit H04",
-      "changed": true,
-      "authority_limit": "Not historical OKX filter truth. Must be evaluated under all preregistered compatibility grids with adverse handling."
-    },
-    {
-      "rule": "nearest FTA must provide >=1R net under doubled fee+slippage",
-      "classification": "PROJECT_POLICY_RISK_DISCIPLINE",
-      "source": "Frozen v3 failure audit H05",
-      "changed": true,
-      "authority_limit": "1R is risk-unit parity, not an empirical optimum or source claim; no farther target fallback."
-    },
-    {
-      "rule": "gate telemetry observer",
-      "classification": "OBSERVER_ONLY",
-      "source": "Frozen v3 failure audit H00 evidence gap",
-      "changed": true,
-      "authority_limit": "Cannot alter decisions or expose outcome fields to strategy logic."
-    },
-    {
-      "rule": "6bp fee +2bp slippage per leg base model",
-      "classification": "INHERITED_PROJECT_POLICY",
-      "source": "Frozen v3/OKX compatibility policy",
       "changed": false,
-      "authority_limit": "Modeled cost assumption, not verified historical account fee."
+      "classification": "INHERITED_MACHINE_RULE",
+      "rule": "HTF state/context architecture",
+      "source": "MACHINE_STRATEGY_v3 frozen specification"
     },
     {
-      "rule": "actual signed historical funding while open",
-      "classification": "VERIFIED_HISTORICAL_INPUT_FOR_VALIDATION",
-      "source": "Sealed OKX Stage-A funding archive",
-      "changed": false
+      "changed": false,
+      "classification": "INHERITED_SOURCE_ALIGNED_MACHINE_RULE",
+      "rule": "SFP/OB/BREAKER/STB/RANGE setup families",
+      "source": "MACHINE_STRATEGY_v3 frozen specification"
     },
     {
-      "rule": "qualification thresholds including WR>=70%",
+      "authority_limit": "Not a SOURCE_RULE. Designed to avoid mechanically terminal pre-context veto while preserving structural invalidation.",
+      "changed": true,
+      "classification": "PROJECT_POLICY",
+      "rule": "APPROACH_CLEAN/CORRECTIVE/INVALID",
+      "source": "Frozen v3 failure audit H01"
+    },
+    {
+      "authority_limit": "Uses completed information only; never chooses farther FTA after invalidation.",
+      "changed": true,
+      "classification": "PROJECT_POLICY",
+      "rule": "completed-close FTA lifecycle invalidation",
+      "source": "Frozen v3 failure audit H02"
+    },
+    {
+      "authority_limit": "No claim that longer lifetime is source-mandated or profitable. Existing 16h parent ceiling retained without retuning.",
+      "changed": true,
+      "classification": "PROJECT_POLICY",
+      "rule": "event-driven order lifetime",
+      "source": "Frozen v3 failure audit H03"
+    },
+    {
+      "authority_limit": "Not historical OKX filter truth. Must be evaluated under all preregistered compatibility grids with adverse handling.",
+      "changed": true,
+      "classification": "TECHNICAL_NORMALIZATION",
+      "rule": "one-grid executable envelope around immutable structural zone",
+      "source": "Frozen v3 failure audit H04"
+    },
+    {
+      "authority_limit": "1R is risk-unit parity, not an empirical optimum or source claim; no farther target fallback.",
+      "changed": true,
+      "classification": "PROJECT_POLICY_RISK_DISCIPLINE",
+      "rule": "nearest FTA must provide >=1R net under doubled fee+slippage",
+      "source": "Frozen v3 failure audit H05"
+    },
+    {
+      "authority_limit": "Cannot alter decisions or expose outcome fields to strategy logic.",
+      "changed": true,
+      "classification": "OBSERVER_ONLY",
+      "rule": "gate telemetry observer",
+      "source": "Frozen v3 failure audit H00 evidence gap"
+    },
+    {
+      "authority_limit": "Modeled cost assumption, not verified historical account fee.",
+      "changed": false,
       "classification": "INHERITED_PROJECT_POLICY",
-      "source": "Frozen project qualification policy and user target",
-      "changed": false
+      "rule": "6bp fee +2bp slippage per leg base model",
+      "source": "Frozen v3/OKX compatibility policy"
+    },
+    {
+      "changed": false,
+      "classification": "VERIFIED_HISTORICAL_INPUT_FOR_VALIDATION",
+      "rule": "actual signed historical funding while open",
+      "source": "Sealed OKX Stage-A funding archive"
+    },
+    {
+      "changed": false,
+      "classification": "INHERITED_PROJECT_POLICY",
+      "rule": "qualification thresholds including WR>=70%",
+      "source": "Frozen project qualification policy and user target"
     }
   ],
+  "exact_inherited_source_citations": "INHERITED_INPUTS_AND_SOURCE_CITATIONS.json",
+  "explicit_new_version_overrides": "EXECUTION_CONTRACT.json#/rule_overrides",
   "forbidden_promotions": [
     "PROJECT_POLICY -> SOURCE_RULE without new source evidence",
     "TECHNICAL_NORMALIZATION -> historical OKX fact",
     "diagnostic historical slice -> production admission rule",
     "exposed-development performance -> pristine OOS evidence"
-  ]
+  ],
+  "normative_complete_rule_registry": "RULE_REGISTRY.json",
+  "version": "MACHINE_STRATEGY_v4"
 }

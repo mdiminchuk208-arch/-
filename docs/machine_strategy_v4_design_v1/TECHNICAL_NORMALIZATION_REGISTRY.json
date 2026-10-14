@@ -1,0 +1,20 @@
+{
+  "historical_exchange_truth": false,
+  "rules": [
+    {
+      "causal_rationale": "One-grid representation of selected POI, explicit raw-POI-outside limit fill policy",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "historical_PnL_selection": false,
+      "hypothesis": "H04",
+      "normative_pointer": "EXECUTION_CONTRACT.json#/executable_zone",
+      "rule_id": "M4_EXECUTABLE_ZONE",
+      "source_concept_refs": [
+        "S_OB_DIRECT_ENTRY",
+        "S_STB_ENTRY"
+      ],
+      "source_selector_equivalence": false
+    }
+  ],
+  "source_rule_equivalence": false,
+  "version": "MACHINE_STRATEGY_v4"
+}

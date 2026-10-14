@@ -27,3 +27,7 @@ All changes below are pre-outcome v4 design choices. No v4 historical financial 
 - no fixed-percentage TP replacement;
 - no parameter sweep over expiry, entry offsets, ATR length, R:R or smoothness counts;
 - no relaxation of qualification criteria.
+
+## Deterministic review supplements
+
+ENTRY_EXIT_CONTRACT.json and EXECUTION_CONTRACT.json name precise v4 overrides and clocks. Planned H05 ratio uses base-cost scenario K_s; fixed reference U remains the reporting comparator. Doubled-cost admission is the explicit v4 override to base-only economics; same case set serves both cost columns. H04 envelope belongs to the selected entry POI, with outside-POI modeled contact allowed. The lifetime ceiling anchors to formation_known_at and uses a half-open executable boundary, explicitly differing from v3 strict-greater discovery expiry. Native structural anchors, same-bar prospective retirement, source range versus deviation stop, pending-only lifecycle, and BREAKER corrective override are separately stated. Nearest raw FTA is selected relative to reference-rounded E_ref and frozen across stress scenarios. No thresholds were selected through trade outcomes.

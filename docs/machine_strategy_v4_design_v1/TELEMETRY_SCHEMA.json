@@ -1,27 +1,52 @@
 {
-  "version": "MACHINE_STRATEGY_v4",
-  "observer_only": true,
-  "outcome_fields_forbidden": true,
+  "anti_scalp_reason_codes": [
+    "REJECTED_SCALP_NO_HTF_CONTEXT",
+    "REJECTED_SCALP_TARGET_TOO_CLOSE",
+    "REJECTED_SCALP_POOR_EDGE_COST_RATIO"
+  ],
+  "anti_scalp_reason_mapping": {
+    "NO_HTF_CONTEXT": "Nonterminal diagnostic tag only; inherited WAIT stays WAIT. Excluded from Anti-Scalp rejected-plan/case denominator. Count distinct waiting origins separately, never add retries or WAIT origins to rejected total.",
+    "POOR_EDGE_COST_RATIO": "N2_s<K_s; retain REJECT_INSUFFICIENT_STRUCTURAL_PAYOFF as detailed native reason",
+    "TARGET_TOO_CLOSE": "inward target collapses into/non-forward E after selection; no farther fallback",
+    "edge_cost_ratio": "d*(T_s-E_s)/[0.0008*(E_s+T_s)] base round-trip fees+slippage; doubled_ratio uses 0.0016; finite positive costs",
+    "exclusive_counts": "one primary scalp reason per rejected plan; context WAIT counts separate, do not double-count retries as unique cases",
+    "rejected_total": "Only terminal economic/geometry rejection flags count; nonterminal NO_HTF_CONTEXT has terminal_rejection=false and is reported in separate waiting_origins_NO_HTF_CONTEXT statistic.",
+    "status": "REJECTED_SCALP_RISK for pre-entry scalp-risk rejection; preserve lifecycle WAIT/retire primary reasons separately"
+  },
+  "causality": {
+    "funding_future_sign_forbidden_as_admission_feature": true,
+    "future_ohlc_fields_forbidden_before_observation": true,
+    "known_at_must_be_lte_decision_cutoff": true,
+    "telemetry_readback_into_strategy_forbidden": true
+  },
   "identity": {
+    "direction": "LONG|SHORT",
+    "family": "SFP|OB|BREAKER|STB|RANGE",
     "formation_id": "canonical immutable formation identity",
     "physical_bucket_id": "symbol+formation_at+direction directional physical bucket",
-    "family": "SFP|OB|BREAKER|STB|RANGE",
-    "symbol": "BTC-USDT-SWAP|ETH-USDT-SWAP",
-    "direction": "LONG|SHORT"
+    "symbol": "BTC-USDT-SWAP|ETH-USDT-SWAP"
+  },
+  "observer_only": true,
+  "outcome_fields_forbidden": true,
+  "outcome_isolation": {
+    "decision_stream": "contains pre-entry fields only; future candle/funding/outcome values forbidden",
+    "execution_stream": "FILL/EXIT/EOF_CENSOR event IDs/timing may be appended only after observation, no performance/PnL/WIN/LOSS and never fed into decisions",
+    "no_duration_feature": "holding bounds may appear only in future post-run statistics, never admission",
+    "observer_interface": "write-only append-only sink; exception cannot become a signal filter; failed evidence persistence is an integrity STOP, not a different strategy selection",
+    "required_anti_scalp_statistics": "counts by primary rejection reason and gross/cost/net/holding diagnostics in a later authorized run, never a feature for this design gate"
   },
   "per_gate_event": {
-    "required": [
-      "formation_id",
-      "physical_bucket_id",
-      "gate_name",
-      "event_type",
-      "known_at",
-      "decision_cutoff",
-      "context_id",
-      "approach_state",
-      "reason_code"
+    "event_type_values": [
+      "FIRST_EVAL",
+      "PASS",
+      "WAIT",
+      "REJECT",
+      "RETIRE",
+      "ORDER_EMIT",
+      "FILL",
+      "EXIT",
+      "EOF_CENSOR"
     ],
-    "event_type_values": ["FIRST_EVAL", "PASS", "WAIT", "REJECT", "RETIRE", "ORDER_EMIT", "FILL", "EXIT", "EOF_CENSOR"],
     "optional_diagnostics": [
       "wait_count",
       "refinement_object_id",
@@ -38,14 +63,33 @@
       "rounded_stop",
       "net_target_R_doubled_cost",
       "reservation_id",
-      "order_expires_by_parent_ceiling_at"
+      "order_expires_by_parent_ceiling_at",
+      "expected_gross_move",
+      "estimated_round_trip_cost",
+      "edge_cost_ratio",
+      "planned_stop_unit_K_s",
+      "qualification_reference_unit_U",
+      "selected_H1_impulse_id",
+      "admission_context_origin_id"
+    ],
+    "reason_code_contract": {
+      "FIRST_EVAL": "one record per formation/gate before first status; paired PASS/WAIT/REJECT possible at same cutoff",
+      "PASS": "first_pass_at fixed at first PASS; later passes separately recorded without changing first",
+      "WAIT": "one status per gate evaluation at cutoff; retry_count counts WAIT evaluations, not origins",
+      "context_id": "nullable before context evaluated; never invented",
+      "terminal": "REJECT/RETIRE/EOF occurs once per origin; no later admission for that identity"
+    },
+    "required": [
+      "formation_id",
+      "physical_bucket_id",
+      "gate_name",
+      "event_type",
+      "known_at",
+      "decision_cutoff",
+      "context_id",
+      "approach_state",
+      "reason_code"
     ]
-  },
-  "causality": {
-    "known_at_must_be_lte_decision_cutoff": true,
-    "future_ohlc_fields_forbidden_before_observation": true,
-    "funding_future_sign_forbidden_as_admission_feature": true,
-    "telemetry_readback_into_strategy_forbidden": true
   },
   "required_funnel_outputs": [
     "unique_formations_by_family_symbol_direction",
@@ -60,5 +104,44 @@
     "unresolved",
     "no_fill",
     "scenario_disagreements"
-  ]
+  ],
+  "telemetry_emission_field_allowlist": [
+    "formation_id",
+    "physical_bucket_id",
+    "family",
+    "symbol",
+    "direction",
+    "native_tf",
+    "decision_cutoff",
+    "known_at",
+    "gate_name",
+    "event_type",
+    "context_id",
+    "approach_state",
+    "reason_code",
+    "wait_count",
+    "refinement_object_id",
+    "poi_id",
+    "fta_id",
+    "fta_price",
+    "structural_zone_low",
+    "structural_zone_high",
+    "executable_zone_low",
+    "executable_zone_high",
+    "raw_entry",
+    "rounded_entry",
+    "structural_stop",
+    "rounded_stop",
+    "net_target_R_doubled_cost",
+    "reservation_id",
+    "order_expires_by_parent_ceiling_at",
+    "expected_gross_move",
+    "estimated_round_trip_cost",
+    "edge_cost_ratio",
+    "planned_stop_unit_K_s",
+    "qualification_reference_unit_U",
+    "selected_H1_impulse_id",
+    "admission_context_origin_id"
+  ],
+  "version": "MACHINE_STRATEGY_v4"
 }

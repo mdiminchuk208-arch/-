@@ -1,0 +1,195 @@
+{
+  "FTA": {
+    "decision_lifecycle_comparator": "latest completed M15 CLOSE vs raw selected FTA: LONG >= / SHORT <= => FTA_ALREADY_COMPLETED",
+    "freeze_at_reference_emission": [
+      "selected_FTA_id",
+      "coincident_FTA_ids",
+      "raw_FTA_price",
+      "target_inventory_digest",
+      "entry_POI_id",
+      "structural_entry_zone",
+      "structural_anchor",
+      "source_range_id_if_any"
+    ],
+    "inventory": "inherited complete opposing contextual unconsumed H1/H4/D1 OB/STB/FVG, unswept profit-side swing pools, native range far boundary cap",
+    "no_farther_fallback": true,
+    "no_stress_reselection": true,
+    "opposing_zone_enclosing_entry": "reject with original opposing zone, never expand opposing zones",
+    "pre_emission_executable_check": "After raw FTA lifecycle check and reference inward rounding, latest completed M15 CLOSE must also be strictly below T_ref LONG / above T_ref SHORT. Equality/beyond => EXECUTABLE_TARGET_ALREADY_COMPLETED; reject before reservation/catalog. Each stress plan independently applies same comparison to T_s; disagreement remains linked to common case. No farther FTA fallback.",
+    "resting_lifecycle_comparator": "completed M15 CLOSE vs inward-rounded T_s of that scenario: LONG >= / SHORT <= => retire before next OPEN",
+    "selected_object_retirement": "confirmed sweep/consumption of selected FTA object observed <=bar OPEN retires pending order; cannot reselect farther; events first known at current bar CLOSE apply after current-bar execution",
+    "selector": "min signed forward raw FTA price distance from reference-grid rounded executable E_ref then canonical ID; retain all coincident IDs. A target between E_ref and raw intended entry is never skipped. Freeze identity at emission; every stress scenario retains it even if its own E makes geometry fail."
+  },
+  "LTF_standalone_idea_allowed": false,
+  "approach": {
+    "breaker_override_explicit": true,
+    "classification": "PROJECT_POLICY",
+    "classification_priority": [
+      "DATA_GAP_OR_MISSING_EVIDENCE_WAIT",
+      "KNOWN_STRUCTURAL_RETIREMENT_INVALID",
+      "MISSING_CONFIRMATION_WAIT",
+      "DUAL_OR_LATER_OPPOSITE_WAIT",
+      "CLEAN_OR_CORRECTIVE"
+    ],
+    "clean": "alive selected CONF, no opposite event in window",
+    "confirmation_selector": "max(known_at,id) among same-direction M15 CONF with known_at>reaction, origin BOS known_at>=reaction, all <=decision",
+    "corrective": "alive selected CONF later than all opposite events in window; positive context/POI gates still required",
+    "event_window": "reaction < opposing BOS/CONF known_at <= decision; not truncated at selected CONF",
+    "invalid": "positively observed family structural break or source retirement, never missing data",
+    "later_opposing_event": "WAIT_RECONFIRMATION if any opposite BOS/CONF has known_at > selected CONF known_at",
+    "missing_or_future_inputs": "WAIT_REQUIRED_CAUSAL_EVIDENCE; no structural rejection or inferred closure",
+    "no_same_direction_conf_before_retirement": "WAIT_REFINEMENT_BOS_CONF while alive; EXPIRED_PENDING at parent deadline",
+    "opposing_event_at_selected_time": "WAIT_DUAL_OPPOSING_EVENT; no canonical ID may choose direction",
+    "reaction_known_at": "inherited reaction/next-open observation must be available <=decision",
+    "rule_id": "M4_APPROACH"
+  },
+  "decision_tf_minutes": 60,
+  "exits": {
+    "SFP_body_exit": "native completed CLOSE strictly beyond unbuffered original pattern extreme, after wick processing; equality does not exit",
+    "breakeven": false,
+    "filled_context_or_POI_change_is_exit": false,
+    "full_nearest_inward_FTA": true,
+    "funding": "Exactly inherit scripts/okx_v3_compatibility_runner_v1.py funding_inputs/_funding_min and pinned COST_FUNDING_BINDING.json: signed settlements valued by completed settlement-close proxy; minimize cash across coherent fill/exit interval witnesses including -1/+1 slots before/after same-timestamp settlements, preserving chronological consistency and chosen witness. Never replace with a fixed timestamp inequality or choose a favorable credit. Future funding sign remains excluded from admission.",
+    "gap_and_wick_handling": "inherit protected v3 observe_m15_bar event order and ambiguity semantics",
+    "non_SFP_body_exit": "none added; structural/context/POI retirement checks pending only",
+    "original_canonical_TP_40_30_30_SL_cost_BE_untouched": true,
+    "partial_TP_ladder": false,
+    "protective_stop": "scenario immutable first lattice point strictly outside protective_boundary",
+    "source_exit_options_remain_unresolved": "Full/partial FTA alternatives preserved in source registry; full same-zone machine exit inherited, no financial choice"
+  },
+  "families": {
+    "BREAKER": {
+      "anchor_equality_breaks": false,
+      "classification": "INHERITED_MACHINE_RULE_EXCEPT_EXPLICIT_V4_OVERRIDES",
+      "entry_zone": "broken parent OB immutable body zone, new BREAKER identity and candidate direction",
+      "family": "BREAKER",
+      "formation_tf_minutes": [
+        60,
+        240
+      ],
+      "inherited_formation_contract": "Contextual-at-birth OB; later opposite body break beyond full extreme; M15 opposite BOS/CONF with no intervening reverse BOS; body-zone retest; parent-birth-through-break extreme boundary.",
+      "protective_boundary": "structural_anchor",
+      "raw_entry": "selected_zone_high LONG / selected_zone_low SHORT",
+      "reaction": "completed native opposite body break; inherited contextual parent-at-birth requirement",
+      "shared_override": "M4_APPROACH explicitly replaces both shared and family-specific no-intervening-reverse-BOS convention; other breaker formation geometry unchanged",
+      "source_validated": false,
+      "structural_anchor": "parent-birth-through-break full movement low LONG / high SHORT",
+      "structural_break_clock": "completed native setup-TF CLOSE after formation_known_at; no M15 substitute",
+      "structural_break_comparison": {
+        "LONG": "close < structural_anchor",
+        "SHORT": "close > structural_anchor"
+      }
+    },
+    "OB": {
+      "anchor_equality_breaks": false,
+      "classification": "INHERITED_MACHINE_RULE_EXCEPT_EXPLICIT_V4_OVERRIDES",
+      "entry_zone": "selected causal M15 OB/FVG wholly contained inside raw OB; OB before FVG, latest birth then canonical ID",
+      "family": "OB",
+      "formation_tf_minutes": [
+        60,
+        240
+      ],
+      "inherited_formation_contract": "Raw raid/opposing candle/full engulf; later reaction; M15 BOS/CONF; new origin-bound OB/FVG inside raw OB; proximal edge; raw full extreme boundary.",
+      "protective_boundary": "structural_anchor",
+      "raw_entry": "selected_zone_high LONG / selected_zone_low SHORT",
+      "reaction": "later native completed first eligible parent-zone contact; parent reaction consumption is not selected refined POI consumption",
+      "source_validated": false,
+      "structural_anchor": "full raw OB low LONG / high SHORT",
+      "structural_break_clock": "completed native setup-TF CLOSE after formation_known_at; no M15 substitute",
+      "structural_break_comparison": {
+        "LONG": "close < structural_anchor",
+        "SHORT": "close > structural_anchor"
+      }
+    },
+    "RANGE": {
+      "additional_retirement": "source native range permanently retires on native CLOSE <=range_low or >=range_high, or later CONF superseding range. This is distinct from strict deviation extreme break.",
+      "anchor_equality_breaks": false,
+      "classification": "INHERITED_MACHINE_RULE_EXCEPT_EXPLICIT_V4_OVERRIDES",
+      "entry_zone": "zero-width fixed native entry boundary: low for LONG / high for SHORT",
+      "family": "RANGE",
+      "formation_tf_minutes": [
+        60,
+        240
+      ],
+      "inherited_formation_contract": "Confirmed impulse plus interior correction; EQ contact/inside CLOSE; first deviation/reclaim then later boundary contact/inside CLOSE; M15 BOS/CONF; boundary entry; deviation extreme; far-boundary FTA cap.",
+      "protective_boundary": "structural_anchor",
+      "raw_entry": "fixed entry boundary",
+      "reaction": "inherited deviation/reclaim then later boundary contact/inside native CLOSE",
+      "source_validated": false,
+      "structural_anchor": "original deviation low LONG / high SHORT",
+      "structural_break_clock": "completed native setup-TF CLOSE after formation_known_at; no M15 substitute",
+      "structural_break_comparison": {
+        "LONG": "close < structural_anchor",
+        "SHORT": "close > structural_anchor"
+      }
+    },
+    "SFP": {
+      "anchor_equality_breaks": false,
+      "classification": "INHERITED_MACHINE_RULE_EXCEPT_EXPLICIT_V4_OVERRIDES",
+      "entry_zone": "selected causal M15 OB/FVG wholly contained inside original pattern; OB before FVG, latest birth then canonical ID",
+      "family": "SFP",
+      "formation_tf_minutes": [
+        60,
+        240
+      ],
+      "inherited_formation_contract": "Completed H1/H4 strict-swing raid/reclaim; next native OPEN reclaimed, usable only at its CLOSE; later M15 BOS/CONF; new origin-bound OB/FVG wholly inside pattern; proximal edge; pattern extreme±causal ATR14; native body invalidation exit.",
+      "protective_boundary": "structural_anchor - ATR14 LONG / + ATR14 SHORT; immutable pattern-end native SMA14 TR",
+      "raw_entry": "selected_zone_high LONG / selected_zone_low SHORT",
+      "reaction": "inherited pattern completion; next native OPEN reclaim observed only at native CLOSE",
+      "source_validated": false,
+      "structural_anchor": "unbuffered original completed pattern low LONG / high SHORT",
+      "structural_break_clock": "completed native setup-TF CLOSE after formation_known_at; no M15 substitute",
+      "structural_break_comparison": {
+        "LONG": "close < structural_anchor",
+        "SHORT": "close > structural_anchor"
+      }
+    },
+    "STB": {
+      "anchor_equality_breaks": false,
+      "classification": "INHERITED_MACHINE_RULE_EXCEPT_EXPLICIT_V4_OVERRIDES",
+      "entry_zone": "immutable manipulation body_low/body_high",
+      "family": "STB",
+      "formation_tf_minutes": [
+        60,
+        240
+      ],
+      "inherited_formation_contract": "Raw manipulation raid/engulf; later matching M15 BOS/CONF; manipulation body midpoint; full manipulation extreme boundary.",
+      "protective_boundary": "structural_anchor",
+      "raw_entry": "(selected_zone_low+selected_zone_high)/2",
+      "reaction": "inherited completed manipulation raid/engulf",
+      "source_validated": false,
+      "structural_anchor": "full manipulation low LONG / high SHORT",
+      "structural_break_clock": "completed native setup-TF CLOSE after formation_known_at; no M15 substitute",
+      "structural_break_comparison": {
+        "LONG": "close < structural_anchor",
+        "SHORT": "close > structural_anchor"
+      }
+    }
+  },
+  "frozen_formation_fields": [
+    "formation_id",
+    "physical_bucket_id",
+    "family",
+    "symbol",
+    "direction",
+    "formation_known_at",
+    "formation_tf",
+    "original_structural_anchor",
+    "original_raw_family_zone",
+    "source_ids",
+    "immutable_pattern_ATR14_if_SFP"
+  ],
+  "htf_context_tf_minutes": [
+    60,
+    240,
+    1440
+  ],
+  "normative": true,
+  "reentry": {
+    "new_case_requires": "new independent causal formation/CONF identity AND unused physical bucket and unused selected POI; later CONF alone cannot revive old bucket/POI",
+    "reservation_released_after_nonfill_or_stress_rejection": false,
+    "same_physical_or_selected_POI_retry": false
+  },
+  "refinement_tf_minutes": 15,
+  "version": "MACHINE_STRATEGY_v4"
+}

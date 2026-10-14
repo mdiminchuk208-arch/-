@@ -1,6 +1,10 @@
 # MACHINE_STRATEGY_v4 — pre-outcome specification
 
-Status: DESIGN_DRAFT_COMPLETE_REVIEW_PENDING. No v4 historical financial outcome has been generated or viewed. This document defines one deterministic candidate architecture derived from the frozen v3 failure mechanisms. It does not claim profitability.
+Status: PRE_OUTCOME_DESIGN_REVIEW_CANDIDATE. Acceptance is determined only by the independently accepted, externally pinned DESIGN_FREEZE_MANIFEST.json. No v4 historical financial outcome has been generated or viewed. This document defines one deterministic candidate architecture derived from the frozen v3 failure mechanisms. It does not claim profitability.
+
+## Normative contract precedence
+
+`ENTRY_EXIT_CONTRACT.json` and `EXECUTION_CONTRACT.json` complete the deterministic definitions below. Their explicit event/zone/payoff rules override inherited shorthand for v4 only. `DETERMINISTIC_REVIEW_CLARIFICATIONS.md` records the initial independent STOP and its narrow repairs; immutable inputs/source citations are in `INHERITED_INPUTS_AND_SOURCE_CITATIONS.json`. No SOURCE_RULE equivalence is claimed.
 
 ## Design objective
 
@@ -24,7 +28,7 @@ V3 terminally rejected a formation when any opposite M15 BOS existed between rea
 
 - `APPROACH_CLEAN`: reaction -> selected same-direction M15 CONF with no intervening opposite CONF/BOS.
 - `APPROACH_CORRECTIVE`: one or more opposite M15 BOS/CONF events may occur after reaction, but the formation structural boundary remains intact and the final selected M15 CONF returns to the candidate direction before decision.
-- `APPROACH_INVALID`: completed price closes through the immutable formation structural invalidation boundary, the formation/source is retired/consumed, required causal evidence is missing/gapped, or no same-direction M15 CONF exists before retirement.
+- `APPROACH_INVALID`: completed price closes through the immutable formation structural invalidation boundary, the formation/source is retired/consumed, or the idea reaches its parent deadline. Missing/gapped evidence or absent confirmation while alive are WAIT/UNKNOWN, never a structural rejection. Classification and all opposing events through decision are pinned in ENTRY_EXIT_CONTRACT.json.
 
 `APPROACH_CORRECTIVE` is not automatically tradable. It proceeds to the same HTF context, POI, FTA and economics gates as `APPROACH_CLEAN`. Context is therefore observed before the design rejects an otherwise structurally alive corrective path.
 
@@ -50,12 +54,12 @@ At every candidate decision:
 
 1. use only completed bars known by decision;
 2. build the same complete contextual nearest-FTA inventory used by v3;
-3. select the nearest signed-forward FTA by raw structural distance, preserving canonical tie handling;
+3. select the nearest signed-forward raw FTA price from the reference-grid rounded executable entry E_ref, preserving canonical tie handling; stress scenarios retain that ID and cannot skip an object between E_ref and raw intended entry;
 4. compare the latest completed M15 close available at decision with the selected FTA.
 
 For LONG, if completed close >= selected FTA price, the trade idea is `FTA_ALREADY_COMPLETED` and no resting order may be created. For SHORT, if completed close <= selected FTA price, same result. Equality is completed, not still pending.
 
-Do not choose a farther FTA after this rejection. A later independent formation/confirmation may create a new idea.
+After inward rounding, the same completed M15 close must also remain strictly before reference executable target T_ref. Equality/beyond T_ref rejects before reservation as EXECUTABLE_TARGET_ALREADY_COMPLETED, even if raw FTA is farther. Stress scenarios check their T_s independently and retain any disagreement. Do not choose a farther FTA after either rejection. A later independent formation/confirmation may create a new idea.
 
 While an order is resting, any completed close beyond/equal the selected target retires the order before the next bar can fill it. OPEN-based gap cancellation remains an execution safeguard, but it is no longer the first lifecycle check when completed evidence had already invalidated the idea.
 
@@ -73,7 +77,7 @@ V4 removes the arbitrary fixed 3600-second active-order expiry. The order remain
 - refinement/POI remains valid and unconsumed;
 - nearest selected FTA remains ahead of current completed price;
 - no metadata/data-integrity STOP occurs;
-- the parent pending idea has not reached the inherited 16-hour pending-lifecycle ceiling.
+- the parent deadline formation_known_at+57600 has not been reached; no emission at/after it and no pending fill at OPEN>=deadline. Exact-boundary policy is explicit in EXECUTION_CONTRACT.json.
 
 Thus lifetime is structural/event-driven, with the existing 16-hour parent pending ceiling retained only as a maximum safety bound. No alternative duration is searched against outcomes.
 
@@ -87,7 +91,7 @@ Structural geometry and executable representation are separate objects.
 
 ### Structural zone
 
-The setup/source defines an immutable raw structural zone/boundary exactly as in the family contract.
+The structural execution-check zone is the selected entry POI: refined M15 POI for SFP/OB, body zone for BREAKER/STB, fixed zero-width boundary for RANGE. Raw family formation geometry is separately immutable; a full raw formation is never substituted for the selected refined POI.
 
 ### Executable zone
 
@@ -121,9 +125,9 @@ V3 permitted any target move strictly greater than modeled round-trip costs. Tha
 
 V4 introduces one pre-outcome, symmetric risk-parity gate:
 
-- compute fixed cash stop unit `K` under the actual modeled entry/stop using the same risk normalization;
+- compute scenario-local planned base-cost stop unit `K_s=d*(E_s-S_s)+0.0008*(E_s+S_s)` per base coin; it is distinct from the fixed reference reporting denominator `U`;
 - compute net cash profit at the nearest FTA under **doubled total fee+slippage costs**, excluding unknown future funding direction from the admission feature;
-- require that doubled-cost net target profit is at least `1.0 * K`.
+- require that doubled-cost net target profit is at least `1.0 * K_s`, using inward-rounded target `T_s`, full entry/exit fees and slippage. The exact formula and reference-catalog/scenario policy are in EXECUTION_CONTRACT.json.
 
 Equivalent condition: planned nearest-FTA `net_target_R_doubled_cost >= +1.0R`.
 
@@ -150,7 +154,7 @@ Preserve conservative compatibility execution principles:
 
 ## V4_REENTRY
 
-No automatic retry of the same physical formation/POI after expiry, invalidation, loss or target completion. A new trade requires a new independent causal formation/confirmation identity. This remains inherited from v3.
+No automatic retry of the same physical formation/POI after expiry, invalidation, loss or target completion. A new trade requires a new independent causal formation/confirmation identity. This remains inherited from v3: a later CONF alone cannot revive an old physical bucket or selected POI.
 
 ## V4_TELEMETRY_OBSERVER
 
@@ -220,3 +224,7 @@ No threshold may be relaxed after outcomes.
 The v3 development period is exposed development data. V4 design may use only the frozen causal failure mechanisms and diagnostics already published; it must not compare alternative v4 parameters by financial outcome. No v4 financial run is authorized until design freeze + implementation freeze + independent readiness review.
 
 PAPER=false. LIVE=false. `trade_entry_allowed=false`.
+
+## Execution review completions
+
+Lifecycle checks apply to PENDING orders only; filled positions retain inherited exits. Current-bar CLOSE/POI consumption cannot pre-cancel current-bar execution. H04 explicitly overrides entry-inside-selected-POI representability and permits a modeled envelope entry contact without POI contact; it does not prove historical or source-valid execution. H05 explicitly overrides base-only admission for this new version while both reporting columns retain one reference catalog and fixed U. All five setup contracts, known_at clocks, equality, ownership, confirmation and raw/inward target comparisons are normative in the two JSON supplements.

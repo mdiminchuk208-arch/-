@@ -1,0 +1,18 @@
+{
+  "decision": "MACHINE_STRATEGY_V4_DESIGN_STOP",
+  "defects": [
+    "H05 admission K/base/doubled/quantity vs fixed reference U undefined; explicit new-version override missing",
+    "H04 selected refined POI vs raw formation zone and outside-zone fill/consumption ownership undefined",
+    "Per-family native structural anchors/equality, BREAKER override and CONF interval undefined",
+    "WAIT data/confirmation vs terminal invalidation inconsistent",
+    "Parent formation_at+57600 expiry boundary and execution ordering undefined",
+    "Raw FTA identity vs inward target lifecycle comparator undefined",
+    "Pending-only lifecycle vs filled-position exits not separated"
+  ],
+  "files_changed_by_reviewer": false,
+  "financial_run_performed": false,
+  "identity": "/root/v4_design_execution_review",
+  "reviewed_commit": "ef88fce620f2ca8347d9079a3b06e3d0c71a6781",
+  "role": "execution_auditor",
+  "stage": "INITIAL_DRAFT_REVIEW"
+}

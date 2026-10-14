@@ -1,0 +1,49 @@
+{
+  "inherited_conflict_registry": "docs/original_strategy_spec_v1/source_conflict_registry.json",
+  "inherited_source_variants": "docs/original_strategy_spec_v1/source_permitted_variants.json",
+  "input_pin_registry": "INHERITED_INPUTS_AND_SOURCE_CITATIONS.json",
+  "material_ambiguities": [
+    {
+      "id": "OB_ENTRY_VARIANTS",
+      "machine_treatment": "inherited conservative refinement/proximal resting limit only; PROJECT_POLICY choice; other source variants preserved, not financially compared",
+      "source_permits": "multiple entries, no universal precedence",
+      "source_rules": [
+        "S_OB_DIRECT_ENTRY",
+        "S_OB_CONS_TF"
+      ]
+    },
+    {
+      "id": "FTA_EXIT_VARIANTS",
+      "machine_treatment": "inherited full FTA, no partial ladder/BE; Original canonical policy untouched",
+      "source_permits": "full or partial FTA exit",
+      "source_rules": [
+        "S_FTA_EXIT_OPTIONS"
+      ]
+    },
+    {
+      "id": "APPROACH_QUALITATIVE",
+      "machine_treatment": "M4_APPROACH is explicit project policy, no source numerical equivalence",
+      "source_permits": "smooth structural approach without unique numeric definition",
+      "source_rules": [
+        "S_OB_APPROACH"
+      ]
+    },
+    {
+      "id": "TF_PREFERENCES",
+      "machine_treatment": "H1/H4 setup and M15 refinement inherited machine scope; excludes source-permitted alternatives without claiming source prohibition",
+      "source_permits": "SFP any TF (H1+ preferred), conservative OB M1-M15",
+      "source_rules": [
+        "S_SFP_TF",
+        "S_OB_CONS_TF"
+      ]
+    },
+    {
+      "id": "PRIORITY_LIFETIME_REENTRY",
+      "machine_treatment": "explicit inherited/new project policies, not source authority",
+      "source_permits": "not a unique complete machine priority/lifetime/re-entry contract",
+      "source_rules": []
+    }
+  ],
+  "source_conflicts_resolved_by_PnL": false,
+  "version": "MACHINE_STRATEGY_v4"
+}

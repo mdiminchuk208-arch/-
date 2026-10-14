@@ -1,36 +1,22 @@
 # Agent Status
 
-State: MACHINE_STRATEGY_V4_DESIGN_DRAFT_COMPLETE_REVIEW_PENDING
-Branch: `machine-v3-research`.
+State: MACHINE_STRATEGY_V4_DESIGN_PASS
+Branch: machine-v3-research.
 
-v3 remains frozen `MACHINE_STRATEGY_V3_QUALIFICATION_STOP`; do not rerun or tune it in place. The independently frozen failure audit remains the causal input for v4.
+The independent v4 design review/freeze is complete. Manifest: `b9452dea092c0d186d2ac164c044f2fad0d865becf9904791caebbf7b477273b` in docs/machine_strategy_v4_design_v1/DESIGN_FREEZE_MANIFEST.json. Exact --resume-existing verification PASS. No v4 historical financial output or strategy implementation has been generated.
 
-## v4 design draft
+## Completed gate
 
-A complete pre-outcome v4 design draft now exists under `docs/machine_strategy_v4_design_v1/`:
-- `MACHINE_STRATEGY_V4_SPEC.md`
-- `DECISION_TREE.json`
-- `V3_TO_V4_CHANGELOG.md`
-- `V4_PREREGISTRATION.json`
-- `RULE_PROVENANCE_REGISTRY.json`
-- `TELEMETRY_SCHEMA.json`
-- `AMBIGUITY_AND_STOP_REGISTRY.json`
-- `DESIGN_DRAFT_RECEIPT.json`
+Reused the published draft at ef88fce620f2ca8347d9079a3b06e3d0c71a6781 without repeating diagnosis or selecting parameters by P&L. Added deterministic execution/entry-exit contracts, full rule/policy/technical/source conflict registries, source citations/input pins, observer telemetry, aliases, decision tree/TF matrix, synthetic QA, actual independent review receipts and freeze tooling.
 
-The draft directly addresses frozen H00-H05 mechanisms while preserving LONG/SHORT symmetry, all five setup families and all qualification thresholds including WR>=70%.
+Initial execution STOP findings were repaired: family/native anchors and SFP buffer separation, selected-POI ownership/envelope, fresh CONF/opposite timing, original formation deadline, pending-only prospective lifecycle, raw/reference inward target consistency, planned K_s versus fixed reporting U and exact inherited funding interval witness minimization. Backtest review additionally closed inward-target pre-reservation and telemetry naming/WAIT counting gaps.
 
-Key design changes are preregistered before any v4 outcome:
-- three-state CLEAN/CORRECTIVE/INVALID structural approach instead of terminally rejecting every intervening opposite M15 BOS before context;
-- completed-close FTA lifecycle invalidation before order emission;
-- event-driven resting-order lifetime instead of fixed one hour, with inherited 16h parent pending ceiling;
-- separate structural zone and one-grid technical executable envelope under all adverse compatibility scenarios;
-- nearest FTA must provide at least +1R net under doubled fee+slippage versus the full modeled stop unit;
-- outcome-blind per-origin/gate telemetry.
+Execution auditor, backtest/causality reviewer and separate final independent reviewer PASS on exact current bytes. Actual serial identities/scopes in AGENT_REGISTER.json. No strategy_designer launched during this review; existing draft reused. One interrupted execution-review turn later resumed and completed.
 
-No v4 financial outcome has been generated or viewed. No implementation has started. The design is NOT frozen/approved yet.
+QA: 28 synthetic design tests, eight commands, byte-identical hash-only verifier replay PASS; 26 tested artifacts/eight logs and 36 inherited source/code pins verified. These fixtures do not prove production adapter prefix/replay or the future v4 funding binding.
 
-## Active gate
+## Next action
 
-Independent v4 design review/freeze. Reviewer must verify causality, provenance, LONG/SHORT symmetry, lack of historical-PnL parameter search, deterministic semantics and consistency with frozen qualification/cost/compatibility policies. Publish exactly `MACHINE_STRATEGY_V4_DESIGN_PASS` or `MACHINE_STRATEGY_V4_DESIGN_STOP`.
+Publish this immutable design, then open a separately named MACHINE_STRATEGY_v4 implementation-readiness gate. No financial authorization follows from design PASS. Frozen v3 remains QUALIFICATION_STOP, previous WR 50% is diagnostic only. All qualification thresholds including WR>=70% are unchanged.
 
-Only DESIGN_PASS may open a separately named implementation/readiness gate. No historical financial run, OOS, PAPER/LIVE/private exchange API/orders or platform work. `trade_entry_allowed=false`.
+No OOS/PAPER/LIVE/private exchange API/orders/platform work. trade_entry_allowed=false. ECC ecc@ecc 2.2.3 enabled; hooks inactive. Root sole writer, serial root plus one specialist.

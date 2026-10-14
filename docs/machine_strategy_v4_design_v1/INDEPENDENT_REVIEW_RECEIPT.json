@@ -1,0 +1,71 @@
+{
+  "LIVE": false,
+  "PAPER": false,
+  "decision": "MACHINE_STRATEGY_V4_DESIGN_PASS",
+  "financial_validation_authorized": false,
+  "implementation_started": false,
+  "reviewed_sha256": {
+    "docs/machine_strategy_v4_design_v1/AMBIGUITY_AND_STOP_REGISTRY.json": "3da368bcada4e1ce686f355e8bc78082766b777da088b2e1ac770a3290917a25",
+    "docs/machine_strategy_v4_design_v1/CAUSALITY_AND_SYMMETRY_QA.md": "5dc8f4013b2f3b2ea8eb71fe2c8e7b305fd61fdb88c78433e86073dc7304b14c",
+    "docs/machine_strategy_v4_design_v1/DECISION_TREE.json": "3b106120b9a22721c2d7a0ee02089947389c8988698e46baf4a0380c66daa143",
+    "docs/machine_strategy_v4_design_v1/DECISION_TREE.md": "9dd7971f7b243961e9fced3836bfff494ffe11d715c81bdfe966058b8df0d30e",
+    "docs/machine_strategy_v4_design_v1/DESIGN_DRAFT_RECEIPT.json": "8cccc2d2845b02d9e2a0cd067494e75d7315083ab89c3895188cae4f157a5eab",
+    "docs/machine_strategy_v4_design_v1/DESIGN_GATE_PROTOCOL.md": "9cf55b06c37352da70a9a87d8eccd6497854c02b2c32917bf223bcc8f6e9e697",
+    "docs/machine_strategy_v4_design_v1/DESIGN_INPUTS.json": "e6a26966dd4a613a217821c3652a95384bb3ddbffb7c7e76ef850a6bf85a8f9e",
+    "docs/machine_strategy_v4_design_v1/DETERMINISTIC_REVIEW_CLARIFICATIONS.md": "e51451ffada8b6accf80ccc3f04588999f7adf78d039a765190d19dcd1c23d60",
+    "docs/machine_strategy_v4_design_v1/ENTRY_EXIT_CONTRACT.json": "871bee8f416c96a7fa3c81e467a48e02689a3f4ec0fe85dcfdbf56145e5a4ef2",
+    "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json": "c9b9d36cc8209ade1837d0c7d617ce04efa60b7369b46c1f99fde544ed4f2d58",
+    "docs/machine_strategy_v4_design_v1/INHERITED_INPUTS_AND_SOURCE_CITATIONS.json": "33b44dd6041fc2f0865f1c25a63b8d095c3f18b1a500eb02dbe78d6e726310af",
+    "docs/machine_strategy_v4_design_v1/MACHINE_STRATEGY_V4_SPEC.md": "949ceb6955538187c9012b5a18415fa7e21bbd6a0cb8cbeb5820a8fe6e01b0ed",
+    "docs/machine_strategy_v4_design_v1/OBSERVER_TELEMETRY_SCHEMA.json": "79d7c80e906f6de20398dc994b108b56c63564232dfd64f9846acfefbe61ec44",
+    "docs/machine_strategy_v4_design_v1/OPENING_REVIEW_RECEIPT.json": "d5447b2f53ae354bc45fbaeecb17d7430c802982dbe9c9db2a280d31aea53030",
+    "docs/machine_strategy_v4_design_v1/PROJECT_POLICY_REGISTRY.json": "1361b0f4758d8694502109313dbbfca58f3c370b68dd9d7443dd5a2fd271f000",
+    "docs/machine_strategy_v4_design_v1/QA_RECEIPT.json": "8d558b79ca8bdb009fca757416e413760da21b635e8a2c6d3ef90f25bb2b5ca8",
+    "docs/machine_strategy_v4_design_v1/QUALIFICATION_PREREGISTRATION.json": "19dca576a63e65d7273405b3cd65a5cc9b89a3fc9da6ebd1027cbadae67072e0",
+    "docs/machine_strategy_v4_design_v1/RULE_PROVENANCE_REGISTRY.json": "8aae9388ab99ef3e21f61fd96d708fe1f604871ef6ed0895c83a145a8be0830a",
+    "docs/machine_strategy_v4_design_v1/RULE_REGISTRY.json": "21f39930e9aa91dcb9ba830c1bd7665fc3641c7d44636728f6ee9a47c6ec2f9b",
+    "docs/machine_strategy_v4_design_v1/SOURCE_CONFLICT_REGISTRY.json": "a889f8b0f2377f13f3c73f1320b8e26f37cf5a4c75de1c96ee477b770bb7fe44",
+    "docs/machine_strategy_v4_design_v1/TECHNICAL_NORMALIZATION_REGISTRY.json": "56c45699249bde60943bd770114350ca019830dacf195db3eb05c54ad263ec67",
+    "docs/machine_strategy_v4_design_v1/TELEMETRY_SCHEMA.json": "79d7c80e906f6de20398dc994b108b56c63564232dfd64f9846acfefbe61ec44",
+    "docs/machine_strategy_v4_design_v1/TF_ROLE_MATRIX.csv": "621f25a080ff6d950a01941f2505a07d90bbb173a633ca19b0092d7254785173",
+    "docs/machine_strategy_v4_design_v1/V3_TO_V4_CHANGELOG.md": "d16467638af1a9761640df8a4f4b073dc5547b7b01b333196c02b88f25800a03",
+    "docs/machine_strategy_v4_design_v1/V4_PREREGISTRATION.json": "19dca576a63e65d7273405b3cd65a5cc9b89a3fc9da6ebd1027cbadae67072e0",
+    "docs/machine_strategy_v4_design_v1/qa/00.log": "c0c7e2360af255689594c9c028fcbb40c6a95320a8e8587610d6823c583dc2eb",
+    "docs/machine_strategy_v4_design_v1/qa/01.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "docs/machine_strategy_v4_design_v1/qa/02.log": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938",
+    "docs/machine_strategy_v4_design_v1/qa/03.log": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e",
+    "docs/machine_strategy_v4_design_v1/qa/04.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/machine_strategy_v4_design_v1/qa/05.log": "1875d71e86f7a8d6ef4d958fabe164f01975941a9c4fc3ee424f1aa81b097fb5",
+    "docs/machine_strategy_v4_design_v1/qa/06.log": "1875d71e86f7a8d6ef4d958fabe164f01975941a9c4fc3ee424f1aa81b097fb5",
+    "docs/machine_strategy_v4_design_v1/qa/07.log": "82a9b7fd053342284a99356473ca30fd7c2efe8db0356b4a0c74b09637ebfec9",
+    "docs/machine_strategy_v4_design_v1/reviews/BACKTEST_BEFORE_FUNDING_CLARIFICATION.json": "bea5962239ebb8d4019a8aa032354490f103b032b9051c9aedadfee29bcf6ed7",
+    "docs/machine_strategy_v4_design_v1/reviews/BACKTEST_REVIEW.json": "afd9019aab67cb4549322cce4981c85d97510499c92db7e30028f4b672fc58e4",
+    "docs/machine_strategy_v4_design_v1/reviews/EXECUTION_INITIAL_STOP.json": "8939215986820093dc95ce19169359d966232942045f7a9549f719a9f70fdf79",
+    "docs/machine_strategy_v4_design_v1/reviews/EXECUTION_REVIEW.json": "980aa320633c980f2c246aa77618c8242939aa12b8aab8502c6be0e11c44c07a",
+    "docs/machine_strategy_v4_design_v1/reviews/FINAL_INDEPENDENT_REVIEW.json": "992444ffe742ab02c8d60e5c52534e5fd27625008936db0d2f6dc3e73079cf7b",
+    "scripts/verify_machine_strategy_v4_design_v1.py": "959b3ea6e029f5e0067408d1be5a72f3422f70625522fd034aaf449e0a856108",
+    "tests/test_machine_strategy_v4_design_v1.py": "b837b6704154ca3778cb942b0a1672b5cb24c51937871bc3619ef6951300e002"
+  },
+  "reviews": [
+    {
+      "decision": "PASS",
+      "identity": "/root/v4_design_execution_review",
+      "receipt": "docs/machine_strategy_v4_design_v1/reviews/EXECUTION_REVIEW.json",
+      "role": "execution_auditor"
+    },
+    {
+      "decision": "PASS",
+      "identity": "/root/v4_design_causality_review",
+      "receipt": "docs/machine_strategy_v4_design_v1/reviews/BACKTEST_REVIEW.json",
+      "role": "backtest_reviewer"
+    },
+    {
+      "decision": "PASS",
+      "identity": "/root/v4_design_final_independent_review",
+      "receipt": "docs/machine_strategy_v4_design_v1/reviews/FINAL_INDEPENDENT_REVIEW.json",
+      "role": "final_independent_reviewer"
+    }
+  ],
+  "trade_entry_allowed": false,
+  "version": "MACHINE_STRATEGY_v4"
+}
