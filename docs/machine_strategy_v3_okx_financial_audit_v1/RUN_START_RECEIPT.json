@@ -1,0 +1,23 @@
+{
+  "LIVE": false,
+  "PAPER": false,
+  "cloud_exec_session_id": 47877,
+  "command": [
+    "/workspace/crypto-bot-venv/bin/python",
+    "scripts/okx_v3_compatibility_runner_v1.py",
+    "--run-historical-once",
+    "--expected-ready-manifest-sha256",
+    "5faeb02bd244777aa416d57f50f9809d9e59abe1eb2ec2fc8c062de721619fd1",
+    "--ready-freeze-commit",
+    "e57b15091bda7e994133e586d7ab851d32011c5d"
+  ],
+  "initial_run_checkpoint_sha256": "8eac40d0349bfd9cb43e0e0e107f393a58ea2655058fb04d99d711ee185e6434",
+  "policy_commit": "23f275cae85d1cab4d91cc07351ffdef2560d75d",
+  "publication_before_execution": true,
+  "ready_commit": "e57b15091bda7e994133e586d7ab851d32011c5d",
+  "ready_manifest_sha256": "5faeb02bd244777aa416d57f50f9809d9e59abe1eb2ec2fc8c062de721619fd1",
+  "run_authority_sha256": "65ae18ce2f668348de7255c92976078a575303ad6e6058ff72cce2898ba6be01",
+  "scope": "ONE_SHOT_DEVELOPMENT_ONLY",
+  "stdout_log": "/tmp/okx_v3_compatibility_financial_run_v1.log",
+  "trade_entry_allowed": false
+}

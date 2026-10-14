@@ -1,6 +1,6 @@
 # Agent Status
 
-State: MACHINE_STRATEGY_V3_OKX_COMPATIBILITY_V1_READY
+State: MACHINE_STRATEGY_V3_OKX_HISTORICAL_VALIDATION_RUNNING
 Branch: `machine-v3-research`.
 
 User priority remains strategy-first and autonomous. Platform/site/integration work stays paused until strategy qualification reaches the platform-reconnection milestone.
@@ -56,4 +56,10 @@ ECC ecc@ecc2.2.3 enabled via /workspace/ecc-setup/codex-ecc; hooks remain inacti
 
 Decision: MACHINE_STRATEGY_V3_OKX_COMPATIBILITY_V1_READY. Manifest: 5faeb02bd244777aa416d57f50f9809d9e59abe1eb2ec2fc8c062de721619fd1. Both independent causality and final non-author reviews PASS. QA54tests PASS plus static/compile/replay. Implementation checkpoint0f741938df2c1e1e15a4faaf0990b5b49ce2b8a4 is published. No actualfinancialoutcomes existed at READY freeze.
 
-Next action immediately after publishing this READY: scripts/okx_v3_compatibility_runner_v1.py --run-historical-once --expected-ready-manifest-sha2565faeb02bd244777aa416d57f50f9809d9e59abe1eb2ec2fc8c062de721619fd1 --ready-freeze-commit READY_COMMIT_SHA (insert published commit). All financial outputs go to docs/machine_strategy_v3_okx_financial_validation_v1. Preserve READY namespace and current CURRENT_BATCH/NEXT_TASK controlpins until run ends. This authorizes development only, not OOS/PAPER/LIVE. trade_entry_allowed=false.
+Next action immediately after publishing this READY: scripts/okx_v3_compatibility_runner_v1.py --run-historical-once --expected-ready-manifest-sha256 5faeb02bd244777aa416d57f50f9809d9e59abe1eb2ec2fc8c062de721619fd1 --ready-freeze-commit READY_COMMIT_SHA (insert published commit). All financial outputs go to docs/machine_strategy_v3_okx_financial_validation_v1. Preserve READY namespace and current CURRENT_BATCH/NEXT_TASK controlpins until run ends. This authorizes development only, not OOS/PAPER/LIVE. trade_entry_allowed=false.
+
+## Published READY and active one-shot validation
+
+READY commit: e57b15091bda7e994133e586d7ab851d32011c5d. External READY manifest: 5faeb02bd244777aa416d57f50f9809d9e59abe1eb2ec2fc8c062de721619fd1. Verified --resume-existing PASS before execution. The first one-shot historical development run is active (cloud exec session 47877, stdout /tmp/okx_v3_compatibility_financial_run_v1.log). Exact command and initial externally recorded checkpoint are in docs/machine_strategy_v3_okx_financial_audit_v1/RUN_START_RECEIPT.json. Do not start a second run or modify frozen compatibility code. If interrupted, use matching authority and the LAST external RUN_CHECKPOINT_SHA256 from the log; retain session/output.
+
+Current action: finish protected reference catalogs and all nine execution scenarios; independently audit accounting, statistical robustness, anti-overfit and final verdict. Production candidate remains NONE; OOS/PAPER/LIVE=false; trade_entry_allowed=false.
