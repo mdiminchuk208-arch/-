@@ -1,0 +1,64 @@
+{
+  "version": "MACHINE_STRATEGY_v4",
+  "observer_only": true,
+  "outcome_fields_forbidden": true,
+  "identity": {
+    "formation_id": "canonical immutable formation identity",
+    "physical_bucket_id": "symbol+formation_at+direction directional physical bucket",
+    "family": "SFP|OB|BREAKER|STB|RANGE",
+    "symbol": "BTC-USDT-SWAP|ETH-USDT-SWAP",
+    "direction": "LONG|SHORT"
+  },
+  "per_gate_event": {
+    "required": [
+      "formation_id",
+      "physical_bucket_id",
+      "gate_name",
+      "event_type",
+      "known_at",
+      "decision_cutoff",
+      "context_id",
+      "approach_state",
+      "reason_code"
+    ],
+    "event_type_values": ["FIRST_EVAL", "PASS", "WAIT", "REJECT", "RETIRE", "ORDER_EMIT", "FILL", "EXIT", "EOF_CENSOR"],
+    "optional_diagnostics": [
+      "wait_count",
+      "refinement_object_id",
+      "poi_id",
+      "fta_id",
+      "fta_price",
+      "structural_zone_low",
+      "structural_zone_high",
+      "executable_zone_low",
+      "executable_zone_high",
+      "raw_entry",
+      "rounded_entry",
+      "structural_stop",
+      "rounded_stop",
+      "net_target_R_doubled_cost",
+      "reservation_id",
+      "order_expires_by_parent_ceiling_at"
+    ]
+  },
+  "causality": {
+    "known_at_must_be_lte_decision_cutoff": true,
+    "future_ohlc_fields_forbidden_before_observation": true,
+    "funding_future_sign_forbidden_as_admission_feature": true,
+    "telemetry_readback_into_strategy_forbidden": true
+  },
+  "required_funnel_outputs": [
+    "unique_formations_by_family_symbol_direction",
+    "unique_physical_buckets",
+    "first_evaluated_per_gate",
+    "first_pass_per_gate",
+    "unique_waiting_origins_per_gate",
+    "terminal_rejects_per_gate",
+    "orders_emitted",
+    "fills",
+    "closures",
+    "unresolved",
+    "no_fill",
+    "scenario_disagreements"
+  ]
+}
