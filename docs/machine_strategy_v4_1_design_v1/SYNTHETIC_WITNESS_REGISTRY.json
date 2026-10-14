@@ -1,0 +1,19 @@
+{
+  "version":"MACHINE_STRATEGY_v4.1",
+  "financial_data_allowed":false,
+  "witnesses":[
+    {"id":"SFP_PREEMISSION_CONTACT","family":"SFP","direction_pair":true,"assert":"refined M15 POI contact after eligibility and before emission rejects; prerequisite reaction does not"},
+    {"id":"OB_PARENT_VS_REFINED","family":"OB","direction_pair":true,"assert":"parent reaction contact does not consume selected refined POI; later refined contact does"},
+    {"id":"STB_BODY_VS_PARENT","family":"STB","direction_pair":true,"assert":"legacy full-parent contact/consumption cannot stand in for generated body first test; later eligible body contact consumes"},
+    {"id":"BREAKER_PRECREATION_CONTACT","family":"BREAKER","direction_pair":true,"assert":"parent OB contacts before breaker creation cannot consume future breaker handle; first later eligible breaker-body contact consumes"},
+    {"id":"RANGE_REQUIRED_REACTION_EXEMPT","family":"RANGE","direction_pair":true,"assert":"mandatory boundary reaction is exempt; first later eligible boundary contact consumes"},
+    {"id":"ACTIVE_ORDER_SAME_BAR_FILL","family":"ALL","direction_pair":true,"assert":"order active at OPEN may fill on bar before contact publication at CLOSE; CLOSE cannot retro-cancel fill"},
+    {"id":"PENDING_CONTACT_NO_FILL","family":"ALL","direction_pair":true,"assert":"eligible contact with no modeled fill consumes at CLOSE and retires before next OPEN"},
+    {"id":"CONTEXT_LATE_ENABLE","family":"ALL","direction_pair":true,"assert":"contact while WAIT_CONTEXT does not backdate first test; eligibility begins prospectively when context becomes admissible"},
+    {"id":"DEADLINE_BOUNDARY","family":"ALL","direction_pair":true,"assert":"no emission/fill at OPEN>=formation_known_at+57600"},
+    {"id":"DECIMAL_ONE_THIRD","family":"ARITHMETIC","direction_pair":false,"assert":"precision50 serialized design value is parsed, not recomputed, by precision80 ledger"},
+    {"id":"DECIMAL_PAYOFF_EQUALITY","family":"ARITHMETIC","direction_pair":true,"assert":"N2_s==K_s passes under design precision50 and cannot be changed by precision80 ledger"},
+    {"id":"LOT_FLOOR_PRECISION_BOUNDARY","family":"ARITHMETIC","direction_pair":false,"assert":"quantity floor occurs once in design scope and is never refloored by ledger"}
+  ],
+  "forbidden_assertions":["profitability","historical candidate count","WR","PF","PnL","historical fill frequency"]
+}
