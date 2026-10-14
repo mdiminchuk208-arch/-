@@ -1,0 +1,20 @@
+{
+  "complete_implementation_freeze": false,
+  "design_manifest_sha256": "4074c337be4800e54682a5ad1ddfd9015e35ce16f4fe2742fc4d12b4bb415790",
+  "design_publication_commit": "96e76edf0e526c588cf87a665da681f577cca77a",
+  "frozen_v4_design_manifest_sha256": "b9452dea092c0d186d2ac164c044f2fad0d865becf9904791caebbf7b477273b",
+  "gate": "MACHINE_STRATEGY_V4_1_IMPLEMENTATION_READINESS_OPEN",
+  "historical_financial_authorized": false,
+  "historical_position_evaluations": 0,
+  "input_sha256": {
+    "docs/machine_strategy_v4_1_design_v1/ARITHMETIC_SCOPE_CONTRACT.json": "b808997cc65be8d125c741191cdb87c5947c9d6e5868acb8d56609195002c72b",
+    "docs/machine_strategy_v4_1_design_v1/FIELD_PROVENANCE.json": "54939b06f63b49ef02f0724425703af95d961f11bb7a13db6cd4dd2b0192bc4e",
+    "docs/machine_strategy_v4_1_design_v1/FIRST_TEST_DECISION_TREE.json": "1ef01202c39ac0ac41dafda1625ae59accd97ee3fd03281d690b637efc33d797",
+    "docs/machine_strategy_v4_1_design_v1/INDEPENDENT_REVIEW_RECEIPT.json": "393ab156d801d1ecd7bbb8924a34327aa37ee6bbad6626b7f5b6f7a2f98c05b4",
+    "docs/machine_strategy_v4_1_design_v1/PREREGISTRATION.json": "66fde7a745407702f9bcb3fe072665636d2d7548de7c7e97b3e9ec1be5b10dc3",
+    "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json": "32d67141a5c8dcff7041fd0e46258c1738ba69cacb317146fd10dc672cc134aa"
+  },
+  "trade_entry_allowed": false,
+  "v4_STOP_manifest_sha256": "6e325d6e5b3cffc4f143bfd4d390712b39ea940bccd4504c85148ed904bbcd7e",
+  "v4_STOP_publication": "766271619c7e03d8cc5dda08a2b3ec626d99c1e8"
+}

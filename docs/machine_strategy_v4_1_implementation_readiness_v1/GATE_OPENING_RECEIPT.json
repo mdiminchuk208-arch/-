@@ -1,0 +1,44 @@
+{
+  "LIVE": false,
+  "PAPER": false,
+  "actually_executed_parent_resumes": [
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "scripts/verify_machine_strategy_v4_1_design_v1.py",
+        "--resume-existing",
+        "--expected-manifest-sha256",
+        "4074c337be4800e54682a5ad1ddfd9015e35ce16f4fe2742fc4d12b4bb415790"
+      ],
+      "exit_code": 0,
+      "result": {
+        "decision": "MACHINE_STRATEGY_V4_1_DESIGN_PASS",
+        "historical_financial_authorized": false,
+        "historical_position_evaluations": 0,
+        "verified_resume": true
+      }
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "scripts/verify_machine_strategy_v4_implementation_v1.py",
+        "--resume-existing",
+        "--expected-manifest-sha256",
+        "6e325d6e5b3cffc4f143bfd4d390712b39ea940bccd4504c85148ed904bbcd7e"
+      ],
+      "exit_code": 0,
+      "result": {
+        "decision": "MACHINE_STRATEGY_V4_IMPLEMENTATION_STOP",
+        "historical_position_evaluations": 0,
+        "implementation_ready": false,
+        "verified_resume": true
+      }
+    }
+  ],
+  "decision": "IMPLEMENTATION_READINESS_ONLY_OPEN",
+  "historical_financial_authorized": false,
+  "historical_position_evaluations": 0,
+  "implementation_ready": false,
+  "trade_entry_allowed": false,
+  "verified_published_design_commit": "96e76edf0e526c588cf87a665da681f577cca77a"
+}

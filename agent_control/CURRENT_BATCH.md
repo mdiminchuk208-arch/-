@@ -1,5 +1,5 @@
-# Current Campaign — v4.1 Design PASS checkpoint
+# Current Campaign — v4.1 Implementation Readiness
 
-Design gate completed MACHINE_STRATEGY_V4_1_DESIGN_PASS, external manifest `4074c337be4800e54682a5ad1ddfd9015e35ce16f4fe2742fc4d12b4bb415790`, independently reviewed exact bytes and52 tests/nine-command QA PASS.
+Frozen DESIGN_PASS published `96e76edf0e526c588cf87a665da681f577cca77a`, manifest `4074c337be4800e54682a5ad1ddfd9015e35ce16f4fe2742fc4d12b4bb415790`. Actual52 test/nine-command design QA and three independent specialist reviews remain design evidence only.
 
-Publish checkpoint, then separately open v4.1 implementation-readiness gate. Frozen predecessors remain unchanged. This design checkpoint is not complete implementation readiness and authorizes no finance. PAPER/LIVE/private API/orders forbidden; trade_entry_allowed=false.
+Active gate MACHINE_STRATEGY_V4_1_IMPLEMENTATION_READINESS_OPEN; follow NEXT_TASK and V4_1_IMPLEMENTATION_READINESS_WORK_ORDER. New input pins and actual parent resume checks saved in implementation namespace. No production implementation/READY/finance yet claimed. Preserve frozen artifacts; no PAPER/LIVE/private API/orders; trade_entry_allowed=false; ECC hooks inactive.

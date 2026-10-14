@@ -1,6 +1,7 @@
 # Agent Status
 
-State: MACHINE_STRATEGY_V4_1_DESIGN_PASS
+State: MACHINE_STRATEGY_V4_1_IMPLEMENTATION_READINESS_OPEN
+Completed gate: MACHINE_STRATEGY_V4_1_DESIGN_PASS
 Branch: machine-v3-research.
 Previous gate: MACHINE_STRATEGY_V4_IMPLEMENTATION_STOP.
 
@@ -12,4 +13,4 @@ QA PASS: 52 tests (24 new+28 frozen design), nine commands,18 registered hand wi
 
 Actual serial role dispatch: execution_auditor; no_lookahead_auditor; final_independent_reviewer. Root sole writer; no new strategy_designer run because current task was review of an already-authored draft. Prior interrupted review evidence recorded; no failed turn promoted to final PASS.
 
-Next: publish this design freeze then open separately named v4.1 implementation-readiness gate. No historical v4/v4.1 fills/exits/finance or catalog-count selection; no OOS/PAPER/LIVE/private API/orders/platform. Production candidate NONE; qualification thresholds unchanged including WR>=70%; trade_entry_allowed=false. ECC enabled hooks inactive.
+Design published `96e76edf0e526c588cf87a665da681f577cca77a`. A separately named v4.1 implementation-readiness gate is now open via NEXT_TASK and V4_1_IMPLEMENTATION_READINESS_WORK_ORDER. No production implementation/READY is yet claimed. No historical v4/v4.1 fills/exits/finance or catalog-count selection; no OOS/PAPER/LIVE/private API/orders/platform. Production candidate NONE; qualification thresholds unchanged including WR>=70%; trade_entry_allowed=false. ECC enabled hooks inactive.
