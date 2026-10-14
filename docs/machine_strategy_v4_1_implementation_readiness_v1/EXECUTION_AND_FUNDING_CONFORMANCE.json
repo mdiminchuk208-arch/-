@@ -1,0 +1,55 @@
+{
+  "version": "MACHINE_STRATEGY_v4.1",
+  "state": "IMPLEMENTATION_IN_PROGRESS",
+  "financial_validation_authorized": false,
+  "trade_entry_allowed": false,
+  "execution": {
+    "nine_scenario_binding": {
+      "status": "IMPLEMENTED_PENDING_EXECUTED_QA",
+      "code": "scripts/machine_strategy_v4_1_execution_binding.py",
+      "scenario_count": 9,
+      "reference_scenario": "P01_Q001",
+      "adverse_states_retained": true,
+      "completed_FTA_case_dropped": false,
+      "historical_fill_exit_simulation": false
+    },
+    "design_arithmetic": {
+      "precision": 50,
+      "rounding": "ROUND_HALF_EVEN",
+      "persisted_entry_stop_target_quantity": "canonical decimal strings",
+      "ledger_may_recompute_geometry": false
+    },
+    "inherited_frozen_rules": [
+      "H04 executable envelope",
+      "H05 doubled-cost 1R planned payoff gate",
+      "nearest FTA without farther fallback",
+      "opposing-zone check",
+      "adverse internal liquidity check",
+      "all-nine scenario retention"
+    ]
+  },
+  "funding": {
+    "status": "REGISTERED_SYNTHETIC_GUARD_IMPLEMENTED_PENDING_EXECUTED_QA",
+    "code": "scripts/machine_strategy_v4_1_funding_guard.py",
+    "ledger_precision": 80,
+    "rounding": "ROUND_HALF_EVEN",
+    "witness_policy": "minimum signed funding cash over coherent fill/exit -1/+1 same-timestamp event slots",
+    "future_funding_sign_used_for_admission": false,
+    "historical_OKX_funding_allowed_in_this_gate": false,
+    "registered_fixture_only": true
+  },
+  "tests_authored_not_yet_claimed_executed": [
+    "tests/test_machine_strategy_v4_1_execution_binding.py",
+    "tests/test_machine_strategy_v4_1_funding_guard.py"
+  ],
+  "remaining_before_READY": [
+    "bind every-M15 active-order lifecycle to complete v4.1 adapter",
+    "full source-only prefix/future-mutation/replay on sealed BTC/ETH history with finance-engine trap",
+    "registered synthetic gap/wick/body/EOF/data-gap execution QA",
+    "execute static/type/compile and targeted/full relevant tests",
+    "independent execution/no-lookahead/final review",
+    "external implementation freeze manifest"
+  ],
+  "implementation_ready": false,
+  "historical_financial_run_allowed": false
+}
