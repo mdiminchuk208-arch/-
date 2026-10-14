@@ -1,0 +1,12 @@
+{
+  "committed_scope_source": "d00138db8e643cf548ba5c88beff47144787ff3b",
+  "control_sha256_at_audit": {
+    ".agents/skills/crypto-strategy-research/SKILL.md": "dd5e6f1875297ec59b3d4f528d3c7ed676768c41481c5cd58c0c62c0956b5e7b",
+    "AGENTS.md": "56fa8cd663168fb17c3e912ab9b777cc0a164fc83785a506c90fa24e67f5c047",
+    "agent_control/CURRENT_BATCH.md": "f5ea006720aea5ec5d8744db0c8f54c32bb4166252f1755803f03743aa5d8fd4",
+    "agent_control/NEXT_TASK.md": "41268c01596c8594fc2a0ade236089efff66fc071ce01746646083a123074881",
+    "agent_control/V3_OKX_FAILURE_AUDIT_PLAN.md": "f1988bcac971de6aedd3dfb5fcb799613c3432008c73b1b50990857e54600dc4"
+  },
+  "new_financial_authorization": false,
+  "scope": "Diagnosis only; afterward automatic v4 design-only opening if independently actionable; no new financial run"
+}

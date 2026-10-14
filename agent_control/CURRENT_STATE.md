@@ -28,3 +28,13 @@ Accounting QA (99 cases / 366 scenario-column checks), completed-segment resume 
 Follow `agent_control/NEXT_TASK.md`: diagnosis-only causal v3 failure audit of admission scarcity, construction, costs and eligibility disagreements before any new strategy/version design. No more financial v3 runs. Do not rebuild already completed work, weaken thresholds, optimize historical P&L or edit frozen artifacts.
 
 ECC ecc@ecc 2.2.3 enabled via `/workspace/ecc-setup/codex-ecc`; hooks inactive. Actual serial specialist roles and identities are in financial `AGENT_REGISTER.json`. Synthetic grids, modeled account costs and settlement mark proxy remain explicitly unverified historical assumptions. No OOS, Paper or live qualification follows from this development result.
+
+## Causal failure audit completed
+
+MACHINE_STRATEGY_V3_OKX_FAILURE_AUDIT_COMPLETE. Namespace: docs/machine_strategy_v3_okx_failure_audit_v1/. External manifest SHA:9b0353dbfeabfa2768f4a1f62af820c128f98c48faad09544acee4c0547867a3; positive --resume-existing PASS. No new v3 trade/financial evaluation.
+
+Verified mechanisms:11947 unique raw formations/9569 physical buckets;10511 terminal non-smooth vetoes before context;42 no-entry-touch one-hour expiries;28 target-OPEN cancellations (18 already beyond FTA at completed decision CLOSE);9 disagreements from unrepresentable synthetic zones. Known20-CLOSED payoff remains negative; partial closure diagnostic only. Fixed reference U and all99cases preserved.
+
+Exact per-origin WAIT transitions remain unavailable from saved aggregate logs; bounds/evidence gaps are explicit. Distinct context fields:18 admission context origins versus20 selected H1 impulses. Eight new synthetic boundary tests, sixQA commands and byte-identical diagnostic replay PASS. Strategy explorer, execution auditor, backtest reviewer and fresh final independent reviewer all completed serially; no designer ran before freeze.
+
+Conditional hypotheses justify opening MACHINE_STRATEGY_v4 design-only after this audit publication. No numeric parameter or profitable subgroup has been selected; no new financial/OOS/PAPER/LIVE/private API/orders permission. trade_entry_allowed=false.

@@ -1,0 +1,30 @@
+{
+  "MFE_MAE": "Price bounds only; no post-cancellation wick included in active-order envelope. No fill has no trade P&L.",
+  "cancellation_OPEN_delta_correction": "12 exact prior CLOSE, 15 differ by one reference increment, one ETH differs by.03; no claimed historical tick epoch",
+  "decision": "EXECUTION_AUDITOR_MECHANICS_REVIEW_PASS",
+  "disagreements": {
+    "cases": 9,
+    "lot_minimum_variants_cause_rejections": false,
+    "narrow_SFP_cases": 1,
+    "no_grid_point_exists_in_each_rejected_zone": true,
+    "one_partial_closed_case_diagnostic_only": true,
+    "rejected_states": 48,
+    "sole_reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+    "zero_width_RANGE_cases": 8
+  },
+  "fixed_U": "ReferenceP01per-one-base U fixed across allstress/size/cost; never multiplied byq",
+  "new_trade_evaluations": 0,
+  "no_fill": {
+    "expired_without_entry_touch": 42,
+    "expiry_LONG_SHORT": [
+      21,
+      21
+    ],
+    "first_OPEN_already_beyond_target_at_decision_CLOSE": 18,
+    "later_target_OPEN_cancellation": 10,
+    "stop_OPEN_cancellation": 0,
+    "target_OPEN_cancellation": 28
+  },
+  "reviewer": "/root/okx_failure_execution_auditor",
+  "symmetry": "No LONG/SHORT direction sign defect found; no market direction conclusion"
+}

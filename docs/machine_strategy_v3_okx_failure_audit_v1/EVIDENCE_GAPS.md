@@ -1,0 +1,8 @@
+# Limits of this frozen diagnosis
+
+1. Saved logs expose unique raw origins, exact terminal dispositions and selected/proposed geometry. They do not expose per-origin WAIT histories, exact gate overlap/conversion, or intermediate confirmation/reaction/context snapshots. Requested exact unique-origin WAIT transition rates are not identifiable. Conservative bounds and gate order are available; no historical replay was used to fill gaps.
+2. Discovery-time null reaction_at is an initial snapshot. It cannot prove that an origin never reacted. Rejected-origin context/timing and hypothetical profitable admissions cannot be reconstructed from aggregate counters.
+3. Native OHLC lacks intrabar event ordering and actual queue/partial-fill history. Active-order no-fill envelopes stop at cancellation OPEN. CLOSED MFE/MAE are lower/upper price bounds, not exact realized extrema. A later touch after cancellation is not a valid fill.
+4. Current reference tick/lot fields are synthetic stress scale, not historical epochs. A price zone with no point on a synthetic grid proves model representability fragility, not an actual historical OKX reject.
+5. Twenty CLOSED cases have 18 admission context.origin_id values, but 20 distinct selected H1 impulse IDs. Admission-context overlap and correlated BTC/ETH market periods limit independence. Positive H4/BREAKER/cash-only slices are tiny and dependent. No causal profitability, direction exclusion or future validation follows.
+6. No alternate expiry, entry, stop, FTA, numeric threshold or profitable rule was tested or chosen. Future design requires explicit pre-outcome definitions and observer telemetry; qualification targets remain fixed.

@@ -1,0 +1,98 @@
+{
+  "code_sha256": {
+    "scripts/build_okx_v3_failure_audit_v1.py": "c351a6bd2c61c40f2b25931145bcd53c1d632c43ac90731855d15bebd79771d2",
+    "tests/test_okx_v3_failure_audit_v1.py": "d1954e5125162f3e60b0c80c12128e0a741684ff06188f79665f0bf8a59be7ea"
+  },
+  "commands": [
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_okx_v3_failure_audit_v1.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v3_okx_failure_audit_v1/qa/00.log",
+      "log_sha256": "3d74c4a03209ef9641560edbb3e18ffdda6af56754cda8930613a101bb9fbcc2"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "check",
+        "scripts/build_okx_v3_failure_audit_v1.py",
+        "tests/test_okx_v3_failure_audit_v1.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v3_okx_failure_audit_v1/qa/01.log",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "format",
+        "--check",
+        "scripts/build_okx_v3_failure_audit_v1.py",
+        "tests/test_okx_v3_failure_audit_v1.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v3_okx_failure_audit_v1/qa/02.log",
+      "log_sha256": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/mypy",
+        "--follow-imports=silent",
+        "scripts/build_okx_v3_failure_audit_v1.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v3_okx_failure_audit_v1/qa/03.log",
+      "log_sha256": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "py_compile",
+        "scripts/build_okx_v3_failure_audit_v1.py",
+        "tests/test_okx_v3_failure_audit_v1.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v3_okx_failure_audit_v1/qa/04.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "scripts/verify_okx_v3_financial_audit_v1.py",
+        "--resume-existing",
+        "--expected-manifest-sha256",
+        "129bde6fe60600449c6740d5cca4e093a20549f1a678390931836d081b50f4c2"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v3_okx_failure_audit_v1/qa/05.log",
+      "log_sha256": "0e4207b37677e3c2408a85a78af323d6d575e3708c31d795dd2fc18db1dc88cd"
+    }
+  ],
+  "deterministic_reader_replay": true,
+  "diagnostic_sha256": {
+    "docs/machine_strategy_v3_okx_failure_audit_v1/ADMISSION_FUNNEL_CAUSAL.json": "8ff4e9032379aeafe0a19c2925374fc4a79ca7a323af071ed626d9d48702ff68",
+    "docs/machine_strategy_v3_okx_failure_audit_v1/CLOSED_EDGE_DECOMPOSITION.json": "495c34512660034ea4893ed0589a4baa0f89d548d347777cdbae72719718f20e",
+    "docs/machine_strategy_v3_okx_failure_audit_v1/DECISION_GEOMETRY.json": "c9f161e65be020bdecd9710c4a4ff6d324a3c41aea050014cba20acfe3b53c12",
+    "docs/machine_strategy_v3_okx_failure_audit_v1/ELIGIBILITY_DISAGREEMENTS.json": "5bf1e43659ffc59da603a7ac72c405672e1d05aeb6b5a5d8184ae0662dfc9635",
+    "docs/machine_strategy_v3_okx_failure_audit_v1/EVIDENCE_GAPS.md": "27637ddc179de10b606ddf567400cf285335bfd68f9d6e8a8aec6e50f2c45468",
+    "docs/machine_strategy_v3_okx_failure_audit_v1/FAILURE_AUDIT_REPORT.md": "059598f72929ac1e1e6937a2464e7c8b0590106052ab3c73805ec5c1b5b4c7a7",
+    "docs/machine_strategy_v3_okx_failure_audit_v1/NO_FILL_DIAGNOSTICS.json": "0de6093f41b83bd5dbafa447ff1d9a13b59476adf7665ac3da9c06f52f8f9679",
+    "docs/machine_strategy_v3_okx_failure_audit_v1/NO_FILL_DISTRIBUTIONS.json": "c1ed8c33cb87a60de253a1b9aef0badc1b09e59e2d50891899097e97e1594645",
+    "docs/machine_strategy_v3_okx_failure_audit_v1/REDESIGN_HYPOTHESES.json": "b5fc2e6424e9056c3f83d9867bd18ae14ce674365d66798bae55aeeda42f2903",
+    "docs/machine_strategy_v3_okx_failure_audit_v1/SOURCE_PROVENANCE.json": "99747c211b88970d83868beb0d67b5bf49c6fcab07ccccb10493740967f38a8c"
+  },
+  "new_financial_backtests": 0,
+  "new_trade_evaluations": 0,
+  "parent_manifest_sha256": "129bde6fe60600449c6740d5cca4e093a20549f1a678390931836d081b50f4c2",
+  "status": "PASS"
+}

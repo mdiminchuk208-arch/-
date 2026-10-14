@@ -1,0 +1,109 @@
+{
+  "actionable_design_gate_supported": true,
+  "financial_validation_authorized": false,
+  "hypotheses": [
+    {
+      "expected_causal_effect": "Represent source-permitted corrective approach without a mechanically overbroad early veto; make downstream context evidence observable.",
+      "failure_evidence": "10,511/11,947 raw formations terminate at the opposite-BOS/non-smooth gate before context; 8,270 physical buckets have only this terminal outcome.",
+      "id": "H01_CAUSAL_APPROACH_DEFINITION",
+      "must_preregister": [
+        "Exact causal event interval and structural invalidation semantics",
+        "LONG/SHORT mirror and source/policy classification",
+        "One version and no historical threshold sweep",
+        "No outcome fields in admission",
+        "Unchanged qualification criteria"
+      ],
+      "not_established": "That rejected origins satisfy context, would fill, or have positive expectancy.",
+      "numeric_parameter_choice": null,
+      "overfit_risk": "Removing the largest blocker purely to increase historical sample; zero opposing BOS is a machine convention, not an unambiguous SOURCE_RULE.",
+      "rank": 1,
+      "rule_family": "Reaction\u2192M15 CONF\u2192structural approach ordering"
+    },
+    {
+      "expected_causal_effect": "Prevent reservation of an already completed target idea using available completed prices; investigate timing of confirmation separately.",
+      "failure_evidence": "18/28 target-open cancellations already have last completed decision CLOSE beyond selected FTA; all28 have previous M15 CLOSE beyond target at cancellation.",
+      "id": "H02_DECISION_MARK_FTA_LIFECYCLE",
+      "must_preregister": [
+        "Target/mark/entry order relation from completed data only",
+        "No fallback farther FTA selected after failure",
+        "Lifecycle/invalidation known_at",
+        "No future OPEN/MFE/MAE as entry features"
+      ],
+      "not_established": "Earlier confirmation is profitable, or skipping these no-fill orders by itself fixes scarcity.",
+      "numeric_parameter_choice": null,
+      "overfit_risk": "Retrospectively relabeling price moves as ideal entries or chasing price.",
+      "rank": 2,
+      "rule_family": "Decision-time structural target validity and lifecycle"
+    },
+    {
+      "expected_causal_effect": "Align eligibility and waiting lifetime with the original structural idea validity and setup/refinement roles.",
+      "failure_evidence": "42 orders have no entry touch in four eligible M15 bars; fixed one-hour order expiry is inherited project policy, not a source-mandated duration.",
+      "id": "H03_ENTRY_REACHABILITY_AND_LIFETIME",
+      "must_preregister": [
+        "Source-permitted entry mode(s) selected without performance comparison",
+        "Exact causal expiry and cancellation semantics",
+        "Timeframe roles, no LTF standalone idea",
+        "No post-hoc duration removal or alternative-fill P&L search"
+      ],
+      "not_established": "One hour is too short or extending expiry/moving entry would improve P&L.",
+      "numeric_parameter_choice": null,
+      "overfit_risk": "Selecting expiry or entry distance against observed missed/rewarding paths.",
+      "rank": 3,
+      "rule_family": "Structural resting entry and order lifetime"
+    },
+    {
+      "expected_causal_effect": "Define honest execution semantics for a structural boundary without silently moving the source idea or inventing historical epochs.",
+      "failure_evidence": "All48 rejected stress states in9cases lack any grid point inside frozen zone:8 zero-width RANGE boundaries and1 narrow SFP zone. Lot variants do not affect eligibility.",
+      "id": "H04_EXECUTABLE_STRUCTURAL_ZONE_CONTRACT",
+      "must_preregister": [
+        "Exact structural-versus-executable region definitions",
+        "Adverse grid/no-fill/unknown handling and all-case denominator",
+        "No imputation or farther-target replacement",
+        "Classification as technical/project policy, not SOURCE_RULE"
+      ],
+      "not_established": "These synthetic rejections occurred on actual historical OKX, or another price representation would make the strategy profitable.",
+      "numeric_parameter_choice": null,
+      "overfit_risk": "Widening zones or picking favorable grids to preserve profitable partial closures.",
+      "rank": 4,
+      "rule_family": "Structural zone versus executable price quantization"
+    },
+    {
+      "expected_causal_effect": "Specify coherent risk/payoff construction and meaningful fee/slippage margin before entry, keeping real structural targets.",
+      "failure_evidence": "Known20-case mean net WIN+.2388R versus abs LOSS.8575R; gross R is negative before fees, and nearest target/structural stop geometry has median target/stop ratio.4426.",
+      "id": "H05_PREENTRY_STRUCTURAL_PAYOFF",
+      "must_preregister": [
+        "Economic/structural rationale independent of case outcomes",
+        "No fixed percent TP replacements, no lookahead holding filter",
+        "Do not move to farther FTA merely to pass economics",
+        "Base/doubled cost and fixed-U semantics",
+        "Explicit assumptions and future untouched validation"
+      ],
+      "not_established": "A RR/edge-cost cutoff improves future performance; no selected cutoff exists.",
+      "numeric_parameter_choice": null,
+      "overfit_risk": "Fitting stop/FTA/fee filters to the 20 exposed cases or choosing a profitable subgroup.",
+      "rank": 5,
+      "rule_family": "Source-aligned stop/nearest FTA economics and anti-scalp feasibility"
+    },
+    {
+      "expected_causal_effect": "Separate gate exposure, first pass, repeated waits and final terminal disposition for future versions without changing signals.",
+      "failure_evidence": "Terminal origins reconcile, but per-origin WAIT histories/overlap and confirmation/reaction snapshots are absent; exact requested intermediate transition rates are not identifiable.",
+      "id": "H00_GATE_TELEMETRY_PREREQUISITE",
+      "must_preregister": [
+        "Unique formation/physical IDs and causal timestamps",
+        "Per-decision gate events and frozen field provenance",
+        "No outcome-dependent admission logging",
+        "No replay of frozen v3 for missing telemetry under this gate"
+      ],
+      "not_established": "Missing stage counts can be recovered from aggregate retries.",
+      "numeric_parameter_choice": null,
+      "overfit_risk": "Using new telemetry to screen many rules against development P&L.",
+      "rank": 0,
+      "rule_family": "Observer-only evidence contract"
+    }
+  ],
+  "hypotheses_are_not_adopted_rules": true,
+  "new_version_name": "MACHINE_STRATEGY_v4",
+  "numeric_thresholds_selected": false,
+  "ranking_basis": "Failure mechanism prevalence and causal construction, not historical profitable-subgroup/P&L ranking; H00 is prerequisite.",
+  "trade_entry_allowed": false
+}

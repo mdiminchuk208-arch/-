@@ -1,0 +1,34 @@
+{
+  "LIVE": false,
+  "PAPER": false,
+  "code_sha256": {
+    "scripts/build_okx_v3_failure_audit_v1.py": "c351a6bd2c61c40f2b25931145bcd53c1d632c43ac90731855d15bebd79771d2",
+    "tests/test_okx_v3_failure_audit_v1.py": "d1954e5125162f3e60b0c80c12128e0a741684ff06188f79665f0bf8a59be7ea"
+  },
+  "decision": "FAILURE_AUDIT_FINAL_REVIEW_PASS",
+  "design_gate_justified": true,
+  "evidence_gaps_retained": [
+    "Exact per-origin WAIT transitions/overlap absent",
+    "Alternateentry/expiry/stop/FTA profitability untested",
+    "Syntheticfilter/fee/mark andintrabar execution reality unverified",
+    "Small dependent CLOSED sample is development-exposed"
+  ],
+  "implementation_author": false,
+  "independent_checks": [
+    "Frozen parent/sourcepins,10diagnostic bytehashes,6QA logs/exitcodes",
+    "11947raw-origin partition and70nofill/9grids/20closed+1partial",
+    "Correction verified:18admissioncontext origins versus20selectedH1impulses",
+    "Every per-case context field matches frozen catalog",
+    "No exact WAIT transition invention, positive-slice/directionselection ornumeric threshold fit",
+    "MFE/MAE/OPEN labels preserve retrospective bounds andcausal prefix",
+    "Conditional hypotheses justify only v4 design opening afterfreeze"
+  ],
+  "new_financial_authorization": false,
+  "parent_financial_manifest_sha256": "129bde6fe60600449c6740d5cca4e093a20549f1a678390931836d081b50f4c2",
+  "review_findings_resolved": [
+    "Misidentifiedselected_H1_impulse asadmissioncontext origin: separatedfielddefinitions/counts; regenerated QA beforefreeze",
+    "CancellationdeltaoneETH.03: generic small-price-change wording, no one-tick/historicalepoch claim"
+  ],
+  "reviewer": "/root/okx_failure_final_independent_reviewer",
+  "trade_entry_allowed": false
+}

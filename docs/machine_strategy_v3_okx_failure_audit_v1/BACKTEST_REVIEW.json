@@ -1,0 +1,18 @@
+{
+  "checked": [
+    "20+70+9exact partition plus1partialclosure keptdiagnostic",
+    "11947raw-origin partition/8270physicalonlynon-smooth",
+    "48ineligiblepricegrids and42expiry/28target-open mechanics",
+    "Known20cash/R decomposition, 10/5/5exits,18contexts",
+    "AverageW/Land78.22%payoffidentity notafittedWRthreshold",
+    "FixedreferenceU maintained acrossscenario/column; quantity affectsnumerator",
+    "CausalATR/completedmark; retrospectiveOPENprice andenvelope labels",
+    "No fakeunique-WAIT transitions, no profitable-slice/directionselection",
+    "Conditionalhypotheses includeoverfit risks/prereg requirements"
+  ],
+  "decision": "BACKTEST_REVIEW_DIAGNOSIS_PASS",
+  "new_trade_evaluations": 0,
+  "report_correction": "Avoid a one-tick claim for all cancellation deltas; one ETH delta is.03. Current prose uses small increments in saved series.",
+  "review_does_not_qualify_strategy_or_select_rules": true,
+  "reviewer": "/root/okx_failure_backtest_reviewer"
+}

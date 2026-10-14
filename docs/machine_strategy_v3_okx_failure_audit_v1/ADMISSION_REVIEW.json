@@ -1,0 +1,16 @@
+{
+  "catalog_candidates": 99,
+  "counts_are_not_independent_trials": true,
+  "decision": "STRATEGY_EXPLORER_ADMISSION_REVIEW_PASS",
+  "new_strategy_evaluations": 0,
+  "non_smooth_only_physical_buckets": 8270,
+  "pending_EOF": 8,
+  "physical_buckets": 9569,
+  "priority_siblings": 6,
+  "raw_origins": 11947,
+  "reservation_conflicts": 11,
+  "reviewer": "/root/okx_failure_admission_strategy_explorer",
+  "terminal_non_smooth": 10511,
+  "terminal_origins": 11823,
+  "unresolved_evidence": "Exact WAIT exposure/overlap/transitions absent from saved logs; conservative bounds only. Discovery snapshot does not expose later reaction. Native source_validated=false/warmup gaps do not prove source attrition."
+}

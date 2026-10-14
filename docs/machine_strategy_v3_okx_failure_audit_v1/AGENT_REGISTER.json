@@ -1,0 +1,32 @@
+{
+  "ECC_plugin": "ecc@ecc2.2.3 enabled; hooks inactive; cloudcollaboration uses projectTOML roleprofiles",
+  "ECC_runtime": "/workspace/ecc-setup/codex-ecc",
+  "LIVE": false,
+  "PAPER": false,
+  "agents": [
+    {
+      "finding": "Exact11947raw-origin partition/9569physical;10511non-smoothearlyveto;waitunique overlapunidentified",
+      "identity": "/root/okx_failure_admission_strategy_explorer",
+      "role": "strategy_explorer"
+    },
+    {
+      "finding": "42unfilledexpiry/28target-open cancellation;9price-zone incompatibilities; fixedUandLONG/SHORTsignmirrored",
+      "identity": "/root/okx_failure_execution_auditor",
+      "role": "execution_auditor"
+    },
+    {
+      "finding": "DiagnosisPASS:20knownclosed+1partialexcluded, negativegross/payoffasymmetry, boundedretrospectiveexcursions, no profitable-subgroupselection",
+      "identity": "/root/okx_failure_backtest_reviewer",
+      "role": "backtest_reviewer"
+    },
+    {
+      "identity": "/root/okx_failure_final_independent_reviewer",
+      "result_artifact": "FINAL_REVIEW.json",
+      "role": "final_independent_reviewer"
+    }
+  ],
+  "dispatch": "SERIAL_ROOT_PLUS_ONE_SPECIALIST",
+  "new_trade_evaluations": 0,
+  "strategy_designer_started_before_audit_freeze": false,
+  "trade_entry_allowed": false
+}

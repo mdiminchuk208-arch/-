@@ -1,0 +1,35 @@
+{
+  "LIVE": false,
+  "PAPER": false,
+  "native_and_catalog_source_validated_false_is_recorded_not_reclassified": true,
+  "new_financial_backtest": false,
+  "parent_financial_manifest_sha256": "129bde6fe60600449c6740d5cca4e093a20549f1a678390931836d081b50f4c2",
+  "rules": [
+    {
+      "classification": "INHERITED_MACHINE_POLICY_NOT_UNAMBIGUOUS_SOURCE",
+      "evidence": "scripts/machine_strategy_v3_historical_adapter.py:467; docs/machine_strategy_v3_design/RULE_PROVENANCE.json",
+      "rule": "Opposite M15 BOS after reaction through selected CONF rejects before HTF context"
+    },
+    {
+      "classification": "MACHINE_SELECTOR_NOT_SOURCE_EQUIVALENCE",
+      "evidence": "scripts/machine_strategy_v3_historical_adapter.py:488",
+      "rule": "Nested same-BOS M15 refinement POI and confirmation"
+    },
+    {
+      "classification": "INHERITED_PROJECT_POLICY",
+      "evidence": "docs/machine_strategy_v3_design/RULE_PROVENANCE.json M3_EXEC",
+      "rule": "16H1 pending / 1H1 resting order expiration"
+    },
+    {
+      "classification": "PREREGISTERED_COMPATIBILITY_PROJECT_POLICY",
+      "evidence": "docs/machine_strategy_v3_okx_compatibility_v1/COMPATIBILITY_POLICY.md",
+      "rule": "Synthetic grid family, worst-state/value, fixed U, funding proxy"
+    },
+    {
+      "classification": "TECHNICAL_DIAGNOSTIC_NORMALIZATION_NOT_SOURCE_RULE",
+      "evidence": "This builder; not used by frozen admission or trade outcomes",
+      "rule": "SMA14 TR diagnostic and OHLC excursion bounds"
+    }
+  ],
+  "trade_entry_allowed": false
+}

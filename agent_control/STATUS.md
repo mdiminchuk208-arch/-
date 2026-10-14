@@ -1,6 +1,6 @@
 # Agent Status
 
-State: MACHINE_STRATEGY_V3_OKX_FAILURE_AUDIT_OPEN
+State: MACHINE_STRATEGY_V3_OKX_FAILURE_AUDIT_COMPLETE
 Branch: `machine-v3-research`.
 
 The first authorized OKX financial development run is frozen STOP. v3 is financially unqualified under the preregistered policy and must not be rerun or tuned in place.
@@ -42,3 +42,13 @@ After an independently frozen failure audit, automatically open a separately nam
 Platform work paused. OOS/PAPER/LIVE/private exchange API/orders prohibited. `trade_entry_allowed=false`.
 
 Allowance policy remains serial-first: normally one specialist, hard ceiling two threads with the second only for independent verification/review.
+
+## Causal failure audit completed
+
+MACHINE_STRATEGY_V3_OKX_FAILURE_AUDIT_COMPLETE. Namespace: docs/machine_strategy_v3_okx_failure_audit_v1/. External manifest SHA:9b0353dbfeabfa2768f4a1f62af820c128f98c48faad09544acee4c0547867a3; positive --resume-existing PASS. No new v3 trade/financial evaluation.
+
+Verified mechanisms:11947 unique raw formations/9569 physical buckets;10511 terminal non-smooth vetoes before context;42 no-entry-touch one-hour expiries;28 target-OPEN cancellations (18 already beyond FTA at completed decision CLOSE);9 disagreements from unrepresentable synthetic zones. Known20-CLOSED payoff remains negative; partial closure diagnostic only. Fixed reference U and all99cases preserved.
+
+Exact per-origin WAIT transitions remain unavailable from saved aggregate logs; bounds/evidence gaps are explicit. Distinct context fields:18 admission context origins versus20 selected H1 impulses. Eight new synthetic boundary tests, sixQA commands and byte-identical diagnostic replay PASS. Strategy explorer, execution auditor, backtest reviewer and fresh final independent reviewer all completed serially; no designer ran before freeze.
+
+Conditional hypotheses justify opening MACHINE_STRATEGY_v4 design-only after this audit publication. No numeric parameter or profitable subgroup has been selected; no new financial/OOS/PAPER/LIVE/private API/orders permission. trade_entry_allowed=false.
