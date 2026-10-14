@@ -25,9 +25,9 @@ Accounting QA (99 cases / 366 scenario-column checks), completed-segment resume 
 
 ## Current gate
 
-Follow `agent_control/NEXT_TASK.md`: diagnosis-only causal v3 failure audit of admission scarcity, construction, costs and eligibility disagreements before any new strategy/version design. No more financial v3 runs. Do not rebuild already completed work, weaken thresholds, optimize historical P&L or edit frozen artifacts.
+MACHINE_STRATEGY_V4_DESIGN_GATE_OPEN. Failure diagnosis was independently frozen and published in `54419daa29e7e68d6f692daee9cf2132203393ef`. Follow NEXT_TASK.md and docs/machine_strategy_v4_design_v1/DESIGN_GATE_PROTOCOL.md for a separate pre-outcome v4 design. All conditional hypotheses remain unadopted; no v4 implementation or financial evaluation has occurred. Complete design freeze before opening implementation readiness; this opening authorizes neither a financial run nor qualification.
 
-ECC ecc@ecc 2.2.3 enabled via `/workspace/ecc-setup/codex-ecc`; hooks inactive. Actual serial specialist roles and identities are in financial `AGENT_REGISTER.json`. Synthetic grids, modeled account costs and settlement mark proxy remain explicitly unverified historical assumptions. No OOS, Paper or live qualification follows from this development result.
+ECC ecc@ecc 2.2.3 enabled via /workspace/ecc-setup/codex-ecc; hooks inactive. The four actual diagnosis specialists and review scopes are in the failure audit AGENT_REGISTER.json. Synthetic grids/costs/mark proxies remain assumptions; exact per-origin WAIT transitions are unresolved. v3 and all earlier frozen evidence remain immutable, trade_entry_allowed=false, OOS/PAPER/LIVE/private API/orders/platform work prohibited.
 
 ## Causal failure audit completed
 

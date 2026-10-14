@@ -1,6 +1,6 @@
 # Agent Status
 
-State: MACHINE_STRATEGY_V3_OKX_FAILURE_AUDIT_COMPLETE
+State: MACHINE_STRATEGY_V4_DESIGN_GATE_OPEN
 Branch: `machine-v3-research`.
 
 The first authorized OKX financial development run is frozen STOP. v3 is financially unqualified under the preregistered policy and must not be rerun or tuned in place.
@@ -23,25 +23,10 @@ Result:
 Independent accounting/statistics/red-team/final STOP reviews and restore/resume verification PASS. This is a genuine failed qualification result for v3, not merely a technical readiness barrier.
 
 ## Active action
-Follow:
-- `agent_control/NEXT_TASK.md`
-- `agent_control/V3_OKX_FAILURE_AUDIT_PLAN.md`
-- `agent_control/CURRENT_BATCH.md`
 
-Current work is diagnosis-only causal failure audit using frozen outputs. Priority:
-1. admission scarcity through refinement/BOS/origin-bound/non-smooth-approach gates;
-2. mechanics of 70 no-fill candidates;
-3. negative gross-edge construction on CLOSED cases;
-4. nine eligibility disagreements;
-5. ranked causal redesign hypotheses.
+Failure audit published in `54419daa29e7e68d6f692daee9cf2132203393ef`. The automatically opened next gate is MACHINE_STRATEGY_v4 design-only. Follow NEXT_TASK.md and docs/machine_strategy_v4_design_v1/DESIGN_GATE_PROTOCOL.md. No v4 rule or numeric parameter has been adopted; no v4 design or implementation freeze exists yet. Strategy_designer may now work after the independently published audit; none ran during diagnosis.
 
-No second v3 financial run and no in-place tuning.
-
-After an independently frozen failure audit, automatically open a separately named new strategy version design gate if actionable causal hypotheses exist. The hard target remains WR>=70% plus positive net expectancy/P&L and all frozen cost/sample/drawdown/robustness requirements.
-
-Platform work paused. OOS/PAPER/LIVE/private exchange API/orders prohibited. `trade_entry_allowed=false`.
-
-Allowance policy remains serial-first: normally one specialist, hard ceiling two threads with the second only for independent verification/review.
+All qualification thresholds remain unchanged, including WR>=70%. Serial-first: root plus one specialist. Frozen predecessors immutable; no new financial run, OOS execution, PAPER/LIVE/private API/orders/platform work. trade_entry_allowed=false; ECC hooks inactive.
 
 ## Causal failure audit completed
 

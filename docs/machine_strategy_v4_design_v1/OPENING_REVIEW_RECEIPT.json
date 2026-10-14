@@ -1,0 +1,30 @@
+{
+  "LIVE": false,
+  "PAPER": false,
+  "audit_publication_commit": "54419daa29e7e68d6f692daee9cf2132203393ef",
+  "checks": [
+    "Eight predecessor input hashes match files and published audit commit",
+    "Failure audit verified --resume-existing with externally pinned manifest; zero new trade evaluations",
+    "git diff --check PASS",
+    "All hypotheses remain unadopted; no design or implementation freeze claim",
+    "Exposed history is development, not pristine OOS",
+    "Source/policy separation, LONG/SHORT symmetry, inherited qualification criteria and serial workflow retained"
+  ],
+  "design_freeze": false,
+  "implementation_author": false,
+  "new_financial_validation_authorized": false,
+  "new_trade_evaluations": 0,
+  "next_task": "Complete one pre-outcome v4 design under DESIGN_GATE_PROTOCOL.md; separate implementation readiness after design freeze.",
+  "review_decision": "PASS_OPENING_ONLY",
+  "reviewed_sha256": {
+    "agent_control/CURRENT_BATCH.md": "9fda96ef9800e25dac2db46597ac7231d688be3dc6252fe646fb032d299ac77b",
+    "agent_control/CURRENT_STATE.md": "c4bd22c8aebd81a6a6b92bf138ac07c813a9ae279d50ab0dbad2b7183e6a6c97",
+    "agent_control/NEXT_TASK.md": "cfa70e3a238961789620127a311cf5e2792c735645065acf619b93f9a717bd54",
+    "agent_control/STATUS.md": "b6345e30346194d3d83b255f44fceda8de23673f75e80e595e63b54f3f2b5759",
+    "docs/machine_strategy_v4_design_v1/DESIGN_GATE_PROTOCOL.md": "9cf55b06c37352da70a9a87d8eccd6497854c02b2c32917bf223bcc8f6e9e697",
+    "docs/machine_strategy_v4_design_v1/DESIGN_INPUTS.json": "e6a26966dd4a613a217821c3652a95384bb3ddbffb7c7e76ef850a6bf85a8f9e"
+  },
+  "reviewer": "/root/okx_failure_final_independent_reviewer",
+  "state": "DESIGN_GATE_OPEN",
+  "trade_entry_allowed": false
+}

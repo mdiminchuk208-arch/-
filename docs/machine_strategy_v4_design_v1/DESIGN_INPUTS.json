@@ -1,0 +1,27 @@
+{
+  "LIVE": false,
+  "PAPER": false,
+  "audit_publication_commit": "54419daa29e7e68d6f692daee9cf2132203393ef",
+  "design_frozen": false,
+  "development_history_exposed": true,
+  "failure_audit_manifest_sha256": "9b0353dbfeabfa2768f4a1f62af820c128f98c48faad09544acee4c0547867a3",
+  "financial_audit_manifest_sha256": "129bde6fe60600449c6740d5cca4e093a20549f1a678390931836d081b50f4c2",
+  "financial_validation_authorized": false,
+  "hypotheses_adopted": false,
+  "implementation_frozen": false,
+  "input_sha256": {
+    "docs/machine_strategy_v3_okx_compatibility_v1/COMPATIBILITY_POLICY.md": "ebb6a99fdeffc9fc826f9f84925d9209d9e9f519eb4eeeadd636e4121bdc5738",
+    "docs/machine_strategy_v3_okx_failure_audit_v1/EVIDENCE_GAPS.md": "27637ddc179de10b606ddf567400cf285335bfd68f9d6e8a8aec6e50f2c45468",
+    "docs/machine_strategy_v3_okx_failure_audit_v1/FAILURE_AUDIT_REPORT.md": "059598f72929ac1e1e6937a2464e7c8b0590106052ab3c73805ec5c1b5b4c7a7",
+    "docs/machine_strategy_v3_okx_failure_audit_v1/FINAL_REVIEW.json": "c1c7d57831fefb520bca8a8fec56c00d4c71b8cc6ff38894b01e35ca073d9ed3",
+    "docs/machine_strategy_v3_okx_failure_audit_v1/REDESIGN_HYPOTHESES.json": "b5fc2e6424e9056c3f83d9867bd18ae14ce674365d66798bae55aeeda42f2903",
+    "docs/machine_strategy_v3_okx_failure_audit_v1/SOURCE_PROVENANCE.json": "99747c211b88970d83868beb0d67b5bf49c6fcab07ccccb10493740967f38a8c",
+    "docs/machine_strategy_v3_okx_failure_audit_v1/freeze_manifest.json": "9b0353dbfeabfa2768f4a1f62af820c128f98c48faad09544acee4c0547867a3",
+    "docs/machine_strategy_v3_okx_financial_audit_v1/freeze_manifest.json": "129bde6fe60600449c6740d5cca4e093a20549f1a678390931836d081b50f4c2"
+  },
+  "numeric_parameters_selected": false,
+  "pristine_OOS_registered": false,
+  "state": "DESIGN_GATE_OPEN",
+  "trade_entry_allowed": false,
+  "version": "MACHINE_STRATEGY_v4"
+}

@@ -1,36 +1,9 @@
-# Current Campaign — v3 OKX Failure Audit → New Version Design
+# Current Campaign — MACHINE_STRATEGY_v4 Pre-outcome Design
 
-The first preregistered OKX financial development run is frozen STOP. v3 is financially failed for the current qualification policy; do not rerun it or tune it in place.
+The v3 OKX failure audit is independently complete, frozen and published: `54419daa29e7e68d6f692daee9cf2132203393ef`, manifest `9b0353dbfeabfa2768f4a1f62af820c128f98c48faad09544acee4c0547867a3`. Its new-version hypotheses are conditional; v3 remains QUALIFICATION_STOP.
 
-Use `agent_control/NEXT_TASK.md` and `agent_control/V3_OKX_FAILURE_AUDIT_PLAN.md` as the active instructions.
+Current gate: DESIGN_GATE_OPEN. Follow NEXT_TASK.md and docs/machine_strategy_v4_design_v1/DESIGN_GATE_PROTOCOL.md. Design has not been completed, implemented, frozen or financially tested.
 
-## Frozen result
-- 99 unique candidates total;
-- 20 all-nine CLOSED;
-- 70 all-scenario no fill;
-- 9 eligibility disagreements;
-- known CLOSED base WR 50%, PF_R 0.278459, net -6.187114R;
-- doubled-cost WR 45%, PF_R 0.162663, net -9.243979R;
-- gross edge already negative;
-- fixed catalog cannot satisfy CLOSED>=200.
+Serial strategy_designer → execution_auditor → backtest_reviewer → final_independent_reviewer; root is sole writer, hard ceiling two threads. Preserve all frozen predecessors. Register causal choices before outcomes and do not fit to historical P&L. Qualification remains WR>=70% plus all prior cost/sample/net-edge/robustness requirements.
 
-## Active work
-Perform diagnosis-only causal failure audit from existing frozen outputs. No second v3 financial run.
-
-Priority order:
-1. unique-origin admission scarcity, especially refinement/BOS/origin-bound/non-smooth-approach gates;
-2. exact mechanics of 70 no-fill candidates;
-3. gross-edge decomposition of CLOSED cases;
-4. exact causes of nine compatibility eligibility disagreements;
-5. ranked causal redesign hypotheses for the next version.
-
-Use specialists serially and only as needed: strategy_explorer → execution_auditor → backtest_reviewer/statistics_robustness_analyst → final_independent_reviewer. Root is sole writer. Hard ceiling two threads, second only for independent review.
-
-Create and freeze `docs/machine_strategy_v3_okx_failure_audit_v1/` per the audit plan.
-
-## Autonomous transition
-Once failure audit is independently frozen, if actionable causal hypotheses exist, immediately open a separately named new strategy version design gate (v3.1 or v4) without asking the user. Freeze the new design before any financial outcome. The new version must still target WR>=70% plus all existing net-edge/sample/cost/robustness criteria.
-
-Do not relax thresholds, cherry-pick small positive slices, ban SHORT based on the failed sample, remove adverse cases, or optimize numeric thresholds against observed P&L.
-
-No OOS/PAPER/LIVE/private exchange API/orders/platform work. `trade_entry_allowed=false`.
+No new historical strategy/financial run, OOS execution, PAPER/LIVE/private API/orders/platform work. trade_entry_allowed=false; hooks inactive.
