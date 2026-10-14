@@ -1,0 +1,60 @@
+{
+  "version": "MACHINE_STRATEGY_v4",
+  "items": [
+    {
+      "id": "A01_HISTORICAL_TICK_EPOCHS",
+      "status": "UNRESOLVED_SOURCE_EVIDENCE",
+      "treatment": "Use separately frozen OKX compatibility stress family; never claim synthetic grids are historical exchange truth."
+    },
+    {
+      "id": "A02_HISTORICAL_ACCOUNT_FEES",
+      "status": "UNRESOLVED_SOURCE_EVIDENCE",
+      "treatment": "Use explicit modeled 6bp fee+2bp slippage per leg and mandatory doubled-cost stress; requalify if later verified costs exceed envelope."
+    },
+    {
+      "id": "A03_CORRECTIVE_APPROACH_SOURCE_AUTHORITY",
+      "status": "PROJECT_POLICY_NOT_SOURCE_RULE",
+      "treatment": "Permit corrective path only while structure is intact and same-direction M15 CONF returns before decision; independent design review required before implementation."
+    },
+    {
+      "id": "A04_ONE_GRID_EXECUTION_ENVELOPE",
+      "status": "TECHNICAL_NORMALIZATION",
+      "treatment": "Exactly one active-grid unit each side; all scenarios evaluated; material eligibility disagreement remains unresolved/adverse."
+    },
+    {
+      "id": "A05_ORDER_LIFETIME",
+      "status": "PROJECT_POLICY",
+      "treatment": "No fixed 1h expiry; event-driven structural validity with inherited 16h parent ceiling. No duration sweep."
+    },
+    {
+      "id": "A06_PAYOFF_PARITY",
+      "status": "PROJECT_POLICY_RISK_DISCIPLINE",
+      "treatment": "Nearest FTA must deliver >=1R net at doubled fee+slippage. No farther FTA fallback."
+    },
+    {
+      "id": "A07_INTRABAR_EVENT_ORDER",
+      "status": "UNOBSERVABLE_FROM_OHLC",
+      "treatment": "Conservative WAIT/UNKNOWN when fill/stop/target ordering cannot be proven."
+    },
+    {
+      "id": "A08_FUTURE_FUNDING_SIGN",
+      "status": "NOT_KNOWN_AT_ENTRY",
+      "treatment": "Never admission feature. Apply realized signed funding only after exposure for historical accounting."
+    },
+    {
+      "id": "A09_V4_EXPOSED_DEVELOPMENT_HISTORY",
+      "status": "NOT_PRISTINE_OOS",
+      "treatment": "Any v4 historical development result is development evidence only; pristine OOS must be separately registered after qualification."
+    }
+  ],
+  "hard_stop_conditions_before_financial_run": [
+    "design freeze not independently accepted",
+    "implementation differs from frozen design without new version",
+    "causality/prefix mutation failure",
+    "strategy can read telemetry outcomes",
+    "compatibility scenario cherry-picking possible",
+    "funding/cost ledger non-deterministic",
+    "protected predecessor hashes changed",
+    "financial output generated before readiness authorization"
+  ]
+}
