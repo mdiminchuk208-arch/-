@@ -1,0 +1,29 @@
+{
+  "version": "MACHINE_STRATEGY_v4",
+  "stage": "DESIGN_DRAFT_COMPLETE_REVIEW_PENDING",
+  "financial_outcomes_generated": false,
+  "financial_validation_authorized": false,
+  "implementation_started": false,
+  "independent_review_completed": false,
+  "required_design_files_present": [
+    "MACHINE_STRATEGY_V4_SPEC.md",
+    "DECISION_TREE.json",
+    "V3_TO_V4_CHANGELOG.md",
+    "V4_PREREGISTRATION.json",
+    "RULE_PROVENANCE_REGISTRY.json",
+    "TELEMETRY_SCHEMA.json",
+    "AMBIGUITY_AND_STOP_REGISTRY.json"
+  ],
+  "adopted_hypotheses": ["H00", "H01", "H02", "H03", "H04", "H05"],
+  "qualification_thresholds_changed": false,
+  "directions_removed": false,
+  "setup_families_removed": false,
+  "historical_pnl_parameter_sweep_performed": false,
+  "next_gate": "V4_DESIGN_INDEPENDENT_REVIEW_AND_FREEZE",
+  "safety": {
+    "PAPER": false,
+    "LIVE": false,
+    "trade_entry_allowed": false,
+    "platform_work_allowed": false
+  }
+}
