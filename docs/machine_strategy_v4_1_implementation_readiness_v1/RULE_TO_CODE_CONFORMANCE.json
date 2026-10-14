@@ -20,39 +20,57 @@
     },
     "NATIVE_FIRST_TEST_CLOCK": {
       "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/common/contact_clock,/native_context_rule,/partial_native_interval",
-      "code": "scripts/machine_strategy_v4_1_contracts.py::native_contact + SelectedPoiInventory.observe_native_bar",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::native_contact + scripts/machine_strategy_v4_1_selected_poi_inventory.py::SelectedPoiInventory.observe_native_bar",
       "status": "IMPLEMENTED_PURE_CLOCK_PENDING_REAL_PREFIX_REPLAY",
       "notes": "OPEN before eligibility is wholly ineligible; contact is published at native CLOSE."
     },
     "RANGE_REQUIRED_REACTION_EXEMPTION": {
       "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/families/RANGE",
       "code": "scripts/machine_strategy_v4_1_contracts.py::native_contact",
-      "status": "IMPLEMENTED_PENDING_FAMILY_ADAPTER_BINDING",
+      "status": "IMPLEMENTED_WITH_AUTHORED_LIFECYCLE_WITNESS_PENDING_EXECUTION",
       "notes": "Required boundary reaction cannot self-consume; later eligible contact can consume."
     },
     "PRE_EMISSION_CONSUMPTION": {
       "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/common/pre_emission_consumption",
       "code": "scripts/machine_strategy_v4_1_contracts.py::register_emission",
-      "status": "IMPLEMENTED_PENDING_EQUAL_CUTOFF_PRODUCTION_QA",
+      "status": "IMPLEMENTED_WITH_EQUAL_CUTOFF_WITNESS_PENDING_EXECUTION",
       "notes": "Contact known_at <= emission rejects before reservation."
     },
     "DECIMAL50_DESIGN_SCOPE": {
       "design": "docs/machine_strategy_v4_1_design_v1/ARITHMETIC_SCOPE_CONTRACT.json#/design_scope",
-      "code": "scripts/machine_strategy_v4_1_contracts.py::design_decimal/canonical_decimal/payoff_equality_passes",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::design_decimal/canonical_decimal/payoff_equality_passes + scripts/machine_strategy_v4_1_execution_binding.py",
       "status": "IMPLEMENTED_PENDING_EXECUTED_REPEATING_DECIMAL_QA",
       "notes": "ROUND_HALF_EVEN precision50; no float/epsilon."
     },
     "DECIMAL50_TO_80_TRANSPORT": {
       "design": "docs/machine_strategy_v4_1_design_v1/ARITHMETIC_SCOPE_CONTRACT.json#/boundary_contract",
-      "code": "scripts/machine_strategy_v4_1_contracts.py::transport_design_value_to_ledger/ledger_decimal",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::transport_design_value_to_ledger/ledger_decimal + scripts/machine_strategy_v4_1_execution_binding.py",
       "status": "IMPLEMENTED_PENDING_LEDGER_BINDING_QA",
-      "notes": "Ledger parses canonical design strings and may not rebuild design geometry."
+      "notes": "Scenario geometry/quantity persist as canonical strings; ledger may not rebuild design geometry."
     },
     "PREPROPOSAL_INVENTORY": {
       "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/common/preproposal_inventory",
       "code": "scripts/machine_strategy_v4_1_selected_poi_inventory.py::SelectedPoiInventory",
-      "status": "IMPLEMENTED_SOURCE_ONLY_COMPONENT_PENDING_FULL_ADAPTER_INTEGRATION",
+      "status": "IMPLEMENTED_SOURCE_ONLY_COMPONENT_WITH_AUTHORED_LIFECYCLE_TESTS_PENDING_FULL_ADAPTER_INTEGRATION",
       "notes": "No trade signal or financial output is emitted by inventory."
+    },
+    "NINE_SCENARIO_BINDING": {
+      "design": "frozen v4 EXECUTION_CONTRACT compatibility/H04/H05 inherited by v4.1",
+      "code": "scripts/machine_strategy_v4_1_execution_binding.py::scenario_plan/all_scenario_plans",
+      "status": "IMPLEMENTED_DISTINCT_V4_1_PATH_PENDING_EXECUTED_QA",
+      "notes": "All nine scenario IDs retained; adverse/ineligible states remain attached to case; historical fill/exit simulation absent."
+    },
+    "SIGNED_FUNDING_WITNESS": {
+      "design": "frozen v4 funding semantics + v4.1 ARITHMETIC_SCOPE_CONTRACT ledger scope",
+      "code": "scripts/machine_strategy_v4_1_funding_guard.py::adverse_funding_witness",
+      "status": "REGISTERED_SYNTHETIC_ONLY_IMPLEMENTED_PENDING_EXECUTED_QA",
+      "notes": "Decimal80 coherent adverse -1/+1 settlement witness; historical OKX funding run unconditionally blocked in readiness."
+    },
+    "HISTORICAL_V4_1_SOURCE_ADAPTER": {
+      "design": "agent_control/V4_1_IMPLEMENTATION_READINESS_WORK_ORDER.md",
+      "code": "distinct full adapter still required; component coverage in HISTORICAL_ADAPTER_COVERAGE.json",
+      "status": "PARTIAL_COMPONENTS_IMPLEMENTED_NOT_READY",
+      "notes": "Must bind all-five-family source inventory and every-M15 lifecycle on sealed history before implementation freeze."
     },
     "HISTORICAL_V4_1_POSITION_ENGINE": {
       "design": "agent_control/V4_1_IMPLEMENTATION_READINESS_WORK_ORDER.md",
@@ -60,5 +78,11 @@
       "status": "BLOCKED_BY_GATE",
       "notes": "Implementation readiness must freeze before any historical v4.1 fill/exit/finance run."
     }
-  }
+  },
+  "authored_tests_not_yet_claimed_executed": [
+    "tests/test_machine_strategy_v4_1_contracts.py",
+    "tests/test_machine_strategy_v4_1_selected_poi_inventory.py",
+    "tests/test_machine_strategy_v4_1_execution_binding.py",
+    "tests/test_machine_strategy_v4_1_funding_guard.py"
+  ]
 }
