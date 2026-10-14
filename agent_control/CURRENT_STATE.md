@@ -9,7 +9,7 @@ Branch: `machine-v3-research`. Strategy first; platform/site work remains paused
 - v3 financial qualification STOP: checkpoint `2d7770680867f93948d4d26b91633cbb8cdbc9136bd54a988436a687accc6dd0`, audit manifest `129bde6fe60600449c6740d5cca4e093a20549f1a678390931836d081b50f4c2`.
 - v3 causal failure audit complete: publication `54419daa29e7e68d6f692daee9cf2132203393ef`, manifest `9b0353dbfeabfa2768f4a1f62af820c128f98c48faad09544acee4c0547867a3`.
 
-Known v3 diagnostic result remains unchanged: 99 candidates, 20 all-nine CLOSED, base WR50%, PF_R0.278459, expectancy -0.309356R, net -6.187114R; doubled-cost WR45%, PF_R0.162663, net -9.243979R. This is failed v3 evidence, not a v4 result.
+Known v3 diagnostic result remains unchanged: 99 candidates, 20 all-nine CLOSED, base WR50%, PF_R0.278459, expectancy -0.309356R, net -6.187114R; doubled-cost WR45%, PF_R0.162663, net -9.243979R. This is failed v3 evidence, not a v4/v4.1 result.
 
 ## Frozen v4 design
 
@@ -21,14 +21,28 @@ Frozen v4 design preserves LONG/SHORT and all five families and introduces only 
 
 Decision: `MACHINE_STRATEGY_V4_IMPLEMENTATION_STOP`. External STOP-checkpoint manifest: `6e325d6e5b3cffc4f143bfd4d390712b39ea940bccd4504c85148ed904bbcd7e`. Complete implementation freeze=false; implementation_ready=false; historical_financial_authorized=false.
 
-Independent execution, no-lookahead and final reviews confirmed the frozen selected-POI first-test gap: STB body/full parent consumption; generated BREAKER/RANGE origin-CONF/context/eligibility; required RANGE reaction exemption. H04 preserves eligibility, so implementation cannot invent the missing policy. The unsupported M15 clock is removed for these three families; lifecycle explicitly WAITs. Planned Decimal50 versus inherited ledger80 scope requires a new design declaration.
+Independent execution, no-lookahead and final reviews confirmed a frozen selected-POI first-test gap: STB body/full parent consumption; generated BREAKER/RANGE origin-CONF/context/eligibility; required RANGE reaction exemption. Planned Decimal50 versus inherited ledger80 scope also required a separate design declaration. No historical v4 financial result was generated.
 
-Preserved prototype work: separate completed-M15 source loop/H1 signal clock, causal anchors/U/FTA, per-scenario geometry checks, event telemetry, lifecycle and nine-scenario synthetic driver/funding. Historical entry unconditionally blocked; only registered exact synthetic fixtures execute. Full five-family historical lifecycle and rule conformance is NOT complete.
+Component QA remains evidence only: 54 tests and nine commands PASS, bounded BTC/ETH source prefix/future-mutation and full sealed data integrity/continuity PASS. Historical tick/lot/account/mark/fill/API latency assumptions remain explicit model limitations.
 
-Actual component QA: 54 tests (28 frozen design +26 prototype/synthetic), nine commands PASS; static/type/compile, bounded seven-day BTC/ETH source prefix and future-mutation with position engine trap, exact frozen design/failure/Stage-A resumes. Full official capture data review PASS: 210240 native M15 bars, 4380 funding rows, complete H1/H4/D1, zero gaps/duplicates/interpolation. Historical tick/lot/account/mark/fill/API latency assumptions remain unverified.
+## Active gate — v4.1 independent design review
 
-Actual serial roles: backtest_engineer; historical_data_engineer; execution_auditor; no_lookahead_auditor; final_independent_reviewer. Root sole writer; ECC ecc@ecc 2.2.3 enabled; hooks inactive. Review receipts and exact hash pins are in docs/machine_strategy_v4_implementation_readiness_v1/.
+A separate narrow pre-outcome MACHINE_STRATEGY_v4.1 amendment has now been authored. It does not change any unrelated frozen v4 strategy rule and uses no historical v4/v4.1 outcomes or catalog-count ranking.
 
-STOP checkpoint publication: `766271619c7e03d8cc5dda08a2b3ec626d99c1e8`. Active next gate: MACHINE_STRATEGY_V4_1_SELECTED_POI_DESIGN_OPEN, a separate narrow pre-outcome selected-POI first-test/arithmetic-scope amendment. See NEXT_TASK.md and V4_1_SELECTED_POI_DESIGN_WORK_ORDER.md. No v4.1 design has yet been authored, reviewed or frozen. No outcome-based policy selection. Preserve all frozen v4/predecessor artifacts; implementation resumes only after new design review/freeze. This checkpoint cannot open a financial gate.
+Authored namespace `docs/machine_strategy_v4_1_design_v1/` now contains:
+- `MACHINE_STRATEGY_v4_1_SPEC.md`;
+- `SELECTED_POI_CONTRACT.json`;
+- `ARITHMETIC_SCOPE_CONTRACT.json`;
+- `PREREGISTRATION.json`;
+- `FIELD_PROVENANCE.json`;
+- `FIRST_TEST_DECISION_TREE.json`;
+- `RULE_REGISTRY.json`;
+- `SYNTHETIC_WITNESS_REGISTRY.json`.
 
-No historical v4 fill/exit/financial output generated or viewed. No OOS/PAPER/LIVE/private API/orders/platform work. Production candidate NONE; trade_entry_allowed=false.
+The amendment makes the selected entry POI a distinct causal object with family-specific identity and first-test clock. SFP/OB keep their refined M15 POIs. STB gets a generated body handle separate from the full manipulation parent. BREAKER gets a generated body handle created only after its completed breaker event. RANGE gets a generated zero-width boundary handle; its mandatory boundary reaction is explicitly exempt from consumption, while the first later eligible contact consumes it. Eligibility begins prospectively only after family prerequisites, origin CONF and required completed context are known. An already-active order is evaluated from the bar OPEN snapshot before current-bar contact becomes known at CLOSE; CLOSE cannot retroactively cancel an earlier valid fill.
+
+Arithmetic is now explicitly separated: design/execution geometry and admission use Decimal precision50 ROUND_HALF_EVEN; realized ledger accumulation/R division uses precision80 ROUND_HALF_EVEN over canonical serialized design values and may not recompute or change admission geometry.
+
+Current decision is NOT yet PASS. Active task is independent synthetic causality/execution/no-lookahead/final review of the exact authored bytes. On accepted `MACHINE_STRATEGY_V4_1_DESIGN_PASS`, publish an external design manifest and reopen a separately named v4.1 implementation-readiness gate. On STOP, preserve the exact blocker. No implementation may silently bypass review.
+
+No historical v4/v4.1 fill/exit/financial output, no OOS/PAPER/LIVE/private API/orders/platform work. Production candidate NONE; `trade_entry_allowed=false`. ECC enabled; hooks inactive.
