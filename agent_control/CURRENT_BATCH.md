@@ -1,51 +1,53 @@
-# Current Campaign — STRATEGY_AUTONOMY_TO_PLATFORM_RECONNECT
+# Current Campaign — OKX Compatibility Implementation + READY Review
 
-The project lead owns the strategy loop end-to-end. Do not stop for routine user decisions. The next user-facing milestone remains a strategy that has completed historical qualification, robustness, pristine OOS/forward validation and Paper qualification strongly enough to reopen platform reconnection planning.
+The autonomous strategy campaign remains active. Do not ask the user routine questions. Platform/site/integration work remains paused.
 
-## Hard target
-A promoted strategy version must achieve **Win Rate >= 70%** and positive net expectancy/net P&L after realistic costs, with the already preregistered PF/drawdown/loss-streak/sample/concentration/robustness requirements. The 70% target must survive OOS/forward and Paper.
+## Fixed target
+Promoted strategy target remains Win Rate >=70% plus positive net expectancy/P&L after modeled costs and signed funding, CLOSED>=200, PF>=1.20, doubled-cost PF>=1.00 and net positive, drawdown<=20R, loss streak<=10, slice/sample/concentration rules, and no critical leakage/integrity failure.
 
-## Venue
-OKX remains the strategy/data/trading target:
+## Venue/products
+OKX:
 - BTC-USDT-SWAP
 - ETH-USDT-SWAP
 
-## Frozen Stage-A checkpoint
-Stage A v1 is frozen STOP at commit `5a63716e0a042d8b1778581ae0d513d6314fb188`, manifest `e8733326e85b6082a33f11ec001066d33bc345bcded6acda26b54cd56ddeb9f0`.
+## Frozen inputs to reuse
+Stage-A v1 freeze:
+- commit `5a63716e0a042d8b1778581ae0d513d6314fb188`
+- manifest `e8733326e85b6082a33f11ec001066d33bc345bcded6acda26b54cd56ddeb9f0`
+- 105,120 continuous completed M15 bars/product
+- deterministic H1/H4/D1 derivation
+- 2,190 signed funding settlements/product
 
-Reuse without rebuilding:
-- 105,120 continuous native M15 bars per product;
-- 365-day warmup + two full development years;
-- deterministic H1/H4/D1 derivations;
-- complete scoped historical signed funding series;
-- retained receipts/checkpoints/QA.
+Compatibility policy preregistration is already frozen before outcomes at commit:
+- `23f275cae85d1cab4d91cc07351ffdef2560d75d`
 
-Do not recollect this sealed namespace.
+Policy namespace:
+- `docs/machine_strategy_v3_okx_compatibility_v1/`
 
-## Active autonomous resume action
-Execute `agent_control/NEXT_TASK.md`: **MACHINE_STRATEGY_v3 OKX Compatibility Repair v1**.
+Policy receipt states historical financial outputs generated=false and implementation_started=false. Preserve policy bytes unchanged.
 
-Reason: exact historical OKX tick/lot/filter epochs and ordinary historical account-applicable API SWAP fees are unavailable as source-verified facts. Rather than waiting indefinitely or fabricating evidence, create a separately versioned, pre-outcome compatibility execution model.
+## Execute now
+Use one implementation specialist at a time, normally `backtest_engineer`; a second thread is allowed only later for independent no-lookahead/final review.
 
-### Required sequence
-1. One specialist designs and preregisters the synthetic adverse quantization stress family and ambiguity/worst-case rule. No P&L access.
-2. Freeze that policy in the new compatibility namespace before implementation can generate financial outputs.
-3. Implement a new OKX compatibility runner/binding without mutating frozen v3 signal logic or old runner bytes.
-4. Use the sealed OKX M15/funding inputs.
-5. Base cost remains the existing modeled 6bp fee + 2bp slippage per leg; actual signed funding is included. Mandatory doubled-total-cost sensitivity from the frozen qualification policy remains required.
-6. Independently audit no-lookahead, deterministic replay, protected hashes and the fact that no financial outcomes were accessed before compatibility preregistration.
-7. If compatibility READY, checkpoint/freeze and continue autonomously into the one-shot historical financial validation if allowance remains.
-8. If historical v3 fails any hard criterion, freeze the failure evidence and open a new explicit strategy version before changing strategy rules.
-9. Continue version loop autonomously through robustness, then OOS/forward, then Paper.
-10. Only after Paper qualification reopen platform reconnection planning.
+1. Implement a NEW versioned OKX compatibility runner/binding. Do not mutate frozen v3 strategy core, frozen Bybit runner/adapter, Stage-A freeze, or frozen compatibility policy bytes.
+2. Consume only the sealed OKX M15/derived/funding inputs.
+3. Preserve frozen v3 signal/setup/trend/range/entry/stop/target rules.
+4. Implement all nine preregistered compatibility scenarios exactly: price-grid multipliers 1/5/20 × lot/minimum multipliers 1/100/700.
+5. Preserve one fixed reference candidate catalog/reservation and reference risk denominator across scenarios. Do not regenerate/select different candidates per scenario to improve results.
+6. Retain all cases. For CLOSED cases use the preregistered worst financial result across scenarios. Any preregistered eligibility/fill/closure disagreement or unresolved fill must follow the frozen adverse/STOP rule rather than disappearing from the denominator.
+7. Include actual signed historical OKX funding according to the frozen settlement proxy/timing policy. Funding is never a signal input.
+8. Apply base modeled costs 6bp fee +2bp slippage per leg and the mandatory doubled-total-fees-and-slippage scenario. Do not replace them with favorable unverified OKX fee assumptions.
+9. Add deterministic tests for scenario enumeration, candidate identity preservation, adverse aggregation, funding sign/timing, base+doubled costs, no-leakage, prefix/future mutation, venue identity, protected-hash invariance and output authorization.
+10. Before any P&L output can be generated, run an independent `no_lookahead_auditor` review and then a fresh `final_independent_reviewer` READY review. Reviewers must not author the implementation.
+11. Publish either `MACHINE_STRATEGY_V3_OKX_COMPATIBILITY_V1_READY` or `_STOP` with QA/replay/freeze manifest.
+12. If READY, immediately open the one-shot Stage-B historical financial run under the same frozen policy if allowance remains. If allowance stops, checkpoint exact READY state and next command; do not repeat the compatibility work next run.
 
-## Agent policy
-Serial-first: normally one active specialist, hard ceiling two threads; second only for independent verification. Use the configured 22-role catalog by function, never all at once.
+## Forbidden before READY
+- reading/generating new strategy financial outcomes;
+- parameter tuning or strategy redesign;
+- changing the nine-scenario policy after implementation results;
+- website/platform work;
+- private OKX API/orders;
+- OOS/PAPER/LIVE.
 
-## User escalation
-Do not ask the user about routine strategy parameters, repairs, versions, tests or sequencing. Escalate only for credentials/secrets, legal/account/jurisdiction decisions, real capital, irreversible external actions or LIVE authorization.
-
-## Safety
-No platform/site work. No private trading API/orders. OOS not started yet. PAPER=false. LIVE=false. `trade_entry_allowed=false`.
-
-If allowance ends, commit/push the exact checkpoint and next action, then resume from it on the next cloud run.
+`trade_entry_allowed=false`.
