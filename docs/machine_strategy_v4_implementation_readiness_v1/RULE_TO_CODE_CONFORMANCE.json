@@ -12,20 +12,20 @@
     },
     "FTA_DECISION_LIFECYCLE": {
       "design": "docs/machine_strategy_v4_design_v1/ENTRY_EXIT_CONTRACT.json#FTA",
-      "code": "scripts/machine_strategy_v4_readiness_core.py::target_lifecycle_ok + scripts/machine_strategy_v4_historical_adapter.py::_select_fta/plan_pending",
-      "status": "IMPLEMENTED_PRE_ENTRY_PENDING_PREFIX_QA",
+      "code": "scripts/machine_strategy_v4_readiness_core.py::target_lifecycle_ok + scripts/machine_strategy_v4_historical_adapter.py::_select_fta/plan_pending + scripts/machine_strategy_v4_execution_binding.py::scenario_plan",
+      "status": "IMPLEMENTED_PRE_ENTRY_AND_SCENARIO_PENDING_PREFIX_QA",
       "must_not_select_farther_fta": true
     },
     "H04_EXECUTABLE_ZONE": {
       "design": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json#executable_zone",
-      "code": "scripts/machine_strategy_v4_readiness_core.py::executable_plan",
-      "status": "IMPLEMENTED_REFERENCE_SCENARIO_PENDING_NINE_SCENARIO_BINDING",
+      "code": "scripts/machine_strategy_v4_readiness_core.py::executable_plan + scripts/machine_strategy_v4_execution_binding.py::scenario_plan",
+      "status": "IMPLEMENTED_ALL_NINE_SCENARIOS_PENDING_EXECUTED_QA",
       "structural_zone_preserved_separately": true
     },
     "H05_STRUCTURAL_PAYOFF": {
       "design": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json#payoff",
-      "code": "scripts/machine_strategy_v4_readiness_core.py::planned_payoff_gate + scripts/machine_strategy_v4_historical_adapter.py::V4HistoricalAdapter.plan_pending",
-      "status": "IMPLEMENTED_REFERENCE_PRE_ENTRY_PENDING_SCENARIO_PARITY_QA",
+      "code": "scripts/machine_strategy_v4_readiness_core.py::planned_payoff_gate + scripts/machine_strategy_v4_historical_adapter.py::V4HistoricalAdapter.plan_pending + scripts/machine_strategy_v4_execution_binding.py::scenario_plan",
+      "status": "IMPLEMENTED_REFERENCE_AND_NINE_SCENARIO_PENDING_QA",
       "future_funding_used_for_admission": false
     },
     "PARENT_LIFETIME": {
@@ -46,6 +46,13 @@
       "code": "scripts/machine_strategy_v4_historical_adapter.py over pinned v3 raw discovery/state components and sealed OKX input bridge",
       "status": "INITIAL_ADAPTER_IMPLEMENTED_PENDING_REAL_PREFIX_REPLAY_QA",
       "financial_outcome_imports_allowed": false
+    },
+    "NINE_SCENARIO_PRE_FILL_BINDING": {
+      "design": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json#compatibility",
+      "code": "scripts/machine_strategy_v4_execution_binding.py::all_scenario_plans",
+      "status": "IMPLEMENTED_PENDING_EXECUTED_QA",
+      "all_cases_retained": true,
+      "financial_outcomes_generated": false
     },
     "FUNDING_AND_REALIZED_EXECUTION": {
       "design": "docs/machine_strategy_v4_design_v1/ENTRY_EXIT_CONTRACT.json#exits.funding",
