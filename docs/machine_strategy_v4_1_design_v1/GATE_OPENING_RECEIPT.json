@@ -1,0 +1,44 @@
+{
+  "LIVE": false,
+  "PAPER": false,
+  "complete_implementation_freeze": false,
+  "decision": "DESIGN_ONLY_OPEN",
+  "historical_financial_authorized": false,
+  "historical_position_evaluations": 0,
+  "previous_gate_decision": "MACHINE_STRATEGY_V4_IMPLEMENTATION_STOP",
+  "published_checkpoint_verified": "766271619c7e03d8cc5dda08a2b3ec626d99c1e8",
+  "trade_entry_allowed": false,
+  "verified_parent_checks": [
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "scripts/verify_machine_strategy_v4_implementation_v1.py",
+        "--resume-existing",
+        "--expected-manifest-sha256",
+        "6e325d6e5b3cffc4f143bfd4d390712b39ea940bccd4504c85148ed904bbcd7e"
+      ],
+      "exit_code": 0,
+      "result": {
+        "decision": "MACHINE_STRATEGY_V4_IMPLEMENTATION_STOP",
+        "historical_position_evaluations": 0,
+        "implementation_ready": false,
+        "verified_resume": true
+      }
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "scripts/verify_machine_strategy_v4_design_v1.py",
+        "--resume-existing",
+        "--expected-manifest-sha256",
+        "b9452dea092c0d186d2ac164c044f2fad0d865becf9904791caebbf7b477273b"
+      ],
+      "exit_code": 0,
+      "result": {
+        "decision": "MACHINE_STRATEGY_V4_DESIGN_PASS",
+        "new_trade_evaluations": 0,
+        "verified_resume": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "baseline_commit": "ba65e91c2b1675f48e80ac785bb3adf89d17bb0b",
+  "frozen_v4_design_manifest_sha256": "b9452dea092c0d186d2ac164c044f2fad0d865becf9904791caebbf7b477273b",
+  "frozen_v4_design_publication": "f88bff4a79a1e5c1aa64c0f16204a1f8b546fa1f",
+  "gate": "MACHINE_STRATEGY_V4_1_SELECTED_POI_DESIGN_OPEN",
+  "historical_financial_authorized": false,
+  "implementation_authorized": false,
+  "input_sha256": {
+    "docs/machine_strategy_v4_design_v1/ENTRY_EXIT_CONTRACT.json": "871bee8f416c96a7fa3c81e467a48e02689a3f4ec0fe85dcfdbf56145e5a4ef2",
+    "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json": "c9b9d36cc8209ade1837d0c7d617ce04efa60b7369b46c1f99fde544ed4f2d58",
+    "docs/machine_strategy_v4_implementation_readiness_v1/BLOCKER_REGISTER.json": "347399dba3f96b9ae06d95e2c80af06fa5b6069241cec370d1c04adfd91c604d",
+    "docs/machine_strategy_v4_implementation_readiness_v1/INDEPENDENT_REVIEW_RECEIPT.json": "6065c98ea435b91c780b53e529d9b5fe242910f3130645365c2e26dc19aa9e59"
+  },
+  "source_rule_changes_authorized": false,
+  "trade_entry_allowed": false,
+  "v4_STOP_checkpoint_manifest_sha256": "6e325d6e5b3cffc4f143bfd4d390712b39ea940bccd4504c85148ed904bbcd7e",
+  "v4_STOP_checkpoint_publication": "766271619c7e03d8cc5dda08a2b3ec626d99c1e8"
+}

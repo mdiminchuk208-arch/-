@@ -29,6 +29,6 @@ Actual component QA: 54 tests (28 frozen design +26 prototype/synthetic), nine c
 
 Actual serial roles: backtest_engineer; historical_data_engineer; execution_auditor; no_lookahead_auditor; final_independent_reviewer. Root sole writer; ECC ecc@ecc 2.2.3 enabled; hooks inactive. Review receipts and exact hash pins are in docs/machine_strategy_v4_implementation_readiness_v1/.
 
-Next action after publication: open a separate narrow pre-outcome MACHINE_STRATEGY_v4.1 selected-POI first-test/arithmetic-scope design gate. No outcome-based policy selection. Preserve all frozen v4/predecessor artifacts; implementation resumes only after new design review/freeze. This checkpoint cannot open a financial gate.
+STOP checkpoint publication: `766271619c7e03d8cc5dda08a2b3ec626d99c1e8`. Active next gate: MACHINE_STRATEGY_V4_1_SELECTED_POI_DESIGN_OPEN, a separate narrow pre-outcome selected-POI first-test/arithmetic-scope amendment. See NEXT_TASK.md and V4_1_SELECTED_POI_DESIGN_WORK_ORDER.md. No v4.1 design has yet been authored, reviewed or frozen. No outcome-based policy selection. Preserve all frozen v4/predecessor artifacts; implementation resumes only after new design review/freeze. This checkpoint cannot open a financial gate.
 
 No historical v4 fill/exit/financial output generated or viewed. No OOS/PAPER/LIVE/private API/orders/platform work. Production candidate NONE; trade_entry_allowed=false.
