@@ -1,46 +1,12 @@
-# Next Task — MACHINE_STRATEGY_v4 Independent Design Review / Freeze
+# Next Task — MACHINE_STRATEGY_v4 Implementation Readiness v1
 
-State: DESIGN_DRAFT_COMPLETE_REVIEW_PENDING. Do not repeat v3 diagnosis and do not generate v4 financial outcomes.
+State: IMPLEMENTATION_READINESS_OPEN. Continue from independently reviewed/frozen v4 design, not from a new strategy draft.
 
-## Pinned predecessors
-- v3 causal failure audit publication: `54419daa29e7e68d6f692daee9cf2132203393ef`.
-- failure audit manifest: `9b0353dbfeabfa2768f4a1f62af820c128f98c48faad09544acee4c0547867a3`.
-- v3 financial audit manifest: `129bde6fe60600449c6740d5cca4e093a20549f1a678390931836d081b50f4c2`.
+- Design publication commit: `f88bff4a79a1e5c1aa64c0f16204a1f8b546fa1f`.
+- External design manifest SHA: `b9452dea092c0d186d2ac164c044f2fad0d865becf9904791caebbf7b477273b`.
+- Design decision: MACHINE_STRATEGY_V4_DESIGN_PASS.
+- Failure audit publication: 54419daa29e7e68d6f692daee9cf2132203393ef; manifest 9b0353dbfeabfa2768f4a1f62af820c128f98c48faad09544acee4c0547867a3.
 
-## Review scope
-Read all files in `docs/machine_strategy_v4_design_v1/`, especially:
-- `MACHINE_STRATEGY_V4_SPEC.md`
-- `DECISION_TREE.json`
-- `V3_TO_V4_CHANGELOG.md`
-- `V4_PREREGISTRATION.json`
-- `RULE_PROVENANCE_REGISTRY.json`
-- `TELEMETRY_SCHEMA.json`
-- `AMBIGUITY_AND_STOP_REGISTRY.json`
-- `DESIGN_DRAFT_RECEIPT.json`
+Read and execute agent_control/V4_IMPLEMENTATION_READINESS_WORK_ORDER.md completely. Verify --resume-existing pinned design before reuse. Build separate complete v4 adapter/guarded runner infrastructure, verify public data and causal fields, production conformance/prefix/future-mutation/replay tests, independent reviews and complete implementation freeze. Update STATUS/CURRENT_STATE, commit/push to machine-v3-research.
 
-Use serial `execution_auditor` -> `backtest_reviewer` / `no_lookahead_auditor` -> `final_independent_reviewer`. Root remains sole writer; hard ceiling root + one specialist.
-
-Review must independently verify:
-1. every v4 change is causally linked to frozen H00-H05 evidence rather than selected by exposed P&L;
-2. LONG/SHORT symmetry and all five setup families are preserved;
-3. the three-state approach contract is deterministic and cannot use future evidence;
-4. completed-close FTA lifecycle uses only known data and never falls back to farther targets;
-5. event-driven order lifetime has deterministic retirement semantics and no hidden duration search;
-6. structural-vs-executable one-grid envelope is labeled technical normalization and evaluated across all compatibility scenarios, never as historical OKX truth;
-7. the +1R doubled-cost nearest-FTA gate is fixed risk-unit parity, not a fitted historical optimum;
-8. telemetry is observer-only and cannot feed outcomes back into admission;
-9. frozen qualification thresholds, cost policy and compatibility adverse handling are unchanged;
-10. no v4 historical financial output existed before design freeze.
-
-Add synthetic design-consistency/causality/symmetry tests or review artifacts as needed without evaluating historical P&L.
-
-## Decision
-Publish exactly one:
-- `MACHINE_STRATEGY_V4_DESIGN_PASS`
-- `MACHINE_STRATEGY_V4_DESIGN_STOP`
-
-On PASS: create an externally pinned `DESIGN_FREEZE_MANIFEST.json`, update control files, and open a separately named `MACHINE_STRATEGY_v4 Implementation Readiness` gate. Do NOT run financial outcomes in the design-review batch.
-
-On STOP: list the exact deterministic/source/causality defect and repair only that defect before repeating review. Do not relax qualification targets.
-
-PAPER=false. LIVE=false. `trade_entry_allowed=false`. No platform work.
+Do not repeat completed design/reviews or alter frozen rules. No historical v4 financial result or trade outcome may be generated or viewed before complete implementation freeze. This gate does not authorize financial validation, OOS, PAPER/LIVE/private API/orders or platform work. trade_entry_allowed=false; all qualification thresholds unchanged. Root sole writer, serial root plus one specialist, ECC hooks inactive.

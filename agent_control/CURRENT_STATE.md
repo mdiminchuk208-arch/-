@@ -25,11 +25,11 @@ Accounting QA (99 cases / 366 scenario-column checks), completed-segment resume 
 
 ## Current gate
 
-MACHINE_STRATEGY_V4_DESIGN_PASS. Independently reviewed design frozen with external manifest `b9452dea092c0d186d2ac164c044f2fad0d865becf9904791caebbf7b477273b` at docs/machine_strategy_v4_design_v1/DESIGN_FREEZE_MANIFEST.json; positive verified reuse PASS. Implementation has not started; financial/OOS/PAPER/LIVE qualification remains absent.
+MACHINE_STRATEGY_V4_IMPLEMENTATION_READINESS_OPEN. Design publication `f88bff4a79a1e5c1aa64c0f16204a1f8b546fa1f` is MACHINE_STRATEGY_V4_DESIGN_PASS. Independently reviewed design frozen with external manifest `b9452dea092c0d186d2ac164c044f2fad0d865becf9904791caebbf7b477273b` at docs/machine_strategy_v4_design_v1/DESIGN_FREEZE_MANIFEST.json; positive verified reuse PASS. Implementation has not started; financial/OOS/PAPER/LIVE qualification remains absent.
 
 Twenty-eight synthetic reference design tests, eight QA commands, byte-identical hash-only verification replay and three serial independent specialist roles PASS. Source/policy ambiguities are retained, not optimized by outcomes; immutable inherited input pins36. Actual identities, initial STOP resolutions and limitations are preserved in the v4 namespace.
 
-Next gate after publication is separately named v4 implementation readiness. It must prove actual historical adapter/runner completeness, production prefix/future-mutation/replay and exact funding binding before complete implementation freeze. No historical v4 financial result may be generated or viewed in that gate. Financial validation requires its own later authorization.
+The separately named v4 implementation-readiness gate is now open; execute NEXT_TASK.md and V4_IMPLEMENTATION_READINESS_WORK_ORDER.md. It must prove actual historical adapter/runner completeness, production prefix/future-mutation/replay and exact funding binding before complete implementation freeze. No historical v4 financial result may be generated or viewed in that gate. Financial validation requires its own later authorization.
 
 ECC ecc@ecc 2.2.3 enabled; hooks inactive. trade_entry_allowed=false; no OOS execution, PAPER/LIVE/private API/orders/platform work. v3 and every earlier frozen result remain unchanged.
 

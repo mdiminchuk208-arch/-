@@ -1,6 +1,6 @@
 # Agent Status
 
-State: MACHINE_STRATEGY_V4_DESIGN_PASS
+State: MACHINE_STRATEGY_V4_IMPLEMENTATION_READINESS_OPEN
 Branch: machine-v3-research.
 
 The independent v4 design review/freeze is complete. Manifest: `b9452dea092c0d186d2ac164c044f2fad0d865becf9904791caebbf7b477273b` in docs/machine_strategy_v4_design_v1/DESIGN_FREEZE_MANIFEST.json. Exact --resume-existing verification PASS. No v4 historical financial output or strategy implementation has been generated.
@@ -17,6 +17,6 @@ QA: 28 synthetic design tests, eight commands, byte-identical hash-only verifier
 
 ## Next action
 
-Publish this immutable design, then open a separately named MACHINE_STRATEGY_v4 implementation-readiness gate. No financial authorization follows from design PASS. Frozen v3 remains QUALIFICATION_STOP, previous WR 50% is diagnostic only. All qualification thresholds including WR>=70% are unchanged.
+Design published in `f88bff4a79a1e5c1aa64c0f16204a1f8b546fa1f`. MACHINE_STRATEGY_v4 implementation readiness is now OPEN; execute NEXT_TASK.md and V4_IMPLEMENTATION_READINESS_WORK_ORDER.md. Implementation has not started in the completed design-review batch. No financial authorization follows from design PASS. Frozen v3 remains QUALIFICATION_STOP, previous WR 50% is diagnostic only. All qualification thresholds including WR>=70% are unchanged.
 
 No OOS/PAPER/LIVE/private exchange API/orders/platform work. trade_entry_allowed=false. ECC ecc@ecc 2.2.3 enabled; hooks inactive. Root sole writer, serial root plus one specialist.
