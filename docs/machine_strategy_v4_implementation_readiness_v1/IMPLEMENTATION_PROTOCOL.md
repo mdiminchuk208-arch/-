@@ -1,6 +1,6 @@
 # MACHINE_STRATEGY_v4 — Implementation Readiness v1
 
-State: IMPLEMENTATION_IN_PROGRESS. This namespace begins after independent design PASS and does not authorize historical financial evaluation.
+State: MACHINE_STRATEGY_V4_IMPLEMENTATION_STOP. This namespace follows independent design PASS and does not authorize historical financial evaluation.
 
 ## Frozen authority
 
@@ -31,16 +31,16 @@ Created:
 - `RULE_TO_CODE_CONFORMANCE.json` — frozen-rule mapping;
 - `RUNNER_OUTCOME_ISOLATION.json` — explicit pre-freeze financial barrier.
 
-No QA PASS is claimed yet. The repository CI workflow runs automatically only on `main` pushes or pull requests, not direct pushes to `machine-v3-research`. Therefore these new files require an actual cloud/local readiness run before any implementation PASS/freeze claim.
+Component QA was actually executed: 54 tests and nine commands PASS, with exact tested/log hashes in QA_RECEIPT.json. This is prototype/synthetic and bounded source-only evidence, not complete model conformance. No repository CI PASS is claimed; its workflow runs on `main`/PR, not direct research-branch pushes.
 
-## Next implementation work
+## Checkpoint scope and deferred work
 
-1. Build `machine_strategy_v4_historical_adapter.py` as a separate causal pre-entry adapter over sealed OKX M15/H1/H4/D1 data.
-2. Bind all five families and H1/H4/D1 context without importing historical outcome code.
-3. Implement selected-POI ownership, scenario plans, current completed-close FTA retirement and structural pending lifecycle.
-4. Add append-only telemetry and prove it cannot feed strategy state.
-5. Add nine-scenario execution/funding conformance on registered synthetic fixtures only.
-6. Run prefix/future-mutation, mirrored LONG/SHORT, five-family, gap/EOF/unknown, deterministic replay and negative guard tests.
-7. Independently review and externally pin `IMPLEMENTATION_FREEZE_MANIFEST.json` before opening any one-shot v4 financial gate.
+Separate source-only adapter, scenario binding, telemetry, lifecycle prototype and registered synthetic execution/funding runner are retained. Seven-day BTC/ETH prefix/future-mutation checks passed with position engines trapped. Complete five-family selected-POI ownership and full-period lifecycle conformance remain blocked by the frozen contract gap.
+
+The next gate is a separate pre-outcome v4.1 selected-POI design amendment. It must define origin/context/eligibility and reaction semantics, and make planned50/inherited-ledger80 arithmetic scope explicit before implementation resumes. The planned IMPLEMENTATION_FREEZE_MANIFEST.json will seal only a STOP checkpoint; complete_implementation_freeze=false and implementation_ready=false. It cannot open a financial gate.
 
 PAPER=false. LIVE=false. `trade_entry_allowed=false`.
+
+## Current independently identified blocker
+
+MACHINE_STRATEGY_V4_IMPLEMENTATION_STOP pending a separately frozen selected-POI first-test contract. Source/data and registered synthetic infrastructure are checkpointed, not complete implementation readiness. No historical v4 execution or financial output has been generated. See BLOCKER_REGISTER.json. Implementation_STOP checkpoint cannot open a financial gate.

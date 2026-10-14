@@ -1,0 +1,23 @@
+{
+  "H1_new_signal_M15_completed_state_clock": "IMPLEMENTED",
+  "bounded_prefix_future_mutation_receipt": "SOURCE_PREFIX_REPLAY_RECEIPT.json",
+  "complete_frozen_rule_conformance": false,
+  "decision": "STOP",
+  "financial_authorized": false,
+  "five_families": [
+    "SFP",
+    "OB",
+    "BREAKER",
+    "STB",
+    "RANGE"
+  ],
+  "full_history_trade_execution_run": false,
+  "historical_position_evaluations": 0,
+  "missing_first_test_mapping": [
+    "STB",
+    "BREAKER",
+    "RANGE"
+  ],
+  "native_source_loading_and_aggregation": "PASS full data",
+  "raw_source_loop": "IMPLEMENTED_SOURCE_ONLY_PROTOTYPE"
+}

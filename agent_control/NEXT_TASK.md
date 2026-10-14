@@ -1,12 +1,7 @@
-# Next Task — MACHINE_STRATEGY_v4 Implementation Readiness v1
+# Next Task — publish v4 implementation STOP and open design amendment
 
-State: IMPLEMENTATION_READINESS_OPEN. Continue from independently reviewed/frozen v4 design, not from a new strategy draft.
+Implementation readiness is objectively MACHINE_STRATEGY_V4_IMPLEMENTATION_STOP. Frozen checkpoint manifest `6e325d6e5b3cffc4f143bfd4d390712b39ea940bccd4504c85148ed904bbcd7e`. See CURRENT_STATE.md, STATUS.md and docs/machine_strategy_v4_implementation_readiness_v1/IMPLEMENTATION_REPORT.md.
 
-- Design publication commit: `f88bff4a79a1e5c1aa64c0f16204a1f8b546fa1f`.
-- External design manifest SHA: `b9452dea092c0d186d2ac164c044f2fad0d865becf9904791caebbf7b477273b`.
-- Design decision: MACHINE_STRATEGY_V4_DESIGN_PASS.
-- Failure audit publication: 54419daa29e7e68d6f692daee9cf2132203393ef; manifest 9b0353dbfeabfa2768f4a1f62af820c128f98c48faad09544acee4c0547867a3.
+Verify checkpoint with externally pinned --resume-existing, publish coherent checkpoint commit/push, then automatically open a narrow MACHINE_STRATEGY_v4.1 pre-outcome selected-POI first-test/arithmetic-scope design-only work order. Independent final reviewer explicitly accepts this transition. Do not treat checkpoint as complete implementation freeze or READY. No financial gate may open.
 
-Read and execute agent_control/V4_IMPLEMENTATION_READINESS_WORK_ORDER.md completely. Verify --resume-existing pinned design before reuse. Build separate complete v4 adapter/guarded runner infrastructure, verify public data and causal fields, production conformance/prefix/future-mutation/replay tests, independent reviews and complete implementation freeze. Update STATUS/CURRENT_STATE, commit/push to machine-v3-research.
-
-Do not repeat completed design/reviews or alter frozen rules. No historical v4 financial result or trade outcome may be generated or viewed before complete implementation freeze. This gate does not authorize financial validation, OOS, PAPER/LIVE/private API/orders or platform work. trade_entry_allowed=false; all qualification thresholds unchanged. Root sole writer, serial root plus one specialist, ECC hooks inactive.
+Preserve all frozen artifacts; serial root+one role; root sole writer. No OOS/PAPER/LIVE/private API/orders/platform; trade_entry_allowed=false.

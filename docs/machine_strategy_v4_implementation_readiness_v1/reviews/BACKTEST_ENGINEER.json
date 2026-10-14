@@ -1,0 +1,12 @@
+{
+  "decision": "STOP_INITIAL_ENGINEERING",
+  "files_written_by_reviewer": false,
+  "financial_authorized": false,
+  "findings": [
+    "Inherited run exception mismatch/H1 timing",
+    "Missing full lifecycle, native anchors, U, scenario adverse/opposing checks, telemetry schema and funding driver"
+  ],
+  "historical_position_evaluations": 0,
+  "identity": "/root/v4_readiness_backtest_engineer",
+  "role": "backtest_engineer"
+}

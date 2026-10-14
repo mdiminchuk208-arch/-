@@ -1,0 +1,7 @@
+SOURCE_ONLY BTC-USDT-SWAP full complete
+SOURCE_ONLY BTC-USDT-SWAP prefix complete
+SOURCE_ONLY BTC-USDT-SWAP future_mutated complete
+SOURCE_ONLY ETH-USDT-SWAP full complete
+SOURCE_ONLY ETH-USDT-SWAP prefix complete
+SOURCE_ONLY ETH-USDT-SWAP future_mutated complete
+{"source_only_causality": "PASS", "products": 2, "historical_position_evaluations": 0, "implementation_ready": false}

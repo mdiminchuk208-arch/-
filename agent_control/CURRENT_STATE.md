@@ -17,30 +17,18 @@ MACHINE_STRATEGY_V4_DESIGN_PASS published `f88bff4a79a1e5c1aa64c0f16204a1f8b546f
 
 Frozen v4 design preserves LONG/SHORT and all five families and introduces only preregistered causal changes: CLEAN/CORRECTIVE/INVALID approach, completed-close FTA lifecycle, structural resting lifetime, structural-vs-executable zone separation, doubled-cost 1R planned payoff gate and outcome-blind gate telemetry. Qualification thresholds remain unchanged, including WR>=70%.
 
-## Active gate — v4 implementation readiness
+## Completed gate — v4 implementation readiness STOP
 
-State: `MACHINE_STRATEGY_V4_IMPLEMENTATION_READINESS_IN_PROGRESS`.
+Decision: `MACHINE_STRATEGY_V4_IMPLEMENTATION_STOP`. External STOP-checkpoint manifest: `6e325d6e5b3cffc4f143bfd4d390712b39ea940bccd4504c85148ed904bbcd7e`. Complete implementation freeze=false; implementation_ready=false; historical_financial_authorized=false.
 
-Separate v4 implementation paths now committed:
-- `scripts/machine_strategy_v4_readiness_core.py` — pure nonfinancial frozen-rule contracts;
-- `scripts/machine_strategy_v4_historical_adapter.py` — causal OKX pre-entry adapter over pinned raw/state/data primitives, with no position/outcome simulation;
-- `scripts/machine_strategy_v4_execution_binding.py` — all nine compatibility scenarios through pre-fill eligibility only;
-- `tests/test_machine_strategy_v4_readiness_core.py`;
-- `tests/test_machine_strategy_v4_execution_binding.py`;
-- `docs/machine_strategy_v4_implementation_readiness_v1/IMPLEMENTATION_PROTOCOL.md`;
-- `docs/machine_strategy_v4_implementation_readiness_v1/RULE_TO_CODE_CONFORMANCE.json`;
-- `docs/machine_strategy_v4_implementation_readiness_v1/RUNNER_OUTCOME_ISOLATION.json`.
+Independent execution, no-lookahead and final reviews confirmed the frozen selected-POI first-test gap: STB body/full parent consumption; generated BREAKER/RANGE origin-CONF/context/eligibility; required RANGE reaction exemption. H04 preserves eligibility, so implementation cannot invent the missing policy. The unsupported M15 clock is removed for these three families; lifecycle explicitly WAITs. Planned Decimal50 versus inherited ledger80 scope requires a new design declaration.
 
-No QA PASS is claimed for these new implementation files yet. Repository Actions trigger strategy validation on main/PR, not direct pushes to this research branch. Actual execution is required next.
+Preserved prototype work: separate completed-M15 source loop/H1 signal clock, causal anchors/U/FTA, per-scenario geometry checks, event telemetry, lifecycle and nine-scenario synthetic driver/funding. Historical entry unconditionally blocked; only registered exact synthetic fixtures execute. Full five-family historical lifecycle and rule conformance is NOT complete.
 
-## Exact next work
+Actual component QA: 54 tests (28 frozen design +26 prototype/synthetic), nine commands PASS; static/type/compile, bounded seven-day BTC/ETH source prefix and future-mutation with position engine trap, exact frozen design/failure/Stage-A resumes. Full official capture data review PASS: 210240 native M15 bars, 4380 funding rows, complete H1/H4/D1, zero gaps/duplicates/interpolation. Historical tick/lot/account/mark/fill/API latency assumptions remain unverified.
 
-1. execute compile/static/unit checks for new v4 code and repair implementation-only defects;
-2. verify real sealed OKX adapter prefix/future-mutation determinism for BTC/ETH without running historical fill/exit finance;
-3. complete active-order structural event loop and full append-only telemetry;
-4. complete guarded nine-scenario execution/funding path with registered synthetic fixtures only;
-5. run mirrored LONG/SHORT/five-family/gap/EOF/unknown/replay/guard-negative conformance;
-6. independent no-lookahead, execution/funding and final review;
-7. externally pin `IMPLEMENTATION_FREEZE_MANIFEST.json` and publish exactly `MACHINE_STRATEGY_V4_IMPLEMENTATION_READY` or `MACHINE_STRATEGY_V4_IMPLEMENTATION_STOP`.
+Actual serial roles: backtest_engineer; historical_data_engineer; execution_auditor; no_lookahead_auditor; final_independent_reviewer. Root sole writer; ECC ecc@ecc 2.2.3 enabled; hooks inactive. Review receipts and exact hash pins are in docs/machine_strategy_v4_implementation_readiness_v1/.
 
-Historical v4 P&L, WR, PF, expectancy, drawdown and case-level financial outcomes remain unauthorized until IMPLEMENTATION_READY opens a separately named one-shot financial gate. No OOS/PAPER/LIVE/private exchange API/orders/platform work. `trade_entry_allowed=false`.
+Next action after publication: open a separate narrow pre-outcome MACHINE_STRATEGY_v4.1 selected-POI first-test/arithmetic-scope design gate. No outcome-based policy selection. Preserve all frozen v4/predecessor artifacts; implementation resumes only after new design review/freeze. This checkpoint cannot open a financial gate.
+
+No historical v4 fill/exit/financial output generated or viewed. No OOS/PAPER/LIVE/private API/orders/platform work. Production candidate NONE; trade_entry_allowed=false.

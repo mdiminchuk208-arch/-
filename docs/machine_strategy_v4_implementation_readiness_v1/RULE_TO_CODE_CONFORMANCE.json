@@ -1,65 +1,67 @@
 {
-  "version": "MACHINE_STRATEGY_v4",
-  "state": "IMPLEMENTATION_IN_PROGRESS",
+  "blocker": "BLOCKER_REGISTER.json",
+  "complete_implementation_conformance": false,
   "design_manifest_sha256": "b9452dea092c0d186d2ac164c044f2fad0d865becf9904791caebbf7b477273b",
   "financial_validation_authorized": false,
   "rules": {
-    "M4_APPROACH": {
-      "design": "docs/machine_strategy_v4_design_v1/ENTRY_EXIT_CONTRACT.json#approach",
-      "code": "scripts/machine_strategy_v4_readiness_core.py::classify_approach + scripts/machine_strategy_v4_historical_adapter.py::V4HistoricalAdapter.plan_pending",
-      "status": "IMPLEMENTED_PENDING_EXECUTED_QA",
-      "must_not_fallback_to_v3": true
-    },
     "FTA_DECISION_LIFECYCLE": {
-      "design": "docs/machine_strategy_v4_design_v1/ENTRY_EXIT_CONTRACT.json#FTA",
       "code": "scripts/machine_strategy_v4_readiness_core.py::target_lifecycle_ok + scripts/machine_strategy_v4_historical_adapter.py::_select_fta/plan_pending + scripts/machine_strategy_v4_execution_binding.py::scenario_plan",
-      "status": "IMPLEMENTED_PRE_ENTRY_AND_SCENARIO_PENDING_PREFIX_QA",
-      "must_not_select_farther_fta": true
+      "design": "docs/machine_strategy_v4_design_v1/ENTRY_EXIT_CONTRACT.json#FTA",
+      "must_not_select_farther_fta": true,
+      "status": "PARTIAL_PROTOTYPE_WITH_EXECUTED_QA_NOT_FROZEN_READY"
+    },
+    "FUNDING_AND_REALIZED_EXECUTION": {
+      "code": "machine_strategy_v4_guarded_runner.py registered synthetic fixtures only; historical entry unconditionally blocked",
+      "design": "docs/machine_strategy_v4_design_v1/ENTRY_EXIT_CONTRACT.json#exits.funding",
+      "historical_case_finance_allowed_now": false,
+      "status": "PARTIAL_PROTOTYPE_WITH_EXECUTED_QA_NOT_FROZEN_READY"
+    },
+    "H00_TELEMETRY": {
+      "code": "scripts/machine_strategy_v4_readiness_core.py::GateTelemetry; pre-entry records in scripts/machine_strategy_v4_historical_adapter.py",
+      "design": "docs/machine_strategy_v4_design_v1/MACHINE_STRATEGY_V4_SPEC.md#V4_TELEMETRY_OBSERVER",
+      "outcome_fields_forbidden": true,
+      "status": "PARTIAL_PROTOTYPE_WITH_EXECUTED_QA_NOT_FROZEN_READY"
     },
     "H04_EXECUTABLE_ZONE": {
-      "design": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json#executable_zone",
       "code": "scripts/machine_strategy_v4_readiness_core.py::executable_plan + scripts/machine_strategy_v4_execution_binding.py::scenario_plan",
-      "status": "IMPLEMENTED_ALL_NINE_SCENARIOS_PENDING_EXECUTED_QA",
+      "design": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json#executable_zone",
+      "status": "PARTIAL_PROTOTYPE_WITH_EXECUTED_QA_NOT_FROZEN_READY",
       "structural_zone_preserved_separately": true
     },
     "H05_STRUCTURAL_PAYOFF": {
-      "design": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json#payoff",
       "code": "scripts/machine_strategy_v4_readiness_core.py::planned_payoff_gate + scripts/machine_strategy_v4_historical_adapter.py::V4HistoricalAdapter.plan_pending + scripts/machine_strategy_v4_execution_binding.py::scenario_plan",
-      "status": "IMPLEMENTED_REFERENCE_AND_NINE_SCENARIO_PENDING_QA",
-      "future_funding_used_for_admission": false
+      "design": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json#payoff",
+      "future_funding_used_for_admission": false,
+      "status": "PARTIAL_PROTOTYPE_WITH_EXECUTED_QA_NOT_FROZEN_READY"
     },
-    "PARENT_LIFETIME": {
-      "design": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json#lifetime",
-      "code": "scripts/machine_strategy_v4_readiness_core.py::pending_alive; pre-emission deadline enforced in scripts/machine_strategy_v4_historical_adapter.py",
-      "status": "PARTIAL_IMPLEMENTATION_PENDING_ACTIVE_ORDER_EVENT_LOOP",
-      "deadline_seconds": 57600,
-      "fixed_3600_expiry": false
-    },
-    "H00_TELEMETRY": {
-      "design": "docs/machine_strategy_v4_design_v1/MACHINE_STRATEGY_V4_SPEC.md#V4_TELEMETRY_OBSERVER",
-      "code": "scripts/machine_strategy_v4_readiness_core.py::GateTelemetry; pre-entry records in scripts/machine_strategy_v4_historical_adapter.py",
-      "status": "PARTIAL_APPEND_ONLY_PRE_ENTRY_PENDING_FULL_GATE_SINK",
-      "outcome_fields_forbidden": true
-    },
-    "RAW_DISCOVERY_AND_STATE": {
-      "design": "inherited only where explicitly pinned by v4 design",
-      "code": "scripts/machine_strategy_v4_historical_adapter.py over pinned v3 raw discovery/state components and sealed OKX input bridge",
-      "status": "INITIAL_ADAPTER_IMPLEMENTED_PENDING_REAL_PREFIX_REPLAY_QA",
-      "financial_outcome_imports_allowed": false
+    "M4_APPROACH": {
+      "code": "scripts/machine_strategy_v4_readiness_core.py::classify_approach + scripts/machine_strategy_v4_historical_adapter.py::V4HistoricalAdapter.plan_pending",
+      "design": "docs/machine_strategy_v4_design_v1/ENTRY_EXIT_CONTRACT.json#approach",
+      "must_not_fallback_to_v3": true,
+      "status": "PARTIAL_PROTOTYPE_WITH_EXECUTED_QA_NOT_FROZEN_READY"
     },
     "NINE_SCENARIO_PRE_FILL_BINDING": {
-      "design": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json#compatibility",
-      "code": "scripts/machine_strategy_v4_execution_binding.py::all_scenario_plans",
-      "status": "IMPLEMENTED_PENDING_EXECUTED_QA",
       "all_cases_retained": true,
-      "financial_outcomes_generated": false
+      "code": "scripts/machine_strategy_v4_execution_binding.py::all_scenario_plans",
+      "design": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json#compatibility",
+      "financial_outcomes_generated": false,
+      "status": "PARTIAL_PROTOTYPE_WITH_EXECUTED_QA_NOT_FROZEN_READY"
     },
-    "FUNDING_AND_REALIZED_EXECUTION": {
-      "design": "docs/machine_strategy_v4_design_v1/ENTRY_EXIT_CONTRACT.json#exits.funding",
-      "code": "future v4 guarded runner; synthetic fixtures before implementation freeze",
-      "status": "NOT_YET_IMPLEMENTED",
-      "historical_case_finance_allowed_now": false
+    "PARENT_LIFETIME": {
+      "code": "scripts/machine_strategy_v4_readiness_core.py::pending_alive; pre-emission deadline enforced in scripts/machine_strategy_v4_historical_adapter.py",
+      "deadline_seconds": 57600,
+      "design": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json#lifetime",
+      "fixed_3600_expiry": false,
+      "status": "PARTIAL_PROTOTYPE_WITH_EXECUTED_QA_NOT_FROZEN_READY"
+    },
+    "RAW_DISCOVERY_AND_STATE": {
+      "code": "scripts/machine_strategy_v4_historical_adapter.py over pinned v3 raw discovery/state components and sealed OKX input bridge",
+      "design": "inherited only where explicitly pinned by v4 design",
+      "financial_outcome_imports_allowed": false,
+      "status": "PARTIAL_PROTOTYPE_WITH_EXECUTED_QA_NOT_FROZEN_READY"
     }
   },
-  "trade_entry_allowed": false
+  "state": "MACHINE_STRATEGY_V4_IMPLEMENTATION_STOP",
+  "trade_entry_allowed": false,
+  "version": "MACHINE_STRATEGY_v4"
 }

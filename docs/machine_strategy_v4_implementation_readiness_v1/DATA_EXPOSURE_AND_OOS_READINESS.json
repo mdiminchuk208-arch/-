@@ -1,0 +1,17 @@
+{
+  "LIVE": false,
+  "OOS_run_performed": false,
+  "PAPER": false,
+  "decision": "NOT_READY_FOR_OOS",
+  "development": "[2024-10-13T00:00Z,2026-10-13T00:00Z)",
+  "development_exposed": true,
+  "old_history_cannot_be_renamed_pristine": true,
+  "preparation": [
+    "Resolve and freeze next design first",
+    "Complete implementation conformance/freeze before development financial gate",
+    "Only after historical/robustness qualification register untreated future interval with embargo/exposure ledger"
+  ],
+  "pristine_interval_registered": false,
+  "trade_entry_allowed": false,
+  "warmup": "[2023-10-14T00:00Z,2024-10-13T00:00Z)"
+}

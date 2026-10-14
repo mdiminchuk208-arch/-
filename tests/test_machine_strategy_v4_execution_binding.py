@@ -35,7 +35,9 @@ class V4ExecutionBindingTests(unittest.TestCase):
         plans = all_scenario_plans(order, completed_close="130")
         self.assertEqual(len(plans), 9)
         self.assertTrue(all(plan["status"] == "INELIGIBLE" for plan in plans))
-        self.assertTrue(all(plan["reason"] == "FTA_ALREADY_COMPLETED" for plan in plans))
+        self.assertTrue(
+            all(plan["reason"] == "FTA_ALREADY_COMPLETED" for plan in plans)
+        )
 
 
 if __name__ == "__main__":

@@ -5,19 +5,22 @@ No historical position/outcome simulation is present in this module.
 
 from __future__ import annotations
 
-from decimal import Decimal, ROUND_CEILING, ROUND_FLOOR
+from decimal import ROUND_CEILING, ROUND_FLOOR, Decimal
 from hashlib import sha256
 
 import machine_strategy_v3_contracts as inherited_core
 import machine_strategy_v3_historical_adapter as inherited
 from machine_strategy_v2_core import serial
 from machine_strategy_v4_readiness_core import (
+    GateTelemetry,
     V4Reject,
     V4Wait,
     classify_approach,
-    executable_plan as v4_executable_plan,
     planned_payoff_gate,
     target_lifecycle_ok,
+)
+from machine_strategy_v4_readiness_core import (
+    executable_plan as v4_executable_plan,
 )
 from okx_v3_compatibility_binding_v1 import PRODUCT_ALIAS, scenarios
 from okx_v3_input_bridge_v1 import aggregate, load_native
@@ -27,7 +30,9 @@ TRADE_ENTRY_ALLOWED = False
 
 
 def identity(kind, *parts):
-    return sha256(inherited.compact(serial([VERSION, kind, *parts])).encode()).hexdigest()
+    return sha256(
+        inherited.compact(serial([VERSION, kind, *parts])).encode()
+    ).hexdigest()
 
 
 def _rounded_entry(raw_entry: Decimal, tick: Decimal, direction: str) -> Decimal:
@@ -82,7 +87,9 @@ class V4HistoricalAdapter(inherited.HistoricalAdapter):
             raise V4Reject("REJECT_OKX_PRODUCT")
         self.product = product
         self.model_grids = scenarios(product)
-        self.telemetry = []
+        self.sinks = {}
+        self._stage = "formation_discovery"
+        self._context_id = None
         super().__init__(
             PRODUCT_ALIAS[product],
             market,
@@ -91,7 +98,37 @@ class V4HistoricalAdapter(inherited.HistoricalAdapter):
             evaluation_end=end,
         )
 
+    def _emit(self, item, at, gate, status, reason=None, **diagnostics):
+        key = (item["formation_id"], item["branch"])
+        if key not in self.sinks:
+            self.sinks[key] = GateTelemetry(
+                item["formation_id"],
+                identity(
+                    "physical", self.symbol, item["formation_at"], item["direction"]
+                ),
+                item["branch"],
+                item["direction"],
+                item["formation_at"],
+            )
+        try:
+            self.sinks[key].emit(
+                {
+                    "gate_name": gate,
+                    "event_type": status,
+                    "known_at": at,
+                    "decision_cutoff": at,
+                    "context_id": self._context_id,
+                    "approach_state": None,
+                    "reason_code": reason,
+                    **diagnostics,
+                }
+            )
+        except V4Reject as exc:
+            raise RuntimeError("TELEMETRY_INTEGRITY_STOP") from exc
+
     def plan_pending(self, item, at):
+        self._stage = "approach_state"
+        self._context_id = None
         direction = item["direction"]
         if at >= item["formation_at"] + 57600:
             raise V4Reject("EXPIRED_PENDING")
@@ -104,18 +141,18 @@ class V4HistoricalAdapter(inherited.HistoricalAdapter):
             and refinement.bos_by_id[c["bos_id"]]["known_at"] >= item["reaction_at"]
             and c["known_at"] <= at
         ]
-        conf = max(confirms, key=lambda c: (c["known_at"], c["id"])) if confirms else None
+        conf = (
+            max(confirms, key=lambda c: (c["known_at"], c["id"])) if confirms else None
+        )
         opposite = [
             {"id": b["id"], "known_at": b["known_at"], "kind": "BOS"}
             for b in refinement.bos
-            if b["direction"] != direction
-            and item["reaction_at"] < b["known_at"] <= at
+            if b["direction"] != direction and item["reaction_at"] < b["known_at"] <= at
         ]
         opposite.extend(
             {"id": c["id"], "known_at": c["known_at"], "kind": "CONF"}
             for c in refinement.confirmations
-            if c["direction"] != direction
-            and item["reaction_at"] < c["known_at"] <= at
+            if c["direction"] != direction and item["reaction_at"] < c["known_at"] <= at
         )
         native_frame = self.frames[item["setup_tf"]]
         approach = classify_approach(
@@ -130,6 +167,8 @@ class V4HistoricalAdapter(inherited.HistoricalAdapter):
         if approach["state"] == "APPROACH_INVALID":
             raise V4Reject("REJECT_STRUCTURAL_APPROACH_INVALID")
 
+        self._emit(item, at, self._stage, "PASS", approach_state=approach["state"])
+        self._stage = "refinement_and_poi"
         poi = item["zone"]
         if item["branch"] in ("SFP", "OB"):
             bos_at = refinement.bos_by_id[conf["bos_id"]]["known_at"]
@@ -159,6 +198,8 @@ class V4HistoricalAdapter(inherited.HistoricalAdapter):
         ):
             raise V4Reject("REJECT_CONSUMED_OR_RESERVED_POI")
 
+        self._emit(item, at, self._stage, "PASS", poi_id=poi["id"])
+        self._stage = "htf_context"
         parent_pois = []
         for tf in (240, 1440):
             for zone in inherited.visible_zones(self.frames[tf], direction):
@@ -194,6 +235,9 @@ class V4HistoricalAdapter(inherited.HistoricalAdapter):
             decision_at=at,
             h4_range=self.frames[240].range_record(),
         )
+        self._context_id = context.get("origin_id", context.get("context_id"))
+        self._emit(item, at, self._stage, "PASS")
+        self._stage = "entry_geometry"
         raw = inherited_core.raw_family_prices(
             family=item["branch"],
             direction=direction,
@@ -231,6 +275,7 @@ class V4HistoricalAdapter(inherited.HistoricalAdapter):
         reference_grid = self.model_grids[0]
         tick = Decimal(reference_grid["tick"])
         reference_entry = _rounded_entry(Decimal(raw["raw_entry"]), tick, direction)
+        self._stage = "fta_lifecycle"
         nearest, coincident = _select_fta(targets, reference_entry, direction, at)
         raw_fta = Decimal(str(nearest["price"]))
         plan = v4_executable_plan(
@@ -249,18 +294,31 @@ class V4HistoricalAdapter(inherited.HistoricalAdapter):
             raw_fta=raw_fta,
             inward_target=plan["target"],
         )
+        self._emit(
+            item, at, self._stage, "PASS", fta_id=nearest["id"], fta_price=str(raw_fta)
+        )
+        self._stage = "payoff_gate"
         payoff = planned_payoff_gate(
             direction=direction,
             entry=plan["entry"],
             stop=plan["stop"],
             target=plan["target"],
         )
+        self._emit(
+            item,
+            at,
+            self._stage,
+            "PASS",
+            net_target_R_doubled_cost=str(payoff["ratio"]),
+        )
+        self._stage = "adverse_liquidity"
         _, pools = inherited.inventories(
             self.frames, direction, plan["entry"], plan["stop"], h1
         )
         if any(pool["adverse"] for pool in pools):
             raise V4Reject("REJECT_INTERNAL_ADVERSE_POOL_BEYOND_STOP")
 
+        self._emit(item, at, self._stage, "PASS")
         physical = identity("physical", self.symbol, item["formation_at"], direction)
         setup = identity("setup", physical, item["formation_id"], conf["id"], poi["id"])
         record = {
@@ -275,6 +333,26 @@ class V4HistoricalAdapter(inherited.HistoricalAdapter):
             "decision_at": at,
             "known_at": at,
             "formation_known_at": item["formation_at"],
+            "emission_decision_at": at,
+            "formation_bar": inherited.bar_record(item["formation_bar"]),
+            "original_structural_anchor": item["extreme"],
+            "stop_anchor": item["extreme"],
+            "setup_tf_seconds": item["setup_tf"] * 60,
+            "contract_type": inherited_core.CONTRACT_TYPE,
+            "expires_at": item["formation_at"] + 57600,
+            "fixed_R_unit": payoff["planned_stop_unit"],
+            "source_range_id": item.get("range", {}).get("id"),
+            "selected_fta_object": nearest,
+            "entry_poi_tf": 15 if item["branch"] in ("SFP", "OB") else item["setup_tf"],
+            "entry_poi_known_at": max(
+                poi["born_at"], refinement.confirmed_bos[poi["origin_bos_id"]]
+            )
+            if item["branch"] in ("SFP", "OB")
+            else None,
+            "first_test_mapping_status": "NATIVE_ORIGIN_CONF"
+            if item["branch"] in ("SFP", "OB")
+            else "UNRESOLVED_FROZEN_DESIGN",
+            "implementation_readiness": "STOP_SELECTED_POI_FIRST_TEST",
             "parent_deadline_at": item["formation_at"] + 57600,
             "status": "PENDING",
             "physical_idea_id": physical,
@@ -303,33 +381,187 @@ class V4HistoricalAdapter(inherited.HistoricalAdapter):
             "historical_position_evaluations": 0,
             "trade_entry_allowed": False,
         }
-        self.telemetry.append(
-            {
-                "formation_id": item["formation_id"],
-                "physical_bucket_id": physical,
-                "gate": "PRE_ENTRY_PLAN",
-                "evaluated_at": at,
-                "status": "PASS",
-                "approach_state": approach["state"],
-                "selected_fta_id": nearest["id"],
-                "entry_poi_id": poi["id"],
-            }
-        )
         return serial(record)
 
-    def catalog(self, cutoff=None):
-        cutoff = self.end - 1 if cutoff is None else min(cutoff, self.end - 1)
-        orders, audit = self.run(cutoff)
-        audit.update(
-            venue="OKX",
-            product=self.product,
-            strategy_version=VERSION,
-            telemetry=self.telemetry,
-            historical_position_evaluations=0,
-            financial_outcomes_generated=False,
-            trade_entry_allowed=False,
+    def run(self, cutoff=None):
+        """Source-only chronological loop. No order contacts or position events."""
+        cutoff = (
+            self.end - 1
+            if cutoff is None
+            else min(inherited_core.exact_timestamp(cutoff), self.end - 1)
         )
-        return orders, audit
+        orders, diagnostics, raw_origins = [], [], {}
+        for bar in self.market[15]:
+            at = bar.end
+            if at > cutoff:
+                break
+            for tf in (1440, 240, 60, 15):
+                self.frames[tf].advance(at)
+            if at % 3600:
+                continue  # Frozen H1-only new-signal clock, M15 states still advanced.
+            before = set(self.pending)
+            self.discover(at)
+            for key in set(self.pending) - before:
+                item = self.pending[key]
+                raw_origins[key] = (
+                    item["formation_id"],
+                    item["branch"],
+                    item["formation_at"],
+                    item["direction"],
+                )
+                self._context_id = None
+                self._emit(item, at, "formation_discovery", "PASS")
+            proposals = []
+            for key, item in list(self.pending.items()):
+                self._stage = "reaction"
+                self._context_id = None
+                try:
+                    if at >= item["formation_at"] + 57600:
+                        raise V4Reject("EXPIRED_PENDING")
+                    frame = self.frames[item["setup_tf"]]
+                    native = frame.bars[frame.cursor - 1]
+                    if _structurally_retired(item, frame, at):
+                        raise V4Reject("REJECT_STRUCTURAL_APPROACH_INVALID")
+                    if item["next_open_required"]:
+                        if native.start < item["formation_at"]:
+                            raise V4Wait("WAIT_SFP_NEXT_NATIVE_OPEN")
+                        item["next_open_required"] = False
+                        item["next_open_evidence"] = {
+                            "actual_at": native.start,
+                            "known_at": native.end,
+                            "open": native.open,
+                        }
+                        if not (
+                            native.open > item["level"]
+                            if item["direction"] == "LONG"
+                            else native.open < item["level"]
+                        ):
+                            raise V4Reject("REJECT_SFP_NEXT_OPEN")
+                    if item["reaction_at"] is None:
+                        if native.start < item[
+                            "formation_at"
+                        ] or not inherited.intersects(
+                            native, item["zone"]["low"], item["zone"]["high"]
+                        ):
+                            raise V4Wait("WAIT_NATIVE_REACTION")
+                        if (
+                            item["branch"] == "RANGE"
+                            and not item["range"]["low"]
+                            < native.close
+                            < item["range"]["high"]
+                        ):
+                            raise V4Wait("WAIT_RANGE_RECLAIM")
+                        item["reaction_at"] = native.end
+                    self._emit(item, at, "reaction", "PASS")
+                    proposal = self.plan_pending(item, at)
+                    proposals.append((key, item, proposal))
+                    continue
+                except (V4Wait, inherited_core.ContractWait) as exc:
+                    reason = getattr(exc, "reason", str(exc))
+                    self.counts[reason] += 1
+                    item["last_wait"] = reason
+                    self._emit(item, at, self._stage, "WAIT", reason)
+                    continue
+                except (V4Reject, inherited_core.ContractReject) as exc:
+                    reason = getattr(exc, "reason", str(exc))
+                    self.counts[reason] += 1
+                    diagnostics.append(
+                        {
+                            "formation_id": item["formation_id"],
+                            "branch": item["branch"],
+                            "decision_at": at,
+                            "reason": reason,
+                        }
+                    )
+                    self._emit(item, at, self._stage, "REJECT", reason)
+                    del self.pending[key]
+            groups = {}
+            for key, item, proposal in proposals:
+                groups.setdefault(proposal["physical_idea_id"], []).append(
+                    (key, item, proposal)
+                )
+            for physical, siblings in sorted(groups.items()):
+                ordered = sorted(
+                    siblings,
+                    key=lambda row: (
+                        inherited.PRIORITY[row[2]["branch"]],
+                        -row[2]["setup_tf"],
+                        row[2]["setup_id"],
+                    ),
+                )
+                key, item, chosen = ordered[0]
+                try:
+                    self.registry = inherited_core.reserve_idea(
+                        self.registry, physical, chosen["entry_poi_id"]
+                    )
+                    chosen["rejected_sibling_branches"] = [
+                        {
+                            "branch": p["branch"],
+                            "formation_id": p["formation_id"],
+                            "setup_id": p["setup_id"],
+                        }
+                        for _, _, p in ordered[1:]
+                    ]
+                    orders.append(chosen)
+                    self._emit(
+                        item,
+                        at,
+                        "reservation_and_order",
+                        "ORDER_EMIT",
+                        reservation_id=chosen["case_id"],
+                    )
+                    for _, other, _ in ordered[1:]:
+                        self._emit(
+                            other,
+                            at,
+                            "reservation_and_order",
+                            "REJECT",
+                            "PRIORITY_SIBLING",
+                        )
+                except inherited_core.ContractReject as exc:
+                    for _, other, _ in ordered:
+                        self._emit(
+                            other, at, "reservation_and_order", "REJECT", exc.reason
+                        )
+                for key, _, _ in ordered:
+                    del self.pending[key]
+        for item in self.pending.values():
+            self._emit(item, cutoff, "EOF", "EOF_CENSOR", "PENDING_SOURCE_EOF")
+        snapshots = [sink.snapshot() for _, sink in sorted(self.sinks.items())]
+        return orders, {
+            "venue": "OKX",
+            "product": self.product,
+            "strategy_version": VERSION,
+            "raw_origins": serial(sorted(raw_origins.values())),
+            "diagnostics": diagnostics,
+            "pending": serial(
+                [
+                    {k: v for k, v in p.items() if k != "formation_bar"}
+                    for p in self.pending.values()
+                ]
+            ),
+            "telemetry": snapshots,
+            "counts": dict(self.counts),
+            "cutoff": cutoff,
+            "frame_prefix_digests": {
+                str(tf): identity(
+                    "frame",
+                    tf,
+                    f.context,
+                    f.confirmations,
+                    f.zones,
+                    f.pools,
+                    f.range_record(),
+                )
+                for tf, f in self.frames.items()
+            },
+            "historical_position_evaluations": 0,
+            "financial_outcomes_generated": False,
+            "trade_entry_allowed": False,
+        }
+
+    def catalog(self, cutoff=None):
+        return self.run(cutoff)
 
 
 def market_inputs(product):

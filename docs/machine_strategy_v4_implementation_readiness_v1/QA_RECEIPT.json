@@ -1,0 +1,177 @@
+{
+  "command_env": {
+    "PYTHONPATH": "scripts"
+  },
+  "commands": [
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_machine_strategy_v4_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_implementation_readiness_v1/qa/00.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "check",
+        "scripts/machine_strategy_v4_execution_binding.py",
+        "scripts/machine_strategy_v4_guarded_runner.py",
+        "scripts/machine_strategy_v4_historical_adapter.py",
+        "scripts/machine_strategy_v4_lifecycle.py",
+        "scripts/machine_strategy_v4_readiness_core.py",
+        "scripts/check_machine_strategy_v4_source_prefix.py",
+        "scripts/verify_machine_strategy_v4_implementation_v1.py",
+        "tests/test_machine_strategy_v4_readiness_core.py",
+        "tests/test_machine_strategy_v4_execution_binding.py",
+        "tests/test_machine_strategy_v4_runner.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_implementation_readiness_v1/qa/01.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "format",
+        "--check",
+        "scripts/machine_strategy_v4_execution_binding.py",
+        "scripts/machine_strategy_v4_guarded_runner.py",
+        "scripts/machine_strategy_v4_historical_adapter.py",
+        "scripts/machine_strategy_v4_lifecycle.py",
+        "scripts/machine_strategy_v4_readiness_core.py",
+        "scripts/check_machine_strategy_v4_source_prefix.py",
+        "scripts/verify_machine_strategy_v4_implementation_v1.py",
+        "tests/test_machine_strategy_v4_readiness_core.py",
+        "tests/test_machine_strategy_v4_execution_binding.py",
+        "tests/test_machine_strategy_v4_runner.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_implementation_readiness_v1/qa/02.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/mypy",
+        "--follow-imports=silent",
+        "scripts/machine_strategy_v4_execution_binding.py",
+        "scripts/machine_strategy_v4_guarded_runner.py",
+        "scripts/machine_strategy_v4_historical_adapter.py",
+        "scripts/machine_strategy_v4_lifecycle.py",
+        "scripts/machine_strategy_v4_readiness_core.py",
+        "scripts/check_machine_strategy_v4_source_prefix.py",
+        "scripts/verify_machine_strategy_v4_implementation_v1.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_implementation_readiness_v1/qa/03.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "py_compile",
+        "scripts/machine_strategy_v4_execution_binding.py",
+        "scripts/machine_strategy_v4_guarded_runner.py",
+        "scripts/machine_strategy_v4_historical_adapter.py",
+        "scripts/machine_strategy_v4_lifecycle.py",
+        "scripts/machine_strategy_v4_readiness_core.py",
+        "scripts/check_machine_strategy_v4_source_prefix.py",
+        "scripts/verify_machine_strategy_v4_implementation_v1.py",
+        "tests/test_machine_strategy_v4_readiness_core.py",
+        "tests/test_machine_strategy_v4_execution_binding.py",
+        "tests/test_machine_strategy_v4_runner.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_implementation_readiness_v1/qa/04.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "scripts/check_machine_strategy_v4_source_prefix.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_implementation_readiness_v1/qa/05.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "scripts/verify_machine_strategy_v4_design_v1.py",
+        "--resume-existing",
+        "--expected-manifest-sha256",
+        "b9452dea092c0d186d2ac164c044f2fad0d865becf9904791caebbf7b477273b"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_implementation_readiness_v1/qa/06.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "scripts/build_okx_v3_failure_audit_v1.py",
+        "--resume-existing",
+        "--expected-manifest-sha256",
+        "9b0353dbfeabfa2768f4a1f62af820c128f98c48faad09544acee4c0547867a3"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_implementation_readiness_v1/qa/07.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "scripts/verify_okx_stage_a_v1.py",
+        "--resume-existing",
+        "--expected-manifest-sha256",
+        "e8733326e85b6082a33f11ec001066d33bc345bcded6acda26b54cd56ddeb9f0"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_implementation_readiness_v1/qa/08.log"
+    }
+  ],
+  "component_QA_status": "PASS",
+  "full_period_rule_conformance": false,
+  "gate_decision": "MACHINE_STRATEGY_V4_IMPLEMENTATION_STOP",
+  "historical_financial_authorized": false,
+  "historical_position_evaluations": 0,
+  "implementation_ready": false,
+  "log_sha256": {
+    "docs/machine_strategy_v4_implementation_readiness_v1/qa/00.log": "381cbd7f97346ab3032daa9af51ad15181a0cd373e010bdf6c2f1732c422a1e0",
+    "docs/machine_strategy_v4_implementation_readiness_v1/qa/01.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "docs/machine_strategy_v4_implementation_readiness_v1/qa/02.log": "5b9f70ad96522f492ef846065642c069b5627379aff2ab3f74acd2e3b9ecfe34",
+    "docs/machine_strategy_v4_implementation_readiness_v1/qa/03.log": "050c52a2b0c61e8b681ef5c485e0bc03340b8d55148e0acef27d744c8be42033",
+    "docs/machine_strategy_v4_implementation_readiness_v1/qa/04.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/machine_strategy_v4_implementation_readiness_v1/qa/05.log": "50cb6ad25c7015b33ca9d8c503eea5b6980836d60b845e84c2cb4bcc683721e4",
+    "docs/machine_strategy_v4_implementation_readiness_v1/qa/06.log": "f8769ffcf905ac7957445a80af9c90b77492ffce59c5276abb26db11253624ad",
+    "docs/machine_strategy_v4_implementation_readiness_v1/qa/07.log": "82a9b7fd053342284a99356473ca30fd7c2efe8db0356b4a0c74b09637ebfec9",
+    "docs/machine_strategy_v4_implementation_readiness_v1/qa/08.log": "946f10be754cc7e03ac6ff2971b9b236de60707c31969b33c37c72a7a8cf6d78"
+  },
+  "source_prefix_scope": "fixed first7development days, full/prefix/future-mutated input graphs; position engines trapped",
+  "tested_sha256": {
+    "docs/machine_strategy_v4_implementation_readiness_v1/BLOCKER_REGISTER.json": "347399dba3f96b9ae06d95e2c80af06fa5b6069241cec370d1c04adfd91c604d",
+    "docs/machine_strategy_v4_implementation_readiness_v1/CAUSAL_FIELD_PROVENANCE.json": "7e41766874b68c0c881b05b40c4cc5d9beb45d8ae75d4fa559f942d0b37c0b03",
+    "docs/machine_strategy_v4_implementation_readiness_v1/DATA_EXPOSURE_AND_OOS_READINESS.json": "5b7825c01ae3d402b5292dde63be596b68fcbfb35cb35b19ab8c2cf676f6bbee",
+    "docs/machine_strategy_v4_implementation_readiness_v1/DATA_GRID_AUTHENTICITY_AND_CONTINUITY.json": "0f50d4a9ec73b7ebab3967576d929abab0ec747207c038b77d40c1c3f6f649f3",
+    "docs/machine_strategy_v4_implementation_readiness_v1/EXECUTION_AND_FUNDING_CONFORMANCE.json": "a12f9f08de15c1fd43ea162207ebb1a49619a88363ea3c42fed9ff8d7ef7a98b",
+    "docs/machine_strategy_v4_implementation_readiness_v1/HISTORICAL_ADAPTER_COVERAGE.json": "5e36da922b57bee8c94e5f6b2a996a8879e0830069660c47a68de2b67566ea48",
+    "docs/machine_strategy_v4_implementation_readiness_v1/RULE_TO_CODE_CONFORMANCE.json": "91021631e90b8f6a4b215e5eb077c015b2d242f744c6dd200a69d6df6cec802e",
+    "docs/machine_strategy_v4_implementation_readiness_v1/RUNNER_OUTCOME_ISOLATION.json": "2aca075bf0031b530afd1576616fb29911b1fc6b754eb918928afe57d262db9e",
+    "docs/machine_strategy_v4_implementation_readiness_v1/SOURCE_PREFIX_REPLAY_RECEIPT.json": "e5e020198832bf0e3aa110ae18c418775c56b543db599c970a8ae032f18d97e3",
+    "docs/machine_strategy_v4_implementation_readiness_v1/TELEMETRY_CONFORMANCE.json": "9c2a3c1339ad1192723c96b6392e9247fcd7d6b5ac70676d25eba23a9cb8d423",
+    "scripts/check_machine_strategy_v4_source_prefix.py": "9d17c22a16a6b1a240fcc7a3ca1a41911ce3def2042e748799feaeef0eb2dc0c",
+    "scripts/machine_strategy_v4_execution_binding.py": "a383730db6c0e315e632af112013bbf4002867e52134e51092930ff11d1ab1f0",
+    "scripts/machine_strategy_v4_guarded_runner.py": "414a8fa7c1a8b2e69dc57ab5ddac65f749bc6664f10b8fd4f02a5460e7280a70",
+    "scripts/machine_strategy_v4_historical_adapter.py": "c511a0ed1f2f760d4b96759dd5d07de2b8262a1f0029a815e88795215e4f30de",
+    "scripts/machine_strategy_v4_lifecycle.py": "0ef83997a772aeb1eeed8656a48e6d226a2d0c66c9f167dc3e5c016be0787a6b",
+    "scripts/machine_strategy_v4_readiness_core.py": "5b45235642199efc0d91caf1a92424d8237cb48c3fc6afb48273bd9facf6200f",
+    "scripts/verify_machine_strategy_v4_implementation_v1.py": "32ee4bf857f9aba03b72e5e8a3c5925d8dc59497bd50d967a3024c3cdde15532",
+    "tests/test_machine_strategy_v4_execution_binding.py": "bfd3b018c38b3d8e00860676f7224f9de7fe3929c895ec49f3a9f0f535125ded",
+    "tests/test_machine_strategy_v4_readiness_core.py": "9400d81013b5ae47e8561a370f85d52cf8dc31b9e2da23fd6105eda15c1159c8",
+    "tests/test_machine_strategy_v4_runner.py": "ae3da7b37b00ad02c42399b885f5ff43e8d4df4a40b24ab80e34a3a57a60b693"
+  },
+  "tests_passed": 54,
+  "tests_scope": "28 frozen design plus 26 prototype/registered synthetic tests, not full model conformance",
+  "trade_entry_allowed": false
+}

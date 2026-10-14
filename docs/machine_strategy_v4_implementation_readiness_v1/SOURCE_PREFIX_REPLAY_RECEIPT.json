@@ -1,0 +1,54 @@
+{
+  "cutoff": 1729382400,
+  "decision": "MACHINE_STRATEGY_V4_IMPLEMENTATION_STOP",
+  "financial_authorization": false,
+  "historical_position_evaluations": 0,
+  "products": {
+    "BTC-USDT-SWAP": {
+      "frame_prefix_digests": {
+        "1440": "4c8c0771ab4626b34d00bc0c90ae2fc481eb63833caba49a1fff3ae1aef297e9",
+        "15": "cefdeb0d3f0d0a3182f7ac3542fa8fb47cc6baa81831de60e3ffc922ac102b91",
+        "240": "8926c4347cd902d0c50d025d3dcb6be50984436d52e89ecf6e0d0a384864983f",
+        "60": "7e7705a5775e5ea3882ffd1a5bb3bed6080d8b5111e6763241c7e2686203b5d7"
+      },
+      "full_prefix_digest": "d3312b5429f9b4544f26f82da5cfe89051fc26af96dc58689b51f9392476c35f",
+      "future_mutation_digest": "d3312b5429f9b4544f26f82da5cfe89051fc26af96dc58689b51f9392476c35f",
+      "position_engine_trap_active": true,
+      "raw_families": {
+        "BREAKER": 1,
+        "OB": 2,
+        "RANGE": 6,
+        "SFP": 43,
+        "STB": 2
+      },
+      "raw_origin_count": 54,
+      "selected_POI_first_test_conformance": "UNRESOLVED_FROZEN_DESIGN",
+      "source_only_causality": "PASS",
+      "trimmed_prefix_digest": "d3312b5429f9b4544f26f82da5cfe89051fc26af96dc58689b51f9392476c35f"
+    },
+    "ETH-USDT-SWAP": {
+      "frame_prefix_digests": {
+        "1440": "fd7e29467042f161212bf2a44a5918b9102a036a9b7aec0791e24c461362318c",
+        "15": "41fbc4575fe2e55f928fd3aeb378299254ff1d58184dba06dafbbd2cb151acf4",
+        "240": "ad5bd11ceb863b1d5b8940fb9701b9d9b62d40592d73e57ae8b965ea3d6d7fcb",
+        "60": "6b9fe2b95342f50d130522ac778da307205bc88220abf21036457164a073c491"
+      },
+      "full_prefix_digest": "149079cea863661fda6ce942168f6ad74591570b2a39951eb2b41b6be3f9a9bc",
+      "future_mutation_digest": "149079cea863661fda6ce942168f6ad74591570b2a39951eb2b41b6be3f9a9bc",
+      "position_engine_trap_active": true,
+      "raw_families": {
+        "BREAKER": 1,
+        "OB": 4,
+        "RANGE": 6,
+        "SFP": 51,
+        "STB": 4
+      },
+      "raw_origin_count": 66,
+      "selected_POI_first_test_conformance": "UNRESOLVED_FROZEN_DESIGN",
+      "source_only_causality": "PASS",
+      "trimmed_prefix_digest": "149079cea863661fda6ce942168f6ad74591570b2a39951eb2b41b6be3f9a9bc"
+    }
+  },
+  "scope": "BOUNDED_SOURCE_ONLY_PROTOTYPE_CAUSALITY_NOT_IMPLEMENTATION_READY",
+  "trade_entry_allowed": false
+}

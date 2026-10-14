@@ -1,0 +1,22 @@
+{
+  "actual_source_selected_POI_lifecycle": "STOP BLOCKER_REGISTER",
+  "decision": "PARTIAL_SYNTHETIC_PASS_NOT_READY",
+  "financial_validation_authorized": false,
+  "historical_entrypoint": "unconditionally blocked in this unqualified checkpoint",
+  "historical_position_evaluations": 0,
+  "inherited_financial_ledger_precision": 80,
+  "planned_payoff_precision": 50,
+  "precision_scope_complete_versioned_contract": "requires explicit v4.1 declaration; no choice by outcomes",
+  "registered_synthetic_driver": "implemented nine scenarios, immutable U, base/doubled same path, coherent funding minimum",
+  "synthetic_scopes": [
+    "all five families LONG/SHORT targets",
+    "SFP native body exits",
+    "pending OPEN gaps",
+    "wick ambiguity",
+    "gaps/EOF",
+    "current-CLOSE prospective retirement",
+    "parent deadline equality",
+    "signed funding/same-timestamp slots",
+    "forged scope and unregistered input blocking"
+  ]
+}

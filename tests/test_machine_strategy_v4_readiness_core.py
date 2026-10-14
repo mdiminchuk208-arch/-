@@ -51,11 +51,17 @@ class V4ReadinessCoreTests(unittest.TestCase):
     def test_completed_fta_mirror(self):
         with self.assertRaisesRegex(V4Reject, "FTA_ALREADY_COMPLETED"):
             target_lifecycle_ok(
-                direction="LONG", completed_close="110", raw_fta="110", inward_target="109"
+                direction="LONG",
+                completed_close="110",
+                raw_fta="110",
+                inward_target="109",
             )
         with self.assertRaisesRegex(V4Reject, "FTA_ALREADY_COMPLETED"):
             target_lifecycle_ok(
-                direction="SHORT", completed_close="90", raw_fta="90", inward_target="91"
+                direction="SHORT",
+                completed_close="90",
+                raw_fta="90",
+                inward_target="91",
             )
 
     def test_zero_width_range_gets_one_grid_envelope(self):
@@ -68,15 +74,15 @@ class V4ReadinessCoreTests(unittest.TestCase):
             structural_high="100",
             tick="1",
         )
-        self.assertEqual(plan["entry"], Decimal("100"))
-        self.assertEqual(plan["exec_low"], Decimal("99"))
-        self.assertEqual(plan["exec_high"], Decimal("101"))
+        self.assertEqual(plan["entry"], Decimal(100))
+        self.assertEqual(plan["exec_low"], Decimal(99))
+        self.assertEqual(plan["exec_high"], Decimal(101))
 
     def test_payoff_gate_pass_and_fail(self):
         result = planned_payoff_gate(
             direction="LONG", entry="100", stop="98", target="103"
         )
-        self.assertGreaterEqual(result["ratio"], Decimal("1"))
+        self.assertGreaterEqual(result["ratio"], Decimal(1))
         with self.assertRaisesRegex(V4Reject, "REJECT_INSUFFICIENT_STRUCTURAL_PAYOFF"):
             planned_payoff_gate(direction="LONG", entry="100", stop="98", target="101")
 

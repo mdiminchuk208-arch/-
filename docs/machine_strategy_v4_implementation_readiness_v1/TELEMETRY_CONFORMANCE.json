@@ -1,0 +1,12 @@
+{
+  "decision": "PARTIAL_SYNTHETIC_PASS_NOT_READY",
+  "execution_cutoff": "event observation cutoff with separate emission_decision_at",
+  "first_eval_and_wait_reject_events": "implemented per-origin source sink",
+  "full_all_gate_denominator_contract": "pending acceptance after v4.1 source-role definition",
+  "historical_execution_events": 0,
+  "observer_failure": "integrity RuntimeError, not strategy reject",
+  "observer_readback_into_strategy": false,
+  "schema": "canonical gate_name/event_type/known_at/decision_cutoff/context_id/approach_state/reason_code",
+  "snapshot": "deep detached copy",
+  "unknown_selected_POI_origin": "retained explicit STOP, not silently filtered"
+}

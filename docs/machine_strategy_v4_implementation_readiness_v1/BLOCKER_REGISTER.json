@@ -1,0 +1,39 @@
+{
+  "blocker": "UNRESOLVED_SELECTED_POI_FIRST_TEST_CONTRACT",
+  "decision": "MACHINE_STRATEGY_V4_IMPLEMENTATION_STOP",
+  "evidence": [
+    {
+      "frozen": "EXECUTION_CONTRACT.json#/executable_zone/structural_zone selects STB body; H04 must not modify first-test eligibility",
+      "id": "B_STB_BODY_SOURCE",
+      "inherited": "machine_strategy_v2_core.py Frame stores native full manipulation zone; raw_pending copies consumption then changes body bounds",
+      "missing": "Which consumption belongs to selected body versus true parent-source retirement"
+    },
+    {
+      "frozen": "POI_ownership native first eligible contact and pre-emission consumed rejection; inherited v3 native origin CONF + matching context",
+      "id": "B_GENERATED_POI_ORIGIN",
+      "inherited": "BREAKER/RANGE selected IDs synthesized outside Frame.zones",
+      "missing": "Exact origin CONF identity, eligibility start/context and pre-emission contact provenance"
+    },
+    {
+      "frozen": "RANGE requires later boundary reaction; same boundary is zero-width selected POI; expected reaction must not self-cancel",
+      "id": "B_RANGE_REACTION",
+      "missing": "Whether required reaction is exempt or consuming; after which precisely defined source event first-test starts"
+    }
+  ],
+  "financial_authorized": false,
+  "known_fixable_findings": [
+    "Own v4 source loop now catches v3 and v4 WAIT/REJECT",
+    "Synthetic context nonce is closure-issued with exact registered fixture input/state checks",
+    "Historical entry always blocked; no arbitrary auth JSON enables it",
+    "Per-scenario opposing-zone/adverse-pool checks added; common U retained"
+  ],
+  "other_remaining_readiness_work": [
+    "Full-period production adapter/rule conformance after definition",
+    "Production lifecycle/first-test replay for all families",
+    "Complete historical runner authorization after independently accepted new implementation freeze",
+    "Explicit new design declaration of planned Decimal50 versus inherited financial Decimal80 scope; no historical result compared"
+  ],
+  "prototype_unaccepted_choice_removed": "entry_poi_known_at=max(born_at,selectedM15CONF) removed for STB/BREAKER/RANGE; explicitly unresolved None and SourceLifecycle WAIT, no silent implementation policy choice",
+  "requires_separate_preoutcome_version": "MACHINE_STRATEGY_v4.1",
+  "trade_entry_allowed": false
+}

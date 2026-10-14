@@ -1,0 +1,58 @@
+{
+  "ECC_hooks_active": false,
+  "ECC_plugin": "ecc@ecc 2.2.3 installed/enabled, plugin list checked",
+  "ECC_runtime": "/workspace/ecc-setup/codex-ecc",
+  "agents": [
+    {
+      "decision": "STOP_INITIAL_ENGINEERING",
+      "files_written_by_reviewer": false,
+      "identity": "/root/v4_readiness_backtest_engineer",
+      "model": "gpt-6-sol",
+      "reasoning_effort": "high",
+      "role": "backtest_engineer",
+      "scope": "engineering API/exception/timing/lifecycle review"
+    },
+    {
+      "decision": "DATA_PASS_ADAPTER_STOP",
+      "files_written_by_reviewer": false,
+      "identity": "/root/v4_readiness_historical_data_review",
+      "model": "gpt-6-sol",
+      "reasoning_effort": "high",
+      "role": "historical_data_engineer",
+      "scope": "complete sealed official-host pages/native/derived/funding review"
+    },
+    {
+      "decision": "STOP_EXECUTION_CONFORMANCE",
+      "files_written_by_reviewer": false,
+      "identity": "/root/v4_readiness_execution_auditor",
+      "model": "gpt-6-sol",
+      "reasoning_effort": "high",
+      "role": "execution_auditor",
+      "scope": "scenario/execution/funding/guard and selected-POI ownership review"
+    },
+    {
+      "decision": "STOP_FROZEN_CONTRACT_GAP",
+      "files_written_by_reviewer": false,
+      "identity": "/root/v4_readiness_no_lookahead_review",
+      "model": "gpt-6-sol",
+      "reasoning_effort": "high",
+      "role": "no_lookahead_auditor",
+      "scope": "frozen native first-test origin/clock/reaction and prefix obligations"
+    },
+    {
+      "decision": "MACHINE_STRATEGY_V4_IMPLEMENTATION_STOP",
+      "files_written_by_reviewer": false,
+      "identity": "/root/v4_readiness_final_independent_reviewer",
+      "model": "gpt-6-sol",
+      "reasoning_effort": "high",
+      "role": "final_independent_reviewer",
+      "scope": "independent exact-byte final STOP checkpoint assessment"
+    }
+  ],
+  "dispatch": "serial root plus one specialist; collaboration.spawn_agent configured role instructions/model, not a nested ECC CLI invocation",
+  "historical_position_evaluations": 0,
+  "multi_agent_project_feature": true,
+  "root_sole_writer": true,
+  "strategy_designer_ran_in_this_gate": false,
+  "trade_entry_allowed": false
+}

@@ -1,0 +1,85 @@
+{
+  "Stage_A_manifest_sha256": "e8733326e85b6082a33f11ec001066d33bc345bcded6acda26b54cd56ddeb9f0",
+  "account_fees_verified": false,
+  "actual_fill_or_queue_verified": false,
+  "actual_mark_proxy_verified": false,
+  "data_decision": "PASS",
+  "historical_exchange_ticks_verified": false,
+  "historical_position_evaluations": 0,
+  "implementation_decision": "MACHINE_STRATEGY_V4_IMPLEMENTATION_STOP",
+  "independent_reviewer": "/root/v4_readiness_historical_data_review",
+  "products": {
+    "BTC-USDT-SWAP": {
+      "all_completed_confirm_1": true,
+      "captured_pages": 351,
+      "captured_rows_before_grid_filter": 105300,
+      "derived_content_sha256": {
+        "D1": "73fab7883fcd17a9af983e66c9958d1412393591372f8914f48460b3cc10e211",
+        "H1": "8f5e214f6625de15a992c86e9316161dc7bd962c0902331270ead7a1394a7183",
+        "H4": "5fa305be03b17ac513db23633f48ba0c16395ce8885bb3cac0fb579704fe0da7"
+      },
+      "derived_counts": {
+        "D1": 1095,
+        "H1": 26280,
+        "H4": 6570
+      },
+      "duplicates": 0,
+      "funding_duplicates": 0,
+      "funding_first_UTC": "2024-10-13T00:00:00Z",
+      "funding_gaps": 0,
+      "funding_grid_seconds": 28800,
+      "funding_last_UTC": "2026-10-12T16:00:00Z",
+      "funding_path": "docs/machine_strategy_v3_okx_qualification_v1/evidence/cost_funding/BTC_USDT_SWAP_funding_development_prereg_20241013_20261013exclusive.csv",
+      "funding_rows": 2190,
+      "funding_sha256": "8a60f74d288c0d050af547536e47758cc048aaeb2fc2a35da6c260e3937bef71",
+      "funding_signed_source_matched": true,
+      "gaps": 0,
+      "grid_seconds": 900,
+      "interpolation": 0,
+      "native_M15_bars": 105120,
+      "native_end_exclusive_UTC": "2026-10-13T00:00:00Z",
+      "native_first_open_UTC": "2023-10-14T00:00:00Z",
+      "native_normalized_sha256": "83e73f00adc635d6e232e7c34ff305ac17c275e7fdd5e69e628d33aedfdc41e6",
+      "native_path": "docs/machine_strategy_v3_okx_qualification_v1/data/BTC-USDT-SWAP.M15.jsonl.gz",
+      "native_stored_sha256": "cbf78345184ef18abd2d324d9995a91f27780ed2f997a28c8bee9b22cab77b1e",
+      "omitted_derived_groups": 0
+    },
+    "ETH-USDT-SWAP": {
+      "all_completed_confirm_1": true,
+      "captured_pages": 351,
+      "captured_rows_before_grid_filter": 105300,
+      "derived_content_sha256": {
+        "D1": "52e7150b9f2c5dd8271fb43fc51d37c8ce8699e2468908e76ad90a5ada280977",
+        "H1": "a48df0c6e9f7988a98a4774e24f8df628d22c3fdfd7d49a855e5b85c2a9ae6a7",
+        "H4": "83eb4da0b10628f95351f35d381f01eca94ebe6e29ffd802de95e9ee145ac324"
+      },
+      "derived_counts": {
+        "D1": 1095,
+        "H1": 26280,
+        "H4": 6570
+      },
+      "duplicates": 0,
+      "funding_duplicates": 0,
+      "funding_first_UTC": "2024-10-13T00:00:00Z",
+      "funding_gaps": 0,
+      "funding_grid_seconds": 28800,
+      "funding_last_UTC": "2026-10-12T16:00:00Z",
+      "funding_path": "docs/machine_strategy_v3_okx_qualification_v1/evidence/cost_funding/ETH_USDT_SWAP_funding_development_prereg_20241013_20261013exclusive.csv",
+      "funding_rows": 2190,
+      "funding_sha256": "6f250ebaf375d3bd810b2669f243cba513eaffaf0293e1891188c3cef0243952",
+      "funding_signed_source_matched": true,
+      "gaps": 0,
+      "grid_seconds": 900,
+      "interpolation": 0,
+      "native_M15_bars": 105120,
+      "native_end_exclusive_UTC": "2026-10-13T00:00:00Z",
+      "native_first_open_UTC": "2023-10-14T00:00:00Z",
+      "native_normalized_sha256": "c9e6ee745432098ca7553c5000eb33ee4fe801feb98fb29ab843e09a48a14c63",
+      "native_path": "docs/machine_strategy_v3_okx_qualification_v1/data/ETH-USDT-SWAP.M15.jsonl.gz",
+      "native_stored_sha256": "75284ba41c3cd0a590eeb95338bb8606a19d2ecac9fcff17dd8e5e8276f4b540",
+      "omitted_derived_groups": 0
+    }
+  },
+  "provenance_limit": "Retained official-host/no-auth capture/body/receipt hashes; no cryptographic exchange signature, actual API latency unknown",
+  "raw_public_receipts_verified": 774
+}

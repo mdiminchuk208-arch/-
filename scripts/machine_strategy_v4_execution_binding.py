@@ -2,12 +2,13 @@
 
 from __future__ import annotations
 
-from decimal import Decimal, ROUND_FLOOR
-from typing import Mapping
+from collections.abc import Mapping
+from decimal import ROUND_FLOOR, Decimal
 
 from machine_strategy_v4_readiness_core import (
     V4Reject,
     V4Wait,
+    dec,
     executable_plan,
     planned_payoff_gate,
     target_lifecycle_ok,
@@ -32,6 +33,24 @@ def scenario_plan(order: Mapping, grid: Mapping, *, completed_close) -> dict:
         structural_high=order["structural_entry_zone"]["high"],
         tick=grid["tick"],
     )
+    long = order["direction"] == "LONG"
+    for target in order.get("all_FTA_inventory", []):
+        if (
+            "zone_low" in target
+            and "zone_high" in target
+            and dec(target["zone_low"]) <= plan["entry"] <= dec(target["zone_high"])
+        ):
+            raise V4Reject("REJECT_ENTRY_IN_OPPOSING_POI")
+    impulse = order.get("selected_impulse")
+    if impulse:
+        low, high = dec(impulse["low"]), dec(impulse["high"])
+        for pool in order.get("liquidity_inventory", []):
+            price = dec(pool["price"])
+            forward = price > plan["entry"] if long else price < plan["entry"]
+            profit_side = pool["side"] == ("HIGH" if long else "LOW")
+            beyond = price < plan["stop"] if long else price > plan["stop"]
+            if not forward and not profit_side and low < price < high and beyond:
+                raise V4Reject("REJECT_INTERNAL_ADVERSE_POOL_BEYOND_STOP")
     target_lifecycle_ok(
         direction=order["direction"],
         completed_close=completed_close,
@@ -44,15 +63,14 @@ def scenario_plan(order: Mapping, grid: Mapping, *, completed_close) -> dict:
         stop=plan["stop"],
         target=plan["target"],
     )
-    contract_base = Decimal(str(grid["contract_base"]))
-    lot = Decimal(str(grid["lot"]))
-    minimum = Decimal(str(grid["minimum"]))
+    contract_base = dec(grid["contract_base"])
+    lot = dec(grid["lot"])
+    minimum = dec(grid["minimum"])
     if min(contract_base, lot, minimum) <= 0:
         raise V4Reject("REJECT_SCENARIO_QUANTITY_INPUT")
-    contracts = (
-        ((Decimal(1) / contract_base) / lot).to_integral_value(rounding=ROUND_FLOOR)
-        * lot
-    )
+    contracts = ((Decimal(1) / contract_base) / lot).to_integral_value(
+        rounding=ROUND_FLOOR
+    ) * lot
     if contracts <= 0 or contracts < minimum:
         raise V4Reject("REJECT_SCENARIO_QUANTITY")
     return {
@@ -61,6 +79,8 @@ def scenario_plan(order: Mapping, grid: Mapping, *, completed_close) -> dict:
         "status": "ELIGIBLE_PENDING",
         **plan,
         "planned_payoff": payoff,
+        "nearest_fta_id": order.get("nearest_fta_id"),
+        "fixed_R_unit": order.get("fixed_R_unit"),
         "quantity_contracts": contracts,
         "quantity_base": contracts * contract_base,
         "trade_entry_allowed": False,

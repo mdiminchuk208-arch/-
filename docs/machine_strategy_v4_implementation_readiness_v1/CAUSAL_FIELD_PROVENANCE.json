@@ -1,0 +1,15 @@
+{
+  "decision": "STOP_SPEC_MAPPING",
+  "fields": {
+    "FTA": "complete contextual inventory, reference rounded entry selection, immutable IDs/price",
+    "OHLC": "sealed NativeBar product/UTC start/end, known_at=end modeled availability",
+    "SFP_ATR": "inherited immutable native pattern-end contiguous SMA14 TR",
+    "funding": "signed settlements only in registered post-event synthetic accounting here",
+    "generated_body_boundary_POI_origin": "UNRESOLVED for STB/BREAKER/RANGE; no fabricated clock",
+    "native_POI_origin": "resolved refined OB/FVG origin_BOS/CONF on M15 for SFP/OB",
+    "setup": "pinned raw GeometryIndex events, consumed only on completed native end",
+    "states": "HistoricalFrame completed D1/H4/H1/M15 advancement"
+  },
+  "future_event_records_are_not_admission_features": true,
+  "historical_financial_authorized": false
+}
