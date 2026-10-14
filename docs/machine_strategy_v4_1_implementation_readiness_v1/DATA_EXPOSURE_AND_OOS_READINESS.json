@@ -1,0 +1,40 @@
+{
+  "version": "MACHINE_STRATEGY_v4.1",
+  "state": "IMPLEMENTATION_IN_PROGRESS",
+  "development_history": {
+    "classification": "EXPOSED_DEVELOPMENT",
+    "venue": "OKX",
+    "products": ["BTC-USDT-SWAP", "ETH-USDT-SWAP"],
+    "native_M15_rows": 210240,
+    "signed_funding_rows": 4380,
+    "may_be_called_pristine_OOS": false,
+    "may_be_used_for_rule_or_parameter_selection_from_financial_outcomes": false
+  },
+  "current_gate_permissions": {
+    "source_data_integrity_checks": true,
+    "causal_feature_adapter_checks": true,
+    "prefix_future_mutation_replay": true,
+    "registered_synthetic_execution_tests": true,
+    "historical_trade_fill_exit_simulation": false,
+    "historical_financial_metrics": false,
+    "OOS_execution": false,
+    "PAPER": false,
+    "LIVE": false
+  },
+  "future_OOS_prerequisites": [
+    "externally pinned MACHINE_STRATEGY_V4_1_IMPLEMENTATION_READY",
+    "one-shot development financial gate completed without in-place tuning",
+    "robustness review completed",
+    "separately registered untouched future interval before access",
+    "no reuse of exposed development history as pristine OOS"
+  ],
+  "paper_prerequisites": {
+    "minimum_closed_trades": 200,
+    "minimum_calendar_days": 30,
+    "win_rate_min": 0.70,
+    "positive_net_edge_required": true,
+    "paper_started": false
+  },
+  "production_candidate": null,
+  "trade_entry_allowed": false
+}
