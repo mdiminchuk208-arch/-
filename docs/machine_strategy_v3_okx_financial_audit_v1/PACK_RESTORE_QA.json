@@ -1,0 +1,6 @@
+{
+  "fresh_checkout_simulation": "Bothmissing rawauditsrestored in isolated tempclone fromgzip; exact originalSHA and fullruncheckpoint verified",
+  "idempotent_second_restore": true,
+  "original_workspace_files_never_moved_modified_deleted": true,
+  "status": "PASS"
+}

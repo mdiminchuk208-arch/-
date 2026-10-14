@@ -1,0 +1,7 @@
+{
+  "both_completed_segments_hash_verified_and_skipped": true,
+  "checkpoint_sha256_unchanged": "2d7770680867f93948d4d26b91633cbb8cdbc9136bd54a988436a687accc6dd0",
+  "historical_trade_evaluations_during_resume": 0,
+  "log_sha256": "b894ef5aeedc922cd985d764f6f8f1500cb4098f832368fc087a3bcb709a61cf",
+  "status": "PASS"
+}

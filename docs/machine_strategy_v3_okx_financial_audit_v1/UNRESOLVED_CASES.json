@@ -1,0 +1,488 @@
+[
+  {
+    "adverse_values_diagnostic_only": true,
+    "branch": "RANGE",
+    "case_id": "75379dbd50dd2e1ab3932d0a24b3005b0cb7706b93f5f067cb3b53cc48bd5250",
+    "direction": "LONG",
+    "product": "BTC-USDT-SWAP",
+    "states": [
+      {
+        "reason": null,
+        "scenario_id": "P01_Q001",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P01_Q100",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P01_Q700",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P05_Q001",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P05_Q100",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P05_Q700",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q001",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q100",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q700",
+        "status": "SCENARIO_INELIGIBLE"
+      }
+    ]
+  },
+  {
+    "adverse_values_diagnostic_only": true,
+    "branch": "RANGE",
+    "case_id": "4b64c877c52fe43fa5947dbbb4f9f33ae96cf95dc1e765126cba918c7ba104fd",
+    "direction": "SHORT",
+    "product": "BTC-USDT-SWAP",
+    "states": [
+      {
+        "reason": null,
+        "scenario_id": "P01_Q001",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P01_Q100",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P01_Q700",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q001",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q100",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q700",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q001",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q100",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q700",
+        "status": "SCENARIO_INELIGIBLE"
+      }
+    ]
+  },
+  {
+    "adverse_values_diagnostic_only": true,
+    "branch": "RANGE",
+    "case_id": "7abc779117acff683b90711cedaa09f552cf4282e5ee55f0aa3b2af92cfd7dc8",
+    "direction": "LONG",
+    "product": "BTC-USDT-SWAP",
+    "states": [
+      {
+        "reason": null,
+        "scenario_id": "P01_Q001",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P01_Q100",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P01_Q700",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q001",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q100",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q700",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q001",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q100",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q700",
+        "status": "SCENARIO_INELIGIBLE"
+      }
+    ]
+  },
+  {
+    "adverse_values_diagnostic_only": true,
+    "branch": "RANGE",
+    "case_id": "e70537234d10445d4a231b79f548f6071319d5e4acf24dd79d38f5333b7b0245",
+    "direction": "LONG",
+    "product": "BTC-USDT-SWAP",
+    "states": [
+      {
+        "reason": null,
+        "scenario_id": "P01_Q001",
+        "status": "CLOSED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P01_Q100",
+        "status": "CLOSED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P01_Q700",
+        "status": "CLOSED"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q001",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q100",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q700",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q001",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q100",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q700",
+        "status": "SCENARIO_INELIGIBLE"
+      }
+    ]
+  },
+  {
+    "adverse_values_diagnostic_only": true,
+    "branch": "RANGE",
+    "case_id": "983ef004e8668d75f6a4c9b946affa9f4798bc091a787e06462466465b1b2df1",
+    "direction": "LONG",
+    "product": "BTC-USDT-SWAP",
+    "states": [
+      {
+        "reason": null,
+        "scenario_id": "P01_Q001",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P01_Q100",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P01_Q700",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q001",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q100",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q700",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q001",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q100",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q700",
+        "status": "SCENARIO_INELIGIBLE"
+      }
+    ]
+  },
+  {
+    "adverse_values_diagnostic_only": true,
+    "branch": "RANGE",
+    "case_id": "f682b10b1fbf1b9ee7cab3d3f6aac275de82dddbc1c845fc73cc9d4b47857299",
+    "direction": "LONG",
+    "product": "ETH-USDT-SWAP",
+    "states": [
+      {
+        "reason": null,
+        "scenario_id": "P01_Q001",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P01_Q100",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P01_Q700",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q001",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q100",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q700",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q001",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q100",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q700",
+        "status": "SCENARIO_INELIGIBLE"
+      }
+    ]
+  },
+  {
+    "adverse_values_diagnostic_only": true,
+    "branch": "RANGE",
+    "case_id": "97984e8f2e9492eb54d92f9a6d734bb67809c6b6e524c5e18af31018710f6d50",
+    "direction": "LONG",
+    "product": "ETH-USDT-SWAP",
+    "states": [
+      {
+        "reason": null,
+        "scenario_id": "P01_Q001",
+        "status": "GAP_INVALIDATED_BEFORE_FILL"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P01_Q100",
+        "status": "GAP_INVALIDATED_BEFORE_FILL"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P01_Q700",
+        "status": "GAP_INVALIDATED_BEFORE_FILL"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q001",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q100",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q700",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q001",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q100",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q700",
+        "status": "SCENARIO_INELIGIBLE"
+      }
+    ]
+  },
+  {
+    "adverse_values_diagnostic_only": true,
+    "branch": "RANGE",
+    "case_id": "78a6a6dd5f6b735f9697c3122e4d9f347e05841e49590ffd975e606e69d8b13c",
+    "direction": "SHORT",
+    "product": "ETH-USDT-SWAP",
+    "states": [
+      {
+        "reason": null,
+        "scenario_id": "P01_Q001",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P01_Q100",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P01_Q700",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q001",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q100",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P05_Q700",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q001",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q100",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q700",
+        "status": "SCENARIO_INELIGIBLE"
+      }
+    ]
+  },
+  {
+    "adverse_values_diagnostic_only": true,
+    "branch": "SFP",
+    "case_id": "b885f1d1bbab4fca8b795342cc45918c074bab30d06f2b420a0c4f73c8fd68e2",
+    "direction": "SHORT",
+    "product": "ETH-USDT-SWAP",
+    "states": [
+      {
+        "reason": null,
+        "scenario_id": "P01_Q001",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P01_Q100",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P01_Q700",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P05_Q001",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P05_Q100",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": null,
+        "scenario_id": "P05_Q700",
+        "status": "UNFILLED_EXPIRED"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q001",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q100",
+        "status": "SCENARIO_INELIGIBLE"
+      },
+      {
+        "reason": "REJECT_ROUNDED_ENTRY_OUTSIDE_ZONE",
+        "scenario_id": "P20_Q700",
+        "status": "SCENARIO_INELIGIBLE"
+      }
+    ]
+  }
+]

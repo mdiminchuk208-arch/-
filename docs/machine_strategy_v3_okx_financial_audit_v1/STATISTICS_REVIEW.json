@@ -1,0 +1,95 @@
+{
+  "base_diagnostic": {
+    "CLOSED": 20,
+    "Expectancy_R": "-0.3093557091496573355140165150",
+    "LOSS": 10,
+    "PF": "0.2784593707819119956079963893",
+    "PF_cash": "0.3715229573663342391911722432",
+    "WIN": 10,
+    "WinRate": "0.5",
+    "coin_direction": {
+      "BTC-USDT-SWAP:LONG": {
+        "CLOSED": 4,
+        "net_R": "-2.156182990538894435512041439",
+        "net_cash": "-2433.810477524319758124800"
+      },
+      "BTC-USDT-SWAP:SHORT": {
+        "CLOSED": 8,
+        "net_R": "-2.819726681320401277161621961",
+        "net_cash": "-991.824178239295364222200"
+      },
+      "ETH-USDT-SWAP:LONG": {
+        "CLOSED": 4,
+        "net_R": "-0.8204386083990354991880037427",
+        "net_cash": "-24.9308912856307105100"
+      },
+      "ETH-USDT-SWAP:SHORT": {
+        "CLOSED": 4,
+        "net_R": "-0.3907659027348154984186631576",
+        "net_cash": "30.067987977653639561600"
+      }
+    },
+    "components": {
+      "fees_R": "2.291637426999780142722800167",
+      "fees_cash": "1330.770609000",
+      "funding_R": "-0.01759083374333368686570187221",
+      "funding_cash": "-13.515747071592193295400",
+      "gross_R": "-3.114006779916772833117561539",
+      "gross_cash": "-1632.62100",
+      "net_cash": "-3420.497559071592193295400",
+      "slippage_R": "0.7638791423332600475742667228",
+      "slippage_cash": "443.590203000"
+    },
+    "largest_quarter_profit_share": "0.7979349845993893238807773926",
+    "max_case_ledger_drawdown_R": "6.187114182993146710280330301",
+    "max_net_loss_streak": 4,
+    "net_PnL_R": "-6.187114182993146710280330301",
+    "wilson_95pct_lower": "0.2992980081982123460269300212"
+  },
+  "checkpoint_sha256": "2d7770680867f93948d4d26b91633cbb8cdbc9136bd54a988436a687accc6dd0",
+  "counts": {
+    "CLOSED": 20,
+    "DISAGREEMENT": 9,
+    "NO_FILL": 70,
+    "catalog_cases": 99
+  },
+  "decision": "STATISTICAL_REVIEW_STOP_CONFIRMED",
+  "doubled_diagnostic": {
+    "CLOSED": 20,
+    "Expectancy_R": "-0.4621989702490882044241059932",
+    "LOSS": 11,
+    "PF": "0.1626626889532575584863675824",
+    "PF_cash": "0.2083883899696595215125734272",
+    "WIN": 9,
+    "WinRate": "0.45",
+    "components": {
+      "fees_R": "4.586455720440158459734109829",
+      "fees_cash": "2665.692538800",
+      "funding_R": "-0.01760847259696354725798710101",
+      "funding_cash": "-13.538767384242612150600",
+      "gross_R": "-3.111096638464589261578652994",
+      "gross_cash": "-1628.82300",
+      "net_cash": "-5196.618485784242612150600",
+      "slippage_R": "1.528818573480052819911369943",
+      "slippage_cash": "888.564179600"
+    },
+    "net_PnL_R": "-9.243979404981764088482119865"
+  },
+  "independent_checks": [
+    "All output hashes and99unique catalog/caseID coverage",
+    "183closed states x2=366cash/R checks",
+    "42adverse selections includingdiagnostic-onlycase",
+    "Fixed referenceU",
+    "Wilson/PF_R/PF_cash/WR/DD/streak/concentration/year/branch/TF/coin-direction independently recomputed"
+  ],
+  "limits": [
+    "20closed cases represent18contextorigins; not independent Bernoulli trials",
+    "ETHSHORTcashpositive butRnegative; noqualificationsubgroup",
+    "Onecaseworstscenario changesbetweenbase/double, explainingdifferentaggregate gross/funding",
+    "UnresolvedcasesretainSTOP; closedsubsetstatistics diagnostic",
+    "NoOOS/forward/paper evidence or exacthistoricalfilters/accountfees/mark"
+  ],
+  "reviewer": "/root/okx_compatibility_financial_statistics_reviewer",
+  "role": "statistics_robustness_analyst",
+  "scope": "Independent output audit; no strategy/model changes"
+}

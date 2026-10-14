@@ -48,3 +48,7 @@ Thumbs.db
 /data/reports/ready_root_cause/audit.log
 /data/reports/ready_root_cause/verified_audit.log
 /data/reports/ready_root_cause/verified_repeat.log
+
+# Lossless published audit archives; restore original bytes with pack_okx_v3_catalog_audits_v1.py --restore.
+/docs/machine_strategy_v3_okx_financial_validation_v1/BTC-USDT-SWAP.catalog_audit.json
+/docs/machine_strategy_v3_okx_financial_validation_v1/ETH-USDT-SWAP.catalog_audit.json

@@ -1,0 +1,21 @@
+{
+  "LIVE": false,
+  "PAPER": false,
+  "checks": [
+    "Ruffcheck/formatcheck/mypy/py_compile forpostrunaudit/storage/verifier",
+    "AccountingQA:99retention,366cash/Rscenario-columnidentities",
+    "Externallypinnedcompletedresume:zero newtrade evaluations, samecheckpoint",
+    "Losslessgziproundtrip andfreshisolatedrestore+idempotence",
+    "FrozenREADY --resume-existing externalSHA PASS",
+    "CSV99/20casecoverage independentlychecked",
+    "Independent statistical/redteam/finalSTOP reviews PASS"
+  ],
+  "code_sha256": {
+    "scripts/audit_okx_v3_financial_validation_v1.py": "482bfa33c2e458df864ce3adac2f0e18421fe714a4f813203d2ad8aa6d84bb8f",
+    "scripts/pack_okx_v3_catalog_audits_v1.py": "af5af62003366b45cd76d151fc603eb977e27766594d262f527d0ba0ae53adfc",
+    "scripts/verify_okx_v3_financial_audit_v1.py": "03487d40e8d7d81e3af5a8ad6479a1100bdb9085321f785ebb042794dc0b07a1"
+  },
+  "status": "PASS",
+  "trade_entry_allowed": false,
+  "trade_re_evaluations": 0
+}

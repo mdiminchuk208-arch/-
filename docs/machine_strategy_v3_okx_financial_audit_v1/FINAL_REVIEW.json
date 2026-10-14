@@ -1,0 +1,27 @@
+{
+  "decision": "FINANCIAL_STOP_FREEZE_REVIEW_PASS",
+  "implementation_author": false,
+  "independent_checks": [
+    "All10outputhashes and3315READYartifacthashes",
+    "Protectedcode/policy unchanged and preregistrationprecededoutcomes",
+    "99uniqueIDs/9states,20closedCSV/99allCSV/9unresolved coverage",
+    "40adverse minima, bothclosedcolumncash/Rindependentrecomputation",
+    "105first-run checkpoints/matchingzero-trade-evaluationresume",
+    "Losslesspacked audits/rawpreservation/freshrestoreQA",
+    "Both priorindependent statistics/redteam reviews",
+    "STOPrequiredby9disagreements,99sampleupperbound<200"
+  ],
+  "limits": [
+    "Known-CLOSED metrics are incomplete diagnostics",
+    "Notexacthistoricalexecution/accountcost/mark",
+    "NoOOS/forward/Paper or productionqualification"
+  ],
+  "post_run_code_sha256": {
+    "scripts/audit_okx_v3_financial_validation_v1.py": "482bfa33c2e458df864ce3adac2f0e18421fe714a4f813203d2ad8aa6d84bb8f",
+    "scripts/pack_okx_v3_catalog_audits_v1.py": "af5af62003366b45cd76d151fc603eb977e27766594d262f527d0ba0ae53adfc",
+    "scripts/verify_okx_v3_financial_audit_v1.py": "03487d40e8d7d81e3af5a8ad6479a1100bdb9085321f785ebb042794dc0b07a1"
+  },
+  "read_only_freeze_verifier": "Reviewed PASS; positiveinvocationaftersealrequired beforepublication",
+  "reviewer": "/root/okx_compatibility_financial_final_reviewer",
+  "run_checkpoint_sha256": "2d7770680867f93948d4d26b91633cbb8cdbc9136bd54a988436a687accc6dd0"
+}

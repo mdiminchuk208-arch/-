@@ -1,0 +1,64 @@
+{
+  "LIVE": false,
+  "PAPER": false,
+  "QA": "PASS",
+  "checks": {
+    "all_case_retention_checks": 99,
+    "closed_scenario_cost_column_checks": 366
+  },
+  "historical_backtest_re_evaluations": 0,
+  "independent_cash_R_reconciliation": {
+    "base": {
+      "CLOSED": 20,
+      "gains_R": "2.3877517808236618707131148752345688306940004567149898694533565439897444824108657",
+      "losses_R": "8.5748659638168085809934451764550085615444974833406284605103705006293432290694651",
+      "net_R": "-6.1871141829931467102803303012204397308504970266256385910570139566395987466585994",
+      "net_cash": "-3420.497559071592193295400"
+    },
+    "doubled": {
+      "CLOSED": 20,
+      "gains_R": "1.7957524725169325710197205296484555535889038837011924131267104750621282761909133",
+      "losses_R": "11.039731877498696659501840395820366775550562736780895073188930080414382533582091",
+      "net_R": "-9.2439794049817640884821198661719112219616588530797026600622196053522542573911779",
+      "net_cash": "-5196.618485784242612150600"
+    }
+  },
+  "products": {
+    "BTC-USDT-SWAP": {
+      "case_status_counts": {
+        "ALL_SCENARIOS_NO_FILL": 33,
+        "CLOSED": 12,
+        "COMPATIBILITY_DISAGREEMENT": 5
+      },
+      "catalog_cases": 50,
+      "funding_rows": 2190,
+      "native_bars": 105120
+    },
+    "ETH-USDT-SWAP": {
+      "case_status_counts": {
+        "ALL_SCENARIOS_NO_FILL": 37,
+        "CLOSED": 8,
+        "COMPATIBILITY_DISAGREEMENT": 4
+      },
+      "catalog_cases": 49,
+      "funding_rows": 2190,
+      "native_bars": 105120
+    }
+  },
+  "ready_manifest_sha256": "5faeb02bd244777aa416d57f50f9809d9e59abe1eb2ec2fc8c062de721619fd1",
+  "run_checkpoint_sha256": "2d7770680867f93948d4d26b91633cbb8cdbc9136bd54a988436a687accc6dd0",
+  "source_output_sha256": {
+    "docs/machine_strategy_v3_okx_financial_validation_v1/BTC-USDT-SWAP.cases.jsonl": "f940c4b98fd8093a4aa96213e3adf88d53cf1574159cca89899dad661354e912",
+    "docs/machine_strategy_v3_okx_financial_validation_v1/BTC-USDT-SWAP.catalog.jsonl.gz": "a8daa86ee5d80a6690ad929f9bcc8e98de94b074ef8969500bc2a60b1fd80685",
+    "docs/machine_strategy_v3_okx_financial_validation_v1/BTC-USDT-SWAP.catalog_audit.json": "a21f439530691164e941e9623849dae5bd5864248ea735b3cc270652b2d25826",
+    "docs/machine_strategy_v3_okx_financial_validation_v1/BTC-USDT-SWAP.complete.json": "c71ee9c63e5ab6e20895f7395576b0683c8688fada109c5c82b847e992b8a296",
+    "docs/machine_strategy_v3_okx_financial_validation_v1/ETH-USDT-SWAP.cases.jsonl": "83106e5f4b82562a06aefc4f512d28105cfc44cecaf9ad9a18e4020f1a7b26e6",
+    "docs/machine_strategy_v3_okx_financial_validation_v1/ETH-USDT-SWAP.catalog.jsonl.gz": "c46f9a52aa7557a2d73bafbd1b9caef691467a1ea60783c413cf592d5bb343e1",
+    "docs/machine_strategy_v3_okx_financial_validation_v1/ETH-USDT-SWAP.catalog_audit.json": "255bb59a6ac5aa7711cc7afbcae9caeb2f94977b487d41dcc5d7f9afca2b7b1d",
+    "docs/machine_strategy_v3_okx_financial_validation_v1/ETH-USDT-SWAP.complete.json": "44282a8968cdbd4431dca4017cb5732239a23882b8da72a19dfbdc4064cccc9d",
+    "docs/machine_strategy_v3_okx_financial_validation_v1/FINANCIAL_RESULT.json": "c84437ed428d1c57a4c77909f20f99360d1e3fc4d3726037c828341a3ec38efe",
+    "docs/machine_strategy_v3_okx_financial_validation_v1/RUN_AUTHORITY.json": "65ae18ce2f668348de7255c92976078a575303ad6e6058ff72cce2898ba6be01",
+    "docs/machine_strategy_v3_okx_financial_validation_v1/RUN_CHECKPOINT.json": "2d7770680867f93948d4d26b91633cbb8cdbc9136bd54a988436a687accc6dd0"
+  },
+  "trade_entry_allowed": false
+}

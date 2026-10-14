@@ -1,0 +1,14 @@
+{
+  "conclusion": "No hidden tuning/exclusion or blocker to honest STOP reporting. No production qualification or OOS/Paper claim.",
+  "decision": "RED_TEAM_STOP_REVIEW_PASS",
+  "independent_checks": [
+    "Preregistration chronology and protected/READY/output hashes",
+    "99 unique catalog/case IDs and all nine states retained",
+    "105 first-run checkpoints and one matched-resume checkpoint; no new trade evaluation",
+    "Lossless audit packing unchanged raw SHA",
+    "Future funding used only in post-event cash",
+    "Small profitable dependent slices never selected for promotion"
+  ],
+  "reviewer": "/root/okx_compatibility_financial_overfit_red_team",
+  "run_checkpoint_sha256": "2d7770680867f93948d4d26b91633cbb8cdbc9136bd54a988436a687accc6dd0"
+}

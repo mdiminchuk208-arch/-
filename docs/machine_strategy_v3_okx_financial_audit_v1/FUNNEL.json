@@ -1,0 +1,68 @@
+{
+  "FILLED_at_least_one_scenario": 21,
+  "all_scenarios_closed": 20,
+  "all_scenarios_no_fill": 70,
+  "catalog_unique_cases": 99,
+  "counter_interpretation": "WAIT/rejection counters can include repeated decision retries; they are not unique opportunity counts. Raw-native formation audit includes warmup.",
+  "disagreement": 9,
+  "product_funnels": {
+    "BTC-USDT-SWAP": {
+      "counts": {
+        "EXPIRED_PENDING": 560,
+        "PRE_ENTRY_ORDER_RESERVED": 50,
+        "RAW_BREAKER": 109,
+        "RAW_OB": 305,
+        "RAW_RANGE": 727,
+        "RAW_SFP": 4514,
+        "RAW_STB": 305,
+        "REJECT_CONSUMED_OR_RESERVED_POI": 58,
+        "REJECT_DUPLICATE_PHYSICAL_OR_POI": 7,
+        "REJECT_ENTRY_IN_OPPOSING_POI": 8,
+        "REJECT_INTERNAL_ADVERSE_POOL_BEYOND_STOP": 9,
+        "REJECT_NON_SMOOTH_STRUCTURAL_APPROACH": 5234,
+        "REJECT_RETIRED_SOURCE_RANGE": 17,
+        "REJECT_UNECONOMIC_NEAREST_FTA": 9,
+        "WAIT_H1_M15_DIRECTION": 1762,
+        "WAIT_H4_D1_TREND_DIRECTION": 36,
+        "WAIT_H4_RANGE_OBJECT": 172,
+        "WAIT_NO_CONFIRMED_STATE": 1142,
+        "WAIT_ORIGIN_BOUND_REFINEMENT_POI": 16324,
+        "WAIT_RANGE_BOUNDARY_FORMATION": 198,
+        "WAIT_REFINEMENT_BOS_CONF": 14188,
+        "WAIT_TRANSITION_ORIGIN_POI": 1097
+      },
+      "logged_pending_formations": 5960,
+      "raw_native_formations_including_warmup": 7645,
+      "reservation_events": 57
+    },
+    "ETH-USDT-SWAP": {
+      "counts": {
+        "EXPIRED_PENDING": 555,
+        "PRE_ENTRY_ORDER_RESERVED": 49,
+        "RAW_BREAKER": 97,
+        "RAW_OB": 225,
+        "RAW_RANGE": 785,
+        "RAW_SFP": 4655,
+        "RAW_STB": 225,
+        "REJECT_CONSUMED_OR_RESERVED_POI": 59,
+        "REJECT_DUPLICATE_PHYSICAL_OR_POI": 4,
+        "REJECT_ENTRY_IN_OPPOSING_POI": 14,
+        "REJECT_INTERNAL_ADVERSE_POOL_BEYOND_STOP": 3,
+        "REJECT_NON_SMOOTH_STRUCTURAL_APPROACH": 5277,
+        "REJECT_RETIRED_SOURCE_RANGE": 17,
+        "REJECT_SFP_NEXT_OPEN": 3,
+        "WAIT_H1_M15_DIRECTION": 1706,
+        "WAIT_H4_D1_TREND_DIRECTION": 51,
+        "WAIT_H4_RANGE_OBJECT": 182,
+        "WAIT_NO_CONFIRMED_STATE": 999,
+        "WAIT_ORIGIN_BOUND_REFINEMENT_POI": 16873,
+        "WAIT_RANGE_BOUNDARY_FORMATION": 256,
+        "WAIT_REFINEMENT_BOS_CONF": 14435,
+        "WAIT_TRANSITION_ORIGIN_POI": 1067
+      },
+      "logged_pending_formations": 5987,
+      "raw_native_formations_including_warmup": 7697,
+      "reservation_events": 53
+    }
+  }
+}

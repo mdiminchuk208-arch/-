@@ -1,0 +1,21 @@
+{
+  "entries": {
+    "docs/machine_strategy_v3_okx_financial_validation_v1/BTC-USDT-SWAP.catalog_audit.json": {
+      "packed_bytes": 12623287,
+      "packed_path": "docs/machine_strategy_v3_okx_financial_audit_v1/packed/BTC-USDT-SWAP.catalog_audit.json.gz",
+      "packed_sha256": "d29876203f229c793933a967b5cd60177c236b8682d04273c2e5917b9e135f86",
+      "raw_bytes": 82982295,
+      "raw_sha256": "a21f439530691164e941e9623849dae5bd5864248ea735b3cc270652b2d25826"
+    },
+    "docs/machine_strategy_v3_okx_financial_validation_v1/ETH-USDT-SWAP.catalog_audit.json": {
+      "packed_bytes": 10729492,
+      "packed_path": "docs/machine_strategy_v3_okx_financial_audit_v1/packed/ETH-USDT-SWAP.catalog_audit.json.gz",
+      "packed_sha256": "cd5ef05d2d92ca9c9fe2ff35ebb5eeba90644513c04071decd689292166f3ca0",
+      "raw_bytes": 71168091,
+      "raw_sha256": "255bb59a6ac5aa7711cc7afbcae9caeb2f94977b487d41dcc5d7f9afca2b7b1d"
+    }
+  },
+  "original_raw_files_retained_in_workspace": true,
+  "policy_or_financial_result_changed": false,
+  "run_checkpoint_sha256": "2d7770680867f93948d4d26b91633cbb8cdbc9136bd54a988436a687accc6dd0"
+}

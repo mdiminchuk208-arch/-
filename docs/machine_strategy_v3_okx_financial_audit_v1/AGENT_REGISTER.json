@@ -1,0 +1,36 @@
+{
+  "ECC": "ecc@ecc2.2.3 enabled; hooksinactive; agents via cloudcollaboration perproject TOML",
+  "agents": [
+    {
+      "finding": "Pre-outcome nine-scenario model, fixedR/cash/funding policy; no financialresultseen",
+      "identity": "/root/okx_compatibility_policy_execution_auditor",
+      "role": "execution_auditor"
+    },
+    {
+      "finding": "PASS;30tests; parent/causalprefix/reservation/authorization findings fixed beforeoutcomes",
+      "identity": "/root/okx_compatibility_no_lookahead_auditor",
+      "role": "no_lookahead_auditor"
+    },
+    {
+      "finding": "READY policy/code/QA boundary PASS beforeone-shot",
+      "identity": "/root/okx_compatibility_final_independent_reviewer",
+      "role": "final_independent_reviewer"
+    },
+    {
+      "finding": "Independent STOP; incomplete20case ledger, negativegross/net, smalldependent slices",
+      "identity": "/root/okx_compatibility_financial_statistics_reviewer",
+      "role": "statistics_robustness_analyst"
+    },
+    {
+      "finding": "STOP reviewPASS; no hidden tuning oradversecase removal; profitable tiny slices notpromoted",
+      "identity": "/root/okx_compatibility_financial_overfit_red_team",
+      "role": "overfit_red_team"
+    },
+    {
+      "finding": "Independent STOP freezePASS;99cases/9states/outputhashes/replay/storage verified",
+      "identity": "/root/okx_compatibility_financial_final_reviewer",
+      "role": "final_independent_reviewer"
+    }
+  ],
+  "dispatch": "SERIAL_ROOT_PLUS_ONE_SPECIALIST"
+}
