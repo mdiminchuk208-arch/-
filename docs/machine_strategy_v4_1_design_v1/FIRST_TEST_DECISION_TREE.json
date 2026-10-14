@@ -1,0 +1,23 @@
+{
+  "version":"MACHINE_STRATEGY_v4.1",
+  "steps":[
+    {"id":1,"question":"Are formation/source-parent/selected-POI identities causally complete?","no":"WAIT_REQUIRED_CAUSAL_EVIDENCE","yes":"2"},
+    {"id":2,"question":"Has the family-required formation/reaction prerequisite completed?","no":"WAIT_REQUIRED_REACTION","yes":"3"},
+    {"id":3,"question":"Is origin CONF completed and known?","no":"WAIT_ORIGIN_CONF","yes":"4"},
+    {"id":4,"question":"Is required completed context admissible now?","no":"WAIT_CONTEXT_FOR_POI_ELIGIBILITY","yes":"set eligibility_at prospectively; go 5"},
+    {"id":5,"question":"Is eligibility_at at/after parent deadline?","yes":"EXPIRED_PENDING","no":"6"},
+    {"id":6,"question":"Did a completed eligible native contact occur after eligibility_at but before emission?","yes":"REJECT_SELECTED_POI_PRECONSUMED","no":"7"},
+    {"id":7,"question":"Can order be emitted under all inherited v4 gates?","no":"use inherited v4 WAIT/REJECT","yes":"reserve selected_poi_id; go 8"},
+    {"id":8,"question":"At a later native bar OPEN is order still active under already-known state/deadline?","no":"RETIRE_PENDING","yes":"9"},
+    {"id":9,"question":"Does current bar execute active order under frozen execution semantics?","yes":"FILL_OWNS_CURRENT_CONTACT; later CLOSE publication cannot retro-cancel","no":"10"},
+    {"id":10,"question":"At bar CLOSE is first eligible selected-POI contact now observed?","yes":"CONSUME_POI_AND_RETIRE_BEFORE_NEXT_OPEN","no":"continue pending"}
+  ],
+  "family_exemptions": {
+    "SFP":"prerequisite contacts before eligibility only",
+    "OB":"parent reaction is not refined selected-POI consumption",
+    "STB":"formation/manipulation bar exempt",
+    "BREAKER":"breaker-creation break exempt",
+    "RANGE":"mandatory boundary reaction exempt; first later eligible boundary contact consumes"
+  },
+  "same_time_tf_rule":"only completed TF state at or before event cutoff is visible; no retroactive earlier-OPEN use"
+}
