@@ -1,0 +1,15 @@
+{
+  "version":"MACHINE_STRATEGY_v4.1",
+  "rules":[
+    {"id":"R41_POI_ELIGIBILITY","classification":"PROJECT_POLICY","rule":"selected POI becomes consumable only after all family prerequisites and admissible completed context are known; eligibility is prospective and not backdated","rationale":"prevents required formation/reaction events from self-cancelling while preserving later first-test ownership","source_rule_claim":false},
+    {"id":"R41_STB_BODY_HANDLE","classification":"TECHNICAL_NORMALIZATION","rule":"STB selected body has a generated deterministic identity distinct from full manipulation parent","rationale":"separates entry-object consumption from parent structural retirement","source_rule_claim":false},
+    {"id":"R41_BREAKER_HANDLE","classification":"TECHNICAL_NORMALIZATION","rule":"BREAKER selected body handle is generated from parent OB id, breaker formation known_at and direction","rationale":"object cannot be consumed before it exists and gains exact causal provenance","source_rule_claim":false},
+    {"id":"R41_RANGE_HANDLE","classification":"TECHNICAL_NORMALIZATION","rule":"RANGE boundary handle is generated from range id, direction and immutable boundary price","rationale":"gives zero-width selected entry object explicit identity","source_rule_claim":false},
+    {"id":"R41_RANGE_REACTION_EXEMPTION","classification":"PROJECT_POLICY","rule":"mandatory RANGE boundary reaction is exempt; first later eligible boundary contact consumes","rationale":"required source formation step cannot invalidate itself while subsequent reuse remains prohibited","source_rule_claim":false},
+    {"id":"R41_CURRENT_BAR_ORDERING","classification":"PROJECT_POLICY","rule":"active order execution from OPEN snapshot precedes contact publication at current native CLOSE; CLOSE cannot retroactively cancel earlier valid fill","rationale":"causal event ordering on OHLC bars","source_rule_claim":false},
+    {"id":"R41_ARITHMETIC_SCOPE","classification":"TECHNICAL_NORMALIZATION","rule":"design/execution Decimal50 HALF_EVEN; realized ledger Decimal80 HALF_EVEN over frozen canonical serialized values","rationale":"eliminates precision-scope ambiguity without changing admission from post-event arithmetic","source_rule_claim":false}
+  ],
+  "inherited_unchanged":"all frozen v4 rules not explicitly listed above",
+  "unresolved_source_ambiguities_preserved":["source full versus partial exit alternatives","source equivalence of machine first-test conventions","historical exact OKX tick/lot epochs and account fee history"],
+  "outcome_selected_rules":false
+}
