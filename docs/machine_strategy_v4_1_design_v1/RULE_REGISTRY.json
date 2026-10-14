@@ -1,15 +1,145 @@
 {
-  "version":"MACHINE_STRATEGY_v4.1",
-  "rules":[
-    {"id":"R41_POI_ELIGIBILITY","classification":"PROJECT_POLICY","rule":"selected POI becomes consumable only after all family prerequisites and admissible completed context are known; eligibility is prospective and not backdated","rationale":"prevents required formation/reaction events from self-cancelling while preserving later first-test ownership","source_rule_claim":false},
-    {"id":"R41_STB_BODY_HANDLE","classification":"TECHNICAL_NORMALIZATION","rule":"STB selected body has a generated deterministic identity distinct from full manipulation parent","rationale":"separates entry-object consumption from parent structural retirement","source_rule_claim":false},
-    {"id":"R41_BREAKER_HANDLE","classification":"TECHNICAL_NORMALIZATION","rule":"BREAKER selected body handle is generated from parent OB id, breaker formation known_at and direction","rationale":"object cannot be consumed before it exists and gains exact causal provenance","source_rule_claim":false},
-    {"id":"R41_RANGE_HANDLE","classification":"TECHNICAL_NORMALIZATION","rule":"RANGE boundary handle is generated from range id, direction and immutable boundary price","rationale":"gives zero-width selected entry object explicit identity","source_rule_claim":false},
-    {"id":"R41_RANGE_REACTION_EXEMPTION","classification":"PROJECT_POLICY","rule":"mandatory RANGE boundary reaction is exempt; first later eligible boundary contact consumes","rationale":"required source formation step cannot invalidate itself while subsequent reuse remains prohibited","source_rule_claim":false},
-    {"id":"R41_CURRENT_BAR_ORDERING","classification":"PROJECT_POLICY","rule":"active order execution from OPEN snapshot precedes contact publication at current native CLOSE; CLOSE cannot retroactively cancel earlier valid fill","rationale":"causal event ordering on OHLC bars","source_rule_claim":false},
-    {"id":"R41_ARITHMETIC_SCOPE","classification":"TECHNICAL_NORMALIZATION","rule":"design/execution Decimal50 HALF_EVEN; realized ledger Decimal80 HALF_EVEN over frozen canonical serialized values","rationale":"eliminates precision-scope ambiguity without changing admission from post-event arithmetic","source_rule_claim":false}
+  "inherited_unchanged": "all frozen v4 rules not explicitly listed above",
+  "outcome_selected_rules": false,
+  "rules": [
+    {
+      "citations": [
+        {
+          "artifact": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json",
+          "pointer": "/POI_ownership",
+          "sha256": "c9b9d36cc8209ade1837d0c7d617ce04efa60b7369b46c1f99fde544ed4f2d58"
+        },
+        {
+          "artifact": "docs/machine_strategy_v4_implementation_readiness_v1/BLOCKER_REGISTER.json",
+          "pointer": "/evidence",
+          "sha256": "347399dba3f96b9ae06d95e2c80af06fa5b6069241cec370d1c04adfd91c604d"
+        }
+      ],
+      "classification": "PROJECT_POLICY",
+      "id": "R41_POI_ELIGIBILITY",
+      "rationale": "prevents required formation/reaction events from self-cancelling while preserving later first-test ownership",
+      "rule": "selected POI becomes consumable only after all family prerequisites and admissible completed context are known; eligibility is prospective and not backdated",
+      "source_rule_claim": false
+    },
+    {
+      "citations": [
+        {
+          "artifact": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json",
+          "pointer": "/POI_ownership",
+          "sha256": "c9b9d36cc8209ade1837d0c7d617ce04efa60b7369b46c1f99fde544ed4f2d58"
+        },
+        {
+          "artifact": "docs/machine_strategy_v4_implementation_readiness_v1/BLOCKER_REGISTER.json",
+          "pointer": "/evidence",
+          "sha256": "347399dba3f96b9ae06d95e2c80af06fa5b6069241cec370d1c04adfd91c604d"
+        }
+      ],
+      "classification": "TECHNICAL_NORMALIZATION",
+      "id": "R41_STB_BODY_HANDLE",
+      "rationale": "separates entry-object consumption from parent structural retirement",
+      "rule": "STB selected body has a generated deterministic identity distinct from full manipulation parent",
+      "source_rule_claim": false
+    },
+    {
+      "citations": [
+        {
+          "artifact": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json",
+          "pointer": "/POI_ownership",
+          "sha256": "c9b9d36cc8209ade1837d0c7d617ce04efa60b7369b46c1f99fde544ed4f2d58"
+        },
+        {
+          "artifact": "docs/machine_strategy_v4_implementation_readiness_v1/BLOCKER_REGISTER.json",
+          "pointer": "/evidence",
+          "sha256": "347399dba3f96b9ae06d95e2c80af06fa5b6069241cec370d1c04adfd91c604d"
+        }
+      ],
+      "classification": "TECHNICAL_NORMALIZATION",
+      "id": "R41_BREAKER_HANDLE",
+      "rationale": "object cannot be consumed before it exists and gains exact causal provenance",
+      "rule": "BREAKER selected body handle is generated from parent OB id, breaker formation known_at and direction",
+      "source_rule_claim": false
+    },
+    {
+      "citations": [
+        {
+          "artifact": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json",
+          "pointer": "/POI_ownership",
+          "sha256": "c9b9d36cc8209ade1837d0c7d617ce04efa60b7369b46c1f99fde544ed4f2d58"
+        },
+        {
+          "artifact": "docs/machine_strategy_v4_implementation_readiness_v1/BLOCKER_REGISTER.json",
+          "pointer": "/evidence",
+          "sha256": "347399dba3f96b9ae06d95e2c80af06fa5b6069241cec370d1c04adfd91c604d"
+        }
+      ],
+      "classification": "TECHNICAL_NORMALIZATION",
+      "id": "R41_RANGE_HANDLE",
+      "rationale": "gives zero-width selected entry object explicit identity",
+      "rule": "RANGE boundary handle is generated from range id, direction and immutable boundary price",
+      "source_rule_claim": false
+    },
+    {
+      "citations": [
+        {
+          "artifact": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json",
+          "pointer": "/POI_ownership",
+          "sha256": "c9b9d36cc8209ade1837d0c7d617ce04efa60b7369b46c1f99fde544ed4f2d58"
+        },
+        {
+          "artifact": "docs/machine_strategy_v4_implementation_readiness_v1/BLOCKER_REGISTER.json",
+          "pointer": "/evidence",
+          "sha256": "347399dba3f96b9ae06d95e2c80af06fa5b6069241cec370d1c04adfd91c604d"
+        }
+      ],
+      "classification": "PROJECT_POLICY",
+      "id": "R41_RANGE_REACTION_EXEMPTION",
+      "rationale": "required source formation step cannot invalidate itself while subsequent reuse remains prohibited",
+      "rule": "mandatory RANGE boundary reaction is exempt; first later eligible boundary contact consumes",
+      "source_rule_claim": false
+    },
+    {
+      "citations": [
+        {
+          "artifact": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json",
+          "pointer": "/POI_ownership",
+          "sha256": "c9b9d36cc8209ade1837d0c7d617ce04efa60b7369b46c1f99fde544ed4f2d58"
+        },
+        {
+          "artifact": "docs/machine_strategy_v4_implementation_readiness_v1/BLOCKER_REGISTER.json",
+          "pointer": "/evidence",
+          "sha256": "347399dba3f96b9ae06d95e2c80af06fa5b6069241cec370d1c04adfd91c604d"
+        }
+      ],
+      "classification": "PROJECT_POLICY",
+      "id": "R41_CURRENT_BAR_ORDERING",
+      "rationale": "causal event ordering on OHLC bars",
+      "rule": "active order execution from OPEN snapshot precedes contact publication at current native CLOSE; CLOSE cannot retroactively cancel earlier valid fill",
+      "source_rule_claim": false
+    },
+    {
+      "citations": [
+        {
+          "artifact": "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json",
+          "pointer": "/payoff/arithmetic",
+          "sha256": "c9b9d36cc8209ade1837d0c7d617ce04efa60b7369b46c1f99fde544ed4f2d58"
+        },
+        {
+          "artifact": "docs/machine_strategy_v4_implementation_readiness_v1/BLOCKER_REGISTER.json",
+          "pointer": "/other_remaining_readiness_work",
+          "sha256": "347399dba3f96b9ae06d95e2c80af06fa5b6069241cec370d1c04adfd91c604d"
+        }
+      ],
+      "classification": "TECHNICAL_NORMALIZATION",
+      "id": "R41_ARITHMETIC_SCOPE",
+      "rationale": "eliminates precision-scope ambiguity without changing admission from post-event arithmetic",
+      "rule": "design/execution Decimal50 HALF_EVEN; realized ledger Decimal80 HALF_EVEN over frozen canonical serialized values",
+      "source_rule_claim": false
+    }
   ],
-  "inherited_unchanged":"all frozen v4 rules not explicitly listed above",
-  "unresolved_source_ambiguities_preserved":["source full versus partial exit alternatives","source equivalence of machine first-test conventions","historical exact OKX tick/lot epochs and account fee history"],
-  "outcome_selected_rules":false
+  "unresolved_source_ambiguities_preserved": [
+    "source full versus partial exit alternatives",
+    "source equivalence of machine first-test conventions",
+    "historical exact OKX tick/lot epochs and account fee history"
+  ],
+  "version": "MACHINE_STRATEGY_v4.1"
 }

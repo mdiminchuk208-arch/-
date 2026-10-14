@@ -25,24 +25,14 @@ Independent execution, no-lookahead and final reviews confirmed a frozen selecte
 
 Component QA remains evidence only: 54 tests and nine commands PASS, bounded BTC/ETH source prefix/future-mutation and full sealed data integrity/continuity PASS. Historical tick/lot/account/mark/fill/API latency assumptions remain explicit model limitations.
 
-## Active gate — v4.1 independent design review
+## Completed gate — v4.1 design PASS
 
-A separate narrow pre-outcome MACHINE_STRATEGY_v4.1 amendment has now been authored. It does not change any unrelated frozen v4 strategy rule and uses no historical v4/v4.1 outcomes or catalog-count ranking.
+MACHINE_STRATEGY_V4_1_DESIGN_PASS independently accepted and externally frozen. Manifest SHA256 `4074c337be4800e54682a5ad1ddfd9015e35ce16f4fe2742fc4d12b4bb415790`; verified --resume-existing PASS. Design manifest is final authority over retained candidate/opening labels. Implementation_ready=false; complete_implementation_freeze=false; historical_financial_authorized=false.
 
-Authored namespace `docs/machine_strategy_v4_1_design_v1/` now contains:
-- `MACHINE_STRATEGY_v4_1_SPEC.md`;
-- `SELECTED_POI_CONTRACT.json`;
-- `ARITHMETIC_SCOPE_CONTRACT.json`;
-- `PREREGISTRATION.json`;
-- `FIELD_PROVENANCE.json`;
-- `FIRST_TEST_DECISION_TREE.json`;
-- `RULE_REGISTRY.json`;
-- `SYNTHETIC_WITNESS_REGISTRY.json`.
+Continued remotely authored draft from `964b3834b2f893497c2ae39849854ef9e06165c1`. Review clarified M15 execution versus native contact clocks, latched physical POI lifecycle before viable H1 proposal, immutable origin versus later proposal CONF, context-late FIRST M15 eligibility cutoff, native-context-at-OPEN, equal-cutoff contact before emission and nullable provenance. These close the selected-POI scope without changing unrelated frozen v4 geometry/exits/costs/scenarios/qualification. STB body/fullparent separation, BREAKER generated identity, RANGE reaction exemption and planned50/ledger80 are explicit machine definitions; source ambiguities are preserved.
 
-The amendment makes the selected entry POI a distinct causal object with family-specific identity and first-test clock. SFP/OB keep their refined M15 POIs. STB gets a generated body handle separate from the full manipulation parent. BREAKER gets a generated body handle created only after its completed breaker event. RANGE gets a generated zero-width boundary handle; its mandatory boundary reaction is explicitly exempt from consumption, while the first later eligible contact consumes it. Eligibility begins prospectively only after family prerequisites, origin CONF and required completed context are known. An already-active order is evaluated from the bar OPEN snapshot before current-bar contact becomes known at CLOSE; CLOSE cannot retroactively cancel an earlier valid fill.
+Actual QA PASS: 52 tests (24 new hand-fixture design/guard tests plus28 frozen v4 design regressions), nine commands; prefix/future-mutation/deterministic replay in abstract design oracle, source/pin/qualification consistency, static/type/compile and both frozen parent resumes. All18 registered witness IDs have corresponding executed tests. Context/M4/fill facts are hand witnesses, not production signals or execution. Full-period historical causality/execution/funding parity remains future implementation work.
 
-Arithmetic is now explicitly separated: design/execution geometry and admission use Decimal precision50 ROUND_HALF_EVEN; realized ledger accumulation/R division uses precision80 ROUND_HALF_EVEN over canonical serialized design values and may not recompute or change admission geometry.
+Actual serial independent roles: execution_auditor (/root/v41_execution_review), no_lookahead_auditor (/root/v41_no_lookahead_review), final_independent_reviewer (/root/v41_final_independent_review). Separate final reviewer re-ran24 tests/design check/parent resumes and verified all QA hashes/logs. Root sole writer; ECC2.2.3 enabled, hooks inactive. Prior interrupted execution review's clock finding retained; its failed final turn was not treated as acceptance.
 
-Current decision is NOT yet PASS. Active task is independent synthetic causality/execution/no-lookahead/final review of the exact authored bytes. On accepted `MACHINE_STRATEGY_V4_1_DESIGN_PASS`, publish an external design manifest and reopen a separately named v4.1 implementation-readiness gate. On STOP, preserve the exact blocker. No implementation may silently bypass review.
-
-No historical v4/v4.1 fill/exit/financial output, no OOS/PAPER/LIVE/private API/orders/platform work. Production candidate NONE; `trade_entry_allowed=false`. ECC enabled; hooks inactive.
+Next after publication: separately named v4.1 Implementation Readiness v1. Preserve frozen v4.1/v4 and all predecessors; build new version paths and complete adapter/lifecycle/runner causality/conformance before any complete implementation freeze. This design PASS opens no financial/OOS/PAPER/LIVE/private API/orders/platform gate. Production candidate NONE; trade_entry_allowed=false.

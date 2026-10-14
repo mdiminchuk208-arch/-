@@ -1,0 +1,34 @@
+{
+  "actually_performed_checks": [
+    "parent/input/source hash and pointer checks",
+    "22 hand fixture tests including future mutation actualPASS",
+    "targeted provenance exact-byte acceptance"
+  ],
+  "decision": "MACHINE_STRATEGY_V4_1_DESIGN_PASS",
+  "files_written_by_reviewer": false,
+  "findings": [
+    "CONF A/contact/CONF B preproposal reset ambiguity repaired",
+    "First cutoff formula includes context/currentM4, never backdates native OPEN",
+    "Generated origin selection mapping usable only at eligibility latch",
+    "Equal-cutoff native CLOSE contact precedes H1 emission; no future CLOSE cancel"
+  ],
+  "harness_scope": "HAND_FIXTURE_ABSTRACT_DESIGN_ORACLE_NOT_PRODUCTION",
+  "historical_financial_authorized": false,
+  "historical_position_evaluations": 0,
+  "identity": "/root/v41_no_lookahead_review",
+  "reviewed_sha256": {
+    "docs/machine_strategy_v4_1_design_v1/ARITHMETIC_SCOPE_CONTRACT.json": "b808997cc65be8d125c741191cdb87c5947c9d6e5868acb8d56609195002c72b",
+    "docs/machine_strategy_v4_1_design_v1/FIELD_PROVENANCE.json": "54939b06f63b49ef02f0724425703af95d961f11bb7a13db6cd4dd2b0192bc4e",
+    "docs/machine_strategy_v4_1_design_v1/FIRST_TEST_DECISION_TREE.json": "1ef01202c39ac0ac41dafda1625ae59accd97ee3fd03281d690b637efc33d797",
+    "docs/machine_strategy_v4_1_design_v1/INHERITANCE_AND_SOURCE_CITATIONS.json": "eeffd40402d99909e94aed74d3c38735e1254546c82ba354669a4219333f2467",
+    "docs/machine_strategy_v4_1_design_v1/MACHINE_STRATEGY_v4_1_SPEC.md": "14762bf7998b977444de01ac745575da59a7ec916de853256b0b406087e431c7",
+    "docs/machine_strategy_v4_1_design_v1/PREREGISTRATION.json": "66fde7a745407702f9bcb3fe072665636d2d7548de7c7e97b3e9ec1be5b10dc3",
+    "docs/machine_strategy_v4_1_design_v1/RULE_REGISTRY.json": "e8d5ecba9a1ebc9ceae66c3dd288eade08c063d88aca7b7600cb5a4bed6ce346",
+    "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json": "32d67141a5c8dcff7041fd0e46258c1738ba69cacb317146fd10dc672cc134aa",
+    "docs/machine_strategy_v4_1_design_v1/SYNTHETIC_WITNESS_REGISTRY.json": "e15252d614eeda91caca0c521b476f1ec88b099a4308ad0d35b0221cc52924d9"
+  },
+  "reviewer_test_count_executed": 22,
+  "role": "no_lookahead_auditor",
+  "root_QA_harness_final_test_count": 24,
+  "trade_entry_allowed": false
+}

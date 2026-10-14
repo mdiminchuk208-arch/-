@@ -1,0 +1,44 @@
+{
+  "ECC_hooks_active": false,
+  "ECC_plugin": "ecc@ecc 2.2.3 enabled",
+  "ECC_runtime": "/workspace/ecc-setup/codex-ecc",
+  "agents": [
+    {
+      "decision": "MACHINE_STRATEGY_V4_1_DESIGN_PASS",
+      "files_written": false,
+      "identity": "/root/v41_execution_review",
+      "model": "gpt-6-sol",
+      "reasoning_effort": "high",
+      "role": "execution_auditor"
+    },
+    {
+      "decision": "MACHINE_STRATEGY_V4_1_DESIGN_PASS",
+      "files_written": false,
+      "identity": "/root/v41_no_lookahead_review",
+      "model": "gpt-6-sol",
+      "reasoning_effort": "high",
+      "role": "no_lookahead_auditor"
+    },
+    {
+      "decision_receipt": "INDEPENDENT_REVIEW_RECEIPT.json",
+      "files_written": false,
+      "identity": "/root/v41_final_independent_review",
+      "model": "gpt-6-sol",
+      "reasoning_effort": "high",
+      "role": "final_independent_reviewer"
+    }
+  ],
+  "design_author": "existing authored remote draft; root only scoped review clarifications and synthetic QA packaging",
+  "dispatch": "collaboration tools using configured project role instructions/models; no nested ECC CLI agent execution",
+  "historical_financial_authorized": false,
+  "historical_position_evaluations": 0,
+  "prior_interrupted_attempt": {
+    "identity": "/root/v41_design_execution_auditor",
+    "status": "review finding delivered; final turn failed usage limit",
+    "treated_as_final_gate_acceptance": false
+  },
+  "root_sole_writer": true,
+  "serial_root_plus_one_specialist": true,
+  "strategy_designer_ran_in_current_review_gate": false,
+  "trade_entry_allowed": false
+}

@@ -1,9 +1,30 @@
 {
-  "version": "MACHINE_STRATEGY_v4.1",
-  "normative": true,
   "classification": "PROJECT_POLICY_WITH_TECHNICAL_IDENTITY_NORMALIZATION",
-  "financial_validation_authorized": false,
   "common": {
+    "H_normalization": {
+      "Decimal_arguments": "canonical finite design-scope strings, no exponent/trailing fractional zeros, zero=0",
+      "encoding": "UTF-8 JSON array of listed identity arguments, ensure_ascii=false,separators=(comma,colon)",
+      "hash": "sha256",
+      "inherited_ids": "opaque frozen IDs unchanged"
+    },
+    "contact_clock": "selected native TF only; OPEN>=eligibility_at and matching native context at that OPEN; contact published at native CLOSE",
+    "context_rule": "required completed context must be admissible at eligibility_at; otherwise WAIT_CONTEXT_FOR_POI_ELIGIBILITY prospectively",
+    "eligibility_rule": "eligibility_at=FIRST admissible completed M15 inventory cutoff at/after max(all completed family prerequisites), including required completed context/current M4 gate; no backdating",
+    "execution_clock": "every M15 OPEN/bar after emission, even inside running H1/H4 contact bar; no active-at-native-OPEN prerequisite",
+    "first_test_rule": "first native bar OPEN>=eligibility_at whose OHLC intersects selected POI; contact is known at that bar CLOSE",
+    "monotonic_ownership": "eligibility_at latched once per selected physical POI; consumed/reserved/retired permanent; no reset by later confirmation or context reacquisition",
+    "native_context_rule": "first eligible contact also requires selected native-TF direction context already admissible at native OPEN; context first learned at native CLOSE cannot retro-classify that bar",
+    "nullable_inventory_fields": {
+      "eligibility_at": "null until first admissible inventory cutoff",
+      "emission_decision_at": "null before an H1 proposal/reservation",
+      "origin_conf_id": "null for generated objects until first eligible latch; SFP/OB own zone origin bound when known",
+      "origin_conf_known_at": "null for generated objects until origin CONF latch; SFP/OB own completed confirmation timestamp when known",
+      "proposal_selected_conf_id": "null before first H1 proposal; separately record current latest inherited M4 CONF when proposal is evaluated"
+    },
+    "origin_vs_proposal": "generated STB/BREAKER/RANGE origin_conf_id is the confirmation latched by first eligibility cutoff; proposal_selected_conf_id is separately the latest inherited M4 CONF at H1 proposal. Later CONF cannot rebase an already latched physical POI. SFP/OB retain own refined-zone origin_bos_id mapped to matching completed confirmation_id.",
+    "partial_native_interval": "native bar OPEN<eligibility_at is ineligible even if M15 eligibility begins inside it; no partial-bar first-test or retroactive OPEN",
+    "pre_emission_consumption": "eligible native contact known_at<=emission_decision_at => REJECT_SELECTED_POI_PRECONSUMED; completed contacts applied before H1 emission",
+    "preproposal_inventory": "Register selected physical objects from completed family evidence. At every completed M15 cutoff, before and independently of viable H1 proposal, evaluate inherited current M4 confirmation gate and required completed candidate context. The FIRST cutoff satisfying those plus all family prerequisites latches origin_conf_id and eligibility_at for that physical ID. No trade signal emitted by this inventory.",
     "required_fields": [
       "formation_id",
       "source_parent_id",
@@ -14,85 +35,92 @@
       "origin_conf_known_at",
       "reaction_required_at",
       "eligibility_at",
-      "emission_decision_at"
+      "emission_decision_at",
+      "proposal_selected_conf_id"
     ],
-    "eligibility_rule": "eligibility_at=max(all completed family prerequisites); no backdating",
-    "context_rule": "required completed context must be admissible at eligibility_at; otherwise WAIT_CONTEXT_FOR_POI_ELIGIBILITY prospectively",
-    "first_test_rule": "first native bar OPEN>=eligibility_at whose OHLC intersects selected POI; contact is known at that bar CLOSE",
-    "pre_emission_consumption": "eligible contact completed before emission => REJECT_SELECTED_POI_PRECONSUMED",
     "reservation_is_consumption": false,
-    "same_bar_ordering": [
-      "apply state known before OPEN",
-      "evaluate already-active order execution",
-      "publish native contact at CLOSE",
-      "consume for subsequent OPENs"
-    ],
     "retroactive_close_cancel_allowed": false,
+    "same_bar_ordering": [
+      "apply completed lifecycle evidence known_at<=each M15 OPEN and half-open deadline",
+      "execute active order on every M15 bar, independently of native contact bar OPEN",
+      "advance completed D1,H4,H1,M15 at equal cutoff; publish native contact at CLOSE",
+      "fill by exclusive owner on any M15 bar in eligible native interval owns contact; exited exposure remains owner",
+      "consume/retire unfilled pending before next M15 OPEN",
+      "at H1 decision reserve only after completed contacts; contact at equal emission cutoff rejects"
+    ],
     "same_physical_poi_retry_allowed": false
   },
+  "deadline": {
+    "active_interval": "[emission_decision_at, formation_known_at+57600)",
+    "anchor": "formation_known_at",
+    "eligibility_after_deadline": "terminal EXPIRED_PENDING; no emission",
+    "seconds": 57600
+  },
   "families": {
-    "SFP": {
-      "selected_poi_kind": "REFINED_M15_POI",
-      "identity": "existing selected refined M15 OB/FVG id",
-      "native_tf": 15,
-      "origin_conf": "selected refined POI own origin BOS/CONF",
-      "reaction_required_at": "parent SFP reaction known_at",
-      "eligibility_at": "max(zone_born_at, origin_conf_known_at, reaction_required_at)",
-      "required_event_exemption": "all prerequisites before eligibility only",
-      "parent_consumption_equals_selected_consumption": false
-    },
-    "OB": {
-      "selected_poi_kind": "REFINED_M15_POI",
-      "identity": "existing selected refined M15 OB/FVG id",
-      "native_tf": 15,
-      "origin_conf": "selected refined POI own origin BOS/CONF",
-      "reaction_required_at": "parent OB reaction known_at",
-      "eligibility_at": "max(zone_born_at, origin_conf_known_at, reaction_required_at)",
-      "required_event_exemption": "parent reaction is not selected refined-POI consumption",
-      "parent_consumption_equals_selected_consumption": false
-    },
-    "STB": {
-      "selected_poi_kind": "STB_BODY",
-      "identity": "H(M4_1_STB_BODY,formation_id,body_low,body_high)",
-      "native_tf": "setup native H1/H4",
-      "origin_conf": "selected causal same-direction M15 CONF",
-      "reaction_required_at": "formation_known_at",
-      "eligibility_at": "max(formation_known_at, origin_conf_known_at)",
-      "required_event_exemption": "manipulation/formation bar cannot consume generated STB body",
-      "full_parent_consumption_equals_selected_consumption": false,
-      "parent_structural_invalidation": "inherited full manipulation structural-anchor rule only"
-    },
     "BREAKER": {
-      "selected_poi_kind": "BREAKER_BODY",
+      "eligibility_at": "FIRST admissible completed M15 inventory cutoff >= max(breaker_formation_known_at, origin_conf_known_at); includes required completed context and current inherited M4 confirmation gate",
+      "eligibility_lower_bound": "max(breaker_formation_known_at, origin_conf_known_at)",
       "identity": "H(M4_1_BREAKER_BODY,parent_ob_id,breaker_formation_known_at,direction)",
       "native_tf": "setup native H1/H4",
-      "origin_conf": "selected same-direction M15 CONF after breaker creation",
+      "origin_conf": "same-direction causal M15 CONF returned by inherited M4 gate at FIRST eligible completed-prefix cutoff, latched before viable H1 emission; later proposal CONF separate",
+      "pre_creation_parent_contacts_consume_breaker": false,
       "reaction_required_at": "completed native opposite body-break creating breaker",
-      "eligibility_at": "max(breaker_formation_known_at, origin_conf_known_at)",
       "required_event_exemption": "breaker-creation break cannot consume object that is created by that event",
-      "pre_creation_parent_contacts_consume_breaker": false
+      "selected_poi_kind": "BREAKER_BODY"
+    },
+    "OB": {
+      "eligibility_at": "FIRST admissible completed M15 inventory cutoff >= max(zone_born_at, origin_conf_known_at, reaction_required_at); includes required completed context and current inherited M4 confirmation gate",
+      "eligibility_lower_bound": "max(zone_born_at, origin_conf_known_at, reaction_required_at)",
+      "identity": "existing selected refined M15 OB/FVG id",
+      "native_tf": 15,
+      "origin_conf": "selected refined POI own origin BOS/CONF",
+      "parent_consumption_equals_selected_consumption": false,
+      "reaction_required_at": "parent OB reaction known_at",
+      "required_event_exemption": "parent reaction is not selected refined-POI consumption",
+      "selected_poi_kind": "REFINED_M15_POI"
     },
     "RANGE": {
-      "selected_poi_kind": "RANGE_BOUNDARY",
+      "eligibility_at": "FIRST admissible completed M15 inventory cutoff >= max(reaction_required_at, origin_conf_known_at); includes required completed context and current inherited M4 confirmation gate",
+      "eligibility_lower_bound": "max(reaction_required_at, origin_conf_known_at)",
       "identity": "H(M4_1_RANGE_BOUNDARY,range_id,direction,boundary_price)",
       "native_tf": "source range native H1/H4",
-      "origin_conf": "selected same-direction M15 CONF after required boundary reaction",
+      "origin_conf": "same-direction causal M15 CONF returned by inherited M4 gate at FIRST eligible completed-prefix cutoff, latched before viable H1 emission; later proposal CONF separate",
       "reaction_required_at": "completed mandatory later boundary-reaction CLOSE",
-      "eligibility_at": "max(reaction_required_at, origin_conf_known_at)",
       "required_event_exemption": "mandatory boundary reaction is explicitly exempt from selected-POI consumption",
-      "subsequent_contact_consumes": true,
-      "source_range_retirement_separate": true
+      "selected_poi_kind": "RANGE_BOUNDARY",
+      "source_range_retirement_separate": true,
+      "subsequent_contact_consumes": true
+    },
+    "SFP": {
+      "eligibility_at": "FIRST admissible completed M15 inventory cutoff >= max(zone_born_at, origin_conf_known_at, reaction_required_at); includes required completed context and current inherited M4 confirmation gate",
+      "eligibility_lower_bound": "max(zone_born_at, origin_conf_known_at, reaction_required_at)",
+      "identity": "existing selected refined M15 OB/FVG id",
+      "native_tf": 15,
+      "origin_conf": "selected refined POI own origin BOS/CONF",
+      "parent_consumption_equals_selected_consumption": false,
+      "reaction_required_at": "parent SFP reaction known_at",
+      "required_event_exemption": "all prerequisites before eligibility only",
+      "selected_poi_kind": "REFINED_M15_POI"
+    },
+    "STB": {
+      "eligibility_at": "FIRST admissible completed M15 inventory cutoff >= max(formation_known_at, origin_conf_known_at); includes required completed context and current inherited M4 confirmation gate",
+      "eligibility_lower_bound": "max(formation_known_at, origin_conf_known_at)",
+      "full_parent_consumption_equals_selected_consumption": false,
+      "identity": "H(M4_1_STB_BODY,formation_id,body_low,body_high)",
+      "native_tf": "setup native H1/H4",
+      "origin_conf": "same-direction causal M15 CONF returned by inherited M4 gate at FIRST eligible completed-prefix cutoff, latched before viable H1 emission; later proposal CONF separate",
+      "parent_structural_invalidation": "inherited full manipulation structural-anchor rule only",
+      "reaction_required_at": "formation_known_at",
+      "required_event_exemption": "manipulation/formation bar cannot consume generated STB body",
+      "selected_poi_kind": "STB_BODY"
     }
   },
-  "deadline": {
-    "anchor": "formation_known_at",
-    "seconds": 57600,
-    "active_interval": "[emission_decision_at, formation_known_at+57600)",
-    "eligibility_after_deadline": "terminal EXPIRED_PENDING; no emission"
-  },
+  "financial_validation_authorized": false,
+  "normative": true,
   "safety": {
-    "trade_entry_allowed": false,
+    "LIVE": false,
     "PAPER": false,
-    "LIVE": false
-  }
+    "trade_entry_allowed": false
+  },
+  "version": "MACHINE_STRATEGY_v4.1"
 }

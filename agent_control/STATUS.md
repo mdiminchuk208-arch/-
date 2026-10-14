@@ -1,22 +1,15 @@
 # Agent Status
 
-State: MACHINE_STRATEGY_V4_1_DESIGN_REVIEW_OPEN
-Previous gate: MACHINE_STRATEGY_V4_IMPLEMENTATION_STOP
+State: MACHINE_STRATEGY_V4_1_DESIGN_PASS
 Branch: machine-v3-research.
+Previous gate: MACHINE_STRATEGY_V4_IMPLEMENTATION_STOP.
 
-Independent final reviewer previously accepted STOP on exact v4 implementation QA/code/protocol bytes. Checkpoint manifest `6e325d6e5b3cffc4f143bfd4d390712b39ea940bccd4504c85148ed904bbcd7e`; complete_implementation_freeze=false, implementation_ready=false, historical_financial_authorized=false.
+Independent execution/no-lookahead/final review accepted exact current v4.1 design bytes. External manifest `4074c337be4800e54682a5ad1ddfd9015e35ce16f4fe2742fc4d12b4bb415790`; exact --resume-existing PASS. Frozen v4/predecessor artifacts unchanged.
 
-A separate pre-outcome MACHINE_STRATEGY_v4.1 amendment has now been authored without historical trade outcomes or catalog-count selection. It resolves only the frozen blocker scope:
-- selected-POI identity/eligibility/first-test clocks for all five families;
-- STB selected body separated from full manipulation parent consumption;
-- generated BREAKER body provenance and first eligible native contact;
-- RANGE boundary handle with mandatory boundary reaction explicitly exempt and only later eligible contact consuming;
-- current-bar OPEN/fill before contact publication at CLOSE, with no retroactive CLOSE cancellation;
-- prospective context eligibility and unchanged formation+57600 half-open deadline;
-- Decimal50 HALF_EVEN design/execution scope versus Decimal80 HALF_EVEN realized ledger scope using canonical serialized boundary values.
+Review closed M15/native execution-clock conflict, preproposal CONF A/B reset ambiguity, context-late lower-bound inconsistency and generated-origin provenance timing. STB/body-parent, BREAKER/RANGE native handles/reaction exemption and Decimal50→80 scope are machine policy/normalization, not new SOURCE_RULE.
 
-Draft artifacts now exist in `docs/machine_strategy_v4_1_design_v1/`: `MACHINE_STRATEGY_v4_1_SPEC.md`, `SELECTED_POI_CONTRACT.json`, `ARITHMETIC_SCOPE_CONTRACT.json`, `PREREGISTRATION.json`, `FIELD_PROVENANCE.json`, `FIRST_TEST_DECISION_TREE.json`, `RULE_REGISTRY.json`, and `SYNTHETIC_WITNESS_REGISTRY.json`. Frozen v4 rules outside this narrow scope remain inherited unchanged. Qualification thresholds remain unchanged, including WR>=70%.
+QA PASS: 52 tests (24 new+28 frozen design), nine commands,18 registered hand witnesses, deterministic prefix/mutation/replay, citation/pin/qualification consistency, lint/type/compile and frozen parent resumes. Full production/history readiness is NOT established.
 
-Current action: independent execution/no-lookahead/final review and synthetic causality QA of these exact draft bytes before any implementation resumes. No reviewer PASS is claimed yet. On accepted design freeze, reopen a separately named v4.1 implementation-readiness gate; otherwise freeze DESIGN_STOP with exact blocker.
+Actual serial role dispatch: execution_auditor; no_lookahead_auditor; final_independent_reviewer. Root sole writer; no new strategy_designer run because current task was review of an already-authored draft. Prior interrupted review evidence recorded; no failed turn promoted to final PASS.
 
-No historical v4/v4.1 fill/exit/financial run/output. Production candidate NONE; PAPER=false; LIVE=false; trade_entry_allowed=false. ECC enabled; hooks inactive.
+Next: publish this design freeze then open separately named v4.1 implementation-readiness gate. No historical v4/v4.1 fills/exits/finance or catalog-count selection; no OOS/PAPER/LIVE/private API/orders/platform. Production candidate NONE; qualification thresholds unchanged including WR>=70%; trade_entry_allowed=false. ECC enabled hooks inactive.

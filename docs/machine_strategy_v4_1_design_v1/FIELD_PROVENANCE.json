@@ -1,19 +1,80 @@
 {
-  "version": "MACHINE_STRATEGY_v4.1",
   "fields": {
-    "formation_id": {"source":"inherited frozen formation identity","known_at":"formation_known_at","classification":"INHERITED_MACHINE_ID"},
-    "source_parent_id": {"source":"family parent structural object","known_at":"parent creation/formation completion","classification":"INHERITED_MACHINE_ID"},
-    "selected_poi_id": {"source":"existing refined POI for SFP/OB or v4.1 generated deterministic handle for STB/BREAKER/RANGE","known_at":"when all identity inputs are complete","classification":"TECHNICAL_NORMALIZATION"},
-    "origin_conf_id": {"source":"completed causal M15 confirmation selected by frozen v4 setup logic","known_at":"origin_conf_known_at","classification":"INHERITED_MACHINE_EVIDENCE"},
-    "reaction_required_at": {"source":"family-specific completed formation/reaction prerequisite","known_at":"that event completion","classification":"INHERITED_MACHINE_EVIDENCE"},
-    "eligibility_at": {"source":"max of completed family prerequisites plus admissible completed context","known_at":"computed prospectively","classification":"PROJECT_POLICY"},
-    "first_eligible_contact": {"source":"first native bar OPEN>=eligibility_at whose OHLC intersects selected POI","known_at":"native bar CLOSE","classification":"PROJECT_POLICY"},
-    "emission_decision_at": {"source":"H1 decision cutoff after all setup gates pass","known_at":"same H1 completed cutoff","classification":"INHERITED_MACHINE_EVIDENCE"},
-    "body_low_high_STB": {"source":"completed manipulation candle body","known_at":"formation_known_at","classification":"INHERITED_MACHINE_GEOMETRY"},
-    "breaker_body_low_high": {"source":"broken contextual parent OB immutable body zone","known_at":"breaker creation completion","classification":"INHERITED_MACHINE_GEOMETRY"},
-    "range_boundary_price": {"source":"frozen source range boundary","known_at":"range formation/context known_at","classification":"INHERITED_MACHINE_GEOMETRY"},
-    "decimal50_values": {"source":"design/execution arithmetic","known_at":"respective causal computation","classification":"TECHNICAL_NORMALIZATION"},
-    "decimal80_ledger_values": {"source":"post-fill ledger arithmetic over frozen serialized design values","known_at":"post-event only","classification":"TECHNICAL_NORMALIZATION"}
+    "body_low_high_STB": {
+      "classification": "INHERITED_MACHINE_GEOMETRY",
+      "known_at": "formation_known_at",
+      "source": "completed manipulation candle body"
+    },
+    "breaker_body_low_high": {
+      "classification": "INHERITED_MACHINE_GEOMETRY",
+      "known_at": "breaker creation completion",
+      "source": "broken contextual parent OB immutable body zone"
+    },
+    "decimal50_values": {
+      "classification": "TECHNICAL_NORMALIZATION",
+      "known_at": "respective causal computation",
+      "source": "design/execution arithmetic"
+    },
+    "decimal80_ledger_values": {
+      "classification": "TECHNICAL_NORMALIZATION",
+      "known_at": "post-event only",
+      "source": "post-fill ledger arithmetic over frozen serialized design values"
+    },
+    "eligibility_at": {
+      "classification": "PROJECT_POLICY",
+      "known_at": "computed prospectively",
+      "source": "FIRST admissible completed M15 preproposal inventory cutoff >= family prerequisite lower bound, with required completed context/current inherited M4 gate; latched per physical POI"
+    },
+    "emission_decision_at": {
+      "classification": "INHERITED_MACHINE_EVIDENCE",
+      "known_at": "same H1 completed cutoff",
+      "source": "H1 decision cutoff after all setup gates pass"
+    },
+    "execution_observation": {
+      "classification": "INHERITED_MACHINE_EVIDENCE",
+      "known_at": "M15 OPEN/execution observation per inherited model, independent of native contact CLOSE",
+      "source": "registered synthetic M15 bar only in design QA; production M15 binding remains implementation work"
+    },
+    "first_eligible_contact": {
+      "classification": "PROJECT_POLICY",
+      "known_at": "native bar CLOSE",
+      "source": "first native bar OPEN>=latched eligibility with matching native context known at OPEN and OHLC intersection"
+    },
+    "formation_id": {
+      "classification": "INHERITED_MACHINE_ID",
+      "known_at": "formation_known_at",
+      "source": "inherited frozen formation identity"
+    },
+    "origin_conf_id": {
+      "classification": "INHERITED_MACHINE_EVIDENCE",
+      "known_at": "SFP/OB own completed origin evidence; generated origin selection becomes usable only at first eligibility_at latch, while underlying CONF event retains origin_conf_known_at",
+      "source": "SFP/OB refined-zone own origin_bos_id -> matching completed confirmation_id; generated objects first admissible M15 inventory cutoff inherited current M4 gate CONF, latched before viable proposal"
+    },
+    "proposal_selected_conf_id": {
+      "classification": "INHERITED_MACHINE_EVIDENCE",
+      "known_at": "selected completed CONF; cannot reset earlier eligibility",
+      "source": "latest inherited M4 confirmation at H1 proposal, distinct from immutable origin CONF"
+    },
+    "range_boundary_price": {
+      "classification": "INHERITED_MACHINE_GEOMETRY",
+      "known_at": "range formation/context known_at",
+      "source": "frozen source range boundary"
+    },
+    "reaction_required_at": {
+      "classification": "INHERITED_MACHINE_EVIDENCE",
+      "known_at": "that event completion",
+      "source": "family-specific completed formation/reaction prerequisite"
+    },
+    "selected_poi_id": {
+      "classification": "TECHNICAL_NORMALIZATION",
+      "known_at": "when all identity inputs are complete",
+      "source": "existing refined POI for SFP/OB or v4.1 generated deterministic handle for STB/BREAKER/RANGE"
+    },
+    "source_parent_id": {
+      "classification": "INHERITED_MACHINE_ID",
+      "known_at": "parent creation/formation completion",
+      "source": "family parent structural object"
+    }
   },
   "forbidden": [
     "future OHLC in eligibility or first-test classification",
@@ -22,5 +83,6 @@
     "using legacy parent consumed_at as selected STB body consumption without explicit body contact",
     "using required RANGE reaction as subsequent consumption",
     "recomputing Decimal50 admission geometry under Decimal80 ledger precision"
-  ]
+  ],
+  "version": "MACHINE_STRATEGY_v4.1"
 }

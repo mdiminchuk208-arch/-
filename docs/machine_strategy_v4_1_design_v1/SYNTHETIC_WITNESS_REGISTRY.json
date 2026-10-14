@@ -1,19 +1,122 @@
 {
-  "version":"MACHINE_STRATEGY_v4.1",
-  "financial_data_allowed":false,
-  "witnesses":[
-    {"id":"SFP_PREEMISSION_CONTACT","family":"SFP","direction_pair":true,"assert":"refined M15 POI contact after eligibility and before emission rejects; prerequisite reaction does not"},
-    {"id":"OB_PARENT_VS_REFINED","family":"OB","direction_pair":true,"assert":"parent reaction contact does not consume selected refined POI; later refined contact does"},
-    {"id":"STB_BODY_VS_PARENT","family":"STB","direction_pair":true,"assert":"legacy full-parent contact/consumption cannot stand in for generated body first test; later eligible body contact consumes"},
-    {"id":"BREAKER_PRECREATION_CONTACT","family":"BREAKER","direction_pair":true,"assert":"parent OB contacts before breaker creation cannot consume future breaker handle; first later eligible breaker-body contact consumes"},
-    {"id":"RANGE_REQUIRED_REACTION_EXEMPT","family":"RANGE","direction_pair":true,"assert":"mandatory boundary reaction is exempt; first later eligible boundary contact consumes"},
-    {"id":"ACTIVE_ORDER_SAME_BAR_FILL","family":"ALL","direction_pair":true,"assert":"order active at OPEN may fill on bar before contact publication at CLOSE; CLOSE cannot retro-cancel fill"},
-    {"id":"PENDING_CONTACT_NO_FILL","family":"ALL","direction_pair":true,"assert":"eligible contact with no modeled fill consumes at CLOSE and retires before next OPEN"},
-    {"id":"CONTEXT_LATE_ENABLE","family":"ALL","direction_pair":true,"assert":"contact while WAIT_CONTEXT does not backdate first test; eligibility begins prospectively when context becomes admissible"},
-    {"id":"DEADLINE_BOUNDARY","family":"ALL","direction_pair":true,"assert":"no emission/fill at OPEN>=formation_known_at+57600"},
-    {"id":"DECIMAL_ONE_THIRD","family":"ARITHMETIC","direction_pair":false,"assert":"precision50 serialized design value is parsed, not recomputed, by precision80 ledger"},
-    {"id":"DECIMAL_PAYOFF_EQUALITY","family":"ARITHMETIC","direction_pair":true,"assert":"N2_s==K_s passes under design precision50 and cannot be changed by precision80 ledger"},
-    {"id":"LOT_FLOOR_PRECISION_BOUNDARY","family":"ARITHMETIC","direction_pair":false,"assert":"quantity floor occurs once in design scope and is never refloored by ledger"}
+  "financial_data_allowed": false,
+  "forbidden_assertions": [
+    "profitability",
+    "historical candidate count",
+    "WR",
+    "PF",
+    "PnL",
+    "historical fill frequency"
   ],
-  "forbidden_assertions":["profitability","historical candidate count","WR","PF","PnL","historical fill frequency"]
+  "version": "MACHINE_STRATEGY_v4.1",
+  "witnesses": [
+    {
+      "assert": "refined M15 POI contact after eligibility and before emission rejects; prerequisite reaction does not",
+      "direction_pair": true,
+      "family": "SFP",
+      "id": "SFP_PREEMISSION_CONTACT"
+    },
+    {
+      "assert": "parent reaction contact does not consume selected refined POI; later refined contact does",
+      "direction_pair": true,
+      "family": "OB",
+      "id": "OB_PARENT_VS_REFINED"
+    },
+    {
+      "assert": "legacy full-parent contact/consumption cannot stand in for generated body first test; later eligible body contact consumes",
+      "direction_pair": true,
+      "family": "STB",
+      "id": "STB_BODY_VS_PARENT"
+    },
+    {
+      "assert": "parent OB contacts before breaker creation cannot consume future breaker handle; first later eligible breaker-body contact consumes",
+      "direction_pair": true,
+      "family": "BREAKER",
+      "id": "BREAKER_PRECREATION_CONTACT"
+    },
+    {
+      "assert": "mandatory boundary reaction is exempt; first later eligible boundary contact consumes",
+      "direction_pair": true,
+      "family": "RANGE",
+      "id": "RANGE_REQUIRED_REACTION_EXEMPT"
+    },
+    {
+      "assert": "order active at OPEN may fill on bar before contact publication at CLOSE; CLOSE cannot retro-cancel fill",
+      "direction_pair": true,
+      "family": "ALL",
+      "id": "ACTIVE_ORDER_SAME_BAR_FILL"
+    },
+    {
+      "assert": "eligible contact with no modeled fill consumes at CLOSE and retires before next OPEN",
+      "direction_pair": true,
+      "family": "ALL",
+      "id": "PENDING_CONTACT_NO_FILL"
+    },
+    {
+      "assert": "contact while WAIT_CONTEXT does not backdate first test; eligibility begins prospectively when context becomes admissible",
+      "direction_pair": true,
+      "family": "ALL",
+      "id": "CONTEXT_LATE_ENABLE"
+    },
+    {
+      "assert": "no emission/fill at OPEN>=formation_known_at+57600",
+      "direction_pair": true,
+      "family": "ALL",
+      "id": "DEADLINE_BOUNDARY"
+    },
+    {
+      "assert": "precision50 serialized design value is parsed, not recomputed, by precision80 ledger",
+      "direction_pair": false,
+      "family": "ARITHMETIC",
+      "id": "DECIMAL_ONE_THIRD"
+    },
+    {
+      "assert": "N2_s==K_s passes under design precision50 and cannot be changed by precision80 ledger",
+      "direction_pair": true,
+      "family": "ARITHMETIC",
+      "id": "DECIMAL_PAYOFF_EQUALITY"
+    },
+    {
+      "assert": "quantity floor occurs once in design scope and is never refloored by ledger",
+      "direction_pair": false,
+      "family": "ARITHMETIC",
+      "id": "LOT_FLOOR_PRECISION_BOUNDARY"
+    },
+    {
+      "assert": "H4 [08,12), eligibility08, emission09 and M15 fill09:15 retained at native CLOSE12; no active-at08 prerequisite; exclusive owner blocks10 proposal",
+      "direction_pair": true,
+      "family": "ALL_NATIVE",
+      "id": "H4_MIDBAR_EMISSION_FILL"
+    },
+    {
+      "assert": "eligible native contact known at H1 emission cutoff rejects new proposal before reservation",
+      "direction_pair": true,
+      "family": "ALL",
+      "id": "CONTACT_EQUALS_EMISSION"
+    },
+    {
+      "assert": "native matching context must be known at OPEN; matching context first learned at CLOSE cannot qualify earlier contact",
+      "direction_pair": true,
+      "family": "ALL",
+      "id": "NATIVE_CONTEXT_OPEN_PROOF"
+    },
+    {
+      "assert": "later context/confirmation or retried proposals cannot reset latched eligibility or consumed/reserved identity",
+      "direction_pair": true,
+      "family": "ALL",
+      "id": "OWNERSHIP_MONOTONIC"
+    },
+    {
+      "assert": "origin CONF A latches eligible physical inventory before viable proposal; contact consumes; later proposal CONF B cannot reset eligibility or admit consumed identity",
+      "direction_pair": true,
+      "family": "ALL_NATIVE",
+      "id": "PREPROPOSAL_CONF_AB_LATCH"
+    },
+    {
+      "assert": "native bar OPEN earlier than eligibility inside the bar is not an eligible first test, even though M15 execution clock is independent",
+      "direction_pair": true,
+      "family": "ALL_NATIVE",
+      "id": "MIDBAR_ELIGIBILITY_NO_BACKDATE"
+    }
+  ]
 }

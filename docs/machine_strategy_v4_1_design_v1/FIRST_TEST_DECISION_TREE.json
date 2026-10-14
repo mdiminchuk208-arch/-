@@ -1,23 +1,74 @@
 {
-  "version":"MACHINE_STRATEGY_v4.1",
-  "steps":[
-    {"id":1,"question":"Are formation/source-parent/selected-POI identities causally complete?","no":"WAIT_REQUIRED_CAUSAL_EVIDENCE","yes":"2"},
-    {"id":2,"question":"Has the family-required formation/reaction prerequisite completed?","no":"WAIT_REQUIRED_REACTION","yes":"3"},
-    {"id":3,"question":"Is origin CONF completed and known?","no":"WAIT_ORIGIN_CONF","yes":"4"},
-    {"id":4,"question":"Is required completed context admissible now?","no":"WAIT_CONTEXT_FOR_POI_ELIGIBILITY","yes":"set eligibility_at prospectively; go 5"},
-    {"id":5,"question":"Is eligibility_at at/after parent deadline?","yes":"EXPIRED_PENDING","no":"6"},
-    {"id":6,"question":"Did a completed eligible native contact occur after eligibility_at but before emission?","yes":"REJECT_SELECTED_POI_PRECONSUMED","no":"7"},
-    {"id":7,"question":"Can order be emitted under all inherited v4 gates?","no":"use inherited v4 WAIT/REJECT","yes":"reserve selected_poi_id; go 8"},
-    {"id":8,"question":"At a later native bar OPEN is order still active under already-known state/deadline?","no":"RETIRE_PENDING","yes":"9"},
-    {"id":9,"question":"Does current bar execute active order under frozen execution semantics?","yes":"FILL_OWNS_CURRENT_CONTACT; later CLOSE publication cannot retro-cancel","no":"10"},
-    {"id":10,"question":"At bar CLOSE is first eligible selected-POI contact now observed?","yes":"CONSUME_POI_AND_RETIRE_BEFORE_NEXT_OPEN","no":"continue pending"}
-  ],
   "family_exemptions": {
-    "SFP":"prerequisite contacts before eligibility only",
-    "OB":"parent reaction is not refined selected-POI consumption",
-    "STB":"formation/manipulation bar exempt",
-    "BREAKER":"breaker-creation break exempt",
-    "RANGE":"mandatory boundary reaction exempt; first later eligible boundary contact consumes"
+    "BREAKER": "breaker-creation break exempt",
+    "OB": "parent reaction is not refined selected-POI consumption",
+    "RANGE": "mandatory boundary reaction exempt; first later eligible boundary contact consumes",
+    "SFP": "prerequisite contacts before eligibility only",
+    "STB": "formation/manipulation bar exempt"
   },
-  "same_time_tf_rule":"only completed TF state at or before event cutoff is visible; no retroactive earlier-OPEN use"
+  "inventory_clock": "completed M15 cutoff; lifecycle eligibility inventory before and independent of viable H1 proposal; no extra trade signals",
+  "same_time_tf_rule": "advance completed D1,H4,H1,M15; publish native contacts before same-cutoff H1 emission; known_at<=next M15 OPEN usable; never use future CLOSE for earlier OPEN",
+  "steps": [
+    {
+      "id": 1,
+      "no": "WAIT_REQUIRED_CAUSAL_EVIDENCE",
+      "question": "Are formation/source-parent/selected-POI identities causally complete?",
+      "yes": "2"
+    },
+    {
+      "id": 2,
+      "no": "WAIT_REQUIRED_REACTION",
+      "question": "Has the family-required formation/reaction prerequisite completed?",
+      "yes": "3"
+    },
+    {
+      "id": 3,
+      "no": "WAIT_ORIGIN_CONF",
+      "question": "Is current inherited M4 confirmation complete and admissible for the first eligibility latch (later proposal CONF cannot reset it)?",
+      "yes": "4"
+    },
+    {
+      "id": 4,
+      "no": "WAIT_CONTEXT_FOR_POI_ELIGIBILITY",
+      "question": "Is required completed context admissible now?",
+      "yes": "set eligibility_at prospectively; go 5"
+    },
+    {
+      "id": 5,
+      "no": "6",
+      "question": "Is eligibility_at at/after parent deadline?",
+      "yes": "EXPIRED_PENDING"
+    },
+    {
+      "id": 6,
+      "no": "7",
+      "question": "Did eligible native contact become known_at<=emission_decision_at, including equal cutoff?",
+      "yes": "REJECT_SELECTED_POI_PRECONSUMED"
+    },
+    {
+      "id": 7,
+      "no": "use inherited v4 WAIT/REJECT",
+      "question": "Can order be emitted under all inherited v4 gates?",
+      "yes": "reserve selected_poi_id; go 8"
+    },
+    {
+      "id": 8,
+      "no": "RETIRE_PENDING",
+      "question": "At each later M15 OPEN, including inside running native contact bar, is order active under completed state known_at<=OPEN and deadline?",
+      "yes": "9"
+    },
+    {
+      "id": 9,
+      "no": "10",
+      "question": "Does current M15 bar execute active order under inherited frozen semantics?",
+      "yes": "FILL_RETAINED; owner fill in eligible native interval owns later contact even after exposure exits"
+    },
+    {
+      "id": 10,
+      "no": "continue pending",
+      "question": "At a completed native CLOSE is first eligible contact now published?",
+      "yes": "If owner previously filled in that native interval retain fill; otherwise consume and retire before next M15 OPEN"
+    }
+  ],
+  "version": "MACHINE_STRATEGY_v4.1"
 }

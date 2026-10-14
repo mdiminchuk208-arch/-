@@ -1,0 +1,151 @@
+{
+  "command_env": {
+    "PYTHONPATH": "scripts"
+  },
+  "commands": [
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_machine_strategy_v4_1_design.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_design_v1/qa/00.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_machine_strategy_v4_design_v1.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_design_v1/qa/01.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "check",
+        "scripts/machine_strategy_v4_1_design_reference.py",
+        "scripts/verify_machine_strategy_v4_1_design_v1.py",
+        "tests/test_machine_strategy_v4_1_design.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_design_v1/qa/02.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "format",
+        "--check",
+        "scripts/machine_strategy_v4_1_design_reference.py",
+        "scripts/verify_machine_strategy_v4_1_design_v1.py",
+        "tests/test_machine_strategy_v4_1_design.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_design_v1/qa/03.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/mypy",
+        "--follow-imports=silent",
+        "scripts/machine_strategy_v4_1_design_reference.py",
+        "scripts/verify_machine_strategy_v4_1_design_v1.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_design_v1/qa/04.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "py_compile",
+        "scripts/machine_strategy_v4_1_design_reference.py",
+        "scripts/verify_machine_strategy_v4_1_design_v1.py",
+        "tests/test_machine_strategy_v4_1_design.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_design_v1/qa/05.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "scripts/verify_machine_strategy_v4_1_design_v1.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_design_v1/qa/06.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "scripts/verify_machine_strategy_v4_implementation_v1.py",
+        "--resume-existing",
+        "--expected-manifest-sha256",
+        "6e325d6e5b3cffc4f143bfd4d390712b39ea940bccd4504c85148ed904bbcd7e"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_design_v1/qa/07.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "scripts/verify_machine_strategy_v4_design_v1.py",
+        "--resume-existing",
+        "--expected-manifest-sha256",
+        "b9452dea092c0d186d2ac164c044f2fad0d865becf9904791caebbf7b477273b"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_design_v1/qa/08.log"
+    }
+  ],
+  "complete_implementation_freeze": false,
+  "historical_financial_authorized": false,
+  "historical_position_evaluations": 0,
+  "implementation_ready": false,
+  "log_sha256": {
+    "docs/machine_strategy_v4_1_design_v1/qa/00.log": "751581504b09849f54be3ad043cd0200a1ad1e8f6cb09b8956c1d42c8a2d7c7e",
+    "docs/machine_strategy_v4_1_design_v1/qa/01.log": "d5838dae931181a0ae24c3b5a02ea9c2fe2e58b7a2fce76833ffa03ea12bfd5d",
+    "docs/machine_strategy_v4_1_design_v1/qa/02.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "docs/machine_strategy_v4_1_design_v1/qa/03.log": "eee76f865de5a9f2456950f710ae5d5f9b5bd0ea02aa54f614c5eed6642a0bfd",
+    "docs/machine_strategy_v4_1_design_v1/qa/04.log": "f9b031e5c45aa702cd4fef028d465551cb20a2c4698e0913c7b00766b20ac4d8",
+    "docs/machine_strategy_v4_1_design_v1/qa/05.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/machine_strategy_v4_1_design_v1/qa/06.log": "05d6d45cf13d67ccf7ee705a3833bd80a491cf22c78c4cd273919f4e537b3ad4",
+    "docs/machine_strategy_v4_1_design_v1/qa/07.log": "033c01e51833100af692d6ff47c25780e3e36deb3286e879ec5eb64bbc765d62",
+    "docs/machine_strategy_v4_1_design_v1/qa/08.log": "f8769ffcf905ac7957445a80af9c90b77492ffce59c5276abb26db11253624ad"
+  },
+  "registered_witness_count": 18,
+  "scope": "DESIGN_ONLY_HAND_FIXTURE_ORACLE_NOT_PRODUCTION",
+  "status": "PASS",
+  "tested_sha256": {
+    "docs/machine_strategy_v4_1_design_v1/ARITHMETIC_SCOPE_CONTRACT.json": "b808997cc65be8d125c741191cdb87c5947c9d6e5868acb8d56609195002c72b",
+    "docs/machine_strategy_v4_1_design_v1/DESIGN_INPUTS.json": "9747ed23003b286e11260f2e15e4de9f8ecdf905d44f57b8c2d9643b44e2a65f",
+    "docs/machine_strategy_v4_1_design_v1/FIELD_PROVENANCE.json": "54939b06f63b49ef02f0724425703af95d961f11bb7a13db6cd4dd2b0192bc4e",
+    "docs/machine_strategy_v4_1_design_v1/FIRST_TEST_DECISION_TREE.json": "1ef01202c39ac0ac41dafda1625ae59accd97ee3fd03281d690b637efc33d797",
+    "docs/machine_strategy_v4_1_design_v1/INHERITANCE_AND_SOURCE_CITATIONS.json": "eeffd40402d99909e94aed74d3c38735e1254546c82ba354669a4219333f2467",
+    "docs/machine_strategy_v4_1_design_v1/PREREGISTRATION.json": "66fde7a745407702f9bcb3fe072665636d2d7548de7c7e97b3e9ec1be5b10dc3",
+    "docs/machine_strategy_v4_1_design_v1/RULE_REGISTRY.json": "e8d5ecba9a1ebc9ceae66c3dd288eade08c063d88aca7b7600cb5a4bed6ce346",
+    "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json": "32d67141a5c8dcff7041fd0e46258c1738ba69cacb317146fd10dc672cc134aa",
+    "docs/machine_strategy_v4_1_design_v1/SYNTHETIC_WITNESS_REGISTRY.json": "e15252d614eeda91caca0c521b476f1ec88b099a4308ad0d35b0221cc52924d9",
+    "scripts/machine_strategy_v4_1_design_reference.py": "81fdba88ec141d6bcc3314dd33b55647155856378a1c4eb29807a0c51f183dcd",
+    "scripts/verify_machine_strategy_v4_1_design_v1.py": "0191f52adab5dbad60870f691e518d0afd2fe90c13e30bcff4956463018ed930",
+    "tests/test_machine_strategy_v4_1_design.py": "5508ac25e2e0abdf53dfea54ca43d40a51f8853d94153f6654a62d46b4b62f7b"
+  },
+  "tests_breakdown": {
+    "frozen_v4_design_regression": 28,
+    "v4_1_design_synthetic_and_guards": 24
+  },
+  "tests_passed": 52,
+  "trade_entry_allowed": false
+}

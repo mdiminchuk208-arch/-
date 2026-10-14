@@ -1,0 +1,418 @@
+{
+  "amendment_rules_are_machine_policy_or_normalization": true,
+  "inherited_v4_citations_artifact": "docs/machine_strategy_v4_design_v1/INHERITED_INPUTS_AND_SOURCE_CITATIONS.json",
+  "inherited_v4_citations_sha256": "33b44dd6041fc2f0865f1c25a63b8d095c3f18b1a500eb02dbe78d6e726310af",
+  "new_source_rules": [],
+  "retained_material_source_variants": [
+    "SW9 permits direct and conservative OB entries without universal precedence",
+    "SW9 permits full or partial exits at FTA",
+    "SFP all TF source-valid; H1+ preferred, v4 H1/H4 only is project scope",
+    "Conservative OB M1-M15 permitted; M15-only is inherited machine choice",
+    "Smooth structural approach lacks unique numerical source definition",
+    "Branch priority, re-entry and TF ladder are machine conventions"
+  ],
+  "source_concepts": [
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p2\u20133",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+          "source_id": "SW5",
+          "source_sha256": "be8e14fbe03b0effbf4496eac104d30849e37e7f3db2fb92d4db1f942ace55ba",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+          "text_sha256": "5c655505788c181a808940863814a68d979a85cec0c20dcb3766cdf51075e656"
+        },
+        {
+          "page_or_paragraph": "word/document.xml:P0053\u2013P0073",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430.docx",
+          "source_id": "19",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a"
+        }
+      ],
+      "literal_meaning": "HH/HL \u0432\u0432\u0435\u0440\u0445, LH/LL \u0432\u043d\u0438\u0437; \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0430 \u2014 \u0444\u0443\u043d\u0434\u0430\u043c\u0435\u043d\u0442 \u0430\u043d\u0430\u043b\u0438\u0437\u0430.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_STRUCTURE"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p4\u20135",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+          "source_id": "SW5",
+          "source_sha256": "be8e14fbe03b0effbf4496eac104d30849e37e7f3db2fb92d4db1f942ace55ba",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+          "text_sha256": "5c655505788c181a808940863814a68d979a85cec0c20dcb3766cdf51075e656"
+        },
+        {
+          "page_or_paragraph": "word/document.xml:P0088\u2013P0100",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430.docx",
+          "source_id": "19",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a"
+        }
+      ],
+      "literal_meaning": "BOS \u043f\u0440\u043e\u0431\u0438\u0432\u0430\u0435\u0442 \u043a\u043b\u044e\u0447\u0435\u0432\u043e\u0439 HL/LH \u0441 \u0437\u0430\u043a\u0440\u0435\u043f\u043b\u0435\u043d\u0438\u0435\u043c \u0442\u0435\u043b\u0430; \u043d\u043e\u0432\u0430\u044f \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0430 \u0440\u0430\u0437\u0432\u0438\u0432\u0430\u0435\u0442\u0441\u044f \u043f\u043e\u0441\u043b\u0435 \u0441\u043b\u043e\u043c\u0430.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_BOS"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p6\u20137",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+          "source_id": "SW5",
+          "source_sha256": "be8e14fbe03b0effbf4496eac104d30849e37e7f3db2fb92d4db1f942ace55ba",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+          "text_sha256": "5c655505788c181a808940863814a68d979a85cec0c20dcb3766cdf51075e656"
+        }
+      ],
+      "literal_meaning": "CONF \u2014 \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435 \u043a\u043b\u044e\u0447\u0435\u0432\u043e\u0433\u043e \u044d\u043a\u0441\u0442\u0440\u0435\u043c\u0443\u043c\u0430 \u043d\u043e\u0432\u043e\u0439 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u044b; \u043a\u043e\u043d\u0441\u0435\u0440\u0432\u0430\u0442\u0438\u0432\u043d\u043e \u0438\u0441\u043a\u0430\u0442\u044c \u0432\u0445\u043e\u0434 \u043f\u043e\u0441\u043b\u0435 CONF.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_CONF"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p5\u20136",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+          "source_id": "SW22",
+          "source_sha256": "ebac736d847b270c64ba38586c2f2a2a8685328d90eb7f6c9ada1bedd3a4d50b",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+          "text_sha256": "5c4e68bbd18e4797a4e5b50e417ef002a5bbb5b6c7bc374f23b362463f85b2f5"
+        }
+      ],
+      "literal_meaning": "\u0410\u043a\u0442\u0443\u0430\u043b\u044c\u043d\u044b\u0439 Order Flow \u0441\u043e\u0447\u0435\u0442\u0430\u0435\u0442 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0443, \u0440\u0430\u0431\u043e\u0442\u0443 \u0441 \u043b\u0438\u043a\u0432\u0438\u0434\u043d\u043e\u0441\u0442\u044c\u044e \u0438 \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0443 \u0432 global POI.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_FLOW"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p2\u20132",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_id": "SW9",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3"
+        }
+      ],
+      "literal_meaning": "\u0421\u0432\u0435\u0447\u0430 \u0441\u043d\u0438\u043c\u0430\u0435\u0442 \u043b\u0438\u043a\u0432\u0438\u0434\u043d\u043e\u0441\u0442\u044c, \u0437\u0430\u0442\u0435\u043c \u0430\u0433\u0440\u0435\u0441\u0441\u0438\u0432\u043d\u0430\u044f \u0438\u043c\u043f\u0443\u043b\u044c\u0441\u043d\u0430\u044f \u0441\u0432\u0435\u0447\u0430 \u043f\u043e\u0433\u043b\u043e\u0449\u0430\u0435\u0442 \u0435\u0451; BOS \u0438 HTF POI \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u044b.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_OB_FORMATION"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p3\u20133",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_id": "SW9",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3"
+        }
+      ],
+      "literal_meaning": "\u041b\u0438\u043c\u0438\u0442 \u043d\u0430 \u0432\u0435\u0440\u0445\u043d\u0435\u0439 LONG/\u043d\u0438\u0436\u043d\u0435\u0439 SHORT \u0433\u0440\u0430\u043d\u0438\u0446\u0435 OB \u0438\u043b\u0438 \u0432\u043d\u0443\u0442\u0440\u0438 \u0437\u043e\u043d\u044b.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_OB_DIRECT_ENTRY"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p4\u20136",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_id": "SW9",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3"
+        }
+      ],
+      "literal_meaning": "HTF OB 15M\u20131D \u00ab\u0438 \u0442.\u0434.\u00bb; \u043f\u0435\u0440\u0435\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 \u043d\u0430 \u043c\u0435\u043d\u044c\u0448\u0438\u0439 TF 1\u201315M.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_OB_CONS_TF"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p4\u20134",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_id": "SW9",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3"
+        }
+      ],
+      "literal_meaning": "\u041e\u0436\u0438\u0434\u0430\u0442\u044c \u043f\u043b\u0430\u0432\u043d\u044b\u0439 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u043d\u044b\u0439 \u043f\u043e\u0434\u0445\u043e\u0434 \u0432 HTF OB.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_OB_APPROACH"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p7\u20138",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_id": "SW9",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3"
+        }
+      ],
+      "literal_meaning": "OB \u0438\u043c\u043f\u0443\u043b\u044c\u0441\u043d\u043e \u043f\u0440\u043e\u0431\u0438\u0442 \u0446\u0435\u043b\u044c\u043d\u044b\u043c \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435\u043c \u0431\u0435\u0437 \u043f\u0440\u043e\u0442\u043e\u0440\u0433\u043e\u0432\u043a\u0438; \u043d\u043e\u0432\u044b\u0439 HH/LL, \u0441\u043b\u043e\u043c \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u044b.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_BREAKER_FORMATION"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "word/document.xml:P0068\u2013P0083",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]8. \u0422\u043e\u0440\u0433\u043e\u0432\u044b\u0435 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b (Base).docx",
+          "source_id": "16",
+          "source_sha256": "88d40f60f201de5ffe7da6591b59c6fd88a1fd7f9c64c281a2f099d84f52ac23",
+          "text": "data/source_materials/cryptology_2026_10_09/16.clean.txt",
+          "text_sha256": "3dfe171ff6d8d9ac90b65683871be5db562c2d8248b5032a648f4ff2c476ac8f"
+        },
+        {
+          "page_or_paragraph": "word/document.xml:P0157\u2013P0162",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430.docx",
+          "source_id": "19",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a"
+        }
+      ],
+      "literal_meaning": "External structural/range liquidity raid, reclaim body CLOSE, \u0441\u043b\u0435\u0434\u0443\u044e\u0449\u0430\u044f OPEN \u043d\u0430 reclaimed \u0441\u0442\u043e\u0440\u043e\u043d\u0435.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_SFP_FORMATION"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "word/document.xml:P0102\u2013P0106",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]8. \u0422\u043e\u0440\u0433\u043e\u0432\u044b\u0435 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b (Base).docx",
+          "source_id": "16",
+          "source_sha256": "88d40f60f201de5ffe7da6591b59c6fd88a1fd7f9c64c281a2f099d84f52ac23",
+          "text": "data/source_materials/cryptology_2026_10_09/16.clean.txt",
+          "text_sha256": "3dfe171ff6d8d9ac90b65683871be5db562c2d8248b5032a648f4ff2c476ac8f"
+        },
+        {
+          "page_or_paragraph": "word/document.xml:P0161\u2013P0162",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430.docx",
+          "source_id": "19",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a"
+        }
+      ],
+      "literal_meaning": "SFP \u043d\u0430 \u043b\u044e\u0431\u043e\u043c TF, H1+ \u043f\u0440\u0435\u0434\u043f\u043e\u0447\u0442\u0438\u0442\u0435\u043b\u044c\u043d\u043e; \u043d\u0443\u0436\u0435\u043d liquidity context.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_SFP_TF"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "word/document.xml:P0084\u2013P0087",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]8. \u0422\u043e\u0440\u0433\u043e\u0432\u044b\u0435 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b (Base).docx",
+          "source_id": "16",
+          "source_sha256": "88d40f60f201de5ffe7da6591b59c6fd88a1fd7f9c64c281a2f099d84f52ac23",
+          "text": "data/source_materials/cryptology_2026_10_09/16.clean.txt",
+          "text_sha256": "3dfe171ff6d8d9ac90b65683871be5db562c2d8248b5032a648f4ff2c476ac8f"
+        }
+      ],
+      "literal_meaning": "\u041f\u043e\u0441\u043b\u0435 formation \u043c\u043e\u0436\u043d\u043e \u043f\u0435\u0440\u0435\u0439\u0442\u0438 \u043d\u0430 LTF, \u0434\u043e\u0436\u0434\u0430\u0442\u044c\u0441\u044f BOS \u0438 \u0438\u0441\u043a\u0430\u0442\u044c entry.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_SFP_REFINE"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p12\u201313",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW12.pdf",
+          "source_id": "SW12",
+          "source_sha256": "1a17dfb7deb3b227b2bf386b88be341a99ad034b1950e0310c6c450e3f22369b",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+          "text_sha256": "62ab3f7ee0af368471373d900ba64420e12c7b54f1ffc6c6a44d5cf469c34a54"
+        }
+      ],
+      "literal_meaning": "ATR \u0440\u0430\u0441\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u043e\u0442\u0441\u0447\u0438\u0442\u044b\u0432\u0430\u0435\u0442\u0441\u044f \u043e\u0442 extreme SFP; \u0437\u0430\u0449\u0438\u0442\u043d\u044b\u0439 \u043e\u0440\u0434\u0435\u0440 \u043d\u0435 \u043f\u0435\u0440\u0435\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u0442\u0441\u044f.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_SFP_STOP"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p13\u201313",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW12.pdf",
+          "source_id": "SW12",
+          "source_sha256": "1a17dfb7deb3b227b2bf386b88be341a99ad034b1950e0310c6c450e3f22369b",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+          "text_sha256": "62ab3f7ee0af368471373d900ba64420e12c7b54f1ffc6c6a44d5cf469c34a54"
+        }
+      ],
+      "literal_meaning": "\u0417\u0430\u043a\u0440\u044b\u0442\u044c, \u0435\u0441\u043b\u0438 \u0441\u0432\u0435\u0447\u0430 \u0437\u0430\u043a\u0440\u044b\u043b\u0430\u0441\u044c \u0437\u0430 SFP minimum/maximum; \u043f\u0430\u0442\u0442\u0435\u0440\u043d \u043d\u0435\u0430\u043a\u0442\u0443\u0430\u043b\u0435\u043d.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_SFP_BODY_EXIT"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p2\u20133",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+          "source_id": "SW22",
+          "source_sha256": "ebac736d847b270c64ba38586c2f2a2a8685328d90eb7f6c9ada1bedd3a4d50b",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+          "text_sha256": "5c4e68bbd18e4797a4e5b50e417ef002a5bbb5b6c7bc374f23b362463f85b2f5"
+        }
+      ],
+      "literal_meaning": "STB/BTS: \u043e\u0441\u043d\u043e\u0432\u043d\u043e\u0439 \u0442\u0440\u0435\u043d\u0434, raid, \u043f\u043e\u043b\u043d\u043e\u0435 \u043f\u043e\u0433\u043b\u043e\u0449\u0435\u043d\u0438\u0435 \u043c\u0430\u043d\u0438\u043f\u0443\u043b\u044f\u0446\u0438\u0438, BOS \u043b\u0438\u0431\u043e CONF.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_STB_FORMATION"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p3\u20134",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+          "source_id": "SW22",
+          "source_sha256": "ebac736d847b270c64ba38586c2f2a2a8685328d90eb7f6c9ada1bedd3a4d50b",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+          "text_sha256": "5c4e68bbd18e4797a4e5b50e417ef002a5bbb5b6c7bc374f23b362463f85b2f5"
+        }
+      ],
+      "literal_meaning": "Entry upper LONG/lower SHORT edge \u043b\u0438\u0431\u043e 0.5 STB/BTS; mitigation/Premium Discount.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_STB_ENTRY"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "word/document.xml:P0037\u2013P0072",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]10. \u0411\u043e\u043a\u043e\u0432\u043e\u0435 \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435.docx",
+          "source_id": "06",
+          "source_sha256": "628cb1caa97138bc5470687e3743127cd147ac20c5cb39144345764be537e631",
+          "text": "data/source_materials/cryptology_2026_10_09/06.clean.txt",
+          "text_sha256": "ad70ddbe23b29b1f0bce9638ffb34b9cd98f04fbf1efcb42eaa52cb5b94aa5c6"
+        },
+        {
+          "page_or_paragraph": "word/document.xml:P0122\u2013P0128",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430.docx",
+          "source_id": "19",
+          "source_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+          "text": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+          "text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a"
+        }
+      ],
+      "literal_meaning": "Impulse \u043a\u043e\u043d\u0435\u0446 \u0438 correction \u043a\u043e\u043d\u0435\u0446 \u0437\u0430\u0434\u0430\u044e\u0442 \u0433\u0440\u0430\u043d\u0438\u0446\u044b; \u0440\u0435\u0430\u043a\u0446\u0438\u044f \u043d\u0430 0.5; \u043d\u0435\u044f\u0441\u043d\u044b\u0439 range \u043f\u0440\u043e\u043f\u0443\u0441\u0442\u0438\u0442\u044c.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_RANGE_FORMATION"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "word/document.xml:P0119\u2013P0121",
+          "source_document": "data/source_materials/source_fidelity_2026_10_11/unique_docx/[SW.BAND]10. \u0411\u043e\u043a\u043e\u0432\u043e\u0435 \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435.docx",
+          "source_id": "06",
+          "source_sha256": "628cb1caa97138bc5470687e3743127cd147ac20c5cb39144345764be537e631",
+          "text": "data/source_materials/cryptology_2026_10_09/06.clean.txt",
+          "text_sha256": "ad70ddbe23b29b1f0bce9638ffb34b9cd98f04fbf1efcb42eaa52cb5b94aa5c6"
+        }
+      ],
+      "literal_meaning": "80% \u0432\u0441\u0435\u0433\u0434\u0430 \u0432\u043d\u0443\u0442\u0440\u0438 \u0443 \u0433\u0440\u0430\u043d\u0438\u0446\u044b, 20% \u043c\u043e\u0436\u043d\u043e \u043e\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u043d\u0430 true breakout.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_RANGE_EXIT"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p11\u201313",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_id": "SW9",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3"
+        },
+        {
+          "page_or_paragraph": "p16\u201316",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_id": "SW9",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3"
+        }
+      ],
+      "literal_meaning": "\u041f\u0435\u0440\u0432\u0430\u044f opposing POI/\u043f\u0440\u043e\u0431\u043b\u0435\u043c\u043d\u0430\u044f \u0437\u043e\u043d\u0430; \u0442\u0440\u0435\u043d\u0434 \u0438 \u043a\u043e\u043d\u0442\u0440\u0442\u0440\u0435\u043d\u0434; \u0441\u0442\u0430\u0440\u0448\u0438\u0439 contextual TF.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_FTA"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p11\u201311",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_id": "SW9",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3"
+        },
+        {
+          "page_or_paragraph": "p16\u201316",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+          "source_id": "SW9",
+          "source_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+          "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3"
+        }
+      ],
+      "literal_meaning": "FTA \u0434\u043e\u043f\u0443\u0441\u043a\u0430\u0435\u0442 full \u043b\u0438\u0431\u043e partial close, \u0432 \u0442\u043e\u043c \u0447\u0438\u0441\u043b\u0435 countertrend.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_FTA_EXIT_OPTIONS"
+    },
+    {
+      "category": "SOURCE_RULE",
+      "citations": [
+        {
+          "page_or_paragraph": "p8\u20138",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW11.pdf",
+          "source_id": "SW11",
+          "source_sha256": "ffc65d95bbc1e22186cbddd061befb93e8143f3a5075c985165ecfe7b054f681",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+          "text_sha256": "e913f457f2711b756b9df901563848ec97b8fdb6e4c2e7e4c4890743e80e9b6f"
+        },
+        {
+          "page_or_paragraph": "p13\u201313",
+          "source_document": "data/source_materials/primary_pdf_2026_10_09/SW12.pdf",
+          "source_id": "SW12",
+          "source_sha256": "1a17dfb7deb3b227b2bf386b88be341a99ad034b1950e0310c6c450e3f22369b",
+          "text": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+          "text_sha256": "62ab3f7ee0af368471373d900ba64420e12c7b54f1ffc6c6a44d5cf469c34a54"
+        }
+      ],
+      "literal_meaning": "\u041f\u0435\u0440\u0432\u0438\u0447\u043d\u044b\u0439 \u0437\u0430\u043f\u0440\u0435\u0442 \u043f\u0435\u0440\u0435\u043d\u043e\u0441\u0438\u0442\u044c \u0441\u0442\u043e\u043f, SFP \u044f\u0432\u043d\u043e fixed stop.",
+      "machine_selector_equivalence": false,
+      "rule_id": "S_STOP_FIXED"
+    }
+  ],
+  "source_selector_equivalence": false,
+  "version": "MACHINE_STRATEGY_v4.1"
+}

@@ -1,0 +1,29 @@
+test_ACTIVE_ORDER_SAME_BAR_FILL (test_machine_strategy_v4_1_design.DesignWitnesses.test_ACTIVE_ORDER_SAME_BAR_FILL) ... ok
+test_BREAKER_PRECREATION_CONTACT (test_machine_strategy_v4_1_design.DesignWitnesses.test_BREAKER_PRECREATION_CONTACT) ... ok
+test_CONTACT_EQUALS_EMISSION (test_machine_strategy_v4_1_design.DesignWitnesses.test_CONTACT_EQUALS_EMISSION) ... ok
+test_CONTEXT_LATE_ENABLE (test_machine_strategy_v4_1_design.DesignWitnesses.test_CONTEXT_LATE_ENABLE) ... ok
+test_DEADLINE_BOUNDARY (test_machine_strategy_v4_1_design.DesignWitnesses.test_DEADLINE_BOUNDARY) ... ok
+test_DECIMAL_ONE_THIRD (test_machine_strategy_v4_1_design.DesignWitnesses.test_DECIMAL_ONE_THIRD) ... ok
+test_DECIMAL_PAYOFF_EQUALITY (test_machine_strategy_v4_1_design.DesignWitnesses.test_DECIMAL_PAYOFF_EQUALITY) ... ok
+test_H4_MIDBAR_EMISSION_FILL (test_machine_strategy_v4_1_design.DesignWitnesses.test_H4_MIDBAR_EMISSION_FILL) ... ok
+test_LOT_FLOOR_PRECISION_BOUNDARY (test_machine_strategy_v4_1_design.DesignWitnesses.test_LOT_FLOOR_PRECISION_BOUNDARY) ... ok
+test_MIDBAR_ELIGIBILITY_NO_BACKDATE (test_machine_strategy_v4_1_design.DesignWitnesses.test_MIDBAR_ELIGIBILITY_NO_BACKDATE) ... ok
+test_NATIVE_CONTEXT_OPEN_PROOF (test_machine_strategy_v4_1_design.DesignWitnesses.test_NATIVE_CONTEXT_OPEN_PROOF) ... ok
+test_OB_PARENT_VS_REFINED (test_machine_strategy_v4_1_design.DesignWitnesses.test_OB_PARENT_VS_REFINED) ... ok
+test_OWNERSHIP_MONOTONIC (test_machine_strategy_v4_1_design.DesignWitnesses.test_OWNERSHIP_MONOTONIC) ... ok
+test_PENDING_CONTACT_NO_FILL (test_machine_strategy_v4_1_design.DesignWitnesses.test_PENDING_CONTACT_NO_FILL) ... ok
+test_PREPROPOSAL_CONF_AB_LATCH (test_machine_strategy_v4_1_design.DesignWitnesses.test_PREPROPOSAL_CONF_AB_LATCH) ... ok
+test_RANGE_REQUIRED_REACTION_EXEMPT (test_machine_strategy_v4_1_design.DesignWitnesses.test_RANGE_REQUIRED_REACTION_EXEMPT) ... ok
+test_SFP_PREEMISSION_CONTACT (test_machine_strategy_v4_1_design.DesignWitnesses.test_SFP_PREEMISSION_CONTACT) ... ok
+test_STB_BODY_VS_PARENT (test_machine_strategy_v4_1_design.DesignWitnesses.test_STB_BODY_VS_PARENT) ... ok
+test_all_registered_witnesses_have_executed_test_methods (test_machine_strategy_v4_1_design.DesignWitnesses.test_all_registered_witnesses_have_executed_test_methods) ... ok
+test_canonical_identity_and_input_guard (test_machine_strategy_v4_1_design.DesignWitnesses.test_canonical_identity_and_input_guard) ... ok
+test_fake_design_manifest_cannot_escalate_authority (test_machine_strategy_v4_1_design.DesignWitnesses.test_fake_design_manifest_cannot_escalate_authority) ... ok
+test_frozen_pin_tamper_and_unsafe_path_rejected (test_machine_strategy_v4_1_design.DesignWitnesses.test_frozen_pin_tamper_and_unsafe_path_rejected) ... ok
+test_prefix_future_mutation_and_deterministic_replay (test_machine_strategy_v4_1_design.DesignWitnesses.test_prefix_future_mutation_and_deterministic_replay) ... ok
+test_reference_imports_are_only_stdlib (test_machine_strategy_v4_1_design.DesignWitnesses.test_reference_imports_are_only_stdlib) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.007s
+
+OK
