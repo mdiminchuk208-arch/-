@@ -1,0 +1,11 @@
+test_financial_authorization_cannot_be_sealed_as_stop (test_verify_okx_stage_a_v1.IntegrityTests.test_financial_authorization_cannot_be_sealed_as_stop) ... ok
+test_frozen_namespace_addition_is_rejected (test_verify_okx_stage_a_v1.IntegrityTests.test_frozen_namespace_addition_is_rejected) ... ok
+test_mutated_source_rejected (test_verify_okx_stage_a_v1.IntegrityTests.test_mutated_source_rejected) ... ok
+test_nonofficial_host_and_authenticated_capture_rejected (test_verify_okx_stage_a_v1.IntegrityTests.test_nonofficial_host_and_authenticated_capture_rejected) ... ok
+test_requested_url_schema_and_hash_supported (test_verify_okx_stage_a_v1.IntegrityTests.test_requested_url_schema_and_hash_supported) ... ok
+test_resume_requires_external_pin (test_verify_okx_stage_a_v1.IntegrityTests.test_resume_requires_external_pin) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+OK

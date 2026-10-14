@@ -1,0 +1,14 @@
+{
+  "control_sha256": {
+    "agent_control/CURRENT_BATCH.md": "c61877885695ad578b342a55211d05f120140444574c282e0f167ad385ee6439",
+    "agent_control/NEXT_TASK.md": "8a267aec2daf213effbc8623c89a5192a1babec0c2f1c2b763e27be07a038045"
+  },
+  "implementation_sha256": {
+    "scripts/build_okx_v3_compatibility_v1.py": "32acfb9f6e5b6979f3dc7c1c8f12797ee417e6ac323fa5b691a7cad70f765a7f",
+    "scripts/okx_v3_compatibility_binding_v1.py": "325d11606391ace7a409e0a7f908e3805af74589f98e3f369a40abbb9a55bccc",
+    "scripts/okx_v3_compatibility_runner_v1.py": "38bc9392acba6fb1179141eb3f1f8a89a5f44f793bc43f6a4338f9be87269f7f",
+    "tests/test_okx_v3_compatibility_v1.py": "7af6f98f25ef111c9221e0b456c6f143770a8a5de72386d06d6cca4d671a0de7"
+  },
+  "scope": "READY_ONLY_AUTHORIZES_ONE_SHOT_DEVELOPMENT_NOT_OOS_PAPER_LIVE",
+  "trade_entry_allowed": false
+}

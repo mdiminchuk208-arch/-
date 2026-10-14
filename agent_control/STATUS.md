@@ -43,3 +43,11 @@ Production candidate: NONE.
 PAPER_TRADING_READY=false.
 REAL_TRADING_READY=false.
 trade_entry_allowed=false.
+
+## Preserved implementation checkpoint (2026-10-14 UTC)
+
+The versioned OKX compatibility binding, guarded one-shot runner and freeze builder are implemented. The four policy files at 23f275ca remain unchanged; protected strategy and all Stage-A/transitive hashes match. QA: 30 compatibility +24 source/bridge/Stage-A tests PASS, Ruff/format/mypy/compile PASS, nine registered toy replays identical. Independent no_lookahead_auditor PASS on exact current code, including emitted-candidate prefix/future mutation, conflicts, ETH/LONG/SHORT and new campaign guard.
+
+Actual roles: /root/okx_compatibility_policy_execution_auditor; /root/okx_compatibility_no_lookahead_auditor; /root/okx_compatibility_final_independent_reviewer. Serial root+one specialist. Final READY review was interrupted by usage on Oct13 and resumed Oct14; no final verdict/READY freeze yet. No actual historical financial namespace, evaluations or outputs. Current action: finish independent review; if PASS seal/commit/push READY, then execute only the frozen one-shot development run. Reuse all existing code and QA; do not restart collection or policy design.
+
+ECC ecc@ecc2.2.3 enabled via /workspace/ecc-setup/codex-ecc; hooks remain inactive. OOS/PAPER/LIVE=false; trade_entry_allowed=false.

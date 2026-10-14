@@ -1,0 +1,12 @@
+test_direct_private_or_financial_boundary_fails_closed (test_okx_v3_input_bridge_v1.BridgeTests.test_direct_private_or_financial_boundary_fails_closed) ... ok
+test_edge_incomplete_group_not_invented (test_okx_v3_input_bridge_v1.BridgeTests.test_edge_incomplete_group_not_invented) ... ok
+test_exact_groups_release_on_complete_end (test_okx_v3_input_bridge_v1.BridgeTests.test_exact_groups_release_on_complete_end) ... ok
+test_future_mutation_cannot_change_visible_prefix (test_okx_v3_input_bridge_v1.BridgeTests.test_future_mutation_cannot_change_visible_prefix) ... ok
+test_interior_missing_bar_rejected (test_okx_v3_input_bridge_v1.BridgeTests.test_interior_missing_bar_rejected) ... ok
+test_product_mix_rejected (test_okx_v3_input_bridge_v1.BridgeTests.test_product_mix_rejected) ... ok
+test_source_description_does_not_claim_Bybit_or_actual_latency (test_okx_v3_input_bridge_v1.BridgeTests.test_source_description_does_not_claim_Bybit_or_actual_latency) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK

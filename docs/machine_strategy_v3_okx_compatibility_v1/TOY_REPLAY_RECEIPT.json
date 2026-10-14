@@ -1,0 +1,48 @@
+{
+  "code_sha256": {
+    "scripts/build_okx_v3_compatibility_v1.py": "32acfb9f6e5b6979f3dc7c1c8f12797ee417e6ac323fa5b691a7cad70f765a7f",
+    "scripts/okx_v3_compatibility_binding_v1.py": "325d11606391ace7a409e0a7f908e3805af74589f98e3f369a40abbb9a55bccc",
+    "scripts/okx_v3_compatibility_runner_v1.py": "38bc9392acba6fb1179141eb3f1f8a89a5f44f793bc43f6a4338f9be87269f7f",
+    "tests/test_okx_v3_compatibility_v1.py": "7af6f98f25ef111c9221e0b456c6f143770a8a5de72386d06d6cca4d671a0de7"
+  },
+  "fixtures": {
+    "LONG": {
+      "identical": true,
+      "sha256": "50755c59c7bf0709285870237ee33dc74685ce86dbbd9decfd61247623ba3832"
+    },
+    "LONG_ELIGIBILITY_DISAGREEMENT": {
+      "identical": true,
+      "sha256": "14618dbdf7b4d957a423845edc699c9c0610e8a8635d5e088f932a2132f37e47"
+    },
+    "LONG_ETH": {
+      "identical": true,
+      "sha256": "2e91cf0f908d455c2a486e198d2c77775b43e2cbed3e130210e92d688e730f46"
+    },
+    "LONG_INTRABAR": {
+      "identical": true,
+      "sha256": "8c911ceea875766ac86ed60aa7b1ae72db26daa168fe96b5cf339d79147a640e"
+    },
+    "LONG_NEGATIVE_FUNDING": {
+      "identical": true,
+      "sha256": "af15b2efd2bc23b470e54e26c5fb897c0d09a63ffb0472043c83df55046715a4"
+    },
+    "LONG_UNFILLED": {
+      "identical": true,
+      "sha256": "5d3e83342a54ecc318c5266ba6027a68bb23f0ec8546c125cc97dba4eab6206b"
+    },
+    "SHORT": {
+      "identical": true,
+      "sha256": "e237ada618c6fdcf86299dc110a1763910f089c5219f011f9c79076064fcc34a"
+    },
+    "SHORT_ETH": {
+      "identical": true,
+      "sha256": "003d806de5ea7b354fa13b81696e3de2271d9dfb3a69d832cf5beb5f36a70143"
+    },
+    "SHORT_NEGATIVE_FUNDING": {
+      "identical": true,
+      "sha256": "af5d1c6fb62b4ba8d5afb37e99b73fd7a0f503d584a5150187bec359507f4563"
+    }
+  },
+  "historical_financial_evaluations": 0,
+  "registered_toy_only": true
+}

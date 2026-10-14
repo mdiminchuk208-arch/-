@@ -1,0 +1,22 @@
+{
+  "agents": [
+    {
+      "identity": "/root/okx_compatibility_policy_execution_auditor",
+      "result": "Pre-outcome nine-scenario policy and accounting interpretation; no financial outputs",
+      "role": "execution_auditor"
+    },
+    {
+      "identity": "/root/okx_compatibility_no_lookahead_auditor",
+      "result": "PASS; independently29tests; parentmanifest/admission/conflict evidence repaired before outcomes",
+      "role": "no_lookahead_auditor"
+    },
+    {
+      "identity": "/root/okx_compatibility_final_independent_reviewer",
+      "result_artifact": "FINAL_REVIEW.json",
+      "role": "final_independent_reviewer"
+    }
+  ],
+  "dispatch": "SERIAL_FIRST_ROOT_PLUS_ONE_SPECIALIST",
+  "runtime": "cloud collaboration roles using project TOML, ECC installed/enabled; hooks inactive",
+  "trade_entry_allowed": false
+}

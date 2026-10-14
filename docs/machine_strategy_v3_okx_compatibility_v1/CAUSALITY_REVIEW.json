@@ -1,0 +1,26 @@
+{
+  "author": false,
+  "code_sha256": {
+    "scripts/build_okx_v3_compatibility_v1.py": "32acfb9f6e5b6979f3dc7c1c8f12797ee417e6ac323fa5b691a7cad70f765a7f",
+    "scripts/okx_v3_compatibility_binding_v1.py": "325d11606391ace7a409e0a7f908e3805af74589f98e3f369a40abbb9a55bccc",
+    "scripts/okx_v3_compatibility_runner_v1.py": "38bc9392acba6fb1179141eb3f1f8a89a5f44f793bc43f6a4338f9be87269f7f",
+    "tests/test_okx_v3_compatibility_v1.py": "7af6f98f25ef111c9221e0b456c6f143770a8a5de72386d06d6cca4d671a0de7"
+  },
+  "configured_role": "no_lookahead_auditor",
+  "decision": "CAUSALITY_REVIEW_PASS",
+  "followup": "Oct14: exact authorized campaign headers, committed READY gate and current control/code pins independently checked; 30 tests PASS. No actual outcomes.",
+  "historical_financial_outputs_accessed": false,
+  "independent_tests": 30,
+  "independent_tests_status": "PASS",
+  "residual_limits": [
+    "Nonempty prefix fixture exercises one emitted candidate, not all branches; hashes preserve all protected branch decision code.",
+    "Finite synthetic stress family is not an exact historical microstructure reconstruction."
+  ],
+  "resolved_findings": [
+    "Parent Stage-A manifest must be externally verified before source load",
+    "Reservation-conflict proposals must have stable IDs/reasons",
+    "Prefix test must emit a candidate, not only discover raw formations",
+    "ETH quantity assertion must compare numeric Decimal value"
+  ],
+  "reviewer": "/root/okx_compatibility_no_lookahead_auditor"
+}

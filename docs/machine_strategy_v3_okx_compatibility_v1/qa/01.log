@@ -1,0 +1,16 @@
+test_application_error_not_success (test_okx_qualification_data_v1.DataTests.test_application_error_not_success) ... ok
+test_bad_prices_nonfinite_and_volume (test_okx_qualification_data_v1.DataTests.test_bad_prices_nonfinite_and_volume) ... ok
+test_completed_only (test_okx_qualification_data_v1.DataTests.test_completed_only) ... ok
+test_duplicate_pages_rejected (test_okx_qualification_data_v1.DataTests.test_duplicate_pages_rejected) ... ok
+test_exact_decimal_and_chronological_sort (test_okx_qualification_data_v1.DataTests.test_exact_decimal_and_chronological_sort) ... ok
+test_full_grid_and_edges (test_okx_qualification_data_v1.DataTests.test_full_grid_and_edges) ... ok
+test_future_and_cursor_equality_rejected (test_okx_qualification_data_v1.DataTests.test_future_and_cursor_equality_rejected) ... ok
+test_grid_and_duplicate_rejected (test_okx_qualification_data_v1.DataTests.test_grid_and_duplicate_rejected) ... ok
+test_interior_gap_not_interpolated (test_okx_qualification_data_v1.DataTests.test_interior_gap_not_interpolated) ... ok
+test_only_official_public_route_and_products (test_okx_qualification_data_v1.DataTests.test_only_official_public_route_and_products) ... ok
+test_prefix_unaffected_by_future_mutation (test_okx_qualification_data_v1.DataTests.test_prefix_unaffected_by_future_mutation) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.001s
+
+OK

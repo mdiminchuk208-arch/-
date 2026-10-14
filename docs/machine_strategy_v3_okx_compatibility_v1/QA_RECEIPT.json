@@ -1,0 +1,130 @@
+{
+  "code_sha256": {
+    "scripts/build_okx_v3_compatibility_v1.py": "32acfb9f6e5b6979f3dc7c1c8f12797ee417e6ac323fa5b691a7cad70f765a7f",
+    "scripts/okx_v3_compatibility_binding_v1.py": "325d11606391ace7a409e0a7f908e3805af74589f98e3f369a40abbb9a55bccc",
+    "scripts/okx_v3_compatibility_runner_v1.py": "38bc9392acba6fb1179141eb3f1f8a89a5f44f793bc43f6a4338f9be87269f7f",
+    "tests/test_okx_v3_compatibility_v1.py": "7af6f98f25ef111c9221e0b456c6f143770a8a5de72386d06d6cca4d671a0de7"
+  },
+  "commands": [
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_okx_v3_compatibility_v1.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v3_okx_compatibility_v1/qa/00.log",
+      "log_sha256": "6a65b298c0e1846dd10aa3457daa51015dd62230a2e6272267fad545b29dfea8"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_okx_qualification_data_v1.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v3_okx_compatibility_v1/qa/01.log",
+      "log_sha256": "b03c74d427662a9098935f3eb1f1f83e3f26f400f21bf9b02432472593f1d25d"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_okx_v3_input_bridge_v1.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v3_okx_compatibility_v1/qa/02.log",
+      "log_sha256": "31d71d9986b3dcfb0553ab659eec630c0c723732a7a175afbc931287c153426e"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_verify_okx_stage_a_v1.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v3_okx_compatibility_v1/qa/03.log",
+      "log_sha256": "34cc0e6da3f79cac21ca5519e39ef0465bd4554a8b18099a3d0941800f1d2470"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "check",
+        "scripts/okx_v3_compatibility_binding_v1.py",
+        "scripts/okx_v3_compatibility_runner_v1.py",
+        "scripts/build_okx_v3_compatibility_v1.py",
+        "tests/test_okx_v3_compatibility_v1.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v3_okx_compatibility_v1/qa/04.log",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "format",
+        "--check",
+        "scripts/okx_v3_compatibility_binding_v1.py",
+        "scripts/okx_v3_compatibility_runner_v1.py",
+        "scripts/build_okx_v3_compatibility_v1.py",
+        "tests/test_okx_v3_compatibility_v1.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v3_okx_compatibility_v1/qa/05.log",
+      "log_sha256": "177f260a5645724013185e4b140c7045cc39e56c0c97b120f5cb23599f85f0de"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/mypy",
+        "--follow-imports=silent",
+        "scripts/okx_v3_compatibility_binding_v1.py",
+        "scripts/okx_v3_compatibility_runner_v1.py",
+        "scripts/build_okx_v3_compatibility_v1.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v3_okx_compatibility_v1/qa/06.log",
+      "log_sha256": "8228fcc5ce46d42d01caf3cd941f4e9c5f2bcc372bb5b147a2f0572d2dd675a8"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "py_compile",
+        "scripts/okx_v3_compatibility_binding_v1.py",
+        "scripts/okx_v3_compatibility_runner_v1.py",
+        "scripts/build_okx_v3_compatibility_v1.py",
+        "tests/test_okx_v3_compatibility_v1.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v3_okx_compatibility_v1/qa/07.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "historical_financial_evaluations": 0,
+  "registered_toy_only": true,
+  "status": "PASS"
+}
