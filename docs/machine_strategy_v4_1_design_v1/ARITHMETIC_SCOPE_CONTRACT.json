@@ -1,0 +1,65 @@
+{
+  "version": "MACHINE_STRATEGY_v4.1",
+  "normative": true,
+  "classification": "TECHNICAL_NORMALIZATION",
+  "rounding": "ROUND_HALF_EVEN",
+  "design_scope": {
+    "decimal_precision": 50,
+    "applies_to": [
+      "raw family geometry",
+      "selected POI boundaries",
+      "tick/lot quantization",
+      "entry/stop/target construction",
+      "H04 executable envelope",
+      "H05 planned payoff gate",
+      "planned K_s and N2_s",
+      "eligibility and exact boundary comparisons"
+    ],
+    "epsilon_allowed": false,
+    "float_allowed": false
+  },
+  "ledger_scope": {
+    "decimal_precision": 80,
+    "applies_to": [
+      "realized gross cash accumulation",
+      "fee cash accumulation",
+      "slippage cash accumulation",
+      "signed funding cash accumulation",
+      "net cash",
+      "fixed-U R division",
+      "portfolio/statistical sums derived from frozen case cash/R"
+    ],
+    "may_recompute_design_geometry": false,
+    "may_change_quantized_entry_stop_target": false,
+    "may_change_selected_FTA_or_selected_POI": false
+  },
+  "boundary_contract": {
+    "transport": "canonical Decimal strings only",
+    "canonical_zero": "0",
+    "scientific_notation_in_persisted_contract_values": false,
+    "timestamps": "exact integer UTC seconds/milliseconds as already defined; no Decimal conversion needed",
+    "comparison": "exact Decimal ordering/equality on the design-scope serialized values; no tolerance",
+    "fixed_U": "serialized once from reference scenario/base-cost design construction and consumed by ledger unchanged",
+    "quantity": "serialized scenario quantity from design/execution binding; ledger consumes unchanged",
+    "funding_rates": "source Decimal strings parsed directly at ledger precision80; never rounded through design precision50 unless used by a design rule, which v4.1 does not permit"
+  },
+  "repeating_decimal_witnesses": [
+    {
+      "name": "one_third_boundary",
+      "input": "1/3",
+      "design_rule": "compute/quantize under precision50 then serialize; ledger must parse exact serialized value rather than recompute 1/3 under precision80"
+    },
+    {
+      "name": "lot_division_boundary",
+      "input": "(1/contract_base)/lot",
+      "design_rule": "contract count flooring is a design/execution operation at precision50; ledger may not refloor at precision80"
+    },
+    {
+      "name": "payoff_equality",
+      "input": "N2_s == K_s",
+      "design_rule": "equality passes exactly under precision50; ledger precision cannot alter admission"
+    }
+  ],
+  "financial_validation_authorized": false,
+  "trade_entry_allowed": false
+}
