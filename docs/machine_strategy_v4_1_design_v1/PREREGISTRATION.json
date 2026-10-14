@@ -1,0 +1,56 @@
+{
+  "version": "MACHINE_STRATEGY_v4.1",
+  "gate": "SELECTED_POI_DESIGN_ONLY",
+  "design_scope": [
+    "selected-POI identity and first-test eligibility",
+    "required reaction exemption",
+    "STB body versus full parent consumption separation",
+    "BREAKER generated body provenance",
+    "RANGE generated boundary provenance",
+    "native contact/OPEN/CLOSE ordering",
+    "Decimal50 design versus Decimal80 ledger scope"
+  ],
+  "explicitly_unchanged": [
+    "LONG/SHORT symmetry",
+    "SFP/OB/STB/BREAKER/RANGE families",
+    "M4 approach selector",
+    "HTF context logic",
+    "structural anchors/stops",
+    "nearest FTA selection",
+    "H04 one-grid executable envelope",
+    "H05 doubled-cost >=1R planned payoff gate",
+    "nine compatibility scenarios",
+    "formation_known_at+57600 half-open parent deadline",
+    "fixed-U reporting semantics",
+    "funding realization policy",
+    "qualification thresholds"
+  ],
+  "outcome_isolation": {
+    "historical_fill_exit_simulation_authorized": false,
+    "historical_financial_output_authorized": false,
+    "catalog_count_selection_authorized": false,
+    "WR_PF_PnL_parameter_selection_authorized": false,
+    "threshold_sweep_authorized": false
+  },
+  "qualification": {
+    "win_rate_min": 0.70,
+    "closed_trades_min": 200,
+    "profit_factor_min": 1.20,
+    "net_expectancy_R_strictly_positive": true,
+    "net_PnL_strictly_positive": true,
+    "doubled_cost_profit_factor_min": 1.00,
+    "doubled_cost_net_PnL_strictly_positive": true,
+    "max_drawdown_R_max": 20,
+    "max_consecutive_net_losses_max": 10,
+    "each_coin_direction_closed_min": 30,
+    "each_coin_direction_net_positive": true,
+    "wilson_95pct_lower_bound_min": 0.60,
+    "largest_calendar_quarter_profit_share_max": 0.50,
+    "largest_coin_profit_share_max": 0.80,
+    "filled_unknown_exit_max": 0
+  },
+  "completion": "independent execution/no-lookahead/final review and externally pinned design freeze required before implementation resumes",
+  "trade_entry_allowed": false,
+  "PAPER": false,
+  "LIVE": false
+}
