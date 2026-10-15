@@ -1,15 +1,25 @@
 # Agent Status
 
-State: `MACHINE_STRATEGY_V4_1_FAILURE_AUDIT_REVIEW_PENDING`.
+State: `SOURCE_STRATEGY_REBUILD_STAGE_2_EXECUTABLE_SEMANTICS`.
 
-The frozen v4.1 development financial gate remains complete as `MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_STOP`. Frozen result namespace `docs/machine_strategy_v4_1_development_financial_v1/` must not be modified. External result manifest SHA256 `d0a05dcd49545ae963a89840aa09388419b5213f963ba0bd266686e622812d74`; RUN_CHECKPOINT SHA256 `7dfaa6fb20c07febdbdb4a98278ce6c92ea4d1a026499656b3c9c5ed0280d6f8`.
+The project has been reset to a source-first strategy rebuild. The authoritative strategy input is the user-supplied `Методичка.docx`. Historical machine versions v2/v2.1/v2.2/v3/v4/v4.1 and their financial/audit results remain frozen evidence, but they are **not authoritative interpretations of the source strategy** and must not supply rules silently.
 
-A new cached-evidence-only audit namespace is authored at `docs/machine_strategy_v4_1_failure_audit_v1/` with protocol, pinned input inventory, causal evidence registry, unresolved-evidence registry, failure audit report and evidence-ranked redesign hypotheses. No new historical engine call, replay, alternative trade simulation, changed PnL, robustness/OOS/forward run or tuning was performed.
+Stage 1 source freeze is present in `docs/source_strategy_rebuild_v1/`:
+- `00_SOURCE_AUTHORITY.md`
+- `01_SOURCE_RULES.md`
+- `02_SEMANTIC_POLICY_AND_OVERLAYS.md`
+- `03_STAGE_PLAN.md`
 
-Current authored diagnosis: 54 candidates -> 8 all-nine filled -> 7 all-nine CLOSED + 1 filled unresolved; 46 no-fill. Across 486 states: 396 `UNFILLED_RETIRED`, 18 `UNFILLED_EXPIRED`, 63 `CLOSED`, 9 `WAIT_INTRABAR_ORDER`, implying 44 all-nine retired candidates and 2 all-nine expired candidates. Availability/reachability/lifecycle retirement is therefore the first causal audit target. The 7 CLOSED cases are 2W/5L, WR 28.5714%, PF_R 0.462899, gross -0.850574R/-132.71 modeled USDT and net -2.433195R/-613.690876 modeled USDT. Costs materially amplify loss but do not create its negative gross sign.
+Current work is Stage 2 only: translate the literal source into causal executable semantics and explicitly separate every predicate into `SOURCE_RULE`, `TECHNICAL_NORMALIZATION`, or `PROJECT_OVERLAY`.
 
-Candidate composition remains sparse/imbalanced: STB38, RANGE10, SFP5, BREAKER1, OB0; BTC LONG9 candidates/0CLOSED. SHORT has 6 CLOSED with1W/5L, but post-result SHORT removal is explicitly not authorized. H4/SFP/LONG positive tiny slices remain diagnostics only. One ETH LONG RANGE H1 case remains all-nine `WAIT_INTRABAR_ORDER`; no exit is imputed.
+Critical rebuild policy:
+- no visual/discretionary AI dependency for production detection;
+- no hidden numeric thresholds for qualitative source language;
+- unresolved source semantics remain visible as `UNKNOWN_*` and may not silently delete formations from coverage telemetry;
+- market structure and SFP are not restricted to H1/H4; the initial active data universe is M15/H1/H4/D1 as a project scope, with architecture open to lower TF expansion;
+- old v4/v4.1 WAIT/REJECT gates, lifetimes, admission rules, family preferences and outcome-derived slices are forbidden carry-over unless separately justified and reclassified;
+- no historical financial execution until source-fidelity/coverage and entry/stop/target contracts are frozen.
 
-This authored diagnosis is **not yet independently accepted or frozen**. Next step is the independent cached-evidence audit review defined in `agent_control/V4_1_FAILURE_AUDIT_REVIEW_WORK_ORDER.md`: strategy/funnel review, execution/lifecycle review, cost/funding review, independent causal/backtest review, then separate final reviewer and exact PASS/STOP freeze manifest. No strategy_designer before audit freeze.
+Before any new P&L, the detector must pass an outcome-blind source-fidelity/coverage gate. User project sanity target: `>=365 actionable setup opportunities / coin-year` across the active timeframe universe. This is a coverage requirement, not permission to fabricate trades; tens of opportunities per year means `SOURCE_FIDELITY_STOP` and detector repair.
 
-Qualification target WR>=70% and all other frozen thresholds remain unchanged. Production candidate NONE. No PAPER/LIVE/private exchange API/orders/platform; `trade_entry_allowed=false`.
+Safety remains `trade_entry_allowed=false`; no PAPER/LIVE/private exchange API/orders/platform. Production candidate NONE.
