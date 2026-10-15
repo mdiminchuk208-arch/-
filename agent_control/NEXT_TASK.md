@@ -1,13 +1,11 @@
-# Next Task — v4.1 implementation gate complete
+# Next Task — MACHINE_STRATEGY_v4.1 one-shot development financial gate
 
-State: `MACHINE_STRATEGY_V4_1_IMPLEMENTATION_READY`. Completed work order: `V4_1_IMPLEMENTATION_READINESS_WORK_ORDER.md`. External implementation manifest SHA256 `e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61`. Preserve the complete frozen implementation and all predecessors.
+State: `MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_OPEN`.
 
-Verify/reuse the finished gate with:
+Do not restart design or implementation readiness. Reuse frozen implementation commit `bf9bb4c7ed9e82df42b4fc2eec5df28695edf155` and external manifest SHA256 `e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61`.
 
-`PYTHONPATH=scripts python scripts/verify_machine_strategy_v4_1_implementation_v1.py --resume-existing --expected-manifest-sha256 e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61`
+Read and execute `agent_control/V4_1_DEVELOPMENT_FINANCIAL_WORK_ORDER.md` completely. The financial rules were preregistered before outcomes in `docs/machine_strategy_v4_1_development_financial_v1/PREREGISTRATION.json`; one-shot authorization is in `AUTHORIZATION.json`.
 
-Do not restart implementation or rerun unchanged full source proof. Read ARTIFACT_INDEX, IMPLEMENTATION_REPORT, QA_RECEIPT and independent reviews in `docs/machine_strategy_v4_1_implementation_readiness_v1`. All current-gate requirements are complete; this file does not silently create a new financial authorization.
+First execute pre-run QA on `scripts/run_machine_strategy_v4_1_development_financial_v1.py` and its synthetic guards. Then run `--verify-authorization`. If and only if those PASS and no result checkpoint exists, execute exactly one historical `--run`. Immediately checkpoint and commit/push exact outputs before any analysis or repair based on results.
 
-The next possible research phase is a separately named, explicitly authorized one-shot development financial gate on these exact frozen implementation bytes, with pre-outcome runner authorization/preregistration and independent financial/anti-overfit review. This implementation work order permits opening that later gate only, not executing it. Historical public execution remains denied until that separate gate. Do not tune rules or select thresholds/directions/families from catalog counts or outcomes; do not reinterpret existing exposed development as pristine OOS.
-
-No historical v4/v4.1 fill/exit/financial evaluation or OOS/forward/PAPER/LIVE/private exchange API/orders/platform is authorized by this completion. Qualification unchanged including WR>=70%; production candidate NONE; `trade_entry_allowed=false`; ECC hooks inactive.
+After the one-shot output exists, never silently rerun or retune. Independently audit all-nine coverage, realized accounting and frozen qualification thresholds; then serially review and freeze exact PASS or STOP. If STOP, open causal failure audit/new explicit strategy version. If PASS, open robustness / separately registered untouched OOS prerequisites. No OOS relabeling, PAPER, LIVE, private API/orders or platform reconnect here. `trade_entry_allowed=false`.
