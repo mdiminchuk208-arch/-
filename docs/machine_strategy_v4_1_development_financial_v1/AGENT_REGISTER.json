@@ -41,6 +41,23 @@
       "role": "backtest_reviewer",
       "scope": "FIRST_SERIAL_POST_RESULT_REVIEW",
       "status": "COMPLETED"
+    },
+    {
+      "agent": "/root/v41_financial_cost_review",
+      "critical_blockers": [],
+      "evidence": "reviews/COST_FUNDING_AUDITOR.json",
+      "invoked": true,
+      "key_findings": [
+        "All54 cases and486 ordered scenario states retained:46 no-fill,7 CLOSED,1 coarse label covering nine identical WAIT_INTRABAR_ORDER states; zero mixed terminal-status cases, no imputed exit.",
+        "Base gross cash-132.71USDT; modeled fees+slippage481.649528USDT; signed funding+0.66865246292181795USDT. Doubled fees+slippage963.299056USDT. Gross is already negative.",
+        "Archived signed settlement rates are verified inputs. Funding cash depends on modeled quantity, native M15 settlement-close proxy and adverse feasible timing witness; account fees, slippage, tick/lot epochs and actual funding cash receipts remain unverified.",
+        "Independent summation of displayed doubled case R differs by1E-79 from aggregate due Decimal80 addition order; cash, components, PF and STOP agree.",
+        "7CLOSED versus200,2wins/7,basePF0.4628989658,negative net/expectancy,doubled failure,9filledunknown states are qualification failures; no separate cost-accounting integrity blocker."
+      ],
+      "result": "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_STOP",
+      "role": "cost_funding_auditor",
+      "scope": "SERIAL_POST_RESULT_REVIEW",
+      "status": "COMPLETED"
     }
   ],
   "historical_execution_attempts": 2,
