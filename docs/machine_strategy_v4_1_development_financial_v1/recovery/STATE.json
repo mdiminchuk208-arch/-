@@ -1,5 +1,12 @@
 {
   "artifacts_sha256": {
+    "docs/machine_strategy_v4_1_development_financial_v1/BTC-USDT-SWAP.cases.jsonl.gz": "65fb2e4c7624a0a2f5b66901d00ccf343895f610de2e3b71de0237a4a5c2f958",
+    "docs/machine_strategy_v4_1_development_financial_v1/BTC-USDT-SWAP.catalog.jsonl.gz": "0abdd4baa3dac44de0567b661de757accc8bc73a9a8977f37a9a553e7854e78b",
+    "docs/machine_strategy_v4_1_development_financial_v1/ETH-USDT-SWAP.cases.jsonl.gz": "fe48c344e4930d39dca375d4d6fafedc728c2b8f18d56c5078da8be16e0f1fe9",
+    "docs/machine_strategy_v4_1_development_financial_v1/ETH-USDT-SWAP.catalog.jsonl.gz": "b49fcf7d529df69564f7812263c8877d2e9d10a07ff168ab12c156f4a4259da0",
+    "docs/machine_strategy_v4_1_development_financial_v1/FINANCIAL_RESULT.json": "6ec53bb9fbddaaa79ca628ae527b9f87417901febb0e3788619a662629206875",
+    "docs/machine_strategy_v4_1_development_financial_v1/RUN_CHECKPOINT.json": "7dfaa6fb20c07febdbdb4a98278ce6c92ea4d1a026499656b3c9c5ed0280d6f8",
+    "docs/machine_strategy_v4_1_development_financial_v1/RUN_RECEIPT.json": "478f41342d452b7d3490de7ce6c4b167e6c677f3ad9a98356e3e9b8d2598ef5d",
     "docs/machine_strategy_v4_1_development_financial_v1/recovery/BTC-USDT-SWAP.catalog.jsonl.gz": "0abdd4baa3dac44de0567b661de757accc8bc73a9a8977f37a9a553e7854e78b",
     "docs/machine_strategy_v4_1_development_financial_v1/recovery/CATALOG_AUDIT.json": "b8a7d0e79541b9c859366d36f2003c2cdfa6aec4fc1f4a006b45f48615364f80",
     "docs/machine_strategy_v4_1_development_financial_v1/recovery/ETH-USDT-SWAP.catalog.jsonl.gz": "b49fcf7d529df69564f7812263c8877d2e9d10a07ff168ab12c156f4a4259da0",
@@ -162,7 +169,7 @@
     "tests/test_machine_strategy_v4_1_development_financial_recovery.py": "4db9ad7099771f74b83ce1bdc0d587d9b511ad60e6c4ecfa4a24567814af9b3a",
     "tests/test_machine_strategy_v4_1_development_financial_runner.py": "2501fa9ea511197122cc4ba4707c9546cd1989b4950161989e98eac93abc2f62"
   },
-  "completed_financial_evaluations": 0,
+  "completed_financial_evaluations": 1,
   "gate": "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_V1",
   "groups": [
     {

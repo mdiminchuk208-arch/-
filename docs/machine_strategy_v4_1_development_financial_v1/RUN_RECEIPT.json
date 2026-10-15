@@ -1,0 +1,25 @@
+{
+  "attempt1": "FAILED_SIGKILL_BEFORE_EMITTED_OUTCOMES",
+  "authorization_commit": "4a0a1471c040522058cb0520b0dc25a8dd20d4b5",
+  "catalog_audit": {
+    "BTC-USDT-SWAP": {
+      "candidate_count": 25,
+      "raw_origin_count": 5960,
+      "source_digest": "58d6853a5a4b539226be29763daed01b1ef4c666ab8e35d7ce2df3c6468a9144"
+    },
+    "ETH-USDT-SWAP": {
+      "candidate_count": 29,
+      "raw_origin_count": 5987,
+      "source_digest": "b52f617a241aa0c9090f1410561fd772140bba457a3ed98d0d91b8198fe8517f"
+    }
+  },
+  "financial_result_decision": "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_STOP",
+  "gate": "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_V1",
+  "historical_execution_attempts": 2,
+  "historical_run_count": 1,
+  "implementation_freeze_commit": "bf9bb4c7ed9e82df42b4fc2eec5df28695edf155",
+  "implementation_manifest_sha256": "e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61",
+  "preregistration_commit": "f5e60538a2c6ea4194177971ac1d433143ddf3a2",
+  "recovery": "UNCHANGED_PRIMITIVES_PUBLISHED_IMMUTABLE_GROUPS",
+  "trade_entry_allowed": false
+}

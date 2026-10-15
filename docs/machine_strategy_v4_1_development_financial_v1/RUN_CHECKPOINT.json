@@ -1,0 +1,14 @@
+{
+  "artifacts_sha256": {
+    "BTC-USDT-SWAP.cases.jsonl.gz": "65fb2e4c7624a0a2f5b66901d00ccf343895f610de2e3b71de0237a4a5c2f958",
+    "BTC-USDT-SWAP.catalog.jsonl.gz": "0abdd4baa3dac44de0567b661de757accc8bc73a9a8977f37a9a553e7854e78b",
+    "ETH-USDT-SWAP.cases.jsonl.gz": "fe48c344e4930d39dca375d4d6fafedc728c2b8f18d56c5078da8be16e0f1fe9",
+    "ETH-USDT-SWAP.catalog.jsonl.gz": "b49fcf7d529df69564f7812263c8877d2e9d10a07ff168ab12c156f4a4259da0",
+    "FINANCIAL_RESULT.json": "6ec53bb9fbddaaa79ca628ae527b9f87417901febb0e3788619a662629206875",
+    "RUN_RECEIPT.json": "478f41342d452b7d3490de7ce6c4b167e6c677f3ad9a98356e3e9b8d2598ef5d"
+  },
+  "decision": "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_STOP",
+  "gate": "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_V1",
+  "historical_run_count": 1,
+  "state": "ONE_SHOT_RESULT_COMMITTED_TO_FILESYSTEM"
+}
