@@ -1,13 +1,21 @@
-# Next task — v4.1 causal failure audit only
+# Next task — independent review/freeze of v4.1 cached-evidence failure audit
 
-The preceding development financial gate is COMPLETE and frozen as MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_STOP. Read STATUS.md/CURRENT_STATE.md and the externally pinned result manifest before work. No further action belongs to the closed financial execution batch. Do not run/recover/finalize/replay its history or modify its namespace/code/data/tests/results.
+State: `MACHINE_STRATEGY_V4_1_FAILURE_AUDIT_REVIEW_PENDING`.
 
-Next authorized research scope: causal failure audit of the exact frozen v4.1 result using cached evidence only. Separate diagnosis from design. Use the smallest competent serial read-only specialist team per AGENTS.md, root sole writer, max root+ONE specialist, no nested agents. Involve strategy_explorer for funnel/structural evidence, execution_auditor for lifecycle and LONG/SHORT symmetry, cost_funding_auditor where cost mechanisms need independent review, and an independent backtest/final reviewer of causal and anti-overfit claims. Do not dispatch strategy_designer before this failure audit is completed and frozen.
+The financial gate is frozen STOP and closed. Do not run/recover/finalize/replay historical financial execution or modify `docs/machine_strategy_v4_1_development_financial_v1/`.
 
-1. Create an audit-only protocol and immutable input inventory in a NEW failure-audit namespace; verify the externally pinned v4.1 result via --resume-existing, never a financial rerun.
-2. Reconcile all54candidates/all486states, zero-cohort evidence,46no-fill/7CLOSED/1filled-unresolved. Distinguish availability, pre-entry gates, pending retirement/expiry, intrabar uncertainty, market structure and costs. Diagnose missing evidence explicitly; no imputed exits or reconstructed favorable outcome paths.
-3. Assess plausible causal failure mechanisms with source/time/contract citations and counterevidence. Separate frozen model/metadata limitations from proven implementation defects and from a correctly negative but tiny sample. Both directions and all families remain represented; do not disable SHORT, select H4/SFP/LONG, tune thresholds or turn diagnostics into rules.
-4. No new profitability backtest, robustness sweep, OOS/forward test, subgroup financial comparison or changed trade simulation. No v4.2 specification/implementation until the diagnosis is independently reviewed and frozen in its own gate. Any future strategy requires a separate explicit pre-outcome spec/freeze and authorization.
-5. Preserve all historical artifacts. Produce audit report, causal evidence registry, unresolved-evidence list, independent review receipts, QA/source-causality consistency checks and freeze manifest/external resume. Update controls, commit/push machine-v3-research, verify clean origin==HEAD. End with objective audit PASS/STOP and whether evidence justifies a separately scoped design gate; audit PASS is not strategy qualification.
+Authored audit namespace: `docs/machine_strategy_v4_1_failure_audit_v1/`.
+Work order: `agent_control/V4_1_FAILURE_AUDIT_REVIEW_WORK_ORDER.md`.
 
-Exposed development is not pristine OOS. No PAPER/LIVE/private exchange API/orders/platform. trade_entry_allowed=false; production NONE.
+Review cached evidence only, with zero historical engine calls:
+1. Independently verify the funnel and all numeric claims: 54 candidates /486 states /46 no-fill /8 filled /7 CLOSED /1 all-nine filled unresolved.
+2. Verify that 396 `UNFILLED_RETIRED` +18 `UNFILLED_EXPIRED` correspond to44 all-nine retired +2 all-nine expired candidates, given zero mixed terminal-status cases.
+3. Review causal language around entry reachability, lifecycle retirement, family composition, directional evidence and planned payoff versus realized gross edge. Downgrade any unsupported claim to unresolved rather than inventing evidence.
+4. Independently verify cost/funding conclusion: gross CLOSED aggregate is already negative before modeled costs; fees/slippage amplify rather than create the negative sign; preserve exchange-model limitations.
+5. Preserve all anti-overfit boundaries: no SHORT ban, H4/SFP/LONG selection, family deletion, lifetime extension, cost rescue, RR tuning or hypothetical unresolved exit.
+6. Produce independent review receipts, QA/source-causality consistency evidence and exact `FAILURE_AUDIT_FREEZE_MANIFEST.json`.
+7. Final independent reviewer issues exactly `MACHINE_STRATEGY_V4_1_FAILURE_AUDIT_PASS` or `MACHINE_STRATEGY_V4_1_FAILURE_AUDIT_STOP`.
+
+Only audit PASS may open a separately named pre-outcome strategy design gate. It does not authorize implementation, historical financial testing, OOS, PAPER or LIVE.
+
+Safety: `trade_entry_allowed=false`; production NONE; no private exchange API/orders/platform.
