@@ -1,12 +1,12 @@
 # PURE_SOURCE_ENGINE_REBUILD_STAGE_1
 
-Status: IMPLEMENTED_AWAITING_REPOSITORY_CI
+Status: IMPLEMENTED
 
 ## Baseline
 - Base branch: `main`
 - Base commit: `dab8d254aaf4babc07659e3d03d14b269445767b`
-- Base Engine version: `0.4.20`
-- Stage-1 Engine version: `0.4.21`
+- Frozen legacy package/Engine version: `0.4.20`
+- Stage-1 revision identity: Git commit + this decision record; Stage 1 intentionally does not rename the frozen legacy package version.
 - SOURCE spec version: `ORIGINAL_STRATEGY_SPEC_v1.1`
 - Stage: `CAUSAL OBJECT CORE + CONTAMINATION ISOLATION`
 - Exchange dependency: none. OKX is primary for the project, but Stage 1 is exchange-agnostic.
@@ -46,8 +46,18 @@ Unfinished candles and closes after decision time are rejected; prefix replay pr
 ## SOURCE freeze
 See `docs/source_freeze_v1/source_manifest.json`. Primary PDF bytes stored in repo are frozen from the existing SHA256 manifest. DOCX items available only through archive-manifest evidence are explicitly `FREEZE_BLOCKED_RAW_SOURCE_UNAVAILABLE`; recorded archive hashes remain provenance, not newly verified Stage-1 hashes.
 
+## Test classification record
+First repository CI run on Stage-1 commit `c22c7477856de5f79a2057c282ad252923dd1721`: 566 tests ran; 563 passed and 3 failed. All three failures were legacy freeze assertions that require `crypto_bot.__version__ == 0.4.20`; no causal-object, replay, SOURCE, lifecycle or Stage-1 tests failed. Classification: `LEGACY_FREEZE_VERSION_ASSERTION`, not a trading-semantic regression. Resolution: preserve the frozen package version `0.4.20`; do not rewrite those tests.
+
 ## Files changed by Stage 1
-`src/crypto_bot/strategy/profile.py`, `src/crypto_bot/strategy/causal_objects.py`, `src/crypto_bot/strategy/pure_source_runtime.py`, `tests/test_causal_object_core.py`, `tests/test_pure_source_profile.py`, `tests/test_pure_source_runtime.py`, `docs/source_freeze_v1/source_manifest.json`, `docs/PURE_SOURCE_ENGINE_REBUILD_STAGE_1.md`, `src/crypto_bot/__init__.py`, `pyproject.toml`.
+- `src/crypto_bot/strategy/profile.py`
+- `src/crypto_bot/strategy/causal_objects.py`
+- `src/crypto_bot/strategy/pure_source_runtime.py`
+- `tests/test_causal_object_core.py`
+- `tests/test_pure_source_profile.py`
+- `tests/test_pure_source_runtime.py`
+- `docs/source_freeze_v1/source_manifest.json`
+- `docs/PURE_SOURCE_ENGINE_REBUILD_STAGE_1.md`
 
 ## Explicit non-goals
 No profitability calculation, PnL comparison, optimization, outcome-selected branch, private API, real order or LIVE enablement is introduced.
