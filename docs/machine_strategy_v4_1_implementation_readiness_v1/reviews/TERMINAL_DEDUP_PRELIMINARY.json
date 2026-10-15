@@ -1,0 +1,9 @@
+{
+  "adapter_sha256": "cdc7d6146ebd0a317d3d9a10de2ff2dd387d3f54fb48e1dab4ca3a95a3e2c038",
+  "agent": "/root/v41_no_lookahead_repaired",
+  "finding": "Only incoming equal-subset of already validated rich event is suppressed. Changed/new/future/outcome fields still validate. No strategy readback.",
+  "full_source_proof_required": true,
+  "independent_targeted_regression": "test_adapter_observer_dedup_does_not_hide_integrity_errors PASS",
+  "scope": "observer terminal dedup only; no fullsource acceptance",
+  "verdict": "SCOPED_ACCEPTED"
+}

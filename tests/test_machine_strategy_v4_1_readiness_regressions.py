@@ -263,6 +263,24 @@ class Regressions(unittest.TestCase):
         self.assertEqual(len(events), 2)  # one FIRST_EVAL and one PASS
         self.assertEqual(events[-1]["context_id"], "known-context")
         self.assertEqual(events[-1]["approach_state"], "APPROACH_CLEAN")
+        source._emit(
+            item,
+            4500,
+            "payoff_gate",
+            "REJECT",
+            "REJECT_INSUFFICIENT_STRUCTURAL_PAYOFF",
+            edge_cost_ratio="2",
+        )
+        source._emit(
+            item, 4500, "payoff_gate", "REJECT", "REJECT_INSUFFICIENT_STRUCTURAL_PAYOFF"
+        )
+        terminal = [
+            e
+            for e in source.sinks[("f", "OB")].snapshot()["events"]
+            if e["event_type"] == "REJECT"
+        ]
+        self.assertEqual(len(terminal), 1)
+        self.assertEqual(terminal[0]["edge_cost_ratio"], "2")
         with self.assertRaisesRegex(RuntimeError, "TELEMETRY_INTEGRITY_STOP"):
             source._emit(item, 3600, "htf_context", "PASS", known_at=3601)
         with self.assertRaisesRegex(RuntimeError, "TELEMETRY_INTEGRITY_STOP"):

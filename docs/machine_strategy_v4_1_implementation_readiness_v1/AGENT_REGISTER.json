@@ -31,14 +31,14 @@
     {
       "acceptance": "preliminary current-code acceptance only; fresh complete BTC/ETH proof pending",
       "agent": "/root/v41_no_lookahead_repaired",
-      "result": "Found and repaired registration, provenance, terminal-WAIT, multi-parent and mandatory H00 observer defects; independently accepted observer repair at adapter025667f0 after11bounded regressions",
+      "result": "Observer gate repair scoped accepted; actual BTC field QA then caught rich/base duplicate terminal events. Corrected subset dedup accepted by independent targeted regression at adaptercdc7d614; fresh proof pending.",
       "role": "no_lookahead_auditor",
       "scope": "repaired/integrated source, bounded provenance probes"
     },
     {
-      "acceptance": "b33e synthetic acceptance archived; current observer-only adapter scope update pending",
+      "acceptance": "141b scoped execution accepted; final dedup-only source SHA update pending",
       "agent": "/root/v41_execution_integrated",
-      "result": "Final bounded recheck accepted b33e7dbb: independent86/86PASS and8component commands/current core pins verified; an intervening usage-limit retry failure was not acceptance",
+      "result": "Current141b2bf3 final bounded acceptance:89/89tests independentlyPASS, eightcommands/all20testedpins verified; observerdiagnostics do not mutate admission/order path",
       "role": "execution_auditor",
       "scope": "registered H1/H4 execution, all9, funding, guards and explicit Decimal context"
     }

@@ -3,7 +3,7 @@
   "append_only": true,
   "code": "immutable machine_strategy_v4_readiness_core.py::GateTelemetry; adapter._emit and registered runner sinks",
   "context_absence": "nonterminal WAIT, never NO_HTF_CONTEXT terminal scalp rejection",
-  "dedup": "only byte/value-equal complete events at same evaluation; invalid changed/future/outcome fields still reach integrity validator",
+  "dedup": "An incoming equal-subset of a previously validated rich event at same origin/gate/status/cutoff is suppressed; rich diagnostics retained; different/new/future/outcome fields validated. Actual production duplicate-terminal failure preserved under qa_before_terminal_dedup.",
   "detached_snapshots": true,
   "distinct_denominators": [
     "raw origin",

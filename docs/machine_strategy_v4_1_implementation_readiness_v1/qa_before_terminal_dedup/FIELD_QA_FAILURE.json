@@ -1,0 +1,7 @@
+{
+  "command": "check_machine_strategy_v4_1_conformance.py --partial --expected-progress-sha256 896cfddf80d01b252a88006fd24ad50b8f76350705d9ee54ecbd7adf1882e083",
+  "exit_code": 1,
+  "reason": "MULTIPLE_TERMINAL_ORIGIN_EVENTS",
+  "source_adapter_sha256": "025667f0067e93974e2745f830ab12d8b53649c3d9371fea4d5c15c6f201423e",
+  "scope": "BTC full source artifact before terminal observer dedup repair; no financial outcomes"
+}

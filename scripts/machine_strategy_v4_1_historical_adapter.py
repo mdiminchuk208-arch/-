@@ -158,7 +158,15 @@ class V41HistoricalAdapter(inherited.HistoricalAdapter):
             "native_tf": item["setup_tf"],
             **diagnostics,
         }
-        if self._last_observer_emit.get(marker) == event:
+        previous = self._last_observer_emit.get(marker)
+        # An outer error handler may repeat a richer already-validated record
+        # without its diagnostics. Keep the rich event once. New/changed fields
+        # still reach validation, including future timestamps and outcome keys.
+        if (
+            previous is not None
+            and event.keys() <= previous.keys()
+            and all(previous[k] == v for k, v in event.items())
+        ):
             return
         try:
             self.sinks[key].emit(event)

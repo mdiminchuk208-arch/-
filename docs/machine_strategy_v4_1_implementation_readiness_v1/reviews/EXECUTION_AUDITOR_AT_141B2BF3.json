@@ -1,0 +1,37 @@
+{
+  "agent": "/root/v41_execution_integrated",
+  "blockers": [],
+  "component_commands_verified": 8,
+  "evidence_type": "root transcription of independently delivered scoped acceptance",
+  "findings": [
+    "physical firsteligible parent provenance retained",
+    "proposal own deadline validated without rebasing physical origin",
+    "terminal preconsumption reject",
+    "all5families mirrored H1/H4 actual adapter bridge",
+    "9scenarios and fixedU",
+    "canonical50 to80 transport and ambient context isolation",
+    "signed coherent funding/gap/wick/body/EOF/guard tests",
+    "mandatory observer repair has no entry/stop/target/quantity/order path mutation",
+    "prospective H05 diagnostics match frozen formulas",
+    "full-event dedup cannot hide invalid telemetry"
+  ],
+  "historical_financial_authorized": false,
+  "independently_rerun_tests": 89,
+  "retry_history": "One followup failed usage limit; user resumed; successful bounded recheck above is acceptance. Failed turn was not acceptance.",
+  "reviewed_commit": "141b2bf3741b2b8f1d948a5a00b69fe050b91253",
+  "reviewed_sha256": {
+    "docs/machine_strategy_v4_1_implementation_readiness_v1/FINAL_COMPONENT_QA_PROGRESS.json": "6f3a710ff7d0e0f1cca845fd9718c92cb36d48eabcb3e54b1f8ee58e92997f00",
+    "docs/machine_strategy_v4_1_implementation_readiness_v1/qa/component_after_telemetry_00.log": "4e0d55a6e0401f635f2d2db8d773eaf2bae29c9e5111ac3487bf5c9d902c50ba",
+    "scripts/machine_strategy_v4_1_contracts.py": "3d7ae78682d17ea5bd4d4af2fe852fde1699b1b055488b787e07ffb2cc2e8037",
+    "scripts/machine_strategy_v4_1_execution_binding.py": "1c3d3445af2d5b84ad9dd9337aaa1480a24f3a371e6488233e9ad68013042f1e",
+    "scripts/machine_strategy_v4_1_funding_guard.py": "05f62cdda8bc89885cde4a7ee12d044e416ac7e9ef6bce00ff33374b8a1c8038",
+    "scripts/machine_strategy_v4_1_guarded_runner.py": "5d74c73990d77ecbbd7f207c4a7f61b2eb444c6e3140c25c780d528ed35c5673",
+    "scripts/machine_strategy_v4_1_historical_adapter.py": "025667f0067e93974e2745f830ab12d8b53649c3d9371fea4d5c15c6f201423e",
+    "scripts/machine_strategy_v4_1_selected_poi_inventory.py": "d79f62e9e29d986b205a6aada9f7aaf6e6d73bf26feb906320af8d0283f6e176",
+    "scripts/machine_strategy_v4_1_synthetic_source_bridge.py": "ea251891bfd7f9254e1753daf89b67aa52b13f0fbd5d2cf4a4a007d57217c2a9"
+  },
+  "role": "execution_auditor",
+  "scope": "current component/registered synthetic execution plus observer diagnostics; full source causality independently reviewed separately",
+  "trade_entry_allowed": false,
+  "verdict": "PASS"
+}
