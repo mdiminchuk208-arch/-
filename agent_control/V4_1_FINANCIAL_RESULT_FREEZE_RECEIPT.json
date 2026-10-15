@@ -1,0 +1,29 @@
+{
+  "checkpoint_sha256": "7dfaa6fb20c07febdbdb4a98278ce6c92ea4d1a026499656b3c9c5ed0280d6f8",
+  "decision": "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_STOP",
+  "external_manifest_sha256": "d0a05dcd49545ae963a89840aa09388419b5213f963ba0bd266686e622812d74",
+  "full_qa_before_control_closure": {
+    "all_exit_zero": true,
+    "commands": 6,
+    "tests": 138
+  },
+  "further_financial_runs_authorized": false,
+  "manifest_path": "docs/machine_strategy_v4_1_development_financial_v1/RESULT_FREEZE_MANIFEST.json",
+  "no_history_replay_after_closure": true,
+  "post_control_closure_sealed_resume_result": {
+    "decision": "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_STOP",
+    "further_historical_financial_runs_authorized": false,
+    "historical_run_count": 1,
+    "trade_entry_allowed": false,
+    "verified_resume": true
+  },
+  "sealed_artifact_anchor_count": 4023,
+  "sealed_resume_result": {
+    "decision": "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_STOP",
+    "further_historical_financial_runs_authorized": false,
+    "historical_run_count": 1,
+    "trade_entry_allowed": false,
+    "verified_resume": true
+  },
+  "trade_entry_allowed": false
+}

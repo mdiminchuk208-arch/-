@@ -1,3 +1,5 @@
+> Historical recovery handoff, SUPERSEDED: gate is now COMPLETE/STOP and frozen. Follow current STATUS.md and NEXT_TASK.md; do not execute recovery commands below.
+
 # v4.1 financial gate continuation handoff
 
 Follow NEXT_TASK.md and RECOVERY_EXECUTION_PROTOCOL.md. No original --run restart, initialization restart, completed-group rerun, source/strategy/cost/qualification changes, PAPER/LIVE/private API/orders/platform. trade_entry_allowed=false. Root is sole writer; root plus ONE read-only specialist maximum, no nested agents.
