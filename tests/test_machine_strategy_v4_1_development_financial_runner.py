@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import copy
 import unittest
 from decimal import Decimal
 
@@ -116,8 +115,12 @@ class V41DevelopmentFinancialRunnerTests(unittest.TestCase):
         }
         case = runner._adverse_case(order, states)
         self.assertEqual(case["status"], "CLOSED")
-        self.assertEqual(Decimal(case["adverse"]["base"]["net_cash"]), Decimal("1"))
-        self.assertEqual(Decimal(case["adverse"]["doubled"]["net_cash"]), Decimal("0"))
+        self.assertEqual(
+            Decimal(case["adverse"]["base"]["net_cash"]), Decimal("1")
+        )
+        self.assertEqual(
+            Decimal(case["adverse"]["doubled"]["net_cash"]), Decimal("0")
+        )
 
     def test_disagreement_is_never_promoted_to_closed(self):
         ids = [grid["id"] for grid in runner.scenarios("BTC-USDT-SWAP")]
