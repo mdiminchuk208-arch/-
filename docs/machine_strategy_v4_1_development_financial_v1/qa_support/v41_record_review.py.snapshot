@@ -1,0 +1,16 @@
+import json,sys,hashlib
+from pathlib import Path
+r=Path('/workspace/-');o=r/'docs/machine_strategy_v4_1_development_financial_v1'
+role,agent,facts_path=sys.argv[1:]
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+input_path=o/('REVIEW_INPUT_'+role+'.json');v=json.loads(input_path.read_text());facts=json.loads(Path(facts_path).read_text())
+assert facts['review_completed'] is True and facts['role']==role and facts['inventory_sha256']==sha(input_path) and facts['verified_input_pin_count']==len(v['reviewed_sha256'])
+for name,expected in v['reviewed_sha256'].items():assert sha(r/name)==expected,name
+value={**v,'review_completed':True,'actual_agent_id':agent,'decision':facts['decision'],'critical_blockers':facts['critical_blockers'],'input_inventory_sha256':sha(input_path),'verified_input_pin_count':facts['verified_input_pin_count'],'observations':facts['observations'],'independent_checks':facts['independent_checks'],'historical_engine_calls_by_review':0,'transport':'native collaboration configured project gpt-6-sol/high/read-only; no nested agents','trade_entry_allowed':False}
+(o/'reviews').mkdir(exist_ok=True);path=o/'reviews'/(role+'.json');assert not path.exists();path.write_text(json.dumps(value,indent=2,sort_keys=True)+'\n')
+reg_path=o/'AGENT_REGISTER.json';reg=json.loads(reg_path.read_text())
+entry=next((x for x in reg['attempts'] if x.get('agent')==agent and x.get('scope')=='FIRST_SERIAL_POST_RESULT_REVIEW'),None)
+if entry is None:
+ entry={'agent':agent,'role':role.lower(),'scope':'SERIAL_POST_RESULT_REVIEW','invoked':True};reg['attempts'].append(entry)
+entry.update(status='COMPLETED',result=facts['decision'],evidence='reviews/'+role+'.json',critical_blockers=facts['critical_blockers'],key_findings=facts['observations'])
+reg_path.write_text(json.dumps(reg,indent=2,sort_keys=True)+'\n');print(role,'receipt',sha(path),'verified pins',len(v['reviewed_sha256']))

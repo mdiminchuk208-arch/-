@@ -5,10 +5,54 @@
       "result": "Initial pre-run block repaired; scoped PASS with21independent tests; root110/fullstatic/authorizationPASS",
       "role": "execution_auditor",
       "scope": "PRE_RUN_NEW_WRAPPER_EXECUTION_SYNTHETIC_AND_GUARDS"
+    },
+    {
+      "agent": "/root/v41_execution_integrated",
+      "evidence": "RECOVERY_PRE_RUN_REVIEW.json",
+      "result": "PASS; independent9 registered tests,136 root tests/six commands; unchanged original primitives; exclusive externally pinned published shards",
+      "role": "execution_auditor",
+      "scope": "PRE_OUTPUT_BOUNDED_RECOVERY_CODE_QA_AND_PUBLICATION_GUARDS"
+    },
+    {
+      "agent": "/root/v41_financial_backtest_review",
+      "evidence": "SEAL_CODE_PRELIMINARY_REVIEW.json",
+      "result": "Initial5 material gaps corrected; codePASS on17 isolated tests, no financial outcomes inspected",
+      "role": "backtest_reviewer",
+      "scope": "PRELIMINARY_NONFINANCIAL_SEAL_CODE_REVIEW"
+    },
+    {
+      "agent": "/root/v41_financial_backtest_review",
+      "critical_blockers": [],
+      "evidence": "reviews/BACKTEST_REVIEWER.json",
+      "input_inventory_sha256": "b23dc4bc29dd080c2c564b9b7fd3dd1fd5dacf14594df7d0b86a09e7eeb5ea7f",
+      "input_pin_count": 220,
+      "invoked": true,
+      "key_findings": [
+        "15 of17 preregistered qualification checks fail; separate critical integrity/causality blockers none",
+        "All220 input pins match; base proof192 anchors,1 completed evaluation/2 documented attempts, concordant STOP",
+        "Original SIGKILL progress log has no case outcomes; failure commit tree contains none of seven result files; original3 financial files match1ae16d34",
+        "50 fixed groups map to50 unique published STATE commits containing each marker/shard/receipt; all ancestor of remote bd0f7f92",
+        "54 catalog cases equal54 unique shard/aggregate cases with original per-product order and486 ordered scenario states",
+        "46 no-fill,7 CLOSED,1 coarse unresolved label;2WIN/5LOSS, WR0.285714, basePF_R0.462899/net-2.433195R/netcash-613.690876; doubledPF_R0.301548/net-4.022435R/netcash-1095.340404",
+        "All9 unresolved states are filled WAIT_INTRABAR_ORDER; mixed terminal-status cases0, raw coarsecounter1 and unknown9 correctly preserved without imputation",
+        "BTC LONG9 candidates/0CLOSED and OB0 candidates explicit; no subgroup omission/tuning; development only; no production/OOS/PAPER/LIVE claim"
+      ],
+      "result": "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_STOP",
+      "role": "backtest_reviewer",
+      "scope": "FIRST_SERIAL_POST_RESULT_REVIEW",
+      "status": "COMPLETED"
     }
   ],
-  "historical_runs": 0,
+  "historical_execution_attempts": 2,
+  "historical_runs": 1,
   "operating_model": "root sole writer; serial one read-only specialist",
+  "post_result_review_order": [
+    "backtest_reviewer",
+    "cost_funding_auditor",
+    "statistics_robustness_analyst",
+    "overfit_red_team",
+    "final_independent_reviewer"
+  ],
   "post_result_reviews_complete": false,
   "post_result_roles_required": [
     "backtest_reviewer",
@@ -17,6 +61,6 @@
     "overfit_red_team",
     "final_independent_reviewer"
   ],
-  "runtime": "ECC2.2.3 enabled; hooks inactive; configured roles via native collaboration",
+  "runtime": "ECC2.2.3 configured/enabled, hooks inactive; actual agent transport native collaboration using configured gpt-6-sol/high/read-only project role profiles",
   "trade_entry_allowed": false
 }
