@@ -8,13 +8,10 @@ deterministic on completed data before a future H1 proposal exists.
 from __future__ import annotations
 
 from dataclasses import asdict, replace
-from decimal import Decimal
-from typing import Mapping
 
 from machine_strategy_v4_1_contracts import (
     SelectedPoiState,
     V41Reject,
-    V41Wait,
     latch_eligibility,
     native_contact,
     register_emission,
@@ -98,6 +95,38 @@ class SelectedPoiInventory:
                 "selected_poi_id": selected_id,
                 "family": family,
                 "known_at": formation_known_at,
+            }
+        )
+        return state
+
+    def set_reaction_required_at(
+        self, selected_poi_id: str, *, known_at: int
+    ) -> SelectedPoiState:
+        """Latch the mandatory completed reaction exactly once before eligibility.
+
+        SFP/OB and RANGE may exist physically before their required reaction is
+        completed.  The reaction timestamp is therefore a monotonic lifecycle
+        field, not something proposal evaluation may backfill or reset.
+        """
+        state = self._states[selected_poi_id]
+        when = timestamp(known_at)
+        if when < state.formation_known_at:
+            raise V41Reject("REJECT_REACTION_BEFORE_FORMATION")
+        if state.eligibility_at is not None and (
+            state.reaction_required_at is None or when != state.reaction_required_at
+        ):
+            raise V41Reject("REJECT_REACTION_MUTATION_AFTER_ELIGIBILITY")
+        if state.reaction_required_at is not None:
+            if state.reaction_required_at != when:
+                raise V41Reject("REJECT_REACTION_TIMESTAMP_RESET")
+            return state
+        state = replace(state, reaction_required_at=when)
+        self._states[selected_poi_id] = state
+        self._events.append(
+            {
+                "event": "REACTION_LATCH",
+                "selected_poi_id": selected_poi_id,
+                "known_at": when,
             }
         )
         return state
@@ -215,6 +244,12 @@ class SelectedPoiInventory:
 
     def state(self, selected_poi_id: str) -> dict:
         return asdict(self._states[selected_poi_id])
+
+    def state_object(self, selected_poi_id: str) -> SelectedPoiState:
+        return self._states[selected_poi_id]
+
+    def ids(self) -> tuple[str, ...]:
+        return tuple(sorted(self._states))
 
     def snapshot(self) -> dict:
         return {
