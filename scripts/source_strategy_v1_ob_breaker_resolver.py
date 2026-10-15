@@ -43,7 +43,11 @@ def _matching_fvg(index: Any, direction: str, required_bar_starts: set[int], dec
 
 
 def resolve_ob_formation(index: Any, ob_id: str, decision_at: int) -> dict[str, Any]:
-    """Resolve the source-identifiable OB formation only; U3 conservative entry chain is later."""
+    """Resolve whether the market object itself is a source-valid OB.
+
+    Trading the OB is a separate U3 conservative reaction->M15 BOS->new-POI chain.
+    A Breaker may descend from this valid market object even when the OB trade setup was never completed.
+    """
     raw = index.by_id.get(ob_id)
     if raw is None or raw.get("kind") != "OB":
         return {"state": "OBJECTIVE_FAIL", "reason": "OB_NOT_FOUND", "trade_entry_allowed": False}
@@ -66,7 +70,6 @@ def resolve_ob_formation(index: Any, ob_id: str, decision_at: int) -> dict[str, 
         return {"state": "OBJECTIVE_FAIL", "reason": "OB_NO_HIGH_LOW_WICK_RAID", "trade_entry_allowed": False}
 
     body, upper_wick, lower_wick = _body_wicks(source_bar)
-    # TN_OB_BODY_001: the literal ordering "body large, wicks small" is encoded without a fitted percentage.
     body_geometry_pass = body > 0 and body > upper_wick and body > lower_wick
     if not body_geometry_pass:
         return {
@@ -85,7 +88,7 @@ def resolve_ob_formation(index: Any, ob_id: str, decision_at: int) -> dict[str, 
         return {"state": "UNKNOWN", "reason": "WAIT_OB_STRUCTURE_UPDATE", "trade_entry_allowed": False}
 
     return {
-        "state": "SOURCE_FORMATION_READY",
+        "state": "SOURCE_OB_VALID",
         "branch": "OB_CONSERVATIVE",
         "direction": direction,
         "setup_tf": raw["tf"],
@@ -98,7 +101,6 @@ def resolve_ob_formation(index: Any, ob_id: str, decision_at: int) -> dict[str, 
         "source_extreme": str(source_bar.low if direction == "LONG" else source_bar.high),
         "technical_normalization_ids": ["TN_OB_BODY_001", "TN_BOS_001", "TN_IMBALANCE_001"],
         "source_rule_ids": ["S_OB_FORMATION", "S_OB_ZONE", "S_FVG", "S_BOS"],
-        "remaining_requirements": ["S_OB_APPROACH", "S_OB_CONS_TRIGGER"],
         "trade_entry_allowed": False,
     }
 
@@ -110,8 +112,8 @@ def resolve_breaker_from_ob(
     *,
     whole_impulse: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    """A Breaker may only descend from a fully source-resolved OB and a causal whole impulse."""
-    if ob.get("state") != "SOURCE_CHAIN_READY" or ob.get("branch") != "OB_CONSERVATIVE":
+    """A Breaker descends from a source-valid OB market object plus causal whole impulse."""
+    if ob.get("state") != "SOURCE_OB_VALID" or ob.get("branch") != "OB_CONSERVATIVE":
         return {"state": "UNKNOWN", "reason": "WAIT_SOURCE_VALID_OB", "trade_entry_allowed": False}
     if (
         not whole_impulse
