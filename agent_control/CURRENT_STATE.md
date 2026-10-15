@@ -2,54 +2,18 @@
 
 State: `MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_OPEN`.
 
-Strategy-first campaign remains active; platform/site work is paused. Production candidate NONE. `trade_entry_allowed=false`; PAPER=false; LIVE=false.
+The frozen implementation at bf9bb4c7ed9e82df42b4fc2eec5df28695edf155 / e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61 is unchanged. Preregistration f5e60538a2c6ea4194177971ac1d433143ddf3a2 and authorization4a0a1471c040522058cb0520b0dc25a8dd20d4b5 remain exact pre-outcome authority.
 
-## Frozen implementation authority
+Attempt1 was killed by SIGKILL9 after15 progress groups, before emitting any case/result/checkpoint files. Its cause remains unverified; observed cgroup OOM counters0. Failure/lock/log evidence is preserved at682235766e08d8efeacab7f4ea7170d6b83cd2dd. No original --run restart or lock deletion is allowed.
 
-`MACHINE_STRATEGY_V4_1_IMPLEMENTATION_READY` is complete and frozen at commit `bf9bb4c7ed9e82df42b4fc2eec5df28695edf155`, external implementation manifest SHA256 `e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61`. Exact resume PASS. Implementation QA: 89 targeted/registered-synthetic tests plus static/type/compile, complete sealed-data verification, deterministic full BTC/ETH source replay, field conformance and independent execution/no-lookahead/final reviews PASS. Historical position evaluations at implementation freeze: 0.
+The explicit pre-output repair clause authorized execution-only bounded recovery, independently reviewed and frozen atdbb79a688073989b70430ef93ea50b3ccc825167. Recovery imports the unchanged original financial primitives and adds no strategy/accounting/threshold changes. Full pre-output QA:136 tests and6 commands PASS; independent execution9 tests PASS. Exact worker/test/QA/protocol and independent acceptance are committed/pushed. Source-only initialization at ef2d9020 rebuilt and byte-compared both complete catalogs to frozen source artifacts, fixed50 groups (23BTC/27ETH), and performed zero position evaluations.
 
-Frozen v4.1 design manifest: `4074c337be4800e54682a5ad1ddfd9015e35ce16f4fe2742fc4d12b4bb415790`. Frozen v4 design manifest: `b9452dea092c0d186d2ac164c044f2fad0d865becf9904791caebbf7b477273b`. All strategy rules and qualification thresholds including WR>=70% remain unchanged.
+Published recovery progress:5/50 groups, source state SHA25610d9a2bfcebcd22d337d931c3338d96f4a3b99094e09f26115f45c9117495c97. Verified --resume-existing PASS with0 engine calls. Every group shard, identity receipt, started marker, STATE, actual exit0 log and external input/output pin journal has been immediately committed/pushed before advancing. All9 states retained. Case-level outputs now EXIST in immutable recovery shards but have not been inspected for financial analysis. No aggregate FINANCIAL_RESULT or final RUN_CHECKPOINT yet. Do not modify worker, original primitives, source data, fees/slippage/funding or qualification. Do not rerun any completed group. Partial transitions fail closed; no adoption/overwrite bypass.
 
-## Active gate — one-shot development financial v1
+Use latest published RECOVERY_EXECUTION_JOURNAL.jsonl output_state_sha256 and group index as the external cursor if newer than this progress note. Confirm unchanged code/all artifacts published and invoke verified --resume-existing before continuing only unfinished groups. Never derive authorization from a caller context or silently substitute a changed STATE hash.
 
-Financial preregistration was committed **before any v4.1 historical financial outcome**:
-- preregistration: `docs/machine_strategy_v4_1_development_financial_v1/PREREGISTRATION.json`
-- preregistration commit: `f5e60538a2c6ea4194177971ac1d433143ddf3a2`
-- authorization: `docs/machine_strategy_v4_1_development_financial_v1/AUTHORIZATION.json`
-- authorization commit: `4a0a1471c040522058cb0520b0dc25a8dd20d4b5`
-- work order: `agent_control/V4_1_DEVELOPMENT_FINANCIAL_WORK_ORDER.md`
+After all50 fixed groups are published, aggregate the immutable shards using --finalize with no position evaluations, immediately commit/push original six payloads and final checkpoint before analysis. Record one completed evaluation and two attempts (attempt1 failed before output). Then independent financial audit and serial backtest_reviewer -> cost_funding_auditor -> statistics_robustness_analyst -> overfit_red_team -> separate final_independent_reviewer. Required exact final PASS or STOP and externally pinned result freeze, full reports/QA/controls/commit/push. No financial parameter search, subgroup selection or new historical replay.
 
-Frozen scope: OKX `BTC-USDT-SWAP` + `ETH-USDT-SWAP`, exposed development `[2024-10-13T00:00:00Z,2026-10-13T00:00:00Z)`, LONG+SHORT, SFP/OB/BREAKER/STB/RANGE, H1 signal clock, every-M15 execution/lifecycle, all nine synthetic compatibility scenarios, base and doubled fee/slippage columns, actual signed funding with coherent adverse timing witness, immutable reference U and all existing qualification thresholds.
+This is exposed development [2024-10-13,2026-10-13), not pristine OOS. All9 scenarios, LONG+SHORT, five families and preregistered CLOSED>=200/WR>=70% and other criteria unchanged. Production candidate NONE. PAPER/LIVE/private exchange API/orders/platform prohibited; trade_entry_allowed=false.
 
-One-shot runner: `scripts/run_machine_strategy_v4_1_development_financial_v1.py`.
-Synthetic runner guards: `tests/test_machine_strategy_v4_1_development_financial_runner.py`.
-Independent post-result auditor: `scripts/audit_machine_strategy_v4_1_development_financial_v1.py`.
-
-The runner is guarded by committed implementation/preregistration/authorization bytes and refuses execution if final output/checkpoint files already exist. It builds the frozen source catalog first, replays v4.1 pending lifecycle before every M15 OPEN, executes current-bar events before contact published at CLOSE, inherits frozen conservative filled-position exits, retains all nine scenario states, and uses Decimal80 realized accounting without rebuilding Decimal50 design geometry.
-
-**The one authorized v4.1 historical financial process is running; no final outcome checkpoint has been inspected.** Existing v3 failed numbers remain historical evidence only and are not v4.1 results.
-
-## Current execution checkpoint
-
-Pre-outcome runner QA/authorization and independent execution review PASS were published at `1ae16d34cc0fe3260b041db9bc70c009db45203a`. Exactly ONE authorized historical run is currently reserved and running. RUN_STARTED.json is durable; never launch a second run. Both rebuilt source catalogs were byte-compared against the frozen complete implementation catalogs before finance. No final financial checkpoint has yet been inspected.
-
-Separate seal/report infrastructure does not invoke the historical engine. An independent preliminary code review required stronger evidence/decision/namespace checks; root repaired the verifier only, and re-review CODE_PASS plus17 isolated tests confirmed the repairs. Full current code QA:127 tests/six commands PASS. New runner/auditor/test bytes remain unchanged from pre-outcome approval. This is not a financial result or qualification claim.
-
-Let the running process finish, immediately checkpoint/commit/push exact outputs, then audit/review the published bytes only. Required result-review order: backtest_reviewer -> cost_funding_auditor -> statistics_robustness_analyst -> overfit_red_team -> separate final_independent_reviewer. Freeze exact PASS or STOP; no silent rerun or tuning. A later rule change requires a new explicit version. No OOS relabeling, PAPER/LIVE/private API/orders/platform.
-
-## Frozen predecessor evidence retained
-
-- OKX Stage A sealed data: 210,240 M15 bars + 4,380 signed funding rows + 774 receipts.
-- v3 compatibility READY manifest `5faeb02bd244777aa416d57f50f9809d9e59abe1eb2ec2fc8c062de721619fd1`.
-- v3 financial STOP checkpoint `2d7770680867f93948d4d26b91633cbb8cdbc9136bd54a988436a687accc6dd0`.
-- v3 failure audit manifest `9b0353dbfeabfa2768f4a1f62af820c128f98c48faad09544acee4c0547867a3`.
-- v3 known diagnostic: 99 candidates, 20 all-nine CLOSED, base WR50%, PF_R0.278459, expectancy -0.309356R, net -6.187114R; doubled WR45%, PF_R0.162663, net -9.243979R. These are not v4.1 outcomes.
-
-
-## Attempt1 interruption
-
-The original process was killed by SIGKILL after15 decision groups, with no emitted case/result/checkpoint files. Exact cause unverified; observed cgroup OOM counters0. Original lock/log and FAILED_ATTEMPT_1.json preserved. No completed financial evaluation/outcome viewed. The work-order pre-output repair clause permits execution-only recovery, subject to independent pre-output QA/review. Do not restart the original --run or delete its reservation. Frozen strategy and original runner/auditor/test bytes unchanged. Next implementation task: bounded durable group workers with externally pinned no-repeat resume and immediate group checkpoint publication.
-
-## Bounded recovery pre-output READY
-
-Recovery worker/aggregator independently accepted on exact code/test/QA/protocol hashes. Full recovery QA:136 tests and6 commands PASS; independent execution9 tests PASS. Original3 financial source/test bytes unchanged. Each fixed group uses unchanged primitives and must be immediately published; verified external STATE resume performs zero engine calls. Partial marker/shard transition is STOP, without overwrite/reexecution. No new historical case output exists before this code+QA+review freeze. Initialize source-only recovery after this checkpoint is committed/pushed, then process all50 groups in fixed order. One completed evaluation only; first SIGKILL attempt remains preserved.
+Frozen StageA:210240 M15 bars,4380 signed funding rows,774 receipts. Preserve every Original/v2/v2.1/v2.2/v3/v4/v4.1 frozen artifact. Baseline ba65e91c2b1675f48e80ac785bb3adf89d17bb0b.
