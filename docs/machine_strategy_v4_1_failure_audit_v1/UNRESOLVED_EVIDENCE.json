@@ -1,0 +1,55 @@
+{
+  "version": "MACHINE_STRATEGY_v4.1",
+  "audit_state": "AUTHORED_REVIEW_PENDING",
+  "unresolved": [
+    {
+      "id": "U01_RETIREMENT_REASON_DISTRIBUTION",
+      "question": "Which specific pending-retirement flags explain the 44 all-nine retired cases?",
+      "known": "396 scenario states are UNFILLED_RETIRED, equivalent to 44 candidates x 9 scenarios.",
+      "missing": "A cached aggregate by structural_break/source_retired/context_invalid/poi_consumed/refinement_stale/target_completed/deadline is not present in the rendered result summary.",
+      "constraint": "May be derived only from already frozen cached case/shard evidence; no engine replay or alternative execution."
+    },
+    {
+      "id": "U02_NO_FILL_DISTANCE_AND_POST_RETIREMENT_PATH",
+      "question": "Were unfilled entries systematically too far from market, or mainly retired by changing structure/context before reach?",
+      "known": "46 candidates have no fill; only 2 all-nine expired, 44 retired.",
+      "missing": "No approved counterfactual path or post-retirement hypothetical touch/return calculation for v4.1.",
+      "constraint": "Do not reconstruct profitable hypothetical fills from future bars in this audit."
+    },
+    {
+      "id": "U03_DIRECTIONAL_EDGE_CAUSE",
+      "question": "Why did SHORT close 1W/5L?",
+      "known": "SHORT gross and net are negative, ETH SHORT is 0/3, BTC SHORT 1/3.",
+      "missing": "Seven CLOSED total is too small to distinguish systematic directional-model error from sampling noise.",
+      "constraint": "Do not disable SHORT or fit a direction rule from this sample."
+    },
+    {
+      "id": "U04_FAMILY_REACHABILITY",
+      "question": "Why did OB emit zero candidates and BREAKER only one while STB emitted 38?",
+      "known": "Frozen candidate cohort counts show severe family imbalance.",
+      "missing": "A complete source-formation -> family gate transition census for v4.1 is not frozen in the financial report.",
+      "constraint": "A future design gate may add outcome-blind formation/gate telemetry before any changed financial run."
+    },
+    {
+      "id": "U05_PLANNED_PAYOFF_VS_REALIZED_EDGE",
+      "question": "Why did the preregistered doubled-cost planned >=1R gate admit cases whose realized gross aggregate was negative?",
+      "known": "Admission is structural nearest-FTA feasibility, not a probability forecast; realized 7-case gross is -0.8505737502R.",
+      "missing": "Enough independent CLOSED cases to estimate conditional hit probability by geometry/context without overfit.",
+      "constraint": "Do not tune a new payoff threshold on these seven outcomes."
+    },
+    {
+      "id": "U06_EXCHANGE_REALITY",
+      "question": "How closely do modeled fills/costs match actual historical OKX account execution?",
+      "known": "Signed funding rows are sealed; tick/lot epochs, ordinary account fee applicability, queue/fill/latency and realized slippage are not historically verified.",
+      "missing": "Historical private account-specific execution evidence.",
+      "constraint": "Model limitation must remain explicit; it cannot be used to erase a negative modeled result."
+    },
+    {
+      "id": "U07_INTRABAR_UNKNOWN_EXIT",
+      "question": "What was the true outcome of the one filled ETH LONG RANGE case with all-nine WAIT_INTRABAR_ORDER?",
+      "known": "All nine modeled grids share the unresolved intrabar ordering state; no mixed terminal status exists.",
+      "missing": "Sub-M15 causal execution evidence resolving entry/stop/target order.",
+      "constraint": "No imputed exit; keep it excluded from CLOSED qualification."
+    }
+  ]
+}
