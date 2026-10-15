@@ -1,0 +1,82 @@
+{
+  "version": "MACHINE_STRATEGY_v4.1",
+  "audit_state": "AUTHORED_REVIEW_PENDING",
+  "evidence": [
+    {
+      "id": "E01_FUNNEL_SCARCITY",
+      "observation": "54 candidates -> 8 cases with fill evidence in all nine scenarios -> 7 all-nine CLOSED + 1 all-nine filled unresolved; 46 cases no-fill.",
+      "derived_rates": {
+        "no_fill_share": "46/54 = 85.185185%",
+        "any_fill_share": "8/54 = 14.814815%",
+        "closed_share": "7/54 = 12.962963%"
+      },
+      "causal_weight": "HIGH_FOR_AVAILABILITY_PROBLEM",
+      "does_not_prove": "that simply loosening gates or extending lifetime would improve PnL"
+    },
+    {
+      "id": "E02_RETIREMENT_DOMINATES_NO_FILL",
+      "observation": "Across 486 scenario states: 396 UNFILLED_RETIRED, 18 UNFILLED_EXPIRED, 63 CLOSED, 9 WAIT_INTRABAR_ORDER. The 414 no-fill states equal 46 cases x 9 scenarios; therefore 44 cases are all-nine retired and 2 cases all-nine expired.",
+      "derived_rates": {
+        "candidate_all_nine_retired_share": "44/54 = 81.481481%",
+        "candidate_all_nine_expired_share": "2/54 = 3.703704%"
+      },
+      "causal_weight": "HIGH_FOR_PENDING_LIFECYCLE_OR_REACHABILITY_DIAGNOSIS",
+      "does_not_prove": "which retirement flag is dominant; exact retirement-reason aggregation is not present in the rendered summary"
+    },
+    {
+      "id": "E03_GROSS_EDGE_NEGATIVE",
+      "observation": "For the 7 all-nine CLOSED cases, base gross before fees/slippage/funding is -0.8505737502R and -132.71 modeled USDT.",
+      "causal_weight": "HIGH",
+      "interpretation": "costs worsen the loss but do not create the negative sign; realized directional/entry-exit edge is already negative in this sample"
+    },
+    {
+      "id": "E04_COST_AMPLIFICATION",
+      "observation": "Base modeled fees 361.237146 USDT + slippage 120.412382 USDT versus signed funding +0.668652463 USDT; doubled costs produce -1095.340404 USDT and -4.022434930R.",
+      "causal_weight": "HIGH_AS_AMPLIFIER_NOT_ROOT_SIGN_CAUSE",
+      "model_limit": "historical account fee applicability, actual queue/fill and slippage are not verified exchange truth"
+    },
+    {
+      "id": "E05_SHORT_CLOSED_SAMPLE",
+      "observation": "SHORT supplies 6 of 7 CLOSED: 1 WIN / 5 LOSS, WR 16.6667%, gross -1.655610005R, net -3.191220429R. ETH SHORT is 0/3; BTC SHORT is 1/3.",
+      "causal_weight": "MODERATE_DIAGNOSTIC_ONLY",
+      "does_not_prove": "SHORT should be disabled; n=6 is too small and post-result direction removal is forbidden"
+    },
+    {
+      "id": "E06_LONG_AVAILABILITY_COLLAPSE",
+      "observation": "BTC LONG emitted 9 candidates and 0 CLOSED. ETH LONG emitted 13 candidates: 11 no-fill, 1 CLOSED WIN, 1 filled unresolved RANGE case. Total LONG has only 1 qualifying CLOSED.",
+      "causal_weight": "HIGH_FOR_SAMPLE/AVAILABILITY_GAP",
+      "does_not_prove": "LONG has positive edge; its only CLOSED winner is one case"
+    },
+    {
+      "id": "E07_FAMILY_IMBALANCE",
+      "observation": "Candidate cohorts: STB 38 (35 no-fill, 3 CLOSED); RANGE 10 (8 no-fill, 1 CLOSED, 1 unresolved); SFP 5 (3 no-fill, 2 CLOSED); BREAKER 1 CLOSED; OB 0 candidates.",
+      "causal_weight": "HIGH_FOR_CATALOG_COMPOSITION",
+      "interpretation": "the five-family specification does not translate into balanced executable opportunity coverage in this window",
+      "does_not_prove": "which family should be promoted or removed"
+    },
+    {
+      "id": "E08_H1_DOMINANCE_AND_WEAK_CLOSED_SAMPLE",
+      "observation": "H1/60: 35 candidates, 6 CLOSED, 1 WIN/5 LOSS, net -3.772211238R. H4/240: 19 candidates, 1 CLOSED WIN, net +1.339016R.",
+      "causal_weight": "MODERATE_DIAGNOSTIC_ONLY",
+      "does_not_prove": "H4 is superior; H4 positive result is a single trade"
+    },
+    {
+      "id": "E09_INTRABAR_AMBIGUITY_LOCAL",
+      "observation": "Exactly one ETH LONG RANGE H1 case has fill evidence in all nine scenarios and all nine end WAIT_INTRABAR_ORDER. There are zero mixed terminal-status cases across grids.",
+      "causal_weight": "LOW_FOR_GLOBAL_FAILURE_HIGH_FOR_EXECUTION_UNCERTAINTY",
+      "interpretation": "intrabar ambiguity blocks qualification but explains only one candidate, not the broad no-fill or negative gross edge"
+    },
+    {
+      "id": "E10_SAMPLE_INSUFFICIENCY",
+      "observation": "Only 7 CLOSED versus required 200; Wilson 95% lower bound is 0.082218924 versus required 0.60. Coin-direction CLOSED counts are 0/3/1/3 versus required 30 each.",
+      "causal_weight": "HIGH_FOR_NON_QUALIFICATION",
+      "interpretation": "the financial estimate is too small for a reliable 70% WR claim even apart from its negative point estimate"
+    },
+    {
+      "id": "E11_NO_CRITICAL_IMPLEMENTATION_DEFECT_FOUND",
+      "observation": "Independent backtest, cost/funding, statistics, overfit and final reviews accepted the result preservation and found no separate critical integrity/causality blocker.",
+      "causal_weight": "HIGH",
+      "interpretation": "the STOP is a strategy/sample/execution-model result, not an identified implementation corruption"
+    }
+  ]
+}
