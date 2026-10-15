@@ -1,0 +1,62 @@
+{
+  "gate_complete": true,
+  "historical_position_evaluations": 0,
+  "products": {
+    "BTC-USDT-SWAP": {
+      "all_conditional_lifecycle_events_validated": true,
+      "all_raw_and_inventory_and_proposal_fields_validated": true,
+      "historical_fills_or_exits_evaluated": false,
+      "raw_family_tf_direction_coverage": {
+        "BREAKER|H1|LONG": 40,
+        "BREAKER|H1|SHORT": 49,
+        "BREAKER|H4|LONG": 10,
+        "BREAKER|H4|SHORT": 10,
+        "OB|H1|LONG": 125,
+        "OB|H1|SHORT": 126,
+        "OB|H4|LONG": 19,
+        "OB|H4|SHORT": 35,
+        "RANGE|H1|LONG": 277,
+        "RANGE|H1|SHORT": 292,
+        "RANGE|H4|LONG": 79,
+        "RANGE|H4|SHORT": 79,
+        "SFP|H1|LONG": 1772,
+        "SFP|H1|SHORT": 1836,
+        "SFP|H4|LONG": 445,
+        "SFP|H4|SHORT": 461,
+        "STB|H1|LONG": 125,
+        "STB|H1|SHORT": 126,
+        "STB|H4|LONG": 19,
+        "STB|H4|SHORT": 35
+      }
+    },
+    "ETH-USDT-SWAP": {
+      "all_conditional_lifecycle_events_validated": true,
+      "all_raw_and_inventory_and_proposal_fields_validated": true,
+      "historical_fills_or_exits_evaluated": false,
+      "raw_family_tf_direction_coverage": {
+        "BREAKER|H1|LONG": 44,
+        "BREAKER|H1|SHORT": 36,
+        "BREAKER|H4|LONG": 8,
+        "BREAKER|H4|SHORT": 9,
+        "OB|H1|LONG": 73,
+        "OB|H1|SHORT": 111,
+        "OB|H4|LONG": 17,
+        "OB|H4|SHORT": 24,
+        "RANGE|H1|LONG": 318,
+        "RANGE|H1|SHORT": 315,
+        "RANGE|H4|LONG": 63,
+        "RANGE|H4|SHORT": 89,
+        "SFP|H1|LONG": 1786,
+        "SFP|H1|SHORT": 1933,
+        "SFP|H4|LONG": 459,
+        "SFP|H4|SHORT": 477,
+        "STB|H1|LONG": 73,
+        "STB|H1|SHORT": 111,
+        "STB|H4|LONG": 17,
+        "STB|H4|SHORT": 24
+      }
+    }
+  },
+  "scope": "FULL_SEALED_SOURCE_FIELD_PROVENANCE",
+  "trade_entry_allowed": false
+}

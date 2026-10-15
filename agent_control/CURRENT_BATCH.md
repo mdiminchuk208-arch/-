@@ -1,26 +1,15 @@
-# Current Campaign — v4.1 Executed Implementation QA
+# Current Campaign — v4.1 implementation readiness completed
 
-Frozen DESIGN_PASS published `96e76edf0e526c588cf87a665da681f577cca77a`, manifest `4074c337be4800e54682a5ad1ddfd9015e35ce16f4fe2742fc4d12b4bb415790`.
+State: `MACHINE_STRATEGY_V4_1_IMPLEMENTATION_READY`. Implementation gate completed; complete_implementation_freeze=true. External implementation manifest SHA256 `e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61`. Exact externally pinned resume verified. Branch `machine-v3-research`; production candidate NONE; `trade_entry_allowed=false`.
 
-Active gate: `MACHINE_STRATEGY_V4_1_IMPLEMENTATION_QA_PENDING`. Do not restart design and do not open financial validation yet.
+Actual QA: 89 targeted unit/registered-synthetic tests and ten commands PASS, including static/type/compile, exact frozen parent resumes, complete sealed-data verification, full deterministic BTC/ETH source replay and final source-field conformance. Both products have two byte-identical full 105,120-bar streams and all 3 preregistered full/truncated/future-mutated cutoff triplets. All 210,240 native bars, derived grids, 4,380 signed funding rows and 774 retained public receipts verified. Evaluation window remains preregistered 2024-10-13 to 2026-10-13UTC with earlier sealed rows feature warmup; no silent three-year formation census claim.
 
-Distinct v4.1 implementation paths are now authored through the full source/lifecycle adapter boundary:
-- `machine_strategy_v4_1_contracts.py`;
-- `machine_strategy_v4_1_selected_poi_inventory.py` with monotonic late-reaction latch;
-- `machine_strategy_v4_1_historical_adapter.py` with every-M15 source/lifecycle ordering, OPEN context snapshot, CLOSE contact publication and H1-only proposal clock;
-- `machine_strategy_v4_1_execution_binding.py` all-nine non-financial scenario planning;
-- `machine_strategy_v4_1_funding_guard.py` registered synthetic-only funding guard;
-- `verify_machine_strategy_v4_1_source_adapter.py` deterministic replay/future-tail/full-period finance-trap verifier;
-- targeted v4.1 unit/synthetic witnesses and readiness conformance artifacts;
-- `THIRD_IMPLEMENTATION_CHECKPOINT.md`.
+Serial independent reviews: execution_auditor accepted mirrored five-family H1/H4 mechanics, nine scenarios, Decimal50-to80 transport, funding/guards and current observer isolation; no_lookahead_auditor accepted complete current-code source/provenance/telemetry/replay evidence; separate final_independent_reviewer accepted READY on exact evidence. Earlier backtest_engineer/historical_data_engineer diagnostics and failed/interrupted/repaired attempts remain in AGENT_REGISTER/reviews. Root sole writer; ECC2.2.3 enabled, hooks inactive.
 
-## Execute now
+All frozen strategy/design/predecessor bytes and qualification rules including WR>=70% preserved. No rule/count/outcome tuning or SOURCE_RULE promotion. Existing history remains exposed development. Historical tick/lot epochs, account fee applicability, mark/queue/fill behavior and API publication delay remain unverified model assumptions; this is implementation conformance, not exchange execution/production qualification.
 
-1. `python scripts/verify_machine_strategy_v4_1_source_adapter.py --full`.
-2. Run all targeted v4.1 tests plus compile/static/lint/type/safety checks.
-3. Verify frozen parent resumes/hashes and predecessor invariance.
-4. Review all-five-family source/lifecycle ordering and no-lookahead on exact executed bytes.
-5. Serial execution auditor → no-lookahead auditor → separate final independent reviewer.
-6. Freeze exactly `MACHINE_STRATEGY_V4_1_IMPLEMENTATION_READY` or exact STOP with `IMPLEMENTATION_FREEZE_MANIFEST.json`/checkpoint evidence.
+Historical position evaluations=0; historical_financial_authorized=false. No v4/v4.1 historical fills/exits/financial outcomes, OOS/forward/PAPER/LIVE/private exchange API/orders/platform executed. READY permits only opening a separately named future one-shot development financial gate; this work order does not authorize its execution. Public historical execution remains denied.
 
-Only READY may open the separately named one-shot development financial gate. No historical fill/exit/WR/PF/P&L/catalog-count selection in this batch. Qualification remains unchanged including WR>=70%. No OOS/PAPER/LIVE/private API/orders/platform; `trade_entry_allowed=false`; ECC hooks inactive.
+Artifacts: `docs/machine_strategy_v4_1_implementation_readiness_v1/ARTIFACT_INDEX.md`; exact evidence authority `docs/machine_strategy_v4_1_implementation_readiness_v1/IMPLEMENTATION_FREEZE_MANIFEST.json`. Mutable STATUS/CURRENT_STATE/NEXT_TASK/CURRENT_BATCH publication pointers intentionally remain outside the manifest to avoid self-referential hashes.
+
+Current campaign is closed. Follow NEXT_TASK boundary; no automatic financial execution.

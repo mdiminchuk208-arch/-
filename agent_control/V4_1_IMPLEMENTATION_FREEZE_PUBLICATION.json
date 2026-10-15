@@ -1,0 +1,23 @@
+{
+  "evidence_origin": "Actual tool sessions77431 freeze exit0 and post-control externally pinned CLI resume exit0; no inference from partial outputs",
+  "external_manifest_sha256": "e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61",
+  "freeze_command_exit_code": 0,
+  "freeze_result": {
+    "decision": "MACHINE_STRATEGY_V4_1_IMPLEMENTATION_READY",
+    "historical_financial_authorized": false,
+    "manifest_sha256": "e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61"
+  },
+  "historical_financial_authorized": false,
+  "manifest": "docs/machine_strategy_v4_1_implementation_readiness_v1/IMPLEMENTATION_FREEZE_MANIFEST.json",
+  "recorded_at_UTC": "2026-10-15T07:11:28.404383+00:00",
+  "resume_command_exit_code": 0,
+  "scope": "POST_FREEZE_PUBLICATION_RECEIPT_OUTSIDE_SEALED_NAMESPACE_TO_AVOID_SELF_HASH_CYCLE",
+  "trade_entry_allowed": false,
+  "verified_resume_result": {
+    "decision": "MACHINE_STRATEGY_V4_1_IMPLEMENTATION_READY",
+    "historical_financial_authorized": false,
+    "historical_position_evaluations": 0,
+    "trade_entry_allowed": false,
+    "verified_resume": true
+  }
+}

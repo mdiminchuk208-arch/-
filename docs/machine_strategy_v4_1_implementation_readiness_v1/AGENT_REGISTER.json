@@ -29,9 +29,9 @@
       "scope": "preintegration registration/canonical transport"
     },
     {
-      "acceptance": "preliminary current-code acceptance only; fresh complete BTC/ETH proof pending",
+      "acceptance": "Full current source-only readiness causality accepted; final independent reviewer/freeze separate",
       "agent": "/root/v41_no_lookahead_repaired",
-      "result": "Observer gate repair scoped accepted; actual BTC field QA then caught rich/base duplicate terminal events. Corrected subset dedup accepted by independent targeted regression at adaptercdc7d614; fresh proof pending.",
+      "result": "Canonical current-code complete BTC/ETH source proof PASS; allpins/logs/6triplets and independent both-artifact timestamp/observer scans accepted; prior defects repaired and preserved",
       "role": "no_lookahead_auditor",
       "scope": "repaired/integrated source, bounded provenance probes"
     },
@@ -41,9 +41,16 @@
       "result": "Current81e90016 bounded execution PASS; independent89/89tests and11targeted regression PASS; eight recorded commands/all20testedpins verified; observer dedup does not mutate admission/order/ledger",
       "role": "execution_auditor",
       "scope": "registered H1/H4 execution, all9, funding, guards and explicit Decimal context"
+    },
+    {
+      "acceptance": "Independent final acceptance true; exact manifest freeze and external resume still to execute",
+      "agent": "/root/v41_final_implementation_review",
+      "result": "Actual independent final review accepted MACHINE_STRATEGY_V4_1_IMPLEMENTATION_READY; blockers[]; independently reran89tests andreadonly --check exit0; allQA/source/reviewpins matched",
+      "role": "final_independent_reviewer",
+      "scope": "Complete current-code implementation/readiness gate, QA/logs/source/data/reviews/verifier/limitations"
     }
   ],
-  "final_independent_review_pending": true,
+  "final_independent_review_pending": false,
   "historical_financial_subagents_launched": false,
   "operating_model": "root sole writer; serial root+one read-only specialist, no nested delegation",
   "runtime": "ECC2.2.3 enabled, hooks inactive; native collaboration APIs execute configured roles",

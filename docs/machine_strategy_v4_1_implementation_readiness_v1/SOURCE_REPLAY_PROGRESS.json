@@ -72,6 +72,70 @@
       "raw_field_provenance_validated": true,
       "source_artifact": "docs/machine_strategy_v4_1_implementation_readiness_v1/BTC_USDT_SWAP.source_only.json.gz",
       "source_artifact_sha256": "031b3ce5b10968d1c5b572798f4116a3582c34a09c764284ef0942ce45a967f2"
+    },
+    "ETH-USDT-SWAP": {
+      "cutoffs": {
+        "1729382400": {
+          "deterministic_source_replay": "PASS",
+          "full_stream": "ede1610f4d9e0964cd1285b31d2cfded734d17b1e48ccbdad65d9227172a19f6",
+          "future_mutated": "ede1610f4d9e0964cd1285b31d2cfded734d17b1e48ccbdad65d9227172a19f6",
+          "truncated": "ede1610f4d9e0964cd1285b31d2cfded734d17b1e48ccbdad65d9227172a19f6"
+        },
+        "1760313600": {
+          "deterministic_source_replay": "PASS",
+          "full_stream": "56646b7ca230fffb3d59e80dde9aabaab53bd836a4f4cd1fe2ce61cc7d5b8bc9",
+          "future_mutated": "56646b7ca230fffb3d59e80dde9aabaab53bd836a4f4cd1fe2ce61cc7d5b8bc9",
+          "truncated": "56646b7ca230fffb3d59e80dde9aabaab53bd836a4f4cd1fe2ce61cc7d5b8bc9"
+        },
+        "1791244800": {
+          "deterministic_source_replay": "PASS",
+          "full_stream": "818c12b5c365b8c6a2b8eaa797e2e289b55b417633b2a68b20c99975632e7913",
+          "future_mutated": "818c12b5c365b8c6a2b8eaa797e2e289b55b417633b2a68b20c99975632e7913",
+          "truncated": "818c12b5c365b8c6a2b8eaa797e2e289b55b417633b2a68b20c99975632e7913"
+        }
+      },
+      "data_end_exclusive": 1791849600,
+      "data_start": 1697241600,
+      "full_checkpoint_digests": {
+        "1729382400": "ede1610f4d9e0964cd1285b31d2cfded734d17b1e48ccbdad65d9227172a19f6",
+        "1760313600": "56646b7ca230fffb3d59e80dde9aabaab53bd836a4f4cd1fe2ce61cc7d5b8bc9",
+        "1791244800": "818c12b5c365b8c6a2b8eaa797e2e289b55b417633b2a68b20c99975632e7913"
+      },
+      "full_deterministic_replay": "PASS",
+      "native_bar_count": 105120,
+      "position_engine_trap_active": true,
+      "raw_family_coverage": {
+        "BREAKER": 97,
+        "OB": 225,
+        "RANGE": 785,
+        "SFP": 4655,
+        "STB": 225
+      },
+      "raw_family_tf_direction_coverage": {
+        "BREAKER|H1|LONG": 44,
+        "BREAKER|H1|SHORT": 36,
+        "BREAKER|H4|LONG": 8,
+        "BREAKER|H4|SHORT": 9,
+        "OB|H1|LONG": 73,
+        "OB|H1|SHORT": 111,
+        "OB|H4|LONG": 17,
+        "OB|H4|SHORT": 24,
+        "RANGE|H1|LONG": 318,
+        "RANGE|H1|SHORT": 315,
+        "RANGE|H4|LONG": 63,
+        "RANGE|H4|SHORT": 89,
+        "SFP|H1|LONG": 1786,
+        "SFP|H1|SHORT": 1933,
+        "SFP|H4|LONG": 459,
+        "SFP|H4|SHORT": 477,
+        "STB|H1|LONG": 73,
+        "STB|H1|SHORT": 111,
+        "STB|H4|LONG": 17,
+        "STB|H4|SHORT": 24
+      },
+      "raw_field_provenance_validated": true,
+      "source_artifact": "docs/machine_strategy_v4_1_implementation_readiness_v1/ETH_USDT_SWAP.source_only.json.gz",
+      "source_artifact_sha256": "498f87fb8e330b464f2b053e9fe851945c0b40d920701dd721cb260505e53203"
     }
   },
   "run_context": {
@@ -88,5 +152,6 @@
     }
   },
   "scope": "FULL_SEALED_HISTORY_SOURCE_ONLY",
+  "source_only_causality": "PASS",
   "trade_entry_allowed": false
 }

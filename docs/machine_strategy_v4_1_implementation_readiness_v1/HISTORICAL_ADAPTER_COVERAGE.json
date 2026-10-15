@@ -5,10 +5,20 @@
     240,
     1440
   ],
+  "data_window_UTC": {
+    "end_exclusive": "2026-10-13T00:00:00+00:00",
+    "native_rows_per_product": 105120,
+    "start_inclusive": "2023-10-14T00:00:00+00:00"
+  },
   "directions": [
     "LONG",
     "SHORT"
   ],
+  "evaluation_window_UTC": {
+    "earlier_native_rows": "processed as preregistered inherited feature warmup; raw source origins begin at evaluation_start, never silently labeled full3year formation census",
+    "end_exclusive": "2026-10-13T00:00:00+00:00",
+    "start_inclusive": "2024-10-13T00:00:00+00:00"
+  },
   "families": [
     "SFP",
     "OB",
@@ -26,7 +36,7 @@
     "V41HistoricalSourceAdapter"
   ],
   "refinement_TF": 15,
-  "runtime_source_evidence": "SOURCE_PREFIX_REPLAY_RECEIPT.json and FULL_SOURCE_CONFORMANCE_RECEIPT.json (pending)",
+  "runtime_source_evidence": "PASS: SOURCE_PREFIX_REPLAY_RECEIPT.json and FULL_SOURCE_CONFORMANCE_RECEIPT.json, both complete products/all3cutoffs",
   "setup_TFs": [
     60,
     240
@@ -36,7 +46,7 @@
     "machine_strategy_v3_historical_adapter.py": "raw formation discovery, FTA/liquidity inventories, immutable source geometry",
     "machine_strategy_v4_readiness_core.py": "unchanged approach/FTA lifecycle/payoff/geometry gates"
   },
-  "state": "EXECUTED_COMPONENTS_FULL_SOURCE_REPLAY_PENDING",
+  "state": "IMPLEMENTATION_COMPONENT_AND_SOURCE_QA_PASS",
   "synthetic_execution_evidence": "tests/test_machine_strategy_v4_1_readiness_regressions.py and test_machine_strategy_v4_1_runner.py",
   "trade_entry_allowed": false,
   "version": "MACHINE_STRATEGY_v4.1"

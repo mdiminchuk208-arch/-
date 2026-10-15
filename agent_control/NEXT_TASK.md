@@ -1,17 +1,13 @@
-# Next Task — MACHINE_STRATEGY_v4.1 Executed Implementation QA
+# Next Task — v4.1 implementation gate complete
 
-State: MACHINE_STRATEGY_V4_1_IMPLEMENTATION_QA_PENDING. Frozen design publication `96e76edf0e526c588cf87a665da681f577cca77a`; external design manifest `4074c337be4800e54682a5ad1ddfd9015e35ce16f4fe2742fc4d12b4bb415790`.
+State: `MACHINE_STRATEGY_V4_1_IMPLEMENTATION_READY`. Completed work order: `V4_1_IMPLEMENTATION_READINESS_WORK_ORDER.md`. External implementation manifest SHA256 `e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61`. Preserve the complete frozen implementation and all predecessors.
 
-Do **not** restart design and do not author a new strategy version. The distinct v4.1 source/lifecycle implementation is now present through the historical source-adapter boundary.
+Verify/reuse the finished gate with:
 
-Execute on the exact current branch bytes, in order:
+`PYTHONPATH=scripts python scripts/verify_machine_strategy_v4_1_implementation_v1.py --resume-existing --expected-manifest-sha256 e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61`
 
-1. `python scripts/verify_machine_strategy_v4_1_source_adapter.py --full` — BTC/ETH deterministic full source/lifecycle replay, bounded prefix replay, future-M15-tail mutation invariance, zero position-engine calls, financial-runner import trap.
-2. Run targeted v4.1 tests for contracts, selected-POI inventory, execution binding and funding guard.
-3. Run compile/static/lint/type and runtime safety checks; `trade_entry_allowed` must remain false.
-4. Verify exact frozen v4.1 design, prior v4 STOP checkpoint and Stage-A parent resumes/hashes; frozen predecessor bytes must be unchanged.
-5. Inspect all-five-family source/lifecycle conformance: preproposal M15 latch, late reaction latch, native context known at OPEN, contact learned at CLOSE, equal-cutoff contact before H1 proposal, half-open deadline/retirement, no CONF rebasing, no hidden parent-consumption substitution.
-6. Run serial `execution_auditor`, then `no_lookahead_auditor`, then separate `final_independent_reviewer` on the exact QA/code bytes.
-7. Finish exactly `MACHINE_STRATEGY_V4_1_IMPLEMENTATION_READY` with externally pinned `IMPLEMENTATION_FREEZE_MANIFEST.json`, or exact `MACHINE_STRATEGY_V4_1_IMPLEMENTATION_STOP` with specific blockers.
+Do not restart implementation or rerun unchanged full source proof. Read ARTIFACT_INDEX, IMPLEMENTATION_REPORT, QA_RECEIPT and independent reviews in `docs/machine_strategy_v4_1_implementation_readiness_v1`. All current-gate requirements are complete; this file does not silently create a new financial authorization.
 
-READY may open only a separately named one-shot development financial gate. Do not run historical v4.1 fills/exits/WR/PF/P&L inside this QA gate. No catalog-count selection/tuning, OOS/PAPER/LIVE/private API/orders/platform. Qualification remains unchanged including WR>=70%; `trade_entry_allowed=false`.
+The next possible research phase is a separately named, explicitly authorized one-shot development financial gate on these exact frozen implementation bytes, with pre-outcome runner authorization/preregistration and independent financial/anti-overfit review. This implementation work order permits opening that later gate only, not executing it. Historical public execution remains denied until that separate gate. Do not tune rules or select thresholds/directions/families from catalog counts or outcomes; do not reinterpret existing exposed development as pristine OOS.
+
+No historical v4/v4.1 fill/exit/financial evaluation or OOS/forward/PAPER/LIVE/private exchange API/orders/platform is authorized by this completion. Qualification unchanged including WR>=70%; production candidate NONE; `trade_entry_allowed=false`; ECC hooks inactive.

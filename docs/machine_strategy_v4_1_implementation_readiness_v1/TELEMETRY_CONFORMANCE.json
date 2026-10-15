@@ -4,6 +4,7 @@
   "code": "immutable machine_strategy_v4_readiness_core.py::GateTelemetry; adapter._emit and registered runner sinks",
   "context_absence": "nonterminal WAIT, never NO_HTF_CONTEXT terminal scalp rejection",
   "dedup": "An incoming equal-subset of a previously validated rich event at same origin/gate/status/cutoff is suppressed; rich diagnostics retained; different/new/future/outcome fields validated. Actual production duplicate-terminal failure preserved under qa_before_terminal_dedup.",
+  "denominator_evidence": "TELEMETRY_FUNNEL_SOURCE_ONLY.json: unique formations/family/direction perproduct, physical buckets/POIs, candidate associations, eligible/reserved POIs, proposals, first-gate/WAIT/terminal counts; historical retry/exposure/fill/exit NOT_EVALUATED",
   "detached_snapshots": true,
   "distinct_denominators": [
     "raw origin",
@@ -16,6 +17,7 @@
     "registered synthetic exposure"
   ],
   "evaluated_context_and_approach": "actual admitted origin_id and classified approach_state; null before evaluation, no invented context",
+  "field_QA": "PASS complete saved BTC/ETH artifact events; unique terminal origin, actual evaluated context/approach, timestamp and scope checks",
   "financial_or_future_fields_rejected": true,
   "funnel_artifact": "TELEMETRY_FUNNEL_SOURCE_ONLY.json, produced by full source field checker after complete replay; historical fill/exit counts NOT_EVALUATED",
   "historical_exposure_denominator": 0,
@@ -58,7 +60,7 @@
     "direction"
   ],
   "retry_denominator_clarification": "historical_retry_and_exposure_counts refers to historical order retry/exposure execution, NOT_EVALUATED. Repeated source WAIT gate evaluations are separately counted in per_gate.wait_evaluations; they are not order retries.",
-  "state": "OBSERVER_REPAIRED_89_TESTS_PASS_FULL_SOURCE_PENDING",
+  "state": "IMPLEMENTATION_COMPONENT_AND_SOURCE_QA_PASS",
   "strategy_readback": false,
   "trade_entry_allowed": false,
   "validation": "full source conformance validates all emitted timestamps/conditional scope; targeted observer mutation/outcome negatives",

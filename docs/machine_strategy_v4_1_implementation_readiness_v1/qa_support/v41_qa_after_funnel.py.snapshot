@@ -1,0 +1,15 @@
+from pathlib import Path
+import json,subprocess,os,hashlib
+r=Path('/workspace/-');d=r/'docs/machine_strategy_v4_1_implementation_readiness_v1'
+p=json.loads((d/'FINAL_COMPONENT_QA_AFTER_DEDUP.json').read_text()); records=[]
+for i,record in enumerate(p['commands'][:5]):
+ log=d/'qa'/f'component_funnel_{i:02}.log'
+ if log.exists():raise SystemExit('REFUSE_OVERWRITE')
+ with log.open('w') as stream: result=subprocess.run(record['command'],cwd=r,env={**os.environ,'PYTHONPATH':'scripts'},stdout=stream,stderr=subprocess.STDOUT)
+ records.append({'command':record['command'],'exit_code':result.returncode,'log':str(log.relative_to(r))})
+ print(i,result.returncode,flush=True)
+ if result.returncode:raise SystemExit(result.returncode)
+p['commands']=records+p['commands'][5:]
+p['tested_sha256']={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in p['tested_sha256']}
+p['reused_unchanged_checks']='Last3 exact parent/data commands from FINAL_COMPONENT_QA_AFTER_DEDUP; no changed parent/data/checker bytes. First5 commands rerun after report-only denominator change.'
+(d/'FINAL_COMPONENT_QA_AFTER_FUNNEL.json').write_text(json.dumps(p,indent=2,sort_keys=True)+'\n')

@@ -36,7 +36,7 @@
   "historical_position_simulation_authorized": false,
   "production_candidate": null,
   "qualification_thresholds_unchanged": true,
-  "state": "EXECUTED_COMPONENTS_FULL_SOURCE_REPLAY_PENDING",
+  "state": "IMPLEMENTATION_COMPONENT_AND_SOURCE_QA_PASS",
   "trade_entry_allowed": false,
   "version": "MACHINE_STRATEGY_v4.1",
   "win_rate_min": 0.7

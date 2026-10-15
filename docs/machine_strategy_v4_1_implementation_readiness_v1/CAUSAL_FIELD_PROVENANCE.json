@@ -135,7 +135,7 @@
     "post-fill state used to change admission",
     "backdated current OKX metadata"
   ],
-  "state": "EXECUTED_COMPONENTS_FULL_SOURCE_REPLAY_PENDING",
+  "state": "IMPLEMENTATION_COMPONENT_AND_SOURCE_QA_PASS",
   "trade_entry_allowed": false,
   "version": "MACHINE_STRATEGY_v4.1"
 }

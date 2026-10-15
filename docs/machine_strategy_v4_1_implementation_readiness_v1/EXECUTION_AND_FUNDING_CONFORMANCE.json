@@ -36,7 +36,7 @@
   "registered_synthetic_execution": "PASS_89_TARGETED_TESTS; FINAL_COMPONENT_QA_AFTER_FUNNEL.json reuses unchanged exact parent/data checks",
   "rounding": "ROUND_HALF_EVEN",
   "scenarios": 9,
-  "state": "EXECUTED_COMPONENTS_FULL_SOURCE_REPLAY_PENDING",
+  "state": "IMPLEMENTATION_COMPONENT_AND_SOURCE_QA_PASS",
   "trade_entry_allowed": false,
   "version": "MACHINE_STRATEGY_v4.1"
 }

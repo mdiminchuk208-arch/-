@@ -1,0 +1,58 @@
+from pathlib import Path
+import json,hashlib,sys
+r=Path('/workspace/-');sys.path.insert(0,str(r/'scripts'))
+from verify_machine_strategy_v4_1_implementation_v1 import check_source,verify_pins
+p=r/'docs/machine_strategy_v4_1_implementation_readiness_v1'
+def read(n):return json.loads((p/n).read_text())
+def write(n,v): (p/n).write_text(json.dumps(v,indent=2,sort_keys=True)+'\n')
+def digest(n):return hashlib.sha256((r/n).read_bytes()).hexdigest()
+s=read('SOURCE_PREFIX_REPLAY_RECEIPT.json');check_source(s)
+f=read('FULL_SOURCE_CONFORMANCE_RECEIPT.json');assert f['gate_complete'] and len(f['products'])==2
+q=read('FINAL_COMPONENT_QA_AFTER_FUNNEL.json');verify_pins(q['tested_sha256'])
+commands=q['commands']+read('SOURCE_COMMAND_COMPLETION.json')['commands'];assert len(commands)==10 and all(c['exit_code']==0 for c in commands)
+q.update({'component_QA_status':'PASS','commands':commands,'log_sha256':{c['log']:digest(c['log']) for c in commands},'historical_position_evaluations':0,'historical_financial_authorized':False,'trade_entry_allowed':False,'targeted_tests':89,'gate_scope':'COMPONENT_AND_COMPLETE_SOURCE_ONLY; independent final decision separate'})
+write('QA_RECEIPT.json',q)
+if '--qa-only' in sys.argv:
+ print('Actual ten-command QA receipt assembled; independent reviews/final freeze separate.');raise SystemExit(0)
+for name in ('EXECUTION_AUDITOR','NO_LOOKAHEAD_AUDITOR'):
+ review=read('reviews/'+name+'.json');assert review['verdict']=='PASS' and not review['blockers'];verify_pins(review['reviewed_sha256'])
+d=read('RULE_TO_CODE_CONFORMANCE.json')
+for rule in d['rules'].values():
+ if rule['status']!='BLOCKED_BY_GATE':rule['status']='PASS_IMPLEMENTATION_SOURCE_OR_REGISTERED_SYNTHETIC_SCOPE'
+d['complete_rule_coverage']=True;d['state']='IMPLEMENTATION_COMPONENT_AND_SOURCE_QA_PASS';d['evidence']=['QA_RECEIPT.json','SOURCE_PREFIX_REPLAY_RECEIPT.json','FULL_SOURCE_CONFORMANCE_RECEIPT.json','reviews/EXECUTION_AUDITOR.json','reviews/NO_LOOKAHEAD_AUDITOR.json'];write('RULE_TO_CODE_CONFORMANCE.json',d)
+for name in ('HISTORICAL_ADAPTER_COVERAGE','CAUSAL_FIELD_PROVENANCE','EXECUTION_AND_FUNDING_CONFORMANCE','TELEMETRY_CONFORMANCE','RUNNER_OUTCOME_ISOLATION'):
+ d=read(name+'.json');d['state']='IMPLEMENTATION_COMPONENT_AND_SOURCE_QA_PASS'
+ if name=='HISTORICAL_ADAPTER_COVERAGE':d['runtime_source_evidence']='PASS: SOURCE_PREFIX_REPLAY_RECEIPT.json and FULL_SOURCE_CONFORMANCE_RECEIPT.json, both complete products/all3cutoffs'
+ if name=='TELEMETRY_CONFORMANCE':d['field_QA']='PASS complete saved BTC/ETH artifact events; unique terminal origin, actual evaluated context/approach, timestamp and scope checks';d['denominator_evidence']='TELEMETRY_FUNNEL_SOURCE_ONLY.json: unique formations/family/direction perproduct, physical buckets/POIs, candidate associations, eligible/reserved POIs, proposals, first-gate/WAIT/terminal counts; historical retry/exposure/fill/exit NOT_EVALUATED'
+ write(name+'.json',d)
+(p/'QA_REPORT.md').write_text('''# Implementation readiness QA
+
+Ten recorded commands PASS; QA_RECEIPT.json pins exact tested code and every actual log. The 89-test unit suite covers frozen design contracts, selected-POI inventory, execution binding, funding/guards, repaired production registration/provenance/observer regressions, registered H1/H4 source-kernel mechanics and freeze negatives. Lint/format/type/compile PASS. Exact v4.1 design/v4 STOP resumes and full sealed data/source checks PASS; their unchanged evidence is reused with byte checks.
+
+Both complete 105,120-bar production streams were replayed twice (sealed 2023-10-14 to 2026-10-13UTC; preregistered formation evaluation 2024-10-13 onward, earlier rows feature warmup) with byte-identical saved source/lifecycle artifacts. Each product passed the three preregistered full-prefix/truncated-input/future-tail-mutated comparisons. Future OHLC mutation rebuilds H1/H4/D1. Active financial function-call/import traps remained in scope throughout all source runs. Actual command exit0 and final two-product receipt establish completion, not partial progress.
+
+The final field checker validates every saved raw origin, physical selected-POI state, first-eligible parent association, conditional pending lifecycle event, pre-entry proposal and observer event. Required context/approach diagnostics and unique terminal origin checks PASS. Funnel denominators remain source-only; historical fills/exits/retry/exposures are NOT_EVALUATED. No historical position engine was called.
+
+Independent execution acceptance covers current core/runner/ledger bytes, mirrored five-family H1/H4 registered mechanics, all nine scenarios, canonical Decimal50-to-80 transport, fixed-U and signed funding witnesses. Independent no-lookahead acceptance covers exact complete source/cutoff/field evidence and causality. Separate final acceptance and an externally pinned manifest are required for the final gate decision.
+
+Earlier defects and attempts remain preserved: missing mandatory observer gates under qa_before_telemetry; duplicated rich/base terminal rejection under qa_before_terminal_dedup. They are not current acceptance. Current observer changes leave the saved BTC catalog and nonobserver source/lifecycle/frame fields unchanged; BTC_OBSERVER_NONINTERFERENCE.json records this directly.
+
+Historical tick/lot epochs, account fee applicability, mark/queue/fill behavior and API publication latency remain unverified model assumptions. Development history is exposed, not pristine OOS. No financial results, OOS/forward/PAPER/LIVE/private API/orders/platform work was authorized or executed. trade_entry_allowed=false; production candidate NONE.
+''')
+(p/'IMPLEMENTATION_REPORT.md').write_text('''# MACHINE_STRATEGY_v4.1 executed implementation readiness
+
+Complete source/component QA passed. Final gate authority is the separately accepted and externally pinned IMPLEMENTATION_FREEZE_MANIFEST.json; this report grants no financial or trading permission.
+
+The new historical adapter implements all five H1/H4 families with completed H4/D1/H1 context and M15 refinement. It uses frozen unchanged discovery/frame and v4 gate primitives, not the hand design oracle as a historical backend. Physical selected-object inventory precedes viable H1 proposals: known refined origins/reactions publish during WAIT; first admissible M15 eligibility and its parent association latch permanently; later proposal CONF/parent evidence remains separate. Generated STB body, BREAKER body and RANGE boundary preserve their frozen identity/required-reaction rules. Native context is snapshotted at OPEN, contacts become known at native CLOSE, and equal-cutoff contact precedes H1 reservation. No parent-consumption substitution or CONF rebasing remains.
+
+Registered synthetic infrastructure validates every-M15 execution independently of native contact, H4 midbar emission/fill, conditional no-fill retirement, late context, same-cutoff rejection and permanent filled/exited owner reservation. Decimal50 HALF_EVEN builds canonical geometry and quantity; ledger80 HALF_EVEN consumes those unchanged values. All nine compatibility scenarios, common fixed U, conservative unknowns and coherent signed funding witnesses remain frozen. Public historical execution stays unconditionally denied, including caller-invented contexts/manifests.
+
+Append-only telemetry supplies actual evaluated context/approach and detailed gate diagnostics. Integrity errors are fatal; repeated validated rich terminal events are retained once. Conditional IF_STILL_PENDING flags are prospective source evidence, never observations of historical unfilled positions. Separate formations, physical buckets/POIs, candidate associations, eligibility, reservation/proposals and gate/WAIT denominators appear in the source-only funnel.
+
+Full proof covers both complete sealed products (2023-10-14 to 2026-10-13UTC native grids; preregistered raw formation evaluation 2024-10-13 onward, earlier rows feature warmup), two identical source streams per product, three prefix/future-mutation triplets per product, all fields and active finance traps. Data QA revalidates 210,240 native bars, derived grids, 4,380 signed funding rows and 774 retained public receipts. See QA_REPORT.md, QA_RECEIPT.json, independent reviews and ARTIFACT_INDEX.md.
+
+This is implementation conformance, not exchange execution qualification. Historical tick/lot epochs, actual account fees, mark/queue/fill behavior and API publication timing remain explicit unverified assumptions; modeled metadata was not promoted. All existing history is exposed development; future untouched OOS needs separate preregistration/data collection/qualification. No source ambiguity was closed by arbitrary policy, and no policy/normalization was promoted to SOURCE_RULE. No threshold, direction/family, cost, exit or qualification rule was tuned from counts or outcomes. WR>=70% qualification remains unchanged.
+
+READY permits only opening a separately named future one-shot development financial gate. It does not authorize executing that gate. Historical financial outcomes, OOS/forward/PAPER/LIVE/private exchange APIs/orders/platform remain unexecuted. Production candidate NONE; trade_entry_allowed=false.
+''')
+print('Final source/component evidence assembled; independent final acceptance still required.')

@@ -1,0 +1,13 @@
+import json
+from pathlib import Path
+p=Path('/workspace/-/docs/machine_strategy_v4_1_implementation_readiness_v1')
+q=json.loads((p/'FINAL_COMPONENT_QA_AFTER_DEDUP.json').read_text())
+names=['scripts/machine_strategy_v4_1_'+x+'.py' for x in ('historical_adapter','guarded_runner','synthetic_source_bridge','contracts','selected_poi_inventory','execution_binding','funding_guard')]
+r={'role':'execution_auditor','agent':'/root/v41_execution_integrated','verdict':'PASS','blockers':[],'scope':'Bounded current-code execution acceptance; full source proof and final acceptance separate','reviewed_commit':'81e90016262b028af74c7bac1ff8bba13685d794','reviewed_sha256':{n:q['tested_sha256'][n] for n in names},'component_receipt_sha256':'905b36369c25f7c2874977d7c569eb9ec3f35e4234811b3e83430c5ce7c19d51','independent_commands':[{'command':'PYTHONPATH=scripts python -m unittest discover -s tests -p test_machine_strategy_v4_1_readiness_regressions.py -v','exit_code':0,'tests':11},{'command':'PYTHONPATH=scripts python -m unittest discover -s tests -p test_machine_strategy_v4_1*.py -v','exit_code':0,'tests':89,'seconds':2.098}],'evidence':['Eight actual recorded QA commands exit0; all logs present;20/20tested pins exact','Only _emit suppression differs vs141b2bf; richer validated event retained; new/changed fields validated','No admission/order/lifecycle/runner/ledger change; previously accepted mirrored H1/H4/all9/canonical transport/funding/guards remain unchanged'],'historical_financial_authorized':False,'trade_entry_allowed':False,'receipt_origin':'Root transcription of actual independent agent message; agent read-only'}
+(p/'reviews/EXECUTION_AUDITOR.json').write_text(json.dumps(r,indent=2,sort_keys=True)+'\n')
+a=json.loads((p/'AGENT_REGISTER.json').read_text())
+for row in a['attempts']:
+ if row['agent']=='/root/v41_execution_integrated':
+  row['result']='Current81e90016 bounded execution PASS; independent89/89tests and11targeted regression PASS; eight recorded commands/all20testedpins verified; observer dedup does not mutate admission/order/ledger'
+  row['acceptance']='Current execution scope accepted; complete source and final review separate'
+(p/'AGENT_REGISTER.json').write_text(json.dumps(a,indent=2,sort_keys=True)+'\n')

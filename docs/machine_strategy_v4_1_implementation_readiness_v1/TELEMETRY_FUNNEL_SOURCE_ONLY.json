@@ -1,0 +1,256 @@
+{
+  "products": {
+    "BTC-USDT-SWAP": {
+      "candidate_parent_associations": 6276,
+      "eligible_physical_POIs": 407,
+      "historical_fill_exit_counts": "NOT_EVALUATED",
+      "historical_position_evaluations": 0,
+      "historical_retry_and_exposure_counts": "NOT_EVALUATED",
+      "per_gate": {
+        "EOF": {
+          "first_evaluated_origins": 1,
+          "first_pass_origins": 0,
+          "terminal_origins": 1,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "adverse_liquidity": {
+          "first_evaluated_origins": 29,
+          "first_pass_origins": 25,
+          "terminal_origins": 4,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "approach_state": {
+          "first_evaluated_origins": 4738,
+          "first_pass_origins": 3907,
+          "terminal_origins": 0,
+          "wait_evaluations": 98524,
+          "waiting_origins": 4646
+        },
+        "completed_data_integrity": {
+          "first_evaluated_origins": 5960,
+          "first_pass_origins": 5960,
+          "terminal_origins": 0,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "entry_geometry": {
+          "first_evaluated_origins": 161,
+          "first_pass_origins": 161,
+          "terminal_origins": 0,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "formation_discovery": {
+          "first_evaluated_origins": 5960,
+          "first_pass_origins": 5960,
+          "terminal_origins": 0,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "fta_lifecycle": {
+          "first_evaluated_origins": 183,
+          "first_pass_origins": 131,
+          "terminal_origins": 52,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "htf_context": {
+          "first_evaluated_origins": 3907,
+          "first_pass_origins": 487,
+          "terminal_origins": 0,
+          "wait_evaluations": 70310,
+          "waiting_origins": 3733
+        },
+        "payoff_gate": {
+          "first_evaluated_origins": 131,
+          "first_pass_origins": 29,
+          "terminal_origins": 102,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "physical_eligibility": {
+          "first_evaluated_origins": 487,
+          "first_pass_origins": 320,
+          "terminal_origins": 15,
+          "wait_evaluations": 2573,
+          "waiting_origins": 205
+        },
+        "reaction": {
+          "first_evaluated_origins": 5960,
+          "first_pass_origins": 4738,
+          "terminal_origins": 2259,
+          "wait_evaluations": 40664,
+          "waiting_origins": 5546
+        },
+        "refinement_and_poi": {
+          "first_evaluated_origins": 449,
+          "first_pass_origins": 183,
+          "terminal_origins": 9,
+          "wait_evaluations": 942,
+          "waiting_origins": 275
+        },
+        "reservation_and_order": {
+          "first_evaluated_origins": 25,
+          "first_pass_origins": 0,
+          "terminal_origins": 0,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "structural_invalidation": {
+          "first_evaluated_origins": 5960,
+          "first_pass_origins": 5960,
+          "terminal_origins": 3493,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        }
+      },
+      "physical_selected_POIs": 4497,
+      "pre_entry_model_proposals": 25,
+      "reserved_physical_POIs": 25,
+      "source_raw_origins": 5960,
+      "unique_physical_buckets": 4731,
+      "unique_source_formations": 5960,
+      "unique_source_formations_by_family_direction": {
+        "BREAKER|LONG": 50,
+        "BREAKER|SHORT": 59,
+        "OB|LONG": 144,
+        "OB|SHORT": 161,
+        "RANGE|LONG": 356,
+        "RANGE|SHORT": 371,
+        "SFP|LONG": 2217,
+        "SFP|SHORT": 2297,
+        "STB|LONG": 144,
+        "STB|SHORT": 161
+      }
+    },
+    "ETH-USDT-SWAP": {
+      "candidate_parent_associations": 6171,
+      "eligible_physical_POIs": 460,
+      "historical_fill_exit_counts": "NOT_EVALUATED",
+      "historical_position_evaluations": 0,
+      "historical_retry_and_exposure_counts": "NOT_EVALUATED",
+      "per_gate": {
+        "EOF": {
+          "first_evaluated_origins": 1,
+          "first_pass_origins": 0,
+          "terminal_origins": 1,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "adverse_liquidity": {
+          "first_evaluated_origins": 32,
+          "first_pass_origins": 29,
+          "terminal_origins": 3,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "approach_state": {
+          "first_evaluated_origins": 4780,
+          "first_pass_origins": 3932,
+          "terminal_origins": 0,
+          "wait_evaluations": 97167,
+          "waiting_origins": 4713
+        },
+        "completed_data_integrity": {
+          "first_evaluated_origins": 5987,
+          "first_pass_origins": 5987,
+          "terminal_origins": 0,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "entry_geometry": {
+          "first_evaluated_origins": 153,
+          "first_pass_origins": 153,
+          "terminal_origins": 0,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "formation_discovery": {
+          "first_evaluated_origins": 5987,
+          "first_pass_origins": 5987,
+          "terminal_origins": 0,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "fta_lifecycle": {
+          "first_evaluated_origins": 183,
+          "first_pass_origins": 122,
+          "terminal_origins": 61,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "htf_context": {
+          "first_evaluated_origins": 3932,
+          "first_pass_origins": 532,
+          "terminal_origins": 0,
+          "wait_evaluations": 72342,
+          "waiting_origins": 3757
+        },
+        "payoff_gate": {
+          "first_evaluated_origins": 122,
+          "first_pass_origins": 32,
+          "terminal_origins": 90,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "physical_eligibility": {
+          "first_evaluated_origins": 532,
+          "first_pass_origins": 363,
+          "terminal_origins": 20,
+          "wait_evaluations": 2551,
+          "waiting_origins": 205
+        },
+        "reaction": {
+          "first_evaluated_origins": 5987,
+          "first_pass_origins": 4780,
+          "terminal_origins": 2288,
+          "wait_evaluations": 40856,
+          "waiting_origins": 5665
+        },
+        "refinement_and_poi": {
+          "first_evaluated_origins": 489,
+          "first_pass_origins": 183,
+          "terminal_origins": 23,
+          "wait_evaluations": 1083,
+          "waiting_origins": 306
+        },
+        "reservation_and_order": {
+          "first_evaluated_origins": 29,
+          "first_pass_origins": 0,
+          "terminal_origins": 0,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "structural_invalidation": {
+          "first_evaluated_origins": 5987,
+          "first_pass_origins": 5987,
+          "terminal_origins": 3472,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        }
+      },
+      "physical_selected_POIs": 4297,
+      "pre_entry_model_proposals": 29,
+      "reserved_physical_POIs": 29,
+      "source_raw_origins": 5987,
+      "unique_physical_buckets": 4838,
+      "unique_source_formations": 5987,
+      "unique_source_formations_by_family_direction": {
+        "BREAKER|LONG": 52,
+        "BREAKER|SHORT": 45,
+        "OB|LONG": 90,
+        "OB|SHORT": 135,
+        "RANGE|LONG": 381,
+        "RANGE|SHORT": 404,
+        "SFP|LONG": 2245,
+        "SFP|SHORT": 2410,
+        "STB|LONG": 90,
+        "STB|SHORT": 135
+      }
+    }
+  },
+  "scope": "SOURCE_ONLY_NO_HISTORICAL_POSITION_COUNTS",
+  "trade_entry_allowed": false
+}

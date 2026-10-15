@@ -1,0 +1,39 @@
+from pathlib import Path
+import sys,json
+r=Path('/workspace/-');sys.path.insert(0,str(r/'scripts'))
+from verify_machine_strategy_v4_1_implementation_v1 import resume,READY
+pin=sys.argv[1];result=resume(pin);decision=result['decision'];assert decision==READY,'STOP requires blocker-specific control text, never generic READY template'
+p=r/'agent_control';d='docs/machine_strategy_v4_1_implementation_readiness_v1'
+summary=f'''State: `{decision}`. Implementation gate completed; complete_implementation_freeze=true. External implementation manifest SHA256 `{pin}`. Exact externally pinned resume verified. Branch `machine-v3-research`; production candidate NONE; `trade_entry_allowed=false`.
+
+Actual QA:89 targeted unit/registered-synthetic tests and ten commands PASS, including static/type/compile, exact frozen parent resumes, complete sealed-data verification, full deterministic BTC/ETH source replay and final source-field conformance. Both products have two byte-identical full105120-bar streams and all3preregistered full/truncated/future-mutated cutoff triplets. All210240native bars, derived grids,4380signed funding rows and774retained public receipts verified. Evaluation window remains preregistered2024-10-13 to2026-10-13UTC with earlier sealed rows feature warmup; no silent three-year formation census claim.
+
+Serial independent reviews: execution_auditor accepted mirrored five-family H1/H4 mechanics, nine scenarios, Decimal50-to80 transport, funding/guards and current observer isolation; no_lookahead_auditor accepted complete current-code source/provenance/telemetry/replay evidence; separate final_independent_reviewer accepted READY on exact evidence. Earlier backtest_engineer/historical_data_engineer diagnostics and failed/interrupted/repaired attempts remain in AGENT_REGISTER/reviews. Root sole writer; ECC2.2.3 enabled, hooks inactive.
+
+All frozen strategy/design/predecessor bytes and qualification rules including WR>=70% preserved. No rule/count/outcome tuning or SOURCE_RULE promotion. Existing history remains exposed development. Historical tick/lot epochs, account fee applicability, mark/queue/fill behavior and API publication delay remain unverified model assumptions; this is implementation conformance, not exchange execution/production qualification.
+
+Historical position evaluations=0; historical_financial_authorized=false. No v4/v4.1 historical fills/exits/financial outcomes, OOS/forward/PAPER/LIVE/private exchange API/orders/platform executed. READY permits only opening a separately named future one-shot development financial gate; this work order does not authorize its execution. Public historical execution remains denied.
+
+Artifacts: `{d}/ARTIFACT_INDEX.md`; exact evidence authority `{d}/IMPLEMENTATION_FREEZE_MANIFEST.json`. Mutable STATUS/CURRENT_STATE/NEXT_TASK/CURRENT_BATCH publication pointers intentionally remain outside the manifest to avoid self-referential hashes.
+'''
+# Improve human-readable counts without changing any frozen contract or threshold.
+for a,b in {'QA:89':'QA: 89','full105120-bar':'full 105,120-bar','all3preregistered':'all 3 preregistered','All210240native':'All 210,240 native','grids,4380signed':'grids, 4,380 signed','rows and774retained':'rows and 774 retained','preregistered2024':'preregistered 2024','to2026':'to 2026'}.items():summary=summary.replace(a,b)
+(p/'STATUS.md').write_text('# Agent Status\n\n'+summary)
+f=p/'CURRENT_STATE.md';old=f.read_text();old=old.removeprefix('# Current State\n\n')
+f.write_text('# Current State\n\n'+summary+'\nThe following frozen-predecessor and progress records are retained as history. The completed manifest decision above supersedes their earlier OPEN, RUNNING and QA_PENDING labels.\n\n'+old)
+(p/'NEXT_TASK.md').write_text(f'''# Next Task — v4.1 implementation gate complete
+
+State: `{decision}`. Completed work order: `V4_1_IMPLEMENTATION_READINESS_WORK_ORDER.md`. External implementation manifest SHA256 `{pin}`. Preserve the complete frozen implementation and all predecessors.
+
+Verify/reuse the finished gate with:
+
+`PYTHONPATH=scripts python scripts/verify_machine_strategy_v4_1_implementation_v1.py --resume-existing --expected-manifest-sha256 {pin}`
+
+Do not restart implementation or rerun unchanged full source proof. Read ARTIFACT_INDEX, IMPLEMENTATION_REPORT, QA_RECEIPT and independent reviews in `{d}`. All current-gate requirements are complete; this file does not silently create a new financial authorization.
+
+The next possible research phase is a separately named, explicitly authorized one-shot development financial gate on these exact frozen implementation bytes, with pre-outcome runner authorization/preregistration and independent financial/anti-overfit review. This implementation work order permits opening that later gate only, not executing it. Historical public execution remains denied until that separate gate. Do not tune rules or select thresholds/directions/families from catalog counts or outcomes; do not reinterpret existing exposed development as pristine OOS.
+
+No historical v4/v4.1 fill/exit/financial evaluation or OOS/forward/PAPER/LIVE/private exchange API/orders/platform is authorized by this completion. Qualification unchanged including WR>=70%; production candidate NONE; `trade_entry_allowed=false`; ECC hooks inactive.
+''')
+(p/'CURRENT_BATCH.md').write_text('# Current Campaign — v4.1 implementation readiness completed\n\n'+summary+'\nCurrent campaign is closed. Follow NEXT_TASK boundary; no automatic financial execution.\n')
+print(json.dumps({'controls_updated':True,'decision':decision,'manifest_sha256':pin,'historical_financial_authorized':False,'trade_entry_allowed':False},sort_keys=True))

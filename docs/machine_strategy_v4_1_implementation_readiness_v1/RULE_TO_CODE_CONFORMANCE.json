@@ -1,8 +1,15 @@
 {
   "classifications": "Exact frozen RULE_REGISTRY classifications retained; no PROJECT_POLICY/TECHNICAL_NORMALIZATION promoted to SOURCE_RULE.",
-  "complete_rule_coverage": false,
+  "complete_rule_coverage": true,
   "design_manifest_sha256": "4074c337be4800e54682a5ad1ddfd9015e35ce16f4fe2742fc4d12b4bb415790",
   "design_publication": "96e76edf0e526c588cf87a665da681f577cca77a",
+  "evidence": [
+    "QA_RECEIPT.json",
+    "SOURCE_PREFIX_REPLAY_RECEIPT.json",
+    "FULL_SOURCE_CONFORMANCE_RECEIPT.json",
+    "reviews/EXECUTION_AUDITOR.json",
+    "reviews/NO_LOOKAHEAD_AUDITOR.json"
+  ],
   "executed_test_files": [
     "tests/test_machine_strategy_v4_1_contracts.py",
     "tests/test_machine_strategy_v4_1_design.py",
@@ -51,6 +58,216 @@
   "frozen_rules_changed": false,
   "historical_financial_authorized": false,
   "historical_position_evaluations": 0,
+  "inherited_v4_rule_mapping": {
+    "M4_APPROACH": {
+      "classification": "PROJECT_POLICY",
+      "code": "V41HistoricalAdapter.prepare -> unchanged machine_strategy_v4_readiness_core.classify_approach",
+      "evidence": [
+        "QA_RECEIPT.json",
+        "SOURCE_PREFIX_REPLAY_RECEIPT.json",
+        "FULL_SOURCE_CONFORMANCE_RECEIPT.json",
+        "reviews/EXECUTION_AUDITOR.json",
+        "reviews/NO_LOOKAHEAD_AUDITOR.json"
+      ],
+      "historical_PnL_selection": false,
+      "normative_pointer": "ENTRY_EXIT_CONTRACT.json#/approach",
+      "scope": "CURRENT_GATE_SOURCE_AND_COMPONENT_CONFORMANCE",
+      "source_selector_equivalence": false,
+      "v4_1_amendment_boundary": "Selected-object first-test/ownership and Decimal scope only; exact seven-rule v4.1 mapping above controls overrides"
+    },
+    "M4_COMPATIBILITY": {
+      "classification": "INHERITED_MACHINE_RULE",
+      "code": "machine_strategy_v4_1_execution_binding.all_scenario_plans; guarded_runner._drive_case/_adverse/_funding_min/_cash; funding_guard exact finite capabilities",
+      "evidence": [
+        "QA_RECEIPT.json",
+        "SOURCE_PREFIX_REPLAY_RECEIPT.json",
+        "FULL_SOURCE_CONFORMANCE_RECEIPT.json",
+        "reviews/EXECUTION_AUDITOR.json",
+        "reviews/NO_LOOKAHEAD_AUDITOR.json"
+      ],
+      "historical_PnL_selection": false,
+      "normative_pointer": "EXECUTION_CONTRACT.json#/compatibility",
+      "scope": "REGISTERED_SYNTHETIC_EXECUTION_ONLY_NO_HISTORICAL_FINANCIAL_CLAIM",
+      "source_selector_equivalence": false,
+      "v4_1_amendment_boundary": "Selected-object first-test/ownership and Decimal scope only; exact seven-rule v4.1 mapping above controls overrides"
+    },
+    "M4_DATA": {
+      "classification": "INHERITED_MACHINE_RULE",
+      "code": "machine_strategy_v4_1_historical_adapter.market_inputs/V41HistoricalAdapter._source_run; check_machine_strategy_v4_1_data.check; unchanged completed-frame primitives",
+      "evidence": [
+        "QA_RECEIPT.json",
+        "SOURCE_PREFIX_REPLAY_RECEIPT.json",
+        "FULL_SOURCE_CONFORMANCE_RECEIPT.json",
+        "reviews/EXECUTION_AUDITOR.json",
+        "reviews/NO_LOOKAHEAD_AUDITOR.json"
+      ],
+      "historical_PnL_selection": false,
+      "normative_pointer": "EXECUTION_CONTRACT.json#/bar_event_priority",
+      "scope": "CURRENT_GATE_SOURCE_AND_COMPONENT_CONFORMANCE",
+      "source_selector_equivalence": false,
+      "v4_1_amendment_boundary": "Selected-object first-test/ownership and Decimal scope only; exact seven-rule v4.1 mapping above controls overrides"
+    },
+    "M4_EXECUTABLE_ZONE": {
+      "classification": "TECHNICAL_NORMALIZATION",
+      "code": "V41HistoricalAdapter.plan_pending -> frozen executable_plan; v4_1_execution_binding.scenario_plan",
+      "evidence": [
+        "QA_RECEIPT.json",
+        "SOURCE_PREFIX_REPLAY_RECEIPT.json",
+        "FULL_SOURCE_CONFORMANCE_RECEIPT.json",
+        "reviews/EXECUTION_AUDITOR.json",
+        "reviews/NO_LOOKAHEAD_AUDITOR.json"
+      ],
+      "historical_PnL_selection": false,
+      "normative_pointer": "EXECUTION_CONTRACT.json#/executable_zone",
+      "scope": "CURRENT_GATE_SOURCE_AND_COMPONENT_CONFORMANCE",
+      "source_selector_equivalence": false,
+      "v4_1_amendment_boundary": "Selected-object first-test/ownership and Decimal scope only; exact seven-rule v4.1 mapping above controls overrides"
+    },
+    "M4_EXITS": {
+      "classification": "INHERITED_MACHINE_RULE",
+      "code": "machine_strategy_v4_1_guarded_runner._drive_case/_cash registered fixtures only; public evaluate_historical_catalog denied",
+      "evidence": [
+        "QA_RECEIPT.json",
+        "SOURCE_PREFIX_REPLAY_RECEIPT.json",
+        "FULL_SOURCE_CONFORMANCE_RECEIPT.json",
+        "reviews/EXECUTION_AUDITOR.json",
+        "reviews/NO_LOOKAHEAD_AUDITOR.json"
+      ],
+      "historical_PnL_selection": false,
+      "normative_pointer": "ENTRY_EXIT_CONTRACT.json#/exits",
+      "scope": "REGISTERED_SYNTHETIC_EXECUTION_ONLY_NO_HISTORICAL_FINANCIAL_CLAIM",
+      "source_selector_equivalence": false,
+      "v4_1_amendment_boundary": "Selected-object first-test/ownership and Decimal scope only; exact seven-rule v4.1 mapping above controls overrides"
+    },
+    "M4_FAMILIES": {
+      "classification": "INHERITED_MACHINE_RULE",
+      "code": "V41HistoricalAdapter.register_family_inventory/prepare/plan_pending; pinned machine_strategy_v3_historical_adapter raw discovery + machine_strategy_v3_contracts.raw_family_prices",
+      "evidence": [
+        "QA_RECEIPT.json",
+        "SOURCE_PREFIX_REPLAY_RECEIPT.json",
+        "FULL_SOURCE_CONFORMANCE_RECEIPT.json",
+        "reviews/EXECUTION_AUDITOR.json",
+        "reviews/NO_LOOKAHEAD_AUDITOR.json"
+      ],
+      "historical_PnL_selection": false,
+      "normative_pointer": "ENTRY_EXIT_CONTRACT.json#/families",
+      "scope": "CURRENT_GATE_SOURCE_AND_COMPONENT_CONFORMANCE",
+      "source_selector_equivalence": false,
+      "v4_1_amendment_boundary": "Selected-object first-test/ownership and Decimal scope only; exact seven-rule v4.1 mapping above controls overrides"
+    },
+    "M4_FTA_LIFECYCLE": {
+      "classification": "PROJECT_POLICY",
+      "code": "V41HistoricalAdapter.plan_pending + module _select_fta -> unchanged target_lifecycle_ok; lifecycle_flags conditional pending rechecks",
+      "evidence": [
+        "QA_RECEIPT.json",
+        "SOURCE_PREFIX_REPLAY_RECEIPT.json",
+        "FULL_SOURCE_CONFORMANCE_RECEIPT.json",
+        "reviews/EXECUTION_AUDITOR.json",
+        "reviews/NO_LOOKAHEAD_AUDITOR.json"
+      ],
+      "historical_PnL_selection": false,
+      "normative_pointer": "ENTRY_EXIT_CONTRACT.json#/FTA",
+      "scope": "CURRENT_GATE_SOURCE_AND_COMPONENT_CONFORMANCE",
+      "source_selector_equivalence": false,
+      "v4_1_amendment_boundary": "Selected-object first-test/ownership and Decimal scope only; exact seven-rule v4.1 mapping above controls overrides"
+    },
+    "M4_LIFETIME": {
+      "classification": "PROJECT_POLICY",
+      "code": "V41HistoricalAdapter._reaction/lifecycle_flags; SelectedPoiInventory.emit_h1_proposal own-association deadline; guarded_runner._drive_case",
+      "evidence": [
+        "QA_RECEIPT.json",
+        "SOURCE_PREFIX_REPLAY_RECEIPT.json",
+        "FULL_SOURCE_CONFORMANCE_RECEIPT.json",
+        "reviews/EXECUTION_AUDITOR.json",
+        "reviews/NO_LOOKAHEAD_AUDITOR.json"
+      ],
+      "historical_PnL_selection": false,
+      "normative_pointer": "EXECUTION_CONTRACT.json#/lifetime",
+      "scope": "CURRENT_GATE_SOURCE_AND_COMPONENT_CONFORMANCE",
+      "source_selector_equivalence": false,
+      "v4_1_amendment_boundary": "Selected-object first-test/ownership and Decimal scope only; exact seven-rule v4.1 mapping above controls overrides"
+    },
+    "M4_PAYOFF": {
+      "classification": "PROJECT_POLICY",
+      "code": "V41HistoricalAdapter.plan_pending -> unchanged planned_payoff_gate; v4_1_execution_binding.scenario_plan",
+      "evidence": [
+        "QA_RECEIPT.json",
+        "SOURCE_PREFIX_REPLAY_RECEIPT.json",
+        "FULL_SOURCE_CONFORMANCE_RECEIPT.json",
+        "reviews/EXECUTION_AUDITOR.json",
+        "reviews/NO_LOOKAHEAD_AUDITOR.json"
+      ],
+      "historical_PnL_selection": false,
+      "normative_pointer": "EXECUTION_CONTRACT.json#/payoff",
+      "scope": "CURRENT_GATE_SOURCE_AND_COMPONENT_CONFORMANCE",
+      "source_selector_equivalence": false,
+      "v4_1_amendment_boundary": "Selected-object first-test/ownership and Decimal scope only; exact seven-rule v4.1 mapping above controls overrides"
+    },
+    "M4_QUALIFICATION": {
+      "classification": "PROJECT_POLICY",
+      "code": "Unchanged frozen v4 QUALIFICATION_PREREGISTRATION + v4.1 PREREGISTRATION exact parent resumes; no current qualification calculation or candidate selection",
+      "evidence": [
+        "QA_RECEIPT.json",
+        "SOURCE_PREFIX_REPLAY_RECEIPT.json",
+        "FULL_SOURCE_CONFORMANCE_RECEIPT.json",
+        "reviews/EXECUTION_AUDITOR.json",
+        "reviews/NO_LOOKAHEAD_AUDITOR.json"
+      ],
+      "historical_PnL_selection": false,
+      "normative_pointer": "QUALIFICATION_PREREGISTRATION.json#/qualification",
+      "scope": "FROZEN_QUALIFICATION_PRESERVED_NOT_ASSESSED",
+      "source_selector_equivalence": false,
+      "v4_1_amendment_boundary": "Selected-object first-test/ownership and Decimal scope only; exact seven-rule v4.1 mapping above controls overrides"
+    },
+    "M4_REENTRY": {
+      "classification": "INHERITED_MACHINE_RULE",
+      "code": "SelectedPoiInventory.emit_h1_proposal/register_emission; V41HistoricalAdapter._source_run/prepare permanent ownership; registered H4 bridge post-exit ownership tests",
+      "evidence": [
+        "QA_RECEIPT.json",
+        "SOURCE_PREFIX_REPLAY_RECEIPT.json",
+        "FULL_SOURCE_CONFORMANCE_RECEIPT.json",
+        "reviews/EXECUTION_AUDITOR.json",
+        "reviews/NO_LOOKAHEAD_AUDITOR.json"
+      ],
+      "historical_PnL_selection": false,
+      "normative_pointer": "ENTRY_EXIT_CONTRACT.json#/reentry",
+      "scope": "CURRENT_GATE_SOURCE_AND_COMPONENT_CONFORMANCE",
+      "source_selector_equivalence": false,
+      "v4_1_amendment_boundary": "Selected-object first-test/ownership and Decimal scope only; exact seven-rule v4.1 mapping above controls overrides"
+    },
+    "M4_STATE": {
+      "classification": "INHERITED_MACHINE_RULE",
+      "code": "V41HistoricalAdapter._context; unchanged machine_strategy_v3_contracts.admit_context and completed frame states",
+      "evidence": [
+        "QA_RECEIPT.json",
+        "SOURCE_PREFIX_REPLAY_RECEIPT.json",
+        "FULL_SOURCE_CONFORMANCE_RECEIPT.json",
+        "reviews/EXECUTION_AUDITOR.json",
+        "reviews/NO_LOOKAHEAD_AUDITOR.json"
+      ],
+      "historical_PnL_selection": false,
+      "normative_pointer": "docs/machine_strategy_v3_design/DIRECTION_AND_REGIME_SPEC.json",
+      "scope": "CURRENT_GATE_SOURCE_AND_COMPONENT_CONFORMANCE",
+      "source_selector_equivalence": false,
+      "v4_1_amendment_boundary": "Selected-object first-test/ownership and Decimal scope only; exact seven-rule v4.1 mapping above controls overrides"
+    },
+    "M4_TELEMETRY": {
+      "classification": "OBSERVER_ONLY",
+      "code": "V41HistoricalAdapter._emit -> unchanged GateTelemetry; check_machine_strategy_v4_1_conformance.check",
+      "evidence": [
+        "QA_RECEIPT.json",
+        "SOURCE_PREFIX_REPLAY_RECEIPT.json",
+        "FULL_SOURCE_CONFORMANCE_RECEIPT.json",
+        "reviews/EXECUTION_AUDITOR.json",
+        "reviews/NO_LOOKAHEAD_AUDITOR.json"
+      ],
+      "historical_PnL_selection": false,
+      "normative_pointer": "TELEMETRY_SCHEMA.json",
+      "scope": "CURRENT_GATE_SOURCE_AND_COMPONENT_CONFORMANCE",
+      "source_selector_equivalence": false,
+      "v4_1_amendment_boundary": "Selected-object first-test/ownership and Decimal scope only; exact seven-rule v4.1 mapping above controls overrides"
+    }
+  },
   "required_execution_before_ready": [
     "python scripts/verify_machine_strategy_v4_1_source_adapter.py --full",
     "targeted v4.1 unit tests",
@@ -64,34 +281,34 @@
     "CANONICAL_SELECTED_POI_IDENTITY": {
       "code": "scripts/machine_strategy_v4_1_contracts.py::physical_identity/selected_poi_identity",
       "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/common/H_normalization and /families",
-      "status": "IMPLEMENTED_COMPONENT_QA_PASS_PENDING_FULL_SOURCE_AND_FINAL_REVIEW"
+      "status": "PASS_IMPLEMENTATION_SOURCE_OR_REGISTERED_SYNTHETIC_SCOPE"
     },
     "DECIMAL50_DESIGN_SCOPE": {
       "code": "scripts/machine_strategy_v4_1_contracts.py + scripts/machine_strategy_v4_1_execution_binding.py + scripts/machine_strategy_v4_1_historical_adapter.py",
       "design": "docs/machine_strategy_v4_1_design_v1/ARITHMETIC_SCOPE_CONTRACT.json#/design_scope",
-      "status": "IMPLEMENTED_COMPONENT_QA_PASS_PENDING_FULL_SOURCE_AND_FINAL_REVIEW"
+      "status": "PASS_IMPLEMENTATION_SOURCE_OR_REGISTERED_SYNTHETIC_SCOPE"
     },
     "DECIMAL50_TO_80_TRANSPORT": {
       "code": "scripts/machine_strategy_v4_1_contracts.py::transport_design_value_to_ledger/ledger_decimal + scripts/machine_strategy_v4_1_execution_binding.py",
       "design": "docs/machine_strategy_v4_1_design_v1/ARITHMETIC_SCOPE_CONTRACT.json#/boundary_contract",
-      "status": "IMPLEMENTED_COMPONENT_QA_PASS_PENDING_FULL_SOURCE_AND_FINAL_REVIEW"
+      "status": "PASS_IMPLEMENTATION_SOURCE_OR_REGISTERED_SYNTHETIC_SCOPE"
     },
     "EVERY_M15_NATIVE_CLOCK_PARITY": {
       "code": "scripts/machine_strategy_v4_1_guarded_runner.py::_drive_case + synthetic_source_bridge.ClosedSourceBridge",
       "design": "SELECTED_POI_CONTRACT same_bar_ordering",
       "notes": "H4 09 emission / 09:15 fill / 12 native contact; context late, no fill, same-cutoff rejection and post-exit owner retention; actual adapter contact and lifecycle methods.",
-      "status": "REGISTERED_SYNTHETIC_PASS"
+      "status": "PASS_IMPLEMENTATION_SOURCE_OR_REGISTERED_SYNTHETIC_SCOPE"
     },
     "FIRST_ADMISSIBLE_M15_ELIGIBILITY": {
       "code": "scripts/machine_strategy_v4_1_contracts.py::latch_eligibility + scripts/machine_strategy_v4_1_selected_poi_inventory.py::SelectedPoiInventory.latch_m15 + scripts/machine_strategy_v4_1_historical_adapter.py::prepare",
       "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/common/eligibility_rule",
-      "status": "IMPLEMENTED_COMPONENT_QA_PASS_PENDING_FULL_SOURCE_AND_FINAL_REVIEW"
+      "status": "PASS_IMPLEMENTATION_SOURCE_OR_REGISTERED_SYNTHETIC_SCOPE"
     },
     "FULL_SOURCE_CAUSALITY": {
       "code": "verify_machine_strategy_v4_1_source_adapter.py --full + check_machine_strategy_v4_1_source_replay.py + check_machine_strategy_v4_1_conformance.py",
       "design": "work order steps8-9",
       "notes": "Two full byte-identical replays plus3 full/truncated/future-mutated checkpoints per product, exact progress reuse and active position/import traps.",
-      "status": "PENDING_FINAL_REPLAY"
+      "status": "PASS_IMPLEMENTATION_SOURCE_OR_REGISTERED_SYNTHETIC_SCOPE"
     },
     "HISTORICAL_V4_1_POSITION_ENGINE": {
       "code": "NOT_AUTHORIZED_IN_THIS_GATE",
@@ -102,58 +319,58 @@
       "code": "scripts/machine_strategy_v4_1_historical_adapter.py::V41HistoricalAdapter",
       "design": "frozen v4.1 spec and work order",
       "notes": "Individually pinned immutable v3 discovery/frame primitives and frozen v4 gates; distinct v4.1 physical lifecycle, Decimal50 context and canonical transport. V41HistoricalSourceAdapter is public spelling of this new implementation, not an alias to frozen v4.",
-      "status": "FULL_PRODUCTION_SOURCE_REPLAY_RUNNING"
+      "status": "PASS_IMPLEMENTATION_SOURCE_OR_REGISTERED_SYNTHETIC_SCOPE"
     },
     "LATE_REACTION_AND_REFINED_ORIGIN": {
       "code": "register_family_inventory/prepare + SelectedPoiInventory.register/latch_m15",
       "design": "SELECTED_POI_CONTRACT nullable fields and FIELD_PROVENANCE",
       "notes": "Known own origin and reaction publish even during context WAIT; first eligible parent association immutable; later proposal association separate.",
-      "status": "BOUNDED_REGRESSION_PASS"
+      "status": "PASS_IMPLEMENTATION_SOURCE_OR_REGISTERED_SYNTHETIC_SCOPE"
     },
     "NATIVE_FIRST_TEST_CLOCK": {
       "code": "scripts/machine_strategy_v4_1_contracts.py::native_contact + scripts/machine_strategy_v4_1_selected_poi_inventory.py::observe_native_bar + scripts/machine_strategy_v4_1_historical_adapter.py::publish_contacts/_source_run",
       "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/common/contact_clock,/native_context_rule,/partial_native_interval",
-      "status": "IMPLEMENTED_COMPONENT_QA_PASS_PENDING_FULL_SOURCE_AND_FINAL_REVIEW"
+      "status": "PASS_IMPLEMENTATION_SOURCE_OR_REGISTERED_SYNTHETIC_SCOPE"
     },
     "NINE_SCENARIO_BINDING": {
       "code": "scripts/machine_strategy_v4_1_execution_binding.py::scenario_plan/all_scenario_plans",
       "design": "frozen v4 EXECUTION_CONTRACT compatibility/H04/H05 inherited by v4.1",
-      "status": "IMPLEMENTED_COMPONENT_QA_PASS_PENDING_FULL_SOURCE_AND_FINAL_REVIEW"
+      "status": "PASS_IMPLEMENTATION_SOURCE_OR_REGISTERED_SYNTHETIC_SCOPE"
     },
     "PREPROPOSAL_INVENTORY": {
       "code": "scripts/machine_strategy_v4_1_selected_poi_inventory.py::SelectedPoiInventory + scripts/machine_strategy_v4_1_historical_adapter.py::V41HistoricalSourceAdapter.run",
       "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/common/preproposal_inventory",
-      "status": "IMPLEMENTED_COMPONENT_QA_PASS_PENDING_FULL_SOURCE_AND_FINAL_REVIEW"
+      "status": "PASS_IMPLEMENTATION_SOURCE_OR_REGISTERED_SYNTHETIC_SCOPE"
     },
     "PRE_EMISSION_CONSUMPTION": {
       "code": "scripts/machine_strategy_v4_1_contracts.py::register_emission + scripts/machine_strategy_v4_1_selected_poi_inventory.py::emit_h1_proposal + scripts/machine_strategy_v4_1_historical_adapter.py::prepare",
       "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/common/pre_emission_consumption",
-      "status": "IMPLEMENTED_COMPONENT_QA_PASS_PENDING_FULL_SOURCE_AND_FINAL_REVIEW"
+      "status": "PASS_IMPLEMENTATION_SOURCE_OR_REGISTERED_SYNTHETIC_SCOPE"
     },
     "RANGE_REQUIRED_REACTION_EXEMPTION": {
       "code": "scripts/machine_strategy_v4_1_contracts.py::native_contact + scripts/machine_strategy_v4_1_historical_adapter.py::register_family_inventory/publish_contacts",
       "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/families/RANGE",
-      "status": "IMPLEMENTED_COMPONENT_QA_PASS_PENDING_FULL_SOURCE_AND_FINAL_REVIEW"
+      "status": "PASS_IMPLEMENTATION_SOURCE_OR_REGISTERED_SYNTHETIC_SCOPE"
     },
     "REACTION_PREREQUISITE_LATCH": {
       "code": "scripts/machine_strategy_v4_1_historical_adapter.py::register_family_inventory + scripts/machine_strategy_v4_1_selected_poi_inventory.py::register/latch_m15 (monotonic association update); optional set_reaction_required_at API",
       "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/families",
       "notes": "Late SFP/OB/RANGE reaction time is monotonic and cannot be reset after eligibility.",
-      "status": "IMPLEMENTED_COMPONENT_QA_PASS_PENDING_FULL_SOURCE_AND_FINAL_REVIEW"
+      "status": "PASS_IMPLEMENTATION_SOURCE_OR_REGISTERED_SYNTHETIC_SCOPE"
     },
     "SIGNED_FUNDING_WITNESS": {
       "code": "scripts/machine_strategy_v4_1_funding_guard.py::adverse_funding_witness",
       "design": "frozen v4 funding semantics + v4.1 ARITHMETIC_SCOPE_CONTRACT ledger scope",
-      "status": "IMPLEMENTED_COMPONENT_QA_PASS_PENDING_FULL_SOURCE_AND_FINAL_REVIEW"
+      "status": "PASS_IMPLEMENTATION_SOURCE_OR_REGISTERED_SYNTHETIC_SCOPE"
     },
     "SOURCE_ADAPTER_REPLAY_AND_MUTATION_QA": {
       "code": "scripts/verify_machine_strategy_v4_1_source_adapter.py",
       "design": "agent_control/V4_1_IMPLEMENTATION_READINESS_WORK_ORDER.md#9",
       "notes": "Required two full byte-identical production source runs plus three full/truncated/future-M15-tail-mutated cutoffs per product; active position-call/import traps.",
-      "status": "IMPLEMENTED_COMPONENT_QA_PASS_PENDING_FULL_SOURCE_AND_FINAL_REVIEW"
+      "status": "PASS_IMPLEMENTATION_SOURCE_OR_REGISTERED_SYNTHETIC_SCOPE"
     }
   },
-  "state": "EXECUTED_COMPONENTS_FULL_SOURCE_REPLAY_PENDING",
+  "state": "IMPLEMENTATION_COMPONENT_AND_SOURCE_QA_PASS",
   "trade_entry_allowed": false,
   "version": "MACHINE_STRATEGY_v4.1"
 }

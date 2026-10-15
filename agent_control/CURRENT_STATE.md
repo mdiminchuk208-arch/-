@@ -1,5 +1,19 @@
 # Current State
 
+State: `MACHINE_STRATEGY_V4_1_IMPLEMENTATION_READY`. Implementation gate completed; complete_implementation_freeze=true. External implementation manifest SHA256 `e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61`. Exact externally pinned resume verified. Branch `machine-v3-research`; production candidate NONE; `trade_entry_allowed=false`.
+
+Actual QA: 89 targeted unit/registered-synthetic tests and ten commands PASS, including static/type/compile, exact frozen parent resumes, complete sealed-data verification, full deterministic BTC/ETH source replay and final source-field conformance. Both products have two byte-identical full 105,120-bar streams and all 3 preregistered full/truncated/future-mutated cutoff triplets. All 210,240 native bars, derived grids, 4,380 signed funding rows and 774 retained public receipts verified. Evaluation window remains preregistered 2024-10-13 to 2026-10-13UTC with earlier sealed rows feature warmup; no silent three-year formation census claim.
+
+Serial independent reviews: execution_auditor accepted mirrored five-family H1/H4 mechanics, nine scenarios, Decimal50-to80 transport, funding/guards and current observer isolation; no_lookahead_auditor accepted complete current-code source/provenance/telemetry/replay evidence; separate final_independent_reviewer accepted READY on exact evidence. Earlier backtest_engineer/historical_data_engineer diagnostics and failed/interrupted/repaired attempts remain in AGENT_REGISTER/reviews. Root sole writer; ECC2.2.3 enabled, hooks inactive.
+
+All frozen strategy/design/predecessor bytes and qualification rules including WR>=70% preserved. No rule/count/outcome tuning or SOURCE_RULE promotion. Existing history remains exposed development. Historical tick/lot epochs, account fee applicability, mark/queue/fill behavior and API publication delay remain unverified model assumptions; this is implementation conformance, not exchange execution/production qualification.
+
+Historical position evaluations=0; historical_financial_authorized=false. No v4/v4.1 historical fills/exits/financial outcomes, OOS/forward/PAPER/LIVE/private exchange API/orders/platform executed. READY permits only opening a separately named future one-shot development financial gate; this work order does not authorize its execution. Public historical execution remains denied.
+
+Artifacts: `docs/machine_strategy_v4_1_implementation_readiness_v1/ARTIFACT_INDEX.md`; exact evidence authority `docs/machine_strategy_v4_1_implementation_readiness_v1/IMPLEMENTATION_FREEZE_MANIFEST.json`. Mutable STATUS/CURRENT_STATE/NEXT_TASK/CURRENT_BATCH publication pointers intentionally remain outside the manifest to avoid self-referential hashes.
+
+The following frozen-predecessor and progress records are retained as history. The completed manifest decision above supersedes their earlier OPEN, RUNNING and QA_PENDING labels.
+
 Branch: `machine-v3-research`. Strategy first; platform/site work remains paused. Production candidate: NONE. OOS not registered; PAPER=false; LIVE=false; `trade_entry_allowed=false`.
 
 ## Frozen predecessors
@@ -46,3 +60,5 @@ Observer repair checkpoint: mandatory H00 trace gaps repaired after independent 
 Terminal observer dedup checkpoint: first full BTC artifact on025667f0 exposed duplicate rich/base payoff REJECT events; failed field QA and snapshot saved under qa_before_terminal_dedup. Current adaptercdc7d6146ebd0a317d3d9a10de2ff2dd387d3f54fb48e1dab4ca3a95a3e2c038 preserves richer validated event once and still validates changed/future/outcome fields. Independent targeted review accepted;89tests/eight component QA commands PASS (FINAL_COMPONENT_QA_AFTER_DEDUP.json). Fresh full source proof running; not READY, no financial outcomes.
 
 BTC complete source checkpoint: current adaptercdc7d614 passed two byte-identical full streams and all3preregistered prefix/future-mutation triplets; external progressSHAc7aa79998a84e887ce32ad068896968297a7c39ec0ae207cd6480180daa7c550 retained under reviews/btc_partial_accepted. Strong BTC field/observer QA and independent bounded review PASS. ETH full proof is RUNNING. Current checker denominator improvement reviewed;89tests/static PASS, exact unchanged parent/data checks reused. Gate still QA_PENDING; no financial positions/outcomes, no READY/freeze yet.
+
+Actual post-freeze result: `agent_control/V4_1_IMPLEMENTATION_FREEZE_PUBLICATION.json` retains freeze/resume exit0 results outside the sealed namespace; no new research or financial authorization.

@@ -124,6 +124,131 @@
         "STB|LONG": 144,
         "STB|SHORT": 161
       }
+    },
+    "ETH-USDT-SWAP": {
+      "candidate_parent_associations": 6171,
+      "eligible_physical_POIs": 460,
+      "historical_fill_exit_counts": "NOT_EVALUATED",
+      "historical_position_evaluations": 0,
+      "historical_retry_and_exposure_counts": "NOT_EVALUATED",
+      "per_gate": {
+        "EOF": {
+          "first_evaluated_origins": 1,
+          "first_pass_origins": 0,
+          "terminal_origins": 1,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "adverse_liquidity": {
+          "first_evaluated_origins": 32,
+          "first_pass_origins": 29,
+          "terminal_origins": 3,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "approach_state": {
+          "first_evaluated_origins": 4780,
+          "first_pass_origins": 3932,
+          "terminal_origins": 0,
+          "wait_evaluations": 97167,
+          "waiting_origins": 4713
+        },
+        "completed_data_integrity": {
+          "first_evaluated_origins": 5987,
+          "first_pass_origins": 5987,
+          "terminal_origins": 0,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "entry_geometry": {
+          "first_evaluated_origins": 153,
+          "first_pass_origins": 153,
+          "terminal_origins": 0,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "formation_discovery": {
+          "first_evaluated_origins": 5987,
+          "first_pass_origins": 5987,
+          "terminal_origins": 0,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "fta_lifecycle": {
+          "first_evaluated_origins": 183,
+          "first_pass_origins": 122,
+          "terminal_origins": 61,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "htf_context": {
+          "first_evaluated_origins": 3932,
+          "first_pass_origins": 532,
+          "terminal_origins": 0,
+          "wait_evaluations": 72342,
+          "waiting_origins": 3757
+        },
+        "payoff_gate": {
+          "first_evaluated_origins": 122,
+          "first_pass_origins": 32,
+          "terminal_origins": 90,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "physical_eligibility": {
+          "first_evaluated_origins": 532,
+          "first_pass_origins": 363,
+          "terminal_origins": 20,
+          "wait_evaluations": 2551,
+          "waiting_origins": 205
+        },
+        "reaction": {
+          "first_evaluated_origins": 5987,
+          "first_pass_origins": 4780,
+          "terminal_origins": 2288,
+          "wait_evaluations": 40856,
+          "waiting_origins": 5665
+        },
+        "refinement_and_poi": {
+          "first_evaluated_origins": 489,
+          "first_pass_origins": 183,
+          "terminal_origins": 23,
+          "wait_evaluations": 1083,
+          "waiting_origins": 306
+        },
+        "reservation_and_order": {
+          "first_evaluated_origins": 29,
+          "first_pass_origins": 0,
+          "terminal_origins": 0,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        },
+        "structural_invalidation": {
+          "first_evaluated_origins": 5987,
+          "first_pass_origins": 5987,
+          "terminal_origins": 3472,
+          "wait_evaluations": 0,
+          "waiting_origins": 0
+        }
+      },
+      "physical_selected_POIs": 4297,
+      "pre_entry_model_proposals": 29,
+      "reserved_physical_POIs": 29,
+      "source_raw_origins": 5987,
+      "unique_physical_buckets": 4838,
+      "unique_source_formations": 5987,
+      "unique_source_formations_by_family_direction": {
+        "BREAKER|LONG": 52,
+        "BREAKER|SHORT": 45,
+        "OB|LONG": 90,
+        "OB|SHORT": 135,
+        "RANGE|LONG": 381,
+        "RANGE|SHORT": 404,
+        "SFP|LONG": 2245,
+        "SFP|SHORT": 2410,
+        "STB|LONG": 90,
+        "STB|SHORT": 135
+      }
     }
   },
   "scope": "SOURCE_ONLY_NO_HISTORICAL_POSITION_COUNTS",

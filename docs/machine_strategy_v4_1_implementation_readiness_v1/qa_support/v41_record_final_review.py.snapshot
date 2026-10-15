@@ -1,0 +1,38 @@
+from pathlib import Path
+import json,hashlib
+r=Path('/workspace/-');p=r/'docs/machine_strategy_v4_1_implementation_readiness_v1';q=json.loads((p/'QA_RECEIPT.json').read_text());pins={**q['tested_sha256'],**q['log_sha256']}
+rows='''ARTIFACT_INDEX.md 398eec6c5e87652e7c3432289394bcb3b662871fe60a65be7565b79b19bba81c
+IMPLEMENTATION_PROTOCOL.md 5883b7887c6ee01694795536301aa6145a5f6977288f41d421cd992960cc7299
+IMPLEMENTATION_REPORT.md b73f6a015e9f4af810649220d28360bc51ddd03c59bbdb533c4d3e893963697f
+RULE_TO_CODE_CONFORMANCE.json 42f91cb38d4efce0625538db3f810cc6b7a79306bc43e444fa0d64fee0702865
+HISTORICAL_ADAPTER_COVERAGE.json 725329e0b09680bbc54508f315d71642ff712811b1d1048523a7b4f4adada932
+CAUSAL_FIELD_PROVENANCE.json 50105e18834dc54c916bb3ab7ad0521c38e89d0c028c371037fe5ea642b376c7
+DATA_GRID_AUTHENTICITY_AND_CONTINUITY.json 696f6fcddb4cce56f00c7398fab9ebad726b4dca5788bbdcf19e85d69dc5655c
+DATA_EXPOSURE_AND_OOS_READINESS.json ca7a1f489fbf2291244980e8036bc9046c706555302fd4db18aebf064d7de88d
+RUNNER_OUTCOME_ISOLATION.json c5d68a6da84ed26bce90e71d327e52dce88267cd9909e5ef1935eeaec685d54c
+EXECUTION_AND_FUNDING_CONFORMANCE.json c3e621f956d71f7e67ce7ddb4adfb3a1b7f2f0b4026290ffe97234039dbe37cb
+TELEMETRY_CONFORMANCE.json 9807839752404085d74fa43a689fc1e2cdecc836cce31d1489a6e0328ab6c09c
+QA_RECEIPT.json ae82853c77be58ea8b9f8bc112a8d1cfccede4d7aa1ea374d932c8ad9a606026
+QA_REPORT.md 3256a2338e6bb0691b82b6312405ff2eab7c05da86581bc2861a7d22e9dd7c96
+SOURCE_COMMAND_COMPLETION.json 97119a3b578c227f3c17fc7d3d1bc8782b9ef8480e9b4a6b87a512dd44d8a842
+SOURCE_PREFIX_REPLAY_RECEIPT.json 24056599b9dd5d65893d180bc5f1b5c7d831e1d75110de395a5a005d1afe0ead
+FULL_SOURCE_CONFORMANCE_RECEIPT.json eeeb1afdedd674b36f808def7573cef1479b3f8e058ae72b2eaf3579b1dd4845
+TELEMETRY_FUNNEL_SOURCE_ONLY.json 7cdcebfe0ea43337155ee08f50c61e304b7ff2735849772e04991d8cfefcbc8b
+SOURCE_REPLAY_PREREGISTRATION.json 7020cd2b4b6ad268d282851c9536cc1e91886631880ab106d13020226f05bf4f
+SOURCE_REPLAY_PROGRESS.json 24056599b9dd5d65893d180bc5f1b5c7d831e1d75110de395a5a005d1afe0ead
+BTC_USDT_SWAP.source_only.json.gz 031b3ce5b10968d1c5b572798f4116a3582c34a09c764284ef0942ce45a967f2
+ETH_USDT_SWAP.source_only.json.gz 498f87fb8e330b464f2b053e9fe851945c0b40d920701dd721cb260505e53203
+BTC_OBSERVER_NONINTERFERENCE.json e828f2a8b1049a8383706d59cc21523e05c3d14718c9542bbc484a4e803d56ae
+AGENT_REGISTER.json 431449f5c98b1486dc1ed5abb55343b2daa787005eeeca52add1ece37840b001
+reviews/EXECUTION_AUDITOR.json a37b6c0d80c0c2a1e3b189ea6bc82ac7e9a20650e60379ae079eb73dfb20eefc
+reviews/NO_LOOKAHEAD_AUDITOR.json 6e9405b84e64a058005a67eca625dd5bf0c68bbc15b63bf463da3c1a75d4046b
+reviews/AGENT_REGISTER_REVIEW_SNAPSHOT.json b6296807b5c6a103c88305c785b490b495d99d04318a6301fedd5650843e34bc'''
+for line in rows.splitlines():
+ name,sha=line.split();path=p/name;assert hashlib.sha256(path.read_bytes()).hexdigest()==sha,name;pins[str(path.relative_to(r))]=sha
+pins.update({'docs/machine_strategy_v4_1_design_v1/DESIGN_FREEZE_MANIFEST.json':'4074c337be4800e54682a5ad1ddfd9015e35ce16f4fe2742fc4d12b4bb415790','docs/machine_strategy_v4_implementation_readiness_v1/IMPLEMENTATION_FREEZE_MANIFEST.json':'6e325d6e5b3cffc4f143bfd4d390712b39ea940bccd4504c85148ed904bbcd7e','AGENTS.md':'56fa8cd663168fb17c3e912ab9b777cc0a164fc83785a506c90fa24e67f5c047','.agents/skills/crypto-strategy-research/SKILL.md':'dd5e6f1875297ec59b3d4f528d3c7ed676768c41481c5cd58c0c62c0956b5e7b','agent_control/V4_1_IMPLEMENTATION_READINESS_WORK_ORDER.md':'1428ca7f164e815f4aad8c12fee3409f8be0c011914515e82a04eb4818630b1e'})
+for name,sha in pins.items():assert hashlib.sha256((r/name).read_bytes()).hexdigest()==sha,name
+review={'agent':'/root/v41_final_implementation_review','role':'final_independent_reviewer','decision':'MACHINE_STRATEGY_V4_1_IMPLEMENTATION_READY','independent_final_acceptance':True,'blockers':[],'reviewed_sha256':pins,'independent_commands':[{'command':'PYTHONPATH=scripts /workspace/crypto-bot-venv/bin/python -m unittest discover -s tests -p test_machine_strategy_v4_1*.py -v','exit_code':0,'tests':89},{'command':'PYTHONPATH=scripts /workspace/crypto-bot-venv/bin/python scripts/verify_machine_strategy_v4_1_implementation_v1.py --check','exit_code':0,'result':'component/source PASS; final_freeze_authority false'}],'findings':['All20tested/10log QA pins,6source run-context pins and both canonical specialist review pins matched','Full source command2products/6cutoffcomparisons/PASS; fieldcheck2products/gate_complete true/PASS','Frozen design/v4STOP manifests matched; public historical execution denied; finance exercised only finite registered synthetic fixtures','All13inheritedv4 rules and7v4.1 amendments mapped; no hidden SOURCE_RULE promotion or selection by counts/outcomes','Final AGENT_REGISTER bookkeeping reaccepted at431449f5; oldb6296807bytes retained as accepted snapshot'],'limitations':['Implementation/source and registered synthetic readiness only, not historical exchange execution accuracy','Tick/lotepochs, accountfees,mark/queue/fills/APIpublication latency remain unverified model assumptions','Existing history exposed development, not untouched OOS','READY grants no financial/OOS/PAPER/LIVE/privateAPI/orders/platform authority'],'historical_position_evaluations':0,'historical_financial_authorized':False,'production_candidate':None,'trade_entry_allowed':False,'receipt_origin':'Root transcription of actual separate independent reviewer final verdict and exact hash map, including subsequent read-only bookkeeping reacceptance; root did not self-approve'}
+path=p/'reviews/FINAL_INDEPENDENT_REVIEW.json';path.write_text(json.dumps(review,indent=2,sort_keys=True)+'\n')
+receipt={**review,'review_transcript':'reviews/FINAL_INDEPENDENT_REVIEW.json','review_transcript_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'mutable_controls_excluded_to_avoid_self_hash_cycle':['agent_control/STATUS.md','agent_control/CURRENT_STATE.md','agent_control/NEXT_TASK.md','agent_control/CURRENT_BATCH.md']}
+(p/'INDEPENDENT_REVIEW_RECEIPT.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
+print('Actual independent READY accepted; exact reviewed pins matched:',len(pins))

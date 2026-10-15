@@ -1,0 +1,30 @@
+{
+  "commands": [
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "scripts/verify_machine_strategy_v4_1_source_adapter.py",
+        "--full"
+      ],
+      "completion_evidence": "Actual resumed exec session15391 returned exit_code0; source receipt2products/6cutoffs/PASS",
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_implementation_readiness_v1/qa/full_source_replay_terminal_fix.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "scripts/check_machine_strategy_v4_1_conformance.py"
+      ],
+      "completion_evidence": "Actual exec session43914 returned exit_code0; gate_complete true,products2,fieldPASS",
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_implementation_readiness_v1/qa/final_complete_source_conformance.log"
+    }
+  ],
+  "environment": {
+    "PYTHONPATH": "scripts"
+  },
+  "historical_position_evaluations": 0,
+  "receipt_origin": "Root records actual tool completion results, not inferred from partial progress",
+  "recorded_at_UTC": "2026-10-15T06:59:25.823268+00:00",
+  "trade_entry_allowed": false
+}

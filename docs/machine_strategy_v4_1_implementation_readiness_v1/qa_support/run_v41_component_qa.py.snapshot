@@ -1,0 +1,25 @@
+from pathlib import Path
+import os,subprocess,json,hashlib
+r=Path('/workspace/-');d=r/'docs/machine_strategy_v4_1_implementation_readiness_v1';q=d/'qa';q.mkdir(exist_ok=True)
+py='/workspace/crypto-bot-venv/bin/python';ruff='/workspace/crypto-bot-venv/bin/ruff';mypy='/workspace/crypto-bot-venv/bin/mypy'
+code=sorted(str(p.relative_to(r)) for p in (r/'scripts').glob('*machine_strategy_v4_1*.py') if 'design_reference' not in p.name and 'verify_machine_strategy_v4_1_design_v1' not in p.name)
+tests=sorted(str(p.relative_to(r)) for p in (r/'tests').glob('test_machine_strategy_v4_1*.py'))
+commands=[
+ [py,'-m','unittest','discover','-s','tests','-p','test_machine_strategy_v4_1*.py','-v'],
+ [ruff,'check',*code,*tests],
+ [ruff,'format','--check',*code,*tests],
+ [mypy,'--follow-imports=silent',*code],
+ [py,'-m','py_compile',*code,*tests],
+ [py,'scripts/verify_machine_strategy_v4_1_design_v1.py','--resume-existing','--expected-manifest-sha256','4074c337be4800e54682a5ad1ddfd9015e35ce16f4fe2742fc4d12b4bb415790'],
+ [py,'scripts/verify_machine_strategy_v4_implementation_v1.py','--resume-existing','--expected-manifest-sha256','6e325d6e5b3cffc4f143bfd4d390712b39ea940bccd4504c85148ed904bbcd7e'],
+ [py,'scripts/check_machine_strategy_v4_1_data.py'],
+]
+records=[]
+for i,cmd in enumerate(commands):
+ log=q/f'component_{i:02}.log'
+ if log.exists():raise SystemExit('REFUSE_OVERWRITE_QA_LOG')
+ with log.open('w') as f: result=subprocess.run(cmd,cwd=r,env={**os.environ,'PYTHONPATH':'scripts'},stdout=f,stderr=subprocess.STDOUT)
+ record={'command':cmd,'exit_code':result.returncode,'log':str(log.relative_to(r))};records.append(record)
+ (d/'COMPONENT_QA_PROGRESS.json').write_text(json.dumps({'commands':records,'tested_sha256':{n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in code+tests}},indent=2,sort_keys=True)+'\n')
+ print(i,result.returncode,flush=True)
+ if result.returncode:raise SystemExit(result.returncode)
