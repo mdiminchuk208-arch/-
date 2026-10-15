@@ -1,0 +1,194 @@
+{
+  "version": "SOURCE_STRATEGY_REBUILD_v1",
+  "stage": "STAGE_2_EXECUTABLE_SEMANTICS",
+  "trade_entry_allowed": false,
+  "rules": [
+    {
+      "id": "SRC_STRUCTURE_001",
+      "class": "SOURCE_RULE",
+      "concept": "MARKET_STRUCTURE",
+      "source_section": "Methodichka pp.3-9",
+      "statement": "Bullish structure is HH/HL, bearish structure is LL/LH; range is a third phase; structure applies on all timeframes.",
+      "machine_status": "EXECUTABLE_WITH_NORMALIZED_SWINGS",
+      "depends_on": ["TN_SWING_001"],
+      "financial": false
+    },
+    {
+      "id": "SRC_STRUCTURE_002",
+      "class": "SOURCE_RULE",
+      "concept": "STRUCTURAL_RELEVANCE",
+      "source_section": "Methodichka pp.3-9",
+      "statement": "In bullish structure a high is structurally relevant when it updates the prior high; in bearish structure a low is structurally relevant when it updates the prior low.",
+      "machine_status": "EXECUTABLE_WITH_NORMALIZED_SWINGS",
+      "depends_on": ["TN_SWING_001"],
+      "financial": false
+    },
+    {
+      "id": "SRC_BOS_001",
+      "class": "SOURCE_RULE",
+      "concept": "BOS",
+      "source_section": "Methodichka pp.8-9",
+      "statement": "Breaking the protected structural point changes structure; after bullish structure breaks below the last HL bearish structure is expected, and vice versa for a bearish break above the relevant LH.",
+      "machine_status": "EXECUTABLE_WITH_NORMALIZED_CLOSE_SEMANTICS",
+      "depends_on": ["TN_BOS_001", "TN_SWING_001"],
+      "financial": false
+    },
+    {
+      "id": "SRC_SETUP_STRUCTURE_001",
+      "class": "SOURCE_RULE",
+      "concept": "POST_BOS_SETUP_DIRECTION",
+      "source_section": "Methodichka pp.8-9",
+      "statement": "After bullish structure breaks and bearish structure forms, seek short when LH forms; after bearish structure breaks and bullish structure forms, seek long when HL forms.",
+      "machine_status": "EXECUTABLE_WITH_NORMALIZED_SWINGS",
+      "depends_on": ["SRC_BOS_001", "TN_SWING_001"],
+      "financial": false
+    },
+    {
+      "id": "SRC_RANGE_001",
+      "class": "SOURCE_RULE",
+      "concept": "RANGE",
+      "source_section": "Methodichka pp.6-7,14-15",
+      "statement": "Range is sideways trading in a defined area; one source description uses the first high after the impulse and first low as boundaries; normal trend structure should be absent inside.",
+      "machine_status": "PARTIAL_UNKNOWN",
+      "unknowns": ["UNKNOWN_RANGE_CLARITY", "UNKNOWN_NO_STRUCTURE_NUMERIC_DEFINITION"],
+      "financial": false
+    },
+    {
+      "id": "SRC_RANGE_002",
+      "class": "SOURCE_RULE",
+      "concept": "RANGE_DEVIATION_SETUP",
+      "source_section": "Methodichka p.15",
+      "statement": "Trade range only after deviation outside a boundary; validate with reaction around 0.5; one setup is return after deviation then test of the zone that sent price back into range with CHOCH.",
+      "machine_status": "PARTIAL_UNKNOWN",
+      "depends_on": ["SRC_RANGE_001", "SRC_OTE_001"],
+      "unknowns": ["UNKNOWN_RANGE_REACTION_COUNT", "UNKNOWN_CHOCH_EXACT_SEMANTICS"],
+      "financial": false
+    },
+    {
+      "id": "SRC_OB_001",
+      "class": "SOURCE_RULE",
+      "concept": "ORDER_BLOCK",
+      "source_section": "Methodichka pp.9-10",
+      "statement": "OB is the last candle before an imbalance/sharp impulse; the move must update a structural point; the OB must take some high/low or wick; body large, wicks small.",
+      "machine_status": "PARTIAL_UNKNOWN",
+      "depends_on": ["SRC_IMB_001", "SRC_STRUCTURE_001"],
+      "unknowns": ["UNKNOWN_OB_BODY_LARGE", "UNKNOWN_OB_WICKS_SMALL", "UNKNOWN_OB_ZONE_GEOMETRY"],
+      "financial": false
+    },
+    {
+      "id": "SRC_IMB_001",
+      "class": "SOURCE_RULE",
+      "concept": "IMBALANCE",
+      "source_section": "Methodichka p.11",
+      "statement": "Imbalance is sharp impulsive movement leaving price inefficiency; mark the empty zone using neighboring candle shadows.",
+      "machine_status": "EXECUTABLE_WITH_NORMALIZATION",
+      "depends_on": ["TN_IMBALANCE_001"],
+      "unknowns": ["UNKNOWN_IMPULSE_STRENGTH"],
+      "financial": false
+    },
+    {
+      "id": "SRC_BREAKER_001",
+      "class": "SOURCE_RULE",
+      "concept": "BREAKER",
+      "source_section": "Methodichka p.12",
+      "statement": "Breaker is an OB that took a high/low and was then impulsively broken with imbalance, followed by CHOCH.",
+      "machine_status": "PARTIAL_UNKNOWN",
+      "depends_on": ["SRC_OB_001", "SRC_IMB_001"],
+      "unknowns": ["UNKNOWN_CHOCH_EXACT_SEMANTICS", "UNKNOWN_BREAKER_ENTRY_ZONE"],
+      "financial": false
+    },
+    {
+      "id": "SRC_LIQ_001",
+      "class": "SOURCE_RULE",
+      "concept": "LIQUIDITY",
+      "source_section": "Methodichka pp.13-14",
+      "statement": "Liquidity represents traders' stops and can be a trade target; EQH/EQL and trendline liquidity are liquidity concepts.",
+      "machine_status": "PARTIAL_UNKNOWN",
+      "unknowns": ["UNKNOWN_EQH_EQL_TOLERANCE", "UNKNOWN_TRENDLINE_LIQUIDITY_TOLERANCE", "UNKNOWN_LIQUIDITY_PRIORITY"],
+      "financial": false
+    },
+    {
+      "id": "SRC_OTE_001",
+      "class": "SOURCE_RULE",
+      "concept": "OTE",
+      "source_section": "Methodichka pp.16-19",
+      "statement": "0.5 is equilibrium; relevant levels include 0.62, 0.705 and 0.79; OTE is the 0.705-0.79 zone and complements other setup evidence, especially OB.",
+      "machine_status": "EXECUTABLE_ZONE_WITH_ANCHOR_AMBIGUITY",
+      "unknowns": ["UNKNOWN_OTE_LONG_ANCHOR_DIRECTION"],
+      "financial": false
+    },
+    {
+      "id": "SRC_SFP_001",
+      "class": "SOURCE_RULE",
+      "concept": "SFP",
+      "source_section": "Methodichka p.19",
+      "statement": "SFP is a reversal pattern, originally three candles with optional fourth confirmation; it sweeps stops above/below a swing or range boundary and reverses without body acceptance beyond the swept area; context is mandatory; applies on all timeframes.",
+      "machine_status": "CANDIDATE_EXECUTABLE_FINAL_VALIDATION_UNKNOWN",
+      "depends_on": ["TN_SFP_001"],
+      "unknowns": ["UNKNOWN_SFP_EXACT_THREE_CANDLE_GEOMETRY", "UNKNOWN_SFP_OPTIONAL_FOURTH_CONFIRMATION", "UNKNOWN_SFP_CONTEXT_PRIORITY"],
+      "financial": false
+    },
+    {
+      "id": "SRC_AMD_001",
+      "class": "SOURCE_RULE",
+      "concept": "AMD",
+      "source_section": "Methodichka pp.20-21",
+      "statement": "AMD is accumulation-manipulation-distribution; source discusses POIs around manipulation-to-distribution transition and a riskier manipulation entry with return speed, liquidity removal and volume considerations.",
+      "machine_status": "CONTEXT_TELEMETRY_ONLY",
+      "unknowns": ["UNKNOWN_AMD_PHASE_BOUNDARIES", "UNKNOWN_RETURN_SPEED", "UNKNOWN_VOLUME_COMPARISON_WINDOW"],
+      "financial": false
+    },
+    {
+      "id": "TN_SWING_001",
+      "class": "TECHNICAL_NORMALIZATION",
+      "concept": "SWING_IDENTITY",
+      "statement": "Use completed strict three-bar pivots: center high strictly above both neighboring highs is a swing high; center low strictly below both neighboring lows is a swing low.",
+      "source_claim": false,
+      "rationale": "Needed to make HH/HL/LH/LL causal and deterministic; inherited from prior source-evidence process, not claimed as wording from Methodichka.",
+      "financial": false
+    },
+    {
+      "id": "TN_BOS_001",
+      "class": "TECHNICAL_NORMALIZATION",
+      "concept": "BOS_PUBLICATION",
+      "statement": "Publish BOS only after a completed candle body close beyond the protected structural level; wick-only excursions remain liquidity/sweep evidence, not BOS.",
+      "source_claim": false,
+      "rationale": "Causal deterministic close semantics; source distinguishes false moves/body acceptance but does not supply one universal BOS equation.",
+      "financial": false
+    },
+    {
+      "id": "TN_IMBALANCE_001",
+      "class": "TECHNICAL_NORMALIZATION",
+      "concept": "WICK_GAP_IMBALANCE",
+      "statement": "For a three-candle sequence, bullish inefficiency exists when third-candle low is above first-candle high; bearish inefficiency exists when third-candle high is below first-candle low. The geometric gap uses those wick boundaries.",
+      "source_claim": false,
+      "rationale": "Implements the source instruction to mark inefficiency using neighboring candle shadows without inventing a minimum size threshold.",
+      "financial": false
+    },
+    {
+      "id": "TN_SFP_001",
+      "class": "TECHNICAL_NORMALIZATION",
+      "concept": "SFP_RAW_CANDIDATE",
+      "statement": "Emit a raw bearish SFP candidate when a completed candle sweeps above an already-known structural/range level and closes back at/below that level; bullish is symmetric below the level. Do not claim final source-valid SFP until unresolved context/three-candle semantics are satisfied.",
+      "source_claim": false,
+      "rationale": "Captures sweep plus body non-acceptance while preserving unresolved exact pattern geometry instead of rejecting it.",
+      "financial": false
+    },
+    {
+      "id": "POL_TF_001",
+      "class": "PROJECT_OVERLAY",
+      "concept": "ACTIVE_TIMEFRAMES",
+      "statement": "Initial detector universe is M15/H1/H4/D1; architecture must be reusable on every active timeframe and allow lower-TF expansion when data is available.",
+      "source_claim": false,
+      "financial": false
+    },
+    {
+      "id": "POL_COVERAGE_001",
+      "class": "PROJECT_OVERLAY",
+      "concept": "SOURCE_FIDELITY_COVERAGE",
+      "statement": "Before P&L, target >=365 actionable setup opportunities per coin-year across active timeframes; never fabricate trades; failure means SOURCE_FIDELITY_STOP and detector repair.",
+      "source_claim": false,
+      "financial": false
+    }
+  ]
+}
