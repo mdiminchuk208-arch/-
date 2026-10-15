@@ -10,8 +10,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from copy import deepcopy
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from decimal import Decimal
 from hashlib import sha256
 
@@ -22,8 +21,8 @@ from machine_strategy_v4_1_historical_adapter import (
 from okx_v3_input_bridge_v1 import NativeBar
 
 PRODUCTS = ("BTC-USDT-SWAP", "ETH-USDT-SWAP")
-DEV_START = int(datetime(2024, 10, 13, tzinfo=timezone.utc).timestamp())
-DEV_END = int(datetime(2026, 10, 13, tzinfo=timezone.utc).timestamp())
+DEV_START = int(datetime(2024, 10, 13, tzinfo=UTC).timestamp())
+DEV_END = int(datetime(2026, 10, 13, tzinfo=UTC).timestamp())
 FINANCIAL_RUNNER_MODULE = "okx_v3_compatibility_runner_v1"
 
 
@@ -87,7 +86,7 @@ def verify_product(product: str, *, full: bool) -> dict:
     bounded_cutoff = DEV_START + 7 * 86400
 
     first, first_digest = _run(product, market, bounded_cutoff)
-    second, second_digest = _run(product, market, bounded_cutoff)
+    _second, second_digest = _run(product, market, bounded_cutoff)
     assert first_digest == second_digest, "NONDETERMINISTIC_PREFIX_REPLAY"
 
     mutated_market = _mutate_future_m15(market, bounded_cutoff)
@@ -125,10 +124,21 @@ def main() -> None:
         action="store_true",
         help="also execute deterministic full development-period replay twice",
     )
+    parser.add_argument("--resume-existing", action="store_true")
+    parser.add_argument("--expected-progress-sha256")
     args = parser.parse_args()
     if FINANCIAL_RUNNER_MODULE in sys.modules:
         raise AssertionError("FINANCIAL_RUNNER_PREIMPORTED")
-    receipts = [verify_product(product, full=args.full) for product in PRODUCTS]
+    if args.full:
+        # Full QA uses the checkpointed, externally pinnable production replay.
+        # It includes all-history deterministic replay, three preregistered
+        # truncated-prefix/future-tail comparisons per product and engine traps.
+        from check_machine_strategy_v4_1_source_replay import check
+
+        result = check(args.resume_existing, args.expected_progress_sha256)
+        print(json.dumps(result, sort_keys=True))
+        return
+    receipts = [verify_product(product, full=False) for product in PRODUCTS]
     print(
         json.dumps(
             {

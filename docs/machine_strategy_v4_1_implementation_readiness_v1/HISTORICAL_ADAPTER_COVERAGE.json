@@ -1,78 +1,43 @@
 {
-  "version": "MACHINE_STRATEGY_v4.1",
-  "state": "IMPLEMENTATION_IN_PROGRESS",
-  "financial_validation_authorized": false,
+  "adapter": "scripts/machine_strategy_v4_1_historical_adapter.py",
+  "context_TFs": [
+    60,
+    240,
+    1440
+  ],
+  "directions": [
+    "LONG",
+    "SHORT"
+  ],
+  "families": [
+    "SFP",
+    "OB",
+    "STB",
+    "BREAKER",
+    "RANGE"
+  ],
+  "hand_design_oracle_is_production_backend": false,
+  "historical_financial_authorized": false,
+  "historical_position_evaluations": 0,
+  "lifecycle_clock": "every completed M15 prefix",
+  "proposal_clock": "completed H1 only",
+  "public_names": [
+    "V41HistoricalAdapter",
+    "V41HistoricalSourceAdapter"
+  ],
+  "refinement_TF": 15,
+  "runtime_source_evidence": "SOURCE_PREFIX_REPLAY_RECEIPT.json and FULL_SOURCE_CONFORMANCE_RECEIPT.json (pending)",
+  "setup_TFs": [
+    60,
+    240
+  ],
+  "source_primitive_inheritance": {
+    "machine_strategy_v2_core.py": "completed frames and prefix event discovery",
+    "machine_strategy_v3_historical_adapter.py": "raw formation discovery, FTA/liquidity inventories, immutable source geometry",
+    "machine_strategy_v4_readiness_core.py": "unchanged approach/FTA lifecycle/payoff/geometry gates"
+  },
+  "state": "EXECUTED_COMPONENTS_FULL_SOURCE_REPLAY_PENDING",
+  "synthetic_execution_evidence": "tests/test_machine_strategy_v4_1_readiness_regressions.py and test_machine_strategy_v4_1_runner.py",
   "trade_entry_allowed": false,
-  "sealed_market_scope": {
-    "venue": "OKX",
-    "products": ["BTC-USDT-SWAP", "ETH-USDT-SWAP"],
-    "native_M15_rows": 210240,
-    "signed_funding_rows": 4380,
-    "history_classification": "EXPOSED_DEVELOPMENT_NOT_PRISTINE_OOS"
-  },
-  "components": {
-    "RAW_DISCOVERY": {
-      "status": "PINNED_INHERITED_PRIMITIVES_ONLY",
-      "authority": "frozen v3 raw discovery/state primitives where v4/v4.1 did not override semantics",
-      "must_not_import_financial_outcomes": true
-    },
-    "HTF_STATE_H1_H4_D1": {
-      "status": "PINNED_INHERITED_PRIMITIVES_PENDING_FULL_PREFIX_REPLAY",
-      "causal_requirement": "completed bars only; equal-cutoff advancement explicit"
-    },
-    "M15_REFINEMENT": {
-      "status": "PINNED_INHERITED_PRIMITIVES_PLUS_V4_APPROACH_PENDING_FULL_PREFIX_REPLAY",
-      "causal_requirement": "completed M15 only; no future mutation dependence"
-    },
-    "SELECTED_POI_IDENTITY": {
-      "status": "IMPLEMENTED_DISTINCT_V4_1_PATH",
-      "code": "scripts/machine_strategy_v4_1_contracts.py::selected_poi_identity",
-      "families": ["SFP", "OB", "STB", "BREAKER", "RANGE"]
-    },
-    "PREPROPOSAL_POI_INVENTORY": {
-      "status": "IMPLEMENTED_SOURCE_ONLY_COMPONENT",
-      "code": "scripts/machine_strategy_v4_1_selected_poi_inventory.py::SelectedPoiInventory",
-      "financial_outputs": false
-    },
-    "FIRST_ADMISSIBLE_ELIGIBILITY": {
-      "status": "IMPLEMENTED_COMPONENT_PENDING_HISTORICAL_BINDING",
-      "code": "scripts/machine_strategy_v4_1_contracts.py::latch_eligibility",
-      "clock": "completed M15 cutoff"
-    },
-    "NATIVE_FIRST_TEST_PUBLICATION": {
-      "status": "IMPLEMENTED_COMPONENT_PENDING_HISTORICAL_BINDING",
-      "code": "scripts/machine_strategy_v4_1_contracts.py::native_contact",
-      "clock": "native OPEN eligibility; publication at native CLOSE"
-    },
-    "RANGE_REACTION_EXEMPTION": {
-      "status": "IMPLEMENTED_COMPONENT_PENDING_FAMILY_REPLAY",
-      "rule": "mandatory boundary reaction cannot self-consume; subsequent eligible contact consumes"
-    },
-    "H1_PROPOSAL_RESERVATION": {
-      "status": "IMPLEMENTED_COMPONENT_PENDING_FULL_ADAPTER_BINDING",
-      "code": "scripts/machine_strategy_v4_1_contracts.py::register_emission"
-    },
-    "EVERY_M15_PENDING_ORDER_LIFECYCLE": {
-      "status": "NOT_YET_FULLY_BOUND_V4_1",
-      "required_before_READY": true
-    },
-    "NINE_SCENARIO_EXECUTION_BINDING": {
-      "status": "V4_PROTOTYPE_EXISTS_BUT_V4_1_REBIND_REQUIRED",
-      "historical_execution_allowed_now": false
-    },
-    "SIGNED_FUNDING_BINDING": {
-      "status": "SYNTHETIC_GUARD_QA_STILL_REQUIRED",
-      "historical_financial_execution_allowed_now": false
-    },
-    "FULL_PERIOD_PREFIX_FUTURE_MUTATION_REPLAY": {
-      "status": "NOT_YET_EXECUTED_ON_CURRENT_V4_1_BYTES",
-      "required_before_READY": true
-    },
-    "INDEPENDENT_IMPLEMENTATION_REVIEW": {
-      "status": "NOT_YET_RUN_ON_COMPLETE_V4_1_IMPLEMENTATION",
-      "required_before_READY": true
-    }
-  },
-  "ready": false,
-  "historical_financial_run_allowed": false
+  "version": "MACHINE_STRATEGY_v4.1"
 }

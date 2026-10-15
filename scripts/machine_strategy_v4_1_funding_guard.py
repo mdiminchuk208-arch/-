@@ -21,7 +21,6 @@ _REGISTERED = {
     "NO_FUNDING",
     "SAME_TIMESTAMP_BOUNDARY",
 }
-_ISSUED: dict[int, "SyntheticFundingCapability"] = {}
 
 
 @dataclass(frozen=True)
@@ -30,22 +29,59 @@ class SyntheticFundingCapability:
     fixture_name: str
 
 
-def synthetic_capability(fixture_name: str) -> SyntheticFundingCapability:
-    if fixture_name not in _REGISTERED:
-        raise V41Reject("UNREGISTERED_SYNTHETIC_FUNDING_FIXTURE")
-    capability = SyntheticFundingCapability(_MARKER, fixture_name)
-    _ISSUED[id(capability)] = capability
-    return capability
+def _authority():
+    # Payloads are sealed in closure at startup; a label never licenses arbitrary data.
+    payloads = {
+        "LONG_POSITIVE_FUNDING": (
+            "LONG",
+            (100, 100),
+            (300, 300),
+            ((200, "0.001", "100"),),
+            "1",
+        ),
+        "SHORT_POSITIVE_FUNDING": (
+            "SHORT",
+            (200, 200),
+            (300, 300),
+            ((200, "0.001", "100"),),
+            "1",
+        ),
+        "SAME_TIMESTAMP_BOUNDARY": (
+            "LONG",
+            (200, 200),
+            (300, 300),
+            ((200, "0.001", "100"), (300, "0.001", "100")),
+            "1",
+        ),
+        "NEGATIVE_FUNDING": (
+            "LONG",
+            (100, 100),
+            (300, 300),
+            ((200, "-0.001", "100"),),
+            "1",
+        ),
+        "NO_FUNDING": ("LONG", (100, 100), (300, 300), (), "1"),
+    }
+    issued = {}
+
+    def mint(name):
+        if name not in payloads:
+            raise V41Reject("UNREGISTERED_SYNTHETIC_FUNDING_FIXTURE")
+        cap = SyntheticFundingCapability(object(), name)
+        issued[cap.marker] = (cap, payloads[name])
+        return cap
+
+    def check(cap, payload):
+        record = issued.get(getattr(cap, "marker", None))
+        if record is None or record[0] is not cap:
+            raise V41Reject("NO_REGISTERED_SYNTHETIC_FUNDING_CAPABILITY")
+        if record[1] != payload:
+            raise V41Reject("UNREGISTERED_SYNTHETIC_FUNDING_INPUT")
+
+    return mint, check
 
 
-def _check(capability: SyntheticFundingCapability) -> None:
-    if (
-        not isinstance(capability, SyntheticFundingCapability)
-        or capability.marker is not _MARKER
-        or _ISSUED.get(id(capability)) is not capability
-        or capability.fixture_name not in _REGISTERED
-    ):
-        raise V41Reject("NO_REGISTERED_SYNTHETIC_FUNDING_CAPABILITY")
+synthetic_capability, _check = _authority()
 
 
 def _ledger_decimal(value: object) -> Decimal:
@@ -70,7 +106,14 @@ def adverse_funding_witness(
     quantity_base: object,
 ) -> dict:
     """Minimize signed funding cash across coherent -1/+1 event-slot witnesses."""
-    _check(capability)
+    normalized_payload = (
+        direction,
+        tuple(fill_time_bounds),
+        tuple(exit_time_bounds),
+        tuple((at, str(rate), str(price)) for at, rate, price in settlements),
+        str(quantity_base),
+    )
+    _check(capability, normalized_payload)
     if direction not in {"LONG", "SHORT"}:
         raise V41Reject("REJECT_DIRECTION")
     flo, fhi = map(timestamp, fill_time_bounds)

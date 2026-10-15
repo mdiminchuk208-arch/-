@@ -7,7 +7,9 @@ deterministic on completed data before a future H1 proposal exists.
 
 from __future__ import annotations
 
+from copy import deepcopy
 from dataclasses import asdict, replace
+from typing import Any
 
 from machine_strategy_v4_1_contracts import (
     SelectedPoiState,
@@ -27,6 +29,7 @@ class SelectedPoiInventory:
     def __init__(self) -> None:
         self._states: dict[str, SelectedPoiState] = {}
         self._events: list[dict] = []
+        self._associations: dict[str, dict[str, dict]] = {}
 
     def register(
         self,
@@ -44,6 +47,11 @@ class SelectedPoiInventory:
         breaker_formation_known_at: int | None = None,
         range_id: str | None = None,
         boundary_price: object | None = None,
+        zone_born_at: int | None = None,
+        origin_bos_id: str | None = None,
+        expected_origin_conf_id: str | None = None,
+        expected_origin_conf_known_at: int | None = None,
+        registration_known_at: int | None = None,
     ) -> SelectedPoiState:
         selected_id = selected_poi_identity(
             family=family,
@@ -57,14 +65,55 @@ class SelectedPoiInventory:
             range_id=range_id,
             boundary_price=boundary_price,
         )
+        association = {
+            "formation_id": formation_id,
+            "source_parent_id": source_parent_id,
+            "formation_known_at": formation_known_at,
+            "reaction_required_at": reaction_required_at,
+        }
+        associations = self._associations.setdefault(selected_id, {})
+        previous_association = associations.get(formation_id)
+        if previous_association is not None:
+            for field, value in association.items():
+                previous = previous_association[field]
+                if previous is not None and value != previous:
+                    raise V41Reject("REJECT_CANDIDATE_ASSOCIATION_MUTATION")
+        associations[formation_id] = association
         if selected_id in self._states:
             existing = self._states[selected_id]
-            if (
-                existing.formation_id != formation_id
-                or existing.source_parent_id != source_parent_id
-                or existing.selected_poi_native_tf != native_tf
-            ):
+            if existing.selected_poi_native_tf != native_tf:
                 raise V41Reject("REJECT_SELECTED_POI_IDENTITY_COLLISION")
+            evidence = {
+                "zone_born_at": zone_born_at,
+                "origin_bos_id": origin_bos_id,
+                "expected_origin_conf_id": expected_origin_conf_id,
+                "expected_origin_conf_known_at": expected_origin_conf_known_at,
+            }
+            changes: dict[str, Any] = {}
+            if (
+                existing.formation_id == formation_id
+                and reaction_required_at is not None
+            ):
+                if (
+                    existing.reaction_required_at is not None
+                    and existing.reaction_required_at != reaction_required_at
+                ):
+                    raise V41Reject("REJECT_REACTION_TIMESTAMP_RESET")
+                if existing.reaction_required_at is None:
+                    changes["reaction_required_at"] = reaction_required_at
+            for field, value in evidence.items():
+                previous = getattr(existing, field)
+                if value is not None:
+                    if previous is not None and previous != value:
+                        raise V41Reject("REJECT_REFINED_ORIGIN_IDENTITY_COLLISION")
+                    if previous is None:
+                        changes[field] = value
+            if expected_origin_conf_id is not None and existing.origin_conf_id is None:
+                changes["origin_conf_id"] = expected_origin_conf_id
+                changes["origin_conf_known_at"] = expected_origin_conf_known_at
+            if changes:
+                existing = replace(existing, **changes)
+                self._states[selected_id] = existing
             return existing
         kind = {
             "SFP": "REFINED_M15_POI",
@@ -82,6 +131,12 @@ class SelectedPoiInventory:
             selected_poi_kind=kind,
             selected_poi_native_tf=native_tf,
             formation_known_at=timestamp(formation_known_at),
+            zone_born_at=zone_born_at,
+            origin_bos_id=origin_bos_id,
+            expected_origin_conf_id=expected_origin_conf_id,
+            expected_origin_conf_known_at=expected_origin_conf_known_at,
+            origin_conf_id=expected_origin_conf_id,
+            origin_conf_known_at=expected_origin_conf_known_at,
             reaction_required_at=(
                 timestamp(reaction_required_at)
                 if reaction_required_at is not None
@@ -94,7 +149,9 @@ class SelectedPoiInventory:
                 "event": "REGISTER",
                 "selected_poi_id": selected_id,
                 "family": family,
-                "known_at": formation_known_at,
+                "known_at": timestamp(registration_known_at)
+                if registration_known_at is not None
+                else max(formation_known_at, zone_born_at or 0),
             }
         )
         return state
@@ -121,6 +178,9 @@ class SelectedPoiInventory:
                 raise V41Reject("REJECT_REACTION_TIMESTAMP_RESET")
             return state
         state = replace(state, reaction_required_at=when)
+        self._associations[selected_poi_id][state.formation_id][
+            "reaction_required_at"
+        ] = when
         self._states[selected_poi_id] = state
         self._events.append(
             {
@@ -141,9 +201,13 @@ class SelectedPoiInventory:
         family_prerequisites_complete: bool,
         m4_gate_admissible: bool,
         completed_context_admissible: bool,
+        formation_id: str | None = None,
     ) -> SelectedPoiState:
         state = self._states[selected_poi_id]
         before = state.eligibility_at
+        original = state
+        if formation_id is not None:
+            state = replace(state, **self._associations[selected_poi_id][formation_id])
         state = latch_eligibility(
             state,
             cutoff=cutoff,
@@ -153,6 +217,24 @@ class SelectedPoiInventory:
             m4_gate_admissible=m4_gate_admissible,
             completed_context_admissible=completed_context_admissible,
         )
+        state = replace(
+            original,
+            formation_id=state.formation_id
+            if before is None
+            else original.formation_id,
+            source_parent_id=state.source_parent_id
+            if before is None
+            else original.source_parent_id,
+            formation_known_at=state.formation_known_at
+            if before is None
+            else original.formation_known_at,
+            origin_conf_id=state.origin_conf_id,
+            origin_conf_known_at=state.origin_conf_known_at,
+            eligibility_at=state.eligibility_at,
+            reaction_required_at=state.reaction_required_at
+            if before is None
+            else original.reaction_required_at,
+        )
         self._states[selected_poi_id] = state
         if before is None and state.eligibility_at is not None:
             self._events.append(
@@ -160,6 +242,8 @@ class SelectedPoiInventory:
                     "event": "ELIGIBILITY_LATCH",
                     "selected_poi_id": selected_poi_id,
                     "origin_conf_id": state.origin_conf_id,
+                    "formation_id": state.formation_id,
+                    "source_parent_id": state.source_parent_id,
                     "known_at": state.eligibility_at,
                 }
             )
@@ -210,23 +294,39 @@ class SelectedPoiInventory:
         *,
         emission_decision_at: int,
         proposal_selected_conf_id: str,
+        formation_id: str | None = None,
     ) -> SelectedPoiState:
+        original = self._states[selected_poi_id]
+        candidate = (
+            replace(original, **self._associations[selected_poi_id][formation_id])
+            if formation_id is not None
+            else original
+        )
         state = register_emission(
-            self._states[selected_poi_id],
+            candidate,
             emission_decision_at=emission_decision_at,
             proposal_selected_conf_id=proposal_selected_conf_id,
         )
-        self._states[selected_poi_id] = state
+        # Validate the proposal association's own deadline, but keep the physical
+        # origin/eligibility association immutable after its first latch.
+        self._states[selected_poi_id] = replace(
+            original,
+            emission_decision_at=state.emission_decision_at,
+            proposal_selected_conf_id=state.proposal_selected_conf_id,
+            reserved_at=state.reserved_at,
+        )
         self._events.append(
             {
                 "event": "H1_PROPOSAL_RESERVED",
+                "formation_id": candidate.formation_id,
+                "source_parent_id": candidate.source_parent_id,
                 "selected_poi_id": selected_poi_id,
                 "origin_conf_id": state.origin_conf_id,
                 "proposal_selected_conf_id": state.proposal_selected_conf_id,
                 "known_at": emission_decision_at,
             }
         )
-        return state
+        return self._states[selected_poi_id]
 
     def retire(self, selected_poi_id: str, *, known_at: int, reason: str) -> None:
         state = self._states[selected_poi_id]
@@ -254,8 +354,11 @@ class SelectedPoiInventory:
     def snapshot(self) -> dict:
         return {
             "version": VERSION,
-            "states": {key: asdict(value) for key, value in sorted(self._states.items())},
-            "events": list(self._events),
+            "states": {
+                key: asdict(value) for key, value in sorted(self._states.items())
+            },
+            "events": deepcopy(self._events),
+            "candidate_associations": deepcopy(self._associations),
             "historical_position_evaluations": 0,
             "financial_metrics_generated": False,
             "trade_entry_allowed": False,

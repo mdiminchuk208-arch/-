@@ -1,0 +1,98 @@
+{
+  "commands": [
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_machine_strategy_v4_1*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_implementation_readiness_v1/qa/component_00.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "check",
+        "scripts/check_machine_strategy_v4_1_conformance.py",
+        "scripts/check_machine_strategy_v4_1_data.py",
+        "scripts/check_machine_strategy_v4_1_source_replay.py",
+        "scripts/machine_strategy_v4_1_contracts.py",
+        "scripts/machine_strategy_v4_1_execution_binding.py",
+        "scripts/machine_strategy_v4_1_funding_guard.py",
+        "scripts/machine_strategy_v4_1_guarded_runner.py",
+        "scripts/machine_strategy_v4_1_historical_adapter.py",
+        "scripts/machine_strategy_v4_1_selected_poi_inventory.py",
+        "scripts/machine_strategy_v4_1_synthetic_source_bridge.py",
+        "scripts/verify_machine_strategy_v4_1_implementation_v1.py",
+        "scripts/verify_machine_strategy_v4_1_source_adapter.py",
+        "tests/test_machine_strategy_v4_1_contracts.py",
+        "tests/test_machine_strategy_v4_1_design.py",
+        "tests/test_machine_strategy_v4_1_execution_binding.py",
+        "tests/test_machine_strategy_v4_1_freeze.py",
+        "tests/test_machine_strategy_v4_1_funding_guard.py",
+        "tests/test_machine_strategy_v4_1_readiness_regressions.py",
+        "tests/test_machine_strategy_v4_1_runner.py",
+        "tests/test_machine_strategy_v4_1_selected_poi_inventory.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_implementation_readiness_v1/qa/component_01.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "format",
+        "--check",
+        "scripts/check_machine_strategy_v4_1_conformance.py",
+        "scripts/check_machine_strategy_v4_1_data.py",
+        "scripts/check_machine_strategy_v4_1_source_replay.py",
+        "scripts/machine_strategy_v4_1_contracts.py",
+        "scripts/machine_strategy_v4_1_execution_binding.py",
+        "scripts/machine_strategy_v4_1_funding_guard.py",
+        "scripts/machine_strategy_v4_1_guarded_runner.py",
+        "scripts/machine_strategy_v4_1_historical_adapter.py",
+        "scripts/machine_strategy_v4_1_selected_poi_inventory.py",
+        "scripts/machine_strategy_v4_1_synthetic_source_bridge.py",
+        "scripts/verify_machine_strategy_v4_1_implementation_v1.py",
+        "scripts/verify_machine_strategy_v4_1_source_adapter.py",
+        "tests/test_machine_strategy_v4_1_contracts.py",
+        "tests/test_machine_strategy_v4_1_design.py",
+        "tests/test_machine_strategy_v4_1_execution_binding.py",
+        "tests/test_machine_strategy_v4_1_freeze.py",
+        "tests/test_machine_strategy_v4_1_funding_guard.py",
+        "tests/test_machine_strategy_v4_1_readiness_regressions.py",
+        "tests/test_machine_strategy_v4_1_runner.py",
+        "tests/test_machine_strategy_v4_1_selected_poi_inventory.py"
+      ],
+      "exit_code": 1,
+      "log": "docs/machine_strategy_v4_1_implementation_readiness_v1/qa/component_02.log"
+    }
+  ],
+  "tested_sha256": {
+    "scripts/check_machine_strategy_v4_1_conformance.py": "b2eb0d0cbfea50944f97db52e4acaf2201a6a5d811f57902d62e1d8bee4b30c3",
+    "scripts/check_machine_strategy_v4_1_data.py": "b450ea113540cb7083285efa4dd220af4eb3c92d98e559a4d6ddb62e07545742",
+    "scripts/check_machine_strategy_v4_1_source_replay.py": "3f164318f4d8f6041deebf0bfb8a1eeeac14a893b5d83f611d0a63141d2c882a",
+    "scripts/machine_strategy_v4_1_contracts.py": "3d7ae78682d17ea5bd4d4af2fe852fde1699b1b055488b787e07ffb2cc2e8037",
+    "scripts/machine_strategy_v4_1_execution_binding.py": "1c3d3445af2d5b84ad9dd9337aaa1480a24f3a371e6488233e9ad68013042f1e",
+    "scripts/machine_strategy_v4_1_funding_guard.py": "05f62cdda8bc89885cde4a7ee12d044e416ac7e9ef6bce00ff33374b8a1c8038",
+    "scripts/machine_strategy_v4_1_guarded_runner.py": "5d74c73990d77ecbbd7f207c4a7f61b2eb444c6e3140c25c780d528ed35c5673",
+    "scripts/machine_strategy_v4_1_historical_adapter.py": "a6e7efad75d48e104efe210350440d1a3a8aa87cb079e3c67e029273372586d0",
+    "scripts/machine_strategy_v4_1_selected_poi_inventory.py": "d79f62e9e29d986b205a6aada9f7aaf6e6d73bf26feb906320af8d0283f6e176",
+    "scripts/machine_strategy_v4_1_synthetic_source_bridge.py": "ea251891bfd7f9254e1753daf89b67aa52b13f0fbd5d2cf4a4a007d57217c2a9",
+    "scripts/verify_machine_strategy_v4_1_implementation_v1.py": "4683105c2284c05fce919cf9175b8a9dd4ccef8b36f2d3b0fc0b312632922264",
+    "scripts/verify_machine_strategy_v4_1_source_adapter.py": "900552238510ed557c5b0545155371390446ff239bdf3b357095c60a0bf6b0e9",
+    "tests/test_machine_strategy_v4_1_contracts.py": "180e0fab797fcd9dd3a83fe7585c07f2fbcb1bdc37037e9bb5f9035af56caacf",
+    "tests/test_machine_strategy_v4_1_design.py": "5508ac25e2e0abdf53dfea54ca43d40a51f8853d94153f6654a62d46b4b62f7b",
+    "tests/test_machine_strategy_v4_1_execution_binding.py": "089b710b9017ac556c1b41ed24505860c557e96e1551e5b62ead1078249d44bf",
+    "tests/test_machine_strategy_v4_1_freeze.py": "ed5d69624a6f4cf0eda19d3afb87d857b805fc8f50cc3e8f479d82ecd774248c",
+    "tests/test_machine_strategy_v4_1_funding_guard.py": "0f212560358a656bf690ca62b42c00af133963dd6035e8a161b0c39a19760a92",
+    "tests/test_machine_strategy_v4_1_readiness_regressions.py": "5190403785891c743540e7ba8e2b93feb1e935ecdb2d2de4618710db3229db02",
+    "tests/test_machine_strategy_v4_1_runner.py": "d80287b9688b832c5f36eaf6cf6542a6b1affd0cddfd76539cf3ae96e64b0c4a",
+    "tests/test_machine_strategy_v4_1_selected_poi_inventory.py": "269bcdbb23e74a86d172b9af3eb9086baf8ac661bc93a57d209b66f6f0c351ec"
+  }
+}

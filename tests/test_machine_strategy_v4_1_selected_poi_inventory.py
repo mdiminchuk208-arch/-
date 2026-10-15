@@ -12,41 +12,42 @@ class TestSelectedPoiInventory(unittest.TestCase):
         inventory = SelectedPoiInventory()
         state = inventory.register(
             family="RANGE",
-            formation_id="formation-range",
-            source_parent_id="range-parent",
+            formation_id="f",
+            source_parent_id="r",
             native_tf=60,
-            formation_known_at=1_000,
-            reaction_required_at=1_900,
+            formation_known_at=0,
+            reaction_required_at=3600,
             direction="LONG",
-            range_id="range-1",
-            boundary_price=Decimal("100"),
-        )
-        inventory.latch_m15(
-            state.selected_poi_id,
-            cutoff=2_000,
-            origin_conf_id="conf-A",
-            origin_conf_known_at=1_950,
-            family_prerequisites_complete=True,
-            m4_gate_admissible=True,
-            completed_context_admissible=True,
+            range_id="r",
+            boundary_price="100",
         )
         exempt = inventory.observe_native_bar(
             state.selected_poi_id,
-            native_bar_open=2_000,
-            native_bar_close=2_300,
+            native_bar_open=0,
+            native_bar_close=3600,
             intersects=True,
             native_context_admissible_at_open=True,
             is_required_reaction_contact=True,
         )
         self.assertIsNone(exempt.consumed_at)
+        inventory.latch_m15(
+            state.selected_poi_id,
+            cutoff=4500,
+            origin_conf_id="A",
+            origin_conf_known_at=4500,
+            family_prerequisites_complete=True,
+            m4_gate_admissible=True,
+            completed_context_admissible=True,
+        )
         consumed = inventory.observe_native_bar(
             state.selected_poi_id,
-            native_bar_open=2_300,
-            native_bar_close=2_600,
+            native_bar_open=7200,
+            native_bar_close=10800,
             intersects=True,
             native_context_admissible_at_open=True,
+            is_required_reaction_contact=True,
         )
-        self.assertEqual(consumed.consumed_at, 2_600)
+        self.assertEqual(consumed.consumed_at, 10800)
 
     def test_reaction_can_latch_after_physical_registration_but_not_reset(self):
         inventory = SelectedPoiInventory()
@@ -59,20 +60,16 @@ class TestSelectedPoiInventory(unittest.TestCase):
             reaction_required_at=None,
             direction="LONG",
             range_id="range-2",
-            boundary_price=Decimal("101"),
+            boundary_price=Decimal(101),
         )
         reacted = inventory.set_reaction_required_at(
             state.selected_poi_id, known_at=1_900
         )
         self.assertEqual(reacted.reaction_required_at, 1_900)
-        same = inventory.set_reaction_required_at(
-            state.selected_poi_id, known_at=1_900
-        )
+        same = inventory.set_reaction_required_at(state.selected_poi_id, known_at=1_900)
         self.assertEqual(same.reaction_required_at, 1_900)
         with self.assertRaisesRegex(V41Reject, "REJECT_REACTION_TIMESTAMP_RESET"):
-            inventory.set_reaction_required_at(
-                state.selected_poi_id, known_at=2_000
-            )
+            inventory.set_reaction_required_at(state.selected_poi_id, known_at=2_000)
 
     def test_late_reaction_is_part_of_eligibility_lower_bound(self):
         inventory = SelectedPoiInventory()
@@ -84,6 +81,10 @@ class TestSelectedPoiInventory(unittest.TestCase):
             formation_known_at=1_000,
             reaction_required_at=None,
             existing_id="refined-poi-late",
+            zone_born_at=1500,
+            origin_bos_id="bos-A",
+            expected_origin_conf_id="conf-A",
+            expected_origin_conf_known_at=1700,
         )
         inventory.set_reaction_required_at(state.selected_poi_id, known_at=1_900)
         with self.assertRaisesRegex(V41Wait, "WAIT_POI_ELIGIBILITY_LOWER_BOUND"):
@@ -106,8 +107,8 @@ class TestSelectedPoiInventory(unittest.TestCase):
             native_tf=60,
             formation_known_at=1_000,
             reaction_required_at=1_000,
-            body_low=Decimal("99"),
-            body_high=Decimal("101"),
+            body_low=Decimal(99),
+            body_high=Decimal(101),
         )
         latched = inventory.latch_m15(
             state.selected_poi_id,
@@ -161,7 +162,7 @@ class TestSelectedPoiInventory(unittest.TestCase):
         unchanged = inventory.observe_native_bar(
             state.selected_poi_id,
             native_bar_open=1_000,
-            native_bar_close=2_400,
+            native_bar_close=15400,
             intersects=True,
             native_context_admissible_at_open=True,
         )
@@ -177,6 +178,10 @@ class TestSelectedPoiInventory(unittest.TestCase):
             formation_known_at=1_000,
             reaction_required_at=1_200,
             existing_id="refined-poi",
+            zone_born_at=1000,
+            origin_bos_id="bos-A",
+            expected_origin_conf_id="conf-A",
+            expected_origin_conf_known_at=1450,
         )
         inventory.latch_m15(
             state.selected_poi_id,
@@ -190,14 +195,14 @@ class TestSelectedPoiInventory(unittest.TestCase):
         inventory.observe_native_bar(
             state.selected_poi_id,
             native_bar_open=1_500,
-            native_bar_close=1_800,
+            native_bar_close=2400,
             intersects=True,
             native_context_admissible_at_open=True,
         )
         with self.assertRaisesRegex(V41Reject, "REJECT_SELECTED_POI_PRECONSUMED"):
             inventory.emit_h1_proposal(
                 state.selected_poi_id,
-                emission_decision_at=1_800,
+                emission_decision_at=2_400,
                 proposal_selected_conf_id="conf-A",
             )
 
@@ -211,6 +216,10 @@ class TestSelectedPoiInventory(unittest.TestCase):
             formation_known_at=1_000,
             reaction_required_at=1_200,
             existing_id="sfp-refined-poi",
+            zone_born_at=1000,
+            origin_bos_id="bos-A",
+            expected_origin_conf_id="conf-A",
+            expected_origin_conf_known_at=1450,
         )
         with self.assertRaisesRegex(V41Wait, "WAIT_CONTEXT_FOR_POI_ELIGIBILITY"):
             inventory.latch_m15(
@@ -237,8 +246,8 @@ class TestSelectedPoiInventory(unittest.TestCase):
             native_tf=60,
             formation_known_at=1_000,
             reaction_required_at=1_000,
-            body_low=Decimal("99"),
-            body_high=Decimal("101"),
+            body_low=Decimal(99),
+            body_high=Decimal(101),
         )
         with self.assertRaisesRegex(V41Reject, "EXPIRED_PENDING"):
             inventory.latch_m15(

@@ -1,0 +1,16 @@
+{
+  "cutoffs_UTC_seconds": [
+    1729382400,
+    1760313600,
+    1791244800
+  ],
+  "evaluation_start": 1728777600,
+  "historical_position_evaluations": 0,
+  "policy_selection_by_catalog_counts": false,
+  "products": [
+    "BTC-USDT-SWAP",
+    "ETH-USDT-SWAP"
+  ],
+  "scope": "FULL_SEALED_HISTORY_SOURCE_ONLY",
+  "trade_entry_allowed": false
+}

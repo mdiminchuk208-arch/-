@@ -1,10 +1,5 @@
 {
-  "version": "MACHINE_STRATEGY_v4.1",
-  "state": "IMPLEMENTATION_IN_PROGRESS",
-  "historical_financial_authorized": false,
-  "historical_position_simulation_authorized": false,
-  "catalog_count_selection_authorized": false,
-  "trade_entry_allowed": false,
+  "READY_alone_does_not_authorize_historical_finance": true,
   "allowed_now": [
     "sealed public OKX source verification",
     "completed causal source/state/selected-POI lifecycle adapter checks",
@@ -12,6 +7,17 @@
     "registered synthetic execution/funding/accounting fixtures",
     "Decimal50 design/execution construction and canonical transport tests"
   ],
+  "catalog_count_selection_authorized": false,
+  "code_guards": {
+    "funding_guard": "issued exact capability object + fixed named payload, no arbitrary rows licensed by name",
+    "guard_negative_tests": "tests/test_machine_strategy_v4_1_freeze.py and test_machine_strategy_v4_1_runner.py",
+    "guarded_runner": "machine_strategy_v4_1_guarded_runner.py closed issued nonce + exact registered fixture hash; historical entry unconditionally denied",
+    "preproposal_inventory": "scripts/machine_strategy_v4_1_selected_poi_inventory.py contains no position/outcome runner import",
+    "pure_contract_block": "scripts/machine_strategy_v4_1_contracts.py::assert_financial_execution_blocked",
+    "required_future_runner_rule": "A distinct guarded v4_1 runner may execute historical financial paths only after exact externally pinned IMPLEMENTATION_FREEZE_MANIFEST READY bytes and a separately named one-shot financial authorization gate.",
+    "source_function_trap": "check_machine_strategy_v4_1_source_replay.py::trap",
+    "source_import_trap": "FinancialImportTrap actively denies financial modules"
+  },
   "forbidden_until_external_implementation_READY": [
     "historical v4/v4.1 fills",
     "historical v4/v4.1 exits",
@@ -25,12 +31,13 @@
     "PAPER",
     "LIVE"
   ],
-  "code_guards": {
-    "pure_contract_block": "scripts/machine_strategy_v4_1_contracts.py::assert_financial_execution_blocked",
-    "preproposal_inventory": "scripts/machine_strategy_v4_1_selected_poi_inventory.py contains no position/outcome runner import",
-    "required_future_runner_rule": "A distinct guarded v4_1 runner may execute historical financial paths only after exact externally pinned IMPLEMENTATION_FREEZE_MANIFEST READY bytes and a separately named one-shot financial authorization gate."
-  },
+  "historical_financial_authorized": false,
+  "historical_position_evaluations": 0,
+  "historical_position_simulation_authorized": false,
+  "production_candidate": null,
   "qualification_thresholds_unchanged": true,
-  "win_rate_min": 0.70,
-  "production_candidate": null
+  "state": "EXECUTED_COMPONENTS_FULL_SOURCE_REPLAY_PENDING",
+  "trade_entry_allowed": false,
+  "version": "MACHINE_STRATEGY_v4.1",
+  "win_rate_min": 0.7
 }

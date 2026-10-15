@@ -1,0 +1,44 @@
+{
+  "append_only": true,
+  "code": "immutable machine_strategy_v4_readiness_core.py::GateTelemetry; adapter._emit and registered runner sinks",
+  "context_absence": "nonterminal WAIT, never NO_HTF_CONTEXT terminal scalp rejection",
+  "detached_snapshots": true,
+  "distinct_denominators": [
+    "raw origin",
+    "physical idea",
+    "physical selected POI",
+    "candidate parent association",
+    "first eligibility",
+    "H1 proposal/reservation",
+    "conditional IF_STILL_PENDING lifecycle",
+    "registered synthetic exposure"
+  ],
+  "financial_or_future_fields_rejected": true,
+  "historical_exposure_denominator": 0,
+  "historical_financial_authorized": false,
+  "historical_position_evaluations": 0,
+  "native_lifecycle_events": [
+    "REGISTER",
+    "REACTION_LATCH API",
+    "ELIGIBILITY_LATCH with first parent",
+    "FIRST_TEST_CONSUMED",
+    "H1_PROPOSAL_RESERVED with proposal parent",
+    "RETIRE API"
+  ],
+  "required_fields": [
+    "known_at",
+    "decision_cutoff",
+    "gate_name",
+    "event_type",
+    "reason_code",
+    "formation_id",
+    "physical_idea_id",
+    "branch",
+    "direction"
+  ],
+  "state": "EXECUTED_COMPONENTS_FULL_SOURCE_REPLAY_PENDING",
+  "strategy_readback": false,
+  "trade_entry_allowed": false,
+  "validation": "full source conformance validates all emitted timestamps/conditional scope; targeted observer mutation/outcome negatives",
+  "version": "MACHINE_STRATEGY_v4.1"
+}

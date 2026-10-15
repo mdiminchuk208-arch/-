@@ -12,7 +12,9 @@ from machine_strategy_v4_1_funding_guard import (
 
 class TestV41FundingGuard(unittest.TestCase):
     def test_unregistered_fixture_is_rejected(self):
-        with self.assertRaisesRegex(V41Reject, "UNREGISTERED_SYNTHETIC_FUNDING_FIXTURE"):
+        with self.assertRaisesRegex(
+            V41Reject, "UNREGISTERED_SYNTHETIC_FUNDING_FIXTURE"
+        ):
             synthetic_capability("NOT_REGISTERED")
 
     def test_long_positive_funding_uses_adverse_negative_cash(self):
@@ -59,7 +61,9 @@ class TestV41FundingGuard(unittest.TestCase):
         self.assertEqual(result["precision"], 80)
 
     def test_historical_funding_is_unconditionally_blocked_in_readiness(self):
-        with self.assertRaisesRegex(V41Reject, "HISTORICAL_V4_1_FUNDING_NOT_AUTHORIZED"):
+        with self.assertRaisesRegex(
+            V41Reject, "HISTORICAL_V4_1_FUNDING_NOT_AUTHORIZED"
+        ):
             assert_historical_funding_blocked()
 
 

@@ -1,0 +1,55 @@
+{
+  "cutoffs_UTC_seconds": [
+    1729382400,
+    1760313600,
+    1791244800
+  ],
+  "evaluation_start": 1728777600,
+  "historical_financial_authorized": false,
+  "historical_position_evaluations": 0,
+  "policy_selection_by_catalog_counts": false,
+  "products": {
+    "BTC-USDT-SWAP": {
+      "cutoffs": {
+        "1729382400": {
+          "deterministic_source_replay": "PASS",
+          "full_stream": "3f4df2e18b786305082bcf1b52d88df4371defa50a0ee8a8e62f7d0e896aba0e",
+          "future_mutated": "3f4df2e18b786305082bcf1b52d88df4371defa50a0ee8a8e62f7d0e896aba0e",
+          "truncated": "3f4df2e18b786305082bcf1b52d88df4371defa50a0ee8a8e62f7d0e896aba0e"
+        }
+      },
+      "data_end_exclusive": 1791849600,
+      "data_start": 1697241600,
+      "full_checkpoint_digests": {
+        "1729382400": "3f4df2e18b786305082bcf1b52d88df4371defa50a0ee8a8e62f7d0e896aba0e",
+        "1760313600": "37712ed697c3c6e66f2a18cbe23976143f5bddab2b74a351d9f7a7ca02dfd2c7",
+        "1791244800": "53aa2ae4f0a053f6fe5b7c3e84ad620e77186aa730c88bf4dd6a35aaa5919966"
+      },
+      "native_bar_count": 105120,
+      "position_engine_trap_active": true,
+      "raw_family_coverage": {
+        "BREAKER": 109,
+        "OB": 305,
+        "RANGE": 727,
+        "SFP": 4514,
+        "STB": 305
+      },
+      "source_artifact": "docs/machine_strategy_v4_1_implementation_readiness_v1/BTC_USDT_SWAP.source_only.json.gz",
+      "source_artifact_sha256": "97d616f6b6f19f993110737b734b59b11b844f9f12e0e354022db51ac453b928"
+    }
+  },
+  "run_context": {
+    "StageA_manifest_sha256": "e8733326e85b6082a33f11ec001066d33bc345bcded6acda26b54cd56ddeb9f0",
+    "design_manifest_sha256": "4074c337be4800e54682a5ad1ddfd9015e35ce16f4fe2742fc4d12b4bb415790",
+    "preregistration_sha256": "7020cd2b4b6ad268d282851c9536cc1e91886631880ab106d13020226f05bf4f",
+    "source_code_sha256": {
+      "scripts/check_machine_strategy_v4_1_source_replay.py": "cfe971aa02f91a2e5a6be15b2edf61eb6b1f3606f06aef56504bdd53e6f71156",
+      "scripts/machine_strategy_v4_1_contracts.py": "3d7ae78682d17ea5bd4d4af2fe852fde1699b1b055488b787e07ffb2cc2e8037",
+      "scripts/machine_strategy_v4_1_execution_binding.py": "1c3d3445af2d5b84ad9dd9337aaa1480a24f3a371e6488233e9ad68013042f1e",
+      "scripts/machine_strategy_v4_1_historical_adapter.py": "eb7ce0f349754cd01a97da53e402ec801d5a03b214216cfcf477802585096aa5",
+      "scripts/machine_strategy_v4_1_selected_poi_inventory.py": "ea6e4b34848090d09f5b6084b79b66551727fff3cb1cdc7eebf157f2d2f81fec"
+    }
+  },
+  "scope": "FULL_SEALED_HISTORY_SOURCE_ONLY",
+  "trade_entry_allowed": false
+}

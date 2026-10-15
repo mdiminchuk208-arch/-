@@ -1,11 +1,11 @@
 from __future__ import annotations
 
-from decimal import Decimal, localcontext
 import unittest
+from decimal import Decimal, localcontext
 
 from machine_strategy_v4_1_contracts import (
-    V41Reject,
     SelectedPoiState,
+    V41Reject,
     canonical_decimal,
     latch_eligibility,
     ledger_decimal,
@@ -20,15 +20,15 @@ from machine_strategy_v4_1_contracts import (
 
 class TestMachineStrategyV41Contracts(unittest.TestCase):
     def base(self, **overrides):
-        values = dict(
-            formation_id="formation-A",
-            source_parent_id="parent-A",
-            selected_poi_id="poi-A",
-            selected_poi_kind="RANGE_BOUNDARY",
-            selected_poi_native_tf=60,
-            formation_known_at=1_000,
-            reaction_required_at=1_900,
-        )
+        values = {
+            "formation_id": "formation-A",
+            "source_parent_id": "parent-A",
+            "selected_poi_id": "poi-A",
+            "selected_poi_kind": "RANGE_BOUNDARY",
+            "selected_poi_native_tf": 60,
+            "formation_known_at": 1_000,
+            "reaction_required_at": 1_900,
+        }
         values.update(overrides)
         return SelectedPoiState(**values)
 
@@ -73,7 +73,7 @@ class TestMachineStrategyV41Contracts(unittest.TestCase):
             family="RANGE",
             range_id="r1",
             direction="SHORT",
-            boundary_price=Decimal("100"),
+            boundary_price=Decimal(100),
         )
         self.assertEqual(range_a, range_b)
 
@@ -113,7 +113,7 @@ class TestMachineStrategyV41Contracts(unittest.TestCase):
         result = native_contact(
             state,
             native_bar_open=1_800,
-            native_bar_close=2_100,
+            native_bar_close=5400,
             intersects=True,
             native_context_admissible_at_open=True,
         )
@@ -132,40 +132,42 @@ class TestMachineStrategyV41Contracts(unittest.TestCase):
         result = native_contact(
             state,
             native_bar_open=2_000,
-            native_bar_close=2_300,
+            native_bar_close=5600,
             intersects=True,
             native_context_admissible_at_open=True,
         )
-        self.assertEqual(result.consumed_at, 2_300)
+        self.assertEqual(result.consumed_at, 5600)
 
     def test_required_range_reaction_is_exempt_then_next_contact_consumes(self):
-        state = latch_eligibility(
-            self.base(),
-            cutoff=2_000,
-            origin_conf_id="conf-A",
-            origin_conf_known_at=1_950,
-            family_prerequisites_complete=True,
-            m4_gate_admissible=True,
-            completed_context_admissible=True,
-        )
+        state = self.base(formation_known_at=0, reaction_required_at=3600)
         exempt = native_contact(
             state,
-            native_bar_open=2_000,
-            native_bar_close=2_300,
+            native_bar_open=0,
+            native_bar_close=3600,
             intersects=True,
             native_context_admissible_at_open=True,
             is_required_reaction_contact=True,
         )
         self.assertIsNone(exempt.consumed_at)
-        self.assertEqual(exempt.required_reaction_exempt_contact_at, 2_300)
-        consumed = native_contact(
+        self.assertEqual(exempt.required_reaction_exempt_contact_at, 3600)
+        latched = latch_eligibility(
             exempt,
-            native_bar_open=2_300,
-            native_bar_close=2_600,
+            cutoff=4500,
+            origin_conf_id="A",
+            origin_conf_known_at=4500,
+            family_prerequisites_complete=True,
+            m4_gate_admissible=True,
+            completed_context_admissible=True,
+        )
+        consumed = native_contact(
+            latched,
+            native_bar_open=7200,
+            native_bar_close=10800,
             intersects=True,
             native_context_admissible_at_open=True,
+            is_required_reaction_contact=True,
         )
-        self.assertEqual(consumed.consumed_at, 2_600)
+        self.assertEqual(consumed.consumed_at, 10800)
 
     def test_pre_emission_consumption_rejects(self):
         consumed = self.base(
@@ -204,8 +206,8 @@ class TestMachineStrategyV41Contracts(unittest.TestCase):
         self.assertEqual(serialized, canonical_decimal(third))
 
     def test_payoff_equality_passes(self):
-        self.assertTrue(payoff_equality_passes(Decimal("1"), Decimal("1")))
-        self.assertFalse(payoff_equality_passes(Decimal("0.999"), Decimal("1")))
+        self.assertTrue(payoff_equality_passes(Decimal(1), Decimal(1)))
+        self.assertFalse(payoff_equality_passes(Decimal("0.999"), Decimal(1)))
 
     def test_float_is_never_canonical_design_input(self):
         with self.assertRaises(V41Reject):

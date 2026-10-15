@@ -1,0 +1,30 @@
+unformatted: File would be reformatted
+  --> tests/test_machine_strategy_v4_1_execution_binding.py:79:25
+   |
+78 |         self.assertTrue(all(row["status"] == "INELIGIBLE" for row in plans))
+   -         self.assertTrue(all(row["reason"] == "REJECT_V4_1_ORDER_VERSION" for row in plans))
+79 +         self.assertTrue(
+80 +             all(row["reason"] == "REJECT_V4_1_ORDER_VERSION" for row in plans)
+81 +         )
+82 |
+   |
+
+unformatted: File would be reformatted
+  --> tests/test_machine_strategy_v4_1_funding_guard.py:15:37
+   |
+14 |     def test_unregistered_fixture_is_rejected(self):
+   -         with self.assertRaisesRegex(V41Reject, "UNREGISTERED_SYNTHETIC_FUNDING_FIXTURE"):
+15 +         with self.assertRaisesRegex(
+16 +             V41Reject, "UNREGISTERED_SYNTHETIC_FUNDING_FIXTURE"
+17 +         ):
+18 |             synthetic_capability("NOT_REGISTERED")
+--------------------------------------------------------------------------------
+63 |     def test_historical_funding_is_unconditionally_blocked_in_readiness(self):
+   -         with self.assertRaisesRegex(V41Reject, "HISTORICAL_V4_1_FUNDING_NOT_AUTHORIZED"):
+64 +         with self.assertRaisesRegex(
+65 +             V41Reject, "HISTORICAL_V4_1_FUNDING_NOT_AUTHORIZED"
+66 +         ):
+67 |             assert_historical_funding_blocked()
+   |
+
+2 files would be reformatted, 18 files already formatted

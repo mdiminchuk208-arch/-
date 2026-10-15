@@ -65,7 +65,14 @@ def ledger_decimal(serialized: str) -> Decimal:
             raise V41Reject("REJECT_INVALID_LEDGER_DECIMAL") from exc
         if not parsed.is_finite():
             raise V41Reject("REJECT_NON_FINITE_DECIMAL")
-        return +parsed
+        text = format(parsed, "f")
+        if "." in text:
+            text = text.rstrip("0").rstrip(".")
+        if parsed == 0:
+            text = "0"
+        if text != serialized or +parsed != parsed:
+            raise V41Reject("REJECT_NONCANONICAL_LEDGER_DECIMAL")
+        return parsed
 
 
 def canonical_decimal(value: object) -> str:
@@ -127,7 +134,11 @@ def selected_poi_identity(
             canonical_decimal(body_high),
         )
     if family == "BREAKER":
-        if not source_parent_id or breaker_formation_known_at is None or direction not in {"LONG", "SHORT"}:
+        if (
+            not source_parent_id
+            or breaker_formation_known_at is None
+            or direction not in {"LONG", "SHORT"}
+        ):
             raise V41Reject("REJECT_BREAKER_IDENTITY_INPUT")
         return physical_identity(
             "M4_1_BREAKER_BODY",
@@ -165,6 +176,10 @@ class SelectedPoiState:
     reserved_at: int | None = None
     retired_at: int | None = None
     required_reaction_exempt_contact_at: int | None = None
+    zone_born_at: int | None = None
+    origin_bos_id: str | None = None
+    expected_origin_conf_id: str | None = None
+    expected_origin_conf_known_at: int | None = None
 
     def __post_init__(self) -> None:
         timestamp(self.formation_known_at)
@@ -179,6 +194,8 @@ class SelectedPoiState:
             "reserved_at",
             "retired_at",
             "required_reaction_exempt_contact_at",
+            "zone_born_at",
+            "expected_origin_conf_known_at",
         ):
             value = getattr(self, name)
             if value is not None:
@@ -206,6 +223,13 @@ def latch_eligibility(
     """Latch FIRST admissible completed-M15 eligibility; later CONF cannot reset it."""
     cutoff = timestamp(cutoff)
     conf_at = timestamp(origin_conf_known_at)
+    for flag in (
+        family_prerequisites_complete,
+        m4_gate_admissible,
+        completed_context_admissible,
+    ):
+        if type(flag) is not bool:
+            raise V41Reject("REJECT_INEXACT_ELIGIBILITY_PROOF")
     if state.eligibility_at is not None:
         return state
     if state.terminal:
@@ -214,10 +238,24 @@ def latch_eligibility(
         raise V41Reject("EXPIRED_PENDING")
     if not family_prerequisites_complete:
         raise V41Wait("WAIT_FAMILY_PREREQUISITES")
+    if state.selected_poi_kind == "REFINED_M15_POI":
+        if (
+            state.zone_born_at is None
+            or not state.origin_bos_id
+            or not state.expected_origin_conf_id
+            or state.expected_origin_conf_known_at is None
+        ):
+            raise V41Wait("WAIT_REFINED_ORIGIN_EVIDENCE")
+        if (origin_conf_id, conf_at) != (
+            state.expected_origin_conf_id,
+            state.expected_origin_conf_known_at,
+        ):
+            raise V41Reject("REJECT_UNRELATED_REFINED_ORIGIN_CONF")
     lower = max(
         state.formation_known_at,
         state.reaction_required_at or state.formation_known_at,
         conf_at,
+        state.zone_born_at or 0,
     )
     if cutoff < lower:
         raise V41Wait("WAIT_POI_ELIGIBILITY_LOWER_BOUND")
@@ -247,8 +285,19 @@ def native_contact(
     """Publish eligible native first-test at native CLOSE, never retroactively at OPEN."""
     opening = timestamp(native_bar_open)
     closing = timestamp(native_bar_close)
-    if closing <= opening:
+    if closing - opening != state.selected_poi_native_tf * 60:
         raise V41Reject("REJECT_NATIVE_BAR_INTERVAL")
+    if any(
+        type(v) is not bool
+        for v in (
+            intersects,
+            native_context_admissible_at_open,
+            is_required_reaction_contact,
+        )
+    ):
+        raise V41Reject("REJECT_INEXACT_NATIVE_CONTACT_PROOF")
+    if is_required_reaction_contact and closing == state.reaction_required_at:
+        return replace(state, required_reaction_exempt_contact_at=closing)
     if state.eligibility_at is None:
         return state
     if state.terminal:
@@ -259,8 +308,6 @@ def native_contact(
     if not native_context_admissible_at_open or not intersects:
         return state
     # The required RANGE reaction and creation/formation events never self-consume.
-    if is_required_reaction_contact:
-        return replace(state, required_reaction_exempt_contact_at=closing)
     return replace(state, consumed_at=closing)
 
 
@@ -275,6 +322,10 @@ def register_emission(
         raise V41Wait("WAIT_SELECTED_POI_ELIGIBILITY")
     if decision >= state.deadline:
         raise V41Reject("EXPIRED_PENDING")
+    if decision < state.eligibility_at:
+        raise V41Reject("REJECT_EMISSION_BEFORE_ELIGIBILITY")
+    if state.reserved_at is not None:
+        raise V41Reject("REJECT_ALREADY_RESERVED")
     if state.consumed_at is not None and state.consumed_at <= decision:
         raise V41Reject("REJECT_SELECTED_POI_PRECONSUMED")
     if state.retired_at is not None and state.retired_at <= decision:

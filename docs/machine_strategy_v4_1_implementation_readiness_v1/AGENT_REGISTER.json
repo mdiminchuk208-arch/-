@@ -1,0 +1,51 @@
+{
+  "attempts": [
+    {
+      "acceptance": "diagnostic only",
+      "agent": "/root/v41_readiness_engineering_review",
+      "result": "implementation counterexamples repaired; no material new frozen design gap",
+      "role": "backtest_engineer",
+      "scope": "preintegration components + missing production adapter/kernel"
+    },
+    {
+      "acceptance": "data scope only, root also revalidated all774receipts and210240bars this continuation",
+      "agent": "/root/v41_readiness_data_review",
+      "result": "sealed data PASS; adapter proof pending then",
+      "role": "historical_data_engineer",
+      "scope": "native/derived/signed funding + exact parent resumes; prior774receipt review reused via hashes"
+    },
+    {
+      "acceptance": "not final acceptance",
+      "agent": "/root/v41_readiness_execution_review",
+      "result": "early STOP, precise bridge requirements supplied and repaired",
+      "role": "execution_auditor",
+      "scope": "early33registered tests + missing H4 source-kernel bridge"
+    },
+    {
+      "acceptance": "failed followup is not acceptance",
+      "agent": "/root/v41_readiness_no_lookahead_review",
+      "result": "found repaired late registration/noncanonical transport; followup errored usage-limit",
+      "role": "no_lookahead_auditor",
+      "scope": "preintegration registration/canonical transport"
+    },
+    {
+      "acceptance": "full receipt pending",
+      "agent": "/root/v41_no_lookahead_repaired",
+      "result": "found terminal-WAIT, early-origin/reaction publication and multi-parent provenance defects; all repaired with regressions; latest quick review no additional concrete blocker",
+      "role": "no_lookahead_auditor",
+      "scope": "repaired/integrated source, bounded provenance probes"
+    },
+    {
+      "acceptance": "scoped synthetic PASS; later source-only provenance changes require bounded final scope check",
+      "agent": "/root/v41_execution_integrated",
+      "result": "79tests PASS; accepted updated runner5d74c73990d77ecbbd7f207c4a7f61b2eb444c6e3140c25c780d528ed35c5673",
+      "role": "execution_auditor",
+      "scope": "registered H1/H4 execution, all9, funding, guards and explicit Decimal context"
+    }
+  ],
+  "final_independent_review_pending": true,
+  "historical_financial_subagents_launched": false,
+  "operating_model": "root sole writer; serial root+one read-only specialist, no nested delegation",
+  "runtime": "ECC2.2.3 enabled, hooks inactive; native collaboration APIs execute configured roles",
+  "trade_entry_allowed": false
+}

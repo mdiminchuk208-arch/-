@@ -1,0 +1,20 @@
+FURB157 [*] Verbose expression in `Decimal` constructor
+  --> tests/test_machine_strategy_v4_1_selected_poi_inventory.py:63:36
+   |
+61 |             direction="LONG",
+62 |             range_id="range-2",
+63 |             boundary_price=Decimal("101"),
+   |                                    ^^^^^
+64 |         )
+65 |         reacted = inventory.set_reaction_required_at(
+   |
+help: Replace with `101`
+   |
+62 |             range_id="range-2",
+   -             boundary_price=Decimal("101"),
+63 +             boundary_price=Decimal(101),
+64 |         )
+   |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

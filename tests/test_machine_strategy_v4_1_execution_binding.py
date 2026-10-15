@@ -76,7 +76,9 @@ class TestV41ExecutionBinding(unittest.TestCase):
         plans = all_scenario_plans(order, completed_close=completed)
         self.assertEqual(len(plans), 9)
         self.assertTrue(all(row["status"] == "INELIGIBLE" for row in plans))
-        self.assertTrue(all(row["reason"] == "REJECT_V4_1_ORDER_VERSION" for row in plans))
+        self.assertTrue(
+            all(row["reason"] == "REJECT_V4_1_ORDER_VERSION" for row in plans)
+        )
 
 
 if __name__ == "__main__":
