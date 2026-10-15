@@ -1,0 +1,96 @@
+{
+  "version": "MACHINE_STRATEGY_v4.1",
+  "status": "AUDIT_HYPOTHESES_ONLY_NOT_A_STRATEGY_SPEC",
+  "ordering_rule": "ranked from frozen causal evidence, not from profitability sweep",
+  "hypotheses": [
+    {
+      "rank": 0,
+      "id": "H00_CACHED_RETIREMENT_REASON_CENSUS",
+      "type": "AUDIT_PREREQUISITE",
+      "problem": "44 of 54 candidates are all-nine UNFILLED_RETIRED, but rendered summaries do not identify which retirement flag dominates.",
+      "future_action": "derive a cached-only per-candidate retirement-reason census from already frozen case/shard evidence with zero engine calls",
+      "forbidden": "rerun, hypothetical fill reconstruction, alternative lifecycle simulation"
+    },
+    {
+      "rank": 1,
+      "id": "H01_ENTRY_REACHABILITY_VS_STRUCTURAL_VALIDITY",
+      "type": "FUTURE_DESIGN_QUESTION",
+      "problem": "Only 8/54 candidates ever fill; 44 retire rather than expire.",
+      "future_action": "define an outcome-blind pre-entry reachability/validity contract that can detect when a selected entry is structurally implausible to revisit before lifecycle retirement",
+      "constraints": [
+        "must use information available at or before decision",
+        "must not extend lifetime merely because future market later returns",
+        "must preserve no-lookahead and all-nine scenario retention"
+      ]
+    },
+    {
+      "rank": 2,
+      "id": "H02_PREDICTIVE_ADMISSION_BEYOND_DISTANCE_RR",
+      "type": "FUTURE_DESIGN_QUESTION",
+      "problem": "Seven CLOSED cases are gross-negative even before fees/slippage; H05 planned structural RR feasibility did not imply positive hit probability.",
+      "future_action": "seek a causal structural admission feature tied to directional continuation/reversal probability rather than simply increasing target distance or RR threshold",
+      "constraints": [
+        "no RR threshold fit on the seven exposed outcomes",
+        "no future MFE/MAE or exit-path feature",
+        "LONG/SHORT mirror unless structural source evidence justifies asymmetry"
+      ]
+    },
+    {
+      "rank": 3,
+      "id": "H03_FAMILY_REACHABILITY_TELEMETRY",
+      "type": "FUTURE_DESIGN_QUESTION",
+      "problem": "STB supplies 38/54 candidates while OB supplies 0 and BREAKER 1.",
+      "future_action": "add outcome-blind formation-to-candidate gate telemetry for all five families so unreachable family rules and over-dominant branches can be diagnosed before financial outcomes",
+      "constraints": [
+        "telemetry cannot influence current decisions",
+        "do not select families from observed PnL",
+        "preserve source-vs-project-policy provenance"
+      ]
+    },
+    {
+      "rank": 4,
+      "id": "H04_DIRECTIONAL_STRUCTURE_REVALIDATION",
+      "type": "FUTURE_RESEARCH_QUESTION",
+      "problem": "SHORT accounts for 6/7 CLOSED and 5/6 SHORT losses, but n=6 is too small for a post-result SHORT ban.",
+      "future_action": "review whether the same structural state definitions are genuinely mirror-symmetric for bullish and bearish market mechanics, without using outcome labels to choose a direction",
+      "constraints": [
+        "SHORT remains enabled during diagnosis",
+        "no coin-specific or direction-specific thresholds fit from this sample"
+      ]
+    },
+    {
+      "rank": 5,
+      "id": "H05_EXECUTION_UNCERTAINTY_RESOLUTION",
+      "type": "FUTURE_DATA_QUESTION",
+      "problem": "One all-nine filled RANGE case remains WAIT_INTRABAR_ORDER because M15 OHLC cannot resolve event order.",
+      "future_action": "consider a separately sourced lower-timeframe causal execution evidence layer only if it can be preregistered and consistently available for the full target period",
+      "constraints": [
+        "no imputation",
+        "no selective lower-TF lookup only for ambiguous winners/losers",
+        "not a substitute for fixing broad no-fill/gross-edge problems"
+      ]
+    },
+    {
+      "rank": 6,
+      "id": "H06_COST_MARGIN_PRESERVATION",
+      "type": "INHERITED_CONSTRAINT",
+      "problem": "Base fees+slippage add 481.649528 USDT of drag and doubled costs are worse, while gross is already negative.",
+      "future_action": "retain conservative cost viability and doubled-cost reporting, but do not treat lower assumed fees as a strategy fix",
+      "constraints": [
+        "historical account fee truth remains unverified",
+        "cost assumptions cannot be changed after outcome merely to make v4.1 pass"
+      ]
+    }
+  ],
+  "not_justified_by_evidence": [
+    "disable SHORT",
+    "H4-only strategy",
+    "SFP-only strategy",
+    "remove STB or RANGE",
+    "increase lifetime until fills occur",
+    "lower cost assumptions to rescue PnL",
+    "raise or lower RR threshold based on seven CLOSED cases",
+    "treat the unresolved RANGE case as a win or loss",
+    "call development history OOS"
+  ]
+}
