@@ -43,6 +43,7 @@ def _matching_fvg(index: Any, direction: str, required_bar_starts: set[int], dec
 
 
 def resolve_ob_formation(index: Any, ob_id: str, decision_at: int) -> dict[str, Any]:
+    """Resolve the source-identifiable OB formation only; U3 conservative entry chain is later."""
     raw = index.by_id.get(ob_id)
     if raw is None or raw.get("kind") != "OB":
         return {"state": "OBJECTIVE_FAIL", "reason": "OB_NOT_FOUND", "trade_entry_allowed": False}
@@ -65,11 +66,11 @@ def resolve_ob_formation(index: Any, ob_id: str, decision_at: int) -> dict[str, 
         return {"state": "OBJECTIVE_FAIL", "reason": "OB_NO_HIGH_LOW_WICK_RAID", "trade_entry_allowed": False}
 
     body, upper_wick, lower_wick = _body_wicks(source_bar)
-    # Explicit outcome-blind normalization of the source phrase "large body, small wicks".
+    # TN_OB_BODY_001: the literal ordering "body large, wicks small" is encoded without a fitted percentage.
     body_geometry_pass = body > 0 and body > upper_wick and body > lower_wick
     if not body_geometry_pass:
         return {
-            "state": "OBJECTIVE_FAIL",
+            "state": "NORMALIZATION_FAIL",
             "reason": "OB_BODY_WICK_NORMALIZATION_FAIL",
             "technical_normalization_id": "TN_OB_BODY_001",
             "trade_entry_allowed": False,
@@ -102,15 +103,38 @@ def resolve_ob_formation(index: Any, ob_id: str, decision_at: int) -> dict[str, 
     }
 
 
-def resolve_breaker_from_ob(index: Any, ob: dict[str, Any], decision_at: int) -> dict[str, Any]:
-    if ob.get("state") != "SOURCE_FORMATION_READY":
+def resolve_breaker_from_ob(
+    index: Any,
+    ob: dict[str, Any],
+    decision_at: int,
+    *,
+    whole_impulse: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """A Breaker may only descend from a fully source-resolved OB and a causal whole impulse."""
+    if ob.get("state") != "SOURCE_CHAIN_READY" or ob.get("branch") != "OB_CONSERVATIVE":
         return {"state": "UNKNOWN", "reason": "WAIT_SOURCE_VALID_OB", "trade_entry_allowed": False}
+    if (
+        not whole_impulse
+        or whole_impulse.get("source_validated") is not True
+        or whole_impulse.get("value") is not True
+        or whole_impulse.get("known_at", decision_at + 1) > decision_at
+        or not {"low", "high", "known_at", "evidence"} <= set(whole_impulse)
+    ):
+        return {"state": "UNKNOWN", "reason": "WAIT_BREAKER_WHOLE_IMPULSE", "trade_entry_allowed": False}
+
     original_direction = ob["direction"]
     direction = "SHORT" if original_direction == "LONG" else "LONG"
     low = Decimal(str(ob["zone"]["low"]))
     high = Decimal(str(ob["zone"]["high"]))
+    impulse_low = Decimal(str(whole_impulse["low"]))
+    impulse_high = Decimal(str(whole_impulse["high"]))
+    if impulse_low >= impulse_high:
+        return {"state": "OBJECTIVE_FAIL", "reason": "BREAKER_IMPULSE_GEOMETRY_INVALID", "trade_entry_allowed": False}
+
     for bar in index.bars:
         if bar.start < ob["decision_at"] or bar.end > decision_at:
+            continue
+        if whole_impulse.get("interval_start", bar.start) > bar.start or whole_impulse.get("interval_end", bar.end) < bar.end:
             continue
         broken = bar.close < low if direction == "SHORT" else bar.close > high
         if not broken:
@@ -121,17 +145,18 @@ def resolve_breaker_from_ob(index: Any, ob: dict[str, Any], decision_at: int) ->
         bos = first_directional_bos(index, direction, bar.start, decision_at)
         if bos is None:
             continue
-        stop_anchor = bar.high if direction == "SHORT" else bar.low
+        stop_anchor = impulse_high if direction == "SHORT" else impulse_low
         return {
             "state": "SOURCE_FORMATION_READY",
             "branch": "BREAKER",
             "direction": direction,
             "setup_tf": ob["setup_tf"],
-            "decision_at": max(bar.end, fvg["known_at"], bos["known_at"]),
+            "decision_at": max(bar.end, fvg["known_at"], bos["known_at"], whole_impulse["known_at"]),
             "parent_ob_id": ob["ob_id"],
             "break_bar_start": bar.start,
             "break_imbalance_id": fvg["id"],
             "structure_confirmation_id": bos["id"],
+            "whole_impulse_evidence": whole_impulse["evidence"],
             "entry_zone": {"low": ob["zone"]["body_low"], "high": ob["zone"]["body_high"]},
             "stop_anchor": {"kind": "RAID_IMPULSE_EXTREME", "price": str(stop_anchor)},
             "source_rule_ids": ["S_BREAKER_FORMATION", "S_BREAKER_STOPS", "S_BOS", "S_FVG"],
