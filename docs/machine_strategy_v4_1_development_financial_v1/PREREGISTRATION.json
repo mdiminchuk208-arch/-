@@ -1,0 +1,94 @@
+{
+  "version": "MACHINE_STRATEGY_v4.1",
+  "gate": "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_V1",
+  "state": "PREREGISTERED_BEFORE_HISTORICAL_FINANCIAL_OUTCOMES",
+  "implementation_freeze_commit": "bf9bb4c7ed9e82df42b4fc2eec5df28695edf155",
+  "implementation_manifest_sha256": "e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61",
+  "venue": "OKX",
+  "products": ["BTC-USDT-SWAP", "ETH-USDT-SWAP"],
+  "development_window": {
+    "start_utc": "2024-10-13T00:00:00Z",
+    "end_exclusive_utc": "2026-10-13T00:00:00Z",
+    "classification": "EXPOSED_DEVELOPMENT_NOT_PRISTINE_OOS"
+  },
+  "strategy_scope": {
+    "families": ["SFP", "OB", "BREAKER", "STB", "RANGE"],
+    "directions": ["LONG", "SHORT"],
+    "new_signal_clock": "H1_ONLY",
+    "execution_clock": "EVERY_NATIVE_M15",
+    "frozen_rule_bytes_required": true
+  },
+  "compatibility_scenarios_in_order": [
+    "P01_Q001", "P01_Q100", "P01_Q700",
+    "P05_Q001", "P05_Q100", "P05_Q700",
+    "P20_Q001", "P20_Q100", "P20_Q700"
+  ],
+  "execution": {
+    "pending_lifecycle": "frozen v4/v4.1 event-driven lifecycle before each M15 OPEN; current-bar OPEN/wick execution precedes contact learned at CLOSE",
+    "filled_position_exits": "frozen inherited conservative v3 position observer, including gap/wick ambiguity and SFP body invalidation",
+    "scenario_disagreement": "retain all states; eligibility/fill/CLOSED-vs-non-CLOSED disagreement is qualification STOP",
+    "filled_unknown_exit_max": 0
+  },
+  "costs": {
+    "base_fee_per_leg": "0.0006",
+    "base_slippage_per_leg": "0.0002",
+    "doubled_total_fee_slippage": true,
+    "funding": "sealed actual signed OKX funding with coherent adverse same-timestamp witness and settlement-close proxy",
+    "historical_account_fee_truth": "UNVERIFIED_MODEL_ASSUMPTION"
+  },
+  "accounting": {
+    "design_precision": 50,
+    "ledger_precision": 80,
+    "rounding": "ROUND_HALF_EVEN",
+    "qualification_R_denominator": "immutable reference P01_Q001 U serialized at emission",
+    "scenario_quantity": "frozen scenario quantity retained in actual cash numerator",
+    "adverse_case_value": "minimum valid CLOSED cash/U separately for base and doubled columns; lexical scenario id tie-break"
+  },
+  "qualification": {
+    "closed_trades_min": 200,
+    "win_rate_min": "0.70",
+    "profit_factor_min": "1.20",
+    "net_expectancy_R_min_exclusive": "0",
+    "net_PnL_min_exclusive": "0",
+    "doubled_cost_profit_factor_min": "1.00",
+    "doubled_cost_net_positive": true,
+    "max_drawdown_R_max": "20",
+    "max_consecutive_net_losses_max": 10,
+    "each_coin_direction_closed_min": 30,
+    "each_coin_direction_net_positive": true,
+    "wilson_95pct_win_rate_lower_bound_min": "0.60",
+    "largest_calendar_quarter_profit_share_max": "0.50",
+    "largest_coin_profit_share_max": "0.80",
+    "filled_unknown_exit_max": 0,
+    "no_critical_causality_or_integrity_failure": true
+  },
+  "one_shot_policy": {
+    "historical_financial_runs_authorized": 1,
+    "parameter_sweep_allowed": false,
+    "threshold_tuning_allowed": false,
+    "post_result_direction_removal_allowed": false,
+    "post_result_family_removal_allowed": false,
+    "profitable_slice_selection_allowed": false,
+    "catalog_count_selection_allowed": false,
+    "rule_changes_after_outcomes_require_new_explicit_strategy_version": true
+  },
+  "required_outputs": [
+    "candidate_count", "closed_count", "win_rate", "profit_factor", "expectancy_R",
+    "net_R", "gross_R", "net_cash", "gross_cash", "fees", "slippage", "funding",
+    "max_drawdown_R", "max_loss_streak", "wilson_95pct_lower",
+    "base_vs_doubled_cost", "BTC_vs_ETH", "LONG_vs_SHORT", "family", "setup_tf",
+    "calendar_quarter_concentration", "coin_concentration", "compatibility_disagreements",
+    "unknown_exits"
+  ],
+  "after_result": {
+    "pass": "freeze exact result then robustness and separately registered untouched OOS/forward prerequisites",
+    "fail": "freeze exact result then causal failure audit; no threshold sweep on exposed outcomes"
+  },
+  "safety": {
+    "trade_entry_allowed": false,
+    "PAPER": false,
+    "LIVE": false,
+    "private_exchange_api_allowed": false,
+    "platform_work_allowed": false
+  }
+}
