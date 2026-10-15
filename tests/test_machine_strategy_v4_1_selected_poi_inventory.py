@@ -48,6 +48,55 @@ class TestSelectedPoiInventory(unittest.TestCase):
         )
         self.assertEqual(consumed.consumed_at, 2_600)
 
+    def test_reaction_can_latch_after_physical_registration_but_not_reset(self):
+        inventory = SelectedPoiInventory()
+        state = inventory.register(
+            family="RANGE",
+            formation_id="range-late-reaction",
+            source_parent_id="range-parent",
+            native_tf=60,
+            formation_known_at=1_000,
+            reaction_required_at=None,
+            direction="LONG",
+            range_id="range-2",
+            boundary_price=Decimal("101"),
+        )
+        reacted = inventory.set_reaction_required_at(
+            state.selected_poi_id, known_at=1_900
+        )
+        self.assertEqual(reacted.reaction_required_at, 1_900)
+        same = inventory.set_reaction_required_at(
+            state.selected_poi_id, known_at=1_900
+        )
+        self.assertEqual(same.reaction_required_at, 1_900)
+        with self.assertRaisesRegex(V41Reject, "REJECT_REACTION_TIMESTAMP_RESET"):
+            inventory.set_reaction_required_at(
+                state.selected_poi_id, known_at=2_000
+            )
+
+    def test_late_reaction_is_part_of_eligibility_lower_bound(self):
+        inventory = SelectedPoiInventory()
+        state = inventory.register(
+            family="SFP",
+            formation_id="sfp-late-reaction",
+            source_parent_id="sfp-parent",
+            native_tf=15,
+            formation_known_at=1_000,
+            reaction_required_at=None,
+            existing_id="refined-poi-late",
+        )
+        inventory.set_reaction_required_at(state.selected_poi_id, known_at=1_900)
+        with self.assertRaisesRegex(V41Wait, "WAIT_POI_ELIGIBILITY_LOWER_BOUND"):
+            inventory.latch_m15(
+                state.selected_poi_id,
+                cutoff=1_800,
+                origin_conf_id="conf-A",
+                origin_conf_known_at=1_700,
+                family_prerequisites_complete=True,
+                m4_gate_admissible=True,
+                completed_context_admissible=True,
+            )
+
     def test_preproposal_origin_latch_cannot_be_rebased_by_later_conf(self):
         inventory = SelectedPoiInventory()
         state = inventory.register(
