@@ -76,8 +76,36 @@
       "role": "statistics_robustness_analyst",
       "scope": "SERIAL_POST_RESULT_REVIEW",
       "status": "COMPLETED"
+    },
+    {
+      "agent": "/root/v41_financial_overfit_review",
+      "critical_blockers": [],
+      "evidence": "reviews/OVERFIT_RED_TEAM.json",
+      "invoked": true,
+      "key_findings": [
+        "15of17preregistered qualificationchecks fail.7CLOSED/2WIN5LOSS/basePF0.462899/net-2.433195R. Qualificationfailure separatefrom absenceofintegrityblockers.",
+        "PositiveH4/SFP/LONG slices contain1/2/1CLOSED respectively,overlappingdiagnostics,no basisforruleorproductionclaim.",
+        "Nine modeled grids shareevents andarenotindependenttrades. Exposeddevelopment,modeledcosts/funding timing donotestablishrealizedaccount execution."
+      ],
+      "result": "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_STOP",
+      "role": "overfit_red_team",
+      "scope": "SERIAL_POST_RESULT_REVIEW",
+      "status": "COMPLETED"
+    },
+    {
+      "agent": "/root/v41_financial_final_review",
+      "completion_evidence": "FINAL_REVIEW_RECEIPT.json",
+      "input_inventory": "REVIEW_INPUT_FINAL_INDEPENDENT_REVIEWER.json",
+      "invoked": true,
+      "note": "Actual invocation recorded before final input pins; final completion/verdict in separate receipt avoids hash cycle.",
+      "readiness_confirmed": true,
+      "role": "final_independent_reviewer",
+      "scope": "SEPARATE_FINAL_RESULT_PRESERVATION_AND_FREEZE_ACCEPTANCE"
     }
   ],
+  "completion_rule": "All five post-result reviews complete only when FINAL_REVIEW_RECEIPT.json has review_completed=true and independent_final_acceptance=true; no assertion of final acceptance before receipt.",
+  "final_review_completion_evidence": "FINAL_REVIEW_RECEIPT.json",
+  "first_four_post_result_reviews_completed": true,
   "historical_execution_attempts": 2,
   "historical_runs": 1,
   "operating_model": "root sole writer; serial one read-only specialist",
@@ -88,7 +116,6 @@
     "overfit_red_team",
     "final_independent_reviewer"
   ],
-  "post_result_reviews_complete": false,
   "post_result_roles_required": [
     "backtest_reviewer",
     "cost_funding_auditor",

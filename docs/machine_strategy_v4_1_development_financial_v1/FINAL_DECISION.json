@@ -1,0 +1,117 @@
+{
+  "LIVE": false,
+  "PAPER": false,
+  "auditor_decision": "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_STOP",
+  "case_population": {
+    "LOSS": 5,
+    "WIN": 2,
+    "all_nine_closed": 7,
+    "all_nine_filled": 8,
+    "candidates": 54,
+    "filled_unknown_scenario_states": 9,
+    "filled_unresolved_cases": 1,
+    "frozen_coarse_compatibility_disagreements": 1,
+    "mixed_terminal_status_cases": 0,
+    "no_fill": 46
+  },
+  "checkpoint_sha256": "7dfaa6fb20c07febdbdb4a98278ce6c92ea4d1a026499656b3c9c5ed0280d6f8",
+  "critical_integrity_or_causality_blockers": [],
+  "decision": "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_STOP",
+  "evaluation_accounting": {
+    "bounded_recovery": "Pre-output code/QA/review freeze then50 individually pinned/published groups and one successful aggregate finalization; no strategy changes",
+    "completed_evaluations": 1,
+    "execution_attempts": 2,
+    "original_attempt": "SIGKILL9 before emitted outcomes; original shell exit status unavailable"
+  },
+  "gate": "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_V1",
+  "interpretation": "Correct negative development result accepted for preservation; not a production qualification, not proof of a profitable subgroup, not pristine OOS. All scenario states and unresolved exits retained.",
+  "new_financial_runs_authorized": false,
+  "next_gate": "CAUSAL_FAILURE_AUDIT_ONLY_SEPARATELY_FROZEN_BEFORE_ANY_NEW_DESIGN",
+  "platform_work_allowed": false,
+  "private_exchange_api_allowed": false,
+  "production_candidate": null,
+  "qualification_checks": {
+    "closed_trades_min": false,
+    "coin_concentration": false,
+    "coin_direction_closed_min": false,
+    "coin_direction_net_positive": false,
+    "compatibility_agreement": false,
+    "doubled_net_positive": false,
+    "doubled_profit_factor_min": false,
+    "expectancy_positive": false,
+    "filled_unknown_exit": false,
+    "max_drawdown": true,
+    "max_loss_streak": true,
+    "net_R_positive": false,
+    "net_cash_positive": false,
+    "profit_factor_min": false,
+    "quarter_concentration": false,
+    "wilson": false,
+    "win_rate_min": false
+  },
+  "robustness_or_OOS_runs_authorized": false,
+  "runner_decision": "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_STOP",
+  "stop_reasons": [
+    {
+      "check": "closed_trades_min",
+      "reason": "7 CLOSED below frozen minimum 200; scenario grids are not independent trades."
+    },
+    {
+      "check": "coin_concentration",
+      "reason": "Both coin net-R totals are negative; positive-profit coin share is undefined, not qualifying."
+    },
+    {
+      "check": "coin_direction_closed_min",
+      "reason": "All four coin/direction cohorts below minimum30; BTC LONG has0CLOSED."
+    },
+    {
+      "check": "coin_direction_net_positive",
+      "reason": "BTC SHORT and ETH SHORT negative; BTC LONG has no closed evidence."
+    },
+    {
+      "check": "compatibility_agreement",
+      "reason": "Preserve frozen coarse counter1; this is one filled case with all9 WAIT_INTRABAR_ORDER, actual mixed terminal-status cases0."
+    },
+    {
+      "check": "doubled_net_positive",
+      "reason": "Doubled same-path net is -4.022434930R / -1095.340403537USDT."
+    },
+    {
+      "check": "doubled_profit_factor_min",
+      "reason": "Doubled PF_R0.301548019 below minimum1.00."
+    },
+    {
+      "check": "expectancy_positive",
+      "reason": "Expectancy -0.347599267R is non-positive."
+    },
+    {
+      "check": "filled_unknown_exit",
+      "reason": "9 actual filled unknown-exit scenario states exceed maximum0; no imputed exit."
+    },
+    {
+      "check": "net_R_positive",
+      "reason": "Base net -2.433194869R is non-positive."
+    },
+    {
+      "check": "net_cash_positive",
+      "reason": "Base modeled net -613.690875537USDT is non-positive."
+    },
+    {
+      "check": "profit_factor_min",
+      "reason": "Base PF_R0.462898966 below minimum1.20."
+    },
+    {
+      "check": "quarter_concentration",
+      "reason": "Only one net-positive quarter; its positive-quarter profit share1 exceeds0.50."
+    },
+    {
+      "check": "wilson",
+      "reason": "95% Wilson lower0.082218924 below minimum0.60; IID interval only descriptive with tiny dependent sample."
+    },
+    {
+      "check": "win_rate_min",
+      "reason": "2WIN/5LOSS gives WR28.5714286%, below frozen70% minimum."
+    }
+  ],
+  "trade_entry_allowed": false
+}
