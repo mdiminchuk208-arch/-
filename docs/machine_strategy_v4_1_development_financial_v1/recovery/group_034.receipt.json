@@ -1,0 +1,20 @@
+{
+  "code_sha256": {
+    "scripts/audit_machine_strategy_v4_1_development_financial_v1.py": "36ff82ea16a294e7f3b3bd10649eae9e924caae1b7ce9bae946005781b024591",
+    "scripts/recover_machine_strategy_v4_1_development_financial_v1.py": "99abe74bca60a8c4c4ac4344066dbd97ea36910f12f09a314f9e904fdc748904",
+    "scripts/run_machine_strategy_v4_1_development_financial_v1.py": "8d8da93d4a0da9583bd21a3fd3319fd59b0af01b656354fd958be5d50234b720",
+    "tests/test_machine_strategy_v4_1_development_financial_recovery.py": "4db9ad7099771f74b83ce1bdc0d587d9b511ad60e6c4ecfa4a24567814af9b3a",
+    "tests/test_machine_strategy_v4_1_development_financial_runner.py": "2501fa9ea511197122cc4ba4707c9546cd1989b4950161989e98eac93abc2f62"
+  },
+  "group": {
+    "case_ids": [
+      "3645554ff94956ac9c7eaeaa3f79187fe523e38ed1e556f7022bd54606da8871"
+    ],
+    "decision_at": 1753131600,
+    "index": 34,
+    "product": "ETH-USDT-SWAP"
+  },
+  "input_state_sha256": "fcc82d387732c147f919adef71c111cd564a66e6ce830ffbfea5994da7f7f0e7",
+  "shard_sha256": "13e27e0744ca64abfa440ebdf3e636c451ba4980f2e727b63a8c60f3930ef564",
+  "trade_entry_allowed": false
+}
