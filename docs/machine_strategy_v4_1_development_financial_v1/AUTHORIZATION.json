@@ -1,0 +1,24 @@
+{
+  "gate": "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_V1",
+  "authorization_state": "ONE_SHOT_HISTORICAL_DEVELOPMENT_FINANCIAL_RUN_AUTHORIZED",
+  "authorized_before_any_v4_1_historical_financial_outcome": true,
+  "preregistration_commit": "f5e60538a2c6ea4194177971ac1d433143ddf3a2",
+  "preregistration_blob_sha": "82472eb3a38097f7b01e89fbb8821a4663508a10",
+  "implementation_freeze_commit": "bf9bb4c7ed9e82df42b4fc2eec5df28695edf155",
+  "implementation_manifest_sha256": "e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61",
+  "historical_runs_remaining": 1,
+  "scope": "exact frozen MACHINE_STRATEGY_v4.1 implementation on exposed preregistered OKX development history only",
+  "forbidden": [
+    "parameter sweep",
+    "threshold selection after results",
+    "direction deletion after results",
+    "family deletion after results",
+    "catalog-count-based rule selection",
+    "OOS relabeling of exposed development history",
+    "PAPER",
+    "LIVE",
+    "private exchange API",
+    "platform reconnect"
+  ],
+  "result_handling": "freeze and publish the exact first financial outcome whether PASS or STOP; any strategy rule change requires a new explicit strategy version"
+}
