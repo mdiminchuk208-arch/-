@@ -1,0 +1,76 @@
+{
+  "version": "SOURCE_STRATEGY_REBUILD_v1",
+  "state": "STAGE_2_IN_PROGRESS",
+  "policy": "No normalization is represented as a literal source rule. Unresolved qualitative semantics remain visible and do not silently delete raw source formations from coverage telemetry.",
+  "frozen_initial_normalizations": [
+    {
+      "id": "TN_SWING_001",
+      "status": "PROPOSED_FOR_STAGE_2_QA",
+      "definition": "Strict completed three-bar pivot: center high > both adjacent highs or center low < both adjacent lows.",
+      "source_claim": false,
+      "purpose": "Causal HH/HL/LH/LL object identity."
+    },
+    {
+      "id": "TN_BOS_001",
+      "status": "PROPOSED_FOR_STAGE_2_QA",
+      "definition": "BOS publishes on completed candle close beyond the relevant protected structural level; wick-only crossing does not publish BOS.",
+      "source_claim": false,
+      "purpose": "Deterministic causal break publication while keeping wick sweeps separate."
+    },
+    {
+      "id": "TN_IMBALANCE_001",
+      "status": "PROPOSED_FOR_STAGE_2_QA",
+      "definition": "Three-candle wick gap: bullish if bar3.low > bar1.high; bearish if bar3.high < bar1.low; no minimum gap threshold.",
+      "source_claim": false,
+      "purpose": "Encode source neighboring-shadow inefficiency geometry without a hidden size filter."
+    },
+    {
+      "id": "TN_SFP_001",
+      "status": "PROPOSED_FOR_STAGE_2_QA",
+      "definition": "Raw candidate only: sweep a known level and close back on the pre-sweep side; exact source-valid three-candle pattern remains unresolved.",
+      "source_claim": false,
+      "purpose": "Preserve sweep/body-rejection opportunities without falsely claiming a complete SFP trade rule."
+    }
+  ],
+  "unresolved_semantics": [
+    "UNKNOWN_EQUAL_STRUCTURE",
+    "UNKNOWN_CHOCH_EXACT_SEMANTICS",
+    "UNKNOWN_RANGE_CLARITY",
+    "UNKNOWN_NO_STRUCTURE_NUMERIC_DEFINITION",
+    "UNKNOWN_RANGE_REACTION_COUNT",
+    "UNKNOWN_OB_BODY_LARGE",
+    "UNKNOWN_OB_WICKS_SMALL",
+    "UNKNOWN_OB_ZONE_GEOMETRY",
+    "UNKNOWN_IMPULSE_STRENGTH",
+    "UNKNOWN_BREAKER_ENTRY_ZONE",
+    "UNKNOWN_EQH_EQL_TOLERANCE",
+    "UNKNOWN_TRENDLINE_LIQUIDITY_TOLERANCE",
+    "UNKNOWN_LIQUIDITY_PRIORITY",
+    "UNKNOWN_OTE_LONG_ANCHOR_DIRECTION",
+    "UNKNOWN_SFP_EXACT_THREE_CANDLE_GEOMETRY",
+    "UNKNOWN_SFP_OPTIONAL_FOURTH_CONFIRMATION",
+    "UNKNOWN_SFP_CONTEXT_PRIORITY",
+    "UNKNOWN_AMD_PHASE_BOUNDARIES",
+    "UNKNOWN_RETURN_SPEED",
+    "UNKNOWN_VOLUME_COMPARISON_WINDOW",
+    "UNKNOWN_STOP_POLICY_BY_FAMILY",
+    "UNKNOWN_TARGET_EXIT_POLICY",
+    "UNKNOWN_REENTRY_POLICY",
+    "UNKNOWN_SETUP_LIFETIME"
+  ],
+  "forbidden_without_new_freeze": [
+    "body percentage threshold",
+    "wick percentage threshold",
+    "ATR significance threshold",
+    "range width threshold",
+    "range reaction minimum count",
+    "EQH/EQL price tolerance",
+    "trendline tolerance",
+    "meaningful liquidity score",
+    "smooth approach score",
+    "whole impulse score",
+    "arbitrary order lifetime",
+    "arbitrary cooldown",
+    "outcome-derived family or direction filter"
+  ]
+}
