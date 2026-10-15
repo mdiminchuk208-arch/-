@@ -1,19 +1,26 @@
-# Current batch — v4.1 development financial gate closed
+# Current batch — v4.1 cached-evidence causal failure audit review
 
-State: `MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_STOP`; phase `INDEPENDENTLY_ACCEPTED_RESULT_FROZEN`.
+State: `MACHINE_STRATEGY_V4_1_FAILURE_AUDIT_REVIEW_PENDING`.
 
-The v4.1 development financial gate is complete. One completed evaluation / two documented execution attempts: original SIGKILL9 before emitted outcomes, original shell status unavailable; independently accepted pre-output bounded recovery frozen at dbb79a688073989b70430ef93ea50b3ccc825167, all50 groups individually pinned/committed/pushed, one successful finalization. First complete outcome published before analysis at e7692453c9f11fd9124dbac50596fdbbe1874b70. No rerun, tuning, outcome deletion, imputed exit or frozen strategy change.
+Frozen predecessor: `MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_STOP`. Its result namespace and code/data/results remain immutable. External result manifest SHA256 `d0a05dcd49545ae963a89840aa09388419b5213f963ba0bd266686e622812d74`.
 
-Frozen result namespace: `docs/machine_strategy_v4_1_development_financial_v1/`.
-External result manifest SHA256: `d0a05dcd49545ae963a89840aa09388419b5213f963ba0bd266686e622812d74`.
-External RUN_CHECKPOINT SHA256: `7dfaa6fb20c07febdbdb4a98278ce6c92ea4d1a026499656b3c9c5ed0280d6f8`.
-Independent result-manifest `--resume-existing` verified all pins and exact namespace membership with zero engine calls. Do not add/modify files in this frozen namespace.
+Authored audit artifacts now exist in `docs/machine_strategy_v4_1_failure_audit_v1/`:
+- `AUDIT_PROTOCOL.md`
+- `INPUT_INVENTORY.json`
+- `CAUSAL_EVIDENCE_REGISTRY.json`
+- `UNRESOLVED_EVIDENCE.json`
+- `FAILURE_AUDIT_REPORT.md`
+- `REDESIGN_HYPOTHESES.json`
 
-Fixed exposed OKX development window [2024-10-13,2026-10-13), BTC/ETH swaps, LONG+SHORT, all5families/all9scenarios preserved. Funnel54 candidates ->8all-nine FILLED ->7all-nine CLOSED;46no-fill and1filled unresolved. CLOSED2WIN/5LOSS; WR28.5714286%; PF_R0.462898966; expectancy/AvgR-0.347599267; net-2.433194869R/-613.690875537 modeled USDT. Gross-132.71USDT, fees361.237146, slippage120.412382, signedfunding+0.668652462922. Doubled same-path PF_R0.301548019, net-4.022434930R/-1095.340403537USDT. Not portfolio returns or historical exchange execution truth.
+Current supported diagnosis before independent acceptance:
+- 54 candidates; 46 all-nine no-fill; 8 all-nine filled; 7 all-nine CLOSED; 1 filled unresolved.
+- 396 retired + 18 expired scenario states imply 44 all-nine retired candidates + 2 all-nine expired candidates.
+- 7 CLOSED = 2W/5L, WR 28.5714%, PF_R 0.462899, gross -0.850574R / -132.71 modeled USDT, net -2.433195R / -613.690876 modeled USDT.
+- Costs materially worsen an already-negative gross aggregate.
+- Candidate stream is dominated by STB38; RANGE10, SFP5, BREAKER1, OB0. BTC LONG9 candidates/0CLOSED.
+- SHORT is poor in the tiny CLOSED sample but cannot be removed post-result; positive H4/SFP/LONG tiny slices cannot be selected.
+- One all-nine filled ETH LONG RANGE H1 case remains unresolved `WAIT_INTRABAR_ORDER`; no exit is imputed.
 
-Runner, independent unchanged auditor and all5actual serial reviews support STOP.15of17 preregistered qualification checks fail; only maxDD/lossstreak pass. No separate critical integrity/causality blocker was found. The frozen coarse disagreementcounter1 denotes one case whose9states ALL WAIT_INTRABAR_ORDER; actual mixed terminal-status cases0, actualfilledunknownexitstates9. Preserve raw classification and every unknown; no assigned exit. OB0candidates and BTC LONG9candidates/0CLOSED remain explicit. Tiny positive H4/SFP/LONG slices do not authorize selection.
+Next action is independent review/freeze only, following `agent_control/V4_1_FAILURE_AUDIT_REVIEW_WORK_ORDER.md`. No historical engine calls, financial replay, changed trade simulation, robustness/OOS, tuning or strategy design until audit PASS.
 
-QA: pre-output recovery136tests/sixcommands PASS; post-result138tests/sixcommands PASS; unchanged independent audit1134closed-state arithmetic checks; all17qualification checks concordant; recovery proof192anchors,50published shard/journal links, no engine/requalification calls. Pre-run deterministic/no-lookahead/prefix/future-mutation and synthetic execution/funding evidence remains pinned. Final chain checks and external sealed resume PASS. Full QA was performed before closure; no claim of a new suite or historical replay after closure.
-
-
-Batch closed after independent acceptance, manifest freeze and external resume. Execution quota consumed; no run/initialize/next-group/finalize/replay authorized. Next batch: separately frozen cached-evidence causal failure audit only. trade_entry_allowed=false.
+Safety: `trade_entry_allowed=false`; no PAPER/LIVE/private exchange API/orders/platform; production NONE.
