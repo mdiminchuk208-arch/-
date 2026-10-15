@@ -1,0 +1,20 @@
+{
+  "code_sha256": {
+    "scripts/audit_machine_strategy_v4_1_development_financial_v1.py": "36ff82ea16a294e7f3b3bd10649eae9e924caae1b7ce9bae946005781b024591",
+    "scripts/recover_machine_strategy_v4_1_development_financial_v1.py": "99abe74bca60a8c4c4ac4344066dbd97ea36910f12f09a314f9e904fdc748904",
+    "scripts/run_machine_strategy_v4_1_development_financial_v1.py": "8d8da93d4a0da9583bd21a3fd3319fd59b0af01b656354fd958be5d50234b720",
+    "tests/test_machine_strategy_v4_1_development_financial_recovery.py": "4db9ad7099771f74b83ce1bdc0d587d9b511ad60e6c4ecfa4a24567814af9b3a",
+    "tests/test_machine_strategy_v4_1_development_financial_runner.py": "2501fa9ea511197122cc4ba4707c9546cd1989b4950161989e98eac93abc2f62"
+  },
+  "group": {
+    "case_ids": [
+      "eb9da0ea2c2f4716ee106381f389045ebf9c9a165c7a200f6076918218589dcf"
+    ],
+    "decision_at": 1758708000,
+    "index": 11,
+    "product": "BTC-USDT-SWAP"
+  },
+  "input_state_sha256": "88952446bd1195b7da04a254828c48fa0ee25a1f27be8a700e248f0c3285877a",
+  "shard_sha256": "095708144e3d8a5e64949e2d056520cda5f6723d17c71d8d905fb92da47b7600",
+  "trade_entry_allowed": false
+}
