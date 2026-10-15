@@ -45,3 +45,7 @@ Let the running process finish, immediately checkpoint/commit/push exact outputs
 - v3 failure audit manifest `9b0353dbfeabfa2768f4a1f62af820c128f98c48faad09544acee4c0547867a3`.
 - v3 known diagnostic: 99 candidates, 20 all-nine CLOSED, base WR50%, PF_R0.278459, expectancy -0.309356R, net -6.187114R; doubled WR45%, PF_R0.162663, net -9.243979R. These are not v4.1 outcomes.
 
+
+## Attempt1 interruption
+
+The original process was killed by SIGKILL after15 decision groups, with no emitted case/result/checkpoint files. Exact cause unverified; observed cgroup OOM counters0. Original lock/log and FAILED_ATTEMPT_1.json preserved. No completed financial evaluation/outcome viewed. The work-order pre-output repair clause permits execution-only recovery, subject to independent pre-output QA/review. Do not restart the original --run or delete its reservation. Frozen strategy and original runner/auditor/test bytes unchanged. Next implementation task: bounded durable group workers with externally pinned no-repeat resume and immediate group checkpoint publication.

@@ -11,3 +11,7 @@ The separate result-seal verifier was independently reviewed, corrected and acce
 Next: let the existing one shot finish; immediately commit/push exact outputs before analysis; external-checkpoint resume; independent financial audit; serial backtest/cost/statistics/overfit/separate-final reviews; exact final PASS or STOP and result freeze. No silent rerun, retuning, threshold sweep or profitable-slice selection.
 
 Exposed development remains NOT pristine OOS. Qualification thresholds including CLOSED>=200/WR>=70% unchanged. No OOS/forward/PAPER/LIVE/private API/orders/platform; production candidate NONE; `trade_entry_allowed=false`.
+
+## Attempt1 interruption
+
+The original process was killed by SIGKILL after15 decision groups, with no emitted case/result/checkpoint files. Exact cause unverified; observed cgroup OOM counters0. Original lock/log and FAILED_ATTEMPT_1.json preserved. No completed financial evaluation/outcome viewed. The work-order pre-output repair clause permits execution-only recovery, subject to independent pre-output QA/review. Do not restart the original --run or delete its reservation. Frozen strategy and original runner/auditor/test bytes unchanged. Next implementation task: bounded durable group workers with externally pinned no-repeat resume and immediate group checkpoint publication.

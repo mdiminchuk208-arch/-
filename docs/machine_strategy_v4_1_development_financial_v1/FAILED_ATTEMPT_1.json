@@ -1,0 +1,31 @@
+{
+  "actual_shell_exit_code_available": false,
+  "attempt": 1,
+  "case_level_financial_outputs_exposed": false,
+  "cause": "UNDETERMINED; no Python traceback, cgroup oom/oom_kill counters0",
+  "completed_progress_groups": 15,
+  "exec_server_session": "70357 lost after transport disconnect; actual shell status unavailable",
+  "exit_code_raw": 9,
+  "financial_result_generated_or_viewed": false,
+  "historical_financial_evaluations_completed": 0,
+  "log_sha256": "c6e856c803aec63871cbf743181a8221d504b91858574c617cff58d3d565ce20",
+  "memory_events_observed": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+  "memory_max_bytes_observed": "34359738368",
+  "pid": 278864,
+  "process_state": "Z",
+  "proposed_repair": "Keep original runner/auditor/test bytes immutable. Separate bounded worker uses their unchanged functions, freezes/publishes each completed decision group with external pins, refuses completed-group re-execution, then assembles exact one completed evaluation. Independent pre-output review/QA required. No financial logic or parameter change.",
+  "repair_authority": "V4_1_DEVELOPMENT_FINANCIAL_WORK_ORDER.md: If execution errors before a committed outcome checkpoint and no case-level financial output was exposed, repair implementation-only defects without changing frozen strategy semantics; record every failed attempt.",
+  "required_output_presence": {
+    "BTC-USDT-SWAP.cases.jsonl.gz": false,
+    "BTC-USDT-SWAP.catalog.jsonl.gz": false,
+    "ETH-USDT-SWAP.cases.jsonl.gz": false,
+    "ETH-USDT-SWAP.catalog.jsonl.gz": false,
+    "FINANCIAL_RESULT.json": false,
+    "RUN_CHECKPOINT.json": false,
+    "RUN_RECEIPT.json": false
+  },
+  "run_started_sha256": "128619162a39e0954e7804e3861f0c2e0d86401709636d7464a5c8539e3a85a0",
+  "signal": 9,
+  "state": "FAILED_SIGKILL_BEFORE_ANY_EMITTED_CASE_OR_FINANCIAL_OUTPUT",
+  "trade_entry_allowed": false
+}
