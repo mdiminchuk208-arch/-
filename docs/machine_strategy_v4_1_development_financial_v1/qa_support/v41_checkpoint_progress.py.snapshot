@@ -1,0 +1,16 @@
+import json,sys
+from pathlib import Path
+root=Path('/workspace/-');out=root/'docs/machine_strategy_v4_1_development_financial_v1'
+old_count,old_pin,new_count,new_pin=sys.argv[1:]
+entries=[json.loads(line) for line in (out/'RECOVERY_EXECUTION_JOURNAL.jsonl').read_text().splitlines()]
+pin='bae0748bc00f0c418bff894d4f7ca1c574fa937d8be342df8a51b2b7be92e39c'
+for index,entry in enumerate(entries):
+ assert entry['group_index']==index and entry['input_state_sha256']==pin and entry['actual_worker_exit_code']==0 and entry['financial_values_inspected'] is False
+ pin=entry['output_state_sha256']
+assert len(entries)==int(new_count) and pin==new_pin
+for name in ('STATUS.md','CURRENT_STATE.md','NEXT_TASK.md'):
+ path=root/'agent_control'/name;text=path.read_text()
+ assert old_count+'/50' in text and old_pin in text
+ text=text.replace(old_count+'/50',new_count+'/50').replace(old_pin,new_pin)
+ path.write_text(text)
+print(new_count+' metadata entries: exact external pin chain, actual exit0; no case values read')
