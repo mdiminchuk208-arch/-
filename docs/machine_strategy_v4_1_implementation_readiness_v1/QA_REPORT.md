@@ -1,5 +1,7 @@
-# Executed readiness QA — in progress
+# Readiness QA — full source proof in progress
 
-86 targeted unit/synthetic tests passed in the current continuation. Parent design and v4 STOP exact resumes passed; full data/grid/signed-funding774-receipt check passed. Formal final command logs/receipt are still pending.
+Current component QA:89 targeted unit/synthetic tests and eight commands PASS, including lint/format/type/compile, exact parent resumes and sealed data/source verification. See FINAL_COMPONENT_QA_PROGRESS.json and qa/component_after_telemetry_*.log.
 
-Full source-only replay is running on repaired/integrated production adapter bytes. Earlier interrupted/superseded logs are retained and are not final acceptance. No historical position, fill, exit, financial outcome or metric is generated in this gate. Final READY requires complete current-byte source replay, field conformance, exact logs/hashes and independent reviews.
+The b33e BTC proof passed two complete streams and two cutoff triples, but independent review identified missing mandatory observer gates/context/approach. That proof and source snapshots are retained under qa_before_telemetry and cannot accept the changed adapter. Observer repair025667f0 was independently reviewed and passed bounded tests; a fresh full BTC/ETH production replay is running. Source field checker also now rejects incomplete final receipts, enforces complete telemetry and emits source-only funnel denominators.
+
+No historical positions/fills/exits/financial results were evaluated. Full source and final independent acceptance/freeze remain pending.

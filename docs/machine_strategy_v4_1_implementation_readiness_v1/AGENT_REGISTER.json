@@ -29,16 +29,16 @@
       "scope": "preintegration registration/canonical transport"
     },
     {
-      "acceptance": "full receipt pending",
+      "acceptance": "preliminary current-code acceptance only; fresh complete BTC/ETH proof pending",
       "agent": "/root/v41_no_lookahead_repaired",
-      "result": "found terminal-WAIT, early-origin/reaction publication and multi-parent provenance defects; all repaired with regressions; latest quick review no additional concrete blocker",
+      "result": "Found and repaired registration, provenance, terminal-WAIT, multi-parent and mandatory H00 observer defects; independently accepted observer repair at adapter025667f0 after11bounded regressions",
       "role": "no_lookahead_auditor",
       "scope": "repaired/integrated source, bounded provenance probes"
     },
     {
-      "acceptance": "scoped synthetic PASS; later source-only provenance changes require bounded final scope check",
+      "acceptance": "b33e synthetic acceptance archived; current observer-only adapter scope update pending",
       "agent": "/root/v41_execution_integrated",
-      "result": "79tests PASS; accepted updated runner5d74c73990d77ecbbd7f207c4a7f61b2eb444c6e3140c25c780d528ed35c5673",
+      "result": "Final bounded recheck accepted b33e7dbb: independent86/86PASS and8component commands/current core pins verified; an intervening usage-limit retry failure was not acceptance",
       "role": "execution_auditor",
       "scope": "registered H1/H4 execution, all9, funding, guards and explicit Decimal context"
     }

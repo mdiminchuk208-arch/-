@@ -1,0 +1,19 @@
+{
+  "artifact_sha256": "d2975ce94e732615351f733b2adc4b33cc4d8b044b48363edf203f3beca04160",
+  "command": [
+    "/workspace/crypto-bot-venv/bin/python",
+    "scripts/check_machine_strategy_v4_1_conformance.py",
+    "--partial",
+    "--expected-progress-sha256",
+    "07d452fcdce702b603946d60d132ddca1370e0046c72306f7e774f647c84d536"
+  ],
+  "exit_code": 0,
+  "scope": "BTC_COMPLETE_ARTIFACT_FIELDS_ONLY_FULL_GATE_PENDING",
+  "tested_code_sha256": "46d6ef1bd6606bce449741f685f7aa0971a9b23a60522365b8ec18c9a61b028a",
+  "tool_result": {
+    "gate_complete": false,
+    "historical_position_evaluations": 0,
+    "products": 1,
+    "source_field_conformance": "PASS"
+  }
+}

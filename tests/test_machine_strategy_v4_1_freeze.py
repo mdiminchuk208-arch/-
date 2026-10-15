@@ -9,11 +9,42 @@ from hashlib import sha256
 from pathlib import Path
 from unittest.mock import patch
 
+import check_machine_strategy_v4_1_conformance as field_checker
 import verify_machine_strategy_v4_1_implementation_v1 as verifier
 from check_machine_strategy_v4_1_source_replay import FinancialImportTrap, trap
 
 
 class FreezeTests(unittest.TestCase):
+    def test_final_field_report_cannot_upgrade_single_product_receipt(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "SOURCE_PREFIX_REPLAY_RECEIPT.json").write_text(
+                json.dumps(
+                    {
+                        "source_only_causality": "PASS",
+                        "historical_position_evaluations": 0,
+                        "historical_financial_authorized": False,
+                        "trade_entry_allowed": False,
+                        "products": {"BTC-USDT-SWAP": {}},
+                    }
+                )
+            )
+            with (
+                patch.object(field_checker, "DEST", root),
+                self.assertRaisesRegex(ValueError, "SOURCE_PRODUCT_GAP"),
+            ):
+                field_checker.check()
+
+    def test_partial_field_report_requires_external_progress_pin(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "SOURCE_REPLAY_PROGRESS.json").write_text("{}")
+            with (
+                patch.object(field_checker, "DEST", root),
+                self.assertRaisesRegex(ValueError, "EXTERNAL_PROGRESS_PIN_MISMATCH"),
+            ):
+                field_checker.check(partial=True, expected_progress_sha256="0" * 64)
+
     def test_pin_verification_rejects_changed_bytes_and_path_escape(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

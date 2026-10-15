@@ -40,3 +40,5 @@ Design publication: `96e76edf0e526c588cf87a665da681f577cca77a`. Active gate: MAC
 ## Executed implementation checkpoint (continuation)
 
 Incoming authored commits through0172cfc03500bfe4fdb4822f01afe2d62990eaf8 integrated; distinct production adapter/guarded runner and independent conformance repairs preserved. Eight component commands PASS:86targeted tests, lint/format/type/compile, exact parent resumes, full210240native/4380signed-funding/774receipt data revalidation. Full current-byte source-only replay remains running; not READY and no historical positions/outcomes. See STATUS and COMPONENT_QA_PROGRESS.json; finish full replay/field QA, exact independent review and freeze before any later financial gate.
+
+Observer repair checkpoint: mandatory H00 trace gaps repaired after independent review. Current adapter SHA025667f0067e93974e2745f830ab12d8b53649c3d9371fea4d5c15c6f201423e,89tests/eight component commands PASS. Earlier BTC proof archived qa_before_telemetry as noncurrent. Fresh full two-product proof running with same preregistered cutoffs; exact progress reuse only. Gate remains QA_PENDING.

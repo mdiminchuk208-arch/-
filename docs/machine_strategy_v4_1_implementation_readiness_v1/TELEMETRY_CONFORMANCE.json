@@ -1,7 +1,9 @@
 {
+  "EOF": "raw source-pending censor only at complete sealed horizon; not a historical unfilled trade",
   "append_only": true,
   "code": "immutable machine_strategy_v4_readiness_core.py::GateTelemetry; adapter._emit and registered runner sinks",
   "context_absence": "nonterminal WAIT, never NO_HTF_CONTEXT terminal scalp rejection",
+  "dedup": "only byte/value-equal complete events at same evaluation; invalid changed/future/outcome fields still reach integrity validator",
   "detached_snapshots": true,
   "distinct_denominators": [
     "raw origin",
@@ -13,7 +15,9 @@
     "conditional IF_STILL_PENDING lifecycle",
     "registered synthetic exposure"
   ],
+  "evaluated_context_and_approach": "actual admitted origin_id and classified approach_state; null before evaluation, no invented context",
   "financial_or_future_fields_rejected": true,
+  "funnel_artifact": "TELEMETRY_FUNNEL_SOURCE_ONLY.json, produced by full source field checker after complete replay; historical fill/exit counts NOT_EVALUATED",
   "historical_exposure_denominator": 0,
   "historical_financial_authorized": false,
   "historical_position_evaluations": 0,
@@ -25,6 +29,23 @@
     "H1_PROPOSAL_RESERVED with proposal parent",
     "RETIRE API"
   ],
+  "production_gates": [
+    "completed_data_integrity",
+    "formation_discovery",
+    "structural_invalidation",
+    "reaction",
+    "approach_state",
+    "htf_context",
+    "physical_eligibility",
+    "refinement_and_poi",
+    "entry_geometry",
+    "fta_lifecycle",
+    "payoff_gate",
+    "adverse_liquidity",
+    "reservation_and_order",
+    "EOF"
+  ],
+  "reaction_trace": "completed reaction published in monotonic state/association and reaction gate PASS; optional REACTION_LATCH API is not used by production and no runtime event coverage is claimed",
   "required_fields": [
     "known_at",
     "decision_cutoff",
@@ -36,7 +57,7 @@
     "branch",
     "direction"
   ],
-  "state": "EXECUTED_COMPONENTS_FULL_SOURCE_REPLAY_PENDING",
+  "state": "OBSERVER_REPAIRED_89_TESTS_PASS_FULL_SOURCE_PENDING",
   "strategy_readback": false,
   "trade_entry_allowed": false,
   "validation": "full source conformance validates all emitted timestamps/conditional scope; targeted observer mutation/outcome negatives",

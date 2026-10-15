@@ -117,6 +117,9 @@ class V41HistoricalAdapter(inherited.HistoricalAdapter):
         self._context_cache_at = None
         self._stage = "formation_discovery"
         self._context_id = None
+        self._approach_state = None
+        self._last_observer_emit = {}
+        self._last_observer_diagnostics = {}
         with localcontext() as ctx:
             ctx.prec = 50
             ctx.rounding = ROUND_HALF_EVEN
@@ -130,6 +133,9 @@ class V41HistoricalAdapter(inherited.HistoricalAdapter):
 
     def _emit(self, item, at, gate, status, reason=None, **diagnostics):
         key = (item["formation_id"], item["branch"])
+        # M15 inventory and H1 proposal may evaluate one prerequisite at the
+        # same cutoff. Observer deduplication never feeds the strategy.
+        marker = (key, gate, status)
         if key not in self.sinks:
             self.sinks[key] = GateTelemetry(
                 item["formation_id"],
@@ -140,19 +146,27 @@ class V41HistoricalAdapter(inherited.HistoricalAdapter):
                 item["direction"],
                 item["formation_at"],
             )
+        event = {
+            "gate_name": gate,
+            "event_type": status,
+            "known_at": at,
+            "decision_cutoff": at,
+            "context_id": self._context_id,
+            "approach_state": self._approach_state,
+            "reason_code": reason,
+            "symbol": self.product,
+            "native_tf": item["setup_tf"],
+            **diagnostics,
+        }
+        if self._last_observer_emit.get(marker) == event:
+            return
         try:
-            self.sinks[key].emit(
-                {
-                    "gate_name": gate,
-                    "event_type": status,
-                    "known_at": at,
-                    "decision_cutoff": at,
-                    "context_id": self._context_id,
-                    "approach_state": None,
-                    "reason_code": reason,
-                    **diagnostics,
-                }
-            )
+            self.sinks[key].emit(event)
+            self._last_observer_emit[marker] = event
+            self._last_observer_diagnostics[key] = {
+                "context_id": event["context_id"],
+                "approach_state": event["approach_state"],
+            }
         except V4Reject as exc:
             raise RuntimeError("TELEMETRY_INTEGRITY_STOP") from exc
 
@@ -205,6 +219,7 @@ class V41HistoricalAdapter(inherited.HistoricalAdapter):
         self._stage = "fta_lifecycle"
         nearest, coincident = _select_fta(targets, reference_entry, direction, at)
         raw_fta = Decimal(str(nearest["price"]))
+        self._stage = "entry_geometry"
         plan = v4_executable_plan(
             direction=direction,
             raw_entry=raw["raw_entry"],
@@ -214,6 +229,22 @@ class V41HistoricalAdapter(inherited.HistoricalAdapter):
             structural_high=poi["high"],
             tick=tick,
         )
+        self._emit(
+            item,
+            at,
+            "entry_geometry",
+            "PASS",
+            poi_id=pstate.selected_poi_id,
+            structural_zone_low=canonical_decimal(poi["low"]),
+            structural_zone_high=canonical_decimal(poi["high"]),
+            executable_zone_low=canonical_decimal(plan["exec_low"]),
+            executable_zone_high=canonical_decimal(plan["exec_high"]),
+            raw_entry=canonical_decimal(raw["raw_entry"]),
+            rounded_entry=canonical_decimal(plan["entry"]),
+            structural_stop=canonical_decimal(raw["raw_stop_boundary"]),
+            rounded_stop=canonical_decimal(plan["stop"]),
+        )
+        self._stage = "fta_lifecycle"
         latest_m15 = self.frames[15].bars[self.frames[15].cursor - 1]
         target_lifecycle_ok(
             direction=direction,
@@ -225,18 +256,40 @@ class V41HistoricalAdapter(inherited.HistoricalAdapter):
             item, at, self._stage, "PASS", fta_id=nearest["id"], fta_price=str(raw_fta)
         )
         self._stage = "payoff_gate"
-        payoff = planned_payoff_gate(
-            direction=direction,
-            entry=plan["entry"],
-            stop=plan["stop"],
-            target=plan["target"],
+        sign = 1 if direction == "LONG" else -1
+        gross_move = sign * (plan["target"] - plan["entry"])
+        costs = Decimal("0.0008") * (plan["entry"] + plan["target"])
+        stop_unit = sign * (plan["entry"] - plan["stop"]) + Decimal("0.0008") * (
+            plan["entry"] + plan["stop"]
         )
+        payoff_diagnostics = {
+            "expected_gross_move": canonical_decimal(gross_move),
+            "estimated_round_trip_cost": canonical_decimal(costs),
+            "edge_cost_ratio": canonical_decimal(gross_move / costs),
+            "planned_stop_unit_K_s": canonical_decimal(stop_unit),
+            "qualification_reference_unit_U": canonical_decimal(stop_unit),
+            "net_target_R_doubled_cost": canonical_decimal(
+                (gross_move - 2 * costs) / stop_unit
+            ),
+        }
+        try:
+            payoff = planned_payoff_gate(
+                direction=direction,
+                entry=plan["entry"],
+                stop=plan["stop"],
+                target=plan["target"],
+            )
+        except V4Reject as exc:
+            self._emit(
+                item, at, self._stage, "REJECT", exc.reason, **payoff_diagnostics
+            )
+            raise
         self._emit(
             item,
             at,
             self._stage,
             "PASS",
-            net_target_R_doubled_cost=str(payoff["ratio"]),
+            **payoff_diagnostics,
         )
         self._stage = "adverse_liquidity"
         _, pools = inherited.inventories(
@@ -408,8 +461,11 @@ class V41HistoricalAdapter(inherited.HistoricalAdapter):
             raise V41Reject("EXPIRED_PENDING")
         frame = self.frames[item["setup_tf"]]
         native = frame.bars[frame.cursor - 1]
+        self._stage = "structural_invalidation"
         if _structurally_retired(item, frame, at):
             raise V41Reject("REJECT_STRUCTURAL_APPROACH_INVALID")
+        self._emit(item, at, self._stage, "PASS")
+        self._stage = "reaction"
         if item["next_open_required"]:
             if native.start < item["formation_at"]:
                 raise V41Wait("WAIT_SFP_NEXT_NATIVE_OPEN")
@@ -484,12 +540,17 @@ class V41HistoricalAdapter(inherited.HistoricalAdapter):
         return context, states
 
     def prepare(self, item, at, latch):
+        self._stage = "reaction"
+        self._context_id = None
+        self._approach_state = None
         physical_zones = self.register_family_inventory(item, at)
         previous_reaction = item["reaction_at"]
         self._reaction(item, at)
         if item["reaction_at"] != previous_reaction:
             # Publish completed reaction provenance before any later M4/context WAIT.
             physical_zones = self.register_family_inventory(item, at)
+        self._emit(item, at, "reaction", "PASS")
+        self._stage = "approach_state"
         direction = item["direction"]
         refinement = self.frames[15]
         confirms = [
@@ -527,9 +588,19 @@ class V41HistoricalAdapter(inherited.HistoricalAdapter):
             data_complete=True,
             structurally_retired=False,
         )
+        self._approach_state = approach["state"]
         if approach["state"] == "APPROACH_INVALID":
             raise V41Reject("REJECT_STRUCTURAL_APPROACH_INVALID")
+        self._emit(
+            item, at, self._stage, "PASS", refinement_object_id=conf["confirmation_id"]
+        )
+        self._stage = "htf_context"
         context, states = self._context(item, conf, at)
+        self._context_id = context.get("origin_id", context.get("context_id"))
+        self._emit(
+            item, at, self._stage, "PASS", admission_context_origin_id=self._context_id
+        )
+        self._stage = "physical_eligibility" if latch else "refinement_and_poi"
         if item["branch"] in ("SFP", "OB"):
             bos_at = refinement.bos_by_id[conf["bos_id"]]["known_at"]
             zones = [
@@ -598,6 +669,14 @@ class V41HistoricalAdapter(inherited.HistoricalAdapter):
                 -ps[0]["born_at"],
                 ps[0]["id"],
             ),
+        )
+        self._emit(
+            item,
+            at,
+            self._stage,
+            "PASS",
+            poi_id=state.selected_poi_id,
+            refinement_object_id=conf["confirmation_id"],
         )
         return conf, poi, context, states, approach, state
 
@@ -723,6 +802,10 @@ class V41HistoricalAdapter(inherited.HistoricalAdapter):
                 self.discover(bar.end)
             for key in sorted(set(self.pending) - before):
                 item = self.pending[key]
+                self._context_id = None
+                self._approach_state = None
+                self._emit(item, bar.end, "completed_data_integrity", "PASS")
+                self._emit(item, bar.end, "formation_discovery", "PASS")
                 self.family_sources[item["formation_id"]] = item
                 self.raw_origin_records[key] = (
                     item["formation_id"],
@@ -747,7 +830,7 @@ class V41HistoricalAdapter(inherited.HistoricalAdapter):
                     self._emit(
                         item,
                         bar.end,
-                        "physical_eligibility",
+                        self._stage,
                         "WAIT",
                         getattr(exc, "reason", str(exc)),
                     )
@@ -755,7 +838,7 @@ class V41HistoricalAdapter(inherited.HistoricalAdapter):
                     self._emit(
                         item,
                         bar.end,
-                        "physical_eligibility",
+                        self._stage,
                         "REJECT",
                         getattr(exc, "reason", str(exc)),
                     )
@@ -820,25 +903,51 @@ class V41HistoricalAdapter(inherited.HistoricalAdapter):
                         self._emit(
                             item,
                             bar.end,
-                            "reservation",
+                            "reservation_and_order",
                             "ORDER_EMIT",
                             reservation_id=chosen["case_id"],
+                            context_id=chosen["context"]["origin_id"],
+                            approach_state=chosen["approach"]["state"],
                         )
                     except (V41Reject, inherited_core.ContractReject) as exc:
-                        self._emit(item, bar.end, "reservation", "REJECT", exc.reason)
-                    for key, other, _ in siblings:
+                        self._emit(
+                            item,
+                            bar.end,
+                            "reservation_and_order",
+                            "REJECT",
+                            exc.reason,
+                            context_id=chosen["context"]["origin_id"],
+                            approach_state=chosen["approach"]["state"],
+                        )
+                    for key, other, other_proposal in siblings:
                         if other is not item:
                             self._emit(
                                 other,
                                 bar.end,
-                                "reservation",
+                                "reservation_and_order",
                                 "REJECT",
                                 "PRIORITY_SIBLING",
+                                context_id=other_proposal["context"]["origin_id"],
+                                approach_state=other_proposal["approach"]["state"],
                             )
                         self.pending.pop(key, None)
             last_end = bar.end
             if bar.end in checkpoints:
                 self.checkpoint_digests[bar.end] = self.source_digest(bar.end, orders)
+        if cutoff == self.end:
+            for item in self.pending.values():
+                self._context_id = None
+                self._approach_state = None
+                self._emit(
+                    item,
+                    cutoff,
+                    "EOF",
+                    "EOF_CENSOR",
+                    "PENDING_SOURCE_EOF",
+                    **self._last_observer_diagnostics.get(
+                        (item["formation_id"], item["branch"]), {}
+                    ),
+                )
         return orders, {
             "strategy_version": VERSION,
             "product": self.product,

@@ -110,6 +110,12 @@ class Regressions(unittest.TestCase):
     def test_refined_inventory_exists_during_context_wait_and_latches_old_origin(self):
         source = object.__new__(V41HistoricalAdapter)
         source.inventory = SelectedPoiInventory()
+        source.sinks, source._last_observer_emit, source._last_observer_diagnostics = (
+            {},
+            {},
+            {},
+        )
+        source.symbol, source.product = "BTCUSDT", "BTC-USDT-SWAP"
         source.meta, source.contact_active = {}, set()
         bos_a = {"id": "BOS_A", "known_at": 900, "direction": "LONG"}
         conf_a = {
@@ -161,7 +167,10 @@ class Regressions(unittest.TestCase):
         self.assertEqual(state["reaction_required_at"], 900)
         self.assertEqual(state["expected_origin_conf_id"], "confirmation_A")
         self.assertEqual(source.inventory.snapshot()["events"][0]["known_at"], 1800)
-        source._context = lambda *args: ({"known_at": 2700}, {})
+        source._context = lambda *args: (
+            {"known_at": 2700, "origin_id": "context_A"},
+            {},
+        )
         source.prepare(item, 2700, True)
         source.inventory.observe_native_bar(
             "refined_A",
@@ -189,8 +198,30 @@ class Regressions(unittest.TestCase):
         frame.confirmations.append(conf_b)
         frame.confirm_times.append(3600)
         frame.confirmed_bos["BOS_B"] = 3600
-        source._context = lambda *args: ({"known_at": 3600}, {})
+        source._context = lambda *args: (
+            {"known_at": 3600, "origin_id": "context_B"},
+            {},
+        )
         source.prepare(item, 3600, True)
+        events = source.sinks[("formation", "OB")].snapshot()["events"]
+        contexts = [
+            e
+            for e in events
+            if e["gate_name"] == "htf_context" and e["event_type"] == "PASS"
+        ]
+        self.assertTrue(contexts)
+        self.assertTrue(
+            all(
+                e["context_id"] and e["approach_state"] == "APPROACH_CLEAN"
+                for e in contexts
+            )
+        )
+        self.assertTrue(
+            any(
+                e["gate_name"] == "reaction" and e["event_type"] == "PASS"
+                for e in events
+            )
+        )
         state = source.inventory.state("refined_A")
         self.assertEqual(
             (state["eligibility_at"], state["origin_conf_id"]), (3600, "confirmation_A")
@@ -209,6 +240,33 @@ class Regressions(unittest.TestCase):
             serial({"price": Decimal("100.00"), "nested": [Decimal("0.0100")]}),
             {"price": "100", "nested": ["0.01"]},
         )
+
+    def test_adapter_observer_dedup_does_not_hide_integrity_errors(self):
+        source = object.__new__(V41HistoricalAdapter)
+        source.sinks, source._last_observer_emit, source._last_observer_diagnostics = (
+            {},
+            {},
+            {},
+        )
+        source.symbol, source.product = "BTCUSDT", "BTC-USDT-SWAP"
+        source._context_id, source._approach_state = "known-context", "APPROACH_CLEAN"
+        item = {
+            "formation_id": "f",
+            "branch": "OB",
+            "direction": "LONG",
+            "formation_at": 0,
+            "setup_tf": 60,
+        }
+        source._emit(item, 3600, "htf_context", "PASS")
+        source._emit(item, 3600, "htf_context", "PASS")
+        events = source.sinks[("f", "OB")].snapshot()["events"]
+        self.assertEqual(len(events), 2)  # one FIRST_EVAL and one PASS
+        self.assertEqual(events[-1]["context_id"], "known-context")
+        self.assertEqual(events[-1]["approach_state"], "APPROACH_CLEAN")
+        with self.assertRaisesRegex(RuntimeError, "TELEMETRY_INTEGRITY_STOP"):
+            source._emit(item, 3600, "htf_context", "PASS", known_at=3601)
+        with self.assertRaisesRegex(RuntimeError, "TELEMETRY_INTEGRITY_STOP"):
+            source._emit(item, 3600, "htf_context", "PASS", x={"pnl": "1"})
 
     def test_completed_reaction_is_published_even_when_context_waits(self):
         inv = SelectedPoiInventory()

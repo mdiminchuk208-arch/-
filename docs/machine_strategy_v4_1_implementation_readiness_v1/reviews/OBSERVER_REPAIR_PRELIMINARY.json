@@ -1,0 +1,16 @@
+{
+  "adapter_sha256": "025667f0067e93974e2745f830ab12d8b53649c3d9371fea4d5c15c6f201423e",
+  "agent": "/root/v41_no_lookahead_repaired",
+  "findings": [
+    "mandatory gates emitted",
+    "actual evaluated context/approach",
+    "observer-only dedup cannot hide invalid diagnostics",
+    "no strategy readback or admission/order change observed"
+  ],
+  "fresh_full_proof_required": true,
+  "historical_financial_authorized": false,
+  "independent_bounded_regressions": 11,
+  "obsolete_pretelemetry_BTC_proof": "qa_before_telemetry",
+  "trade_entry_allowed": false,
+  "verdict": "SCOPED_OBSERVER_REPAIR_ACCEPTED_FULL_PROOF_PENDING"
+}

@@ -1,0 +1,34 @@
+{
+  "agent": "/root/v41_execution_integrated",
+  "blockers": [],
+  "component_commands_verified": 8,
+  "evidence_type": "root transcription of independently delivered scoped acceptance",
+  "findings": [
+    "physical firsteligible parent provenance retained",
+    "proposal own deadline validated without rebasing physical origin",
+    "terminal preconsumption reject",
+    "all5families mirrored H1/H4 actual adapter bridge",
+    "9scenarios and fixedU",
+    "canonical50 to80 transport and ambient context isolation",
+    "signed coherent funding/gap/wick/body/EOF/guard tests"
+  ],
+  "historical_financial_authorized": false,
+  "independently_rerun_tests": 86,
+  "retry_history": "One followup failed usage limit; user resumed; successful bounded recheck above is acceptance. Failed turn was not acceptance.",
+  "reviewed_commit": "b33e7dbbcc81f08999504ecd82ff4886a694b2e1",
+  "reviewed_sha256": {
+    "docs/machine_strategy_v4_1_implementation_readiness_v1/COMPONENT_QA_PROGRESS.json": "ecb0c7627ee262d2823191edceeabdaa7cdf8c59054ab7c4874d4e5a9f50990b",
+    "docs/machine_strategy_v4_1_implementation_readiness_v1/qa/component_00.log": "3e32d679509102629ac54d67e9236e44c37253281639172340eba0139b66d8e9",
+    "scripts/machine_strategy_v4_1_contracts.py": "3d7ae78682d17ea5bd4d4af2fe852fde1699b1b055488b787e07ffb2cc2e8037",
+    "scripts/machine_strategy_v4_1_execution_binding.py": "1c3d3445af2d5b84ad9dd9337aaa1480a24f3a371e6488233e9ad68013042f1e",
+    "scripts/machine_strategy_v4_1_funding_guard.py": "05f62cdda8bc89885cde4a7ee12d044e416ac7e9ef6bce00ff33374b8a1c8038",
+    "scripts/machine_strategy_v4_1_guarded_runner.py": "5d74c73990d77ecbbd7f207c4a7f61b2eb444c6e3140c25c780d528ed35c5673",
+    "scripts/machine_strategy_v4_1_historical_adapter.py": "a6e7efad75d48e104efe210350440d1a3a8aa87cb079e3c67e029273372586d0",
+    "scripts/machine_strategy_v4_1_selected_poi_inventory.py": "d79f62e9e29d986b205a6aada9f7aaf6e6d73bf26feb906320af8d0283f6e176",
+    "scripts/machine_strategy_v4_1_synthetic_source_bridge.py": "ea251891bfd7f9254e1753daf89b67aa52b13f0fbd5d2cf4a4a007d57217c2a9"
+  },
+  "role": "execution_auditor",
+  "scope": "registered synthetic execution/accounting + actual source/kernel lifecycle binding; full source causality reviewed separately",
+  "trade_entry_allowed": false,
+  "verdict": "PASS"
+}

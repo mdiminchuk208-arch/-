@@ -2,11 +2,14 @@
 
 from __future__ import annotations
 
+import argparse
 import gzip
 import json
 from collections import Counter
 from hashlib import sha256
 from pathlib import Path
+
+from verify_machine_strategy_v4_1_implementation_v1 import check_source
 
 ROOT = Path(__file__).resolve().parents[1]
 DEST = ROOT / "docs/machine_strategy_v4_1_implementation_readiness_v1"
@@ -17,13 +20,39 @@ def require(condition, reason):
         raise ValueError(reason)
 
 
-def check():
-    receipt = json.loads((DEST / "SOURCE_PREFIX_REPLAY_RECEIPT.json").read_text())
-    require(receipt["source_only_causality"] == "PASS", "SOURCE_NOT_COMPLETE")
+def check(partial=False, expected_progress_sha256=None):
+    name = (
+        "SOURCE_REPLAY_PROGRESS.json"
+        if partial
+        else "SOURCE_PREFIX_REPLAY_RECEIPT.json"
+    )
+    content = (DEST / name).read_bytes()
+    receipt = json.loads(content)
+    if partial:
+        require(
+            expected_progress_sha256 == sha256(content).hexdigest(),
+            "EXTERNAL_PROGRESS_PIN_MISMATCH",
+        )
+    else:
+        # Field-level PASS cannot upgrade an incomplete two-product replay.
+        check_source(receipt)
+    for name, expected in receipt["run_context"]["source_code_sha256"].items():
+        require(
+            sha256((ROOT / name).read_bytes()).hexdigest() == expected,
+            "SOURCE_CODE_CHANGED",
+        )
     report = {
-        "scope": "FULL_SEALED_SOURCE_FIELD_PROVENANCE",
+        "scope": "PARTIAL_GATE_COMPLETED_PRODUCT_FIELDS"
+        if partial
+        else "FULL_SEALED_SOURCE_FIELD_PROVENANCE",
+        "gate_complete": not partial,
         "products": {},
         "historical_position_evaluations": 0,
+        "trade_entry_allowed": False,
+    }
+    funnel = {
+        "scope": "SOURCE_ONLY_NO_HISTORICAL_POSITION_COUNTS",
+        "products": {},
         "trade_entry_allowed": False,
     }
     for product, result in receipt["products"].items():
@@ -99,8 +128,26 @@ def check():
                 type(event["known_at"]) is int and event["known_at"] >= 0,
                 "INVENTORY_EVENT_TIME",
             )
+        gate_counts = {}
         for sink in audit["telemetry"]:
+            first_gates = set()
+            terminals = 0
             for event in sink["events"]:
+                require(
+                    {
+                        "formation_id",
+                        "physical_bucket_id",
+                        "gate_name",
+                        "event_type",
+                        "known_at",
+                        "decision_cutoff",
+                        "context_id",
+                        "approach_state",
+                        "reason_code",
+                    }
+                    <= event.keys(),
+                    "TELEMETRY_REQUIRED_FIELDS",
+                )
                 require(
                     event["known_at"] <= event["decision_cutoff"],
                     "TELEMETRY_FUTURE_EVENT",
@@ -112,6 +159,65 @@ def check():
                     ),
                     "CONTEXT_WAIT_BECAME_TERMINAL_SCALP_REJECT",
                 )
+                gate, kind = event["gate_name"], event["event_type"]
+                counter = gate_counts.setdefault(
+                    gate,
+                    {
+                        "first_evaluated_origins": set(),
+                        "first_pass_origins": set(),
+                        "waiting_origins": set(),
+                        "wait_evaluations": 0,
+                        "terminal_origins": set(),
+                    },
+                )
+                origin = sink["formation_id"]
+                if kind == "FIRST_EVAL":
+                    require(gate not in first_gates, "DUPLICATE_FIRST_EVAL")
+                    first_gates.add(gate)
+                    counter["first_evaluated_origins"].add(origin)
+                elif kind == "PASS":
+                    counter["first_pass_origins"].add(origin)
+                elif kind == "WAIT":
+                    counter["waiting_origins"].add(origin)
+                    counter["wait_evaluations"] += 1
+                elif kind in ("REJECT", "RETIRE", "EOF_CENSOR"):
+                    counter["terminal_origins"].add(origin)
+                    terminals += 1
+                if gate == "approach_state" and kind == "PASS":
+                    require(
+                        event["approach_state"]
+                        in ("APPROACH_CLEAN", "APPROACH_CORRECTIVE"),
+                        "MISSING_EVALUATED_APPROACH",
+                    )
+                if gate in (
+                    "htf_context",
+                    "refinement_and_poi",
+                    "physical_eligibility",
+                    "entry_geometry",
+                    "fta_lifecycle",
+                    "payoff_gate",
+                    "adverse_liquidity",
+                    "reservation_and_order",
+                ) and kind in ("PASS", "ORDER_EMIT"):
+                    require(
+                        event["context_id"] and event["approach_state"],
+                        "MISSING_EVALUATED_CONTEXT_OR_APPROACH",
+                    )
+            require(terminals <= 1, "MULTIPLE_TERMINAL_ORIGIN_EVENTS")
+        funnel["products"][product] = {
+            "source_raw_origins": len(raw),
+            "unique_physical_buckets": len(
+                {s["physical_bucket_id"] for s in audit["telemetry"]}
+            ),
+            "physical_selected_POIs": len(inventory["states"]),
+            "pre_entry_model_proposals": len(orders),
+            "historical_position_evaluations": 0,
+            "historical_fill_exit_counts": "NOT_EVALUATED",
+            "per_gate": {
+                g: {k: len(v) if isinstance(v, set) else v for k, v in c.items()}
+                for g, c in sorted(gate_counts.items())
+            },
+        }
         for conditional in audit["conditional_pending_lifecycle"]:
             require(
                 conditional["scope"] == "IF_STILL_PENDING"
@@ -155,15 +261,31 @@ def check():
             "all_conditional_lifecycle_events_validated": True,
             "historical_fills_or_exits_evaluated": False,
         }
-    (DEST / "FULL_SOURCE_CONFORMANCE_RECEIPT.json").write_text(
-        json.dumps(report, indent=2, sort_keys=True) + "\n"
+    report_name = (
+        "FULL_SOURCE_CONFORMANCE.partial.json"
+        if partial
+        else "FULL_SOURCE_CONFORMANCE_RECEIPT.json"
     )
+    (DEST / report_name).write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
+    funnel_name = (
+        "TELEMETRY_FUNNEL_SOURCE_ONLY.partial.json"
+        if partial
+        else "TELEMETRY_FUNNEL_SOURCE_ONLY.json"
+    )
+    (DEST / funnel_name).write_text(json.dumps(funnel, indent=2, sort_keys=True) + "\n")
     return {
-        "full_source_conformance": "PASS",
+        "source_field_conformance": "PASS",
+        "gate_complete": not partial,
         "products": len(report["products"]),
         "historical_position_evaluations": 0,
     }
 
 
 if __name__ == "__main__":
-    print(json.dumps(check(), sort_keys=True))
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--partial", action="store_true")
+    parser.add_argument("--expected-progress-sha256")
+    args = parser.parse_args()
+    print(
+        json.dumps(check(args.partial, args.expected_progress_sha256), sort_keys=True)
+    )
