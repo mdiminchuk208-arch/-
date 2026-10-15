@@ -1,0 +1,105 @@
+{
+  "commands": [
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_machine_strategy_v4_1*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_development_financial_v1/qa/final_qa_00.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "check",
+        "scripts/audit_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/report_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/run_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/verify_machine_strategy_v4_1_development_financial_v1.py",
+        "tests/test_machine_strategy_v4_1_development_financial_freeze.py",
+        "tests/test_machine_strategy_v4_1_development_financial_runner.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_development_financial_v1/qa/final_qa_01.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "format",
+        "--check",
+        "scripts/audit_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/report_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/run_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/verify_machine_strategy_v4_1_development_financial_v1.py",
+        "tests/test_machine_strategy_v4_1_development_financial_freeze.py",
+        "tests/test_machine_strategy_v4_1_development_financial_runner.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_development_financial_v1/qa/final_qa_02.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/mypy",
+        "--follow-imports=silent",
+        "scripts/audit_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/report_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/run_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/verify_machine_strategy_v4_1_development_financial_v1.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_development_financial_v1/qa/final_qa_03.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "py_compile",
+        "scripts/audit_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/report_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/run_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/verify_machine_strategy_v4_1_development_financial_v1.py",
+        "tests/test_machine_strategy_v4_1_development_financial_freeze.py",
+        "tests/test_machine_strategy_v4_1_development_financial_runner.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_development_financial_v1/qa/final_qa_04.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "scripts/verify_machine_strategy_v4_1_implementation_v1.py",
+        "--resume-existing",
+        "--expected-manifest-sha256",
+        "e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_development_financial_v1/qa/final_qa_05.log"
+    }
+  ],
+  "historical_financial_runs_started_by_this_qa": 0,
+  "log_sha256": {
+    "docs/machine_strategy_v4_1_development_financial_v1/qa/final_qa_00.log": "cf0ce7899990847f5027cd69eace74a59938506ec5f9f5074072aa85be3a20ca",
+    "docs/machine_strategy_v4_1_development_financial_v1/qa/final_qa_01.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "docs/machine_strategy_v4_1_development_financial_v1/qa/final_qa_02.log": "ef7d13d02214e98ca902b05257cdbe6a8e84f3b4714508efdc19766460b54209",
+    "docs/machine_strategy_v4_1_development_financial_v1/qa/final_qa_03.log": "71144743c83babea384888a735db0c4daba3d4d7b7942b6839984bd5c21b52bb",
+    "docs/machine_strategy_v4_1_development_financial_v1/qa/final_qa_04.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/machine_strategy_v4_1_development_financial_v1/qa/final_qa_05.log": "1cb05a62cf1b2133fe9a24cf7d5469fe6c1e897efb1964788fe89aa5b8decc6b"
+  },
+  "status": "PASS",
+  "tested_sha256": {
+    "scripts/audit_machine_strategy_v4_1_development_financial_v1.py": "36ff82ea16a294e7f3b3bd10649eae9e924caae1b7ce9bae946005781b024591",
+    "scripts/report_machine_strategy_v4_1_development_financial_v1.py": "eb2b2b93673623c3645a51b55ba7209ed945c382ac7758f044822b3c7d96ff9f",
+    "scripts/run_machine_strategy_v4_1_development_financial_v1.py": "8d8da93d4a0da9583bd21a3fd3319fd59b0af01b656354fd958be5d50234b720",
+    "scripts/verify_machine_strategy_v4_1_development_financial_v1.py": "74f3b16b3dba9feb78a35a92cd4e88bbeafde195161adcdfa2b513b5657de1e5",
+    "tests/test_machine_strategy_v4_1_development_financial_freeze.py": "8e9ee20d26e206d95067557e47691b7bdf4fff60fd85b449bf08885ab7eed6b9",
+    "tests/test_machine_strategy_v4_1_development_financial_runner.py": "2501fa9ea511197122cc4ba4707c9546cd1989b4950161989e98eac93abc2f62"
+  },
+  "trade_entry_allowed": false
+}

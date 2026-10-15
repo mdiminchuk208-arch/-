@@ -1,0 +1,35 @@
+{
+  "agent": "/root/v41_financial_backtest_review",
+  "attempts": [
+    {
+      "decision": "CHANGES_REQUIRED",
+      "findings": [
+        "Incomplete reviewer evidence coverage and serial binding",
+        "Final decision not checked for coherence",
+        "Empty/arbitrary pre-run QA inventories accepted",
+        "Partial/truthy audit check map accepted",
+        "Added unpinned namespace files not rejected by resume"
+      ],
+      "reviewed_sha256": {
+        "scripts/verify_machine_strategy_v4_1_development_financial_v1.py": "e1c06193b991901651c532937c0b84a1f1bcf1a12f2bf074e971ebb86e10b7b4",
+        "tests/test_machine_strategy_v4_1_development_financial_freeze.py": "9e217436efec54c0fd0a9f27f24c990196beaa9defb5aa3befba7b24a2ea5b1b"
+      }
+    },
+    {
+      "decision": "CODE_PASS",
+      "findings": "All previously reported material code gaps addressed. Financial verdict pending published first-outcome checkpoint. Agent default Python lacked mypy; root configured-venv mypy passed.",
+      "independent_test_count": 17,
+      "independent_test_result": "PASS",
+      "reviewed_sha256": {
+        "scripts/verify_machine_strategy_v4_1_development_financial_v1.py": "74f3b16b3dba9feb78a35a92cd4e88bbeafde195161adcdfa2b513b5657de1e5",
+        "tests/test_machine_strategy_v4_1_development_financial_freeze.py": "8e9ee20d26e206d95067557e47691b7bdf4fff60fd85b449bf08885ab7eed6b9"
+      }
+    }
+  ],
+  "historical_financial_runs_started_by_this_review": 0,
+  "role": "backtest_reviewer",
+  "runner_auditor_or_strategy_modified_by_this_review": false,
+  "scope": "Nonfinancial result-seal code only. No FINANCIAL_RESULT, case outputs or main log inspected. Not the required post-result financial review.",
+  "trade_entry_allowed": false,
+  "transport": "native collaboration; project role gpt-6-sol/high; read-only"
+}

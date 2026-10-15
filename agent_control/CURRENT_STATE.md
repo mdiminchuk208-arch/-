@@ -27,20 +27,15 @@ Independent post-result auditor: `scripts/audit_machine_strategy_v4_1_developmen
 
 The runner is guarded by committed implementation/preregistration/authorization bytes and refuses execution if final output/checkpoint files already exist. It builds the frozen source catalog first, replays v4.1 pending lifecycle before every M15 OPEN, executes current-bar events before contact published at CLOSE, inherits frozen conservative filled-position exits, retains all nine scenario states, and uses Decimal80 realized accounting without rebuilding Decimal50 design geometry.
 
-**No v4.1 historical financial result exists yet.** Candidate count, CLOSED, WR, PF, expectancy, net P&L, DD and case outcomes have not yet been generated/viewed in this gate. Existing v3 failed numbers remain historical evidence only and are not v4.1 results.
+**The one authorized v4.1 historical financial process is running; no final outcome checkpoint has been inspected.** Existing v3 failed numbers remain historical evidence only and are not v4.1 results.
 
-## Exact next execution
+## Current execution checkpoint
 
-Follow `CURRENT_BATCH.md` and `NEXT_TASK.md`:
-1. verify frozen implementation resume;
-2. execute new runner synthetic/negative QA + relevant inherited execution/funding/static checks;
-3. run `--verify-authorization`;
-4. if no result checkpoint exists, execute exactly one `--run`;
-5. immediately checkpoint/commit/push exact catalog/case/result bytes;
-6. execute independent financial audit and serial backtest/cost/statistics/overfit/final reviews;
-7. freeze exact `MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_PASS` or `..._STOP`.
+Pre-outcome runner QA/authorization and independent execution review PASS were published at `1ae16d34cc0fe3260b041db9bc70c009db45203a`. Exactly ONE authorized historical run is currently reserved and running. RUN_STARTED.json is durable; never launch a second run. Both rebuilt source catalogs were byte-compared against the frozen complete implementation catalogs before finance. No final financial checkpoint has yet been inspected.
 
-After any financial output is emitted, no silent rerun, parameter sweep, threshold tuning, family/direction removal, profitable-slice selection or catalog-count selection is allowed. Any rule change requires a new explicit strategy version. PASS may open robustness and separately registered untouched OOS prerequisites only. STOP opens causal failure audit/new explicit version. No OOS relabeling, PAPER/LIVE/private exchange API/orders/platform in this gate.
+Separate seal/report infrastructure does not invoke the historical engine. An independent preliminary code review required stronger evidence/decision/namespace checks; root repaired the verifier only, and re-review CODE_PASS plus17 isolated tests confirmed the repairs. Full current code QA:127 tests/six commands PASS. New runner/auditor/test bytes remain unchanged from pre-outcome approval. This is not a financial result or qualification claim.
+
+Let the running process finish, immediately checkpoint/commit/push exact outputs, then audit/review the published bytes only. Required result-review order: backtest_reviewer -> cost_funding_auditor -> statistics_robustness_analyst -> overfit_red_team -> separate final_independent_reviewer. Freeze exact PASS or STOP; no silent rerun or tuning. A later rule change requires a new explicit version. No OOS relabeling, PAPER/LIVE/private API/orders/platform.
 
 ## Frozen predecessor evidence retained
 
@@ -50,4 +45,3 @@ After any financial output is emitted, no silent rerun, parameter sweep, thresho
 - v3 failure audit manifest `9b0353dbfeabfa2768f4a1f62af820c128f98c48faad09544acee4c0547867a3`.
 - v3 known diagnostic: 99 candidates, 20 all-nine CLOSED, base WR50%, PF_R0.278459, expectancy -0.309356R, net -6.187114R; doubled WR45%, PF_R0.162663, net -9.243979R. These are not v4.1 outcomes.
 
-Pre-run checkpoint:110tests/sevencommands and real authorization PASS; independent execution reviewer21tests/current hashes PASS. New wrapper-only defects repaired before any historical outcome, frozen implementation bytes unchanged. No historical result/RUN_STARTED exists yet; next action exactly one authorized run, immediate checkpoint/commit/push before analysis. See PRE_RUN_QA_RECEIPT and EXECUTION_PRE_RUN_REVIEW in the development financial namespace.

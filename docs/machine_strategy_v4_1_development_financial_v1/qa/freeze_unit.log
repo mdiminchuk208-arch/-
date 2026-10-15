@@ -1,0 +1,15 @@
+test_arbitrary_external_path_pin_rejected (test_machine_strategy_v4_1_development_financial_freeze.FinancialSealIntegrityTests.test_arbitrary_external_path_pin_rejected) ... ok
+test_changed_payload_cannot_pass_external_checkpoint (test_machine_strategy_v4_1_development_financial_freeze.FinancialSealIntegrityTests.test_changed_payload_cannot_pass_external_checkpoint) ... ok
+test_empty_pin_inventory_rejected (test_machine_strategy_v4_1_development_financial_freeze.FinancialSealIntegrityTests.test_empty_pin_inventory_rejected) ... ok
+test_missing_external_checkpoint_pin_cannot_resume (test_machine_strategy_v4_1_development_financial_freeze.FinancialSealIntegrityTests.test_missing_external_checkpoint_pin_cannot_resume) ... ok
+test_one_shot_count_must_remain_one (test_machine_strategy_v4_1_development_financial_freeze.FinancialSealIntegrityTests.test_one_shot_count_must_remain_one) ... ok
+test_parent_manifest_tamper_rejected (test_machine_strategy_v4_1_development_financial_freeze.FinancialSealIntegrityTests.test_parent_manifest_tamper_rejected) ... ok
+test_result_manifest_cannot_resume_without_external_pin (test_machine_strategy_v4_1_development_financial_freeze.FinancialSealIntegrityTests.test_result_manifest_cannot_resume_without_external_pin) ... ok
+test_runner_auditor_disagreement_never_becomes_pass (test_machine_strategy_v4_1_development_financial_freeze.FinancialSealIntegrityTests.test_runner_auditor_disagreement_never_becomes_pass) ... ok
+test_unknown_decision_rejected (test_machine_strategy_v4_1_development_financial_freeze.FinancialSealIntegrityTests.test_unknown_decision_rejected) ... ok
+test_valid_complete_checkpoint_and_missing_member (test_machine_strategy_v4_1_development_financial_freeze.FinancialSealIntegrityTests.test_valid_complete_checkpoint_and_missing_member) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.003s
+
+OK
