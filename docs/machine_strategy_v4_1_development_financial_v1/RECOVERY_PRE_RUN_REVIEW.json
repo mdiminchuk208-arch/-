@@ -1,0 +1,42 @@
+{
+  "agent": "/root/v41_execution_integrated",
+  "conclusions": [
+    "Within explicit pre-output repair clause; no prior emitted case/result/checkpoint",
+    "Original runner/auditor/runner-test bytes unchanged from1ae16d34",
+    "Unchanged group/case/qualification functions and exact source/catalog/case ordering",
+    "All-nine group partition and external state/code/input pins enforced",
+    "STATE and each artifact must be committed/pushed before advancing",
+    "Exclusive marker/shard and explicit partial-transition STOP; no adoption/reexecution",
+    "Recovery final receipt documents failedattempt1 and attempt2; publication evidence must reflect final assembly exit0, not invent originalrun completion"
+  ],
+  "critical_blockers": [],
+  "full_root_commands_exit_code": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "full_root_test_count": 136,
+  "historical_financial_runs_started": 0,
+  "independent_execution_acceptance": true,
+  "independent_registered_test_count": 9,
+  "independent_registered_test_exit_code": 0,
+  "qa_pins_independently_verified": 14,
+  "reviewed_no_historical_financial_outcomes": true,
+  "reviewed_sha256": {
+    "docs/machine_strategy_v4_1_development_financial_v1/FAILED_ATTEMPT_1.json": "0aaba82860def0ebef620b31fc9234d00c467d19d602bb4f98e8a67517bedc1b",
+    "docs/machine_strategy_v4_1_development_financial_v1/RECOVERY_EXECUTION_PROTOCOL.md": "daf4fad5b857859ae444246c6800cd75d11a9a6d72cbc61a74a15e83e429a267",
+    "docs/machine_strategy_v4_1_development_financial_v1/RECOVERY_PRE_RUN_QA.json": "adaf47890e0510aadd81371eff6b22ce78117fdbbab923d69f4fda4ef33ea520",
+    "docs/machine_strategy_v4_1_development_financial_v1/RUN_STARTED.json": "128619162a39e0954e7804e3861f0c2e0d86401709636d7464a5c8539e3a85a0",
+    "scripts/audit_machine_strategy_v4_1_development_financial_v1.py": "36ff82ea16a294e7f3b3bd10649eae9e924caae1b7ce9bae946005781b024591",
+    "scripts/recover_machine_strategy_v4_1_development_financial_v1.py": "99abe74bca60a8c4c4ac4344066dbd97ea36910f12f09a314f9e904fdc748904",
+    "scripts/run_machine_strategy_v4_1_development_financial_v1.py": "8d8da93d4a0da9583bd21a3fd3319fd59b0af01b656354fd958be5d50234b720",
+    "tests/test_machine_strategy_v4_1_development_financial_recovery.py": "4db9ad7099771f74b83ce1bdc0d587d9b511ad60e6c4ecfa4a24567814af9b3a",
+    "tests/test_machine_strategy_v4_1_development_financial_runner.py": "2501fa9ea511197122cc4ba4707c9546cd1989b4950161989e98eac93abc2f62"
+  },
+  "role": "execution_auditor",
+  "trade_entry_allowed": false,
+  "transport": "Native collaboration project role gpt-6-sol/high read-only; root+one specialist"
+}

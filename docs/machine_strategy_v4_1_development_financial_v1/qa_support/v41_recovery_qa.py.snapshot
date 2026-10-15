@@ -1,0 +1,14 @@
+import json,os,subprocess,hashlib
+from pathlib import Path
+r=Path('/workspace/-');o=r/'docs/machine_strategy_v4_1_development_financial_v1';p='/workspace/crypto-bot-venv/bin/'
+sources=[str(x.relative_to(r)) for x in sorted((r/'scripts').glob('*machine_strategy_v4_1_development_financial*.py'))]+[str(x.relative_to(r)) for x in sorted((r/'tests').glob('*machine_strategy_v4_1_development_financial*.py'))]
+required={'scripts/run_machine_strategy_v4_1_development_financial_v1.py','scripts/audit_machine_strategy_v4_1_development_financial_v1.py','tests/test_machine_strategy_v4_1_development_financial_runner.py','scripts/recover_machine_strategy_v4_1_development_financial_v1.py','tests/test_machine_strategy_v4_1_development_financial_recovery.py'}
+cmds=[[p+'python','-m','unittest','discover','-s','tests','-p','test_machine_strategy_v4_1*.py','-v'],[p+'ruff','check',*sources],[p+'ruff','format','--check',*sources],[p+'mypy','--follow-imports=silent',*[s for s in sources if s.startswith('scripts/')]],[p+'python','-m','py_compile',*sources],[p+'python','scripts/verify_machine_strategy_v4_1_implementation_v1.py','--resume-existing','--expected-manifest-sha256','e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61']]
+entries=[]
+for i,cmd in enumerate(cmds):
+ log=o/f'qa/recovery_pre_run_{i:02d}.log'
+ with log.open('x') as h:done=subprocess.run(cmd,cwd=r,env={**os.environ,'PYTHONPATH':'scripts'},stdout=h,stderr=subprocess.STDOUT)
+ entries.append({'command':cmd,'exit_code':done.returncode,'log':str(log.relative_to(r))});print(i,done.returncode,flush=True)
+sha=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
+data={'status':'PASS' if all(x['exit_code']==0 for x in entries) else 'FAIL','tested_sha256':{s:sha(r/s) for s in sorted(required)},'additional_tested_sha256':{s:sha(r/s) for s in sources if s not in required},'commands':entries,'log_sha256':{x['log']:sha(r/x['log']) for x in entries},'attempt1':'FAILED_SIGKILL_WITHOUT_EMITTED_CASE_OUTCOMES','completed_historical_financial_evaluations_before_qa':0,'case_level_financial_outputs_exposed':False,'historical_financial_runs_started_by_this_qa':0,'trade_entry_allowed':False}
+(o/'RECOVERY_PRE_RUN_QA.json').write_text(json.dumps(data,indent=2,sort_keys=True)+'\n')

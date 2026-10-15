@@ -149,7 +149,8 @@ def report(expected):
                     json.dumps(value) if isinstance(value, (list, dict)) else value
                 )
         if case["status"] == "CLOSED":
-            lower, upper = case["adverse"]["base"]["holding_time_bounds"]
+            bounds = case["adverse"]["base"]["holding_time_bounds"]
+            lower, upper = bounds["minimum_seconds"], bounds["maximum_seconds"]
             for which, value in (("lower", lower), ("upper", upper)):
                 inventory = summary["holding_time_bins_" + which]
                 label = duration_bin(value)

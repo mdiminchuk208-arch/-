@@ -1,0 +1,21 @@
+import hashlib,json,sys
+from pathlib import Path
+root=Path('/workspace/-');out=root/'docs/machine_strategy_v4_1_development_financial_v1'
+roles=['BACKTEST_REVIEWER','COST_FUNDING_AUDITOR','STATISTICS_ROBUSTNESS_ANALYST','OVERFIT_RED_TEAM','FINAL_INDEPENDENT_REVIEWER']
+role=sys.argv[1];index=roles.index(role)
+def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+qa=json.loads((out/'PRE_RUN_QA_RECEIPT.json').read_text())
+pins={**qa['tested_sha256'],**qa['log_sha256']}
+files=['PRE_RUN_QA_RECEIPT.json','RUN_CHECKPOINT.json','INDEPENDENT_FINANCIAL_AUDIT.json','ONE_SHOT_RESULT_PUBLICATION.json','FINANCIAL_RESULT.json','RUN_RECEIPT.json','BTC-USDT-SWAP.catalog.jsonl.gz','ETH-USDT-SWAP.catalog.jsonl.gz','BTC-USDT-SWAP.cases.jsonl.gz','ETH-USDT-SWAP.cases.jsonl.gz','FINAL_CODE_QA_RECEIPT.json','REPORT_CODE_QA_RECEIPT.json','FINANCIAL_REPORT.md','ALL_CASES.csv','ALL_SCENARIO_STATES.csv','REPORT_DATA.json']
+for previous in roles[:index]:files.append('reviews/'+previous+'.json')
+if index==4:files.extend(['FINAL_DECISION.json','AGENT_REGISTER.json'])
+for name in files:pins[str((out/name).relative_to(root))]=sha(out/name)
+for name in ('scripts/verify_machine_strategy_v4_1_development_financial_v1.py','scripts/report_machine_strategy_v4_1_development_financial_v1.py','tests/test_machine_strategy_v4_1_development_financial_freeze.py','agent_control/V4_1_DEVELOPMENT_FINANCIAL_WORK_ORDER.md'):
+    pins[name]=sha(root/name)
+for record in ('FINAL_CODE_QA_RECEIPT.json','REPORT_CODE_QA_RECEIPT.json'):
+    data=json.loads((out/record).read_text())
+    pins.update(data['log_sha256'])
+previous=sha(out/('reviews/'+roles[index-1]+'.json')) if index else None
+value={'role':role,'sequence':index+1,'previous_review_sha256':previous,'reviewed_sha256':dict(sorted(pins.items())),'scope':'Exact published first one-shot result only; no historical --run/replay, no source tuning, no writes or nested agents','checkpoint_sha256':sha(out/'RUN_CHECKPOINT.json')}
+path=out/('REVIEW_INPUT_'+role+'.json');path.write_text(json.dumps(value,indent=2,sort_keys=True)+'\n')
+print(path.relative_to(root),sha(path),len(pins))

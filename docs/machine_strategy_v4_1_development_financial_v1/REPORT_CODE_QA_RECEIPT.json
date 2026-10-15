@@ -1,0 +1,38 @@
+{
+  "commands": [
+    {
+      "check": "ruff check",
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_development_financial_v1/qa/report_lint.log"
+    },
+    {
+      "check": "ruff format --check",
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_development_financial_v1/qa/report_format.log"
+    },
+    {
+      "check": "mypy --follow-imports=silent",
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_development_financial_v1/qa/report_type.log"
+    },
+    {
+      "check": "python -m py_compile",
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_development_financial_v1/qa/report_compile.log"
+    }
+  ],
+  "historical_engine_calls": 0,
+  "log_sha256": {
+    "docs/machine_strategy_v4_1_development_financial_v1/qa/report_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/machine_strategy_v4_1_development_financial_v1/qa/report_format.log": "fd2299c9f1c6dc869070883e281051bfe93aacf66c1a3b0069f45b4aa410ca50",
+    "docs/machine_strategy_v4_1_development_financial_v1/qa/report_lint.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "docs/machine_strategy_v4_1_development_financial_v1/qa/report_type.log": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e"
+  },
+  "purpose": "Presentation only: retain observer minimum/maximum duration seconds dictionary; no engine or financial-rule changes",
+  "status": "PASS",
+  "supersedes_reporter_pin_only_in": "FINAL_CODE_QA_RECEIPT.json",
+  "tested_sha256": {
+    "scripts/report_machine_strategy_v4_1_development_financial_v1.py": "fd6c76546a118addc8a83db96a08479d09ce0175be0fc016206ce8c6395678af"
+  },
+  "trade_entry_allowed": false
+}

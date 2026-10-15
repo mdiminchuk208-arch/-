@@ -49,3 +49,7 @@ Let the running process finish, immediately checkpoint/commit/push exact outputs
 ## Attempt1 interruption
 
 The original process was killed by SIGKILL after15 decision groups, with no emitted case/result/checkpoint files. Exact cause unverified; observed cgroup OOM counters0. Original lock/log and FAILED_ATTEMPT_1.json preserved. No completed financial evaluation/outcome viewed. The work-order pre-output repair clause permits execution-only recovery, subject to independent pre-output QA/review. Do not restart the original --run or delete its reservation. Frozen strategy and original runner/auditor/test bytes unchanged. Next implementation task: bounded durable group workers with externally pinned no-repeat resume and immediate group checkpoint publication.
+
+## Bounded recovery pre-output READY
+
+Recovery worker/aggregator independently accepted on exact code/test/QA/protocol hashes. Full recovery QA:136 tests and6 commands PASS; independent execution9 tests PASS. Original3 financial source/test bytes unchanged. Each fixed group uses unchanged primitives and must be immediately published; verified external STATE resume performs zero engine calls. Partial marker/shard transition is STOP, without overwrite/reexecution. No new historical case output exists before this code+QA+review freeze. Initialize source-only recovery after this checkpoint is committed/pushed, then process all50 groups in fixed order. One completed evaluation only; first SIGKILL attempt remains preserved.

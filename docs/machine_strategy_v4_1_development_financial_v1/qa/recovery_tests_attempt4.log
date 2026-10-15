@@ -1,0 +1,14 @@
+test_aggregation_requires_complete_exact_partition_and_receipts (test_machine_strategy_v4_1_development_financial_recovery.BoundedRecoveryTests.test_aggregation_requires_complete_exact_partition_and_receipts) ... ok
+test_bounded_worker_and_final_assembly_match_registered_case_exactly (test_machine_strategy_v4_1_development_financial_recovery.BoundedRecoveryTests.test_bounded_worker_and_final_assembly_match_registered_case_exactly) ... ok
+test_completed_or_existing_group_cannot_execute_again (test_machine_strategy_v4_1_development_financial_recovery.BoundedRecoveryTests.test_completed_or_existing_group_cannot_execute_again) ... ok
+test_exclusive_create_never_replaces_a_completed_payload (test_machine_strategy_v4_1_development_financial_recovery.BoundedRecoveryTests.test_exclusive_create_never_replaces_a_completed_payload) ... ok
+test_frozen_original_bytes_are_preserved (test_machine_strategy_v4_1_development_financial_recovery.BoundedRecoveryTests.test_frozen_original_bytes_are_preserved) ... ok
+test_group_rejects_missing_duplicate_identity_and_scenario_coverage (test_machine_strategy_v4_1_development_financial_recovery.BoundedRecoveryTests.test_group_rejects_missing_duplicate_identity_and_scenario_coverage) ... ok
+test_no_boolean_or_path_can_authorize_recovery (test_machine_strategy_v4_1_development_financial_recovery.BoundedRecoveryTests.test_no_boolean_or_path_can_authorize_recovery) ... ok
+test_registered_closed_source_survives_json_round_trip_exactly (test_machine_strategy_v4_1_development_financial_recovery.BoundedRecoveryTests.test_registered_closed_source_survives_json_round_trip_exactly) ... ok
+test_state_requires_external_pin_and_committed_same_bytes (test_machine_strategy_v4_1_development_financial_recovery.BoundedRecoveryTests.test_state_requires_external_pin_and_committed_same_bytes) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.089s
+
+OK
