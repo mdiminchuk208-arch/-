@@ -39,6 +39,20 @@
       "purpose": "Encode only the qualitative ordering stated by the source while avoiding a hidden magnitude threshold. Failures are reported separately as NORMALIZATION_FAIL in coverage telemetry."
     },
     {
+      "id": "TN_OB_APPROACH_001",
+      "status": "PROPOSED_FOR_STAGE_2_QA",
+      "definition": "For the source phrase 'smooth structural approach into OB', require a completed four-swing corrective M15 structure into the zone: LH/LL into a LONG OB or HH/HL into a SHORT OB. No distance, candle-body, ATR or speed threshold.",
+      "source_claim": false,
+      "purpose": "Translate the word structural literally into causal market-structure evidence without a fitted smoothness score."
+    },
+    {
+      "id": "TN_OB_REACTION_001",
+      "status": "PROPOSED_FOR_STAGE_2_QA",
+      "definition": "The first M15 bar that intersects the frozen OB zone and completes with its close back beyond the proximal edge in trade direction is the causal OB reaction witness used by U3 before BOS/new-POI search.",
+      "source_claim": false,
+      "purpose": "Give the source reaction->BOS->new POI sequence a deterministic event clock without retrospective best-reaction selection."
+    },
+    {
       "id": "TN_RANGE_BOUNDARY_001",
       "status": "PROPOSED_FOR_STAGE_2_QA",
       "definition": "A raw Range candidate is bounded by its causally known three-bar swing low/high pair. No width, ATR or percentage filter is added. The candidate is not source-ready until midpoint reaction, absence-of-trend evidence, deviation/reclaim, CHOCH/BOS and retest are observed.",
