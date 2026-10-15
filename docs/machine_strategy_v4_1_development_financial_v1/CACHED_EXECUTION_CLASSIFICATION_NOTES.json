@@ -1,0 +1,84 @@
+{
+  "candidate_cohorts": {
+    "coin_direction": {
+      "BTC-USDT-SWAP:LONG": {
+        "ALL_SCENARIOS_NO_FILL": 9
+      },
+      "BTC-USDT-SWAP:SHORT": {
+        "ALL_SCENARIOS_NO_FILL": 13,
+        "CLOSED": 3
+      },
+      "ETH-USDT-SWAP:LONG": {
+        "ALL_SCENARIOS_NO_FILL": 11,
+        "CLOSED": 1,
+        "COMPATIBILITY_DISAGREEMENT": 1
+      },
+      "ETH-USDT-SWAP:SHORT": {
+        "ALL_SCENARIOS_NO_FILL": 13,
+        "CLOSED": 3
+      }
+    },
+    "family": {
+      "BREAKER": {
+        "CLOSED": 1
+      },
+      "RANGE": {
+        "ALL_SCENARIOS_NO_FILL": 8,
+        "CLOSED": 1,
+        "COMPATIBILITY_DISAGREEMENT": 1
+      },
+      "SFP": {
+        "ALL_SCENARIOS_NO_FILL": 3,
+        "CLOSED": 2
+      },
+      "STB": {
+        "ALL_SCENARIOS_NO_FILL": 35,
+        "CLOSED": 3
+      }
+    },
+    "setup_tf": {
+      "240": {
+        "ALL_SCENARIOS_NO_FILL": 18,
+        "CLOSED": 1
+      },
+      "60": {
+        "ALL_SCENARIOS_NO_FILL": 28,
+        "CLOSED": 6,
+        "COMPATIBILITY_DISAGREEMENT": 1
+      }
+    }
+  },
+  "case_status_counts": {
+    "ALL_SCENARIOS_NO_FILL": 46,
+    "CLOSED": 7,
+    "COMPATIBILITY_DISAGREEMENT": 1
+  },
+  "historical_engine_calls": 0,
+  "mixed_scenario_terminal_status_cases": 0,
+  "nonclosed_case_details": [
+    {
+      "branch": "RANGE",
+      "case_id": "d59e9aa4555fe2d50e0615bc43d23b015eb4e224bb49da2f6a7ee88b7656f2dd",
+      "decision_at": 1729828800,
+      "direction": "LONG",
+      "fill_evidence_scenarios": 9,
+      "product": "ETH-USDT-SWAP",
+      "raw_case_status": "COMPATIBILITY_DISAGREEMENT",
+      "scenario_statuses": {
+        "P01_Q001": "WAIT_INTRABAR_ORDER",
+        "P01_Q100": "WAIT_INTRABAR_ORDER",
+        "P01_Q700": "WAIT_INTRABAR_ORDER",
+        "P05_Q001": "WAIT_INTRABAR_ORDER",
+        "P05_Q100": "WAIT_INTRABAR_ORDER",
+        "P05_Q700": "WAIT_INTRABAR_ORDER",
+        "P20_Q001": "WAIT_INTRABAR_ORDER",
+        "P20_Q100": "WAIT_INTRABAR_ORDER",
+        "P20_Q700": "WAIT_INTRABAR_ORDER"
+      },
+      "setup_tf": 60
+    }
+  ],
+  "policy": "Preserve raw compatibility_disagreements=1 and all qualification checks unchanged. Its coarse case label also covers same-status unresolved cases; do not interpret it as evidence of differing terminal states across grids. Filled unresolved case stays excluded from CLOSED statistics and blocks qualification. No imputed exit or rerun.",
+  "source": "Cached immutable published cases only; no engine calls, qualification changes, or new result",
+  "trade_entry_allowed": false
+}

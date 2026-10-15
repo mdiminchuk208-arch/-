@@ -11,6 +11,89 @@ import verify_machine_strategy_v4_1_development_financial_v1 as seal
 
 
 class FinancialSealIntegrityTests(unittest.TestCase):
+    def test_journal_requires_complete_causal_pin_and_shard_identity_chain(self):
+        first = "bae0748bc00f0c418bff894d4f7ca1c574fa937d8be342df8a51b2b7be92e39c"
+        groups = [{"index": 0}, {"index": 1}]
+        pins = {"frozen_worker": "immutable"}
+        entries = []
+        receipts = []
+        markers = []
+        previous = first
+        for index, output in enumerate(("b" * 64, "c" * 64)):
+            entries.append(
+                {
+                    "group_index": index,
+                    "input_state_sha256": previous,
+                    "output_state_sha256": output,
+                    "actual_worker_exit_code": 0,
+                    "financial_values_inspected": False,
+                    "shard_sha256": str(index) * 64,
+                }
+            )
+            receipts.append(
+                {"input_state_sha256": previous, "shard_sha256": str(index) * 64}
+            )
+            markers.append(
+                {
+                    "input_state_sha256": previous,
+                    "group": groups[index],
+                    "code_sha256": pins,
+                }
+            )
+            previous = output
+        seal.journal_integrity(entries, groups, receipts, markers, pins, "c" * 64)
+        with self.assertRaisesRegex(ValueError, "JOURNAL_INCOMPLETE"):
+            seal.journal_integrity(
+                entries[:-1], groups, receipts, markers, pins, "c" * 64
+            )
+        for field, value in (
+            ("group_index", 0),
+            ("input_state_sha256", "a" * 64),
+            ("actual_worker_exit_code", 137),
+            ("financial_values_inspected", True),
+            ("shard_sha256", "a" * 64),
+        ):
+            bad = copy.deepcopy(entries)
+            bad[1][field] = value
+            with (
+                self.subTest(field=field),
+                self.assertRaisesRegex(ValueError, "EXTERNAL_PIN_CHAIN"),
+            ):
+                seal.journal_integrity(bad, groups, receipts, markers, pins, "c" * 64)
+        with self.assertRaisesRegex(ValueError, "PRE_FINALIZE_STATE_DRIFT"):
+            seal.journal_integrity(entries, groups, receipts, markers, pins, "d" * 64)
+
+    def test_recovery_publication_truthfully_distinguishes_failed_original(self):
+        publication = {
+            "checkpoint_sha256": "a" * 64,
+            "mode": "BOUNDED_PRE_OUTPUT_RECOVERY",
+            "historical_run_count": 1,
+            "historical_execution_attempts": 2,
+            "actual_original_runner_exit_code": None,
+            "original_attempt_exit_signal": 9,
+            "actual_recovery_finalize_exit_code": 0,
+            "aggregate_push_actual_exit_code": 0,
+            "analysis_started_only_after_aggregate_push": True,
+        }
+        receipt = {"historical_run_count": 1, "historical_execution_attempts": 2}
+        seal.publication_integrity(publication, receipt, "a" * 64)
+        for field, value in (
+            ("actual_original_runner_exit_code", 0),
+            ("original_attempt_exit_signal", 0),
+            ("actual_recovery_finalize_exit_code", 137),
+            ("historical_execution_attempts", 1),
+            ("analysis_started_only_after_aggregate_push", False),
+            ("aggregate_push_actual_exit_code", 1),
+            ("checkpoint_sha256", "b" * 64),
+        ):
+            with (
+                self.subTest(field=field),
+                self.assertRaisesRegex(ValueError, "FIRST_OUTCOME_PUBLICATION_DRIFT"),
+            ):
+                seal.publication_integrity(
+                    {**publication, field: value}, receipt, "a" * 64
+                )
+
     def test_missing_external_checkpoint_pin_cannot_resume(self):
         with self.assertRaisesRegex(ValueError, "EXTERNAL_CHECKPOINT_PIN_REQUIRED"):
             seal.checkpoint(None)

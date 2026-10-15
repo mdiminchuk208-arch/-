@@ -1,0 +1,23 @@
+import json, os, subprocess, hashlib
+from pathlib import Path
+root=Path('/workspace/-')
+out=root/'docs/machine_strategy_v4_1_development_financial_v1'
+p='/workspace/crypto-bot-venv/bin/'
+sources=[str(x.relative_to(root)) for x in sorted((root/'scripts').glob('*machine_strategy_v4_1_development_financial*.py'))]+[str(x.relative_to(root)) for x in sorted((root/'tests').glob('*machine_strategy_v4_1_development_financial*.py'))]
+commands=[
+[p+'python','-m','unittest','discover','-s','tests','-p','test_machine_strategy_v4_1*.py','-v'],
+[p+'ruff','check',*sources],
+[p+'ruff','format','--check',*sources],
+[p+'mypy','--follow-imports=silent',*[s for s in sources if s.startswith('scripts/')]],
+[p+'python','-m','py_compile',*sources],
+[p+'python','scripts/verify_machine_strategy_v4_1_implementation_v1.py','--resume-existing','--expected-manifest-sha256','e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61'],
+]
+entries=[]
+for i,cmd in enumerate(commands):
+    logfile=out/f'qa/post_result_qa_{i:02d}.log'
+    with logfile.open('x') as handle:
+        done=subprocess.run(cmd,cwd=root,env={**os.environ,'PYTHONPATH':'scripts'},stdout=handle,stderr=subprocess.STDOUT)
+    entries.append({'command':cmd,'exit_code':done.returncode,'log':str(logfile.relative_to(root))})
+    print(i,done.returncode,flush=True)
+receipt={'commands':entries,'status':'PASS' if all(x['exit_code']==0 for x in entries) else 'FAIL','tested_sha256':{s:hashlib.sha256((root/s).read_bytes()).hexdigest() for s in sources},'log_sha256':{x['log']:hashlib.sha256((root/x['log']).read_bytes()).hexdigest() for x in entries},'historical_financial_runs_started_by_this_qa':0,'trade_entry_allowed':False}
+(out/'POST_RESULT_CODE_QA_RECEIPT.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')

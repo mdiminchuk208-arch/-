@@ -1,0 +1,15 @@
+import json,gzip,collections
+from pathlib import Path
+r=Path('/workspace/-');o=r/'docs/machine_strategy_v4_1_development_financial_v1'
+cases=[]
+for product in ('BTC-USDT-SWAP','ETH-USDT-SWAP'):
+ cases.extend(json.loads(x) for x in gzip.decompress((o/f'{product}.cases.jsonl.gz').read_bytes()).splitlines())
+notes={'source':'Cached immutable published cases only; no engine calls, qualification changes, or new result','case_status_counts':dict(collections.Counter(c['status'] for c in cases)),'mixed_scenario_terminal_status_cases':sum(len({s['status'] for s in c['all_scenarios']})>1 for c in cases),'nonclosed_case_details':[],'candidate_cohorts':{},'policy':'Preserve raw compatibility_disagreements=1 and all qualification checks unchanged. Its coarse case label also covers same-status unresolved cases; do not interpret it as evidence of differing terminal states across grids. Filled unresolved case stays excluded from CLOSED statistics and blocks qualification. No imputed exit or rerun.','historical_engine_calls':0,'trade_entry_allowed':False}
+for c in cases:
+ if c['status']=='COMPATIBILITY_DISAGREEMENT':notes['nonclosed_case_details'].append({'case_id':c['case_id'],'product':c['product'],'direction':c['direction'],'branch':c['branch'],'setup_tf':c['setup_tf'],'decision_at':c['decision_at'],'raw_case_status':c['status'],'scenario_statuses':{s['scenario_id']:s['status'] for s in c['all_scenarios']},'fill_evidence_scenarios':sum('fill_price' in s for s in c['all_scenarios'])})
+for dimension,fn in {'coin_direction':lambda c:c['product']+':'+c['direction'],'family':lambda c:c['branch'],'setup_tf':lambda c:str(c['setup_tf'])}.items():
+ buckets=collections.defaultdict(collections.Counter)
+ for c in cases:buckets[fn(c)][c['status']]+=1
+ notes['candidate_cohorts'][dimension]={k:dict(v) for k,v in sorted(buckets.items())}
+(o/'CACHED_EXECUTION_CLASSIFICATION_NOTES.json').write_text(json.dumps(notes,indent=2,sort_keys=True)+'\n')
+print(json.dumps(notes,indent=2))

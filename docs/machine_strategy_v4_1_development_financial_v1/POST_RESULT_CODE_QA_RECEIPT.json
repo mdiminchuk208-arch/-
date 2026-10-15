@@ -1,0 +1,114 @@
+{
+  "commands": [
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_machine_strategy_v4_1*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_development_financial_v1/qa/post_result_qa_00.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "check",
+        "scripts/audit_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/recover_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/report_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/run_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/verify_machine_strategy_v4_1_development_financial_v1.py",
+        "tests/test_machine_strategy_v4_1_development_financial_freeze.py",
+        "tests/test_machine_strategy_v4_1_development_financial_recovery.py",
+        "tests/test_machine_strategy_v4_1_development_financial_runner.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_development_financial_v1/qa/post_result_qa_01.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "format",
+        "--check",
+        "scripts/audit_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/recover_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/report_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/run_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/verify_machine_strategy_v4_1_development_financial_v1.py",
+        "tests/test_machine_strategy_v4_1_development_financial_freeze.py",
+        "tests/test_machine_strategy_v4_1_development_financial_recovery.py",
+        "tests/test_machine_strategy_v4_1_development_financial_runner.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_development_financial_v1/qa/post_result_qa_02.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/mypy",
+        "--follow-imports=silent",
+        "scripts/audit_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/recover_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/report_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/run_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/verify_machine_strategy_v4_1_development_financial_v1.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_development_financial_v1/qa/post_result_qa_03.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "py_compile",
+        "scripts/audit_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/recover_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/report_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/run_machine_strategy_v4_1_development_financial_v1.py",
+        "scripts/verify_machine_strategy_v4_1_development_financial_v1.py",
+        "tests/test_machine_strategy_v4_1_development_financial_freeze.py",
+        "tests/test_machine_strategy_v4_1_development_financial_recovery.py",
+        "tests/test_machine_strategy_v4_1_development_financial_runner.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_development_financial_v1/qa/post_result_qa_04.log"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "scripts/verify_machine_strategy_v4_1_implementation_v1.py",
+        "--resume-existing",
+        "--expected-manifest-sha256",
+        "e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61"
+      ],
+      "exit_code": 0,
+      "log": "docs/machine_strategy_v4_1_development_financial_v1/qa/post_result_qa_05.log"
+    }
+  ],
+  "historical_financial_runs_started_by_this_qa": 0,
+  "log_sha256": {
+    "docs/machine_strategy_v4_1_development_financial_v1/qa/post_result_qa_00.log": "91fb871e2573eb0a4ab49ca3090a95085762cf111ac8d2192074549b38739ca4",
+    "docs/machine_strategy_v4_1_development_financial_v1/qa/post_result_qa_01.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "docs/machine_strategy_v4_1_development_financial_v1/qa/post_result_qa_02.log": "8e93d18ae56550d4eef2feac77e6630617c7e169246e56e39c75d58b46167985",
+    "docs/machine_strategy_v4_1_development_financial_v1/qa/post_result_qa_03.log": "e317872697c2cbfdefa321527a6efe73290dff3a390b0fa8723b87092eccba6a",
+    "docs/machine_strategy_v4_1_development_financial_v1/qa/post_result_qa_04.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/machine_strategy_v4_1_development_financial_v1/qa/post_result_qa_05.log": "1cb05a62cf1b2133fe9a24cf7d5469fe6c1e897efb1964788fe89aa5b8decc6b"
+  },
+  "status": "PASS",
+  "tested_sha256": {
+    "scripts/audit_machine_strategy_v4_1_development_financial_v1.py": "36ff82ea16a294e7f3b3bd10649eae9e924caae1b7ce9bae946005781b024591",
+    "scripts/recover_machine_strategy_v4_1_development_financial_v1.py": "99abe74bca60a8c4c4ac4344066dbd97ea36910f12f09a314f9e904fdc748904",
+    "scripts/report_machine_strategy_v4_1_development_financial_v1.py": "fd6c76546a118addc8a83db96a08479d09ce0175be0fc016206ce8c6395678af",
+    "scripts/run_machine_strategy_v4_1_development_financial_v1.py": "8d8da93d4a0da9583bd21a3fd3319fd59b0af01b656354fd958be5d50234b720",
+    "scripts/verify_machine_strategy_v4_1_development_financial_v1.py": "a6a1830b2c3d7a8c20692cad16e3fe19fb8c0a73dc2dd9bad4aa2c2e5688e987",
+    "tests/test_machine_strategy_v4_1_development_financial_freeze.py": "47a0be6887547f638a9725c60f578d5265bb5afa0cfbb0738f72bb72870dd777",
+    "tests/test_machine_strategy_v4_1_development_financial_recovery.py": "4db9ad7099771f74b83ce1bdc0d587d9b511ad60e6c4ecfa4a24567814af9b3a",
+    "tests/test_machine_strategy_v4_1_development_financial_runner.py": "2501fa9ea511197122cc4ba4707c9546cd1989b4950161989e98eac93abc2f62"
+  },
+  "trade_entry_allowed": false
+}

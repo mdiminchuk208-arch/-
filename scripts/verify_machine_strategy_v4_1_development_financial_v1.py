@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import gzip
 import json
 import subprocess
 from hashlib import sha256
@@ -213,7 +214,122 @@ def namespace_files():
     return result
 
 
-def check(expected):
+def publication_integrity(publication, receipt, expected):
+    require(
+        publication["checkpoint_sha256"] == expected
+        and publication["mode"] == "BOUNDED_PRE_OUTPUT_RECOVERY"
+        and publication["historical_run_count"] == receipt["historical_run_count"] == 1
+        and publication["historical_execution_attempts"]
+        == receipt["historical_execution_attempts"]
+        == 2
+        and publication["actual_original_runner_exit_code"] is None
+        and publication["original_attempt_exit_signal"] == 9
+        and publication["actual_recovery_finalize_exit_code"] == 0
+        and publication["aggregate_push_actual_exit_code"] == 0
+        and publication["analysis_started_only_after_aggregate_push"] is True,
+        "FIRST_OUTCOME_PUBLICATION_DRIFT",
+    )
+
+
+def journal_integrity(entries, groups, receipts, markers, code_pins, expected_last_pin):
+    previous = "bae0748bc00f0c418bff894d4f7ca1c574fa937d8be342df8a51b2b7be92e39c"
+    require(len(entries) == len(groups), "RECOVERY_JOURNAL_INCOMPLETE")
+    for index, entry in enumerate(entries):
+        receipt = receipts[index]
+        marker = markers[index]
+        require(
+            entry["group_index"] == index
+            and entry["input_state_sha256"] == previous
+            and entry["actual_worker_exit_code"] == 0
+            and entry["financial_values_inspected"] is False
+            and receipt["input_state_sha256"]
+            == marker["input_state_sha256"]
+            == previous
+            and receipt["shard_sha256"] == entry["shard_sha256"]
+            and marker["group"] == groups[index]
+            and marker["code_sha256"] == code_pins,
+            "RECOVERY_EXTERNAL_PIN_CHAIN_CHANGED",
+        )
+        previous = entry["output_state_sha256"]
+    require(
+        previous == expected_last_pin,
+        "PRE_FINALIZE_STATE_DRIFT",
+    )
+
+
+def recovery_proof(publication):
+    import recover_machine_strategy_v4_1_development_financial_v1 as recovery
+
+    recovery.authorize()
+    state = recovery.state_load(publication["completion_recovery_state_sha256"])
+    require(
+        state["completed_financial_evaluations"] == 1
+        and state["next_group"] == len(state["groups"]),
+        "RECOVERY_EVALUATION_INCOMPLETE",
+    )
+    catalogs = recovery.catalogs_from(state)
+    cases = recovery.collect_cases(state, catalogs)
+    for product in catalogs:
+        for kind, rows in (("catalog", catalogs[product]), ("cases", cases[product])):
+            payload = b"\n".join(recovery.original._compact(row) for row in rows)
+            payload += b"\n" if rows else b""
+            require(
+                (OUT / f"{product}.{kind}.jsonl.gz").read_bytes()
+                == gzip.compress(payload, mtime=0),
+                "RECOVERY_AGGREGATE_BYTES_CHANGED",
+            )
+    entries = [
+        json.loads(line)
+        for line in (OUT / "RECOVERY_EXECUTION_JOURNAL.jsonl").read_text().splitlines()
+    ]
+    journal_integrity(
+        entries,
+        state["groups"],
+        [
+            read(f"recovery/group_{index:03d}.receipt.json")
+            for index in range(len(entries))
+        ],
+        [
+            read(f"recovery/group_{index:03d}.started.json")
+            for index in range(len(entries))
+        ],
+        state["code_sha256"],
+        publication["pre_finalize_recovery_state_sha256"],
+    )
+    require(
+        digest(OUT / "FAILED_ATTEMPT_1.json")
+        == publication["first_failed_attempt_sha256"],
+        "FAILED_ATTEMPT_PUBLICATION_DRIFT",
+    )
+    require(
+        (OUT / "recovery/STATE.json").read_bytes()
+        == committed_bytes(
+            publication["first_outcome_commit"],
+            str((OUT / "recovery/STATE.json").relative_to(ROOT)),
+        ),
+        "FIRST_COMPLETION_STATE_BYTES_CHANGED",
+    )
+    pins = {**state["artifacts_sha256"], **state["code_sha256"]}
+    qa = read("RECOVERY_PRE_RUN_QA.json")
+    pins.update(qa["log_sha256"])
+    for name in (
+        "recovery/STATE.json",
+        "RECOVERY_PRE_RUN_QA.json",
+        "RECOVERY_PRE_RUN_REVIEW.json",
+        "RECOVERY_EXECUTION_PROTOCOL.md",
+        "RECOVERY_EXECUTION_JOURNAL.jsonl",
+        "FAILED_ATTEMPT_1.json",
+        "RUN_STARTED.json",
+        "qa/one_shot_attempt1_sigkill.log",
+        "qa/recovery_finalize.log",
+        "qa/independent_financial_audit.log",
+    ):
+        pins[str((OUT / name).relative_to(ROOT))] = digest(OUT / name)
+    verify_pins(pins)
+    return pins
+
+
+def base_check(expected):
     parent_pins()
     saved = checkpoint(expected)
     qa_pins = pre_run_qa(read("PRE_RUN_QA_RECEIPT.json"))
@@ -231,12 +347,7 @@ def check(expected):
     )
     audit_integrity(audit, saved["decision"])
     publication = read("ONE_SHOT_RESULT_PUBLICATION.json")
-    require(
-        publication["checkpoint_sha256"] == expected
-        and publication["historical_run_count"] == 1
-        and publication["actual_runner_exit_code"] == 0,
-        "FIRST_OUTCOME_PUBLICATION_DRIFT",
-    )
+    publication_integrity(publication, read("RUN_RECEIPT.json"), expected)
     commit = publication["first_outcome_commit"]
     subprocess.run(
         ["git", "merge-base", "--is-ancestor", PRE_RUN_COMMIT, commit],
@@ -256,6 +367,21 @@ def check(expected):
         "ONE_SHOT_RESULT_PUBLICATION.json",
     ):
         anchors[str((OUT / name).relative_to(ROOT))] = digest(OUT / name)
+    anchors.update(recovery_proof(publication))
+    return {
+        "runner_decision": saved["decision"],
+        "auditor_decision": audit["decision"],
+        "qualification_concordant": saved["decision"] == audit["decision"],
+        "historical_runs": 1,
+        "historical_execution_attempts": 2,
+        "trade_entry_allowed": False,
+        "review_anchors": anchors,
+    }
+
+
+def check(expected):
+    checked = base_check(expected)
+    anchors = checked.pop("review_anchors")
     critical_blockers = []
     previous = None
     for sequence, role in enumerate(ROLES, 1):
@@ -266,9 +392,7 @@ def check(expected):
         previous = digest(path)
         anchors[str(path.relative_to(ROOT))] = previous
     return {
-        "runner_decision": saved["decision"],
-        "auditor_decision": audit["decision"],
-        "qualification_concordant": saved["decision"] == audit["decision"],
+        **checked,
         "critical_blockers": critical_blockers,
         "historical_runs": 1,
         "trade_entry_allowed": False,
@@ -317,6 +441,7 @@ def freeze(expected):
         "gate": "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_V1",
         "decision": final,
         "historical_run_count": 1,
+        "historical_execution_attempts": 2,
         "checkpoint_sha256": expected,
         "implementation_manifest_sha256": PARENT_SHA,
         "artifact_sha256": pins,

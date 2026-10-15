@@ -1,0 +1,19 @@
+{
+  "actual_original_runner_exit_code": null,
+  "actual_recovery_finalize_exit_code": 0,
+  "aggregate_push_actual_exit_code": 0,
+  "all_50_workers_actual_exit_code": 0,
+  "analysis_started_only_after_aggregate_push": true,
+  "checkpoint_sha256": "7dfaa6fb20c07febdbdb4a98278ce6c92ea4d1a026499656b3c9c5ed0280d6f8",
+  "completion_recovery_state_sha256": "b1751fa6d3430555ef5133830c260fc84b06ce680af5acc38b5cbfa2a2ea189c",
+  "first_case_shard_commit": "5ade7353ec30fc706c5e0d6a616ac07a8ddaa30e",
+  "first_failed_attempt_sha256": "0aaba82860def0ebef620b31fc9234d00c467d19d602bb4f98e8a67517bedc1b",
+  "first_outcome_commit": "e7692453c9f11fd9124dbac50596fdbbe1874b70",
+  "historical_execution_attempts": 2,
+  "historical_run_count": 1,
+  "mode": "BOUNDED_PRE_OUTPUT_RECOVERY",
+  "original_attempt_exit_signal": 9,
+  "pre_finalize_recovery_state_sha256": "e4fdeca89eefa0602253fe387da35393596db89a5db4dd7f874b298fb582e650",
+  "publication_scope": "First complete aggregate; prior immutable case shards already committed/pushed individually before each next group",
+  "trade_entry_allowed": false
+}

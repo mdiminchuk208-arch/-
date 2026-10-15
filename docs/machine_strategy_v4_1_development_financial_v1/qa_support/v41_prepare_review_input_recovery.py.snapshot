@@ -1,0 +1,22 @@
+import hashlib,json,sys
+from pathlib import Path
+sys.path.insert(0,'scripts')
+import verify_machine_strategy_v4_1_development_financial_v1 as seal
+root=Path('/workspace/-');out=root/'docs/machine_strategy_v4_1_development_financial_v1'
+roles=['BACKTEST_REVIEWER','COST_FUNDING_AUDITOR','STATISTICS_ROBUSTNESS_ANALYST','OVERFIT_RED_TEAM','FINAL_INDEPENDENT_REVIEWER']
+role=sys.argv[1];index=roles.index(role)
+def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+expected='7dfaa6fb20c07febdbdb4a98278ce6c92ea4d1a026499656b3c9c5ed0280d6f8'
+pins=seal.base_check(expected)['review_anchors']
+files=['POST_RESULT_CODE_QA_RECEIPT.json','FINAL_CODE_QA_RECEIPT.json','REPORT_CODE_QA_RECEIPT.json','FINANCIAL_REPORT.md','ALL_CASES.csv','ALL_SCENARIO_STATES.csv','REPORT_DATA.json','CACHED_EXECUTION_CLASSIFICATION_NOTES.json']
+for previous in roles[:index]:files.append('reviews/'+previous+'.json')
+if index==4:files.extend(['FINAL_DECISION.json','AGENT_REGISTER.json'])
+for name in files:pins[str((out/name).relative_to(root))]=sha(out/name)
+for name in ('scripts/verify_machine_strategy_v4_1_development_financial_v1.py','scripts/report_machine_strategy_v4_1_development_financial_v1.py','tests/test_machine_strategy_v4_1_development_financial_freeze.py','agent_control/V4_1_DEVELOPMENT_FINANCIAL_WORK_ORDER.md'):
+ pins[name]=sha(root/name)
+for record in ('POST_RESULT_CODE_QA_RECEIPT.json','FINAL_CODE_QA_RECEIPT.json','REPORT_CODE_QA_RECEIPT.json'):
+ data=json.loads((out/record).read_text());pins.update(data['log_sha256'])
+previous=sha(out/('reviews/'+roles[index-1]+'.json')) if index else None
+value={'role':role,'sequence':index+1,'previous_review_sha256':previous,'reviewed_sha256':dict(sorted(pins.items())),'scope':'Exact published first completed result and all immutable recovery shards; no history engine/replay, tuning, writes or nested agents','checkpoint_sha256':expected}
+path=out/('REVIEW_INPUT_'+role+'.json');path.write_text(json.dumps(value,indent=2,sort_keys=True)+'\n')
+print(path.relative_to(root),sha(path),len(pins))
