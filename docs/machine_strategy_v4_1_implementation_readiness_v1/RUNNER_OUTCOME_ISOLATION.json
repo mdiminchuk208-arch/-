@@ -18,7 +18,7 @@
     "source_function_trap": "check_machine_strategy_v4_1_source_replay.py::trap",
     "source_import_trap": "FinancialImportTrap actively denies financial modules"
   },
-  "forbidden_until_external_implementation_READY": [
+  "forbidden_in_this_gate_and_not_granted_by_READY": [
     "historical v4/v4.1 fills",
     "historical v4/v4.1 exits",
     "historical case-level PnL or R",

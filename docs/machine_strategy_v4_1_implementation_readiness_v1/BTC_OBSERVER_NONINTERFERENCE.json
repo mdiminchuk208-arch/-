@@ -1,0 +1,25 @@
+{
+  "all_source_and_proposal_state_unchanged": true,
+  "checks": {
+    "audit_conditional_pending_lifecycle_unchanged": true,
+    "audit_cutoff_unchanged": true,
+    "audit_financial_outcomes_generated_unchanged": true,
+    "audit_frame_prefix_digests_unchanged": true,
+    "audit_historical_position_engine_calls_unchanged": true,
+    "audit_historical_position_evaluations_unchanged": true,
+    "audit_inventory_unchanged": true,
+    "audit_product_unchanged": true,
+    "audit_raw_origins_unchanged": true,
+    "audit_strategy_version_unchanged": true,
+    "audit_trade_entry_allowed_unchanged": true,
+    "preentry_model_catalog_unchanged": true
+  },
+  "complete_two_product_proof": false,
+  "current_artifact": "docs/machine_strategy_v4_1_implementation_readiness_v1/BTC_USDT_SWAP.source_only.json.gz",
+  "current_sha256": "031b3ce5b10968d1c5b572798f4116a3582c34a09c764284ef0942ce45a967f2",
+  "historical_position_evaluations": 0,
+  "old_artifact": "docs/machine_strategy_v4_1_implementation_readiness_v1/qa_before_telemetry/BTC_USDT_SWAP.source_only.json.gz",
+  "old_sha256": "517b68a4e27669ea6c1ddc0cc1f3a57b0a568c6c37454cab8f39b05ddf1aa4b7",
+  "scope": "BTC_NONFINANCIAL_OBSERVER_NONINTERFERENCE",
+  "trade_entry_allowed": false
+}

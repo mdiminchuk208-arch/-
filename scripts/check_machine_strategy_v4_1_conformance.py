@@ -206,11 +206,29 @@ def check(partial=False, expected_progress_sha256=None):
             require(terminals <= 1, "MULTIPLE_TERMINAL_ORIGIN_EVENTS")
         funnel["products"][product] = {
             "source_raw_origins": len(raw),
+            "unique_source_formations": len({row[0] for row in raw}),
+            "unique_source_formations_by_family_direction": {
+                key: len({row[0] for row in raw if f"{row[1]}|{row[3]}" == key})
+                for key in sorted({f"{row[1]}|{row[3]}" for row in raw})
+            },
             "unique_physical_buckets": len(
                 {s["physical_bucket_id"] for s in audit["telemetry"]}
             ),
             "physical_selected_POIs": len(inventory["states"]),
+            "candidate_parent_associations": sum(
+                len(associations)
+                for associations in inventory["candidate_associations"].values()
+            ),
+            "eligible_physical_POIs": sum(
+                state["eligibility_at"] is not None
+                for state in inventory["states"].values()
+            ),
+            "reserved_physical_POIs": sum(
+                state["reserved_at"] is not None
+                for state in inventory["states"].values()
+            ),
             "pre_entry_model_proposals": len(orders),
+            "historical_retry_and_exposure_counts": "NOT_EVALUATED",
             "historical_position_evaluations": 0,
             "historical_fill_exit_counts": "NOT_EVALUATED",
             "per_gate": {

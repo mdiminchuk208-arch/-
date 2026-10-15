@@ -1,0 +1,39 @@
+{
+  "agent": "/root/v41_execution_integrated",
+  "blockers": [],
+  "component_receipt_sha256": "905b36369c25f7c2874977d7c569eb9ec3f35e4234811b3e83430c5ce7c19d51",
+  "evidence": [
+    "Eight actual recorded QA commands exit0; all logs present;20/20tested pins exact",
+    "Only _emit suppression differs vs141b2bf; richer validated event retained; new/changed fields validated",
+    "No admission/order/lifecycle/runner/ledger change; previously accepted mirrored H1/H4/all9/canonical transport/funding/guards remain unchanged"
+  ],
+  "historical_financial_authorized": false,
+  "independent_commands": [
+    {
+      "command": "PYTHONPATH=scripts python -m unittest discover -s tests -p test_machine_strategy_v4_1_readiness_regressions.py -v",
+      "exit_code": 0,
+      "tests": 11
+    },
+    {
+      "command": "PYTHONPATH=scripts python -m unittest discover -s tests -p test_machine_strategy_v4_1*.py -v",
+      "exit_code": 0,
+      "seconds": 2.098,
+      "tests": 89
+    }
+  ],
+  "receipt_origin": "Root transcription of actual independent agent message; agent read-only",
+  "reviewed_commit": "81e90016262b028af74c7bac1ff8bba13685d794",
+  "reviewed_sha256": {
+    "scripts/machine_strategy_v4_1_contracts.py": "3d7ae78682d17ea5bd4d4af2fe852fde1699b1b055488b787e07ffb2cc2e8037",
+    "scripts/machine_strategy_v4_1_execution_binding.py": "1c3d3445af2d5b84ad9dd9337aaa1480a24f3a371e6488233e9ad68013042f1e",
+    "scripts/machine_strategy_v4_1_funding_guard.py": "05f62cdda8bc89885cde4a7ee12d044e416ac7e9ef6bce00ff33374b8a1c8038",
+    "scripts/machine_strategy_v4_1_guarded_runner.py": "5d74c73990d77ecbbd7f207c4a7f61b2eb444c6e3140c25c780d528ed35c5673",
+    "scripts/machine_strategy_v4_1_historical_adapter.py": "cdc7d6146ebd0a317d3d9a10de2ff2dd387d3f54fb48e1dab4ca3a95a3e2c038",
+    "scripts/machine_strategy_v4_1_selected_poi_inventory.py": "d79f62e9e29d986b205a6aada9f7aaf6e6d73bf26feb906320af8d0283f6e176",
+    "scripts/machine_strategy_v4_1_synthetic_source_bridge.py": "ea251891bfd7f9254e1753daf89b67aa52b13f0fbd5d2cf4a4a007d57217c2a9"
+  },
+  "role": "execution_auditor",
+  "scope": "Bounded current-code execution acceptance; full source proof and final acceptance separate",
+  "trade_entry_allowed": false,
+  "verdict": "PASS"
+}

@@ -36,9 +36,9 @@
       "scope": "repaired/integrated source, bounded provenance probes"
     },
     {
-      "acceptance": "141b scoped execution accepted; final dedup-only source SHA update pending",
+      "acceptance": "Current execution scope accepted; complete source and final review separate",
       "agent": "/root/v41_execution_integrated",
-      "result": "Current141b2bf3 final bounded acceptance:89/89tests independentlyPASS, eightcommands/all20testedpins verified; observerdiagnostics do not mutate admission/order path",
+      "result": "Current81e90016 bounded execution PASS; independent89/89tests and11targeted regression PASS; eight recorded commands/all20testedpins verified; observer dedup does not mutate admission/order/ledger",
       "role": "execution_auditor",
       "scope": "registered H1/H4 execution, all9, funding, guards and explicit Decimal context"
     }

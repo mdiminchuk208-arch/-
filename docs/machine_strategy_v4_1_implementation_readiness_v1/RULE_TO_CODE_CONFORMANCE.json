@@ -1,4 +1,5 @@
 {
+  "classifications": "Exact frozen RULE_REGISTRY classifications retained; no PROJECT_POLICY/TECHNICAL_NORMALIZATION promoted to SOURCE_RULE.",
   "complete_rule_coverage": false,
   "design_manifest_sha256": "4074c337be4800e54682a5ad1ddfd9015e35ce16f4fe2742fc4d12b4bb415790",
   "design_publication": "96e76edf0e526c588cf87a665da681f577cca77a",
@@ -13,6 +14,40 @@
     "tests/test_machine_strategy_v4_1_selected_poi_inventory.py"
   ],
   "financial_validation_authorized": false,
+  "frozen_rule_registry_mapping": {
+    "R41_ARITHMETIC_SCOPE": [
+      "DECIMAL50_DESIGN_SCOPE",
+      "DECIMAL50_TO_80_TRANSPORT",
+      "NINE_SCENARIO_BINDING",
+      "SIGNED_FUNDING_WITNESS"
+    ],
+    "R41_BREAKER_HANDLE": [
+      "CANONICAL_SELECTED_POI_IDENTITY",
+      "HISTORICAL_V4_1_SOURCE_ADAPTER"
+    ],
+    "R41_CURRENT_BAR_ORDERING": [
+      "EVERY_M15_NATIVE_CLOCK_PARITY",
+      "PRE_EMISSION_CONSUMPTION"
+    ],
+    "R41_POI_ELIGIBILITY": [
+      "FIRST_ADMISSIBLE_M15_ELIGIBILITY",
+      "PREPROPOSAL_INVENTORY",
+      "NATIVE_FIRST_TEST_CLOCK",
+      "LATE_REACTION_AND_REFINED_ORIGIN"
+    ],
+    "R41_RANGE_HANDLE": [
+      "CANONICAL_SELECTED_POI_IDENTITY",
+      "RANGE_REQUIRED_REACTION_EXEMPTION"
+    ],
+    "R41_RANGE_REACTION_EXEMPTION": [
+      "RANGE_REQUIRED_REACTION_EXEMPTION",
+      "NATIVE_FIRST_TEST_CLOCK"
+    ],
+    "R41_STB_BODY_HANDLE": [
+      "CANONICAL_SELECTED_POI_IDENTITY",
+      "HISTORICAL_V4_1_SOURCE_ADAPTER"
+    ]
+  },
   "frozen_rules_changed": false,
   "historical_financial_authorized": false,
   "historical_position_evaluations": 0,
@@ -48,7 +83,7 @@
       "status": "REGISTERED_SYNTHETIC_PASS"
     },
     "FIRST_ADMISSIBLE_M15_ELIGIBILITY": {
-      "code": "scripts/machine_strategy_v4_1_contracts.py::latch_eligibility + scripts/machine_strategy_v4_1_selected_poi_inventory.py::SelectedPoiInventory.latch_m15 + scripts/machine_strategy_v4_1_historical_adapter.py::_latch_item_eligibility",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::latch_eligibility + scripts/machine_strategy_v4_1_selected_poi_inventory.py::SelectedPoiInventory.latch_m15 + scripts/machine_strategy_v4_1_historical_adapter.py::prepare",
       "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/common/eligibility_rule",
       "status": "IMPLEMENTED_COMPONENT_QA_PASS_PENDING_FULL_SOURCE_AND_FINAL_REVIEW"
     },
@@ -76,7 +111,7 @@
       "status": "BOUNDED_REGRESSION_PASS"
     },
     "NATIVE_FIRST_TEST_CLOCK": {
-      "code": "scripts/machine_strategy_v4_1_contracts.py::native_contact + scripts/machine_strategy_v4_1_selected_poi_inventory.py::SelectedPoiInventory.observe_native_bar + scripts/machine_strategy_v4_1_historical_adapter.py::_native_contact_publication",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::native_contact + scripts/machine_strategy_v4_1_selected_poi_inventory.py::observe_native_bar + scripts/machine_strategy_v4_1_historical_adapter.py::publish_contacts/_source_run",
       "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/common/contact_clock,/native_context_rule,/partial_native_interval",
       "status": "IMPLEMENTED_COMPONENT_QA_PASS_PENDING_FULL_SOURCE_AND_FINAL_REVIEW"
     },
@@ -91,17 +126,17 @@
       "status": "IMPLEMENTED_COMPONENT_QA_PASS_PENDING_FULL_SOURCE_AND_FINAL_REVIEW"
     },
     "PRE_EMISSION_CONSUMPTION": {
-      "code": "scripts/machine_strategy_v4_1_contracts.py::register_emission + scripts/machine_strategy_v4_1_historical_adapter.py::_proposal_record",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::register_emission + scripts/machine_strategy_v4_1_selected_poi_inventory.py::emit_h1_proposal + scripts/machine_strategy_v4_1_historical_adapter.py::prepare",
       "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/common/pre_emission_consumption",
       "status": "IMPLEMENTED_COMPONENT_QA_PASS_PENDING_FULL_SOURCE_AND_FINAL_REVIEW"
     },
     "RANGE_REQUIRED_REACTION_EXEMPTION": {
-      "code": "scripts/machine_strategy_v4_1_contracts.py::native_contact + scripts/machine_strategy_v4_1_historical_adapter.py::_native_contact_publication",
+      "code": "scripts/machine_strategy_v4_1_contracts.py::native_contact + scripts/machine_strategy_v4_1_historical_adapter.py::register_family_inventory/publish_contacts",
       "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/families/RANGE",
       "status": "IMPLEMENTED_COMPONENT_QA_PASS_PENDING_FULL_SOURCE_AND_FINAL_REVIEW"
     },
     "REACTION_PREREQUISITE_LATCH": {
-      "code": "scripts/machine_strategy_v4_1_selected_poi_inventory.py::SelectedPoiInventory.set_reaction_required_at",
+      "code": "scripts/machine_strategy_v4_1_historical_adapter.py::register_family_inventory + scripts/machine_strategy_v4_1_selected_poi_inventory.py::register/latch_m15 (monotonic association update); optional set_reaction_required_at API",
       "design": "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json#/families",
       "notes": "Late SFP/OB/RANGE reaction time is monotonic and cannot be reset after eligibility.",
       "status": "IMPLEMENTED_COMPONENT_QA_PASS_PENDING_FULL_SOURCE_AND_FINAL_REVIEW"
@@ -114,7 +149,7 @@
     "SOURCE_ADAPTER_REPLAY_AND_MUTATION_QA": {
       "code": "scripts/verify_machine_strategy_v4_1_source_adapter.py",
       "design": "agent_control/V4_1_IMPLEMENTATION_READINESS_WORK_ORDER.md#9",
-      "notes": "Bounded deterministic replay, future-M15-tail mutation and optional full-period double replay; financial runner import trap.",
+      "notes": "Required two full byte-identical production source runs plus three full/truncated/future-M15-tail-mutated cutoffs per product; active position-call/import traps.",
       "status": "IMPLEMENTED_COMPONENT_QA_PASS_PENDING_FULL_SOURCE_AND_FINAL_REVIEW"
     }
   },

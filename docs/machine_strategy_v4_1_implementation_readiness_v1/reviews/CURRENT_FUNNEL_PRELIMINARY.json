@@ -1,0 +1,19 @@
+{
+  "agent": "/root/v41_no_lookahead_repaired",
+  "findings": [
+    "All new saved BTC funnel scalars and family-direction map independently recomputed exact",
+    "All7mappingIDs exactly equal frozen registry; mapped targets and runtime methods exist;3PROJECT_POLICY+4TECHNICAL_NORMALIZATION/source_rule_claimfalse preserved",
+    "Newchecker pinned in8-command89-testQA; source status remains pending",
+    "Minor historical order retry/exposure label clarified in TELEMETRY_CONFORMANCE; source WAIT evaluations remain separately counted"
+  ],
+  "full_gate_acceptance": false,
+  "pending": "Complete BTC/ETH replay/cutoff proof and final acceptance",
+  "receipt_origin": "Root transcription of actual independent read-only agent message",
+  "reviewed_sha256": {
+    "docs/machine_strategy_v4_1_implementation_readiness_v1/RULE_TO_CODE_CONFORMANCE.json": "14821941a71c7c0f04151e6cb12ddb466c3a1f8c994b8be8830cca1026a9be89",
+    "scripts/check_machine_strategy_v4_1_conformance.py": "3c576e15fac5c17a2e53f13388150d6aba084850a34e709fe697047081c2a8b5"
+  },
+  "role": "no_lookahead_auditor",
+  "trade_entry_allowed": false,
+  "verdict": "BOUNDED_REPORT_PASS"
+}

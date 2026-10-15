@@ -1,0 +1,23 @@
+{
+  "agent": "/root/v41_no_lookahead_repaired",
+  "artifact_sha256": "031b3ce5b10968d1c5b572798f4116a3582c34a09c764284ef0942ce45a967f2",
+  "findings": [
+    "All run_context and artifact pins matched",
+    "Independent scan: no duplicate terminals; all102payoff REJECTs retain edge diagnostics; no missing context/approach on evaluated PASS",
+    "All physical and proposal timestamps/native eligibility/first-association/own-origin/deadline checks valid",
+    "Terminal source partition exact; no financial positions evaluated"
+  ],
+  "full_gate_acceptance": false,
+  "pending": [
+    "full deterministic BTC replay",
+    "all3BTC cutoff comparisons",
+    "complete ETH proof",
+    "final independent review"
+  ],
+  "progress_sha256": "10f2cfd3caad19ecff10cafdb542a6f5e51cee54c07971571af69b66c36c5371",
+  "receipt_origin": "Root transcription of actual read-only independent agent message",
+  "report_opportunity": "Add candidate-parent-association and unique-family/direction formation denominators without changing source graph; root implemented and reran report QA",
+  "role": "no_lookahead_auditor",
+  "trade_entry_allowed": false,
+  "verdict": "PRELIMINARY_BTC_FIELD_PASS"
+}

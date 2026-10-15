@@ -1,0 +1,11 @@
+{
+  "BTC_deterministic_full_replay": "PASS",
+  "BTC_three_prefix_future_mutation_triplets": "PASS",
+  "ETH": "RUNNING",
+  "current_source_code_pins_verified": true,
+  "full_two_product_gate_complete": false,
+  "historical_position_evaluations": 0,
+  "progress_sha256": "c7aa79998a84e887ce32ad068896968297a7c39ec0ae207cd6480180daa7c550",
+  "scope": "COMPLETE_BTC_SOURCE_PROOF_ONLY",
+  "trade_entry_allowed": false
+}

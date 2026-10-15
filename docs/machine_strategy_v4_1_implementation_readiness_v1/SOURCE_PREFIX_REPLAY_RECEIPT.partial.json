@@ -1,0 +1,92 @@
+{
+  "cutoffs_UTC_seconds": [
+    1729382400,
+    1760313600,
+    1791244800
+  ],
+  "evaluation_start": 1728777600,
+  "historical_financial_authorized": false,
+  "historical_position_evaluations": 0,
+  "policy_selection_by_catalog_counts": false,
+  "products": {
+    "BTC-USDT-SWAP": {
+      "cutoffs": {
+        "1729382400": {
+          "deterministic_source_replay": "PASS",
+          "full_stream": "f9e75bc4850edf753e126401cae5842b182e129f45bd4280d8d43687c278bb4d",
+          "future_mutated": "f9e75bc4850edf753e126401cae5842b182e129f45bd4280d8d43687c278bb4d",
+          "truncated": "f9e75bc4850edf753e126401cae5842b182e129f45bd4280d8d43687c278bb4d"
+        },
+        "1760313600": {
+          "deterministic_source_replay": "PASS",
+          "full_stream": "22b6da5923908dd01228149f505e0d513650db660b9501f605b5ad0736357dff",
+          "future_mutated": "22b6da5923908dd01228149f505e0d513650db660b9501f605b5ad0736357dff",
+          "truncated": "22b6da5923908dd01228149f505e0d513650db660b9501f605b5ad0736357dff"
+        },
+        "1791244800": {
+          "deterministic_source_replay": "PASS",
+          "full_stream": "26895e0bcfdb2d2026ad47a2438c6e6a7a5125a8136482fc5b8eb69231466d37",
+          "future_mutated": "26895e0bcfdb2d2026ad47a2438c6e6a7a5125a8136482fc5b8eb69231466d37",
+          "truncated": "26895e0bcfdb2d2026ad47a2438c6e6a7a5125a8136482fc5b8eb69231466d37"
+        }
+      },
+      "data_end_exclusive": 1791849600,
+      "data_start": 1697241600,
+      "full_checkpoint_digests": {
+        "1729382400": "f9e75bc4850edf753e126401cae5842b182e129f45bd4280d8d43687c278bb4d",
+        "1760313600": "22b6da5923908dd01228149f505e0d513650db660b9501f605b5ad0736357dff",
+        "1791244800": "26895e0bcfdb2d2026ad47a2438c6e6a7a5125a8136482fc5b8eb69231466d37"
+      },
+      "full_deterministic_replay": "PASS",
+      "native_bar_count": 105120,
+      "position_engine_trap_active": true,
+      "raw_family_coverage": {
+        "BREAKER": 109,
+        "OB": 305,
+        "RANGE": 727,
+        "SFP": 4514,
+        "STB": 305
+      },
+      "raw_family_tf_direction_coverage": {
+        "BREAKER|H1|LONG": 40,
+        "BREAKER|H1|SHORT": 49,
+        "BREAKER|H4|LONG": 10,
+        "BREAKER|H4|SHORT": 10,
+        "OB|H1|LONG": 125,
+        "OB|H1|SHORT": 126,
+        "OB|H4|LONG": 19,
+        "OB|H4|SHORT": 35,
+        "RANGE|H1|LONG": 277,
+        "RANGE|H1|SHORT": 292,
+        "RANGE|H4|LONG": 79,
+        "RANGE|H4|SHORT": 79,
+        "SFP|H1|LONG": 1772,
+        "SFP|H1|SHORT": 1836,
+        "SFP|H4|LONG": 445,
+        "SFP|H4|SHORT": 461,
+        "STB|H1|LONG": 125,
+        "STB|H1|SHORT": 126,
+        "STB|H4|LONG": 19,
+        "STB|H4|SHORT": 35
+      },
+      "raw_field_provenance_validated": true,
+      "source_artifact": "docs/machine_strategy_v4_1_implementation_readiness_v1/BTC_USDT_SWAP.source_only.json.gz",
+      "source_artifact_sha256": "031b3ce5b10968d1c5b572798f4116a3582c34a09c764284ef0942ce45a967f2"
+    }
+  },
+  "run_context": {
+    "StageA_manifest_sha256": "e8733326e85b6082a33f11ec001066d33bc345bcded6acda26b54cd56ddeb9f0",
+    "design_manifest_sha256": "4074c337be4800e54682a5ad1ddfd9015e35ce16f4fe2742fc4d12b4bb415790",
+    "preregistration_sha256": "7020cd2b4b6ad268d282851c9536cc1e91886631880ab106d13020226f05bf4f",
+    "source_code_sha256": {
+      "scripts/check_machine_strategy_v4_1_source_replay.py": "3f164318f4d8f6041deebf0bfb8a1eeeac14a893b5d83f611d0a63141d2c882a",
+      "scripts/machine_strategy_v4_1_contracts.py": "3d7ae78682d17ea5bd4d4af2fe852fde1699b1b055488b787e07ffb2cc2e8037",
+      "scripts/machine_strategy_v4_1_execution_binding.py": "1c3d3445af2d5b84ad9dd9337aaa1480a24f3a371e6488233e9ad68013042f1e",
+      "scripts/machine_strategy_v4_1_historical_adapter.py": "cdc7d6146ebd0a317d3d9a10de2ff2dd387d3f54fb48e1dab4ca3a95a3e2c038",
+      "scripts/machine_strategy_v4_1_selected_poi_inventory.py": "d79f62e9e29d986b205a6aada9f7aaf6e6d73bf26feb906320af8d0283f6e176",
+      "scripts/verify_machine_strategy_v4_1_source_adapter.py": "900552238510ed557c5b0545155371390446ff239bdf3b357095c60a0bf6b0e9"
+    }
+  },
+  "scope": "FULL_SEALED_HISTORY_SOURCE_ONLY",
+  "trade_entry_allowed": false
+}

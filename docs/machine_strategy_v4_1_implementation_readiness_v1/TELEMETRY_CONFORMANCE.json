@@ -57,9 +57,11 @@
     "branch",
     "direction"
   ],
+  "retry_denominator_clarification": "historical_retry_and_exposure_counts refers to historical order retry/exposure execution, NOT_EVALUATED. Repeated source WAIT gate evaluations are separately counted in per_gate.wait_evaluations; they are not order retries.",
   "state": "OBSERVER_REPAIRED_89_TESTS_PASS_FULL_SOURCE_PENDING",
   "strategy_readback": false,
   "trade_entry_allowed": false,
   "validation": "full source conformance validates all emitted timestamps/conditional scope; targeted observer mutation/outcome negatives",
-  "version": "MACHINE_STRATEGY_v4.1"
+  "version": "MACHINE_STRATEGY_v4.1",
+  "zero_historical_exposure_denominator_means": "No historical position evaluations performed; not an observed zero-trade result of the strategy."
 }
