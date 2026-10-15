@@ -1,0 +1,22 @@
+{
+  "attempts": [
+    {
+      "agent": "/root/v41_execution_integrated",
+      "result": "Initial pre-run block repaired; scoped PASS with21independent tests; root110/fullstatic/authorizationPASS",
+      "role": "execution_auditor",
+      "scope": "PRE_RUN_NEW_WRAPPER_EXECUTION_SYNTHETIC_AND_GUARDS"
+    }
+  ],
+  "historical_runs": 0,
+  "operating_model": "root sole writer; serial one read-only specialist",
+  "post_result_reviews_complete": false,
+  "post_result_roles_required": [
+    "backtest_reviewer",
+    "cost_funding_auditor",
+    "statistics_robustness_analyst",
+    "overfit_red_team",
+    "final_independent_reviewer"
+  ],
+  "runtime": "ECC2.2.3 enabled; hooks inactive; configured roles via native collaboration",
+  "trade_entry_allowed": false
+}

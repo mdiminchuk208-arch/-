@@ -15,6 +15,7 @@ import subprocess
 from collections import defaultdict
 from datetime import UTC, datetime
 from decimal import ROUND_HALF_EVEN, Decimal, localcontext
+from functools import wraps
 from hashlib import sha256
 from pathlib import Path
 
@@ -40,6 +41,21 @@ IMPLEMENTATION_FREEZE_COMMIT = "bf9bb4c7ed9e82df42b4fc2eec5df28695edf155"
 PREREG_COMMIT = "f5e60538a2c6ea4194177971ac1d433143ddf3a2"
 AUTH_COMMIT = "4a0a1471c040522058cb0520b0dc25a8dd20d4b5"
 TRADE_ENTRY_ALLOWED = False
+
+
+def _precision(digits):
+    def decorate(function):
+        @wraps(function)
+        def scoped(*args, **kwargs):
+            with localcontext() as context:
+                context.prec = digits
+                context.rounding = ROUND_HALF_EVEN
+                return function(*args, **kwargs)
+
+        return scoped
+
+    return decorate
+
 
 FINAL_FILES = (
     "BTC-USDT-SWAP.catalog.jsonl.gz",
@@ -81,6 +97,9 @@ def _verify_committed_file(path: Path, commit: str) -> None:
 
 
 def _authorization() -> dict:
+    from verify_machine_strategy_v4_1_implementation_v1 import resume
+
+    resume(IMPLEMENTATION_MANIFEST_SHA256)
     if _sha(IMPLEMENTATION_MANIFEST) != IMPLEMENTATION_MANIFEST_SHA256:
         raise FinancialGateBlocked("IMPLEMENTATION_MANIFEST_CHANGED")
     for commit in (IMPLEMENTATION_FREEZE_COMMIT, PREREG_COMMIT, AUTH_COMMIT):
@@ -92,23 +111,29 @@ def _authorization() -> dict:
     auth = json.loads(AUTH.read_text())
     if prereg.get("gate") != GATE or auth.get("gate") != GATE:
         raise FinancialGateBlocked("WRONG_FINANCIAL_GATE")
-    if auth.get("authorization_state") != "ONE_SHOT_HISTORICAL_DEVELOPMENT_FINANCIAL_RUN_AUTHORIZED":
+    if (
+        auth.get("authorization_state")
+        != "ONE_SHOT_HISTORICAL_DEVELOPMENT_FINANCIAL_RUN_AUTHORIZED"
+    ):
         raise FinancialGateBlocked("ONE_SHOT_NOT_AUTHORIZED")
     if auth.get("historical_runs_remaining") != 1:
         raise FinancialGateBlocked("ONE_SHOT_COUNT_NOT_ONE")
     if prereg.get("implementation_manifest_sha256") != IMPLEMENTATION_MANIFEST_SHA256:
         raise FinancialGateBlocked("PREREG_IMPLEMENTATION_PIN_MISMATCH")
     batch = (ROOT / "agent_control/CURRENT_BATCH.md").read_text()
-    if "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_OPEN" not in batch or "one-shot" not in batch.lower():
+    if (
+        "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_OPEN" not in batch
+        or "one-shot" not in batch.lower()
+    ):
         raise FinancialGateBlocked("FINANCIAL_CAMPAIGN_NOT_ACTIVE")
-    for name in FINAL_FILES:
+    for name in (*FINAL_FILES, "RUN_STARTED.json"):
         if (OUT / name).exists():
             raise FinancialGateBlocked("ONE_SHOT_OUTPUT_ALREADY_EXISTS")
     return prereg
 
 
 def _epoch(text: str) -> int:
-    return int(datetime.fromisoformat(text.replace("Z", "+00:00")).timestamp())
+    return int(datetime.fromisoformat(text).timestamp())
 
 
 def _jsonable(value):
@@ -127,7 +152,9 @@ def _jsonable(value):
 
 
 def _compact(value) -> bytes:
-    return json.dumps(_jsonable(value), ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()
+    return json.dumps(
+        _jsonable(value), ensure_ascii=False, sort_keys=True, separators=(",", ":")
+    ).encode()
 
 
 def _bar_record(bar) -> dict:
@@ -184,7 +211,9 @@ def _funding_min(state: dict, rows, quantity: Decimal):
             values.append((cash, fill, exit_, [r[0] for r in selected]))
     if not values:
         raise core.ContractWait("WAIT_COHERENT_FUNDING_TIMELINE")
-    cash, fill, exit_, settlements = min(values, key=lambda row: (row[0], row[1], row[2]))
+    cash, fill, exit_, settlements = min(
+        values, key=lambda row: (row[0], row[1], row[2])
+    )
     return cash, {
         "model_fill_event_slot": fill,
         "model_exit_event_slot": exit_,
@@ -230,7 +259,9 @@ def _scenario_state(order: dict, plan: dict, grid: dict) -> dict:
     if plan["status"] != "ELIGIBLE_PENDING":
         return {
             "scenario_id": plan["scenario_id"],
-            "status": "SCENARIO_INELIGIBLE",
+            "status": "UNRESOLVED"
+            if plan["status"] == "UNRESOLVED"
+            else "SCENARIO_INELIGIBLE",
             "reason": plan.get("reason", "INELIGIBLE_AT_EMISSION"),
             "trade_entry_allowed": False,
         }
@@ -258,13 +289,16 @@ def _retire_pending(state: dict, flags: dict) -> dict:
         }
     return {
         **state,
-        "status": "UNFILLED_RETIRED",
+        "status": "UNFILLED_EXPIRED" if flags.get("deadline") else "UNFILLED_RETIRED",
         "observed_at": flags["known_at"],
         "retirement_reasons": reasons,
     }
 
 
-def _drive_decision_group(product: str, market, funding_rows, orders: list[dict], start: int, end: int):
+@_precision(50)
+def _drive_decision_group(
+    product: str, market, funding_rows, orders: list[dict], start: int, end: int
+):
     decision = orders[0]["decision_at"]
     if any(order["decision_at"] != decision for order in orders):
         raise FinancialGateBlocked("MIXED_DECISION_GROUP")
@@ -272,7 +306,9 @@ def _drive_decision_group(product: str, market, funding_rows, orders: list[dict]
     replay_orders, _ = adapter.catalog(cutoff=decision)
     replay = {row["case_id"]: row for row in replay_orders}
     for order in orders:
-        if order["case_id"] not in replay or _compact(replay[order["case_id"]]) != _compact(order):
+        if order["case_id"] not in replay or _compact(
+            replay[order["case_id"]]
+        ) != _compact(order):
             raise FinancialGateBlocked("CATALOG_REPLAY_MISMATCH")
 
     grids = {grid["id"]: grid for grid in scenarios(product)}
@@ -294,7 +330,10 @@ def _drive_decision_group(product: str, market, funding_rows, orders: list[dict]
             break
         # Preserve native context exactly as known at OPEN before advancing this bar.
         for tf, frame in adapter.frames.items():
-            if frame.cursor < len(frame.bars) and frame.bars[frame.cursor].start == bar.start:
+            if (
+                frame.cursor < len(frame.bars)
+                and frame.bars[frame.cursor].start == bar.start
+            ):
                 adapter.native_context_open[(tf, bar.start)] = (
                     frame.context["direction"]
                     if frame.context and frame.context["known_at"] <= bar.start
@@ -305,15 +344,39 @@ def _drive_decision_group(product: str, market, funding_rows, orders: list[dict]
             rows = states[order["case_id"]]
             plans = {p["scenario_id"]: p for p in order["scenario_plans"]}
             for index, state in enumerate(rows):
+                if active(state) and bar.start != state.get(
+                    "last_observed_end", decision
+                ):
+                    rows[index] = {
+                        **state,
+                        "status": "UNKNOWN_DATA_GAP",
+                        "observed_at": bar.start,
+                    }
+                    continue
                 if state["status"] == "PENDING":
-                    flags = adapter.lifecycle_flags(order, bar.start, plans[state["scenario_id"]])
+                    flags = adapter.lifecycle_flags(
+                        order, bar.start, plans[state["scenario_id"]]
+                    )
+                    if flags["known_at"] > bar.start:
+                        raise FinancialGateBlocked("FUTURE_PENDING_LIFECYCLE")
                     if any(value for key, value in flags.items() if key != "known_at"):
                         rows[index] = _retire_pending(state, flags)
                         continue
                 if state["status"] not in {"PENDING", "FILLED"}:
                     continue
                 grid = grids[state["scenario_id"]]
-                next_state = _model_observer(state, _bar_record(bar), [grid])
+                try:
+                    next_state = _model_observer(state, _bar_record(bar), [grid])
+                except core.ContractWait as exc:
+                    rows[index] = {
+                        **state,
+                        "status": "UNKNOWN_DATA_GAP"
+                        if "DATA_GAP" in str(exc)
+                        else "UNRESOLVED",
+                        "reason": str(exc),
+                        "observed_at": bar.end,
+                    }
+                    continue
                 if next_state["status"] == "EXIT_OBSERVED":
                     next_state = {**next_state, "status": "CLOSED"}
                     next_state.update(_closed_cash(next_state, funding_rows))
@@ -326,15 +389,32 @@ def _drive_decision_group(product: str, market, funding_rows, orders: list[dict]
         for tf in (1440, 240, 60, 15):
             adapter.frames[tf].advance(bar.end)
         adapter.publish_contacts(bar.end)
+        for order in orders:
+            for index, state in enumerate(states[order["case_id"]]):
+                if state["status"] == "PENDING":
+                    flags = adapter.lifecycle_flags(
+                        order, bar.end, plans_for(order, state)
+                    )
+                    if flags["known_at"] > bar.end:
+                        raise FinancialGateBlocked("FUTURE_PENDING_LIFECYCLE")
+                    if any(value for key, value in flags.items() if key != "known_at"):
+                        states[order["case_id"]][index] = _retire_pending(state, flags)
 
     observed_through = market[15][-1].end
-    for case_id, rows in states.items():
+    for rows in states.values():
         for index, state in enumerate(rows):
             if state["status"] in {"PENDING", "FILLED"}:
                 rows[index] = core.censor_eof(state, observed_through)
     return states
 
 
+def plans_for(order, state):
+    return next(
+        p for p in order["scenario_plans"] if p["scenario_id"] == state["scenario_id"]
+    )
+
+
+@_precision(80)
 def _adverse_case(order: dict, states: list[dict]) -> dict:
     expected = [grid["id"] for grid in scenarios(order["product"])]
     if [row["scenario_id"] for row in states] != expected:
@@ -399,6 +479,7 @@ def _adverse_case(order: dict, states: list[dict]) -> dict:
     )
 
 
+@_precision(80)
 def _group_stats(cases: list[dict], column: str) -> dict:
     closed = [row for row in cases if row["status"] == "CLOSED"]
     ledger = sorted(
@@ -414,7 +495,7 @@ def _group_stats(cases: list[dict], column: str) -> dict:
     n = len(values)
     rate = Decimal(wins) / n if n else None
     wilson = None
-    if n:
+    if rate is not None:
         z = Decimal("1.959963984540054")
         wilson = (
             rate
@@ -450,7 +531,11 @@ def _group_stats(cases: list[dict], column: str) -> dict:
             "LOSS": n - wins,
             "win_rate": rate,
             "wilson_95pct_lower": wilson,
-            "profit_factor_R": gains / losses if losses else "Infinity" if gains else None,
+            "profit_factor_R": gains / losses
+            if losses
+            else "Infinity"
+            if gains
+            else None,
             "expectancy_R": sum(values, Decimal(0)) / n if n else None,
             "net_R": sum(values, Decimal(0)),
             "gross_R": sum(gross, Decimal(0)),
@@ -476,13 +561,16 @@ def _breakdowns(cases: list[dict], column: str) -> dict:
         for row in cases:
             if row["status"] == "CLOSED":
                 buckets[key_fn(row)].append(row)
-        result[dimension] = {key: _group_stats(rows, column) for key, rows in sorted(buckets.items())}
+        result[dimension] = {
+            key: _group_stats(rows, column) for key, rows in sorted(buckets.items())
+        }
     return result
 
 
+@_precision(80)
 def _concentration(cases: list[dict], column: str) -> dict:
-    quarters = defaultdict(Decimal)
-    coins = defaultdict(Decimal)
+    quarters: defaultdict[str, Decimal] = defaultdict(Decimal)
+    coins: defaultdict[str, Decimal] = defaultdict(Decimal)
     for row in cases:
         if row["status"] != "CLOSED":
             continue
@@ -502,7 +590,9 @@ def _concentration(cases: list[dict], column: str) -> dict:
             "largest_calendar_quarter_profit_share": (
                 max(positive_quarters.values()) / q_total if q_total else None
             ),
-            "largest_coin_profit_share": max(positive_coins.values()) / c_total if c_total else None,
+            "largest_coin_profit_share": max(positive_coins.values()) / c_total
+            if c_total
+            else None,
         }
     )
 
@@ -513,13 +603,19 @@ def _pf_number(value):
     return Decimal(value) if value is not None else None
 
 
+@_precision(80)
 def _qualification(cases: list[dict], prereg: dict) -> dict:
     base = _group_stats(cases, "base")
     doubled = _group_stats(cases, "doubled")
     breakdowns = _breakdowns(cases, "base")
     concentration = _concentration(cases, "base")
     disagreements = sum(row["status"] == "COMPATIBILITY_DISAGREEMENT" for row in cases)
-    unknown_statuses = {"WAIT_INTRABAR_ORDER", "OPEN_CENSORED_EOF", "UNKNOWN_DATA_GAP"}
+    unknown_statuses = {
+        "WAIT_INTRABAR_ORDER",
+        "OPEN_CENSORED_EOF",
+        "UNKNOWN_DATA_GAP",
+        "UNRESOLVED",
+    }
     unknown = sum(
         1
         for row in cases
@@ -529,17 +625,35 @@ def _qualification(cases: list[dict], prereg: dict) -> dict:
     q = prereg["qualification"]
     checks = {}
     checks["closed_trades_min"] = base["CLOSED"] >= q["closed_trades_min"]
-    checks["win_rate_min"] = base["win_rate"] is not None and Decimal(base["win_rate"]) >= Decimal(q["win_rate_min"])
+    checks["win_rate_min"] = base["win_rate"] is not None and Decimal(
+        base["win_rate"]
+    ) >= Decimal(q["win_rate_min"])
     pf = _pf_number(base["profit_factor_R"])
-    checks["profit_factor_min"] = pf is not None and pf >= Decimal(q["profit_factor_min"])
-    checks["expectancy_positive"] = base["expectancy_R"] is not None and Decimal(base["expectancy_R"]) > 0
+    checks["profit_factor_min"] = pf is not None and pf >= Decimal(
+        q["profit_factor_min"]
+    )
+    checks["expectancy_positive"] = (
+        base["expectancy_R"] is not None and Decimal(base["expectancy_R"]) > 0
+    )
     checks["net_R_positive"] = Decimal(base["net_R"]) > 0
+    checks["net_cash_positive"] = Decimal(base["net_cash"]) > 0
     doubled_pf = _pf_number(doubled["profit_factor_R"])
-    checks["doubled_profit_factor_min"] = doubled_pf is not None and doubled_pf >= Decimal(q["doubled_cost_profit_factor_min"])
-    checks["doubled_net_positive"] = Decimal(doubled["net_R"]) > 0 and Decimal(doubled["net_cash"]) > 0
-    checks["max_drawdown"] = Decimal(base["max_drawdown_R"]) <= Decimal(q["max_drawdown_R_max"])
-    checks["max_loss_streak"] = base["max_consecutive_net_losses"] <= q["max_consecutive_net_losses_max"]
-    checks["wilson"] = base["wilson_95pct_lower"] is not None and Decimal(base["wilson_95pct_lower"]) >= Decimal(q["wilson_95pct_win_rate_lower_bound_min"])
+    checks["doubled_profit_factor_min"] = (
+        doubled_pf is not None
+        and doubled_pf >= Decimal(q["doubled_cost_profit_factor_min"])
+    )
+    checks["doubled_net_positive"] = (
+        Decimal(doubled["net_R"]) > 0 and Decimal(doubled["net_cash"]) > 0
+    )
+    checks["max_drawdown"] = Decimal(base["max_drawdown_R"]) <= Decimal(
+        q["max_drawdown_R_max"]
+    )
+    checks["max_loss_streak"] = (
+        base["max_consecutive_net_losses"] <= q["max_consecutive_net_losses_max"]
+    )
+    checks["wilson"] = base["wilson_95pct_lower"] is not None and Decimal(
+        base["wilson_95pct_lower"]
+    ) >= Decimal(q["wilson_95pct_win_rate_lower_bound_min"])
     coin_direction = breakdowns["coin_direction"]
     required_groups = [
         "BTC-USDT-SWAP:LONG",
@@ -548,17 +662,24 @@ def _qualification(cases: list[dict], prereg: dict) -> dict:
         "ETH-USDT-SWAP:SHORT",
     ]
     checks["coin_direction_closed_min"] = all(
-        key in coin_direction and coin_direction[key]["CLOSED"] >= q["each_coin_direction_closed_min"]
+        key in coin_direction
+        and coin_direction[key]["CLOSED"] >= q["each_coin_direction_closed_min"]
         for key in required_groups
     )
     checks["coin_direction_net_positive"] = all(
-        key in coin_direction and Decimal(coin_direction[key]["net_R"]) > 0
+        key in coin_direction
+        and Decimal(coin_direction[key]["net_R"]) > 0
+        and Decimal(coin_direction[key]["net_cash"]) > 0
         for key in required_groups
     )
     quarter_share = concentration["largest_calendar_quarter_profit_share"]
     coin_share = concentration["largest_coin_profit_share"]
-    checks["quarter_concentration"] = quarter_share is not None and Decimal(quarter_share) <= Decimal(q["largest_calendar_quarter_profit_share_max"])
-    checks["coin_concentration"] = coin_share is not None and Decimal(coin_share) <= Decimal(q["largest_coin_profit_share_max"])
+    checks["quarter_concentration"] = quarter_share is not None and Decimal(
+        quarter_share
+    ) <= Decimal(q["largest_calendar_quarter_profit_share_max"])
+    checks["coin_concentration"] = coin_share is not None and Decimal(
+        coin_share
+    ) <= Decimal(q["largest_coin_profit_share_max"])
     checks["filled_unknown_exit"] = unknown <= q["filled_unknown_exit_max"]
     checks["compatibility_agreement"] = disagreements == 0
     decision = (
@@ -583,8 +704,22 @@ def _write_gzip_jsonl(path: Path, rows: list[dict]) -> None:
     path.write_bytes(gzip.compress(payload, mtime=0))
 
 
+@_precision(50)
 def _run() -> dict:
     prereg = _authorization()
+    # Atomic durable reservation prevents concurrent runs and silent failed-run retries.
+    with (OUT / "RUN_STARTED.json").open("x") as started:
+        json.dump(
+            {
+                "gate": GATE,
+                "state": "ONE_SHOT_RESERVED",
+                "runner_sha256": _sha(Path(__file__)),
+                "preregistration_sha256": _sha(PREREG),
+                "authorization_sha256": _sha(AUTH),
+                "trade_entry_allowed": False,
+            },
+            started,
+        )
     start = _epoch(prereg["development_window"]["start_utc"])
     end = _epoch(prereg["development_window"]["end_exclusive_utc"])
     catalogs = {}
@@ -599,15 +734,34 @@ def _run() -> dict:
         markets[product] = market
         adapter = V41HistoricalAdapter(product, market, start, end)
         orders, audit = adapter.catalog()
-        if audit["historical_position_engine_calls"] != 0 or audit["financial_outcomes_generated"]:
+        if (
+            audit["historical_position_engine_calls"] != 0
+            or audit["financial_outcomes_generated"]
+        ):
             raise FinancialGateBlocked("SOURCE_ADAPTER_FINANCIAL_ISOLATION_BROKEN")
+        source_receipt = json.loads(
+            (
+                IMPLEMENTATION_MANIFEST.parent / "SOURCE_PREFIX_REPLAY_RECEIPT.json"
+            ).read_text()
+        )
+        frozen_source = ROOT / source_receipt["products"][product]["source_artifact"]
+        frozen_catalog = json.loads(gzip.decompress(frozen_source.read_bytes()))[
+            "preentry_model_catalog"
+        ]
+        if _compact(orders) != _compact(frozen_catalog):
+            raise FinancialGateBlocked("FROZEN_SOURCE_CATALOG_CHANGED_BEFORE_FINANCE")
+        del frozen_catalog
         catalogs[product] = orders
         catalog_audit[product] = {
             "candidate_count": len(orders),
             "raw_origin_count": len(audit["raw_origins"]),
-            "source_digest": sha256(_compact({"orders": orders, "audit": audit})).hexdigest(),
+            "source_digest": sha256(
+                _compact({"orders": orders, "audit": audit})
+            ).hexdigest(),
         }
         funding[product] = _funding_inputs(product, market[15])
+        del adapter, audit
+        print("SOURCE_CATALOG_COMPLETE", product, flush=True)
 
     for product in prereg["products"]:
         groups = defaultdict(list)
@@ -624,10 +778,17 @@ def _run() -> dict:
                 end,
             )
             for order in orders:
-                evaluated[order["case_id"]] = _adverse_case(order, group_states[order["case_id"]])
-        cases_by_product[product] = [evaluated[row["case_id"]] for row in catalogs[product]]
+                evaluated[order["case_id"]] = _adverse_case(
+                    order, group_states[order["case_id"]]
+                )
+            print("DECISION_GROUP_COMPLETE", product, decision, flush=True)
+        cases_by_product[product] = [
+            evaluated[row["case_id"]] for row in catalogs[product]
+        ]
 
-    all_cases = [row for product in prereg["products"] for row in cases_by_product[product]]
+    all_cases = [
+        row for product in prereg["products"] for row in cases_by_product[product]
+    ]
     qualification = _qualification(all_cases, prereg)
     result = _jsonable(
         {
@@ -694,9 +855,15 @@ def _run() -> dict:
 
 
 def _verify_existing(expected: str | None) -> dict:
+    if not isinstance(expected, str) or len(expected) != 64:
+        raise FinancialGateBlocked("EXTERNAL_RUN_CHECKPOINT_PIN_REQUIRED")
     if not (OUT / "RUN_CHECKPOINT.json").exists():
         raise FinancialGateBlocked("NO_RUN_CHECKPOINT")
     checkpoint = json.loads((OUT / "RUN_CHECKPOINT.json").read_text())
+    if set(checkpoint["artifacts_sha256"]) != set(FINAL_FILES) - {
+        "RUN_CHECKPOINT.json"
+    }:
+        raise FinancialGateBlocked("INCOMPLETE_RUN_CHECKPOINT")
     for name, digest in checkpoint["artifacts_sha256"].items():
         if _sha(OUT / name) != digest:
             raise FinancialGateBlocked(f"RESULT_ARTIFACT_CHANGED:{name}")
@@ -722,7 +889,11 @@ def main() -> None:
     elif args.run:
         print(json.dumps(_run(), ensure_ascii=False, sort_keys=True))
     else:
-        print(json.dumps(_verify_existing(args.expected_checkpoint_sha256), sort_keys=True))
+        print(
+            json.dumps(
+                _verify_existing(args.expected_checkpoint_sha256), sort_keys=True
+            )
+        )
 
 
 if __name__ == "__main__":

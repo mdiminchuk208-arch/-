@@ -1,0 +1,56 @@
+test_all_nine_closed_uses_worst_cash_per_column (test_machine_strategy_v4_1_development_financial_runner.V41DevelopmentFinancialRunnerTests.test_all_nine_closed_uses_worst_cash_per_column) ... ok
+test_closed_cash_keeps_funding_signed_and_doubled_cost_worse (test_machine_strategy_v4_1_development_financial_runner.V41DevelopmentFinancialRunnerTests.test_closed_cash_keeps_funding_signed_and_doubled_cost_worse) ... ok
+test_data_gap_retirement_is_unknown_not_no_fill (test_machine_strategy_v4_1_development_financial_runner.V41DevelopmentFinancialRunnerTests.test_data_gap_retirement_is_unknown_not_no_fill) ... ok
+test_disagreement_is_never_promoted_to_closed (test_machine_strategy_v4_1_development_financial_runner.V41DevelopmentFinancialRunnerTests.test_disagreement_is_never_promoted_to_closed) ... ok
+test_empty_case_set_cannot_pass_qualification (test_machine_strategy_v4_1_development_financial_runner.V41DevelopmentFinancialRunnerTests.test_empty_case_set_cannot_pass_qualification) ... ok
+test_pending_retirement_is_terminal_before_fill (test_machine_strategy_v4_1_development_financial_runner.V41DevelopmentFinancialRunnerTests.test_pending_retirement_is_terminal_before_fill) ... ok
+test_trade_entry_never_enabled (test_machine_strategy_v4_1_development_financial_runner.V41DevelopmentFinancialRunnerTests.test_trade_entry_never_enabled) ... ok
+test_actual_source_final_close_contact_retires_before_eof (test_machine_strategy_v4_1_development_financial_runner.V41PreRunIntegrityTests.test_actual_source_final_close_contact_retires_before_eof) ... ok
+test_actual_source_h4_midbar_driver_long_short (test_machine_strategy_v4_1_development_financial_runner.V41PreRunIntegrityTests.test_actual_source_h4_midbar_driver_long_short) ... ok
+test_ambient_context_cannot_change_driver_or_auditor (test_machine_strategy_v4_1_development_financial_runner.V41PreRunIntegrityTests.test_ambient_context_cannot_change_driver_or_auditor) ... ERROR
+test_atomic_reservation_refuses_concurrent_second_entry (test_machine_strategy_v4_1_development_financial_runner.V41PreRunIntegrityTests.test_atomic_reservation_refuses_concurrent_second_entry) ... ok
+test_auditor_rejects_adverse_value_tamper (test_machine_strategy_v4_1_development_financial_runner.V41PreRunIntegrityTests.test_auditor_rejects_adverse_value_tamper) ... ERROR
+test_authorization_does_not_accept_caller_context (test_machine_strategy_v4_1_development_financial_runner.V41PreRunIntegrityTests.test_authorization_does_not_accept_caller_context) ... ok
+test_authorization_verifies_transitive_implementation_pins (test_machine_strategy_v4_1_development_financial_runner.V41PreRunIntegrityTests.test_authorization_verifies_transitive_implementation_pins) ... ok
+test_deadline_and_structural_retirement_are_distinct (test_machine_strategy_v4_1_development_financial_runner.V41PreRunIntegrityTests.test_deadline_and_structural_retirement_are_distinct) ... ok
+test_driver_deadline_before_observer (test_machine_strategy_v4_1_development_financial_runner.V41PreRunIntegrityTests.test_driver_deadline_before_observer) ... ok
+test_driver_gap_retains_unknown (test_machine_strategy_v4_1_development_financial_runner.V41PreRunIntegrityTests.test_driver_gap_retains_unknown) ... ok
+test_existing_output_or_started_reservation_blocks_before_data (test_machine_strategy_v4_1_development_financial_runner.V41PreRunIntegrityTests.test_existing_output_or_started_reservation_blocks_before_data) ... ok
+test_independent_signed_funding_witness_matches_exact_ledger (test_machine_strategy_v4_1_development_financial_runner.V41PreRunIntegrityTests.test_independent_signed_funding_witness_matches_exact_ledger) ... ok
+test_observer_wait_is_preserved_without_aborting_run (test_machine_strategy_v4_1_development_financial_runner.V41PreRunIntegrityTests.test_observer_wait_is_preserved_without_aborting_run) ... ok
+test_unresolved_plan_retains_unknown_state (test_machine_strategy_v4_1_development_financial_runner.V41PreRunIntegrityTests.test_unresolved_plan_retains_unknown_state) ... ok
+
+======================================================================
+ERROR: test_ambient_context_cannot_change_driver_or_auditor (test_machine_strategy_v4_1_development_financial_runner.V41PreRunIntegrityTests.test_ambient_context_cannot_change_driver_or_auditor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/-/tests/test_machine_strategy_v4_1_development_financial_runner.py", line 287, in test_ambient_context_cannot_change_driver_or_auditor
+    case = runner._adverse_case(order, expected)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/scripts/run_machine_strategy_v4_1_development_financial_v1.py", line 53, in scoped
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/scripts/run_machine_strategy_v4_1_development_financial_v1.py", line 429, in _adverse_case
+    "context": order["context"],
+               ~~~~~^^^^^^^^^^^
+KeyError: 'context'
+
+======================================================================
+ERROR: test_auditor_rejects_adverse_value_tamper (test_machine_strategy_v4_1_development_financial_runner.V41PreRunIntegrityTests.test_auditor_rejects_adverse_value_tamper)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/-/tests/test_machine_strategy_v4_1_development_financial_runner.py", line 294, in test_auditor_rejects_adverse_value_tamper
+    case = runner._adverse_case(order, self._drive(order, native, funding, source))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/scripts/run_machine_strategy_v4_1_development_financial_v1.py", line 53, in scoped
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/-/scripts/run_machine_strategy_v4_1_development_financial_v1.py", line 429, in _adverse_case
+    "context": order["context"],
+               ~~~~~^^^^^^^^^^^
+KeyError: 'context'
+
+----------------------------------------------------------------------
+Ran 21 tests in 6.501s
+
+FAILED (errors=2)

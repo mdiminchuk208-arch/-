@@ -1,0 +1,17 @@
+from pathlib import Path
+import hashlib,json,subprocess,os,shutil
+r=Path('/workspace/-');d=r/'docs/machine_strategy_v4_1_development_financial_v1';q=d/'qa';q.mkdir(exist_ok=True)
+for n in ('v41_financial_tests_attempt1.log','v41_financial_tests_attempt2.log'):
+ shutil.copyfile(Path('/tmp')/n,q/n)
+py='/workspace/crypto-bot-venv/bin/python';new=['scripts/run_machine_strategy_v4_1_development_financial_v1.py','scripts/audit_machine_strategy_v4_1_development_financial_v1.py','tests/test_machine_strategy_v4_1_development_financial_runner.py']
+commands=[[py,'-m','unittest','discover','-s','tests','-p','test_machine_strategy_v4_1*.py','-v'],['/workspace/crypto-bot-venv/bin/ruff','check',*new],['/workspace/crypto-bot-venv/bin/ruff','format','--check',*new],['/workspace/crypto-bot-venv/bin/mypy','--follow-imports=silent',*new[:2]],[py,'-m','py_compile',*new],[py,'scripts/verify_machine_strategy_v4_1_implementation_v1.py','--resume-existing','--expected-manifest-sha256','e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61'],[py,'scripts/run_machine_strategy_v4_1_development_financial_v1.py','--verify-authorization']]
+rows=[]
+for i,command in enumerate(commands):
+ log=q/f'pre_run_{i:02}.log'
+ if log.exists():raise SystemExit('REFUSE_OVERWRITE_QA_LOG')
+ with log.open('w') as out:result=subprocess.run(command,cwd=r,env={**os.environ,'PYTHONPATH':'scripts'},stdout=out,stderr=subprocess.STDOUT)
+ rows.append({'command':command,'exit_code':result.returncode,'log':str(log.relative_to(r))})
+ print(i,result.returncode,flush=True)
+ if result.returncode:raise SystemExit(result.returncode)
+receipt={'status':'PASS','scope':'PRE_FIRST_HISTORICAL_FINANCIAL_OUTCOME','commands':rows,'tested_sha256':{n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in new},'log_sha256':{c['log']:hashlib.sha256((r/c['log']).read_bytes()).hexdigest() for c in rows},'historical_financial_runs':0,'historical_outcomes_viewed':False,'trade_entry_allowed':False,'environment':{'PYTHONPATH':'scripts'},'frozen_implementation_manifest_sha256':'e18fa81383bac27af8524ad62703a894018c6b761241faa5015109efebcf0e61'}
+(d/'PRE_RUN_QA_RECEIPT.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')

@@ -1,0 +1,30 @@
+{
+  "agent": "/root/v41_execution_integrated",
+  "blockers": [],
+  "exit_code": 0,
+  "historical_financial_runs": 0,
+  "independent_tests": 21,
+  "prior_pre_run_findings": [
+    "Verify full implementation artifact pins",
+    "Preserve UNRESOLVED vs INELIGIBLE",
+    "Preserve deadline UNFILLED_EXPIRED",
+    "Post-CLOSE pending recheck beforeEOF"
+  ],
+  "receipt_origin": "Root transcription of actual independent read-only agent verdict and reported code hashes",
+  "repairs_accepted": [
+    "All four material pre-run findings repaired before any historical outcome",
+    "Driver50 and ledger/stats80 ambient invariance",
+    "Atomic one-shot reservation and exact frozen catalog compare",
+    "Gap/ContractWait unknown states retained",
+    "Independent auditor signed funding and adverse event/value checks"
+  ],
+  "reviewed_sha256": {
+    "scripts/audit_machine_strategy_v4_1_development_financial_v1.py": "36ff82ea16a294e7f3b3bd10649eae9e924caae1b7ce9bae946005781b024591",
+    "scripts/run_machine_strategy_v4_1_development_financial_v1.py": "8d8da93d4a0da9583bd21a3fd3319fd59b0af01b656354fd958be5d50234b720",
+    "tests/test_machine_strategy_v4_1_development_financial_runner.py": "2501fa9ea511197122cc4ba4707c9546cd1989b4950161989e98eac93abc2f62"
+  },
+  "role": "execution_auditor",
+  "scope": "PRE_RUN_NEW_WRAPPER_EXECUTION_SYNTHETIC_AND_GUARDS",
+  "trade_entry_allowed": false,
+  "verdict": "PASS"
+}

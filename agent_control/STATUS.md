@@ -13,3 +13,5 @@ A guarded runner now exists at `scripts/run_machine_strategy_v4_1_development_fi
 Qualification thresholds remain unchanged including WR>=70%, CLOSED>=200, PF>=1.20, positive expectancy/net P&L, doubled-cost robustness, DD/loss-streak/group/Wilson/concentration/unknown-exit requirements. Existing history is development, not pristine OOS.
 
 No OOS/forward/PAPER/LIVE/private exchange API/orders/platform. Production candidate NONE; `trade_entry_allowed=false`.
+
+Pre-run checkpoint:110tests/sevencommands and real authorization PASS; independent execution reviewer21tests/current hashes PASS. New wrapper-only defects repaired before any historical outcome, frozen implementation bytes unchanged. No historical result/RUN_STARTED exists yet; next action exactly one authorized run, immediate checkpoint/commit/push before analysis. See PRE_RUN_QA_RECEIPT and EXECUTION_PRE_RUN_REVIEW in the development financial namespace.

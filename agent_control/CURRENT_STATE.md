@@ -49,3 +49,5 @@ After any financial output is emitted, no silent rerun, parameter sweep, thresho
 - v3 financial STOP checkpoint `2d7770680867f93948d4d26b91633cbb8cdbc9136bd54a988436a687accc6dd0`.
 - v3 failure audit manifest `9b0353dbfeabfa2768f4a1f62af820c128f98c48faad09544acee4c0547867a3`.
 - v3 known diagnostic: 99 candidates, 20 all-nine CLOSED, base WR50%, PF_R0.278459, expectancy -0.309356R, net -6.187114R; doubled WR45%, PF_R0.162663, net -9.243979R. These are not v4.1 outcomes.
+
+Pre-run checkpoint:110tests/sevencommands and real authorization PASS; independent execution reviewer21tests/current hashes PASS. New wrapper-only defects repaired before any historical outcome, frozen implementation bytes unchanged. No historical result/RUN_STARTED exists yet; next action exactly one authorized run, immediate checkpoint/commit/push before analysis. See PRE_RUN_QA_RECEIPT and EXECUTION_PRE_RUN_REVIEW in the development financial namespace.

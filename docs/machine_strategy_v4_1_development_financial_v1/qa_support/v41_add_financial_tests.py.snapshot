@@ -1,0 +1,132 @@
+from pathlib import Path
+p=Path('/workspace/-/tests/test_machine_strategy_v4_1_development_financial_runner.py')
+s=p.read_text();s=s.replace('import unittest\nfrom decimal import Decimal','import unittest\nimport json\nimport tempfile\nfrom pathlib import Path\nfrom types import SimpleNamespace\nfrom unittest.mock import patch\nfrom decimal import Decimal, ROUND_UP, localcontext\nimport audit_machine_strategy_v4_1_development_financial_v1 as auditor\nfrom machine_strategy_v4_1_guarded_runner import fixture\nfrom machine_strategy_v4_1_synthetic_source_bridge import ClosedSourceBridge\nfrom machine_strategy_v4_1_execution_binding import all_scenario_plans')
+extra='''
+
+class V41PreRunIntegrityTests(unittest.TestCase):
+    def test_authorization_verifies_transitive_implementation_pins(self):
+        with patch("verify_machine_strategy_v4_1_implementation_v1.resume", side_effect=ValueError("PIN_CHANGED")) as verify, patch.object(runner, "market_inputs") as data:
+            with self.assertRaisesRegex(ValueError, "PIN_CHANGED"):
+                runner._run()
+            verify.assert_called_once_with(runner.IMPLEMENTATION_MANIFEST_SHA256)
+            data.assert_not_called()
+
+    def test_authorization_does_not_accept_caller_context(self):
+        with self.assertRaises(TypeError):
+            runner._authorization(True)
+        with self.assertRaises(TypeError):
+            runner._authorization(manifest_path="arbitrary.json")
+
+    def test_existing_output_or_started_reservation_blocks_before_data(self):
+        for name in (*runner.FINAL_FILES, "RUN_STARTED.json"):
+            with self.subTest(name=name), tempfile.TemporaryDirectory() as directory:
+                out = Path(directory)
+                (out / name).write_text("existing")
+                with patch.object(runner, "OUT", out), patch.object(runner, "market_inputs") as data:
+                    with self.assertRaisesRegex(runner.FinancialGateBlocked, "ONE_SHOT_OUTPUT_ALREADY_EXISTS"):
+                        runner._run()
+                    data.assert_not_called()
+
+    def test_atomic_reservation_refuses_concurrent_second_entry(self):
+        with tempfile.TemporaryDirectory() as directory:
+            out = Path(directory)
+            (out / "RUN_STARTED.json").write_text("reserved")
+            with patch.object(runner, "OUT", out), patch.object(runner, "_authorization", return_value={}), patch.object(runner, "market_inputs") as data:
+                with self.assertRaises(FileExistsError):
+                    runner._run()
+                data.assert_not_called()
+
+    def test_unresolved_plan_retains_unknown_state(self):
+        state = runner._scenario_state({}, {"scenario_id": "P01_Q001", "status": "UNRESOLVED", "reason": "DATA_UNKNOWN"}, {})
+        self.assertEqual(state["status"], "UNRESOLVED")
+
+    def test_deadline_and_structural_retirement_are_distinct(self):
+        state = {"status": "PENDING"}
+        self.assertEqual(runner._retire_pending(state, {"known_at": 57600, "deadline": True})["status"], "UNFILLED_EXPIRED")
+        self.assertEqual(runner._retire_pending(state, {"known_at": 57600, "structural_break": True})["status"], "UNFILLED_RETIRED")
+
+    def _registered_source(self, name, eof_at=None):
+        order, bars, funding, _ = fixture(name)
+        if eof_at is not None:
+            bars = [bar for bar in bars if bar["end"] <= eof_at]
+        order = runner._jsonable(order)
+        order["scenario_plans"] = all_scenario_plans(order, completed_close=order["decision_close"])
+        bridge = ClosedSourceBridge(order, bars)
+        source = bridge.source
+        source.catalog = lambda cutoff=None: ([order], {})
+        return order, bridge.native, funding, source
+
+    def _drive(self, order, native, funding, source):
+        with patch.object(runner, "V41HistoricalAdapter", return_value=source):
+            return runner._drive_decision_group(order["product"], {15: native}, funding, [order], 0, native[-1].end)[order["case_id"]]
+
+    def test_actual_source_h4_midbar_driver_long_short(self):
+        for direction in ("long", "short"):
+            with self.subTest(direction=direction):
+                order, native, funding, source = self._registered_source(direction + "_stb_h4_midbar")
+                states = self._drive(order, native, funding, source)
+                self.assertEqual(len(states), 9)
+                self.assertEqual(states[0]["status"], "CLOSED")
+                self.assertEqual(states[0]["fill_time_bounds"], (33300, 34200))
+                self.assertEqual(source.inventory.state(order["entry_poi_id"])["reserved_at"], 32400)
+
+    def test_actual_source_final_close_contact_retires_before_eof(self):
+        order, native, funding, source = self._registered_source("long_stb_h4_no_fill", 43200)
+        states = self._drive(order, native, funding, source)
+        self.assertEqual(states[0]["status"], "UNFILLED_RETIRED")
+        self.assertEqual(states[0]["observed_at"], 43200)
+        self.assertIn("poi_consumed", states[0]["retirement_reasons"])
+
+    def test_driver_gap_retains_unknown(self):
+        order, native, funding, source = self._registered_source("long_stb_h4_midbar")
+        native = [bar for bar in native if bar.start != 33300]
+        states = self._drive(order, native, funding, source)
+        self.assertEqual(states[0]["status"], "UNKNOWN_DATA_GAP")
+
+    def test_driver_deadline_before_observer(self):
+        order, native, funding, source = self._registered_source("long_stb_h4_midbar")
+        source.lifecycle_flags = lambda order, at, scenario: {"known_at": at, "deadline": at >= 32400}
+        with patch.object(runner, "_model_observer") as observer:
+            states = self._drive(order, native, funding, source)
+            observer.assert_not_called()
+        self.assertEqual(states[0]["status"], "UNFILLED_EXPIRED")
+
+    def test_observer_wait_is_preserved_without_aborting_run(self):
+        order, native, funding, source = self._registered_source("long_stb_h4_midbar")
+        with patch.object(runner, "_model_observer", side_effect=runner.core.ContractWait("WAIT_HISTORICAL_TICK_METADATA")):
+            states = self._drive(order, native, funding, source)
+        self.assertEqual(states[0]["status"], "UNRESOLVED")
+
+    def test_ambient_context_cannot_change_driver_or_auditor(self):
+        first = self._registered_source("long_stb_h4_midbar")
+        expected = runner._jsonable(self._drive(*first))
+        second = self._registered_source("long_stb_h4_midbar")
+        with localcontext() as context:
+            context.prec = 6
+            context.rounding = ROUND_UP
+            actual = runner._jsonable(self._drive(*second))
+        self.assertEqual(actual, expected)
+        order = first[0]
+        case = runner._adverse_case(order, expected)
+        arithmetic = auditor._verify_case_arithmetic({order["case_id"]: order}, [case], {order["product"]: []})
+        self.assertGreater(arithmetic["closed_arithmetic_checks"], 0)
+        self.assertEqual(runner._group_stats([case], "base")["net_R"], auditor._serialize(auditor._stats([case], "base"))["net_R"])
+
+    def test_auditor_rejects_adverse_value_tamper(self):
+        order, native, funding, source = self._registered_source("long_stb_h4_midbar")
+        case = runner._adverse_case(order, self._drive(order, native, funding, source))
+        case["adverse"]["base"]["net_cash"] = "99999"
+        with self.assertRaisesRegex(auditor.AuditStop, "ADVERSE_SELECTION_OR_VALUES_CHANGED"):
+            auditor._verify_case_arithmetic({order["case_id"]: order}, [case])
+
+    def test_independent_signed_funding_witness_matches_exact_ledger(self):
+        for direction in ("LONG", "SHORT"):
+            state = {"direction": direction, "quantity_base": "0.33333333333333333333333333333333333333333333333333", "fill_price": "100", "exit_price": "110", "fixed_R_unit": "3", "fill_time_bounds": [0, 900], "event_time_bounds": [1800, 2700]}
+            rows = [(900, Decimal("0.001"), Decimal(105)), (1800, Decimal("-0.002"), Decimal(108))]
+            cash = runner._jsonable(runner._closed_cash(state, rows))
+            actual, witness = auditor._funding_witness(state, rows)
+            self.assertEqual(actual, Decimal(cash["columns"]["base"]["funding_cash"]))
+            self.assertEqual(witness, cash["funding_timing_witness"])
+'''
+s=s.replace('\n\nif __name__ == "__main__":',extra+'\n\nif __name__ == "__main__":')
+p.write_text(s)
