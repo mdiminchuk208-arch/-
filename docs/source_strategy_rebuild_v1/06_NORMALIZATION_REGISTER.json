@@ -27,9 +27,16 @@
     {
       "id": "TN_SFP_001",
       "status": "PROPOSED_FOR_STAGE_2_QA",
-      "definition": "Raw candidate only: sweep a known level and close back on the pre-sweep side; exact source-valid three-candle pattern remains unresolved.",
+      "definition": "Raw candidate only: sweep a known level and close back on the pre-sweep side; exact source-valid three-candle pattern remains separately source-checked.",
       "source_claim": false,
-      "purpose": "Preserve sweep/body-rejection opportunities without falsely claiming a complete SFP trade rule."
+      "purpose": "Preserve sweep/body-rejection opportunities without deleting source formations."
+    },
+    {
+      "id": "TN_OB_BODY_001",
+      "status": "PROPOSED_FOR_STAGE_2_QA",
+      "definition": "For the source phrase 'OB body large, wicks small', require positive candle body and body length > upper-wick length and > lower-wick length. No percentage, ATR, percentile or outcome-fitted cutoff.",
+      "source_claim": false,
+      "purpose": "Encode only the qualitative ordering stated by the source while avoiding a hidden magnitude threshold. Failures are reported separately as NORMALIZATION_FAIL in coverage telemetry."
     }
   ],
   "unresolved_semantics": [
@@ -38,8 +45,6 @@
     "UNKNOWN_RANGE_CLARITY",
     "UNKNOWN_NO_STRUCTURE_NUMERIC_DEFINITION",
     "UNKNOWN_RANGE_REACTION_COUNT",
-    "UNKNOWN_OB_BODY_LARGE",
-    "UNKNOWN_OB_WICKS_SMALL",
     "UNKNOWN_OB_ZONE_GEOMETRY",
     "UNKNOWN_IMPULSE_STRENGTH",
     "UNKNOWN_BREAKER_ENTRY_ZONE",
@@ -53,9 +58,7 @@
     "UNKNOWN_AMD_PHASE_BOUNDARIES",
     "UNKNOWN_RETURN_SPEED",
     "UNKNOWN_VOLUME_COMPARISON_WINDOW",
-    "UNKNOWN_STOP_POLICY_BY_FAMILY",
-    "UNKNOWN_TARGET_EXIT_POLICY",
-    "UNKNOWN_REENTRY_POLICY",
+    "UNKNOWN_TARGET_EXIT_POLICY_OUTSIDE_U1",
     "UNKNOWN_SETUP_LIFETIME"
   ],
   "forbidden_without_new_freeze": [
