@@ -1,0 +1,211 @@
+{
+  "version": "SOURCE_STRATEGY_REBUILD_v1",
+  "baseline": "SOURCE_FAITHFUL_HISTORICAL_EVIDENCE_ADAPTER_v2",
+  "baseline_raw_proposals": 176365,
+  "baseline_evidence_complete": 0,
+  "goal": "Close source-resolvable evidence gaps with causal deterministic code; preserve genuinely underspecified semantics as UNKNOWN; do not use outcomes.",
+  "rules": [
+    {
+      "gap": "HISTORICAL_INSTRUMENT_METADATA",
+      "old_count": 176365,
+      "new_treatment": "DEFER_FROM_SOURCE_COVERAGE",
+      "reason": "Tick/quantity metadata is required for executable quote rounding, not for recognizing SOURCE chart formations. Reintroduce venue metadata at entry-price/size stage using current OKX policy."
+    },
+    {
+      "gap": "CANONICAL_SOURCE_CONTEXT",
+      "old_count": 176365,
+      "new_treatment": "AUTO_STRUCTURE_CONTEXT",
+      "resolver": "strict three-bar swings -> HH/HL/LH/LL -> causal structure/context IDs across active TFs",
+      "rule_class": "SOURCE_RULE+TECHNICAL_NORMALIZATION"
+    },
+    {
+      "gap": "SOURCE_CONFIRMATION",
+      "old_count": 176365,
+      "new_treatment": "AUTO_CAUSAL_CONFIRMATION",
+      "resolver": "completed body-close BOS/CONF against already-known protected structural levels; family-specific confirmation chain",
+      "rule_class": "SOURCE_RULE+TECHNICAL_NORMALIZATION"
+    },
+    {
+      "gap": "SOURCE_ENTRY_POI",
+      "old_count": 176365,
+      "new_treatment": "AUTO_BRANCH_ENTRY_CHAIN",
+      "resolver": "U3: OB reaction->M15 BOS->new POI; SFP pattern->M15 BOS->new/retest POI; Range reclaim/retest; STB midpoint; confirmed Breaker",
+      "rule_class": "USER_RESOLUTION_PRE_BACKTEST"
+    },
+    {
+      "gap": "market_context",
+      "old_count": 176365,
+      "new_treatment": "AUTO_STRUCTURE_CONTEXT",
+      "resolver": "known-prefix structural state and source TF roles; no universal all-TF alignment"
+    },
+    {
+      "gap": "protected_endpoints",
+      "old_count": 164730,
+      "new_treatment": "AUTO_PROTECTED_STRUCTURE",
+      "resolver": "protected HL/LH/key extreme selected from causal source-valid structure sequence; ties/nonunique cases remain UNKNOWN"
+    },
+    {
+      "gap": "zone_first_test",
+      "old_count": 176365,
+      "new_treatment": "AUTO_FIRST_TEST_REGISTRY",
+      "resolver": "U6 FIRST_TEST_ONLY with stable POI identity and chronological native-bar contact; ambiguous intrabar order stays UNKNOWN"
+    },
+    {
+      "gap": "inventory_completeness",
+      "old_count": 176365,
+      "new_treatment": "AUTO_KNOWN_PREFIX_INVENTORY",
+      "resolver": "enumerate every source-valid known-prefix POI/liquidity object in M15/H1/H4/D1; completeness attested by deterministic object registry"
+    },
+    {
+      "gap": "contextual_poi_relation",
+      "old_count": 176365,
+      "new_treatment": "AUTO_DIRECTIONAL_POI_RELATION",
+      "resolver": "compare causal POI zone/direction/TF/consumed state to setup and selected structural context; no future POI"
+    },
+    {
+      "gap": "source_stop_anchor",
+      "old_count": 120091,
+      "new_treatment": "AUTO_FROM_U2",
+      "resolver": "OB source extreme; Breaker raid/impulse extreme; SFP pattern extreme+ATR14; STB manipulation raid; Range deviation/invalidation; nonunique stays UNKNOWN"
+    },
+    {
+      "gap": "liquidity_context",
+      "old_count": 56274,
+      "new_treatment": "AUTO_WHEN_SOURCE_DEFINED",
+      "resolver": "For SFP, swept pre-existing swing/range boundary itself satisfies source liquidity-context geometry. Other ambiguous contextual roles remain UNKNOWN."
+    },
+    {
+      "gap": "meaningful_liquidity",
+      "old_count": 56274,
+      "new_treatment": "AUTO_STRUCTURAL_OR_RANGE_EXTERNAL_ELSE_UNKNOWN",
+      "resolver": "Structural swing/range boundary explicitly referenced by a source setup is meaningful for that setup without a distance score. Other pools remain UNKNOWN; no old fitted filter."
+    },
+    {
+      "gap": "ltf_bos_source_entry",
+      "old_count": 56274,
+      "new_treatment": "AUTO_M15_CHAIN",
+      "resolver": "For SFP/OB above M15, scan completed M15 structure after formation for first source-valid directional BOS before source invalidation, then build first new source-valid POI. M15 setups requiring strictly-lower refinement remain coverage WAIT under frozen U4."
+    },
+    {
+      "gap": "clear_range",
+      "old_count": 108456,
+      "new_treatment": "AUTO_PARTIAL_SOURCE_RANGE",
+      "resolver": "Use source first-high/first-low boundaries, absence of directional structure inside, deviation and 0.5 reaction. Boundary/reaction ambiguity stays UNKNOWN without hidden width threshold."
+    },
+    {
+      "gap": "range_deviation",
+      "old_count": 108456,
+      "new_treatment": "AUTO_EXACT",
+      "resolver": "completed price excursion beyond known range boundary followed by source-required reclaim evidence"
+    },
+    {
+      "gap": "range_reclaim_retest",
+      "old_count": 108456,
+      "new_treatment": "AUTO_EXACT",
+      "resolver": "chronological reclaim then later boundary/origin-zone retest using completed bars"
+    },
+    {
+      "gap": "outside_poi",
+      "old_count": 54228,
+      "new_treatment": "AUTO_GEOMETRY",
+      "resolver": "known source POI outside/at range boundary by zone relation; no fitted distance cutoff"
+    },
+    {
+      "gap": "return_choch_zone",
+      "old_count": 54228,
+      "new_treatment": "AUTO_CAUSAL_STRUCTURE_BREAK",
+      "resolver": "return inside range plus source structural break/CHOCH evidence using completed structure events"
+    },
+    {
+      "gap": "trend_aligned",
+      "old_count": 7778,
+      "new_treatment": "AUTO_STRUCTURE_RELATION",
+      "resolver": "direction compared with source-valid local/global structural context under U4; no all-TF AND gate"
+    },
+    {
+      "gap": "pd_context",
+      "old_count": 3889,
+      "new_treatment": "AUTO_SELECTED_RANGE_IMPULSE",
+      "resolver": "0.5 equilibrium and premium/discount only after causal source-valid range/impulse endpoints exist"
+    },
+    {
+      "gap": "stb_raid_absorption_structure",
+      "old_count": 3889,
+      "new_treatment": "AUTO_RAID_ENGULF_BOS",
+      "resolver": "pre-existing liquidity raid -> opposite source candle/absorption -> engulf -> directional structural confirmation; STB midpoint entry from U3"
+    },
+    {
+      "gap": "ob_formation",
+      "old_count": 3889,
+      "new_treatment": "AUTO_RAID_IMBALANCE_STRUCTURE_WITH_EXPLICIT_BODY_RULE",
+      "resolver": "last candle before source wick-gap impulse, takes prior high/low/wick, move updates structure; technical body/wick normalization must be explicit and outcome-blind"
+    },
+    {
+      "gap": "higher_poi",
+      "old_count": 3889,
+      "new_treatment": "AUTO_KNOWN_HTF_POI",
+      "resolver": "use already-known H1/H4/D1 source-valid POI relations, not fitted owner labels"
+    },
+    {
+      "gap": "reaction_bos_new_poi",
+      "old_count": 3889,
+      "new_treatment": "AUTO_U3_CHAIN",
+      "resolver": "chronological POI reaction -> M15 BOS -> newly formed source-valid POI -> later first test"
+    },
+    {
+      "gap": "selected_impulse",
+      "old_count": 3889,
+      "new_treatment": "AUTO_CAUSAL_ORIGIN_IMPULSE_WHEN_UNIQUE",
+      "resolver": "impulse that caused the relevant structural update/imbalance is selected only when unique; ambiguity remains UNKNOWN"
+    },
+    {
+      "gap": "breaker_formation",
+      "old_count": 3857,
+      "new_treatment": "AUTO_PRIOR_OB_BREAK_IMBALANCE_STRUCTURE",
+      "resolver": "must originate from source-valid prior OB, take high/low, break through with imbalance and source structural confirmation"
+    },
+    {
+      "gap": "breaker_confirmation",
+      "old_count": 3857,
+      "new_treatment": "AUTO_CAUSAL_CONFIRMATION",
+      "resolver": "source BOS/CHOCH confirmation after breaker formation; ambiguous CHOCH identity remains UNKNOWN"
+    },
+    {
+      "gap": "poi_reaction",
+      "old_count": 3857,
+      "new_treatment": "AUTO_TOUCH_REACTION",
+      "resolver": "first eligible causal touch/reaction of source-valid POI; no retrospective best reaction selection"
+    },
+    {
+      "gap": "flow_context",
+      "old_count": 7746,
+      "new_treatment": "AUTO_WHEN_STRUCTURE_DEFINES_FLOW_ELSE_UNKNOWN",
+      "resolver": "derive only source-supported directional order-flow relation from completed structural sequence; no score"
+    },
+    {
+      "gap": "smooth_approach",
+      "old_count": 3889,
+      "new_treatment": "NEW_TECHNICAL_NORMALIZATION_REQUIRED",
+      "resolver": "must be frozen as an explicit structural-sequence predicate before it can PASS/FAIL; no ATR/body-score tuning"
+    },
+    {
+      "gap": "whole_impulse",
+      "old_count": 3857,
+      "new_treatment": "NEW_TECHNICAL_NORMALIZATION_REQUIRED",
+      "resolver": "must be frozen using source impulse continuity/imbalance/structure facts; no outcome-fitted displacement threshold"
+    },
+    {
+      "gap": "reasonable_tilt",
+      "new_treatment": "NEW_TECHNICAL_NORMALIZATION_REQUIRED",
+      "resolver": "EQH/EQL/trendline tolerance must be explicit, venue-independent and outcome-blind"
+    }
+  ],
+  "forbidden": [
+    "old outcome labels",
+    "manual visual trade guessing as production logic",
+    "future candles",
+    "financial optimization",
+    "hidden numeric significance thresholds",
+    "dropping UNKNOWN from coverage totals"
+  ]
+}
