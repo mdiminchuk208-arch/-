@@ -1,0 +1,12 @@
+{
+  "BTC-USDT-SWAP": {
+    "candidate_count": 25,
+    "raw_origin_count": 5960,
+    "source_digest": "58d6853a5a4b539226be29763daed01b1ef4c666ab8e35d7ce2df3c6468a9144"
+  },
+  "ETH-USDT-SWAP": {
+    "candidate_count": 29,
+    "raw_origin_count": 5987,
+    "source_digest": "b52f617a241aa0c9090f1410561fd772140bba457a3ed98d0d91b8198fe8517f"
+  }
+}

@@ -1,0 +1,425 @@
+{
+  "artifacts_sha256": {
+    "docs/machine_strategy_v4_1_development_financial_v1/recovery/BTC-USDT-SWAP.catalog.jsonl.gz": "0abdd4baa3dac44de0567b661de757accc8bc73a9a8977f37a9a553e7854e78b",
+    "docs/machine_strategy_v4_1_development_financial_v1/recovery/CATALOG_AUDIT.json": "b8a7d0e79541b9c859366d36f2003c2cdfa6aec4fc1f4a006b45f48615364f80",
+    "docs/machine_strategy_v4_1_development_financial_v1/recovery/ETH-USDT-SWAP.catalog.jsonl.gz": "b49fcf7d529df69564f7812263c8877d2e9d10a07ff168ab12c156f4a4259da0",
+    "docs/machine_strategy_v4_1_development_financial_v1/recovery/INITIALIZATION_STARTED.json": "50076848292e756d0d03039659c41da07f61ee9d76bdc4912e9a4923326e71a3"
+  },
+  "code_sha256": {
+    "scripts/audit_machine_strategy_v4_1_development_financial_v1.py": "36ff82ea16a294e7f3b3bd10649eae9e924caae1b7ce9bae946005781b024591",
+    "scripts/recover_machine_strategy_v4_1_development_financial_v1.py": "99abe74bca60a8c4c4ac4344066dbd97ea36910f12f09a314f9e904fdc748904",
+    "scripts/run_machine_strategy_v4_1_development_financial_v1.py": "8d8da93d4a0da9583bd21a3fd3319fd59b0af01b656354fd958be5d50234b720",
+    "tests/test_machine_strategy_v4_1_development_financial_recovery.py": "4db9ad7099771f74b83ce1bdc0d587d9b511ad60e6c4ecfa4a24567814af9b3a",
+    "tests/test_machine_strategy_v4_1_development_financial_runner.py": "2501fa9ea511197122cc4ba4707c9546cd1989b4950161989e98eac93abc2f62"
+  },
+  "completed_financial_evaluations": 0,
+  "gate": "MACHINE_STRATEGY_V4_1_DEVELOPMENT_FINANCIAL_V1",
+  "groups": [
+    {
+      "case_ids": [
+        "be3c94e3581d927356a42c085b0c4da24b8f88c48ee997c70c05552d71967018"
+      ],
+      "decision_at": 1734336000,
+      "index": 0,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "354b252fc1d17cf06a1f18da2d51000455cadaf5a483650df7fa24fb3706fd33"
+      ],
+      "decision_at": 1743026400,
+      "index": 1,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "ab11377473c0fc3ba330d8112c3cf34debc29bfb24994bb1895be95baa8009e2"
+      ],
+      "decision_at": 1743656400,
+      "index": 2,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "87b9af237a56aac3c38c84352ce366e59ccbe5946ca6aec2bdae0deb189a5324"
+      ],
+      "decision_at": 1745877600,
+      "index": 3,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "6cd0242f2c69840ce6f4c9170ac111967004bd031b9d3bb914d24489241bd0eb"
+      ],
+      "decision_at": 1747054800,
+      "index": 4,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "ce76df84978c871034e5483a9585142b42dac8896267db3e5909abf2c78ff5d1"
+      ],
+      "decision_at": 1747152000,
+      "index": 5,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "03c7c24098ea4b9099fc6e680716c39f8bc88ec751cb7573243a7813b6d696e7"
+      ],
+      "decision_at": 1747656000,
+      "index": 6,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "57a24373792688f84c610dbd95732bd876d22ffe6701fe9b630af26324945f58"
+      ],
+      "decision_at": 1751223600,
+      "index": 7,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "9daa8426dc0fdda039688db632905f736d8baf74458f5bcef6a77ec6f35ef92b"
+      ],
+      "decision_at": 1754632800,
+      "index": 8,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "6bb4d8cd7d77052eb0ebe0aa1ecf143bc4169737e3e8ac9edc13a88646cc7e4c"
+      ],
+      "decision_at": 1754668800,
+      "index": 9,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "8b2191f3f5f1244c3ac29cf259bc754205608bde248cd41eaaec00ae979338ec"
+      ],
+      "decision_at": 1755741600,
+      "index": 10,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "eb9da0ea2c2f4716ee106381f389045ebf9c9a165c7a200f6076918218589dcf"
+      ],
+      "decision_at": 1758708000,
+      "index": 11,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "4b095bc424821b3247a8596b28d8000e8e9d6977cdb08c4ad77500a946ae9222"
+      ],
+      "decision_at": 1762804800,
+      "index": 12,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "7bc8c9e20b73ed417ece973e6f56bbe59cf36c21a58319812246401ca7ff04ff",
+        "de0f1f8352048532ea7a19b8c9b7fb84c018b98d3b20d9c677d6d3192e62f233"
+      ],
+      "decision_at": 1763611200,
+      "index": 13,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "12af92026d8cef3222c84acfd2e1866079170f91361906e130468b6e4e70c37b"
+      ],
+      "decision_at": 1770361200,
+      "index": 14,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "132a7c65e4a48416d5705e7783d809ab01978e8b6e7a7d43c7485233ba0cd691"
+      ],
+      "decision_at": 1770926400,
+      "index": 15,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "c45f77042def3af0af89ae2ec4e8363504570828b1a4ee6e522ec51d684bfde9"
+      ],
+      "decision_at": 1775361600,
+      "index": 16,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "8e40125bc1da7970d47d7385bc96b14651dcb95f4792e9cb491615ec1d012a7f"
+      ],
+      "decision_at": 1775588400,
+      "index": 17,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "ca52d0f27645d1595f3ac2f4f4782d527820366b3f38871a49afae508d1c6853"
+      ],
+      "decision_at": 1776895200,
+      "index": 18,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "ad914dc106e6a0d7d5d2fb392bc7c4dabb335bc5604bcea987330188bdd5881e"
+      ],
+      "decision_at": 1785938400,
+      "index": 19,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "4b60fc3138e8f84cd6775f0c6cf65a88ec119a4fde09a5c3981263376aadfc6c"
+      ],
+      "decision_at": 1790352000,
+      "index": 20,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "f19c011edd79f659bc76a4ae15944db91c3d49bb35dd53aec5e5051a48c30842"
+      ],
+      "decision_at": 1790553600,
+      "index": 21,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "2dce639cd7bc61ec3a83f37c75e401ce9a63e6f7a3a094525654bd74ccebf439",
+        "c941dea020547a204b39212ead93751eda66e2897c6dc88d93c7274463a108be"
+      ],
+      "decision_at": 1790730000,
+      "index": 22,
+      "product": "BTC-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "136fbbac6b237c793fb5fc19b1f11425850b833881b450935aa533043bddee6f"
+      ],
+      "decision_at": 1729022400,
+      "index": 23,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "d59e9aa4555fe2d50e0615bc43d23b015eb4e224bb49da2f6a7ee88b7656f2dd"
+      ],
+      "decision_at": 1729828800,
+      "index": 24,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "1b0284b4f1a57468aa918cf2b0cee1943a434e7108fff48c75429006238323ba"
+      ],
+      "decision_at": 1730685600,
+      "index": 25,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "036809dfaa64c49a0d38d5c5c08abc45a4d354ab04cc577b666cd7afe4a913c2"
+      ],
+      "decision_at": 1733166000,
+      "index": 26,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "babad35a347679dda375b7a93d7154a3f2fee2803140d02862c97004f803d906"
+      ],
+      "decision_at": 1734228000,
+      "index": 27,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "2c005f9bf2995a0c80681982a2269585bec12beb7c584ee9014394af491c1fa1"
+      ],
+      "decision_at": 1741143600,
+      "index": 28,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "3d974b6f1f7d3d16bc4eeaf2bf3f27dfdb2f2d35cfcc4cae3758e1a114e49c62",
+        "ca61685bf9b15b710c439779ae14f7ba732d0f403c1652d5682854f1c8f2457d"
+      ],
+      "decision_at": 1745737200,
+      "index": 29,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "1732d9c31f846ece7e98d94a6366ebad21fe223720727fe55724b33ce73112f3"
+      ],
+      "decision_at": 1747098000,
+      "index": 30,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "7f8a2124ec71e8a68c5f9e7dbb8909389518aa7ebf56d6679fa50e41ea0036c9"
+      ],
+      "decision_at": 1748811600,
+      "index": 31,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "e564ef52981a2425705c37461724f638ee62427a819ca2061873a091751d68eb"
+      ],
+      "decision_at": 1750125600,
+      "index": 32,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "2ff6b2f0bb8320236ed814175717fd5759395eb3a2e94b95c90b10901f452fde"
+      ],
+      "decision_at": 1752350400,
+      "index": 33,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "3645554ff94956ac9c7eaeaa3f79187fe523e38ed1e556f7022bd54606da8871"
+      ],
+      "decision_at": 1753131600,
+      "index": 34,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "4f66f944062f95c7ea51467f67e66c70b98a613b4e1e2c56c3941dc65e20f6ed"
+      ],
+      "decision_at": 1758916800,
+      "index": 35,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "901f906ad794ea5e8b9b9864883459e0ac47f705dc7df4dbc71aaf9e3ad58665"
+      ],
+      "decision_at": 1770667200,
+      "index": 36,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "812b1bc5091b4dbada938cff9282f3f85b3e224f1209db42670819b1fb1bbe27"
+      ],
+      "decision_at": 1773338400,
+      "index": 37,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "d4c648bfe4693bf42e87f3ad348718f188c7f6023c18a143b9d89bb1cd47d2bf"
+      ],
+      "decision_at": 1774958400,
+      "index": 38,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "9b62595b70107cdf44335b18d049815777ce26547e24c6cf4d89fb63269d9c6a"
+      ],
+      "decision_at": 1775757600,
+      "index": 39,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "ee0e3f37df319d0aa4fc6cb55a0c4100a5c037dc48ad30a00ae94eb34162e3c0"
+      ],
+      "decision_at": 1776740400,
+      "index": 40,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "4295f5a26bf4081148bd407a5129f340238680597f231f588d63a0419e783eec"
+      ],
+      "decision_at": 1778252400,
+      "index": 41,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "4bb147dfde5b940fc94a620d3b207ea0d5441d89142c3087885ce5272187a539"
+      ],
+      "decision_at": 1779746400,
+      "index": 42,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "5b4df8147e4179b65c601a1368320ea7b2a03392871fb9e76b6dcb2ff6e841e1"
+      ],
+      "decision_at": 1780005600,
+      "index": 43,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "d5afb22f6dd43f85960d0b8d1a96c80ebc3b14e8be696fa789584b935b540ce7"
+      ],
+      "decision_at": 1781208000,
+      "index": 44,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "c27f84b67926ac0813ba0c862feb245eefe44846ea58bfd5481fca3280a1eebe"
+      ],
+      "decision_at": 1782165600,
+      "index": 45,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "ae05f1a7248e05cbd83acc034635136a50448351afd257af9ee01c818417efe5",
+        "ef46ac8a497bc5e144c71c7f1003a021967648505f044dc4d4f513b021d202bc"
+      ],
+      "decision_at": 1783447200,
+      "index": 46,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "96fa5afdc6d78fe535c57f7d4668848d1acf9c960abab932be9ddbec213a3e65"
+      ],
+      "decision_at": 1788897600,
+      "index": 47,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "7ae3a131f9660d6971639f782ca2560473895865a1aa50b0e6883f48f16aa276"
+      ],
+      "decision_at": 1789077600,
+      "index": 48,
+      "product": "ETH-USDT-SWAP"
+    },
+    {
+      "case_ids": [
+        "760757f13158a5644dcdc81f116f40c9b417e2c0b8d97af53b34327b952cb010"
+      ],
+      "decision_at": 1791320400,
+      "index": 49,
+      "product": "ETH-USDT-SWAP"
+    }
+  ],
+  "next_group": 0,
+  "trade_entry_allowed": false
+}

@@ -1,0 +1,39 @@
+(async () => {
+  const workdir = "/workspace/-";
+  const base = "docs/machine_strategy_v4_1_development_financial_v1";
+  const sq = value => "'" + String(value).replace(/'/g, "'\\''") + "'";
+  async function command(cmd) {
+    let result = await tools.exec_command({cmd: "set -e\n" + cmd, workdir, yield_time_ms:1000, max_output_tokens:3000});
+    let output = result.output;
+    while (result.session_id !== undefined) {
+      result = await tools.write_stdin({session_id:result.session_id, chars:"", yield_time_ms:45000, max_output_tokens:3000});
+      output += result.output;
+    }
+    if (result.exit_code !== 0) throw new Error("Actual command failed exit=" + result.exit_code + ": " + output);
+    return output;
+  }
+  let pin = load("v41_recovery_state_pin");
+  let index = load("v41_recovery_next_group");
+  if (!/^[0-9a-f]{64}$/.test(pin) || !Number.isInteger(index)) throw new Error("Missing external recovery cursor");
+  const end = Math.min(index + 5, 50);
+  while(index < end) {
+    notify({event:"RECOVERY_GROUP_STARTED", index, expected_state_sha256:pin});
+    const label=String(index).padStart(3,"0");
+    const cmd = "set -o pipefail\nPYTHONPATH=scripts /workspace/crypto-bot-venv/bin/python scripts/recover_machine_strategy_v4_1_development_financial_v1.py --next-group --expected-state-sha256 " + pin + " 2>&1 | tee " + base + "/qa/recovery_group_" + label + ".log";
+    const output = await command(cmd);
+    const lines=output.trim().split(/\r?\n/);
+    const response=JSON.parse(lines[lines.length-1]);
+    if(response.completed_group !== index || response.groups_complete !== index+1 || !/^[0-9a-f]{64}$/.test(response.state_sha256)) throw new Error("Unexpected recovery response");
+    store("v41_recovery_pending_group", {index,input_pin:pin,response,actual_worker_exit_code:0});
+    const entry=JSON.stringify({group_index:index,input_state_sha256:pin,output_state_sha256:response.state_sha256,shard_sha256:response.shard_sha256,actual_worker_exit_code:0,financial_values_inspected:false,publication_required_before_next:true});
+    await command("/workspace/crypto-bot-venv/bin/python -c " + sq('import sys;open(sys.argv[1],"a").write(sys.argv[2]+"\\n")') + " " + sq(base+"/RECOVERY_EXECUTION_JOURNAL.jsonl") + " " + sq(entry));
+    await command("git add " + base + "/recovery " + base + "/qa/recovery_group_" + label + ".log " + base + "/RECOVERY_EXECUTION_JOURNAL.jsonl\ngit commit -m " + sq("Checkpoint immutable v4.1 recovery group "+label) + "\ngit push origin machine-v3-research");
+    pin=response.state_sha256;
+    index=response.groups_complete;
+    store("v41_recovery_state_pin",pin);
+    store("v41_recovery_next_group",index);
+    store("v41_recovery_pending_group",null);
+    notify({event:"RECOVERY_GROUP_PUBLISHED",groups_complete:index,total:50,state_sha256:pin});
+  }
+  return {groups_complete:index,state_sha256:pin,financial_values_inspected:false};
+})()
