@@ -1,0 +1,54 @@
+{
+  "version": "MACHINE_STRATEGY_v4.1",
+  "audit": "MACHINE_STRATEGY_V4_1_FAILURE_AUDIT_V1",
+  "state": "AUTHORED_REVIEW_PENDING",
+  "financial_result_manifest_sha256": "d0a05dcd49545ae963a89840aa09388419b5213f963ba0bd266686e622812d74",
+  "run_checkpoint_sha256": "7dfaa6fb20c07febdbdb4a98278ce6c92ea4d1a026499656b3c9c5ed0280d6f8",
+  "frozen_result_publication_commit": "e7692453c9f11fd9124dbac50596fdbbe1874b70",
+  "result_close_commit": "2fc5ab72f88598dd87de7fc313f5c443919fe285",
+  "development_window": "[2024-10-13T00:00:00Z,2026-10-13T00:00:00Z)",
+  "inputs": [
+    "docs/machine_strategy_v4_1_development_financial_v1/FINANCIAL_RESULT.json",
+    "docs/machine_strategy_v4_1_development_financial_v1/REPORT_DATA.json",
+    "docs/machine_strategy_v4_1_development_financial_v1/ALL_CASES.csv",
+    "docs/machine_strategy_v4_1_development_financial_v1/ALL_SCENARIO_STATES.csv",
+    "docs/machine_strategy_v4_1_development_financial_v1/CACHED_EXECUTION_CLASSIFICATION_NOTES.json",
+    "docs/machine_strategy_v4_1_development_financial_v1/AGENT_REGISTER.json",
+    "docs/machine_strategy_v4_1_development_financial_v1/reviews/BACKTEST_REVIEWER.json",
+    "docs/machine_strategy_v4_1_development_financial_v1/reviews/COST_FUNDING_AUDITOR.json",
+    "docs/machine_strategy_v4_1_development_financial_v1/reviews/STATISTICS_ROBUSTNESS_ANALYST.json",
+    "docs/machine_strategy_v4_1_development_financial_v1/reviews/OVERFIT_RED_TEAM.json",
+    "docs/machine_strategy_v4_design_v1/EXECUTION_CONTRACT.json",
+    "docs/machine_strategy_v4_1_design_v1/SELECTED_POI_CONTRACT.json",
+    "docs/machine_strategy_v4_1_design_v1/ARITHMETIC_SCOPE_CONTRACT.json"
+  ],
+  "frozen_observed_counts": {
+    "candidates": 54,
+    "all_scenarios_no_fill": 46,
+    "all_nine_filled": 8,
+    "all_nine_closed": 7,
+    "filled_unresolved_cases": 1,
+    "filled_unknown_exit_scenario_states": 9,
+    "wins": 2,
+    "losses": 5
+  },
+  "forbidden_in_audit": [
+    "new historical engine call",
+    "replay or alternative trade simulation",
+    "hypothetical fill or exit imputation",
+    "parameter sweep",
+    "threshold tuning",
+    "direction removal",
+    "family removal",
+    "profitable slice promotion",
+    "OOS or forward testing",
+    "new strategy design before audit freeze"
+  ],
+  "safety": {
+    "trade_entry_allowed": false,
+    "PAPER": false,
+    "LIVE": false,
+    "private_exchange_api_allowed": false,
+    "platform_work_allowed": false
+  }
+}
