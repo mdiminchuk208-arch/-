@@ -96,7 +96,10 @@
     "docs/machine_strategy_v4_1_development_financial_v1/recovery/group_029.started.json": "6993ff847dfab07bc9dd27d4a918ec2831d98280f70d7663b9baa1f9ff59b1e7",
     "docs/machine_strategy_v4_1_development_financial_v1/recovery/group_030.jsonl.gz": "1a13461af20121a490aecc454ed7ded86d1c5b2cd4a958f578ed708835415d9b",
     "docs/machine_strategy_v4_1_development_financial_v1/recovery/group_030.receipt.json": "f8a9a964a8b540375c7c508cffeb2e71146f9776c16cbeec7ba479da2e0ee728",
-    "docs/machine_strategy_v4_1_development_financial_v1/recovery/group_030.started.json": "1dcaa429f272b68ff22d5f2a7f9e3fffee738dc32d745beac486385b4c049363"
+    "docs/machine_strategy_v4_1_development_financial_v1/recovery/group_030.started.json": "1dcaa429f272b68ff22d5f2a7f9e3fffee738dc32d745beac486385b4c049363",
+    "docs/machine_strategy_v4_1_development_financial_v1/recovery/group_031.jsonl.gz": "947cc947e40aeea08c24ca53e8dc8383923606b7f659789508c68015c5428c66",
+    "docs/machine_strategy_v4_1_development_financial_v1/recovery/group_031.receipt.json": "1dd3aa834953efbdc7509071f99bb63d3568683c9de7cd0ac650eff651c54a6e",
+    "docs/machine_strategy_v4_1_development_financial_v1/recovery/group_031.started.json": "a496d234ea158fd09736daf04e2a71089f14ee9e5dfa190c12d5967834b3d1e4"
   },
   "code_sha256": {
     "scripts/audit_machine_strategy_v4_1_development_financial_v1.py": "36ff82ea16a294e7f3b3bd10649eae9e924caae1b7ce9bae946005781b024591",
@@ -513,6 +516,6 @@
       "product": "ETH-USDT-SWAP"
     }
   ],
-  "next_group": 31,
+  "next_group": 32,
   "trade_entry_allowed": false
 }
