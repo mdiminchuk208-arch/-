@@ -114,7 +114,7 @@ class _PoiSelection:
 
 
 def assemble_ob_direct_first_test(ob: SourceOrderBlockEvidence) -> SetupAssemblyAssessment:
-    """Create the direct OB plan before the future first interaction occurs."""
+    """Create a direct first-test plan without inventing Stage-8 entry geometry."""
     if not _context_active_at(ob.obj, ob.obj.known_at):
         return _fail("OB_CONTEXT_NOT_ACTIVE_AT_KNOWN_AT")
     return _assemble(
@@ -125,7 +125,7 @@ def assemble_ob_direct_first_test(ob: SourceOrderBlockEvidence) -> SetupAssembly
         evidence_ids=(),
         parent_objects=(),
         source_rule_ids=("OB_FIRST_TEST_001", "SETUP_OB_DIRECT_001"),
-        provenance="SW9 p3 direct OB first-test plan; quote and stop are deferred to Stage 8",
+        provenance="SW9 p3 direct OB first-test plan; quote and stop deferred to Stage 8",
     )
 
 
@@ -157,7 +157,7 @@ def assemble_ob_repeat_after_ltf_reaction(
         evidence_ids=(prior_test.evidence_id, ltf_reaction.evidence_id),
         parent_objects=(),
         source_rule_ids=("OB_FIRST_TEST_001", "SETUP_OB_REPEAT_REACTION_001"),
-        provenance="SW9 p3 exceptional repeated OB plan after causal lower-timeframe reaction",
+        provenance="SW9 p3 repeated OB plan only after causal lower-timeframe reaction",
     )
 
 
@@ -170,12 +170,15 @@ def assemble_ob_conservative_ltf(
     entry_poi_candidates: Sequence[CausalSourceObject],
     decision_at: datetime,
 ) -> SetupAssemblyAssessment:
-    """Assemble HTF OB -> LTF reaction -> BOS -> one newly formed POI."""
+    """Assemble HTF OB -> 1-15m reaction -> LTF BOS -> one new source-valid POI."""
     _aware("decision_at", decision_at)
-    if decision_at < ltf_bos.known_at:
-        return _fail("DECISION_PRECEDES_LTF_BOS")
+    pair_check = _validate_pair_against_context(pair, ob.obj)
+    if pair_check is not None:
+        return pair_check
     if pair.refinement_minutes > 15:
         return _fail("OB_CONSERVATIVE_REFINEMENT_OUTSIDE_SOURCE_1_15M_SCOPE")
+    if decision_at < ltf_bos.known_at:
+        return _fail("DECISION_PRECEDES_LTF_BOS")
     if ltf_reaction.direction != ob.direction or ob.obj.object_id not in ltf_reaction.parent_object_ids:
         return _fail("OB_CONSERVATIVE_REACTION_MISMATCH")
     if ltf_reaction.known_at < ob.obj.known_at:
@@ -225,7 +228,7 @@ def assemble_ob_conf_strict(ob: SourceOrderBlockEvidence, *, conf: BosReference)
         evidence_ids=(conf.evidence_id,),
         parent_objects=(),
         source_rule_ids=("MS_CONF_001", "SETUP_OB_CONF_STRICT_001"),
-        provenance="SW5 p6 general conservative after-CONF branch on an already source-valid OB context",
+        provenance="SW5 p6 conservative after-CONF variant on an already source-valid OB context",
     )
 
 
@@ -239,6 +242,9 @@ def assemble_sfp_ltf_bos_new_poi(
 ) -> SetupAssemblyAssessment:
     """Assemble SFP -> strictly lower-TF BOS -> one newly formed source-valid POI."""
     _aware("decision_at", decision_at)
+    pair_check = _validate_pair_against_context(pair, sfp.obj)
+    if pair_check is not None:
+        return pair_check
     if decision_at < ltf_bos.known_at:
         return _fail("DECISION_PRECEDES_LTF_BOS")
     if ltf_bos.kind != "BOS" or ltf_bos.direction != sfp.direction:
@@ -282,7 +288,7 @@ def assemble_breaker_direct(breaker: SourceBreakerEvidence) -> SetupAssemblyAsse
         evidence_ids=(),
         parent_objects=(),
         source_rule_ids=("BREAKER_PARENT_OB_001", "SETUP_BREAKER_DIRECT_001"),
-        provenance="source-valid Breaker plan; quote and stop are deferred to Stage 8",
+        provenance="source-valid Breaker plan; quote and stop deferred to Stage 8",
     )
 
 
@@ -332,7 +338,7 @@ def assemble_stb_bts_direct(stb_bts: SourceStbBtsEvidence) -> SetupAssemblyAsses
         evidence_ids=(),
         parent_objects=(),
         source_rule_ids=("STB_BTS_BOS_CONF_001", "SETUP_STB_BTS_DIRECT_001"),
-        provenance="source-valid STB/BTS plan; edge/0.5 mitigation choice is deferred to Stage 8",
+        provenance="source-valid STB/BTS plan; edge/0.5 mitigation choice deferred to Stage 8",
     )
 
 
@@ -360,7 +366,7 @@ def assemble_range_aggressive(
         evidence_ids=(deviation.evidence_id, external_poi.object_id, external_relation.evidence_id or ""),
         parent_objects=(external_poi,),
         source_rule_ids=("RANGE_AGGRESSIVE_ENTRY_001", "SETUP_RANGE_AGGRESSIVE_001"),
-        provenance="SW10 aggressive Range branch: deviation at a causally known external POI; quote deferred",
+        provenance="SW10 aggressive Range branch: deviation at an already-known external POI; quote deferred",
     )
 
 
@@ -430,8 +436,8 @@ def _select_unique_new_poi(
     }
     eligible: list[CausalSourceObject] = []
     for candidate in candidates:
-        # Future candidates are ignored rather than used to invalidate an earlier
-        # unique POI decision.
+        # A future candidate is invisible to the current decision. It cannot
+        # retroactively turn an earlier unique candidate into a non-unique one.
         if candidate.known_at > decision_at:
             continue
         if candidate.object_type not in allowed_types or candidate.direction != direction.value:
@@ -499,7 +505,10 @@ def _assemble(
     entry_poi_id: str | None = None,
 ) -> SetupAssemblyAssessment:
     _aware("setup known_at", known_at)
-    if context.direction != direction.value:
+    # Directional objects must agree with the assembled setup. Range is special:
+    # its object direction records the impulse that formed the range, while the
+    # setup direction is SOURCE-derived from the later deviation side.
+    if context.object_type != SourceObjectType.RANGE and context.direction != direction.value:
         return _fail("SETUP_DIRECTION_DOES_NOT_MATCH_SOURCE_CONTEXT")
     if known_at < context.known_at:
         return _fail("SETUP_KNOWN_AT_PRECEDES_CONTEXT")
@@ -526,6 +535,11 @@ def _assemble(
     setup_parent_ids = tuple(
         dict.fromkeys((physical.object_id, context.object_id) + tuple(p.object_id for p in parent_objects))
     )
+    direction_normalization = (
+        "TN_RANGE_SETUP_DIRECTION_FROM_DEVIATION"
+        if context.object_type == SourceObjectType.RANGE
+        else "TN_SETUP_DIRECTION_FROM_SOURCE_CONTEXT"
+    )
     setup = CausalSourceObject.formed(
         object_type=SourceObjectType.SETUP,
         symbol=context.symbol,
@@ -547,7 +561,7 @@ def _assemble(
         source_rule_ids=tuple(source_rule_ids),
         technical_normalization_ids=(
             "TN_SETUP_BRANCH_EXPLICIT_NO_PRECEDENCE",
-            "TN_SETUP_DIRECTION_FROM_SOURCE_CONTEXT",
+            direction_normalization,
         ),
         parent_object_ids=setup_parent_ids,
         provenance=provenance,
@@ -567,6 +581,36 @@ def _assemble(
             entry_poi_id=entry_poi_id,
         ),
     )
+
+
+def _validate_pair_against_context(
+    pair: LowerTimeframePair,
+    context: CausalSourceObject,
+) -> SetupAssemblyAssessment | None:
+    context_minutes = _timeframe_minutes(context.timeframe)
+    if context_minutes is None:
+        return SetupAssemblyAssessment(EvidenceStatus.UNKNOWN, "WAIT_CONTEXT_TIMEFRAME_NORMALIZATION")
+    if pair.context_minutes != context_minutes:
+        return _fail("LTF_PAIR_CONTEXT_TIMEFRAME_MISMATCH")
+    return None
+
+
+def _timeframe_minutes(value: str) -> int | None:
+    text = str(value).strip().lower()
+    multiplier = 1
+    if text.endswith("m"):
+        text = text[:-1]
+    elif text.endswith("h"):
+        text = text[:-1]
+        multiplier = 60
+    elif text.endswith("d"):
+        text = text[:-1]
+        multiplier = 1440
+    try:
+        number = int(text)
+    except ValueError:
+        return None
+    return number * multiplier if number > 0 else None
 
 
 def _context_active_at(obj: CausalSourceObject, at: datetime) -> bool:
