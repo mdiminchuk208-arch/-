@@ -1,0 +1,62 @@
+{
+  "version": "PURE_SOURCE_STAGE10_REPLAY_V2",
+  "scope": "deterministic_market_data_prefix_transport_and_qa",
+  "trade_entry_allowed": false,
+  "input_contract": {
+    "market_data_type": "MarketCandle",
+    "closed_candles_only": true,
+    "per_series_continuity_required": true,
+    "duplicates_forbidden": true,
+    "out_of_order_forbidden": true,
+    "timestamp_alignment_required": true,
+    "mixed_symbol_or_exchange_forbidden": true
+  },
+  "causal_schedule": {
+    "decision_clock": "union_of_closed_candle_close_times",
+    "same_close_multitimeframe_visibility": "all_series_prefixes_visible_together",
+    "provider_receives_full_dataset_manifest": false,
+    "provider_receives_future_row_count": false,
+    "future_candle_visibility": false,
+    "universal_htf_ltf_ladder": false
+  },
+  "evidence_order": [
+    "Stage 2-6.5 market objects",
+    "Stage 7 setup assessments",
+    "Stage 8 execution assessments",
+    "Stage 9 runtime state"
+  ],
+  "provider_contract": {
+    "input": "ReplayFrame closed prefixes only",
+    "output": "ReplayEvidenceBatch",
+    "market_object_parentage": "topological and causal",
+    "setup_bypass_via_market_object_batch": false,
+    "qualitative_source_terms_may_be_invented": false
+  },
+  "reproducibility": {
+    "dataset_sha256": true,
+    "series_sha256": true,
+    "per_decision_prefix_sha256": true,
+    "per_decision_evidence_batch_sha256": true,
+    "per_decision_runtime_sha256": true,
+    "future_mutation_prefix_comparison": true
+  },
+  "built_in_provider": {
+    "id": "PURE_SOURCE_STAGE2_STRUCTURE_LIQUIDITY_V2",
+    "scope": "Stage 2 structure and structural liquidity only",
+    "later_stages": "must supply their own causal SOURCE evidence; no legacy signal engine fallback"
+  },
+  "forbidden": [
+    "legacy source_engine setup/admission",
+    "historical_replay legacy signal stack as SOURCE truth",
+    "virtual/project portfolio",
+    "PnL-based branch selection",
+    "score/ranking optimization",
+    "Anti-Scalp",
+    "edge_cost_ratio",
+    "cost viability admission",
+    "TP 40/30/30",
+    "cost-adjusted breakeven",
+    "private exchange API",
+    "live orders"
+  ]
+}
