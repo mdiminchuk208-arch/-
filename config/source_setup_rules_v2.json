@@ -37,7 +37,8 @@
     },
     {
       "branch_id": "OB_CONF_STRICT",
-      "classification": "SOURCE_RULE_GENERAL_CONSERVATIVE_VARIANT",
+      "classification": "SOURCE_RULE",
+      "interpretation_status": "GENERAL_CONSERVATIVE_VARIANT_NO_PRECEDENCE",
       "sources": ["SW5 p6"],
       "status": "ACTIVE_SOURCE_PERMITTED_NO_PRECEDENCE",
       "assembly": "source-valid OB context plus later directional CONF; entry details remain Stage 8",
@@ -61,7 +62,8 @@
     },
     {
       "branch_id": "DEMAND_SUPPLY_DIRECT",
-      "classification": "SOURCE_RULE_SECONDARY_SOURCE",
+      "classification": "SOURCE_RULE",
+      "source_tier": "SECONDARY_VERIFIED_SOURCE",
       "sources": ["SRC_DS_001"],
       "status": "ACTIVE_SOURCE_PERMITTED",
       "assembly": "fresh Demand/Supply zone with causal Premium/Discount context",
@@ -95,7 +97,7 @@
   "technical_normalizations": [
     {
       "rule_id": "TN_PHYSICAL_IDEA_BRANCH_INDEPENDENT",
-      "statement": "One source context produces one branch-independent physical idea ID; multiple source-permitted setup branches may descend from it without duplicating the physical market idea."
+      "statement": "One source context and direction produce one branch-independent physical idea ID; multiple source-permitted setup branches may descend from it without PnL-based selection."
     },
     {
       "rule_id": "TN_SETUP_BRANCH_EXPLICIT_NO_PRECEDENCE",
@@ -103,7 +105,11 @@
     },
     {
       "rule_id": "TN_SETUP_DIRECTION_FROM_SOURCE_CONTEXT",
-      "statement": "Setup direction is inherited from its source-valid object/chain. No project macro/HTF direction override is applied."
+      "statement": "Directional setup objects inherit direction from their source-valid object/chain. No project macro/HTF direction override is applied."
+    },
+    {
+      "rule_id": "TN_RANGE_SETUP_DIRECTION_FROM_DEVIATION",
+      "statement": "For Range branches, setup direction is derived from the causally known deviation side: low-side deviation LONG, high-side deviation SHORT. The impulse direction that formed the Range does not override the later deviation direction."
     },
     {
       "rule_id": "TN_ENTRY_POI_CAUSAL_UNIQUENESS",
@@ -111,8 +117,18 @@
     },
     {
       "rule_id": "TN_LTF_RELATION_WITHOUT_FIXED_MAPPING",
-      "statement": "When SOURCE requires a lower timeframe, Stage 7 enforces strictly lower TF only. OB conservative additionally preserves the explicit 1-15m refinement scope. No H1->M5/H4->M15 universal mapping is SOURCE."
+      "statement": "When SOURCE requires a lower timeframe, Stage 7 requires the declared context TF to match the parent object and the refinement TF to be strictly lower. OB conservative additionally preserves the explicit 1-15m refinement scope. No universal H1->M5/H4->M15 mapping is SOURCE."
+    },
+    {
+      "rule_id": "TN_CONTEXT_TIMEFRAME_PARSE",
+      "statement": "Causal objects carrying numeric-minute or m/h/d timeframe labels are normalized to minutes only to validate parent/refinement relation; unparseable labels remain UNKNOWN rather than receiving an invented mapping."
     }
+  ],
+  "unresolved": [
+    "precedence when multiple source-permitted branches coexist",
+    "generic HTF-to-LTF mapping outside source-explicit scopes",
+    "selection among multiple simultaneously valid newly formed POIs",
+    "generic context/timeframe hierarchy beyond source wording"
   ],
   "deferred_to_stage8": [
     "entry quote/boundary/inside-zone choice",
