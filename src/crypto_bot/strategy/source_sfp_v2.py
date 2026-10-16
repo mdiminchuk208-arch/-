@@ -185,11 +185,16 @@ def detect_source_sfp(
             "SFP_RECLAIM_CLOSE_001",
             "SFP_NEXT_OPEN_001",
         ),
-        technical_normalization_ids=("TN_SFP_PATTERN_EXTREME_SWEEP_CANDLE",),
+        technical_normalization_ids=(
+            "LIQ_STRICT_WICK_TAKE_V2",
+            "TN_SFP_PARENT_KNOWN_BEFORE_SWEEP",
+            "TN_SFP_PATTERN_EXTREME_SWEEP_CANDLE",
+        ),
         parent_object_ids=(liquidity.parent_object_id,),
         provenance=(
             "SW8 p5 SFP formation from already-known external liquidity; "
-            "sweep-candle extreme is retained only as the explicit invalidation-anchor normalization"
+            "strict penetration and parent-known timing are explicit causal normalizations; "
+            "sweep-candle extreme is retained only as the invalidation-anchor normalization"
         ),
     )
     evidence = SourceSfpEvidence(
