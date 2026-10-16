@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import inspect
 import unittest
+from dataclasses import replace
 from datetime import datetime, timedelta, timezone
 
 from crypto_bot.common.models import Candle, Direction
@@ -160,6 +161,12 @@ class PureSourceRuntimeTests(unittest.TestCase):
         with self.assertRaises(ProjectPolicyContaminationError):
             runtime.apply_policy("ANTI_SCALP", PolicyClass.PROJECT_POLICY)
 
+    def test_project_like_policy_id_cannot_be_applied_as_technical(self):
+        runtime = PureSourceRuntime(SYMBOL)
+        with self.assertRaises(ValueError):
+            runtime.apply_policy("PROJECT_CUSTOM_FILTER", PolicyClass.TECHNICAL_NORMALIZATION)
+        self.assertEqual(runtime.config.applied_policy_ids, ())
+
     def test_project_like_policy_id_cannot_hide_in_source_evidence(self):
         runtime = PureSourceRuntime(SYMBOL)
         contaminated = source_object(
@@ -194,6 +201,39 @@ class PureSourceRuntimeTests(unittest.TestCase):
         mutated = base.invalidate(t(10), "LATER_INVALIDATION")
         with self.assertRaises(ValueError):
             runtime.register_object(mutated, observed_at=t(5))
+
+    def test_market_object_lifecycle_can_extend_forward_without_rewriting_history(self):
+        runtime = PureSourceRuntime(SYMBOL)
+        base = source_object(SourceObjectType.ORDER_BLOCK, minute=0, token="lifecycle-extension")
+        runtime.register_object(base, observed_at=t(0))
+        later = base.invalidate(t(10), "SOURCE_INVALIDATION")
+        runtime.register_object(later, observed_at=t(10))
+        stored = runtime.registry.get(base.object_id)
+        self.assertEqual(stored.invalidated_at, t(10))
+        self.assertIsNone(stored.state_at(t(5)).invalidated_at)
+        self.assertTrue(stored.state_at(t(5)).formation_valid)
+        self.assertEqual(stored.state_at(t(10)).status.value, "INVALIDATED")
+
+    def test_object_immutable_provenance_cannot_change_on_extension(self):
+        runtime = PureSourceRuntime(SYMBOL)
+        base = source_object(SourceObjectType.ORDER_BLOCK, minute=0, token="provenance-freeze")
+        runtime.register_object(base, observed_at=t(0))
+        rewritten = replace(base, provenance="retroactively rewritten")
+        with self.assertRaises(ValueError):
+            runtime.register_object(rewritten, observed_at=t(1))
+
+    def test_top_level_state_cannot_disagree_with_lifecycle(self):
+        runtime = PureSourceRuntime(SYMBOL)
+        base = source_object(SourceObjectType.ORDER_BLOCK, minute=0, token="projection")
+        forged = replace(base, status=base.status.INVALIDATED, invalidated_at=t(0))
+        with self.assertRaises(ValueError):
+            runtime.register_object(forged, observed_at=t(0))
+
+    def test_register_object_cannot_bypass_stage7_setup_wiring(self):
+        runtime = PureSourceRuntime(SYMBOL)
+        bypass = source_object(SourceObjectType.SETUP, minute=0, token="bypass")
+        with self.assertRaises(ValueError):
+            runtime.register_object(bypass, observed_at=t(0))
 
     def test_stage7_setup_requires_registered_causal_parents(self):
         runtime = PureSourceRuntime(SYMBOL)
@@ -277,6 +317,19 @@ class PureSourceRuntimeTests(unittest.TestCase):
                 setup_id=evidence.setup.object_id,
             )
         self.assertEqual(runtime.decision_watermark, t(5))
+        self.assertFalse(runtime.registry.get(evidence.setup.object_id).trade_eligible)
+
+    def test_nested_execution_rule_ids_cannot_smuggle_project_policy(self):
+        runtime = PureSourceRuntime(SYMBOL)
+        evidence = setup_evidence(runtime)
+        plan = execution_plan(evidence, unresolved=())
+        contaminated_entry = replace(
+            plan.entry_options[0],
+            source_rule_ids=("PROJECT_CUSTOM_ENTRY_FILTER",),
+        )
+        contaminated = replace(plan, entry_options=(contaminated_entry,))
+        with self.assertRaises(ValueError):
+            runtime.register_execution_plan(contaminated, observed_at=t(5))
         self.assertFalse(runtime.registry.get(evidence.setup.object_id).trade_eligible)
 
     def test_source_ready_is_separate_from_live_permission(self):
