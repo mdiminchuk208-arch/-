@@ -99,8 +99,8 @@ def _structure_object(*, symbol: str, timeframe: str | int, leg: StructureLeg) -
         known_at=leg.known_at,
         identity_parts={
             "direction": leg.direction,
-            "protected_swing_id": leg.protected_swing_id,
-            "extreme_swing_id": leg.extreme_swing_id,
+            "protected_pivot_id": leg.protected_swing_id,
+            "extreme_pivot_id": leg.extreme_swing_id,
             "protected_price": leg.protected_price,
             "extreme_price": leg.extreme_price,
         },
