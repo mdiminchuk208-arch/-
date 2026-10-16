@@ -161,7 +161,7 @@ class SourceStructureLiquidityV2Tests(unittest.TestCase):
         self.assertFalse(evidence.exact_price)
         self.assertTrue(evidence.directional_tilt_valid)
 
-    def test_tilted_eqh_passes_only_after_qualitative_confirmation(self):
+    def test_tilted_eqh_true_without_provenance_stays_unknown(self):
         candles = [
             c(0, 10, 11, 9, 10), c(1, 10, 13, 9.5, 12), c(2, 12, 12, 10, 11),
             c(3, 11, 12, 9, 10), c(4, 10, 12.8, 9.5, 12), c(5, 12, 12, 10, 11),
@@ -171,7 +171,22 @@ class SourceStructureLiquidityV2Tests(unittest.TestCase):
             highs[0], highs[1], kind=EqualLiquidityKind.EQH,
             substructure_pair_confirmed=True, reasonable_tilt_confirmed=True,
         )
+        self.assertEqual(evidence.status, EvidenceStatus.UNKNOWN)
+        self.assertEqual(evidence.reason, "WAIT_QUALITATIVE_EVIDENCE_PROVENANCE")
+
+    def test_tilted_eqh_passes_only_after_qualitative_confirmation_with_provenance(self):
+        candles = [
+            c(0, 10, 11, 9, 10), c(1, 10, 13, 9.5, 12), c(2, 12, 12, 10, 11),
+            c(3, 11, 12, 9, 10), c(4, 10, 12.8, 9.5, 12), c(5, 12, 12, 10, 11),
+        ]
+        highs = [s for s in confirmed_source_swings(candles, symbol="BTC-USDT-SWAP", timeframe="1m") if s.side == "high"]
+        evidence = assess_equal_liquidity(
+            highs[0], highs[1], kind=EqualLiquidityKind.EQH,
+            substructure_pair_confirmed=True, reasonable_tilt_confirmed=True,
+            qualitative_evidence_id="annotation:eqh:001",
+        )
         self.assertEqual(evidence.status, EvidenceStatus.PASS)
+        self.assertEqual(evidence.qualitative_evidence_id, "annotation:eqh:001")
         self.assertEqual(evidence.reason, "QUALITATIVE_REASONABLE_TILT_CONFIRMED")
 
     def test_wrong_eqh_tilt_direction_fails(self):
@@ -183,6 +198,7 @@ class SourceStructureLiquidityV2Tests(unittest.TestCase):
         evidence = assess_equal_liquidity(
             highs[0], highs[1], kind=EqualLiquidityKind.EQH,
             substructure_pair_confirmed=True, reasonable_tilt_confirmed=True,
+            qualitative_evidence_id="annotation:eqh:bad-direction",
         )
         self.assertEqual(evidence.status, EvidenceStatus.FAIL)
         self.assertEqual(evidence.reason, "SOURCE_TILT_DIRECTION_VIOLATION")
@@ -196,6 +212,7 @@ class SourceStructureLiquidityV2Tests(unittest.TestCase):
         evidence = assess_equal_liquidity(
             lows[0], lows[1], kind=EqualLiquidityKind.EQL,
             substructure_pair_confirmed=True, reasonable_tilt_confirmed=True,
+            qualitative_evidence_id="annotation:eql:001",
         )
         self.assertEqual(evidence.status, EvidenceStatus.PASS)
 
