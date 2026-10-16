@@ -172,8 +172,14 @@ def assess_source_range(
             return RangeAssessment(EvidenceStatus.FAIL, f"{name}_SOURCE_EVIDENCE_FAILED")
         if not evidence.provenance_ready:
             return RangeAssessment(EvidenceStatus.UNKNOWN, f"WAIT_{name}_QUALITATIVE_PROVENANCE")
-        if evidence.known_at < correction.known_at:  # type: ignore[operator]
-            return RangeAssessment(EvidenceStatus.FAIL, f"{name}_KNOWN_BEFORE_RANGE_BOUNDARIES")
+
+    # The impulse-strength fact can be known when the impulse completes. By contrast,
+    # midpoint reaction and absence of internal structure are confirmations of the range
+    # after both boundaries exist, so they cannot causally precede the correction endpoint.
+    if midpoint_reaction.known_at < correction.known_at:  # type: ignore[operator]
+        return RangeAssessment(EvidenceStatus.FAIL, "MIDPOINT_REACTION_KNOWN_BEFORE_RANGE_BOUNDARIES")
+    if no_internal_structure.known_at < correction.known_at:  # type: ignore[operator]
+        return RangeAssessment(EvidenceStatus.FAIL, "NO_INTERNAL_STRUCTURE_KNOWN_BEFORE_RANGE_BOUNDARIES")
 
     lower, upper = sorted((first_boundary, second_boundary))
     midpoint = (lower + upper) / 2
