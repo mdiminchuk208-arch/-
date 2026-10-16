@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import datetime
 from typing import Sequence
 
 from crypto_bot.common.models import Candle
@@ -25,7 +26,7 @@ class StructureLiquiditySnapshot:
     SourceEngine labels or PROJECT policy.
     """
 
-    decision_at: object | None
+    decision_at: datetime | None
     swings: tuple[SourceSwingEvidence, ...]
     liquidity: tuple[StructuralLiquidityEvidence, ...]
     latest_formed_leg: StructureLeg | None
