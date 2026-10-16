@@ -1,0 +1,172 @@
+{
+  "version": "PURE_SOURCE_STAGE8_EXECUTION_SEMANTICS_V2",
+  "scope": "entry_stop_fta_target_exit_remainder_evidence_only",
+  "trade_entry_allowed": false,
+  "principles": {
+    "preserve_all_source_permitted_variants": true,
+    "variant_precedence": "UNRESOLVED_NO_PRECEDENCE",
+    "future_facts_forbidden": true,
+    "outcome_dependent_selection_forbidden": true,
+    "project_tp_40_30_30_forbidden": true,
+    "cost_adjusted_breakeven_forbidden": true,
+    "cost_or_edge_admission_forbidden": true,
+    "portfolio_policy_forbidden": true
+  },
+  "entry": {
+    "OB_DIRECT_FIRST_TEST": {
+      "classification": "SOURCE_RULE",
+      "source": "SW9 p3",
+      "variants": [
+        "LONG upper OB boundary / SHORT lower OB boundary limit",
+        "limit order inside OB zone"
+      ],
+      "selection": "UNRESOLVED",
+      "notes": "Source explicitly permits both; no ranking or preferred inside-zone price is stated."
+    },
+    "OB_REPEAT_AFTER_LTF_REACTION": {
+      "classification": "SOURCE_RULE",
+      "source": "SW9 p3",
+      "variants": ["same OB-zone entry geometry after causal LTF reaction"],
+      "selection": "UNRESOLVED_BOUNDARY_VS_INSIDE"
+    },
+    "OB_CONSERVATIVE_LTF_BOS_NEW_POI": {
+      "classification": "SOURCE_RULE",
+      "source": "SW9 p4-6",
+      "rule": "after HTF OB reaction and LTF BOS, place limit order on the newly formed POI",
+      "exact_quote_within_new_poi": "UNRESOLVED"
+    },
+    "OB_CONF_STRICT": {
+      "classification": "SOURCE_RULE",
+      "sources": ["SW5 p6", "SW9 p3"],
+      "rule": "after conservative CONF, OB remains the source context; boundary-vs-inside quote remains unresolved"
+    },
+    "SFP_LTF_BOS_NEW_POI": {
+      "classification": "SOURCE_RULE",
+      "source": "SW8 p5",
+      "rule": "completed SFP -> lower-TF BOS -> seek entry; Stage 7 supplies the new POI",
+      "exact_quote_within_entry_poi": "UNRESOLVED"
+    },
+    "BREAKER_DIRECT": {
+      "classification": "SOURCE_RULE",
+      "source": "SW9 p7-10",
+      "rule": "Breaker zone is tradable POI",
+      "exact_quote_within_breaker": "UNRESOLVED"
+    },
+    "STB_BTS_DIRECT": {
+      "classification": "SOURCE_RULE",
+      "source": "SW22 p3-4",
+      "variants": [
+        "upper part for LONG / lower part for SHORT",
+        "exact 0.5 midpoint of STB/BTS zone"
+      ],
+      "selection": "UNRESOLVED_NO_PRECEDENCE"
+    },
+    "RANGE_AGGRESSIVE_EXTERNAL_POI": {
+      "classification": "SOURCE_RULE",
+      "source": "SW10 p5",
+      "rule": "aggressive entry on deviation only when an external POI exists above/below the range",
+      "exact_quote": "UNRESOLVED_WITHIN_DEVIATION_EXTERNAL_POI"
+    },
+    "RANGE_CONSERVATIVE_RETURN_RETEST": {
+      "classification": "SOURCE_RULE",
+      "source": "SW10 p6",
+      "rule": "after return and acceptance inside range, enter on boundary retest",
+      "boundary_anchor": "SOURCE_EXPLICIT"
+    },
+    "DEMAND_SUPPLY_DIRECT": {
+      "classification": "SOURCE_RULE_SECONDARY_VERIFIED",
+      "source": "SRC_DS_001",
+      "rule": "fresh Demand/Supply zones can be points for opening positions in discount/premium",
+      "exact_quote_within_zone": "UNRESOLVED"
+    }
+  },
+  "stop": {
+    "OB": {
+      "classification": "SOURCE_RULE",
+      "source": "SW9 p3",
+      "variants": [
+        "beyond OB minimum/maximum",
+        "beyond wick/extreme of candle that engulfed OB"
+      ],
+      "selection": "UNRESOLVED",
+      "exact_buffer_beyond_anchor": "UNRESOLVED"
+    },
+    "BREAKER": {
+      "classification": "SOURCE_RULE",
+      "source": "SW9 p9-10",
+      "variants": [
+        "aggressive immediately beyond breaker",
+        "conservative beyond liquidity-sweeping impulse candle minimum/maximum"
+      ],
+      "selection": "UNRESOLVED",
+      "exact_buffer_beyond_anchor": "UNRESOLVED"
+    },
+    "SFP": {
+      "classification": "SOURCE_RULE",
+      "source": "SW12 p12-14",
+      "rule": "ATR distance is counted from SFP pattern extreme; protective order is not moved; body close beyond pattern extreme invalidates pattern",
+      "atr_standard_period": 14,
+      "strategy_period_selection": "UNRESOLVED_SOURCE_SAYS_PERIOD_MAY_CHANGE"
+    },
+    "STB_BTS": {
+      "classification": "UNRESOLVED",
+      "reason": "SW22 p2-4 defines entry/mitigation but not an explicit protective-stop anchor."
+    },
+    "RANGE": {
+      "classification": "UNRESOLVED",
+      "reason": "SW10 p5-7 defines entry and 80/20 exit but not an explicit protective-stop anchor."
+    },
+    "DEMAND_SUPPLY": {
+      "classification": "UNRESOLVED",
+      "reason": "SRC_DS_001 defines formation/freshness/Premium-Discount but no stop geometry."
+    }
+  },
+  "fta": {
+    "classification": "SOURCE_RULE",
+    "source": "SW9 p11-16",
+    "definition": "first trouble area after character/trend shift; may be an opposing POI",
+    "timeframe": "higher timeframe POI",
+    "trend_trade": "full or partial TP at FTA",
+    "countertrend_trade": "TP at FTA; conclusion explicitly permits partial or full fixation",
+    "selection_normalization": "first causal price contact among already-known active opposing higher-TF POI",
+    "future_poi_forbidden": true,
+    "generic_candidate_types": ["POI", "ORDER_BLOCK", "BREAKER", "FVG", "STB_BTS"],
+    "range_object_as_generic_fta": "FORBIDDEN_DIRECTION_SEMANTICS_AMBIGUOUS_AND_RANGE_HAS_OWN_EXIT",
+    "full_vs_partial_fraction": "UNRESOLVED"
+  },
+  "exit": {
+    "GENERIC_FTA": {
+      "classification": "SOURCE_RULE",
+      "source": "SW9 p11-16",
+      "policy": "full or partial at FTA",
+      "fraction": "UNRESOLVED"
+    },
+    "RANGE_80_20": {
+      "classification": "SOURCE_RULE",
+      "source": "SW10 p5",
+      "primary_fraction": 0.8,
+      "primary_destination": "inside range at directional opposite boundary",
+      "remainder_fraction": 0.2,
+      "remainder_destination": "may be left for true breakout; exact target/termination unresolved"
+    },
+    "SFP_BODY_CLOSE_INVALIDATION": {
+      "classification": "SOURCE_RULE",
+      "source": "SW12 p13",
+      "policy": "manual/semantic invalidation when a candle body closes beyond SFP pattern minimum/maximum"
+    }
+  },
+  "unresolved": [
+    "OB boundary-vs-inside entry selection",
+    "OB stop variant selection and exact beyond-anchor buffer",
+    "exact quote inside conservative newly formed POI",
+    "Breaker exact entry quote and stop variant selection",
+    "SFP exact entry quote inside post-BOS POI",
+    "SFP strategy-specific ATR period beyond standard 14",
+    "STB/BTS edge-vs-midpoint entry precedence and protective stop",
+    "Range aggressive exact quote and protective stop",
+    "Demand/Supply exact entry quote and protective stop",
+    "generic FTA full-vs-partial fraction",
+    "Range 20% true-breakout remainder target/termination",
+    "generic remainder and re-entry policy"
+  ]
+}
