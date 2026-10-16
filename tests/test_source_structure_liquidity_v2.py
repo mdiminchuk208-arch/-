@@ -201,18 +201,12 @@ class SourceStructureLiquidityV2Tests(unittest.TestCase):
 
     def test_strict_raid_is_a_named_normalization_not_eq_tolerance(self):
         swings = confirmed_source_swings(bullish_sequence(), symbol="BTC-USDT-SWAP", timeframe="1m")
-        pool = structural_liquidity(swings[0], symbol="BTC-USDT-SWAP", timeframe="1m", active_leg=None)
+        high_swing = next(s for s in swings if s.side == "high" and s.price == 12)
+        pool = structural_liquidity(high_swing, symbol="BTC-USDT-SWAP", timeframe="1m", active_leg=None)
         equal_touch = c(30, 10, pool.price, 9, 10)
         penetration = c(31, 10, pool.price + 0.1, 9, 10)
-        if pool.side == "high":
-            self.assertFalse(strict_liquidity_take(equal_touch, pool))
-            self.assertTrue(strict_liquidity_take(penetration, pool))
-        else:
-            # Mirror the price relation for a low-side pool.
-            equal_touch = c(30, 10, 11, pool.price, 10)
-            penetration = c(31, 10, 11, pool.price - 0.1, 10)
-            self.assertFalse(strict_liquidity_take(equal_touch, pool))
-            self.assertTrue(strict_liquidity_take(penetration, pool))
+        self.assertFalse(strict_liquidity_take(equal_touch, pool))
+        self.assertTrue(strict_liquidity_take(penetration, pool))
 
     def test_future_extension_does_not_change_existing_swing_ids(self):
         prefix = bullish_sequence()
