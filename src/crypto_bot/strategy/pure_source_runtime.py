@@ -2,163 +2,525 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime
-from typing import Any, Callable, Mapping
+from enum import Enum
+from typing import Sequence
 
-from crypto_bot.strategy.causal_objects import CausalObjectRegistry, CausalSourceObject, RejectionCategory, SourceObjectType
-from crypto_bot.strategy.profile import PURE_SOURCE_CONFIG, PolicyClass, StrategyProfile, StrategyRuntimeConfig
+from crypto_bot.common.models import Candle
+from crypto_bot.strategy.causal_objects import (
+    CausalObjectRegistry,
+    CausalSourceObject,
+    LifecycleEventKind,
+    ObjectStatus,
+    RejectionCategory,
+    SourceObjectType,
+    require_closed_candles,
+)
+from crypto_bot.strategy.profile import (
+    PROJECT_POLICY_IDS,
+    PURE_SOURCE_CONFIG,
+    PolicyClass,
+    StrategyProfile,
+    StrategyRuntimeConfig,
+)
+from crypto_bot.strategy.source_execution_v2 import ExecutionPlanAssessment, SourceExecutionPlan
+from crypto_bot.strategy.source_setup_v2 import SetupAssemblyAssessment, SourceSetupEvidence
+from crypto_bot.strategy.source_structure_liquidity_v2 import EvidenceStatus
 
-_ZONE_TYPE_MAP = {"ORDER_BLOCK": SourceObjectType.ORDER_BLOCK, "BREAKER": SourceObjectType.BREAKER,
-                  "STB": SourceObjectType.STB_BTS, "BTS": SourceObjectType.STB_BTS,
-                  "MANIPULATION": SourceObjectType.STB_BTS, "RANGE_POI": SourceObjectType.RANGE,
-                  "FVG": SourceObjectType.FVG, "DEMAND": SourceObjectType.POI, "SUPPLY": SourceObjectType.POI}
+
+class RuntimeStage(str, Enum):
+    OBJECT = "OBJECT"
+    SETUP = "SETUP"
+    EXECUTION = "EXECUTION"
+
+
+@dataclass(frozen=True)
+class RuntimeBlocker:
+    stage: RuntimeStage
+    status: EvidenceStatus
+    reason: str
+    observed_at: datetime
+    setup_id: str | None = None
+
+    def __post_init__(self) -> None:
+        _aware("blocker observed_at", self.observed_at)
+        if self.status == EvidenceStatus.PASS:
+            raise ValueError("PASS cannot be recorded as a runtime blocker")
+        if not self.reason:
+            raise ValueError("runtime blocker reason is required")
+
 
 @dataclass
 class PureSourceRuntime:
-    """Stage-1 entry point: isolate policy and persist SOURCE objects apart from trade admission."""
+    """Canonical Stage-9 PURE_SOURCE runtime shell.
+
+    The runtime consumes causal evidence produced by Stages 1-8. It does not
+    infer SOURCE truth through historical/canonical adapters, does not select a
+    branch by outcome, and never enables order execution. Object existence,
+    setup assembly, SOURCE trade eligibility and live-order permission remain
+    separate concepts.
+    """
+
     symbol: str
-    series: Mapping[int, Any]
     config: StrategyRuntimeConfig = PURE_SOURCE_CONFIG
-    engine_factory: Callable[[str, Mapping[int, Any]], Any] | None = None
 
     def __post_init__(self) -> None:
+        if not self.symbol:
+            raise ValueError("symbol is required")
         if self.config.strategy_profile != StrategyProfile.PURE_SOURCE:
             raise ValueError("PureSourceRuntime requires strategy_profile=PURE_SOURCE")
         self.config.__post_init__()
         self.registry = CausalObjectRegistry()
-        self._legacy_ids: dict[tuple[str, str], str] = {}
-        if self.engine_factory is None:
-            from crypto_bot.strategy.source_engine import SourceEngine
-            self.engine = SourceEngine(self.symbol, dict(self.series))
-        else:
-            self.engine = self.engine_factory(self.symbol, self.series)
+        self._setups: dict[str, SourceSetupEvidence] = {}
+        self._execution_plans: dict[str, SourceExecutionPlan] = {}
+        self._blockers: dict[tuple[str, str, str | None, datetime], RuntimeBlocker] = {}
+        self._decision_watermark: datetime | None = None
 
     @property
     def trade_entry_allowed(self) -> bool:
         return False
 
+    @property
+    def decision_watermark(self) -> datetime | None:
+        return self._decision_watermark
+
+    @property
+    def blockers(self) -> tuple[RuntimeBlocker, ...]:
+        return tuple(
+            sorted(
+                self._blockers.values(),
+                key=lambda item: (
+                    item.observed_at,
+                    item.stage.value,
+                    item.setup_id or "",
+                    item.reason,
+                ),
+            )
+        )
+
     def apply_policy(self, policy_id: str, policy_class: PolicyClass) -> None:
+        # Preserve the profile layer's established exception contract for known
+        # PROJECT_POLICY values. The additional naming guard below catches new
+        # project-like ids even when a caller mislabels their PolicyClass.
+        if policy_class == PolicyClass.PROJECT_POLICY or policy_id in PROJECT_POLICY_IDS:
+            self.config = self.config.record_policy(policy_id, policy_class)
+            return
+        self._assert_policy_ids_clean((policy_id,))
         self.config = self.config.record_policy(policy_id, policy_class)
 
-    def advance(self, timeframe: int, index: int) -> None:
-        series = self.series[timeframe]
-        candle = series.candles[index]
-        if not candle.is_closed:
-            raise ValueError("unfinished candle is forbidden in PURE_SOURCE")
-        self.engine.advance(timeframe, index)
-        now = candle.close_time
-        self._capture_series(timeframe, now)
-        self._capture_setups(now)
+    def observe_candles(self, candles: Sequence[Candle], *, decision_at: datetime) -> None:
+        """Advance only the causal clock; detectors stay in their Stage-2..8 modules."""
+        _aware("decision_at", decision_at)
+        require_closed_candles(candles, decision_at=decision_at)
+        self._advance_watermark(decision_at)
+
+    def register_object(
+        self,
+        obj: CausalSourceObject,
+        *,
+        observed_at: datetime | None = None,
+    ) -> CausalSourceObject:
+        """Persist or causally extend one Stage-2..6.5 market object.
+
+        Existing history may only be extended by later lifecycle events. Earlier
+        events, identity/provenance and SOURCE classifications are immutable.
+        SETUP/PHYSICAL_IDEA objects must use the dedicated Stage-7 wiring path.
+        """
+        if obj.object_type in (SourceObjectType.SETUP, SourceObjectType.PHYSICAL_IDEA):
+            raise ValueError("SETUP/PHYSICAL_IDEA objects must use register_setup")
+        if obj.trade_eligible:
+            raise ValueError("market objects cannot arrive pre-admitted")
+        if any(event.kind == LifecycleEventKind.TRADE_ELIGIBILITY for event in obj.lifecycle):
+            raise ValueError("market-object trade-eligibility lifecycle is owned by runtime/setup wiring")
+
+        at = self._observation_time(observed_at, obj.known_at)
+        self._validate_object(obj, at)
+        self._assert_policy_ids_clean(obj.source_rule_ids)
+        self._assert_policy_ids_clean(obj.technical_normalization_ids)
+
+        try:
+            existing = self.registry.get(obj.object_id)
+        except KeyError:
+            self.registry.add(obj)
+        else:
+            if existing != obj:
+                self._validate_object_extension(existing, obj)
+                self.registry.replace(obj)
+        self._advance_watermark(at)
+        return obj
+
+    def register_setup_assessment(
+        self,
+        assessment: SetupAssemblyAssessment,
+        *,
+        observed_at: datetime,
+    ) -> SourceSetupEvidence | None:
+        """Preserve Stage-7 PASS/UNKNOWN/FAIL without manufacturing a setup."""
+        _aware("setup assessment observed_at", observed_at)
+        if assessment.status == EvidenceStatus.PASS:
+            if assessment.evidence is None:
+                raise ValueError("PASS setup assessment requires evidence")
+            return self.register_setup(assessment.evidence, observed_at=observed_at)
+        if assessment.evidence is not None:
+            raise ValueError("non-PASS setup assessment cannot contain evidence")
+        self.record_blocker(
+            RuntimeStage.SETUP,
+            assessment.status,
+            assessment.reason,
+            observed_at,
+        )
+        return None
+
+    def register_setup(
+        self,
+        evidence: SourceSetupEvidence,
+        *,
+        observed_at: datetime | None = None,
+    ) -> SourceSetupEvidence:
+        """Wire a Stage-7 setup only after every causal parent is already registered."""
+        at = self._observation_time(observed_at, evidence.known_at)
+        if evidence.setup.object_type != SourceObjectType.SETUP:
+            raise ValueError("Stage-7 setup evidence must contain a SETUP object")
+        if evidence.physical_idea.object_type != SourceObjectType.PHYSICAL_IDEA:
+            raise ValueError("Stage-7 setup evidence must contain a PHYSICAL_IDEA object")
+        if evidence.setup.symbol != self.symbol or evidence.physical_idea.symbol != self.symbol:
+            raise ValueError("setup symbol does not match runtime symbol")
+        if evidence.setup.known_at != evidence.known_at:
+            raise ValueError("setup known_at contract mismatch")
+        if evidence.setup.direction != evidence.direction.value:
+            raise ValueError("setup direction contract mismatch")
+        if evidence.physical_idea.direction != evidence.direction.value:
+            raise ValueError("physical idea direction contract mismatch")
+        if evidence.setup.trade_eligible or evidence.physical_idea.trade_eligible:
+            raise ValueError("Stage-7 objects cannot arrive pre-admitted")
+
+        context = self._require_registered(evidence.context_object_id)
+        self._assert_active_at(context, evidence.known_at, "setup context")
+        if evidence.context_object_id not in evidence.physical_idea.parent_object_ids:
+            raise ValueError("physical idea must reference Stage-7 context object")
+        if evidence.context_object_id not in evidence.setup.parent_object_ids:
+            raise ValueError("setup must reference Stage-7 context object")
+        if evidence.physical_idea.object_id not in evidence.setup.parent_object_ids:
+            raise ValueError("setup must reference its physical idea")
+
+        if evidence.entry_poi_id is not None:
+            entry_poi = self._require_registered(evidence.entry_poi_id)
+            self._assert_active_at(entry_poi, evidence.known_at, "entry POI")
+            if evidence.entry_poi_id not in evidence.setup.parent_object_ids:
+                raise ValueError("setup must reference its entry POI")
+
+        self._validate_object(evidence.physical_idea, at)
+        self._assert_policy_ids_clean(evidence.physical_idea.source_rule_ids)
+        self._assert_policy_ids_clean(evidence.physical_idea.technical_normalization_ids)
+        for parent_id in evidence.physical_idea.parent_object_ids:
+            self._require_registered(parent_id)
+
+        self._validate_object(evidence.setup, at)
+        self._assert_policy_ids_clean(evidence.setup.source_rule_ids)
+        self._assert_policy_ids_clean(evidence.setup.technical_normalization_ids)
+        for parent_id in evidence.setup.parent_object_ids:
+            if parent_id != evidence.physical_idea.object_id:
+                self._require_registered(parent_id)
+
+        existing = self._setups.get(evidence.setup.object_id)
+        if existing is not None and existing != evidence:
+            raise ValueError(f"setup id collision: {evidence.setup.object_id}")
+
+        self.registry.add(evidence.physical_idea)
+        self.registry.add(evidence.setup)
+        self._setups[evidence.setup.object_id] = evidence
+        self._advance_watermark(at)
+        return evidence
+
+    def register_execution_assessment(
+        self,
+        assessment: ExecutionPlanAssessment,
+        *,
+        observed_at: datetime,
+        setup_id: str | None = None,
+    ) -> SourceExecutionPlan | None:
+        """Preserve Stage-8 PASS/UNKNOWN/FAIL; malformed contracts fail loudly."""
+        _aware("execution observed_at", observed_at)
+        if assessment.status == EvidenceStatus.PASS:
+            if assessment.plan is None:
+                raise ValueError("PASS execution assessment requires plan")
+            if setup_id is not None and assessment.plan.setup_id != setup_id:
+                raise ValueError("execution assessment setup_id mismatch")
+            return self.register_execution_plan(assessment.plan, observed_at=observed_at)
+        if assessment.plan is not None:
+            raise ValueError("non-PASS execution assessment cannot contain plan")
+        self.record_blocker(
+            RuntimeStage.EXECUTION,
+            assessment.status,
+            assessment.reason,
+            observed_at,
+            setup_id=setup_id,
+        )
+        return None
+
+    def register_execution_plan(
+        self,
+        plan: SourceExecutionPlan,
+        *,
+        observed_at: datetime | None = None,
+    ) -> SourceExecutionPlan:
+        at = self._observation_time(observed_at, plan.known_at)
+        if plan.trade_entry_allowed is not False:
+            raise ValueError("Stage-8 plan cannot enable trade entry")
+        if plan.known_at > at:
+            raise ValueError("execution plan is not known at observed_at")
+        self._assert_policy_ids_clean(plan.source_rule_ids)
+        self._assert_policy_ids_clean(plan.technical_normalization_ids)
+        for entry in plan.entry_options:
+            self._assert_policy_ids_clean(entry.source_rule_ids)
+        for stop in plan.stop_options:
+            self._assert_policy_ids_clean(stop.source_rule_ids)
+        self._assert_policy_ids_clean(plan.exit_policy.source_rule_ids)
+
+        setup_evidence = self._setups.get(plan.setup_id)
+        if setup_evidence is None:
+            raise KeyError(f"Stage-8 plan references unregistered setup: {plan.setup_id}")
+        if setup_evidence.physical_idea.object_id != plan.physical_idea_id:
+            raise ValueError("execution plan physical idea mismatch")
+        if setup_evidence.branch != plan.branch or setup_evidence.direction != plan.direction:
+            raise ValueError("execution plan branch/direction mismatch")
+        if setup_evidence.known_at != plan.known_at:
+            raise ValueError("execution plan known_at must equal Stage-7 setup known_at")
+
+        setup_obj = self.registry.get(plan.setup_id)
+        self._assert_active_at(setup_obj, at, "execution setup")
+
+        existing = self._execution_plans.get(plan.setup_id)
+        if existing is not None and existing != plan:
+            raise ValueError(f"execution plan changed for setup: {plan.setup_id}")
+        self._execution_plans[plan.setup_id] = plan
+
+        for reason in plan.unresolved:
+            self.record_blocker(
+                RuntimeStage.EXECUTION,
+                EvidenceStatus.UNKNOWN,
+                reason,
+                at,
+                setup_id=plan.setup_id,
+            )
+
+        setup_obj = self.registry.get(plan.setup_id)
+        if plan.execution_ready and not setup_obj.trade_eligible:
+            self.registry.replace(
+                setup_obj.set_trade_eligible(
+                    True,
+                    at,
+                    "SOURCE_STAGE8_EXECUTION_READY_NO_LIVE_PERMISSION",
+                )
+            )
+        self._advance_watermark(at)
+        return plan
+
+    def record_blocker(
+        self,
+        stage: RuntimeStage,
+        status: EvidenceStatus,
+        reason: str,
+        observed_at: datetime,
+        *,
+        setup_id: str | None = None,
+    ) -> RuntimeBlocker:
+        _aware("blocker observed_at", observed_at)
+        if status == EvidenceStatus.PASS:
+            raise ValueError("PASS cannot be recorded as a runtime blocker")
+        if setup_id is not None and setup_id not in self._setups:
+            raise KeyError(f"blocker references unregistered setup: {setup_id}")
+        blocker = RuntimeBlocker(stage, status, reason, observed_at, setup_id)
+        self._advance_watermark(observed_at)
+        key = (stage.value, reason, setup_id, observed_at)
+        self._blockers[key] = blocker
+        return blocker
+
+    def get_execution_plan(self, setup_id: str) -> SourceExecutionPlan:
+        return self._execution_plans[setup_id]
 
     def finish(self) -> dict:
-        result = dict(self.engine.finish())
-        result["strategy_profile"] = StrategyProfile.PURE_SOURCE.value
-        result["trade_entry_allowed"] = False
-        result["causal_object_count"] = len(self.registry)
-        return result
+        ready_setup_ids = tuple(
+            sorted(
+                setup_id
+                for setup_id in self._setups
+                if self.registry.get(setup_id).trade_eligible
+            )
+        )
+        blocker_rows = tuple(
+            {
+                "stage": blocker.stage.value,
+                "status": blocker.status.value,
+                "reason": blocker.reason,
+                "observed_at": blocker.observed_at.isoformat(),
+                "setup_id": blocker.setup_id,
+            }
+            for blocker in self.blockers
+        )
+        return {
+            "strategy_profile": StrategyProfile.PURE_SOURCE.value,
+            "runtime_version": "PURE_SOURCE_STAGE9_V2",
+            "trade_entry_allowed": False,
+            "legacy_runtime_adapter_enabled": False,
+            "project_overlays_enabled": False,
+            "causal_object_count": len(self.registry),
+            "setup_count": len(self._setups),
+            "execution_plan_count": len(self._execution_plans),
+            "source_ready_setup_ids": ready_setup_ids,
+            "decision_watermark": (
+                self._decision_watermark.isoformat()
+                if self._decision_watermark is not None
+                else None
+            ),
+            "runtime_blockers": blocker_rows,
+            "unresolved_blockers": blocker_rows,
+        }
 
-    def _capture_series(self, timeframe: int, now: datetime) -> None:
-        series = self.series[timeframe]
-        for pool in getattr(series, "pools", {}).values():
-            if pool.known_at <= now:
-                self._register_pool(timeframe, pool)
-        for zone in getattr(series, "zone_registry", {}).values():
-            if zone.known_at <= now:
-                self._register_zone(timeframe, zone, now)
-        for event in getattr(series, "events", {}).get(getattr(series, "index", -1), ()):
-            if event.event_time <= now:
-                self._register_event(timeframe, event)
-        for range_id, value in getattr(series, "range_bounds", {}).items():
-            lower, upper, known_at, causal_id = value
-            if known_at <= now:
-                self._register_range(timeframe, range_id, lower, upper, known_at, causal_id)
+    def advance(self, *args: object, **kwargs: object) -> None:
+        """Fail loudly if an old adapter-style caller reaches the canonical runtime."""
+        del args, kwargs
+        raise RuntimeError(
+            "legacy runtime advance path is disabled; provide causal Stage-2..8 evidence explicitly"
+        )
 
-    def _register_pool(self, timeframe: int, pool: Any) -> None:
-        key = ("pool", str(pool.pool_id))
-        if key in self._legacy_ids:
-            return
-        obj = CausalSourceObject.formed(object_type=SourceObjectType.LIQUIDITY_POOL, symbol=self.symbol,
-            timeframe=timeframe, direction=None, formation_at=pool.known_at, known_at=pool.known_at,
-            identity_parts={"legacy_pool_id": pool.pool_id, "side": pool.side, "price": pool.price, "origin": pool.origin},
-            source_rule_ids=("SOURCE_LIQUIDITY_GEOMETRY",),
-            provenance="legacy SourceSeries pool adapted at causal known_at")
-        self.registry.add(obj); self._legacy_ids[key] = obj.object_id
+    def _validate_object(self, obj: CausalSourceObject, observed_at: datetime) -> None:
+        if obj.symbol != self.symbol:
+            raise ValueError("object symbol does not match runtime symbol")
+        if obj.known_at > observed_at:
+            raise ValueError("object is not known at observed_at")
+        if obj.confirmed_at is not None and obj.confirmed_at > observed_at:
+            raise ValueError("future confirmation is forbidden in PURE_SOURCE")
+        if obj.invalidated_at is not None and obj.invalidated_at > observed_at:
+            raise ValueError("future invalidation is forbidden in PURE_SOURCE")
+        if any(event.at > observed_at for event in obj.lifecycle):
+            raise ValueError("future lifecycle event is forbidden in PURE_SOURCE")
+        self._validate_lifecycle_projection(obj)
 
-    def _register_zone(self, timeframe: int, zone: Any, now: datetime) -> None:
-        key = ("zone", str(zone.zone_id)); object_id = self._legacy_ids.get(key)
-        if object_id is None:
-            obj = CausalSourceObject.formed(object_type=_ZONE_TYPE_MAP.get(zone.kind, SourceObjectType.POI),
-                symbol=self.symbol, timeframe=timeframe, direction=zone.direction,
-                formation_at=zone.formed_at, known_at=zone.known_at,
-                identity_parts={"legacy_zone_id": zone.zone_id, "kind": zone.kind,
-                                "origin_index": zone.origin_index, "low": zone.low, "high": zone.high},
-                source_rule_ids=("SOURCE_ZONE_FORMATION",),
-                provenance="legacy SourceSeries zone adapted without changing trading semantics")
-            self.registry.add(obj); self._legacy_ids[key] = obj.object_id; object_id = obj.object_id
-        obj = self.registry.get(object_id); invalidated_at = getattr(zone, "invalidated_at", None)
-        if invalidated_at is not None and invalidated_at <= now and obj.invalidated_at is None:
-            self.registry.replace(obj.invalidate(invalidated_at, "SOURCE_ZONE_INVALIDATION"))
+    def _validate_lifecycle_projection(self, obj: CausalSourceObject) -> None:
+        if not obj.lifecycle:
+            raise ValueError("causal SOURCE object requires lifecycle provenance")
+        status = obj.lifecycle[-1].status
+        trade_eligible = obj.lifecycle[-1].trade_eligible
+        formation_valid = True
+        confirmed_at: datetime | None = None
+        invalidated_at: datetime | None = None
+        rejection_reasons: list[str] = []
+        for event in obj.lifecycle:
+            if event.kind == LifecycleEventKind.CONFIRMATION:
+                confirmed_at = event.at
+            elif event.kind == LifecycleEventKind.INVALIDATION:
+                invalidated_at = event.at
+            if event.kind == LifecycleEventKind.REJECTION and event.reason:
+                rejection_reasons.append(event.reason)
+                if event.reason.startswith(RejectionCategory.OBJECT_INVALID_SOURCE.value):
+                    formation_valid = False
+            elif event.kind in (LifecycleEventKind.INVALIDATION, LifecycleEventKind.CANCELLATION) and event.reason:
+                rejection_reasons.append(event.reason)
+        projected = (
+            status,
+            formation_valid,
+            trade_eligible,
+            confirmed_at,
+            invalidated_at,
+            tuple(rejection_reasons),
+        )
+        actual = (
+            obj.status,
+            obj.formation_valid,
+            obj.trade_eligible,
+            obj.confirmed_at,
+            obj.invalidated_at,
+            obj.rejection_reasons,
+        )
+        if projected != actual:
+            raise ValueError("causal object top-level state does not match lifecycle history")
 
-    def _register_event(self, timeframe: int, event: Any) -> None:
-        name = event.kind.value
-        if "SWING_" in name: object_type = SourceObjectType.SWING
-        elif "SFP_" in name: object_type = SourceObjectType.SFP
-        elif "LIQUIDITY" in name: object_type = SourceObjectType.LIQUIDITY_POOL
-        elif "STRUCTURE" in name or "CONF_" in name: object_type = SourceObjectType.STRUCTURE
-        else: return
-        key = ("event", f"{timeframe}:{name}:{event.candle_index}:{event.level_id}:{event.event_time.isoformat()}")
-        if key in self._legacy_ids: return
-        obj = CausalSourceObject.formed(object_type=object_type, symbol=self.symbol, timeframe=timeframe,
-            direction=None, formation_at=event.event_time, known_at=event.event_time,
-            identity_parts={"event_kind": name, "candle_index": event.candle_index, "level_id": event.level_id,
-                            "level_price": event.level_price, "price": event.price, "episode_id": event.episode_id},
-            source_rule_ids=("SOURCE_MARKET_EVENT",), provenance="MarketAnalysis causal event")
-        self.registry.add(obj); self._legacy_ids[key] = obj.object_id
+    def _validate_object_extension(
+        self,
+        existing: CausalSourceObject,
+        new: CausalSourceObject,
+    ) -> None:
+        immutable_existing = (
+            existing.object_id,
+            existing.object_type,
+            existing.symbol,
+            existing.timeframe,
+            existing.direction,
+            existing.formation_at,
+            existing.known_at,
+            existing.source_rule_ids,
+            existing.technical_normalization_ids,
+            existing.parent_object_ids,
+            existing.provenance,
+        )
+        immutable_new = (
+            new.object_id,
+            new.object_type,
+            new.symbol,
+            new.timeframe,
+            new.direction,
+            new.formation_at,
+            new.known_at,
+            new.source_rule_ids,
+            new.technical_normalization_ids,
+            new.parent_object_ids,
+            new.provenance,
+        )
+        if immutable_existing != immutable_new:
+            raise ValueError("causal object immutable identity/provenance changed")
+        if len(new.lifecycle) < len(existing.lifecycle):
+            raise ValueError("causal lifecycle cannot shrink")
+        if new.lifecycle[: len(existing.lifecycle)] != existing.lifecycle:
+            raise ValueError("causal lifecycle history cannot be rewritten")
 
-    def _register_range(self, timeframe: int, range_id: Any, lower: float, upper: float,
-                        known_at: datetime, causal_id: str) -> None:
-        key = ("range", str(causal_id))
-        if key in self._legacy_ids: return
-        obj = CausalSourceObject.formed(object_type=SourceObjectType.RANGE, symbol=self.symbol,
-            timeframe=timeframe, direction=None, formation_at=known_at, known_at=known_at,
-            identity_parts={"legacy_range_id": range_id, "causal_id": causal_id, "lower": lower, "upper": upper},
-            source_rule_ids=("SOURCE_RANGE_GEOMETRY",),
-            technical_normalization_ids=("TN_LEGACY_RANGE_FORMATION_AT_CAUSAL_KNOWN_AT",),
-            provenance="legacy range adapter; exact earlier physical formation is not backfilled")
-        self.registry.add(obj); self._legacy_ids[key] = obj.object_id
+    def _assert_active_at(self, obj: CausalSourceObject, at: datetime, label: str) -> None:
+        state = obj.state_at(at)
+        if (
+            not state.formation_valid
+            or state.invalidated_at is not None
+            or state.status in (ObjectStatus.INVALIDATED, ObjectStatus.CANCELLED)
+        ):
+            raise ValueError(f"{label} is not source-active at decision time")
 
-    def _capture_setups(self, now: datetime) -> None:
-        for setup in getattr(self.engine, "setups", ()):
-            if setup.interaction_at > now: continue
-            poi_id = self._legacy_ids.get(("zone", str(setup.poi.zone_id)))
-            physical_key = ("physical", f"{setup.poi.zone_id}:{setup.interaction_at.isoformat()}")
-            physical_id = self._legacy_ids.get(physical_key)
-            if physical_id is None:
-                physical = CausalSourceObject.formed(object_type=SourceObjectType.PHYSICAL_IDEA,
-                    symbol=self.symbol, timeframe=setup.htf, direction=setup.poi.direction,
-                    formation_at=setup.interaction_at, known_at=setup.interaction_at,
-                    identity_parts={"poi_zone_id": setup.poi.zone_id, "interaction_at": setup.interaction_at},
-                    source_rule_ids=("SOURCE_PHYSICAL_CONTEXT",), parent_object_ids=(poi_id,) if poi_id else (),
-                    provenance="physical idea identity excludes branch, score and future outcome")
-                self.registry.add(physical); physical_id = physical.object_id; self._legacy_ids[physical_key] = physical_id
-            setup_key = ("setup", str(setup.setup_id)); setup_object_id = self._legacy_ids.get(setup_key)
-            if setup_object_id is None:
-                obj = CausalSourceObject.formed(object_type=SourceObjectType.SETUP, symbol=self.symbol,
-                    timeframe=f"{setup.htf}/{setup.ltf}", direction=setup.poi.direction,
-                    formation_at=setup.interaction_at, known_at=setup.interaction_at,
-                    identity_parts={"physical_idea_id": physical_id, "htf": setup.htf, "ltf": setup.ltf},
-                    source_rule_ids=("SOURCE_SETUP_ASSEMBLY_LEGACY",),
-                    parent_object_ids=tuple(v for v in (physical_id, poi_id) if v),
-                    provenance="legacy setup adapted; trade eligibility remains independent")
-                self.registry.add(obj); setup_object_id = obj.object_id; self._legacy_ids[setup_key] = setup_object_id
-            obj = self.registry.get(setup_object_id)
-            if setup.ready_id is not None and not obj.trade_eligible:
-                signal = next((s for s in getattr(self.engine, "signals", ()) if s.signal_id == setup.ready_id), None)
-                ready_at = signal.known_at if signal is not None else now
-                self.registry.replace(obj.set_trade_eligible(True, ready_at, "SOURCE_CHAIN_READY")); obj = self.registry.get(setup_object_id)
-            invalidated_at = getattr(setup, "invalidated_at", None)
-            if invalidated_at is not None and invalidated_at <= now and obj.status.value != "CANCELLED":
-                category = RejectionCategory.CANCELLED_AFTER_READY if setup.ready_id is not None else RejectionCategory.SETUP_REJECTED_SOURCE
-                if setup.ready_id is not None:
-                    self.registry.replace(obj.cancel(invalidated_at, f"{category.value}:{setup.reason}"))
-                else:
-                    self.registry.replace(obj.reject(category, invalidated_at, setup.reason))
+    def _assert_policy_ids_clean(self, policy_ids: Sequence[str]) -> None:
+        contaminated = {
+            policy_id
+            for policy_id in policy_ids
+            if (
+                policy_id in PROJECT_POLICY_IDS
+                or str(policy_id).upper().startswith("PROJECT_")
+                or "PROJECT_POLICY" in str(policy_id).upper()
+            )
+        }
+        if contaminated:
+            joined = ",".join(sorted(contaminated))
+            raise ValueError(f"PROJECT_POLICY ids are forbidden in PURE_SOURCE evidence: {joined}")
+
+    def _require_registered(self, object_id: str) -> CausalSourceObject:
+        try:
+            return self.registry.get(object_id)
+        except KeyError as exc:
+            raise KeyError(f"causal parent is not registered: {object_id}") from exc
+
+    def _observation_time(self, explicit: datetime | None, floor: datetime) -> datetime:
+        _aware("observation floor", floor)
+        if explicit is None:
+            if self._decision_watermark is not None and self._decision_watermark >= floor:
+                return self._decision_watermark
+            return floor
+        _aware("observed_at", explicit)
+        if explicit < floor:
+            raise ValueError("observed_at cannot precede evidence known_at")
+        if self._decision_watermark is not None and explicit < self._decision_watermark:
+            raise ValueError("observed_at cannot move PURE_SOURCE runtime watermark backward")
+        return explicit
+
+    def _advance_watermark(self, at: datetime) -> None:
+        _aware("runtime watermark", at)
+        if self._decision_watermark is not None and at < self._decision_watermark:
+            raise ValueError("PURE_SOURCE runtime decision watermark cannot move backward")
+        self._decision_watermark = at
+
+
+def _aware(name: str, value: datetime) -> None:
+    if value.tzinfo is None or value.utcoffset() is None:
+        raise ValueError(f"{name} must be timezone-aware")
