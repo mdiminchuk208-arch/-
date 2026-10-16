@@ -44,12 +44,12 @@ class OldLiquidityRaidReference:
 
 @dataclass(frozen=True)
 class SourceMovementReference:
-    """Causal, pre-qualified 'last movement' geometry for Demand/Supply.
+    """Causal 'last movement' geometry candidate for Demand/Supply.
 
-    The secondary SOURCE allows one candle or several consecutive candles and
-    does not provide a deterministic segmentation algorithm. Stage 6.5 therefore
-    consumes auditable movement geometry instead of inventing a candle count,
-    ATR threshold, or displacement rule.
+    The verified secondary SOURCE allows one candle or several consecutive
+    candles and does not give a deterministic segmentation algorithm. The
+    geometry is therefore accompanied by PASS/FAIL/UNKNOWN qualitative evidence
+    instead of an invented candle count, ATR threshold, or displacement rule.
     """
 
     direction: MovementDirection
@@ -73,10 +73,6 @@ class SourceMovementReference:
             raise ValueError("movement cannot be known before it starts")
         if not self.parent_object_ids or not self.evidence_id or not self.provenance:
             raise ValueError("movement reference requires parent ids and provenance")
-        if self.last_movement_evidence.status == EvidenceStatus.FAIL:
-            raise ValueError("movement is explicitly not the SOURCE last movement")
-        if not self.last_movement_evidence.provenance_ready:
-            raise ValueError("last-movement geometry requires auditable qualitative provenance")
         if self.last_movement_evidence.known_at is not None and self.last_movement_evidence.known_at < self.start_at:
             raise ValueError("last-movement evidence cannot predate movement start")
 
@@ -135,6 +131,13 @@ def form_source_demand_supply(
     """
     if not symbol:
         raise ValueError("symbol is required")
+
+    movement_quality = movement.last_movement_evidence
+    if movement_quality.status == EvidenceStatus.FAIL:
+        return DemandSupplyFormationAssessment(EvidenceStatus.FAIL, "LAST_MOVEMENT_SOURCE_GEOMETRY_FAILED")
+    if not movement_quality.provenance_ready:
+        return DemandSupplyFormationAssessment(EvidenceStatus.UNKNOWN, "WAIT_LAST_MOVEMENT_QUALITATIVE_PROVENANCE")
+
     if raid.raid_known_at > movement.known_at:
         return DemandSupplyFormationAssessment(
             EvidenceStatus.FAIL,
@@ -159,7 +162,7 @@ def form_source_demand_supply(
     known_at = max(
         movement.known_at,
         raid.raid_known_at,
-        movement.last_movement_evidence.known_at,  # type: ignore[arg-type]
+        movement_quality.known_at,  # type: ignore[arg-type]
     )
     parent_ids = tuple(dict.fromkeys(movement.parent_object_ids + (raid.parent_liquidity_id,)))
     obj = CausalSourceObject.formed(
