@@ -207,18 +207,20 @@ class PureSourceRuntime:
         self._assert_policy_ids_clean(evidence.physical_idea.technical_normalization_ids)
         for parent_id in evidence.physical_idea.parent_object_ids:
             self._require_registered(parent_id)
-        self.registry.add(evidence.physical_idea)
 
         self._validate_object(evidence.setup, at)
-        for parent_id in evidence.setup.parent_object_ids:
-            self._require_registered(parent_id)
         self._assert_policy_ids_clean(evidence.setup.source_rule_ids)
         self._assert_policy_ids_clean(evidence.setup.technical_normalization_ids)
-        self.registry.add(evidence.setup)
+        for parent_id in evidence.setup.parent_object_ids:
+            if parent_id != evidence.physical_idea.object_id:
+                self._require_registered(parent_id)
 
         existing = self._setups.get(evidence.setup.object_id)
         if existing is not None and existing != evidence:
             raise ValueError(f"setup id collision: {evidence.setup.object_id}")
+
+        self.registry.add(evidence.physical_idea)
+        self.registry.add(evidence.setup)
         self._setups[evidence.setup.object_id] = evidence
         self._advance_watermark(at)
         return evidence
@@ -322,9 +324,9 @@ class PureSourceRuntime:
         if setup_id is not None and setup_id not in self._setups:
             raise KeyError(f"blocker references unregistered setup: {setup_id}")
         blocker = RuntimeBlocker(stage, status, reason, observed_at, setup_id)
+        self._advance_watermark(observed_at)
         key = (stage.value, reason, setup_id, observed_at)
         self._blockers[key] = blocker
-        self._advance_watermark(observed_at)
         return blocker
 
     def get_execution_plan(self, setup_id: str) -> SourceExecutionPlan:
@@ -502,6 +504,8 @@ class PureSourceRuntime:
         _aware("observed_at", explicit)
         if explicit < floor:
             raise ValueError("observed_at cannot precede evidence known_at")
+        if self._decision_watermark is not None and explicit < self._decision_watermark:
+            raise ValueError("observed_at cannot move PURE_SOURCE runtime watermark backward")
         return explicit
 
     def _advance_watermark(self, at: datetime) -> None:
