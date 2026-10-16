@@ -7,10 +7,7 @@ from typing import Sequence
 
 from crypto_bot.common.models import Direction
 from crypto_bot.strategy.causal_objects import CausalSourceObject, ObjectStatus, SourceObjectType
-from crypto_bot.strategy.source_demand_supply_v2 import (
-    SourceDemandSupplyEvidence,
-    assess_demand_supply_context,
-)
+from crypto_bot.strategy.source_demand_supply_v2 import SourceDemandSupplyEvidence, assess_demand_supply_context
 from crypto_bot.strategy.source_imb_ote_pd_v2 import PremiumDiscountEvidence
 from crypto_bot.strategy.source_ob_breaker_v2 import (
     BosReference,
@@ -109,15 +106,15 @@ class SetupAssemblyAssessment:
         return self.status == EvidenceStatus.PASS
 
 
-def assemble_ob_direct_first_test(
-    ob: SourceOrderBlockEvidence,
-) -> SetupAssemblyAssessment:
-    """Register the source-permitted direct OB plan for its next/first test.
+@dataclass(frozen=True)
+class _PoiSelection:
+    status: EvidenceStatus
+    reason: str
+    poi: CausalSourceObject | None = None
 
-    No future test is required to create the plan. Stage 8 will define the entry
-    quote/stop and enforce first-test execution semantics. This prevents future
-    interaction from being used as historical setup-formation evidence.
-    """
+
+def assemble_ob_direct_first_test(ob: SourceOrderBlockEvidence) -> SetupAssemblyAssessment:
+    """Create the direct OB plan before the future first interaction occurs."""
     if not _context_active_at(ob.obj, ob.obj.known_at):
         return _fail("OB_CONTEXT_NOT_ACTIVE_AT_KNOWN_AT")
     return _assemble(
@@ -128,7 +125,7 @@ def assemble_ob_direct_first_test(
         evidence_ids=(),
         parent_objects=(),
         source_rule_ids=("OB_FIRST_TEST_001", "SETUP_OB_DIRECT_001"),
-        provenance="SW9 p3 direct OB first-test setup; quote and stop deferred to Stage 8",
+        provenance="SW9 p3 direct OB first-test plan; quote and stop are deferred to Stage 8",
     )
 
 
@@ -138,7 +135,6 @@ def assemble_ob_repeat_after_ltf_reaction(
     prior_test: PoiTestReference,
     ltf_reaction: CausalChainEvidence,
 ) -> SetupAssemblyAssessment:
-    """Create the exceptional repeated-OB setup only after a causal LTF reaction."""
     if prior_test.poi_object_id != ob.obj.object_id:
         return _fail("PRIOR_TEST_DOES_NOT_BELONG_TO_OB")
     if prior_test.test_number != 1:
@@ -161,7 +157,7 @@ def assemble_ob_repeat_after_ltf_reaction(
         evidence_ids=(prior_test.evidence_id, ltf_reaction.evidence_id),
         parent_objects=(),
         source_rule_ids=("OB_FIRST_TEST_001", "SETUP_OB_REPEAT_REACTION_001"),
-        provenance="SW9 p3 repeated OB path after lower-timeframe reaction; future repeat quote deferred",
+        provenance="SW9 p3 exceptional repeated OB plan after causal lower-timeframe reaction",
     )
 
 
@@ -172,8 +168,12 @@ def assemble_ob_conservative_ltf(
     ltf_reaction: CausalChainEvidence,
     ltf_bos: BosReference,
     entry_poi_candidates: Sequence[CausalSourceObject],
+    decision_at: datetime,
 ) -> SetupAssemblyAssessment:
-    """Assemble SW9 conservative HTF-OB -> LTF reaction -> BOS -> new POI chain."""
+    """Assemble HTF OB -> LTF reaction -> BOS -> one newly formed POI."""
+    _aware("decision_at", decision_at)
+    if decision_at < ltf_bos.known_at:
+        return _fail("DECISION_PRECEDES_LTF_BOS")
     if pair.refinement_minutes > 15:
         return _fail("OB_CONSERVATIVE_REFINEMENT_OUTSIDE_SOURCE_1_15M_SCOPE")
     if ltf_reaction.direction != ob.direction or ob.obj.object_id not in ltf_reaction.parent_object_ids:
@@ -188,13 +188,12 @@ def assemble_ob_conservative_ltf(
         entry_poi_candidates,
         direction=ob.direction,
         min_formation_at=ltf_bos.known_at,
-        decision_at=max((p.known_at for p in entry_poi_candidates), default=ltf_bos.known_at),
+        decision_at=decision_at,
     )
     if selection.status != EvidenceStatus.PASS:
-        return selection
-    assert isinstance(selection.evidence, SourceSetupEvidence) is False
-    poi = selection_poi(selection)
-    assert poi is not None
+        return SetupAssemblyAssessment(selection.status, selection.reason)
+    assert selection.poi is not None
+    poi = selection.poi
     if not _context_active_at(ob.obj, poi.known_at):
         return _fail("OB_CONTEXT_NOT_ACTIVE_WHEN_LTF_POI_KNOWN")
     return _assemble(
@@ -205,18 +204,13 @@ def assemble_ob_conservative_ltf(
         evidence_ids=(ltf_reaction.evidence_id, ltf_bos.evidence_id, poi.object_id),
         parent_objects=(poi,),
         source_rule_ids=("OB_LTF_ENTRY_001", "SETUP_OB_CONSERVATIVE_LTF_001"),
-        provenance="SW9 p4-6 HTF OB reaction -> lower-TF BOS -> newly formed source-valid POI",
+        provenance="SW9 p4-6 HTF OB reaction -> lower-TF BOS -> one new source-valid POI",
         refinement_timeframe_minutes=pair.refinement_minutes,
         entry_poi_id=poi.object_id,
     )
 
 
-def assemble_ob_conf_strict(
-    ob: SourceOrderBlockEvidence,
-    *,
-    conf: BosReference,
-) -> SetupAssemblyAssessment:
-    """Preserve the general conservative 'after CONF' source-permitted branch."""
+def assemble_ob_conf_strict(ob: SourceOrderBlockEvidence, *, conf: BosReference) -> SetupAssemblyAssessment:
     if conf.kind != "CONF" or conf.direction != ob.direction:
         return _fail("OB_CONF_BRANCH_REQUIRES_DIRECTIONAL_CONF")
     if conf.known_at < ob.obj.known_at:
@@ -231,7 +225,7 @@ def assemble_ob_conf_strict(
         evidence_ids=(conf.evidence_id,),
         parent_objects=(),
         source_rule_ids=("MS_CONF_001", "SETUP_OB_CONF_STRICT_001"),
-        provenance="SW5 p6 conservative after-CONF branch applied to an already source-valid OB context",
+        provenance="SW5 p6 general conservative after-CONF branch on an already source-valid OB context",
     )
 
 
@@ -241,8 +235,12 @@ def assemble_sfp_ltf_bos_new_poi(
     pair: LowerTimeframePair,
     ltf_bos: BosReference,
     entry_poi_candidates: Sequence[CausalSourceObject],
+    decision_at: datetime,
 ) -> SetupAssemblyAssessment:
-    """Assemble completed SFP -> strictly lower-TF BOS -> new source-valid POI."""
+    """Assemble SFP -> strictly lower-TF BOS -> one newly formed source-valid POI."""
+    _aware("decision_at", decision_at)
+    if decision_at < ltf_bos.known_at:
+        return _fail("DECISION_PRECEDES_LTF_BOS")
     if ltf_bos.kind != "BOS" or ltf_bos.direction != sfp.direction:
         return _fail("SFP_SETUP_REQUIRES_DIRECTIONAL_LTF_BOS")
     if ltf_bos.known_at < sfp.obj.known_at:
@@ -251,12 +249,12 @@ def assemble_sfp_ltf_bos_new_poi(
         entry_poi_candidates,
         direction=sfp.direction,
         min_formation_at=ltf_bos.known_at,
-        decision_at=max((p.known_at for p in entry_poi_candidates), default=ltf_bos.known_at),
+        decision_at=decision_at,
     )
     if selection.status != EvidenceStatus.PASS:
-        return selection
-    poi = selection_poi(selection)
-    assert poi is not None
+        return SetupAssemblyAssessment(selection.status, selection.reason)
+    assert selection.poi is not None
+    poi = selection.poi
     if not _context_active_at(sfp.obj, poi.known_at):
         return _fail("SFP_CONTEXT_NOT_ACTIVE_WHEN_ENTRY_POI_KNOWN")
     return _assemble(
@@ -267,15 +265,13 @@ def assemble_sfp_ltf_bos_new_poi(
         evidence_ids=(ltf_bos.evidence_id, poi.object_id),
         parent_objects=(poi,),
         source_rule_ids=("SFP_LTF_BOS_002", "SETUP_SFP_NEW_POI_001"),
-        provenance="SW8/SW9 completed SFP -> lower-TF BOS -> new source-valid POI; no fixed TF mapping",
+        provenance="SW8/SW9 completed SFP -> lower-TF BOS -> one new source-valid POI; no fixed TF mapping",
         refinement_timeframe_minutes=pair.refinement_minutes,
         entry_poi_id=poi.object_id,
     )
 
 
-def assemble_breaker_direct(
-    breaker: SourceBreakerEvidence,
-) -> SetupAssemblyAssessment:
+def assemble_breaker_direct(breaker: SourceBreakerEvidence) -> SetupAssemblyAssessment:
     if not _context_active_at(breaker.obj, breaker.obj.known_at):
         return _fail("BREAKER_CONTEXT_NOT_ACTIVE_AT_KNOWN_AT")
     return _assemble(
@@ -286,7 +282,7 @@ def assemble_breaker_direct(
         evidence_ids=(),
         parent_objects=(),
         source_rule_ids=("BREAKER_PARENT_OB_001", "SETUP_BREAKER_DIRECT_001"),
-        provenance="source-valid Breaker POI setup; quote/stop deferred to Stage 8",
+        provenance="source-valid Breaker plan; quote and stop are deferred to Stage 8",
     )
 
 
@@ -308,24 +304,24 @@ def assemble_demand_supply_direct(
     )
     if context.status != EvidenceStatus.PASS:
         return SetupAssemblyAssessment(context.status, context.reason)
-    if not _context_active_at(zone.obj, decision_at):
-        return _fail("DEMAND_SUPPLY_OBJECT_NOT_ACTIVE_AT_DECISION")
-    pd_id = premium_discount.dealing_range_evidence_id if premium_discount is not None else ""
+    if premium_discount is None:
+        return SetupAssemblyAssessment(EvidenceStatus.UNKNOWN, "WAIT_PREMIUM_DISCOUNT_CONTEXT")
+    setup_known_at = max(zone.obj.known_at, premium_discount.known_at)
+    if not _context_active_at(zone.obj, setup_known_at):
+        return _fail("DEMAND_SUPPLY_OBJECT_NOT_ACTIVE_AT_SETUP_TIME")
     return _assemble(
         context=zone.obj,
         direction=zone.direction,
         branch=SetupBranch.DEMAND_SUPPLY_DIRECT,
-        known_at=decision_at,
-        evidence_ids=(pd_id,),
+        known_at=setup_known_at,
+        evidence_ids=(premium_discount.dealing_range_evidence_id,),
         parent_objects=(),
         source_rule_ids=("DS_UNTESTED_001", "DS_PREMIUM_DISCOUNT_001", "SETUP_DS_DIRECT_001"),
-        provenance="verified D/S source: fresh zone plus causal Premium/Discount context; entry deferred",
+        provenance="verified D/S source: causal Premium/Discount context and first-test freshness; entry deferred",
     )
 
 
-def assemble_stb_bts_direct(
-    stb_bts: SourceStbBtsEvidence,
-) -> SetupAssemblyAssessment:
+def assemble_stb_bts_direct(stb_bts: SourceStbBtsEvidence) -> SetupAssemblyAssessment:
     if not _context_active_at(stb_bts.obj, stb_bts.obj.known_at):
         return _fail("STB_BTS_CONTEXT_NOT_ACTIVE_AT_KNOWN_AT")
     return _assemble(
@@ -336,7 +332,7 @@ def assemble_stb_bts_direct(
         evidence_ids=(),
         parent_objects=(),
         source_rule_ids=("STB_BTS_BOS_CONF_001", "SETUP_STB_BTS_DIRECT_001"),
-        provenance="source-valid STB/BTS context; edge/0.5 mitigation choice deferred to Stage 8",
+        provenance="source-valid STB/BTS plan; edge/0.5 mitigation choice is deferred to Stage 8",
     )
 
 
@@ -416,13 +412,6 @@ def assemble_range_conservative(
     )
 
 
-@dataclass(frozen=True)
-class _PoiSelection:
-    status: EvidenceStatus
-    reason: str
-    poi: CausalSourceObject | None = None
-
-
 def _select_unique_new_poi(
     candidates: Sequence[CausalSourceObject],
     *,
@@ -441,13 +430,13 @@ def _select_unique_new_poi(
     }
     eligible: list[CausalSourceObject] = []
     for candidate in candidates:
-        if candidate.object_type not in allowed_types:
+        # Future candidates are ignored rather than used to invalidate an earlier
+        # unique POI decision.
+        if candidate.known_at > decision_at:
             continue
-        if candidate.direction != direction.value:
+        if candidate.object_type not in allowed_types or candidate.direction != direction.value:
             continue
         if candidate.formation_at < min_formation_at or candidate.known_at < min_formation_at:
-            continue
-        if candidate.known_at > decision_at:
             continue
         if not _context_active_at(candidate, decision_at):
             continue
@@ -457,10 +446,6 @@ def _select_unique_new_poi(
     if len(eligible) > 1:
         return _PoiSelection(EvidenceStatus.UNKNOWN, "WAIT_NONUNIQUE_ENTRY_POI")
     return _PoiSelection(EvidenceStatus.PASS, "UNIQUE_NEW_SOURCE_VALID_ENTRY_POI", eligible[0])
-
-
-def selection_poi(selection: _PoiSelection | SetupAssemblyAssessment) -> CausalSourceObject | None:
-    return selection.poi if isinstance(selection, _PoiSelection) else None
 
 
 def _validate_range_external_context(
@@ -488,6 +473,9 @@ def _validate_range_external_context(
     if not external_relation.provenance_ready:
         return SetupAssemblyAssessment(EvidenceStatus.UNKNOWN, "WAIT_EXTERNAL_POI_RELATION_PROVENANCE")
     assert external_relation.known_at is not None
+    relation_floor = max(range_evidence.obj.known_at, external_poi.known_at)
+    if external_relation.known_at < relation_floor:
+        return _fail("EXTERNAL_POI_RELATION_PRECEDES_REQUIRED_OBJECTS")
     if external_relation.known_at > deviation.known_at:
         return _fail("EXTERNAL_POI_RELATION_NOT_KNOWN_AT_DEVIATION")
     return SetupAssemblyAssessment(EvidenceStatus.PASS, "RANGE_EXTERNAL_CONTEXT_VALID")
@@ -528,17 +516,16 @@ def _assemble(
         direction=direction.value,
         formation_at=context.formation_at,
         known_at=context.known_at,
-        identity_parts={
-            "context_object_id": context.object_id,
-            "direction": direction.value,
-        },
+        identity_parts={"context_object_id": context.object_id, "direction": direction.value},
         source_rule_ids=tuple(context.source_rule_ids),
         technical_normalization_ids=("TN_PHYSICAL_IDEA_BRANCH_INDEPENDENT",),
         parent_object_ids=(context.object_id,),
         provenance="branch-independent physical source idea; no ranking, score or future outcome",
     )
     cleaned_ids = tuple(x for x in evidence_ids if x)
-    setup_parent_ids = tuple(dict.fromkeys((physical.object_id, context.object_id) + tuple(p.object_id for p in parent_objects)))
+    setup_parent_ids = tuple(
+        dict.fromkeys((physical.object_id, context.object_id) + tuple(p.object_id for p in parent_objects))
+    )
     setup = CausalSourceObject.formed(
         object_type=SourceObjectType.SETUP,
         symbol=context.symbol,
@@ -548,7 +535,7 @@ def _assemble(
             else context.timeframe
         ),
         direction=direction.value,
-        formation_at=context.known_at,
+        formation_at=known_at,
         known_at=known_at,
         identity_parts={
             "physical_idea_id": physical.object_id,
