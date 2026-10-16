@@ -1,0 +1,46 @@
+{
+  "version": "PURE_SOURCE_STAGE9_V2",
+  "strategy_profile": "PURE_SOURCE",
+  "trade_entry_allowed": false,
+  "canonical_runtime": "crypto_bot.strategy.pure_source_runtime.PureSourceRuntime",
+  "inputs": [
+    "closed candles for causal clock only",
+    "Stage 2-6.5 CausalSourceObject evidence",
+    "Stage 7 SourceSetupEvidence",
+    "Stage 8 SourceExecutionPlan / ExecutionPlanAssessment"
+  ],
+  "forbidden_backends": [
+    "legacy source engine setup/admission path",
+    "virtual/project portfolio path",
+    "private exchange execution",
+    "live orders"
+  ],
+  "forbidden_project_policy": [
+    "ANTI_SCALP",
+    "EDGE_COST_RATIO",
+    "COST_VIABILITY",
+    "FEE_SLIPPAGE_ADMISSION",
+    "PROJECT_HTF_FILTER",
+    "PROJECT_MEDIUM_TERM_FILTER",
+    "PROJECT_SCORING",
+    "PROJECT_RANKING",
+    "PORTFOLIO_ADMISSION",
+    "CORRELATION_LIMIT",
+    "DAILY_LOSS_LIMIT",
+    "LEVERAGE_POLICY",
+    "TP_40_30_30",
+    "COST_ADJUSTED_BREAKEVEN",
+    "PROJECT_REENTRY_FILTER"
+  ],
+  "runtime_invariants": {
+    "object_validity_independent_of_setup_or_trade_eligibility": true,
+    "source_ready_independent_of_live_permission": true,
+    "future_lifecycle_mutation_forbidden": true,
+    "future_candle_close_forbidden": true,
+    "all_setup_parents_registered_before_setup": true,
+    "stage8_unresolved_becomes_blocker_not_guess": true,
+    "decision_watermark_monotonic": true,
+    "legacy_advance_path_disabled": true
+  },
+  "unresolved_source_semantics": "preserved from Stage 8 blockers; runtime never resolves them by score, PnL or project policy"
+}
