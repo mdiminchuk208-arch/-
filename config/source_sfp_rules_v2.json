@@ -1,0 +1,97 @@
+{
+  "version": "PURE_SOURCE_STAGE3_SFP_V2",
+  "scope": "sfp_object_and_lifecycle_only",
+  "rules": [
+    {
+      "rule_id": "SFP_EXTERNAL_LIQUIDITY_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "[SW.BAND]8. Торговые инструменты (Base).pdf",
+      "page": 5,
+      "statement": "SFP begins with a false break/sweep of external liquidity from a structural swing or range boundary."
+    },
+    {
+      "rule_id": "SFP_RECLAIM_CLOSE_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "[SW.BAND]8. Торговые инструменты (Base).pdf",
+      "page": 5,
+      "statement": "The sweep candle body must close back inside the swept external-liquidity level."
+    },
+    {
+      "rule_id": "SFP_NEXT_OPEN_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "[SW.BAND]8. Торговые инструменты (Base).pdf",
+      "page": 5,
+      "statement": "The immediate next candle must open back inside the swept level; only then is SFP formation complete."
+    },
+    {
+      "rule_id": "SFP_LTF_BOS_AFTER_FORMATION_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED_CHAIN_REQUIREMENT",
+      "source": "[SW.BAND]8. Торговые инструменты (Base).pdf",
+      "page": 5,
+      "statement": "After completed SFP formation, move to a lower timeframe and wait for BOS before searching for entry. LTF BOS is not part of SFP object existence."
+    },
+    {
+      "rule_id": "SFP_BODY_CLOSE_INVALIDATION_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "[SW.BAND]12. Индикаторы.pdf",
+      "page": 13,
+      "statement": "SFP becomes irrelevant when a later candle body closes beyond the SFP pattern minimum/maximum."
+    },
+    {
+      "rule_id": "TN_SFP_PATTERN_EXTREME_SWEEP_CANDLE",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE",
+      "statement": "Machine pattern min/max for invalidation is represented by the completed sweep-candle low/high."
+    },
+    {
+      "rule_id": "TN_SFP_PARENT_KNOWN_BEFORE_SWEEP",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE",
+      "statement": "External-liquidity parent must already be causally known no later than sweep-candle open; a level discovered after the sweep begins cannot retroactively anchor that SFP."
+    },
+    {
+      "rule_id": "LIQ_STRICT_WICK_TAKE_V2",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "INHERITED_FROM_STAGE2",
+      "statement": "Sweep is represented as strict penetration beyond the known level; exact touch alone is not a sweep."
+    },
+    {
+      "rule_id": "SFP_TIMEFRAME_ANY_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "statement": "SFP formation is source-valid on any timeframe."
+    },
+    {
+      "rule_id": "SFP_H1_PLUS_PREFERENCE_001",
+      "classification": "SOURCE_RULE",
+      "status": "PREFERENCE_NOT_GATE",
+      "statement": "H1+ is a preferred search timeframe, not a mandatory validity/admission filter."
+    },
+    {
+      "rule_id": "SFP_WAIT_EXPIRY",
+      "classification": "BACKTEST_PARAMETER",
+      "status": "DISABLED_FOR_PURE_SOURCE",
+      "statement": "SOURCE specifies no finite wait duration for LTF BOS. Any max-wait window is not part of PURE_SOURCE baseline."
+    },
+    {
+      "rule_id": "SFP_DUAL_SIDE_SAME_TIME",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "AMBIGUOUS_CHAIN_ONLY",
+      "statement": "If opposite-direction SFP objects form at the same causal time, preserve both objects and mark later setup direction unresolved; do not delete either historical formation."
+    }
+  ],
+  "forbidden_as_source": [
+    "finite SFP expiry window",
+    "mandatory H1-only SFP validity",
+    "PnL-based SFP significance filtering",
+    "arbitrary important-swing filter",
+    "ATR/percentage liquidity clustering threshold",
+    "LTF BOS as a prerequisite for historical SFP object existence",
+    "future next-candle HLC data in SFP formation"
+  ]
+}
