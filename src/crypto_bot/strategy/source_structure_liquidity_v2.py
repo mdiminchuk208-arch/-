@@ -193,7 +193,7 @@ def structural_liquidity(
         formation_at=swing.obj.formation_at,
         known_at=swing.obj.known_at,
         identity_parts={
-            "swing_object_id": swing.obj.object_id,
+            "parent_pivot_id": swing.obj.object_id,
             "side": swing.side,
             "price": swing.price,
         },
