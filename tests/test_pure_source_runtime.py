@@ -7,7 +7,7 @@ from datetime import datetime, timedelta, timezone
 
 from crypto_bot.common.models import Candle, Direction
 from crypto_bot.strategy import pure_source_runtime as runtime_module
-from crypto_bot.strategy.causal_objects import CausalSourceObject, SourceObjectType
+from crypto_bot.strategy.causal_objects import CausalSourceObject, ObjectStatus, SourceObjectType
 from crypto_bot.strategy.profile import (
     PolicyClass,
     ProjectPolicyContaminationError,
@@ -195,6 +195,16 @@ class PureSourceRuntimeTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             runtime.observe_candles((future_closed,), decision_at=t(2))
 
+    def test_backward_observation_is_rejected_before_registry_mutation(self):
+        runtime = PureSourceRuntime(SYMBOL)
+        later = source_object(SourceObjectType.ORDER_BLOCK, minute=10, token="later")
+        runtime.register_object(later, observed_at=t(10))
+        earlier = source_object(SourceObjectType.BREAKER, minute=5, token="earlier")
+        with self.assertRaises(ValueError):
+            runtime.register_object(earlier, observed_at=t(5))
+        self.assertEqual(len(runtime.registry), 1)
+        self.assertEqual(runtime.decision_watermark, t(10))
+
     def test_future_lifecycle_mutation_cannot_be_ingested_early(self):
         runtime = PureSourceRuntime(SYMBOL)
         base = source_object(SourceObjectType.ORDER_BLOCK, minute=0, token="future-invalidation")
@@ -212,7 +222,7 @@ class PureSourceRuntimeTests(unittest.TestCase):
         self.assertEqual(stored.invalidated_at, t(10))
         self.assertIsNone(stored.state_at(t(5)).invalidated_at)
         self.assertTrue(stored.state_at(t(5)).formation_valid)
-        self.assertEqual(stored.state_at(t(10)).status.value, "INVALIDATED")
+        self.assertEqual(stored.state_at(t(10)).status, ObjectStatus.INVALIDATED)
 
     def test_object_immutable_provenance_cannot_change_on_extension(self):
         runtime = PureSourceRuntime(SYMBOL)
@@ -225,7 +235,7 @@ class PureSourceRuntimeTests(unittest.TestCase):
     def test_top_level_state_cannot_disagree_with_lifecycle(self):
         runtime = PureSourceRuntime(SYMBOL)
         base = source_object(SourceObjectType.ORDER_BLOCK, minute=0, token="projection")
-        forged = replace(base, status=base.status.INVALIDATED, invalidated_at=t(0))
+        forged = replace(base, status=ObjectStatus.INVALIDATED, invalidated_at=t(0))
         with self.assertRaises(ValueError):
             runtime.register_object(forged, observed_at=t(0))
 
@@ -261,6 +271,38 @@ class PureSourceRuntimeTests(unittest.TestCase):
         )
         with self.assertRaises(KeyError):
             runtime.register_setup(evidence, observed_at=t(5))
+
+    def test_setup_validation_failure_does_not_partially_register_physical_idea(self):
+        runtime = PureSourceRuntime(SYMBOL)
+        context = source_object(SourceObjectType.ORDER_BLOCK, minute=0, token="atomic-context")
+        runtime.register_object(context, observed_at=t(0))
+        missing = source_object(SourceObjectType.POI, minute=0, token="missing-extra-parent")
+        physical = source_object(
+            SourceObjectType.PHYSICAL_IDEA,
+            minute=0,
+            token="atomic-physical",
+            parents=(context.object_id,),
+        )
+        setup = source_object(
+            SourceObjectType.SETUP,
+            minute=5,
+            token="atomic-setup",
+            parents=(physical.object_id, context.object_id, missing.object_id),
+        )
+        evidence = SourceSetupEvidence(
+            physical,
+            setup,
+            SetupBranch.OB_DIRECT_FIRST_TEST,
+            Direction.LONG,
+            context.object_id,
+            t(5),
+            (),
+        )
+        with self.assertRaises(KeyError):
+            runtime.register_setup(evidence, observed_at=t(5))
+        with self.assertRaises(KeyError):
+            runtime.registry.get(physical.object_id)
+        self.assertEqual(len(runtime.registry), 1)
 
     def test_stage7_unknown_assessment_becomes_setup_blocker(self):
         runtime = PureSourceRuntime(SYMBOL)
