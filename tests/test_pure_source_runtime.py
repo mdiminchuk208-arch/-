@@ -17,13 +17,18 @@ from crypto_bot.strategy.pure_source_runtime import PureSourceRuntime, RuntimeSt
 from crypto_bot.strategy.source_execution_v2 import (
     EntryMode,
     EntryOption,
+    ExecutionPlanAssessment,
     ExitMode,
     ExitPolicy,
     SourceExecutionPlan,
     StopMode,
     StopOption,
 )
-from crypto_bot.strategy.source_setup_v2 import SetupBranch, SourceSetupEvidence
+from crypto_bot.strategy.source_setup_v2 import (
+    SetupAssemblyAssessment,
+    SetupBranch,
+    SourceSetupEvidence,
+)
 from crypto_bot.strategy.source_structure_liquidity_v2 import EvidenceStatus
 
 UTC = timezone.utc
@@ -43,6 +48,8 @@ def source_object(
     direction: Direction | None = Direction.LONG,
     timeframe: str | int = 60,
     parents: tuple[str, ...] = (),
+    source_rule_ids: tuple[str, ...] = ("TEST_SOURCE_RULE",),
+    technical_normalization_ids: tuple[str, ...] = (),
 ) -> CausalSourceObject:
     at = t(minute)
     return CausalSourceObject.formed(
@@ -53,7 +60,8 @@ def source_object(
         formation_at=at,
         known_at=at,
         identity_parts={"fixture": token},
-        source_rule_ids=("TEST_SOURCE_RULE",),
+        source_rule_ids=source_rule_ids,
+        technical_normalization_ids=technical_normalization_ids,
         parent_object_ids=parents,
         provenance="Stage-9 runtime fixture",
     )
@@ -152,6 +160,18 @@ class PureSourceRuntimeTests(unittest.TestCase):
         with self.assertRaises(ProjectPolicyContaminationError):
             runtime.apply_policy("ANTI_SCALP", PolicyClass.PROJECT_POLICY)
 
+    def test_project_like_policy_id_cannot_hide_in_source_evidence(self):
+        runtime = PureSourceRuntime(SYMBOL)
+        contaminated = source_object(
+            SourceObjectType.ORDER_BLOCK,
+            minute=0,
+            token="contaminated",
+            source_rule_ids=("PROJECT_CUSTOM_FILTER",),
+        )
+        with self.assertRaises(ValueError):
+            runtime.register_object(contaminated, observed_at=t(0))
+        self.assertEqual(len(runtime.registry), 0)
+
     def test_project_overlay_profile_cannot_construct_pure_runtime(self):
         cfg = StrategyRuntimeConfig(strategy_profile=StrategyProfile.PROJECT_OVERLAY)
         with self.assertRaises(ValueError):
@@ -202,6 +222,24 @@ class PureSourceRuntimeTests(unittest.TestCase):
         with self.assertRaises(KeyError):
             runtime.register_setup(evidence, observed_at=t(5))
 
+    def test_stage7_unknown_assessment_becomes_setup_blocker(self):
+        runtime = PureSourceRuntime(SYMBOL)
+        assessment = SetupAssemblyAssessment(EvidenceStatus.UNKNOWN, "WAIT_SOURCE_BRANCH_SELECTION")
+        result = runtime.register_setup_assessment(assessment, observed_at=t(5))
+        self.assertIsNone(result)
+        self.assertEqual(len(runtime.blockers), 1)
+        self.assertEqual(runtime.blockers[0].stage, RuntimeStage.SETUP)
+        self.assertEqual(runtime.blockers[0].status, EvidenceStatus.UNKNOWN)
+        self.assertEqual(runtime.blockers[0].reason, "WAIT_SOURCE_BRANCH_SELECTION")
+
+    def test_malformed_stage7_pass_without_evidence_does_not_advance_runtime(self):
+        runtime = PureSourceRuntime(SYMBOL)
+        assessment = SetupAssemblyAssessment(EvidenceStatus.PASS, "BROKEN_PASS_CONTRACT")
+        with self.assertRaises(ValueError):
+            runtime.register_setup_assessment(assessment, observed_at=t(9))
+        self.assertIsNone(runtime.decision_watermark)
+        self.assertEqual(len(runtime.blockers), 0)
+
     def test_unresolved_stage8_plan_records_blocker_and_does_not_admit_setup(self):
         runtime = PureSourceRuntime(SYMBOL)
         evidence = setup_evidence(runtime)
@@ -213,6 +251,33 @@ class PureSourceRuntimeTests(unittest.TestCase):
         self.assertEqual(runtime.blockers[0].stage, RuntimeStage.EXECUTION)
         self.assertEqual(runtime.blockers[0].status, EvidenceStatus.UNKNOWN)
         self.assertEqual(runtime.blockers[0].reason, "WAIT_UNRESOLVED_STOP_GEOMETRY")
+
+    def test_malformed_stage8_pass_without_plan_does_not_advance_runtime(self):
+        runtime = PureSourceRuntime(SYMBOL)
+        evidence = setup_evidence(runtime)
+        before = runtime.decision_watermark
+        assessment = ExecutionPlanAssessment(EvidenceStatus.PASS, "BROKEN_PASS_CONTRACT")
+        with self.assertRaises(ValueError):
+            runtime.register_execution_assessment(
+                assessment,
+                observed_at=t(9),
+                setup_id=evidence.setup.object_id,
+            )
+        self.assertEqual(runtime.decision_watermark, before)
+
+    def test_nonpass_stage8_assessment_cannot_smuggle_plan(self):
+        runtime = PureSourceRuntime(SYMBOL)
+        evidence = setup_evidence(runtime)
+        plan = execution_plan(evidence, unresolved=())
+        assessment = ExecutionPlanAssessment(EvidenceStatus.FAIL, "BROKEN_FAIL_CONTRACT", plan)
+        with self.assertRaises(ValueError):
+            runtime.register_execution_assessment(
+                assessment,
+                observed_at=t(9),
+                setup_id=evidence.setup.object_id,
+            )
+        self.assertEqual(runtime.decision_watermark, t(5))
+        self.assertFalse(runtime.registry.get(evidence.setup.object_id).trade_eligible)
 
     def test_source_ready_is_separate_from_live_permission(self):
         runtime = PureSourceRuntime(SYMBOL)
