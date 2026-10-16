@@ -9,6 +9,8 @@ from crypto_bot.common.models import Candle
 from crypto_bot.strategy.causal_objects import (
     CausalObjectRegistry,
     CausalSourceObject,
+    LifecycleEventKind,
+    ObjectStatus,
     SourceObjectType,
     require_closed_candles,
 )
@@ -40,6 +42,8 @@ class RuntimeBlocker:
 
     def __post_init__(self) -> None:
         _aware("blocker observed_at", self.observed_at)
+        if self.status == EvidenceStatus.PASS:
+            raise ValueError("PASS cannot be recorded as a runtime blocker")
         if not self.reason:
             raise ValueError("runtime blocker reason is required")
 
@@ -93,6 +97,7 @@ class PureSourceRuntime:
         )
 
     def apply_policy(self, policy_id: str, policy_class: PolicyClass) -> None:
+        self._assert_policy_ids_clean((policy_id,))
         self.config = self.config.record_policy(policy_id, policy_class)
 
     def observe_candles(self, candles: Sequence[Candle], *, decision_at: datetime) -> None:
@@ -107,12 +112,32 @@ class PureSourceRuntime:
         *,
         observed_at: datetime | None = None,
     ) -> CausalSourceObject:
-        """Persist one SOURCE object without using trade admission as an existence gate."""
+        """Persist or causally extend one Stage-2..6.5 market object.
+
+        Existing history may only be extended by later lifecycle events. Earlier
+        events, identity/provenance and SOURCE classifications are immutable.
+        SETUP/PHYSICAL_IDEA objects must use the dedicated Stage-7 wiring path.
+        """
+        if obj.object_type in (SourceObjectType.SETUP, SourceObjectType.PHYSICAL_IDEA):
+            raise ValueError("SETUP/PHYSICAL_IDEA objects must use register_setup")
+        if obj.trade_eligible:
+            raise ValueError("market objects cannot arrive pre-admitted")
+        if any(event.kind == LifecycleEventKind.TRADE_ELIGIBILITY for event in obj.lifecycle):
+            raise ValueError("market-object trade-eligibility lifecycle is owned by runtime/setup wiring")
+
         at = self._observation_time(observed_at, obj.known_at)
         self._validate_object(obj, at)
         self._assert_policy_ids_clean(obj.source_rule_ids)
         self._assert_policy_ids_clean(obj.technical_normalization_ids)
-        self.registry.add(obj)
+
+        try:
+            existing = self.registry.get(obj.object_id)
+        except KeyError:
+            self.registry.add(obj)
+        else:
+            if existing != obj:
+                self._validate_object_extension(existing, obj)
+                self.registry.replace(obj)
         self._advance_watermark(at)
         return obj
 
@@ -154,12 +179,27 @@ class PureSourceRuntime:
             raise ValueError("setup symbol does not match runtime symbol")
         if evidence.setup.known_at != evidence.known_at:
             raise ValueError("setup known_at contract mismatch")
+        if evidence.setup.direction != evidence.direction.value:
+            raise ValueError("setup direction contract mismatch")
+        if evidence.physical_idea.direction != evidence.direction.value:
+            raise ValueError("physical idea direction contract mismatch")
         if evidence.setup.trade_eligible or evidence.physical_idea.trade_eligible:
             raise ValueError("Stage-7 objects cannot arrive pre-admitted")
 
-        self._require_registered(evidence.context_object_id)
+        context = self._require_registered(evidence.context_object_id)
+        self._assert_active_at(context, evidence.known_at, "setup context")
+        if evidence.context_object_id not in evidence.physical_idea.parent_object_ids:
+            raise ValueError("physical idea must reference Stage-7 context object")
+        if evidence.context_object_id not in evidence.setup.parent_object_ids:
+            raise ValueError("setup must reference Stage-7 context object")
+        if evidence.physical_idea.object_id not in evidence.setup.parent_object_ids:
+            raise ValueError("setup must reference its physical idea")
+
         if evidence.entry_poi_id is not None:
-            self._require_registered(evidence.entry_poi_id)
+            entry_poi = self._require_registered(evidence.entry_poi_id)
+            self._assert_active_at(entry_poi, evidence.known_at, "entry POI")
+            if evidence.entry_poi_id not in evidence.setup.parent_object_ids:
+                raise ValueError("setup must reference its entry POI")
 
         self._validate_object(evidence.physical_idea, at)
         self._assert_policy_ids_clean(evidence.physical_idea.source_rule_ids)
@@ -221,6 +261,11 @@ class PureSourceRuntime:
             raise ValueError("execution plan is not known at observed_at")
         self._assert_policy_ids_clean(plan.source_rule_ids)
         self._assert_policy_ids_clean(plan.technical_normalization_ids)
+        for entry in plan.entry_options:
+            self._assert_policy_ids_clean(entry.source_rule_ids)
+        for stop in plan.stop_options:
+            self._assert_policy_ids_clean(stop.source_rule_ids)
+        self._assert_policy_ids_clean(plan.exit_policy.source_rule_ids)
 
         setup_evidence = self._setups.get(plan.setup_id)
         if setup_evidence is None:
@@ -231,6 +276,9 @@ class PureSourceRuntime:
             raise ValueError("execution plan branch/direction mismatch")
         if setup_evidence.known_at != plan.known_at:
             raise ValueError("execution plan known_at must equal Stage-7 setup known_at")
+
+        setup_obj = self.registry.get(plan.setup_id)
+        self._assert_active_at(setup_obj, at, "execution setup")
 
         existing = self._execution_plans.get(plan.setup_id)
         if existing is not None and existing != plan:
@@ -268,6 +316,8 @@ class PureSourceRuntime:
         setup_id: str | None = None,
     ) -> RuntimeBlocker:
         _aware("blocker observed_at", observed_at)
+        if status == EvidenceStatus.PASS:
+            raise ValueError("PASS cannot be recorded as a runtime blocker")
         if setup_id is not None and setup_id not in self._setups:
             raise KeyError(f"blocker references unregistered setup: {setup_id}")
         blocker = RuntimeBlocker(stage, status, reason, observed_at, setup_id)
@@ -287,6 +337,16 @@ class PureSourceRuntime:
                 if self.registry.get(setup_id).trade_eligible
             )
         )
+        blocker_rows = tuple(
+            {
+                "stage": blocker.stage.value,
+                "status": blocker.status.value,
+                "reason": blocker.reason,
+                "observed_at": blocker.observed_at.isoformat(),
+                "setup_id": blocker.setup_id,
+            }
+            for blocker in self.blockers
+        )
         return {
             "strategy_profile": StrategyProfile.PURE_SOURCE.value,
             "runtime_version": "PURE_SOURCE_STAGE9_V2",
@@ -302,16 +362,8 @@ class PureSourceRuntime:
                 if self._decision_watermark is not None
                 else None
             ),
-            "unresolved_blockers": tuple(
-                {
-                    "stage": blocker.stage.value,
-                    "status": blocker.status.value,
-                    "reason": blocker.reason,
-                    "observed_at": blocker.observed_at.isoformat(),
-                    "setup_id": blocker.setup_id,
-                }
-                for blocker in self.blockers
-            ),
+            "runtime_blockers": blocker_rows,
+            "unresolved_blockers": blocker_rows,
         }
 
     def advance(self, *args: object, **kwargs: object) -> None:
@@ -332,6 +384,53 @@ class PureSourceRuntime:
             raise ValueError("future invalidation is forbidden in PURE_SOURCE")
         if any(event.at > observed_at for event in obj.lifecycle):
             raise ValueError("future lifecycle event is forbidden in PURE_SOURCE")
+
+    def _validate_object_extension(
+        self,
+        existing: CausalSourceObject,
+        new: CausalSourceObject,
+    ) -> None:
+        immutable_existing = (
+            existing.object_id,
+            existing.object_type,
+            existing.symbol,
+            existing.timeframe,
+            existing.direction,
+            existing.formation_at,
+            existing.known_at,
+            existing.source_rule_ids,
+            existing.technical_normalization_ids,
+            existing.parent_object_ids,
+            existing.provenance,
+        )
+        immutable_new = (
+            new.object_id,
+            new.object_type,
+            new.symbol,
+            new.timeframe,
+            new.direction,
+            new.formation_at,
+            new.known_at,
+            new.source_rule_ids,
+            new.technical_normalization_ids,
+            new.parent_object_ids,
+            new.provenance,
+        )
+        if immutable_existing != immutable_new:
+            raise ValueError("causal object immutable identity/provenance changed")
+        if len(new.lifecycle) < len(existing.lifecycle):
+            raise ValueError("causal lifecycle cannot shrink")
+        if new.lifecycle[: len(existing.lifecycle)] != existing.lifecycle:
+            raise ValueError("causal lifecycle history cannot be rewritten")
+
+    def _assert_active_at(self, obj: CausalSourceObject, at: datetime, label: str) -> None:
+        state = obj.state_at(at)
+        if (
+            not state.formation_valid
+            or state.invalidated_at is not None
+            or state.status in (ObjectStatus.INVALIDATED, ObjectStatus.CANCELLED)
+        ):
+            raise ValueError(f"{label} is not source-active at decision time")
 
     def _assert_policy_ids_clean(self, policy_ids: Sequence[str]) -> None:
         contaminated = {
