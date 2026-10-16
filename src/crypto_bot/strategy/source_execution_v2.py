@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, replace
+from dataclasses import dataclass
 from datetime import datetime
 from enum import Enum
 from math import isfinite
@@ -167,11 +167,13 @@ class SourceExecutionPlan:
     def execution_ready(self) -> bool:
         if self.trade_entry_allowed or self.unresolved:
             return False
-        if len(self.entry_options) != 1 or not self.entry_options[0].exact_quote:
-            return False
-        if len(self.stop_options) != 1 or not self.stop_options[0].exact_price:
-            return False
-        return self.exit_policy.primary_target_price is not None
+        return (
+            len(self.entry_options) == 1
+            and self.entry_options[0].exact_quote
+            and len(self.stop_options) == 1
+            and self.stop_options[0].exact_price
+            and self.exit_policy.primary_target_price is not None
+        )
 
 
 @dataclass(frozen=True)
@@ -191,10 +193,11 @@ def select_source_fta(
 ) -> FtaSelection:
     """Select the first causal opposing higher-TF POI by first price contact.
 
-    SOURCE: SW9 p11-16 defines FTA as the first trouble area and says it may be
-    any opposing higher-timeframe POI. TECHNICAL_NORMALIZATION: the first contact
-    with a zone is its near edge (low edge for LONG, high edge for SHORT).
-    Future, consumed, invalid or non-opposing POIs are invisible.
+    SW9 p11-16 defines FTA as the first trouble area and says it may be an
+    opposing higher-timeframe POI. The deterministic first-contact normalization
+    uses the near edge of a known price zone. A Range object is deliberately not
+    a generic FTA candidate: Stage-6 Range.direction is its forming impulse,
+    not the direction of an opposing POI, and Range has a separate SOURCE exit.
     """
     _positive("entry_price", entry_price)
     _aware("FTA decision_at", decision_at)
@@ -207,7 +210,6 @@ def select_source_fta(
         SourceObjectType.BREAKER,
         SourceObjectType.FVG,
         SourceObjectType.STB_BTS,
-        SourceObjectType.RANGE,
     }
     opposite = Direction.SHORT.value if direction == Direction.LONG else Direction.LONG.value
     visible: list[tuple[float, float, SourcePoiTargetReference]] = []
@@ -223,7 +225,6 @@ def select_source_fta(
             continue
         if not _active_at(obj, decision_at):
             continue
-
         timeframe = _timeframe_minutes(obj.timeframe)
         if timeframe is None:
             if _zone_is_ahead(direction, entry_price, candidate.zone_low, candidate.zone_high):
@@ -231,7 +232,6 @@ def select_source_fta(
             continue
         if timeframe <= trade_timeframe_minutes:
             continue
-
         if candidate.zone_low <= entry_price <= candidate.zone_high:
             return FtaSelection(
                 EvidenceStatus.UNKNOWN,
@@ -245,10 +245,8 @@ def select_source_fta(
             )
         if not _zone_is_ahead(direction, entry_price, candidate.zone_low, candidate.zone_high):
             continue
-
         first_contact = candidate.zone_low if direction == Direction.LONG else candidate.zone_high
-        distance = abs(first_contact - entry_price)
-        visible.append((distance, first_contact, candidate))
+        visible.append((abs(first_contact - entry_price), first_contact, candidate))
 
     if unknown_timeframe_ahead:
         return FtaSelection(
@@ -268,10 +266,8 @@ def select_source_fta(
             entry_price,
             trade_timeframe_minutes,
         )
-
     visible.sort(key=lambda row: (row[0], row[1]))
-    nearest_distance = visible[0][0]
-    nearest_price = visible[0][1]
+    nearest_distance, nearest_price, _ = visible[0]
     nearest = tuple(row[2] for row in visible if row[0] == nearest_distance and row[1] == nearest_price)
     return FtaSelection(
         EvidenceStatus.PASS,
@@ -293,63 +289,91 @@ def plan_ob_execution(
     engulfing_wick_extreme: PriceAnchorReference | None = None,
     fta: FtaSelection | None = None,
 ) -> ExecutionPlanAssessment:
-    allowed = {
-        SetupBranch.OB_DIRECT_FIRST_TEST,
-        SetupBranch.OB_REPEAT_AFTER_LTF_REACTION,
-        SetupBranch.OB_CONSERVATIVE_LTF_BOS_NEW_POI,
-        SetupBranch.OB_CONF_STRICT,
-    }
-    mismatch = _validate_setup_context(setup, ob.obj, ob.direction, allowed)
+    mismatch = _validate_setup_context(
+        setup,
+        ob.obj,
+        ob.direction,
+        {
+            SetupBranch.OB_DIRECT_FIRST_TEST,
+            SetupBranch.OB_REPEAT_AFTER_LTF_REACTION,
+            SetupBranch.OB_CONSERVATIVE_LTF_BOS_NEW_POI,
+            SetupBranch.OB_CONF_STRICT,
+        },
+    )
     if mismatch is not None:
         return mismatch
 
     unresolved: list[str] = []
     entries: list[EntryOption] = []
     stops: list[StopOption] = []
-
     if setup.branch == SetupBranch.OB_CONSERVATIVE_LTF_BOS_NEW_POI:
         if entry_poi is None or entry_poi.obj.object_id != setup.entry_poi_id:
             return ExecutionPlanAssessment(EvidenceStatus.UNKNOWN, "WAIT_CAUSAL_ENTRY_POI_GEOMETRY")
         if entry_poi.obj.known_at > setup.known_at:
             return ExecutionPlanAssessment(EvidenceStatus.FAIL, "ENTRY_POI_GEOMETRY_KNOWN_AFTER_SETUP")
-        entries.append(_zone_entry(EntryMode.NEW_POI_ZONE, entry_poi.zone_low, entry_poi.zone_high,
-                                   ("OB_LTF_ENTRY_001",), "SW9 p4-6: limit order on the new POI; exact quote inside POI unspecified"))
+        entries.append(_zone_entry(
+            EntryMode.NEW_POI_ZONE,
+            entry_poi.zone_low,
+            entry_poi.zone_high,
+            ("OB_LTF_ENTRY_001",),
+            "SW9 p4-6: limit on new POI; exact quote inside POI unspecified",
+        ))
         stops.append(_unresolved_stop("SW9 p4-6 does not uniquely define stop geometry for the refined new POI"))
         unresolved.extend(("OB_CONSERVATIVE_ENTRY_QUOTE_WITHIN_NEW_POI_UNRESOLVED", "WAIT_UNRESOLVED_STOP_GEOMETRY"))
     else:
         boundary = ob.zone_high if ob.direction == Direction.LONG else ob.zone_low
-        entries.append(EntryOption(
-            EntryMode.OB_BOUNDARY_LIMIT, ob.zone_low, ob.zone_high, boundary, True,
-            ("OB_ENTRY_FIRST_VARIANT_001",),
-            "SW9 p3: LONG upper OB boundary / SHORT lower OB boundary",
-        ))
-        entries.append(_zone_entry(
-            EntryMode.OB_INSIDE_ZONE, ob.zone_low, ob.zone_high, ("OB_ENTRY_FIRST_VARIANT_001",),
-            "SW9 p3 also permits limit orders inside the OB; exact inside-zone quote unspecified",
+        entries.extend((
+            EntryOption(
+                EntryMode.OB_BOUNDARY_LIMIT,
+                ob.zone_low,
+                ob.zone_high,
+                boundary,
+                True,
+                ("OB_ENTRY_FIRST_VARIANT_001",),
+                "SW9 p3: LONG upper OB boundary / SHORT lower OB boundary",
+            ),
+            _zone_entry(
+                EntryMode.OB_INSIDE_ZONE,
+                ob.zone_low,
+                ob.zone_high,
+                ("OB_ENTRY_FIRST_VARIANT_001",),
+                "SW9 p3 also permits limits inside OB; exact inside-zone quote unspecified",
+            ),
         ))
         unresolved.append("OB_ENTRY_BOUNDARY_VS_INSIDE_UNRESOLVED")
-
-        ob_anchor = ob.zone_low if ob.direction == Direction.LONG else ob.zone_high
         relation = "BELOW" if ob.direction == Direction.LONG else "ABOVE"
         stops.append(StopOption(
-            StopMode.OB_BEYOND_ZONE_EXTREME, relation, ob_anchor, None, False,
-            ("OB_STOP_VARIANTS_001",), "SW9 p3: stop beyond OB minimum/maximum; beyond-anchor buffer unspecified",
+            StopMode.OB_BEYOND_ZONE_EXTREME,
+            relation,
+            ob.zone_low if ob.direction == Direction.LONG else ob.zone_high,
+            None,
+            False,
+            ("OB_STOP_VARIANTS_001",),
+            "SW9 p3: beyond OB min/max; exact beyond-anchor buffer unspecified",
         ))
         if engulfing_wick_extreme is not None:
             if engulfing_wick_extreme.known_at > setup.known_at:
                 return ExecutionPlanAssessment(EvidenceStatus.FAIL, "ENGULFING_WICK_EXTREME_FROM_FUTURE")
             stops.append(StopOption(
-                StopMode.OB_BEYOND_ENGULFING_WICK, relation, engulfing_wick_extreme.price, None, False,
-                ("OB_STOP_VARIANTS_001",), "SW9 p3: alternative stop beyond wick/extreme of candle that engulfed OB",
+                StopMode.OB_BEYOND_ENGULFING_WICK,
+                relation,
+                engulfing_wick_extreme.price,
+                None,
+                False,
+                ("OB_STOP_VARIANTS_001",),
+                "SW9 p3: alternative beyond engulfing-candle wick/extreme",
             ))
         else:
             unresolved.append("WAIT_OB_ENGULFING_WICK_STOP_EVIDENCE")
         unresolved.append("OB_STOP_VARIANT_AND_EXACT_BUFFER_UNRESOLVED")
 
-    exit_policy, exit_unresolved = _generic_fta_exit(fta)
-    unresolved.extend(exit_unresolved)
+    exit_policy, extra = _generic_fta_exit(fta)
+    unresolved.extend(extra)
     return _plan(
-        setup, entries, stops, exit_policy,
+        setup,
+        entries,
+        stops,
+        exit_policy,
         invalidation_rules=(),
         unresolved=unresolved,
         source_rule_ids=("OB_ENTRY_FIRST_VARIANT_001", "OB_STOP_VARIANTS_001", "FTA_TARGET_001"),
@@ -367,19 +391,23 @@ def plan_breaker_execution(
     mismatch = _validate_setup_context(setup, breaker.obj, breaker.direction, {SetupBranch.BREAKER_DIRECT})
     if mismatch is not None:
         return mismatch
-
-    entries = [
-        _zone_entry(EntryMode.BREAKER_ZONE, breaker.zone_low, breaker.zone_high,
-                    ("BREAKER_ENTRY_ZONE_001",), "SW9 p7-10: Breaker is tradable POI; exact quote inside zone unspecified")
-    ]
+    entries = [_zone_entry(
+        EntryMode.BREAKER_ZONE,
+        breaker.zone_low,
+        breaker.zone_high,
+        ("BREAKER_ENTRY_ZONE_001",),
+        "SW9 p7-10: Breaker is tradable POI; exact quote unspecified",
+    )]
     relation = "BELOW" if breaker.direction == Direction.LONG else "ABOVE"
-    aggressive_anchor = breaker.zone_low if breaker.direction == Direction.LONG else breaker.zone_high
-    stops = [
-        StopOption(
-            StopMode.BREAKER_AGGRESSIVE_BEYOND_ZONE, relation, aggressive_anchor, None, False,
-            ("BREAKER_STOP_VARIANTS_001",), "SW9 p9: aggressive stop immediately beyond Breaker; exact buffer unspecified",
-        )
-    ]
+    stops = [StopOption(
+        StopMode.BREAKER_AGGRESSIVE_BEYOND_ZONE,
+        relation,
+        breaker.zone_low if breaker.direction == Direction.LONG else breaker.zone_high,
+        None,
+        False,
+        ("BREAKER_STOP_VARIANTS_001",),
+        "SW9 p9: aggressive immediately beyond Breaker; exact buffer unspecified",
+    )]
     unresolved = ["BREAKER_ENTRY_QUOTE_WITHIN_ZONE_UNRESOLVED", "BREAKER_STOP_VARIANT_AND_BUFFER_UNRESOLVED"]
     if sweep_impulse_extreme is not None:
         if sweep_impulse_extreme.known_at > setup.known_at:
@@ -391,13 +419,12 @@ def plan_breaker_execution(
             None,
             False,
             ("BREAKER_STOP_VARIANTS_001",),
-            "SW9 p9: conservative stop beyond liquidity-sweeping impulse candle min/max",
+            "SW9 p9: conservative beyond liquidity-sweeping impulse min/max",
         ))
     else:
         unresolved.append("WAIT_BREAKER_CONSERVATIVE_STOP_EXTREME_EVIDENCE")
-
-    exit_policy, exit_unresolved = _generic_fta_exit(fta)
-    unresolved.extend(exit_unresolved)
+    exit_policy, extra = _generic_fta_exit(fta)
+    unresolved.extend(extra)
     return _plan(
         setup, entries, stops, exit_policy,
         invalidation_rules=(), unresolved=unresolved,
@@ -421,24 +448,25 @@ def plan_sfp_execution(
         return ExecutionPlanAssessment(EvidenceStatus.FAIL, "SFP_ENTRY_POI_ID_MISMATCH")
     if entry_poi.obj.known_at > setup.known_at:
         return ExecutionPlanAssessment(EvidenceStatus.FAIL, "SFP_ENTRY_POI_FROM_FUTURE")
-
     entries = [_zone_entry(
-        EntryMode.NEW_POI_ZONE, entry_poi.zone_low, entry_poi.zone_high,
-        ("SFP_LTF_BOS_002",), "SW8 p5: seek entry after LTF BOS; Stage 7 supplies new POI; exact quote unspecified",
+        EntryMode.NEW_POI_ZONE,
+        entry_poi.zone_low,
+        entry_poi.zone_high,
+        ("SFP_LTF_BOS_002",),
+        "SW8 p5: seek entry after LTF BOS; exact quote inside new POI unspecified",
     )]
     unresolved = ["SFP_ENTRY_QUOTE_WITHIN_NEW_POI_UNRESOLVED"]
     stops: list[StopOption] = []
     if atr is None:
-        stops.append(_unresolved_stop("SW12 p12-13 supports ATR stop, but ATR evidence is missing"))
+        stops.append(_unresolved_stop("SW12 p12-13 supports ATR stop but ATR evidence is missing"))
         unresolved.append("WAIT_SFP_ATR_EVIDENCE")
     elif atr.known_at > setup.known_at:
         return ExecutionPlanAssessment(EvidenceStatus.FAIL, "SFP_ATR_FROM_FUTURE")
     else:
         stop = sfp.pattern_extreme - atr.value if sfp.direction == Direction.LONG else sfp.pattern_extreme + atr.value
-        relation = "BELOW" if sfp.direction == Direction.LONG else "ABOVE"
         stops.append(StopOption(
             StopMode.SFP_ATR_FROM_PATTERN_EXTREME,
-            relation,
+            "BELOW" if sfp.direction == Direction.LONG else "ABOVE",
             sfp.pattern_extreme,
             stop,
             True,
@@ -447,9 +475,8 @@ def plan_sfp_execution(
         ))
         if atr.period != 14:
             unresolved.append("SFP_ATR_PERIOD_NOT_FROZEN_BY_SOURCE_STRATEGY")
-
-    exit_policy, exit_unresolved = _generic_fta_exit(fta)
-    unresolved.extend(exit_unresolved)
+    exit_policy, extra = _generic_fta_exit(fta)
+    unresolved.extend(extra)
     return _plan(
         setup, entries, stops, exit_policy,
         invalidation_rules=("SFP_BODY_CLOSE_BEYOND_PATTERN_EXTREME_INVALIDATES", "SFP_PROTECTIVE_STOP_NOT_MOVED"),
@@ -468,24 +495,33 @@ def plan_stb_bts_execution(
     mismatch = _validate_setup_context(setup, stb_bts.obj, stb_bts.direction, {SetupBranch.STB_BTS_DIRECT})
     if mismatch is not None:
         return mismatch
-    if stb_bts.direction == Direction.LONG:
-        part_low, part_high = stb_bts.midpoint, stb_bts.zone_high
-    else:
-        part_low, part_high = stb_bts.zone_low, stb_bts.midpoint
+    part_low, part_high = (
+        (stb_bts.midpoint, stb_bts.zone_high)
+        if stb_bts.direction == Direction.LONG
+        else (stb_bts.zone_low, stb_bts.midpoint)
+    )
     entries = [
         _zone_entry(
-            EntryMode.STB_BTS_DIRECTIONAL_PART, part_low, part_high,
-            ("STB_BTS_ENTRY_001",), "SW22 p3: upper part for LONG / lower part for SHORT; no exact quote within that part",
+            EntryMode.STB_BTS_DIRECTIONAL_PART,
+            part_low,
+            part_high,
+            ("STB_BTS_ENTRY_001",),
+            "SW22 p3: upper part LONG / lower part SHORT; exact quote unspecified",
         ),
         EntryOption(
-            EntryMode.STB_BTS_MIDPOINT, stb_bts.zone_low, stb_bts.zone_high, stb_bts.midpoint, True,
-            ("STB_BTS_ENTRY_001",), "SW22 p3-4: exact 0.5 midpoint is a source-permitted entry/mitigation level",
+            EntryMode.STB_BTS_MIDPOINT,
+            stb_bts.zone_low,
+            stb_bts.zone_high,
+            stb_bts.midpoint,
+            True,
+            ("STB_BTS_ENTRY_001",),
+            "SW22 p3-4: exact 0.5 midpoint is source-permitted",
         ),
     ]
-    stops = [_unresolved_stop("SW22 p2-4 does not state a unique protective stop anchor for STB/BTS")]
+    stops = [_unresolved_stop("SW22 p2-4 does not state a unique protective stop anchor")]
     unresolved = ["STB_BTS_EDGE_VS_MIDPOINT_ENTRY_PRECEDENCE_UNRESOLVED", "WAIT_UNRESOLVED_STOP_GEOMETRY"]
-    exit_policy, exit_unresolved = _generic_fta_exit(fta)
-    unresolved.extend(exit_unresolved)
+    exit_policy, extra = _generic_fta_exit(fta)
+    unresolved.extend(extra)
     return _plan(
         setup, entries, stops, exit_policy,
         invalidation_rules=(), unresolved=unresolved,
@@ -501,16 +537,20 @@ def plan_range_execution(
     deviation: RangeDeviationEvidence,
     external_poi: SourcePoiTargetReference | None = None,
 ) -> ExecutionPlanAssessment:
-    allowed = {SetupBranch.RANGE_AGGRESSIVE_EXTERNAL_POI, SetupBranch.RANGE_CONSERVATIVE_RETURN_RETEST}
-    mismatch = _validate_setup_context(setup, range_evidence.obj, setup.direction, allowed, allow_range_direction=True)
+    mismatch = _validate_setup_context(
+        setup,
+        range_evidence.obj,
+        setup.direction,
+        {SetupBranch.RANGE_AGGRESSIVE_EXTERNAL_POI, SetupBranch.RANGE_CONSERVATIVE_RETURN_RETEST},
+        allow_range_direction=True,
+    )
     if mismatch is not None:
         return mismatch
     if deviation.range_object_id != range_evidence.obj.object_id or deviation.known_at > setup.known_at:
         return ExecutionPlanAssessment(EvidenceStatus.FAIL, "RANGE_DEVIATION_NOT_CAUSAL_FOR_SETUP")
-    expected_direction = Direction.LONG if deviation.side == RangeDeviationSide.LOW else Direction.SHORT
-    if setup.direction != expected_direction:
+    expected = Direction.LONG if deviation.side == RangeDeviationSide.LOW else Direction.SHORT
+    if setup.direction != expected:
         return ExecutionPlanAssessment(EvidenceStatus.FAIL, "RANGE_SETUP_DIRECTION_DOES_NOT_MATCH_DEVIATION")
-
     unresolved = ["WAIT_UNRESOLVED_RANGE_STOP_GEOMETRY"]
     if setup.branch == SetupBranch.RANGE_AGGRESSIVE_EXTERNAL_POI:
         if external_poi is None:
@@ -518,8 +558,11 @@ def plan_range_execution(
         if external_poi.obj.known_at > deviation.known_at:
             return ExecutionPlanAssessment(EvidenceStatus.FAIL, "RANGE_EXTERNAL_POI_NOT_KNOWN_AT_DEVIATION")
         entries = [_zone_entry(
-            EntryMode.RANGE_DEVIATION_EXTERNAL_POI, external_poi.zone_low, external_poi.zone_high,
-            ("RANGE_AGGRESSIVE_ENTRY_001",), "SW10 p5: aggressive on deviation with external POI; exact quote unspecified",
+            EntryMode.RANGE_DEVIATION_EXTERNAL_POI,
+            external_poi.zone_low,
+            external_poi.zone_high,
+            ("RANGE_AGGRESSIVE_ENTRY_001",),
+            "SW10 p5: aggressive on deviation with external POI; exact quote unspecified",
         )]
         unresolved.append("RANGE_AGGRESSIVE_EXACT_QUOTE_UNRESOLVED")
     else:
@@ -533,7 +576,6 @@ def plan_range_execution(
             ("RANGE_CONSERVATIVE_ENTRY_001",),
             "SW10 p6: after return/acceptance inside range, enter on boundary retest",
         )]
-
     stops = [_unresolved_stop("SW10 p5-7 does not define a unique protective stop anchor")]
     primary_target = range_evidence.upper if setup.direction == Direction.LONG else range_evidence.lower
     exit_policy = ExitPolicy(
@@ -565,13 +607,16 @@ def plan_demand_supply_execution(
     if mismatch is not None:
         return mismatch
     entries = [_zone_entry(
-        EntryMode.DEMAND_SUPPLY_ZONE, zone.zone_low, zone.zone_high,
-        ("DS_ENTRY_ZONE_001",), "SRC_DS_001: zone may be a point for opening position; exact quote inside zone unspecified",
+        EntryMode.DEMAND_SUPPLY_ZONE,
+        zone.zone_low,
+        zone.zone_high,
+        ("DS_ENTRY_ZONE_001",),
+        "SRC_DS_001: zone may open a position; exact quote inside zone unspecified",
     )]
     stops = [_unresolved_stop("SRC_DS_001 does not define protective stop geometry")]
     unresolved = ["DEMAND_SUPPLY_EXACT_ENTRY_QUOTE_UNRESOLVED", "WAIT_UNRESOLVED_STOP_GEOMETRY"]
-    exit_policy, exit_unresolved = _generic_fta_exit(fta)
-    unresolved.extend(exit_unresolved)
+    exit_policy, extra = _generic_fta_exit(fta)
+    unresolved.extend(extra)
     return _plan(
         setup, entries, stops, exit_policy,
         invalidation_rules=(), unresolved=unresolved,
@@ -587,14 +632,13 @@ def _generic_fta_exit(fta: FtaSelection | None) -> tuple[ExitPolicy, tuple[str, 
             ExitPolicy(ExitMode.WAIT_FTA, None, None, None, (), None, ("FTA_TARGET_001",), (reason,)),
             (reason,),
         )
-    ids = tuple(candidate.obj.object_id for candidate in fta.candidates)
     return (
         ExitPolicy(
             ExitMode.FTA_FULL_OR_PARTIAL,
             None,
             None,
             fta.first_contact_price,
-            ids,
+            tuple(candidate.obj.object_id for candidate in fta.candidates),
             None,
             ("FTA_TARGET_001",),
             ("FTA_FULL_VS_PARTIAL_FRACTION_UNRESOLVED",),
@@ -616,7 +660,6 @@ def _plan(
 ) -> ExecutionPlanAssessment:
     if setup.setup.known_at != setup.known_at:
         return ExecutionPlanAssessment(EvidenceStatus.FAIL, "SETUP_KNOWN_AT_CONTRACT_MISMATCH")
-    dedup_unresolved = tuple(dict.fromkeys(reason for reason in unresolved if reason))
     plan = SourceExecutionPlan(
         setup_id=setup.setup.object_id,
         physical_idea_id=setup.physical_idea.object_id,
@@ -627,7 +670,7 @@ def _plan(
         stop_options=tuple(stops),
         exit_policy=exit_policy,
         invalidation_rules=tuple(invalidation_rules),
-        unresolved=dedup_unresolved,
+        unresolved=tuple(dict.fromkeys(reason for reason in unresolved if reason)),
         source_rule_ids=tuple(dict.fromkeys(source_rule_ids)),
         technical_normalization_ids=tuple(dict.fromkeys(technical_ids)),
         trade_entry_allowed=False,
@@ -635,7 +678,13 @@ def _plan(
     return ExecutionPlanAssessment(EvidenceStatus.PASS, "SOURCE_EXECUTION_SEMANTICS_CAPTURED", plan)
 
 
-def _zone_entry(mode: EntryMode, low: float, high: float, source_ids: tuple[str, ...], note: str) -> EntryOption:
+def _zone_entry(
+    mode: EntryMode,
+    low: float,
+    high: float,
+    source_ids: tuple[str, ...],
+    note: str,
+) -> EntryOption:
     _positive("entry zone low", low)
     _positive("entry zone high", high)
     if low >= high:
