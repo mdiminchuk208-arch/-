@@ -102,6 +102,7 @@ class SourceSfpV2Tests(unittest.TestCase):
         self.assertTrue(evidence.requires_ltf_bos)
         self.assertEqual(evidence.pattern_extreme, sweep.high)
         self.assertEqual(evidence.origin, SfpOrigin.STRUCTURAL_LIQUIDITY)
+        self.assertIn("TN_SFP_PARENT_KNOWN_BEFORE_SWEEP", evidence.obj.technical_normalization_ids)
 
     def test_bullish_source_sfp_is_mirrored(self):
         sweep, next_candle, ref = valid_bullish()
@@ -177,13 +178,24 @@ class SourceSfpV2Tests(unittest.TestCase):
                 timeframe="5m",
             ).valid
         )
-        too_late_obj = replace(late_pool.obj, known_at=sweep.open_time + timedelta(seconds=1))
+        known_too_late = sweep.open_time + timedelta(seconds=1)
+        too_late_obj = CausalSourceObject.formed(
+            object_type=SourceObjectType.LIQUIDITY_POOL,
+            symbol="BTC-USDT-SWAP",
+            timeframe="5m",
+            direction=None,
+            formation_at=known_too_late,
+            known_at=known_too_late,
+            identity_parts={"level_price": 103.0, "side": "high", "origin": "too-late-test"},
+            source_rule_ids=("LIQ_STRUCTURAL_001",),
+            provenance="test level learned after sweep began",
+        )
         too_late = StructuralLiquidityEvidence(
             obj=too_late_obj,
-            swing_object_id=late_pool.swing_object_id,
-            side=late_pool.side,
-            price=late_pool.price,
-            location=late_pool.location,
+            swing_object_id="late-parent-pivot",
+            side="high",
+            price=103.0,
+            location=LiquidityLocation.EXTERNAL,
         )
         too_late_ref = SfpLiquidityReference.from_structural_liquidity(too_late)
         result = detect_source_sfp(
@@ -328,7 +340,7 @@ class SourceSfpV2Tests(unittest.TestCase):
         )
         assert formed.evidence is not None
         before = formed.evidence.obj.state_at(formed.evidence.obj.known_at)
-        later = c(20, 99.0, 100.0, 97.0, 97.5)
+        later = c(20, 99.0, 100.0, 94.0, 94.5)
         invalidated = apply_sfp_invalidation(formed.evidence, later)
         after = invalidated.obj.state_at(later.close_time)
         self.assertTrue(before.formation_valid)
