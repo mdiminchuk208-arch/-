@@ -1,21 +1,128 @@
 {
-  "freeze_id": "SOURCE_FREEZE_v1_STAGE1",
-  "base_commit": "dab8d254aaf4babc07659e3d03d14b269445767b",
+  "freeze_id": "SOURCE_FREEZE_v1_VERIFIED_2026_10_16",
+  "base_commit": "f6eca678a24cbedd3a60f2f30c7a3ce3f6c24bcc",
   "source_spec_version": "ORIGINAL_STRATEGY_SPEC_v1.1",
-  "status": "PARTIAL_BYTE_FREEZE",
-  "rules": {"no_hash_invention": true, "semantic_analysis_allowed_when_raw_blocked": true},
+  "status": "BYTE_HASH_VERIFIED_EXTERNAL_RAW",
+  "verification": {
+    "verified_at": "2026-10-16",
+    "archive_sha256": "2b9de082079d8e85eac13444626289b6a37b7733b668ff773e1598909bd873b8",
+    "archive_name": "Криптология.zip",
+    "method": "SHA256 recomputed directly from user-provided raw archive entries and compared with the existing cryptology_2026_10_09 archive manifest",
+    "self_contained_in_repository": false,
+    "note": "Repository keeps hashes/provenance. Copyrighted/raw course documents are not copied into the code repository by this freeze record."
+  },
+  "rules": {
+    "no_hash_invention": true,
+    "source_priority": [
+      "Методичка",
+      "SW5",
+      "SW9",
+      "SW11",
+      "SW12",
+      "SW22",
+      "other confirmed ORIGINAL SOURCE materials",
+      "SOURCE Rule Registry"
+    ],
+    "unverified_or_mixed_reference_cannot_override_confirmed_source": true
+  },
   "sources": [
-    {"source_id":"SRC_METHOD_001","filename":"Криптология/Методичка.docx","version":"cryptology_2026_10_09 archive entry 19","sha256":null,"recorded_sha256_from_archive_manifest":"032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1","provenance":"data/source_materials/cryptology_2026_10_09/manifest.json entry 19; original raw DOCX is not exposed as a standalone repo blob in Stage 1","status":"FREEZE_BLOCKED_RAW_SOURCE_UNAVAILABLE"},
-    {"source_id":"SRC_SW5_001","filename":"data/source_materials/primary_pdf_2026_10_09/SW5.pdf","version":"primary_pdf_2026_10_09","sha256":"be8e14fbe03b0effbf4496eac104d30849e37e7f3db2fb92d4db1f942ace55ba","provenance":"primary_pdf_2026_10_09/manifest.json; raw PDF stored in repository","status":"FROZEN"},
-    {"source_id":"SRC_SW9_001","filename":"data/source_materials/primary_pdf_2026_10_09/SW9.pdf","version":"primary_pdf_2026_10_09","sha256":"ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a","provenance":"primary_pdf_2026_10_09/manifest.json; raw PDF stored in repository","status":"FROZEN"},
-    {"source_id":"SRC_SW11_001","filename":"data/source_materials/primary_pdf_2026_10_09/SW11.pdf","version":"primary_pdf_2026_10_09","sha256":"ffc65d95bbc1e22186cbddd061befb93e8143f3a5075c985165ecfe7b054f681","provenance":"primary_pdf_2026_10_09/manifest.json; raw PDF stored in repository","status":"FROZEN"},
-    {"source_id":"SRC_SW12_001","filename":"data/source_materials/primary_pdf_2026_10_09/SW12.pdf","version":"primary_pdf_2026_10_09","sha256":"1a17dfb7deb3b227b2bf386b88be341a99ad034b1950e0310c6c450e3f22369b","provenance":"primary_pdf_2026_10_09/manifest.json; raw PDF stored in repository","status":"FROZEN"},
-    {"source_id":"SRC_SW22_001","filename":"data/source_materials/primary_pdf_2026_10_09/SW22.pdf","version":"primary_pdf_2026_10_09","sha256":"ebac736d847b270c64ba38586c2f2a2a8685328d90eb7f6c9ada1bedd3a4d50b","provenance":"primary_pdf_2026_10_09/manifest.json; raw PDF stored in repository","status":"FROZEN"},
-    {"source_id":"SRC_SW4_001","filename":"Криптология/Smart money/[SW.BAND]4. Рыночная структура  (Base).docx","version":"cryptology_2026_10_09 archive entry 11","sha256":null,"recorded_sha256_from_archive_manifest":"946b3bf11184763f2ad1c1f93a2da448eb66fff725a96398c1ccd14cc8d34393","provenance":"cryptology archive manifest; standalone raw DOCX unavailable to Stage 1 runtime","status":"FREEZE_BLOCKED_RAW_SOURCE_UNAVAILABLE"},
-    {"source_id":"SRC_SW6_001","filename":"Криптология/Smart money/[SW.BAND]6. Ликвидность.docx","version":"cryptology_2026_10_09 archive entry 14","sha256":null,"recorded_sha256_from_archive_manifest":"8587a15f68f4214c27a7bcd66ae85058571ed95369bc96f32d41bf3ef4a35178","provenance":"cryptology archive manifest; standalone raw DOCX unavailable to Stage 1 runtime","status":"FREEZE_BLOCKED_RAW_SOURCE_UNAVAILABLE"},
-    {"source_id":"SRC_SW8_001","filename":"Криптология/Smart money/[SW.BAND]8. Торговые инструменты (Base).docx","version":"cryptology_2026_10_09 archive entry 16","sha256":null,"recorded_sha256_from_archive_manifest":"88d40f60f201de5ffe7da6591b59c6fd88a1fd7f9c64c281a2f099d84f52ac23","provenance":"cryptology archive manifest; standalone raw DOCX unavailable to Stage 1 runtime","status":"FREEZE_BLOCKED_RAW_SOURCE_UNAVAILABLE"},
-    {"source_id":"SRC_SW10_001","filename":"Криптология/Smart money/[SW.BAND]10. Боковое движение.docx","version":"cryptology_2026_10_09 archive entry 6","sha256":null,"recorded_sha256_from_archive_manifest":"628cb1caa97138bc5470687e3743127cd147ac20c5cb39144345764be537e631","provenance":"cryptology archive manifest; standalone raw DOCX unavailable to Stage 1 runtime","status":"FREEZE_BLOCKED_RAW_SOURCE_UNAVAILABLE"},
-    {"source_id":"SRC_DS_CANDIDATE_001","filename":"Криптология/Зоны_спроса_и_предложения_Demand_and_Supply.docx","version":"cryptology_2026_10_09 archive entry 18","sha256":null,"recorded_sha256_from_archive_manifest":"824a8a97902d84f85099aa10db6c13c8c008c6f818b188453af8ede6ccdbb020","provenance":"same archive, but authoritative ORIGINAL status not promoted in Stage 1","status":"PROVENANCE_PENDING_NOT_FROZEN"}
+    {
+      "source_id": "SRC_METHOD_001",
+      "filename": "Криптология/Методичка.docx",
+      "sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+      "recorded_sha256_from_archive_manifest": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+      "provenance": "raw entry verified from user-provided Криптология.zip; matches cryptology_2026_10_09 archive manifest entry 19",
+      "status": "FROZEN_HASH_VERIFIED"
+    },
+    {
+      "source_id": "SRC_SW4_001",
+      "filename": "Криптология/Smart money/[SW.BAND]4. Рыночная структура  (Base).docx",
+      "sha256": "946b3bf11184763f2ad1c1f93a2da448eb66fff725a96398c1ccd14cc8d34393",
+      "recorded_sha256_from_archive_manifest": "946b3bf11184763f2ad1c1f93a2da448eb66fff725a96398c1ccd14cc8d34393",
+      "provenance": "raw entry verified from user-provided Криптология.zip; matches archived manifest",
+      "status": "FROZEN_HASH_VERIFIED"
+    },
+    {
+      "source_id": "SRC_SW5_001",
+      "filename": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+      "sha256": "be8e14fbe03b0effbf4496eac104d30849e37e7f3db2fb92d4db1f942ace55ba",
+      "provenance": "primary_pdf_2026_10_09/manifest.json; raw PDF stored in repository",
+      "status": "FROZEN"
+    },
+    {
+      "source_id": "SRC_SW6_001",
+      "filename": "Криптология/Smart money/[SW.BAND]6. Ликвидность.docx",
+      "sha256": "8587a15f68f4214c27a7bcd66ae85058571ed95369bc96f32d41bf3ef4a35178",
+      "recorded_sha256_from_archive_manifest": "8587a15f68f4214c27a7bcd66ae85058571ed95369bc96f32d41bf3ef4a35178",
+      "provenance": "raw entry verified from user-provided Криптология.zip; matches archived manifest",
+      "status": "FROZEN_HASH_VERIFIED"
+    },
+    {
+      "source_id": "SRC_SW8_001",
+      "filename": "Криптология/Smart money/[SW.BAND]8. Торговые инструменты (Base).docx",
+      "sha256": "88d40f60f201de5ffe7da6591b59c6fd88a1fd7f9c64c281a2f099d84f52ac23",
+      "recorded_sha256_from_archive_manifest": "88d40f60f201de5ffe7da6591b59c6fd88a1fd7f9c64c281a2f099d84f52ac23",
+      "provenance": "raw entry verified from user-provided Криптология.zip; matches archived manifest",
+      "status": "FROZEN_HASH_VERIFIED"
+    },
+    {
+      "source_id": "SRC_SW9_001",
+      "filename": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+      "sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+      "provenance": "primary_pdf_2026_10_09/manifest.json; raw PDF stored in repository",
+      "status": "FROZEN"
+    },
+    {
+      "source_id": "SRC_SW10_001",
+      "filename": "Криптология/Smart money/[SW.BAND]10. Боковое движение.docx",
+      "sha256": "628cb1caa97138bc5470687e3743127cd147ac20c5cb39144345764be537e631",
+      "recorded_sha256_from_archive_manifest": "628cb1caa97138bc5470687e3743127cd147ac20c5cb39144345764be537e631",
+      "provenance": "raw entry verified from user-provided Криптология.zip; matches archived manifest",
+      "status": "FROZEN_HASH_VERIFIED"
+    },
+    {
+      "source_id": "SRC_SW11_001",
+      "filename": "data/source_materials/primary_pdf_2026_10_09/SW11.pdf",
+      "sha256": "ffc65d95bbc1e22186cbddd061befb93e8143f3a5075c985165ecfe7b054f681",
+      "provenance": "primary_pdf_2026_10_09/manifest.json; raw PDF stored in repository",
+      "status": "FROZEN"
+    },
+    {
+      "source_id": "SRC_SW12_001",
+      "filename": "data/source_materials/primary_pdf_2026_10_09/SW12.pdf",
+      "sha256": "1a17dfb7deb3b227b2bf386b88be341a99ad034b1950e0310c6c450e3f22369b",
+      "provenance": "primary_pdf_2026_10_09/manifest.json; raw PDF stored in repository",
+      "status": "FROZEN"
+    },
+    {
+      "source_id": "SRC_SW22_001",
+      "filename": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+      "sha256": "ebac736d847b270c64ba38586c2f2a2a8685328d90eb7f6c9ada1bedd3a4d50b",
+      "provenance": "primary_pdf_2026_10_09/manifest.json; raw PDF stored in repository",
+      "status": "FROZEN"
+    },
+    {
+      "source_id": "SRC_DS_001",
+      "filename": "Криптология/Зоны_спроса_и_предложения_Demand_and_Supply.docx",
+      "sha256": "824a8a97902d84f85099aa10db6c13c8c008c6f818b188453af8ede6ccdbb020",
+      "recorded_sha256_from_archive_manifest": "824a8a97902d84f85099aa10db6c13c8c008c6f818b188453af8ede6ccdbb020",
+      "provenance": "raw strategy material verified from user-provided Криптология.zip; same archived source set; semantic priority below Методичка/SW modules",
+      "status": "FROZEN_SECONDARY_SOURCE_MATERIAL"
+    }
   ],
-  "blocked_raw_sources": ["SRC_METHOD_001","SRC_SW4_001","SRC_SW6_001","SRC_SW8_001","SRC_SW10_001"]
+  "additional_materials": [
+    {
+      "source_id": "SRC_SMART_MONEY_TRADER2_CANDIDATE",
+      "filename": "Криптология/Smart money/Smart Money Trader 2.docx",
+      "sha256": "265470eb60d78a11c7c3b2265768bd2f76cc1cfab3464dccffc80b97654505da",
+      "status": "ORIGINAL_SOURCE_CANDIDATE_NEEDS_RULE_LEVEL_PROVENANCE_REVIEW"
+    },
+    {
+      "source_id": "REF_TRAINING_MIXED_001",
+      "filename": "Криптология/обучалка.docx",
+      "sha256": "d0202f918df90211e534bd026217cc74c4e81659cc7074e8d553df89877e79a3",
+      "status": "MIXED_REFERENCE_NOT_SOURCE_TRUTH"
+    }
+  ],
+  "blocked_raw_sources": []
 }
