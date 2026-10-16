@@ -98,6 +98,12 @@ class PureSourceRuntime:
         )
 
     def apply_policy(self, policy_id: str, policy_class: PolicyClass) -> None:
+        # Preserve the profile layer's established exception contract for known
+        # PROJECT_POLICY values. The additional naming guard below catches new
+        # project-like ids even when a caller mislabels their PolicyClass.
+        if policy_class == PolicyClass.PROJECT_POLICY or policy_id in PROJECT_POLICY_IDS:
+            self.config = self.config.record_policy(policy_id, policy_class)
+            return
         self._assert_policy_ids_clean((policy_id,))
         self.config = self.config.record_policy(policy_id, policy_class)
 
