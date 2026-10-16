@@ -1,0 +1,137 @@
+{
+  "version": "PURE_SOURCE_STAGE7_SETUP_DIRECTION_V2",
+  "scope": "setup_assembly_and_direction_only",
+  "principles": {
+    "object_validity_separate_from_setup_validity": true,
+    "setup_assembly_separate_from_entry_execution": true,
+    "branch_precedence": "UNRESOLVED_NO_PRECEDENCE",
+    "ranking_scoring": "FORBIDDEN",
+    "pnl_branch_selection": "FORBIDDEN",
+    "fixed_htf_ltf_mapping": "FORBIDDEN_UNLESS_SOURCE_EXPLICIT",
+    "trade_entry_allowed": false
+  },
+  "branches": [
+    {
+      "branch_id": "OB_DIRECT_FIRST_TEST",
+      "classification": "SOURCE_RULE",
+      "sources": ["SW9 p3"],
+      "status": "ACTIVE_SOURCE_PERMITTED",
+      "assembly": "source-valid OB object creates a direct plan for the future first interaction; entry quote and stop are Stage 8",
+      "direction": "from OB object"
+    },
+    {
+      "branch_id": "OB_REPEAT_AFTER_LTF_REACTION",
+      "classification": "SOURCE_RULE",
+      "sources": ["SW9 p3"],
+      "status": "ACTIVE_EXCEPTIONAL_SOURCE_PERMITTED",
+      "assembly": "after the causal first OB test, a lower-timeframe reaction may create a repeated-OB plan for a later interaction",
+      "direction": "from OB object"
+    },
+    {
+      "branch_id": "OB_CONSERVATIVE_LTF_BOS_NEW_POI",
+      "classification": "SOURCE_RULE",
+      "sources": ["SW9 p4-6"],
+      "status": "ACTIVE_SOURCE_PERMITTED",
+      "assembly": "HTF OB reaction -> 1-15m refinement -> directional LTF BOS -> one newly formed source-valid POI",
+      "direction": "from OB object and matching LTF evidence"
+    },
+    {
+      "branch_id": "OB_CONF_STRICT",
+      "classification": "SOURCE_RULE_GENERAL_CONSERVATIVE_VARIANT",
+      "sources": ["SW5 p6"],
+      "status": "ACTIVE_SOURCE_PERMITTED_NO_PRECEDENCE",
+      "assembly": "source-valid OB context plus later directional CONF; entry details remain Stage 8",
+      "direction": "from OB object and matching CONF"
+    },
+    {
+      "branch_id": "SFP_LTF_BOS_NEW_POI",
+      "classification": "SOURCE_RULE",
+      "sources": ["SW8", "SW9"],
+      "status": "ACTIVE_SOURCE_PERMITTED",
+      "assembly": "completed SFP -> strictly lower timeframe BOS -> one newly formed source-valid POI",
+      "direction": "from SFP object and matching BOS"
+    },
+    {
+      "branch_id": "BREAKER_DIRECT",
+      "classification": "SOURCE_RULE",
+      "sources": ["SW9", "Методичка"],
+      "status": "ACTIVE_SOURCE_PERMITTED",
+      "assembly": "source-valid Breaker object; exact entry/stop variant deferred",
+      "direction": "from Breaker object"
+    },
+    {
+      "branch_id": "DEMAND_SUPPLY_DIRECT",
+      "classification": "SOURCE_RULE_SECONDARY_SOURCE",
+      "sources": ["SRC_DS_001"],
+      "status": "ACTIVE_SOURCE_PERMITTED",
+      "assembly": "fresh Demand/Supply zone with causal Premium/Discount context",
+      "direction": "Demand LONG / Supply SHORT"
+    },
+    {
+      "branch_id": "STB_BTS_DIRECT",
+      "classification": "SOURCE_RULE",
+      "sources": ["SW22"],
+      "status": "ACTIVE_SOURCE_PERMITTED",
+      "assembly": "source-valid STB/BTS object; edge-vs-0.5 mitigation deferred",
+      "direction": "from STB/BTS object"
+    },
+    {
+      "branch_id": "RANGE_AGGRESSIVE_EXTERNAL_POI",
+      "classification": "SOURCE_RULE",
+      "sources": ["SW10"],
+      "status": "ACTIVE_SOURCE_PERMITTED",
+      "assembly": "known Range + deviation at an already-known external POI",
+      "direction": "low-side deviation LONG / high-side deviation SHORT"
+    },
+    {
+      "branch_id": "RANGE_CONSERVATIVE_RETURN_RETEST",
+      "classification": "SOURCE_RULE",
+      "sources": ["SW10", "Методичка"],
+      "status": "ACTIVE_SOURCE_PERMITTED",
+      "assembly": "external POI/deviation -> return or acceptance inside Range -> boundary retest",
+      "direction": "low-side deviation LONG / high-side deviation SHORT"
+    }
+  ],
+  "technical_normalizations": [
+    {
+      "rule_id": "TN_PHYSICAL_IDEA_BRANCH_INDEPENDENT",
+      "statement": "One source context produces one branch-independent physical idea ID; multiple source-permitted setup branches may descend from it without duplicating the physical market idea."
+    },
+    {
+      "rule_id": "TN_SETUP_BRANCH_EXPLICIT_NO_PRECEDENCE",
+      "statement": "Branch id is explicit in setup identity, but no priority/score/ranking selects a winner. Coexisting source-valid branches are preserved."
+    },
+    {
+      "rule_id": "TN_SETUP_DIRECTION_FROM_SOURCE_CONTEXT",
+      "statement": "Setup direction is inherited from its source-valid object/chain. No project macro/HTF direction override is applied."
+    },
+    {
+      "rule_id": "TN_ENTRY_POI_CAUSAL_UNIQUENESS",
+      "statement": "For branches requiring a newly formed POI, only candidates known by decision_at and formed no earlier than the triggering BOS are considered. Zero candidates -> WAIT; more than one -> WAIT_NONUNIQUE; future candidates cannot alter an earlier setup."
+    },
+    {
+      "rule_id": "TN_LTF_RELATION_WITHOUT_FIXED_MAPPING",
+      "statement": "When SOURCE requires a lower timeframe, Stage 7 enforces strictly lower TF only. OB conservative additionally preserves the explicit 1-15m refinement scope. No H1->M5/H4->M15 universal mapping is SOURCE."
+    }
+  ],
+  "deferred_to_stage8": [
+    "entry quote/boundary/inside-zone choice",
+    "stop anchor and aggressive/conservative stop variants",
+    "FTA inventory and target selection",
+    "Range 80/20 exit",
+    "SFP ATR stop variant if retained as source-permitted research branch",
+    "remainder behavior",
+    "re-entry after completed/cancelled trade"
+  ],
+  "forbidden_as_source": [
+    "source_permitted_policy historical path precedence",
+    "score or ranking among branches",
+    "PnL-selected winning branch",
+    "project HTF admission override",
+    "fixed H1/H4/H4-D1 project hierarchy",
+    "future POI uniqueness check",
+    "future first-test information",
+    "cost or edge admission",
+    "portfolio/correlation/daily-loss gates"
+  ]
+}
