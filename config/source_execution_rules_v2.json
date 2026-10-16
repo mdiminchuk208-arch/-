@@ -130,6 +130,8 @@
     "countertrend_trade": "TP at FTA; conclusion explicitly permits partial or full fixation",
     "selection_normalization": "first causal price contact among already-known active opposing higher-TF POI",
     "future_poi_forbidden": true,
+    "generic_candidate_types": ["POI", "ORDER_BLOCK", "BREAKER", "FVG", "STB_BTS"],
+    "range_object_as_generic_fta": "FORBIDDEN_DIRECTION_SEMANTICS_AMBIGUOUS_AND_RANGE_HAS_OWN_EXIT",
     "full_vs_partial_fraction": "UNRESOLVED"
   },
   "exit": {
