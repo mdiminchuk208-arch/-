@@ -167,6 +167,10 @@ def structural_liquidity(
     SOURCE: SW6 p12 places external liquidity at structural highs/lows and
     internal liquidity inside a formed impulse between its structural endpoints.
     No significance/ranking threshold is introduced here.
+
+    Pool identity is the physical swing/side/price only. INTERNAL/EXTERNAL is a
+    causal context label and is deliberately excluded from the stable ID so a
+    later context interpretation cannot create a second physical pool identity.
     """
     if active_leg is None:
         location = LiquidityLocation.EXTERNAL
@@ -186,12 +190,11 @@ def structural_liquidity(
             "swing_object_id": swing.obj.object_id,
             "side": swing.side,
             "price": swing.price,
-            "location": location.value,
         },
         source_rule_ids=("LIQ_STRUCTURAL_001",),
         technical_normalization_ids=("TN_LIQUIDITY_LOCATION_FROM_ACTIVE_STRUCTURE_LEG",),
         parent_object_ids=(swing.obj.object_id,),
-        provenance="SW6 p12 structural liquidity; causal location classification from already-known structure endpoints",
+        provenance="SW6 p12 structural liquidity; location is a causal context label, not physical pool identity",
     )
     return StructuralLiquidityEvidence(obj, swing.obj.object_id, swing.side, swing.price, location)
 
