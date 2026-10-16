@@ -1,0 +1,95 @@
+{
+  "version": "PURE_SOURCE_STAGE5_IMB_OTE_PD_V2",
+  "scope": "imbalance_fvg_ote_premium_discount_geometry",
+  "rules": [
+    {
+      "rule_id": "IMB_THREE_CANDLE_WICK_GAP_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "sources": ["SW8 p1-3", "Методичка p11"],
+      "statement": "IMB/FVG is price inefficiency around an impulsive move represented by the gap between the wick/extreme of the candle before the impulse and the wick/extreme of the candle after it."
+    },
+    {
+      "rule_id": "IMB_ZONE_BOUNDARIES_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "SW8 p2",
+      "statement": "Bullish IMB zone runs from the previous candle high to the post-impulse candle low; bearish IMB runs from the previous candle low to the post-impulse candle high."
+    },
+    {
+      "rule_id": "IMB_EQUILIBRIUM_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "SW8 p1,p3,p6",
+      "statement": "Equilibrium is the exact 0.5 midpoint of the Imbalance zone."
+    },
+    {
+      "rule_id": "IMB_FULL_FILL_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "SW8 p1,p3",
+      "statement": "Full Fill is complete coverage of the price inefficiency zone."
+    },
+    {
+      "rule_id": "IMB_MAGNET_LANGUAGE_001",
+      "classification": "SOURCE_RULE_CONTEXT",
+      "status": "DESCRIPTIVE_NOT_ADMISSION_GUARANTEE",
+      "source": "SW8 p2,p6",
+      "statement": "SOURCE describes IMB as a price magnet and says price seeks equilibrium/full fill. PURE_SOURCE object formation does not convert that descriptive language into a guaranteed future target or admission filter."
+    },
+    {
+      "rule_id": "OTE_ZONE_0705_079_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "Методичка p16-18",
+      "statement": "OTE is the retracement zone between 0.705 and 0.79 of a valid impulse."
+    },
+    {
+      "rule_id": "PD_EQUILIBRIUM_05_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED_GEOMETRY",
+      "sources": ["Методичка p16-18", "SW22 p4", "SW9 p6"],
+      "statement": "0.5 is equilibrium/fair price; Premium/Discount analysis is relative to an already-defined source range/impulse."
+    },
+    {
+      "rule_id": "TN_IMB_STRICT_POSITIVE_GAP",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE",
+      "statement": "Exact touch between outer candle wicks has zero zone width and is not emitted as IMB; a strictly positive wick gap is required."
+    },
+    {
+      "rule_id": "TN_IMB_KNOWN_AFTER_THIRD_CLOSE",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE",
+      "statement": "Because the third-candle high/low defines one IMB boundary, the stable zone is emitted only after that candle closes; intrabar future mutation cannot rewrite the object."
+    },
+    {
+      "rule_id": "TN_OTE_REQUIRES_SOURCE_IMPULSE_REFERENCE",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE",
+      "statement": "Stage 5 never chooses OTE anchors from arbitrary highs/lows. It consumes an already source-qualified impulse with causal endpoints and provenance."
+    },
+    {
+      "rule_id": "TN_PD_REQUIRES_SOURCE_DEALING_RANGE",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE",
+      "statement": "Premium/Discount classification is computed only after a source-qualified dealing range is known; Stage 5 does not invent range endpoints."
+    }
+  ],
+  "deferred": [
+    "automatic source impulse-anchor selection when source geometry is ambiguous",
+    "automatic dealing-range construction",
+    "OTE as mandatory entry filter",
+    "IMB as guaranteed target",
+    "entry/stop/FTA/RR",
+    "ranking/scoring/portfolio overlays"
+  ],
+  "forbidden_as_source": [
+    "minimum FVG size in ATR/percent/ticks unless explicitly classified as research parameter",
+    "future fill status in IMB object identity",
+    "arbitrary latest-high/latest-low OTE anchors",
+    "Premium/Discount from an unqualified range",
+    "project cost/edge admission",
+    "PnL-selected FVG or OTE quality"
+  ]
+}
