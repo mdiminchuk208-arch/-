@@ -1,0 +1,149 @@
+{
+  "version": "PURE_SOURCE_STAGE4_OB_BREAKER_V2",
+  "scope": "order_block_and_breaker_object_semantics_only",
+  "source_priority": [
+    "Методичка",
+    "SW5",
+    "SW9",
+    "SW11",
+    "SW12",
+    "SW22",
+    "other confirmed ORIGINAL SOURCE materials",
+    "SOURCE Rule Registry"
+  ],
+  "rules": [
+    {
+      "rule_id": "OB_RAID_CANDLE_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "sources": ["SW9 p2", "Методичка p10"],
+      "statement": "The OB candidate candle itself works with/sweeps liquidity; a later unrelated raid cannot retroactively manufacture the OB candle."
+    },
+    {
+      "rule_id": "OB_ENGULF_IMPULSE_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED_QUALITATIVE",
+      "source": "SW9 p2",
+      "statement": "After the liquidity-sweeping candle there is an aggressive impulsive candle that overlaps/engulfs the prior candle."
+    },
+    {
+      "rule_id": "OB_BOS_CONFIRMATION_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "SW9 p2",
+      "statement": "OB formation requires additional structural confirmation via BOS / movement change."
+    },
+    {
+      "rule_id": "OB_HTF_POI_CONTEXT_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "SW9 p2",
+      "statement": "The OB formation must be located in a higher-timeframe POI. Stage 4 consumes a source-valid POI parent; it does not invent a new POI detector."
+    },
+    {
+      "rule_id": "OB_STRUCTURAL_IMPULSE_TREND_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "sources": ["SW9 p3", "Методичка p9-10"],
+      "statement": "OB is inside the structural impulse and is worked with the current structural trend/update."
+    },
+    {
+      "rule_id": "OB_WHOLE_CANDLE_ZONE_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "SW9 p2",
+      "statement": "OB zone is the whole engulfed candidate candle including wicks."
+    },
+    {
+      "rule_id": "OB_FIRST_TEST_001",
+      "classification": "SOURCE_RULE",
+      "status": "TRADE_CHAIN_NOT_OBJECT_VALIDITY",
+      "source": "SW9 p3",
+      "statement": "First OB test is preferred in about 90% of cases; repeated entry may be considered after LTF reaction. This does not erase or create the historical OB object."
+    },
+    {
+      "rule_id": "OB_IMB_REQUIREMENT_CONFLICT_001",
+      "classification": "SOURCE_RULE_CONFLICT",
+      "status": "UNRESOLVED_FOR_IMB_ABSENCE",
+      "sources": ["Методичка p9-11", "SW9 p2", "SW9 p6-7"],
+      "statement": "Методичка defines OB as the last candle before imbalance/sharp impulse, while SW9 says the signal is most accurate when IMB appears and warns not to ignore IMB. Presence of IMB is compatible with all sources; absence is not promoted to PASS or FAIL in the clean object layer until the conflict is formally resolved."
+    },
+    {
+      "rule_id": "BREAKER_PARENT_OB_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "sources": ["SW9 p1,p7", "Методичка p12"],
+      "statement": "Breaker is a previously valid Order Block later broken by impulsive movement; it must preserve the parent OB identity."
+    },
+    {
+      "rule_id": "BREAKER_FAST_WHOLE_IMPULSE_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED_QUALITATIVE",
+      "source": "SW9 p7",
+      "statement": "The OB is broken by a fast whole/continuous impulsive movement without trading in the OB area. No numeric speed/displacement threshold is specified."
+    },
+    {
+      "rule_id": "BREAKER_STRUCTURE_UPDATE_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "SW9 p7",
+      "statement": "Breaker belongs to structure context and forms with a new HH/LL / structure break-update relationship."
+    },
+    {
+      "rule_id": "BREAKER_METHOD_IMB_SHIFT_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED_BY_HIGHER_PRIORITY_SOURCE",
+      "source": "Методичка p12",
+      "statement": "Higher-priority Методичка explicitly requires Breaker penetration with imbalance followed by CHOCH/structure shift. Stage 4 therefore requires IMB plus a causal structure-shift reference."
+    },
+    {
+      "rule_id": "TN_OB_DIRECTION_FROM_RAID_SIDE",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE",
+      "statement": "Low-side raid maps to LONG OB and high-side raid maps to SHORT OB as deterministic directional mirror."
+    },
+    {
+      "rule_id": "TN_OB_BODY_ENGULF_GEOMETRY",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE",
+      "statement": "The qualitative phrase that the impulse overlaps/engulfs the candidate is represented by directional impulse-body coverage of the candidate body; no ATR/body-ratio threshold is added."
+    },
+    {
+      "rule_id": "TN_OB_QUALITATIVE_EVIDENCE_PROVENANCE",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE",
+      "statement": "Qualitative aggressive-impulse and large-body/small-wick facts require an auditable evidence id and causal known_at."
+    },
+    {
+      "rule_id": "TN_BREAKER_CLOSE_BEYOND_OB_ZONE",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE",
+      "statement": "Machine representation of a broken OB requires a completed candle body close beyond the opposite edge of the parent OB zone; wick-only penetration is not auto-promoted."
+    },
+    {
+      "rule_id": "TN_BREAKER_QUALITATIVE_EVIDENCE_PROVENANCE",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE",
+      "statement": "Fast impulse and continuous/no-trading-through-OB claims require auditable qualitative evidence; no hidden numeric threshold is permitted."
+    }
+  ],
+  "deferred_to_later_stages": [
+    "OB first-test entry execution",
+    "OB repeat-entry eligibility",
+    "OB limit price selection",
+    "OB stop selection",
+    "Breaker aggressive/conservative stop selection",
+    "FTA/target selection",
+    "RR",
+    "ranking/scoring",
+    "portfolio/risk overlays"
+  ],
+  "forbidden_as_source": [
+    "ATR displacement threshold for aggressive/fast impulse",
+    "fixed body-to-wick ratio",
+    "fixed OB timeframe mapping such as 240/60",
+    "PnL-based OB/Breaker quality grade",
+    "post-hoc future reaction as historical object validity",
+    "PROJECT score/rank/cost filters"
+  ]
+}
