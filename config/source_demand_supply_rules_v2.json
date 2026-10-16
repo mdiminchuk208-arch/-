@@ -1,0 +1,63 @@
+{
+  "version": "PURE_SOURCE_STAGE6_5_DEMAND_SUPPLY_V2",
+  "scope": "demand_supply_object_and_context_semantics",
+  "source_material": {
+    "source_id": "SRC_DS_001",
+    "filename": "Криптология/Зоны_спроса_и_предложения_Demand_and_Supply.docx",
+    "sha256": "824a8a97902d84f85099aa10db6c13c8c008c6f818b188453af8ede6ccdbb020",
+    "priority": "SECONDARY_CONFIRMED_ORIGINAL_SOURCE_MATERIAL"
+  },
+  "rules": [
+    {
+      "rule_id": "DS_LAST_MOVEMENT_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED_QUALITATIVE_GEOMETRY",
+      "statement": "Supply is the last rising movement; Demand is the last falling movement. The movement may be one candle on a higher timeframe or several consecutive candles on a lower timeframe."
+    },
+    {
+      "rule_id": "DS_OLD_LIQUIDITY_RAID_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "statement": "The movement forming the Demand/Supply zone must raid old liquidity."
+    },
+    {
+      "rule_id": "DS_UNTESTED_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED_CONTEXT_ELIGIBILITY",
+      "statement": "Supply and Demand zones are untested/fresh. A later first test affects contextual eligibility but does not erase the historical zone object."
+    },
+    {
+      "rule_id": "DS_PREMIUM_DISCOUNT_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED_CONTEXT_ELIGIBILITY",
+      "statement": "Supply is valid for sells in Premium; Demand is valid for buys in Discount. Stage 6.5 consumes an already-qualified Premium/Discount context and does not invent dealing-range endpoints."
+    },
+    {
+      "rule_id": "TN_DS_QUALITATIVE_MOVEMENT_PROVENANCE",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE",
+      "statement": "Because SOURCE permits one or multiple consecutive candles but gives no deterministic segmentation algorithm for the 'last movement', the movement geometry requires auditable qualitative evidence with causal known_at rather than a fixed candle count or ATR threshold."
+    },
+    {
+      "rule_id": "TN_DS_OBJECT_CONTEXT_SEPARATION",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE",
+      "statement": "Movement+raid form the historical POI object. Premium/Discount and later first-test freshness are evaluated separately so future testing cannot retroactively delete the object."
+    }
+  ],
+  "forbidden_as_source": [
+    "fixed number of candles for Demand/Supply movement",
+    "ATR/displacement threshold for zone segmentation",
+    "future retest as object formation evidence",
+    "current Premium/Discount projected backward before known_at",
+    "PROJECT score/rank/cost filters",
+    "PnL-selected Demand/Supply geometry"
+  ],
+  "deferred": [
+    "entry quote within Demand/Supply zone",
+    "stop behind move extreme",
+    "FTA/target",
+    "RR",
+    "setup branch selection"
+  ]
+}
