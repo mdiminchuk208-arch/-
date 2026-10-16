@@ -20,7 +20,7 @@ from crypto_bot.strategy.profile import (
     StrategyRuntimeConfig,
 )
 from crypto_bot.strategy.source_execution_v2 import ExecutionPlanAssessment, SourceExecutionPlan
-from crypto_bot.strategy.source_setup_v2 import SourceSetupEvidence
+from crypto_bot.strategy.source_setup_v2 import SetupAssemblyAssessment, SourceSetupEvidence
 from crypto_bot.strategy.source_structure_liquidity_v2 import EvidenceStatus
 
 
@@ -116,6 +116,28 @@ class PureSourceRuntime:
         self._advance_watermark(at)
         return obj
 
+    def register_setup_assessment(
+        self,
+        assessment: SetupAssemblyAssessment,
+        *,
+        observed_at: datetime,
+    ) -> SourceSetupEvidence | None:
+        """Preserve Stage-7 PASS/UNKNOWN/FAIL without manufacturing a setup."""
+        _aware("setup assessment observed_at", observed_at)
+        if assessment.status == EvidenceStatus.PASS:
+            if assessment.evidence is None:
+                raise ValueError("PASS setup assessment requires evidence")
+            return self.register_setup(assessment.evidence, observed_at=observed_at)
+        if assessment.evidence is not None:
+            raise ValueError("non-PASS setup assessment cannot contain evidence")
+        self.record_blocker(
+            RuntimeStage.SETUP,
+            assessment.status,
+            assessment.reason,
+            observed_at,
+        )
+        return None
+
     def register_setup(
         self,
         evidence: SourceSetupEvidence,
@@ -140,6 +162,8 @@ class PureSourceRuntime:
             self._require_registered(evidence.entry_poi_id)
 
         self._validate_object(evidence.physical_idea, at)
+        self._assert_policy_ids_clean(evidence.physical_idea.source_rule_ids)
+        self._assert_policy_ids_clean(evidence.physical_idea.technical_normalization_ids)
         for parent_id in evidence.physical_idea.parent_object_ids:
             self._require_registered(parent_id)
         self.registry.add(evidence.physical_idea)
@@ -165,21 +189,24 @@ class PureSourceRuntime:
         observed_at: datetime,
         setup_id: str | None = None,
     ) -> SourceExecutionPlan | None:
-        """Wire Stage-8 evidence; unresolved SOURCE semantics stay blockers, never guesses."""
+        """Preserve Stage-8 PASS/UNKNOWN/FAIL; malformed contracts fail loudly."""
         _aware("execution observed_at", observed_at)
-        self._advance_watermark(observed_at)
-        if assessment.status != EvidenceStatus.PASS or assessment.plan is None:
-            self.record_blocker(
-                RuntimeStage.EXECUTION,
-                assessment.status,
-                assessment.reason,
-                observed_at,
-                setup_id=setup_id,
-            )
-            return None
-        if setup_id is not None and assessment.plan.setup_id != setup_id:
-            raise ValueError("execution assessment setup_id mismatch")
-        return self.register_execution_plan(assessment.plan, observed_at=observed_at)
+        if assessment.status == EvidenceStatus.PASS:
+            if assessment.plan is None:
+                raise ValueError("PASS execution assessment requires plan")
+            if setup_id is not None and assessment.plan.setup_id != setup_id:
+                raise ValueError("execution assessment setup_id mismatch")
+            return self.register_execution_plan(assessment.plan, observed_at=observed_at)
+        if assessment.plan is not None:
+            raise ValueError("non-PASS execution assessment cannot contain plan")
+        self.record_blocker(
+            RuntimeStage.EXECUTION,
+            assessment.status,
+            assessment.reason,
+            observed_at,
+            setup_id=setup_id,
+        )
+        return None
 
     def register_execution_plan(
         self,
@@ -307,7 +334,15 @@ class PureSourceRuntime:
             raise ValueError("future lifecycle event is forbidden in PURE_SOURCE")
 
     def _assert_policy_ids_clean(self, policy_ids: Sequence[str]) -> None:
-        contaminated = PROJECT_POLICY_IDS.intersection(policy_ids)
+        contaminated = {
+            policy_id
+            for policy_id in policy_ids
+            if (
+                policy_id in PROJECT_POLICY_IDS
+                or str(policy_id).upper().startswith("PROJECT_")
+                or "PROJECT_POLICY" in str(policy_id).upper()
+            )
+        }
         if contaminated:
             joined = ",".join(sorted(contaminated))
             raise ValueError(f"PROJECT_POLICY ids are forbidden in PURE_SOURCE evidence: {joined}")
