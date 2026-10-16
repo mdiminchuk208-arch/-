@@ -63,6 +63,7 @@ class EqualLiquidityEvidence:
     directional_tilt_valid: bool
     substructure_pair_confirmed: bool | None
     reasonable_tilt_confirmed: bool | None
+    qualitative_evidence_id: str | None
     reason: str
 
 
@@ -134,6 +135,9 @@ def latest_structure_leg(swings: Sequence[SourceSwingEvidence]) -> StructureLeg 
     structure and lower lows + lower highs for bearish structure.
     TECHNICAL_NORMALIZATION: machine pairing is chronological/interleaved; this
     prevents two unrelated same-side points from being paired into a structure.
+
+    If bullish and bearish candidates become identifiable at the same causal
+    confirmation index, direction is ambiguous and no structure is selected.
     """
     bullish: tuple[int, StructureLeg] | None = None
     bearish: tuple[int, StructureLeg] | None = None
@@ -152,6 +156,8 @@ def latest_structure_leg(swings: Sequence[SourceSwingEvidence]) -> StructureLeg 
         return bearish[1] if bearish else None
     if bearish is None:
         return bullish[1]
+    if bullish[0] == bearish[0]:
+        return None
     return bullish[1] if bullish[0] > bearish[0] else bearish[1]
 
 
@@ -206,6 +212,7 @@ def assess_equal_liquidity(
     kind: EqualLiquidityKind,
     substructure_pair_confirmed: bool | None,
     reasonable_tilt_confirmed: bool | None,
+    qualitative_evidence_id: str | None = None,
 ) -> EqualLiquidityEvidence:
     """Assess EQH/EQL without inventing a numeric price tolerance.
 
@@ -213,17 +220,17 @@ def assess_equal_liquidity(
     they need not be ruler-flat. A reasonable tilt is allowed, with EQH left
     maximum above right and EQL left minimum below right. The source gives no
     numeric definition of "reasonable", therefore non-exact tilted geometry
-    remains UNKNOWN until qualitative evidence is supplied.
+    remains UNKNOWN until qualitative evidence with provenance is supplied.
     """
     expected_side = "high" if kind == EqualLiquidityKind.EQH else "low"
     if left.side != expected_side or right.side != expected_side:
         return _equal_result(kind, EvidenceStatus.FAIL, left, right, False, False,
                              substructure_pair_confirmed, reasonable_tilt_confirmed,
-                             "WRONG_SWING_SIDE")
+                             qualitative_evidence_id, "WRONG_SWING_SIDE")
     if right.confirmed_index <= left.confirmed_index:
         return _equal_result(kind, EvidenceStatus.FAIL, left, right, False, False,
                              substructure_pair_confirmed, reasonable_tilt_confirmed,
-                             "NON_CAUSAL_ORDER")
+                             qualitative_evidence_id, "NON_CAUSAL_ORDER")
 
     exact = left.price == right.price
     directional_tilt_valid = (
@@ -234,30 +241,34 @@ def assess_equal_liquidity(
     if not directional_tilt_valid:
         return _equal_result(kind, EvidenceStatus.FAIL, left, right, exact, False,
                              substructure_pair_confirmed, reasonable_tilt_confirmed,
-                             "SOURCE_TILT_DIRECTION_VIOLATION")
+                             qualitative_evidence_id, "SOURCE_TILT_DIRECTION_VIOLATION")
     if substructure_pair_confirmed is False:
         return _equal_result(kind, EvidenceStatus.FAIL, left, right, exact, True,
                              substructure_pair_confirmed, reasonable_tilt_confirmed,
-                             "NOT_SUBSTRUCTURE_SWINGS")
+                             qualitative_evidence_id, "NOT_SUBSTRUCTURE_SWINGS")
     if substructure_pair_confirmed is None:
         return _equal_result(kind, EvidenceStatus.UNKNOWN, left, right, exact, True,
                              substructure_pair_confirmed, reasonable_tilt_confirmed,
-                             "WAIT_SUBSTRUCTURE_EVIDENCE")
+                             qualitative_evidence_id, "WAIT_SUBSTRUCTURE_EVIDENCE")
     if exact:
         return _equal_result(kind, EvidenceStatus.PASS, left, right, True, True,
                              substructure_pair_confirmed, reasonable_tilt_confirmed,
-                             "EXACT_EQUAL_SUBSTRUCTURE_SWINGS")
+                             qualitative_evidence_id, "EXACT_EQUAL_SUBSTRUCTURE_SWINGS")
+    if reasonable_tilt_confirmed is True and not qualitative_evidence_id:
+        return _equal_result(kind, EvidenceStatus.UNKNOWN, left, right, False, True,
+                             substructure_pair_confirmed, reasonable_tilt_confirmed,
+                             qualitative_evidence_id, "WAIT_QUALITATIVE_EVIDENCE_PROVENANCE")
     if reasonable_tilt_confirmed is True:
         return _equal_result(kind, EvidenceStatus.PASS, left, right, False, True,
                              substructure_pair_confirmed, reasonable_tilt_confirmed,
-                             "QUALITATIVE_REASONABLE_TILT_CONFIRMED")
+                             qualitative_evidence_id, "QUALITATIVE_REASONABLE_TILT_CONFIRMED")
     if reasonable_tilt_confirmed is False:
         return _equal_result(kind, EvidenceStatus.FAIL, left, right, False, True,
                              substructure_pair_confirmed, reasonable_tilt_confirmed,
-                             "TILT_NOT_REASONABLE")
+                             qualitative_evidence_id, "TILT_NOT_REASONABLE")
     return _equal_result(kind, EvidenceStatus.UNKNOWN, left, right, False, True,
                          substructure_pair_confirmed, reasonable_tilt_confirmed,
-                         "WAIT_QUALITATIVE_REASONABLE_TILT")
+                         qualitative_evidence_id, "WAIT_QUALITATIVE_REASONABLE_TILT")
 
 
 def bos_breaks_active_leg(candle: Candle, leg: StructureLeg) -> bool:
@@ -380,6 +391,7 @@ def _equal_result(
     directional_tilt_valid: bool,
     substructure_pair_confirmed: bool | None,
     reasonable_tilt_confirmed: bool | None,
+    qualitative_evidence_id: str | None,
     reason: str,
 ) -> EqualLiquidityEvidence:
     return EqualLiquidityEvidence(
@@ -391,5 +403,6 @@ def _equal_result(
         directional_tilt_valid,
         substructure_pair_confirmed,
         reasonable_tilt_confirmed,
+        qualitative_evidence_id,
         reason,
     )
