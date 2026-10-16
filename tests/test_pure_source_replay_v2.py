@@ -7,8 +7,6 @@ from crypto_bot.common.models import Direction
 from crypto_bot.data.models import MarketCandle
 from crypto_bot.strategy.causal_objects import CausalSourceObject, SourceObjectType
 from crypto_bot.strategy.pure_source_replay_v2 import (
-    PrefixReplayComparison,
-    PureSourceReplayResult,
     ReplayEvidenceBatch,
     ReplayExecutionAssessment,
     ReplayFrame,
@@ -158,15 +156,15 @@ class FutureObjectProvider:
     provider_id = "TEST_FUTURE_OBJECT_PROVIDER"
 
     def produce(self, frame: ReplayFrame) -> ReplayEvidenceBatch:
-        future = frame.decision_at + timedelta(minutes=1)
+        later_known_at = frame.decision_at + timedelta(minutes=1)
         obj = CausalSourceObject.formed(
             object_type=SourceObjectType.POI,
             symbol=frame.symbol,
             timeframe="1m",
             direction=Direction.LONG.value,
-            formation_at=future,
-            known_at=future,
-            identity_parts={"future-at": future},
+            formation_at=later_known_at,
+            known_at=later_known_at,
+            identity_parts={"fixture": "later-known-object", "at": later_known_at},
             source_rule_ids=("TEST_FUTURE",),
             provenance="Stage-10 future leakage fixture",
         )
