@@ -1,0 +1,131 @@
+{
+  "version": "PURE_SOURCE_STAGE6_RANGE_STB_V2",
+  "scope": "range_deviation_stb_bts_object_semantics",
+  "rules": [
+    {
+      "rule_id": "RANGE_AFTER_STRONG_IMPULSE_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED_QUALITATIVE",
+      "source": "SW10",
+      "statement": "Range forms after a strong directional impulse. SOURCE does not define a numeric strength threshold."
+    },
+    {
+      "rule_id": "RANGE_BOUNDARY_SEQUENCE_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "SW10",
+      "statement": "Impulse end is the first range boundary; the later correction end is the second. After an up impulse the first boundary is the high and second is the later low; after a down impulse the first is the low and second is the later high."
+    },
+    {
+      "rule_id": "RANGE_MIDPOINT_REACTION_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED_QUALITATIVE",
+      "sources": ["SW10", "Методичка p15"],
+      "statement": "A good/correct reaction from 0.5 confirms that range boundaries are drawn correctly. 'Good reaction' is qualitative and receives no invented tolerance."
+    },
+    {
+      "rule_id": "RANGE_NO_INTERNAL_STRUCTURE_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED_BY_HIGHER_PRIORITY_SOURCE",
+      "source": "Методичка p14",
+      "statement": "Internal structure should be absent inside the range. Stage 6 requires auditable evidence rather than a hidden clarity score."
+    },
+    {
+      "rule_id": "RANGE_DEVIATION_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "SW10",
+      "statement": "Deviation is price movement beyond a range boundary to remove external liquidity. Return/reclaim is a later setup-chain fact, not required for the raw deviation event."
+    },
+    {
+      "rule_id": "RANGE_DEVIATION_OPPOSITE_SIDE_LANGUAGE_001",
+      "classification": "SOURCE_RULE_CONTEXT",
+      "status": "DESCRIPTIVE_NOT_GUARANTEE",
+      "source": "SW10",
+      "statement": "SOURCE says a deviation on one side tends to lead toward liquidity on the other side. PURE_SOURCE does not turn this into a guaranteed future target."
+    },
+    {
+      "rule_id": "RANGE_AGGRESSIVE_ENTRY_001",
+      "classification": "SOURCE_RULE",
+      "status": "DEFERRED_TO_SETUP_ENTRY_STAGE",
+      "source": "SW10",
+      "statement": "Aggressive range trading is on deviation and only with POI beyond/under the range. Not part of Range object validity."
+    },
+    {
+      "rule_id": "RANGE_CONSERVATIVE_ENTRY_001",
+      "classification": "SOURCE_RULE",
+      "status": "DEFERRED_TO_SETUP_ENTRY_STAGE",
+      "source": "SW10",
+      "statement": "Conservative range entry waits for external POI interaction, return/acceptance inside range and boundary retest. Not part of Range object validity."
+    },
+    {
+      "rule_id": "RANGE_EXIT_80_20_001",
+      "classification": "SOURCE_RULE",
+      "status": "DEFERRED_TO_EXIT_STAGE",
+      "source": "SW10",
+      "statement": "80% position volume is fixed inside the range near boundaries and 20% may remain for true breakout. This is exit logic, not Range formation."
+    },
+    {
+      "rule_id": "STB_BTS_LIQUIDITY_MANIPULATION_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "SW22 p1-3",
+      "statement": "STB/BTS begins with smart-money manipulation that sweeps a liquidity pool; STB maps to long after low-side manipulation and BTS mirrors it for short."
+    },
+    {
+      "rule_id": "STB_BTS_FULL_ENGULF_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED_QUALITATIVE",
+      "source": "SW22 p2-3",
+      "statement": "The manipulation movement is fully engulfed on reversal. SOURCE does not specify a numeric candle-count/displacement threshold for 'full'."
+    },
+    {
+      "rule_id": "STB_BTS_BOS_CONF_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "SW22 p3",
+      "statement": "A break or confirmation of structure is required."
+    },
+    {
+      "rule_id": "STB_BTS_MAIN_TREND_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "SW22 p3",
+      "statement": "The potential position agrees with the main trend."
+    },
+    {
+      "rule_id": "STB_BTS_MITIGATION_05_001",
+      "classification": "SOURCE_RULE",
+      "status": "DEFERRED_TO_ENTRY_STAGE",
+      "source": "SW22 p2-4",
+      "statement": "Mitigation/entry may use the relevant zone edge or 0.5. This is not required for historical STB/BTS object existence."
+    },
+    {
+      "rule_id": "TN_RANGE_QUALITATIVE_EVIDENCE_PROVENANCE",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE",
+      "statement": "Strong impulse, good midpoint reaction and no-internal-structure claims require auditable PASS/FAIL/UNKNOWN evidence with causal timestamps; no numeric range-clarity tolerance is invented."
+    },
+    {
+      "rule_id": "TN_RANGE_DEVIATION_STRICT_PENETRATION",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE",
+      "statement": "A raw deviation event is represented by strict wick penetration beyond a known range boundary. Reclaim/acceptance remains a later chain condition."
+    },
+    {
+      "rule_id": "TN_STB_BTS_QUALITATIVE_ENGULF_PROVENANCE",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE",
+      "statement": "Full-manipulation engulf requires auditable qualitative evidence rather than ATR/percent/candle-count thresholds."
+    }
+  ],
+  "forbidden_as_source": [
+    "fixed midpoint tolerance such as 0.08",
+    "ATR threshold for strong range impulse",
+    "range clarity score",
+    "future opposite-boundary hit as range validity",
+    "PnL-selected range or STB branch",
+    "fixed H1/H4 ownership",
+    "PROJECT ranking/scoring/cost filters"
+  ]
+}
