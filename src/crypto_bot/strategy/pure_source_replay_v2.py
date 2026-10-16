@@ -38,6 +38,12 @@ class ReplaySeries:
             raise ValueError("interval_ms must be positive")
         if not self.candles:
             raise ValueError("replay series cannot be empty")
+        market_interval_ms = _parse_fixed_interval_ms(self.candles[0].interval)
+        if market_interval_ms is not None and market_interval_ms != self.interval_ms:
+            raise ValueError("MarketCandle interval does not match replay interval_ms")
+        timeframe_interval_ms = _parse_fixed_interval_ms(str(self.timeframe))
+        if timeframe_interval_ms is not None and timeframe_interval_ms != self.interval_ms:
+            raise ValueError("replay timeframe label does not match interval_ms")
 
 
 @dataclass(frozen=True)
@@ -287,6 +293,13 @@ def compare_replay_prefixes(
     """Compare causal receipts while intentionally ignoring future manifest data."""
 
     _aware("through", through)
+    if left.version != right.version:
+        return PrefixReplayComparison(False, 0, through, reason="REPLAY_VERSION_MISMATCH")
+    if left.provider_id != right.provider_id:
+        return PrefixReplayComparison(False, 0, through, reason="PROVIDER_ID_MISMATCH")
+    if (left.manifest.exchange, left.manifest.symbol) != (right.manifest.exchange, right.manifest.symbol):
+        return PrefixReplayComparison(False, 0, through, reason="DATASET_IDENTITY_MISMATCH")
+
     left_rows = tuple(row for row in left.receipts if row.decision_at <= through)
     right_rows = tuple(row for row in right.receipts if row.decision_at <= through)
     if len(left_rows) != len(right_rows):
@@ -363,6 +376,13 @@ def _prepare_dataset(
             raise ValueError(f"unhealthy replay data {timeframe}: {first.kind.value}: {first.detail}")
 
         first_market = spec.candles[0]
+        market_interval_ms = _parse_fixed_interval_ms(first_market.interval)
+        if market_interval_ms is not None and market_interval_ms != spec.interval_ms:
+            raise ValueError(f"market interval mismatch for replay timeframe {timeframe}")
+        timeframe_interval_ms = _parse_fixed_interval_ms(timeframe)
+        if timeframe_interval_ms is not None and timeframe_interval_ms != spec.interval_ms:
+            raise ValueError(f"timeframe label mismatch for replay timeframe {timeframe}")
+
         if exchange is None:
             exchange = first_market.exchange
             symbol = first_market.symbol
@@ -572,6 +592,36 @@ def _jsonable(value: Any) -> Any:
     if isinstance(value, (str, int, float, bool)) or value is None:
         return value
     raise TypeError(f"unsupported replay fingerprint value: {type(value).__name__}")
+
+
+def _parse_fixed_interval_ms(value: str) -> int | None:
+    text = str(value).strip().lower()
+    if not text:
+        return None
+    if text.isdigit():
+        minutes = int(text)
+        return minutes * 60_000 if minutes > 0 else None
+    if text == "d":
+        return 86_400_000
+    if text.endswith("m") and text[:-1].isdigit():
+        minutes = int(text[:-1])
+        return minutes * 60_000 if minutes > 0 else None
+    if text.endswith("h") and text[:-1].isdigit():
+        hours = int(text[:-1])
+        return hours * 3_600_000 if hours > 0 else None
+    if text.endswith("d") and text[:-1].isdigit():
+        days = int(text[:-1])
+        return days * 86_400_000 if days > 0 else None
+    if text.startswith("m") and text[1:].isdigit():
+        minutes = int(text[1:])
+        return minutes * 60_000 if minutes > 0 else None
+    if text.startswith("h") and text[1:].isdigit():
+        hours = int(text[1:])
+        return hours * 3_600_000 if hours > 0 else None
+    if text.startswith("d") and text[1:].isdigit():
+        days = int(text[1:])
+        return days * 86_400_000 if days > 0 else None
+    return None
 
 
 def _aware(name: str, value: datetime) -> None:
