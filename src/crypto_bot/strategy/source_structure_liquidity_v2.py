@@ -317,7 +317,7 @@ def _swing(
             "price": price,
             "center_index": center_index,
             "confirmed_index": confirmed_index,
-            "swing_time": swing_time,
+            "pivot_open_time": swing_time,
         },
         source_rule_ids=(rule_id,),
         technical_normalization_ids=("SWING_CONFIRM_001",),
