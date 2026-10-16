@@ -11,6 +11,7 @@ from crypto_bot.strategy.causal_objects import (
     CausalSourceObject,
     LifecycleEventKind,
     ObjectStatus,
+    RejectionCategory,
     SourceObjectType,
     require_closed_candles,
 )
@@ -384,6 +385,46 @@ class PureSourceRuntime:
             raise ValueError("future invalidation is forbidden in PURE_SOURCE")
         if any(event.at > observed_at for event in obj.lifecycle):
             raise ValueError("future lifecycle event is forbidden in PURE_SOURCE")
+        self._validate_lifecycle_projection(obj)
+
+    def _validate_lifecycle_projection(self, obj: CausalSourceObject) -> None:
+        if not obj.lifecycle:
+            raise ValueError("causal SOURCE object requires lifecycle provenance")
+        status = obj.lifecycle[-1].status
+        trade_eligible = obj.lifecycle[-1].trade_eligible
+        formation_valid = True
+        confirmed_at: datetime | None = None
+        invalidated_at: datetime | None = None
+        rejection_reasons: list[str] = []
+        for event in obj.lifecycle:
+            if event.kind == LifecycleEventKind.CONFIRMATION:
+                confirmed_at = event.at
+            elif event.kind == LifecycleEventKind.INVALIDATION:
+                invalidated_at = event.at
+            if event.kind == LifecycleEventKind.REJECTION and event.reason:
+                rejection_reasons.append(event.reason)
+                if event.reason.startswith(RejectionCategory.OBJECT_INVALID_SOURCE.value):
+                    formation_valid = False
+            elif event.kind in (LifecycleEventKind.INVALIDATION, LifecycleEventKind.CANCELLATION) and event.reason:
+                rejection_reasons.append(event.reason)
+        projected = (
+            status,
+            formation_valid,
+            trade_eligible,
+            confirmed_at,
+            invalidated_at,
+            tuple(rejection_reasons),
+        )
+        actual = (
+            obj.status,
+            obj.formation_valid,
+            obj.trade_eligible,
+            obj.confirmed_at,
+            obj.invalidated_at,
+            obj.rejection_reasons,
+        )
+        if projected != actual:
+            raise ValueError("causal object top-level state does not match lifecycle history")
 
     def _validate_object_extension(
         self,
