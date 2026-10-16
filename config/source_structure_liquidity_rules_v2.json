@@ -1,0 +1,109 @@
+{
+  "version": "PURE_SOURCE_STAGE2_STRUCTURE_LIQUIDITY_V2",
+  "scope": "market_structure_and_liquidity_only",
+  "rules": [
+    {
+      "rule_id": "MS_SWING_HIGH_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "[SW.BAND]5. Рыночная структура (Advanced).pdf",
+      "page": 2,
+      "statement": "Swing High is three consecutive candles where both adjacent highs are lower than the center high."
+    },
+    {
+      "rule_id": "MS_SWING_LOW_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "[SW.BAND]5. Рыночная структура (Advanced).pdf",
+      "page": 2,
+      "statement": "Swing Low is three consecutive candles where both adjacent lows are higher than the center low."
+    },
+    {
+      "rule_id": "SWING_CONFIRM_001",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE",
+      "statement": "A three-candle swing becomes knowable only after the right-hand candle closes."
+    },
+    {
+      "rule_id": "MS_TREND_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "[SW.BAND]4. Рыночная структура  (Base).pdf",
+      "page": 3,
+      "statement": "Bullish trend has highs and lows above previous; bearish trend has lows and highs below previous."
+    },
+    {
+      "rule_id": "MS_INTERLEAVED_PAIRING_V2",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE",
+      "statement": "Machine structure requires chronological/interleaved swing pairing so unrelated same-side swings are not combined into artificial HH/HL or LL/LH structure."
+    },
+    {
+      "rule_id": "MS_BOS_CONTEXT_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "[SW.BAND]5. Рыночная структура (Advanced).pdf",
+      "pages": [4, 5],
+      "statement": "Bullish structure BOS breaks the protected key minimum/HL; bearish structure BOS breaks the protected key maximum/LH with candle-body acceptance beyond the level."
+    },
+    {
+      "rule_id": "MS_CONF_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED_SEMANTIC_MACHINE_ANCHOR_NORMALIZED",
+      "source": "[SW.BAND]5. Рыночная структура (Advanced).pdf",
+      "pages": [6, 7],
+      "statement": "CONF is a later update of the key minimum/maximum of the new structure after BOS. Exact machine anchor selection remains a technical normalization."
+    },
+    {
+      "rule_id": "LIQ_STRUCTURAL_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "[SW.BAND]6. Ликвидность.pdf",
+      "page": 12,
+      "statement": "External liquidity is at structural highs/lows and beyond range boundaries; internal liquidity is inside a formed impulse/range between structural endpoints on the corresponding timeframe."
+    },
+    {
+      "rule_id": "TN_LIQUIDITY_LOCATION_FROM_ACTIVE_STRUCTURE_LEG",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE",
+      "statement": "A confirmed swing strictly inside already-known structural endpoints is context-labelled INTERNAL; endpoint/outside evidence is EXTERNAL. Context label is excluded from physical pool stable identity."
+    },
+    {
+      "rule_id": "LIQ_EQH_EQL_SUBSTRUCTURE_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "[SW.BAND]6. Ликвидность.pdf",
+      "page": 10,
+      "statement": "EQH/EQL form between substructure swings, not arbitrary candles."
+    },
+    {
+      "rule_id": "LIQ_EQH_EQL_TILT_DIRECTION_001",
+      "classification": "SOURCE_RULE",
+      "status": "CONFIRMED",
+      "source": "[SW.BAND]6. Ликвидность.pdf",
+      "page": 10,
+      "statement": "EQH may be tilted with left maximum above right; EQL may be tilted with left minimum below right."
+    },
+    {
+      "rule_id": "LIQ_EQH_EQL_REASONABLE_TILT_001",
+      "classification": "SOURCE_RULE",
+      "status": "QUALITATIVE_UNRESOLVED_NUMERICALLY",
+      "source": "[SW.BAND]6. Ликвидность.pdf",
+      "page": 10,
+      "statement": "The source allows tilt within reason but provides no numeric tolerance. No automatic percentage/ATR/tick threshold is authorized."
+    },
+    {
+      "rule_id": "LIQ_STRICT_WICK_TAKE_V2",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "status": "ACTIVE_PENDING_CONFORMANCE",
+      "statement": "A deterministic sweep is represented as strict wick penetration beyond a known pool. Exact touch alone is not a sweep. The source does not provide a machine close-vs-wick threshold."
+    }
+  ],
+  "forbidden_as_source": [
+    "exact-price-only EQH/EQL detector",
+    "numeric EQH/EQL tolerance not present in source",
+    "old adverse-liquidity labels as source truth",
+    "PnL-selected liquidity significance",
+    "project timeframe ownership filters"
+  ]
+}
