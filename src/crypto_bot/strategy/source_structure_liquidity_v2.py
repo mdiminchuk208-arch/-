@@ -315,13 +315,11 @@ def _swing(
         identity_parts={
             "side": side,
             "price": price,
-            "center_index": center_index,
-            "confirmed_index": confirmed_index,
             "pivot_open_time": swing_time,
         },
         source_rule_ids=(rule_id,),
         technical_normalization_ids=("SWING_CONFIRM_001",),
-        provenance="SW5 p2 strict three-candle swing; known after right candle close",
+        provenance="SW5 p2 strict three-candle swing; stable ID uses causal timestamps, not dataset-relative indexes",
     )
     return SourceSwingEvidence(obj, side, price, center_index, confirmed_index, swing_time)
 
