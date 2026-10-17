@@ -1,8 +1,8 @@
 # PURE SOURCE — authoritative current status
 
 **Status date:** 2026-10-18
-**Current rebuild stage:** Stage 21 — Qualified EQH/EQL Consumer
-**Base:** Stage 20 merge `a37fd2233321af0cc77643af0c88d7df2e8eb8f0`
+**Current rebuild stage:** Stage 22 — Qualified SFP Liquidity Context
+**Base:** Stage 21 merge `301e65a5c2e8b798e2d7ec20936f1812961673fd`
 
 > This file is the current continuation entrypoint for PURE SOURCE strategy work.
 > Historical `README.md`, `CONTINUATION_STATUS.md`, old Bybit replays, source-permitted physical cases and earlier PnL reports remain preserved evidence, but they are **not SOURCE truth** and must not be used to resolve current SOURCE ambiguity.
@@ -183,3 +183,9 @@ Next safe work: typed, provenance-retaining consumer adapters, separately audite
 The EQH/EQL diagnostic adapter now reconstructs real closed-prefix swings, resolves exact scoped annotations internally and retains complete receipts. Exact pairs require substructure provenance; tilted pairs also require reasonable-tilt provenance. No ranking, numeric tolerance or trade admission is added. See `docs/PURE_SOURCE_ENGINE_STAGE21_QUALIFIED_LIQUIDITY.md` and its QA/MIGRATION_FRONTIER.json.
 
 Next safe independent consumer: SFP liquidity context, separate from structural validity. OB/Breaker, Range/OTE anchors, STB/BTS/DS segmentation and exit/re-entry gaps remain explicit. Do not reuse legacy stronger intersections as priority1 SOURCE truth. All financial/trading permissions remain false.
+
+## Stage22 SFP context checkpoint
+
+An explicit qualified SFP context consumer now resolves only the TRADE_CONTEXT semantic against actual SW8 transport/pool subjects and closed data. Full receipts survive; context PASS/FAIL never rewrites structural formation. Full priority1 pattern qualification remains UNKNOWN, execution_ready and trade_entry_allowed remain immutable false. See `docs/PURE_SOURCE_ENGINE_STAGE22_QUALIFIED_SFP_CONTEXT.md`.
+
+Next safe step: integrate bound consumers into deterministic diagnostic replay with explicit annotation deliveries and clock progression; no financial artifacts. Actual market annotations, priority1 pattern/movement/anchor relations and execution/exit/re-entry gaps remain unresolved.

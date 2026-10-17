@@ -1,0 +1,40 @@
+{
+  "version": "PURE_SOURCE_STAGE22_QUALIFIED_SFP_CONTEXT_V1",
+  "classification": "TECHNICAL_NORMALIZATION",
+  "baseline_identifiability": "NOT_IDENTIFIABLE",
+  "trade_entry_allowed": false,
+  "financial_backtest_allowed": false,
+  "paper_allowed": false,
+  "live_allowed": false,
+  "private_api_allowed": false,
+  "execution_ready": false,
+  "project_policy_applied": [],
+  "contract": {
+    "semantic_id": "SFP_LIQUIDITY_CONTEXT",
+    "scope": "TRADE_CONTEXT",
+    "subjects": "actual closed-prefix SW8 SFP transport and its actual swept liquidity parent",
+    "boundaries": "context window covers sweep and closed confirmation transport; all complete receipts retained",
+    "availability": "not earlier than closed transport and effective annotation observation",
+    "context_pass_does_not_imply": [
+      "priority1 pattern qualification",
+      "trade eligibility",
+      "execution readiness",
+      "permission to enter"
+    ]
+  },
+  "priority1_pattern_status": "UNKNOWN",
+  "source_evidence": [
+    "Stage19 M_SFP_SHAPE",
+    "Stage19 M_SFP_LIQUIDITY",
+    "Stage19 M_SFP_REVERSAL",
+    "Stage19 M_SFP_TIMEFRAMES",
+    "Stage19 M_SFP_CONTEXT"
+  ],
+  "limits": [
+    "This is one structural SW8 transport, not every SFP pattern",
+    "No universal mandatory fourth candle or third-body engulf is inferred",
+    "No universal LTF BOS chain is inferred from the legacy transport property",
+    "Actual market annotation truth/identity/blindness remain outside the content-integrity guarantee",
+    "Default frozen providers remain unchanged"
+  ]
+}
