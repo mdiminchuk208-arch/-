@@ -1,0 +1,120 @@
+{
+  "version": "PURE_SOURCE_STAGE18_QUALITATIVE_PROVENANCE_V2",
+  "base_stage17_head": "a895fc2e80702e9d3798ba8fd08f17496ff5820a",
+  "classification": "TECHNICAL_NORMALIZATION",
+  "purpose": "causal_auditable_provenance_for_source_terms_that_are_not_numerically_defined",
+  "trade_entry_allowed": false,
+  "financial_backtest_allowed": false,
+  "project_policy_applied": [],
+  "numeric_proxy_inference_allowed": false,
+  "annotation_methods": [
+    "HUMAN_SOURCE_ANNOTATION",
+    "CURATED_SOURCE_DATASET_ANNOTATION"
+  ],
+  "semantics": [
+    {
+      "semantic_id": "OB_AGGRESSIVE_IMPULSE",
+      "scope": "OBJECT_FORMATION",
+      "source_refs": ["Методичка P0102-P0108", "SW9 p2"],
+      "source_rule_ids": ["OB_ENGULF_IMPULSE_001"],
+      "description": "Qualitative aggressive/impulsive movement associated with source-valid OB formation; no ATR, body-percent or displacement threshold is supplied by SOURCE."
+    },
+    {
+      "semantic_id": "OB_LARGE_BODY_SMALL_WICKS",
+      "scope": "OBJECT_FORMATION",
+      "source_refs": ["Методичка P0102-P0108"],
+      "source_rule_ids": ["OB_WHOLE_CANDLE_ZONE_001"],
+      "description": "Methodichka says the OB candle body should be large and its wicks small, without a numeric ratio."
+    },
+    {
+      "semantic_id": "BREAKER_FAST_WHOLE_IMPULSE",
+      "scope": "OBJECT_FORMATION",
+      "source_refs": ["Методичка P0113-P0116", "SW9 p7"],
+      "source_rule_ids": ["BREAKER_FAST_WHOLE_IMPULSE_001"],
+      "description": "Qualitative fast/whole impulsive break of a source-valid OB."
+    },
+    {
+      "semantic_id": "BREAKER_CONTINUOUS_NO_OB_TRADING",
+      "scope": "OBJECT_FORMATION",
+      "source_refs": ["SW9 p7"],
+      "source_rule_ids": ["BREAKER_FAST_WHOLE_IMPULSE_001"],
+      "description": "Qualitative continuity of the breaker impulse without trading back inside the OB area."
+    },
+    {
+      "semantic_id": "SOURCE_QUALIFIED_IMPULSE_SEGMENTATION",
+      "scope": "OBJECT_FORMATION",
+      "source_refs": ["Методичка P0122-P0130", "Методичка P0139-P0156"],
+      "source_rule_ids": [],
+      "description": "Causal qualification of which movement is the source impulse consumed by Range/OTE geometry; arbitrary extrema are forbidden."
+    },
+    {
+      "semantic_id": "RANGE_STRONG_DIRECTIONAL_IMPULSE",
+      "scope": "OBJECT_FORMATION",
+      "source_refs": ["Методичка P0122-P0130", "SW10 p2-4"],
+      "source_rule_ids": ["RANGE_AFTER_STRONG_IMPULSE_001"],
+      "description": "Qualitative strength/direction of the impulse preceding a Range, without invented displacement thresholds."
+    },
+    {
+      "semantic_id": "RANGE_MIDPOINT_REACTION",
+      "scope": "OBJECT_FORMATION",
+      "source_refs": ["Методичка P0122-P0130"],
+      "source_rule_ids": ["RANGE_MIDPOINT_REACTION_001"],
+      "description": "Source-required reaction from exact Range 0.5; exact midpoint is numeric, reaction quality/timing provenance remains causal evidence."
+    },
+    {
+      "semantic_id": "RANGE_NO_INTERNAL_STRUCTURE",
+      "scope": "OBJECT_FORMATION",
+      "source_refs": ["Методичка P0122-P0130"],
+      "source_rule_ids": ["RANGE_NO_INTERNAL_STRUCTURE_001"],
+      "description": "Methodichka requires no structure inside the Range; the claim must identify the observed interval rather than infer a tolerance."
+    },
+    {
+      "semantic_id": "STB_BTS_FULL_MANIPULATION_ENGULF",
+      "scope": "OBJECT_FORMATION",
+      "source_refs": ["SW22 p1-3"],
+      "source_rule_ids": ["STB_BTS_FULL_ENGULF_001"],
+      "description": "Qualitative full engulf of the manipulation required by STB/BTS."
+    },
+    {
+      "semantic_id": "DEMAND_SUPPLY_LAST_MOVEMENT_SEGMENTATION",
+      "scope": "OBJECT_FORMATION",
+      "source_refs": ["SRC_DS_001"],
+      "source_rule_ids": ["DS_LAST_MOVEMENT_001"],
+      "description": "Source permits one or several consecutive candles as the last rising/falling movement but gives no deterministic segmentation algorithm."
+    },
+    {
+      "semantic_id": "EQH_EQL_SUBSTRUCTURE_PAIR",
+      "scope": "OBJECT_FORMATION",
+      "source_refs": ["SW6 p7-10"],
+      "source_rule_ids": [],
+      "description": "Qualification that the two candidate swings belong to the source-defined substructure context."
+    },
+    {
+      "semantic_id": "EQH_EQL_REASONABLE_TILT",
+      "scope": "OBJECT_FORMATION",
+      "source_refs": ["SW6 p7-10"],
+      "source_rule_ids": [],
+      "description": "Source permits non-flat EQH/EQL with a reasonable directional tilt but gives no numeric tolerance."
+    },
+    {
+      "semantic_id": "SFP_LIQUIDITY_CONTEXT",
+      "scope": "TRADE_CONTEXT",
+      "source_refs": ["Методичка P0157-P0162"],
+      "source_rule_ids": [],
+      "description": "SFP requires context in the form of source-relevant liquidity points/zones being swept; structural SFP validity alone is not trade eligibility."
+    }
+  ],
+  "forbidden_fields": [
+    "rank",
+    "score",
+    "confidence",
+    "probability",
+    "weight",
+    "preferred",
+    "win_rate",
+    "profit_factor",
+    "expectancy",
+    "pnl",
+    "backtest_result"
+  ]
+}
