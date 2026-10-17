@@ -1,0 +1,37 @@
+"""Executed after code commit, before QA artifact commit; no financial activity."""
+import json, hashlib, subprocess
+from pathlib import Path
+root=Path.cwd(); qa=Path('docs/pure_source_stage23_1_qa_v1')
+def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+def write(path,obj):Path(path).write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n')
+base='ceba28fe4969c7eb916e348a30e6f7db0bf08d44'
+code=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+parent_path='docs/pure_source_stage23_qa_v1/STAGE23_FREEZE_MANIFEST.json'
+parent=json.loads(Path(parent_path).read_text()); pins=dict(parent['artifact_sha256'])
+allowed={'.github/workflows/strategy-engine-validation.yml':'J: actual Python matrix','docs/PURE_SOURCE_ENGINE_STAGE19_RULE_LEDGER.md':'I: truthful retained handoff/image locations','src/crypto_bot/strategy/pure_source_rule_ledger_v1.py':'C-I: byte/quote/XML/conflict/export integrity','src/crypto_bot/strategy/source_claim_binding_v1.py':'A/B: complete causal state and canonical subjects','src/crypto_bot/strategy/source_qualified_liquidity_v1.py':'J: stable domain safety errors','src/crypto_bot/strategy/source_qualified_sfp_context_v1.py':'J: stable domain safety errors','src/crypto_bot/strategy/source_qualitative_provenance_v2.py':'B: direct-construction subject canonicalization','tests/test_pure_source_rule_ledger_v1.py':'C-I: mutation regressions','tests/test_source_claim_binding_v1.py':'A/B: causal and identity regressions','tests/test_source_qualified_sfp_context_v1.py':'J: literal-False constructor/replace regression'}
+superseded=[]
+for path,old in pins.items():
+ actual=sha(path)
+ if actual!=old:
+  assert path in allowed,('Unexpected parent pin changed',path)
+  superseded.append({'path':path,'historical_sha256':old,'current_sha256':actual,'reason':allowed[path]})
+  pins[path]=actual
+# Verify every originally retained source byte, original Stage19 ledger/export,
+# and historical QA/freeze/report byte against the preceding main Git tree.
+tracked=subprocess.check_output(['git','ls-tree','-r','--name-only',base],text=True).splitlines()
+protected=[p for p in tracked if p.startswith(('data/source_materials/','docs/source_freeze_v1/','docs/pure_source_stage19_ledger_v1/')) or (p.startswith('docs/pure_source_stage') and '_qa_' in p)]
+for path in protected:
+ original=subprocess.check_output(['git','show',base+':'+path])
+ assert Path(path).read_bytes()==original,('Historical artifact changed',path)
+write(qa/'HISTORICAL_PRESERVATION.json',{'status':'PASS','compared_against_git_commit':base,'verified_paths':{p:sha(p) for p in protected},'count':len(protected),'historical_freezes_rewritten':False,'original_source_ledgers_rewritten':False,'source_materials_rewritten':False})
+changed=subprocess.check_output(['git','diff','--name-only',base,code],text=True).splitlines()
+for path in changed:
+ if path!='PURE_SOURCE_CURRENT_STATUS.md':pins[path]=sha(path)
+for path in qa.rglob('*'):
+ if path.is_file() and path.name!='STAGE23_1_FREEZE_MANIFEST.json':pins[str(path)]=sha(path)
+pins[parent_path]=sha(parent_path)
+for path in ['data/source_materials/cryptology_2026_10_09/cryptology.zip','data/source_materials/cryptology_2026_10_09/manifest.json','docs/source_freeze_v1/source_manifest.json']:pins[path]=sha(path)
+write(qa/'STAGE23_1_FREEZE_MANIFEST.json',{'stage':'23.1','git_code_commit':code,'base_commit':base,'classification':'TECHNICAL_NORMALIZATION','baseline_identifiability':'NOT_IDENTIFIABLE','decision':'AUDIT_HARDENING_NOT_SOURCE_RECONSTRUCTION_OR_TRADE_ADMISSION','trade_entry_allowed':False,'financial_backtest_allowed':False,'paper_allowed':False,'live_allowed':False,'private_api_allowed':False,'execution_ready':False,'source_rule_changes':[],'project_policy_applied':[],'historical_freezes_rewritten':False,'parent_manifest_path':parent_path,'parent_manifest_sha256':sha(parent_path),'superseded_parent_pins':superseded,'artifact_sha256':dict(sorted(pins.items())),'external_acceptance':'Merge additionally requires exact PR head CI green, Codex review findings resolved and final adversarial acceptance. Review/merge receipts remain GitHub event records, outside this pre-PR immutable freeze.'})
+manifest=json.loads((qa/'STAGE23_1_FREEZE_MANIFEST.json').read_text())
+assert all(sha(p)==digest for p,digest in manifest['artifact_sha256'].items())
+print('Historical preserved:',len(protected),'Superseded parent pins:',len(superseded),'Current freeze pins:',len(pins),'code:',code)

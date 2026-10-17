@@ -1,0 +1,23 @@
+{
+  "version": "PURE_SOURCE_STAGE23_1_AUDIT_HARDENING_V1",
+  "base_commit": "ceba28fe4969c7eb916e348a30e6f7db0bf08d44",
+  "classification": "TECHNICAL_NORMALIZATION",
+  "baseline_identifiability": "NOT_IDENTIFIABLE",
+  "trade_entry_allowed": false,
+  "financial_backtest_allowed": false,
+  "paper_allowed": false,
+  "live_allowed": false,
+  "private_api_allowed": false,
+  "execution_ready": false,
+  "project_policy_applied": [],
+  "source_rule_changes": [],
+  "binding_schema_version": "PURE_SOURCE_STAGE23_1_CLAIM_BINDING_V2",
+  "ci_python_versions": [
+    "3.11",
+    "3.14"
+  ],
+  "reconstruction_stage24_started": false,
+  "historical_freeze_manifests_rewritten": false,
+  "source_ledgers_and_exports_rewritten": false,
+  "historical_documentation_corrected": true
+}

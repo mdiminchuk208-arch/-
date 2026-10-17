@@ -1,0 +1,85 @@
+{
+  "stage": "23.1",
+  "has_unresolved_findings": false,
+  "findings": [
+    {
+      "id": "A",
+      "status": "CLOSED",
+      "resolution": "Complete causal historical fingerprint",
+      "regression": "tests/test_source_claim_binding_v1.py"
+    },
+    {
+      "id": "B",
+      "status": "CLOSED",
+      "resolution": "Canonical unordered subject identity through direct/factory/ingest/query",
+      "regression": "tests/test_source_claim_binding_v1.py"
+    },
+    {
+      "id": "C",
+      "status": "CLOSED",
+      "resolution": "Real archive/member bytes and independent manifest pins",
+      "regression": "tests/test_pure_source_archive_audit_v1.py"
+    },
+    {
+      "id": "D",
+      "status": "CLOSED",
+      "resolution": "Exact reviewed quote selections and offsets pinned",
+      "regression": "tests/test_pure_source_rule_ledger_v1.py"
+    },
+    {
+      "id": "E",
+      "status": "CLOSED",
+      "resolution": "Actual DOCX XML relationships/media/paragraphs/neighbors",
+      "regression": "tests/test_pure_source_archive_audit_v1.py"
+    },
+    {
+      "id": "F",
+      "status": "CLOSED",
+      "resolution": "Every conflict citation resolves with source authority",
+      "regression": "tests/test_pure_source_rule_ledger_v1.py"
+    },
+    {
+      "id": "G",
+      "status": "CLOSED",
+      "resolution": "Every paragraph CSV field plus actual raw DOCX mapping",
+      "regression": "tests/test_pure_source_rule_ledger_v1.py"
+    },
+    {
+      "id": "H",
+      "status": "CLOSED",
+      "resolution": "Every authoritative rule-table field and provenance declaration",
+      "regression": "tests/test_pure_source_rule_ledger_v1.py"
+    },
+    {
+      "id": "I",
+      "status": "CLOSED",
+      "resolution": "Four original handoffs retained; image retention claim corrected",
+      "regression": "tests/test_pure_source_audit_retention_v1.py"
+    },
+    {
+      "id": "J",
+      "status": "CLOSED",
+      "resolution": "Explicit literal-False domain errors; actual 3.11/3.14 matrix",
+      "regression": "tests/test_source_qualified_sfp_context_v1.py"
+    }
+  ],
+  "additional_independent_findings": [
+    {
+      "id": "R1",
+      "finding": "Source authority/provenance metadata fields could diverge",
+      "status": "CLOSED",
+      "resolution": "Seven code-pinned metadata sections from original ceba28fe Git bytes; metadata mutation regressions"
+    },
+    {
+      "id": "R2",
+      "finding": "Visual figure ID-to-asset/provenance remapping could survive actual XML checks",
+      "status": "CLOSED",
+      "resolution": "Reviewed visual figure identity pin supplements real XML checks; mapping/ID-swap mutations rejected"
+    }
+  ],
+  "limits": [
+    "Content/locator integrity is not annotation truth or authenticated historical arrival",
+    "Original full archive unavailable; distinct retained local archive and matching original audited DOCX members stated separately",
+    "SOURCE ambiguities remain UNKNOWN/UNRESOLVED; no financial authorization"
+  ]
+}

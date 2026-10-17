@@ -487,6 +487,103 @@ class SourceClaimBindingTests(unittest.TestCase):
         self.assertEqual(self.journal.records, before)
         self.assertEqual(self.query(claim).evidence.status, EvidenceStatus.PASS)
 
+    def test_context_commits_same_status_but_different_historical_eligibility(self):
+        pool = next(
+            o for o in self.objects if o.object_type == SourceObjectType.LIQUIDITY_POOL
+        )
+        pool = pool.confirm(self.frame.decision_at)
+        active = replace(
+            pool,
+            trade_eligible=True,
+            lifecycle=(
+                *pool.lifecycle[:-1],
+                replace(pool.lifecycle[-1], trade_eligible=True),
+            ),
+        )
+        self.assertEqual(
+            pool.state_at(self.frame.decision_at).status,
+            active.state_at(self.frame.decision_at).status,
+        )
+
+        def context(obj):
+            objects = tuple(
+                obj if o.object_id == pool.object_id else o for o in self.objects
+            )
+            claim, _ = self.annotation(subjects=(pool.object_id,), objects=objects)
+            return claim_context_sha256(claim, self.frame, objects)
+
+        self.assertNotEqual(context(pool), context(active))
+
+    def test_future_eligibility_and_rejection_do_not_change_past_context(self):
+        pool = next(
+            o for o in self.objects if o.object_type == SourceObjectType.LIQUIDITY_POOL
+        )
+        claim, _ = self.annotation(subjects=(pool.object_id,))
+        before = claim_context_sha256(claim, self.frame, self.objects)
+        future = pool.set_trade_eligible(True, frame_at(8).decision_at)
+        objects = tuple(
+            future if o.object_id == pool.object_id else o for o in self.objects
+        )
+        self.assertEqual(before, claim_context_sha256(claim, frame_at(8), objects))
+
+    def test_subject_set_normalized_by_direct_constructor_ingestion_and_assessment(
+        self,
+    ):
+        subjects = tuple(
+            source_candle_subject_id("TEST", "BTCUSDT", "1m", c)
+            for c in self.frame.series[0].candles[1:3]
+        )
+        claim, raw = self.annotation(subjects=subjects)
+        changed = replace(claim, subject_object_ids=(*reversed(subjects), subjects[0]))
+        self.assertEqual(changed, claim)
+        self.assertEqual(changed.evidence_id, claim.evidence_id)
+        self.assertEqual(
+            claim_context_sha256(changed, self.frame, self.objects),
+            claim_context_sha256(claim, self.frame, self.objects),
+        )
+        self.journal.ingest(
+            changed, frame=self.frame, objects=self.objects, provenance=raw
+        )
+        self.assertEqual(self.query(claim).evidence.status, EvidenceStatus.PASS)
+        repeated = self.journal.ingest(
+            changed, frame=self.frame, objects=self.objects, provenance=raw
+        )
+        self.assertEqual(len(self.journal.records), 1)
+        self.assertEqual(repeated, self.journal.records[0])
+        result = self.journal.assess(
+            semantic_id=claim.semantic_id,
+            subject_object_ids=(*reversed(subjects), subjects[0]),
+            timeframe=claim.timeframe,
+            observation_start_at=claim.observation_start_at,
+            observation_end_at=claim.observation_end_at,
+            scope=claim.scope,
+            decision_at=self.frame.decision_at,
+        )
+        self.assertEqual(result, self.query(claim))
+        with self.assertRaisesRegex(ValueError, "canonical causal payload"):
+            replace(claim, subject_object_ids=("conflicting-identity",))
+
+    def test_rejection_reason_is_bound_but_future_cancellation_is_not(self):
+        pool = next(
+            o for o in self.objects if o.object_type == SourceObjectType.LIQUIDITY_POOL
+        )
+        claim, _ = self.annotation(subjects=(pool.object_id,))
+
+        def context(obj, frame=self.frame):
+            objects = tuple(
+                obj if o.object_id == pool.object_id else o for o in self.objects
+            )
+            return claim_context_sha256(claim, frame, objects)
+
+        self.assertNotEqual(
+            context(pool.cancel(self.frame.decision_at, "reason-A")),
+            context(pool.cancel(self.frame.decision_at, "reason-B")),
+        )
+        self.assertEqual(
+            context(pool),
+            context(pool.cancel(frame_at(8).decision_at, "later"), frame_at(8)),
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

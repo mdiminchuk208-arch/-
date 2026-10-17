@@ -1,0 +1,1292 @@
+{
+  "artifact": "STAGE18_PRIMARY_SOURCE_COMPARATOR_EVIDENCE",
+  "schema_version": 1,
+  "repo": "/workspace/-",
+  "base_commit": "b084ba180dab00cbd2ca0634a8bd139da20ee13d",
+  "scope": {
+    "primary_sources_reviewed": [
+      "SW5",
+      "SW9",
+      "SW11",
+      "SW12",
+      "SW22"
+    ],
+    "source_directory": "data/source_materials/primary_pdf_2026_10_09",
+    "methodichka_read": false,
+    "methodichka_owner": "separate assigned analyst",
+    "mode": "read-only primary clean text; no financial calculations, tests, replay or network/exchange API",
+    "repo_edits": false,
+    "source_priority": "Методичка → SW5 → SW9 → SW11 → SW12 → SW22 → other confirmed ORIGINAL SOURCE materials → SOURCE Rule Registry",
+    "priority_warning": "This is the lower-priority primary-source contribution; merge with Methodichka review before declaring final source contracts. Code, registry and status documents were context only, never independent SOURCE truth.",
+    "visual_scope": "No page-image review performed; text-only readings do not resolve missing diagram geometry."
+  },
+  "citation_scheme": {
+    "name": "clean-text page-local blank-line block index",
+    "definition": "Split each exact SWx.txt on ^===== SWx PAGE N =====\\n; within each page use re.split(r\"\\n\\s*\\n\", content), discard blocks for which strip() is empty, and number remaining blocks from 1. Headers, footers and headings count, so indexes are mechanically reproducible; they are analyst-generated locators, not printed publisher paragraph numbers. Normalize quote matching with \" \".join(block.split()).",
+    "physical_lines": "1-based start/end lines in the immutable checked text file, inclusive; line spans and short verbatim quotes accompany each locator.",
+    "pages": "Printed PDF page identity matches the frozen text marker.",
+    "checks": "All quote substrings programmatically checked against normalized cited paragraphs; each PDF/text SHA256 checked against frozen manifest."
+  },
+  "sources": [
+    {
+      "source": "SW5",
+      "original_name": "[SW.BAND]5. Рыночная структура (Advanced) (2).pdf",
+      "pages": 9,
+      "pdf_path": "data/source_materials/primary_pdf_2026_10_09/SW5.pdf",
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+      "pdf_sha256": "be8e14fbe03b0effbf4496eac104d30849e37e7f3db2fb92d4db1f942ace55ba",
+      "text_sha256": "5c655505788c181a808940863814a68d979a85cec0c20dcb3766cdf51075e656",
+      "manifest_pdf_checksum_matches": true,
+      "manifest_text_checksum_matches": true,
+      "extracted_page_count_matches": true
+    },
+    {
+      "source": "SW9",
+      "original_name": "SW_BAND9_Торговые_инструменты_Advanced (2).pdf",
+      "pages": 16,
+      "pdf_path": "data/source_materials/primary_pdf_2026_10_09/SW9.pdf",
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "pdf_sha256": "ba4aaaab887ee60cf79c3daccb014dea975296516dff00b712d413658e40282a",
+      "text_sha256": "690836e9b31ab3673cbcd06b8556da2199e0c6f85145f63b5af4679182ca9ba3",
+      "manifest_pdf_checksum_matches": true,
+      "manifest_text_checksum_matches": true,
+      "extracted_page_count_matches": true
+    },
+    {
+      "source": "SW11",
+      "original_name": "[SW.BAND]11. Риск-менеджмент (2).pdf",
+      "pages": 8,
+      "pdf_path": "data/source_materials/primary_pdf_2026_10_09/SW11.pdf",
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+      "pdf_sha256": "ffc65d95bbc1e22186cbddd061befb93e8143f3a5075c985165ecfe7b054f681",
+      "text_sha256": "e913f457f2711b756b9df901563848ec97b8fdb6e4c2e7e4c4890743e80e9b6f",
+      "manifest_pdf_checksum_matches": true,
+      "manifest_text_checksum_matches": true,
+      "extracted_page_count_matches": true
+    },
+    {
+      "source": "SW12",
+      "original_name": "[SW.BAND]12. Индикаторы (2).pdf",
+      "pages": 15,
+      "pdf_path": "data/source_materials/primary_pdf_2026_10_09/SW12.pdf",
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+      "pdf_sha256": "1a17dfb7deb3b227b2bf386b88be341a99ad034b1950e0310c6c450e3f22369b",
+      "text_sha256": "62ab3f7ee0af368471373d900ba64420e12c7b54f1ffc6c6a44d5cf469c34a54",
+      "manifest_pdf_checksum_matches": true,
+      "manifest_text_checksum_matches": true,
+      "extracted_page_count_matches": true
+    },
+    {
+      "source": "SW22",
+      "original_name": "[SW.BAND]22. Торговые инструменты (Pro) (2).pdf",
+      "pages": 6,
+      "pdf_path": "data/source_materials/primary_pdf_2026_10_09/SW22.pdf",
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+      "pdf_sha256": "ebac736d847b270c64ba38586c2f2a2a8685328d90eb7f6c9ada1bedd3a4d50b",
+      "text_sha256": "5c4e68bbd18e4797a4e5b50e417ef002a5bbb5b6c7bc374f23b362463f85b2f5",
+      "manifest_pdf_checksum_matches": true,
+      "manifest_text_checksum_matches": true,
+      "extracted_page_count_matches": true
+    }
+  ],
+  "evidence": {
+    "E001": {
+      "locator": "SW5:p02:¶03",
+      "source": "SW5",
+      "page": 2,
+      "paragraph_index": 3,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+      "line_start": 63,
+      "line_end": 65,
+      "quote": "три последовательные свечи, две крайние из которых имеют более низкие максимумы, чем центральная"
+    },
+    "E002": {
+      "locator": "SW5:p02:¶04",
+      "source": "SW5",
+      "page": 2,
+      "paragraph_index": 4,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+      "line_start": 67,
+      "line_end": 69,
+      "quote": "три последовательные свечи, две крайние из которых имеют более высокие минимумы, чем центральная"
+    },
+    "E003": {
+      "locator": "SW5:p02:¶05",
+      "source": "SW5",
+      "page": 2,
+      "paragraph_index": 5,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+      "line_start": 74,
+      "line_end": 77,
+      "quote": "Важно, чтобы это была последовательность свечей, как написано выше, а не просто пик."
+    },
+    "E004": {
+      "locator": "SW5:p02:¶08",
+      "source": "SW5",
+      "page": 2,
+      "paragraph_index": 8,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+      "line_start": 92,
+      "line_end": 93,
+      "quote": "ключевые максимумы (HH) и минимумы (HL) выше предыдущих"
+    },
+    "E005": {
+      "locator": "SW5:p03:¶02",
+      "source": "SW5",
+      "page": 3,
+      "paragraph_index": 2,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+      "line_start": 104,
+      "line_end": 105,
+      "quote": "ключевые максимумы (LH) и минимумы (LL) ниже предыдущих"
+    },
+    "E006": {
+      "locator": "SW5:p04:¶04",
+      "source": "SW5",
+      "page": 4,
+      "paragraph_index": 4,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+      "line_start": 142,
+      "line_end": 145,
+      "quote": "конкретный минимум на восходящем движении и максимум на нисходящем движении, являющийся ключевым в данном тренде"
+    },
+    "E007": {
+      "locator": "SW5:p04:¶04",
+      "source": "SW5",
+      "page": 4,
+      "paragraph_index": 4,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+      "line_start": 142,
+      "line_end": 145,
+      "quote": "пробой данного максимума/ минимума и закрепление тела свечи выше"
+    },
+    "E008": {
+      "locator": "SW5:p05:¶02",
+      "source": "SW5",
+      "page": 5,
+      "paragraph_index": 2,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+      "line_start": 158,
+      "line_end": 159,
+      "quote": "После пробоя уровня данного минимума"
+    },
+    "E009": {
+      "locator": "SW5:p05:¶04",
+      "source": "SW5",
+      "page": 5,
+      "paragraph_index": 4,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+      "line_start": 166,
+      "line_end": 167,
+      "quote": "После пробоя уровня данного максимума"
+    },
+    "E010": {
+      "locator": "SW5:p06:¶02",
+      "source": "SW5",
+      "page": 6,
+      "paragraph_index": 2,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+      "line_start": 188,
+      "line_end": 194,
+      "quote": "Обновление ключевого минимума/максимума новой структуры."
+    },
+    "E011": {
+      "locator": "SW5:p06:¶02",
+      "source": "SW5",
+      "page": 6,
+      "paragraph_index": 2,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW5.txt",
+      "line_start": 188,
+      "line_end": 194,
+      "quote": "Консервативным подходом к работе является поиск точки входа после conf."
+    },
+    "E012": {
+      "locator": "SW9:p02:¶03",
+      "source": "SW9",
+      "page": 2,
+      "paragraph_index": 3,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 58,
+      "line_end": 60,
+      "quote": "свечи, которая сняла ликвидность. После этой свечи образуется агрессивная импульсная свеча, которая перекрывает предыдущую свечу."
+    },
+    "E013": {
+      "locator": "SW9:p02:¶04",
+      "source": "SW9",
+      "page": 2,
+      "paragraph_index": 4,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 62,
+      "line_end": 63,
+      "quote": "Наиболее точным является сигнал, когда после поглощенной свечи образуется имбаланс."
+    },
+    "E014": {
+      "locator": "SW9:p02:¶05",
+      "source": "SW9",
+      "page": 2,
+      "paragraph_index": 5,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 65,
+      "line_end": 67,
+      "quote": "дополнительное подтверждение – слом структуры"
+    },
+    "E015": {
+      "locator": "SW9:p02:¶06",
+      "source": "SW9",
+      "page": 2,
+      "paragraph_index": 6,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 69,
+      "line_end": 72,
+      "quote": "Формация обязательно должна находиться в зоне интереса старшего таймфрейма."
+    },
+    "E016": {
+      "locator": "SW9:p02:¶08",
+      "source": "SW9",
+      "page": 2,
+      "paragraph_index": 8,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 79,
+      "line_end": 80,
+      "quote": "выделяем всю свечу, которая была поглощена вместе с тенями"
+    },
+    "E017": {
+      "locator": "SW9:p02:¶09",
+      "source": "SW9",
+      "page": 2,
+      "paragraph_index": 9,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 82,
+      "line_end": 83,
+      "quote": "Вы можете использовать OB на любых ТФ, главное, чтобы были соблюдены все вышеупомянутые условия."
+    },
+    "E018": {
+      "locator": "SW9:p03:¶04",
+      "source": "SW9",
+      "page": 3,
+      "paragraph_index": 4,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 106,
+      "line_end": 108,
+      "quote": "В 90% случаев мы работаем исключительно от первого теста OB, только в некоторых случаях можно рассматривать повторный вход от OB, дожидаясь реакции на младшем ТФ."
+    },
+    "E019": {
+      "locator": "SW9:p03:¶05",
+      "source": "SW9",
+      "page": 3,
+      "paragraph_index": 5,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 110,
+      "line_end": 111,
+      "quote": "OB должен находиться внутри структурного импульса и работать с ним необходимо по “тренду”."
+    },
+    "E020": {
+      "locator": "SW9:p03:¶07",
+      "source": "SW9",
+      "page": 3,
+      "paragraph_index": 7,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 115,
+      "line_end": 120,
+      "quote": "Для бычьего OB - верхняя граница, для медвежьего OB - нижняя. Также можно выставлять лимитные ордера внутри зоны ОВ."
+    },
+    "E021": {
+      "locator": "SW9:p03:¶07",
+      "source": "SW9",
+      "page": 3,
+      "paragraph_index": 7,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 115,
+      "line_end": 120,
+      "quote": "Стоп ставим за минимум/максимум OB. Либо за тень свечи, которая поглотила OB."
+    },
+    "E022": {
+      "locator": "SW9:p04:¶04",
+      "source": "SW9",
+      "page": 4,
+      "paragraph_index": 4,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 135,
+      "line_end": 135,
+      "quote": "на OB образованных на ТФ 15M - 1D и т.д."
+    },
+    "E023": {
+      "locator": "SW9:p04:¶05",
+      "source": "SW9",
+      "page": 4,
+      "paragraph_index": 5,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 137,
+      "line_end": 141,
+      "quote": "Переключаемся на ТФ ниже (1-15М). Ожидаем плавный структурный подход цены в диапазон OB. После реакции мы ожидаем слом структуры и формировании POI"
+    },
+    "E024": {
+      "locator": "SW9:p06:¶02",
+      "source": "SW9",
+      "page": 6,
+      "paragraph_index": 2,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 177,
+      "line_end": 178,
+      "quote": "Выставляем лимитный ордер на новую POI."
+    },
+    "E025": {
+      "locator": "SW9:p06:¶04",
+      "source": "SW9",
+      "page": 6,
+      "paragraph_index": 4,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 186,
+      "line_end": 188,
+      "quote": "не находится в структурном импульсе или зоне ОТЕ (соблюдение зон Premium и Discount)"
+    },
+    "E026": {
+      "locator": "SW9:p07:¶02",
+      "source": "SW9",
+      "page": 7,
+      "paragraph_index": 2,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 204,
+      "line_end": 205,
+      "quote": "В этом примере нижний ОВ в приоритете, так как под первым ОВ находится IMB второго."
+    },
+    "E027": {
+      "locator": "SW9:p07:¶03",
+      "source": "SW9",
+      "page": 7,
+      "paragraph_index": 3,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 207,
+      "line_end": 209,
+      "quote": "Если вы встретите такую ситуацию, вы можете попробовать работать по второму варианту, через подтверждение."
+    },
+    "E028": {
+      "locator": "SW9:p07:¶04",
+      "source": "SW9",
+      "page": 7,
+      "paragraph_index": 4,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 214,
+      "line_end": 217,
+      "quote": "пробит быстрым импульсным движением. Очень важно, чтобы импульсное движение было цельным, без проторговки в области OB."
+    },
+    "E029": {
+      "locator": "SW9:p07:¶05",
+      "source": "SW9",
+      "page": 7,
+      "paragraph_index": 5,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 219,
+      "line_end": 220,
+      "quote": "Это зона на графике, в которой происходит слом структуры."
+    },
+    "E030": {
+      "locator": "SW9:p07:¶06",
+      "source": "SW9",
+      "page": 7,
+      "paragraph_index": 6,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 222,
+      "line_end": 223,
+      "quote": "не обязательно является разворотной моделью, он может сигнализировать о продолжении тренда"
+    },
+    "E031": {
+      "locator": "SW9:p07:¶07",
+      "source": "SW9",
+      "page": 7,
+      "paragraph_index": 7,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 225,
+      "line_end": 229,
+      "quote": "Брейкер образуется после образования нового HH или LL при импульсном пробитии ордерблока."
+    },
+    "E032": {
+      "locator": "SW9:p09:¶04",
+      "source": "SW9",
+      "page": 9,
+      "paragraph_index": 4,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 271,
+      "line_end": 273,
+      "quote": "допустимо использовать два вида стоп ордеров – агрессивный и консервативный"
+    },
+    "E033": {
+      "locator": "SW9:p09:¶05",
+      "source": "SW9",
+      "page": 9,
+      "paragraph_index": 5,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 275,
+      "line_end": 276,
+      "quote": "Агрессивный стоп располагается сразу под брейкером"
+    },
+    "E034": {
+      "locator": "SW9:p09:¶06",
+      "source": "SW9",
+      "page": 9,
+      "paragraph_index": 6,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 278,
+      "line_end": 284,
+      "quote": "Размещать консервативный стоп следует за импульсной свечой, снимающей ликвидность, то есть за ценовой минимум/ максимум."
+    },
+    "E035": {
+      "locator": "SW9:p11:¶02",
+      "source": "SW9",
+      "page": 11,
+      "paragraph_index": 2,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 312,
+      "line_end": 313,
+      "quote": "манипуляции, ордерблоки, брейкеры и другие торговые элементы"
+    },
+    "E036": {
+      "locator": "SW9:p11:¶03",
+      "source": "SW9",
+      "page": 11,
+      "paragraph_index": 3,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 315,
+      "line_end": 316,
+      "quote": "На основе реакции принимается решение о входе в сделку."
+    },
+    "E037": {
+      "locator": "SW9:p11:¶05",
+      "source": "SW9",
+      "page": 11,
+      "paragraph_index": 5,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 323,
+      "line_end": 328,
+      "quote": "первая проблемная зона после смены характера движения"
+    },
+    "E038": {
+      "locator": "SW9:p11:¶05",
+      "source": "SW9",
+      "page": 11,
+      "paragraph_index": 5,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 323,
+      "line_end": 328,
+      "quote": "различные POI, которые находятся в противоположном направлении от вашего входа"
+    },
+    "E039": {
+      "locator": "SW9:p11:¶07",
+      "source": "SW9",
+      "page": 11,
+      "paragraph_index": 7,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 332,
+      "line_end": 336,
+      "quote": "ваш тейк- профит (полный, либо частичный) будет находиться у первой проблемной зоны (FTA)."
+    },
+    "E040": {
+      "locator": "SW9:p13:¶03",
+      "source": "SW9",
+      "page": 13,
+      "paragraph_index": 3,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 368,
+      "line_end": 371,
+      "quote": "старший ТФ восходящий, а младший - нисходящий"
+    },
+    "E041": {
+      "locator": "SW9:p16:¶03",
+      "source": "SW9",
+      "page": 16,
+      "paragraph_index": 3,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 421,
+      "line_end": 423,
+      "quote": "которой может быть любая POI со старшего ТФ"
+    },
+    "E042": {
+      "locator": "SW9:p16:¶03",
+      "source": "SW9",
+      "page": 16,
+      "paragraph_index": 3,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW9.txt",
+      "line_start": 421,
+      "line_end": 423,
+      "quote": "При открытии контртрендовой сделки, у зоны FTA мы производим частичную или полную фиксацию позиции."
+    },
+    "E043": {
+      "locator": "SW11:p02:¶08",
+      "source": "SW11",
+      "page": 2,
+      "paragraph_index": 8,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+      "line_start": 92,
+      "line_end": 96,
+      "quote": "Все должно быть точно определено до того, как сделка будет открыта. Должна быть определена точка входа, точка выхода и точка тейк-профита."
+    },
+    "E044": {
+      "locator": "SW11:p04:¶02",
+      "source": "SW11",
+      "page": 4,
+      "paragraph_index": 2,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+      "line_start": 158,
+      "line_end": 160,
+      "quote": "основываясь ТОЛЬКО на фактах, которые есть в моменте на графике"
+    },
+    "E045": {
+      "locator": "SW11:p04:¶06",
+      "source": "SW11",
+      "page": 4,
+      "paragraph_index": 6,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+      "line_start": 174,
+      "line_end": 179,
+      "quote": "Технические (выставляется за определенный уровень, препятствие на пути цены)"
+    },
+    "E046": {
+      "locator": "SW11:p04:¶07",
+      "source": "SW11",
+      "page": 4,
+      "paragraph_index": 7,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+      "line_start": 181,
+      "line_end": 183,
+      "quote": "стоп не превышает 0.25-2% за сделку"
+    },
+    "E047": {
+      "locator": "SW11:p03:¶05",
+      "source": "SW11",
+      "page": 3,
+      "paragraph_index": 5,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+      "line_start": 119,
+      "line_end": 120,
+      "quote": "не больше 2% за один трейд (в зависимости от настроек торговой системы)"
+    },
+    "E048": {
+      "locator": "SW11:p04:¶10",
+      "source": "SW11",
+      "page": 4,
+      "paragraph_index": 10,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+      "line_start": 191,
+      "line_end": 191,
+      "quote": "Объем позиции = сумма риска (% риска / расстояние до стоп-лосса)."
+    },
+    "E049": {
+      "locator": "SW11:p04:¶11",
+      "source": "SW11",
+      "page": 4,
+      "paragraph_index": 11,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+      "line_start": 193,
+      "line_end": 196,
+      "quote": "Последняя цена – это фактическая цена актива, потому именно эта опция рекомендуется при торговле."
+    },
+    "E050": {
+      "locator": "SW11:p08:¶02",
+      "source": "SW11",
+      "page": 8,
+      "paragraph_index": 2,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+      "line_start": 392,
+      "line_end": 422,
+      "quote": "Не открывайте позицию, если не знаете, где будет стоп-лосс."
+    },
+    "E051": {
+      "locator": "SW11:p08:¶02",
+      "source": "SW11",
+      "page": 8,
+      "paragraph_index": 2,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+      "line_start": 392,
+      "line_end": 422,
+      "quote": "Не передвигайте стоп-лосс."
+    },
+    "E052": {
+      "locator": "SW11:p08:¶02",
+      "source": "SW11",
+      "page": 8,
+      "paragraph_index": 2,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+      "line_start": 392,
+      "line_end": 422,
+      "quote": "Не ставить стоп-лосс на уровне скопления ликвидности."
+    },
+    "E053": {
+      "locator": "SW11:p06:¶04",
+      "source": "SW11",
+      "page": 6,
+      "paragraph_index": 4,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW11.txt",
+      "line_start": 285,
+      "line_end": 286,
+      "quote": "обозначим условно рабочий месяц как 20 дней и рассмотрим регулярную фиксацию прибыли в размере 5R"
+    },
+    "E054": {
+      "locator": "SW12:p02:¶04",
+      "source": "SW12",
+      "page": 2,
+      "paragraph_index": 4,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+      "line_start": 66,
+      "line_end": 66,
+      "quote": "Всегда перепроверяйте информацию, которую даёт индикатор!"
+    },
+    "E055": {
+      "locator": "SW12:p15:¶03",
+      "source": "SW12",
+      "page": 15,
+      "paragraph_index": 3,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+      "line_start": 509,
+      "line_end": 511,
+      "quote": "Описанные индикаторы не дают сигналов купить/продать."
+    },
+    "E056": {
+      "locator": "SW12:p10:¶06",
+      "source": "SW12",
+      "page": 10,
+      "paragraph_index": 6,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+      "line_start": 340,
+      "line_end": 342,
+      "quote": "основные пулы ликвидности предыдущего дня"
+    },
+    "E057": {
+      "locator": "SW12:p10:¶09",
+      "source": "SW12",
+      "page": 10,
+      "paragraph_index": 9,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+      "line_start": 355,
+      "line_end": 356,
+      "quote": "ATR не используется для выявления направления движения цены."
+    },
+    "E058": {
+      "locator": "SW12:p11:¶09",
+      "source": "SW12",
+      "page": 11,
+      "paragraph_index": 9,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+      "line_start": 392,
+      "line_end": 393,
+      "quote": "обычно строящейся для периода в 14 дней. Эта цифра может изменяться в зависимости от вашей стратегии."
+    },
+    "E059": {
+      "locator": "SW12:p12:¶07",
+      "source": "SW12",
+      "page": 12,
+      "paragraph_index": 7,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+      "line_start": 424,
+      "line_end": 425,
+      "quote": "В примере на графике BTC H3 волатильность равна 403 пунктам, которые следует отсчитать от нижней точки."
+    },
+    "E060": {
+      "locator": "SW12:p13:¶02",
+      "source": "SW12",
+      "page": 13,
+      "paragraph_index": 2,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+      "line_start": 436,
+      "line_end": 437,
+      "quote": "наведением курсора на свечу SFP"
+    },
+    "E061": {
+      "locator": "SW12:p13:¶03",
+      "source": "SW12",
+      "page": 13,
+      "paragraph_index": 3,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+      "line_start": 439,
+      "line_end": 444,
+      "quote": "Уровень защитного ордера не переставляется, но трейдер должен закрыть сделку вручную, если какая-либо свеча закроется ниже минимума (в случае с продажами – максимума) паттерна SFP."
+    },
+    "E062": {
+      "locator": "SW12:p13:¶03",
+      "source": "SW12",
+      "page": 13,
+      "paragraph_index": 3,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+      "line_start": 439,
+      "line_end": 444,
+      "quote": "Тогда паттерн будет являтся неактуальным."
+    },
+    "E063": {
+      "locator": "SW12:p13:¶07",
+      "source": "SW12",
+      "page": 13,
+      "paragraph_index": 7,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+      "line_start": 455,
+      "line_end": 463,
+      "quote": "Стандартное значение для ATR – 14"
+    },
+    "E064": {
+      "locator": "SW12:p13:¶08",
+      "source": "SW12",
+      "page": 13,
+      "paragraph_index": 8,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+      "line_start": 465,
+      "line_end": 468,
+      "quote": "В первом случае ATR был установлен на 7"
+    },
+    "E065": {
+      "locator": "SW12:p14:¶02",
+      "source": "SW12",
+      "page": 14,
+      "paragraph_index": 2,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+      "line_start": 482,
+      "line_end": 483,
+      "quote": "На изображении ниже ATR был установлен на 28."
+    },
+    "E066": {
+      "locator": "SW12:p14:¶04",
+      "source": "SW12",
+      "page": 14,
+      "paragraph_index": 4,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW12.txt",
+      "line_start": 491,
+      "line_end": 494,
+      "quote": "результаты зафиксируйте в торговом журнале и затем сравните их"
+    },
+    "E067": {
+      "locator": "SW22:p01:¶09",
+      "source": "SW22",
+      "page": 1,
+      "paragraph_index": 9,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+      "line_start": 42,
+      "line_end": 47,
+      "quote": "Данную манипуляцию проводят с целью снятия ликвидности и набора позиции крупным игроком."
+    },
+    "E068": {
+      "locator": "SW22:p02:¶05",
+      "source": "SW22",
+      "page": 2,
+      "paragraph_index": 5,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+      "line_start": 75,
+      "line_end": 80,
+      "quote": "слом структуры и поглощение всего движения STB"
+    },
+    "E069": {
+      "locator": "SW22:p03:¶03",
+      "source": "SW22",
+      "page": 3,
+      "paragraph_index": 3,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+      "line_start": 104,
+      "line_end": 109,
+      "quote": "слом структуры и поглощение всего движения BTS"
+    },
+    "E070": {
+      "locator": "SW22:p03:¶04",
+      "source": "SW22",
+      "page": 3,
+      "paragraph_index": 4,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+      "line_start": 111,
+      "line_end": 113,
+      "quote": "как верхняя часть (лонг)/нижняя часть (шорт), так и 0.5 всей зоны STB/BTS"
+    },
+    "E071": {
+      "locator": "SW22:p03:¶05",
+      "source": "SW22",
+      "page": 3,
+      "paragraph_index": 5,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+      "line_start": 115,
+      "line_end": 118,
+      "quote": "Потенциальная позиция совпадает с основным трендом."
+    },
+    "E072": {
+      "locator": "SW22:p03:¶05",
+      "source": "SW22",
+      "page": 3,
+      "paragraph_index": 5,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+      "line_start": 115,
+      "line_end": 118,
+      "quote": "Ценовое движение сняло пул ликвидности и полностью поглотило манипуляцию при развороте."
+    },
+    "E073": {
+      "locator": "SW22:p03:¶05",
+      "source": "SW22",
+      "page": 3,
+      "paragraph_index": 5,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+      "line_start": 115,
+      "line_end": 118,
+      "quote": "Произошел слом, либо подтверждение структуры."
+    },
+    "E074": {
+      "locator": "SW22:p04:¶03",
+      "source": "SW22",
+      "page": 4,
+      "paragraph_index": 3,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+      "line_start": 134,
+      "line_end": 137,
+      "quote": "цена должна протестировать зону 0.5, либо ниже/выше 0.5"
+    },
+    "E075": {
+      "locator": "SW22:p05:¶03",
+      "source": "SW22",
+      "page": 5,
+      "paragraph_index": 3,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+      "line_start": 162,
+      "line_end": 165,
+      "quote": "Основным отличием Order Flow от классического тренда является обязательная работа с ликвидностью."
+    },
+    "E076": {
+      "locator": "SW22:p06:¶03",
+      "source": "SW22",
+      "page": 6,
+      "paragraph_index": 3,
+      "text_path": "data/source_materials/primary_pdf_2026_10_09/SW22.txt",
+      "line_start": 193,
+      "line_end": 199,
+      "quote": "Как только зона интереса маркетмейкера будет протестирована, поток приказов нарушается и меняется на противоположный."
+    }
+  },
+  "findings": [
+    {
+      "id": "PRIMARY_STRUCTURE_SWINGS",
+      "source_rule": "A selected-timeframe swing is a three-consecutive-candle pattern: both adjacent highs are lower than the middle high; both adjacent lows are higher than the middle low. Bull structure has increasing key HH/HL; bear structure has decreasing key LH/LL.",
+      "evidence": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005"
+      ],
+      "source_defined_geometry": [
+        "Exactly three consecutive candles.",
+        "Strict higher/lower relations, without ATR/tick/percentage tolerance."
+      ],
+      "qualitative_evidence_required": [
+        "Identity of the selected timeframe and price dataset.",
+        "Identity/provenance of the key swing sequence used for structure; not every peak is a selected-timeframe swing."
+      ],
+      "unresolved_execution_choices": [
+        "No unique timeframe or cross-timeframe mapping is selected universally.",
+        "Equal-price candles are outside the stated strict swing definition; a plateau/tie variant must not be fabricated.",
+        "These paragraphs do not independently define how to choose key structural swings among nested valid swings."
+      ],
+      "causal_normalization": [
+        "TECHNICAL_NORMALIZATION: middle-candle formation_at may precede known_at; a three-candle swing cannot be known before the rightmost supporting candle closes."
+      ]
+    },
+    {
+      "id": "PRIMARY_BOS_CONF",
+      "source_rule": "BOS refers to breaking the key low of an ascending trend or key high of a descending trend with body establishment; CONF updates the new structure key low/high. Waiting for CONF is described as conservative.",
+      "evidence": [
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011"
+      ],
+      "source_defined_geometry": [
+        "Relevant break anchor is the cited key structural extremum.",
+        "CONF updates the key extremum of the new structure; no ATR buffer or candle-count threshold is supplied."
+      ],
+      "qualitative_evidence_required": [
+        "Causally established old trend and key extremum.",
+        "Links from the break to new structure and the extremum that CONF updates."
+      ],
+      "unresolved_execution_choices": [
+        "Conservative after-CONF timing is source-supported, without making every setup require CONF; preserve setup-specific BOS-or-CONF permission in SW22.",
+        "SW5 p4 literally says body establishment \"выше\" while also describing the ascending-trend low break. Do not derive a universal both-directions close comparator from that single word. Coordinate direction must be read with p5 context and higher-priority source/visual evidence.",
+        "Exact entry price and protective-stop distance do not follow from BOS/CONF alone."
+      ],
+      "causal_normalization": [
+        "TECHNICAL_NORMALIZATION: record each participating candle and event time; body establishment/CONF cannot be assigned using later unavailable candles."
+      ]
+    },
+    {
+      "id": "PRIMARY_OB_VALIDITY_CONTEXT",
+      "source_rule": "OB text describes liquidity-sweeping candle, aggressive impulsive engulfing candle, imbalance context, BOS, required HTF POI context, whole engulfed candle including wicks, and structural-impulse/trend context. It warns against treating every engulf as OB.",
+      "evidence": [
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E019",
+        "E025"
+      ],
+      "source_defined_geometry": [
+        "Once the source-valid engulfed candle is identified, OB zone is its full high-low range, including wicks."
+      ],
+      "qualitative_evidence_required": [
+        "Swept source-qualified liquidity object and its prior known time.",
+        "Identity of engulfed candle and aggressive impulsive engulfing movement.",
+        "Imbalance object/link, BOS object/link, source-valid HTF POI containment.",
+        "Source-qualified structural impulse, trend direction, and OTE/Premium/Discount context with independent anchor provenance."
+      ],
+      "unresolved_execution_choices": [
+        "No numeric definition of aggressive impulse, qualifying sweep context, or structural impulse segmentation is given here.",
+        "SW9 p2 says imbalance is the most accurate signal, while p6 warns against ignoring IMB. This review does not resolve their force against higher-priority Methodichka; do not convert to optional or mandatory using code/registry.",
+        "No universal HTF/LTF pair or OTE anchor selection is supplied. SW9 does not give the OTE ratios here.",
+        "Large-body/small-wick quality is not specified numerically in SW9; the assigned Methodichka analyst must supply the higher-priority wording."
+      ],
+      "causal_normalization": [
+        "TECHNICAL_NORMALIZATION: required context objects must be causally known by the annotation decision; record later confirmations as later times rather than backdating OB eligibility."
+      ],
+      "boundary": "Source-specific OB HTF POI provenance must not be confused with the forbidden generic PROJECT HTF admission overlay."
+    },
+    {
+      "id": "PRIMARY_OB_EXECUTION_VARIANTS",
+      "source_rule": "Preserve direct boundary/inside-zone entry and direct/LTF-confirmation paths, both stop anchors, and exceptional re-entry conditional on LTF reaction.",
+      "evidence": [
+        "E020",
+        "E021",
+        "E022",
+        "E023",
+        "E024",
+        "E018"
+      ],
+      "source_defined_geometry": [
+        "Direct bullish boundary is OB upper boundary; direct bearish boundary is OB lower boundary.",
+        "Inside-zone entry is a bounded alternative without a unique quote.",
+        "Both source stop anchor alternatives are explicit: OB extremum, or engulfing candle wick.",
+        "LTF path text gives 15M–1D etc. parent examples and 1–15M child examples; these do not select a universal pair."
+      ],
+      "qualitative_evidence_required": [
+        "For LTF path: smooth structural approach, HTF reaction, subsequent LTF BOS and new source-valid POI.",
+        "For first-test/re-entry: causal prior-test history and the lower-timeframe reaction; explicit unresolved exceptional-case identity."
+      ],
+      "unresolved_execution_choices": [
+        "Exact inside-OB quote.",
+        "Exact quote on new POI.",
+        "Which qualified timeframe pair to use.",
+        "Exact stop quote beyond either anchor, including buffer and LTF refined-stop geometry.",
+        "Exceptional cases allowing re-entry, what counts as a first test, attempt identity, cancellation/expiry and repeated touch handling.",
+        "The phrase \"В 90% случаев\" is descriptive practice, not a random admission probability or quota threshold."
+      ],
+      "causal_normalization": [
+        "TECHNICAL_NORMALIZATION: LTF-confirmation path known_at must follow the reaction/BOS/new-POI evidence actually required; preserve the direct path separately without precedence."
+      ]
+    },
+    {
+      "id": "PRIMARY_OB_IMB_INTERACTION_EXAMPLE",
+      "source_rule": "A specific illustrated nested-OB/IMB situation distinguishes the confirmation path from the lower-OB direct path after IMB coverage.",
+      "evidence": [
+        "E026",
+        "E027"
+      ],
+      "source_defined_geometry": [],
+      "qualitative_evidence_required": [
+        "If using this example, preserve identities of both OBs and their IMB/coverage relation and cite the actual source illustration."
+      ],
+      "unresolved_execution_choices": [
+        "A text-only example does not provide a general scoring, profitability-based selection, or global precedence rule.",
+        "No generalized multiple-POI selection algorithm is inferred here."
+      ]
+    },
+    {
+      "id": "PRIMARY_BREAKER_VALIDITY",
+      "source_rule": "Breaker is a source-valid OB pierced by a quick, whole impulsive movement without trading/consolidation in the OB area; SW9 relates it to BOS and a new HH/LL and allows continuation as well as reversal context.",
+      "evidence": [
+        "E028",
+        "E029",
+        "E030",
+        "E031"
+      ],
+      "source_defined_geometry": [
+        "Breaker inherits the cited OB identity rather than any arbitrary pierced candle."
+      ],
+      "qualitative_evidence_required": [
+        "Underlying source-valid OB and its lifecycle.",
+        "Causal impulse segmentation, intact/whole impulse and absence of trading/consolidation in OB area.",
+        "New HH/LL, BOS and trend linkage.",
+        "Imbalance-pierce/CHOCH requirements, if supplied by higher-priority Methodichka, must be supplied by that analyst; they were not silently inferred from SW9."
+      ],
+      "unresolved_execution_choices": [
+        "No numeric definition for quick, impulsive, whole or without trading/consolidation.",
+        "Exact Breaker entry quote, order type, timing/expiry, retest identity and protective-stop buffer remain unspecified by these text passages."
+      ]
+    },
+    {
+      "id": "PRIMARY_BREAKER_STOP_VARIANTS",
+      "source_rule": "Aggressive and conservative stops are both explicitly permitted.",
+      "evidence": [
+        "E032",
+        "E033",
+        "E034"
+      ],
+      "source_defined_geometry": [
+        "Aggressive: immediately under Breaker in the textual example.",
+        "Conservative: beyond liquidity-sweeping impulse-candle extreme."
+      ],
+      "qualitative_evidence_required": [
+        "Identity of Breaker zone and source-valid liquidity-sweeping impulse candle."
+      ],
+      "unresolved_execution_choices": [
+        "Exact \"immediately under\"/\"beyond\" offset.",
+        "Directional mirroring of the aggressive example requires source context; do not invent a buffer.",
+        "Source descriptive claims about RR/stop frequency do not authorize choosing a winning branch."
+      ]
+    },
+    {
+      "id": "PRIMARY_POI_FTA",
+      "source_rule": "POI is a family of reaction zones; FTA is the first trouble zone opposing the entry. Both trend and countertrend work are described, and both full and partial fixation are permitted.",
+      "evidence": [
+        "E035",
+        "E036",
+        "E037",
+        "E038",
+        "E039",
+        "E040",
+        "E041",
+        "E042"
+      ],
+      "source_defined_geometry": [
+        "Full fixation denotes the full position (allocation 1.0); this is a semantic normalization of \"полную\", not a preferred branch.",
+        "FTA is anchored to a source-qualified opposing POI, not a fixed RR or arbitrary price fraction."
+      ],
+      "qualitative_evidence_required": [
+        "Selected causal FTA POI identity, higher-timeframe context, relationship to entry direction, and why it is the first trouble area.",
+        "For trend/countertrend context: linked HTF/LTF structures and transition from correction to impulse or impulse to correction."
+      ],
+      "unresolved_execution_choices": [
+        "Exact exit quote within/at the FTA zone.",
+        "Partial fraction and all remainder destinations, stop lifecycle and termination.",
+        "Which qualifying opposing POI is selected where several exist; no profitability/scoring solution.",
+        "Source permits countertrend FTA logic without overriding OB-specific trend restrictions."
+      ]
+    },
+    {
+      "id": "PRIMARY_RISK_CAUSAL_STOP_ANNOTATION",
+      "source_rule": "Entry, exit and TP must be determined before entry; use only facts present on the chart; do not enter without knowing stop location; do not move the stop or place it at liquidity accumulation.",
+      "evidence": [
+        "E043",
+        "E044",
+        "E045",
+        "E050",
+        "E051",
+        "E052"
+      ],
+      "source_defined_geometry": [
+        "Technical stop is behind a relevant level/obstacle; this gives an anchor relation without a universal numeric buffer."
+      ],
+      "qualitative_evidence_required": [
+        "Pre-entry stop anchor and causal chart evidence.",
+        "Known opposing/adverse liquidity pool(s) at the proposed stop, with provenance; absence cannot be assumed from missing annotations."
+      ],
+      "unresolved_execution_choices": [
+        "Exact beyond-level buffer and how source-qualified liquidity accumulation is identified.",
+        "A monetary risk bound cannot manufacture missing structural stop geometry."
+      ],
+      "boundary": "Account, portfolio, leverage, daily-loss and other PROJECT policies are not added to PURE SOURCE by this review."
+    },
+    {
+      "id": "PRIMARY_RISK_NUMBERS_SCOPE",
+      "source_rule": "SW11 gives source risk guidance and arithmetic; none supplies a universal missing price coordinate or fixed SOURCE FTA target.",
+      "evidence": [
+        "E047",
+        "E046",
+        "E048",
+        "E049",
+        "E053"
+      ],
+      "source_defined_geometry": [
+        "Per-trade account-risk guidance explicitly mentions no more than 2%, dependent on system settings, and a recommended 0.25–2% range.",
+        "Position-size relation is quoted verbatim; dimensional conventions are not silently repaired.",
+        "Last-price stop trigger is recommended in source."
+      ],
+      "qualitative_evidence_required": [
+        "Provenance/classification of any later source-risk parameter choice; keep it distinct from structural object validity."
+      ],
+      "unresolved_execution_choices": [
+        "A unique risk percentage is not selected by the range.",
+        "The quoted sizing formula requires units/amount-vs-percent normalization before any execution use; no calculation is authorized here.",
+        "SW11 3R/5R and monthly arithmetic are explanatory examples; no general FTA replacement, minimum RR, portfolio selection, leverage limit or fixed 5R target is inferred."
+      ],
+      "boundary": "Source account-risk guidance is recorded as source context only; this task excludes applying project portfolio/leverage policy or running financial outcomes."
+    },
+    {
+      "id": "PRIMARY_SFP_ATR_PROTECTION",
+      "source_rule": "Read ATR on the SFP candle; source gives an ATR-distance example from the lower point, keeps protective order fixed, and invalidates SFP when a candle closes beyond the pattern extreme.",
+      "evidence": [
+        "E059",
+        "E060",
+        "E061",
+        "E062"
+      ],
+      "source_defined_geometry": [
+        "Worked example: BTC H3 ATR volatility is 403 points counted from the lower point. 403 is example data, never a universal stop distance.",
+        "Invalidation is a candle close below SFP minimum for buys, or beyond SFP maximum for sells as text states in the parenthetical."
+      ],
+      "qualitative_evidence_required": [
+        "Source-valid SFP pattern identity from higher-priority analyst, exact SFP candle and extreme, selected ATR settings/timeframe, and quote unit.",
+        "Protective-order identity plus the actual closed candle causing invalidation."
+      ],
+      "unresolved_execution_choices": [
+        "Selected ATR period variant and ATR calculation details (true-range smoothing/seed) are not specified by the selected text.",
+        "Generic universal ATR-multiple formula should not be claimed solely from a worked 403-point example; source scope/visual or higher-priority evidence must support generalization.",
+        "The source manual-close instruction does not define machine execution latency, fill price or an exchange-order implementation."
+      ],
+      "causal_normalization": [
+        "TECHNICAL_NORMALIZATION: pattern invalidated_at cannot precede the invalidating close; distinguish invalidation event from unspecified execution fill. No future ATR values may be used."
+      ]
+    },
+    {
+      "id": "PRIMARY_ATR_VARIANTS_AUXILIARY_INDICATORS",
+      "source_rule": "Standard ATR period is 14; source permits strategy-dependent adjusted settings. Indicators remain auxiliary and must be checked.",
+      "evidence": [
+        "E057",
+        "E058",
+        "E063",
+        "E064",
+        "E065",
+        "E066",
+        "E054",
+        "E055",
+        "E056"
+      ],
+      "source_defined_geometry": [
+        "ATR standard period 14 is exact once timeframe/data/calculation contract is selected.",
+        "7 and 28 are explicit illustrative settings, not a complete enumeration of the allowed adjusted-period family.",
+        "PDH/PDL are previous-day high/low liquidity-pool identities; no meaning/selection tolerance is added."
+      ],
+      "qualitative_evidence_required": [
+        "ATR branch/settings provenance, timeframe and SFP candle linkage.",
+        "If using prior-day liquidity, causal day boundary and level identity."
+      ],
+      "unresolved_execution_choices": [
+        "No unique adjusted period or universal precedence over 14.",
+        "Source ATR text recommends comparing strategy results, but this project forbids profitability-based branch selection; preserve alternatives without implementing that comparison.",
+        "No chosen smoothing/initialization/day-session standard is supplied by these passages.",
+        "Indicator output alone cannot replace source-qualified structure/liquidity annotations."
+      ]
+    },
+    {
+      "id": "PRIMARY_STB_BTS",
+      "source_rule": "STB/BTS entries require main-trend agreement, a liquidity-pool sweep, complete engulf of the manipulation on reversal, and BOS or CONF. Preserve directional-zone-part and exact 0.5 entry alternatives.",
+      "evidence": [
+        "E067",
+        "E068",
+        "E069",
+        "E070",
+        "E071",
+        "E072",
+        "E073",
+        "E074"
+      ],
+      "source_defined_geometry": [
+        "Exact 0.5 of the full STB/BTS zone is a source-defined midpoint once source-valid zone endpoints are known.",
+        "Upper zone part for LONG / lower zone part for SHORT is a source-permitted bounded alternative; text does not define one exact quote or precise subzone boundary.",
+        "BOS OR CONF is explicitly allowed; do not universally require both."
+      ],
+      "qualitative_evidence_required": [
+        "Causally selected main-trend structure with timeframe provenance.",
+        "Identity and prior known time of the swept liquidity pool.",
+        "Manipulation start/end and full-zone anchor identities.",
+        "Engulfing reversal segment with evidence that the entire selected manipulation was engulfed.",
+        "Actual causal BOS/CONF event(s), and later mitigation/test evidence if used."
+      ],
+      "unresolved_execution_choices": [
+        "No numeric manipulation segmentation, sweep meaningfulness, engulf body/wick convention or main-trend timeframe selector is supplied in these paragraphs.",
+        "Exact directional-part quote and precise directional subzone boundary.",
+        "Protective stop anchor/buffer, exit allocation/targets, expiry/re-entry and fills are not supplied for STB/BTS here.",
+        "The marketmaker-position narrative does not establish observable latent positions; annotate the chart evidence rather than asserting hidden positions."
+      ],
+      "causal_normalization": [
+        "TECHNICAL_NORMALIZATION: formation may span the manipulation; confirmation/known_at follows complete engulf and the chosen BOS-or-CONF evidence. Do not label the future-completed manipulation valid at its start."
+      ]
+    },
+    {
+      "id": "PRIMARY_ORDER_FLOW_CONTEXT",
+      "source_rule": "Order Flow text requires liquidity interaction in addition to classical trend and links its lifecycle to a global POI test.",
+      "evidence": [
+        "E075",
+        "E076"
+      ],
+      "source_defined_geometry": [],
+      "qualitative_evidence_required": [
+        "Source-qualified global POI, causal trend/extrema and actual liquidity operations."
+      ],
+      "unresolved_execution_choices": [
+        "No quantitative rule for selecting the marketmaker/global POI or when a test counts as complete.",
+        "No new price/ATR/score threshold or hidden-position assertion is authorized by this explanation."
+      ]
+    }
+  ],
+  "annotation_contract_handoff": {
+    "classification": "TECHNICAL_NORMALIZATION proposal grounded in source evidence; not a new SOURCE geometry rule",
+    "minimum_provenance": [
+      "annotation_id and parent-object ids; source identity + checksum + page/paragraph + short quote",
+      "annotator/reviewer identity and annotation-contract version",
+      "dataset identity, timeframe, candle ids and causal cutoff",
+      "assertion status SUPPORTED / CONTRADICTED / UNKNOWN; missing evidence remains UNKNOWN",
+      "formation_at, known_at, confirmed_at, invalidated_at with supporting causal candles/events and explanation of any null",
+      "qualitative decision rationale linked to the actual source phrase and observed chart segment",
+      "all explicit finite variants as stable alternatives; no preferred/default/outcome-based choice",
+      "unresolved execution coordinates and geometry tracked separately from object validity"
+    ],
+    "causal_boundary": [
+      "Evidence dependencies must already be known at the decision cutoff. A later annotation/review time is separate from the time the underlying evidence first became available.",
+      "Human hindsight cannot backdate known_at or PASS. Final-segment selection must be explainable from the prefix evidence.",
+      "Do not infer object eligibility, trade entry or executable orders from a source-valid zone or an exact branch coordinate.",
+      "No arbitrary ATR/OHLC/tick/percentage/fraction/ML/score thresholds may replace qualitative impulse, liquidity, body/wick, reaction or manipulation provenance."
+    ],
+    "safe_unknowns": [
+      "No market-data annotation corpus was reviewed; every proposed qualitative field remains a contract requirement, not an asserted PASS for an actual market object.",
+      "No source conclusion here changes trade_entry_allowed=false or baseline_identifiability=NOT_IDENTIFIABLE."
+    ]
+  },
+  "methodichka_handoff": [
+    "Provide higher-priority OB large-body/small-wick wording and whether IMB and structural update are mandatory; SW9 must not silently relax it.",
+    "Provide higher-priority Breaker sweep/imbalance-pierce/CHOCH requirements and combine with SW9 whole-impulse/no-trading context.",
+    "Provide original SFP formation/candle-count/context/entry definitions; SW12 supplies the ATR protection and invalidation contribution only.",
+    "Provide Range, OTE anchor, EQH/EQL reasonable-tilt, Demand/Supply last-movement and other higher-priority qualitative provenance; these primary modules do not close those gaps.",
+    "Resolve source precedence conflicts explicitly; do not prefer Stage17 registry/code over either primary text or Methodichka."
+  ],
+  "stage17_comparison": {
+    "finite_families_confirmed": [
+      "OB_DIRECT_ENTRY: boundary vs inside",
+      "OB_EXECUTION_PATH: direct vs LTF confirmation/new POI",
+      "OB_STOP_ANCHOR: OB extreme vs engulfing wick",
+      "BREAKER_STOP_ANCHOR: aggressive vs conservative",
+      "STB_BTS_ENTRY: directional part vs 0.5",
+      "FTA_FIXATION: full vs partial",
+      "SFP_ATR_PERIOD: standard 14 vs adjusted family"
+    ],
+    "additional_annotation_context": [
+      "OB HTF source POI + structural impulse/trend + OTE/Premium/Discount context",
+      "OB smooth structural approach and conditional re-entry reaction/history",
+      "Breaker whole impulsive pierce without trading in the OB zone",
+      "FTA first opposing causal POI and trend/countertrend context",
+      "STB/BTS manipulation segmentation and full engulf plus main trend/sweep/BOS-or-CONF",
+      "SFP fixed stop and close-based pattern invalidation; source validity remains separate from unknown fill mechanics"
+    ],
+    "not_resolved": [
+      "exact inside/new-POI/Breaker/directional-part quotes",
+      "beyond-anchor stop buffers",
+      "partial FTA fraction/remainder lifecycle",
+      "timeframe/POI selection and repeated-test identity",
+      "qualitative evidence contracts and all higher-priority Methodichka reconciliation"
+    ]
+  },
+  "safety": {
+    "trade_entry_allowed": false,
+    "financial_backtest_allowed": false,
+    "paper_allowed": false,
+    "live_allowed": false,
+    "private_api_allowed": false,
+    "source_rule_changes": [],
+    "project_policy_applied": [],
+    "ranked_or_selected_variants": []
+  },
+  "verification": {
+    "quote_checks": 76,
+    "all_manifest_checks_pass": true,
+    "repository_tests_or_replay_run": false
+  }
+}

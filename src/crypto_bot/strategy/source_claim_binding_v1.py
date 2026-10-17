@@ -28,7 +28,7 @@ from crypto_bot.strategy.source_qualitative_provenance_v2 import (
 )
 from crypto_bot.strategy.source_structure_liquidity_v2 import EvidenceStatus
 
-CLAIM_BINDING_VERSION = "PURE_SOURCE_STAGE20_CLAIM_BINDING_V1"
+CLAIM_BINDING_VERSION = "PURE_SOURCE_STAGE23_1_CLAIM_BINDING_V2"
 
 
 def _utc(at: datetime) -> str:
@@ -145,8 +145,22 @@ def claim_context_sha256(
             "timeframe": obj.timeframe,
             "formation_at": _utc(obj.formation_at),
             "known_at": _utc(obj.known_at),
+            "snapshot_at": _utc(state.at),
             "status": state.status.value,
             "formation_valid": state.formation_valid,
+            "trade_eligible": state.trade_eligible,
+            "rejection_reasons": state.rejection_reasons,
+            "causal_lifecycle": [
+                {
+                    "kind": event.kind.value,
+                    "at": _utc(event.at),
+                    "status": event.status.value,
+                    "trade_eligible": event.trade_eligible,
+                    "reason": event.reason,
+                }
+                for event in obj.lifecycle
+                if event.at <= claim.known_at
+            ],
             "confirmed_at": _utc(state.confirmed_at) if state.confirmed_at else None,
             "invalidated_at": _utc(state.invalidated_at)
             if state.invalidated_at
@@ -416,6 +430,10 @@ class SourceClaimJournal:
         definition = self.catalog.semantic(semantic_id)
         if definition.scope != scope:
             raise ValueError("trade context cannot be projected as object formation")
+        if not subject_object_ids or any(
+            not isinstance(s, str) or not s.strip() for s in subject_object_ids
+        ):
+            raise ValueError("subject IDs must be nonblank immutable text")
         subjects = tuple(sorted(set(subject_object_ids)))
         records = tuple(
             r

@@ -1,0 +1,19 @@
+import json,os,shlex,subprocess
+from pathlib import Path
+out=Path('docs/pure_source_stage23_1_qa_v1');out.mkdir(exist_ok=True)
+records=[]
+for label,python in [('311','/home/agent/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11'),('314','/home/agent/.local/share/uv/python/cpython-3.14-linux-x86_64-gnu/bin/python3.14')]:
+ version=subprocess.check_output([python,'-VV'],text=True).strip();print(version,flush=True)
+ commands=[('compile',[python,'-B','-m','compileall','-q','src','scripts','tests']),('unit' if label=='311' else 'source_compat',[python,'-m','unittest','discover','-s','tests','-p','test_*.py' if label=='311' else 'test_*source*.py','-v'])]
+ if label=='314':commands.append(('causal_core',[python,'-m','unittest','discover','-s','tests','-p','test_causal_object_core.py','-v']))
+ for name,cmd in commands:
+  path=out/f'{name}-python{label}.log'
+  with path.open('w') as handle:r=subprocess.run(cmd,stdout=handle,stderr=subprocess.STDOUT,env={**os.environ,'PYTHONPATH':'src'})
+  records.append({'name':name,'python':version,'command':cmd,'exit_code':r.returncode,'log':str(path)});print(label,name,r.returncode,flush=True)
+  Path('/tmp/stage231-qa-commands.json').write_text(json.dumps(records,indent=2)+'\n')
+  assert r.returncode==0,path
+ safety="if grep -R --include='*.py' --line-number --fixed-string 'trade_entry_allowed=True' src scripts; then exit 1; fi\n"+shlex.join([python,'-c',"from pathlib import Path; ps=[*Path('src').rglob('*.py'),*Path('scripts').rglob('*.py')]; assert not any('trade_entry_allowed=True' in p.read_text(encoding='utf-8',errors='ignore') for p in ps); print('SAFETY PASS')"])
+ path=out/f'safety-python{label}.log'
+ with path.open('w') as handle:r=subprocess.run(['bash','-c',safety],stdout=handle,stderr=subprocess.STDOUT)
+ records.append({'name':'safety','python':version,'command':['bash','-c',safety],'exit_code':r.returncode,'log':str(path)});print(label,'safety',r.returncode,flush=True)
+ Path('/tmp/stage231-qa-commands.json').write_text(json.dumps(records,indent=2)+'\n');assert r.returncode==0,path

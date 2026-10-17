@@ -9,11 +9,90 @@ from dataclasses import dataclass
 from hashlib import sha256
 from pathlib import Path
 
+from crypto_bot.strategy.pure_source_archive_audit_v1 import audit_archive_provenance
+from crypto_bot.strategy.pure_source_audit_retention_v1 import (
+    validate_retained_handoffs,
+)
+
 LEDGER_VERSION = "PURE_SOURCE_STAGE19_RULE_LEDGER_V1"
+REVIEWED_REFERENCE = "audit/REVIEWED_CITATION_EXPORT_REFERENCE.json"
+# Independent code pin: editing a ledger and its purported reference together
+# must not redefine the originally reviewed selection or historical export.
+REVIEWED_REFERENCE_SHA256 = (
+    "d9b5e3d7af10d5381292246c80260916984c804903945b7685e236dfbbb28cc2"
+)
+
+
+def _reviewed_reference(ledger: Path) -> dict:
+    path = ledger / REVIEWED_REFERENCE
+    if _hash(path) != REVIEWED_REFERENCE_SHA256:
+        raise ValueError("reviewed citation/export reference integrity mismatch")
+    return _read(path)
+
+
+def _check_selected_quote(reference, seen, key, quote, context, locator, error):
+    pin = reference["citations"].get(key)
+    normalized, context = _normal(quote), _normal(context)
+    if (
+        pin is None
+        or key in seen
+        or quote != pin["selected_quote"]
+        or locator != pin["locator"]
+        or sha256(normalized.encode()).hexdigest() != pin["normalized_excerpt_sha256"]
+        or sha256(context.encode()).hexdigest() != pin["context_sha256"]
+        or context[pin["start_offset"] : pin["end_offset_exclusive"]] != normalized
+    ):
+        raise ValueError(error + ": reviewed excerpt/locator mismatch")
+    seen.add(key)
+
+
+def _read_export(path, reference, error):
+    with path.open(newline="", encoding="utf-8") as handle:
+        reader = csv.DictReader(handle)
+        columns, rows = reader.fieldnames, list(reader)
+    expected = reference["historical_exports"][path.name]
+    if columns != expected["columns"]:
+        raise ValueError(error + ": authoritative columns mismatch")
+    return rows, expected["rows"]
 
 
 def _read(path: Path):
-    return json.loads(path.read_text(encoding="utf-8"))
+    def unique_object(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError("duplicate JSON object key: " + key)
+            result[key] = value
+        return result
+
+    return json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=unique_object)
+
+
+def _validate_reviewed_metadata(reference: dict, documents: dict) -> None:
+    """Bind original reviewed provenance assertions, after actual-source checks.
+
+    Section hashes came from the committed review base, independently of these
+    input ledgers. Historical paths/claims are retained evidence, not runtime
+    source locators or substitutes for reconstructed archive/XML identities.
+    """
+    for filename, sections in reference["reviewed_metadata_hashes"].items():
+        document = documents[filename]
+        for section, expected in sections.items():
+            if section not in document:
+                raise ValueError("reviewed source metadata section missing")
+            canonical = json.dumps(
+                document[section],
+                ensure_ascii=False,
+                sort_keys=True,
+                separators=(",", ":"),
+            ).encode("utf-8")
+            if sha256(canonical).hexdigest() != expected:
+                raise ValueError(
+                    "reviewed source metadata/identity mismatch: "
+                    + filename
+                    + ":"
+                    + section
+                )
 
 
 def _hash(path: Path) -> str:
@@ -112,6 +191,116 @@ def _primary_blocks(path: Path) -> dict:
     return blocks
 
 
+def _validate_conflict_citations(
+    conflicts,
+    reference,
+    paragraphs,
+    rules,
+    primary,
+    secondary,
+    visual,
+):
+    """Resolve historical citation forms to checked source identities/locators.
+
+    Page-range aliases are transport conveniences, not extra SOURCE evidence.
+    Their targets must be concrete already-checked primary excerpt records.
+    """
+    primary_evidence = primary["evidence"]
+    findings = {row["id"]: row["evidence"] for row in primary["findings"]}
+    if (
+        len(findings) != len(primary["findings"])
+        or findings != reference["primary_findings"]
+    ):
+        raise ValueError("conflict primary finding identities/citations mismatch")
+    if any(
+        not ids or not set(ids) <= primary_evidence.keys() for ids in findings.values()
+    ):
+        raise ValueError("conflict primary finding has unknown evidence IDs")
+    rule_map = {row["rule_id"]: row for row in rules}
+    secondary_map = {row["id"]: row for row in secondary["evidence"]}
+    figures = {row["figure_id"]: row for row in visual["figures"]}
+    if len(secondary_map) != len(secondary["evidence"]) or len(figures) != len(
+        visual["figures"]
+    ):
+        raise ValueError("conflict citation identities must be unique")
+    priority = reference["source_priority"]
+
+    def source_rank(source):
+        # All consulted secondary originals retain rank7; they cannot override
+        # Methodichka or a primary SW source through an invented source label.
+        if source in {"SW6", "SW8", "SW10", "DemandSupply"}:
+            source = "other confirmed ORIGINAL SOURCE materials"
+        if source not in priority:
+            raise ValueError("conflict citation source authority mismatch")
+        return priority.index(source) + 1
+
+    def resolve(citation):
+        match = re.fullmatch(r"Методичка (P\d{4})(?:-(P\d{4}))?", citation)
+        if match:
+            first, last = int(match[1][1:]), int((match[2] or match[1])[1:])
+            ids = [f"P{i:04d}" for i in range(first, last + 1)]
+            if not ids or not set(ids) <= paragraphs.keys():
+                raise ValueError("conflict citation paragraph mismatch")
+            return [(source_rank("Методичка"), pid) for pid in ids]
+        if citation in rule_map:
+            return [
+                item
+                for pid in rule_map[citation]["paragraph_ids"]
+                for item in resolve("Методичка " + pid)
+            ]
+        if citation in primary_evidence:
+            row = primary_evidence[citation]
+            return [(source_rank(row["source"]), row["locator"])]
+        if citation in findings:
+            return [item for eid in findings[citation] for item in resolve(eid)]
+        if citation in secondary_map:
+            row = secondary_map[citation]
+            return [
+                (source_rank(row["source_id"]), row["source_id"] + ":" + pid)
+                for pid in row["paragraphs"]
+            ]
+        if citation in figures:
+            row = figures[citation]
+            location = row["source_location"]
+            if not set(row["related_text_rule_ids"]) <= rule_map.keys() or any(
+                location[key] is not None and location[key] not in paragraphs
+                for key in (
+                    "preceding_or_containing_clean_paragraph",
+                    "next_clean_paragraph",
+                )
+            ):
+                raise ValueError("conflict visual rule/paragraph locator mismatch")
+            return [(source_rank("Методичка"), citation)]
+        match = re.fullmatch(r"(SW\d+) p(\d+)(?:-(\d+))?", citation)
+        if match:
+            targets = [
+                eid
+                for eid, row in primary_evidence.items()
+                if row["source"] == match[1]
+                and int(match[2]) <= row["page"] <= int(match[3] or match[2])
+            ]
+            if targets:
+                return [item for eid in targets for item in resolve(eid)]
+        raise ValueError("unknown conflict citation: " + str(citation))
+
+    ids = [row["id"] for row in conflicts["entries"]]
+    if not ids or len(ids) != len(set(ids)):
+        raise ValueError("conflict identities must be nonempty and unique")
+    for row in conflicts["entries"]:
+        if not row["citations"] or len(row["citations"]) != len(set(row["citations"])):
+            raise ValueError("conflict citations must be nonempty and unique")
+        for citation in row["citations"]:
+            if not resolve(citation):
+                raise ValueError("empty conflict citation resolution")
+        if row.get("visual_corroboration") not in (
+            None,
+            "METHODICHKA_VISUAL_LEDGER.json",
+        ):
+            raise ValueError("conflict visual corroboration locator mismatch")
+    if conflicts["entries"] != reference["conflict_entries"]:
+        raise ValueError("conflict citations/content differ from reviewed export")
+
+
 @dataclass(frozen=True)
 class SourceLedgerValidation:
     version: str
@@ -131,11 +320,19 @@ def validate_source_rule_ledger(
 ) -> SourceLedgerValidation:
     """Check retained source bytes/citations, not the truth of market annotations.
 
-    Raw DOCX/archive visual inspections remain named human audit receipts. CI can
-    verify their original entry/text/image hashes against the frozen manifests;
-    it does not pretend to rediscover semantic meaning with OCR or a backtest.
+    Raw archive/DOCX bytes and relationships are checked independently. Pinned
+    excerpts preserve the named agents' reviewed selection, without reinterpreting SOURCE.
     """
     root = repository.resolve()
+    reference = _reviewed_reference(ledger)
+    validate_retained_handoffs(root, ledger)
+    selected_quotes = set()
+    archive_audit = audit_archive_provenance(root, ledger)
+    raw_paragraph_indices = {}
+    for mapping in archive_audit["raw_paragraph_mapping"]:
+        raw_paragraph_indices.setdefault(
+            mapping["clean_paragraph_id"], mapping["raw_nonempty_index"]
+        )
     for path in ledger.glob("*.json"):
         _audit_safety(_read(path))
     frozen = _read(root / "docs/source_freeze_v1/source_manifest.json")
@@ -154,6 +351,12 @@ def validate_source_rule_ledger(
 
     method = _read(ledger / "METHODICHKA_RULE_LEDGER.json")
     source = method["source"]
+    if (
+        source["source_id"] != "SRC_METHOD_001"
+        or source["source_name"] != "Методичка"
+        or source["priority"] != 1
+    ):
+        raise ValueError("Methodichka source authority mismatch")
     if source["raw_entry_sha256"] != source_hashes["SRC_METHOD_001"]:
         raise ValueError("Methodichka raw entry differs from priority-1 freeze")
     if entries[source["raw_entry_name"]]["sha256"] != source["raw_entry_sha256"]:
@@ -185,21 +388,38 @@ def validate_source_rule_ledger(
             raise ValueError("software timestamp mapping is not SOURCE_RULE")
         if set(row["paragraph_ids"]) != {c["paragraph_id"] for c in row["citations"]}:
             raise ValueError("Methodichka rule/citation coverage mismatch")
-        for citation in row["citations"]:
+        for citation_index, citation in enumerate(row["citations"]):
             pid = citation["paragraph_id"]
             if (
                 not _normal(citation["short_exact_quote"])
                 or pid not in row["paragraph_ids"]
+                or pid not in paragraphs
                 or line_map[pid] != citation["clean_file_line"]
                 or _normal(citation["short_exact_quote"]) not in paragraphs[pid]
             ):
                 raise ValueError("Methodichka citation mismatch")
+            _check_selected_quote(
+                reference,
+                selected_quotes,
+                f"method:{row['rule_id']}:{citation_index}",
+                citation["short_exact_quote"],
+                paragraphs[pid],
+                {
+                    "source": "Методичка",
+                    "source_id": "SRC_METHOD_001",
+                    "text_path": source["clean_text_path"],
+                    "paragraph_id": pid,
+                    "clean_file_line": line_map[pid],
+                },
+                "Methodichka citation mismatch",
+            )
             quote_checks += 1
 
-    with (ledger / "METHODICHKA_PARAGRAPH_COVERAGE.csv").open(
-        newline="", encoding="utf-8"
-    ) as handle:
-        coverage = list(csv.DictReader(handle))
+    coverage, reviewed_coverage = _read_export(
+        ledger / "METHODICHKA_PARAGRAPH_COVERAGE.csv",
+        reference,
+        "Methodichka coverage content mismatch",
+    )
     if len(coverage) != len(paragraphs) or {
         row["paragraph_id"] for row in coverage
     } != set(paragraphs):
@@ -214,17 +434,22 @@ def validate_source_rule_ledger(
         pid = row["paragraph_id"]
         if (
             int(row["clean_file_line"]) != line_map[pid]
+            or int(row["raw_document_nonempty_paragraph_index_1based"])
+            != raw_paragraph_indices[pid]
             or sha256(raw_blocks[pid].encode()).hexdigest() != row["paragraph_sha256"]
             or set(filter(None, row["rule_ids"].split("|")))
             != {rule["rule_id"] for rule in rules if pid in rule["paragraph_ids"]}
             or row["executable_trade_rule_identified"] != "False"
         ):
             raise ValueError("Methodichka coverage content mismatch")
+    if coverage != reviewed_coverage:
+        raise ValueError("Methodichka coverage content mismatch: historical export")
 
-    with (ledger / "METHODICHKA_RULE_TABLE.csv").open(
-        newline="", encoding="utf-8"
-    ) as handle:
-        table = list(csv.DictReader(handle))
+    table, reviewed_table = _read_export(
+        ledger / "METHODICHKA_RULE_TABLE.csv",
+        reference,
+        "rule table semantics/lifecycle mismatch",
+    )
     by_id = {row["rule_id"]: row for row in rules}
     if len(table) != len(rules) or {row["rule_id"] for row in table} != set(ids):
         raise ValueError("rule table coverage mismatch")
@@ -232,15 +457,21 @@ def validate_source_rule_ledger(
         expected = by_id[row["rule_id"]]
         if (
             row["exact_source_meaning"] != expected["stated_semantic"]
+            or row["source"] != source["source_id"]
+            or row["source_role"] != expected["source_role"]
             or row["classification"] != expected["classification"]
             or row["machine_state"] != expected["machine_state"]
             or row["paragraph_page"] != "|".join(expected["paragraph_ids"])
             or json.loads(row["causal_inputs"]) != expected["causal_inputs"]
             or json.loads(row["output"]) != expected["causal_output"]
             or json.loads(row["known_at"]) != expected["lifecycle"]
+            or row["invalidated_at"]
+            != expected["lifecycle"]["technical_normalization"]["invalidated_at"]
             or json.loads(row["unresolved"]) != expected["unresolved"]
         ):
             raise ValueError("rule table semantics/lifecycle mismatch")
+    if table != reviewed_table:
+        raise ValueError("rule table semantics/lifecycle mismatch: historical export")
 
     visual = _read(ledger / "METHODICHKA_VISUAL_LEDGER.json")
     if visual["source"]["raw_entry_sha256"] != source_hashes["SRC_METHOD_001"]:
@@ -300,7 +531,7 @@ def validate_source_rule_ledger(
         path = check_file(row["text_path"], row["text_sha256"])
         primary_sources[row["source"]] = row
         page_blocks[row["source"]] = _primary_blocks(path)
-    for row in primary["evidence"].values():
+    for evidence_id, row in primary["evidence"].items():
         origin = primary_sources.get(row["source"])
         block = page_blocks.get(row["source"], {}).get(
             (row["page"], row["paragraph_index"])
@@ -318,6 +549,26 @@ def validate_source_rule_ledger(
             raise ValueError("primary source/page/locator mismatch")
         if not _normal(row["quote"]) or _normal(row["quote"]) not in _normal(block[0]):
             raise ValueError("primary quote mismatch")
+        _check_selected_quote(
+            reference,
+            selected_quotes,
+            "primary:" + evidence_id,
+            row["quote"],
+            block[0],
+            {
+                key: row[key]
+                for key in (
+                    "source",
+                    "text_path",
+                    "page",
+                    "paragraph_index",
+                    "locator",
+                    "line_start",
+                    "line_end",
+                )
+            },
+            "primary quote mismatch",
+        )
         quote_checks += 1
 
     secondary = _read(ledger / "SECONDARY_SOURCE_COMPARISON.json")
@@ -355,7 +606,18 @@ def validate_source_rule_ledger(
             or _normal(row["short_quote_ru"]) not in _normal(chunk)
         ):
             raise ValueError("secondary citation mismatch")
+        _check_selected_quote(
+            reference,
+            selected_quotes,
+            "secondary:" + row["id"],
+            row["short_quote_ru"],
+            chunk,
+            {key: row[key] for key in ("source_id", "source_part", "paragraphs")},
+            "secondary citation mismatch",
+        )
         quote_checks += 1
+    if selected_quotes != set(reference["citations"]):
+        raise ValueError("reviewed citation coverage mismatch")
 
     conflicts = _read(ledger / "SOURCE_CONFLICT_REGISTRY.json")
     for document in (primary, secondary):
@@ -376,12 +638,37 @@ def validate_source_rule_ledger(
         or conflicts["financial_backtest_allowed"] is not False
         or conflicts["project_policy_applied"] != []
         or conflicts["source_priority"] != frozen["rules"]["source_priority"]
+        or conflicts["source_priority"] != reference["source_priority"]
+        or primary["scope"]["source_priority"]
+        != " → ".join(reference["source_priority"])
+        or secondary["source_priority"]
+        != reference["priority_labels"]["SECONDARY_SOURCE_COMPARISON.json"]
+        or visual["source_priority"]
+        != reference["priority_labels"]["METHODICHKA_VISUAL_LEDGER.json"]
     ):
         raise ValueError("source conflict register must preserve authority and safety")
+    _validate_conflict_citations(
+        conflicts,
+        reference,
+        paragraphs,
+        rules,
+        primary,
+        secondary,
+        visual,
+    )
+    _validate_reviewed_metadata(
+        reference,
+        {
+            "METHODICHKA_RULE_LEDGER.json": method,
+            "METHODICHKA_VISUAL_LEDGER.json": visual,
+            "PRIMARY_SOURCE_COMPARISON.json": primary,
+            "SECONDARY_SOURCE_COMPARISON.json": secondary,
+        },
+    )
     artifacts = tuple(
         sorted(
-            (p.name, _hash(p))
-            for p in ledger.iterdir()
+            (str(p.relative_to(ledger)), _hash(p))
+            for p in ledger.rglob("*")
             if p.is_file() and p.suffix in {".json", ".csv"}
         )
     )

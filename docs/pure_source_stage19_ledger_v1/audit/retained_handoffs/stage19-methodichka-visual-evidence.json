@@ -1,0 +1,2682 @@
+{
+  "analysis_id": "STAGE19_METHODICHKA_VISUAL_EVIDENCE_V1",
+  "analysis_date": "2026-10-17",
+  "source_priority": 1,
+  "source": {
+    "source_id": "SRC_METHOD_001",
+    "raw_archive_path": "/workspace/-/data/source_materials/cryptology_2026_10_09/cryptology.zip",
+    "raw_entry": "Криптология/Методичка.docx",
+    "raw_entry_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+    "raw_entry_hash_matches_frozen_methodichka": true,
+    "document_part": "word/document.xml",
+    "relationship_part": "word/_rels/document.xml.rels",
+    "image_manifest_path": "/workspace/-/data/source_materials/cryptology_2026_10_09/manifest.json",
+    "image_manifest_material_id": 19,
+    "original_text_ledger_path": "/tmp/stage18-methodichka-extraction.json",
+    "original_text_ledger_sha256_at_visual_analysis": "8ceb11e65ba9390b3836a871c9fcabad2b5b5df65394af1589d6d9f703235c81",
+    "original_text_ledger_preserved": true,
+    "source_image_assignment_method": "Read each XML image relationship and its enclosing paragraph; align raw nonempty paragraphs to existing clean paragraph IDs. Filenames alone did not establish identity or placement."
+  },
+  "coverage": {
+    "raw_media_asset_count": 41,
+    "xml_image_reference_count": 41,
+    "primary_reference_count": 31,
+    "fallback_reference_count": 10,
+    "distinct_image_hash_count": 31,
+    "distinct_semantic_figures_visually_inspected": 31,
+    "all_distinct_assets_viewed_with_view_image": true,
+    "uninspected_distinct_images": [],
+    "all_image_manifest_hashes_match": true,
+    "all_embedded_media_assets_referenced": true,
+    "duplicate_policy": "Ten byte-identical media assets are AlternateContent Fallback copies of primary grouped pictures; inspect each distinct hash once, preserve every reference in the inventory.",
+    "text_coverage": "Existing complete 171-paragraph ledger retained separately; this ledger supplements source images and does not rewrite it.",
+    "remaining_limits": [
+      "Images are teaching schematics or selected chart examples; they do not supply automatic qualitative detection thresholds.",
+      "No plotted outcome or visual risk/reward rectangle was used for PnL/ranking or universal numeric trade geometry.",
+      "No source software timestamp or order-execution timing is invented."
+    ]
+  },
+  "source_vs_technical_normalization": {
+    "source": "Source caption labels, level coordinates and clearly depicted relations are recorded as evidence within stated scope.",
+    "technical_normalization": {
+      "classification": "TECHNICAL_NORMALIZATION",
+      "closed_prefix_availability": "An image-illustrated confirmation can only be consumed when its relevant closed candle and all causal parents are available; annotation availability is separate from depicted historical event time.",
+      "timestamp_fields": "formation_at, known_at, confirmed_at and invalidated_at are software fields, not timestamps supplied by source illustrations.",
+      "sfp_example": "If the pictured third-candle engulf branch is represented, that evidence cannot be known before candle3 is observed/closed. This does not make it mandatory for every SFP transport path.",
+      "range_example": "Retest entry evidence must follow known return/CHOCH and identify the pre-break OB; do not backdate the complete setup to deviation.",
+      "invalidation": "No timeout, retrial limit, stop buffer, or inferred expiry is added."
+    }
+  },
+  "findings": [
+    {
+      "finding_id": "VIS_RANGE_CHRONOLOGY",
+      "machine_state": "EXPLICIT",
+      "figure_ids": [
+        "METHOD_VIS_23"
+      ],
+      "related_text": [
+        "P0129",
+        "P0130"
+      ],
+      "source_rule": "In the illustrated short setup, return into range and structure break occur before the OB entry/retest. The OB is the last working zone before the break.",
+      "resolution": "RESOLVES_PRIOR_TEXT_ONLY_CHOCH_AFTER_TEST_AMBIGUITY_FOR_THIS_SETUP",
+      "remaining": "No exact entry/stop and not the exclusive range strategy."
+    },
+    {
+      "finding_id": "VIS_RANGE_TARGET",
+      "machine_state": "EXPLICIT",
+      "figure_ids": [
+        "METHOD_VIS_23"
+      ],
+      "related_text": [
+        "P0130"
+      ],
+      "source_rule": "Trade target is the opposite side of the range.",
+      "resolution": "NEW_PRIORITY1_TARGET_ROLE_EVIDENCE_ABSENT_FROM_TEXT_ONLY_LEDGER",
+      "remaining": "Exact exit quote/buffer, allocation and lifecycle remain unspecified."
+    },
+    {
+      "finding_id": "VIS_RANGE_ANCHOR_ORDER",
+      "machine_state": "EXPLICIT",
+      "figure_ids": [
+        "METHOD_VIS_21",
+        "METHOD_VIS_22",
+        "METHOD_VIS_23"
+      ],
+      "related_text": [
+        "P0125",
+        "P0130"
+      ],
+      "source_rule": "Rising-impulse figures21/22 highlight first high then first low. Figure23 labels first lower-bound touch before first upper-bound touch. Both paired first-touch anchor orders are depicted.",
+      "resolution": "SOURCE_FIGURES_DO_NOT_SUPPORT_UNIVERSAL_HIGH_BEFORE_LOW_ORDER",
+      "remaining": "Qualifying impulse, exact segmentation and causal swing recognition remain qualitative. Do not turn two example orders into ranked strategy choices."
+    },
+    {
+      "finding_id": "VIS_OTE_LONG_COORDINATES",
+      "machine_state": "EXPLICIT",
+      "figure_ids": [
+        "METHOD_VIS_25",
+        "METHOD_VIS_26"
+      ],
+      "related_text": [
+        "P0153",
+        "P0155"
+      ],
+      "source_rule": "Bullish example labels 0=high H and 1=low L; .705–.79 lie toward L.",
+      "resolution": "LONG_COORDINATE_ORIENTATION_IDENTIFIED_CONDITIONAL_ON_SOURCE_VALID_ANCHORS",
+      "remaining": "Short orientation not illustrated; source-qualified impulse endpoints still missing. Click order is irrelevant to this mapping. Literal text stays intact.",
+      "technical_normalization": {
+        "classification": "TECHNICAL_NORMALIZATION",
+        "algebraic_encoding": "price(r)=H-r*(H-L), for this labeled LONG mapping",
+        "source_geometry_is_not_arbitrary": true
+      }
+    },
+    {
+      "finding_id": "VIS_OB_WHOLE_CANDLE",
+      "machine_state": "EXPLICIT",
+      "figure_ids": [
+        "METHOD_VIS_12"
+      ],
+      "related_text": [
+        "P0103",
+        "P0108"
+      ],
+      "source_rule": "Caption states whole red candle is the OB zone in the bullish schema.",
+      "resolution": "ADDITIONAL_PRIORITY1_ZONE_GEOMETRY_EVIDENCE",
+      "remaining": "No body/wick quality threshold or selected global geometry precedence across all contexts."
+    },
+    {
+      "finding_id": "VIS_BREAKER_EXTREME",
+      "machine_state": "EXPLICIT",
+      "figure_ids": [
+        "METHOD_VIS_18"
+      ],
+      "related_text": [
+        "P0115",
+        "P0116"
+      ],
+      "source_rule": "Sweep is labeled above the last high, or the last low for the upward variant; imbalance/CHOCH and later retest are depicted.",
+      "resolution": "CORROBORATES_AND_NARROWS_BREAKER_SWEEP_PARENT_CONTEXT",
+      "remaining": "Qualitative source-valid OB, impulse and CHOCH parents still required."
+    },
+    {
+      "finding_id": "VIS_IMB_THREE_CANDLE_EXAMPLE",
+      "machine_state": "EXPLICIT",
+      "figure_ids": [
+        "METHOD_VIS_14",
+        "METHOD_VIS_15",
+        "METHOD_VIS_16"
+      ],
+      "related_text": [
+        "P0110",
+        "P0112"
+      ],
+      "source_rule": "Bullish example bounds gap with first-candle high and third-candle low around a middle impulse.",
+      "resolution": "FIGURE_CLARIFIES_NEIGHBORING_WICKS_IN_BULLISH_EXAMPLE",
+      "remaining": "No magnitude threshold or universally mandated bearish mirror derived from pixels."
+    },
+    {
+      "finding_id": "VIS_EQUAL_LOWS_TILT",
+      "machine_state": "EXPLICIT",
+      "figure_ids": [
+        "METHOD_VIS_19"
+      ],
+      "related_text": [
+        "P0120"
+      ],
+      "source_rule": "A slightly tilted pair is explicitly labeled equal lows.",
+      "resolution": "EXACT_HORIZONTAL_EQUALITY_NOT_UNIVERSALLY_REQUIRED",
+      "remaining": "Permissible tilt/equality tolerance and source-qualified substructure stay qualitative."
+    },
+    {
+      "finding_id": "VIS_SFP_ENGULF",
+      "machine_state": "EXPLICIT",
+      "figure_ids": [
+        "METHOD_VIS_27",
+        "METHOD_VIS_28"
+      ],
+      "related_text": [
+        "P0158",
+        "P0160",
+        "P0162"
+      ],
+      "source_rule": "Illustrated bearish SFP uses candle3 engulf of candle2 body after candle2 sweep/no body establishment.",
+      "resolution": "EXPLICIT_ILLUSTRATED_INSTANCE_GEOMETRY_ONLY",
+      "universal_requirement_machine_state": "UNKNOWN",
+      "optional_fourth_candle_shown_or_labeled": false,
+      "remaining": "Do not silently require engulf universally or equate candle3 with optional candle4. No source execution instant is identified."
+    },
+    {
+      "finding_id": "VIS_OB_REPEATED_INTERACTIONS",
+      "machine_state": "EXPLICIT",
+      "figure_ids": [
+        "METHOD_VIS_13"
+      ],
+      "related_text": [
+        "P0103"
+      ],
+      "source_rule": "Line illustration shows several interactions with one OB zone.",
+      "resolution": "PRICE_INTERACTIONS_ARE_VISIBLE",
+      "reentry_eligibility_machine_state": "UNKNOWN",
+      "remaining": "No count of trades, object reuse eligibility, or first-test-only rule follows."
+    },
+    {
+      "finding_id": "VIS_STB_DS_EXIT_LIFECYCLE",
+      "machine_state": "UNKNOWN",
+      "figure_ids": [],
+      "related_text": [],
+      "source_rule": null,
+      "resolution": "NO_ADDITIONAL_STB_DS_REENTRY_PROTECTIVE_STOP_OR_EXIT_ALLOCATION_CAPTION_FOUND_IN_ALL31_FIGURES",
+      "remaining": "Plotted risk boxes are examples, not universal numeric execution rules."
+    }
+  ],
+  "figures": [
+    {
+      "figure_id": "METHOD_VIS_01",
+      "source_asset": "word/media/image1.jpg",
+      "sha256": "b89e88686d16805a81e3692c74ba394e21225a51ed9e67cfa602e2db01b3d3fd",
+      "image_manifest_key": "19/image1.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image1.jpg",
+      "dimensions_px": [
+        1268,
+        788
+      ],
+      "source_location": {
+        "xml_paragraph_index": 63,
+        "preceding_or_containing_clean_paragraph": "P0062",
+        "next_clean_paragraph": "P0063",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId5",
+          "target": "media/image1.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Bullish structure",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "Higher High",
+        "Higher Low"
+      ],
+      "direct_visual_observations": [
+        "Alternating rising highs and lows; horizontal blue references through prior highs."
+      ],
+      "bounded_conclusion": "Corroborates HH/HL bullish structure definition, without swing-confirmation algorithm.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_MS_BULL"
+      ],
+      "unresolved": [
+        "No swing window or close rule."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_02",
+      "source_asset": "word/media/image2.jpg",
+      "sha256": "e1c69cf3cabb4725bd76f0e95e75273fabb259290c4d37cf72402cdd4ff7e99c",
+      "image_manifest_key": "19/image2.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image2.jpg",
+      "dimensions_px": [
+        1892,
+        996
+      ],
+      "source_location": {
+        "xml_paragraph_index": 65,
+        "preceding_or_containing_clean_paragraph": "P0063",
+        "next_clean_paragraph": "P0064",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId6",
+          "target": "media/image2.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Bullish structure on candles",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "HH",
+        "HL"
+      ],
+      "direct_visual_observations": [
+        "Candlestick example labels successive structural highs/lows; final red reference is beneath recent HL."
+      ],
+      "bounded_conclusion": "An illustration of selected structural points, not a causal numeric point-selection rule.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_MS_BULL"
+      ],
+      "unresolved": [
+        "No universal pivot width, lookback, or liquidity tolerance."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_03",
+      "source_asset": "word/media/image3.jpg",
+      "sha256": "72a90bbb4aa0b4dbdce69dd3db031eaa0b818e5d3057f99a70984229c94a61a5",
+      "image_manifest_key": "19/image3.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image3.jpg",
+      "dimensions_px": [
+        1268,
+        786
+      ],
+      "source_location": {
+        "xml_paragraph_index": 72,
+        "preceding_or_containing_clean_paragraph": "P0069",
+        "next_clean_paragraph": "P0070",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId7",
+          "target": "media/image3.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Bearish structure",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "Lower High",
+        "Lower Low"
+      ],
+      "direct_visual_observations": [
+        "Alternating falling highs/lows with horizontal prior-low references."
+      ],
+      "bounded_conclusion": "Corroborates bearish LL/LH structure.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_MS_BEAR"
+      ],
+      "unresolved": [
+        "No exact automated swing confirmation."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_04",
+      "source_asset": "word/media/image4.jpg",
+      "sha256": "9c4b808f6ad20a62a0bd0fd0dd7a1236142ef66037b6b45175cd9bf2e79044bf",
+      "image_manifest_key": "19/image4.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image4.jpg",
+      "dimensions_px": [
+        1528,
+        1054
+      ],
+      "source_location": {
+        "xml_paragraph_index": 74,
+        "preceding_or_containing_clean_paragraph": "P0070",
+        "next_clean_paragraph": "P0071",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId8",
+          "target": "media/image4.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Bearish structure on candles",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "LH",
+        "LL"
+      ],
+      "direct_visual_observations": [
+        "Annotated candlestick downtrend; last red LH reference is eventually crossed."
+      ],
+      "bounded_conclusion": "Selected source-valid structure examples do not provide the selection algorithm.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_MS_BEAR"
+      ],
+      "unresolved": [
+        "No universal causal swing window."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_05",
+      "source_asset": "word/media/image5.jpg",
+      "sha256": "9245236b048e416c4c43d90b55a125a1aa927b1c9e4d6537e668a4edf50d697a",
+      "image_manifest_key": "19/image5.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image5.jpg",
+      "dimensions_px": [
+        1268,
+        782
+      ],
+      "source_location": {
+        "xml_paragraph_index": 85,
+        "preceding_or_containing_clean_paragraph": "P0080",
+        "next_clean_paragraph": "P0081",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId9",
+          "target": "media/image5.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Sideways movement",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [],
+      "direct_visual_observations": [
+        "A line moves repeatedly between two horizontal blue boundaries; dotted arrows depict possible upward and downward exits."
+      ],
+      "bounded_conclusion": "The schema permits two exit directions without ranking or universal exact equal-level requirement.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_RANGE_PHASE",
+        "M_RANGE_EXIT_VARIANTS"
+      ],
+      "unresolved": [
+        "No target, entry, deviation size or trigger."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_06",
+      "source_asset": "word/media/image6.jpg",
+      "sha256": "e2d1b4e3208148daeb668fe6710a9ef7f3d069b934e4b1991183b64b7bcc57c3",
+      "image_manifest_key": "19/image6.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image6.jpg",
+      "dimensions_px": [
+        1646,
+        1004
+      ],
+      "source_location": {
+        "xml_paragraph_index": 87,
+        "preceding_or_containing_clean_paragraph": "P0081",
+        "next_clean_paragraph": "P0082",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId10",
+          "target": "media/image6.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Sideways examples on candles",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [],
+      "direct_visual_observations": [
+        "Two ranges are bounded by blue lines; candle wicks and bodies occasionally protrude beyond them."
+      ],
+      "bounded_conclusion": "Illustrates context-sensitive range boundaries; exact pixel alignment is not a source tolerance.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_RANGE_PHASE"
+      ],
+      "unresolved": [
+        "No numerical allowable boundary overshoot."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_07",
+      "source_asset": "word/media/image7.jpg",
+      "sha256": "04843fe2412a4af70fd7e4aaacd950e0a3ee16d57e6abb8111387f9e55c22088",
+      "image_manifest_key": "19/image7.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image7.jpg",
+      "dimensions_px": [
+        1268,
+        628
+      ],
+      "source_location": {
+        "xml_paragraph_index": 96,
+        "preceding_or_containing_clean_paragraph": "P0090",
+        "next_clean_paragraph": "P0091",
+        "paragraph_location_relation": "WITHIN_TEXT_PARAGRAPH"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId11",
+          "target": "media/image7.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Bullish structure break schema",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "HH",
+        "HL",
+        "LL",
+        "LH",
+        "bos"
+      ],
+      "direct_visual_observations": [
+        "Price crosses the last HL, prints LL, then LH before further decline."
+      ],
+      "bounded_conclusion": "Corroborates P0092–94 order: last-HL break precedes bearish continuation and later LH search.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_BOS_BULL_BREAK"
+      ],
+      "unresolved": [
+        "No exact entry/stop or swing confirmation."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_08",
+      "source_asset": "word/media/image8.jpg",
+      "sha256": "aa4243e677520e3ff5fb30cf07834e6d862140ed8ee5a344f86ae56f744159d3",
+      "image_manifest_key": "19/image8.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image8.jpg",
+      "dimensions_px": [
+        1268,
+        667
+      ],
+      "source_location": {
+        "xml_paragraph_index": 97,
+        "preceding_or_containing_clean_paragraph": "P0090",
+        "next_clean_paragraph": "P0091",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId12",
+          "target": "media/image8.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Bullish structure break on candles",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "HH",
+        "HL",
+        "bos"
+      ],
+      "direct_visual_observations": [
+        "The bos line begins at the last HL and is crossed by bearish movement."
+      ],
+      "bounded_conclusion": "Confirms the selected last-HL BOS anchor in this instance.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_BOS_BULL_BREAK"
+      ],
+      "unresolved": [
+        "No universal wick/body crossing definition."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_09",
+      "source_asset": "word/media/image9.jpg",
+      "sha256": "c968d512659b9bb50ffb53a2f66cd07282d7d3aec999f7d35c431bc228dcb22d",
+      "image_manifest_key": "19/image9.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image9.jpg",
+      "dimensions_px": [
+        1268,
+        634
+      ],
+      "source_location": {
+        "xml_paragraph_index": 103,
+        "preceding_or_containing_clean_paragraph": "P0096",
+        "next_clean_paragraph": "P0097",
+        "paragraph_location_relation": "WITHIN_TEXT_PARAGRAPH"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId13",
+          "target": "media/image9.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Bearish structure break schema",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "LH",
+        "LL",
+        "HH",
+        "HL",
+        "bos"
+      ],
+      "direct_visual_observations": [
+        "The LH associated with the last LL is broken upward; a subsequent trough is labeled HL."
+      ],
+      "bounded_conclusion": "Corroborates last-LH break and later bullish structure.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_BOS_BEAR_BREAK"
+      ],
+      "unresolved": [
+        "No execution geometry."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_10",
+      "source_asset": "word/media/image10.jpg",
+      "sha256": "8beb5c9cb82528ba946e26213a46eb5c9c396c1bbc85efea56d82404a0c39aee",
+      "image_manifest_key": "19/image10.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image10.jpg",
+      "dimensions_px": [
+        1268,
+        672
+      ],
+      "source_location": {
+        "xml_paragraph_index": 105,
+        "preceding_or_containing_clean_paragraph": "P0098",
+        "next_clean_paragraph": "P0099",
+        "paragraph_location_relation": "WITHIN_TEXT_PARAGRAPH"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId14",
+          "target": "media/image10.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Bearish structure break on candles",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "LH",
+        "LL",
+        "HH",
+        "HL",
+        "bos"
+      ],
+      "direct_visual_observations": [
+        "An upward movement crosses the final selected LH; later HL/HH are marked."
+      ],
+      "bounded_conclusion": "Confirms the causal parent-level illustration without supplying automated swing selection.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_BOS_BEAR_BREAK"
+      ],
+      "unresolved": [
+        "No universal break-close rule or deadline."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_11",
+      "source_asset": "word/media/image11.jpg",
+      "sha256": "1ee1d48a7afbc26ce4a3b2229bf2230af63abe9e48816541007578b8c08c079e",
+      "image_manifest_key": "19/image11.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image11.jpg",
+      "dimensions_px": [
+        1268,
+        615
+      ],
+      "source_location": {
+        "xml_paragraph_index": 117,
+        "preceding_or_containing_clean_paragraph": "P0108",
+        "next_clean_paragraph": "P0109",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId15",
+          "target": "media/image11.jpg",
+          "branch": "PRIMARY_CHOICE"
+        },
+        {
+          "relationship_id": "rId17",
+          "target": "media/image100.jpg",
+          "branch": "FALLBACK_DUPLICATE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Bearish OB candlestick example",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "orderblock",
+        "Зона имбаланса",
+        "bos"
+      ],
+      "direct_visual_observations": [
+        "A shaded upper zone is labeled orderblock; subsequent bearish movement has an imbalance callout and crosses a prior low/bos; price later revisits the zone."
+      ],
+      "bounded_conclusion": "Supports OB before imbalance and structural consequence in this bearish example.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_OB_ORIGIN",
+        "M_OB_STRUCTURE",
+        "M_OB_SHAPE"
+      ],
+      "unresolved": [
+        "Does not quantify large body/small wicks or exact stop/entry."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_12",
+      "source_asset": "word/media/image12.jpg",
+      "sha256": "368de3cf7636695f15cb8078cb2f6ef83ad2d7b36910f7e7c824578a9859f3d7",
+      "image_manifest_key": "19/image12.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image12.jpg",
+      "dimensions_px": [
+        1268,
+        531
+      ],
+      "source_location": {
+        "xml_paragraph_index": 117,
+        "preceding_or_containing_clean_paragraph": "P0108",
+        "next_clean_paragraph": "P0109",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId16",
+          "target": "media/image12.jpg",
+          "branch": "PRIMARY_CHOICE"
+        },
+        {
+          "relationship_id": "rId18",
+          "target": "media/image110.jpg",
+          "branch": "FALLBACK_DUPLICATE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Bullish OB whole-candle annotation",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "bos",
+        "вся красная свеча-зона ордерблока"
+      ],
+      "direct_visual_observations": [
+        "A red candle before a large green candle is explicitly described as the OB zone; nearby horizontal boundaries bracket the candle region."
+      ],
+      "bounded_conclusion": "The shown bullish OB schema explicitly assigns the whole red candle as the zone, rather than merely declaring an arbitrary sub-body area.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "EXPLICIT_CAPTION_FOR_ILLUSTRATED_BULLISH_OB_SCHEMA",
+      "related_text_rule_ids": [
+        "M_OB_ORIGIN",
+        "M_OB_SHAPE"
+      ],
+      "unresolved": [
+        "No numeric body/wick quality threshold; broader OB zone precedence across all source contexts is not selected from one example.",
+        "Do not recover exact price coordinates or wick/body fractions from pixels."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_13",
+      "source_asset": "word/media/image13.jpg",
+      "sha256": "919fd271e7d611c8ff47589b3ecfc86a2f9527b710569ecbaba7c158003bf8a4",
+      "image_manifest_key": "19/image13.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image13.jpg",
+      "dimensions_px": [
+        1268,
+        540
+      ],
+      "source_location": {
+        "xml_paragraph_index": 118,
+        "preceding_or_containing_clean_paragraph": "P0108",
+        "next_clean_paragraph": "P0109",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId19",
+          "target": "media/image13.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Bullish and bearish OB line examples",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "orderblock"
+      ],
+      "direct_visual_observations": [
+        "Left: structure breaks upward, then several line interactions occur within one OB before continuation. Right: bearish break, zone retest, decline."
+      ],
+      "bounded_conclusion": "Shows source OB continuation/retest concepts in both directions; multiple price interactions are depicted.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_OB_STRUCTURE"
+      ],
+      "unresolved": [
+        "Several interactions are not a permission for multiple trades or a re-entry eligibility rule.",
+        "No candle-quality measurement can be extracted from line drawings."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_14",
+      "source_asset": "word/media/image14.jpg",
+      "sha256": "9a114cc421872fc0b6e3247bc03f2b84e9b177f11c3c6bbb7b0d0cab27a04e45",
+      "image_manifest_key": "19/image14.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image14.jpg",
+      "dimensions_px": [
+        1268,
+        636
+      ],
+      "source_location": {
+        "xml_paragraph_index": 123,
+        "preceding_or_containing_clean_paragraph": "P0112",
+        "next_clean_paragraph": "P0113",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId20",
+          "target": "media/image14.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Bullish imbalance on candles",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "Зона имбаланса"
+      ],
+      "direct_visual_observations": [
+        "Horizontal red lines bracket a gap beside a large upward candle, between neighboring candle wick boundaries."
+      ],
+      "bounded_conclusion": "Supports the neighboring-wicks empty-zone definition.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_IMB_GEOMETRY"
+      ],
+      "unresolved": [
+        "No impulse-size threshold or entry quote."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_15",
+      "source_asset": "word/media/image15.jpg",
+      "sha256": "769f80f7c5445f32e2d550cc685895a6081c6af62a45112431dcf5d12f7529d8",
+      "image_manifest_key": "19/image15.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image15.jpg",
+      "dimensions_px": [
+        1268,
+        529
+      ],
+      "source_location": {
+        "xml_paragraph_index": 124,
+        "preceding_or_containing_clean_paragraph": "P0112",
+        "next_clean_paragraph": "P0113",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId21",
+          "target": "media/image15.jpg",
+          "branch": "PRIMARY_CHOICE"
+        },
+        {
+          "relationship_id": "rId23",
+          "target": "media/image140.jpg",
+          "branch": "FALLBACK_DUPLICATE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Bullish three-candle imbalance schema",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "imbalance"
+      ],
+      "direct_visual_observations": [
+        "The first red candle upper wick and the third green candle lower wick bound the displayed gap; the large middle green candle spans it. A further continuation candle is drawn."
+      ],
+      "bounded_conclusion": "Clarifies the displayed bullish gap geometry as first-high to third-low around a middle impulse.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_IMB_GEOMETRY",
+        "M_IMB_ORIGIN"
+      ],
+      "unresolved": [
+        "A universal bearish mirror is not independently illustrated in this figure.",
+        "No minimum gap/impulse magnitude."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_16",
+      "source_asset": "word/media/image16.jpg",
+      "sha256": "3abba09586307ae98bd08cda70205a31894a95fd9c685557c2011317d9d59092",
+      "image_manifest_key": "19/image16.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image16.jpg",
+      "dimensions_px": [
+        1268,
+        524
+      ],
+      "source_location": {
+        "xml_paragraph_index": 124,
+        "preceding_or_containing_clean_paragraph": "P0112",
+        "next_clean_paragraph": "P0113",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId22",
+          "target": "media/image16.jpg",
+          "branch": "PRIMARY_CHOICE"
+        },
+        {
+          "relationship_id": "rId24",
+          "target": "media/image150.jpg",
+          "branch": "FALLBACK_DUPLICATE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Bullish imbalance return illustration",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "imbalance"
+      ],
+      "direct_visual_observations": [
+        "The same first-high/third-low boundaries persist; later line movement enters and traverses the gap before rising."
+      ],
+      "bounded_conclusion": "Illustrates subsequent return and crossing, without an expiry or guaranteed date.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_IMB_RETURN"
+      ],
+      "unresolved": [
+        "No entry, stop, guaranteed future behavior or timeout."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_17",
+      "source_asset": "word/media/image17.jpg",
+      "sha256": "a8c09fb5da019793b8600dff2a056a6124601a0094a19c5f82cb62724d2b6c4e",
+      "image_manifest_key": "19/image17.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image17.jpg",
+      "dimensions_px": [
+        1268,
+        610
+      ],
+      "source_location": {
+        "xml_paragraph_index": 129,
+        "preceding_or_containing_clean_paragraph": "P0116",
+        "next_clean_paragraph": "P0117",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId25",
+          "target": "media/image17.jpg",
+          "branch": "PRIMARY_CHOICE"
+        },
+        {
+          "relationship_id": "rId27",
+          "target": "media/image160.jpg",
+          "branch": "FALLBACK_DUPLICATE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Bearish Breaker on candles",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "Снятие ликвидности",
+        "breaker"
+      ],
+      "direct_visual_observations": [
+        "Price sweeps above a prior high, falls sharply through the marked zone, and later revisits it from below."
+      ],
+      "bounded_conclusion": "Corroborates sweep→downward pierce→later retest in this Breaker example.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_BREAKER_PARENT",
+        "M_BREAKER_SEQUENCE"
+      ],
+      "unresolved": [
+        "CHOCH is not separately labeled in this particular chart; P0116 and image18 supply that stated relation.",
+        "No stop buffer or exact entry."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_18",
+      "source_asset": "word/media/image18.jpg",
+      "sha256": "174ba866f4b37de25264eedeed18b251c3954b04ac3b825b7a39253bf9a5cc6f",
+      "image_manifest_key": "19/image18.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image18.jpg",
+      "dimensions_px": [
+        1268,
+        628
+      ],
+      "source_location": {
+        "xml_paragraph_index": 129,
+        "preceding_or_containing_clean_paragraph": "P0116",
+        "next_clean_paragraph": "P0117",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId26",
+          "target": "media/image18.jpg",
+          "branch": "PRIMARY_CHOICE"
+        },
+        {
+          "relationship_id": "rId28",
+          "target": "media/image170.jpg",
+          "branch": "FALLBACK_DUPLICATE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Breaker schema",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "Вынос ликвидности над крайним high (Либо крайним low в восходящем варианте)",
+        "Зона имбаланса",
+        "choch",
+        "breaker"
+      ],
+      "direct_visual_observations": [
+        "A higher sweep takes liquidity above the last high; the downward imbalance movement crosses the marked choch low; price then revisits the Breaker zone before declining."
+      ],
+      "bounded_conclusion": "The caption explicitly names last high, or last low in the upward variant; the schema confirms imbalance/CHOCH before retest.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "EXPLICIT_CAPTION_AND_SCHEMATIC_RELATIONS_WITH_NAMED_BULLISH_MIRROR",
+      "related_text_rule_ids": [
+        "M_BREAKER_SEQUENCE"
+      ],
+      "unresolved": [
+        "No numeric impulse requirement, pierce buffer, stop or entry quote."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_19",
+      "source_asset": "word/media/image19.jpg",
+      "sha256": "6f9d5563da2857954e14bf989484fe6d2d51d409951b7eaa3e3dfbf889ad82a2",
+      "image_manifest_key": "19/image19.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image19.jpg",
+      "dimensions_px": [
+        1494,
+        662
+      ],
+      "source_location": {
+        "xml_paragraph_index": 134,
+        "preceding_or_containing_clean_paragraph": "P0121",
+        "next_clean_paragraph": "P0122",
+        "paragraph_location_relation": "WITHIN_TEXT_PARAGRAPH"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId29",
+          "target": "media/image19.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Equal-high/low liquidity schematics",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "equal lows",
+        "equla highs",
+        "$"
+      ],
+      "direct_visual_observations": [
+        "One two-low pattern explicitly labeled equal lows has an upward-tilted dotted reference; other equal-low/high sets are horizontal or slightly tilted."
+      ],
+      "bounded_conclusion": "Exact horizontal price equality is not universally required by the depicted equal-low concept.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_LIQ_OBJECTS"
+      ],
+      "unresolved": [
+        "No permissible angle, tick tolerance, percentage, minimum swing count beyond individual examples, or substructure rule is quantified."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_20",
+      "source_asset": "word/media/image20.jpg",
+      "sha256": "4931d9ea03e48c73d0f37aeee9edcf22e110b4eee4586fd86c258f5f8078d5cd",
+      "image_manifest_key": "19/image20.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image20.jpg",
+      "dimensions_px": [
+        1466,
+        646
+      ],
+      "source_location": {
+        "xml_paragraph_index": 135,
+        "preceding_or_containing_clean_paragraph": "P0121",
+        "next_clean_paragraph": "P0122",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId30",
+          "target": "media/image20.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Trendline liquidity schematics",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "trend line",
+        "$"
+      ],
+      "direct_visual_observations": [
+        "Ascending lows and descending highs lie on dotted trendline references."
+      ],
+      "bounded_conclusion": "Supports trendline-liquidity context without a unique line-fitting algorithm.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_LIQ_OBJECTS"
+      ],
+      "unresolved": [
+        "No fitting tolerance or ranking among alternative valid lines."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_21",
+      "source_asset": "word/media/image21.jpg",
+      "sha256": "3fe2b814568c35d470c560cb6ae29daedec6ebc5e527f69d60219b3ee785e99a",
+      "image_manifest_key": "19/image21.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image21.jpg",
+      "dimensions_px": [
+        1268,
+        533
+      ],
+      "source_location": {
+        "xml_paragraph_index": 140,
+        "preceding_or_containing_clean_paragraph": "P0126",
+        "next_clean_paragraph": "P0127",
+        "paragraph_location_relation": "WITHIN_TEXT_PARAGRAPH"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId31",
+          "target": "media/image21.jpg",
+          "branch": "PRIMARY_CHOICE"
+        },
+        {
+          "relationship_id": "rId33",
+          "target": "media/image200.jpg",
+          "branch": "FALLBACK_DUPLICATE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Range first anchors",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [],
+      "direct_visual_observations": [
+        "After a strong rise, the first high and following low are highlighted red; later highs/lows vary."
+      ],
+      "bounded_conclusion": "Corroborates first-high-after-impulse and first-low pairing in this rising-impulse example.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_RANGE_ANCHORS"
+      ],
+      "unresolved": [
+        "No causal impulse segmentation or swing-recognition algorithm."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_22",
+      "source_asset": "word/media/image22.jpg",
+      "sha256": "6a29ca6ff6edcaf35004a308ea52e10f870314db315b7ee3c8f0e01c53194ab8",
+      "image_manifest_key": "19/image22.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image22.jpg",
+      "dimensions_px": [
+        1268,
+        531
+      ],
+      "source_location": {
+        "xml_paragraph_index": 140,
+        "preceding_or_containing_clean_paragraph": "P0126",
+        "next_clean_paragraph": "P0127",
+        "paragraph_location_relation": "WITHIN_TEXT_PARAGRAPH"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId32",
+          "target": "media/image22.jpg",
+          "branch": "PRIMARY_CHOICE"
+        },
+        {
+          "relationship_id": "rId34",
+          "target": "media/image210.jpg",
+          "branch": "FALLBACK_DUPLICATE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Range bounds and midpoint",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "1",
+        "0.5",
+        "0"
+      ],
+      "direct_visual_observations": [
+        "The first highlighted high/low define upper/lower horizontal boundaries; midpoint is labeled 0.5; later excursions cross both sides."
+      ],
+      "bounded_conclusion": "Confirms range boundary/midpoint geometry and illustrated deviations.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_RANGE_ANCHORS",
+        "M_RANGE_MIDPOINT",
+        "M_RANGE_DEVIATION"
+      ],
+      "unresolved": [
+        "No numeric midpoint-reaction quality or deviation threshold."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_23",
+      "source_asset": "word/media/image23.jpg",
+      "sha256": "4ea93e8e697f85283eb708642ebb84decbe11ebd0d1819a607f2d4b66eee01ae",
+      "image_manifest_key": "19/image23.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image23.jpg",
+      "dimensions_px": [
+        1268,
+        608
+      ],
+      "source_location": {
+        "xml_paragraph_index": 145,
+        "preceding_or_containing_clean_paragraph": "P0130",
+        "next_clean_paragraph": "P0131",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId35",
+          "target": "media/image23.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Range return/CHOCH/OB retest and target",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "Первое касание, по которому строим верх боковика.",
+        "Девиация - выход цены из боковика.",
+        "После возвращения цены в боковик + слома структуры Мы будем набирать шорт позицию из последней рабочей зоны ( orderblock ) перед сломом структуры.",
+        "Первое касание, по которому строим низ боковика.",
+        "Цель сделки - противоположная сторона боковика. Очень часто девиация сверху приводит к девиации снизу и наоборот.",
+        "orderblock",
+        "choch",
+        "1",
+        "0.5",
+        "0"
+      ],
+      "direct_visual_observations": [
+        "Upper/lower first touches mark range bounds. Price deviates above, returns, crosses a red choch reference downward, then revisits the shaded pre-break orderblock. The final arrow points toward the opposite/lower range side.",
+        "The explicitly labeled first lower-bound touch occurs before the explicitly labeled first upper-bound touch, unlike the high-first rising-impulse pairing in figures21/22."
+      ],
+      "bounded_conclusion": "Resolves the illustrated P0130 short setup: deviation→return with structure break/CHOCH→retest of the last working OB before break→short. The explicit trade target is the opposite side of the range.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "EXPLICIT_SETUP_CAPTION_AND_LABELED_CHRONOLOGY; NOT_EXCLUSIVE_RANGE_STRATEGY",
+      "related_text_rule_ids": [
+        "M_RANGE_RETEST_SETUP",
+        "M_RANGE_ANCHORS",
+        "M_RANGE_DEVIATION",
+        "M_LIQ_TARGET"
+      ],
+      "unresolved": [
+        "No ordering between return crossing the range boundary and CHOCH beyond their association is separately required.",
+        "No exact quote inside the OB, protective stop, buffer, exit allocation, or remaining-position lifecycle.",
+        "Very often an opposite deviation occurs is a qualitative expectation, not a mandatory excursion or extra target buffer.",
+        "P0129 calls this one setup, so it is not promoted to every allowed Range strategy.",
+        "Do not impose universal high-before-low ordering of the boundary pair; this figure visibly presents the low touch first."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_24",
+      "source_asset": "word/media/image24.jpg",
+      "sha256": "b2515bfd2c8a25ff580946b633d9323b07be8b71d52ef8de1dc438007c730dc0",
+      "image_manifest_key": "19/image24.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image24.jpg",
+      "dimensions_px": [
+        894,
+        1278
+      ],
+      "source_location": {
+        "xml_paragraph_index": 159,
+        "preceding_or_containing_clean_paragraph": "P0143",
+        "next_clean_paragraph": "P0144",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId36",
+          "target": "media/image24.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Fibonacci configuration screenshot",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "0",
+        "0.5",
+        "0.62",
+        "0.705",
+        "0.79",
+        "1"
+      ],
+      "direct_visual_observations": [
+        "Checkboxes enable 0, 0.5, 0.62, 0.705, 0.79 and 1; other displayed settings are disabled."
+      ],
+      "bounded_conclusion": "Confirms source custom grid uses 0.62 (not silently substituted classic 0.618) and supplies endpoint labels 0/1.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "EXPLICIT_ENABLED_GRID_CONFIGURATION",
+      "related_text_rule_ids": [
+        "M_FIB_LEVELS",
+        "M_OTE_GEOMETRY"
+      ],
+      "unresolved": [
+        "Disabled UI alternatives are not source-authorized trading branches merely because the dialog displays them."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_25",
+      "source_asset": "word/media/image25.jpg",
+      "sha256": "90f8587504027dd586d5f97ff79a396a0b622bf3fee5aef99e454d6f66fe2a9a",
+      "image_manifest_key": "19/image25.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image25.jpg",
+      "dimensions_px": [
+        1268,
+        594
+      ],
+      "source_location": {
+        "xml_paragraph_index": 170,
+        "preceding_or_containing_clean_paragraph": "P0153",
+        "next_clean_paragraph": "P0154",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId37",
+          "target": "media/image25.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Bullish OTE coordinate orientation",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "0",
+        "0.5",
+        "0.62",
+        "0.705",
+        "0.79",
+        "1",
+        "ищем в этой зоне инструмент"
+      ],
+      "direct_visual_observations": [
+        "A rising impulse goes from the lower highlighted endpoint labeled 1 to the upper highlighted endpoint labeled 0. The cyan 0.705–0.79 band lies near the lower endpoint; its callout says to look for an instrument there."
+      ],
+      "bounded_conclusion": "Identifies LONG example ratio coordinates: 0=impulse high H, 1=impulse low L; OTE is the deep retracement band nearer L. This can close LONG coordinate orientation conditional on source-qualified H/L.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "EXPLICIT_LONG_COORDINATE_LABELS_CONDITIONAL_ON_SOURCE_VALID_ANCHORS",
+      "related_text_rule_ids": [
+        "M_OTE_ANCHOR_TEXT",
+        "M_OTE_GEOMETRY"
+      ],
+      "unresolved": [
+        "Selection/segmentation of H/L remains qualitative and unavailable automatically.",
+        "No bearish OTE counterpart or short coordinate mapping is shown.",
+        "Mouse-click/drawing order is not labeled and is irrelevant to encoding the identified ratio-price geometry.",
+        "The literal P0153 wording is preserved; no guessed textual correction is required to use the visibly labeled LONG mapping."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_26",
+      "source_asset": "word/media/image26.jpg",
+      "sha256": "080d37f6fa91d099247a7bdddc8955af25ee3a39dc0a1f8cc442992309754c17",
+      "image_manifest_key": "19/image26.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image26.jpg",
+      "dimensions_px": [
+        1268,
+        594
+      ],
+      "source_location": {
+        "xml_paragraph_index": 173,
+        "preceding_or_containing_clean_paragraph": "P0155",
+        "next_clean_paragraph": "P0156",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId38",
+          "target": "media/image26.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Bullish OTE/OB confluence",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "0",
+        "0.5",
+        "0.62",
+        "0.705",
+        "0.79",
+        "1",
+        "orderblock"
+      ],
+      "direct_visual_observations": [
+        "Same 0-at-high/1-at-low grid; price retraces into the cyan OTE/OB overlap; a long-position graphic is shown with an upper target at the prior high and a red lower risk area."
+      ],
+      "bounded_conclusion": "Corroborates bullish direction and OTE/OB confluence. The drawn long target/risk box belongs to this plotted example.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "LONG_ORIENTATION_CORROBORATION_AND_ILLUSTRATED_POSITION_ONLY",
+      "related_text_rule_ids": [
+        "M_OTE_GEOMETRY",
+        "M_OTE_OB"
+      ],
+      "unresolved": [
+        "No universal prior-high target, exact entry, protective-stop rule, risk/reward multiple, or buffer is stated in its labels.",
+        "Printed sample prices and graphic dimensions must not become rules."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_27",
+      "source_asset": "word/media/image27.jpg",
+      "sha256": "106a333c1872c3eee633c8ccd1f9eb173cce540b08a25bae8ebac5975a2b5eb6",
+      "image_manifest_key": "19/image27.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image27.jpg",
+      "dimensions_px": [
+        1268,
+        445
+      ],
+      "source_location": {
+        "xml_paragraph_index": 181,
+        "preceding_or_containing_clean_paragraph": "P0162",
+        "next_clean_paragraph": "P0163",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId39",
+          "target": "media/image27.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Three-candle bearish SFP schema",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "Зона прошлых вершин/низов. Вершина/низ боковика.",
+        "Цене не дали закрепиться телом.",
+        "Свеча поглотила тело прошлой свечи.",
+        "SFP pattern"
+      ],
+      "direct_visual_observations": [
+        "Three candles are depicted left-to-right. Candle 2 has a wick beyond the dotted prior-high/context level and its body below it. Candle 3 is labeled as engulfing the body of the prior candle (candle 2). No candle 4 is drawn/labeled."
+      ],
+      "bounded_conclusion": "The original-three-candle bearish illustration uses third-candle body engulf of the sweep candle as confirmation geometry. This is explicit illustrated-instance geometry, not proof that engulf is mandatory for every SOURCE-permitted SFP.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "EXPLICIT_ILLUSTRATED_INSTANCE_GEOMETRY; UNIVERSAL_MANDATORY_STATUS_UNKNOWN",
+      "related_text_rule_ids": [
+        "M_SFP_SHAPE",
+        "M_SFP_REVERSAL",
+        "M_SFP_CONTEXT"
+      ],
+      "unresolved": [
+        "Universal engulf requirement remains UNKNOWN.",
+        "The source text permits an optional fourth directional confirmation, but the illustrated third engulf candle is not that fourth.",
+        "No universal body-close count, wick ratio, bar deadline or trade-entry time is supplied.",
+        "An earlier sweep/next-open transport must not be rejected solely because the illustrated original-three-candle completion uses later evidence."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_28",
+      "source_asset": "word/media/image28.jpg",
+      "sha256": "1dc91d46f479024a5345b2293700773e22668e66c44f0d21294ef90b23702db6",
+      "image_manifest_key": "19/image28.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image28.jpg",
+      "dimensions_px": [
+        1268,
+        637
+      ],
+      "source_location": {
+        "xml_paragraph_index": 182,
+        "preceding_or_containing_clean_paragraph": "P0162",
+        "next_clean_paragraph": "P0163",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId40",
+          "target": "media/image28.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "Bearish SFP on candles",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "Цена подходит к зоне интереса.",
+        "Выход цены за прошлый high без закрепа телом.",
+        "Свеча поглотила тело прошлой.",
+        "Разворот цена с лонговой на шортовую."
+      ],
+      "direct_visual_observations": [
+        "Price approaches the prior-high POI. The annotated sweep candle extends above prior high without body establishment. The following bearish candle is labeled engulfing the previous body. Later declining price is illustrated."
+      ],
+      "bounded_conclusion": "Corroborates the illustrated sweep→next candle body-engulf reversal relation; the confirming engulf candle corresponds to third position in image27. No fourth optional confirmation is separately labeled.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "EXPLICIT_ILLUSTRATED_INSTANCE_GEOMETRY; UNIVERSAL_MANDATORY_STATUS_UNKNOWN",
+      "related_text_rule_ids": [
+        "M_SFP_SHAPE",
+        "M_SFP_REVERSAL"
+      ],
+      "unresolved": [
+        "No universal engulf mandate or exact entry at this candle close/open; do not infer a strict body threshold from pixels.",
+        "Subsequent candles are chart context, not a fourth-candle requirement."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_29",
+      "source_asset": "word/media/image29.jpg",
+      "sha256": "ed986805f2e8590404509a6a927fa6fc15b42c2b80a3f5f9f46132706d8657af",
+      "image_manifest_key": "19/image29.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image29.jpg",
+      "dimensions_px": [
+        1268,
+        621
+      ],
+      "source_location": {
+        "xml_paragraph_index": 186,
+        "preceding_or_containing_clean_paragraph": "P0165",
+        "next_clean_paragraph": "P0166",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId41",
+          "target": "media/image29.jpg",
+          "branch": "PRIMARY_INLINE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "AMD phase schema",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "accumulation",
+        "manipulation",
+        "distribution"
+      ],
+      "direct_visual_observations": [
+        "Grey sideways accumulation, lower red manipulation with low excursion, then higher blue distribution/upward structure are marked."
+      ],
+      "bounded_conclusion": "Corroborates sequence and phase-level manipulation context; does not supply automatic segmentation.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_AMD_PHASES"
+      ],
+      "unresolved": [
+        "No phase duration, amplitude, close trigger or trade geometry."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_30",
+      "source_asset": "word/media/image30.jpg",
+      "sha256": "ad134475265a0f03b2c84ccf408d42f39650ba2830e8f3e9fc15265f1294f1ac",
+      "image_manifest_key": "19/image30.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image30.jpg",
+      "dimensions_px": [
+        1268,
+        693
+      ],
+      "source_location": {
+        "xml_paragraph_index": 187,
+        "preceding_or_containing_clean_paragraph": "P0165",
+        "next_clean_paragraph": "P0166",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId42",
+          "target": "media/image30.jpg",
+          "branch": "PRIMARY_CHOICE"
+        },
+        {
+          "relationship_id": "rId44",
+          "target": "media/image290.jpg",
+          "branch": "FALLBACK_DUPLICATE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "AMD chart example",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "accumulation",
+        "manipulation",
+        "distribution"
+      ],
+      "direct_visual_observations": [
+        "The three phases are shaded on an actual candle chart."
+      ],
+      "bounded_conclusion": "Instance annotations of phase intervals do not become numeric phase classifiers.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_AMD_PHASES"
+      ],
+      "unresolved": [
+        "No causal segmentation algorithm or executable entry/exit."
+      ],
+      "trade_entry_allowed": false
+    },
+    {
+      "figure_id": "METHOD_VIS_31",
+      "source_asset": "word/media/image31.jpg",
+      "sha256": "3c298df9dd4a5dd2600f025a15c4b1acb9da326192dff3e47a56a80417089bd9",
+      "image_manifest_key": "19/image31.jpg",
+      "manifest_hash_verified": true,
+      "local_path": "/tmp/stage19-methodichka-images/image31.jpg",
+      "dimensions_px": [
+        1268,
+        643
+      ],
+      "source_location": {
+        "xml_paragraph_index": 187,
+        "preceding_or_containing_clean_paragraph": "P0165",
+        "next_clean_paragraph": "P0166",
+        "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS"
+      },
+      "source_relationship_references": [
+        {
+          "relationship_id": "rId43",
+          "target": "media/image31.jpg",
+          "branch": "PRIMARY_CHOICE"
+        },
+        {
+          "relationship_id": "rId45",
+          "target": "media/image300.jpg",
+          "branch": "FALLBACK_DUPLICATE"
+        }
+      ],
+      "inspection": {
+        "actual_asset_viewed": true,
+        "view_tool": "view_image",
+        "distinct_hash_visual_reads": 1,
+        "ocr_only": false
+      },
+      "topic": "AMD liquidity-swept chart example",
+      "readable_source_labels_verbatim_or_normalized_whitespace": [
+        "accumulation",
+        "manipulation",
+        "distribution",
+        "liquidity swept"
+      ],
+      "direct_visual_observations": [
+        "Red manipulation undercuts an accumulation low and is labeled liquidity swept; subsequent green distribution is shown."
+      ],
+      "bounded_conclusion": "Corroborates manipulation low-sweep context in P0169 without exact timing/volume thresholds.",
+      "source_evidence_classification": "SOURCE_RULE",
+      "generalization_scope": "ILLUSTRATED_INSTANCE_ONLY",
+      "related_text_rule_ids": [
+        "M_AMD_PHASES",
+        "M_AMD_RETURN_LIQUIDITY"
+      ],
+      "unresolved": [
+        "No entry quote, stop, phase threshold, re-entry or allocation rule."
+      ],
+      "trade_entry_allowed": false
+    }
+  ],
+  "document_image_reference_inventory": [
+    {
+      "drawing_order": 1,
+      "xml_paragraph_index": 63,
+      "raw_nonempty_paragraphs_before_or_containing": 62,
+      "preceding_or_containing_clean_paragraph": "P0062",
+      "paragraph_text": "",
+      "relationship_id": "rId5",
+      "relationship_target": "media/image1.jpg",
+      "sha256": "b89e88686d16805a81e3692c74ba394e21225a51ed9e67cfa602e2db01b3d3fd",
+      "local_path": "/tmp/stage19-methodichka-images/image1.jpg",
+      "bytes": 51353,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image1.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0063",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Восходящий тренд состоит из более высоких минимумов (HL) и более высоких максимумов (HH).",
+      "next_clean_text": "Бычья структура рынка."
+    },
+    {
+      "drawing_order": 2,
+      "xml_paragraph_index": 65,
+      "raw_nonempty_paragraphs_before_or_containing": 63,
+      "preceding_or_containing_clean_paragraph": "P0063",
+      "paragraph_text": "",
+      "relationship_id": "rId6",
+      "relationship_target": "media/image2.jpg",
+      "sha256": "e1c69cf3cabb4725bd76f0e95e75273fabb259290c4d37cf72402cdd4ff7e99c",
+      "local_path": "/tmp/stage19-methodichka-images/image2.jpg",
+      "bytes": 108242,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image2.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0064",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Бычья структура рынка.",
+      "next_clean_text": "Бычья структура на графике."
+    },
+    {
+      "drawing_order": 3,
+      "xml_paragraph_index": 72,
+      "raw_nonempty_paragraphs_before_or_containing": 69,
+      "preceding_or_containing_clean_paragraph": "P0069",
+      "paragraph_text": "",
+      "relationship_id": "rId7",
+      "relationship_target": "media/image3.jpg",
+      "sha256": "72a90bbb4aa0b4dbdce69dd3db031eaa0b818e5d3057f99a70984229c94a61a5",
+      "local_path": "/tmp/stage19-methodichka-images/image3.jpg",
+      "bytes": 45927,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image3.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0070",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Нисходящий тренд - более низкие минимумы (LL) и более низкие максимумы (LH).",
+      "next_clean_text": "Медьвежья структура."
+    },
+    {
+      "drawing_order": 4,
+      "xml_paragraph_index": 74,
+      "raw_nonempty_paragraphs_before_or_containing": 70,
+      "preceding_or_containing_clean_paragraph": "P0070",
+      "paragraph_text": "",
+      "relationship_id": "rId8",
+      "relationship_target": "media/image4.jpg",
+      "sha256": "9c4b808f6ad20a62a0bd0fd0dd7a1236142ef66037b6b45175cd9bf2e79044bf",
+      "local_path": "/tmp/stage19-methodichka-images/image4.jpg",
+      "bytes": 96592,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image4.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0071",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Медьвежья структура.",
+      "next_clean_text": "Медьвежья структура на графике."
+    },
+    {
+      "drawing_order": 5,
+      "xml_paragraph_index": 85,
+      "raw_nonempty_paragraphs_before_or_containing": 80,
+      "preceding_or_containing_clean_paragraph": "P0080",
+      "paragraph_text": "",
+      "relationship_id": "rId9",
+      "relationship_target": "media/image5.jpg",
+      "sha256": "9245236b048e416c4c43d90b55a125a1aa927b1c9e4d6537e668a4edf50d697a",
+      "local_path": "/tmp/stage19-methodichka-images/image5.jpg",
+      "bytes": 41575,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image5.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0081",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Опираясь на эту информацию можно определить дальнейшее движение цены с большой вероятностью.",
+      "next_clean_text": "Схематично боковое движение"
+    },
+    {
+      "drawing_order": 6,
+      "xml_paragraph_index": 87,
+      "raw_nonempty_paragraphs_before_or_containing": 81,
+      "preceding_or_containing_clean_paragraph": "P0081",
+      "paragraph_text": "",
+      "relationship_id": "rId10",
+      "relationship_target": "media/image6.jpg",
+      "sha256": "e2d1b4e3208148daeb668fe6710a9ef7f3d069b934e4b1991183b64b7bcc57c3",
+      "local_path": "/tmp/stage19-methodichka-images/image6.jpg",
+      "bytes": 106023,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image6.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0082",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Схематично боковое движение",
+      "next_clean_text": "Консолидация на графике с выходом и продолжение бычьего движения"
+    },
+    {
+      "drawing_order": 7,
+      "xml_paragraph_index": 96,
+      "raw_nonempty_paragraphs_before_or_containing": 90,
+      "preceding_or_containing_clean_paragraph": "P0090",
+      "paragraph_text": "Схема слома бычьей структуры",
+      "relationship_id": "rId11",
+      "relationship_target": "media/image7.jpg",
+      "sha256": "04843fe2412a4af70fd7e4aaacd950e0a3ee16d57e6abb8111387f9e55c22088",
+      "local_path": "/tmp/stage19-methodichka-images/image7.jpg",
+      "bytes": 35791,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image7.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0091",
+      "paragraph_location_relation": "WITHIN_TEXT_PARAGRAPH",
+      "preceding_or_containing_clean_text": "Схема слома бычьей структуры",
+      "next_clean_text": "Слом бычьей структуры на графике"
+    },
+    {
+      "drawing_order": 8,
+      "xml_paragraph_index": 97,
+      "raw_nonempty_paragraphs_before_or_containing": 90,
+      "preceding_or_containing_clean_paragraph": "P0090",
+      "paragraph_text": "",
+      "relationship_id": "rId12",
+      "relationship_target": "media/image8.jpg",
+      "sha256": "aa4243e677520e3ff5fb30cf07834e6d862140ed8ee5a344f86ae56f744159d3",
+      "local_path": "/tmp/stage19-methodichka-images/image8.jpg",
+      "bytes": 63214,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image8.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0091",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Схема слома бычьей структуры",
+      "next_clean_text": "Слом бычьей структуры на графике"
+    },
+    {
+      "drawing_order": 9,
+      "xml_paragraph_index": 103,
+      "raw_nonempty_paragraphs_before_or_containing": 96,
+      "preceding_or_containing_clean_paragraph": "P0096",
+      "paragraph_text": "Схкма",
+      "relationship_id": "rId13",
+      "relationship_target": "media/image9.jpg",
+      "sha256": "c968d512659b9bb50ffb53a2f66cd07282d7d3aec999f7d35c431bc228dcb22d",
+      "local_path": "/tmp/stage19-methodichka-images/image9.jpg",
+      "bytes": 39317,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image9.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0097",
+      "paragraph_location_relation": "WITHIN_TEXT_PARAGRAPH",
+      "preceding_or_containing_clean_text": "Схкма",
+      "next_clean_text": "слома медвежьей структуры"
+    },
+    {
+      "drawing_order": 10,
+      "xml_paragraph_index": 105,
+      "raw_nonempty_paragraphs_before_or_containing": 98,
+      "preceding_or_containing_clean_paragraph": "P0098",
+      "paragraph_text": "Схема слома медвежьей структуры на графике",
+      "relationship_id": "rId14",
+      "relationship_target": "media/image10.jpg",
+      "sha256": "8beb5c9cb82528ba946e26213a46eb5c9c396c1bbc85efea56d82404a0c39aee",
+      "local_path": "/tmp/stage19-methodichka-images/image10.jpg",
+      "bytes": 60785,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image10.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0099",
+      "paragraph_location_relation": "WITHIN_TEXT_PARAGRAPH",
+      "preceding_or_containing_clean_text": "Схема слома медвежьей структуры на графике",
+      "next_clean_text": "Bos выступает Lower High (LH) образовавший последний Lower Low (LL)"
+    },
+    {
+      "drawing_order": 11,
+      "xml_paragraph_index": 117,
+      "raw_nonempty_paragraphs_before_or_containing": 109,
+      "preceding_or_containing_clean_paragraph": "P0108",
+      "paragraph_text": "",
+      "relationship_id": "rId15",
+      "relationship_target": "media/image11.jpg",
+      "sha256": "1ee1d48a7afbc26ce4a3b2229bf2230af63abe9e48816541007578b8c08c079e",
+      "local_path": "/tmp/stage19-methodichka-images/image11.jpg",
+      "bytes": 55612,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_CHOICE",
+      "image_asset_manifest_key": "19/image11.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0109",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "тело ордерблока должно быть большим, в то время как фитили-маленькими",
+      "next_clean_text": "IMBALANCE(имбаланс)"
+    },
+    {
+      "drawing_order": 12,
+      "xml_paragraph_index": 117,
+      "raw_nonempty_paragraphs_before_or_containing": 109,
+      "preceding_or_containing_clean_paragraph": "P0108",
+      "paragraph_text": "",
+      "relationship_id": "rId16",
+      "relationship_target": "media/image12.jpg",
+      "sha256": "368de3cf7636695f15cb8078cb2f6ef83ad2d7b36910f7e7c824578a9859f3d7",
+      "local_path": "/tmp/stage19-methodichka-images/image12.jpg",
+      "bytes": 33877,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_CHOICE",
+      "image_asset_manifest_key": "19/image12.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0109",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "тело ордерблока должно быть большим, в то время как фитили-маленькими",
+      "next_clean_text": "IMBALANCE(имбаланс)"
+    },
+    {
+      "drawing_order": 13,
+      "xml_paragraph_index": 117,
+      "raw_nonempty_paragraphs_before_or_containing": 109,
+      "preceding_or_containing_clean_paragraph": "P0108",
+      "paragraph_text": "",
+      "relationship_id": "rId17",
+      "relationship_target": "media/image100.jpg",
+      "sha256": "1ee1d48a7afbc26ce4a3b2229bf2230af63abe9e48816541007578b8c08c079e",
+      "local_path": "/tmp/stage19-methodichka-images/image100.jpg",
+      "bytes": 55612,
+      "xml_element": "imagedata",
+      "rendering_branch": "FALLBACK_DUPLICATE",
+      "image_asset_manifest_key": "19/image100.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0109",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "тело ордерблока должно быть большим, в то время как фитили-маленькими",
+      "next_clean_text": "IMBALANCE(имбаланс)"
+    },
+    {
+      "drawing_order": 14,
+      "xml_paragraph_index": 117,
+      "raw_nonempty_paragraphs_before_or_containing": 109,
+      "preceding_or_containing_clean_paragraph": "P0108",
+      "paragraph_text": "",
+      "relationship_id": "rId18",
+      "relationship_target": "media/image110.jpg",
+      "sha256": "368de3cf7636695f15cb8078cb2f6ef83ad2d7b36910f7e7c824578a9859f3d7",
+      "local_path": "/tmp/stage19-methodichka-images/image110.jpg",
+      "bytes": 33877,
+      "xml_element": "imagedata",
+      "rendering_branch": "FALLBACK_DUPLICATE",
+      "image_asset_manifest_key": "19/image110.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0109",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "тело ордерблока должно быть большим, в то время как фитили-маленькими",
+      "next_clean_text": "IMBALANCE(имбаланс)"
+    },
+    {
+      "drawing_order": 15,
+      "xml_paragraph_index": 118,
+      "raw_nonempty_paragraphs_before_or_containing": 109,
+      "preceding_or_containing_clean_paragraph": "P0108",
+      "paragraph_text": "",
+      "relationship_id": "rId19",
+      "relationship_target": "media/image13.jpg",
+      "sha256": "919fd271e7d611c8ff47589b3ecfc86a2f9527b710569ecbaba7c158003bf8a4",
+      "local_path": "/tmp/stage19-methodichka-images/image13.jpg",
+      "bytes": 34306,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image13.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0109",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "тело ордерблока должно быть большим, в то время как фитили-маленькими",
+      "next_clean_text": "IMBALANCE(имбаланс)"
+    },
+    {
+      "drawing_order": 16,
+      "xml_paragraph_index": 123,
+      "raw_nonempty_paragraphs_before_or_containing": 113,
+      "preceding_or_containing_clean_paragraph": "P0112",
+      "paragraph_text": "",
+      "relationship_id": "rId20",
+      "relationship_target": "media/image14.jpg",
+      "sha256": "9a114cc421872fc0b6e3247bc03f2b84e9b177f11c3c6bbb7b0d0cab27a04e45",
+      "local_path": "/tmp/stage19-methodichka-images/image14.jpg",
+      "bytes": 33077,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image14.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0113",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Отмечать имбаланс нужно по теням соседних свечей = зона пустоты.",
+      "next_clean_text": "BREAKER(брейкер)"
+    },
+    {
+      "drawing_order": 17,
+      "xml_paragraph_index": 124,
+      "raw_nonempty_paragraphs_before_or_containing": 113,
+      "preceding_or_containing_clean_paragraph": "P0112",
+      "paragraph_text": "",
+      "relationship_id": "rId21",
+      "relationship_target": "media/image15.jpg",
+      "sha256": "769f80f7c5445f32e2d550cc685895a6081c6af62a45112431dcf5d12f7529d8",
+      "local_path": "/tmp/stage19-methodichka-images/image15.jpg",
+      "bytes": 25282,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_CHOICE",
+      "image_asset_manifest_key": "19/image15.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0113",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Отмечать имбаланс нужно по теням соседних свечей = зона пустоты.",
+      "next_clean_text": "BREAKER(брейкер)"
+    },
+    {
+      "drawing_order": 18,
+      "xml_paragraph_index": 124,
+      "raw_nonempty_paragraphs_before_or_containing": 113,
+      "preceding_or_containing_clean_paragraph": "P0112",
+      "paragraph_text": "",
+      "relationship_id": "rId22",
+      "relationship_target": "media/image16.jpg",
+      "sha256": "3abba09586307ae98bd08cda70205a31894a95fd9c685557c2011317d9d59092",
+      "local_path": "/tmp/stage19-methodichka-images/image16.jpg",
+      "bytes": 31982,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_CHOICE",
+      "image_asset_manifest_key": "19/image16.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0113",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Отмечать имбаланс нужно по теням соседних свечей = зона пустоты.",
+      "next_clean_text": "BREAKER(брейкер)"
+    },
+    {
+      "drawing_order": 19,
+      "xml_paragraph_index": 124,
+      "raw_nonempty_paragraphs_before_or_containing": 113,
+      "preceding_or_containing_clean_paragraph": "P0112",
+      "paragraph_text": "",
+      "relationship_id": "rId23",
+      "relationship_target": "media/image140.jpg",
+      "sha256": "769f80f7c5445f32e2d550cc685895a6081c6af62a45112431dcf5d12f7529d8",
+      "local_path": "/tmp/stage19-methodichka-images/image140.jpg",
+      "bytes": 25282,
+      "xml_element": "imagedata",
+      "rendering_branch": "FALLBACK_DUPLICATE",
+      "image_asset_manifest_key": "19/image140.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0113",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Отмечать имбаланс нужно по теням соседних свечей = зона пустоты.",
+      "next_clean_text": "BREAKER(брейкер)"
+    },
+    {
+      "drawing_order": 20,
+      "xml_paragraph_index": 124,
+      "raw_nonempty_paragraphs_before_or_containing": 113,
+      "preceding_or_containing_clean_paragraph": "P0112",
+      "paragraph_text": "",
+      "relationship_id": "rId24",
+      "relationship_target": "media/image150.jpg",
+      "sha256": "3abba09586307ae98bd08cda70205a31894a95fd9c685557c2011317d9d59092",
+      "local_path": "/tmp/stage19-methodichka-images/image150.jpg",
+      "bytes": 31982,
+      "xml_element": "imagedata",
+      "rendering_branch": "FALLBACK_DUPLICATE",
+      "image_asset_manifest_key": "19/image150.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0113",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Отмечать имбаланс нужно по теням соседних свечей = зона пустоты.",
+      "next_clean_text": "BREAKER(брейкер)"
+    },
+    {
+      "drawing_order": 21,
+      "xml_paragraph_index": 129,
+      "raw_nonempty_paragraphs_before_or_containing": 117,
+      "preceding_or_containing_clean_paragraph": "P0116",
+      "paragraph_text": "",
+      "relationship_id": "rId25",
+      "relationship_target": "media/image17.jpg",
+      "sha256": "a8c09fb5da019793b8600dff2a056a6124601a0094a19c5f82cb62724d2b6c4e",
+      "local_path": "/tmp/stage19-methodichka-images/image17.jpg",
+      "bytes": 62096,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_CHOICE",
+      "image_asset_manifest_key": "19/image17.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0117",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Объязательно брейкер должен прошиться имбалансом, после чего мы должны получить choch.",
+      "next_clean_text": "LIQUIDITY(ликвидность - стопы игроков)"
+    },
+    {
+      "drawing_order": 22,
+      "xml_paragraph_index": 129,
+      "raw_nonempty_paragraphs_before_or_containing": 117,
+      "preceding_or_containing_clean_paragraph": "P0116",
+      "paragraph_text": "",
+      "relationship_id": "rId26",
+      "relationship_target": "media/image18.jpg",
+      "sha256": "174ba866f4b37de25264eedeed18b251c3954b04ac3b825b7a39253bf9a5cc6f",
+      "local_path": "/tmp/stage19-methodichka-images/image18.jpg",
+      "bytes": 31065,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_CHOICE",
+      "image_asset_manifest_key": "19/image18.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0117",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Объязательно брейкер должен прошиться имбалансом, после чего мы должны получить choch.",
+      "next_clean_text": "LIQUIDITY(ликвидность - стопы игроков)"
+    },
+    {
+      "drawing_order": 23,
+      "xml_paragraph_index": 129,
+      "raw_nonempty_paragraphs_before_or_containing": 117,
+      "preceding_or_containing_clean_paragraph": "P0116",
+      "paragraph_text": "",
+      "relationship_id": "rId27",
+      "relationship_target": "media/image160.jpg",
+      "sha256": "a8c09fb5da019793b8600dff2a056a6124601a0094a19c5f82cb62724d2b6c4e",
+      "local_path": "/tmp/stage19-methodichka-images/image160.jpg",
+      "bytes": 62096,
+      "xml_element": "imagedata",
+      "rendering_branch": "FALLBACK_DUPLICATE",
+      "image_asset_manifest_key": "19/image160.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0117",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Объязательно брейкер должен прошиться имбалансом, после чего мы должны получить choch.",
+      "next_clean_text": "LIQUIDITY(ликвидность - стопы игроков)"
+    },
+    {
+      "drawing_order": 24,
+      "xml_paragraph_index": 129,
+      "raw_nonempty_paragraphs_before_or_containing": 117,
+      "preceding_or_containing_clean_paragraph": "P0116",
+      "paragraph_text": "",
+      "relationship_id": "rId28",
+      "relationship_target": "media/image170.jpg",
+      "sha256": "174ba866f4b37de25264eedeed18b251c3954b04ac3b825b7a39253bf9a5cc6f",
+      "local_path": "/tmp/stage19-methodichka-images/image170.jpg",
+      "bytes": 31065,
+      "xml_element": "imagedata",
+      "rendering_branch": "FALLBACK_DUPLICATE",
+      "image_asset_manifest_key": "19/image170.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0117",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Объязательно брейкер должен прошиться имбалансом, после чего мы должны получить choch.",
+      "next_clean_text": "LIQUIDITY(ликвидность - стопы игроков)"
+    },
+    {
+      "drawing_order": 25,
+      "xml_paragraph_index": 134,
+      "raw_nonempty_paragraphs_before_or_containing": 122,
+      "preceding_or_containing_clean_paragraph": "P0121",
+      "paragraph_text": "Trendline liquidity(трендовая ликвидность)",
+      "relationship_id": "rId29",
+      "relationship_target": "media/image19.jpg",
+      "sha256": "6f9d5563da2857954e14bf989484fe6d2d51d409951b7eaa3e3dfbf889ad82a2",
+      "local_path": "/tmp/stage19-methodichka-images/image19.jpg",
+      "bytes": 59184,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image19.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0122",
+      "paragraph_location_relation": "WITHIN_TEXT_PARAGRAPH",
+      "preceding_or_containing_clean_text": "Trendline liquidity(трендовая ликвидность)",
+      "next_clean_text": "RANGE(боковик)"
+    },
+    {
+      "drawing_order": 26,
+      "xml_paragraph_index": 135,
+      "raw_nonempty_paragraphs_before_or_containing": 122,
+      "preceding_or_containing_clean_paragraph": "P0121",
+      "paragraph_text": "",
+      "relationship_id": "rId30",
+      "relationship_target": "media/image20.jpg",
+      "sha256": "4931d9ea03e48c73d0f37aeee9edcf22e110b4eee4586fd86c258f5f8078d5cd",
+      "local_path": "/tmp/stage19-methodichka-images/image20.jpg",
+      "bytes": 43797,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image20.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0122",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Trendline liquidity(трендовая ликвидность)",
+      "next_clean_text": "RANGE(боковик)"
+    },
+    {
+      "drawing_order": 27,
+      "xml_paragraph_index": 140,
+      "raw_nonempty_paragraphs_before_or_containing": 127,
+      "preceding_or_containing_clean_paragraph": "P0126",
+      "paragraph_text": "Торгуют боковик только после отклонения ( выхода ) (Девиации) цены за грани боковика.",
+      "relationship_id": "rId31",
+      "relationship_target": "media/image21.jpg",
+      "sha256": "3fe2b814568c35d470c560cb6ae29daedec6ebc5e527f69d60219b3ee785e99a",
+      "local_path": "/tmp/stage19-methodichka-images/image21.jpg",
+      "bytes": 21254,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_CHOICE",
+      "image_asset_manifest_key": "19/image21.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0127",
+      "paragraph_location_relation": "WITHIN_TEXT_PARAGRAPH",
+      "preceding_or_containing_clean_text": "Торгуют боковик только после отклонения ( выхода ) (Девиации) цены за грани боковика.",
+      "next_clean_text": "Отклонение цены от боковика называется девиацией."
+    },
+    {
+      "drawing_order": 28,
+      "xml_paragraph_index": 140,
+      "raw_nonempty_paragraphs_before_or_containing": 127,
+      "preceding_or_containing_clean_paragraph": "P0126",
+      "paragraph_text": "Торгуют боковик только после отклонения ( выхода ) (Девиации) цены за грани боковика.",
+      "relationship_id": "rId32",
+      "relationship_target": "media/image22.jpg",
+      "sha256": "6a29ca6ff6edcaf35004a308ea52e10f870314db315b7ee3c8f0e01c53194ab8",
+      "local_path": "/tmp/stage19-methodichka-images/image22.jpg",
+      "bytes": 30365,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_CHOICE",
+      "image_asset_manifest_key": "19/image22.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0127",
+      "paragraph_location_relation": "WITHIN_TEXT_PARAGRAPH",
+      "preceding_or_containing_clean_text": "Торгуют боковик только после отклонения ( выхода ) (Девиации) цены за грани боковика.",
+      "next_clean_text": "Отклонение цены от боковика называется девиацией."
+    },
+    {
+      "drawing_order": 29,
+      "xml_paragraph_index": 140,
+      "raw_nonempty_paragraphs_before_or_containing": 127,
+      "preceding_or_containing_clean_paragraph": "P0126",
+      "paragraph_text": "Торгуют боковик только после отклонения ( выхода ) (Девиации) цены за грани боковика.",
+      "relationship_id": "rId33",
+      "relationship_target": "media/image200.jpg",
+      "sha256": "3fe2b814568c35d470c560cb6ae29daedec6ebc5e527f69d60219b3ee785e99a",
+      "local_path": "/tmp/stage19-methodichka-images/image200.jpg",
+      "bytes": 21254,
+      "xml_element": "imagedata",
+      "rendering_branch": "FALLBACK_DUPLICATE",
+      "image_asset_manifest_key": "19/image200.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0127",
+      "paragraph_location_relation": "WITHIN_TEXT_PARAGRAPH",
+      "preceding_or_containing_clean_text": "Торгуют боковик только после отклонения ( выхода ) (Девиации) цены за грани боковика.",
+      "next_clean_text": "Отклонение цены от боковика называется девиацией."
+    },
+    {
+      "drawing_order": 30,
+      "xml_paragraph_index": 140,
+      "raw_nonempty_paragraphs_before_or_containing": 127,
+      "preceding_or_containing_clean_paragraph": "P0126",
+      "paragraph_text": "Торгуют боковик только после отклонения ( выхода ) (Девиации) цены за грани боковика.",
+      "relationship_id": "rId34",
+      "relationship_target": "media/image210.jpg",
+      "sha256": "6a29ca6ff6edcaf35004a308ea52e10f870314db315b7ee3c8f0e01c53194ab8",
+      "local_path": "/tmp/stage19-methodichka-images/image210.jpg",
+      "bytes": 30365,
+      "xml_element": "imagedata",
+      "rendering_branch": "FALLBACK_DUPLICATE",
+      "image_asset_manifest_key": "19/image210.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0127",
+      "paragraph_location_relation": "WITHIN_TEXT_PARAGRAPH",
+      "preceding_or_containing_clean_text": "Торгуют боковик только после отклонения ( выхода ) (Девиации) цены за грани боковика.",
+      "next_clean_text": "Отклонение цены от боковика называется девиацией."
+    },
+    {
+      "drawing_order": 31,
+      "xml_paragraph_index": 145,
+      "raw_nonempty_paragraphs_before_or_containing": 131,
+      "preceding_or_containing_clean_paragraph": "P0130",
+      "paragraph_text": "",
+      "relationship_id": "rId35",
+      "relationship_target": "media/image23.jpg",
+      "sha256": "4ea93e8e697f85283eb708642ebb84decbe11ebd0d1819a607f2d4b66eee01ae",
+      "local_path": "/tmp/stage19-methodichka-images/image23.jpg",
+      "bytes": 71987,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image23.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0131",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Возврат цены после девиации - с последующим тестом зоны , которая отправила цену обратно в ренж , сделав choch.",
+      "next_clean_text": "OPTIMAL TRADING ENTRY(оптимальная точка входа) и коррекция по Фибоначчи"
+    },
+    {
+      "drawing_order": 32,
+      "xml_paragraph_index": 159,
+      "raw_nonempty_paragraphs_before_or_containing": 144,
+      "preceding_or_containing_clean_paragraph": "P0143",
+      "paragraph_text": "",
+      "relationship_id": "rId36",
+      "relationship_target": "media/image24.jpg",
+      "sha256": "b2515bfd2c8a25ff580946b633d9323b07be8b71d52ef8de1dc438007c730dc0",
+      "local_path": "/tmp/stage19-methodichka-images/image24.jpg",
+      "bytes": 229805,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image24.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0144",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "0,79",
+      "next_clean_text": "Эта сетка отличается от классической по таким причинам"
+    },
+    {
+      "drawing_order": 33,
+      "xml_paragraph_index": 170,
+      "raw_nonempty_paragraphs_before_or_containing": 154,
+      "preceding_or_containing_clean_paragraph": "P0153",
+      "paragraph_text": "",
+      "relationship_id": "rId37",
+      "relationship_target": "media/image25.jpg",
+      "sha256": "90f8587504027dd586d5f97ff79a396a0b622bf3fee5aef99e454d6f66fe2a9a",
+      "local_path": "/tmp/stage19-methodichka-images/image25.jpg",
+      "bytes": 53576,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image25.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0154",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Тянем фибоначи с хая к лею для поиска шотр позиции или от хая к лею для открытия лонг позиции",
+      "next_clean_text": "Пример реакции цены на зону ОТЕ"
+    },
+    {
+      "drawing_order": 34,
+      "xml_paragraph_index": 173,
+      "raw_nonempty_paragraphs_before_or_containing": 156,
+      "preceding_or_containing_clean_paragraph": "P0155",
+      "paragraph_text": "",
+      "relationship_id": "rId38",
+      "relationship_target": "media/image26.jpg",
+      "sha256": "080d37f6fa91d099247a7bdddc8955af25ee3a39dc0a1f8cc442992309754c17",
+      "local_path": "/tmp/stage19-methodichka-images/image26.jpg",
+      "bytes": 51843,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image26.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0156",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "ОТЕ дает максимальную отработку в связке с ордер блоком",
+      "next_clean_text": "Пример реакции цены на зону ОТЕ в связке с ордер блоком"
+    },
+    {
+      "drawing_order": 35,
+      "xml_paragraph_index": 181,
+      "raw_nonempty_paragraphs_before_or_containing": 163,
+      "preceding_or_containing_clean_paragraph": "P0162",
+      "paragraph_text": "",
+      "relationship_id": "rId39",
+      "relationship_target": "media/image27.jpg",
+      "sha256": "106a333c1872c3eee633c8ccd1f9eb173cce540b08a25bae8ebac5975a2b5eb6",
+      "local_path": "/tmp/stage19-methodichka-images/image27.jpg",
+      "bytes": 26095,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image27.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0163",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Обязательно наличие контекста = точек либо зон которые будут сниматься.",
+      "next_clean_text": "AMD(accumulation-manipulation- distribution) цикл"
+    },
+    {
+      "drawing_order": 36,
+      "xml_paragraph_index": 182,
+      "raw_nonempty_paragraphs_before_or_containing": 163,
+      "preceding_or_containing_clean_paragraph": "P0162",
+      "paragraph_text": "",
+      "relationship_id": "rId40",
+      "relationship_target": "media/image28.jpg",
+      "sha256": "1dc91d46f479024a5345b2293700773e22668e66c44f0d21294ef90b23702db6",
+      "local_path": "/tmp/stage19-methodichka-images/image28.jpg",
+      "bytes": 70534,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image28.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0163",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Обязательно наличие контекста = точек либо зон которые будут сниматься.",
+      "next_clean_text": "AMD(accumulation-manipulation- distribution) цикл"
+    },
+    {
+      "drawing_order": 37,
+      "xml_paragraph_index": 186,
+      "raw_nonempty_paragraphs_before_or_containing": 166,
+      "preceding_or_containing_clean_paragraph": "P0165",
+      "paragraph_text": "",
+      "relationship_id": "rId41",
+      "relationship_target": "media/image29.jpg",
+      "sha256": "ed986805f2e8590404509a6a927fa6fc15b42c2b80a3f5f9f46132706d8657af",
+      "local_path": "/tmp/stage19-methodichka-images/image29.jpg",
+      "bytes": 40735,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_INLINE",
+      "image_asset_manifest_key": "19/image29.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0166",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Манипуляция - этап участия \"умных денег\" , которые штучно двигают цену вниз , заставляя участников рынка убыточно закрывать позиции , тем самым , откупать актив по минимальной цене для его дальнейшей реализации по завышенной цене. 3)Распределение - этап продажи активов \"умными деньгами\" остальным участникам рынка по сверх высокой цене.",
+      "next_clean_text": "Рассматривают два основных варианта набора позиций в цикле:"
+    },
+    {
+      "drawing_order": 38,
+      "xml_paragraph_index": 187,
+      "raw_nonempty_paragraphs_before_or_containing": 166,
+      "preceding_or_containing_clean_paragraph": "P0165",
+      "paragraph_text": "",
+      "relationship_id": "rId42",
+      "relationship_target": "media/image30.jpg",
+      "sha256": "ad134475265a0f03b2c84ccf408d42f39650ba2830e8f3e9fc15265f1294f1ac",
+      "local_path": "/tmp/stage19-methodichka-images/image30.jpg",
+      "bytes": 65286,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_CHOICE",
+      "image_asset_manifest_key": "19/image30.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0166",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Манипуляция - этап участия \"умных денег\" , которые штучно двигают цену вниз , заставляя участников рынка убыточно закрывать позиции , тем самым , откупать актив по минимальной цене для его дальнейшей реализации по завышенной цене. 3)Распределение - этап продажи активов \"умными деньгами\" остальным участникам рынка по сверх высокой цене.",
+      "next_clean_text": "Рассматривают два основных варианта набора позиций в цикле:"
+    },
+    {
+      "drawing_order": 39,
+      "xml_paragraph_index": 187,
+      "raw_nonempty_paragraphs_before_or_containing": 166,
+      "preceding_or_containing_clean_paragraph": "P0165",
+      "paragraph_text": "",
+      "relationship_id": "rId43",
+      "relationship_target": "media/image31.jpg",
+      "sha256": "3c298df9dd4a5dd2600f025a15c4b1acb9da326192dff3e47a56a80417089bd9",
+      "local_path": "/tmp/stage19-methodichka-images/image31.jpg",
+      "bytes": 67733,
+      "xml_element": "blip",
+      "rendering_branch": "PRIMARY_CHOICE",
+      "image_asset_manifest_key": "19/image31.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0166",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Манипуляция - этап участия \"умных денег\" , которые штучно двигают цену вниз , заставляя участников рынка убыточно закрывать позиции , тем самым , откупать актив по минимальной цене для его дальнейшей реализации по завышенной цене. 3)Распределение - этап продажи активов \"умными деньгами\" остальным участникам рынка по сверх высокой цене.",
+      "next_clean_text": "Рассматривают два основных варианта набора позиций в цикле:"
+    },
+    {
+      "drawing_order": 40,
+      "xml_paragraph_index": 187,
+      "raw_nonempty_paragraphs_before_or_containing": 166,
+      "preceding_or_containing_clean_paragraph": "P0165",
+      "paragraph_text": "",
+      "relationship_id": "rId44",
+      "relationship_target": "media/image290.jpg",
+      "sha256": "ad134475265a0f03b2c84ccf408d42f39650ba2830e8f3e9fc15265f1294f1ac",
+      "local_path": "/tmp/stage19-methodichka-images/image290.jpg",
+      "bytes": 65286,
+      "xml_element": "imagedata",
+      "rendering_branch": "FALLBACK_DUPLICATE",
+      "image_asset_manifest_key": "19/image290.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0166",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Манипуляция - этап участия \"умных денег\" , которые штучно двигают цену вниз , заставляя участников рынка убыточно закрывать позиции , тем самым , откупать актив по минимальной цене для его дальнейшей реализации по завышенной цене. 3)Распределение - этап продажи активов \"умными деньгами\" остальным участникам рынка по сверх высокой цене.",
+      "next_clean_text": "Рассматривают два основных варианта набора позиций в цикле:"
+    },
+    {
+      "drawing_order": 41,
+      "xml_paragraph_index": 187,
+      "raw_nonempty_paragraphs_before_or_containing": 166,
+      "preceding_or_containing_clean_paragraph": "P0165",
+      "paragraph_text": "",
+      "relationship_id": "rId45",
+      "relationship_target": "media/image300.jpg",
+      "sha256": "3c298df9dd4a5dd2600f025a15c4b1acb9da326192dff3e47a56a80417089bd9",
+      "local_path": "/tmp/stage19-methodichka-images/image300.jpg",
+      "bytes": 67733,
+      "xml_element": "imagedata",
+      "rendering_branch": "FALLBACK_DUPLICATE",
+      "image_asset_manifest_key": "19/image300.jpg",
+      "matches_archive_image_manifest_hash": true,
+      "next_clean_paragraph": "P0166",
+      "paragraph_location_relation": "BETWEEN_PRECEDING_AND_NEXT_TEXT_PARAGRAPHS",
+      "preceding_or_containing_clean_text": "Манипуляция - этап участия \"умных денег\" , которые штучно двигают цену вниз , заставляя участников рынка убыточно закрывать позиции , тем самым , откупать актив по минимальной цене для его дальнейшей реализации по завышенной цене. 3)Распределение - этап продажи активов \"умными деньгами\" остальным участникам рынка по сверх высокой цене.",
+      "next_clean_text": "Рассматривают два основных варианта набора позиций в цикле:"
+    }
+  ],
+  "guardrails": {
+    "source_examples_are_not_automatically_universal_rules": true,
+    "pixel_or_tick_numeric_thresholds_derived": false,
+    "project_policy_applied": false,
+    "trade_entry_allowed": false,
+    "tests_replay_backtest_run": false,
+    "repository_files_edited": false,
+    "nested_agents_used": false
+  }
+}
