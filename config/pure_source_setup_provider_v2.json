@@ -1,0 +1,45 @@
+{
+  "version": "PURE_SOURCE_STAGE13_SETUPS_V2",
+  "base_merge_commit": "a17c66eb48b595bc25a74d46f43a97634fae811f",
+  "scope": "causal_source_setup_assembly_not_trade_qualification",
+  "trade_entry_allowed": false,
+  "baseline_identifiability": "NOT_IDENTIFIABLE",
+  "source_rules_reused": [
+    "MS_BOS_CONTEXT_001",
+    "unchanged Stage7 SFP_LTF_BOS_NEW_POI contract"
+  ],
+  "source_rule_changes": [],
+  "project_policy_applied": [],
+  "technical_normalizations": [
+    {
+      "id": "TN_BOS_FIRST_STRUCTURAL_INVALIDATION",
+      "classification": "TECHNICAL_NORMALIZATION"
+    },
+    {
+      "id": "TN_STRUCTURE_INACTIVE_AT_KNOWN_AFTER_OBSERVED_BREACH",
+      "classification": "TECHNICAL_NORMALIZATION"
+    },
+    {
+      "id": "TN_EXHAUSTIVE_UNSELECTED_REFINEMENTS",
+      "classification": "TECHNICAL_NORMALIZATION"
+    },
+    {
+      "id": "TN_HISTORICAL_SETUP_FACT_RETENTION",
+      "classification": "TECHNICAL_NORMALIZATION"
+    },
+    {
+      "id": "TN_CLOSED_ONLY_ACTUAL_OBSERVATION",
+      "classification": "TECHNICAL_NORMALIZATION"
+    }
+  ],
+  "execution_plans": false,
+  "financial_run": false,
+  "PAPER": false,
+  "LIVE": false,
+  "private_api": false,
+  "artifact_sha256": {
+    "src/crypto_bot/strategy/pure_source_setup_provider_v2.py": "0d0d0818cb26533c53eca597e0371c80712df0fe3d43c89e3ac9caf8caf39d5f",
+    "tests/test_pure_source_setup_provider_v2.py": "2aaaec2e136606209afddbee5d42a2ce6c6cbe434b532a38e92737413fa95ad1",
+    "docs/PURE_SOURCE_ENGINE_STAGE13_SETUP_ASSEMBLY.md": "80d0aac920a637a330fc359e5cbd486725da3eae27fc60089462272ddfad1f8e"
+  }
+}
