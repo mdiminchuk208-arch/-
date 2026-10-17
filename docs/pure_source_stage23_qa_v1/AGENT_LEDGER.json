@@ -1,0 +1,50 @@
+{
+  "stage": 23,
+  "physical_specialists_reused": 1,
+  "max_active_including_root": 2,
+  "total_original_source_specialists_from_stage19": 3,
+  "source_rescans": 0,
+  "note": "Actual focused collaboration agent review; no22physical agents or ECC CLI-agent execution claimed. Original source ledgers reused byte-identically.",
+  "rows": [
+    {
+      "agent": "root",
+      "task": "Causal annotation delivery and qualified consumers in existing replay runner",
+      "files_read": [
+        "Stage20-22contracts",
+        "Stage10runner/batchserializer",
+        "Stage11canonicalproducer",
+        "relevantfrozenQAfixtures"
+      ],
+      "source_evidence": "Frozen Stage19 source handoff reused, no new SOURCE inference",
+      "decision": "Explicit diagnostics only; full future input identity remains outside prefix receipts",
+      "uncertainty": "actual market annotations and missing SOURCE relations remain unresolved",
+      "files_changed": [
+        "source_qualified_replay_v1.py",
+        "test_source_qualified_replay_v1.py",
+        "Stage23docs/config/QA",
+        "PURE_SOURCE_CURRENT_STATUS.md"
+      ],
+      "tests": [
+        "17targetedPASS"
+      ],
+      "next_dependency": "independentreview/fullsuite/exactheadCI"
+    },
+    {
+      "agent": "/root/stage18_adversarial_reviewer",
+      "task": "Independent temporal/identity/safety review of qualified replay",
+      "files_read": [
+        "Stage23newmodule/test",
+        "necessaryfrozendependencies"
+      ],
+      "source_evidence": "no source rereads",
+      "decision": "SCOPED_ACCEPTANCE_NO_MATERIAL_BLOCKERS",
+      "uncertainty": "market truth/authorship/blindness outside content integrity",
+      "files_changed": [],
+      "tests": [
+        "17targetedPASS",
+        "UTC equivalence repro fixed and independently rechecked"
+      ],
+      "next_dependency": "fullsuite/exactheadCI"
+    }
+  ]
+}

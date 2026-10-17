@@ -1,8 +1,8 @@
 # PURE SOURCE — authoritative current status
 
 **Status date:** 2026-10-18
-**Current rebuild stage:** Stage 22 — Qualified SFP Liquidity Context
-**Base:** Stage 21 merge `301e65a5c2e8b798e2d7ec20936f1812961673fd`
+**Current rebuild stage:** Stage 23 — Qualified Diagnostic Replay
+**Base:** Stage 22 merge `ba7abf3623c82104b390c4c5dc6242b4ab36ae84`
 
 > This file is the current continuation entrypoint for PURE SOURCE strategy work.
 > Historical `README.md`, `CONTINUATION_STATUS.md`, old Bybit replays, source-permitted physical cases and earlier PnL reports remain preserved evidence, but they are **not SOURCE truth** and must not be used to resolve current SOURCE ambiguity.
@@ -20,7 +20,7 @@ This remains intentionally fail-closed:
 - historical PnL must not choose among SOURCE-permitted alternatives;
 - qualitative SOURCE terms must not be replaced by optimized numeric proxies.
 
-Stage 15 established deterministic diagnostic replay. Stage 16 froze the identifiability frontier and priority-1 Methodichka evidence. Stage 17 created stable, non-ranked identities for finite SOURCE alternatives. Stage 18 now defines an auditable causal contract for genuinely qualitative SOURCE facts.
+Stage 15 established deterministic diagnostic replay. Stage 16 froze the identifiability frontier and priority-1 Methodichka evidence. Stage 17 created stable, non-ranked identities for finite SOURCE alternatives. Stage 18 defines the qualitative fact contract; Stage19 audits the full priority1 rule ledger; Stage20 binds actual closed data and first replay observation; Stage21/22 retain provenance in EQH/EQL and SFP-context consumers; Stage23 integrates these explicit consumers into deterministic diagnostic replay.
 
 ## Hard semantic boundaries
 
@@ -109,7 +109,7 @@ Files:
 
 Existing OB/Breaker, Range/STB, Demand/Supply and liquidity modules already use a lightweight legacy `QualitativeEvidence` shape. Stage 18 defines the stronger authoritative claim contract but does **not** silently change all consumers in the same step.
 
-Next migration must make those consumers accept audited Stage 18 claims (or remain UNKNOWN) while preserving all existing SOURCE definitions and causality tests.
+Stage21/22 now provide explicit qualified EQH/EQL and SFP-context consumers, and Stage23 integrates those consumers with causal annotation delivery. Other families remain unmigrated: their missing movement/anchor/event relations cannot be replaced by stricter legacy intersections. New adapters must preserve SOURCE definitions and causality, and missing market annotations remain UNKNOWN.
 
 ### 2. Exact geometry / lifecycle remains unspecified in places
 
@@ -189,3 +189,9 @@ Next safe independent consumer: SFP liquidity context, separate from structural 
 An explicit qualified SFP context consumer now resolves only the TRADE_CONTEXT semantic against actual SW8 transport/pool subjects and closed data. Full receipts survive; context PASS/FAIL never rewrites structural formation. Full priority1 pattern qualification remains UNKNOWN, execution_ready and trade_entry_allowed remain immutable false. See `docs/PURE_SOURCE_ENGINE_STAGE22_QUALIFIED_SFP_CONTEXT.md`.
 
 Next safe step: integrate bound consumers into deterministic diagnostic replay with explicit annotation deliveries and clock progression; no financial artifacts. Actual market annotations, priority1 pattern/movement/anchor relations and execution/exit/re-entry gaps remain unresolved.
+
+## Stage23 qualified diagnostic replay checkpoint
+
+`run_qualified_diagnostic_replay` now accepts explicit immutable annotation-delivery and consumer-request schedules, advances the journal on every closed frame and emits complete qualified EQH/EQL/SFP-context envelopes through the existing deterministic runner. Future schedules do not enter prior evidence fingerprints. Failed multi-input frames emit no batch and poison the session. No setup, execution plan, READY or trade is created.
+
+See `docs/PURE_SOURCE_ENGINE_STAGE23_QUALIFIED_DIAGNOSTIC_REPLAY.md` and `docs/pure_source_stage23_qa_v1/SOURCE_HANDOFF_FRONTIER.json`. The next dependency is source-qualified market annotations and explicit missing movement/anchor/event/execution relationships. Synthetic QA is not market SOURCE truth. Financial comparison cannot resolve these gaps. NOT_IDENTIFIABLE; all trading/financial/private-API permissions and execution readiness remain false.
