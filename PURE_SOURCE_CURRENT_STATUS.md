@@ -1,8 +1,8 @@
 # PURE SOURCE — authoritative current status
 
 **Status date:** 2026-10-17  
-**Current rebuild stage:** Stage 16 — Identifiability Frontier  
-**Base:** Stage 15 merge `b570018371eff6fac34088038091f6b8aff41ea1`
+**Current rebuild stage:** Stage 17 — Non-ranked SOURCE Branch Registry  
+**Base:** Stage 16 merge `f206e6938fe78adb7290ba3264c6d19c2ababf9b`
 
 > This file is the current continuation entrypoint for PURE SOURCE strategy work.
 > Historical `README.md`, `CONTINUATION_STATUS.md`, old Bybit replays, source-permitted physical cases and earlier PnL reports remain preserved evidence, but they are **not SOURCE truth** and must not be used to resolve current SOURCE ambiguity.
@@ -19,7 +19,7 @@ This is intentional and fail-closed:
 - no PROJECT overlays in SOURCE baseline;
 - historical PnL must not choose among SOURCE-permitted alternatives.
 
-Stage 15 established deterministic diagnostic end-to-end replay and exact repeated-artifact verification. It did **not** manufacture missing entry quotes, stops, ATR choices, FTA allocation, qualitative market objects, exits or re-entry rules.
+Stage 15 established deterministic diagnostic end-to-end replay and exact repeated-artifact verification. Stage 16 froze the identifiability frontier and priority-1 Methodichka evidence. Stage 17 gives finite, explicit SOURCE alternatives stable branch identities **without selecting or ranking them**.
 
 ## What is already causally implemented
 
@@ -27,7 +27,13 @@ The rebuild has a deterministic closed-candle causal core for market structure a
 
 `OBJECT VALIDITY != TRADE ELIGIBILITY` remains a hard invariant.
 
-## Source details newly confirmed from the priority-1 Methodichka
+Stage 17 adds another explicit boundary:
+
+`EXACT SOURCE ALTERNATIVE != TRADE ELIGIBILITY`.
+
+An exact branch such as STB/BTS midpoint 0.5, full FTA fixation, or ATR 14 is only exact **conditional on its required causal parent evidence**. Exactness does not make that branch preferred, profitable, or executable.
+
+## Source details confirmed from the priority-1 Methodichka
 
 The extracted `19.clean.txt` is tied by the frozen archive manifest to `Криптология/Методичка.docx`, so it outranks SW modules when reconstructing the rules.
 
@@ -40,6 +46,24 @@ It confirms several pieces that are more specific than the previous generic fron
 - SFP: original pattern is three candles, may have a fourth confirmation candle, applies on all timeframes and requires liquidity context to be swept.
 
 These findings narrow the frontier but do **not** yet make a unique executable financial baseline.
+
+## Stage 17 branch registry
+
+Finite explicit alternatives are now represented separately instead of being collapsed into one generic unresolved choice. Current registered families are:
+
+- `OB_DIRECT_ENTRY`: exact boundary vs under-specified inside-zone quote;
+- `OB_EXECUTION_PATH`: direct path vs LTF BOS + new-POI path;
+- `OB_STOP_ANCHOR`: beyond OB extreme vs beyond engulfing-candle wick;
+- `BREAKER_STOP_ANCHOR`: aggressive vs conservative anchor;
+- `STB_BTS_ENTRY`: directional zone part vs exact 0.5 midpoint;
+- `FTA_FIXATION`: full 100% fixation vs under-specified partial fixation;
+- `SFP_ATR_PERIOD`: standard 14 vs strategy-adjusted period family.
+
+The registry rejects ranking/outcome fields such as `rank`, `score`, `preferred`, `win_rate`, `profit_factor`, `expectancy`, `pnl`, and `backtest_result`. It also rejects PROJECT policies, financial-backtest permission and `trade_entry_allowed=true`.
+
+Machine-readable branch registry: `config/pure_source_branch_registry_v2.json`.
+Typed contract: `src/crypto_bot/strategy/pure_source_branch_registry_v2.py`.
+Detailed Stage 17 record: `docs/PURE_SOURCE_ENGINE_STAGE17_BRANCH_REGISTRY.md`.
 
 ## Current blocking frontier
 
@@ -58,23 +82,15 @@ The machine must not invent numeric proxies for source concepts whose original d
 
 Until these have source-backed causal provenance, they stay `UNKNOWN`, not `FAIL` and not guessed `PASS`.
 
-### 2. SOURCE explicitly permits multiple execution variants
-
-Frozen originals confirm that some rules are a **family of permitted branches**, not a single precedence rule:
-
-- SW9: OB boundary limit vs inside-zone entry; direct vs LTF-confirmed new-POI variant;
-- SW9: multiple OB/Breaker stop variants;
-- SW9: FTA may be full or partial fixation;
-- SW12: ATR 14 is the standard setting, while the source explicitly permits strategy-specific adjustment;
-- SW22: STB/BTS entry may use the directional zone part or exact 0.5.
-
-These alternatives may be **enumerated as separate SOURCE branches**, but no branch may be selected because it backtests better.
-
-### 3. Exact geometry / lifecycle remains unspecified in places
+### 2. Exact geometry / lifecycle remains unspecified in places
 
 Examples include exact quote inside an OB/new POI, exact buffer for a stop described only as “behind/beyond”, some protective stops, partial-FTA fraction, destination of the remaining position and re-entry identity/eligibility.
 
-These remain `UNRESOLVED` unless an original source defines them or a bounded source-supported branch can be represented without adding a new trading rule.
+Stage 17 now preserves these as properties of specific alternatives instead of forcing one common selection. They remain `UNRESOLVED` unless an original source defines them or a bounded source-supported branch can be represented without adding a new trading rule.
+
+### 3. Context selection remains unresolved
+
+Where several source-valid timeframes, liquidity pools or identities coexist, no PROJECT ranking/filter may choose among them. Re-entry identity/eligibility also remains unresolved where SOURCE does not define it precisely.
 
 ## Source authority
 
@@ -95,8 +111,10 @@ The frozen manifest confirms verified provenance for the original source set. Ra
 
 ## Next permitted work
 
-Continue rule-level extraction from the frozen originals. Where the source has finite explicit alternatives, represent them as separate non-ranked branches. Where a concept is qualitative, create a causal provenance/annotation contract rather than an arbitrary threshold. Only after required object, execution and exit semantics become sufficiently identified may a financial PURE SOURCE backtest be proposed.
+The next safe step is to build **causal qualitative evidence / annotation contracts** for source concepts that are genuinely qualitative, rather than replacing them with arbitrary numeric thresholds. The Stage 17 branch registry can then consume only source-valid parent evidence and keep alternatives non-ranked.
+
+A financial PURE SOURCE backtest remains blocked until required object provenance, execution geometry and exit lifecycle are sufficiently identified.
 
 Machine-readable frontier: `config/pure_source_identifiability_frontier_v2.json`.
-
-Detailed Stage 16 record: `docs/PURE_SOURCE_ENGINE_STAGE16_IDENTIFIABILITY_FRONTIER.md`.
+Stage 16 record: `docs/PURE_SOURCE_ENGINE_STAGE16_IDENTIFIABILITY_FRONTIER.md`.
+Stage 17 record: `docs/PURE_SOURCE_ENGINE_STAGE17_BRANCH_REGISTRY.md`.
