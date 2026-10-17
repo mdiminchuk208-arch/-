@@ -1,0 +1,3131 @@
+{
+  "cases": [
+    {
+      "input_series": {
+        "candles": [
+          {
+            "close": 100,
+            "exchange": "TEST",
+            "high": 102,
+            "interval": "1m",
+            "is_closed": true,
+            "low": 98,
+            "open": 100,
+            "open_time_ms": 1767225600000,
+            "symbol": "BTCUSDT",
+            "turnover_quote": 1000.0,
+            "volume_base": 100.0
+          },
+          {
+            "close": 105,
+            "exchange": "TEST",
+            "high": 110,
+            "interval": "1m",
+            "is_closed": true,
+            "low": 99,
+            "open": 100,
+            "open_time_ms": 1767225660000,
+            "symbol": "BTCUSDT",
+            "turnover_quote": 1000.0,
+            "volume_base": 100.0
+          },
+          {
+            "close": 104,
+            "exchange": "TEST",
+            "high": 106,
+            "interval": "1m",
+            "is_closed": true,
+            "low": 100,
+            "open": 105,
+            "open_time_ms": 1767225720000,
+            "symbol": "BTCUSDT",
+            "turnover_quote": 1000.0,
+            "volume_base": 100.0
+          },
+          {
+            "close": 107,
+            "exchange": "TEST",
+            "high": 108,
+            "interval": "1m",
+            "is_closed": true,
+            "low": 101,
+            "open": 104,
+            "open_time_ms": 1767225780000,
+            "symbol": "BTCUSDT",
+            "turnover_quote": 1000.0,
+            "volume_base": 100.0
+          },
+          {
+            "close": 108,
+            "exchange": "TEST",
+            "high": 112,
+            "interval": "1m",
+            "is_closed": true,
+            "low": 103,
+            "open": 107,
+            "open_time_ms": 1767225840000,
+            "symbol": "BTCUSDT",
+            "turnover_quote": 1000.0,
+            "volume_base": 100.0
+          },
+          {
+            "close": 107,
+            "exchange": "TEST",
+            "high": 111,
+            "interval": "1m",
+            "is_closed": true,
+            "low": 105,
+            "open": 109,
+            "open_time_ms": 1767225900000,
+            "symbol": "BTCUSDT",
+            "turnover_quote": 1000.0,
+            "volume_base": 100.0
+          },
+          {
+            "close": 114,
+            "exchange": "TEST",
+            "high": 116,
+            "interval": "1m",
+            "is_closed": true,
+            "low": 106,
+            "open": 107,
+            "open_time_ms": 1767225960000,
+            "symbol": "BTCUSDT",
+            "turnover_quote": 1000.0,
+            "volume_base": 100.0
+          },
+          {
+            "close": 113,
+            "exchange": "TEST",
+            "high": 115,
+            "interval": "1m",
+            "is_closed": true,
+            "low": 110,
+            "open": 114,
+            "open_time_ms": 1767226020000,
+            "symbol": "BTCUSDT",
+            "turnover_quote": 1000.0,
+            "volume_base": 100.0
+          }
+        ],
+        "interval_ms": 60000,
+        "timeframe": "1m"
+      },
+      "name": "SFP_LIFECYCLE",
+      "run": {
+        "evidence_batches": [
+          {
+            "execution_assessments": [],
+            "imbalances": [],
+            "object_assessments": [
+              {
+                "family": "BREAKER",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+                "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "DEMAND_SUPPLY",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+                "source_reference": "SRC_DS_001",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "EQH_EQL",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+                "source_reference": "SW6 p7-10",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "IMB_FVG",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_THREE_CLOSED_CANDLES",
+                "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "LIQUIDITY_CONTEXT",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+                "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OB",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OTE_PD",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "RANGE",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+                "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "SFP",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_CLOSED_NEXT_OPEN_OBSERVATION",
+                "source_reference": "SW8 p5",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "STB_BTS",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+                "source_reference": "SW22 p1-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              }
+            ],
+            "objects": [],
+            "setup_assessments": [],
+            "sfps": []
+          },
+          {
+            "execution_assessments": [],
+            "imbalances": [],
+            "object_assessments": [
+              {
+                "family": "BREAKER",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+                "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "DEMAND_SUPPLY",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+                "source_reference": "SRC_DS_001",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "EQH_EQL",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+                "source_reference": "SW6 p7-10",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "IMB_FVG",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_THREE_CLOSED_CANDLES",
+                "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "LIQUIDITY_CONTEXT",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+                "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OB",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OTE_PD",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "RANGE",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+                "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "SFP",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_KNOWN_EXTERNAL_LIQUIDITY",
+                "source_reference": "SW8 p5",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "STB_BTS",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+                "source_reference": "SW22 p1-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              }
+            ],
+            "objects": [],
+            "setup_assessments": [],
+            "sfps": []
+          },
+          {
+            "execution_assessments": [],
+            "imbalances": [],
+            "object_assessments": [
+              {
+                "family": "BREAKER",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+                "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "DEMAND_SUPPLY",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+                "source_reference": "SRC_DS_001",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "EQH_EQL",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+                "source_reference": "SW6 p7-10",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "IMB_FVG",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "NO_POSITIVE_WICK_GAP",
+                "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+                "status": "FAIL",
+                "timeframe": "1m"
+              },
+              {
+                "family": "LIQUIDITY_CONTEXT",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+                "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OB",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OTE_PD",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "RANGE",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+                "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "SFP",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_KNOWN_EXTERNAL_LIQUIDITY",
+                "source_reference": "SW8 p5",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "STB_BTS",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+                "source_reference": "SW22 p1-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              }
+            ],
+            "objects": [
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:03:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:03:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "7272c711947872f3eb158a70819d7d9e",
+                "object_type": "swing",
+                "parent_object_ids": [],
+                "provenance": "SW5 p2 strict three-candle swing; stable ID uses causal timestamps, not dataset-relative indexes",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "MS_SWING_HIGH_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "SWING_CONFIRM_001"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              },
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:03:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:03:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "f54432944f6395cabfcdedc80d5cc7c0",
+                "object_type": "liquidity_pool",
+                "parent_object_ids": [
+                  "7272c711947872f3eb158a70819d7d9e"
+                ],
+                "provenance": "SW6 p12 structural liquidity; location is a causal context label, not physical pool identity",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "LIQ_STRUCTURAL_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "TN_LIQUIDITY_LOCATION_FROM_ACTIVE_STRUCTURE_LEG"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              }
+            ],
+            "setup_assessments": [],
+            "sfps": []
+          },
+          {
+            "execution_assessments": [],
+            "imbalances": [],
+            "object_assessments": [
+              {
+                "family": "BREAKER",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:04:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+                "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "DEMAND_SUPPLY",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:04:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+                "source_reference": "SRC_DS_001",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "EQH_EQL",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:04:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+                "source_reference": "SW6 p7-10",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "IMB_FVG",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:04:00+00:00",
+                "parent_object_ids": [],
+                "reason": "NO_POSITIVE_WICK_GAP",
+                "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+                "status": "FAIL",
+                "timeframe": "1m"
+              },
+              {
+                "family": "LIQUIDITY_CONTEXT",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:04:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+                "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OB",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:04:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OTE_PD",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:04:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "RANGE",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:04:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+                "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "SFP",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:04:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_KNOWN_EXTERNAL_LIQUIDITY",
+                "source_reference": "SW8 p5",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "STB_BTS",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:04:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+                "source_reference": "SW22 p1-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              }
+            ],
+            "objects": [
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:03:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:03:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "7272c711947872f3eb158a70819d7d9e",
+                "object_type": "swing",
+                "parent_object_ids": [],
+                "provenance": "SW5 p2 strict three-candle swing; stable ID uses causal timestamps, not dataset-relative indexes",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "MS_SWING_HIGH_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "SWING_CONFIRM_001"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              },
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:03:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:03:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "f54432944f6395cabfcdedc80d5cc7c0",
+                "object_type": "liquidity_pool",
+                "parent_object_ids": [
+                  "7272c711947872f3eb158a70819d7d9e"
+                ],
+                "provenance": "SW6 p12 structural liquidity; location is a causal context label, not physical pool identity",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "LIQ_STRUCTURAL_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "TN_LIQUIDITY_LOCATION_FROM_ACTIVE_STRUCTURE_LEG"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              }
+            ],
+            "setup_assessments": [],
+            "sfps": []
+          },
+          {
+            "execution_assessments": [],
+            "imbalances": [],
+            "object_assessments": [
+              {
+                "family": "BREAKER",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:05:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+                "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "DEMAND_SUPPLY",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:05:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+                "source_reference": "SRC_DS_001",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "EQH_EQL",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:05:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+                "source_reference": "SW6 p7-10",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "IMB_FVG",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:05:00+00:00",
+                "parent_object_ids": [],
+                "reason": "NO_POSITIVE_WICK_GAP",
+                "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+                "status": "FAIL",
+                "timeframe": "1m"
+              },
+              {
+                "family": "LIQUIDITY_CONTEXT",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:05:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+                "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OB",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:05:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OTE_PD",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:05:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "RANGE",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:05:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+                "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "SFP",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:05:00+00:00",
+                "parent_object_ids": [
+                  "f54432944f6395cabfcdedc80d5cc7c0"
+                ],
+                "reason": "EXTERNAL_LIQUIDITY_NOT_SWEPT",
+                "source_reference": "SW8 p5; SW12 p13",
+                "status": "FAIL",
+                "timeframe": "1m"
+              },
+              {
+                "family": "STB_BTS",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:05:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+                "source_reference": "SW22 p1-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              }
+            ],
+            "objects": [
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:03:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:03:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "7272c711947872f3eb158a70819d7d9e",
+                "object_type": "swing",
+                "parent_object_ids": [],
+                "provenance": "SW5 p2 strict three-candle swing; stable ID uses causal timestamps, not dataset-relative indexes",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "MS_SWING_HIGH_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "SWING_CONFIRM_001"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              },
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:03:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:03:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "f54432944f6395cabfcdedc80d5cc7c0",
+                "object_type": "liquidity_pool",
+                "parent_object_ids": [
+                  "7272c711947872f3eb158a70819d7d9e"
+                ],
+                "provenance": "SW6 p12 structural liquidity; location is a causal context label, not physical pool identity",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "LIQ_STRUCTURAL_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "TN_LIQUIDITY_LOCATION_FROM_ACTIVE_STRUCTURE_LEG"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              }
+            ],
+            "setup_assessments": [],
+            "sfps": []
+          },
+          {
+            "execution_assessments": [],
+            "imbalances": [],
+            "object_assessments": [
+              {
+                "family": "BREAKER",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:06:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+                "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "DEMAND_SUPPLY",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:06:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+                "source_reference": "SRC_DS_001",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "EQH_EQL",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:06:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+                "source_reference": "SW6 p7-10",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "IMB_FVG",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:06:00+00:00",
+                "parent_object_ids": [],
+                "reason": "NO_POSITIVE_WICK_GAP",
+                "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+                "status": "FAIL",
+                "timeframe": "1m"
+              },
+              {
+                "family": "LIQUIDITY_CONTEXT",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:06:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+                "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OB",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:06:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OTE_PD",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:06:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "RANGE",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:06:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+                "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "SFP",
+                "object_id": "487dc146ec5f255160c2abc2c897afc3",
+                "observed_at": "2026-01-01T00:06:00+00:00",
+                "parent_object_ids": [
+                  "f54432944f6395cabfcdedc80d5cc7c0"
+                ],
+                "reason": "SOURCE_SFP_FORMED",
+                "source_reference": "SW8 p5; SW12 p13",
+                "status": "PASS",
+                "timeframe": "1m"
+              },
+              {
+                "family": "STB_BTS",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:06:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+                "source_reference": "SW22 p1-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              }
+            ],
+            "objects": [
+              {
+                "confirmed_at": null,
+                "direction": "short",
+                "formation_at": "2026-01-01T00:05:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:05:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:05:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:05:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "487dc146ec5f255160c2abc2c897afc3",
+                "object_type": "sfp",
+                "parent_object_ids": [
+                  "f54432944f6395cabfcdedc80d5cc7c0"
+                ],
+                "provenance": "SW8 p5 SFP formation from already-known external liquidity; strict penetration and parent-known timing are explicit causal normalizations; sweep-candle extreme is retained only as the invalidation-anchor normalization",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "SFP_EXTERNAL_LIQUIDITY_001",
+                  "SFP_RECLAIM_CLOSE_001",
+                  "SFP_NEXT_OPEN_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "LIQ_STRICT_WICK_TAKE_V2",
+                  "TN_SFP_PARENT_KNOWN_BEFORE_SWEEP",
+                  "TN_SFP_PATTERN_EXTREME_SWEEP_CANDLE"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              },
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:03:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:03:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "7272c711947872f3eb158a70819d7d9e",
+                "object_type": "swing",
+                "parent_object_ids": [],
+                "provenance": "SW5 p2 strict three-candle swing; stable ID uses causal timestamps, not dataset-relative indexes",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "MS_SWING_HIGH_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "SWING_CONFIRM_001"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              },
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:06:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:06:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:06:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:06:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "7cd4d6abd969e0d49a07ddb06043091b",
+                "object_type": "liquidity_pool",
+                "parent_object_ids": [
+                  "eed844e1c98ef8ca992e5ea1e68da429"
+                ],
+                "provenance": "SW6 p12 structural liquidity; location is a causal context label, not physical pool identity",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "LIQ_STRUCTURAL_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "TN_LIQUIDITY_LOCATION_FROM_ACTIVE_STRUCTURE_LEG"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              },
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:06:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:06:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:06:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:06:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "eed844e1c98ef8ca992e5ea1e68da429",
+                "object_type": "swing",
+                "parent_object_ids": [],
+                "provenance": "SW5 p2 strict three-candle swing; stable ID uses causal timestamps, not dataset-relative indexes",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "MS_SWING_HIGH_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "SWING_CONFIRM_001"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              },
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:03:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:03:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "f54432944f6395cabfcdedc80d5cc7c0",
+                "object_type": "liquidity_pool",
+                "parent_object_ids": [
+                  "7272c711947872f3eb158a70819d7d9e"
+                ],
+                "provenance": "SW6 p12 structural liquidity; location is a causal context label, not physical pool identity",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "LIQ_STRUCTURAL_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "TN_LIQUIDITY_LOCATION_FROM_ACTIVE_STRUCTURE_LEG"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              }
+            ],
+            "setup_assessments": [],
+            "sfps": [
+              {
+                "confirmation_open_time": "2026-01-01T00:05:00+00:00",
+                "direction": "short",
+                "liquidity_price": 110,
+                "obj": {
+                  "confirmed_at": null,
+                  "direction": "short",
+                  "formation_at": "2026-01-01T00:05:00+00:00",
+                  "formation_valid": true,
+                  "invalidated_at": null,
+                  "known_at": "2026-01-01T00:05:00+00:00",
+                  "lifecycle": [
+                    {
+                      "at": "2026-01-01T00:05:00+00:00",
+                      "kind": "FORMATION",
+                      "reason": null,
+                      "status": "FORMED",
+                      "trade_eligible": false
+                    },
+                    {
+                      "at": "2026-01-01T00:05:00+00:00",
+                      "kind": "KNOWN",
+                      "reason": null,
+                      "status": "KNOWN",
+                      "trade_eligible": false
+                    }
+                  ],
+                  "object_id": "487dc146ec5f255160c2abc2c897afc3",
+                  "object_type": "sfp",
+                  "parent_object_ids": [
+                    "f54432944f6395cabfcdedc80d5cc7c0"
+                  ],
+                  "provenance": "SW8 p5 SFP formation from already-known external liquidity; strict penetration and parent-known timing are explicit causal normalizations; sweep-candle extreme is retained only as the invalidation-anchor normalization",
+                  "rejection_reasons": [],
+                  "source_rule_ids": [
+                    "SFP_EXTERNAL_LIQUIDITY_001",
+                    "SFP_RECLAIM_CLOSE_001",
+                    "SFP_NEXT_OPEN_001"
+                  ],
+                  "status": "KNOWN",
+                  "symbol": "BTCUSDT",
+                  "technical_normalization_ids": [
+                    "LIQ_STRICT_WICK_TAKE_V2",
+                    "TN_SFP_PARENT_KNOWN_BEFORE_SWEEP",
+                    "TN_SFP_PATTERN_EXTREME_SWEEP_CANDLE"
+                  ],
+                  "timeframe": "1m",
+                  "trade_eligible": false
+                },
+                "origin": "STRUCTURAL_LIQUIDITY",
+                "parent_liquidity_id": "f54432944f6395cabfcdedc80d5cc7c0",
+                "pattern_extreme": 112,
+                "sweep_close_time": "2026-01-01T00:05:00+00:00",
+                "sweep_open_time": "2026-01-01T00:04:00+00:00",
+                "swept_side": "high"
+              }
+            ]
+          },
+          {
+            "execution_assessments": [],
+            "imbalances": [],
+            "object_assessments": [
+              {
+                "family": "BREAKER",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:07:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+                "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "DEMAND_SUPPLY",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:07:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+                "source_reference": "SRC_DS_001",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "EQH_EQL",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:07:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+                "source_reference": "SW6 p7-10",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "IMB_FVG",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:07:00+00:00",
+                "parent_object_ids": [],
+                "reason": "NO_POSITIVE_WICK_GAP",
+                "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+                "status": "FAIL",
+                "timeframe": "1m"
+              },
+              {
+                "family": "LIQUIDITY_CONTEXT",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:07:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+                "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OB",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:07:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OTE_PD",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:07:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "RANGE",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:07:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+                "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "SFP",
+                "object_id": "f6fa44f6cfd9e44a8623cf1a878f032e",
+                "observed_at": "2026-01-01T00:07:00+00:00",
+                "parent_object_ids": [
+                  "f54432944f6395cabfcdedc80d5cc7c0"
+                ],
+                "reason": "SOURCE_SFP_FORMED",
+                "source_reference": "SW8 p5; SW12 p13",
+                "status": "PASS",
+                "timeframe": "1m"
+              },
+              {
+                "family": "STB_BTS",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:07:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+                "source_reference": "SW22 p1-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              }
+            ],
+            "objects": [
+              {
+                "confirmed_at": null,
+                "direction": "short",
+                "formation_at": "2026-01-01T00:05:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": "2026-01-01T00:07:00+00:00",
+                "known_at": "2026-01-01T00:05:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:05:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:05:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:07:00+00:00",
+                    "kind": "INVALIDATION",
+                    "reason": "SOURCE_SFP_BODY_CLOSE_BEYOND_PATTERN_EXTREME",
+                    "status": "INVALIDATED",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "487dc146ec5f255160c2abc2c897afc3",
+                "object_type": "sfp",
+                "parent_object_ids": [
+                  "f54432944f6395cabfcdedc80d5cc7c0"
+                ],
+                "provenance": "SW8 p5 SFP formation from already-known external liquidity; strict penetration and parent-known timing are explicit causal normalizations; sweep-candle extreme is retained only as the invalidation-anchor normalization",
+                "rejection_reasons": [
+                  "SOURCE_SFP_BODY_CLOSE_BEYOND_PATTERN_EXTREME"
+                ],
+                "source_rule_ids": [
+                  "SFP_EXTERNAL_LIQUIDITY_001",
+                  "SFP_RECLAIM_CLOSE_001",
+                  "SFP_NEXT_OPEN_001"
+                ],
+                "status": "INVALIDATED",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "LIQ_STRICT_WICK_TAKE_V2",
+                  "TN_SFP_PARENT_KNOWN_BEFORE_SWEEP",
+                  "TN_SFP_PATTERN_EXTREME_SWEEP_CANDLE"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              },
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:03:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:03:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "7272c711947872f3eb158a70819d7d9e",
+                "object_type": "swing",
+                "parent_object_ids": [],
+                "provenance": "SW5 p2 strict three-candle swing; stable ID uses causal timestamps, not dataset-relative indexes",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "MS_SWING_HIGH_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "SWING_CONFIRM_001"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              },
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:06:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:06:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:06:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:06:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "7cd4d6abd969e0d49a07ddb06043091b",
+                "object_type": "liquidity_pool",
+                "parent_object_ids": [
+                  "eed844e1c98ef8ca992e5ea1e68da429"
+                ],
+                "provenance": "SW6 p12 structural liquidity; location is a causal context label, not physical pool identity",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "LIQ_STRUCTURAL_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "TN_LIQUIDITY_LOCATION_FROM_ACTIVE_STRUCTURE_LEG"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              },
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:06:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:06:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:06:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:06:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "eed844e1c98ef8ca992e5ea1e68da429",
+                "object_type": "swing",
+                "parent_object_ids": [],
+                "provenance": "SW5 p2 strict three-candle swing; stable ID uses causal timestamps, not dataset-relative indexes",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "MS_SWING_HIGH_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "SWING_CONFIRM_001"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              },
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:03:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:03:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "f54432944f6395cabfcdedc80d5cc7c0",
+                "object_type": "liquidity_pool",
+                "parent_object_ids": [
+                  "7272c711947872f3eb158a70819d7d9e"
+                ],
+                "provenance": "SW6 p12 structural liquidity; location is a causal context label, not physical pool identity",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "LIQ_STRUCTURAL_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "TN_LIQUIDITY_LOCATION_FROM_ACTIVE_STRUCTURE_LEG"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              },
+              {
+                "confirmed_at": null,
+                "direction": "short",
+                "formation_at": "2026-01-01T00:06:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": "2026-01-01T00:07:00+00:00",
+                "known_at": "2026-01-01T00:06:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:06:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:06:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:07:00+00:00",
+                    "kind": "INVALIDATION",
+                    "reason": "SOURCE_SFP_BODY_CLOSE_BEYOND_PATTERN_EXTREME",
+                    "status": "INVALIDATED",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "f6fa44f6cfd9e44a8623cf1a878f032e",
+                "object_type": "sfp",
+                "parent_object_ids": [
+                  "f54432944f6395cabfcdedc80d5cc7c0"
+                ],
+                "provenance": "SW8 p5 SFP formation from already-known external liquidity; strict penetration and parent-known timing are explicit causal normalizations; sweep-candle extreme is retained only as the invalidation-anchor normalization",
+                "rejection_reasons": [
+                  "SOURCE_SFP_BODY_CLOSE_BEYOND_PATTERN_EXTREME"
+                ],
+                "source_rule_ids": [
+                  "SFP_EXTERNAL_LIQUIDITY_001",
+                  "SFP_RECLAIM_CLOSE_001",
+                  "SFP_NEXT_OPEN_001"
+                ],
+                "status": "INVALIDATED",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "LIQ_STRICT_WICK_TAKE_V2",
+                  "TN_SFP_PARENT_KNOWN_BEFORE_SWEEP",
+                  "TN_SFP_PATTERN_EXTREME_SWEEP_CANDLE"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              }
+            ],
+            "setup_assessments": [],
+            "sfps": [
+              {
+                "confirmation_open_time": "2026-01-01T00:05:00+00:00",
+                "direction": "short",
+                "liquidity_price": 110,
+                "obj": {
+                  "confirmed_at": null,
+                  "direction": "short",
+                  "formation_at": "2026-01-01T00:05:00+00:00",
+                  "formation_valid": true,
+                  "invalidated_at": "2026-01-01T00:07:00+00:00",
+                  "known_at": "2026-01-01T00:05:00+00:00",
+                  "lifecycle": [
+                    {
+                      "at": "2026-01-01T00:05:00+00:00",
+                      "kind": "FORMATION",
+                      "reason": null,
+                      "status": "FORMED",
+                      "trade_eligible": false
+                    },
+                    {
+                      "at": "2026-01-01T00:05:00+00:00",
+                      "kind": "KNOWN",
+                      "reason": null,
+                      "status": "KNOWN",
+                      "trade_eligible": false
+                    },
+                    {
+                      "at": "2026-01-01T00:07:00+00:00",
+                      "kind": "INVALIDATION",
+                      "reason": "SOURCE_SFP_BODY_CLOSE_BEYOND_PATTERN_EXTREME",
+                      "status": "INVALIDATED",
+                      "trade_eligible": false
+                    }
+                  ],
+                  "object_id": "487dc146ec5f255160c2abc2c897afc3",
+                  "object_type": "sfp",
+                  "parent_object_ids": [
+                    "f54432944f6395cabfcdedc80d5cc7c0"
+                  ],
+                  "provenance": "SW8 p5 SFP formation from already-known external liquidity; strict penetration and parent-known timing are explicit causal normalizations; sweep-candle extreme is retained only as the invalidation-anchor normalization",
+                  "rejection_reasons": [
+                    "SOURCE_SFP_BODY_CLOSE_BEYOND_PATTERN_EXTREME"
+                  ],
+                  "source_rule_ids": [
+                    "SFP_EXTERNAL_LIQUIDITY_001",
+                    "SFP_RECLAIM_CLOSE_001",
+                    "SFP_NEXT_OPEN_001"
+                  ],
+                  "status": "INVALIDATED",
+                  "symbol": "BTCUSDT",
+                  "technical_normalization_ids": [
+                    "LIQ_STRICT_WICK_TAKE_V2",
+                    "TN_SFP_PARENT_KNOWN_BEFORE_SWEEP",
+                    "TN_SFP_PATTERN_EXTREME_SWEEP_CANDLE"
+                  ],
+                  "timeframe": "1m",
+                  "trade_eligible": false
+                },
+                "origin": "STRUCTURAL_LIQUIDITY",
+                "parent_liquidity_id": "f54432944f6395cabfcdedc80d5cc7c0",
+                "pattern_extreme": 112,
+                "sweep_close_time": "2026-01-01T00:05:00+00:00",
+                "sweep_open_time": "2026-01-01T00:04:00+00:00",
+                "swept_side": "high"
+              },
+              {
+                "confirmation_open_time": "2026-01-01T00:06:00+00:00",
+                "direction": "short",
+                "liquidity_price": 110,
+                "obj": {
+                  "confirmed_at": null,
+                  "direction": "short",
+                  "formation_at": "2026-01-01T00:06:00+00:00",
+                  "formation_valid": true,
+                  "invalidated_at": "2026-01-01T00:07:00+00:00",
+                  "known_at": "2026-01-01T00:06:00+00:00",
+                  "lifecycle": [
+                    {
+                      "at": "2026-01-01T00:06:00+00:00",
+                      "kind": "FORMATION",
+                      "reason": null,
+                      "status": "FORMED",
+                      "trade_eligible": false
+                    },
+                    {
+                      "at": "2026-01-01T00:06:00+00:00",
+                      "kind": "KNOWN",
+                      "reason": null,
+                      "status": "KNOWN",
+                      "trade_eligible": false
+                    },
+                    {
+                      "at": "2026-01-01T00:07:00+00:00",
+                      "kind": "INVALIDATION",
+                      "reason": "SOURCE_SFP_BODY_CLOSE_BEYOND_PATTERN_EXTREME",
+                      "status": "INVALIDATED",
+                      "trade_eligible": false
+                    }
+                  ],
+                  "object_id": "f6fa44f6cfd9e44a8623cf1a878f032e",
+                  "object_type": "sfp",
+                  "parent_object_ids": [
+                    "f54432944f6395cabfcdedc80d5cc7c0"
+                  ],
+                  "provenance": "SW8 p5 SFP formation from already-known external liquidity; strict penetration and parent-known timing are explicit causal normalizations; sweep-candle extreme is retained only as the invalidation-anchor normalization",
+                  "rejection_reasons": [
+                    "SOURCE_SFP_BODY_CLOSE_BEYOND_PATTERN_EXTREME"
+                  ],
+                  "source_rule_ids": [
+                    "SFP_EXTERNAL_LIQUIDITY_001",
+                    "SFP_RECLAIM_CLOSE_001",
+                    "SFP_NEXT_OPEN_001"
+                  ],
+                  "status": "INVALIDATED",
+                  "symbol": "BTCUSDT",
+                  "technical_normalization_ids": [
+                    "LIQ_STRICT_WICK_TAKE_V2",
+                    "TN_SFP_PARENT_KNOWN_BEFORE_SWEEP",
+                    "TN_SFP_PATTERN_EXTREME_SWEEP_CANDLE"
+                  ],
+                  "timeframe": "1m",
+                  "trade_eligible": false
+                },
+                "origin": "STRUCTURAL_LIQUIDITY",
+                "parent_liquidity_id": "f54432944f6395cabfcdedc80d5cc7c0",
+                "pattern_extreme": 111,
+                "sweep_close_time": "2026-01-01T00:06:00+00:00",
+                "sweep_open_time": "2026-01-01T00:05:00+00:00",
+                "swept_side": "high"
+              }
+            ]
+          },
+          {
+            "execution_assessments": [],
+            "imbalances": [],
+            "object_assessments": [
+              {
+                "family": "BREAKER",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:08:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+                "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "DEMAND_SUPPLY",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:08:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+                "source_reference": "SRC_DS_001",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "EQH_EQL",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:08:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+                "source_reference": "SW6 p7-10",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "IMB_FVG",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:08:00+00:00",
+                "parent_object_ids": [],
+                "reason": "NO_POSITIVE_WICK_GAP",
+                "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+                "status": "FAIL",
+                "timeframe": "1m"
+              },
+              {
+                "family": "LIQUIDITY_CONTEXT",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:08:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+                "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OB",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:08:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OTE_PD",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:08:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "RANGE",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:08:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+                "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "SFP",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:08:00+00:00",
+                "parent_object_ids": [
+                  "7cd4d6abd969e0d49a07ddb06043091b"
+                ],
+                "reason": "SWEEP_BODY_DID_NOT_CLOSE_BACK_INSIDE",
+                "source_reference": "SW8 p5; SW12 p13",
+                "status": "FAIL",
+                "timeframe": "1m"
+              },
+              {
+                "family": "SFP",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:08:00+00:00",
+                "parent_object_ids": [
+                  "f54432944f6395cabfcdedc80d5cc7c0"
+                ],
+                "reason": "SWEEP_BODY_DID_NOT_CLOSE_BACK_INSIDE",
+                "source_reference": "SW8 p5; SW12 p13",
+                "status": "FAIL",
+                "timeframe": "1m"
+              },
+              {
+                "family": "STB_BTS",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:08:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+                "source_reference": "SW22 p1-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              }
+            ],
+            "objects": [
+              {
+                "confirmed_at": null,
+                "direction": "short",
+                "formation_at": "2026-01-01T00:05:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": "2026-01-01T00:07:00+00:00",
+                "known_at": "2026-01-01T00:05:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:05:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:05:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:07:00+00:00",
+                    "kind": "INVALIDATION",
+                    "reason": "SOURCE_SFP_BODY_CLOSE_BEYOND_PATTERN_EXTREME",
+                    "status": "INVALIDATED",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "487dc146ec5f255160c2abc2c897afc3",
+                "object_type": "sfp",
+                "parent_object_ids": [
+                  "f54432944f6395cabfcdedc80d5cc7c0"
+                ],
+                "provenance": "SW8 p5 SFP formation from already-known external liquidity; strict penetration and parent-known timing are explicit causal normalizations; sweep-candle extreme is retained only as the invalidation-anchor normalization",
+                "rejection_reasons": [
+                  "SOURCE_SFP_BODY_CLOSE_BEYOND_PATTERN_EXTREME"
+                ],
+                "source_rule_ids": [
+                  "SFP_EXTERNAL_LIQUIDITY_001",
+                  "SFP_RECLAIM_CLOSE_001",
+                  "SFP_NEXT_OPEN_001"
+                ],
+                "status": "INVALIDATED",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "LIQ_STRICT_WICK_TAKE_V2",
+                  "TN_SFP_PARENT_KNOWN_BEFORE_SWEEP",
+                  "TN_SFP_PATTERN_EXTREME_SWEEP_CANDLE"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              },
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:08:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:08:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:08:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:08:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "584700619f5f2312d3013322b2ddd161",
+                "object_type": "liquidity_pool",
+                "parent_object_ids": [
+                  "608877192617f1d07e1c38dcc36b20d3"
+                ],
+                "provenance": "SW6 p12 structural liquidity; location is a causal context label, not physical pool identity",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "LIQ_STRUCTURAL_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "TN_LIQUIDITY_LOCATION_FROM_ACTIVE_STRUCTURE_LEG"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              },
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:08:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:08:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:08:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:08:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "608877192617f1d07e1c38dcc36b20d3",
+                "object_type": "swing",
+                "parent_object_ids": [],
+                "provenance": "SW5 p2 strict three-candle swing; stable ID uses causal timestamps, not dataset-relative indexes",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "MS_SWING_HIGH_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "SWING_CONFIRM_001"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              },
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:03:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:03:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "7272c711947872f3eb158a70819d7d9e",
+                "object_type": "swing",
+                "parent_object_ids": [],
+                "provenance": "SW5 p2 strict three-candle swing; stable ID uses causal timestamps, not dataset-relative indexes",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "MS_SWING_HIGH_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "SWING_CONFIRM_001"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              },
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:06:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:06:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:06:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:06:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "7cd4d6abd969e0d49a07ddb06043091b",
+                "object_type": "liquidity_pool",
+                "parent_object_ids": [
+                  "eed844e1c98ef8ca992e5ea1e68da429"
+                ],
+                "provenance": "SW6 p12 structural liquidity; location is a causal context label, not physical pool identity",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "LIQ_STRUCTURAL_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "TN_LIQUIDITY_LOCATION_FROM_ACTIVE_STRUCTURE_LEG"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              },
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:06:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:06:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:06:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:06:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "eed844e1c98ef8ca992e5ea1e68da429",
+                "object_type": "swing",
+                "parent_object_ids": [],
+                "provenance": "SW5 p2 strict three-candle swing; stable ID uses causal timestamps, not dataset-relative indexes",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "MS_SWING_HIGH_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "SWING_CONFIRM_001"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              },
+              {
+                "confirmed_at": null,
+                "direction": null,
+                "formation_at": "2026-01-01T00:03:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:03:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "f54432944f6395cabfcdedc80d5cc7c0",
+                "object_type": "liquidity_pool",
+                "parent_object_ids": [
+                  "7272c711947872f3eb158a70819d7d9e"
+                ],
+                "provenance": "SW6 p12 structural liquidity; location is a causal context label, not physical pool identity",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "LIQ_STRUCTURAL_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "TN_LIQUIDITY_LOCATION_FROM_ACTIVE_STRUCTURE_LEG"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              },
+              {
+                "confirmed_at": null,
+                "direction": "short",
+                "formation_at": "2026-01-01T00:06:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": "2026-01-01T00:07:00+00:00",
+                "known_at": "2026-01-01T00:06:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:06:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:06:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:07:00+00:00",
+                    "kind": "INVALIDATION",
+                    "reason": "SOURCE_SFP_BODY_CLOSE_BEYOND_PATTERN_EXTREME",
+                    "status": "INVALIDATED",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "f6fa44f6cfd9e44a8623cf1a878f032e",
+                "object_type": "sfp",
+                "parent_object_ids": [
+                  "f54432944f6395cabfcdedc80d5cc7c0"
+                ],
+                "provenance": "SW8 p5 SFP formation from already-known external liquidity; strict penetration and parent-known timing are explicit causal normalizations; sweep-candle extreme is retained only as the invalidation-anchor normalization",
+                "rejection_reasons": [
+                  "SOURCE_SFP_BODY_CLOSE_BEYOND_PATTERN_EXTREME"
+                ],
+                "source_rule_ids": [
+                  "SFP_EXTERNAL_LIQUIDITY_001",
+                  "SFP_RECLAIM_CLOSE_001",
+                  "SFP_NEXT_OPEN_001"
+                ],
+                "status": "INVALIDATED",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "LIQ_STRICT_WICK_TAKE_V2",
+                  "TN_SFP_PARENT_KNOWN_BEFORE_SWEEP",
+                  "TN_SFP_PATTERN_EXTREME_SWEEP_CANDLE"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              }
+            ],
+            "setup_assessments": [],
+            "sfps": [
+              {
+                "confirmation_open_time": "2026-01-01T00:05:00+00:00",
+                "direction": "short",
+                "liquidity_price": 110,
+                "obj": {
+                  "confirmed_at": null,
+                  "direction": "short",
+                  "formation_at": "2026-01-01T00:05:00+00:00",
+                  "formation_valid": true,
+                  "invalidated_at": "2026-01-01T00:07:00+00:00",
+                  "known_at": "2026-01-01T00:05:00+00:00",
+                  "lifecycle": [
+                    {
+                      "at": "2026-01-01T00:05:00+00:00",
+                      "kind": "FORMATION",
+                      "reason": null,
+                      "status": "FORMED",
+                      "trade_eligible": false
+                    },
+                    {
+                      "at": "2026-01-01T00:05:00+00:00",
+                      "kind": "KNOWN",
+                      "reason": null,
+                      "status": "KNOWN",
+                      "trade_eligible": false
+                    },
+                    {
+                      "at": "2026-01-01T00:07:00+00:00",
+                      "kind": "INVALIDATION",
+                      "reason": "SOURCE_SFP_BODY_CLOSE_BEYOND_PATTERN_EXTREME",
+                      "status": "INVALIDATED",
+                      "trade_eligible": false
+                    }
+                  ],
+                  "object_id": "487dc146ec5f255160c2abc2c897afc3",
+                  "object_type": "sfp",
+                  "parent_object_ids": [
+                    "f54432944f6395cabfcdedc80d5cc7c0"
+                  ],
+                  "provenance": "SW8 p5 SFP formation from already-known external liquidity; strict penetration and parent-known timing are explicit causal normalizations; sweep-candle extreme is retained only as the invalidation-anchor normalization",
+                  "rejection_reasons": [
+                    "SOURCE_SFP_BODY_CLOSE_BEYOND_PATTERN_EXTREME"
+                  ],
+                  "source_rule_ids": [
+                    "SFP_EXTERNAL_LIQUIDITY_001",
+                    "SFP_RECLAIM_CLOSE_001",
+                    "SFP_NEXT_OPEN_001"
+                  ],
+                  "status": "INVALIDATED",
+                  "symbol": "BTCUSDT",
+                  "technical_normalization_ids": [
+                    "LIQ_STRICT_WICK_TAKE_V2",
+                    "TN_SFP_PARENT_KNOWN_BEFORE_SWEEP",
+                    "TN_SFP_PATTERN_EXTREME_SWEEP_CANDLE"
+                  ],
+                  "timeframe": "1m",
+                  "trade_eligible": false
+                },
+                "origin": "STRUCTURAL_LIQUIDITY",
+                "parent_liquidity_id": "f54432944f6395cabfcdedc80d5cc7c0",
+                "pattern_extreme": 112,
+                "sweep_close_time": "2026-01-01T00:05:00+00:00",
+                "sweep_open_time": "2026-01-01T00:04:00+00:00",
+                "swept_side": "high"
+              },
+              {
+                "confirmation_open_time": "2026-01-01T00:06:00+00:00",
+                "direction": "short",
+                "liquidity_price": 110,
+                "obj": {
+                  "confirmed_at": null,
+                  "direction": "short",
+                  "formation_at": "2026-01-01T00:06:00+00:00",
+                  "formation_valid": true,
+                  "invalidated_at": "2026-01-01T00:07:00+00:00",
+                  "known_at": "2026-01-01T00:06:00+00:00",
+                  "lifecycle": [
+                    {
+                      "at": "2026-01-01T00:06:00+00:00",
+                      "kind": "FORMATION",
+                      "reason": null,
+                      "status": "FORMED",
+                      "trade_eligible": false
+                    },
+                    {
+                      "at": "2026-01-01T00:06:00+00:00",
+                      "kind": "KNOWN",
+                      "reason": null,
+                      "status": "KNOWN",
+                      "trade_eligible": false
+                    },
+                    {
+                      "at": "2026-01-01T00:07:00+00:00",
+                      "kind": "INVALIDATION",
+                      "reason": "SOURCE_SFP_BODY_CLOSE_BEYOND_PATTERN_EXTREME",
+                      "status": "INVALIDATED",
+                      "trade_eligible": false
+                    }
+                  ],
+                  "object_id": "f6fa44f6cfd9e44a8623cf1a878f032e",
+                  "object_type": "sfp",
+                  "parent_object_ids": [
+                    "f54432944f6395cabfcdedc80d5cc7c0"
+                  ],
+                  "provenance": "SW8 p5 SFP formation from already-known external liquidity; strict penetration and parent-known timing are explicit causal normalizations; sweep-candle extreme is retained only as the invalidation-anchor normalization",
+                  "rejection_reasons": [
+                    "SOURCE_SFP_BODY_CLOSE_BEYOND_PATTERN_EXTREME"
+                  ],
+                  "source_rule_ids": [
+                    "SFP_EXTERNAL_LIQUIDITY_001",
+                    "SFP_RECLAIM_CLOSE_001",
+                    "SFP_NEXT_OPEN_001"
+                  ],
+                  "status": "INVALIDATED",
+                  "symbol": "BTCUSDT",
+                  "technical_normalization_ids": [
+                    "LIQ_STRICT_WICK_TAKE_V2",
+                    "TN_SFP_PARENT_KNOWN_BEFORE_SWEEP",
+                    "TN_SFP_PATTERN_EXTREME_SWEEP_CANDLE"
+                  ],
+                  "timeframe": "1m",
+                  "trade_eligible": false
+                },
+                "origin": "STRUCTURAL_LIQUIDITY",
+                "parent_liquidity_id": "f54432944f6395cabfcdedc80d5cc7c0",
+                "pattern_extreme": 111,
+                "sweep_close_time": "2026-01-01T00:06:00+00:00",
+                "sweep_open_time": "2026-01-01T00:05:00+00:00",
+                "swept_side": "high"
+              }
+            ]
+          }
+        ],
+        "replay": {
+          "manifest": {
+            "dataset_sha256": "fd8fe806ea27a0104f57343a4917293c33c77a97bf7e9760ec95645cd6f91468",
+            "exchange": "TEST",
+            "series": [
+              {
+                "candle_count": 8,
+                "first_open_time_ms": 1767225600000,
+                "interval_ms": 60000,
+                "last_open_time_ms": 1767226020000,
+                "series_sha256": "81738554744f904bdeb51e07c21a3dd5c501d43eb287ead4aa6f568a7215f85a",
+                "timeframe": "1m"
+              }
+            ],
+            "symbol": "BTCUSDT",
+            "total_candles": 8,
+            "version": "PURE_SOURCE_STAGE10_REPLAY_V2"
+          },
+          "provider_id": "PURE_SOURCE_OBJECTS",
+          "provider_version": "PURE_SOURCE_STAGE11_OBJECTS_V2",
+          "receipts": [
+            {
+              "blocker_count": 0,
+              "causal_object_count": 0,
+              "decision_at": "2026-01-01T00:01:00+00:00",
+              "evidence_batch_sha256": "7cc0444f983399d9916fcce1e1dbc0804bbaedbdacf2f63929b56ac1f1681710",
+              "execution_plan_count": 0,
+              "prefix_sha256": "7aa62d66321fa7890d848d19368ae80fe29fb66a820c1de954f6691ecca3d219",
+              "prefix_sizes": [
+                [
+                  "1m",
+                  1
+                ]
+              ],
+              "runtime_sha256": "78b2afecc9f2e7fe4f83182f808214b62e9bd778644ac41043481f2dfa286b09",
+              "setup_count": 0
+            },
+            {
+              "blocker_count": 0,
+              "causal_object_count": 0,
+              "decision_at": "2026-01-01T00:02:00+00:00",
+              "evidence_batch_sha256": "0b6ec765ff07a138ae6803c37a19dc583b9611cd2fd4ed806eadb2c7ff4bdd12",
+              "execution_plan_count": 0,
+              "prefix_sha256": "fa814a5cb293bbde78b2cfc338254813351aaeeef40d63aa7de4b292dc50b0f4",
+              "prefix_sizes": [
+                [
+                  "1m",
+                  2
+                ]
+              ],
+              "runtime_sha256": "40b83e559a4bda61806b6a964652bc616a5674926fc96d291c5030a83d276c8d",
+              "setup_count": 0
+            },
+            {
+              "blocker_count": 0,
+              "causal_object_count": 2,
+              "decision_at": "2026-01-01T00:03:00+00:00",
+              "evidence_batch_sha256": "a288b870d85537c87efd17c5c1e8a08497273521bd769519c690f746116bf35e",
+              "execution_plan_count": 0,
+              "prefix_sha256": "7184863bdad7baf71adc3b8a79d0fd8f0fe31aad6e94566f01e4bc43c5972da6",
+              "prefix_sizes": [
+                [
+                  "1m",
+                  3
+                ]
+              ],
+              "runtime_sha256": "b8100b9988806e116e857080ef3dc7e66593132a3c66342c015fc2e186339d7c",
+              "setup_count": 0
+            },
+            {
+              "blocker_count": 0,
+              "causal_object_count": 2,
+              "decision_at": "2026-01-01T00:04:00+00:00",
+              "evidence_batch_sha256": "c8d68c4c876db246c85697f400886161196e1958d23424df18ca44f2927d1319",
+              "execution_plan_count": 0,
+              "prefix_sha256": "6c753cc41aea22502b559b7eb339af6b3ecae04f6bf908cf77c311ca1f520bd5",
+              "prefix_sizes": [
+                [
+                  "1m",
+                  4
+                ]
+              ],
+              "runtime_sha256": "692a0e383bdec9e063c1bd0476094d761a8366a81258207791e79a2e54e1f52e",
+              "setup_count": 0
+            },
+            {
+              "blocker_count": 0,
+              "causal_object_count": 2,
+              "decision_at": "2026-01-01T00:05:00+00:00",
+              "evidence_batch_sha256": "359bae2da622b83a46d3b213441abbbfd6bc5b1d6e8cc95e03656ff6eae44c1c",
+              "execution_plan_count": 0,
+              "prefix_sha256": "eb6d56245436ea86d1a84d4c819c796b8b18eaf0468bc2d24183fcd07088744b",
+              "prefix_sizes": [
+                [
+                  "1m",
+                  5
+                ]
+              ],
+              "runtime_sha256": "2965ee4123c9285ace8e5077411085a0e925dd95951bfeb3f45817f517f0184a",
+              "setup_count": 0
+            },
+            {
+              "blocker_count": 0,
+              "causal_object_count": 5,
+              "decision_at": "2026-01-01T00:06:00+00:00",
+              "evidence_batch_sha256": "78a5e5b9772beac30090759930c2b17532b5aa112f638601065bc9906930ccc8",
+              "execution_plan_count": 0,
+              "prefix_sha256": "22c3e479733d19e5b13a42c1dca1c505b1691446be27b869c46cc0761c614b42",
+              "prefix_sizes": [
+                [
+                  "1m",
+                  6
+                ]
+              ],
+              "runtime_sha256": "fd34e0a8813501067292b8ee9ccae4df69ab64d8741b6c755ee513ddd08a71f2",
+              "setup_count": 0
+            },
+            {
+              "blocker_count": 0,
+              "causal_object_count": 6,
+              "decision_at": "2026-01-01T00:07:00+00:00",
+              "evidence_batch_sha256": "5edce5de95b65b00174170041e99ca60478f57a44c11986962308e67335c3125",
+              "execution_plan_count": 0,
+              "prefix_sha256": "16180aaf8d759e4ba2c5cecea34606631676a7531f96285f619f917e28367d86",
+              "prefix_sizes": [
+                [
+                  "1m",
+                  7
+                ]
+              ],
+              "runtime_sha256": "763fe3863e62a894fedf7bef4b5018f4ddb04d003fc67af9f191f617d83ed71d",
+              "setup_count": 0
+            },
+            {
+              "blocker_count": 0,
+              "causal_object_count": 8,
+              "decision_at": "2026-01-01T00:08:00+00:00",
+              "evidence_batch_sha256": "755fbe51c71795107232a86647942a38fe62740c79f3e68659b50ca9e78f2528",
+              "execution_plan_count": 0,
+              "prefix_sha256": "4fd975c5b20cd0ba772dedff2f78cc880cdb1d40c4899595c0e8d20ea613afb1",
+              "prefix_sizes": [
+                [
+                  "1m",
+                  8
+                ]
+              ],
+              "runtime_sha256": "c5a2e79753096cfdbdcf3abedcb8c521713a401df8f4d241558b616754736fce",
+              "setup_count": 0
+            }
+          ],
+          "runtime_summary": {
+            "causal_object_count": 8,
+            "decision_watermark": "2026-01-01T00:08:00+00:00",
+            "execution_plan_count": 0,
+            "legacy_runtime_adapter_enabled": false,
+            "project_overlays_enabled": false,
+            "runtime_blockers": [],
+            "runtime_version": "PURE_SOURCE_STAGE9_V2",
+            "setup_count": 0,
+            "source_ready_setup_ids": [],
+            "strategy_profile": "PURE_SOURCE",
+            "trade_entry_allowed": false,
+            "unresolved_blockers": []
+          },
+          "version": "PURE_SOURCE_STAGE10_REPLAY_V2"
+        }
+      }
+    },
+    {
+      "input_series": {
+        "candles": [
+          {
+            "close": 100,
+            "exchange": "TEST",
+            "high": 101,
+            "interval": "1m",
+            "is_closed": true,
+            "low": 99,
+            "open": 100,
+            "open_time_ms": 1767225600000,
+            "symbol": "BTCUSDT",
+            "turnover_quote": 1000.0,
+            "volume_base": 100.0
+          },
+          {
+            "close": 103,
+            "exchange": "TEST",
+            "high": 104,
+            "interval": "1m",
+            "is_closed": true,
+            "low": 102,
+            "open": 103,
+            "open_time_ms": 1767225660000,
+            "symbol": "BTCUSDT",
+            "turnover_quote": 1000.0,
+            "volume_base": 100.0
+          },
+          {
+            "close": 106,
+            "exchange": "TEST",
+            "high": 107,
+            "interval": "1m",
+            "is_closed": true,
+            "low": 105,
+            "open": 106,
+            "open_time_ms": 1767225720000,
+            "symbol": "BTCUSDT",
+            "turnover_quote": 1000.0,
+            "volume_base": 100.0
+          }
+        ],
+        "interval_ms": 60000,
+        "timeframe": "1m"
+      },
+      "name": "IMB_GEOMETRY",
+      "run": {
+        "evidence_batches": [
+          {
+            "execution_assessments": [],
+            "imbalances": [],
+            "object_assessments": [
+              {
+                "family": "BREAKER",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+                "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "DEMAND_SUPPLY",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+                "source_reference": "SRC_DS_001",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "EQH_EQL",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+                "source_reference": "SW6 p7-10",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "IMB_FVG",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_THREE_CLOSED_CANDLES",
+                "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "LIQUIDITY_CONTEXT",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+                "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OB",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OTE_PD",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "RANGE",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+                "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "SFP",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_CLOSED_NEXT_OPEN_OBSERVATION",
+                "source_reference": "SW8 p5",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "STB_BTS",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:01:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+                "source_reference": "SW22 p1-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              }
+            ],
+            "objects": [],
+            "setup_assessments": [],
+            "sfps": []
+          },
+          {
+            "execution_assessments": [],
+            "imbalances": [],
+            "object_assessments": [
+              {
+                "family": "BREAKER",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+                "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "DEMAND_SUPPLY",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+                "source_reference": "SRC_DS_001",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "EQH_EQL",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+                "source_reference": "SW6 p7-10",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "IMB_FVG",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_THREE_CLOSED_CANDLES",
+                "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "LIQUIDITY_CONTEXT",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+                "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OB",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OTE_PD",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "RANGE",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+                "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "SFP",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_KNOWN_EXTERNAL_LIQUIDITY",
+                "source_reference": "SW8 p5",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "STB_BTS",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:02:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+                "source_reference": "SW22 p1-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              }
+            ],
+            "objects": [],
+            "setup_assessments": [],
+            "sfps": []
+          },
+          {
+            "execution_assessments": [],
+            "imbalances": [
+              {
+                "direction": "long",
+                "equilibrium": 103.0,
+                "first_open_time": "2026-01-01T00:00:00+00:00",
+                "impulse_open_time": "2026-01-01T00:01:00+00:00",
+                "obj": {
+                  "confirmed_at": null,
+                  "direction": "long",
+                  "formation_at": "2026-01-01T00:03:00+00:00",
+                  "formation_valid": true,
+                  "invalidated_at": null,
+                  "known_at": "2026-01-01T00:03:00+00:00",
+                  "lifecycle": [
+                    {
+                      "at": "2026-01-01T00:03:00+00:00",
+                      "kind": "FORMATION",
+                      "reason": null,
+                      "status": "FORMED",
+                      "trade_eligible": false
+                    },
+                    {
+                      "at": "2026-01-01T00:03:00+00:00",
+                      "kind": "KNOWN",
+                      "reason": null,
+                      "status": "KNOWN",
+                      "trade_eligible": false
+                    }
+                  ],
+                  "object_id": "c9e996f903b03e02794b65cf76060f14",
+                  "object_type": "fvg",
+                  "parent_object_ids": [],
+                  "provenance": "SW8 p1-3 + \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11: three-candle wick-gap price inefficiency; equilibrium is exact 0.5 of the zone",
+                  "rejection_reasons": [],
+                  "source_rule_ids": [
+                    "IMB_THREE_CANDLE_WICK_GAP_001",
+                    "IMB_ZONE_BOUNDARIES_001",
+                    "IMB_EQUILIBRIUM_001"
+                  ],
+                  "status": "KNOWN",
+                  "symbol": "BTCUSDT",
+                  "technical_normalization_ids": [
+                    "TN_IMB_STRICT_POSITIVE_GAP",
+                    "TN_IMB_KNOWN_AFTER_THIRD_CLOSE"
+                  ],
+                  "timeframe": "1m",
+                  "trade_eligible": false
+                },
+                "third_close_time": "2026-01-01T00:03:00+00:00",
+                "zone_high": 105,
+                "zone_low": 101
+              }
+            ],
+            "object_assessments": [
+              {
+                "family": "BREAKER",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+                "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "DEMAND_SUPPLY",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+                "source_reference": "SRC_DS_001",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "EQH_EQL",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+                "source_reference": "SW6 p7-10",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "IMB_FVG",
+                "object_id": "c9e996f903b03e02794b65cf76060f14",
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "SOURCE_IMB_FORMED",
+                "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+                "status": "PASS",
+                "timeframe": "1m"
+              },
+              {
+                "family": "LIQUIDITY_CONTEXT",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+                "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OB",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "OTE_PD",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+                "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "RANGE",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+                "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "SFP",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_KNOWN_EXTERNAL_LIQUIDITY",
+                "source_reference": "SW8 p5",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              },
+              {
+                "family": "STB_BTS",
+                "object_id": null,
+                "observed_at": "2026-01-01T00:03:00+00:00",
+                "parent_object_ids": [],
+                "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+                "source_reference": "SW22 p1-3",
+                "status": "UNKNOWN",
+                "timeframe": "1m"
+              }
+            ],
+            "objects": [
+              {
+                "confirmed_at": null,
+                "direction": "long",
+                "formation_at": "2026-01-01T00:03:00+00:00",
+                "formation_valid": true,
+                "invalidated_at": null,
+                "known_at": "2026-01-01T00:03:00+00:00",
+                "lifecycle": [
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "FORMATION",
+                    "reason": null,
+                    "status": "FORMED",
+                    "trade_eligible": false
+                  },
+                  {
+                    "at": "2026-01-01T00:03:00+00:00",
+                    "kind": "KNOWN",
+                    "reason": null,
+                    "status": "KNOWN",
+                    "trade_eligible": false
+                  }
+                ],
+                "object_id": "c9e996f903b03e02794b65cf76060f14",
+                "object_type": "fvg",
+                "parent_object_ids": [],
+                "provenance": "SW8 p1-3 + \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11: three-candle wick-gap price inefficiency; equilibrium is exact 0.5 of the zone",
+                "rejection_reasons": [],
+                "source_rule_ids": [
+                  "IMB_THREE_CANDLE_WICK_GAP_001",
+                  "IMB_ZONE_BOUNDARIES_001",
+                  "IMB_EQUILIBRIUM_001"
+                ],
+                "status": "KNOWN",
+                "symbol": "BTCUSDT",
+                "technical_normalization_ids": [
+                  "TN_IMB_STRICT_POSITIVE_GAP",
+                  "TN_IMB_KNOWN_AFTER_THIRD_CLOSE"
+                ],
+                "timeframe": "1m",
+                "trade_eligible": false
+              }
+            ],
+            "setup_assessments": [],
+            "sfps": []
+          }
+        ],
+        "replay": {
+          "manifest": {
+            "dataset_sha256": "65f322805aa3bc3446c113c07ed68f1c0310b6787e934958774c895aef4070f2",
+            "exchange": "TEST",
+            "series": [
+              {
+                "candle_count": 3,
+                "first_open_time_ms": 1767225600000,
+                "interval_ms": 60000,
+                "last_open_time_ms": 1767225720000,
+                "series_sha256": "85e4d6a1d8442645d85a9bd1b5e718e76d3c2fb37271ff087e35d3b26ace8436",
+                "timeframe": "1m"
+              }
+            ],
+            "symbol": "BTCUSDT",
+            "total_candles": 3,
+            "version": "PURE_SOURCE_STAGE10_REPLAY_V2"
+          },
+          "provider_id": "PURE_SOURCE_OBJECTS",
+          "provider_version": "PURE_SOURCE_STAGE11_OBJECTS_V2",
+          "receipts": [
+            {
+              "blocker_count": 0,
+              "causal_object_count": 0,
+              "decision_at": "2026-01-01T00:01:00+00:00",
+              "evidence_batch_sha256": "7cc0444f983399d9916fcce1e1dbc0804bbaedbdacf2f63929b56ac1f1681710",
+              "execution_plan_count": 0,
+              "prefix_sha256": "67605c77c5f71270ba9763fb06b632c59808365f2237ce37af34bef43d0a7939",
+              "prefix_sizes": [
+                [
+                  "1m",
+                  1
+                ]
+              ],
+              "runtime_sha256": "78b2afecc9f2e7fe4f83182f808214b62e9bd778644ac41043481f2dfa286b09",
+              "setup_count": 0
+            },
+            {
+              "blocker_count": 0,
+              "causal_object_count": 0,
+              "decision_at": "2026-01-01T00:02:00+00:00",
+              "evidence_batch_sha256": "0b6ec765ff07a138ae6803c37a19dc583b9611cd2fd4ed806eadb2c7ff4bdd12",
+              "execution_plan_count": 0,
+              "prefix_sha256": "f1256ba06a3b77cb25bcc2e3aaaf48f468eb450a47965e264b2010af41eabbf9",
+              "prefix_sizes": [
+                [
+                  "1m",
+                  2
+                ]
+              ],
+              "runtime_sha256": "40b83e559a4bda61806b6a964652bc616a5674926fc96d291c5030a83d276c8d",
+              "setup_count": 0
+            },
+            {
+              "blocker_count": 0,
+              "causal_object_count": 1,
+              "decision_at": "2026-01-01T00:03:00+00:00",
+              "evidence_batch_sha256": "1a735586a8059903aa49e8df9da8f02173171a126b1bb88a18fe72bc6c26b749",
+              "execution_plan_count": 0,
+              "prefix_sha256": "23df84542e1d0f514e9d1967801c910970b4f4639936052175cf964c6c26eec6",
+              "prefix_sizes": [
+                [
+                  "1m",
+                  3
+                ]
+              ],
+              "runtime_sha256": "b1cfa8961815bafaeaf39c2a8fe419c1df8a238451ff2cf68e4f5eb4126fe37f",
+              "setup_count": 0
+            }
+          ],
+          "runtime_summary": {
+            "causal_object_count": 1,
+            "decision_watermark": "2026-01-01T00:03:00+00:00",
+            "execution_plan_count": 0,
+            "legacy_runtime_adapter_enabled": false,
+            "project_overlays_enabled": false,
+            "runtime_blockers": [],
+            "runtime_version": "PURE_SOURCE_STAGE9_V2",
+            "setup_count": 0,
+            "source_ready_setup_ids": [],
+            "strategy_profile": "PURE_SOURCE",
+            "trade_entry_allowed": false,
+            "unresolved_blockers": []
+          },
+          "version": "PURE_SOURCE_STAGE10_REPLAY_V2"
+        }
+      }
+    }
+  ],
+  "classification": "SYNTHETIC_QA_NOT_MARKET_HISTORY",
+  "config_sha256": "fa9c2f45632833a8a2816e95f2beca29a4cf531c80f3ff3c16326abe44af8b48",
+  "engine_version": "PURE_SOURCE_STAGE11_OBJECTS_V2",
+  "git_commit": "f5f6ff9651b69616f98e2f6c099ef81ae1cbe270",
+  "source_manifest_sha256": "2ab9fa44808503bbfb93cf0abd28e2d5c3de1cf825d0c7666824c1ff6128a123",
+  "source_spec_version": "ORIGINAL_STRATEGY_SPEC_v1.1"
+}

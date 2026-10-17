@@ -1,0 +1,83 @@
+{
+  "LIVE": false,
+  "PAPER": false,
+  "artifact_sha256": {
+    "config/pure_source_object_provider_v2.json": "fa9c2f45632833a8a2816e95f2beca29a4cf531c80f3ff3c16326abe44af8b48",
+    "docs/PURE_SOURCE_ENGINE_STAGE11_OBJECT_PROVIDERS.md": "00a624832b853b4708e3d641f67a3ec446d829c1cf12da05e865cb48719e8dea",
+    "docs/pure_source_stage11_qa_v1/SYNTHETIC_EVIDENCE.json": "54b5c36d43547f7540a700d136979c5c3649d78c85c6d32bf2a4b46979004b24",
+    "docs/pure_source_stage11_qa_v1/SYNTHETIC_FUNNEL.json": "327f0bf2c7c1bc163f71384063b69df0abdc9c101c74d8e9ee60d8a862d48f63",
+    "docs/pure_source_stage11_qa_v1/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/pure_source_stage11_qa_v1/safety.log": "1bbac526cb48b6a8b5607610e0cfde3a115445eae2a08881901f61e1ce4edfeb",
+    "docs/pure_source_stage11_qa_v1/unit.log": "385c1d4f3f08dc7fbe9bc38cc026184a961193913a55522c8947ce7bda665c8f",
+    "src/crypto_bot/strategy/pure_source_object_provider_v2.py": "61e2462cf73c9560b6405275c0fddd55dadc0498f17e67d82682409d2856496f",
+    "tests/test_pure_source_object_provider_v2.py": "418d66d2946a4e088ec61d90c01d0938f15283d5be124bb356eaf54a49fb1a56"
+  },
+  "base_commit": "016f2a38e35ea95ae50d69a86cb3caab45f715d5",
+  "ci_required_before_merge": true,
+  "commands": [
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage11_qa_v1/compile.log",
+      "name": "compile"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage11_qa_v1/unit.log",
+      "name": "unit"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-c",
+        "from pathlib import Path; ps=[*Path('src').rglob('*.py'),*Path('scripts').rglob('*.py')]; assert not any('trade_entry_allowed=True' in p.read_text(encoding='utf-8',errors='ignore') for p in ps); print('SAFETY PASS')"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage11_qa_v1/safety.log",
+      "name": "safety"
+    }
+  ],
+  "engine_version": "PURE_SOURCE_STAGE11_OBJECTS_V2",
+  "git_commit": "f5f6ff9651b69616f98e2f6c099ef81ae1cbe270",
+  "historical_financial_runs": 0,
+  "independent_review": {
+    "actual_agent": "/root/pure_source_stage10_review",
+    "decision": "SCOPED_ACCEPTANCE_CI_REQUIRED",
+    "material_blockers": [],
+    "read_only": true,
+    "source_references_checked": [
+      "SW8 raw16.clean.txt P0068-P0087/P0102-P0104",
+      "SW12 p13",
+      "existing Stage2/3/5 contracts"
+    ],
+    "targeted_tests_independently_passed": 11,
+    "typed_evidence_retention_accepted": true
+  },
+  "private_api": false,
+  "source_rule_or_policy_changes": false,
+  "source_spec_version": "ORIGINAL_STRATEGY_SPEC_v1.1",
+  "stage": 11,
+  "targeted_tests": 11,
+  "timestamp_utc": "2026-10-17T09:05:07.814700+00:00",
+  "trade_entry_allowed": false,
+  "unit_tests": 737
+}
