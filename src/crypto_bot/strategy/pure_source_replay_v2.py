@@ -11,7 +11,9 @@ from crypto_bot.common.models import Candle
 from crypto_bot.data.models import MarketCandle
 from crypto_bot.data.qa import DataQualityReport, audit_klines
 from crypto_bot.strategy.causal_objects import CausalSourceObject, SourceObjectType
-from crypto_bot.strategy.pure_source_evidence_v2 import build_structure_liquidity_snapshot
+from crypto_bot.strategy.pure_source_evidence_v2 import (
+    build_structure_liquidity_snapshot,
+)
 from crypto_bot.strategy.pure_source_runtime import PureSourceRuntime
 from crypto_bot.strategy.source_execution_v2 import ExecutionPlanAssessment
 from crypto_bot.strategy.source_setup_v2 import SetupAssemblyAssessment
@@ -39,10 +41,14 @@ class ReplaySeries:
         if not self.candles:
             raise ValueError("replay series cannot be empty")
         market_interval_ms = _parse_fixed_interval_ms(self.candles[0].interval)
-        if market_interval_ms is not None and market_interval_ms != self.interval_ms:
+        if market_interval_ms is None:
+            raise ValueError("unsupported fixed MarketCandle interval")
+        if market_interval_ms != self.interval_ms:
             raise ValueError("MarketCandle interval does not match replay interval_ms")
         timeframe_interval_ms = _parse_fixed_interval_ms(str(self.timeframe))
-        if timeframe_interval_ms is not None and timeframe_interval_ms != self.interval_ms:
+        if timeframe_interval_ms is None:
+            raise ValueError("unsupported fixed replay timeframe")
+        if timeframe_interval_ms != self.interval_ms:
             raise ValueError("replay timeframe label does not match interval_ms")
 
 
@@ -113,9 +119,9 @@ class ReplayEvidenceBatch:
 
 class PureSourceEvidenceProvider(Protocol):
     provider_id: str
+    provider_version: str
 
-    def produce(self, frame: ReplayFrame) -> ReplayEvidenceBatch:
-        ...
+    def produce(self, frame: ReplayFrame) -> ReplayEvidenceBatch: ...
 
 
 @dataclass(frozen=True)
@@ -135,6 +141,7 @@ class ReplayStepReceipt:
 class PureSourceReplayResult:
     version: str
     provider_id: str
+    provider_version: str
     manifest: ReplayDatasetManifest
     receipts: tuple[ReplayStepReceipt, ...]
     runtime_summary: Mapping[str, Any]
@@ -168,6 +175,7 @@ class StructureLiquidityReplayProvider:
     """
 
     provider_id = "PURE_SOURCE_STAGE2_STRUCTURE_LIQUIDITY_V2"
+    provider_version = "2"
 
     def produce(self, frame: ReplayFrame) -> ReplayEvidenceBatch:
         objects: dict[str, CausalSourceObject] = {}
@@ -183,7 +191,9 @@ class StructureLiquidityReplayProvider:
                 objects[pool.obj.object_id] = pool.obj
             if snapshot.structure_object is not None:
                 objects[snapshot.structure_object.object_id] = snapshot.structure_object
-        return ReplayEvidenceBatch(objects=tuple(objects[key] for key in sorted(objects)))
+        return ReplayEvidenceBatch(
+            objects=tuple(objects[key] for key in sorted(objects))
+        )
 
 
 def run_pure_source_replay(
@@ -201,9 +211,12 @@ def run_pure_source_replay(
     execution assessments.
     """
 
-    provider_id = str(getattr(provider, "provider_id", "")).strip()
-    if not provider_id:
+    provider_id = getattr(provider, "provider_id", None)
+    if not isinstance(provider_id, str) or not provider_id.strip():
         raise ValueError("evidence provider requires non-empty provider_id")
+    provider_version = getattr(provider, "provider_version", None)
+    if not isinstance(provider_version, str) or not provider_version.strip():
+        raise ValueError("evidence provider requires non-empty provider_version")
     if through is not None:
         _aware("through", through)
 
@@ -222,13 +235,17 @@ def run_pure_source_replay(
 
     positions = [0 for _ in prepared]
     receipts: list[ReplayStepReceipt] = []
+    applied_assessments: set[tuple[str, str]] = set()
 
     for decision_at in decision_times:
         frame_series: list[PrefixSeries] = []
         for index, item in enumerate(prepared):
             old_position = positions[index]
             position = old_position
-            while position < len(item.strategy) and item.strategy[position].close_time <= decision_at:
+            while (
+                position < len(item.strategy)
+                and item.strategy[position].close_time <= decision_at
+            ):
                 position += 1
             positions[index] = position
             newly_closed = item.strategy[old_position:position]
@@ -259,12 +276,19 @@ def run_pure_source_replay(
         if not isinstance(batch, ReplayEvidenceBatch):
             raise TypeError("provider must return ReplayEvidenceBatch")
         batch_hash = _hash_payload(batch)
-        _apply_batch(runtime, batch, decision_at=decision_at)
+        _apply_batch(
+            runtime,
+            batch,
+            decision_at=decision_at,
+            applied_assessments=applied_assessments,
+        )
         summary = runtime.finish()
         receipts.append(
             ReplayStepReceipt(
                 decision_at=decision_at,
-                prefix_sizes=tuple((item.timeframe, len(item.candles)) for item in frame.series),
+                prefix_sizes=tuple(
+                    (item.timeframe, len(item.candles)) for item in frame.series
+                ),
                 prefix_sha256=prefix_hash,
                 evidence_batch_sha256=batch_hash,
                 runtime_sha256=_runtime_fingerprint(runtime, decision_at),
@@ -278,6 +302,7 @@ def run_pure_source_replay(
     return PureSourceReplayResult(
         version=REPLAY_VERSION,
         provider_id=provider_id,
+        provider_version=provider_version,
         manifest=manifest,
         receipts=tuple(receipts),
         runtime_summary=runtime.finish(),
@@ -294,11 +319,22 @@ def compare_replay_prefixes(
 
     _aware("through", through)
     if left.version != right.version:
-        return PrefixReplayComparison(False, 0, through, reason="REPLAY_VERSION_MISMATCH")
+        return PrefixReplayComparison(
+            False, 0, through, reason="REPLAY_VERSION_MISMATCH"
+        )
     if left.provider_id != right.provider_id:
         return PrefixReplayComparison(False, 0, through, reason="PROVIDER_ID_MISMATCH")
-    if (left.manifest.exchange, left.manifest.symbol) != (right.manifest.exchange, right.manifest.symbol):
-        return PrefixReplayComparison(False, 0, through, reason="DATASET_IDENTITY_MISMATCH")
+    if left.provider_version != right.provider_version:
+        return PrefixReplayComparison(
+            False, 0, through, reason="PROVIDER_VERSION_MISMATCH"
+        )
+    if (left.manifest.exchange, left.manifest.symbol) != (
+        right.manifest.exchange,
+        right.manifest.symbol,
+    ):
+        return PrefixReplayComparison(
+            False, 0, through, reason="DATASET_IDENTITY_MISMATCH"
+        )
 
     left_rows = tuple(row for row in left.receipts if row.decision_at <= through)
     right_rows = tuple(row for row in right.receipts if row.decision_at <= through)
@@ -364,7 +400,9 @@ def _prepare_dataset(
     exchange: str | None = None
     symbol: str | None = None
 
-    for spec in sorted(series, key=lambda item: (item.interval_ms, str(item.timeframe))):
+    for spec in sorted(
+        series, key=lambda item: (item.interval_ms, str(item.timeframe))
+    ):
         timeframe = str(spec.timeframe)
         if timeframe in timeframe_keys:
             raise ValueError(f"duplicate replay timeframe: {timeframe}")
@@ -373,15 +411,21 @@ def _prepare_dataset(
         qa = audit_klines(spec.candles, spec.interval_ms)
         if not qa.is_healthy:
             first = qa.issues[0]
-            raise ValueError(f"unhealthy replay data {timeframe}: {first.kind.value}: {first.detail}")
+            raise ValueError(
+                f"unhealthy replay data {timeframe}: {first.kind.value}: {first.detail}"
+            )
 
         first_market = spec.candles[0]
         market_interval_ms = _parse_fixed_interval_ms(first_market.interval)
-        if market_interval_ms is not None and market_interval_ms != spec.interval_ms:
-            raise ValueError(f"market interval mismatch for replay timeframe {timeframe}")
+        if market_interval_ms is None or market_interval_ms != spec.interval_ms:
+            raise ValueError(
+                f"market interval mismatch for replay timeframe {timeframe}"
+            )
         timeframe_interval_ms = _parse_fixed_interval_ms(timeframe)
-        if timeframe_interval_ms is not None and timeframe_interval_ms != spec.interval_ms:
-            raise ValueError(f"timeframe label mismatch for replay timeframe {timeframe}")
+        if timeframe_interval_ms is None or timeframe_interval_ms != spec.interval_ms:
+            raise ValueError(
+                f"timeframe label mismatch for replay timeframe {timeframe}"
+            )
 
         if exchange is None:
             exchange = first_market.exchange
@@ -389,7 +433,9 @@ def _prepare_dataset(
         elif first_market.exchange != exchange or first_market.symbol != symbol:
             raise ValueError("all replay series must share exchange and symbol")
 
-        strategy = tuple(candle.to_strategy_candle(spec.interval_ms) for candle in spec.candles)
+        strategy = tuple(
+            candle.to_strategy_candle(spec.interval_ms) for candle in spec.candles
+        )
         prefix_hashes = _series_prefix_hashes(timeframe, spec.interval_ms, spec.candles)
         prepared.append(
             _PreparedSeries(
@@ -455,7 +501,9 @@ def _series_prefix_hashes(
     return tuple(hashes)
 
 
-def _combined_prefix_hash(prepared: Sequence[_PreparedSeries], positions: Sequence[int]) -> str:
+def _combined_prefix_hash(
+    prepared: Sequence[_PreparedSeries], positions: Sequence[int]
+) -> str:
     payload = {
         "version": REPLAY_VERSION,
         "series": tuple(
@@ -477,7 +525,9 @@ def _validate_frame(frame: ReplayFrame) -> None:
     for item in frame.series:
         key = (item.interval_ms, item.timeframe)
         if previous_key is not None and key <= previous_key:
-            raise ValueError("replay frame series order must be deterministic and unique")
+            raise ValueError(
+                "replay frame series order must be deterministic and unique"
+            )
         previous_key = key
         for candle in item.candles:
             if not candle.is_closed or candle.close_time > frame.decision_at:
@@ -487,26 +537,52 @@ def _validate_frame(frame: ReplayFrame) -> None:
                 raise ValueError("newly_closed candle must close at frame decision_at")
 
 
-def _apply_batch(runtime: PureSourceRuntime, batch: ReplayEvidenceBatch, *, decision_at: datetime) -> None:
+def _apply_batch(
+    runtime: PureSourceRuntime,
+    batch: ReplayEvidenceBatch,
+    *,
+    decision_at: datetime,
+    applied_assessments: set[tuple[str, str]],
+) -> None:
     _register_market_objects(runtime, batch.objects, decision_at=decision_at)
 
     def setup_key(assessment: SetupAssemblyAssessment) -> tuple[str, str, str]:
-        object_id = assessment.evidence.setup.object_id if assessment.evidence is not None else ""
+        object_id = (
+            assessment.evidence.setup.object_id
+            if assessment.evidence is not None
+            else ""
+        )
         return assessment.status.value, assessment.reason, object_id
 
     for assessment in sorted(batch.setup_assessments, key=setup_key):
+        key = ("SETUP", _hash_payload(assessment))
+        if assessment.status.value == "PASS" and key in applied_assessments:
+            continue
         runtime.register_setup_assessment(assessment, observed_at=decision_at)
+        if assessment.status.value == "PASS":
+            applied_assessments.add(key)
 
     def execution_key(item: ReplayExecutionAssessment) -> tuple[str, str, str]:
-        plan_id = item.assessment.plan.setup_id if item.assessment.plan is not None else ""
-        return item.setup_id or plan_id, item.assessment.status.value, item.assessment.reason
+        plan_id = (
+            item.assessment.plan.setup_id if item.assessment.plan is not None else ""
+        )
+        return (
+            item.setup_id or plan_id,
+            item.assessment.status.value,
+            item.assessment.reason,
+        )
 
     for item in sorted(batch.execution_assessments, key=execution_key):
+        key = ("EXECUTION", _hash_payload(item))
+        if item.assessment.status.value == "PASS" and key in applied_assessments:
+            continue
         runtime.register_execution_assessment(
             item.assessment,
             observed_at=decision_at,
             setup_id=item.setup_id,
         )
+        if item.assessment.status.value == "PASS":
+            applied_assessments.add(key)
 
 
 def _register_market_objects(
@@ -518,10 +594,28 @@ def _register_market_objects(
     by_id: dict[str, CausalSourceObject] = {}
     for obj in objects:
         if obj.object_type in (SourceObjectType.SETUP, SourceObjectType.PHYSICAL_IDEA):
-            raise ValueError("provider market-object batch cannot bypass Stage-7 setup wiring")
+            raise ValueError(
+                "provider market-object batch cannot bypass Stage-7 setup wiring"
+            )
         if obj.object_id in by_id and by_id[obj.object_id] != obj:
-            raise ValueError(f"provider emitted conflicting object versions in one frame: {obj.object_id}")
+            raise ValueError(
+                f"provider emitted conflicting object versions in one frame: {obj.object_id}"
+            )
         by_id[obj.object_id] = obj
+
+    # Existence/topological order alone does not establish historical causality.
+    # A retired/invalidated parent may still be a valid historical dependency;
+    # only its first-known timestamp is required here, not current activity.
+    for obj in by_id.values():
+        for parent_id in obj.parent_object_ids:
+            parent = by_id.get(parent_id)
+            if parent is None:
+                try:
+                    parent = runtime.registry.get(parent_id)
+                except KeyError:
+                    continue  # Missing parents fail closed in the topological gate.
+            if parent.known_at > obj.known_at:
+                raise ValueError("child known_at cannot precede causal parent known_at")
 
     pending = dict(by_id)
     while pending:
@@ -535,7 +629,9 @@ def _register_market_objects(
             progressed = True
         if not progressed:
             unresolved = ",".join(sorted(pending))
-            raise ValueError(f"unresolved/cyclic causal parentage in provider batch: {unresolved}")
+            raise ValueError(
+                f"unresolved/cyclic causal parentage in provider batch: {unresolved}"
+            )
 
 
 def _parents_available(
@@ -584,9 +680,14 @@ def _jsonable(value: Any) -> Any:
     if isinstance(value, Enum):
         return value.value
     if is_dataclass(value) and not isinstance(value, type):
-        return {field.name: _jsonable(getattr(value, field.name)) for field in fields(value)}
+        return {
+            field.name: _jsonable(getattr(value, field.name)) for field in fields(value)
+        }
     if isinstance(value, Mapping):
-        return {str(key): _jsonable(item) for key, item in sorted(value.items(), key=lambda pair: str(pair[0]))}
+        return {
+            str(key): _jsonable(item)
+            for key, item in sorted(value.items(), key=lambda pair: str(pair[0]))
+        }
     if isinstance(value, (tuple, list)):
         return [_jsonable(item) for item in value]
     if isinstance(value, (str, int, float, bool)) or value is None:
@@ -595,7 +696,12 @@ def _jsonable(value: Any) -> Any:
 
 
 def _parse_fixed_interval_ms(value: str) -> int | None:
-    text = str(value).strip().lower()
+    text = str(value).strip()
+    # Calendar-month suffix (e.g. Binance 1M) is case-sensitive. It must not
+    # become a minute duration; the prefix form M1 remains a minute alias.
+    if text.endswith("M") and text[:-1].isdigit():
+        return None
+    text = text.lower()
     if not text:
         return None
     if text.isdigit():

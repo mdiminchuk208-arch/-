@@ -1,0 +1,60 @@
+{
+  "stage": 10,
+  "base_commit": "d56d6878250b653c37b234d8b60d14c5894f7767",
+  "reviewed_original_pr_head": "8c3107f62785bd706ab7c09bdb344ef4f00fad87",
+  "unit_suite": {
+    "command": "PYTHONPATH=src python -m unittest discover -s tests -p test_*.py -v",
+    "tests": 726,
+    "exit_code": 0,
+    "log": "unit.log"
+  },
+  "targeted_tests": 21,
+  "commands": [
+    {
+      "name": "compile",
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-c",
+        "from pathlib import Path; ps=[*Path('src').rglob('*.py'),*Path('scripts').rglob('*.py')]; assert not any('trade_entry_allowed=True' in p.read_text(encoding='utf-8',errors='ignore') for p in ps); print('SAFETY PASS')"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "independent_review": {
+    "actual_agent": "/root/pure_source_stage10_review",
+    "read_only": true,
+    "targeted_tests_independently_passed": 21,
+    "decision": "SCOPED_ACCEPTANCE_CI_REQUIRED",
+    "findings_repaired": [
+      "repeat-ready assessment identity collision",
+      "child known before parent",
+      "unsupported/nonfixed/monthly interval duration bypass"
+    ],
+    "Stage1_9_unchanged": true
+  },
+  "artifact_sha256": {
+    "src/crypto_bot/strategy/pure_source_replay_v2.py": "32e6d692b849780052905c26a4031c73d4590ce15de454ca0ac9def4b0382c3c",
+    "tests/test_pure_source_replay_v2.py": "2f458b0848c3d3a45674b46a9f5349400a94d4ffb7ce1ee8cded44483747cc00",
+    "docs/PURE_SOURCE_ENGINE_STAGE10_CAUSAL_REPLAY.md": "9b3f7772bbfbdb65f0ab7d8a60807cdec5fc1c58d61cefc06c6444747e8929f4",
+    "config/pure_source_replay_v2.json": "7792d3bec28d83144e985e5f1674316ab47d762e9bf5c028a95bc9b11ea30da9",
+    "docs/pure_source_stage10_qa_v1/unit.log": "835e8cdfc7ccf2bda25caf1d6689f139937868a21b3d687842a592a03b1951c9",
+    "docs/pure_source_stage10_qa_v1/safety.log": "1bbac526cb48b6a8b5607610e0cfde3a115445eae2a08881901f61e1ce4edfeb",
+    "docs/pure_source_stage10_qa_v1/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "financial_backtest_run": false,
+  "trade_entry_allowed": false,
+  "github_actions_required_before_merge": true
+}

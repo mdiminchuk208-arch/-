@@ -9,7 +9,8 @@
     "duplicates_forbidden": true,
     "out_of_order_forbidden": true,
     "timestamp_alignment_required": true,
-    "mixed_symbol_or_exchange_forbidden": true
+    "mixed_symbol_or_exchange_forbidden": true,
+    "unsupported_or_nonfixed_intervals": "REJECTED; no arbitrary duration for W/M/session calendars"
   },
   "causal_schedule": {
     "decision_clock": "union_of_closed_candle_close_times",
@@ -28,9 +29,15 @@
   "provider_contract": {
     "input": "ReplayFrame closed prefixes only",
     "output": "ReplayEvidenceBatch",
-    "market_object_parentage": "topological and causal",
+    "market_object_parentage": "topological; child known_at >= every parent known_at",
     "setup_bypass_via_market_object_batch": false,
-    "qualitative_source_terms_may_be_invented": false
+    "qualitative_source_terms_may_be_invented": false,
+    "required_identity_fields": [
+      "provider_id",
+      "provider_version"
+    ],
+    "repeated_PASS_assessments": "exact content idempotent per replay; conflicting evidence still rejected; runtime lifecycle not reset",
+    "UNKNOWN_FAIL_assessments": "preserved at every observation"
   },
   "reproducibility": {
     "dataset_sha256": true,
@@ -38,7 +45,8 @@
     "per_decision_prefix_sha256": true,
     "per_decision_evidence_batch_sha256": true,
     "per_decision_runtime_sha256": true,
-    "future_mutation_prefix_comparison": true
+    "future_mutation_prefix_comparison": true,
+    "provider_version_comparison_required": true
   },
   "built_in_provider": {
     "id": "PURE_SOURCE_STAGE2_STRUCTURE_LIQUIDITY_V2",
@@ -58,5 +66,10 @@
     "cost-adjusted breakeven",
     "private exchange API",
     "live orders"
-  ]
+  ],
+  "artifact_sha256": {
+    "src/crypto_bot/strategy/pure_source_replay_v2.py": "32e6d692b849780052905c26a4031c73d4590ce15de454ca0ac9def4b0382c3c",
+    "tests/test_pure_source_replay_v2.py": "2f458b0848c3d3a45674b46a9f5349400a94d4ffb7ce1ee8cded44483747cc00",
+    "docs/PURE_SOURCE_ENGINE_STAGE10_CAUSAL_REPLAY.md": "9b3f7772bbfbdb65f0ab7d8a60807cdec5fc1c58d61cefc06c6444747e8929f4"
+  }
 }

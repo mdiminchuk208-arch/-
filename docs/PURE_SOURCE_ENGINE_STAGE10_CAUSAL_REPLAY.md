@@ -122,3 +122,17 @@ The Stage-10 tests cover:
 
 ## Next stage after merge
 After Stage 10 is green, the next work is **Stage 11: clean evidence orchestration coverage** — add/test source-causal providers/resolvers for the remaining Stage 3–8 modules and measure the honest funnel of PASS / UNKNOWN / FAIL without PnL optimization. Only after that should the Market Data + Backtest + QA branch calculate baseline performance metrics.
+
+## PR #13 causal contract corrections
+
+The original Actions run #98 (38955107248, head8c3107f6) ran716tests with one stale exception-message assertion; safety was skipped after that failure. The corrected test verifies actual Stage-9 rejection of later-known evidence and an unchanged object registry without depending on wording. Stage-9 validation is unchanged.
+
+Independent read-only review /root/pure_source_stage10_review additionally reproduced three transport defects: repeated Stage-7 assessments after runtime-owned READY caused a stable-ID collision; child objects could claim knowledge before a causal parent; unsupported interval labels could supply arbitrary durations. The adapter now:
+- delivers an identical successfully applied PASS setup/execution assessment once per replay, without resetting runtime-owned eligibility; changed plans still fail, UNKNOWN/FAIL observations remain visible;
+- rejects child known_at earlier than any causal parent, whether emitted in the same batch or already registered; a historical invalidated parent is not globally forbidden;
+- rejects unsupported/nonfixed interval labels rather than guessing W/M/session calendars; supported exchange aliases must match the explicit fixed interval;
+- requires provider_id and provider_version and refuses cross-provider/version equivalence claims.
+
+Additional regression evidence covers independently truncated prefix replay, future OHLC mutation, late invalidation retaining its object and earlier receipts, four-close Stage7/8/9 wiring, changed-plan rejection, UNKNOWN observation retention, and interval/provider guards. These are infrastructure/causality normalizations, not trading SOURCE rules or PROJECT admission filters. No Stage1-9 module or frozen SOURCE semantics changed.
+
+Final local QA:726full-suite tests PASS (including21Stage10 tests); compile and safety invariant PASS. Independent reviewer /root/pure_source_stage10_review rechecked all fixes including case-sensitive1M monthly labels and accepted scope; merge remains conditional on green GitHub Actions for exact published head.
