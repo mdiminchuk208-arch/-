@@ -34,21 +34,29 @@
     "prefix_replay_and_future_mutation_invariance",
     "deterministic_diagnostic_artifact_and_exact_repeat_verification"
   ],
+  "identified_source_geometry_not_yet_fully_automated": [
+    "Methodichka_Range_first_high_after_impulse_and_first_low",
+    "Methodichka_Range_requires_no_structure_inside_and_reaction_from_0_5",
+    "Methodichka_Range_trade_setup_after_deviation_return_zone_test_and_CHOCH",
+    "Methodichka_OTE_levels_0_5_0_62_0_705_0_79_and_optimal_zone_0_705_to_0_79",
+    "Methodichka_SFP_original_three_candles_optional_fourth_confirmation",
+    "Methodichka_SFP_all_timeframes_with_required_liquidity_context"
+  ],
   "blocker_classes": [
     {
       "class": "MISSING_SOURCE_QUALITATIVE_PROVENANCE",
       "resolution_mode": "REQUIRES_SOURCE_EVIDENCE_OR_EXPLICIT_HUMAN_SOURCE_ANNOTATION_CONTRACT",
       "items": [
         "EQH_EQL_source_qualified_substructure_and_reasonable_tilt",
-        "OB_qualitative_geometry_context_and_aggressive_impulse",
-        "Breaker_source_valid_OB_and_confirmation_provenance",
-        "Range_source_qualified_endpoints_strength_midpoint_and_internal_structure",
+        "OB_large_body_small_wicks_liquidity_sweep_imbalance_and_context_provenance",
+        "Breaker_source_valid_OB_imbalance_pierce_and_CHOCH_provenance",
+        "Range_source_qualified_preceding_impulse_segmentation_and_midpoint_reaction_provenance",
         "STB_BTS_manipulation_segmentation_and_full_engulf_provenance",
         "Demand_Supply_last_movement_segmentation",
-        "OTE_PD_source_qualified_impulse_or_dealing_range_anchors",
+        "OTE_PD_source_qualified_impulse_or_dealing_range_anchors_while_ratios_are_source_defined",
         "meaningful_and_adverse_liquidity_context"
       ],
-      "forbidden_shortcut": "Do not substitute arbitrary OHLC, ATR, percentage, tick, score, ranking, ML, or profitability thresholds."
+      "forbidden_shortcut": "Do not substitute arbitrary OHLC, ATR, percentage, tick, score, ranking, ML, or profitability thresholds for qualitative source provenance."
     },
     {
       "class": "SOURCE_PERMITTED_VARIANTS_NO_PRECEDENCE",
@@ -77,7 +85,7 @@
         "protective_stop_for_Range_when_not_defined_by_SOURCE",
         "protective_stop_for_Demand_Supply_when_not_defined_by_SOURCE"
       ],
-      "forbidden_shortcut": "Do not manufacture midpoint, ATR multiple, candle fraction, RR multiple, or tick buffer as SOURCE."
+      "forbidden_shortcut": "Do not manufacture an ATR multiple, candle fraction, RR multiple, tick buffer, or any other exact coordinate not supplied by SOURCE."
     },
     {
       "class": "SOURCE_EXIT_ALLOCATION_UNSPECIFIED",
@@ -101,6 +109,31 @@
     }
   ],
   "source_evidence_confirmed_in_frozen_primary_materials": [
+    {
+      "source": "Методичка",
+      "paragraphs": "P0102-P0108",
+      "finding": "OB is the last candle before imbalance; the movement must update structure, the OB must sweep a low/high or wick, and the body should be large while wicks are small. The large/small qualitative boundary is not numerically defined."
+    },
+    {
+      "source": "Методичка",
+      "paragraphs": "P0113-P0116",
+      "finding": "Breaker is an impulsively pierced OB; it must sweep a high/low, be pierced by imbalance, and be followed by CHOCH."
+    },
+    {
+      "source": "Методичка",
+      "paragraphs": "P0122-P0130",
+      "finding": "Range has no structure inside; it is built from the first high after the impulse and the first low, requires reaction from 0.5 for validation, and the described setup trades after deviation, return, zone test and CHOCH."
+    },
+    {
+      "source": "Методичка",
+      "paragraphs": "P0139-P0156",
+      "finding": "Fibonacci source levels include 0.5, 0.62, 0.705 and 0.79; OTE is explicitly the 0.705-0.79 zone, while exact source-qualified impulse anchors still require causal provenance."
+    },
+    {
+      "source": "Методичка",
+      "paragraphs": "P0157-P0162",
+      "finding": "SFP is originally a three-candle reversal pattern with an optional fourth confirmation candle, is applicable on all timeframes, and requires context in the form of liquidity points or zones being swept."
+    },
     {
       "source": "SW9",
       "pages": "3-6",
@@ -129,10 +162,10 @@
   ],
   "next_allowed_work": [
     "extract_rule_level_evidence_from_frozen_original_sources",
-    "build_source_branch_enumeration_where_alternatives_are finite_and_explicit",
+    "build_source_branch_enumeration_where_alternatives_are_finite_and_explicit",
     "build_qualitative_annotation_contracts_with_causal_timestamps_and_provenance",
-    "extend_object_provider_only_when_source_evidence_is explicit",
-    "keep_diagnostic_replay_non_financial_until_required_execution_and_exit_geometry_is identified"
+    "extend_object_provider_only_when_source_evidence_is_explicit",
+    "keep_diagnostic_replay_non_financial_until_required_execution_and_exit_geometry_is_identified"
   ],
   "prohibited_next_work": [
     "financial_performance_claim_for_PURE_SOURCE",
