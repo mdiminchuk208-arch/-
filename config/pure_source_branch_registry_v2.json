@@ -1,0 +1,185 @@
+{
+  "version": "PURE_SOURCE_STAGE17_BRANCH_REGISTRY_V2",
+  "base_merge_commit": "f206e6938fe78adb7290ba3264c6d19c2ababf9b",
+  "classification": "TECHNICAL_NORMALIZATION",
+  "purpose": "stable_non_ranked_representation_of_explicit_source_permitted_alternatives",
+  "trade_entry_allowed": false,
+  "financial_backtest_allowed": false,
+  "project_policy_applied": [],
+  "selection_policy": "NO_PRECEDENCE_NO_RANKING_NO_OUTCOME_SELECTION",
+  "families": [
+    {
+      "family_id": "OB_DIRECT_ENTRY",
+      "dimension": "ENTRY",
+      "source_refs": ["SW9 p3"],
+      "alternatives": [
+        {
+          "alternative_id": "OB_DIRECT_BOUNDARY_LIMIT",
+          "geometry_status": "EXACT_IF_PARENT_GEOMETRY_KNOWN",
+          "exact_value": null,
+          "requirements": ["source_valid_OB_geometry", "setup_causally_known"],
+          "unresolved": [],
+          "description": "LONG uses upper OB boundary; SHORT uses lower OB boundary."
+        },
+        {
+          "alternative_id": "OB_DIRECT_INSIDE_ZONE",
+          "geometry_status": "BOUNDED_ZONE_NO_EXACT_QUOTE",
+          "exact_value": null,
+          "requirements": ["source_valid_OB_geometry", "setup_causally_known"],
+          "unresolved": ["EXACT_INSIDE_OB_QUOTE_UNSPECIFIED"],
+          "description": "Source also permits a limit inside the OB, without one exact inside-zone quote."
+        }
+      ]
+    },
+    {
+      "family_id": "OB_EXECUTION_PATH",
+      "dimension": "ENTRY_PATH",
+      "source_refs": ["SW9 p3-6"],
+      "alternatives": [
+        {
+          "alternative_id": "OB_DIRECT_PATH",
+          "geometry_status": "PATH_DEFINED_GEOMETRY_DEPENDS_ON_ENTRY_BRANCH",
+          "exact_value": null,
+          "requirements": ["source_valid_OB", "eligible_OB_test_state"],
+          "unresolved": ["ENTRY_BRANCH_STILL_REQUIRED"],
+          "description": "Direct OB work using source-permitted direct-entry geometry."
+        },
+        {
+          "alternative_id": "OB_LTF_CONFIRMATION_NEW_POI_PATH",
+          "geometry_status": "PATH_DEFINED_FINAL_QUOTE_UNRESOLVED",
+          "exact_value": null,
+          "requirements": ["HTF_OB_reaction", "causal_LTF_BOS", "new_source_valid_POI"],
+          "unresolved": ["EXACT_QUOTE_WITHIN_NEW_POI_UNSPECIFIED", "REFINED_STOP_GEOMETRY_UNSPECIFIED"],
+          "description": "Conservative path waits for LTF BOS and a newly formed POI, then places a limit on that POI."
+        }
+      ]
+    },
+    {
+      "family_id": "OB_STOP_ANCHOR",
+      "dimension": "STOP",
+      "source_refs": ["SW9 p3"],
+      "alternatives": [
+        {
+          "alternative_id": "OB_STOP_BEYOND_ZONE_EXTREME",
+          "geometry_status": "RELATIVE_ANCHOR_NO_EXACT_BUFFER",
+          "exact_value": null,
+          "requirements": ["source_valid_OB_geometry"],
+          "unresolved": ["EXACT_BEYOND_ANCHOR_BUFFER_UNSPECIFIED"],
+          "description": "Stop beyond OB minimum/maximum."
+        },
+        {
+          "alternative_id": "OB_STOP_BEYOND_ENGULFING_WICK",
+          "geometry_status": "RELATIVE_ANCHOR_NO_EXACT_BUFFER",
+          "exact_value": null,
+          "requirements": ["causal_engulfing_candle_extreme"],
+          "unresolved": ["EXACT_BEYOND_ANCHOR_BUFFER_UNSPECIFIED"],
+          "description": "Alternative stop beyond the wick/extreme of the candle that engulfed the OB."
+        }
+      ]
+    },
+    {
+      "family_id": "BREAKER_STOP_ANCHOR",
+      "dimension": "STOP",
+      "source_refs": ["SW9 p9-10"],
+      "alternatives": [
+        {
+          "alternative_id": "BREAKER_STOP_AGGRESSIVE",
+          "geometry_status": "RELATIVE_ANCHOR_NO_EXACT_BUFFER",
+          "exact_value": null,
+          "requirements": ["source_valid_Breaker_geometry"],
+          "unresolved": ["EXACT_BEYOND_BREAKER_BUFFER_UNSPECIFIED"],
+          "description": "Aggressive stop immediately beyond the Breaker."
+        },
+        {
+          "alternative_id": "BREAKER_STOP_CONSERVATIVE",
+          "geometry_status": "RELATIVE_ANCHOR_NO_EXACT_BUFFER",
+          "exact_value": null,
+          "requirements": ["causal_liquidity_sweeping_impulse_extreme"],
+          "unresolved": ["EXACT_BEYOND_IMPULSE_BUFFER_UNSPECIFIED"],
+          "description": "Conservative stop beyond the liquidity-sweeping impulse candle minimum/maximum."
+        }
+      ]
+    },
+    {
+      "family_id": "STB_BTS_ENTRY",
+      "dimension": "ENTRY",
+      "source_refs": ["SW22 p3-4"],
+      "alternatives": [
+        {
+          "alternative_id": "STB_BTS_DIRECTIONAL_PART",
+          "geometry_status": "BOUNDED_ZONE_NO_EXACT_QUOTE",
+          "exact_value": null,
+          "requirements": ["source_valid_STB_BTS_geometry", "trend_alignment", "liquidity_sweep", "full_engulf", "BOS_or_CONF"],
+          "unresolved": ["EXACT_QUOTE_WITHIN_DIRECTIONAL_PART_UNSPECIFIED"],
+          "description": "LONG may use upper part; SHORT may use lower part of the STB/BTS zone."
+        },
+        {
+          "alternative_id": "STB_BTS_MIDPOINT_0_5",
+          "geometry_status": "EXACT_IF_PARENT_GEOMETRY_KNOWN",
+          "exact_value": 0.5,
+          "requirements": ["source_valid_STB_BTS_geometry", "trend_alignment", "liquidity_sweep", "full_engulf", "BOS_or_CONF"],
+          "unresolved": [],
+          "description": "Exact 0.5 midpoint is explicitly source-permitted."
+        }
+      ]
+    },
+    {
+      "family_id": "FTA_FIXATION",
+      "dimension": "EXIT_ALLOCATION",
+      "source_refs": ["SW9 p11-16"],
+      "alternatives": [
+        {
+          "alternative_id": "FTA_FULL_FIXATION",
+          "geometry_status": "EXACT_ALLOCATION_IF_FTA_KNOWN",
+          "exact_value": 1.0,
+          "requirements": ["causal_source_valid_FTA"],
+          "unresolved": [],
+          "description": "Full fixation at FTA is explicitly source-permitted."
+        },
+        {
+          "alternative_id": "FTA_PARTIAL_FIXATION",
+          "geometry_status": "ALLOCATION_FAMILY_NO_EXACT_FRACTION",
+          "exact_value": null,
+          "requirements": ["causal_source_valid_FTA"],
+          "unresolved": ["PARTIAL_FRACTION_UNSPECIFIED", "REMAINDER_DESTINATION_UNSPECIFIED", "REMAINDER_TERMINATION_UNSPECIFIED"],
+          "description": "Partial fixation at FTA is explicitly source-permitted, but the fraction and remainder lifecycle are not uniquely defined."
+        }
+      ]
+    },
+    {
+      "family_id": "SFP_ATR_PERIOD",
+      "dimension": "PARAMETER",
+      "source_refs": ["SW12 p12-14"],
+      "alternatives": [
+        {
+          "alternative_id": "SFP_ATR_STANDARD_14",
+          "geometry_status": "EXACT_PARAMETER",
+          "exact_value": 14,
+          "requirements": ["causal_ATR_evidence_on_required_timeframe"],
+          "unresolved": [],
+          "description": "ATR 14 is the source-described standard setting."
+        },
+        {
+          "alternative_id": "SFP_ATR_STRATEGY_ADJUSTED",
+          "geometry_status": "PARAMETER_FAMILY_NO_SOURCE_PRECEDENCE",
+          "exact_value": null,
+          "requirements": ["source_supported_strategy_specific_period_choice"],
+          "unresolved": ["EXACT_ADJUSTED_PERIOD_NOT_DEFINED_BY_SOURCE"],
+          "description": "Source explicitly permits changing ATR period according to strategy, but does not define one universal alternative period."
+        }
+      ]
+    }
+  ],
+  "forbidden_fields": [
+    "rank",
+    "score",
+    "weight",
+    "priority",
+    "preferred",
+    "win_rate",
+    "profit_factor",
+    "expectancy",
+    "pnl",
+    "backtest_result"
+  ]
+}
