@@ -9,19 +9,31 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.14']
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: ${{ matrix.python-version }}
       - name: Install project
         run: python -m pip install -e .
       - name: Compile all Python
         run: python -m compileall -q src scripts tests
       - name: Full unit test suite
+        if: matrix.python-version == '3.11'
         env:
           PYTHONPATH: src
         run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: PURE SOURCE and compatibility unit tests
+        if: matrix.python-version == '3.14'
+        env:
+          PYTHONPATH: src
+        run: |
+          python -m unittest discover -s tests -p 'test_*source*.py' -v
+          python -m unittest discover -s tests -p 'test_causal_object_core.py' -v
       - name: Safety invariant
         run: |
           if grep -R --include='*.py' --line-number --fixed-string 'trade_entry_allowed=True' src scripts; then

@@ -1,8 +1,8 @@
 # PURE SOURCE — authoritative current status
 
 **Status date:** 2026-10-18
-**Current rebuild stage:** Stage 23 — Qualified Diagnostic Replay
-**Base:** Stage 22 merge `ba7abf3623c82104b390c4c5dc6242b4ab36ae84`
+**Current rebuild stage:** Stage 23.1 — Audit Hardening
+**Base:** Stage 23 merge `ceba28fe4969c7eb916e348a30e6f7db0bf08d44`
 
 > This file is the current continuation entrypoint for PURE SOURCE strategy work.
 > Historical `README.md`, `CONTINUATION_STATUS.md`, old Bybit replays, source-permitted physical cases and earlier PnL reports remain preserved evidence, but they are **not SOURCE truth** and must not be used to resolve current SOURCE ambiguity.
@@ -195,3 +195,9 @@ Next safe step: integrate bound consumers into deterministic diagnostic replay w
 `run_qualified_diagnostic_replay` now accepts explicit immutable annotation-delivery and consumer-request schedules, advances the journal on every closed frame and emits complete qualified EQH/EQL/SFP-context envelopes through the existing deterministic runner. Future schedules do not enter prior evidence fingerprints. Failed multi-input frames emit no batch and poison the session. No setup, execution plan, READY or trade is created.
 
 See `docs/PURE_SOURCE_ENGINE_STAGE23_QUALIFIED_DIAGNOSTIC_REPLAY.md` and `docs/pure_source_stage23_qa_v1/SOURCE_HANDOFF_FRONTIER.json`. The next dependency is source-qualified market annotations and explicit missing movement/anchor/event/execution relationships. Synthetic QA is not market SOURCE truth. Financial comparison cannot resolve these gaps. NOT_IDENTIFIABLE; all trading/financial/private-API permissions and execution readiness remain false.
+
+## Stage23.1 audit hardening checkpoint
+
+Stage24 reconstruction is gated on clean Stage23.1 acceptance. Hardening covers full historical context state, canonical subject membership, actual committed archive/member bytes, DOCX XML/media/paragraph relationships, pinned exact quote selections, resolvable conflict citations, every authoritative CSV column, retained analyst handoffs and truthful Python3.11/3.14 safety behavior. See `docs/PURE_SOURCE_ENGINE_STAGE23_1_AUDIT_HARDENING.md`.
+
+Binding context V2 intentionally supersedes V1 fingerprints. Original Stage19–23 freeze files/reports remain historical receipts; authorized audit-code hash changes are recorded only in the new Stage23.1 freeze. SOURCE definitions/alternatives and all original material bytes remain unchanged. NOT_IDENTIFIABLE and all trading/financial/private-API permissions remain false. No financial replay or Stage24 work is part of this gate.

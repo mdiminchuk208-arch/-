@@ -39,8 +39,15 @@ class QualifiedSfpContextAssessment:
     priority1_pattern_status: EvidenceStatus = field(
         default=EvidenceStatus.UNKNOWN, init=False
     )
-    execution_ready: bool = field(default=False, init=False)
-    trade_entry_allowed: bool = field(default=False, init=False)
+    execution_ready: bool = False
+    trade_entry_allowed: bool = False
+
+    def __post_init__(self) -> None:
+        # Domain validation stays stable across dataclasses.replace versions.
+        if self.execution_ready is not False or self.trade_entry_allowed is not False:
+            raise ValueError(
+                "qualified SFP context cannot enable execution or trade entry"
+            )
 
 
 def assess_bound_sfp_context(

@@ -127,6 +127,9 @@ class SourceQualitativeClaim:
                 raise ValueError("qualitative identity collections must be immutable tuples")
             for value in values:
                 _audit_text(value, name)
+        # Subjects are unordered membership, as in the factory and assessment.
+        # Event/anchor roles must be carried by separate typed contracts.
+        object.__setattr__(self, "subject_object_ids", tuple(sorted(set(self.subject_object_ids))))
         for name, value in (
             ("observation_start_at", self.observation_start_at),
             ("observation_end_at", self.observation_end_at),

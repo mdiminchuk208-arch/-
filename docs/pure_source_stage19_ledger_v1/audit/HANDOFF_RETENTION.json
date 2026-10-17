@@ -1,0 +1,31 @@
+{
+  "classification": "TECHNICAL_NORMALIZATION",
+  "source_semantics_changed": false,
+  "handoffs": [
+    {
+      "original_locator": "/tmp/stage18-methodichka-extraction.json",
+      "repository_path": "docs/pure_source_stage19_ledger_v1/audit/retained_handoffs/stage18-methodichka-extraction.json",
+      "sha256": "8ceb11e65ba9390b3836a871c9fcabad2b5b5df65394af1589d6d9f703235c81",
+      "bytes": 236763
+    },
+    {
+      "original_locator": "/tmp/stage18-primary-evidence.json",
+      "repository_path": "docs/pure_source_stage19_ledger_v1/audit/retained_handoffs/stage18-primary-evidence.json",
+      "sha256": "ca4ab008b707487600005e88ec32c64713e49e027d8a844d79a3367f930a93d7",
+      "bytes": 59908
+    },
+    {
+      "original_locator": "/tmp/stage18-secondary-evidence.json",
+      "repository_path": "docs/pure_source_stage19_ledger_v1/audit/retained_handoffs/stage18-secondary-evidence.json",
+      "sha256": "ef4df96236409bca23f588d86c1cd419de58c590de0f0db3e949ed8f0e84cbcd",
+      "bytes": 42234
+    },
+    {
+      "original_locator": "/tmp/stage19-methodichka-visual-evidence.json",
+      "repository_path": "docs/pure_source_stage19_ledger_v1/audit/retained_handoffs/stage19-methodichka-visual-evidence.json",
+      "sha256": "d3378dc10574b76a80b6a0e6f919f278912dbb7eeed3f02cbc9e74c49ac56631",
+      "bytes": 117214
+    }
+  ],
+  "image_retention": "Original image bytes remain inside the committed cryptology.zip embedded Methodichka DOCX; extracted /tmp image copies are not repository artifacts or CI dependencies."
+}

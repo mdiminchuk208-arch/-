@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import datetime, timedelta
 from itertools import pairwise
 from math import isfinite
@@ -45,7 +45,11 @@ class QualifiedEqualLiquidityAssessment:
     geometry_known_at: datetime
     known_at: datetime | None
     facts: tuple[BoundLiquidityFact, ...]
-    trade_entry_allowed: bool = field(default=False, init=False)
+    trade_entry_allowed: bool = False
+
+    def __post_init__(self) -> None:
+        if self.trade_entry_allowed is not False:
+            raise ValueError("qualified liquidity cannot enable trade entry")
 
 
 def assess_bound_equal_liquidity(

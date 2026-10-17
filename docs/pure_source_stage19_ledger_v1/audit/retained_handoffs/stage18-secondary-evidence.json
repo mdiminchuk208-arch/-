@@ -1,0 +1,719 @@
+{
+  "report_version": "STAGE18_SECONDARY_ORIGINAL_EVIDENCE_V1",
+  "task_scope": "Read-only source extraction for qualitative causal annotation contracts; no strategy implementation or financial validation.",
+  "source_priority": "All four consulted sources are other confirmed ORIGINAL SOURCE materials. Methodichka, SW5, SW9, SW11, SW12 and SW22 take precedence; no conflicts are resolved here.",
+  "consulted_texts": [
+    "14.clean.txt",
+    "16.clean.txt",
+    "06.clean.txt",
+    "18.clean.txt"
+  ],
+  "excluded_original_texts": [
+    "Methodichka",
+    "SW5",
+    "SW9",
+    "SW11",
+    "SW12",
+    "SW22"
+  ],
+  "current_frontier_read": [
+    "AGENTS.md",
+    "PURE_SOURCE_CURRENT_STATUS.md",
+    "config/pure_source_identifiability_frontier_v2.json"
+  ],
+  "manifest": {
+    "path": "data/source_materials/cryptology_2026_10_09/manifest.json",
+    "sha256": "652e5e83d793be3f567c9007241357d593d7df49aebdc684968738586b8f7136",
+    "archive_path": "data/source_materials/cryptology_2026_10_09/cryptology.zip",
+    "archive_sha256": "33cee26232d90fe26840bb4fced2e75551a5368d59359ffecc4b72d92c3870b9",
+    "archive_manifest_hash_match": true
+  },
+  "sources": [
+    {
+      "source_id": "SW6",
+      "authority_tier": "other confirmed ORIGINAL SOURCE materials",
+      "manifest_entry_id": 14,
+      "archive_member": "Криптология/Smart money/[SW.BAND]6. Ликвидность.docx",
+      "archive_member_sha256": "8587a15f68f4214c27a7bcd66ae85058571ed95369bc96f32d41bf3ef4a35178",
+      "clean_text_path": "data/source_materials/cryptology_2026_10_09/14.clean.txt",
+      "clean_text_sha256": "be369cab60dd4b2b804e2d7baf6c6e2352d33935223462fee24915a68400de9e",
+      "manifest_hash_match": true,
+      "archive_member_hash_match": true
+    },
+    {
+      "source_id": "SW8",
+      "authority_tier": "other confirmed ORIGINAL SOURCE materials",
+      "manifest_entry_id": 16,
+      "archive_member": "Криптология/Smart money/[SW.BAND]8. Торговые инструменты (Base).docx",
+      "archive_member_sha256": "88d40f60f201de5ffe7da6591b59c6fd88a1fd7f9c64c281a2f099d84f52ac23",
+      "clean_text_path": "data/source_materials/cryptology_2026_10_09/16.clean.txt",
+      "clean_text_sha256": "3dfe171ff6d8d9ac90b65683871be5db562c2d8248b5032a648f4ff2c476ac8f",
+      "manifest_hash_match": true,
+      "archive_member_hash_match": true
+    },
+    {
+      "source_id": "SW10",
+      "authority_tier": "other confirmed ORIGINAL SOURCE materials",
+      "manifest_entry_id": 6,
+      "archive_member": "Криптология/Smart money/[SW.BAND]10. Боковое движение.docx",
+      "archive_member_sha256": "628cb1caa97138bc5470687e3743127cd147ac20c5cb39144345764be537e631",
+      "clean_text_path": "data/source_materials/cryptology_2026_10_09/06.clean.txt",
+      "clean_text_sha256": "ad70ddbe23b29b1f0bce9638ffb34b9cd98f04fbf1efcb42eaa52cb5b94aa5c6",
+      "manifest_hash_match": true,
+      "archive_member_hash_match": true
+    },
+    {
+      "source_id": "DemandSupply",
+      "authority_tier": "other confirmed ORIGINAL SOURCE materials",
+      "manifest_entry_id": 18,
+      "archive_member": "Криптология/Зоны_спроса_и_предложения_Demand_and_Supply.docx",
+      "archive_member_sha256": "824a8a97902d84f85099aa10db6c13c8c008c6f818b188453af8ede6ccdbb020",
+      "clean_text_path": "data/source_materials/cryptology_2026_10_09/18.clean.txt",
+      "clean_text_sha256": "605298b07a02a64d00ee2b6ba887cfdd8d366785aebf8d6e6d5e54d8a46da823",
+      "manifest_hash_match": true,
+      "archive_member_hash_match": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "SEC_SW6_EQ_TILT",
+      "source_id": "SW6",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0145",
+        "P0146",
+        "P0147",
+        "P0148",
+        "P0149",
+        "P0150"
+      ],
+      "short_quote_ru": ". EQH/EQL необязательно должны быть ровными как по линейке. Допускается отклонение в наклоне (в пределах разумного). Этот наклон должен соответствовать правилу: Для EQH - левый максимум выше правого. Для EQL - левый минимум ниже правого. (показано на схематическом и графическом примере выше).",
+      "classification": "SOURCE_RULE",
+      "predicate": "EQH_EQL_reasonable_tilt",
+      "supported_meaning": "EQH/EQL need not be perfectly level. For a tilted case, the permitted direction is left EQH maximum above right, or left EQL minimum below right. Reasonableness remains qualitative.",
+      "scope": "qualitative_source_provenance",
+      "unresolved": [
+        "No maximum slope, price gap, percentage, tick or ATR tolerance.",
+        "Do not turn permission to tilt into a requirement that perfectly level pools have strict inequalities."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW6_SUBSTRUCTURE",
+      "source_id": "SW6",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0152",
+        "P0153"
+      ],
+      "short_quote_ru": ". Важно понимать, что EQH/EQL образуются между свингами субструктуры, а не между двумя свечами на графике.",
+      "classification": "SOURCE_RULE",
+      "predicate": "EQH_EQL_source_qualified_substructure",
+      "supported_meaning": "EQH/EQL form between substructure swings, not merely between two chart candles.",
+      "scope": "qualitative_source_provenance",
+      "unresolved": [
+        "The source does not numerically define substructure swing detection or choose which of several valid substructures to use."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW6_ADVERSE_LIQUIDITY",
+      "source_id": "SW6",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0156",
+        "P0157",
+        "P0158",
+        "P0159"
+      ],
+      "short_quote_ru": "EQH/EQL помогает найти цель для трейда, а также подсказывает, когда не стоит входить в позицию. Если ниже вашей точки входа есть EQH/EQL, тогда вход в позицию осуществляем после того, как цена их снимет.",
+      "classification": "SOURCE_RULE",
+      "predicate": "adverse_liquidity_context",
+      "supported_meaning": "EQH/EQL inform when entry should wait; the literal example requires liquidity below the intended entry to be swept first.",
+      "scope": "entry_context_permission_or_wait_condition",
+      "unresolved": [
+        "Directional scope of the literal below-entry sentence is under-specified.",
+        "No automatic symmetrical long/short predicate, distance threshold, liquidity ranking, or sweep-selected target can be inferred."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW6_MEANINGFUL_LEVEL",
+      "source_id": "SW6",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0162",
+        "P0163",
+        "P0164",
+        "P0165",
+        "P0166"
+      ],
+      "short_quote_ru": "BSL (buy side liquidity) - ликвидность, как цель для покупателей. SSL (sell side liquidity) - ликвидность, как цель для продавцов. Это значимые уровни, которые являются интересом для крупных игроков, так как за этими уровнями располагается большое количество стоп ордеров других участников рынка.",
+      "classification": "SOURCE_RULE",
+      "predicate": "meaningful_liquidity_context",
+      "supported_meaning": "BSL/SSL are significant levels associated with large-player interest and many stops. This supports a human source-qualified level assertion, not an inferred amount.",
+      "scope": "qualitative_source_provenance",
+      "unresolved": [
+        "No quantitative significance cutoff, required amount of stops, ranking of pools, or unique context selector."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW6_NOT_PREDICTIVE",
+      "source_id": "SW6",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0114",
+        "P0115",
+        "P0116",
+        "P0117",
+        "P0118",
+        "P0119",
+        "P0120"
+      ],
+      "short_quote_ru": "Ликвидность не является точкой входа в позицию (только при продвинутой работе, которая рассматривается в пакете “Advanced” и “Pro”). Мы никогда не знаем, послужит ли ликвидность “топливом” или обратными заявками для набора позиции. Мы не можем утверждать, за какой именно ликвидностью пойдет цена. Мы будем использовать ликвидность как цель трейда, в которой позиция будет фиксироваться.",
+      "classification": "SOURCE_RULE",
+      "predicate": "liquidity_context_limit",
+      "supported_meaning": "At this Base level liquidity is used as a target; the text says one cannot know whether it fuels continuation or builds a position, or precisely which liquidity price will seek.",
+      "scope": "permission_and_epistemic_limit",
+      "unresolved": [
+        "Advanced/Pro entry exceptions are explicitly mentioned; this is not a universal ban overriding higher-priority source patterns.",
+        "No predictive PASS, target winner, reversal guarantee, or execution method follows from a valid pool."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW6_LEVEL_TYPES",
+      "source_id": "SW6",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0169",
+        "P0170",
+        "P0171",
+        "P0172",
+        "P0173",
+        "P0174",
+        "P0175"
+      ],
+      "short_quote_ru": "BSL/SSL могут являться: Уровни открытия/закрытия торговых сессий. Уровни открытия/закрытия прошлого дня/недели/месяца. Внутренняя и внешняя ликвидность. Первые два пункта относятся к более продвинутым будущим темам, для которых нужно понимать контекст. В данной теме мы будем разбирать внутреннюю и внешнюю ликвидность.",
+      "classification": "SOURCE_RULE",
+      "predicate": "meaningful_liquidity_context_types",
+      "supported_meaning": "Possible BSL/SSL types include session and previous day/week/month opening/closing levels and internal/external liquidity. The first two are deferred to advanced context.",
+      "scope": "qualitative_source_provenance",
+      "unresolved": [
+        "This enumeration does not select the relevant level, timeframe, session, or admissible context."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW6_INTERNAL_EXTERNAL",
+      "source_id": "SW6",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0177",
+        "P0178",
+        "P0179",
+        "P0180",
+        "P0181"
+      ],
+      "short_quote_ru": "Внутренняя ликвидность (internal) расположена внутри бокового движения или образованного импульса, между структурным максимумом и минимумом, на соответствующем ТФ. Внешняя ликвидность (external) расположена за границами бокового движения и на структурных максимумах и минимумах соответствующего ТФ.",
+      "classification": "SOURCE_RULE",
+      "predicate": "source_qualified_liquidity_anchors",
+      "supported_meaning": "Internal liquidity is inside a range/formed impulse between structural extrema on the corresponding timeframe; external liquidity lies beyond range boundaries or at structural extrema.",
+      "scope": "qualitative_source_provenance",
+      "unresolved": [
+        "Range, impulse, structure and timeframe identities need source-qualified parents.",
+        "No numerical range/impulse detector or unique timeframe selection is given."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW6_TF_SCOPE",
+      "source_id": "SW6",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0197",
+        "P0198"
+      ],
+      "short_quote_ru": "Правила работы с ликвидностью действительны для всех ТФ (от 1 секунды до 1 месяца).",
+      "classification": "SOURCE_RULE",
+      "predicate": "liquidity_timeframe_scope",
+      "supported_meaning": "Liquidity rules apply on all cited timeframes, from one second to one month.",
+      "scope": "source_scope",
+      "unresolved": [
+        "Applicability does not rank or select a timeframe."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW10_IMPULSE",
+      "source_id": "SW10",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0037",
+        "P0038",
+        "P0039",
+        "P0040"
+      ],
+      "short_quote_ru": "Боковик всегда образуется после сильного направленного движения в одну из сторон (восходящий или нисходящий импульс). Окончание этого импульса будет первой границей боковика, окончание коррекционного движения - второй.",
+      "classification": "SOURCE_RULE",
+      "predicate": "Range_source_qualified_preceding_impulse",
+      "supported_meaning": "Range follows a strong directed impulse; the impulse ending is the first boundary, and the correction ending the second.",
+      "scope": "qualitative_source_provenance",
+      "unresolved": [
+        "No impulse magnitude, duration, bar count, ATR, percentage or exact segmentation algorithm.",
+        "Do not treat a future-confirmed impulse endpoint as known at its formation timestamp."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW10_UP_ANCHORS",
+      "source_id": "SW10",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0053",
+        "P0054"
+      ],
+      "short_quote_ru": "После восходящего импульсного движения первой границей боковика будет максимум, второй - сформированный позже минимум.",
+      "classification": "SOURCE_RULE",
+      "predicate": "Range_directional_anchor_provenance",
+      "supported_meaning": "After an upward impulse the first boundary is a maximum and the second a later minimum.",
+      "scope": "qualitative_source_provenance",
+      "unresolved": [
+        "Must defer to Methodichka priority on anchor interpretation.",
+        "No independent selection among multiple source-valid impulse/correction identities."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW10_DOWN_ANCHORS",
+      "source_id": "SW10",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0056",
+        "P0057"
+      ],
+      "short_quote_ru": "После нисходящего импульсного движения первой границей боковика будет минимум, второй - сформированный позже максимум.",
+      "classification": "SOURCE_RULE",
+      "predicate": "Range_directional_anchor_provenance",
+      "supported_meaning": "After a downward impulse the first boundary is a minimum and the second a later maximum.",
+      "scope": "qualitative_source_provenance",
+      "unresolved": [
+        "Potential interpretation tension with the current-frontier summary of Methodichka first-high/first-low wording is for the priority comparator; no override is made here."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW10_MIDPOINT_REACTION",
+      "source_id": "SW10",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0063",
+        "P0064",
+        "P0065",
+        "P0066",
+        "P0067"
+      ],
+      "short_quote_ru": "Цена должна получать хорошую реакцию от уровня 0.5, так как он выступает дополнительным фактором для определения правильности построения боковика. Хорошая (правильная) реакция на уровень 0.5 подтверждает то, что границы ренджа определены правильно.",
+      "classification": "SOURCE_RULE",
+      "predicate": "Range_midpoint_reaction_provenance",
+      "supported_meaning": "A good/correct reaction at 0.5 confirms correct Range boundary selection. The midpoint itself is exact, while the quality and causal reaction evidence remain qualitative.",
+      "scope": "qualitative_source_provenance",
+      "unresolved": [
+        "No minimum reaction distance, persistence duration, reversal size, number of reactions, or candle count.",
+        "A midpoint touch alone is not source proof of a good reaction."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW10_BOUNDARY_WARNING",
+      "source_id": "SW10",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0069",
+        "P0070",
+        "P0071",
+        "P0072"
+      ],
+      "short_quote_ru": "Это не самый удачный пример боковика. Как вы видите, границы боковика смазывались и дальнейшее ценовое движение определить достаточно сложно, поэтому советуем пропускать такие ситуации, рынок всегда даст возможность заработать.",
+      "classification": "SOURCE_RULE",
+      "predicate": "Range_boundary_quality",
+      "supported_meaning": "The text advises skipping a blurred-boundary example whose movement is difficult to determine.",
+      "scope": "qualitative_skip_advice",
+      "unresolved": [
+        "No machine-readable quality threshold, invalidation time, or duration is provided."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW10_DEVIATION",
+      "source_id": "SW10",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0075",
+        "P0076"
+      ],
+      "short_quote_ru": "Девиация - ценовое движение, которое направлено на снятие внешней ликвидности за пределами границ боковика.",
+      "classification": "SOURCE_RULE",
+      "predicate": "Range_deviation_liquidity_context",
+      "supported_meaning": "Deviation is movement aimed at sweeping external liquidity beyond the Range boundaries.",
+      "scope": "qualitative_source_provenance",
+      "unresolved": [
+        "Requires source-qualified parent Range and liquidity identity.",
+        "No quantitative deviation amount/duration."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW10_AGGRESSIVE_CONTEXT",
+      "source_id": "SW10",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0111",
+        "P0112"
+      ],
+      "short_quote_ru": ". Агрессивный - на девиации и только при наличии POI под/над боковиком.",
+      "classification": "SOURCE_RULE",
+      "predicate": "Range_entry_context",
+      "supported_meaning": "The lower-priority source names an aggressive entry on deviation only with POI beyond/under/above the Range.",
+      "scope": "conditional_source_permission",
+      "unresolved": [
+        "This is a conditional permission, not the Stage18 permission to execute.",
+        "Compare with higher-priority Methodichka confirmation sequence before using; this agent makes no conflict resolution.",
+        "No exact quote, stop, fill, or re-entry lifecycle."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW10_CONSERVATIVE_CONTEXT",
+      "source_id": "SW10",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0124",
+        "P0125",
+        "P0126",
+        "P0127",
+        "P0128",
+        "P0129"
+      ],
+      "short_quote_ru": ". Консервативный - Наличие POI сверху/снизу всегда выступает сильным магнитом для цены, поэтому мы ожидаем поход цены в ту зону, до этого позиции внутри ренджа не открываем, если цена не дает реакцию на poi, входим консервативно, после возврата и закрепления цены внутри боковика, на тесте границ.",
+      "classification": "SOURCE_RULE",
+      "predicate": "Range_entry_context",
+      "supported_meaning": "The conservative description waits for POI context; if there is no POI reaction, it describes return and settling inside the Range followed by testing its boundaries.",
+      "scope": "conditional_source_permission",
+      "unresolved": [
+        "Settling/POI reaction/test are not defined by bar count or numerical tolerances.",
+        "No unique execution quote, stop buffer, or higher-priority conflict resolution."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW8_SFP_CONTEXT",
+      "source_id": "SW8",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0068",
+        "P0069",
+        "P0070",
+        "P0071",
+        "P0072",
+        "P0073",
+        "P0074"
+      ],
+      "short_quote_ru": "Данный паттерн работает с ликвидностью. Его главная особенность в том, что он снимает внешнюю ликвидность со структурного максимума или минимума. При этом тело свечи не закрывается выше уровня внешней ликвидности, образуя новый свинг. Далее цена чаще всего двигается в противоположную сторону. SFP - паттерн, который образуется в моменте, предвидеть его формирование нельзя.",
+      "classification": "SOURCE_RULE",
+      "predicate": "SFP_required_liquidity_context",
+      "supported_meaning": "SFP sweeps external liquidity from a structural maximum/minimum; the source states that formation cannot be predicted.",
+      "scope": "qualitative_source_provenance",
+      "unresolved": [
+        "Structural/liquidity parent identity must be supplied.",
+        "Do not infer a predicted SFP, automatic trade permission, or guaranteed reversal."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW8_SFP_SWEEP",
+      "source_id": "SW8",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0075",
+        "P0076",
+        "P0077",
+        "P0078",
+        "P0079"
+      ],
+      "short_quote_ru": "Нам необходимо дождаться следующих условий: Снятия внешней ликвидности с границы бокового движения (боковое движение будет разобрано в будущих темах) или со структурного свинга максимума или минимума ).",
+      "classification": "SOURCE_RULE",
+      "predicate": "SFP_required_external_liquidity_sweep",
+      "supported_meaning": "Wait for external liquidity to be swept from a Range boundary or structural swing maximum/minimum.",
+      "scope": "qualitative_source_provenance",
+      "unresolved": [
+        "Requires source-valid Range/structural-swing and external-liquidity parents.",
+        "No source-qualified meaningfulness or pool-selection algorithm is supplied."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW8_SFP_OBSERVATIONS",
+      "source_id": "SW8",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0080",
+        "P0081",
+        "P0082",
+        "P0083"
+      ],
+      "short_quote_ru": "Закрытия свечи (которая сняла ликвидность) ниже/выше уровня уровня снятой ликвидности. Дождаться открытия следующей свечи, которая также должна открыться ниже уровня снимаемой ликвидности.",
+      "classification": "SOURCE_RULE",
+      "predicate": "SFP_close_and_next_open_context",
+      "supported_meaning": "The source requires the sweep candle close below/above the swept liquidity level and waiting for the next candle opening; its next-open wording says below only.",
+      "scope": "causal_formation_evidence",
+      "unresolved": [
+        "The below-only next-open wording is directionally asymmetric and must not silently become a universal mirrored predicate.",
+        "This lower-priority text does not replace Methodichka original three-candle/optional-fourth description.",
+        "Open-event availability must obey the repository closed-candle contract; exact technical event transport is not specified by this source."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW8_SFP_LTF",
+      "source_id": "SW8",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0084",
+        "P0085",
+        "P0086",
+        "P0087"
+      ],
+      "short_quote_ru": "Как же использовать SFP в торговле? После завершения формирования паттерна, вы можете перейти на младший таймфрейм и дождаться слома структуры. После этого можно искать точку входа.",
+      "classification": "SOURCE_RULE",
+      "predicate": "SFP_followup_context",
+      "supported_meaning": "After pattern formation, the text permits moving to a lower timeframe, waiting for a structure break, then looking for entry.",
+      "scope": "conditional_source_permission",
+      "unresolved": [
+        "This is a conditional post-pattern workflow, not proof of exact execution geometry or automatic trade eligibility.",
+        "No unique LTF choice, entry quote, stop buffer or lifecycle."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_SW8_SFP_TF",
+      "source_id": "SW8",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0102",
+        "P0103",
+        "P0104",
+        "P0105",
+        "P0106"
+      ],
+      "short_quote_ru": "SFP формируется на структурных максимумах или минимумах любого таймфрейма, однако наиболее предпочтительными для его поиска являются временные промежутки, начиная с H1 и выше. Возникает он в результате неудачной попытки участников рынка сформировать новый структурный максимум или минимум.",
+      "classification": "SOURCE_RULE",
+      "predicate": "SFP_timeframe_scope",
+      "supported_meaning": "SFP may form at structural maxima/minima on any timeframe; H1 and higher are described as preferred for search.",
+      "scope": "source_scope_with_nonbinding_preference",
+      "unresolved": [
+        "H1 preference is not a hard admission gate or license for project HTF ranking.",
+        "Higher-priority Methodichka all-timeframe applicability is preserved."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_DS_SUPPLY_LAST_MOVEMENT",
+      "source_id": "DemandSupply",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0005"
+      ],
+      "short_quote_ru": "Supply zone (Зона предложения) - Последнее восходящее движение которое может состоять как из одной свечи на старшем тф так и из нескольких последовательных свеч (чаще всего манипуляция BTS) на младшем таймфрейме",
+      "classification": "SOURCE_RULE",
+      "predicate": "Demand_Supply_last_movement_segmentation",
+      "supported_meaning": "Supply is the last upward movement; it may be one HTF candle or several consecutive LTF candles, often BTS manipulation.",
+      "scope": "qualitative_source_provenance",
+      "unresolved": [
+        "Last-movement boundaries, exact candles, selected timeframe and manipulation segmentation remain qualitative.",
+        "Often BTS is not an obligatory BTS identity or automatic entry."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_DS_DEMAND_LAST_MOVEMENT",
+      "source_id": "DemandSupply",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0007"
+      ],
+      "short_quote_ru": "Demand zone ( Зона спроса ) - Последнее нисходящее движение которое может состоять как из одной свечи на старшем тф так и из нескольких последовательных свеч (чаще всего манипуляция STB) на младшем таймфрейме",
+      "classification": "SOURCE_RULE",
+      "predicate": "Demand_Supply_last_movement_segmentation",
+      "supported_meaning": "Demand is the last downward movement; it may be one HTF candle or several consecutive LTF candles, often STB manipulation.",
+      "scope": "qualitative_source_provenance",
+      "unresolved": [
+        "Last-movement boundaries, exact candles, selected timeframe and manipulation segmentation remain qualitative.",
+        "Often STB is not an obligatory STB identity or automatic entry."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_DS_LIQUIDITY_RAID",
+      "source_id": "DemandSupply",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0010"
+      ],
+      "short_quote_ru": "Движение которое формирует зону должно обязательно быть через рейд старой ликвидности.",
+      "classification": "SOURCE_RULE",
+      "predicate": "Demand_Supply_required_liquidity_raid",
+      "supported_meaning": "The zone-forming movement must occur through a raid of old liquidity.",
+      "scope": "qualitative_source_provenance",
+      "unresolved": [
+        "Old-liquidity identity and source-qualified sweep evidence required; old has no numerical age threshold.",
+        "No score/ranking or liquidity quantity cutoff."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_DS_FRESHNESS",
+      "source_id": "DemandSupply",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0011"
+      ],
+      "short_quote_ru": "Зоны Supply и Demand являются не тестированными.",
+      "classification": "SOURCE_RULE",
+      "predicate": "Demand_Supply_freshness",
+      "supported_meaning": "Supply/Demand zones are untested; prior-test provenance is needed to support freshness.",
+      "scope": "source_zone_qualification_not_exact_lifecycle",
+      "unresolved": [
+        "The exact definition of test, boundary touching rules, mitigation percentage, freshness expiry and invalidation timestamp are not given.",
+        "Do not equate unknown history with fresh, or invent invalidated_at at a first wick touch."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    },
+    {
+      "id": "SEC_DS_PD",
+      "source_id": "DemandSupply",
+      "source_part": "word/document.xml",
+      "paragraphs": [
+        "P0012"
+      ],
+      "short_quote_ru": "Зоны Supply действительны для продаж в премиуме, зоны Demand для покупок расположены дискаунте.",
+      "classification": "SOURCE_RULE",
+      "predicate": "Demand_Supply_Premium_Discount_context",
+      "supported_meaning": "Supply is valid for sales in premium and Demand for purchases in discount.",
+      "scope": "directional_context_requirement",
+      "unresolved": [
+        "Requires a separately source-qualified dealing-range/impulse anchor identity.",
+        "No arbitrary midpoint parent, automatic range selection, exact entry quote, protective stop or stop buffer."
+      ],
+      "causal_annotation_note": "Require source-linked observed evidence available by the annotation known_at; no automatic quantitative proxy or look-ahead is supplied by this statement.",
+      "trade_entry_allowed": false
+    }
+  ],
+  "causal_contract_guidance": {
+    "classification": "TECHNICAL_NORMALIZATION",
+    "proposals_not_new_source_rules": [
+      "Store exact source identity/hash, word/document.xml paragraph IDs, target object/parent identities, annotation verdict and as-of observed closed-candle evidence.",
+      "Preserve formation_at, known_at, confirmed_at and invalidated_at separately; later annotation or reaction knowledge must not be backdated to an earlier formation.",
+      "A source-linked human annotation may attest a qualitative predicate; an annotation is not a numeric detector or proof of unique executable strategy.",
+      "Missing source-qualified parents, ambiguous segmentation or incomplete history stay UNKNOWN/UNRESOLVED. Source-qualified adverse context may produce an explicit wait condition only within its supported directional scope.",
+      "Do not promote an untested requirement or qualitative skip recommendation into an exact invalidation event unless source provides that lifecycle.",
+      "Keep trade_entry_allowed=false; a valid object or qualitative evidence record does not unlock execution."
+    ]
+  },
+  "review_flags": [
+    {
+      "id": "SW6_ADVERSE_DIRECTION",
+      "refs": [
+        "SEC_SW6_ADVERSE_LIQUIDITY"
+      ],
+      "kind": "literal_scope_ambiguity",
+      "detail": "The wording says EQH/EQL below entry, without a complete directional mapping. Preserve the quote and require priority-source/context review."
+    },
+    {
+      "id": "SW8_NEXT_OPEN_DIRECTION",
+      "refs": [
+        "SEC_SW8_SFP_OBSERVATIONS"
+      ],
+      "kind": "internal_directional_asymmetry",
+      "detail": "Sweep-candle close is below/above; next open is below only. Do not silently mirror or encode a one-sided condition for both directions."
+    },
+    {
+      "id": "RANGE_PRIORITY",
+      "refs": [
+        "SEC_SW10_UP_ANCHORS",
+        "SEC_SW10_DOWN_ANCHORS",
+        "SEC_SW10_AGGRESSIVE_CONTEXT",
+        "SEC_SW10_CONSERVATIVE_CONTEXT"
+      ],
+      "kind": "higher_priority_comparison_required",
+      "detail": "Compare SW10 directional anchor and aggressive/conservative entry descriptions to Methodichka. This report does not select an interpretation or override the current frontier."
+    },
+    {
+      "id": "SFP_TF_PREFERENCE",
+      "refs": [
+        "SEC_SW8_SFP_TF"
+      ],
+      "kind": "scope_vs_preference",
+      "detail": "Any-timeframe scope plus H1 preference does not identify a hard H1 gate or unique context selector."
+    },
+    {
+      "id": "LIQUIDITY_NO_FORECAST",
+      "refs": [
+        "SEC_SW6_NOT_PREDICTIVE",
+        "SEC_SW6_MEANINGFUL_LEVEL"
+      ],
+      "kind": "epistemic_limit",
+      "detail": "Meaningful liquidity does not establish which pool will be sought or whether a sweep fuels continuation or reversal."
+    },
+    {
+      "id": "DS_FRESHNESS_LIFECYCLE",
+      "refs": [
+        "SEC_DS_FRESHNESS"
+      ],
+      "kind": "exact_invalidation_unspecified",
+      "detail": "Untested is explicit; exact test geometry, expiry and invalidation-time semantics are not."
+    }
+  ],
+  "not_identified_by_secondary_sources": [
+    "Numerical impulse, strong-movement, good-reaction, reasonable-tilt, liquidity-significance or freshness-expiry thresholds.",
+    "Unique timeframe/context/pool selection or score/ranking.",
+    "Exact entry quotes, protective stops/buffers, fill mechanics, financial execution permission or exit/re-entry lifecycle.",
+    "Exact test/touch/mitigation/invalidation semantics for Demand/Supply."
+  ],
+  "safety": {
+    "trade_entry_allowed": false,
+    "financial_backtest_allowed": false,
+    "paper_allowed": false,
+    "live_allowed": false,
+    "private_api_allowed": false,
+    "repo_files_modified": false,
+    "tests_or_backtests_run": false,
+    "nested_agents_used": false
+  }
+}

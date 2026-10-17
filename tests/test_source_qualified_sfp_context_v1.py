@@ -2,11 +2,12 @@ from __future__ import annotations
 
 import json
 import unittest
-from dataclasses import replace
+from dataclasses import FrozenInstanceError, fields, replace
 from hashlib import sha256
 from pathlib import Path
 
 from test_pure_source_object_provider_v2 import BASE, sfp_data
+from test_source_qualified_liquidity_v1 import fixture as liquidity_fixture
 
 from crypto_bot.strategy.pure_source_object_provider_v2 import build_source_object_batch
 from crypto_bot.strategy.pure_source_replay_v2 import PrefixSeries, ReplayFrame
@@ -15,6 +16,9 @@ from crypto_bot.strategy.source_claim_binding_v1 import (
     _witness_payload,
     claim_context_sha256,
 )
+from crypto_bot.strategy.source_qualified_liquidity_v1 import (
+    assess_bound_equal_liquidity,
+)
 from crypto_bot.strategy.source_qualified_sfp_context_v1 import assess_bound_sfp_context
 from crypto_bot.strategy.source_qualitative_provenance_v2 import (
     AnnotationMethod,
@@ -22,7 +26,10 @@ from crypto_bot.strategy.source_qualitative_provenance_v2 import (
     load_qualitative_semantic_catalog,
     make_source_qualitative_claim,
 )
-from crypto_bot.strategy.source_structure_liquidity_v2 import EvidenceStatus
+from crypto_bot.strategy.source_structure_liquidity_v2 import (
+    EqualLiquidityKind,
+    EvidenceStatus,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -141,6 +148,41 @@ class QualifiedSfpContextTests(unittest.TestCase):
         self.assertEqual(result.transport_closed_observable_at, self.frame.decision_at)
         with self.assertRaises(ValueError):
             replace(result, trade_entry_allowed=True)
+
+    def test_safety_flags_have_stable_domain_validation_and_remain_frozen(self):
+        sfp = self.assess()
+        frame, _, pair = liquidity_fixture()
+        liquidity = assess_bound_equal_liquidity(
+            self.journal,
+            frame,
+            timeframe="1m",
+            left_swing_id=pair[0].obj.object_id,
+            right_swing_id=pair[1].obj.object_id,
+            kind=EqualLiquidityKind.EQH,
+            observation_start_at=frame.series[0].candles[0].open_time,
+            observation_end_at=frame.decision_at,
+        )
+        for result, names in (
+            (sfp, ("execution_ready", "trade_entry_allowed")),
+            (liquidity, ("trade_entry_allowed",)),
+        ):
+            constructor_args = {
+                item.name: getattr(result, item.name)
+                for item in fields(result)
+                if item.init
+            }
+            for name in names:
+                with self.subTest(assessment=type(result).__name__, flag=name):
+                    self.assertIs(getattr(result, name), False)
+                    self.assertEqual(replace(result, **{name: False}), result)
+                    for invalid in (True, 0, 1, None, "false"):
+                        with self.subTest(value=invalid):
+                            with self.assertRaisesRegex(ValueError, "cannot enable"):
+                                replace(result, **{name: invalid})
+                            with self.assertRaisesRegex(ValueError, "cannot enable"):
+                                type(result)(**{**constructor_args, name: invalid})
+                    with self.assertRaises(FrozenInstanceError):
+                        setattr(result, name, True)
 
     def test_missing_context_never_uses_structural_formation_as_substitute(self):
         result = self.assess()
