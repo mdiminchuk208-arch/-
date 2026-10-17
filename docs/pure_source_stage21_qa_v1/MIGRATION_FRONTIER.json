@@ -1,0 +1,127 @@
+{
+  "stage": 21,
+  "baseline_identifiability": "NOT_IDENTIFIABLE",
+  "trade_entry_allowed": false,
+  "financial_backtest_allowed": false,
+  "paper_allowed": false,
+  "live_allowed": false,
+  "private_api_allowed": false,
+  "classification": "TECHNICAL_NORMALIZATION",
+  "status": "INDEPENDENT_SOURCE_BLOCKERS_RETAINED_NOT_GLOBAL_STOP",
+  "resolved_transport": [
+    "closed window/parent/witness/first-observation binding",
+    "qualified EQH/EQL consumer with full provenance"
+  ],
+  "families": [
+    {
+      "family": "Range",
+      "status": "UNRESOLVED",
+      "dependencies": [
+        "source-qualified preceding impulse segmentation",
+        "first boundary/correction identity and reaction annotation",
+        "illustrated path is one scenario, not universal"
+      ],
+      "safe_shortcut_forbidden": "Do not replace first-after-impulse with arbitrary latest extrema."
+    },
+    {
+      "family": "OTE",
+      "status": "UNRESOLVED",
+      "dependencies": [
+        "source-qualified anchor selection",
+        "SHORT level orientation not proven by the LONG illustrations"
+      ],
+      "exact_source_geometry": "0.705-0.79; conditional LONG0=high,1=low"
+    },
+    {
+      "family": "OB",
+      "status": "UNRESOLVED",
+      "dependencies": [
+        "last-before-IMB relation",
+        "actual sweep/imbalance/movement ancestry",
+        "CHOCH OR directional continuation typed event mapping",
+        "market qualitative annotations"
+      ],
+      "legacy_mismatches": [
+        "universal adjacent single-candle body engulf",
+        "universal HTF POI/pre-existing same-direction structure",
+        "generic BOS instead of explicit alternatives",
+        "boolean IMB instead of actual ancestry"
+      ]
+    },
+    {
+      "family": "Breaker",
+      "status": "UNRESOLVED",
+      "dependencies": [
+        "valid priority1 parent OB",
+        "linked sweep then imbalance pierce then CHOCH",
+        "source-supported zone geometry",
+        "market qualitative annotations"
+      ],
+      "legacy_mismatches": [
+        "generic BOS accepted without kind check",
+        "missing explicit pre-pierce sweep/IMB ancestry",
+        "single-candle close beyond inherited zone made universal"
+      ]
+    },
+    {
+      "family": "EQH/EQL",
+      "status": "CONSUMER_BOUND_MARKET_EVIDENCE_STILL_REQUIRED",
+      "dependencies": [
+        "actual causal SOURCE substructure/tilt annotations",
+        "meaningful/adverse trade context not inferred"
+      ]
+    },
+    {
+      "family": "SFP context",
+      "status": "NEXT_SAFE_CONSUMER",
+      "dependencies": [
+        "context claim binding separate from structural formation",
+        "actual causal liquidity-context annotations"
+      ]
+    },
+    {
+      "family": "STB/BTS",
+      "status": "UNRESOLVED",
+      "dependencies": [
+        "source-qualified manipulation segmentation",
+        "full-engulf annotations",
+        "typed BOS or CONF event mapping"
+      ]
+    },
+    {
+      "family": "Demand/Supply",
+      "status": "UNRESOLVED",
+      "dependencies": [
+        "last movement segmentation",
+        "actual market annotations",
+        "freshness/re-entry lifecycle not fully specified"
+      ]
+    },
+    {
+      "family": "exit/cancellation",
+      "status": "UNRESOLVED",
+      "dependencies": [
+        "partial FTA allocation and remainder destination/termination",
+        "unspecified protective/beyond-anchor stop geometry"
+      ]
+    },
+    {
+      "family": "re-entry",
+      "status": "UNRESOLVED",
+      "dependencies": [
+        "physical attempt identity and eligibility",
+        "no project re-entry lifecycle may be imported"
+      ]
+    }
+  ],
+  "evidence_reused": [
+    "docs/pure_source_stage19_ledger_v1/METHODICHKA_RULE_LEDGER.json",
+    "docs/pure_source_stage19_ledger_v1/METHODICHKA_VISUAL_LEDGER.json",
+    "docs/pure_source_stage19_ledger_v1/PRIMARY_SOURCE_COMPARISON.json",
+    "docs/pure_source_stage19_ledger_v1/SECONDARY_SOURCE_COMPARISON.json",
+    "docs/pure_source_stage19_ledger_v1/SOURCE_CONFLICT_REGISTRY.json"
+  ],
+  "source_comparison_agent": "/root/stage18_primary_comparator",
+  "original_rescans": false,
+  "financial_selection_used": false
+}

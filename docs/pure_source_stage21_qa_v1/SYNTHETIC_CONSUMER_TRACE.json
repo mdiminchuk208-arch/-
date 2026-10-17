@@ -1,0 +1,285 @@
+{
+  "fixture": "SYNTHETIC_QA_NOT_MARKET_HISTORY",
+  "qualified_tilted_pair": {
+    "evidence": {
+      "kind": "EQH",
+      "status": "PASS",
+      "left_swing_id": "94e0b7fe470acdad025a8ffb61233369",
+      "right_swing_id": "2595d3291fb4bf7665dac3cd00485e37",
+      "exact_price": false,
+      "directional_tilt_valid": true,
+      "substructure_pair_confirmed": true,
+      "reasonable_tilt_confirmed": true,
+      "qualitative_evidence_id": "equal-qual-d190c6741250cb5db92a1aa3e9eb49cbf505a67fa92f264116b1dc4a7e933109",
+      "reason": "QUALITATIVE_REASONABLE_TILT_CONFIRMED"
+    },
+    "geometry_known_at": "2026-01-01T00:06:00+00:00",
+    "known_at": "2026-01-01T00:06:00+00:00",
+    "facts": [
+      {
+        "semantic_id": "EQH_EQL_SUBSTRUCTURE_PAIR",
+        "scope": "OBJECT_FORMATION",
+        "timeframe": "1m",
+        "subject_object_ids": [
+          "2595d3291fb4bf7665dac3cd00485e37",
+          "94e0b7fe470acdad025a8ffb61233369"
+        ],
+        "observation_start_at": "2026-01-01T00:00:00+00:00",
+        "observation_end_at": "2026-01-01T00:06:00+00:00",
+        "assessment": {
+          "evidence": {
+            "status": "PASS",
+            "evidence_id": "qual-2e97838a8eae30e6e79e88708c8788f17244320616168d8f035e3a117533dcf9",
+            "known_at": "2026-01-01T00:06:00+00:00"
+          },
+          "reason": "BOUND_SOURCE_ANNOTATION_NOT_OBJECT_OR_TRADE_ADMISSION",
+          "supporting_claim_ids": [
+            "3d4d973097473aa5e68f26823fb1f99e"
+          ]
+        },
+        "supporting_claims": [
+          {
+            "claim": {
+              "semantic_id": "EQH_EQL_SUBSTRUCTURE_PAIR",
+              "scope": "OBJECT_FORMATION",
+              "status": "PASS",
+              "symbol": "BTCUSDT",
+              "timeframe": "1m",
+              "observation_start_at": "2026-01-01T00:00:00+00:00",
+              "observation_end_at": "2026-01-01T00:06:00+00:00",
+              "known_at": "2026-01-01T00:06:00+00:00",
+              "subject_object_ids": [
+                "2595d3291fb4bf7665dac3cd00485e37",
+                "94e0b7fe470acdad025a8ffb61233369"
+              ],
+              "source_refs": [
+                "SW6 p7-10"
+              ],
+              "source_rule_ids": [],
+              "annotation_method": "CURATED_SOURCE_DATASET_ANNOTATION",
+              "provenance_ref": "sha256:f3a3f4a17bf8d33d42875165ec9b4bd0ddee12ff970406ed1f7fce071651319f",
+              "rationale_code": "SYNTHETIC_QA_NOT_MARKET_SOURCE_EVIDENCE",
+              "evidence_id": "3d4d973097473aa5e68f26823fb1f99e"
+            },
+            "first_observed_at": "2026-01-01T00:06:00+00:00",
+            "effective_known_at": "2026-01-01T00:06:00+00:00",
+            "context_sha256": "2511d43e7b9e52fe805f994ba625478492ed6a789bb250d3f6d7e8e51ea53d5a",
+            "first_frame_sha256": "d099cd7d1be523a97267a9b4d3e1c901ae5f95b5bcb78ca4d1cfbb76d37bc48d",
+            "provenance_json": "{\"annotation_method\": \"CURATED_SOURCE_DATASET_ANNOTATION\", \"annotator_ref\": \"synthetic-QA\", \"context_sha256\": \"2511d43e7b9e52fe805f994ba625478492ed6a789bb250d3f6d7e8e51ea53d5a\", \"known_at\": \"2026-01-01T00:06:00+00:00\", \"observation_end_at\": \"2026-01-01T00:06:00+00:00\", \"observation_start_at\": \"2026-01-01T00:00:00+00:00\", \"rationale_code\": \"SYNTHETIC_QA_NOT_MARKET_SOURCE_EVIDENCE\", \"schema\": \"PURE_SOURCE_STAGE20_CLAIM_BINDING_V1\", \"scope\": \"OBJECT_FORMATION\", \"semantic_id\": \"EQH_EQL_SUBSTRUCTURE_PAIR\", \"source_refs\": [\"SW6 p7-10\"], \"source_rule_ids\": [], \"status\": \"PASS\", \"subject_object_ids\": [\"2595d3291fb4bf7665dac3cd00485e37\", \"94e0b7fe470acdad025a8ffb61233369\"], \"symbol\": \"BTCUSDT\", \"timeframe\": \"1m\"}"
+          }
+        ]
+      },
+      {
+        "semantic_id": "EQH_EQL_REASONABLE_TILT",
+        "scope": "OBJECT_FORMATION",
+        "timeframe": "1m",
+        "subject_object_ids": [
+          "2595d3291fb4bf7665dac3cd00485e37",
+          "94e0b7fe470acdad025a8ffb61233369"
+        ],
+        "observation_start_at": "2026-01-01T00:00:00+00:00",
+        "observation_end_at": "2026-01-01T00:06:00+00:00",
+        "assessment": {
+          "evidence": {
+            "status": "PASS",
+            "evidence_id": "qual-31740e0cf18846b5c7a2a761783bfca4621359586d32e622888c49e4bff50a28",
+            "known_at": "2026-01-01T00:06:00+00:00"
+          },
+          "reason": "BOUND_SOURCE_ANNOTATION_NOT_OBJECT_OR_TRADE_ADMISSION",
+          "supporting_claim_ids": [
+            "fe3ed5bfbcd4676daa8271780c39cf3a"
+          ]
+        },
+        "supporting_claims": [
+          {
+            "claim": {
+              "semantic_id": "EQH_EQL_REASONABLE_TILT",
+              "scope": "OBJECT_FORMATION",
+              "status": "PASS",
+              "symbol": "BTCUSDT",
+              "timeframe": "1m",
+              "observation_start_at": "2026-01-01T00:00:00+00:00",
+              "observation_end_at": "2026-01-01T00:06:00+00:00",
+              "known_at": "2026-01-01T00:06:00+00:00",
+              "subject_object_ids": [
+                "2595d3291fb4bf7665dac3cd00485e37",
+                "94e0b7fe470acdad025a8ffb61233369"
+              ],
+              "source_refs": [
+                "SW6 p7-10"
+              ],
+              "source_rule_ids": [],
+              "annotation_method": "CURATED_SOURCE_DATASET_ANNOTATION",
+              "provenance_ref": "sha256:55470c672959fc2d5a124f2f098f8ac166b289047da964b4296f83d477915206",
+              "rationale_code": "SYNTHETIC_QA_NOT_MARKET_SOURCE_EVIDENCE",
+              "evidence_id": "fe3ed5bfbcd4676daa8271780c39cf3a"
+            },
+            "first_observed_at": "2026-01-01T00:06:00+00:00",
+            "effective_known_at": "2026-01-01T00:06:00+00:00",
+            "context_sha256": "2511d43e7b9e52fe805f994ba625478492ed6a789bb250d3f6d7e8e51ea53d5a",
+            "first_frame_sha256": "d099cd7d1be523a97267a9b4d3e1c901ae5f95b5bcb78ca4d1cfbb76d37bc48d",
+            "provenance_json": "{\"annotation_method\": \"CURATED_SOURCE_DATASET_ANNOTATION\", \"annotator_ref\": \"synthetic-QA\", \"context_sha256\": \"2511d43e7b9e52fe805f994ba625478492ed6a789bb250d3f6d7e8e51ea53d5a\", \"known_at\": \"2026-01-01T00:06:00+00:00\", \"observation_end_at\": \"2026-01-01T00:06:00+00:00\", \"observation_start_at\": \"2026-01-01T00:00:00+00:00\", \"rationale_code\": \"SYNTHETIC_QA_NOT_MARKET_SOURCE_EVIDENCE\", \"schema\": \"PURE_SOURCE_STAGE20_CLAIM_BINDING_V1\", \"scope\": \"OBJECT_FORMATION\", \"semantic_id\": \"EQH_EQL_REASONABLE_TILT\", \"source_refs\": [\"SW6 p7-10\"], \"source_rule_ids\": [], \"status\": \"PASS\", \"subject_object_ids\": [\"2595d3291fb4bf7665dac3cd00485e37\", \"94e0b7fe470acdad025a8ffb61233369\"], \"symbol\": \"BTCUSDT\", \"timeframe\": \"1m\"}"
+          }
+        ]
+      }
+    ],
+    "trade_entry_allowed": false
+  },
+  "after_conflicting_annotation": {
+    "evidence": {
+      "kind": "EQH",
+      "status": "UNKNOWN",
+      "left_swing_id": "94e0b7fe470acdad025a8ffb61233369",
+      "right_swing_id": "2595d3291fb4bf7665dac3cd00485e37",
+      "exact_price": false,
+      "directional_tilt_valid": true,
+      "substructure_pair_confirmed": null,
+      "reasonable_tilt_confirmed": true,
+      "qualitative_evidence_id": "equal-qual-82bbf88e5e1539eb6b88dccf59a39d11666a01158b9159fd66e548e125d69ab5",
+      "reason": "WAIT_SUBSTRUCTURE_EVIDENCE"
+    },
+    "geometry_known_at": "2026-01-01T00:06:00+00:00",
+    "known_at": null,
+    "facts": [
+      {
+        "semantic_id": "EQH_EQL_SUBSTRUCTURE_PAIR",
+        "scope": "OBJECT_FORMATION",
+        "timeframe": "1m",
+        "subject_object_ids": [
+          "2595d3291fb4bf7665dac3cd00485e37",
+          "94e0b7fe470acdad025a8ffb61233369"
+        ],
+        "observation_start_at": "2026-01-01T00:00:00+00:00",
+        "observation_end_at": "2026-01-01T00:06:00+00:00",
+        "assessment": {
+          "evidence": {
+            "status": "UNKNOWN",
+            "evidence_id": null,
+            "known_at": null
+          },
+          "reason": "CONFLICTING_SOURCE_ANNOTATIONS_NO_WINNER",
+          "supporting_claim_ids": [
+            "3d4d973097473aa5e68f26823fb1f99e",
+            "6a67e75e529584bc4eb2800bfbeaddbf"
+          ]
+        },
+        "supporting_claims": [
+          {
+            "claim": {
+              "semantic_id": "EQH_EQL_SUBSTRUCTURE_PAIR",
+              "scope": "OBJECT_FORMATION",
+              "status": "PASS",
+              "symbol": "BTCUSDT",
+              "timeframe": "1m",
+              "observation_start_at": "2026-01-01T00:00:00+00:00",
+              "observation_end_at": "2026-01-01T00:06:00+00:00",
+              "known_at": "2026-01-01T00:06:00+00:00",
+              "subject_object_ids": [
+                "2595d3291fb4bf7665dac3cd00485e37",
+                "94e0b7fe470acdad025a8ffb61233369"
+              ],
+              "source_refs": [
+                "SW6 p7-10"
+              ],
+              "source_rule_ids": [],
+              "annotation_method": "CURATED_SOURCE_DATASET_ANNOTATION",
+              "provenance_ref": "sha256:f3a3f4a17bf8d33d42875165ec9b4bd0ddee12ff970406ed1f7fce071651319f",
+              "rationale_code": "SYNTHETIC_QA_NOT_MARKET_SOURCE_EVIDENCE",
+              "evidence_id": "3d4d973097473aa5e68f26823fb1f99e"
+            },
+            "first_observed_at": "2026-01-01T00:06:00+00:00",
+            "effective_known_at": "2026-01-01T00:06:00+00:00",
+            "context_sha256": "2511d43e7b9e52fe805f994ba625478492ed6a789bb250d3f6d7e8e51ea53d5a",
+            "first_frame_sha256": "d099cd7d1be523a97267a9b4d3e1c901ae5f95b5bcb78ca4d1cfbb76d37bc48d",
+            "provenance_json": "{\"annotation_method\": \"CURATED_SOURCE_DATASET_ANNOTATION\", \"annotator_ref\": \"synthetic-QA\", \"context_sha256\": \"2511d43e7b9e52fe805f994ba625478492ed6a789bb250d3f6d7e8e51ea53d5a\", \"known_at\": \"2026-01-01T00:06:00+00:00\", \"observation_end_at\": \"2026-01-01T00:06:00+00:00\", \"observation_start_at\": \"2026-01-01T00:00:00+00:00\", \"rationale_code\": \"SYNTHETIC_QA_NOT_MARKET_SOURCE_EVIDENCE\", \"schema\": \"PURE_SOURCE_STAGE20_CLAIM_BINDING_V1\", \"scope\": \"OBJECT_FORMATION\", \"semantic_id\": \"EQH_EQL_SUBSTRUCTURE_PAIR\", \"source_refs\": [\"SW6 p7-10\"], \"source_rule_ids\": [], \"status\": \"PASS\", \"subject_object_ids\": [\"2595d3291fb4bf7665dac3cd00485e37\", \"94e0b7fe470acdad025a8ffb61233369\"], \"symbol\": \"BTCUSDT\", \"timeframe\": \"1m\"}"
+          },
+          {
+            "claim": {
+              "semantic_id": "EQH_EQL_SUBSTRUCTURE_PAIR",
+              "scope": "OBJECT_FORMATION",
+              "status": "FAIL",
+              "symbol": "BTCUSDT",
+              "timeframe": "1m",
+              "observation_start_at": "2026-01-01T00:00:00+00:00",
+              "observation_end_at": "2026-01-01T00:06:00+00:00",
+              "known_at": "2026-01-01T00:06:00+00:00",
+              "subject_object_ids": [
+                "2595d3291fb4bf7665dac3cd00485e37",
+                "94e0b7fe470acdad025a8ffb61233369"
+              ],
+              "source_refs": [
+                "SW6 p7-10"
+              ],
+              "source_rule_ids": [],
+              "annotation_method": "CURATED_SOURCE_DATASET_ANNOTATION",
+              "provenance_ref": "sha256:eae3ad655dcde21e4e95f83bb8e7f98c6ec3f70c03bb0d7777aed618d6dc4572",
+              "rationale_code": "SYNTHETIC_QA_NOT_MARKET_SOURCE_EVIDENCE",
+              "evidence_id": "6a67e75e529584bc4eb2800bfbeaddbf"
+            },
+            "first_observed_at": "2026-01-01T00:06:00+00:00",
+            "effective_known_at": "2026-01-01T00:06:00+00:00",
+            "context_sha256": "2511d43e7b9e52fe805f994ba625478492ed6a789bb250d3f6d7e8e51ea53d5a",
+            "first_frame_sha256": "d099cd7d1be523a97267a9b4d3e1c901ae5f95b5bcb78ca4d1cfbb76d37bc48d",
+            "provenance_json": "{\"annotation_method\": \"CURATED_SOURCE_DATASET_ANNOTATION\", \"annotator_ref\": \"conflicting-QA\", \"context_sha256\": \"2511d43e7b9e52fe805f994ba625478492ed6a789bb250d3f6d7e8e51ea53d5a\", \"known_at\": \"2026-01-01T00:06:00+00:00\", \"observation_end_at\": \"2026-01-01T00:06:00+00:00\", \"observation_start_at\": \"2026-01-01T00:00:00+00:00\", \"rationale_code\": \"SYNTHETIC_QA_NOT_MARKET_SOURCE_EVIDENCE\", \"schema\": \"PURE_SOURCE_STAGE20_CLAIM_BINDING_V1\", \"scope\": \"OBJECT_FORMATION\", \"semantic_id\": \"EQH_EQL_SUBSTRUCTURE_PAIR\", \"source_refs\": [\"SW6 p7-10\"], \"source_rule_ids\": [], \"status\": \"FAIL\", \"subject_object_ids\": [\"2595d3291fb4bf7665dac3cd00485e37\", \"94e0b7fe470acdad025a8ffb61233369\"], \"symbol\": \"BTCUSDT\", \"timeframe\": \"1m\"}"
+          }
+        ]
+      },
+      {
+        "semantic_id": "EQH_EQL_REASONABLE_TILT",
+        "scope": "OBJECT_FORMATION",
+        "timeframe": "1m",
+        "subject_object_ids": [
+          "2595d3291fb4bf7665dac3cd00485e37",
+          "94e0b7fe470acdad025a8ffb61233369"
+        ],
+        "observation_start_at": "2026-01-01T00:00:00+00:00",
+        "observation_end_at": "2026-01-01T00:06:00+00:00",
+        "assessment": {
+          "evidence": {
+            "status": "PASS",
+            "evidence_id": "qual-31740e0cf18846b5c7a2a761783bfca4621359586d32e622888c49e4bff50a28",
+            "known_at": "2026-01-01T00:06:00+00:00"
+          },
+          "reason": "BOUND_SOURCE_ANNOTATION_NOT_OBJECT_OR_TRADE_ADMISSION",
+          "supporting_claim_ids": [
+            "fe3ed5bfbcd4676daa8271780c39cf3a"
+          ]
+        },
+        "supporting_claims": [
+          {
+            "claim": {
+              "semantic_id": "EQH_EQL_REASONABLE_TILT",
+              "scope": "OBJECT_FORMATION",
+              "status": "PASS",
+              "symbol": "BTCUSDT",
+              "timeframe": "1m",
+              "observation_start_at": "2026-01-01T00:00:00+00:00",
+              "observation_end_at": "2026-01-01T00:06:00+00:00",
+              "known_at": "2026-01-01T00:06:00+00:00",
+              "subject_object_ids": [
+                "2595d3291fb4bf7665dac3cd00485e37",
+                "94e0b7fe470acdad025a8ffb61233369"
+              ],
+              "source_refs": [
+                "SW6 p7-10"
+              ],
+              "source_rule_ids": [],
+              "annotation_method": "CURATED_SOURCE_DATASET_ANNOTATION",
+              "provenance_ref": "sha256:55470c672959fc2d5a124f2f098f8ac166b289047da964b4296f83d477915206",
+              "rationale_code": "SYNTHETIC_QA_NOT_MARKET_SOURCE_EVIDENCE",
+              "evidence_id": "fe3ed5bfbcd4676daa8271780c39cf3a"
+            },
+            "first_observed_at": "2026-01-01T00:06:00+00:00",
+            "effective_known_at": "2026-01-01T00:06:00+00:00",
+            "context_sha256": "2511d43e7b9e52fe805f994ba625478492ed6a789bb250d3f6d7e8e51ea53d5a",
+            "first_frame_sha256": "d099cd7d1be523a97267a9b4d3e1c901ae5f95b5bcb78ca4d1cfbb76d37bc48d",
+            "provenance_json": "{\"annotation_method\": \"CURATED_SOURCE_DATASET_ANNOTATION\", \"annotator_ref\": \"synthetic-QA\", \"context_sha256\": \"2511d43e7b9e52fe805f994ba625478492ed6a789bb250d3f6d7e8e51ea53d5a\", \"known_at\": \"2026-01-01T00:06:00+00:00\", \"observation_end_at\": \"2026-01-01T00:06:00+00:00\", \"observation_start_at\": \"2026-01-01T00:00:00+00:00\", \"rationale_code\": \"SYNTHETIC_QA_NOT_MARKET_SOURCE_EVIDENCE\", \"schema\": \"PURE_SOURCE_STAGE20_CLAIM_BINDING_V1\", \"scope\": \"OBJECT_FORMATION\", \"semantic_id\": \"EQH_EQL_REASONABLE_TILT\", \"source_refs\": [\"SW6 p7-10\"], \"source_rule_ids\": [], \"status\": \"PASS\", \"subject_object_ids\": [\"2595d3291fb4bf7665dac3cd00485e37\", \"94e0b7fe470acdad025a8ffb61233369\"], \"symbol\": \"BTCUSDT\", \"timeframe\": \"1m\"}"
+          }
+        ]
+      }
+    ],
+    "trade_entry_allowed": false
+  },
+  "trade_entry_allowed": false,
+  "historical_financial_runs": 0
+}
