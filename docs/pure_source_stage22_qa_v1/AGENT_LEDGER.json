@@ -1,0 +1,47 @@
+{
+  "stage": 22,
+  "physical_specialists_reused": 1,
+  "max_active_including_root": 2,
+  "source_rescans": 0,
+  "note": "Actual collaboration agents reused for concrete bounded tasks. No claim that ECC CLI agents or22physical agents ran.",
+  "rows": [
+    {
+      "agent": "root",
+      "task": "Bound SFP trade-context consumer without priority1 pattern promotion",
+      "files_read": [
+        "Stage19 M_SFP_SHAPE/LIQUIDITY/REVERSAL/TIMEFRAMES/CONTEXT",
+        "Stage20 binding",
+        "relevant frozen SFP/object producer APIs"
+      ],
+      "source_evidence": "Reused complete Stage19 original-source audit; no rescan",
+      "decision": "Context fact stays separate from structural transport and full priority1 pattern",
+      "uncertainty": "actual market annotations and full pattern geometry remain unresolved",
+      "files_changed": [
+        "source_qualified_sfp_context_v1.py",
+        "test_source_qualified_sfp_context_v1.py",
+        "Stage22docs/config/QA",
+        "PURE_SOURCE_CURRENT_STATUS.md"
+      ],
+      "tests": [
+        "13targetedPASS"
+      ],
+      "next_dependency": "independent review/fullsuite/exactheadCI"
+    },
+    {
+      "agent": "/root/stage18_adversarial_reviewer",
+      "task": "Read-only causal and scope review",
+      "files_read": [
+        "Stage22newmodule/test",
+        "necessaryfrozendependencies"
+      ],
+      "source_evidence": "no duplicate source reading",
+      "decision": "SCOPED_ACCEPTANCE_NO_MATERIAL_BLOCKERS",
+      "uncertainty": "annotation truth is not reviewed as market evidence",
+      "files_changed": [],
+      "tests": [
+        "13targetedPASS"
+      ],
+      "next_dependency": "fullsuite/exactheadCI"
+    }
+  ]
+}
