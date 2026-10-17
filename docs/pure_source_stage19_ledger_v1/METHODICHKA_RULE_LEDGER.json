@@ -1,0 +1,3361 @@
+{
+  "analysis_id": "STAGE18_PRIORITY1_METHODICHKA_READ_ONLY_EXTRACTION_V1",
+  "base_commit": "f205791d6b7fba02dcc856493fd6177d904444a2",
+  "definition_only_or_absent_requested_topics": [
+    {
+      "citations": [
+        {
+          "exact_text": "BTS (buy to sell) - купить чтобы продать",
+          "paragraph_id": "P0008"
+        },
+        {
+          "exact_text": "STB (sell to buy) - продать чтобы купить",
+          "paragraph_id": "P0043"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "STB_BTS",
+      "definition_state": "EXPLICIT",
+      "missing": "No segmentation, full engulf, trend condition, zone geometry, entry, stop, exit or lifecycle rule for STB/BTS appears in these 171 text paragraphs.",
+      "paragraph_ids": [
+        "P0008",
+        "P0043"
+      ],
+      "requested_execution_semantics_machine_state": "UNKNOWN",
+      "source_role": "DEFINITION_ONLY",
+      "stated_semantic": "BTS means buy to sell; STB means sell to buy.",
+      "trade_entry_allowed": false
+    },
+    {
+      "citations": [
+        {
+          "exact_text": "Mitigation - тест зоны спроса / предложения",
+          "paragraph_id": "P0022"
+        },
+        {
+          "exact_text": "RTO (return to origin) - возврат в исходную зону спроса / предложения",
+          "paragraph_id": "P0036"
+        },
+        {
+          "exact_text": "SnD (supply & demand) - зоны спроса и предложения",
+          "paragraph_id": "P0041"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "DEMAND_SUPPLY",
+      "definition_state": "EXPLICIT",
+      "missing": "No last-movement segmentation, zone construction, trade entry, protective stop, exit or lifecycle rule appears here.",
+      "paragraph_ids": [
+        "P0022",
+        "P0036",
+        "P0041"
+      ],
+      "requested_execution_semantics_machine_state": "UNKNOWN",
+      "source_role": "DEFINITION_ONLY",
+      "stated_semantic": "Mitigation is a test of a demand/supply zone; RTO is return to its origin; SnD means demand/supply zones.",
+      "trade_entry_allowed": false
+    },
+    {
+      "citations": [
+        {
+          "exact_text": "FTA (first trouble area) - первая проблемная зона",
+          "paragraph_id": "P0014"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "FTA_EXIT",
+      "definition_state": "EXPLICIT",
+      "missing": "No FTA selection, full/partial fixation fraction, exit quote or remaining-position destination.",
+      "paragraph_ids": [
+        "P0014"
+      ],
+      "requested_execution_semantics_machine_state": "UNKNOWN",
+      "source_role": "DEFINITION_ONLY",
+      "stated_semantic": "FTA means first trouble area.",
+      "trade_entry_allowed": false
+    },
+    {
+      "citations": [
+        {
+          "exact_text": "BE (breakeven) - безубыток",
+          "paragraph_id": "P0005"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "BREAKEVEN",
+      "definition_state": "EXPLICIT",
+      "missing": "No breakeven trigger, price offset, stop movement or fee treatment.",
+      "paragraph_ids": [
+        "P0005"
+      ],
+      "requested_execution_semantics_machine_state": "UNKNOWN",
+      "source_role": "DEFINITION_ONLY",
+      "stated_semantic": "BE means breakeven.",
+      "trade_entry_allowed": false
+    },
+    {
+      "citations": [],
+      "classification": null,
+      "concept": "REENTRY",
+      "definition_state": "UNKNOWN",
+      "missing": "No first-test-only rule, object reuse limit, prior-attempt identity, cooldown, retry count or eligibility.",
+      "paragraph_ids": [],
+      "requested_execution_semantics_machine_state": "UNKNOWN",
+      "source_role": "ABSENT_FROM_171_TEXT_PARAGRAPHS",
+      "stated_semantic": "No explicit re-entry rule found in the complete text.",
+      "trade_entry_allowed": false
+    },
+    {
+      "citations": [],
+      "classification": null,
+      "concept": "PROTECTIVE_STOPS",
+      "definition_state": "UNKNOWN",
+      "missing": "No beyond-anchor buffer or exact stop for OB, Breaker, Range, OTE, SFP, STB/BTS or DS. SFP P0159 describes other traders’ stops.",
+      "paragraph_ids": [],
+      "requested_execution_semantics_machine_state": "UNKNOWN",
+      "source_role": "ABSENT_FROM_171_TEXT_PARAGRAPHS",
+      "stated_semantic": "No protective-stop construction rule found in the complete text.",
+      "trade_entry_allowed": false
+    },
+    {
+      "citations": [
+        {
+          "exact_text": "Ликвидность выступает как цель вашего трейда",
+          "paragraph_id": "P0118"
+        },
+        {
+          "exact_text": "Этот инструмент используют для определения потенциала коррекции, а так же для выставлений целей после ее завершения.",
+          "paragraph_id": "P0135"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "EXIT_ALLOCATION",
+      "definition_state": "EXPLICIT",
+      "missing": "No allocation percentage, full/partial order, destination of remainder, Range 80%/20%, TP 40/30/30, or exit termination.",
+      "paragraph_ids": [
+        "P0118",
+        "P0135"
+      ],
+      "requested_execution_semantics_machine_state": "UNKNOWN",
+      "source_role": "DEFINITION_ONLY",
+      "stated_semantic": "Liquidity is a target; Fibonacci can set targets after correction completion.",
+      "trade_entry_allowed": false
+    }
+  ],
+  "global_technical_normalization": {
+    "annotation_availability": "Separate observed event time and annotation available_at. Later annotation of a past chart cannot be used as if available in an earlier causal replay.",
+    "classification": "TECHNICAL_NORMALIZATION",
+    "confirmed_at": "Earliest time all mandatory source confirmation relations are known. Optional confirmations do not retroactively become mandatory for every branch.",
+    "formation_at": "Historical candle/object-origin time; not retrospective availability.",
+    "guardrails": [
+      "OBJECT_VALIDITY != TRADE_ELIGIBILITY",
+      "EXACT_SOURCE_ALTERNATIVE != TRADE_ELIGIBILITY",
+      "Unknown qualitative evidence stays UNKNOWN",
+      "No guessed OHLC/ATR/tick/percentage thresholds",
+      "No ranking, PnL or project policy resolves source ambiguity",
+      "trade_entry_allowed=false"
+    ],
+    "invalidated_at": "Record only supported invalidation evidence; this extraction supplies no invented TTL, expiry count or arbitrary stop invalidation.",
+    "known_at": "Earliest closed-candle time when the quoted relationship and every necessary parent reference are observable, subject to actual evidence availability.",
+    "ordering": "Cross-timeframe parents must be closed/known by consumption; future evidence cannot make an earlier trade eligible.",
+    "source_does_not_define_software_timestamps": true
+  },
+  "machine_state_semantics": {
+    "ALTERNATIVES": "The source explicitly permits a finite disjunction/path family; no branch is selected or ranked.",
+    "EXPLICIT": "The source explicitly states the extracted relationship, condition, definition or ratio. This is not a concrete object validity PASS or trade permission.",
+    "UNKNOWN": "The requested operational meaning or anchor direction is not identified by this source text.",
+    "classification": "SOURCE_RULE marks source-derived evidence; source_role distinguishes actual conditions from educational description, expectations and cautions. Technical lifecycle proposals are separately TECHNICAL_NORMALIZATION.",
+    "source_input_state": "Separate from semantic machine_state: concrete source-qualified parents/annotations are not supplied in this extraction, so operational qualification remains UNKNOWN."
+  },
+  "priority_conflicts_and_frontier_refinements": [
+    {
+      "conflict_type": "SOURCE_TEXT_INCONSISTENCY",
+      "finding": "Same high-to-low instruction for short and long. Existing frontier describes generic causal anchor provenance but does not explicitly preserve this orientation inconsistency.",
+      "id": "OTE_DIRECTION_LITERAL_INCONSISTENCY",
+      "paragraph_ids": [
+        "P0153"
+      ],
+      "required_handling": "Keep unresolved; source hierarchy may supply compatible lower-priority corroboration but cannot silently rewrite a priority-1 contradiction.",
+      "resolution_state": "UNRESOLVED",
+      "source_classification": "SOURCE_RULE"
+    },
+    {
+      "conflict_type": "FRONTIER_SCOPE_OR_PRIORITY_REFINEMENT",
+      "finding": "After-deviation trading is universal in P0126; return/retest/CHOCH is explicitly one setup in P0129.",
+      "id": "RANGE_GLOBAL_VS_EXAMPLE",
+      "paragraph_ids": [
+        "P0126",
+        "P0129",
+        "P0130"
+      ],
+      "required_handling": "Do not elevate one example into the exclusive Range setup.",
+      "resolution_state": "EXPLICIT_SCOPE_PRESERVED",
+      "source_classification": "SOURCE_RULE"
+    },
+    {
+      "conflict_type": "TEMPORAL_INTERPRETATION_CONFLICT",
+      "finding": "Return is followed by zone test; CHOCH is attached grammatically to the move/zone returning price into range. The sentence does not unambiguously require test before CHOCH.",
+      "id": "RANGE_CHOCH_ATTACHMENT",
+      "paragraph_ids": [
+        "P0130"
+      ],
+      "required_handling": "Keep exact wording and separate event relations; avoid forcing deviation<return<test<CHOCH.",
+      "resolution_state": "UNRESOLVED",
+      "source_classification": "SOURCE_RULE"
+    },
+    {
+      "conflict_type": "FRONTIER_SCOPE_OR_PRIORITY_REFINEMENT",
+      "finding": "Last-before-imbalance, structure update, sweep and body/wick qualities are priority-1 requirements.",
+      "id": "OB_PRIORITY1_REQUIREMENTS",
+      "paragraph_ids": [
+        "P0103",
+        "P0105",
+        "P0106",
+        "P0107",
+        "P0108"
+      ],
+      "required_handling": "Lower-priority entry alternatives remain conditional on all parent validity evidence; do not weaken qualitative conditions.",
+      "resolution_state": "EXPLICIT_SCOPE_PRESERVED",
+      "source_classification": "SOURCE_RULE"
+    },
+    {
+      "conflict_type": "FRONTIER_SCOPE_OR_PRIORITY_REFINEMENT",
+      "finding": "OB update may be CHOCH OR directional high/low continuation.",
+      "id": "CHOCH_NOT_REQUIRED_FOR_ALL_OB",
+      "paragraph_ids": [
+        "P0106"
+      ],
+      "required_handling": "Do not mandate reversal CHOCH in the continuation branch.",
+      "resolution_state": "EXPLICIT_SCOPE_PRESERVED",
+      "source_classification": "SOURCE_RULE"
+    },
+    {
+      "conflict_type": "FRONTIER_SCOPE_OR_PRIORITY_REFINEMENT",
+      "finding": "In-range CHOCH may not deliver expected result.",
+      "id": "RANGE_CHOCH_CAUTION_NOT_BAN",
+      "paragraph_ids": [
+        "P0124"
+      ],
+      "required_handling": "Do not convert a caution into categorical validity failure.",
+      "resolution_state": "EXPLICIT_SCOPE_PRESERVED",
+      "source_classification": "SOURCE_RULE"
+    },
+    {
+      "conflict_type": "FRONTIER_SCOPE_OR_PRIORITY_REFINEMENT",
+      "finding": "The custom grid uses 0.62 and its 0.705 midpoint, while classic comparison mentions 0.618.",
+      "id": "FIB_062_VS_0618",
+      "paragraph_ids": [
+        "P0141",
+        "P0148",
+        "P0151"
+      ],
+      "required_handling": "Preserve both in their stated roles without rounding substitution.",
+      "resolution_state": "EXPLICIT_SCOPE_PRESERVED",
+      "source_classification": "SOURCE_RULE"
+    },
+    {
+      "conflict_type": "FRONTIER_SCOPE_OR_PRIORITY_REFINEMENT",
+      "finding": "No body consolidation/establishment is stated, without exact bar-close-count definition.",
+      "id": "SFP_BODY_ESTABLISHMENT",
+      "paragraph_ids": [
+        "P0160"
+      ],
+      "required_handling": "Keep technical operationalization distinct from SOURCE_RULE.",
+      "resolution_state": "EXPLICIT_SCOPE_PRESERVED",
+      "source_classification": "SOURCE_RULE"
+    },
+    {
+      "conflict_type": "FRONTIER_SCOPE_OR_PRIORITY_REFINEMENT",
+      "finding": "STB/BTS, DS, FTA, BE have definitions only; no protective-stop, allocation, re-entry lifecycle text.",
+      "id": "REQUESTED_RULES_ABSENT_FROM_TEXT",
+      "paragraph_ids": [
+        "P0005",
+        "P0008",
+        "P0014",
+        "P0022",
+        "P0036",
+        "P0041",
+        "P0043"
+      ],
+      "required_handling": "Keep existing lower-priority branch provenance attached to SW/other sources; do not attribute their execution semantics to Methodichka.",
+      "resolution_state": "EXPLICIT_SCOPE_PRESERVED",
+      "source_classification": "SOURCE_RULE"
+    }
+  ],
+  "rules": [
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "source-qualified chronological highs and lows",
+        "timeframe"
+      ],
+      "causal_output": {
+        "claim": "Market structure is a sequence of highs and lows used to determine trend and subsequent movement on different timeframes; the three phases are bullish, bearish, and sideways.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 54,
+          "paragraph_id": "P0053",
+          "short_exact_quote": "Структура рынка - последовательность максимумов и минимумов. Позволяет определить тренд и дальнейшее движение цены инструмента на различных ТФ"
+        },
+        {
+          "clean_file_line": 55,
+          "paragraph_id": "P0054",
+          "short_exact_quote": "Рынок имеет три основные фазы движения :"
+        },
+        {
+          "clean_file_line": 56,
+          "paragraph_id": "P0055",
+          "short_exact_quote": "Бычий тренд"
+        },
+        {
+          "clean_file_line": 57,
+          "paragraph_id": "P0056",
+          "short_exact_quote": "Медвежий тренд"
+        },
+        {
+          "clean_file_line": 58,
+          "paragraph_id": "P0057",
+          "short_exact_quote": "Боковое движение/флэт/Ренж"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Market structure",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Causal source-qualified swing identities and phase boundaries."
+      ],
+      "notes": [],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0053",
+        "P0054",
+        "P0055",
+        "P0056",
+        "P0057"
+      ],
+      "rule_id": "M_MS_DEFINITION",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "Market structure is a sequence of highs and lows used to determine trend and subsequent movement on different timeframes; the three phases are bullish, bearish, and sideways.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "Causal source-qualified swing identities and phase boundaries."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "timeframe context"
+      ],
+      "causal_output": {
+        "claim": "Structure applies on all timeframes.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 61,
+          "paragraph_id": "P0060",
+          "short_exact_quote": "Структура отрабатывает на всех таймфреймах!"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Structure timeframe scope",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Selection or precedence among several valid timeframes."
+      ],
+      "notes": [
+        "Validity scope is not permission for a project HTF admission filter."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0060"
+      ],
+      "rule_id": "M_MS_TIMEFRAMES",
+      "source_modality": "SOURCE_SCOPE_STATEMENT",
+      "source_role": "SOURCE_SCOPE_STATEMENT",
+      "stated_semantic": "Structure applies on all timeframes.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "Selection or precedence among several valid timeframes."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "A new high/low is compared with its preceding structural point."
+      ],
+      "causal_inputs": [
+        "ordered source-valid HL/HH points"
+      ],
+      "causal_output": {
+        "claim": "Bullish structure has higher lows and higher highs. Attend only to highs that update previous highs.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 63,
+          "paragraph_id": "P0062",
+          "short_exact_quote": "Восходящий тренд состоит из более высоких минимумов (HL) и более высоких максимумов (HH)."
+        },
+        {
+          "clean_file_line": 66,
+          "paragraph_id": "P0065",
+          "short_exact_quote": "Синими линиями обозначено как обновляется структура,"
+        },
+        {
+          "clean_file_line": 67,
+          "paragraph_id": "P0066",
+          "short_exact_quote": "Образование нового хая и нового лоя."
+        },
+        {
+          "clean_file_line": 68,
+          "paragraph_id": "P0067",
+          "short_exact_quote": "Стоит обращать внимание только на те хаи, которые обновляют предыдущие."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Bullish trend",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Source-qualified highs/lows; exact temporal swing confirmation geometry is not defined in these paragraphs."
+      ],
+      "notes": [],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0062",
+        "P0065",
+        "P0066",
+        "P0067"
+      ],
+      "rule_id": "M_MS_BULL",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "Bullish structure has higher lows and higher highs. Attend only to highs that update previous highs.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "Source-qualified highs/lows; exact temporal swing confirmation geometry is not defined in these paragraphs."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "ordered source-valid LL/LH points"
+      ],
+      "causal_output": {
+        "claim": "Bearish structure has lower lows and lower highs; new maxima and minima lie below prior ones. Attend only to lows that update previous lows.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 70,
+          "paragraph_id": "P0069",
+          "short_exact_quote": "Нисходящий тренд - более низкие минимумы (LL) и более низкие максимумы (LH)."
+        },
+        {
+          "clean_file_line": 73,
+          "paragraph_id": "P0072",
+          "short_exact_quote": "Стоит обратить внимание что новые максимумы и минимумы ниже предыдущих."
+        },
+        {
+          "clean_file_line": 74,
+          "paragraph_id": "P0073",
+          "short_exact_quote": "Нам интересны только те лои, которые обновляют предыдущие!"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Bearish trend",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Source-qualified highs/lows and swing confirmation geometry."
+      ],
+      "notes": [],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0069",
+        "P0072",
+        "P0073"
+      ],
+      "rule_id": "M_MS_BEAR",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "Bearish structure has lower lows and lower highs; new maxima and minima lie below prior ones. Attend only to lows that update previous lows.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "Source-qualified highs/lows and swing confirmation geometry."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "The described sideways behavior precedes exit."
+      ],
+      "causal_inputs": [
+        "source-valid band boundaries",
+        "observed structure sequence"
+      ],
+      "causal_output": {
+        "claim": "In consolidation the above trending sequences do not occur until exit. A range may form at highs or lows and need not have clear edges, provided the instrument trades in a certain band.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 76,
+          "paragraph_id": "P0075",
+          "short_exact_quote": "На консолидирующемся рынке ничего из вышеперечисленного не происходит до тех пор, пока цена не выйдет в ту либо в другую сторону, в зависимости от рыночной ситуации."
+        },
+        {
+          "clean_file_line": 84,
+          "paragraph_id": "P0083",
+          "short_exact_quote": "Ренж может образоваться как на хаях так и на лоях."
+        },
+        {
+          "clean_file_line": 86,
+          "paragraph_id": "P0085",
+          "short_exact_quote": "Боковик может и не иметь четких граней, важно чтоб инструмент торговался в определённом диапазоне"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Sideways phase",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Band identity, fuzzy boundary representation, and absence-of-structure evidence; no width/tolerance supplied."
+      ],
+      "notes": [],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0075",
+        "P0083",
+        "P0085"
+      ],
+      "rule_id": "M_RANGE_PHASE",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "In consolidation the above trending sequences do not occur until exit. A range may form at highs or lows and need not have clear edges, provided the instrument trades in a certain band.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "Band identity, fuzzy boundary representation, and absence-of-structure evidence; no width/tolerance supplied."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "Preceding trend comes before the range."
+      ],
+      "causal_inputs": [
+        "prior trend",
+        "HTF trend with explicit timeframe identity",
+        "support/resistance context"
+      ],
+      "causal_output": {
+        "claim": "While price is sideways determine the preceding trend, overall higher-timeframe trend, and whether price lies at support or resistance. The text claims this context helps anticipate movement.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 77,
+          "paragraph_id": "P0076",
+          "short_exact_quote": "Когда цена находится в боковом движении, нужно определять :"
+        },
+        {
+          "clean_file_line": 78,
+          "paragraph_id": "P0077",
+          "short_exact_quote": "предшествующий тренд"
+        },
+        {
+          "clean_file_line": 79,
+          "paragraph_id": "P0078",
+          "short_exact_quote": "какой общий тренд на старших таймфреймах"
+        },
+        {
+          "clean_file_line": 80,
+          "paragraph_id": "P0079",
+          "short_exact_quote": "где находится цена, на уровне поддержки или сопротивления?"
+        },
+        {
+          "clean_file_line": 81,
+          "paragraph_id": "P0080",
+          "short_exact_quote": "Опираясь на эту информацию можно определить дальнейшее движение цены с большой вероятностью."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Context while sideways",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Preceding-trend identity; higher timeframe choice; source-qualified support/resistance and context interpretation."
+      ],
+      "notes": [
+        "This is a request to inspect context, not a numeric HTF trade-admission rule."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0076",
+        "P0077",
+        "P0078",
+        "P0079",
+        "P0080"
+      ],
+      "rule_id": "M_RANGE_CONTEXT",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "While price is sideways determine the preceding trend, overall higher-timeframe trend, and whether price lies at support or resistance. The text claims this context helps anticipate movement.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "Preceding-trend identity; higher timeframe choice; source-qualified support/resistance and context interpretation."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "prior trend",
+        "source-valid range",
+        "exit and structure evidence"
+      ],
+      "causal_output": {
+        "claim": "Exit can continue the trend immediately without a pullback or go in the opposite direction with a structure break. The text says continuation occurs most often.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 87,
+          "paragraph_id": "P0086",
+          "short_exact_quote": "Стоит заметить что выход из рэнжа может быть сразу по тренду (без отката), либо в противоположную сторону со сломом структуры."
+        },
+        {
+          "clean_file_line": 88,
+          "paragraph_id": "P0087",
+          "short_exact_quote": "Чаще всего выход из консолидации происходит по тренду."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Range exit alternatives",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "ALTERNATIVES",
+      "missing_qualitative_or_anchor_inputs": [
+        "No precedence or deterministic predictor is given."
+      ],
+      "notes": [
+        "The frequency claim must not become a chosen branch or profitability ranking."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0086",
+        "P0087"
+      ],
+      "rule_id": "M_RANGE_EXIT_VARIANTS",
+      "source_modality": "SOURCE_ALTERNATIVES_AND_QUALITATIVE_EXPECTATION",
+      "source_role": "SOURCE_ALTERNATIVES_AND_QUALITATIVE_EXPECTATION",
+      "stated_semantic": "Exit can continue the trend immediately without a pullback or go in the opposite direction with a structure break. The text says continuation occurs most often.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "No precedence or deterministic predictor is given."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "Violation precedes expected new trend."
+      ],
+      "causal_inputs": [
+        "source-valid structure violation"
+      ],
+      "causal_output": {
+        "claim": "A new trend is expected after a structure violation.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 90,
+          "paragraph_id": "P0089",
+          "short_exact_quote": "При нарушении структуры ожидается формирование нового тренда."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "After structure violation",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "The statement supplies no guaranteed completion, deadline, or entry geometry."
+      ],
+      "notes": [],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0089"
+      ],
+      "rule_id": "M_BOS_EXPECTATION",
+      "source_modality": "SOURCE_EXPECTATION",
+      "source_role": "SOURCE_EXPECTATION",
+      "stated_semantic": "A new trend is expected after a structure violation.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "The statement supplies no guaranteed completion, deadline, or entry geometry."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "Break last HL, then bearish structure develops; short search is at LH formation."
+      ],
+      "causal_inputs": [
+        "last source-valid HL",
+        "crossing event",
+        "later source-valid LL/LH"
+      ],
+      "causal_output": {
+        "claim": "If price crosses the last HL, bullish structure is broken and that HL is the BOS level. Bearish LL/LH structure should follow. The author looks for a short when price forms LH.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 93,
+          "paragraph_id": "P0092",
+          "short_exact_quote": "Логика определения слома структуры - если цена перебивает последний Higher Low (HL), то структура сломана, BOS выступает последний Higher Low (HL)"
+        },
+        {
+          "clean_file_line": 94,
+          "paragraph_id": "P0093",
+          "short_exact_quote": "После bos должна последовать медвежья структура, то есть формирование Lower Low (LL) и Lower High (LH)."
+        },
+        {
+          "clean_file_line": 95,
+          "paragraph_id": "P0094",
+          "short_exact_quote": "Когда цена формирует LH, я ищу шорт позицию."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Break of bullish structure",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Which source-valid HL is last; what counts as crosses; later LH identity; short entry/stop/target coordinates."
+      ],
+      "notes": [
+        "Looking for a short is not a fully specified execution command."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0092",
+        "P0093",
+        "P0094"
+      ],
+      "rule_id": "M_BOS_BULL_BREAK",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "If price crosses the last HL, bullish structure is broken and that HL is the BOS level. Bearish LL/LH structure should follow. The author looks for a short when price forms LH.",
+      "technical_normalization_proposals": [
+        "Do not backdate the later LH or bearish confirmation to the BOS bar."
+      ],
+      "unresolved": [
+        "Which source-valid HL is last; what counts as crosses; later LH identity; short entry/stop/target coordinates."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "LH must have produced last LL; BOS precedes normally expected bullish structure and HL long search."
+      ],
+      "causal_inputs": [
+        "LH parent of last LL",
+        "BOS event",
+        "later source-valid HL/HH"
+      ],
+      "causal_output": {
+        "claim": "The BOS level is the LH that created the last LL. Normally bullish HL/HH structure follows; the author looks for a long when HL forms.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 100,
+          "paragraph_id": "P0099",
+          "short_exact_quote": "Bos выступает Lower High (LH) образовавший последний Lower Low (LL)"
+        },
+        {
+          "clean_file_line": 101,
+          "paragraph_id": "P0100",
+          "short_exact_quote": "После bos обычно должна последовать бычья структура, а именно формирование HL и HH. Когда цена формирует HL, я ищу лонг позицию"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Break of bearish structure",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Source-qualified LH→last-LL parent link; break geometry; HL identity; entry/stop/target."
+      ],
+      "notes": [
+        "The normally wording is retained; it is not a guaranteed state transition."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0099",
+        "P0100"
+      ],
+      "rule_id": "M_BOS_BEAR_BREAK",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "The BOS level is the LH that created the last LL. Normally bullish HL/HH structure follows; the author looks for a long when HL forms.",
+      "technical_normalization_proposals": [
+        "Keep expected future structure distinct from evidence known on the break."
+      ],
+      "unresolved": [
+        "Source-qualified LH→last-LL parent link; break geometry; HL identity; entry/stop/target."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "source-valid OB",
+        "Fibonacci correction evidence",
+        "volume-profile evidence, if that tool is used"
+      ],
+      "causal_output": {
+        "claim": "The author often uses an order block, Fibonacci correction and volume profile when opening positions.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 96,
+          "paragraph_id": "P0095",
+          "short_exact_quote": "Для открытия позиции зачастую использую ордер блок, коррекцию по Фиббоначи и профиль обьёма."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Tools used for entry",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "No exact conjunction, ordering, volume-profile configuration, or entry coordinate."
+      ],
+      "notes": [
+        "Often does not make all three universally mandatory; the raw DOCX repeats this exact paragraph once after clean P0100."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0095"
+      ],
+      "rule_id": "M_BOS_ENTRY_TOOLS",
+      "source_modality": "SOURCE_NONEXHAUSTIVE_PRACTICE",
+      "source_role": "SOURCE_NONEXHAUSTIVE_PRACTICE",
+      "stated_semantic": "The author often uses an order block, Fibonacci correction and volume profile when opening positions.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "No exact conjunction, ordering, volume-profile configuration, or entry coordinate."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "Structure assessment precedes setup formation."
+      ],
+      "causal_inputs": [
+        "known source-valid market structure"
+      ],
+      "causal_output": {
+        "claim": "Monitor market structure before forming a setup.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 102,
+          "paragraph_id": "P0101",
+          "short_exact_quote": "Стоит запомнить что перед формированием своего сетапа важно следить за структурой рынка!"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Structure before setup",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "No deterministic setup selection or timeframe precedence."
+      ],
+      "notes": [],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0101"
+      ],
+      "rule_id": "M_STRUCTURE_BEFORE_SETUP",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "Monitor market structure before forming a setup.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "No deterministic setup selection or timeframe precedence."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "OB candle precedes the imbalance."
+      ],
+      "causal_inputs": [
+        "qualitative impulse/imbalance evidence",
+        "last preceding candle identity"
+      ],
+      "causal_output": {
+        "claim": "An OB is the last candle before imbalance, described here as sharp impulsive movement.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 104,
+          "paragraph_id": "P0103",
+          "short_exact_quote": "Ордерблок- последняя свеча перед имбалансом ( резким импульсным движением)."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Order-block origin",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Source-qualified imbalance/impulse and the last preceding candle identity; precise zone boundaries."
+      ],
+      "notes": [],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0103"
+      ],
+      "rule_id": "M_OB_ORIGIN",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "An OB is the last candle before imbalance, described here as sharp impulsive movement.",
+      "technical_normalization_proposals": [
+        "The candle may have formation_at at its own close, but the OB relation cannot be known until the later imbalance is available."
+      ],
+      "unresolved": [
+        "Source-qualified imbalance/impulse and the last preceding candle identity; precise zone boundaries."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "The qualifying movement follows the OB candle and must produce the stated structural update."
+      ],
+      "causal_inputs": [
+        "OB candidate",
+        "qualifying movement",
+        "source-valid trend",
+        "CHOCH or directional structural-update evidence"
+      ],
+      "causal_output": {
+        "claim": "The movement must update a structural point: by CHOCH, or a high during a long trend, or a low during a short trend.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 106,
+          "paragraph_id": "P0105",
+          "short_exact_quote": "движение должно обновить структурную точку"
+        },
+        {
+          "clean_file_line": 107,
+          "paragraph_id": "P0106",
+          "short_exact_quote": "сделав choch либо же обновить high при лонг тренде , либо low при шорт тренде."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Order-block structural consequence",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "ALTERNATIVES",
+      "missing_qualitative_or_anchor_inputs": [
+        "Trend identity, source-qualified structural point and movement segmentation."
+      ],
+      "notes": [
+        "CHOCH and directional continuation updates are explicit alternatives; CHOCH is not universally mandatory."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0105",
+        "P0106"
+      ],
+      "rule_id": "M_OB_STRUCTURE",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "The movement must update a structural point: by CHOCH, or a high during a long trend, or a low during a short trend.",
+      "technical_normalization_proposals": [
+        "Do not confirm the source-valid OB before the update evidence exists."
+      ],
+      "unresolved": [
+        "Trend identity, source-qualified structural point and movement segmentation."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "OB candidate",
+        "swept low/high/wick identity",
+        "sweep event"
+      ],
+      "causal_output": {
+        "claim": "The OB swept some low/high or wick.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 108,
+          "paragraph_id": "P0107",
+          "short_exact_quote": "ордеблок выбивал какой-то лоу/хай или фитиль"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Order-block liquidity sweep",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Identity and availability of the swept low/high/wick; sweep geometry and relevant context."
+      ],
+      "notes": [],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0107"
+      ],
+      "rule_id": "M_OB_SWEEP",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "The OB swept some low/high or wick.",
+      "technical_normalization_proposals": [
+        "Swept reference must belong to the OB qualifying event; an unrelated later sweep cannot justify past validity.",
+        "Attach causal reference IDs and known-at timestamps; do not create a magnitude threshold."
+      ],
+      "unresolved": [
+        "Identity and availability of the swept low/high/wick; sweep geometry and relevant context."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "OB candle OHLC",
+        "source-qualified large-body/small-wick annotation"
+      ],
+      "causal_output": {
+        "claim": "The OB body should be large while its wicks are small.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 109,
+          "paragraph_id": "P0108",
+          "short_exact_quote": "тело ордерблока должно быть большим, в то время как фитили-маленькими"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Order-block qualitative shape",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_QUALITATIVE_FRONTIER_AND_PRIORITY_1_CONSTRAINT",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Source-qualified large-body and small-wick judgments; no ratio/ATR/tick/percent cutoff supplied."
+      ],
+      "notes": [],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0108"
+      ],
+      "rule_id": "M_OB_SHAPE",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "The OB body should be large while its wicks are small.",
+      "technical_normalization_proposals": [
+        "Record qualitative provenance as UNKNOWN unless a source-backed annotation supplies it."
+      ],
+      "unresolved": [
+        "Source-qualified large-body and small-wick judgments; no ratio/ATR/tick/percent cutoff supplied."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "Movement/candle leaves the inefficiency."
+      ],
+      "causal_inputs": [
+        "source-qualified sharp/impulsive movement",
+        "inefficiency evidence"
+      ],
+      "causal_output": {
+        "claim": "Imbalance is a sharp impulsive movement/candle leaving price inefficiency.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 111,
+          "paragraph_id": "P0110",
+          "short_exact_quote": "Имбаланс-  резкое импульсное движение(свеча), котороя оставляет которое оставляет после себя неэффективность цены"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Imbalance origin",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Sharp/impulsive movement provenance, segmentation, and inefficiency identity."
+      ],
+      "notes": [],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0110"
+      ],
+      "rule_id": "M_IMB_ORIGIN",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "Imbalance is a sharp impulsive movement/candle leaving price inefficiency.",
+      "technical_normalization_proposals": [
+        "No arbitrary ATR or OHLC threshold may define sharp."
+      ],
+      "unresolved": [
+        "Sharp/impulsive movement provenance, segmentation, and inefficiency identity."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "The stated return is subsequent to the inefficiency."
+      ],
+      "causal_inputs": [
+        "known inefficiency zone",
+        "later crossing/trading evidence if observed"
+      ],
+      "causal_output": {
+        "claim": "The text calls imbalance a magnet and says price always returns sooner or later to trade through the empty area.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 112,
+          "paragraph_id": "P0111",
+          "short_exact_quote": "Выступает как магнит для цены , поэтому цена всегда возвращается ( рано или поздно ) в место пустоты , чтобы пересечь его = проторговать."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Imbalance return expectation",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "No time limit, expiry, protective stop, or guaranteed observable return date."
+      ],
+      "notes": [
+        "Do not import a timeout or order entry solely from this claim."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0111"
+      ],
+      "rule_id": "M_IMB_RETURN",
+      "source_modality": "SOURCE_EXPECTATION",
+      "source_role": "SOURCE_EXPECTATION",
+      "stated_semantic": "The text calls imbalance a magnet and says price always returns sooner or later to trade through the empty area.",
+      "technical_normalization_proposals": [
+        "Treat as a source assertion, not future knowledge at formation; never mark a future fill known early."
+      ],
+      "unresolved": [
+        "No time limit, expiry, protective stop, or guaranteed observable return date."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "identified neighboring candles",
+        "closed wick boundaries"
+      ],
+      "causal_output": {
+        "claim": "Mark the empty zone using the shadows/wicks of neighboring candles.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 113,
+          "paragraph_id": "P0112",
+          "short_exact_quote": "Отмечать имбаланс нужно по теням соседних свечей = зона пустоты."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Imbalance geometry",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Which neighboring candles and gap orientation for a concrete instance; final candle availability."
+      ],
+      "notes": [
+        "This paragraph does not itself supply a numbered three-candle FVG formula."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0112"
+      ],
+      "rule_id": "M_IMB_GEOMETRY",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "Mark the empty zone using the shadows/wicks of neighboring candles.",
+      "technical_normalization_proposals": [
+        "Any required neighboring candle must be closed and available before geometry is known."
+      ],
+      "unresolved": [
+        "Which neighboring candles and gap orientation for a concrete instance; final candle availability."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "OB precedes its pierce."
+      ],
+      "causal_inputs": [
+        "source-valid OB",
+        "source-qualified impulsive pierce"
+      ],
+      "causal_output": {
+        "claim": "A Breaker is an OB pierced impulsively.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 115,
+          "paragraph_id": "P0114",
+          "short_exact_quote": "Брейкер-это импульсно прошитый ордерблок."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Breaker parent",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "A source-valid OB satisfying priority-1 OB requirements; impulsive-pierce provenance; final zone geometry."
+      ],
+      "notes": [],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0114"
+      ],
+      "rule_id": "M_BREAKER_PARENT",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "A Breaker is an OB pierced impulsively.",
+      "technical_normalization_proposals": [
+        "Inherit OB parent evidence; do not create an independent lookalike zone."
+      ],
+      "unresolved": [
+        "A source-valid OB satisfying priority-1 OB requirements; impulsive-pierce provenance; final zone geometry."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "Sweep precedes pierce; imbalance pierce precedes CHOCH."
+      ],
+      "causal_inputs": [
+        "source-valid OB",
+        "high/low sweep",
+        "imbalance pierce",
+        "subsequent CHOCH"
+      ],
+      "causal_output": {
+        "claim": "The Breaker must sweep a high/low and then be pierced. It must be pierced by imbalance, after which CHOCH must occur.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 116,
+          "paragraph_id": "P0115",
+          "short_exact_quote": "Брейкер должен выбить хай/лоу после чего прошиться."
+        },
+        {
+          "clean_file_line": 117,
+          "paragraph_id": "P0116",
+          "short_exact_quote": "Объязательно брейкер должен прошиться имбалансом, после чего мы должны получить choch."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Breaker sequence",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Swept level, imbalance piercing relation, source-valid CHOCH, and parent identities."
+      ],
+      "notes": [
+        "No entry quote, protective stop, expiration, or CHOCH-after-N-bars window appears here."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0115",
+        "P0116"
+      ],
+      "rule_id": "M_BREAKER_SEQUENCE",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "The Breaker must sweep a high/low and then be pierced. It must be pierced by imbalance, after which CHOCH must occur.",
+      "technical_normalization_proposals": [
+        "Keep formation_at of the old zone distinct from known_at of pierce and confirmed_at of later CHOCH."
+      ],
+      "unresolved": [
+        "Swept level, imbalance piercing relation, source-valid CHOCH, and parent identities."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "source-qualified relevant liquidity pool"
+      ],
+      "causal_output": {
+        "claim": "Liquidity serves as the trade target.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 119,
+          "paragraph_id": "P0118",
+          "short_exact_quote": "Ликвидность выступает как цель вашего трейда"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Liquidity as target",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Relevant pool identity, exact target quote, competing-pool selection, allocation, and termination."
+      ],
+      "notes": [
+        "Trade-target role does not fully specify an executable exit."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0118"
+      ],
+      "rule_id": "M_LIQ_TARGET",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "Liquidity serves as the trade target.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "Relevant pool identity, exact target quote, competing-pool selection, allocation, and termination."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "source-qualified EQH/EQL or trendline liquidity"
+      ],
+      "causal_output": {
+        "claim": "Liquidity is described as technical-analysis objects to manipulate; equal lows/highs and trendline liquidity are listed.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 120,
+          "paragraph_id": "P0119",
+          "short_exact_quote": "Ликвидность-это инструменты Тех Анализа, которыми мы должны сманипулировать"
+        },
+        {
+          "clean_file_line": 121,
+          "paragraph_id": "P0120",
+          "short_exact_quote": "Equal lows/equal highs(одинаковые хаи или лои)"
+        },
+        {
+          "clean_file_line": 122,
+          "paragraph_id": "P0121",
+          "short_exact_quote": "Trendline liquidity(трендовая ликвидность)"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Liquidity objects",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Source-qualified equal-level grouping, trendline construction, equality tolerance, meaningful pool selection."
+      ],
+      "notes": [
+        "The list is not a numerical definition of equality or a pool ranking."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0119",
+        "P0120",
+        "P0121"
+      ],
+      "rule_id": "M_LIQ_OBJECTS",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "Liquidity is described as technical-analysis objects to manipulate; equal lows/highs and trendline liquidity are listed.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "Source-qualified equal-level grouping, trendline construction, equality tolerance, meaningful pool selection."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "source-valid range interior",
+        "observed source-valid structure evidence or qualified absence annotation"
+      ],
+      "causal_output": {
+        "claim": "Structure must be absent inside the range.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 124,
+          "paragraph_id": "P0123",
+          "short_exact_quote": "Внутри боковика должна отсутствовать структура"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Range structural condition",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "How the source-defined interior is delimited and evidence for absence of qualifying structure."
+      ],
+      "notes": [],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0123"
+      ],
+      "rule_id": "M_RANGE_NO_STRUCTURE",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "Structure must be absent inside the range.",
+      "technical_normalization_proposals": [
+        "Record evidence scope/interval; avoid asserting absence over candles not yet observed."
+      ],
+      "unresolved": [
+        "How the source-defined interior is delimited and evidence for absence of qualifying structure."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "range identity",
+        "in-range CHOCH"
+      ],
+      "causal_output": {
+        "claim": "CHOCH inside a range may not produce the expected result.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 125,
+          "paragraph_id": "P0124",
+          "short_exact_quote": "Сhoch внутри боковика может не дать той отработки, которую вы ждёте."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "CHOCH inside range",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "No absolute ban or acceptance predicate is given."
+      ],
+      "notes": [
+        "Do not turn may not into all in-range CHOCH invalid or all setups prohibited."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0124"
+      ],
+      "rule_id": "M_RANGE_CHOCH_CAUTION",
+      "source_modality": "SOURCE_CAUTION",
+      "source_role": "SOURCE_CAUTION",
+      "stated_semantic": "CHOCH inside a range may not produce the expected result.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "No absolute ban or acceptance predicate is given."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "The first high explicitly follows the impulse."
+      ],
+      "causal_inputs": [
+        "source-qualified prior impulse",
+        "first subsequent high",
+        "paired first low"
+      ],
+      "causal_output": {
+        "claim": "Construct/determine range from the first high after the impulse and the first low.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 126,
+          "paragraph_id": "P0125",
+          "short_exact_quote": "Как построить и определить range -первый хай после импульса и первый лой."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Range construction",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Source-qualified preceding impulse segmentation; which first high and first low belong together; causal swing recognition."
+      ],
+      "notes": [
+        "The sentence explicitly attaches after impulse to first high; the temporal attachment and pairing of first low are not numerically specified."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0125"
+      ],
+      "rule_id": "M_RANGE_ANCHORS",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "Construct/determine range from the first high after the impulse and the first low.",
+      "technical_normalization_proposals": [
+        "Both boundary references must be available before derived midpoint is known."
+      ],
+      "unresolved": [
+        "Source-qualified preceding impulse segmentation; which first high and first low belong together; causal swing recognition."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "Deviation must precede range trading."
+      ],
+      "causal_inputs": [
+        "source-valid range boundaries",
+        "observed deviation"
+      ],
+      "causal_output": {
+        "claim": "Trade a range only after price deviates/exits beyond its boundaries. Deviation means this exit.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 127,
+          "paragraph_id": "P0126",
+          "short_exact_quote": "Торгуют боковик только после отклонения ( выхода ) (Девиации) цены за грани боковика."
+        },
+        {
+          "clean_file_line": 128,
+          "paragraph_id": "P0127",
+          "short_exact_quote": "Отклонение цены от боковика называется девиацией."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Range trade prerequisite",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "REFINES_EXISTING_FRONTIER_GLOBAL_PREREQUISITE_VS_ONE_SETUP",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Source-valid boundary evidence; what counts as exit; return is specified in the one later example, not in this universal prerequisite."
+      ],
+      "notes": [],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0126",
+        "P0127"
+      ],
+      "rule_id": "M_RANGE_DEVIATION",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "Trade a range only after price deviates/exits beyond its boundaries. Deviation means this exit.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "Source-valid boundary evidence; what counts as exit; return is specified in the one later example, not in this universal prerequisite."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "Reaction must be seen before claiming validated range."
+      ],
+      "causal_inputs": [
+        "source-valid range boundaries",
+        "qualifying midpoint reaction"
+      ],
+      "causal_output": {
+        "claim": "To be sure the pattern is valid, a reaction from its middle, the 0.5 level, must be observed.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 129,
+          "paragraph_id": "P0128",
+          "short_exact_quote": "Для того, что бы точно удостоверится, в валидности фигуры, мы должны видеть реакции от середины боковика, от уровня 0.5 на схеме."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Range validation",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Qualifying reaction, its observation time, and source-qualified range boundaries."
+      ],
+      "notes": [
+        "The 0.5 ratio is exact source geometry. No invented bounce-size threshold."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0128"
+      ],
+      "rule_id": "M_RANGE_MIDPOINT",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "To be sure the pattern is valid, a reaction from its middle, the 0.5 level, must be observed.",
+      "technical_normalization_proposals": [
+        "Compute 0.5 only from source-valid boundaries; midpoint reaction cannot be assigned known before its evidence."
+      ],
+      "unresolved": [
+        "Qualifying reaction, its observation time, and source-qualified range boundaries."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "Deviation precedes return; subsequent zone test follows return. CHOCH is associated with the return-producing move/zone; the sentence does not unambiguously order CHOCH after the test."
+      ],
+      "causal_inputs": [
+        "source-valid range",
+        "deviation",
+        "return",
+        "return-producing zone",
+        "CHOCH provenance",
+        "subsequent zone test"
+      ],
+      "causal_output": {
+        "claim": "One stated setup is return after deviation followed by a test of the zone that sent price back into range, making CHOCH.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 130,
+          "paragraph_id": "P0129",
+          "short_exact_quote": "Один из сетапов который мы используем для торговли боковых движений :"
+        },
+        {
+          "clean_file_line": 131,
+          "paragraph_id": "P0130",
+          "short_exact_quote": "Возврат цены после девиации - с последующим тестом зоны , которая отправила цену обратно в ренж , сделав choch."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "One Range setup",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "TIMING_ATTACHMENT_AMBIGUITY_AND_ONE_OF_SEVERAL_SETUPS_NOT_CAPTURED_EXPLICITLY_IN_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Identity and bounds of the return-producing zone; precise CHOCH attachment; exact entry/stop; whether the zone is OB, Breaker or another POI is not stated."
+      ],
+      "notes": [
+        "Do not universally require this example for every range trade; P0126 is the universal after-deviation requirement."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0129",
+        "P0130"
+      ],
+      "rule_id": "M_RANGE_RETEST_SETUP",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "One stated setup is return after deviation followed by a test of the zone that sent price back into range, making CHOCH.",
+      "technical_normalization_proposals": [
+        "Preserve separate deviation_at, return_at, zone_test_at and CHOCH evidence; do not invent test<CHOCH."
+      ],
+      "unresolved": [
+        "Identity and bounds of the return-producing zone; precise CHOCH attachment; exact entry/stop; whether the zone is OB, Breaker or another POI is not stated."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "Target-setting is described after correction completion."
+      ],
+      "causal_inputs": [
+        "source-qualified price move",
+        "correction evidence"
+      ],
+      "causal_output": {
+        "claim": "Fibonacci measures a price move and marks horizontal support/resistance levels used for decisions. It is described as a magnet, a correction-potential tool and a way to set targets after correction completion.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 133,
+          "paragraph_id": "P0132",
+          "short_exact_quote": "В трейдинге термин \"Фибоначчи\" означает инструмент, который измеряет движение цены и на основе этого выставляет горизонтальные уровни поддержки и сопротивления на ценовом графике."
+        },
+        {
+          "clean_file_line": 134,
+          "paragraph_id": "P0133",
+          "short_exact_quote": "Данные уровни поддержки и сопротивления называют \"уровнями Фибоначчи\" и используют для принятия торговых решений, как и обычные горизонтальные уровни поддержи и сопротивления."
+        },
+        {
+          "clean_file_line": 135,
+          "paragraph_id": "P0134",
+          "short_exact_quote": "Уровни Фибоначчи чаще всего являются магнитом для цены"
+        },
+        {
+          "clean_file_line": 136,
+          "paragraph_id": "P0135",
+          "short_exact_quote": "Этот инструмент используют для определения потенциала коррекции, а так же для выставлений целей после ее завершения."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Fibonacci purpose",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Source-qualified move anchors, correction completion identity, and exact target levels/exit allocation."
+      ],
+      "notes": [
+        "Magnet language is not causal knowledge of a future touch."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0132",
+        "P0133",
+        "P0134",
+        "P0135"
+      ],
+      "rule_id": "M_FIB_PURPOSE",
+      "source_modality": "SOURCE_TOOL_DESCRIPTION",
+      "source_role": "SOURCE_TOOL_DESCRIPTION",
+      "stated_semantic": "Fibonacci measures a price move and marks horizontal support/resistance levels used for decisions. It is described as a magnet, a correction-potential tool and a way to set targets after correction completion.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "Source-qualified move anchors, correction completion identity, and exact target levels/exit allocation."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "Fibonacci tool context"
+      ],
+      "causal_output": {
+        "claim": "The tool has extensive settings and different traders use it differently.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 137,
+          "paragraph_id": "P0136",
+          "short_exact_quote": "Инструмент достаточно гибкий, имеет достаточно обширные настройки, его часто вы можете видеть в обзорах различных трейдеров, и они его используют своеобразно."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Fibonacci flexible settings",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "No new source-specific alternative settings enumerated in this paragraph."
+      ],
+      "notes": [
+        "Do not treat generic flexibility as permission to invent baseline ratios."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0136"
+      ],
+      "rule_id": "M_FIB_CONFIGURATION",
+      "source_modality": "SOURCE_DESCRIPTIVE_STATEMENT",
+      "source_role": "SOURCE_DESCRIPTIVE_STATEMENT",
+      "stated_semantic": "The tool has extensive settings and different traders use it differently.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "No new source-specific alternative settings enumerated in this paragraph."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "Fibonacci evidence",
+        "strategy confluence evidence"
+      ],
+      "causal_output": {
+        "claim": "Fibonacci is rarely used alone; it should supplement the strategy in a combined approach to entries.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 139,
+          "paragraph_id": "P0138",
+          "short_exact_quote": "В торговле Фибоначчи редко используют одну, инструмент должен дополнять вашу стратегию дабы использовать комплексный подход для открытия позиции и входа в сделку."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Fibonacci conjunction",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "No unique conjunction, mandatory extra tool, or precedence."
+      ],
+      "notes": [],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0138"
+      ],
+      "rule_id": "M_FIB_CONFLUENCE",
+      "source_modality": "SOURCE_GENERAL_GUIDANCE",
+      "source_role": "SOURCE_GENERAL_GUIDANCE",
+      "stated_semantic": "Fibonacci is rarely used alone; it should supplement the strategy in a combined approach to entries.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "No unique conjunction, mandatory extra tool, or precedence."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "source-qualified move endpoints",
+        "known orientation"
+      ],
+      "causal_output": {
+        "claim": "Levels requiring attention are exactly 0.5, 0.62, 0.705 and 0.79.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 140,
+          "paragraph_id": "P0139",
+          "short_exact_quote": "В торговле по Фибоначчи требуют внимания уровни:"
+        },
+        {
+          "clean_file_line": 141,
+          "paragraph_id": "P0140",
+          "short_exact_quote": "0,5"
+        },
+        {
+          "clean_file_line": 142,
+          "paragraph_id": "P0141",
+          "short_exact_quote": "0,62"
+        },
+        {
+          "clean_file_line": 143,
+          "paragraph_id": "P0142",
+          "short_exact_quote": "0,705"
+        },
+        {
+          "clean_file_line": 144,
+          "paragraph_id": "P0143",
+          "short_exact_quote": "0,79"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Fibonacci levels",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Source-qualified anchors and orientation, not ratios."
+      ],
+      "notes": [
+        "Retain 0.62 as stated; do not replace it with classic 0.618."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0139",
+        "P0140",
+        "P0141",
+        "P0142",
+        "P0143"
+      ],
+      "rule_id": "M_FIB_LEVELS",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "Levels requiring attention are exactly 0.5, 0.62, 0.705 and 0.79.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "Source-qualified anchors and orientation, not ratios."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "source-qualified endpoints",
+        "known orientation",
+        "price behavior beyond midpoint"
+      ],
+      "causal_output": {
+        "claim": "0.5 is considered fair market price and an important level. Entry interest concerns price behavior beyond 0.5.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 146,
+          "paragraph_id": "P0145",
+          "short_exact_quote": "0,5 - уровень, который считается справедливой ценой рынка."
+        },
+        {
+          "clean_file_line": 147,
+          "paragraph_id": "P0146",
+          "short_exact_quote": "Значение 0,5 так же используется в других инструментах и является важным уровнем."
+        },
+        {
+          "clean_file_line": 148,
+          "paragraph_id": "P0147",
+          "short_exact_quote": "Для открытия позиции нам интересно поведение цены за пределами 0,5"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Fibonacci 0.5",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Anchor orientation and which side beyond means for each directional instance; qualifying behavior is unspecified."
+      ],
+      "notes": [
+        "No unique entry quote or automatic premium/discount eligibility follows."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0145",
+        "P0146",
+        "P0147"
+      ],
+      "rule_id": "M_FIB_EQUILIBRIUM",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "0.5 is considered fair market price and an important level. Entry interest concerns price behavior beyond 0.5.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "Anchor orientation and which side beyond means for each directional instance; qualifying behavior is unspecified."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "classic-grid context",
+        "source-qualified move endpoints"
+      ],
+      "causal_output": {
+        "claim": "Classic 0.618 is described as significant because corrections usually end near it.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 149,
+          "paragraph_id": "P0148",
+          "short_exact_quote": "Так же в классической модели сетки Фибоначчи есть уровень 0,618 который является значимым, так как обычно цена заканчивает свою коррекцию именно у этих значений."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Classic Fibonacci comparison",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "No deterministic endpoint/entry rule or proximity tolerance."
+      ],
+      "notes": [
+        "This coexists with stated source grid 0.62; do not collapse the two."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0148"
+      ],
+      "rule_id": "M_FIB_CLASSIC_0618",
+      "source_modality": "SOURCE_COMPARATIVE_EXPECTATION",
+      "source_role": "SOURCE_COMPARATIVE_EXPECTATION",
+      "stated_semantic": "Classic 0.618 is described as significant because corrections usually end near it.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "No deterministic endpoint/entry rule or proximity tolerance."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "source-qualified move endpoints",
+        "known orientation"
+      ],
+      "causal_output": {
+        "claim": "The expanded OTE grid supplies an optimal entry zone from 0.705 to 0.79. 0.705 is the mean of 0.62 and 0.79.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 150,
+          "paragraph_id": "P0149",
+          "short_exact_quote": "Поэтому для более четкого входа в позицию используют расширенную сетку которая имеет название OTE"
+        },
+        {
+          "clean_file_line": 151,
+          "paragraph_id": "P0150",
+          "short_exact_quote": "OTE ( optimal trade entry) диапазон цен который находиться промежутке 0,705-0.79 является оптимальной зоной для открытия позиции."
+        },
+        {
+          "clean_file_line": 152,
+          "paragraph_id": "P0151",
+          "short_exact_quote": "Значение 0,705 получено путем среднего значения между 0,62 и 0,79"
+        },
+        {
+          "clean_file_line": 153,
+          "paragraph_id": "P0152",
+          "short_exact_quote": "Далее с ее помощью мы можем найти точки для открытия позиции"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "OTE exact zone",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Source-qualified impulse endpoints, anchor orientation, selection among multiple valid moves, and exact entry quote inside the interval."
+      ],
+      "notes": [
+        "The zone ratios are exact but do not make any internal quote, parent move, or trade selected."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0149",
+        "P0150",
+        "P0151",
+        "P0152"
+      ],
+      "rule_id": "M_OTE_GEOMETRY",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "The expanded OTE grid supplies an optimal entry zone from 0.705 to 0.79. 0.705 is the mean of 0.62 and 0.79.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "Source-qualified impulse endpoints, anchor orientation, selection among multiple valid moves, and exact entry quote inside the interval."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "source-qualified high/low",
+        "trade direction",
+        "authoritative direction clarification if available"
+      ],
+      "causal_output": {
+        "claim": "The literal text instructs drawing Fibonacci from high to low for a short, or from high to low for a long. Both directions are identical in the source.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 154,
+          "paragraph_id": "P0153",
+          "short_exact_quote": "Тянем фибоначи с хая к лею для поиска шотр позиции или от хая к лею для открытия лонг позиции"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "Fibonacci anchor direction inconsistency",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "NEW_EXPLICIT_SOURCE_INCONSISTENCY_BEYOND_GENERIC_ANCHOR_PROVENANCE_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "UNKNOWN",
+      "missing_qualitative_or_anchor_inputs": [
+        "Whether the long clause is an error and what authorized source evidence resolves its direction; exact source-qualified impulse endpoints."
+      ],
+      "notes": [
+        "No replacement direction is chosen in this extraction."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0153"
+      ],
+      "rule_id": "M_OTE_ANCHOR_TEXT",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "The literal text instructs drawing Fibonacci from high to low for a short, or from high to low for a long. Both directions are identical in the source.",
+      "technical_normalization_proposals": [
+        "Retain the source wording and an unresolved orientation field. Do not silently reverse the long anchors as an obvious correction."
+      ],
+      "unresolved": [
+        "Whether the long clause is an error and what authorized source evidence resolves its direction; exact source-qualified impulse endpoints."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "source-valid OB",
+        "source-valid OTE zone"
+      ],
+      "causal_output": {
+        "claim": "The source claims the greatest OTE response when used with an OB.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 156,
+          "paragraph_id": "P0155",
+          "short_exact_quote": "ОТЕ дает максимальную отработку в связке с ордер блоком"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "OTE with OB",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Source-valid OB/OTE intersection and no quantified response or universal mandatory conjunction."
+      ],
+      "notes": [
+        "Not a branch ranking instruction or authorization to choose by measured returns."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0155"
+      ],
+      "rule_id": "M_OTE_OB",
+      "source_modality": "SOURCE_QUALITATIVE_CONFLUENCE_CLAIM",
+      "source_role": "SOURCE_QUALITATIVE_CONFLUENCE_CLAIM",
+      "stated_semantic": "The source claims the greatest OTE response when used with an OB.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "Source-valid OB/OTE intersection and no quantified response or universal mandatory conjunction."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "Optional fourth candle follows the original three and confirms direction."
+      ],
+      "causal_inputs": [
+        "three identified closed candles",
+        "optional fourth directional confirmation candle"
+      ],
+      "causal_output": {
+        "claim": "SFP is a reversal pattern originally comprising three candles; a fourth candle in the pattern direction may confirm direction.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 159,
+          "paragraph_id": "P0158",
+          "short_exact_quote": "Swing failure pattern - разворотный паттерн , которий состоит из 3 свечей ( в оригинале ) , может быть 4 свеча в направлении движения паттерна , которая подтвердит направление."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "SFP candle sequence",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "ALTERNATIVES",
+      "missing_qualitative_or_anchor_inputs": [
+        "Which three candles for a concrete pattern; exact geometry not supplied here; optional fourth confirmation identity."
+      ],
+      "notes": [],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0158"
+      ],
+      "rule_id": "M_SFP_SHAPE",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "SFP is a reversal pattern originally comprising three candles; a fourth candle in the pattern direction may confirm direction.",
+      "technical_normalization_proposals": [
+        "Three-candle and optional-fourth confirmation paths remain separate evidence states; do not make the fourth universally mandatory."
+      ],
+      "unresolved": [
+        "Which three candles for a concrete pattern; exact geometry not supplied here; optional fourth confirmation identity."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "source-valid swing high/low or range boundary",
+        "liquidity sweep"
+      ],
+      "causal_output": {
+        "claim": "The pattern aims to collect/activate traders’ stops beyond swing highs/lows or above/below a sideways range.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 160,
+          "paragraph_id": "P0159",
+          "short_exact_quote": "Цель паттерна - подобрать / активировать стоп приказы трейдеров над вершинами либо низами ( swing high/low ) , так-же верхом и низом бокового движения."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "SFP target objects",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Source-qualified swing/range boundary, liquidity availability, and relevant sweep."
+      ],
+      "notes": [
+        "These are other traders’ stops; this paragraph does not define the strategy protective stop."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0159"
+      ],
+      "rule_id": "M_SFP_LIQUIDITY",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "The pattern aims to collect/activate traders’ stops beyond swing highs/lows or above/below a sideways range.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "Source-qualified swing/range boundary, liquidity availability, and relevant sweep."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "The deceptive move precedes reversal; the described failure does not become BOS/CHOCH."
+      ],
+      "causal_inputs": [
+        "swept level",
+        "deceptive move",
+        "reversal",
+        "source-qualified no-body-establishment evidence"
+      ],
+      "causal_output": {
+        "claim": "Price makes a deceptive move and reverses without establishing/consolidating with the body; no CHOCH/BOS occurs.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 161,
+          "paragraph_id": "P0160",
+          "short_exact_quote": "То есть - цена делает обманный мув и меняет направление на противоположное , не совершив закрепление телом - не происходит choch/bos."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "SFP failed break",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Exact semantic of body consolidation, level identity and the causal point where failed break is established."
+      ],
+      "notes": [
+        "No fixed wick ratio, body-close count, or return deadline is supplied."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0160"
+      ],
+      "rule_id": "M_SFP_REVERSAL",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "Price makes a deceptive move and reverses without establishing/consolidating with the body; no CHOCH/BOS occurs.",
+      "technical_normalization_proposals": [
+        "If implementing closed-body evidence, label the operational mapping TECHNICAL_NORMALIZATION, not an exact quote that one body close suffices."
+      ],
+      "unresolved": [
+        "Exact semantic of body consolidation, level identity and the causal point where failed break is established."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "timeframe context"
+      ],
+      "causal_output": {
+        "claim": "SFP is applicable on all timeframes.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 162,
+          "paragraph_id": "P0161",
+          "short_exact_quote": "Актуальность на всех тайм-фреймах."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "SFP timeframe scope",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Trade timeframe selection and precedence remain unspecified."
+      ],
+      "notes": [],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0161"
+      ],
+      "rule_id": "M_SFP_TIMEFRAMES",
+      "source_modality": "SOURCE_SCOPE_STATEMENT",
+      "source_role": "SOURCE_SCOPE_STATEMENT",
+      "stated_semantic": "SFP is applicable on all timeframes.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "Trade timeframe selection and precedence remain unspecified."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [],
+      "causal_inputs": [
+        "source-qualified liquidity point or zone",
+        "sweep relation"
+      ],
+      "causal_output": {
+        "claim": "Context is mandatory: points or zones whose liquidity will be swept.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 163,
+          "paragraph_id": "P0162",
+          "short_exact_quote": "Обязательно наличие контекста = точек либо зон которые будут сниматься."
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "SFP mandatory context",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Source-qualified point/zone, liquidity significance, and causal parent context."
+      ],
+      "notes": [],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0162"
+      ],
+      "rule_id": "M_SFP_CONTEXT",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "Context is mandatory: points or zones whose liquidity will be swept.",
+      "technical_normalization_proposals": [
+        "Context references must be identifiable for the sweep; a later unrelated pool cannot justify an earlier trade.",
+        "A structural SFP alone is not trade eligibility; keep missing context UNKNOWN."
+      ],
+      "unresolved": [
+        "Source-qualified point/zone, liquidity significance, and causal parent context."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "Accumulation precedes manipulation; cheap buying precedes later distribution."
+      ],
+      "causal_inputs": [
+        "source-qualified accumulation/manipulation/distribution intervals"
+      ],
+      "causal_output": {
+        "claim": "Accumulation is participant position building at inflated prices. Manipulation is smart money moving price down, making others close at losses and buying cheaply for later distribution/sales at high prices.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 165,
+          "paragraph_id": "P0164",
+          "short_exact_quote": "Накопление - период аккумуляции позиций участниками рынками по завышенным ценам."
+        },
+        {
+          "clean_file_line": 166,
+          "excerpt_omits_tail": true,
+          "paragraph_id": "P0165",
+          "short_exact_quote": "Манипуляция - этап участия \"умных денег\" , которые штучно двигают цену вниз , заставляя участников рынка убыточно закрывать позиции , тем самым , откупать актив по минимальной цене для его дальнейшей реализации по завышенной цене. 3)Расп"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "AMD phases",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Source-qualified phase intervals and transition provenance; no machine segmentation threshold."
+      ],
+      "notes": [
+        "Retain the source wording, including inflated prices in accumulation, without silently rewriting textbook semantics."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0164",
+        "P0165"
+      ],
+      "rule_id": "M_AMD_PHASES",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "Accumulation is participant position building at inflated prices. Manipulation is smart money moving price down, making others close at losses and buying cheaply for later distribution/sales at high prices.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "Source-qualified phase intervals and transition provenance; no machine segmentation threshold."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "Transition is associated with update of a local high; manipulation entry can precede that confirmation."
+      ],
+      "causal_inputs": [
+        "source-qualified manipulation phase",
+        "local POI or manipulation entry",
+        "local-high update for transition-confirmed path"
+      ],
+      "causal_output": {
+        "claim": "Two basic entry variants: work with local POIs at manipulation→distribution transition, or buy during manipulation. The latter is called risky because buyers’ intent is not yet shown; local-high update marks the transition into distribution.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 167,
+          "paragraph_id": "P0166",
+          "short_exact_quote": "Рассматривают два основных варианта набора позиций в цикле:"
+        },
+        {
+          "clean_file_line": 168,
+          "paragraph_id": "P0167",
+          "short_exact_quote": "Работа с локальными зонами интереса , в месте перехода цены из зоны манипуляции в зону распределения."
+        },
+        {
+          "clean_file_line": 169,
+          "excerpt_omits_tail": true,
+          "paragraph_id": "P0168",
+          "short_exact_quote": "Покупка актива в зоне манипуляции. Рискованный вариант - так как на этом этапе цена не может показать настрой покупателей ( момент перехода в зону распределения , когда цена обновляет локальный максимум ). Поэтому покупка производится на"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "AMD entry alternatives",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "ALTERNATIVES",
+      "missing_qualitative_or_anchor_inputs": [
+        "Source-qualified local POI, manipulation/distribution intervals, local-high identity, exact entry/stop/target and eligibility."
+      ],
+      "notes": [
+        "Calling a path risky does not authorize removing it or inventing a risk threshold."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0166",
+        "P0167",
+        "P0168"
+      ],
+      "rule_id": "M_AMD_ENTRY_VARIANTS",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "Two basic entry variants: work with local POIs at manipulation→distribution transition, or buy during manipulation. The latter is called risky because buyers’ intent is not yet shown; local-high update marks the transition into distribution.",
+      "technical_normalization_proposals": [
+        "Keep confirmed-transition and manipulation-anticipation evidence paths separate without selecting a winner."
+      ],
+      "unresolved": [
+        "Source-qualified local POI, manipulation/distribution intervals, local-high identity, exact entry/stop/target and eligibility."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "Range re-entry follows departure; low sweeps occur during manipulation."
+      ],
+      "causal_inputs": [
+        "source-qualified accumulation/manipulation and range",
+        "range departure/re-entry",
+        "overhead liquidity",
+        "low-sweep evidence"
+      ],
+      "causal_output": {
+        "claim": "Attend to how quickly price re-enters the range after leaving accumulation, overhead liquidity zones and taking lows during manipulation.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 170,
+          "paragraph_id": "P0169",
+          "short_exact_quote": "Как быстро цена зашла в ренж после ухода из зоны накопления Зоны ликвидности сверху + снятие низов на этапе манипуляции"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "AMD manipulation observations",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Qualitative speed judgment; source-valid accumulation/range/manipulation phases; overhead liquidity and swept lows."
+      ],
+      "notes": [
+        "No bar-count speed, minimum distance, volume or other numeric cutoff."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0169"
+      ],
+      "rule_id": "M_AMD_RETURN_LIQUIDITY",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "Attend to how quickly price re-enters the range after leaving accumulation, overhead liquidity zones and taking lows during manipulation.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "Qualitative speed judgment; source-valid accumulation/range/manipulation phases; overhead liquidity and swept lows."
+      ]
+    },
+    {
+      "causal_constraints_from_source": [
+        "Observation is scoped to manipulation."
+      ],
+      "causal_inputs": [
+        "source-qualified manipulation interval",
+        "green/red candles",
+        "source-qualified comparative volume evidence"
+      ],
+      "causal_output": {
+        "claim": "During manipulation attend to higher volume on buying/green candles compared with red candles.",
+        "claim_kind": "SOURCE_DERIVED_EVIDENCE_RELATION",
+        "concrete_object_qualification": "UNKNOWN",
+        "trade_entry_allowed": false
+      },
+      "citations": [
+        {
+          "clean_file_line": 171,
+          "paragraph_id": "P0170",
+          "short_exact_quote": "Повышение объемов при покупке = зеленых свечах ( в сравнении с красными ) на этапе манипуляции"
+        }
+      ],
+      "classification": "SOURCE_RULE",
+      "concept": "AMD volume observation",
+      "executable_trade_rule_identified": false,
+      "frontier_relationship": "CONSISTENT_WITH_EXISTING_FRONTIER",
+      "lifecycle": {
+        "confirmed_at_source": null,
+        "formation_at_source": "Source contains only the event relationships listed in causal_constraints_from_source; no software timestamp definition.",
+        "invalidated_at_source": null,
+        "known_at_source": null,
+        "source_software_timestamp_fields": null,
+        "technical_normalization": {
+          "classification": "TECHNICAL_NORMALIZATION",
+          "confirmed_at": "Availability of mandatory confirmation relationships for the selected explicit path; optional confirmation stays optional.",
+          "formation_at": "Underlying object/event origin, if present; not availability.",
+          "invalidated_at": "UNRESOLVED unless an original source separately supplies the relevant invalidation relation. No timeout, retry count or price buffer is inferred.",
+          "known_at": "Closed-prefix availability of all necessary parent evidence, including annotation available_at; cannot be earlier than any parent availability."
+        }
+      },
+      "machine_state": "EXPLICIT",
+      "missing_qualitative_or_anchor_inputs": [
+        "Comparison interval, aggregation, candle classification details and what degree of increase qualifies."
+      ],
+      "notes": [
+        "Do not invent an average/ratio threshold or make this an otherwise unstated universal filter."
+      ],
+      "operational_input_state": "UNKNOWN",
+      "paragraph_ids": [
+        "P0170"
+      ],
+      "rule_id": "M_AMD_VOLUME",
+      "source_modality": "SOURCE_RULE",
+      "source_role": "NORMATIVE_RELATION_OR_CONDITION",
+      "stated_semantic": "During manipulation attend to higher volume on buying/green candles compared with red candles.",
+      "technical_normalization_proposals": [],
+      "unresolved": [
+        "Comparison interval, aggregation, candle classification details and what degree of increase qualifies."
+      ]
+    }
+  ],
+  "scope": {
+    "code_changes": false,
+    "complete_text_read": true,
+    "images_read": false,
+    "legacy_or_pnl_used": false,
+    "paragraph_count": 171,
+    "repository_files_edited": false,
+    "source_text_read_policy": "One full model read; a bounded recovery of P0149-P0154 was required because orchestration output truncated. Programmatic rereads for citation serialization and raw-text alignment only.",
+    "sw_pdf_comparator_read": false,
+    "tests_replay_backtest_run": false
+  },
+  "source": {
+    "actual_text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+    "archive_identity_note": "Local archive matches extraction manifest; frozen record describes a different external archive hash. Exact Methodichka entry bytes match all raw-entry hashes; do not claim both whole archives are identical.",
+    "archive_manifest_path": "data/source_materials/cryptology_2026_10_09/manifest.json",
+    "clean_text_path": "data/source_materials/cryptology_2026_10_09/19.clean.txt",
+    "frozen_external_archive_sha256": "2b9de082079d8e85eac13444626289b6a37b7733b668ff773e1598909bd873b8",
+    "frozen_manifest_path": "docs/source_freeze_v1/source_manifest.json",
+    "frozen_source": {
+      "filename": "Криптология/Методичка.docx",
+      "provenance": "raw entry verified from user-provided Криптология.zip; matches cryptology_2026_10_09 archive manifest entry 19",
+      "recorded_sha256_from_archive_manifest": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+      "sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+      "source_id": "SRC_METHOD_001",
+      "status": "FROZEN_HASH_VERIFIED"
+    },
+    "image_limit": "Manifest includes image assets, but this assignment reads text only. Absence claims in this file are limited to 171 text paragraphs; unseen diagrams could contain extra evidence.",
+    "local_archive_sha256": "33cee26232d90fe26840bb4fced2e75551a5368d59359ffecc4b72d92c3870b9",
+    "manifest_entry_id": 19,
+    "priority": 1,
+    "raw_entry_bytes": 2112433,
+    "raw_entry_name": "Криптология/Методичка.docx",
+    "raw_entry_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+    "raw_text_alignment": {
+      "clean_paragraphs": 171,
+      "interpretation": "After whitespace normalization all text aligns except one omitted duplicate of clean P0095 at raw nonempty position 101. Extraction P IDs are not raw DOCX paragraph numbers.",
+      "operations": [
+        {
+          "clean_slice_0based": [
+            0,
+            100
+          ],
+          "operation": "equal",
+          "raw_nonempty_slice_0based": [
+            0,
+            100
+          ],
+          "raw_text": null
+        },
+        {
+          "clean_slice_0based": [
+            100,
+            100
+          ],
+          "operation": "delete",
+          "raw_nonempty_slice_0based": [
+            100,
+            101
+          ],
+          "raw_text": [
+            "Для открытия позиции зачастую использую ордер блок, коррекцию по Фиббоначи и профиль обьёма."
+          ]
+        },
+        {
+          "clean_slice_0based": [
+            100,
+            171
+          ],
+          "operation": "equal",
+          "raw_nonempty_slice_0based": [
+            101,
+            172
+          ],
+          "raw_text": null
+        }
+      ],
+      "raw_nonempty_paragraphs": 172
+    },
+    "recorded_archive_sha256": "33cee26232d90fe26840bb4fced2e75551a5368d59359ffecc4b72d92c3870b9",
+    "recorded_raw_sha256": "032a314046cc5dba220f698da567387e9f0dd30b35e4ff1add6328ea41e4e9d1",
+    "recorded_text_sha256": "dec09e740eb772721a9a3aae578dabdf9dbba76338b1389b8b31e11438ac402a",
+    "source_id": "SRC_METHOD_001",
+    "source_name": "Методичка"
+  }
+}

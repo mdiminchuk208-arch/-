@@ -1,0 +1,242 @@
+{
+  "classification": "TECHNICAL_NORMALIZATION",
+  "entries": [
+    {
+      "citations": [
+        "Методичка P0153"
+      ],
+      "finding": "Same high-to-low instruction for short and long. Existing frontier describes generic causal anchor provenance but does not explicitly preserve this orientation inconsistency.",
+      "handling": "METHOD_VIS_25/26 explicitly show0=high,1=low for LONG. Preserve literal wording; click order is not an execution rule; source-qualified anchors and SHORT remain unresolved.",
+      "id": "OTE_DIRECTION_LITERAL_INCONSISTENCY",
+      "kind": "SOURCE_TEXT_INCONSISTENCY",
+      "runtime_change": false,
+      "status": "LONG_LEVEL_COORDINATES_IDENTIFIED_VISUALLY_SHORT_REMAINS_UNRESOLVED",
+      "visual_corroboration": "METHODICHKA_VISUAL_LEDGER.json"
+    },
+    {
+      "citations": [
+        "Методичка P0126",
+        "Методичка P0129",
+        "Методичка P0130"
+      ],
+      "finding": "After-deviation trading is universal in P0126; return/retest/CHOCH is explicitly one setup in P0129.",
+      "handling": "Do not elevate one example into the exclusive Range setup.",
+      "id": "RANGE_GLOBAL_VS_EXAMPLE",
+      "kind": "FRONTIER_SCOPE_OR_PRIORITY_REFINEMENT",
+      "runtime_change": false,
+      "status": "EXPLICIT_SCOPE_PRESERVED"
+    },
+    {
+      "citations": [
+        "Методичка P0130"
+      ],
+      "finding": "Return is followed by zone test; CHOCH is attached grammatically to the move/zone returning price into range. The sentence does not unambiguously require test before CHOCH.",
+      "handling": "METHOD_VIS_23 showsreturn/CHOCH before retest of last pre-break OB and target opposite Range side. This closes text-only sequence ambiguity for that illustrated path, not everyRange branch.",
+      "id": "RANGE_CHOCH_ATTACHMENT",
+      "kind": "TEMPORAL_INTERPRETATION_CONFLICT",
+      "runtime_change": false,
+      "status": "ILLUSTRATED_PATH_RESOLVED_NOT_UNIVERSAL",
+      "visual_corroboration": "METHODICHKA_VISUAL_LEDGER.json"
+    },
+    {
+      "citations": [
+        "Методичка P0103",
+        "Методичка P0105",
+        "Методичка P0106",
+        "Методичка P0107",
+        "Методичка P0108"
+      ],
+      "finding": "Last-before-imbalance, structure update, sweep and body/wick qualities are priority-1 requirements.",
+      "handling": "Lower-priority entry alternatives remain conditional on all parent validity evidence; do not weaken qualitative conditions.",
+      "id": "OB_PRIORITY1_REQUIREMENTS",
+      "kind": "FRONTIER_SCOPE_OR_PRIORITY_REFINEMENT",
+      "runtime_change": false,
+      "status": "EXPLICIT_SCOPE_PRESERVED"
+    },
+    {
+      "citations": [
+        "Методичка P0106"
+      ],
+      "finding": "OB update may be CHOCH OR directional high/low continuation.",
+      "handling": "Do not mandate reversal CHOCH in the continuation branch.",
+      "id": "CHOCH_NOT_REQUIRED_FOR_ALL_OB",
+      "kind": "FRONTIER_SCOPE_OR_PRIORITY_REFINEMENT",
+      "runtime_change": false,
+      "status": "EXPLICIT_SCOPE_PRESERVED"
+    },
+    {
+      "citations": [
+        "Методичка P0124"
+      ],
+      "finding": "In-range CHOCH may not deliver expected result.",
+      "handling": "Do not convert a caution into categorical validity failure.",
+      "id": "RANGE_CHOCH_CAUTION_NOT_BAN",
+      "kind": "FRONTIER_SCOPE_OR_PRIORITY_REFINEMENT",
+      "runtime_change": false,
+      "status": "EXPLICIT_SCOPE_PRESERVED"
+    },
+    {
+      "citations": [
+        "Методичка P0141",
+        "Методичка P0148",
+        "Методичка P0151"
+      ],
+      "finding": "The custom grid uses 0.62 and its 0.705 midpoint, while classic comparison mentions 0.618.",
+      "handling": "Preserve both in their stated roles without rounding substitution.",
+      "id": "FIB_062_VS_0618",
+      "kind": "FRONTIER_SCOPE_OR_PRIORITY_REFINEMENT",
+      "runtime_change": false,
+      "status": "EXPLICIT_SCOPE_PRESERVED"
+    },
+    {
+      "citations": [
+        "Методичка P0160"
+      ],
+      "finding": "No body consolidation/establishment is stated, without exact bar-close-count definition.",
+      "handling": "Keep technical operationalization distinct from SOURCE_RULE.",
+      "id": "SFP_BODY_ESTABLISHMENT",
+      "kind": "FRONTIER_SCOPE_OR_PRIORITY_REFINEMENT",
+      "runtime_change": false,
+      "status": "EXPLICIT_SCOPE_PRESERVED"
+    },
+    {
+      "citations": [
+        "Методичка P0005",
+        "Методичка P0008",
+        "Методичка P0014",
+        "Методичка P0022",
+        "Методичка P0036",
+        "Методичка P0041",
+        "Методичка P0043"
+      ],
+      "finding": "STB/BTS, DS, FTA, BE have definitions only; no protective-stop, allocation, re-entry lifecycle text.",
+      "handling": "Keep existing lower-priority branch provenance attached to SW/other sources; do not attribute their execution semantics to Methodichka.",
+      "id": "REQUESTED_RULES_ABSENT_FROM_TEXT",
+      "kind": "FRONTIER_SCOPE_OR_PRIORITY_REFINEMENT",
+      "runtime_change": false,
+      "status": "EXPLICIT_SCOPE_PRESERVED"
+    },
+    {
+      "citations": [
+        "SEC_SW6_ADVERSE_LIQUIDITY"
+      ],
+      "finding": "The wording says EQH/EQL below entry, without a complete directional mapping. Preserve the quote and require priority-source/context review.",
+      "handling": "Keep source scope/uncertainty explicit; no threshold or winner inferred.",
+      "id": "SW6_ADVERSE_DIRECTION",
+      "kind": "literal_scope_ambiguity",
+      "runtime_change": false,
+      "status": "UNRESOLVED_OR_SCOPE_LIMIT"
+    },
+    {
+      "citations": [
+        "SEC_SW8_SFP_OBSERVATIONS"
+      ],
+      "finding": "Sweep-candle close is below/above; next open is below only. Do not silently mirror or encode a one-sided condition for both directions.",
+      "handling": "Keep source scope/uncertainty explicit; no threshold or winner inferred.",
+      "id": "SW8_NEXT_OPEN_DIRECTION",
+      "kind": "internal_directional_asymmetry",
+      "runtime_change": false,
+      "status": "UNRESOLVED_OR_SCOPE_LIMIT"
+    },
+    {
+      "citations": [
+        "SEC_SW10_UP_ANCHORS",
+        "SEC_SW10_DOWN_ANCHORS",
+        "SEC_SW10_AGGRESSIVE_CONTEXT",
+        "SEC_SW10_CONSERVATIVE_CONTEXT"
+      ],
+      "finding": "Compare SW10 directional anchor and aggressive/conservative entry descriptions to Methodichka. This report does not select an interpretation or override the current frontier.",
+      "handling": "Keep source scope/uncertainty explicit; no threshold or winner inferred.",
+      "id": "RANGE_PRIORITY",
+      "kind": "higher_priority_comparison_required",
+      "runtime_change": false,
+      "status": "UNRESOLVED_OR_SCOPE_LIMIT"
+    },
+    {
+      "citations": [
+        "SEC_SW8_SFP_TF"
+      ],
+      "finding": "Any-timeframe scope plus H1 preference does not identify a hard H1 gate or unique context selector.",
+      "handling": "Keep source scope/uncertainty explicit; no threshold or winner inferred.",
+      "id": "SFP_TF_PREFERENCE",
+      "kind": "scope_vs_preference",
+      "runtime_change": false,
+      "status": "UNRESOLVED_OR_SCOPE_LIMIT"
+    },
+    {
+      "citations": [
+        "SEC_SW6_NOT_PREDICTIVE",
+        "SEC_SW6_MEANINGFUL_LEVEL"
+      ],
+      "finding": "Meaningful liquidity does not establish which pool will be sought or whether a sweep fuels continuation or reversal.",
+      "handling": "Keep source scope/uncertainty explicit; no threshold or winner inferred.",
+      "id": "LIQUIDITY_NO_FORECAST",
+      "kind": "epistemic_limit",
+      "runtime_change": false,
+      "status": "UNRESOLVED_OR_SCOPE_LIMIT"
+    },
+    {
+      "citations": [
+        "SEC_DS_FRESHNESS"
+      ],
+      "finding": "Untested is explicit; exact test geometry, expiry and invalidation-time semantics are not.",
+      "handling": "Keep source scope/uncertainty explicit; no threshold or winner inferred.",
+      "id": "DS_FRESHNESS_LIFECYCLE",
+      "kind": "exact_invalidation_unspecified",
+      "runtime_change": false,
+      "status": "UNRESOLVED_OR_SCOPE_LIMIT"
+    },
+    {
+      "citations": [
+        "PRIMARY_BOS_CONF",
+        "SW5 p4-5"
+      ],
+      "finding": "A single above-body wording cannot define both break directions; preserve source context/visual evidence and existing TN classification.",
+      "handling": "Do not derive a new universal comparator from one word.",
+      "id": "SW5_ABOVE_DIRECTION_WORDING",
+      "kind": "DIRECTION_WORDING_REQUIRES_SOURCE_CONTEXT",
+      "runtime_change": false,
+      "status": "UNRESOLVED_TEXT_SCOPE"
+    },
+    {
+      "citations": [
+        "METHOD_VIS_21",
+        "METHOD_VIS_22",
+        "METHOD_VIS_23"
+      ],
+      "finding": "High-first/low-second and low-first/high-second Range examples appear in priority1figures.",
+      "handling": "Keep qualified impulse/first-touch paircontext; no universal high-before-low ordering.",
+      "id": "RANGE_DIRECTIONAL_BOUNDARY_ORDER",
+      "kind": "SOURCE_VISUAL_SCOPE_REFINEMENT",
+      "runtime_change": false,
+      "status": "EXPLICIT_CONTEXTUAL_ORDER_NOT_UNIVERSAL"
+    },
+    {
+      "citations": [
+        "METHOD_VIS_27",
+        "METHOD_VIS_28",
+        "Методичка P0158-P0162"
+      ],
+      "finding": "Illustrated third candle engulfs preceding body; no optional fourth candle label.",
+      "handling": "Preserve bounded source-permitted geometry; universal engulf requirement remains UNKNOWN; do not invalidate every lower-priority transport from an example alone.",
+      "id": "SFP_BODY_ENGULF_ILLUSTRATION_SCOPE",
+      "kind": "SOURCE_VISUAL_INSTANCE_NOT_UNIVERSAL",
+      "runtime_change": false,
+      "status": "ILLUSTRATED_INSTANCE_IDENTIFIED_UNIVERSAL_RULE_UNRESOLVED"
+    }
+  ],
+  "financial_backtest_allowed": false,
+  "project_policy_applied": [],
+  "source_priority": [
+    "Методичка",
+    "SW5",
+    "SW9",
+    "SW11",
+    "SW12",
+    "SW22",
+    "other confirmed ORIGINAL SOURCE materials",
+    "SOURCE Rule Registry"
+  ],
+  "trade_entry_allowed": false,
+  "version": "PURE_SOURCE_STAGE19_CONFLICT_LEDGER_V1"
+}
