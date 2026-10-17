@@ -74,6 +74,27 @@ class PureSourceIdentifiabilityFrontierTests(unittest.TestCase):
             ],
         )
 
+    def test_priority_one_methodichka_evidence_is_preserved(self):
+        evidence = self.frontier["source_evidence_confirmed_in_frozen_primary_materials"]
+        method = [row for row in evidence if row["source"] == "Методичка"]
+        self.assertGreaterEqual(len(method), 5)
+        joined = " ".join(row["finding"] for row in method).lower()
+        self.assertIn("0.705-0.79", joined)
+        self.assertIn("three-candle", joined)
+        self.assertIn("first high after the impulse", joined)
+        self.assertIn("large", joined)
+        self.assertIn("choch", joined)
+
+        identified = set(self.frontier["identified_source_geometry_not_yet_fully_automated"])
+        self.assertIn(
+            "Methodichka_OTE_levels_0_5_0_62_0_705_0_79_and_optimal_zone_0_705_to_0_79",
+            identified,
+        )
+        self.assertIn(
+            "Methodichka_Range_requires_no_structure_inside_and_reaction_from_0_5",
+            identified,
+        )
+
     def test_project_overlays_are_not_allowed_as_next_work(self):
         prohibited = " ".join(self.frontier["prohibited_next_work"]).lower()
         self.assertIn("project_overlay", prohibited)
