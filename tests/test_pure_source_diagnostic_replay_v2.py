@@ -46,13 +46,37 @@ class SourceDiagnosticReplayTests(unittest.TestCase):
         reverse = build_source_diagnostic_artifact((higher, lower))
         self.assertEqual(forward, reverse)
 
-    def test_prefix_artifact_is_unchanged_by_later_future_mutation(self):
+    def test_future_mutation_changes_dataset_identity_not_causal_prefix(self):
         cutoff = BASE + timedelta(minutes=45)
         initial = build_source_diagnostic_artifact(setup_data(), through=cutoff)
         mutated = build_source_diagnostic_artifact(
             setup_data(invalidation=True, extra_poi=True), through=cutoff
         )
-        self.assertEqual(initial, mutated)
+
+        # The immutable full-dataset manifest must expose the changed future
+        # suffix. Hiding that difference would make artifact reuse unsafe.
+        self.assertNotEqual(initial.dataset_sha256, mutated.dataset_sha256)
+        self.assertNotEqual(initial.artifact_sha256, mutated.artifact_sha256)
+
+        # Causal computation through the cutoff must remain bit-for-bit stable.
+        self.assertEqual(initial.first_decision_at, mutated.first_decision_at)
+        self.assertEqual(initial.last_decision_at, mutated.last_decision_at)
+        self.assertEqual(initial.receipt_count, mutated.receipt_count)
+        self.assertEqual(initial.evidence_batch_count, mutated.evidence_batch_count)
+        self.assertEqual(initial.receipt_chain_sha256, mutated.receipt_chain_sha256)
+        self.assertEqual(initial.evidence_chain_sha256, mutated.evidence_chain_sha256)
+        self.assertEqual(initial.final_runtime_sha256, mutated.final_runtime_sha256)
+        self.assertEqual(initial.causal_object_count, mutated.causal_object_count)
+        self.assertEqual(initial.setup_count, mutated.setup_count)
+        self.assertEqual(initial.execution_plan_count, mutated.execution_plan_count)
+        self.assertEqual(initial.source_ready_setup_count, mutated.source_ready_setup_count)
+        self.assertEqual(
+            initial.execution_ready_observation_count,
+            mutated.execution_ready_observation_count,
+        )
+        self.assertEqual(initial.unresolved, mutated.unresolved)
+        self.assertEqual(initial.trade_entry_allowed, mutated.trade_entry_allowed)
+        self.assertEqual(initial.financial_run, mutated.financial_run)
 
     def test_fingerprint_detects_tampering(self):
         artifact = build_source_diagnostic_artifact(setup_data())
