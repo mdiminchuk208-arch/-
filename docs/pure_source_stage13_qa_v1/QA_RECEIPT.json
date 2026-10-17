@@ -1,0 +1,105 @@
+{
+  "artifact_sha256": {
+    "docs/pure_source_stage13_qa_v1/QA_EXECUTION_HELPER.py.txt": "087fa616c85ecc9223b58abfe7b84a0d1abe638b7fd6631a1c8c533214ea4846",
+    "docs/pure_source_stage13_qa_v1/SYNTHETIC_EVIDENCE.json": "aa7981899b253b75f9338fbb1119fc3f3336bf87969848d6c706d43f91759c7f",
+    "docs/pure_source_stage13_qa_v1/SYNTHETIC_FUNNEL.json": "1a528c3f60570bba95a9ba5d978c09becbe21b29bf4e7545238abb0dd4c3b1b8",
+    "docs/pure_source_stage13_qa_v1/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/pure_source_stage13_qa_v1/format.log": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938",
+    "docs/pure_source_stage13_qa_v1/lint.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "docs/pure_source_stage13_qa_v1/safety.log": "1bbac526cb48b6a8b5607610e0cfde3a115445eae2a08881901f61e1ce4edfeb",
+    "docs/pure_source_stage13_qa_v1/unit.log": "b26a4154ffc43764174df44e8ee8e0b45b045b6ad4b49890ee70ff8bc8974b40"
+  },
+  "ci_required_before_merge": true,
+  "code_config_doc_sha256": {
+    "config/pure_source_setup_provider_v2.json": "a01690f249c4beba0bf8b966dcbd5498f44fc0cd6308270fb405bf4ff8a1b741",
+    "docs/PURE_SOURCE_ENGINE_STAGE13_SETUP_ASSEMBLY.md": "80d0aac920a637a330fc359e5cbd486725da3eae27fc60089462272ddfad1f8e",
+    "src/crypto_bot/strategy/pure_source_setup_provider_v2.py": "0d0d0818cb26533c53eca597e0371c80712df0fe3d43c89e3ac9caf8caf39d5f",
+    "tests/test_pure_source_setup_provider_v2.py": "135d315fc8f8aadcbf146a64799ad87794e336de216ccb566001965a2e764f42"
+  },
+  "commands": [
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage13_qa_v1/compile.log",
+      "name": "compile"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage13_qa_v1/unit.log",
+      "name": "unit"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-c",
+        "from pathlib import Path; ps=[*Path('src').rglob('*.py'),*Path('scripts').rglob('*.py')]; assert not any('trade_entry_allowed=True' in p.read_text(encoding='utf-8',errors='ignore') for p in ps); print('SAFETY PASS')"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage13_qa_v1/safety.log",
+      "name": "safety"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "check",
+        "src/crypto_bot/strategy/pure_source_setup_provider_v2.py",
+        "tests/test_pure_source_setup_provider_v2.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage13_qa_v1/lint.log",
+      "name": "lint"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "format",
+        "--check",
+        "src/crypto_bot/strategy/pure_source_setup_provider_v2.py",
+        "tests/test_pure_source_setup_provider_v2.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage13_qa_v1/format.log",
+      "name": "format"
+    }
+  ],
+  "engine_version": "PURE_SOURCE_STAGE13_SETUPS_V2",
+  "git_commit": "114d3590450ae26186c1a61fb178378afa7ef0e3",
+  "historical_financial_runs": 0,
+  "independent_review": {
+    "actual_agent": "/root/pure_source_stage10_review",
+    "decision": "SCOPED_ACCEPTANCE_CI_REQUIRED",
+    "extra_checks": [
+      "late-born structure breach/reclaim found and fixed; mirrored regression",
+      "historical unique setup retention after later nonunique POI/invalidation",
+      "birth-close breach no retroactive BOS"
+    ],
+    "material_blockers": [],
+    "read_only": true,
+    "targeted_tests_independently_passed": 11
+  },
+  "source_rule_changes": [],
+  "stage": 13,
+  "targeted_tests": 11,
+  "timestamp_utc": "2026-10-17T09:31:57.668054+00:00",
+  "trade_entry_allowed": false,
+  "unit_tests": 758
+}
