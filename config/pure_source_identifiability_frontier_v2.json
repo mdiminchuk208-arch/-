@@ -1,0 +1,178 @@
+{
+  "version": "PURE_SOURCE_STAGE16_IDENTIFIABILITY_FRONTIER_V2",
+  "base_merge_commit": "b570018371eff6fac34088038091f6b8aff41ea1",
+  "source_spec_version": "ORIGINAL_STRATEGY_SPEC_v1.1",
+  "baseline_identifiability": "NOT_IDENTIFIABLE",
+  "trade_entry_allowed": false,
+  "financial_backtest_allowed": false,
+  "paper_allowed": false,
+  "live_allowed": false,
+  "private_api_allowed": false,
+  "source_rule_changes": [],
+  "project_policy_applied": [],
+  "authority": {
+    "source_priority": [
+      "Методичка",
+      "SW5",
+      "SW9",
+      "SW11",
+      "SW12",
+      "SW22",
+      "other confirmed ORIGINAL SOURCE materials",
+      "SOURCE Rule Registry"
+    ],
+    "historical_engine_is_source_truth": false,
+    "historical_pnl_can_resolve_source_ambiguity": false
+  },
+  "resolved_causal_core": [
+    "closed_candle_causal_market_structure",
+    "swing_structure_hh_hl_lh_ll",
+    "bos_and_confirmation_transport",
+    "structural_sfp_transport",
+    "imb_fvg_transport",
+    "typed_setup_to_execution_semantics_transport",
+    "prefix_replay_and_future_mutation_invariance",
+    "deterministic_diagnostic_artifact_and_exact_repeat_verification"
+  ],
+  "identified_source_geometry_not_yet_fully_automated": [
+    "Methodichka_Range_first_high_after_impulse_and_first_low",
+    "Methodichka_Range_requires_no_structure_inside_and_reaction_from_0_5",
+    "Methodichka_Range_trade_setup_after_deviation_return_zone_test_and_CHOCH",
+    "Methodichka_OTE_levels_0_5_0_62_0_705_0_79_and_optimal_zone_0_705_to_0_79",
+    "Methodichka_SFP_original_three_candles_optional_fourth_confirmation",
+    "Methodichka_SFP_all_timeframes_with_required_liquidity_context"
+  ],
+  "blocker_classes": [
+    {
+      "class": "MISSING_SOURCE_QUALITATIVE_PROVENANCE",
+      "resolution_mode": "REQUIRES_SOURCE_EVIDENCE_OR_EXPLICIT_HUMAN_SOURCE_ANNOTATION_CONTRACT",
+      "items": [
+        "EQH_EQL_source_qualified_substructure_and_reasonable_tilt",
+        "OB_large_body_small_wicks_liquidity_sweep_imbalance_and_context_provenance",
+        "Breaker_source_valid_OB_imbalance_pierce_and_CHOCH_provenance",
+        "Range_source_qualified_preceding_impulse_segmentation_and_midpoint_reaction_provenance",
+        "STB_BTS_manipulation_segmentation_and_full_engulf_provenance",
+        "Demand_Supply_last_movement_segmentation",
+        "OTE_PD_source_qualified_impulse_or_dealing_range_anchors_while_ratios_are_source_defined",
+        "meaningful_and_adverse_liquidity_context"
+      ],
+      "forbidden_shortcut": "Do not substitute arbitrary OHLC, ATR, percentage, tick, score, ranking, ML, or profitability thresholds for qualitative source provenance."
+    },
+    {
+      "class": "SOURCE_PERMITTED_VARIANTS_NO_PRECEDENCE",
+      "resolution_mode": "ENUMERATE_AS_SEPARATE_SOURCE_BRANCHES_WITHOUT_RANKING",
+      "items": [
+        "OB_direct_entry_boundary_vs_inside_zone",
+        "OB_stop_behind_OB_extreme_vs_engulfing_candle_wick",
+        "Breaker_aggressive_vs_conservative_stop",
+        "OB_direct_vs_LTF_confirmation_entry_variant",
+        "STB_BTS_directional_zone_part_vs_exact_0_5_entry",
+        "FTA_full_vs_partial_fixation",
+        "ATR_standard_14_vs_strategy_adjusted_period"
+      ],
+      "forbidden_shortcut": "Do not choose a winner using historical PnL, win rate, PF, expectancy, score, or preference not present in SOURCE."
+    },
+    {
+      "class": "SOURCE_GEOMETRY_UNSPECIFIED",
+      "resolution_mode": "KEEP_UNRESOLVED_UNTIL_SOURCE_DEFINES_EXACT_GEOMETRY_OR_ENUMERABLE_BOUND",
+      "items": [
+        "exact_quote_inside_OB_when_inside_zone_variant_is_used",
+        "exact_quote_on_new_POI_after_LTF_BOS",
+        "exact_beyond_anchor_stop_buffer_where_SOURCE_only_says_behind_or_beyond",
+        "exact_Breaker_entry_quote_if_not_explicitly_anchored",
+        "exact_STB_BTS_quote_for_directional_part_variant",
+        "protective_stop_for_STB_BTS_when_not_defined_by_SOURCE",
+        "protective_stop_for_Range_when_not_defined_by_SOURCE",
+        "protective_stop_for_Demand_Supply_when_not_defined_by_SOURCE"
+      ],
+      "forbidden_shortcut": "Do not manufacture an ATR multiple, candle fraction, RR multiple, tick buffer, or any other exact coordinate not supplied by SOURCE."
+    },
+    {
+      "class": "SOURCE_EXIT_ALLOCATION_UNSPECIFIED",
+      "resolution_mode": "KEEP_ALTERNATIVES_OR_REMAINDER_UNRESOLVED",
+      "items": [
+        "FTA_partial_fixation_fraction",
+        "destination_and_termination_of_remainder_after_partial_FTA",
+        "destination_and_termination_of_remaining_20_percent_after_Range_80_percent_fixation"
+      ],
+      "forbidden_shortcut": "Do not import project TP 40_30_30, project breakeven, or optimize exit fractions."
+    },
+    {
+      "class": "SOURCE_CONTEXT_OR_IDENTITY_UNSPECIFIED",
+      "resolution_mode": "REQUIRES_SOURCE_PROVENANCE_OR_EXPLICIT_BRANCH_CONTRACT",
+      "items": [
+        "timeframe_context_selection_where_SOURCE_allows_multiple_timeframes",
+        "meaningful_liquidity_selection_when_multiple_source_valid_pools_exist",
+        "re_entry_identity_and_eligibility_after_first_OB_test_or_prior_attempt"
+      ],
+      "forbidden_shortcut": "Do not use project HTF admission, ranking, score, correlation, cost filters, or outcome-aware selection."
+    }
+  ],
+  "source_evidence_confirmed_in_frozen_primary_materials": [
+    {
+      "source": "Методичка",
+      "paragraphs": "P0102-P0108",
+      "finding": "OB is the last candle before imbalance; the movement must update structure, the OB must sweep a low/high or wick, and the body should be large while wicks are small. The large/small qualitative boundary is not numerically defined."
+    },
+    {
+      "source": "Методичка",
+      "paragraphs": "P0113-P0116",
+      "finding": "Breaker is an impulsively pierced OB; it must sweep a high/low, be pierced by imbalance, and be followed by CHOCH."
+    },
+    {
+      "source": "Методичка",
+      "paragraphs": "P0122-P0130",
+      "finding": "Range has no structure inside; it is built from the first high after the impulse and the first low, requires reaction from 0.5 for validation, and the described setup trades after deviation, return, zone test and CHOCH."
+    },
+    {
+      "source": "Методичка",
+      "paragraphs": "P0139-P0156",
+      "finding": "Fibonacci source levels include 0.5, 0.62, 0.705 and 0.79; OTE is explicitly the 0.705-0.79 zone, while exact source-qualified impulse anchors still require causal provenance."
+    },
+    {
+      "source": "Методичка",
+      "paragraphs": "P0157-P0162",
+      "finding": "SFP is originally a three-candle reversal pattern with an optional fourth confirmation candle, is applicable on all timeframes, and requires context in the form of liquidity points or zones being swept."
+    },
+    {
+      "source": "SW9",
+      "pages": "3-6",
+      "finding": "OB source permits boundary limit entry and also entry inside the OB; a second variant waits for LTF structure break and a new POI."
+    },
+    {
+      "source": "SW9",
+      "pages": "9-9",
+      "finding": "Breaker source permits aggressive and conservative stop variants."
+    },
+    {
+      "source": "SW9",
+      "pages": "11-16",
+      "finding": "FTA can be used for full or partial profit fixation; source text does not select a unique allocation."
+    },
+    {
+      "source": "SW12",
+      "pages": "10-14",
+      "finding": "ATR standard value is 14, while the source explicitly allows changing the setting according to strategy and comparing results."
+    },
+    {
+      "source": "SW22",
+      "pages": "1-6",
+      "finding": "STB/BTS source permits a directional part of the zone or exact 0.5 as entry, subject to trend, liquidity sweep, full engulf and BOS/CONF conditions."
+    }
+  ],
+  "next_allowed_work": [
+    "extract_rule_level_evidence_from_frozen_original_sources",
+    "build_source_branch_enumeration_where_alternatives_are_finite_and_explicit",
+    "build_qualitative_annotation_contracts_with_causal_timestamps_and_provenance",
+    "extend_object_provider_only_when_source_evidence_is_explicit",
+    "keep_diagnostic_replay_non_financial_until_required_execution_and_exit_geometry_is_identified"
+  ],
+  "prohibited_next_work": [
+    "financial_performance_claim_for_PURE_SOURCE",
+    "profitability_based_source_rule_selection",
+    "automatic_numericization_of_qualitative_source_concepts",
+    "project_overlay_injection_into_SOURCE_baseline",
+    "paper_or_live_execution",
+    "private_exchange_api_or_real_orders"
+  ]
+}
