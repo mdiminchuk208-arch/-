@@ -1,0 +1,1156 @@
+{
+  "fixture": "SYNTHETIC_QA_NOT_MARKET_HISTORY",
+  "annotation_input_sha256": "cbb102983629befd1c4c052b09f2e90d77646cd21975320ef36d81839105cf03",
+  "replay_manifest": {
+    "version": "PURE_SOURCE_STAGE10_REPLAY_V2",
+    "exchange": "TEST",
+    "symbol": "BTCUSDT",
+    "series": [
+      {
+        "timeframe": "1m",
+        "interval_ms": 60000,
+        "candle_count": 8,
+        "first_open_time_ms": 1767225600000,
+        "last_open_time_ms": 1767226020000,
+        "series_sha256": "48e986fb0a51c9224b78f7f07a6975bb1531029323a4623a363f3fb6985cb952"
+      }
+    ],
+    "dataset_sha256": "b3a9fe7c4af3d20d343eb38dd28af3e5a246869b806e4bb4eaf356c5123e2ede",
+    "total_candles": 8
+  },
+  "receipts": [
+    {
+      "decision_at": "2026-01-01T00:01:00+00:00",
+      "prefix_sizes": [
+        [
+          "1m",
+          1
+        ]
+      ],
+      "prefix_sha256": "0be720af462749a48df036e316b50d25271ab36d9a0a71473a75169665ee4acb",
+      "evidence_batch_sha256": "eaea9912f56cfb8f6897dd5bdf2829715a2c786a2b31a7bd3c2474c006c7656c",
+      "runtime_sha256": "78b2afecc9f2e7fe4f83182f808214b62e9bd778644ac41043481f2dfa286b09",
+      "causal_object_count": 0,
+      "setup_count": 0,
+      "execution_plan_count": 0,
+      "blocker_count": 0
+    },
+    {
+      "decision_at": "2026-01-01T00:02:00+00:00",
+      "prefix_sizes": [
+        [
+          "1m",
+          2
+        ]
+      ],
+      "prefix_sha256": "9f1ddfd515003602ac7deac4d2131daa944367438324bd64729bc1477c88f080",
+      "evidence_batch_sha256": "a80e210173d55ebb184c31e7ad1c8a79013f790ce545934f3d169b4406171527",
+      "runtime_sha256": "40b83e559a4bda61806b6a964652bc616a5674926fc96d291c5030a83d276c8d",
+      "causal_object_count": 0,
+      "setup_count": 0,
+      "execution_plan_count": 0,
+      "blocker_count": 0
+    },
+    {
+      "decision_at": "2026-01-01T00:03:00+00:00",
+      "prefix_sizes": [
+        [
+          "1m",
+          3
+        ]
+      ],
+      "prefix_sha256": "5d821182f181ffbe2835e856353354eb480b012bc3eea3f3f3f90b01beb6af45",
+      "evidence_batch_sha256": "51992a01db5b7127b8ec10bd0273b57a0b4fd373e228ec7f38d5d1fa372ae571",
+      "runtime_sha256": "9010c4506f0ae8dab22115c8f2a37e93f8262e72e2271807ef4e9732b4ade1b3",
+      "causal_object_count": 2,
+      "setup_count": 0,
+      "execution_plan_count": 0,
+      "blocker_count": 0
+    },
+    {
+      "decision_at": "2026-01-01T00:04:00+00:00",
+      "prefix_sizes": [
+        [
+          "1m",
+          4
+        ]
+      ],
+      "prefix_sha256": "b6cfafc294e1bab0ecd0abd81b48421f182b1d5dec0d4c6a264ceb02b5023279",
+      "evidence_batch_sha256": "e44f29925c4aa784507b1b35481f9d832a4dcc3bb9eda93c1b8baeafb8e67cff",
+      "runtime_sha256": "4403092602c2b48fad234928375ed1e4463caf66c775522870c4aa33f2724561",
+      "causal_object_count": 2,
+      "setup_count": 0,
+      "execution_plan_count": 0,
+      "blocker_count": 0
+    },
+    {
+      "decision_at": "2026-01-01T00:05:00+00:00",
+      "prefix_sizes": [
+        [
+          "1m",
+          5
+        ]
+      ],
+      "prefix_sha256": "20e9022e28cfe5bfc30908d0c2f4c7ca929897a2c0e8991490dbdf0f906a4855",
+      "evidence_batch_sha256": "ed851a8cdf3ec16568e5ed7a066342d6defd55aaa3aac18f63a6226d7584021e",
+      "runtime_sha256": "777af4b5689ed18d973e27a21a96bbdea99b38421fe94c89d39bd9635716d5ac",
+      "causal_object_count": 4,
+      "setup_count": 0,
+      "execution_plan_count": 0,
+      "blocker_count": 0
+    },
+    {
+      "decision_at": "2026-01-01T00:06:00+00:00",
+      "prefix_sizes": [
+        [
+          "1m",
+          6
+        ]
+      ],
+      "prefix_sha256": "ec3fbc3c6c74838b26ca350a2780fd2ba2de2f4f82087702a74ce8af079e64f2",
+      "evidence_batch_sha256": "2639cd4742db28dc3233d22109033a8882796ba45ca628f9bb3abdc6e0432ddf",
+      "runtime_sha256": "62187da3764574ef8dcebe370bae689bac204ff0702956afd6c5de4fce833650",
+      "causal_object_count": 6,
+      "setup_count": 0,
+      "execution_plan_count": 0,
+      "blocker_count": 0
+    },
+    {
+      "decision_at": "2026-01-01T00:07:00+00:00",
+      "prefix_sizes": [
+        [
+          "1m",
+          7
+        ]
+      ],
+      "prefix_sha256": "0426597021cabfd400ee3721675de3bfa0bd77ea25d2cf897fe4a52203400bd0",
+      "evidence_batch_sha256": "b163c00245e694848f9508957de1d207d7785a2d00b53e74cfa2ca81c5037c97",
+      "runtime_sha256": "99d4c3697ab43a665c7c8f3643a6a540572b9baf0e9acda914a96b4274cc3ae3",
+      "causal_object_count": 6,
+      "setup_count": 0,
+      "execution_plan_count": 0,
+      "blocker_count": 0
+    },
+    {
+      "decision_at": "2026-01-01T00:08:00+00:00",
+      "prefix_sizes": [
+        [
+          "1m",
+          8
+        ]
+      ],
+      "prefix_sha256": "46a8aab38c343cf60509b75c03cf4fde2e64cec7651d94c98439071707fe2dcb",
+      "evidence_batch_sha256": "22713ae70391edbcc4dfdbb0e0ad04f4830f30dd263b98608657cdd1d54e1c09",
+      "runtime_sha256": "d13115ec04301d72689e24bc77f2f9853029b2dcbf3b640687ff31839c9b1098",
+      "causal_object_count": 6,
+      "setup_count": 0,
+      "execution_plan_count": 0,
+      "blocker_count": 0
+    }
+  ],
+  "before_delivery": {
+    "objects": [
+      {
+        "object_id": "24b3f21b0f489e479d630e1216c325a0",
+        "object_type": "liquidity_pool",
+        "symbol": "BTCUSDT",
+        "timeframe": "1m",
+        "direction": null,
+        "formation_at": "2026-01-01T00:06:00+00:00",
+        "known_at": "2026-01-01T00:06:00+00:00",
+        "confirmed_at": null,
+        "invalidated_at": null,
+        "formation_valid": true,
+        "trade_eligible": false,
+        "status": "KNOWN",
+        "source_rule_ids": [
+          "LIQ_STRUCTURAL_001"
+        ],
+        "technical_normalization_ids": [
+          "TN_LIQUIDITY_LOCATION_FROM_ACTIVE_STRUCTURE_LEG"
+        ],
+        "rejection_reasons": [],
+        "parent_object_ids": [
+          "2595d3291fb4bf7665dac3cd00485e37"
+        ],
+        "provenance": "SW6 p12 structural liquidity; location is a causal context label, not physical pool identity",
+        "lifecycle": [
+          {
+            "kind": "FORMATION",
+            "at": "2026-01-01T00:06:00+00:00",
+            "status": "FORMED",
+            "trade_eligible": false,
+            "reason": null
+          },
+          {
+            "kind": "KNOWN",
+            "at": "2026-01-01T00:06:00+00:00",
+            "status": "KNOWN",
+            "trade_eligible": false,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "object_id": "2595d3291fb4bf7665dac3cd00485e37",
+        "object_type": "swing",
+        "symbol": "BTCUSDT",
+        "timeframe": "1m",
+        "direction": null,
+        "formation_at": "2026-01-01T00:06:00+00:00",
+        "known_at": "2026-01-01T00:06:00+00:00",
+        "confirmed_at": null,
+        "invalidated_at": null,
+        "formation_valid": true,
+        "trade_eligible": false,
+        "status": "KNOWN",
+        "source_rule_ids": [
+          "MS_SWING_HIGH_001"
+        ],
+        "technical_normalization_ids": [
+          "SWING_CONFIRM_001"
+        ],
+        "rejection_reasons": [],
+        "parent_object_ids": [],
+        "provenance": "SW5 p2 strict three-candle swing; stable ID uses causal timestamps, not dataset-relative indexes",
+        "lifecycle": [
+          {
+            "kind": "FORMATION",
+            "at": "2026-01-01T00:06:00+00:00",
+            "status": "FORMED",
+            "trade_eligible": false,
+            "reason": null
+          },
+          {
+            "kind": "KNOWN",
+            "at": "2026-01-01T00:06:00+00:00",
+            "status": "KNOWN",
+            "trade_eligible": false,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "object_id": "284d3f3dc453293cee31d9bc31ecc70c",
+        "object_type": "swing",
+        "symbol": "BTCUSDT",
+        "timeframe": "1m",
+        "direction": null,
+        "formation_at": "2026-01-01T00:05:00+00:00",
+        "known_at": "2026-01-01T00:05:00+00:00",
+        "confirmed_at": null,
+        "invalidated_at": null,
+        "formation_valid": true,
+        "trade_eligible": false,
+        "status": "KNOWN",
+        "source_rule_ids": [
+          "MS_SWING_LOW_001"
+        ],
+        "technical_normalization_ids": [
+          "SWING_CONFIRM_001"
+        ],
+        "rejection_reasons": [],
+        "parent_object_ids": [],
+        "provenance": "SW5 p2 strict three-candle swing; stable ID uses causal timestamps, not dataset-relative indexes",
+        "lifecycle": [
+          {
+            "kind": "FORMATION",
+            "at": "2026-01-01T00:05:00+00:00",
+            "status": "FORMED",
+            "trade_eligible": false,
+            "reason": null
+          },
+          {
+            "kind": "KNOWN",
+            "at": "2026-01-01T00:05:00+00:00",
+            "status": "KNOWN",
+            "trade_eligible": false,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "object_id": "29a0c2d1b2a7bc0015c05fa608c0ac37",
+        "object_type": "liquidity_pool",
+        "symbol": "BTCUSDT",
+        "timeframe": "1m",
+        "direction": null,
+        "formation_at": "2026-01-01T00:03:00+00:00",
+        "known_at": "2026-01-01T00:03:00+00:00",
+        "confirmed_at": null,
+        "invalidated_at": null,
+        "formation_valid": true,
+        "trade_eligible": false,
+        "status": "KNOWN",
+        "source_rule_ids": [
+          "LIQ_STRUCTURAL_001"
+        ],
+        "technical_normalization_ids": [
+          "TN_LIQUIDITY_LOCATION_FROM_ACTIVE_STRUCTURE_LEG"
+        ],
+        "rejection_reasons": [],
+        "parent_object_ids": [
+          "94e0b7fe470acdad025a8ffb61233369"
+        ],
+        "provenance": "SW6 p12 structural liquidity; location is a causal context label, not physical pool identity",
+        "lifecycle": [
+          {
+            "kind": "FORMATION",
+            "at": "2026-01-01T00:03:00+00:00",
+            "status": "FORMED",
+            "trade_eligible": false,
+            "reason": null
+          },
+          {
+            "kind": "KNOWN",
+            "at": "2026-01-01T00:03:00+00:00",
+            "status": "KNOWN",
+            "trade_eligible": false,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "object_id": "94e0b7fe470acdad025a8ffb61233369",
+        "object_type": "swing",
+        "symbol": "BTCUSDT",
+        "timeframe": "1m",
+        "direction": null,
+        "formation_at": "2026-01-01T00:03:00+00:00",
+        "known_at": "2026-01-01T00:03:00+00:00",
+        "confirmed_at": null,
+        "invalidated_at": null,
+        "formation_valid": true,
+        "trade_eligible": false,
+        "status": "KNOWN",
+        "source_rule_ids": [
+          "MS_SWING_HIGH_001"
+        ],
+        "technical_normalization_ids": [
+          "SWING_CONFIRM_001"
+        ],
+        "rejection_reasons": [],
+        "parent_object_ids": [],
+        "provenance": "SW5 p2 strict three-candle swing; stable ID uses causal timestamps, not dataset-relative indexes",
+        "lifecycle": [
+          {
+            "kind": "FORMATION",
+            "at": "2026-01-01T00:03:00+00:00",
+            "status": "FORMED",
+            "trade_eligible": false,
+            "reason": null
+          },
+          {
+            "kind": "KNOWN",
+            "at": "2026-01-01T00:03:00+00:00",
+            "status": "KNOWN",
+            "trade_eligible": false,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "object_id": "f8fa41322451d33dabba2cfbc2225f3d",
+        "object_type": "liquidity_pool",
+        "symbol": "BTCUSDT",
+        "timeframe": "1m",
+        "direction": null,
+        "formation_at": "2026-01-01T00:05:00+00:00",
+        "known_at": "2026-01-01T00:05:00+00:00",
+        "confirmed_at": null,
+        "invalidated_at": null,
+        "formation_valid": true,
+        "trade_eligible": false,
+        "status": "KNOWN",
+        "source_rule_ids": [
+          "LIQ_STRUCTURAL_001"
+        ],
+        "technical_normalization_ids": [
+          "TN_LIQUIDITY_LOCATION_FROM_ACTIVE_STRUCTURE_LEG"
+        ],
+        "rejection_reasons": [],
+        "parent_object_ids": [
+          "284d3f3dc453293cee31d9bc31ecc70c"
+        ],
+        "provenance": "SW6 p12 structural liquidity; location is a causal context label, not physical pool identity",
+        "lifecycle": [
+          {
+            "kind": "FORMATION",
+            "at": "2026-01-01T00:05:00+00:00",
+            "status": "FORMED",
+            "trade_eligible": false,
+            "reason": null
+          },
+          {
+            "kind": "KNOWN",
+            "at": "2026-01-01T00:05:00+00:00",
+            "status": "KNOWN",
+            "trade_eligible": false,
+            "reason": null
+          }
+        ]
+      }
+    ],
+    "setup_assessments": [],
+    "execution_assessments": [],
+    "object_assessments": [
+      {
+        "family": "BREAKER",
+        "timeframe": "1m",
+        "status": "UNKNOWN",
+        "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+        "observed_at": "2026-01-01T00:06:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [],
+        "source_reference": "SW9; Методичка"
+      },
+      {
+        "family": "DEMAND_SUPPLY",
+        "timeframe": "1m",
+        "status": "UNKNOWN",
+        "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+        "observed_at": "2026-01-01T00:06:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [],
+        "source_reference": "SRC_DS_001"
+      },
+      {
+        "family": "EQH_EQL",
+        "timeframe": "1m",
+        "status": "UNKNOWN",
+        "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+        "observed_at": "2026-01-01T00:06:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [],
+        "source_reference": "SW6 p7-10"
+      },
+      {
+        "family": "IMB_FVG",
+        "timeframe": "1m",
+        "status": "FAIL",
+        "reason": "NO_POSITIVE_WICK_GAP",
+        "observed_at": "2026-01-01T00:06:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [],
+        "source_reference": "SW8 p1-3; Методичка p11"
+      },
+      {
+        "family": "LIQUIDITY_CONTEXT",
+        "timeframe": "1m",
+        "status": "UNKNOWN",
+        "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+        "observed_at": "2026-01-01T00:06:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [],
+        "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract"
+      },
+      {
+        "family": "OB",
+        "timeframe": "1m",
+        "status": "UNKNOWN",
+        "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+        "observed_at": "2026-01-01T00:06:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [],
+        "source_reference": "Методичка p9-10; SW9 p2-3"
+      },
+      {
+        "family": "OTE_PD",
+        "timeframe": "1m",
+        "status": "UNKNOWN",
+        "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+        "observed_at": "2026-01-01T00:06:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [],
+        "source_reference": "Методичка; SW8"
+      },
+      {
+        "family": "RANGE",
+        "timeframe": "1m",
+        "status": "UNKNOWN",
+        "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+        "observed_at": "2026-01-01T00:06:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [],
+        "source_reference": "SW10; Методичка"
+      },
+      {
+        "family": "SFP",
+        "timeframe": "1m",
+        "status": "FAIL",
+        "reason": "EXTERNAL_LIQUIDITY_NOT_SWEPT",
+        "observed_at": "2026-01-01T00:06:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [
+          "29a0c2d1b2a7bc0015c05fa608c0ac37"
+        ],
+        "source_reference": "SW8 p5; SW12 p13"
+      },
+      {
+        "family": "STB_BTS",
+        "timeframe": "1m",
+        "status": "UNKNOWN",
+        "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+        "observed_at": "2026-01-01T00:06:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [],
+        "source_reference": "SW22 p1-3"
+      }
+    ],
+    "sfps": [],
+    "imbalances": [],
+    "annotation_receipts": [],
+    "equal_pair_requests": [
+      {
+        "requested_at": "2026-01-01T00:06:00+00:00",
+        "timeframe": "1m",
+        "left_swing_id": "94e0b7fe470acdad025a8ffb61233369",
+        "right_swing_id": "2595d3291fb4bf7665dac3cd00485e37",
+        "kind": "EQH",
+        "observation_start_at": "2026-01-01T00:00:00+00:00",
+        "observation_end_at": "2026-01-01T00:06:00+00:00"
+      }
+    ],
+    "equal_liquidity": [
+      {
+        "evidence": {
+          "kind": "EQH",
+          "status": "UNKNOWN",
+          "left_swing_id": "94e0b7fe470acdad025a8ffb61233369",
+          "right_swing_id": "2595d3291fb4bf7665dac3cd00485e37",
+          "exact_price": false,
+          "directional_tilt_valid": true,
+          "substructure_pair_confirmed": null,
+          "reasonable_tilt_confirmed": null,
+          "qualitative_evidence_id": null,
+          "reason": "WAIT_SUBSTRUCTURE_EVIDENCE"
+        },
+        "geometry_known_at": "2026-01-01T00:06:00+00:00",
+        "known_at": null,
+        "facts": [
+          {
+            "semantic_id": "EQH_EQL_SUBSTRUCTURE_PAIR",
+            "scope": "OBJECT_FORMATION",
+            "timeframe": "1m",
+            "subject_object_ids": [
+              "2595d3291fb4bf7665dac3cd00485e37",
+              "94e0b7fe470acdad025a8ffb61233369"
+            ],
+            "observation_start_at": "2026-01-01T00:00:00+00:00",
+            "observation_end_at": "2026-01-01T00:06:00+00:00",
+            "assessment": {
+              "evidence": {
+                "status": "UNKNOWN",
+                "evidence_id": null,
+                "known_at": null
+              },
+              "reason": "WAIT_CAUSAL_SOURCE_ANNOTATION",
+              "supporting_claim_ids": []
+            },
+            "supporting_claims": []
+          },
+          {
+            "semantic_id": "EQH_EQL_REASONABLE_TILT",
+            "scope": "OBJECT_FORMATION",
+            "timeframe": "1m",
+            "subject_object_ids": [
+              "2595d3291fb4bf7665dac3cd00485e37",
+              "94e0b7fe470acdad025a8ffb61233369"
+            ],
+            "observation_start_at": "2026-01-01T00:00:00+00:00",
+            "observation_end_at": "2026-01-01T00:06:00+00:00",
+            "assessment": {
+              "evidence": {
+                "status": "UNKNOWN",
+                "evidence_id": null,
+                "known_at": null
+              },
+              "reason": "WAIT_CAUSAL_SOURCE_ANNOTATION",
+              "supporting_claim_ids": []
+            },
+            "supporting_claims": []
+          }
+        ],
+        "trade_entry_allowed": false
+      }
+    ],
+    "sfp_context_requests": [],
+    "sfp_contexts": []
+  },
+  "first_actual_delivery_frame": {
+    "objects": [
+      {
+        "object_id": "24b3f21b0f489e479d630e1216c325a0",
+        "object_type": "liquidity_pool",
+        "symbol": "BTCUSDT",
+        "timeframe": "1m",
+        "direction": null,
+        "formation_at": "2026-01-01T00:06:00+00:00",
+        "known_at": "2026-01-01T00:06:00+00:00",
+        "confirmed_at": null,
+        "invalidated_at": null,
+        "formation_valid": true,
+        "trade_eligible": false,
+        "status": "KNOWN",
+        "source_rule_ids": [
+          "LIQ_STRUCTURAL_001"
+        ],
+        "technical_normalization_ids": [
+          "TN_LIQUIDITY_LOCATION_FROM_ACTIVE_STRUCTURE_LEG"
+        ],
+        "rejection_reasons": [],
+        "parent_object_ids": [
+          "2595d3291fb4bf7665dac3cd00485e37"
+        ],
+        "provenance": "SW6 p12 structural liquidity; location is a causal context label, not physical pool identity",
+        "lifecycle": [
+          {
+            "kind": "FORMATION",
+            "at": "2026-01-01T00:06:00+00:00",
+            "status": "FORMED",
+            "trade_eligible": false,
+            "reason": null
+          },
+          {
+            "kind": "KNOWN",
+            "at": "2026-01-01T00:06:00+00:00",
+            "status": "KNOWN",
+            "trade_eligible": false,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "object_id": "2595d3291fb4bf7665dac3cd00485e37",
+        "object_type": "swing",
+        "symbol": "BTCUSDT",
+        "timeframe": "1m",
+        "direction": null,
+        "formation_at": "2026-01-01T00:06:00+00:00",
+        "known_at": "2026-01-01T00:06:00+00:00",
+        "confirmed_at": null,
+        "invalidated_at": null,
+        "formation_valid": true,
+        "trade_eligible": false,
+        "status": "KNOWN",
+        "source_rule_ids": [
+          "MS_SWING_HIGH_001"
+        ],
+        "technical_normalization_ids": [
+          "SWING_CONFIRM_001"
+        ],
+        "rejection_reasons": [],
+        "parent_object_ids": [],
+        "provenance": "SW5 p2 strict three-candle swing; stable ID uses causal timestamps, not dataset-relative indexes",
+        "lifecycle": [
+          {
+            "kind": "FORMATION",
+            "at": "2026-01-01T00:06:00+00:00",
+            "status": "FORMED",
+            "trade_eligible": false,
+            "reason": null
+          },
+          {
+            "kind": "KNOWN",
+            "at": "2026-01-01T00:06:00+00:00",
+            "status": "KNOWN",
+            "trade_eligible": false,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "object_id": "284d3f3dc453293cee31d9bc31ecc70c",
+        "object_type": "swing",
+        "symbol": "BTCUSDT",
+        "timeframe": "1m",
+        "direction": null,
+        "formation_at": "2026-01-01T00:05:00+00:00",
+        "known_at": "2026-01-01T00:05:00+00:00",
+        "confirmed_at": null,
+        "invalidated_at": null,
+        "formation_valid": true,
+        "trade_eligible": false,
+        "status": "KNOWN",
+        "source_rule_ids": [
+          "MS_SWING_LOW_001"
+        ],
+        "technical_normalization_ids": [
+          "SWING_CONFIRM_001"
+        ],
+        "rejection_reasons": [],
+        "parent_object_ids": [],
+        "provenance": "SW5 p2 strict three-candle swing; stable ID uses causal timestamps, not dataset-relative indexes",
+        "lifecycle": [
+          {
+            "kind": "FORMATION",
+            "at": "2026-01-01T00:05:00+00:00",
+            "status": "FORMED",
+            "trade_eligible": false,
+            "reason": null
+          },
+          {
+            "kind": "KNOWN",
+            "at": "2026-01-01T00:05:00+00:00",
+            "status": "KNOWN",
+            "trade_eligible": false,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "object_id": "29a0c2d1b2a7bc0015c05fa608c0ac37",
+        "object_type": "liquidity_pool",
+        "symbol": "BTCUSDT",
+        "timeframe": "1m",
+        "direction": null,
+        "formation_at": "2026-01-01T00:03:00+00:00",
+        "known_at": "2026-01-01T00:03:00+00:00",
+        "confirmed_at": null,
+        "invalidated_at": null,
+        "formation_valid": true,
+        "trade_eligible": false,
+        "status": "KNOWN",
+        "source_rule_ids": [
+          "LIQ_STRUCTURAL_001"
+        ],
+        "technical_normalization_ids": [
+          "TN_LIQUIDITY_LOCATION_FROM_ACTIVE_STRUCTURE_LEG"
+        ],
+        "rejection_reasons": [],
+        "parent_object_ids": [
+          "94e0b7fe470acdad025a8ffb61233369"
+        ],
+        "provenance": "SW6 p12 structural liquidity; location is a causal context label, not physical pool identity",
+        "lifecycle": [
+          {
+            "kind": "FORMATION",
+            "at": "2026-01-01T00:03:00+00:00",
+            "status": "FORMED",
+            "trade_eligible": false,
+            "reason": null
+          },
+          {
+            "kind": "KNOWN",
+            "at": "2026-01-01T00:03:00+00:00",
+            "status": "KNOWN",
+            "trade_eligible": false,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "object_id": "94e0b7fe470acdad025a8ffb61233369",
+        "object_type": "swing",
+        "symbol": "BTCUSDT",
+        "timeframe": "1m",
+        "direction": null,
+        "formation_at": "2026-01-01T00:03:00+00:00",
+        "known_at": "2026-01-01T00:03:00+00:00",
+        "confirmed_at": null,
+        "invalidated_at": null,
+        "formation_valid": true,
+        "trade_eligible": false,
+        "status": "KNOWN",
+        "source_rule_ids": [
+          "MS_SWING_HIGH_001"
+        ],
+        "technical_normalization_ids": [
+          "SWING_CONFIRM_001"
+        ],
+        "rejection_reasons": [],
+        "parent_object_ids": [],
+        "provenance": "SW5 p2 strict three-candle swing; stable ID uses causal timestamps, not dataset-relative indexes",
+        "lifecycle": [
+          {
+            "kind": "FORMATION",
+            "at": "2026-01-01T00:03:00+00:00",
+            "status": "FORMED",
+            "trade_eligible": false,
+            "reason": null
+          },
+          {
+            "kind": "KNOWN",
+            "at": "2026-01-01T00:03:00+00:00",
+            "status": "KNOWN",
+            "trade_eligible": false,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "object_id": "f8fa41322451d33dabba2cfbc2225f3d",
+        "object_type": "liquidity_pool",
+        "symbol": "BTCUSDT",
+        "timeframe": "1m",
+        "direction": null,
+        "formation_at": "2026-01-01T00:05:00+00:00",
+        "known_at": "2026-01-01T00:05:00+00:00",
+        "confirmed_at": null,
+        "invalidated_at": null,
+        "formation_valid": true,
+        "trade_eligible": false,
+        "status": "KNOWN",
+        "source_rule_ids": [
+          "LIQ_STRUCTURAL_001"
+        ],
+        "technical_normalization_ids": [
+          "TN_LIQUIDITY_LOCATION_FROM_ACTIVE_STRUCTURE_LEG"
+        ],
+        "rejection_reasons": [],
+        "parent_object_ids": [
+          "284d3f3dc453293cee31d9bc31ecc70c"
+        ],
+        "provenance": "SW6 p12 structural liquidity; location is a causal context label, not physical pool identity",
+        "lifecycle": [
+          {
+            "kind": "FORMATION",
+            "at": "2026-01-01T00:05:00+00:00",
+            "status": "FORMED",
+            "trade_eligible": false,
+            "reason": null
+          },
+          {
+            "kind": "KNOWN",
+            "at": "2026-01-01T00:05:00+00:00",
+            "status": "KNOWN",
+            "trade_eligible": false,
+            "reason": null
+          }
+        ]
+      }
+    ],
+    "setup_assessments": [],
+    "execution_assessments": [],
+    "object_assessments": [
+      {
+        "family": "BREAKER",
+        "timeframe": "1m",
+        "status": "UNKNOWN",
+        "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+        "observed_at": "2026-01-01T00:07:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [],
+        "source_reference": "SW9; Методичка"
+      },
+      {
+        "family": "DEMAND_SUPPLY",
+        "timeframe": "1m",
+        "status": "UNKNOWN",
+        "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+        "observed_at": "2026-01-01T00:07:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [],
+        "source_reference": "SRC_DS_001"
+      },
+      {
+        "family": "EQH_EQL",
+        "timeframe": "1m",
+        "status": "UNKNOWN",
+        "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+        "observed_at": "2026-01-01T00:07:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [],
+        "source_reference": "SW6 p7-10"
+      },
+      {
+        "family": "IMB_FVG",
+        "timeframe": "1m",
+        "status": "FAIL",
+        "reason": "NO_POSITIVE_WICK_GAP",
+        "observed_at": "2026-01-01T00:07:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [],
+        "source_reference": "SW8 p1-3; Методичка p11"
+      },
+      {
+        "family": "LIQUIDITY_CONTEXT",
+        "timeframe": "1m",
+        "status": "UNKNOWN",
+        "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+        "observed_at": "2026-01-01T00:07:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [],
+        "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract"
+      },
+      {
+        "family": "OB",
+        "timeframe": "1m",
+        "status": "UNKNOWN",
+        "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+        "observed_at": "2026-01-01T00:07:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [],
+        "source_reference": "Методичка p9-10; SW9 p2-3"
+      },
+      {
+        "family": "OTE_PD",
+        "timeframe": "1m",
+        "status": "UNKNOWN",
+        "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+        "observed_at": "2026-01-01T00:07:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [],
+        "source_reference": "Методичка; SW8"
+      },
+      {
+        "family": "RANGE",
+        "timeframe": "1m",
+        "status": "UNKNOWN",
+        "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+        "observed_at": "2026-01-01T00:07:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [],
+        "source_reference": "SW10; Методичка"
+      },
+      {
+        "family": "SFP",
+        "timeframe": "1m",
+        "status": "FAIL",
+        "reason": "EXTERNAL_LIQUIDITY_NOT_SWEPT",
+        "observed_at": "2026-01-01T00:07:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [
+          "29a0c2d1b2a7bc0015c05fa608c0ac37"
+        ],
+        "source_reference": "SW8 p5; SW12 p13"
+      },
+      {
+        "family": "SFP",
+        "timeframe": "1m",
+        "status": "FAIL",
+        "reason": "EXTERNAL_LIQUIDITY_NOT_SWEPT",
+        "observed_at": "2026-01-01T00:07:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [
+          "f8fa41322451d33dabba2cfbc2225f3d"
+        ],
+        "source_reference": "SW8 p5; SW12 p13"
+      },
+      {
+        "family": "STB_BTS",
+        "timeframe": "1m",
+        "status": "UNKNOWN",
+        "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+        "observed_at": "2026-01-01T00:07:00+00:00",
+        "object_id": null,
+        "parent_object_ids": [],
+        "source_reference": "SW22 p1-3"
+      }
+    ],
+    "sfps": [],
+    "imbalances": [],
+    "annotation_receipts": [
+      {
+        "claim": {
+          "semantic_id": "EQH_EQL_SUBSTRUCTURE_PAIR",
+          "scope": "OBJECT_FORMATION",
+          "status": "PASS",
+          "symbol": "BTCUSDT",
+          "timeframe": "1m",
+          "observation_start_at": "2026-01-01T00:00:00+00:00",
+          "observation_end_at": "2026-01-01T00:06:00+00:00",
+          "known_at": "2026-01-01T00:06:00+00:00",
+          "subject_object_ids": [
+            "2595d3291fb4bf7665dac3cd00485e37",
+            "94e0b7fe470acdad025a8ffb61233369"
+          ],
+          "source_refs": [
+            "SW6 p7-10"
+          ],
+          "source_rule_ids": [],
+          "annotation_method": "CURATED_SOURCE_DATASET_ANNOTATION",
+          "provenance_ref": "sha256:f3a3f4a17bf8d33d42875165ec9b4bd0ddee12ff970406ed1f7fce071651319f",
+          "rationale_code": "SYNTHETIC_QA_NOT_MARKET_SOURCE_EVIDENCE",
+          "evidence_id": "3d4d973097473aa5e68f26823fb1f99e"
+        },
+        "first_observed_at": "2026-01-01T00:07:00+00:00",
+        "effective_known_at": "2026-01-01T00:07:00+00:00",
+        "context_sha256": "2511d43e7b9e52fe805f994ba625478492ed6a789bb250d3f6d7e8e51ea53d5a",
+        "first_frame_sha256": "d4124fb3175df9a4f34707beb9cbdd711373ea20c6f76138c7891a6140395135",
+        "provenance_json": "{\"annotation_method\": \"CURATED_SOURCE_DATASET_ANNOTATION\", \"annotator_ref\": \"synthetic-QA\", \"context_sha256\": \"2511d43e7b9e52fe805f994ba625478492ed6a789bb250d3f6d7e8e51ea53d5a\", \"known_at\": \"2026-01-01T00:06:00+00:00\", \"observation_end_at\": \"2026-01-01T00:06:00+00:00\", \"observation_start_at\": \"2026-01-01T00:00:00+00:00\", \"rationale_code\": \"SYNTHETIC_QA_NOT_MARKET_SOURCE_EVIDENCE\", \"schema\": \"PURE_SOURCE_STAGE20_CLAIM_BINDING_V1\", \"scope\": \"OBJECT_FORMATION\", \"semantic_id\": \"EQH_EQL_SUBSTRUCTURE_PAIR\", \"source_refs\": [\"SW6 p7-10\"], \"source_rule_ids\": [], \"status\": \"PASS\", \"subject_object_ids\": [\"2595d3291fb4bf7665dac3cd00485e37\", \"94e0b7fe470acdad025a8ffb61233369\"], \"symbol\": \"BTCUSDT\", \"timeframe\": \"1m\"}"
+      },
+      {
+        "claim": {
+          "semantic_id": "EQH_EQL_REASONABLE_TILT",
+          "scope": "OBJECT_FORMATION",
+          "status": "PASS",
+          "symbol": "BTCUSDT",
+          "timeframe": "1m",
+          "observation_start_at": "2026-01-01T00:00:00+00:00",
+          "observation_end_at": "2026-01-01T00:06:00+00:00",
+          "known_at": "2026-01-01T00:06:00+00:00",
+          "subject_object_ids": [
+            "2595d3291fb4bf7665dac3cd00485e37",
+            "94e0b7fe470acdad025a8ffb61233369"
+          ],
+          "source_refs": [
+            "SW6 p7-10"
+          ],
+          "source_rule_ids": [],
+          "annotation_method": "CURATED_SOURCE_DATASET_ANNOTATION",
+          "provenance_ref": "sha256:55470c672959fc2d5a124f2f098f8ac166b289047da964b4296f83d477915206",
+          "rationale_code": "SYNTHETIC_QA_NOT_MARKET_SOURCE_EVIDENCE",
+          "evidence_id": "fe3ed5bfbcd4676daa8271780c39cf3a"
+        },
+        "first_observed_at": "2026-01-01T00:07:00+00:00",
+        "effective_known_at": "2026-01-01T00:07:00+00:00",
+        "context_sha256": "2511d43e7b9e52fe805f994ba625478492ed6a789bb250d3f6d7e8e51ea53d5a",
+        "first_frame_sha256": "d4124fb3175df9a4f34707beb9cbdd711373ea20c6f76138c7891a6140395135",
+        "provenance_json": "{\"annotation_method\": \"CURATED_SOURCE_DATASET_ANNOTATION\", \"annotator_ref\": \"synthetic-QA\", \"context_sha256\": \"2511d43e7b9e52fe805f994ba625478492ed6a789bb250d3f6d7e8e51ea53d5a\", \"known_at\": \"2026-01-01T00:06:00+00:00\", \"observation_end_at\": \"2026-01-01T00:06:00+00:00\", \"observation_start_at\": \"2026-01-01T00:00:00+00:00\", \"rationale_code\": \"SYNTHETIC_QA_NOT_MARKET_SOURCE_EVIDENCE\", \"schema\": \"PURE_SOURCE_STAGE20_CLAIM_BINDING_V1\", \"scope\": \"OBJECT_FORMATION\", \"semantic_id\": \"EQH_EQL_REASONABLE_TILT\", \"source_refs\": [\"SW6 p7-10\"], \"source_rule_ids\": [], \"status\": \"PASS\", \"subject_object_ids\": [\"2595d3291fb4bf7665dac3cd00485e37\", \"94e0b7fe470acdad025a8ffb61233369\"], \"symbol\": \"BTCUSDT\", \"timeframe\": \"1m\"}"
+      }
+    ],
+    "equal_pair_requests": [
+      {
+        "requested_at": "2026-01-01T00:06:00+00:00",
+        "timeframe": "1m",
+        "left_swing_id": "94e0b7fe470acdad025a8ffb61233369",
+        "right_swing_id": "2595d3291fb4bf7665dac3cd00485e37",
+        "kind": "EQH",
+        "observation_start_at": "2026-01-01T00:00:00+00:00",
+        "observation_end_at": "2026-01-01T00:06:00+00:00"
+      }
+    ],
+    "equal_liquidity": [
+      {
+        "evidence": {
+          "kind": "EQH",
+          "status": "PASS",
+          "left_swing_id": "94e0b7fe470acdad025a8ffb61233369",
+          "right_swing_id": "2595d3291fb4bf7665dac3cd00485e37",
+          "exact_price": false,
+          "directional_tilt_valid": true,
+          "substructure_pair_confirmed": true,
+          "reasonable_tilt_confirmed": true,
+          "qualitative_evidence_id": "equal-qual-ba7b3b3ff648941f66bdbc24eebc542a63624f975c6e45097178e5913c57b423",
+          "reason": "QUALITATIVE_REASONABLE_TILT_CONFIRMED"
+        },
+        "geometry_known_at": "2026-01-01T00:06:00+00:00",
+        "known_at": "2026-01-01T00:07:00+00:00",
+        "facts": [
+          {
+            "semantic_id": "EQH_EQL_SUBSTRUCTURE_PAIR",
+            "scope": "OBJECT_FORMATION",
+            "timeframe": "1m",
+            "subject_object_ids": [
+              "2595d3291fb4bf7665dac3cd00485e37",
+              "94e0b7fe470acdad025a8ffb61233369"
+            ],
+            "observation_start_at": "2026-01-01T00:00:00+00:00",
+            "observation_end_at": "2026-01-01T00:06:00+00:00",
+            "assessment": {
+              "evidence": {
+                "status": "PASS",
+                "evidence_id": "qual-ed1f8dba2ae7bda80cb8940b762fd3870ea7b17205ebe8f0b8532309edc423a4",
+                "known_at": "2026-01-01T00:07:00+00:00"
+              },
+              "reason": "BOUND_SOURCE_ANNOTATION_NOT_OBJECT_OR_TRADE_ADMISSION",
+              "supporting_claim_ids": [
+                "3d4d973097473aa5e68f26823fb1f99e"
+              ]
+            },
+            "supporting_claims": [
+              {
+                "claim": {
+                  "semantic_id": "EQH_EQL_SUBSTRUCTURE_PAIR",
+                  "scope": "OBJECT_FORMATION",
+                  "status": "PASS",
+                  "symbol": "BTCUSDT",
+                  "timeframe": "1m",
+                  "observation_start_at": "2026-01-01T00:00:00+00:00",
+                  "observation_end_at": "2026-01-01T00:06:00+00:00",
+                  "known_at": "2026-01-01T00:06:00+00:00",
+                  "subject_object_ids": [
+                    "2595d3291fb4bf7665dac3cd00485e37",
+                    "94e0b7fe470acdad025a8ffb61233369"
+                  ],
+                  "source_refs": [
+                    "SW6 p7-10"
+                  ],
+                  "source_rule_ids": [],
+                  "annotation_method": "CURATED_SOURCE_DATASET_ANNOTATION",
+                  "provenance_ref": "sha256:f3a3f4a17bf8d33d42875165ec9b4bd0ddee12ff970406ed1f7fce071651319f",
+                  "rationale_code": "SYNTHETIC_QA_NOT_MARKET_SOURCE_EVIDENCE",
+                  "evidence_id": "3d4d973097473aa5e68f26823fb1f99e"
+                },
+                "first_observed_at": "2026-01-01T00:07:00+00:00",
+                "effective_known_at": "2026-01-01T00:07:00+00:00",
+                "context_sha256": "2511d43e7b9e52fe805f994ba625478492ed6a789bb250d3f6d7e8e51ea53d5a",
+                "first_frame_sha256": "d4124fb3175df9a4f34707beb9cbdd711373ea20c6f76138c7891a6140395135",
+                "provenance_json": "{\"annotation_method\": \"CURATED_SOURCE_DATASET_ANNOTATION\", \"annotator_ref\": \"synthetic-QA\", \"context_sha256\": \"2511d43e7b9e52fe805f994ba625478492ed6a789bb250d3f6d7e8e51ea53d5a\", \"known_at\": \"2026-01-01T00:06:00+00:00\", \"observation_end_at\": \"2026-01-01T00:06:00+00:00\", \"observation_start_at\": \"2026-01-01T00:00:00+00:00\", \"rationale_code\": \"SYNTHETIC_QA_NOT_MARKET_SOURCE_EVIDENCE\", \"schema\": \"PURE_SOURCE_STAGE20_CLAIM_BINDING_V1\", \"scope\": \"OBJECT_FORMATION\", \"semantic_id\": \"EQH_EQL_SUBSTRUCTURE_PAIR\", \"source_refs\": [\"SW6 p7-10\"], \"source_rule_ids\": [], \"status\": \"PASS\", \"subject_object_ids\": [\"2595d3291fb4bf7665dac3cd00485e37\", \"94e0b7fe470acdad025a8ffb61233369\"], \"symbol\": \"BTCUSDT\", \"timeframe\": \"1m\"}"
+              }
+            ]
+          },
+          {
+            "semantic_id": "EQH_EQL_REASONABLE_TILT",
+            "scope": "OBJECT_FORMATION",
+            "timeframe": "1m",
+            "subject_object_ids": [
+              "2595d3291fb4bf7665dac3cd00485e37",
+              "94e0b7fe470acdad025a8ffb61233369"
+            ],
+            "observation_start_at": "2026-01-01T00:00:00+00:00",
+            "observation_end_at": "2026-01-01T00:06:00+00:00",
+            "assessment": {
+              "evidence": {
+                "status": "PASS",
+                "evidence_id": "qual-8124588d1d543a6167a5ac129d02bf0969d80f8cd1ef0658c0b97911f715da94",
+                "known_at": "2026-01-01T00:07:00+00:00"
+              },
+              "reason": "BOUND_SOURCE_ANNOTATION_NOT_OBJECT_OR_TRADE_ADMISSION",
+              "supporting_claim_ids": [
+                "fe3ed5bfbcd4676daa8271780c39cf3a"
+              ]
+            },
+            "supporting_claims": [
+              {
+                "claim": {
+                  "semantic_id": "EQH_EQL_REASONABLE_TILT",
+                  "scope": "OBJECT_FORMATION",
+                  "status": "PASS",
+                  "symbol": "BTCUSDT",
+                  "timeframe": "1m",
+                  "observation_start_at": "2026-01-01T00:00:00+00:00",
+                  "observation_end_at": "2026-01-01T00:06:00+00:00",
+                  "known_at": "2026-01-01T00:06:00+00:00",
+                  "subject_object_ids": [
+                    "2595d3291fb4bf7665dac3cd00485e37",
+                    "94e0b7fe470acdad025a8ffb61233369"
+                  ],
+                  "source_refs": [
+                    "SW6 p7-10"
+                  ],
+                  "source_rule_ids": [],
+                  "annotation_method": "CURATED_SOURCE_DATASET_ANNOTATION",
+                  "provenance_ref": "sha256:55470c672959fc2d5a124f2f098f8ac166b289047da964b4296f83d477915206",
+                  "rationale_code": "SYNTHETIC_QA_NOT_MARKET_SOURCE_EVIDENCE",
+                  "evidence_id": "fe3ed5bfbcd4676daa8271780c39cf3a"
+                },
+                "first_observed_at": "2026-01-01T00:07:00+00:00",
+                "effective_known_at": "2026-01-01T00:07:00+00:00",
+                "context_sha256": "2511d43e7b9e52fe805f994ba625478492ed6a789bb250d3f6d7e8e51ea53d5a",
+                "first_frame_sha256": "d4124fb3175df9a4f34707beb9cbdd711373ea20c6f76138c7891a6140395135",
+                "provenance_json": "{\"annotation_method\": \"CURATED_SOURCE_DATASET_ANNOTATION\", \"annotator_ref\": \"synthetic-QA\", \"context_sha256\": \"2511d43e7b9e52fe805f994ba625478492ed6a789bb250d3f6d7e8e51ea53d5a\", \"known_at\": \"2026-01-01T00:06:00+00:00\", \"observation_end_at\": \"2026-01-01T00:06:00+00:00\", \"observation_start_at\": \"2026-01-01T00:00:00+00:00\", \"rationale_code\": \"SYNTHETIC_QA_NOT_MARKET_SOURCE_EVIDENCE\", \"schema\": \"PURE_SOURCE_STAGE20_CLAIM_BINDING_V1\", \"scope\": \"OBJECT_FORMATION\", \"semantic_id\": \"EQH_EQL_REASONABLE_TILT\", \"source_refs\": [\"SW6 p7-10\"], \"source_rule_ids\": [], \"status\": \"PASS\", \"subject_object_ids\": [\"2595d3291fb4bf7665dac3cd00485e37\", \"94e0b7fe470acdad025a8ffb61233369\"], \"symbol\": \"BTCUSDT\", \"timeframe\": \"1m\"}"
+              }
+            ]
+          }
+        ],
+        "trade_entry_allowed": false
+      }
+    ],
+    "sfp_context_requests": [],
+    "sfp_contexts": []
+  },
+  "prefix_comparison": {
+    "equal": true,
+    "compared_steps": 6,
+    "through": "2026-01-01T00:06:00+00:00",
+    "mismatch_at": null,
+    "reason": null
+  },
+  "exact_repeat_reversed_delivery_equal": true,
+  "setup_assessment_count": 0,
+  "execution_assessment_count": 0,
+  "trade_entry_allowed": false,
+  "historical_financial_runs": 0
+}
