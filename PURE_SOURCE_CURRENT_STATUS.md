@@ -1,8 +1,8 @@
 # PURE SOURCE — authoritative current status
 
-**Status date:** 2026-10-17  
-**Current rebuild stage:** Stage 20 — Causal Claim Binding
-**Base:** Stage 19 merge `3a4cf35d400efc352432a8cdc64d473fa50b4116`
+**Status date:** 2026-10-18
+**Current rebuild stage:** Stage 21 — Qualified EQH/EQL Consumer
+**Base:** Stage 20 merge `a37fd2233321af0cc77643af0c88d7df2e8eb8f0`
 
 > This file is the current continuation entrypoint for PURE SOURCE strategy work.
 > Historical `README.md`, `CONTINUATION_STATUS.md`, old Bybit replays, source-permitted physical cases and earlier PnL reports remain preserved evidence, but they are **not SOURCE truth** and must not be used to resolve current SOURCE ambiguity.
@@ -44,7 +44,7 @@ It confirms:
 
 - OB: last candle before imbalance; movement updates structure; OB sweeps a low/high or wick; body should be large and wicks small. The exact numeric meaning of “large/small” is not supplied.
 - Breaker: impulsively pierced OB that swept a high/low, is pierced by imbalance and is followed by CHOCH.
-- Range: no structure inside; first high after the impulse and first low define it; reaction from 0.5 validates it; setup follows deviation, return, zone test and CHOCH.
+- Range: no structure inside and reaction from 0.5; boundary order depends on impulse direction. In the illustrated path, return/CHOCH precedes pre-break OB retest; this is one scenario, not the exclusive strategy.
 - OTE: source levels include 0.5 / 0.62 / 0.705 / 0.79; OTE is explicitly 0.705–0.79. Correct impulse-anchor selection remains a provenance problem.
 - SFP: original pattern is three candles, may have a fourth confirmation candle, applies on all timeframes and requires liquidity context to be swept.
 
@@ -146,7 +146,7 @@ The verified source set remains frozen under `docs/source_freeze_v1/`, `data/sou
 
 ## Next permitted work
 
-Migrate qualitative consumers incrementally onto Stage 18 claims. The first safe target is OB/Breaker because its current legacy qualitative requirements already map cleanly to Stage 18 semantics. Each migration must:
+Migrate qualitative consumers incrementally onto bound Stage18/20 claims. Direct legacy OB/Breaker wrapping is blocked by the Stage21 priority1 comparison: current hard conjunctions and ancestry do not form a universal SOURCE definition. Use a separately audited priority1 transport when its missing relation contracts exist. Each migration must:
 
 - preserve current SOURCE formation rules;
 - preserve closed-candle timing;
@@ -177,3 +177,9 @@ Next safe work: actual closed-parent/window binding and first-ingestion timing f
 This is infrastructure, not a claim of historical annotation truth/authorship/blindness or authenticated arrival. Full typed claim/scope/window/provenance must survive consumer integration; the legacy projection alone is insufficient. Production consumers remain unchanged. See `docs/PURE_SOURCE_ENGINE_STAGE20_CAUSAL_CLAIM_BINDING.md`.
 
 Next safe work: typed, provenance-retaining consumer adapters, separately audited against priority1 definitions; do not promote stricter legacy intersections to universal SOURCE rules. Market annotation content and unresolved execution geometry remain SOURCE blockers. NOT_IDENTIFIABLE and all financial/trading permissions false.
+
+## Stage21 qualified liquidity checkpoint
+
+The EQH/EQL diagnostic adapter now reconstructs real closed-prefix swings, resolves exact scoped annotations internally and retains complete receipts. Exact pairs require substructure provenance; tilted pairs also require reasonable-tilt provenance. No ranking, numeric tolerance or trade admission is added. See `docs/PURE_SOURCE_ENGINE_STAGE21_QUALIFIED_LIQUIDITY.md` and its QA/MIGRATION_FRONTIER.json.
+
+Next safe independent consumer: SFP liquidity context, separate from structural validity. OB/Breaker, Range/OTE anchors, STB/BTS/DS segmentation and exit/re-entry gaps remain explicit. Do not reuse legacy stronger intersections as priority1 SOURCE truth. All financial/trading permissions remain false.

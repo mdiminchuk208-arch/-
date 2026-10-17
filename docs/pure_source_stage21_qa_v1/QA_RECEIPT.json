@@ -1,0 +1,90 @@
+{
+  "stage": 21,
+  "classification": "TECHNICAL_NORMALIZATION",
+  "git_code_commit": "0dee82cbaf09863c60f7a29a95b3616f3473b096",
+  "commands": [
+    {
+      "name": "compile",
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-B",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage21_qa_v1/compile.log"
+    },
+    {
+      "name": "unit",
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage21_qa_v1/unit.log"
+    },
+    {
+      "name": "safety",
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-c",
+        "from pathlib import Path; ps=[*Path('src').rglob('*.py'),*Path('scripts').rglob('*.py')]; assert not any('trade_entry_allowed=True' in p.read_text(encoding='utf-8',errors='ignore') for p in ps); print('SAFETY PASS')"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage21_qa_v1/safety.log"
+    },
+    {
+      "name": "lint",
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "check",
+        "src/crypto_bot/strategy/source_qualified_liquidity_v1.py",
+        "tests/test_source_qualified_liquidity_v1.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage21_qa_v1/lint.log"
+    },
+    {
+      "name": "format",
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "format",
+        "--check",
+        "src/crypto_bot/strategy/source_qualified_liquidity_v1.py",
+        "tests/test_source_qualified_liquidity_v1.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage21_qa_v1/format.log"
+    }
+  ],
+  "targeted_tests": 15,
+  "unit_tests": 846,
+  "historical_financial_runs": 0,
+  "source_rule_changes": [],
+  "project_policy_applied": [],
+  "trade_entry_allowed": false,
+  "financial_backtest_allowed": false,
+  "independent_review": {
+    "agent": "/root/stage18_adversarial_reviewer",
+    "decision": "SCOPED_ACCEPTANCE_NO_MATERIAL_BLOCKERS",
+    "targeted_tests_passed": 15,
+    "read_only": true
+  },
+  "limits": [
+    "Synthetic QA is not market SOURCE truth",
+    "No default provider behavior switch",
+    "Complete provenance envelope must be retained",
+    "Caller replay clock and annotation authentication limits remain Stage20 boundaries"
+  ]
+}
