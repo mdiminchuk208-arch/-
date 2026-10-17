@@ -1,8 +1,8 @@
 # PURE SOURCE — authoritative current status
 
 **Status date:** 2026-10-17  
-**Current rebuild stage:** Stage 18 — Causal Qualitative Provenance  
-**Base:** Stage 17 merge `f205791d6b7fba02dcc856493fd6177d904444a2`
+**Current rebuild stage:** Stage 19 — Priority-1 Rule Ledger and Source Conflict Audit  
+**Base:** Stage 18 merge `61d6693a993eb28b4d40b58baa4073566cae01b4`
 
 > This file is the current continuation entrypoint for PURE SOURCE strategy work.
 > Historical `README.md`, `CONTINUATION_STATUS.md`, old Bybit replays, source-permitted physical cases and earlier PnL reports remain preserved evidence, but they are **not SOURCE truth** and must not be used to resolve current SOURCE ambiguity.
@@ -161,3 +161,11 @@ Machine-readable frontier: `config/pure_source_identifiability_frontier_v2.json`
 Stage 16: `docs/PURE_SOURCE_ENGINE_STAGE16_IDENTIFIABILITY_FRONTIER.md`.
 Stage 17: `docs/PURE_SOURCE_ENGINE_STAGE17_BRANCH_REGISTRY.md`.
 Stage 18: `docs/PURE_SOURCE_ENGINE_STAGE18_QUALITATIVE_PROVENANCE.md`.
+
+## Stage19 source reconstruction checkpoint
+
+Base: Stage18 merge `61d6693a993eb28b4d40b58baa4073566cae01b4` (PR21). Full priority1Methodichka coverage now records47rule/concept records,171text paragraphs and31distinct figures/41references. Primary/secondary comparison and source conflict registry retain exact citations and priority. See `docs/PURE_SOURCE_ENGINE_STAGE19_RULE_LEDGER.md` and `docs/pure_source_stage19_ledger_v1/`.
+
+The illustrated Range path is clarified as return/CHOCH before pre-break-OB retest, with opposite-boundary target; it remains one scenario. Conditional LONG OTE level orientation is visually known, while anchors and unshown SHORT remain unresolved. SFP body engulf is illustrated, not universally imposed. No runtime SOURCE rule or market object behavior changes in this stage.
+
+Next safe work: actual closed-parent/window binding and first-ingestion timing for Stage18annotation claims, then incremental qualified consumers. Missing evidence stays UNKNOWN. Allfinancial/PAPER/LIVE/privateAPI permissions and trade_entry_allowed remain false; NOT_IDENTIFIABLE remains the verdict.

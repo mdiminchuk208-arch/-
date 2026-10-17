@@ -1,0 +1,128 @@
+{
+  "actual_agent_handoffs": {
+    "/tmp/stage18-methodichka-extraction.json": "8ceb11e65ba9390b3836a871c9fcabad2b5b5df65394af1589d6d9f703235c81",
+    "/tmp/stage18-primary-evidence.json": "ca4ab008b707487600005e88ec32c64713e49e027d8a844d79a3367f930a93d7",
+    "/tmp/stage18-secondary-evidence.json": "ef4df96236409bca23f588d86c1cd419de58c590de0f0db3e949ed8f0e84cbcd",
+    "/tmp/stage19-methodichka-visual-evidence.json": "d3378dc10574b76a80b6a0e6f919f278912dbb7eeed3f02cbc9e74c49ac56631"
+  },
+  "deferred_role_work": "Existing stages already implement conditional structure/setup/execution transport and finite enumeration; object-consumer roles are activated only when source-backed binding work is concrete, never to duplicate source reading.",
+  "max_active_agents_including_root": 4,
+  "note": "Roles share focused agents; no claim that22physical agents ran. Source analysts read disjoint source sets. Root owns implementation; final reviewer read-only.",
+  "old_review_limit_error": "Stage15 local reviewer failed usage limit; not claimed accepted",
+  "rows": [
+    {
+      "agent": "root",
+      "decision": "sourceevidenceledger only; no tradingrule changes",
+      "files_changed": [
+        "src/crypto_bot/strategy/pure_source_rule_ledger_v1.py",
+        "tests/test_pure_source_rule_ledger_v1.py",
+        "config/pure_source_rule_ledger_v1.json",
+        "docs/PURE_SOURCE_ENGINE_STAGE19_RULE_LEDGER.md",
+        "docs/pure_source_stage19_ledger_v1/",
+        "PURE_SOURCE_CURRENT_STATUS.md"
+      ],
+      "files_read": [
+        "AGENTS.md",
+        "PURE_SOURCE_CURRENT_STATUS.md",
+        "config/pure_source_identifiability_frontier_v2.json",
+        "docs/PURE_SOURCE_ENGINE_STAGE16_IDENTIFIABILITY_FRONTIER.md",
+        "docs/PURE_SOURCE_ENGINE_STAGE17_BRANCH_REGISTRY.md",
+        "relevant existing typed contracts"
+      ],
+      "next_dependency": "independentStage19review andfullCI",
+      "roles": [
+        "SOURCE Lead",
+        "Repository Historian",
+        "technical contract engineer",
+        "Test Engineer"
+      ],
+      "source_evidence": "Delegated exclusively to per-source analysts",
+      "task": "Stage18schema fixes/merge; Stage19source audit implementation and QA",
+      "tests": [
+        "Stage18full799PASS",
+        "Stage19targeted14PASS",
+        "Stage19full813PASS;compile/safetyPASS"
+      ],
+      "uncertainty": "qualitative input predicates cannot be automatic PASS"
+    },
+    {
+      "agent": "stage18_methodichka_analyst",
+      "decision": "COMPLETED_SOURCE_HANDOFF_NO_REPO_EDITS",
+      "files_changed": [],
+      "files_read": [
+        "19.clean.txt",
+        "local archive+manifest Methodichka entry"
+      ],
+      "next_dependency": "rootRuleRegistryAuditor/qualifiedconsumercontracts",
+      "roles": [
+        "Methodichka Analyst"
+      ],
+      "source_evidence": "47records,171paragraphs,31distinctfigures/41refs,verifiedDOCXentry/text/imagehashlinks",
+      "task": "Complete priority1 rule extraction and raw/text identity",
+      "tests": []
+    },
+    {
+      "agent": "stage18_primary_comparator",
+      "decision": "COMPLETED_SOURCE_HANDOFF_NO_REPO_EDITS",
+      "files_changed": [],
+      "files_read": [
+        "SW5/SW9/SW11/SW12/SW22 primary text only"
+      ],
+      "next_dependency": "rootRuleRegistryAuditor/qualifiedconsumercontracts",
+      "roles": [
+        "SW5 Analyst",
+        "SW9 Analyst",
+        "SW11 Analyst",
+        "SW12 Analyst",
+        "SW22 Analyst"
+      ],
+      "source_evidence": "5primaryPDF/textpairs,14findings,76exactpage/blockcitations",
+      "task": "Primary citation comparator, no Methodichka duplication",
+      "tests": []
+    },
+    {
+      "agent": "stage18_secondary_context",
+      "decision": "COMPLETED_SOURCE_HANDOFF_NO_REPO_EDITS",
+      "files_changed": [],
+      "files_read": [
+        "SW6/SW8/SW10/DS only"
+      ],
+      "next_dependency": "rootRuleRegistryAuditor/qualifiedconsumercontracts",
+      "roles": [
+        "Secondary Sources Analyst",
+        "Liquidity Engineer",
+        "SFP Engineer",
+        "Range+OTE provenance",
+        "DemandSupply provenance"
+      ],
+      "source_evidence": "4verifiedoriginals,26exactparagraphcitations",
+      "task": "Only secondary unresolved contextual predicates",
+      "tests": []
+    },
+    {
+      "agent": "stage18_adversarial_reviewer",
+      "decision": "SCOPED_ACCEPTANCE_NO_REMAINING_MATERIAL_BLOCKERS",
+      "files_changed": [],
+      "files_read": [
+        "source_qualitative_provenance_v2.py",
+        "pure_source_rule_ledger_v1.py",
+        "related tests/config/docs only; no duplicatefullsource reads"
+      ],
+      "next_dependency": "full exact-headCI beforemerge",
+      "roles": [
+        "Final Adversarial Reviewer",
+        "Rule Registry Auditor",
+        "No-Look-Ahead Auditor",
+        "Backtest/Replay QA Engineer"
+      ],
+      "source_evidence": "analyst handoffs,citation/sourcehashconsistency",
+      "task": "Read-only Stage18/19 contract andtamperreview",
+      "tests": [
+        "Stage18independent14PASS",
+        "Stage19independent14PASS plus allreported tamperrepros rejected"
+      ],
+      "uncertainty": "auditdoesnotprove marketannotationtruth"
+    }
+  ],
+  "stage": 19
+}

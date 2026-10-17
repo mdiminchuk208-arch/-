@@ -1,0 +1,22 @@
+{
+  "version": "PURE_SOURCE_STAGE19_RULE_LEDGER_V1",
+  "classification": "TECHNICAL_NORMALIZATION",
+  "base_merge_commit": "61d6693a993eb28b4d40b58baa4073566cae01b4",
+  "ledger_directory": "docs/pure_source_stage19_ledger_v1",
+  "baseline_identifiability": "NOT_IDENTIFIABLE",
+  "trade_entry_allowed": false,
+  "financial_backtest_allowed": false,
+  "paper_allowed": false,
+  "live_allowed": false,
+  "private_api_allowed": false,
+  "project_policy_applied": [],
+  "source_runtime_rule_changes": [],
+  "source_evidence_added": [
+    "complete Methodichka text and figure ledger",
+    "illustrated Range chronology and target",
+    "conditional LONG OTE level orientation",
+    "scope limits for first boundary order and SFP body engulf"
+  ],
+  "annotation_instance_truth_proven": false,
+  "automatic_object_qualification": false
+}
