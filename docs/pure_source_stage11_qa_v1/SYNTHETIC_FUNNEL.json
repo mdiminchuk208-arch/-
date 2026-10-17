@@ -1,0 +1,156 @@
+{
+  "baseline_identifiability": "NOT_IDENTIFIABLE",
+  "cases": [
+    {
+      "assessment_counts_observations_not_trades": {
+        "BREAKER": {
+          "FAIL": 0,
+          "PASS": 0,
+          "UNKNOWN": 8
+        },
+        "DEMAND_SUPPLY": {
+          "FAIL": 0,
+          "PASS": 0,
+          "UNKNOWN": 8
+        },
+        "EQH_EQL": {
+          "FAIL": 0,
+          "PASS": 0,
+          "UNKNOWN": 8
+        },
+        "IMB_FVG": {
+          "FAIL": 6,
+          "PASS": 0,
+          "UNKNOWN": 2
+        },
+        "LIQUIDITY_CONTEXT": {
+          "FAIL": 0,
+          "PASS": 0,
+          "UNKNOWN": 8
+        },
+        "OB": {
+          "FAIL": 0,
+          "PASS": 0,
+          "UNKNOWN": 8
+        },
+        "OTE_PD": {
+          "FAIL": 0,
+          "PASS": 0,
+          "UNKNOWN": 8
+        },
+        "RANGE": {
+          "FAIL": 0,
+          "PASS": 0,
+          "UNKNOWN": 8
+        },
+        "SFP": {
+          "FAIL": 3,
+          "PASS": 2,
+          "UNKNOWN": 4
+        },
+        "STB_BTS": {
+          "FAIL": 0,
+          "PASS": 0,
+          "UNKNOWN": 8
+        }
+      },
+      "dataset_sha256": "fd8fe806ea27a0104f57343a4917293c33c77a97bf7e9760ec95645cd6f91468",
+      "last_batch_object_counts": {
+        "liquidity_pool": 3,
+        "sfp": 2,
+        "swing": 3
+      },
+      "name": "SFP_LIFECYCLE",
+      "runtime_summary": {
+        "causal_object_count": 8,
+        "decision_watermark": "2026-01-01T00:08:00+00:00",
+        "execution_plan_count": 0,
+        "legacy_runtime_adapter_enabled": false,
+        "project_overlays_enabled": false,
+        "runtime_blockers": [],
+        "runtime_version": "PURE_SOURCE_STAGE9_V2",
+        "setup_count": 0,
+        "source_ready_setup_ids": [],
+        "strategy_profile": "PURE_SOURCE",
+        "trade_entry_allowed": false,
+        "unresolved_blockers": []
+      }
+    },
+    {
+      "assessment_counts_observations_not_trades": {
+        "BREAKER": {
+          "FAIL": 0,
+          "PASS": 0,
+          "UNKNOWN": 3
+        },
+        "DEMAND_SUPPLY": {
+          "FAIL": 0,
+          "PASS": 0,
+          "UNKNOWN": 3
+        },
+        "EQH_EQL": {
+          "FAIL": 0,
+          "PASS": 0,
+          "UNKNOWN": 3
+        },
+        "IMB_FVG": {
+          "FAIL": 0,
+          "PASS": 1,
+          "UNKNOWN": 2
+        },
+        "LIQUIDITY_CONTEXT": {
+          "FAIL": 0,
+          "PASS": 0,
+          "UNKNOWN": 3
+        },
+        "OB": {
+          "FAIL": 0,
+          "PASS": 0,
+          "UNKNOWN": 3
+        },
+        "OTE_PD": {
+          "FAIL": 0,
+          "PASS": 0,
+          "UNKNOWN": 3
+        },
+        "RANGE": {
+          "FAIL": 0,
+          "PASS": 0,
+          "UNKNOWN": 3
+        },
+        "SFP": {
+          "FAIL": 0,
+          "PASS": 0,
+          "UNKNOWN": 3
+        },
+        "STB_BTS": {
+          "FAIL": 0,
+          "PASS": 0,
+          "UNKNOWN": 3
+        }
+      },
+      "dataset_sha256": "65f322805aa3bc3446c113c07ed68f1c0310b6787e934958774c895aef4070f2",
+      "last_batch_object_counts": {
+        "fvg": 1
+      },
+      "name": "IMB_GEOMETRY",
+      "runtime_summary": {
+        "causal_object_count": 1,
+        "decision_watermark": "2026-01-01T00:03:00+00:00",
+        "execution_plan_count": 0,
+        "legacy_runtime_adapter_enabled": false,
+        "project_overlays_enabled": false,
+        "runtime_blockers": [],
+        "runtime_version": "PURE_SOURCE_STAGE9_V2",
+        "setup_count": 0,
+        "source_ready_setup_ids": [],
+        "strategy_profile": "PURE_SOURCE",
+        "trade_entry_allowed": false,
+        "unresolved_blockers": []
+      }
+    }
+  ],
+  "classification": "SYNTHETIC_QA_NOT_HISTORICAL_TRADE_COUNTS",
+  "financial_outcomes_calculated": false,
+  "trade_entry_allowed": false
+}

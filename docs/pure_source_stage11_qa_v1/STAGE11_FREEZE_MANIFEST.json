@@ -1,0 +1,33 @@
+{
+  "artifact_sha256": {
+    ".github/workflows/strategy-engine-validation.yml": "ab85d6a536a8c519d57e3af2579b312483beca594652f53542244cc7fc37c52e",
+    "config/pure_source_object_provider_v2.json": "fa9c2f45632833a8a2816e95f2beca29a4cf531c80f3ff3c16326abe44af8b48",
+    "config/pure_source_replay_v2.json": "7792d3bec28d83144e985e5f1674316ab47d762e9bf5c028a95bc9b11ea30da9",
+    "config/source_imb_ote_pd_rules_v2.json": "948a032717b5fc77b5333337a92a684c8b2d1c1c5176a9d2ec3637a5ff87ec80",
+    "config/source_sfp_rules_v2.json": "5b6ea713f0d5bbdb98ab98d817e879d083b834f52da6e94ba5f3871fb5374830",
+    "docs/PURE_SOURCE_ENGINE_STAGE11_OBJECT_PROVIDERS.md": "00a624832b853b4708e3d641f67a3ec446d829c1cf12da05e865cb48719e8dea",
+    "docs/pure_source_stage11_qa_v1/QA_RECEIPT.json": "027a9b91f3e7815315472b4b67a799bf5eb522c3669ecd92099f654d767b0cde",
+    "docs/pure_source_stage11_qa_v1/SYNTHETIC_EVIDENCE.json": "54b5c36d43547f7540a700d136979c5c3649d78c85c6d32bf2a4b46979004b24",
+    "docs/pure_source_stage11_qa_v1/SYNTHETIC_FUNNEL.json": "327f0bf2c7c1bc163f71384063b69df0abdc9c101c74d8e9ee60d8a862d48f63",
+    "docs/pure_source_stage11_qa_v1/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/pure_source_stage11_qa_v1/safety.log": "1bbac526cb48b6a8b5607610e0cfde3a115445eae2a08881901f61e1ce4edfeb",
+    "docs/pure_source_stage11_qa_v1/unit.log": "385c1d4f3f08dc7fbe9bc38cc026184a961193913a55522c8947ce7bda665c8f",
+    "docs/source_freeze_v1/source_manifest.json": "2ab9fa44808503bbfb93cf0abd28e2d5c3de1cf825d0c7666824c1ff6128a123",
+    "src/crypto_bot/strategy/causal_objects.py": "2fdcb05f73c4b6c617bf3c3f3f1099953b9e19321f7edb909ab7cc965a775159",
+    "src/crypto_bot/strategy/profile.py": "d6b0072d71abfc90fc4eef306e5386db83085948517af3e88780f364937559df",
+    "src/crypto_bot/strategy/pure_source_evidence_v2.py": "cdd108804e7a8b50b81f697a676679df0817ba0369e051e62622b93a4693ef23",
+    "src/crypto_bot/strategy/pure_source_object_provider_v2.py": "61e2462cf73c9560b6405275c0fddd55dadc0498f17e67d82682409d2856496f",
+    "src/crypto_bot/strategy/pure_source_replay_v2.py": "32e6d692b849780052905c26a4031c73d4590ce15de454ca0ac9def4b0382c3c",
+    "src/crypto_bot/strategy/pure_source_runtime.py": "46a39f0c313dcfe7663e70e3b86e12d6ddeb00536c87d1d96861fc8d449c0fda",
+    "src/crypto_bot/strategy/source_imb_ote_pd_v2.py": "f323e419fde3c6f4d24615c369a232d16b0b55e035153d5b3de3e67a32213282",
+    "src/crypto_bot/strategy/source_sfp_v2.py": "0ae466f2fc127e6f52f8fef74be6f96ed9ee5d8d6f260c4fce1d48b9e9bd5584",
+    "src/crypto_bot/strategy/source_structure_liquidity_v2.py": "be66f6be3898d5061c961c9725118d5a93bfbaf864201545d4129d8aeaf726cb",
+    "tests/test_pure_source_object_provider_v2.py": "418d66d2946a4e088ec61d90c01d0938f15283d5be124bb356eaf54a49fb1a56"
+  },
+  "baseline_verdict": "NOT_IDENTIFIABLE",
+  "decision": "SOURCE_OBJECT_PROVIDER_READY_WITH_EXPLICIT_UNRESOLVED_INPUTS",
+  "git_code_commit": "f5f6ff9651b69616f98e2f6c099ef81ae1cbe270",
+  "historical_financial_runs_authorized": 0,
+  "stage": 11,
+  "trade_entry_allowed": false
+}
