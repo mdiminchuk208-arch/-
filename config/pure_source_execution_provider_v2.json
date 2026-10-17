@@ -1,0 +1,35 @@
+{
+  "version": "PURE_SOURCE_STAGE14_EXECUTION_V2",
+  "base_merge_commit": "5e40bebcded754081bb02f219df0c828ee075253",
+  "scope": "source_execution_semantics_not_executable_trade",
+  "baseline_identifiability": "NOT_IDENTIFIABLE",
+  "trade_entry_allowed": false,
+  "source_rule_changes": [],
+  "project_policy_applied": [],
+  "technical_normalizations": [
+    {
+      "id": "TN_TYPED_EXECUTION_PARENT_BINDING",
+      "classification": "TECHNICAL_NORMALIZATION"
+    },
+    {
+      "id": "TN_IMMUTABLE_HISTORICAL_PLAN_CAPTURE",
+      "classification": "TECHNICAL_NORMALIZATION"
+    },
+    {
+      "id": "TN_EXPLICIT_SEMANTICS_VS_READY_DIAGNOSTICS",
+      "classification": "TECHNICAL_NORMALIZATION"
+    }
+  ],
+  "atr_input": null,
+  "fta_input": null,
+  "exact_entry_quote_selection": "UNRESOLVED",
+  "financial_run": false,
+  "PAPER": false,
+  "LIVE": false,
+  "private_api": false,
+  "artifact_sha256": {
+    "src/crypto_bot/strategy/pure_source_execution_provider_v2.py": "20d320dda1105b342830b434dd72ec841bda06c53b889facb8fbe2a02b0fa967",
+    "tests/test_pure_source_execution_provider_v2.py": "91b00b1a4c48d9addad6b6ba0ecfa513a4737df29484159c10b4efc9bee58844",
+    "docs/PURE_SOURCE_ENGINE_STAGE14_EXECUTION_PLANNING.md": "3b0d179e073befe45550af0b46203a6ac520656f0ee836e649760732997c8cb0"
+  }
+}
