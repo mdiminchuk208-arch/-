@@ -1,0 +1,35 @@
+{
+  "version": "PURE_SOURCE_STAGE23_QUALIFIED_DIAGNOSTIC_REPLAY_V1",
+  "classification": "TECHNICAL_NORMALIZATION",
+  "baseline_identifiability": "NOT_IDENTIFIABLE",
+  "trade_entry_allowed": false,
+  "financial_backtest_allowed": false,
+  "paper_allowed": false,
+  "live_allowed": false,
+  "private_api_allowed": false,
+  "execution_ready": false,
+  "project_policy_applied": [],
+  "purpose": "Explicit causal annotation delivery and qualified-consumer diagnostic replay; no financial run.",
+  "inputs": {
+    "deliveries": "immutable AnnotationDelivery tuples with declared observed_at and content-bound witness bytes",
+    "requests": "immutable explicit EqualPairRequest/SfpContextRequest tuples, each with requested_at and already-closed window",
+    "default_generated_annotations": false,
+    "automatic_candidate_ranking": false
+  },
+  "causality": {
+    "clock": "journal observes every actual closed replay frame even without annotations",
+    "delivery": "first actual frame at/after declared arrival; cannot backfill earlier frame",
+    "future_schedule": "excluded from per-step batch until observed/requested; full input SHA is run metadata only",
+    "context": "complete bound receipts and typed consumer envelopes fingerprinted in batch",
+    "failure": "partial frame never emitted; session poisoned and requires fresh instance",
+    "timezone_identity": "Delivery/claim/request timestamps normalized to UTC before identity, sort and duplicate checks."
+  },
+  "result_limits": [
+    "EQH/EQL qualification is not trade context",
+    "SFP context is not full priority1 pattern qualification",
+    "Default frozen providers remain unchanged",
+    "No setup/execution assessment generation",
+    "Actual market annotation truth/blindness/arrival authenticity not established by declared schedule"
+  ],
+  "artifact_mode": "SYNTHETIC_QA_NOT_MARKET_HISTORY; real annotated diagnostic data may be supplied only with equally explicit provenance; no financial permission follows."
+}
