@@ -1,0 +1,42 @@
+{
+  "version": "PURE_SOURCE_STAGE12_MTF_V2",
+  "base_merge_commit": "a3a2faab1dedbf674af0ae3b4e6acd2fb09fda1a",
+  "scope": "causal_mtf_object_views_and_data_consistency",
+  "trade_entry_allowed": false,
+  "baseline_identifiability": "NOT_IDENTIFIABLE",
+  "project_policy_applied": [],
+  "technical_normalizations": [
+    {
+      "id": "TN_MTF_VISIBLE_OBJECT_VIEW",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "statement": "Expose latest visible prefix timestamp and current-batch causal IDs per declared timeframe; never expose future higher-TF objects."
+    },
+    {
+      "id": "TN_MTF_UNSELECTED_LOWER_RELATIONS",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "statement": "Enumerate every strictly lower whole-minute duration relation after both prefixes are visible; candidates do not select context, branch, direction or entry TF."
+    },
+    {
+      "id": "TN_MTF_UNIQUE_PHYSICAL_DURATION",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "statement": "Reject duplicate-duration aliases rather than double-counting one physical timeframe or choosing an alias by ranking."
+    },
+    {
+      "id": "TN_MTF_CLOSED_OHLC_CONSISTENCY",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "statement": "Fail closed on exact OHLC discrepancy in fully observable fixed-grid tiles; incomplete or nonintegral coverage is UNKNOWN; no tolerance is fitted."
+    }
+  ],
+  "source_rule_changes": [],
+  "source_context_or_branch_selection": "UNRESOLVED_NOT_PERFORMED",
+  "volume_and_session_authenticity_claim": false,
+  "PAPER": false,
+  "LIVE": false,
+  "private_api": false,
+  "financial_run": false,
+  "artifact_sha256": {
+    "src/crypto_bot/strategy/pure_source_mtf_v2.py": "5453823f81aa8769c3a9b9b6440e74491a7d25d9363897268a6e02fc4c88b855",
+    "tests/test_pure_source_mtf_v2.py": "6e57a08cbc367deab8f1eb10f7932a3a7a9ba7565a3597a363151946969327ec",
+    "docs/PURE_SOURCE_ENGINE_STAGE12_MTF_COMPOSITION.md": "c1dfdf0016327132e8242ac9cd0b464001026fcd761baf9b1d5a0c3e6cb2f806"
+  }
+}
