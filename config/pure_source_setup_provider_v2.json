@@ -39,7 +39,7 @@
   "private_api": false,
   "artifact_sha256": {
     "src/crypto_bot/strategy/pure_source_setup_provider_v2.py": "0d0d0818cb26533c53eca597e0371c80712df0fe3d43c89e3ac9caf8caf39d5f",
-    "tests/test_pure_source_setup_provider_v2.py": "2aaaec2e136606209afddbee5d42a2ce6c6cbe434b532a38e92737413fa95ad1",
+    "tests/test_pure_source_setup_provider_v2.py": "135d315fc8f8aadcbf146a64799ad87794e336de216ccb566001965a2e764f42",
     "docs/PURE_SOURCE_ENGINE_STAGE13_SETUP_ASSEMBLY.md": "80d0aac920a637a330fc359e5cbd486725da3eae27fc60089462272ddfad1f8e"
   }
 }

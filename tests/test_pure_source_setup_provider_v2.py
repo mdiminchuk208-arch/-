@@ -214,13 +214,13 @@ class SourceSetupProviderTests(unittest.TestCase):
         reclaimed[7] = (11.2, 13, 8.5, 8.8)
         reclaimed[8] = (8.8, 12.7, 8.7, 11.6)
         reclaimed.append((11.6, 11.9, 8.0, 8.6))
-        for rows in (rows, reclaimed):
+        for scenario in (rows, reclaimed):
             for mirror in (False, True):
                 with self.subTest(mirror=mirror):
                     prices = (
-                        [(20 - o, 20 - l, 20 - h, 20 - c) for o, h, l, c in rows]
+                        [(20 - o, 20 - l, 20 - h, 20 - c) for o, h, l, c in scenario]
                         if mirror
-                        else rows
+                        else scenario
                     )
                     series = data(tuple(prices))
                     candles = tuple(
