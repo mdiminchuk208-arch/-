@@ -183,6 +183,66 @@ class SourceQualitativeProvenanceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "may not be auto-numericized"):
             parse_qualitative_semantic_catalog(raw)
 
+    def test_catalog_cannot_disable_metadata_guard_via_input_deny_list(self):
+        for forbidden in (
+            [],
+            ["score"],
+            [name for name in self.raw["forbidden_fields"] if name != "score"],
+        ):
+            raw = deepcopy(self.raw)
+            raw["forbidden_fields"] = forbidden
+            raw["semantics"][0]["score"] = 100
+            with self.assertRaises(ValueError):
+                parse_qualitative_semantic_catalog(raw)
+
+    def test_catalog_rejects_unknown_root_and_semantic_policy_fields(self):
+        for scope in ("root", "semantic"):
+            raw = deepcopy(self.raw)
+            target = raw if scope == "root" else raw["semantics"][0]
+            target["body_ratio_threshold"] = 0.6
+            with self.assertRaises(ValueError):
+                parse_qualitative_semantic_catalog(raw)
+
+    def test_catalog_metadata_requires_exact_fields_and_text_values(self):
+        for field in ("purpose", "base_stage17_head"):
+            for value in (None, " ", {"body_ratio_threshold": 0.6}):
+                raw = deepcopy(self.raw)
+                raw[field] = value
+                with self.subTest(field=field, value=value), self.assertRaises(ValueError):
+                    parse_qualitative_semantic_catalog(raw)
+            raw = deepcopy(self.raw)
+            del raw[field]
+            with self.assertRaises(ValueError):
+                parse_qualitative_semantic_catalog(raw)
+
+    def test_claim_rejects_blank_mutable_and_untyped_audit_identity(self):
+        from dataclasses import replace
+        valid = self.claim()
+        for field, value in (
+            ("subject_object_ids", ("",)), ("subject_object_ids", ["candidate"]),
+            ("source_refs", (" ",)), ("source_rule_ids", ["rule"]),
+            ("provenance_ref", " "), ("rationale_code", " "),
+            ("provenance_ref", {"annotation": ["row17"]}),
+            ("rationale_code", ["review"]), ("symbol", " "),
+            ("scope", "OBJECT_FORMATION"), ("status", "PASS"),
+            ("annotation_method", "HUMAN_SOURCE_ANNOTATION"),
+        ):
+            with self.subTest(field=field, value=value), self.assertRaises(ValueError):
+                replace(valid, **{field: value})
+        with self.assertRaises(ValueError):
+            self.claim(subjects=("",))
+
+    def test_claim_id_uses_utc_for_equivalent_instants(self):
+        from dataclasses import replace
+        valid = self.claim()
+        other = timezone(timedelta(hours=3))
+        equivalent = replace(valid,
+            observation_start_at=valid.observation_start_at.astimezone(other),
+            observation_end_at=valid.observation_end_at.astimezone(other),
+            known_at=valid.known_at.astimezone(other))
+        self.assertEqual(valid, equivalent)
+        self.assertEqual(valid.evidence_id, equivalent.evidence_id)
+
 
 if __name__ == "__main__":
     unittest.main()

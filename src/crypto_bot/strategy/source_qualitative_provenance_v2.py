@@ -9,7 +9,7 @@ This module does not create market objects, choose branches or allow trades.
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import UTC, datetime
 from enum import Enum
 from hashlib import sha256
 import json
@@ -20,6 +20,42 @@ from crypto_bot.strategy.source_structure_liquidity_v2 import EvidenceStatus
 
 
 QUALITATIVE_PROVENANCE_VERSION = "PURE_SOURCE_STAGE18_QUALITATIVE_PROVENANCE_V2"
+
+
+# Input may extend the deny list, never weaken the baseline schema contract.
+REQUIRED_FORBIDDEN_FIELDS = frozenset(
+    {
+        "rank",
+        "score",
+        "confidence",
+        "probability",
+        "weight",
+        "preferred",
+        "win_rate",
+        "profit_factor",
+        "expectancy",
+        "pnl",
+        "backtest_result",
+    }
+)
+CATALOG_FIELDS = frozenset(
+    {
+        "version",
+        "base_stage17_head",
+        "classification",
+        "purpose",
+        "trade_entry_allowed",
+        "financial_backtest_allowed",
+        "project_policy_applied",
+        "numeric_proxy_inference_allowed",
+        "annotation_methods",
+        "semantics",
+        "forbidden_fields",
+    }
+)
+SEMANTIC_FIELDS = frozenset(
+    {"semantic_id", "scope", "source_refs", "source_rule_ids", "description"}
+)
 
 
 class QualitativeScope(str, Enum):
@@ -79,8 +115,18 @@ class SourceQualitativeClaim:
     evidence_id: str | None
 
     def __post_init__(self) -> None:
-        if not self.semantic_id or not self.symbol or not self.timeframe:
-            raise ValueError("qualitative claim requires semantic_id, symbol and timeframe")
+        for name in ("semantic_id", "symbol", "timeframe"):
+            _audit_text(getattr(self, name), name)
+        if not isinstance(self.scope, QualitativeScope) or not isinstance(self.status, EvidenceStatus):
+            raise ValueError("qualitative claim requires typed scope and status")
+        if self.annotation_method is not None and not isinstance(self.annotation_method, AnnotationMethod):
+            raise ValueError("qualitative claim requires a typed annotation method")
+        for name in ("subject_object_ids", "source_refs", "source_rule_ids"):
+            values = getattr(self, name)
+            if type(values) is not tuple:
+                raise ValueError("qualitative identity collections must be immutable tuples")
+            for value in values:
+                _audit_text(value, name)
         for name, value in (
             ("observation_start_at", self.observation_start_at),
             ("observation_end_at", self.observation_end_at),
@@ -108,6 +154,8 @@ class SourceQualitativeClaim:
             ):
                 raise ValueError("UNKNOWN qualitative claim cannot masquerade as audited evidence")
         else:
+            for name in ("provenance_ref", "rationale_code", "evidence_id"):
+                _audit_text(getattr(self, name), name)
             if self.annotation_method is None:
                 raise ValueError("PASS/FAIL qualitative claim requires annotation_method")
             if not self.provenance_ref or not self.rationale_code or not self.evidence_id:
@@ -161,8 +209,18 @@ def load_qualitative_semantic_catalog(path: str | Path) -> QualitativeSemanticCa
 
 
 def parse_qualitative_semantic_catalog(raw: Mapping[str, Any]) -> QualitativeSemanticCatalog:
+    if set(raw) != CATALOG_FIELDS:
+        raise ValueError("unknown or missing qualitative catalog fields")
+    _nonempty(raw.get("purpose"), "purpose")
+    _nonempty(raw.get("base_stage17_head"), "base_stage17_head")
     forbidden = _string_tuple(raw.get("forbidden_fields"), "forbidden_fields")
-    _reject_forbidden_metadata(raw, frozenset(item.lower() for item in forbidden))
+    declared = frozenset(item.lower() for item in forbidden)
+    if not REQUIRED_FORBIDDEN_FIELDS <= declared:
+        raise ValueError(
+            "qualitative metadata deny list cannot weaken the schema contract"
+        )
+    _reject_forbidden_metadata(raw, REQUIRED_FORBIDDEN_FIELDS | declared)
+
 
     if raw.get("version") != QUALITATIVE_PROVENANCE_VERSION:
         raise ValueError("unexpected qualitative provenance version")
@@ -194,6 +252,8 @@ def parse_qualitative_semantic_catalog(raw: Mapping[str, Any]) -> QualitativeSem
     for row in rows:
         if not isinstance(row, dict):
             raise ValueError("qualitative semantic must be an object")
+        if set(row) != SEMANTIC_FIELDS:
+            raise ValueError("unknown or missing qualitative semantic fields")
         semantic_id = _nonempty(row.get("semantic_id"), "semantic_id")
         if semantic_id in ids:
             raise ValueError(f"duplicate qualitative semantic: {semantic_id}")
@@ -243,6 +303,17 @@ def make_source_qualitative_claim(
     provenance_ref: str | None = None,
     rationale_code: str | None = None,
 ) -> SourceQualitativeClaim:
+    if not isinstance(status, EvidenceStatus):
+        raise ValueError("status must be EvidenceStatus")
+    if annotation_method is not None and not isinstance(annotation_method, AnnotationMethod):
+        raise ValueError("annotation method must be AnnotationMethod")
+    if type(subject_object_ids) is not tuple:
+        raise ValueError("subject IDs must be an immutable tuple")
+    for value in subject_object_ids:
+        _audit_text(value, "subject_object_ids")
+    if status != EvidenceStatus.UNKNOWN:
+        _audit_text(provenance_ref, "provenance_ref")
+        _audit_text(rationale_code, "rationale_code")
     definition = catalog.semantic(semantic_id)
     timeframe_text = str(timeframe)
     normalized_subjects = tuple(sorted(set(subject_object_ids)))
@@ -347,9 +418,9 @@ def source_qualitative_claim_id(
         "status": status.value,
         "symbol": symbol,
         "timeframe": timeframe,
-        "observation_start_at": observation_start_at.isoformat(),
-        "observation_end_at": observation_end_at.isoformat(),
-        "known_at": known_at.isoformat(),
+        "observation_start_at": observation_start_at.astimezone(UTC).isoformat(),
+        "observation_end_at": observation_end_at.astimezone(UTC).isoformat(),
+        "known_at": known_at.astimezone(UTC).isoformat(),
         "subject_object_ids": sorted(set(subject_object_ids)),
         "source_refs": list(source_refs),
         "source_rule_ids": list(source_rule_ids),
@@ -386,6 +457,11 @@ def _nonempty(value: Any, name: str) -> str:
     return value.strip()
 
 
+def _audit_text(value: Any, name: str) -> None:
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"{name} must be nonblank immutable text")
+
+
 def _aware(name: str, value: datetime) -> None:
-    if value.tzinfo is None or value.utcoffset() is None:
-        raise ValueError(f"{name} must be timezone-aware")
+    if not isinstance(value, datetime) or value.tzinfo is None or value.utcoffset() is None:
+        raise ValueError(f"{name} must be a timezone-aware datetime")

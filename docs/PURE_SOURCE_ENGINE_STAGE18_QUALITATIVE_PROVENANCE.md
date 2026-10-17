@@ -129,3 +129,9 @@ Therefore Stage 18 cannot be used to select a branch because it performs better 
 After this contract passes repository validation, migrate qualitative consumers incrementally so that OB/Breaker, Range/STB, Demand/Supply and EQH/EQL consume audited claims or stay UNKNOWN. Each migration must preserve closed-candle causality and must not change SOURCE definitions.
 
 The PURE SOURCE financial baseline remains `NOT_IDENTIFIABLE`; PAPER/LIVE/private exchange execution stays forbidden.
+
+## Review hardening
+
+The metadata deny list is a schema invariant in code. Input may extend it but cannot remove baseline exclusions. Unknown root or semantic fields are rejected rather than silently ignored; a caller cannot introduce a body-ratio threshold or score by editing the JSON deny list. Regression tests cover removal/partial removal of the deny list, unknown policy fields and mandatory metadata types. Identity/audit fields are immutable nonblank text or typed enums/tuples. Equivalent instants use UTC serialization for the claim ID; no market-object rule changes. These checks are TECHNICAL_NORMALIZATION and do not change any SOURCE judgment.
+
+Stage18 records claims; it does not prove human annotation truth, validate actual market-data/parent membership or assign first ingestion time. Consumer integration must bind those facts causally and retain the complete claim. Standalone `available_at` is a declared-known-time check, not permission to backfill an annotation delivered later.
