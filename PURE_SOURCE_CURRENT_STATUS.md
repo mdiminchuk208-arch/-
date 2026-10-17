@@ -27,6 +27,20 @@ The rebuild has a deterministic closed-candle causal core for market structure a
 
 `OBJECT VALIDITY != TRADE ELIGIBILITY` remains a hard invariant.
 
+## Source details newly confirmed from the priority-1 Methodichka
+
+The extracted `19.clean.txt` is tied by the frozen archive manifest to `Криптология/Методичка.docx`, so it outranks SW modules when reconstructing the rules.
+
+It confirms several pieces that are more specific than the previous generic frontier:
+
+- OB: last candle before imbalance; the movement must update structure; the OB swept a low/high or wick; body should be large and wicks small. The exact numeric meaning of “large/small” is still not supplied.
+- Breaker: an impulsively pierced OB that swept a high/low, is pierced by imbalance and is followed by CHOCH.
+- Range: no structure inside; first high after the impulse and first low define the range; reaction from 0.5 validates it; the described setup trades after deviation, return, zone test and CHOCH. The remaining machine problem is source-qualified impulse/reaction provenance, not inventing a new range midpoint.
+- OTE: source levels include 0.5 / 0.62 / 0.705 / 0.79, and OTE is explicitly 0.705–0.79. The remaining problem is causal selection of the correct source-qualified impulse/anchors.
+- SFP: original pattern is three candles, may have a fourth confirmation candle, applies on all timeframes and requires liquidity context to be swept.
+
+These findings narrow the frontier but do **not** yet make a unique executable financial baseline.
+
 ## Current blocking frontier
 
 ### 1. Qualitative SOURCE provenance still missing for automatic detection
@@ -34,12 +48,12 @@ The rebuild has a deterministic closed-candle causal core for market structure a
 The machine must not invent numeric proxies for source concepts whose original definition remains qualitative. Current examples include:
 
 - EQH/EQL source-qualified substructure / reasonable tilt;
-- Order Block qualitative context, geometry and aggressive impulse;
-- Breaker provenance from a source-valid OB plus confirmation;
-- Range endpoints, strength, midpoint and internal structure;
+- OB large-body/small-wick, liquidity-sweep, imbalance and context provenance;
+- Breaker provenance from a source-valid OB, imbalance pierce and CHOCH;
+- Range source-qualified preceding impulse segmentation and midpoint-reaction provenance;
 - STB/BTS manipulation segmentation and full-engulf provenance;
 - Demand/Supply last-movement segmentation;
-- OTE / Premium-Discount source-qualified anchors;
+- OTE / Premium-Discount source-qualified impulse/dealing-range anchors, while OTE ratios themselves are source-defined;
 - meaningful / adverse liquidity context.
 
 Until these have source-backed causal provenance, they stay `UNKNOWN`, not `FAIL` and not guessed `PASS`.
@@ -58,7 +72,7 @@ These alternatives may be **enumerated as separate SOURCE branches**, but no bra
 
 ### 3. Exact geometry / lifecycle remains unspecified in places
 
-Examples include exact quote inside a POI, exact buffer for a stop described only as “behind/beyond”, some protective stops, partial-FTA fraction, destination of the remaining position and re-entry identity/eligibility.
+Examples include exact quote inside an OB/new POI, exact buffer for a stop described only as “behind/beyond”, some protective stops, partial-FTA fraction, destination of the remaining position and re-entry identity/eligibility.
 
 These remain `UNRESOLVED` unless an original source defines them or a bounded source-supported branch can be represented without adding a new trading rule.
 
@@ -77,7 +91,7 @@ Use this order only:
 
 Repository code is infrastructure / historical evidence, not SOURCE truth.
 
-The frozen manifest confirms verified provenance for the original source set. Raw SW5/SW9/SW11/SW12/SW22 PDFs and extracted text are retained under `data/source_materials/primary_pdf_2026_10_09/`.
+The frozen manifest confirms verified provenance for the original source set. Raw SW5/SW9/SW11/SW12/SW22 PDFs and extracted text are retained under `data/source_materials/primary_pdf_2026_10_09/`; the archive-extracted Methodichka text is retained as `data/source_materials/cryptology_2026_10_09/19.clean.txt` with manifest linkage to the verified DOCX hash.
 
 ## Next permitted work
 
