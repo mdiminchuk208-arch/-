@@ -1,0 +1,2374 @@
+{
+  "classification": "SYNTHETIC_QA_NOT_MARKET_HISTORY",
+  "config_sha256": "94c654a4474b5e81334abdf8aa0ea826495cb0318defa25d4140c1b3c0105168",
+  "engine_version": "PURE_SOURCE_STAGE12_MTF_V2",
+  "git_commit": "da1cbe40025e791fe0d614cc5b2556180aae0671",
+  "input_series": [
+    {
+      "candles": [
+        {
+          "close": 101,
+          "exchange": "TEST",
+          "high": 102,
+          "interval": "1m",
+          "is_closed": true,
+          "low": 99,
+          "open": 100,
+          "open_time_ms": 1767225600000,
+          "symbol": "BTCUSDT",
+          "turnover_quote": 1000.0,
+          "volume_base": 100.0
+        },
+        {
+          "close": 102,
+          "exchange": "TEST",
+          "high": 103,
+          "interval": "1m",
+          "is_closed": true,
+          "low": 100,
+          "open": 101,
+          "open_time_ms": 1767225660000,
+          "symbol": "BTCUSDT",
+          "turnover_quote": 1000.0,
+          "volume_base": 100.0
+        },
+        {
+          "close": 103,
+          "exchange": "TEST",
+          "high": 104,
+          "interval": "1m",
+          "is_closed": true,
+          "low": 101,
+          "open": 102,
+          "open_time_ms": 1767225720000,
+          "symbol": "BTCUSDT",
+          "turnover_quote": 1000.0,
+          "volume_base": 100.0
+        },
+        {
+          "close": 104,
+          "exchange": "TEST",
+          "high": 105,
+          "interval": "1m",
+          "is_closed": true,
+          "low": 102,
+          "open": 103,
+          "open_time_ms": 1767225780000,
+          "symbol": "BTCUSDT",
+          "turnover_quote": 1000.0,
+          "volume_base": 100.0
+        },
+        {
+          "close": 105,
+          "exchange": "TEST",
+          "high": 106,
+          "interval": "1m",
+          "is_closed": true,
+          "low": 103,
+          "open": 104,
+          "open_time_ms": 1767225840000,
+          "symbol": "BTCUSDT",
+          "turnover_quote": 1000.0,
+          "volume_base": 100.0
+        },
+        {
+          "close": 106,
+          "exchange": "TEST",
+          "high": 107,
+          "interval": "1m",
+          "is_closed": true,
+          "low": 104,
+          "open": 105,
+          "open_time_ms": 1767225900000,
+          "symbol": "BTCUSDT",
+          "turnover_quote": 1000.0,
+          "volume_base": 100.0
+        },
+        {
+          "close": 107,
+          "exchange": "TEST",
+          "high": 108,
+          "interval": "1m",
+          "is_closed": true,
+          "low": 105,
+          "open": 106,
+          "open_time_ms": 1767225960000,
+          "symbol": "BTCUSDT",
+          "turnover_quote": 1000.0,
+          "volume_base": 100.0
+        },
+        {
+          "close": 108,
+          "exchange": "TEST",
+          "high": 109,
+          "interval": "1m",
+          "is_closed": true,
+          "low": 106,
+          "open": 107,
+          "open_time_ms": 1767226020000,
+          "symbol": "BTCUSDT",
+          "turnover_quote": 1000.0,
+          "volume_base": 100.0
+        },
+        {
+          "close": 109,
+          "exchange": "TEST",
+          "high": 110,
+          "interval": "1m",
+          "is_closed": true,
+          "low": 107,
+          "open": 108,
+          "open_time_ms": 1767226080000,
+          "symbol": "BTCUSDT",
+          "turnover_quote": 1000.0,
+          "volume_base": 100.0
+        },
+        {
+          "close": 110,
+          "exchange": "TEST",
+          "high": 111,
+          "interval": "1m",
+          "is_closed": true,
+          "low": 108,
+          "open": 109,
+          "open_time_ms": 1767226140000,
+          "symbol": "BTCUSDT",
+          "turnover_quote": 1000.0,
+          "volume_base": 100.0
+        },
+        {
+          "close": 111,
+          "exchange": "TEST",
+          "high": 112,
+          "interval": "1m",
+          "is_closed": true,
+          "low": 109,
+          "open": 110,
+          "open_time_ms": 1767226200000,
+          "symbol": "BTCUSDT",
+          "turnover_quote": 1000.0,
+          "volume_base": 100.0
+        },
+        {
+          "close": 112,
+          "exchange": "TEST",
+          "high": 113,
+          "interval": "1m",
+          "is_closed": true,
+          "low": 110,
+          "open": 111,
+          "open_time_ms": 1767226260000,
+          "symbol": "BTCUSDT",
+          "turnover_quote": 1000.0,
+          "volume_base": 100.0
+        }
+      ],
+      "interval_ms": 60000,
+      "timeframe": "1m"
+    },
+    {
+      "candles": [
+        {
+          "close": 105,
+          "exchange": "TEST",
+          "high": 106,
+          "interval": "5m",
+          "is_closed": true,
+          "low": 99,
+          "open": 100,
+          "open_time_ms": 1767225600000,
+          "symbol": "BTCUSDT",
+          "turnover_quote": 5000.0,
+          "volume_base": 500.0
+        },
+        {
+          "close": 110,
+          "exchange": "TEST",
+          "high": 111,
+          "interval": "5m",
+          "is_closed": true,
+          "low": 104,
+          "open": 105,
+          "open_time_ms": 1767225900000,
+          "symbol": "BTCUSDT",
+          "turnover_quote": 5000.0,
+          "volume_base": 500.0
+        }
+      ],
+      "interval_ms": 300000,
+      "timeframe": "5m"
+    }
+  ],
+  "run": {
+    "evidence_batches": [
+      {
+        "execution_assessments": [],
+        "imbalances": [],
+        "mtf_price_audits": [
+          {
+            "complete_tiles": 0,
+            "higher_timeframe": "5m",
+            "incomplete_tiles": 0,
+            "lower_timeframe": "1m",
+            "reason": "INCOMPLETE_VISIBLE_LOWER_COVERAGE",
+            "status": "UNKNOWN"
+          }
+        ],
+        "object_assessments": [
+          {
+            "family": "BREAKER",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:01:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+            "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "DEMAND_SUPPLY",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:01:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+            "source_reference": "SRC_DS_001",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "EQH_EQL",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:01:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+            "source_reference": "SW6 p7-10",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "IMB_FVG",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:01:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_THREE_CLOSED_CANDLES",
+            "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "LIQUIDITY_CONTEXT",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:01:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+            "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OB",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:01:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OTE_PD",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:01:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "RANGE",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:01:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+            "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "SFP",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:01:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_CLOSED_NEXT_OPEN_OBSERVATION",
+            "source_reference": "SW8 p5",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "STB_BTS",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:01:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+            "source_reference": "SW22 p1-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          }
+        ],
+        "objects": [],
+        "refinement_candidates": [],
+        "setup_assessments": [],
+        "sfps": [],
+        "timeframe_views": [
+          {
+            "interval_ms": 60000,
+            "known_through": "2026-01-01T00:01:00+00:00",
+            "object_ids": [],
+            "timeframe": "1m"
+          },
+          {
+            "interval_ms": 300000,
+            "known_through": null,
+            "object_ids": [],
+            "timeframe": "5m"
+          }
+        ]
+      },
+      {
+        "execution_assessments": [],
+        "imbalances": [],
+        "mtf_price_audits": [
+          {
+            "complete_tiles": 0,
+            "higher_timeframe": "5m",
+            "incomplete_tiles": 0,
+            "lower_timeframe": "1m",
+            "reason": "INCOMPLETE_VISIBLE_LOWER_COVERAGE",
+            "status": "UNKNOWN"
+          }
+        ],
+        "object_assessments": [
+          {
+            "family": "BREAKER",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:02:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+            "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "DEMAND_SUPPLY",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:02:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+            "source_reference": "SRC_DS_001",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "EQH_EQL",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:02:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+            "source_reference": "SW6 p7-10",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "IMB_FVG",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:02:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_THREE_CLOSED_CANDLES",
+            "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "LIQUIDITY_CONTEXT",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:02:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+            "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OB",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:02:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OTE_PD",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:02:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "RANGE",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:02:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+            "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "SFP",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:02:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_KNOWN_EXTERNAL_LIQUIDITY",
+            "source_reference": "SW8 p5",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "STB_BTS",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:02:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+            "source_reference": "SW22 p1-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          }
+        ],
+        "objects": [],
+        "refinement_candidates": [],
+        "setup_assessments": [],
+        "sfps": [],
+        "timeframe_views": [
+          {
+            "interval_ms": 60000,
+            "known_through": "2026-01-01T00:02:00+00:00",
+            "object_ids": [],
+            "timeframe": "1m"
+          },
+          {
+            "interval_ms": 300000,
+            "known_through": null,
+            "object_ids": [],
+            "timeframe": "5m"
+          }
+        ]
+      },
+      {
+        "execution_assessments": [],
+        "imbalances": [],
+        "mtf_price_audits": [
+          {
+            "complete_tiles": 0,
+            "higher_timeframe": "5m",
+            "incomplete_tiles": 0,
+            "lower_timeframe": "1m",
+            "reason": "INCOMPLETE_VISIBLE_LOWER_COVERAGE",
+            "status": "UNKNOWN"
+          }
+        ],
+        "object_assessments": [
+          {
+            "family": "BREAKER",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:03:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+            "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "DEMAND_SUPPLY",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:03:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+            "source_reference": "SRC_DS_001",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "EQH_EQL",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:03:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+            "source_reference": "SW6 p7-10",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "IMB_FVG",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:03:00+00:00",
+            "parent_object_ids": [],
+            "reason": "NO_POSITIVE_WICK_GAP",
+            "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+            "status": "FAIL",
+            "timeframe": "1m"
+          },
+          {
+            "family": "LIQUIDITY_CONTEXT",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:03:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+            "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OB",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:03:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OTE_PD",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:03:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "RANGE",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:03:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+            "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "SFP",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:03:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_KNOWN_EXTERNAL_LIQUIDITY",
+            "source_reference": "SW8 p5",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "STB_BTS",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:03:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+            "source_reference": "SW22 p1-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          }
+        ],
+        "objects": [],
+        "refinement_candidates": [],
+        "setup_assessments": [],
+        "sfps": [],
+        "timeframe_views": [
+          {
+            "interval_ms": 60000,
+            "known_through": "2026-01-01T00:03:00+00:00",
+            "object_ids": [],
+            "timeframe": "1m"
+          },
+          {
+            "interval_ms": 300000,
+            "known_through": null,
+            "object_ids": [],
+            "timeframe": "5m"
+          }
+        ]
+      },
+      {
+        "execution_assessments": [],
+        "imbalances": [],
+        "mtf_price_audits": [
+          {
+            "complete_tiles": 0,
+            "higher_timeframe": "5m",
+            "incomplete_tiles": 0,
+            "lower_timeframe": "1m",
+            "reason": "INCOMPLETE_VISIBLE_LOWER_COVERAGE",
+            "status": "UNKNOWN"
+          }
+        ],
+        "object_assessments": [
+          {
+            "family": "BREAKER",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:04:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+            "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "DEMAND_SUPPLY",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:04:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+            "source_reference": "SRC_DS_001",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "EQH_EQL",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:04:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+            "source_reference": "SW6 p7-10",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "IMB_FVG",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:04:00+00:00",
+            "parent_object_ids": [],
+            "reason": "NO_POSITIVE_WICK_GAP",
+            "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+            "status": "FAIL",
+            "timeframe": "1m"
+          },
+          {
+            "family": "LIQUIDITY_CONTEXT",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:04:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+            "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OB",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:04:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OTE_PD",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:04:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "RANGE",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:04:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+            "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "SFP",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:04:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_KNOWN_EXTERNAL_LIQUIDITY",
+            "source_reference": "SW8 p5",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "STB_BTS",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:04:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+            "source_reference": "SW22 p1-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          }
+        ],
+        "objects": [],
+        "refinement_candidates": [],
+        "setup_assessments": [],
+        "sfps": [],
+        "timeframe_views": [
+          {
+            "interval_ms": 60000,
+            "known_through": "2026-01-01T00:04:00+00:00",
+            "object_ids": [],
+            "timeframe": "1m"
+          },
+          {
+            "interval_ms": 300000,
+            "known_through": null,
+            "object_ids": [],
+            "timeframe": "5m"
+          }
+        ]
+      },
+      {
+        "execution_assessments": [],
+        "imbalances": [],
+        "mtf_price_audits": [
+          {
+            "complete_tiles": 1,
+            "higher_timeframe": "5m",
+            "incomplete_tiles": 0,
+            "lower_timeframe": "1m",
+            "reason": "COMPLETE_CLOSED_OHLC_TILES_MATCH",
+            "status": "PASS"
+          }
+        ],
+        "object_assessments": [
+          {
+            "family": "BREAKER",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+            "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "DEMAND_SUPPLY",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+            "source_reference": "SRC_DS_001",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "EQH_EQL",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+            "source_reference": "SW6 p7-10",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "IMB_FVG",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "NO_POSITIVE_WICK_GAP",
+            "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+            "status": "FAIL",
+            "timeframe": "1m"
+          },
+          {
+            "family": "LIQUIDITY_CONTEXT",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+            "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OB",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OTE_PD",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "RANGE",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+            "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "SFP",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_KNOWN_EXTERNAL_LIQUIDITY",
+            "source_reference": "SW8 p5",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "STB_BTS",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+            "source_reference": "SW22 p1-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "BREAKER",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+            "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          },
+          {
+            "family": "DEMAND_SUPPLY",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+            "source_reference": "SRC_DS_001",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          },
+          {
+            "family": "EQH_EQL",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+            "source_reference": "SW6 p7-10",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          },
+          {
+            "family": "IMB_FVG",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_THREE_CLOSED_CANDLES",
+            "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          },
+          {
+            "family": "LIQUIDITY_CONTEXT",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+            "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          },
+          {
+            "family": "OB",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          },
+          {
+            "family": "OTE_PD",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          },
+          {
+            "family": "RANGE",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+            "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          },
+          {
+            "family": "SFP",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_CLOSED_NEXT_OPEN_OBSERVATION",
+            "source_reference": "SW8 p5",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          },
+          {
+            "family": "STB_BTS",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:05:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+            "source_reference": "SW22 p1-3",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          }
+        ],
+        "objects": [],
+        "refinement_candidates": [
+          {
+            "context_timeframe": "5m",
+            "pair": {
+              "context_minutes": 5,
+              "refinement_minutes": 1
+            },
+            "refinement_timeframe": "1m"
+          }
+        ],
+        "setup_assessments": [],
+        "sfps": [],
+        "timeframe_views": [
+          {
+            "interval_ms": 60000,
+            "known_through": "2026-01-01T00:05:00+00:00",
+            "object_ids": [],
+            "timeframe": "1m"
+          },
+          {
+            "interval_ms": 300000,
+            "known_through": "2026-01-01T00:05:00+00:00",
+            "object_ids": [],
+            "timeframe": "5m"
+          }
+        ]
+      },
+      {
+        "execution_assessments": [],
+        "imbalances": [],
+        "mtf_price_audits": [
+          {
+            "complete_tiles": 1,
+            "higher_timeframe": "5m",
+            "incomplete_tiles": 0,
+            "lower_timeframe": "1m",
+            "reason": "COMPLETE_CLOSED_OHLC_TILES_MATCH",
+            "status": "PASS"
+          }
+        ],
+        "object_assessments": [
+          {
+            "family": "BREAKER",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:06:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+            "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "DEMAND_SUPPLY",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:06:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+            "source_reference": "SRC_DS_001",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "EQH_EQL",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:06:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+            "source_reference": "SW6 p7-10",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "IMB_FVG",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:06:00+00:00",
+            "parent_object_ids": [],
+            "reason": "NO_POSITIVE_WICK_GAP",
+            "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+            "status": "FAIL",
+            "timeframe": "1m"
+          },
+          {
+            "family": "LIQUIDITY_CONTEXT",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:06:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+            "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OB",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:06:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OTE_PD",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:06:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "RANGE",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:06:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+            "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "SFP",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:06:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_KNOWN_EXTERNAL_LIQUIDITY",
+            "source_reference": "SW8 p5",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "STB_BTS",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:06:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+            "source_reference": "SW22 p1-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          }
+        ],
+        "objects": [],
+        "refinement_candidates": [
+          {
+            "context_timeframe": "5m",
+            "pair": {
+              "context_minutes": 5,
+              "refinement_minutes": 1
+            },
+            "refinement_timeframe": "1m"
+          }
+        ],
+        "setup_assessments": [],
+        "sfps": [],
+        "timeframe_views": [
+          {
+            "interval_ms": 60000,
+            "known_through": "2026-01-01T00:06:00+00:00",
+            "object_ids": [],
+            "timeframe": "1m"
+          },
+          {
+            "interval_ms": 300000,
+            "known_through": "2026-01-01T00:05:00+00:00",
+            "object_ids": [],
+            "timeframe": "5m"
+          }
+        ]
+      },
+      {
+        "execution_assessments": [],
+        "imbalances": [],
+        "mtf_price_audits": [
+          {
+            "complete_tiles": 1,
+            "higher_timeframe": "5m",
+            "incomplete_tiles": 0,
+            "lower_timeframe": "1m",
+            "reason": "COMPLETE_CLOSED_OHLC_TILES_MATCH",
+            "status": "PASS"
+          }
+        ],
+        "object_assessments": [
+          {
+            "family": "BREAKER",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:07:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+            "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "DEMAND_SUPPLY",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:07:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+            "source_reference": "SRC_DS_001",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "EQH_EQL",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:07:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+            "source_reference": "SW6 p7-10",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "IMB_FVG",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:07:00+00:00",
+            "parent_object_ids": [],
+            "reason": "NO_POSITIVE_WICK_GAP",
+            "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+            "status": "FAIL",
+            "timeframe": "1m"
+          },
+          {
+            "family": "LIQUIDITY_CONTEXT",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:07:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+            "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OB",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:07:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OTE_PD",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:07:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "RANGE",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:07:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+            "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "SFP",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:07:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_KNOWN_EXTERNAL_LIQUIDITY",
+            "source_reference": "SW8 p5",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "STB_BTS",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:07:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+            "source_reference": "SW22 p1-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          }
+        ],
+        "objects": [],
+        "refinement_candidates": [
+          {
+            "context_timeframe": "5m",
+            "pair": {
+              "context_minutes": 5,
+              "refinement_minutes": 1
+            },
+            "refinement_timeframe": "1m"
+          }
+        ],
+        "setup_assessments": [],
+        "sfps": [],
+        "timeframe_views": [
+          {
+            "interval_ms": 60000,
+            "known_through": "2026-01-01T00:07:00+00:00",
+            "object_ids": [],
+            "timeframe": "1m"
+          },
+          {
+            "interval_ms": 300000,
+            "known_through": "2026-01-01T00:05:00+00:00",
+            "object_ids": [],
+            "timeframe": "5m"
+          }
+        ]
+      },
+      {
+        "execution_assessments": [],
+        "imbalances": [],
+        "mtf_price_audits": [
+          {
+            "complete_tiles": 1,
+            "higher_timeframe": "5m",
+            "incomplete_tiles": 0,
+            "lower_timeframe": "1m",
+            "reason": "COMPLETE_CLOSED_OHLC_TILES_MATCH",
+            "status": "PASS"
+          }
+        ],
+        "object_assessments": [
+          {
+            "family": "BREAKER",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:08:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+            "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "DEMAND_SUPPLY",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:08:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+            "source_reference": "SRC_DS_001",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "EQH_EQL",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:08:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+            "source_reference": "SW6 p7-10",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "IMB_FVG",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:08:00+00:00",
+            "parent_object_ids": [],
+            "reason": "NO_POSITIVE_WICK_GAP",
+            "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+            "status": "FAIL",
+            "timeframe": "1m"
+          },
+          {
+            "family": "LIQUIDITY_CONTEXT",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:08:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+            "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OB",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:08:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OTE_PD",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:08:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "RANGE",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:08:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+            "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "SFP",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:08:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_KNOWN_EXTERNAL_LIQUIDITY",
+            "source_reference": "SW8 p5",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "STB_BTS",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:08:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+            "source_reference": "SW22 p1-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          }
+        ],
+        "objects": [],
+        "refinement_candidates": [
+          {
+            "context_timeframe": "5m",
+            "pair": {
+              "context_minutes": 5,
+              "refinement_minutes": 1
+            },
+            "refinement_timeframe": "1m"
+          }
+        ],
+        "setup_assessments": [],
+        "sfps": [],
+        "timeframe_views": [
+          {
+            "interval_ms": 60000,
+            "known_through": "2026-01-01T00:08:00+00:00",
+            "object_ids": [],
+            "timeframe": "1m"
+          },
+          {
+            "interval_ms": 300000,
+            "known_through": "2026-01-01T00:05:00+00:00",
+            "object_ids": [],
+            "timeframe": "5m"
+          }
+        ]
+      },
+      {
+        "execution_assessments": [],
+        "imbalances": [],
+        "mtf_price_audits": [
+          {
+            "complete_tiles": 1,
+            "higher_timeframe": "5m",
+            "incomplete_tiles": 0,
+            "lower_timeframe": "1m",
+            "reason": "COMPLETE_CLOSED_OHLC_TILES_MATCH",
+            "status": "PASS"
+          }
+        ],
+        "object_assessments": [
+          {
+            "family": "BREAKER",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:09:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+            "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "DEMAND_SUPPLY",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:09:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+            "source_reference": "SRC_DS_001",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "EQH_EQL",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:09:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+            "source_reference": "SW6 p7-10",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "IMB_FVG",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:09:00+00:00",
+            "parent_object_ids": [],
+            "reason": "NO_POSITIVE_WICK_GAP",
+            "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+            "status": "FAIL",
+            "timeframe": "1m"
+          },
+          {
+            "family": "LIQUIDITY_CONTEXT",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:09:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+            "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OB",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:09:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OTE_PD",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:09:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "RANGE",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:09:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+            "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "SFP",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:09:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_KNOWN_EXTERNAL_LIQUIDITY",
+            "source_reference": "SW8 p5",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "STB_BTS",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:09:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+            "source_reference": "SW22 p1-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          }
+        ],
+        "objects": [],
+        "refinement_candidates": [
+          {
+            "context_timeframe": "5m",
+            "pair": {
+              "context_minutes": 5,
+              "refinement_minutes": 1
+            },
+            "refinement_timeframe": "1m"
+          }
+        ],
+        "setup_assessments": [],
+        "sfps": [],
+        "timeframe_views": [
+          {
+            "interval_ms": 60000,
+            "known_through": "2026-01-01T00:09:00+00:00",
+            "object_ids": [],
+            "timeframe": "1m"
+          },
+          {
+            "interval_ms": 300000,
+            "known_through": "2026-01-01T00:05:00+00:00",
+            "object_ids": [],
+            "timeframe": "5m"
+          }
+        ]
+      },
+      {
+        "execution_assessments": [],
+        "imbalances": [],
+        "mtf_price_audits": [
+          {
+            "complete_tiles": 2,
+            "higher_timeframe": "5m",
+            "incomplete_tiles": 0,
+            "lower_timeframe": "1m",
+            "reason": "COMPLETE_CLOSED_OHLC_TILES_MATCH",
+            "status": "PASS"
+          }
+        ],
+        "object_assessments": [
+          {
+            "family": "BREAKER",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+            "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "DEMAND_SUPPLY",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+            "source_reference": "SRC_DS_001",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "EQH_EQL",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+            "source_reference": "SW6 p7-10",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "IMB_FVG",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "NO_POSITIVE_WICK_GAP",
+            "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+            "status": "FAIL",
+            "timeframe": "1m"
+          },
+          {
+            "family": "LIQUIDITY_CONTEXT",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+            "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OB",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OTE_PD",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "RANGE",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+            "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "SFP",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_KNOWN_EXTERNAL_LIQUIDITY",
+            "source_reference": "SW8 p5",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "STB_BTS",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+            "source_reference": "SW22 p1-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "BREAKER",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+            "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          },
+          {
+            "family": "DEMAND_SUPPLY",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+            "source_reference": "SRC_DS_001",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          },
+          {
+            "family": "EQH_EQL",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+            "source_reference": "SW6 p7-10",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          },
+          {
+            "family": "IMB_FVG",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_THREE_CLOSED_CANDLES",
+            "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          },
+          {
+            "family": "LIQUIDITY_CONTEXT",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+            "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          },
+          {
+            "family": "OB",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          },
+          {
+            "family": "OTE_PD",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          },
+          {
+            "family": "RANGE",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+            "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          },
+          {
+            "family": "SFP",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_KNOWN_EXTERNAL_LIQUIDITY",
+            "source_reference": "SW8 p5",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          },
+          {
+            "family": "STB_BTS",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:10:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+            "source_reference": "SW22 p1-3",
+            "status": "UNKNOWN",
+            "timeframe": "5m"
+          }
+        ],
+        "objects": [],
+        "refinement_candidates": [
+          {
+            "context_timeframe": "5m",
+            "pair": {
+              "context_minutes": 5,
+              "refinement_minutes": 1
+            },
+            "refinement_timeframe": "1m"
+          }
+        ],
+        "setup_assessments": [],
+        "sfps": [],
+        "timeframe_views": [
+          {
+            "interval_ms": 60000,
+            "known_through": "2026-01-01T00:10:00+00:00",
+            "object_ids": [],
+            "timeframe": "1m"
+          },
+          {
+            "interval_ms": 300000,
+            "known_through": "2026-01-01T00:10:00+00:00",
+            "object_ids": [],
+            "timeframe": "5m"
+          }
+        ]
+      },
+      {
+        "execution_assessments": [],
+        "imbalances": [],
+        "mtf_price_audits": [
+          {
+            "complete_tiles": 2,
+            "higher_timeframe": "5m",
+            "incomplete_tiles": 0,
+            "lower_timeframe": "1m",
+            "reason": "COMPLETE_CLOSED_OHLC_TILES_MATCH",
+            "status": "PASS"
+          }
+        ],
+        "object_assessments": [
+          {
+            "family": "BREAKER",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:11:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+            "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "DEMAND_SUPPLY",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:11:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+            "source_reference": "SRC_DS_001",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "EQH_EQL",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:11:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+            "source_reference": "SW6 p7-10",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "IMB_FVG",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:11:00+00:00",
+            "parent_object_ids": [],
+            "reason": "NO_POSITIVE_WICK_GAP",
+            "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+            "status": "FAIL",
+            "timeframe": "1m"
+          },
+          {
+            "family": "LIQUIDITY_CONTEXT",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:11:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+            "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OB",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:11:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OTE_PD",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:11:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "RANGE",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:11:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+            "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "SFP",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:11:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_KNOWN_EXTERNAL_LIQUIDITY",
+            "source_reference": "SW8 p5",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "STB_BTS",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:11:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+            "source_reference": "SW22 p1-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          }
+        ],
+        "objects": [],
+        "refinement_candidates": [
+          {
+            "context_timeframe": "5m",
+            "pair": {
+              "context_minutes": 5,
+              "refinement_minutes": 1
+            },
+            "refinement_timeframe": "1m"
+          }
+        ],
+        "setup_assessments": [],
+        "sfps": [],
+        "timeframe_views": [
+          {
+            "interval_ms": 60000,
+            "known_through": "2026-01-01T00:11:00+00:00",
+            "object_ids": [],
+            "timeframe": "1m"
+          },
+          {
+            "interval_ms": 300000,
+            "known_through": "2026-01-01T00:10:00+00:00",
+            "object_ids": [],
+            "timeframe": "5m"
+          }
+        ]
+      },
+      {
+        "execution_assessments": [],
+        "imbalances": [],
+        "mtf_price_audits": [
+          {
+            "complete_tiles": 2,
+            "higher_timeframe": "5m",
+            "incomplete_tiles": 0,
+            "lower_timeframe": "1m",
+            "reason": "COMPLETE_CLOSED_OHLC_TILES_MATCH",
+            "status": "PASS"
+          }
+        ],
+        "object_assessments": [
+          {
+            "family": "BREAKER",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:12:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_VALID_OB_AND_BREAKER_CONFIRMATION",
+            "source_reference": "SW9; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "DEMAND_SUPPLY",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:12:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_LAST_MOVEMENT_SEGMENTATION_PROVENANCE",
+            "source_reference": "SRC_DS_001",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "EQH_EQL",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:12:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SUBSTRUCTURE_AND_REASONABLE_TILT_PROVENANCE",
+            "source_reference": "SW6 p7-10",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "IMB_FVG",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:12:00+00:00",
+            "parent_object_ids": [],
+            "reason": "NO_POSITIVE_WICK_GAP",
+            "source_reference": "SW8 p1-3; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p11",
+            "status": "FAIL",
+            "timeframe": "1m"
+          },
+          {
+            "family": "LIQUIDITY_CONTEXT",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:12:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MEANINGFUL_LIQUIDITY_CONTEXT_RESOLUTION",
+            "source_reference": "User task section8: unresolved meaningful liquidity; Stage8 FTA input contract",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OB",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:12:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_OB_QUALITATIVE_GEOMETRY_AND_CONTEXT_PROVENANCE",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430 p9-10; SW9 p2-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "OTE_PD",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:12:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_SOURCE_QUALIFIED_IMPULSE_OR_DEALING_RANGE_ANCHORS",
+            "source_reference": "\u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430; SW8",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "RANGE",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:12:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_RANGE_ENDPOINT_AND_QUALITATIVE_CONFIRMATION",
+            "source_reference": "SW10; \u041c\u0435\u0442\u043e\u0434\u0438\u0447\u043a\u0430",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "SFP",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:12:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_KNOWN_EXTERNAL_LIQUIDITY",
+            "source_reference": "SW8 p5",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          },
+          {
+            "family": "STB_BTS",
+            "object_id": null,
+            "observed_at": "2026-01-01T00:12:00+00:00",
+            "parent_object_ids": [],
+            "reason": "WAIT_MANIPULATION_AND_FULL_ENGULF_PROVENANCE",
+            "source_reference": "SW22 p1-3",
+            "status": "UNKNOWN",
+            "timeframe": "1m"
+          }
+        ],
+        "objects": [],
+        "refinement_candidates": [
+          {
+            "context_timeframe": "5m",
+            "pair": {
+              "context_minutes": 5,
+              "refinement_minutes": 1
+            },
+            "refinement_timeframe": "1m"
+          }
+        ],
+        "setup_assessments": [],
+        "sfps": [],
+        "timeframe_views": [
+          {
+            "interval_ms": 60000,
+            "known_through": "2026-01-01T00:12:00+00:00",
+            "object_ids": [],
+            "timeframe": "1m"
+          },
+          {
+            "interval_ms": 300000,
+            "known_through": "2026-01-01T00:10:00+00:00",
+            "object_ids": [],
+            "timeframe": "5m"
+          }
+        ]
+      }
+    ],
+    "replay": {
+      "manifest": {
+        "dataset_sha256": "0ba8d31e7debc653eadaef8663cd3821b3a74aecdb285f7e08e2c08123a892f7",
+        "exchange": "TEST",
+        "series": [
+          {
+            "candle_count": 12,
+            "first_open_time_ms": 1767225600000,
+            "interval_ms": 60000,
+            "last_open_time_ms": 1767226260000,
+            "series_sha256": "5bb2621de2accf70d34170940066f2f662980e0b17d0a02b7adf3386623a49ec",
+            "timeframe": "1m"
+          },
+          {
+            "candle_count": 2,
+            "first_open_time_ms": 1767225600000,
+            "interval_ms": 300000,
+            "last_open_time_ms": 1767225900000,
+            "series_sha256": "98f5ad37fac260908a590c37b2b1ec0517b358f5787f4054aeefefcb3bff972a",
+            "timeframe": "5m"
+          }
+        ],
+        "symbol": "BTCUSDT",
+        "total_candles": 14,
+        "version": "PURE_SOURCE_STAGE10_REPLAY_V2"
+      },
+      "provider_id": "PURE_SOURCE_MTF_OBJECTS",
+      "provider_version": "PURE_SOURCE_STAGE12_MTF_V2",
+      "receipts": [
+        {
+          "blocker_count": 0,
+          "causal_object_count": 0,
+          "decision_at": "2026-01-01T00:01:00+00:00",
+          "evidence_batch_sha256": "f54d89701141e1f1d409c45abcb44c7addcefa919c384f0e62d796139fafcd2e",
+          "execution_plan_count": 0,
+          "prefix_sha256": "beba7c8e449c225b77ff6343258b18e6271f4c64e4e3992450da61f130bb8d02",
+          "prefix_sizes": [
+            [
+              "1m",
+              1
+            ],
+            [
+              "5m",
+              0
+            ]
+          ],
+          "runtime_sha256": "78b2afecc9f2e7fe4f83182f808214b62e9bd778644ac41043481f2dfa286b09",
+          "setup_count": 0
+        },
+        {
+          "blocker_count": 0,
+          "causal_object_count": 0,
+          "decision_at": "2026-01-01T00:02:00+00:00",
+          "evidence_batch_sha256": "c11c8abd86aa434b997162d52263b2a54c12216337788db432d9c36cad3edeae",
+          "execution_plan_count": 0,
+          "prefix_sha256": "44a3f60551f645cbe26ddd361bafe4d616f50cae3ffaf2598aec0be9db0ee153",
+          "prefix_sizes": [
+            [
+              "1m",
+              2
+            ],
+            [
+              "5m",
+              0
+            ]
+          ],
+          "runtime_sha256": "40b83e559a4bda61806b6a964652bc616a5674926fc96d291c5030a83d276c8d",
+          "setup_count": 0
+        },
+        {
+          "blocker_count": 0,
+          "causal_object_count": 0,
+          "decision_at": "2026-01-01T00:03:00+00:00",
+          "evidence_batch_sha256": "14ff69f6ee5beaa827415d1a4110c0cdfaa2198403823e132da4aa10ecca795e",
+          "execution_plan_count": 0,
+          "prefix_sha256": "287e4ed57e9acbd0c71f9e6e8e4e4e2f51e3bc85b67b572e83b39100ca648b71",
+          "prefix_sizes": [
+            [
+              "1m",
+              3
+            ],
+            [
+              "5m",
+              0
+            ]
+          ],
+          "runtime_sha256": "1de455cb898de39fe239d9453a56c98444fec747f7a826234f36dfb08c500ff1",
+          "setup_count": 0
+        },
+        {
+          "blocker_count": 0,
+          "causal_object_count": 0,
+          "decision_at": "2026-01-01T00:04:00+00:00",
+          "evidence_batch_sha256": "f76859f7e8e6f323702539bf1c5ffb997f26948f785d4aa49cfd1800ce6c21aa",
+          "execution_plan_count": 0,
+          "prefix_sha256": "82c2a86b22e4b582d21e28adb5723117ef2cda20884bdc0234e7ef3168210f62",
+          "prefix_sizes": [
+            [
+              "1m",
+              4
+            ],
+            [
+              "5m",
+              0
+            ]
+          ],
+          "runtime_sha256": "f8593591092128a68c9e37d098b13afe3f3b0174bf4788e9bfca1bfae5c3b0e2",
+          "setup_count": 0
+        },
+        {
+          "blocker_count": 0,
+          "causal_object_count": 0,
+          "decision_at": "2026-01-01T00:05:00+00:00",
+          "evidence_batch_sha256": "239cf971b1217807acc09183b9605d7e210fb91670420d968928c83aaa5d9ad4",
+          "execution_plan_count": 0,
+          "prefix_sha256": "1dea15299c53f97bbce014c48b8425a519579e2ad926f4cd021d54c32b8da2b6",
+          "prefix_sizes": [
+            [
+              "1m",
+              5
+            ],
+            [
+              "5m",
+              1
+            ]
+          ],
+          "runtime_sha256": "911876e672c258aa082c45a1332e4b8dc23d3465984a0a0158f4026a17db5ebe",
+          "setup_count": 0
+        },
+        {
+          "blocker_count": 0,
+          "causal_object_count": 0,
+          "decision_at": "2026-01-01T00:06:00+00:00",
+          "evidence_batch_sha256": "3b4443c0cc756fe5d8eb85066d64f4b88a7082bde5649f549352fe8b1a7a8673",
+          "execution_plan_count": 0,
+          "prefix_sha256": "e55ac165af999c84adce886e49d41ec351d1b5189abe6ca2a17cf04efbdefc63",
+          "prefix_sizes": [
+            [
+              "1m",
+              6
+            ],
+            [
+              "5m",
+              1
+            ]
+          ],
+          "runtime_sha256": "1ebd11287dfae19c63c37ef37e890339aa543886ed368115725314c4dd47b6a1",
+          "setup_count": 0
+        },
+        {
+          "blocker_count": 0,
+          "causal_object_count": 0,
+          "decision_at": "2026-01-01T00:07:00+00:00",
+          "evidence_batch_sha256": "107881f80a1d784edf106edfcc61c04295dce057d930b755ea6a60ceb7be90ab",
+          "execution_plan_count": 0,
+          "prefix_sha256": "d2c4bdc1e4632e703c2e82825d5bb3587373c549c50fcf8fb19d67bcc26fcf13",
+          "prefix_sizes": [
+            [
+              "1m",
+              7
+            ],
+            [
+              "5m",
+              1
+            ]
+          ],
+          "runtime_sha256": "05351b54481307fe7b7afb51a10b74b5cba18db54f711cd3add01fb9fa725be8",
+          "setup_count": 0
+        },
+        {
+          "blocker_count": 0,
+          "causal_object_count": 0,
+          "decision_at": "2026-01-01T00:08:00+00:00",
+          "evidence_batch_sha256": "f5ebdc5434af4fd94f0f2c3654decbdba3d085d85fd0f6ceba1ebd1fd3737a3c",
+          "execution_plan_count": 0,
+          "prefix_sha256": "44d6e80b8d3fb60278bba0045ee3ff064b4bde44ad383cf484e7e5fefde1a373",
+          "prefix_sizes": [
+            [
+              "1m",
+              8
+            ],
+            [
+              "5m",
+              1
+            ]
+          ],
+          "runtime_sha256": "88368f84d64b067f540d8491ea42984d70c7284389dc3bd8f0e0cf789bfeccec",
+          "setup_count": 0
+        },
+        {
+          "blocker_count": 0,
+          "causal_object_count": 0,
+          "decision_at": "2026-01-01T00:09:00+00:00",
+          "evidence_batch_sha256": "6620a70b615fdd8346b66e1354c3476227582a83eeb1c9af4488ed175d97d7ac",
+          "execution_plan_count": 0,
+          "prefix_sha256": "905d291a1aa100fba476bd06525c2edd9a5d6c0c1fb94c96581684b2e81a135f",
+          "prefix_sizes": [
+            [
+              "1m",
+              9
+            ],
+            [
+              "5m",
+              1
+            ]
+          ],
+          "runtime_sha256": "a15aecfc2cdee7ae406824b0aee90adc24d83b7ede40d99e124c05299c087614",
+          "setup_count": 0
+        },
+        {
+          "blocker_count": 0,
+          "causal_object_count": 0,
+          "decision_at": "2026-01-01T00:10:00+00:00",
+          "evidence_batch_sha256": "8b575729b0867993b92eb1b620366a02fa6d77680a1169f8e25f9bfc26d22a2d",
+          "execution_plan_count": 0,
+          "prefix_sha256": "1c7fcc5548ff9633f2dc1d1240fd53c43983fcbbd50a1aa845a893075333bf9c",
+          "prefix_sizes": [
+            [
+              "1m",
+              10
+            ],
+            [
+              "5m",
+              2
+            ]
+          ],
+          "runtime_sha256": "3eec613dcc42ce4fb43ad3acac47063e712fe3af04da7db74e66cc11a3448df7",
+          "setup_count": 0
+        },
+        {
+          "blocker_count": 0,
+          "causal_object_count": 0,
+          "decision_at": "2026-01-01T00:11:00+00:00",
+          "evidence_batch_sha256": "55315718d1c1ff96f1d6b64bfa8f5f7917bc15b1cd71df0d8d7266432b1f7e38",
+          "execution_plan_count": 0,
+          "prefix_sha256": "d0d8b5e3b88ceb505ad9cfb2f905a86086b2bcd7ab5941969b2fbdbbb8e047d1",
+          "prefix_sizes": [
+            [
+              "1m",
+              11
+            ],
+            [
+              "5m",
+              2
+            ]
+          ],
+          "runtime_sha256": "e1410fd189c0bf669a0c5b0dd63feee8ceffcd388b1d9ad70947918021ae9bf0",
+          "setup_count": 0
+        },
+        {
+          "blocker_count": 0,
+          "causal_object_count": 0,
+          "decision_at": "2026-01-01T00:12:00+00:00",
+          "evidence_batch_sha256": "dca685fda1ef85877a154f927e41e8229b8e0ed47d7ace1b2c2719bc333f2416",
+          "execution_plan_count": 0,
+          "prefix_sha256": "e2b16995986dcb16f3da7bf4aba53bd757decc8b00769f0c5a5ea75c7415481e",
+          "prefix_sizes": [
+            [
+              "1m",
+              12
+            ],
+            [
+              "5m",
+              2
+            ]
+          ],
+          "runtime_sha256": "9af39e57595b357c3d6c1a3da4fcb0a3a1b38ba74f590c9e501c92ee43876333",
+          "setup_count": 0
+        }
+      ],
+      "runtime_summary": {
+        "causal_object_count": 0,
+        "decision_watermark": "2026-01-01T00:12:00+00:00",
+        "execution_plan_count": 0,
+        "legacy_runtime_adapter_enabled": false,
+        "project_overlays_enabled": false,
+        "runtime_blockers": [],
+        "runtime_version": "PURE_SOURCE_STAGE9_V2",
+        "setup_count": 0,
+        "source_ready_setup_ids": [],
+        "strategy_profile": "PURE_SOURCE",
+        "trade_entry_allowed": false,
+        "unresolved_blockers": []
+      },
+      "version": "PURE_SOURCE_STAGE10_REPLAY_V2"
+    }
+  },
+  "source_manifest_sha256": "2ab9fa44808503bbfb93cf0abd28e2d5c3de1cf825d0c7666824c1ff6128a123",
+  "source_spec_version": "ORIGINAL_STRATEGY_SPEC_v1.1"
+}

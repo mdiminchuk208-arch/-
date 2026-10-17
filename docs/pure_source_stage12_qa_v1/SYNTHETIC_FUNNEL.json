@@ -1,0 +1,105 @@
+{
+  "all_unselected_refinement_candidates": [
+    {
+      "context_timeframe": "5m",
+      "pair": {
+        "context_minutes": 5,
+        "refinement_minutes": 1
+      },
+      "refinement_timeframe": "1m"
+    }
+  ],
+  "assessment_counts": {
+    "BREAKER": {
+      "FAIL": 0,
+      "PASS": 0,
+      "UNKNOWN": 14
+    },
+    "DEMAND_SUPPLY": {
+      "FAIL": 0,
+      "PASS": 0,
+      "UNKNOWN": 14
+    },
+    "EQH_EQL": {
+      "FAIL": 0,
+      "PASS": 0,
+      "UNKNOWN": 14
+    },
+    "IMB_FVG": {
+      "FAIL": 10,
+      "PASS": 0,
+      "UNKNOWN": 4
+    },
+    "LIQUIDITY_CONTEXT": {
+      "FAIL": 0,
+      "PASS": 0,
+      "UNKNOWN": 14
+    },
+    "OB": {
+      "FAIL": 0,
+      "PASS": 0,
+      "UNKNOWN": 14
+    },
+    "OTE_PD": {
+      "FAIL": 0,
+      "PASS": 0,
+      "UNKNOWN": 14
+    },
+    "RANGE": {
+      "FAIL": 0,
+      "PASS": 0,
+      "UNKNOWN": 14
+    },
+    "SFP": {
+      "FAIL": 0,
+      "PASS": 0,
+      "UNKNOWN": 14
+    },
+    "STB_BTS": {
+      "FAIL": 0,
+      "PASS": 0,
+      "UNKNOWN": 14
+    }
+  },
+  "baseline_identifiability": "NOT_IDENTIFIABLE",
+  "classification": "SYNTHETIC_QA_NOT_TRADES",
+  "last_price_audits": [
+    {
+      "complete_tiles": 2,
+      "higher_timeframe": "5m",
+      "incomplete_tiles": 0,
+      "lower_timeframe": "1m",
+      "reason": "COMPLETE_CLOSED_OHLC_TILES_MATCH",
+      "status": "PASS"
+    }
+  ],
+  "last_views": [
+    {
+      "interval_ms": 60000,
+      "known_through": "2026-01-01T00:12:00+00:00",
+      "object_ids": [],
+      "timeframe": "1m"
+    },
+    {
+      "interval_ms": 300000,
+      "known_through": "2026-01-01T00:10:00+00:00",
+      "object_ids": [],
+      "timeframe": "5m"
+    }
+  ],
+  "runtime_summary": {
+    "causal_object_count": 0,
+    "decision_watermark": "2026-01-01T00:12:00+00:00",
+    "execution_plan_count": 0,
+    "legacy_runtime_adapter_enabled": false,
+    "project_overlays_enabled": false,
+    "runtime_blockers": [],
+    "runtime_version": "PURE_SOURCE_STAGE9_V2",
+    "setup_count": 0,
+    "source_ready_setup_ids": [],
+    "strategy_profile": "PURE_SOURCE",
+    "trade_entry_allowed": false,
+    "unresolved_blockers": []
+  },
+  "trade_entry_allowed": false
+}

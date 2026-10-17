@@ -1,0 +1,104 @@
+{
+  "artifact_sha256": {
+    "docs/pure_source_stage12_qa_v1/QA_EXECUTION_HELPER.py.txt": "b775f57d1d9a4a7b7829d59b361e5d88d1672f9d6d1a94e114957c643cc543db",
+    "docs/pure_source_stage12_qa_v1/SYNTHETIC_EVIDENCE.json": "0563d4e35833ea2667625f5de9e9fa0eeda5db6f9c15930ad441e8e791caafe3",
+    "docs/pure_source_stage12_qa_v1/SYNTHETIC_FUNNEL.json": "3c0c9ecf3496b9b2deb9e947fe5a4cd72348ee79102f491d8c2fbefce6527f6f",
+    "docs/pure_source_stage12_qa_v1/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/pure_source_stage12_qa_v1/format.log": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938",
+    "docs/pure_source_stage12_qa_v1/lint.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "docs/pure_source_stage12_qa_v1/safety.log": "1bbac526cb48b6a8b5607610e0cfde3a115445eae2a08881901f61e1ce4edfeb",
+    "docs/pure_source_stage12_qa_v1/unit.log": "242b5955d37bec7ba9fd3fc8df11ff4f756ea2c2e47481d7bf7ec39f1409ff10"
+  },
+  "ci_required_before_merge": true,
+  "code_config_doc_sha256": {
+    "config/pure_source_mtf_v2.json": "94c654a4474b5e81334abdf8aa0ea826495cb0318defa25d4140c1b3c0105168",
+    "docs/PURE_SOURCE_ENGINE_STAGE12_MTF_COMPOSITION.md": "c1dfdf0016327132e8242ac9cd0b464001026fcd761baf9b1d5a0c3e6cb2f806",
+    "src/crypto_bot/strategy/pure_source_mtf_v2.py": "5453823f81aa8769c3a9b9b6440e74491a7d25d9363897268a6e02fc4c88b855",
+    "tests/test_pure_source_mtf_v2.py": "6e57a08cbc367deab8f1eb10f7932a3a7a9ba7565a3597a363151946969327ec"
+  },
+  "commands": [
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage12_qa_v1/compile.log",
+      "name": "compile"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage12_qa_v1/unit.log",
+      "name": "unit"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-c",
+        "from pathlib import Path; ps=[*Path('src').rglob('*.py'),*Path('scripts').rglob('*.py')]; assert not any('trade_entry_allowed=True' in p.read_text(encoding='utf-8',errors='ignore') for p in ps); print('SAFETY PASS')"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage12_qa_v1/safety.log",
+      "name": "safety"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "check",
+        "src/crypto_bot/strategy/pure_source_mtf_v2.py",
+        "tests/test_pure_source_mtf_v2.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage12_qa_v1/lint.log",
+      "name": "lint"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/ruff",
+        "format",
+        "--check",
+        "src/crypto_bot/strategy/pure_source_mtf_v2.py",
+        "tests/test_pure_source_mtf_v2.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage12_qa_v1/format.log",
+      "name": "format"
+    }
+  ],
+  "engine_version": "PURE_SOURCE_STAGE12_MTF_V2",
+  "git_commit": "da1cbe40025e791fe0d614cc5b2556180aae0671",
+  "historical_financial_runs": 0,
+  "independent_review": {
+    "actual_agent": "/root/pure_source_stage10_review",
+    "decision": "SCOPED_ACCEPTANCE_CI_REQUIRED",
+    "extra_checks": [
+      "each OHLC mismatch timing",
+      "mixed complete/incomplete tiles stay UNKNOWN"
+    ],
+    "material_blockers": [],
+    "read_only": true,
+    "targeted_tests_independently_passed": 10
+  },
+  "source_rule_changes": [],
+  "stage": 12,
+  "targeted_tests": 10,
+  "timestamp_utc": "2026-10-17T09:18:42.702030+00:00",
+  "trade_entry_allowed": false,
+  "unit_tests": 747
+}
