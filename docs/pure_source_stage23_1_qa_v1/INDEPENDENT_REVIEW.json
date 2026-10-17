@@ -1,0 +1,25 @@
+{
+  "stage": "23.1",
+  "status": "SCOPED_ACCEPTANCE",
+  "reviewers": [
+    {
+      "agent": "audit231_claim_review",
+      "scope": "A/B; causal/safety/replay regression",
+      "tests_passed": 68,
+      "blocking_findings": []
+    },
+    {
+      "agent": "audit231_final_adversarial",
+      "scope": "C-I; independent actual metadata/figure mutations",
+      "tests_passed": 46,
+      "previously_accepted_mutations_now_rejected": 46,
+      "metadata_section_pins_verified_against_original_git_commit": 7,
+      "blocking_findings": []
+    }
+  ],
+  "prohibited_activity": {
+    "source_rescan": false,
+    "financial_run": false,
+    "trade_entry": false
+  }
+}

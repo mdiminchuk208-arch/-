@@ -1,0 +1,10 @@
+import json,subprocess
+from pathlib import Path
+names=set(subprocess.check_output(['git','diff','--name-only','ceba28fe4969c7eb916e348a30e6f7db0bf08d44'],text=True).splitlines())|set(subprocess.check_output(['git','ls-files','--others','--exclude-standard'],text=True).splitlines())
+paths=sorted(n for n in names if n.endswith('.py'))
+out=Path('docs/pure_source_stage23_1_qa_v1');records=[]
+for name,args in [('lint',['check','--select','E9,F',*paths]),('format',['format','--check',*[p for p in paths if p!='src/crypto_bot/strategy/source_qualitative_provenance_v2.py']])]:
+ cmd=['/workspace/crypto-bot-venv/bin/ruff',*args]
+ with (out/(name+'.log')).open('w') as handle:r=subprocess.run(cmd,stdout=handle,stderr=subprocess.STDOUT)
+ records.append({'name':name,'command':cmd,'exit_code':r.returncode,'log':str(out/(name+'.log'))});print(name,r.returncode);assert r.returncode==0
+Path('/tmp/stage231-lint-commands.json').write_text(json.dumps(records,indent=2)+'\n')

@@ -1,0 +1,102 @@
+{
+  "stage": "23.1",
+  "base": "ceba28fe4969c7eb916e348a30e6f7db0bf08d44",
+  "max_active_including_root": 4,
+  "source_rescans": 0,
+  "rows": [
+    {
+      "agent": "root",
+      "roles": [
+        "Technical Lead",
+        "Claim Binding Engineer",
+        "Test Engineer"
+      ],
+      "task": "A/B implementation; integrate C-J and final QA",
+      "files_changed": [
+        "source_claim_binding_v1.py",
+        "source_qualitative_provenance_v2.py",
+        "test_source_claim_binding_v1.py"
+      ],
+      "decision": "A-J integrated; full Python3.11 913 PASS; Python3.14 SOURCE472+causal9 PASS; compile/safety/lint PASS",
+      "next_dependency": "PR exact-head CI and external Codex review; final acceptance"
+    },
+    {
+      "agent": "audit231_claim_review",
+      "roles": [
+        "Causality Auditor",
+        "Qualitative Evidence Auditor",
+        "No-Look-Ahead Auditor"
+      ],
+      "task": "A/B read-only review",
+      "files_read": [
+        "binding/provenance/causal state definitions",
+        "bindingtargetedtests"
+      ],
+      "files_changed": [],
+      "decision": "SCOPED_ACCEPTANCE; final 68 causal/consumer/replay tests PASS",
+      "next_dependency": "PR exact-head CI and external Codex review; final acceptance",
+      "tests": [
+        "22 binding",
+        "15 liquidity",
+        "14 SFP",
+        "17 replay"
+      ]
+    },
+    {
+      "agent": "audit231_archive_xml",
+      "roles": [
+        "Provenance Engineer",
+        "Archive Integrity Auditor",
+        "DOCX/XML Auditor"
+      ],
+      "task": "C/E and actual raw DOCX mapping",
+      "decision": "17targetedPASS",
+      "source_rescans": 0,
+      "next_dependency": "PR exact-head CI and external Codex review; final acceptance",
+      "files_changed": [
+        "pure_source_archive_audit_v1.py",
+        "test_pure_source_archive_audit_v1.py"
+      ]
+    },
+    {
+      "agent": "audit231_ledger",
+      "roles": [
+        "Citation Integrity Auditor",
+        "Rule Ledger Auditor",
+        "Conflict Registry Auditor"
+      ],
+      "task": "D/F/G/H quote pins and every authoritative CSV column",
+      "decision": "Consolidated R1/R2 fix independently accepted; 46 combined archive/ledger/retention tests PASS",
+      "source_rescans": 0,
+      "next_dependency": "PR exact-head CI and external Codex review; final acceptance",
+      "files_changed": [
+        "pure_source_rule_ledger_v1.py",
+        "test_pure_source_rule_ledger_v1.py",
+        "audit/REVIEWED_CITATION_EXPORT_REFERENCE.json"
+      ]
+    },
+    {
+      "agent": "audit231_python_ci",
+      "roles": [
+        "Python Compatibility Engineer",
+        "CI Engineer"
+      ],
+      "task": "J + Python3.11/3.14matrix and stable domain safety validation",
+      "decision": "46targetedPASS each actual3.11.16/3.14.7",
+      "source_rescans": 0,
+      "next_dependency": "PR exact-head CI and external Codex review; final acceptance"
+    },
+    {
+      "agent": "audit231_final_adversarial",
+      "roles": [
+        "Mutation/Fuzz Test Engineer",
+        "Security/Safety Auditor",
+        "Final Adversarial Reviewer"
+      ],
+      "task": "C-I independent mutation review",
+      "decision": "SCOPED_ACCEPTANCE; all 46 mutation reproductions rejected; 7 metadata sections independently matched original ceba28fe; 46 selected tests PASS",
+      "files_changed": [],
+      "next_dependency": "PR exact-head CI and external Codex review; final acceptance"
+    }
+  ]
+}

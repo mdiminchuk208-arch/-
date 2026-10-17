@@ -1,0 +1,14 @@
+test_closed_candle_only (test_causal_object_core.CausalObjectCoreTests.test_closed_candle_only) ... ok
+test_contract_covers_stage_one_object_types (test_causal_object_core.CausalObjectCoreTests.test_contract_covers_stage_one_object_types) ... ok
+test_formation_valid_is_independent_from_trade_eligibility (test_causal_object_core.CausalObjectCoreTests.test_formation_valid_is_independent_from_trade_eligibility) ... ok
+test_future_mutation_keeps_old_identity_and_state (test_causal_object_core.CausalObjectCoreTests.test_future_mutation_keeps_old_identity_and_state) ... ok
+test_later_cancellation_preserves_setup_history (test_causal_object_core.CausalObjectCoreTests.test_later_cancellation_preserves_setup_history) ... ok
+test_later_invalidation_does_not_rewrite_past_validity (test_causal_object_core.CausalObjectCoreTests.test_later_invalidation_does_not_rewrite_past_validity) ... ok
+test_object_invalid_source_is_distinct_rejection (test_causal_object_core.CausalObjectCoreTests.test_object_invalid_source_is_distinct_rejection) ... ok
+test_prefix_replay_matches_full_history_at_cutoff (test_causal_object_core.CausalObjectCoreTests.test_prefix_replay_matches_full_history_at_cutoff) ... ok
+test_stable_id_is_prefix_safe_and_outcome_independent (test_causal_object_core.CausalObjectCoreTests.test_stable_id_is_prefix_safe_and_outcome_independent) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+OK
