@@ -1,0 +1,33 @@
+{
+  "version": "PURE_SOURCE_STAGE20_CLAIM_BINDING_V1",
+  "classification": "TECHNICAL_NORMALIZATION",
+  "baseline_identifiability": "NOT_IDENTIFIABLE",
+  "baseline_source_rule_changes": [],
+  "project_policy_applied": [],
+  "permissions": {
+    "trade_entry_allowed": false,
+    "financial_backtest_allowed": false,
+    "paper_allowed": false,
+    "live_allowed": false,
+    "private_api_allowed": false,
+    "automatic_qualitative_proxy_inference_allowed": false
+  },
+  "contract": {
+    "closed_data": "Exact closed prefix, fixed timeframe duration, contiguous bounded observation window, exact newly_closed suffix.",
+    "subjects": "Actual closed candle content IDs or supplied canonical causal objects with complete ancestry.",
+    "provenance": "Immutable UTF8 JSON bytes; SHA256 reference; exact bounded claim/context fields plus explicit annotator_ref; no extra outcome/ranking fields.",
+    "availability": "max(declared_known_at, first accepted caller replay frame decision_at). observe_frame advances the caller clock without annotations.",
+    "conflict": "Conflicting available statuses remain UNKNOWN with every supporting claim ID; no annotator or latest-claim winner.",
+    "consumer_boundary": "No production consumer migration in Stage20. Legacy projection loses scope/window/semantic metadata; full claims and assessment must be retained."
+  },
+  "not_proven": [
+    "Annotation truth",
+    "Authenticated author identity",
+    "Historical blindness of an annotation",
+    "External wall-clock arrival",
+    "Durable ingestion across process restarts",
+    "Geometry authenticity of upstream supplied canonical objects"
+  ],
+  "module": "src/crypto_bot/strategy/source_claim_binding_v1.py",
+  "configuration_role": "Auditable contract declaration; not runtime permission toggles."
+}

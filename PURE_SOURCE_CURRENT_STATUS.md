@@ -1,8 +1,8 @@
 # PURE SOURCE — authoritative current status
 
 **Status date:** 2026-10-17  
-**Current rebuild stage:** Stage 19 — Priority-1 Rule Ledger and Source Conflict Audit  
-**Base:** Stage 18 merge `61d6693a993eb28b4d40b58baa4073566cae01b4`
+**Current rebuild stage:** Stage 20 — Causal Claim Binding
+**Base:** Stage 19 merge `3a4cf35d400efc352432a8cdc64d473fa50b4116`
 
 > This file is the current continuation entrypoint for PURE SOURCE strategy work.
 > Historical `README.md`, `CONTINUATION_STATUS.md`, old Bybit replays, source-permitted physical cases and earlier PnL reports remain preserved evidence, but they are **not SOURCE truth** and must not be used to resolve current SOURCE ambiguity.
@@ -169,3 +169,11 @@ Base: Stage18 merge `61d6693a993eb28b4d40b58baa4073566cae01b4` (PR21). Full prio
 The illustrated Range path is clarified as return/CHOCH before pre-break-OB retest, with opposite-boundary target; it remains one scenario. Conditional LONG OTE level orientation is visually known, while anchors and unshown SHORT remain unresolved. SFP body engulf is illustrated, not universally imposed. No runtime SOURCE rule or market object behavior changes in this stage.
 
 Next safe work: actual closed-parent/window binding and first-ingestion timing for Stage18annotation claims, then incremental qualified consumers. Missing evidence stays UNKNOWN. Allfinancial/PAPER/LIVE/privateAPI permissions and trade_entry_allowed remain false; NOT_IDENTIFIABLE remains the verdict.
+
+## Stage20 causal claim binding checkpoint
+
+`SourceClaimJournal` now binds Stage18 annotations to real closed candle windows, actual causal parents, content-hashed witness bytes and first accepted caller replay time. Missing/conflicting evidence remains UNKNOWN. Append-only closed data, parent identity/lifecycle, exact newly_closed and monotonic clocks prevent accepted history from being rewritten in a journal.
+
+This is infrastructure, not a claim of historical annotation truth/authorship/blindness or authenticated arrival. Full typed claim/scope/window/provenance must survive consumer integration; the legacy projection alone is insufficient. Production consumers remain unchanged. See `docs/PURE_SOURCE_ENGINE_STAGE20_CAUSAL_CLAIM_BINDING.md`.
+
+Next safe work: typed, provenance-retaining consumer adapters, separately audited against priority1 definitions; do not promote stricter legacy intersections to universal SOURCE rules. Market annotation content and unresolved execution geometry remain SOURCE blockers. NOT_IDENTIFIABLE and all financial/trading permissions false.
