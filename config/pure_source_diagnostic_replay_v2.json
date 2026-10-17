@@ -1,0 +1,28 @@
+{
+  "version": "PURE_SOURCE_STAGE15_DIAGNOSTIC_REPLAY_V2",
+  "base_merge_commit": "9d00c817e6bbf21dcc216d7ef4d0b71554db1c04",
+  "scope": "deterministic_diagnostic_replay_and_exact_repeat_verification",
+  "baseline_identifiability": "NOT_IDENTIFIABLE",
+  "trade_entry_allowed": false,
+  "financial_run": false,
+  "source_rule_changes": [],
+  "project_policy_applied": [],
+  "technical_normalizations": [
+    {
+      "id": "TN_DIAGNOSTIC_RECEIPT_CHAIN",
+      "classification": "TECHNICAL_NORMALIZATION"
+    },
+    {
+      "id": "TN_DIAGNOSTIC_ARTIFACT_FINGERPRINT",
+      "classification": "TECHNICAL_NORMALIZATION"
+    },
+    {
+      "id": "TN_EXACT_REPEAT_REPLAY_VERIFICATION",
+      "classification": "TECHNICAL_NORMALIZATION"
+    }
+  ],
+  "incremental_runtime_hydration": false,
+  "PAPER": false,
+  "LIVE": false,
+  "private_api": false
+}
