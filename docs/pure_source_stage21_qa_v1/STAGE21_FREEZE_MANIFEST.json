@@ -171,6 +171,7 @@
     "tests/test_pure_source_setup_provider_v2.py": "135d315fc8f8aadcbf146a64799ad87794e336de216ccb566001965a2e764f42",
     "tests/test_source_claim_binding_v1.py": "049a31c4c95351d68855f2315740b00adb0aaa737bb37fb1c720e7b1aa68bd36",
     "tests/test_source_qualified_liquidity_v1.py": "0a1c7c12c483c59d94d5f5a5d4f12c331d7df88530b54928c23bd2e14da67009",
-    "tests/test_source_qualitative_provenance_v2.py": "d109b13fa09b8b64f1564b809a6279dad738f49d3a49356c230546e3177c16bf"
+    "tests/test_source_qualitative_provenance_v2.py": "d109b13fa09b8b64f1564b809a6279dad738f49d3a49356c230546e3177c16bf",
+    "tests/test_source_structure_liquidity_v2.py": "35f91aab40628e62cdaccbd03b4d2bf1f12ed60ad01f5c3b609802c8d6b91b4c"
   }
 }
