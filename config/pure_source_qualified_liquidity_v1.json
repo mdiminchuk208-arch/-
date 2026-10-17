@@ -1,0 +1,47 @@
+{
+  "version": "PURE_SOURCE_STAGE21_QUALIFIED_LIQUIDITY_V1",
+  "classification": "TECHNICAL_NORMALIZATION",
+  "baseline_identifiability": "NOT_IDENTIFIABLE",
+  "trade_entry_allowed": false,
+  "financial_backtest_allowed": false,
+  "paper_allowed": false,
+  "live_allowed": false,
+  "private_api_allowed": false,
+  "project_policy_applied": [],
+  "source_semantics_preserved": [
+    {
+      "source": "SW6",
+      "evidence": "Stage19 SEC_SW6_SUBSTRUCTURE",
+      "meaning": "EQH/EQL form between source-qualified substructure swings, not arbitrary candles."
+    },
+    {
+      "source": "SW6",
+      "evidence": "Stage19 SEC_SW6_EQ_TILT",
+      "meaning": "Perfect equality is permitted; directional reasonable tilt also permitted. No tolerance threshold."
+    },
+    {
+      "source": "Методичка",
+      "evidence": "Stage19 METHOD_VIS_19",
+      "meaning": "Illustrated EQL may be tilted; no numeric tilt bound."
+    }
+  ],
+  "consumer": {
+    "name": "assess_bound_equal_liquidity",
+    "subjects": "two explicit canonical closed-prefix SWING IDs; no candidate ranking",
+    "scope": "OBJECT_FORMATION",
+    "required_for_all_pairs": [
+      "EQH_EQL_SUBSTRUCTURE_PAIR"
+    ],
+    "required_for_nonflat_pairs": [
+      "EQH_EQL_REASONABLE_TILT"
+    ],
+    "receipt_retention": "complete typed facts plus all BoundSourceClaim receipts; no generic evidence injection",
+    "availability": "not earlier than both swings and effective available qualitative dependencies",
+    "integration": "explicit adapter; frozen default provider remains unchanged"
+  },
+  "unresolved": [
+    "actual market SOURCE annotations",
+    "selection of meaningful/adverse liquidity for trade context",
+    "source gaps in other object and execution families"
+  ]
+}
