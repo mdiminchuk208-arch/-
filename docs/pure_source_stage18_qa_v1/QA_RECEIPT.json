@@ -1,0 +1,67 @@
+{
+  "classification": "TECHNICAL_NORMALIZATION",
+  "commands": [
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-B",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage18_qa_v1/compile.log",
+      "name": "compile"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage18_qa_v1/unit.log",
+      "name": "unit"
+    },
+    {
+      "command": [
+        "/workspace/crypto-bot-venv/bin/python",
+        "-c",
+        "from pathlib import Path; ps=[*Path('src').rglob('*.py'),*Path('scripts').rglob('*.py')]; assert not any('trade_entry_allowed=True' in p.read_text(encoding='utf-8',errors='ignore') for p in ps); print('SAFETY PASS')"
+      ],
+      "exit_code": 0,
+      "log": "docs/pure_source_stage18_qa_v1/safety.log",
+      "name": "safety"
+    }
+  ],
+  "git_code_commit": "f9a20b2923e057d1176fc15ee8530fd80608211c",
+  "historical_financial_runs": 0,
+  "independent_review": {
+    "agent": "/root/stage18_adversarial_reviewer",
+    "consumer_binding_and_first_ingestion": "NOT_IMPLEMENTED_BY_STANDALONE_CLAIM_CONTRACT",
+    "decision": "SCOPED_ACCEPTANCE_NO_MATERIAL_BLOCKERS",
+    "found_and_fixed": [
+      "editable deny list bypass",
+      "blank/mutable audit identity",
+      "nested ignored metadata"
+    ],
+    "read_only": true,
+    "tests_passed": 14,
+    "utc_equivalence_regression": true
+  },
+  "project_policy_applied": [],
+  "source_rule_changes": [],
+  "stage": 18,
+  "targeted_tests": 14,
+  "trade_entry_allowed": false,
+  "unit_tests": 799
+}

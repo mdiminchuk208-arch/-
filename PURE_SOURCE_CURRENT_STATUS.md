@@ -1,8 +1,8 @@
 # PURE SOURCE — authoritative current status
 
 **Status date:** 2026-10-17  
-**Current rebuild stage:** Stage 17 — Non-ranked SOURCE Branch Registry  
-**Base:** Stage 16 merge `f206e6938fe78adb7290ba3264c6d19c2ababf9b`
+**Current rebuild stage:** Stage 18 — Causal Qualitative Provenance  
+**Base:** Stage 17 merge `f205791d6b7fba02dcc856493fd6177d904444a2`
 
 > This file is the current continuation entrypoint for PURE SOURCE strategy work.
 > Historical `README.md`, `CONTINUATION_STATUS.md`, old Bybit replays, source-permitted physical cases and earlier PnL reports remain preserved evidence, but they are **not SOURCE truth** and must not be used to resolve current SOURCE ambiguity.
@@ -11,86 +11,121 @@
 
 The PURE SOURCE baseline is **`NOT_IDENTIFIABLE`** as one unique executable financial strategy.
 
-This is intentional and fail-closed:
+This remains intentionally fail-closed:
 
 - `trade_entry_allowed=false`;
 - no financial PURE SOURCE backtest is authorized yet;
 - no PAPER/LIVE/private exchange API/orders;
 - no PROJECT overlays in SOURCE baseline;
-- historical PnL must not choose among SOURCE-permitted alternatives.
+- historical PnL must not choose among SOURCE-permitted alternatives;
+- qualitative SOURCE terms must not be replaced by optimized numeric proxies.
 
-Stage 15 established deterministic diagnostic end-to-end replay and exact repeated-artifact verification. Stage 16 froze the identifiability frontier and priority-1 Methodichka evidence. Stage 17 gives finite, explicit SOURCE alternatives stable branch identities **without selecting or ranking them**.
+Stage 15 established deterministic diagnostic replay. Stage 16 froze the identifiability frontier and priority-1 Methodichka evidence. Stage 17 created stable, non-ranked identities for finite SOURCE alternatives. Stage 18 now defines an auditable causal contract for genuinely qualitative SOURCE facts.
 
-## What is already causally implemented
-
-The rebuild has a deterministic closed-candle causal core for market structure and typed evidence transport, including structural SFP and IMB/FVG evidence, setup transport, execution-semantics transport, prefix/future-mutation QA and diagnostic replay fingerprints.
+## Hard semantic boundaries
 
 `OBJECT VALIDITY != TRADE ELIGIBILITY` remains a hard invariant.
 
-Stage 17 adds another explicit boundary:
+Stage 17 added:
 
 `EXACT SOURCE ALTERNATIVE != TRADE ELIGIBILITY`.
 
-An exact branch such as STB/BTS midpoint 0.5, full FTA fixation, or ATR 14 is only exact **conditional on its required causal parent evidence**. Exactness does not make that branch preferred, profitable, or executable.
+Stage 18 adds:
+
+`QUALITATIVE PASS/FAIL != UNTRACEABLE OPINION`.
+
+A qualitative PASS or FAIL must have a frozen semantic ID, observed closed-data window, `known_at`, subject IDs, source references, annotation method, provenance reference, rationale code and canonical evidence ID. UNKNOWN deliberately has no provenance/evidence ID and cannot masquerade as confirmed evidence.
 
 ## Source details confirmed from the priority-1 Methodichka
 
 The extracted `19.clean.txt` is tied by the frozen archive manifest to `Криптология/Методичка.docx`, so it outranks SW modules when reconstructing the rules.
 
-It confirms several pieces that are more specific than the previous generic frontier:
+It confirms:
 
-- OB: last candle before imbalance; the movement must update structure; the OB swept a low/high or wick; body should be large and wicks small. The exact numeric meaning of “large/small” is still not supplied.
-- Breaker: an impulsively pierced OB that swept a high/low, is pierced by imbalance and is followed by CHOCH.
-- Range: no structure inside; first high after the impulse and first low define the range; reaction from 0.5 validates it; the described setup trades after deviation, return, zone test and CHOCH. The remaining machine problem is source-qualified impulse/reaction provenance, not inventing a new range midpoint.
-- OTE: source levels include 0.5 / 0.62 / 0.705 / 0.79, and OTE is explicitly 0.705–0.79. The remaining problem is causal selection of the correct source-qualified impulse/anchors.
+- OB: last candle before imbalance; movement updates structure; OB sweeps a low/high or wick; body should be large and wicks small. The exact numeric meaning of “large/small” is not supplied.
+- Breaker: impulsively pierced OB that swept a high/low, is pierced by imbalance and is followed by CHOCH.
+- Range: no structure inside; first high after the impulse and first low define it; reaction from 0.5 validates it; setup follows deviation, return, zone test and CHOCH.
+- OTE: source levels include 0.5 / 0.62 / 0.705 / 0.79; OTE is explicitly 0.705–0.79. Correct impulse-anchor selection remains a provenance problem.
 - SFP: original pattern is three candles, may have a fourth confirmation candle, applies on all timeframes and requires liquidity context to be swept.
 
-These findings narrow the frontier but do **not** yet make a unique executable financial baseline.
+These findings narrow the frontier but do **not** yet make one unique executable financial baseline.
 
 ## Stage 17 branch registry
 
-Finite explicit alternatives are now represented separately instead of being collapsed into one generic unresolved choice. Current registered families are:
+Finite explicit alternatives are represented separately without precedence:
 
-- `OB_DIRECT_ENTRY`: exact boundary vs under-specified inside-zone quote;
-- `OB_EXECUTION_PATH`: direct path vs LTF BOS + new-POI path;
-- `OB_STOP_ANCHOR`: beyond OB extreme vs beyond engulfing-candle wick;
-- `BREAKER_STOP_ANCHOR`: aggressive vs conservative anchor;
-- `STB_BTS_ENTRY`: directional zone part vs exact 0.5 midpoint;
-- `FTA_FIXATION`: full 100% fixation vs under-specified partial fixation;
-- `SFP_ATR_PERIOD`: standard 14 vs strategy-adjusted period family.
+- `OB_DIRECT_ENTRY`;
+- `OB_EXECUTION_PATH`;
+- `OB_STOP_ANCHOR`;
+- `BREAKER_STOP_ANCHOR`;
+- `STB_BTS_ENTRY`;
+- `FTA_FIXATION`;
+- `SFP_ATR_PERIOD`.
 
-The registry rejects ranking/outcome fields such as `rank`, `score`, `preferred`, `win_rate`, `profit_factor`, `expectancy`, `pnl`, and `backtest_result`. It also rejects PROJECT policies, financial-backtest permission and `trade_entry_allowed=true`.
+Exact branches such as STB/BTS midpoint 0.5, full FTA fixation or ATR 14 remain conditional on valid causal parent evidence and are not defaults.
 
-Machine-readable branch registry: `config/pure_source_branch_registry_v2.json`.
-Typed contract: `src/crypto_bot/strategy/pure_source_branch_registry_v2.py`.
-Detailed Stage 17 record: `docs/PURE_SOURCE_ENGINE_STAGE17_BRANCH_REGISTRY.md`.
+Files:
+
+- `config/pure_source_branch_registry_v2.json`
+- `src/crypto_bot/strategy/pure_source_branch_registry_v2.py`
+- `docs/PURE_SOURCE_ENGINE_STAGE17_BRANCH_REGISTRY.md`
+
+## Stage 18 qualitative provenance
+
+A frozen semantic catalog now covers qualitative claims used or required around:
+
+- OB aggressive impulse;
+- OB large body / small wicks;
+- Breaker fast/whole impulse;
+- Breaker continuous movement without OB trading;
+- source-qualified impulse segmentation for Range/OTE;
+- Range strong impulse, midpoint reaction and absence of internal structure;
+- STB/BTS full manipulation engulf;
+- Demand/Supply last-movement segmentation;
+- EQH/EQL substructure and reasonable tilt;
+- SFP liquidity context.
+
+A `SourceQualitativeClaim` is causal only when `known_at >= observation_end_at`. PASS/FAIL requires auditable provenance. UNKNOWN cannot carry a fake evidence ID.
+
+Stage 18 allows only explicit annotation transports:
+
+- `HUMAN_SOURCE_ANNOTATION`;
+- `CURATED_SOURCE_DATASET_ANNOTATION`.
+
+It explicitly forbids automatic numeric proxy inference and rejects ranking/proxy/outcome metadata such as score, confidence, probability, preferred, WR, PF, expectancy and PnL.
+
+Stage 18 also preserves scope: object-formation evidence cannot silently be relabelled as trade context or vice versa. In particular, SFP liquidity context is typed as `TRADE_CONTEXT` rather than structural SFP formation.
+
+Files:
+
+- `config/pure_source_qualitative_semantics_v2.json`
+- `src/crypto_bot/strategy/source_qualitative_provenance_v2.py`
+- `tests/test_source_qualitative_provenance_v2.py`
+- `docs/PURE_SOURCE_ENGINE_STAGE18_QUALITATIVE_PROVENANCE.md`
 
 ## Current blocking frontier
 
-### 1. Qualitative SOURCE provenance still missing for automatic detection
+### 1. Qualitative consumers are not yet fully migrated
 
-The machine must not invent numeric proxies for source concepts whose original definition remains qualitative. Current examples include:
+Existing OB/Breaker, Range/STB, Demand/Supply and liquidity modules already use a lightweight legacy `QualitativeEvidence` shape. Stage 18 defines the stronger authoritative claim contract but does **not** silently change all consumers in the same step.
 
-- EQH/EQL source-qualified substructure / reasonable tilt;
-- OB large-body/small-wick, liquidity-sweep, imbalance and context provenance;
-- Breaker provenance from a source-valid OB, imbalance pierce and CHOCH;
-- Range source-qualified preceding impulse segmentation and midpoint-reaction provenance;
-- STB/BTS manipulation segmentation and full-engulf provenance;
-- Demand/Supply last-movement segmentation;
-- OTE / Premium-Discount source-qualified impulse/dealing-range anchors, while OTE ratios themselves are source-defined;
-- meaningful / adverse liquidity context.
-
-Until these have source-backed causal provenance, they stay `UNKNOWN`, not `FAIL` and not guessed `PASS`.
+Next migration must make those consumers accept audited Stage 18 claims (or remain UNKNOWN) while preserving all existing SOURCE definitions and causality tests.
 
 ### 2. Exact geometry / lifecycle remains unspecified in places
 
-Examples include exact quote inside an OB/new POI, exact buffer for a stop described only as “behind/beyond”, some protective stops, partial-FTA fraction, destination of the remaining position and re-entry identity/eligibility.
+Still unresolved where SOURCE does not supply an exact coordinate/lifecycle, including:
 
-Stage 17 now preserves these as properties of specific alternatives instead of forcing one common selection. They remain `UNRESOLVED` unless an original source defines them or a bounded source-supported branch can be represented without adding a new trading rule.
+- exact quote inside OB/new POI variants;
+- exact beyond-anchor stop buffer;
+- some protective-stop geometry;
+- partial FTA fraction and remainder lifecycle;
+- some re-entry identity/eligibility details.
+
+Stage 17 preserves these as properties of specific alternatives rather than choosing a winner.
 
 ### 3. Context selection remains unresolved
 
-Where several source-valid timeframes, liquidity pools or identities coexist, no PROJECT ranking/filter may choose among them. Re-entry identity/eligibility also remains unresolved where SOURCE does not define it precisely.
+Where several source-valid timeframes, liquidity pools or identities coexist, no PROJECT ranking/filter may choose among them. Meaningful/adverse liquidity selection and exact re-entry identity remain separate source-provenance problems where not explicitly defined.
 
 ## Source authority
 
@@ -107,14 +142,22 @@ Use this order only:
 
 Repository code is infrastructure / historical evidence, not SOURCE truth.
 
-The frozen manifest confirms verified provenance for the original source set. Raw SW5/SW9/SW11/SW12/SW22 PDFs and extracted text are retained under `data/source_materials/primary_pdf_2026_10_09/`; the archive-extracted Methodichka text is retained as `data/source_materials/cryptology_2026_10_09/19.clean.txt` with manifest linkage to the verified DOCX hash.
+The verified source set remains frozen under `docs/source_freeze_v1/`, `data/source_materials/primary_pdf_2026_10_09/` and `data/source_materials/cryptology_2026_10_09/`.
 
 ## Next permitted work
 
-The next safe step is to build **causal qualitative evidence / annotation contracts** for source concepts that are genuinely qualitative, rather than replacing them with arbitrary numeric thresholds. The Stage 17 branch registry can then consume only source-valid parent evidence and keep alternatives non-ranked.
+Migrate qualitative consumers incrementally onto Stage 18 claims. The first safe target is OB/Breaker because its current legacy qualitative requirements already map cleanly to Stage 18 semantics. Each migration must:
+
+- preserve current SOURCE formation rules;
+- preserve closed-candle timing;
+- reject future-known annotations;
+- retain full claim provenance;
+- remain `trade_entry_allowed=false`;
+- not add PROJECT policy or numeric thresholds.
 
 A financial PURE SOURCE backtest remains blocked until required object provenance, execution geometry and exit lifecycle are sufficiently identified.
 
 Machine-readable frontier: `config/pure_source_identifiability_frontier_v2.json`.
-Stage 16 record: `docs/PURE_SOURCE_ENGINE_STAGE16_IDENTIFIABILITY_FRONTIER.md`.
-Stage 17 record: `docs/PURE_SOURCE_ENGINE_STAGE17_BRANCH_REGISTRY.md`.
+Stage 16: `docs/PURE_SOURCE_ENGINE_STAGE16_IDENTIFIABILITY_FRONTIER.md`.
+Stage 17: `docs/PURE_SOURCE_ENGINE_STAGE17_BRANCH_REGISTRY.md`.
+Stage 18: `docs/PURE_SOURCE_ENGINE_STAGE18_QUALITATIVE_PROVENANCE.md`.
