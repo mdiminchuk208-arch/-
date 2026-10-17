@@ -1,0 +1,73 @@
+{
+  "version": "PURE_SOURCE_STAGE11_OBJECTS_V2",
+  "scope": "causal_object_evidence_only",
+  "base_merge_commit": "016f2a38e35ea95ae50d69a86cb3caab45f715d5",
+  "provider_id": "PURE_SOURCE_OBJECTS",
+  "trade_entry_allowed": false,
+  "source_spec_version": "ORIGINAL_STRATEGY_SPEC_v1.1",
+  "source_identifiability": "NOT_IDENTIFIABLE",
+  "project_policy_applied": [],
+  "implemented": [
+    "Stage2 structure/liquidity snapshots",
+    "structural-reference SFP formation/body-close invalidation",
+    "IMB/FVG formation"
+  ],
+  "not_implemented_by_this_stage": [
+    "Range-boundary SFP without source-valid Range",
+    "Stage7 setup orchestration",
+    "Stage8 execution orchestration",
+    "financial simulation"
+  ],
+  "technical_normalizations": [
+    {
+      "id": "TN_CLOSED_PREFIX_OBJECT_OBSERVATION",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "statement": "Observe an opening fact only when its containing candle is in the closed prefix; retain intrinsic known_at and actual later observed_at separately, without backfilled receipts."
+    },
+    {
+      "id": "TN_OBJECT_ASSESSMENT_PER_NEW_TF_CLOSE",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "statement": "Record candidate/missing-input assessments only when the timeframe gains a newly closed candle; preserve all SFP/FVG formations and lifecycle facts."
+    },
+    {
+      "id": "TN_OBJECT_DIAGNOSTIC_FINGERPRINT",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "statement": "Fingerprint typed object assessments together with evidence batches; observation counts are not unique trade counts."
+    },
+    {
+      "id": "TN_TYPED_SOURCE_EVIDENCE_RETENTION",
+      "classification": "TECHNICAL_NORMALIZATION",
+      "statement": "Retain original typed SFP/FVG evidence and its exact object lifecycle for downstream composition; never reconstruct geometry from opaque IDs or legacy engine state."
+    }
+  ],
+  "source_rule_implementations": [
+    "source_structure_liquidity_v2.py",
+    "source_sfp_v2.py",
+    "source_imb_ote_pd_v2.py"
+  ],
+  "unresolved_source_inputs": [
+    "qualitative geometry provenance",
+    "source-qualified impulse/dealing-range endpoints",
+    "context/timeframe and branch selection",
+    "meaningful/adverse liquidity",
+    "entry/stop normalization alternatives",
+    "full/partial exit/remainder",
+    "re-entry identity/eligibility"
+  ],
+  "invariants": {
+    "object_validity_not_trade_eligibility": true,
+    "no_first_take_or_freshness_rule_invented": true,
+    "no_arbitrary_qualitative_threshold": true,
+    "no_universal_tf_ladder": true,
+    "no_project_admission": true,
+    "no_legacy_engine": true,
+    "PAPER": false,
+    "LIVE": false,
+    "private_api": false
+  },
+  "artifact_sha256": {
+    "src/crypto_bot/strategy/pure_source_object_provider_v2.py": "61e2462cf73c9560b6405275c0fddd55dadc0498f17e67d82682409d2856496f",
+    "tests/test_pure_source_object_provider_v2.py": "418d66d2946a4e088ec61d90c01d0938f15283d5be124bb356eaf54a49fb1a56",
+    "docs/PURE_SOURCE_ENGINE_STAGE11_OBJECT_PROVIDERS.md": "00a624832b853b4708e3d641f67a3ec446d829c1cf12da05e865cb48719e8dea"
+  }
+}
