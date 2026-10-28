@@ -34,6 +34,13 @@ def _unique(values: Iterable[str]) -> tuple[str, ...]:
     return tuple(dict.fromkeys(str(value) for value in values if str(value)))
 
 
+def _json_native(payload: Any) -> Any:
+    """Normalize immutable Python tuples into the exact JSON boundary shape."""
+    return json.loads(
+        json.dumps(payload, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+    )
+
+
 @dataclass(frozen=True)
 class StrategyObjectSnapshot:
     """Immutable outward-facing snapshot of one Strategy Engine object.
@@ -84,11 +91,19 @@ class StrategyObjectSnapshot:
             raise ValueError(f"unsupported strategy event schema: {self.schema!r}")
         if self.trade_entry_allowed:
             raise ValueError("trade_entry_allowed must remain false in the fail-closed integration contract")
-        for name in ("event_id", "object_id", "object_type", "symbol", "timeframe", "status",
-                     "engine_version", "engine_git_commit", "dataset_id"):
+        for name in (
+            "event_id",
+            "object_id",
+            "object_type",
+            "symbol",
+            "timeframe",
+            "status",
+            "engine_version",
+            "engine_git_commit",
+            "dataset_id",
+        ):
             if not str(getattr(self, name)).strip():
                 raise ValueError(f"{name} must be non-empty")
-        # Validate transported timestamps without rewriting them.
         parsed = {
             "emitted_at": datetime.fromisoformat(self.emitted_at),
             "formation_at": datetime.fromisoformat(self.formation_at),
@@ -112,13 +127,17 @@ class StrategyObjectSnapshot:
         _price(self.fta_price, "fta_price")
 
     def to_dict(self) -> dict[str, Any]:
-        payload = asdict(self)
-        # Tuples become JSON arrays at the boundary while the Python contract
-        # stays immutable.
-        return payload
+        # API/outbox payloads are JSON-native: arrays are lists rather than
+        # Python tuples. The dataclass itself remains immutable internally.
+        return _json_native(asdict(self))
 
     def canonical_json(self) -> str:
-        return json.dumps(self.to_dict(), sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+        return json.dumps(
+            self.to_dict(),
+            sort_keys=True,
+            ensure_ascii=False,
+            separators=(",", ":"),
+        )
 
     @classmethod
     def from_source_object(
@@ -156,8 +175,6 @@ class StrategyObjectSnapshot:
             "invalidated_at": invalidated,
             "formation_valid": obj.formation_valid,
             "trade_eligible": obj.trade_eligible,
-            # Financial execution authority is intentionally not derived from
-            # object eligibility. The project is fail-closed.
             "trade_entry_allowed": False,
             "source_rule_ids": _unique(obj.source_rule_ids),
             "technical_normalization_ids": _unique(obj.technical_normalization_ids),
@@ -174,9 +191,12 @@ class StrategyObjectSnapshot:
             "fta_price": _price(fta_price, "fta_price"),
         }
 
-        # event_id intentionally excludes emitted_at. Re-emitting the exact same
-        # engine state/version/dataset is idempotent for backend ingestion.
         fingerprint = hashlib.sha256(
-            json.dumps(base, sort_keys=True, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+            json.dumps(
+                base,
+                sort_keys=True,
+                ensure_ascii=False,
+                separators=(",", ":"),
+            ).encode("utf-8")
         ).hexdigest()
         return cls(event_id=fingerprint, emitted_at=emitted, **base)
