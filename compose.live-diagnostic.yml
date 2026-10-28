@@ -44,5 +44,33 @@ services:
       start_period: 90s
       retries: 3
 
+  crypto-bot-outbox-delivery:
+    profiles:
+      - backend
+    image: crypto-bot-live-diagnostic:local
+    restart: unless-stopped
+    init: true
+    read_only: true
+    environment:
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUNBUFFERED: "1"
+      CRYPTO_BOT_BACKEND_ENDPOINT: ${CRYPTO_BOT_BACKEND_ENDPOINT:-}
+      CRYPTO_BOT_BACKEND_TOKEN: ${CRYPTO_BOT_BACKEND_TOKEN:-}
+    command:
+      - python
+      - /app/scripts/deliver_engine_outbox.py
+      - --outbox
+      - /app/data/runtime/okx/BTC-USDT-SWAP/engine_outbox.sqlite3
+      - --poll-seconds
+      - "5"
+    volumes:
+      - crypto-bot-runtime:/app/data/runtime
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+
 volumes:
   crypto-bot-runtime:
