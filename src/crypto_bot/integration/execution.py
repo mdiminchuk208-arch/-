@@ -22,6 +22,12 @@ def _dedupe(values: tuple[str, ...]) -> tuple[str, ...]:
     return tuple(dict.fromkeys(value for value in values if value))
 
 
+def _json_native(payload: Any) -> Any:
+    return json.loads(
+        json.dumps(payload, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+    )
+
+
 @dataclass(frozen=True)
 class EntryOptionSnapshot:
     mode: str
@@ -116,10 +122,17 @@ class SourceExecutionPlanSnapshot:
             raise ValueError("source_geometry_resolved cannot be true while unresolved items remain")
 
     def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
+        # JSON-facing payloads must have stable JSON array semantics rather than
+        # depending on Python tuple/list distinctions after persistence.
+        return _json_native(asdict(self))
 
     def canonical_json(self) -> str:
-        return json.dumps(self.to_dict(), sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+        return json.dumps(
+            self.to_dict(),
+            sort_keys=True,
+            ensure_ascii=False,
+            separators=(",", ":"),
+        )
 
     @classmethod
     def from_plan(
@@ -184,8 +197,6 @@ class SourceExecutionPlanSnapshot:
             "unresolved": unresolved,
             "source_rule_ids": _dedupe(plan.source_rule_ids),
             "technical_normalization_ids": _dedupe(plan.technical_normalization_ids),
-            # This is source-geometry resolution only. It is NOT financial
-            # permission to enter a trade.
             "source_geometry_resolved": bool(plan.execution_ready),
             "trade_entry_allowed": False,
             "engine_version": engine_version,
@@ -199,6 +210,11 @@ class SourceExecutionPlanSnapshot:
             "exit_policy": asdict(exit_policy),
         }
         event_id = hashlib.sha256(
-            json.dumps(serializable, sort_keys=True, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+            json.dumps(
+                serializable,
+                sort_keys=True,
+                ensure_ascii=False,
+                separators=(",", ":"),
+            ).encode("utf-8")
         ).hexdigest()
         return cls(event_id=event_id, emitted_at=emitted, **base)
