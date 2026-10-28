@@ -87,33 +87,62 @@ class SQLiteMtfCandleStore:
             1 if candle.is_closed else 0,
         )
 
-    def put(self, candle: MarketCandle) -> bool:
-        if not candle.is_closed:
-            raise ValueError("MTF store accepts closed candles only")
-        identity = (
-            candle.exchange.upper(),
-            candle.symbol.upper(),
-            candle.interval,
-            candle.open_time_ms,
+    @staticmethod
+    def _row_to_candle(row: sqlite3.Row) -> MarketCandle:
+        return MarketCandle(
+            exchange=row["exchange"],
+            symbol=row["symbol"],
+            interval=row["interval"],
+            open_time_ms=int(row["open_time_ms"]),
+            open=float(row["open"]),
+            high=float(row["high"]),
+            low=float(row["low"]),
+            close=float(row["close"]),
+            volume_base=(float(row["volume_base"]) if row["volume_base"] is not None else None),
+            turnover_quote=(
+                float(row["turnover_quote"]) if row["turnover_quote"] is not None else None
+            ),
+            is_closed=bool(row["is_closed"]),
         )
+
+    def get(
+        self,
+        *,
+        exchange: str,
+        symbol: str,
+        interval: str,
+        open_time_ms: int,
+    ) -> MarketCandle | None:
         with self._connect() as conn:
-            existing = conn.execute(
+            row = conn.execute(
                 """
                 SELECT exchange,symbol,interval,open_time_ms,open,high,low,close,
                        volume_base,turnover_quote,is_closed
                 FROM mtf_candles
                 WHERE exchange=? AND symbol=? AND interval=? AND open_time_ms=?
                 """,
-                identity,
+                (exchange.upper(), symbol.upper(), interval, int(open_time_ms)),
             ).fetchone()
-            values = self._row_tuple(candle)
-            if existing is not None:
-                observed = tuple(existing)
-                if observed != values:
-                    raise ValueError(
-                        "closed candle mutation detected for existing exchange/symbol/interval/open_time"
-                    )
-                return False
+        return self._row_to_candle(row) if row is not None else None
+
+    def put(self, candle: MarketCandle) -> bool:
+        if not candle.is_closed:
+            raise ValueError("MTF store accepts closed candles only")
+        existing = self.get(
+            exchange=candle.exchange,
+            symbol=candle.symbol,
+            interval=candle.interval,
+            open_time_ms=candle.open_time_ms,
+        )
+        if existing is not None:
+            if existing != candle:
+                raise ValueError(
+                    "closed candle mutation detected for existing exchange/symbol/interval/open_time"
+                )
+            return False
+
+        values = self._row_tuple(candle)
+        with self._connect() as conn:
             conn.execute(
                 """
                 INSERT INTO mtf_candles(
@@ -153,26 +182,7 @@ class SQLiteMtfCandleStore:
             params.append(limit)
         with self._connect() as conn:
             rows = conn.execute(sql, tuple(params)).fetchall()
-        return tuple(
-            MarketCandle(
-                exchange=row["exchange"],
-                symbol=row["symbol"],
-                interval=row["interval"],
-                open_time_ms=int(row["open_time_ms"]),
-                open=float(row["open"]),
-                high=float(row["high"]),
-                low=float(row["low"]),
-                close=float(row["close"]),
-                volume_base=(
-                    float(row["volume_base"]) if row["volume_base"] is not None else None
-                ),
-                turnover_quote=(
-                    float(row["turnover_quote"]) if row["turnover_quote"] is not None else None
-                ),
-                is_closed=bool(row["is_closed"]),
-            )
-            for row in rows
-        )
+        return tuple(self._row_to_candle(row) for row in rows)
 
 
 class LiveMtfBuffer:
@@ -213,6 +223,19 @@ class LiveMtfBuffer:
             raise ValueError(f"unconfigured MTF interval: {candle.interval}") from exc
         if candle.open_time_ms % spec.interval_ms != 0:
             raise ValueError("MTF candle open time is not aligned to configured interval")
+
+        exact = self.store.get(
+            exchange=self.exchange,
+            symbol=self.symbol,
+            interval=candle.interval,
+            open_time_ms=candle.open_time_ms,
+        )
+        if exact is not None:
+            if exact != candle:
+                raise ValueError(
+                    "closed candle mutation detected for existing exchange/symbol/interval/open_time"
+                )
+            return False
 
         existing = self.store.load_series(
             exchange=self.exchange,
