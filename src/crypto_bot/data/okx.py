@@ -10,7 +10,11 @@ from urllib.request import Request, urlopen
 from crypto_bot.data.models import HistoricalFetch, InstrumentInfo, MarketCandle
 
 
-OKX_MAINNET = "https://www.okx.com"
+# OKX Global's recommended production REST domain as of 2026-05-20.
+# Regional registrations can inject us.okx.com / eea.okx.com / another
+# documented domain through OKXPublicClient(base_url=...) without touching
+# Strategy Engine code.
+OKX_MAINNET = "https://openapi.okx.com"
 
 # Keep the repository's existing canonical interval vocabulary at the adapter
 # boundary. OKX's UTC daily bar is used deliberately so D1 does not inherit the
