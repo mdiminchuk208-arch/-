@@ -75,7 +75,7 @@ Exit code `0` means the runtime is responsive. Exit code `2` means the receipt i
 
 Historical data stays read-only inside the container. Runtime state uses a persistent named volume.
 
-Build and start:
+Build and start the diagnostic service only:
 
 ```bash
 docker compose -f compose.live-diagnostic.yml up -d --build
@@ -96,9 +96,26 @@ docker compose -f compose.live-diagnostic.yml down
 
 Do **not** add `-v` unless the durable cursor/MTF/outbox state is intentionally being discarded and the restart procedure has been reviewed.
 
+### Optional backend delivery profile
+
+Do not enable backend delivery until the **real** backend ingestion endpoint from `BACKEND_ENGINE_EVENT_CONTRACT.md` exists.
+
+No endpoint or secret is committed to this repository. Supply them through the deployment environment:
+
+```bash
+export CRYPTO_BOT_BACKEND_ENDPOINT='https://your-real-backend.example/your-chosen-ingestion-path'
+export CRYPTO_BOT_BACKEND_TOKEN='use-a-secret-manager-or-host-secret'
+
+docker compose -f compose.live-diagnostic.yml --profile backend up -d
+```
+
+The `backend` profile starts `crypto-bot-outbox-delivery`, which reads the same persistent `engine_outbox.sqlite3` and acknowledges an event only after a successful 2xx backend response.
+
+If `CRYPTO_BOT_BACKEND_ENDPOINT` is missing, the optional delivery process fails closed instead of inventing a destination. Do not put real credentials into Compose YAML, source files, Git history or this runbook.
+
 ## 4. systemd deployment
 
-Reference paths used by the unit:
+Reference paths used by the diagnostic unit:
 
 - repository: `/opt/crypto-bot`
 - virtual environment: `/opt/crypto-bot/.venv`
@@ -118,7 +135,7 @@ python3 -m venv .venv
 .venv/bin/python -m pip install .
 ```
 
-Copy/install the unit:
+Copy/install the diagnostic unit:
 
 ```bash
 sudo cp deploy/systemd/crypto-bot-live-diagnostic.service /etc/systemd/system/
@@ -142,6 +159,36 @@ Health check:
   --max-age-seconds 120
 ```
 
+### Optional systemd backend delivery
+
+Only after the real backend exists, create a root-readable deployment secret file outside the repository:
+
+```bash
+sudo install -d -m 0750 /etc/crypto-bot
+sudo sh -c 'cat > /etc/crypto-bot/backend-delivery.env <<EOF
+CRYPTO_BOT_BACKEND_ENDPOINT=https://your-real-backend.example/your-chosen-ingestion-path
+CRYPTO_BOT_BACKEND_TOKEN=replace-via-your-secret-management-process
+EOF'
+sudo chmod 0600 /etc/crypto-bot/backend-delivery.env
+```
+
+Then install and start the optional worker:
+
+```bash
+sudo cp deploy/systemd/crypto-bot-outbox-delivery.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable --now crypto-bot-outbox-delivery.service
+```
+
+Inspect it separately:
+
+```bash
+systemctl status crypto-bot-outbox-delivery.service
+journalctl -u crypto-bot-outbox-delivery.service -f
+```
+
+The worker is transport-only. It cannot create a signal, alter SOURCE state or grant trading permission.
+
 ## 5. Restart/recovery contract
 
 The service is designed for at-least-once recovery:
@@ -152,7 +199,8 @@ The service is designed for at-least-once recovery:
 4. if the process was offline longer than one OKX page, polling paginates backwards until the durable cursor is reached;
 5. any missing closed candle fails closed instead of silently skipping it;
 6. cursor advances only after the candle is accepted by durable MTF state;
-7. diagnostic events are fingerprinted and outbox insertion is idempotent.
+7. diagnostic events are fingerprinted and outbox insertion is idempotent;
+8. backend delivery retries the same immutable event until a 2xx acknowledgement is received.
 
 A cursor that is ahead of durable MTF state is treated as corruption and fails closed.
 
@@ -164,7 +212,11 @@ Do not repair this by manually moving cursors. Inspect OKX connectivity, host cl
 
 ### `ENGINE_OUTBOX_BACKLOG` / DEGRADED
 
-The Strategy Engine side is producing durable diagnostic events faster than the backend handoff is acknowledging them. Preserve the outbox database. Investigate the future backend delivery worker/API rather than deleting pending events.
+The Strategy Engine side is producing durable diagnostic events faster than the backend handoff is acknowledging them. Preserve the outbox database. Inspect the optional delivery worker and real backend availability. Do not delete pending events merely to clear the warning.
+
+### backend delivery returns non-2xx
+
+The event remains pending. Check the configured endpoint, authentication, backend transaction logs and the receiver contract. A `409` should be treated as a potential immutable event-ID collision and investigated rather than force-acknowledged.
 
 ### catch-up gap detected
 
@@ -182,6 +234,7 @@ This deployment does not yet provide:
 - LIVE trading;
 - automatic resolution of unresolved PURE SOURCE semantics;
 - PROJECT policy selection inside PURE SOURCE;
-- TradingView as a production dependency.
+- TradingView as a production dependency;
+- a fabricated backend URL when the actual Platform/Backend application has not defined one.
 
 Those boundaries must remain intact until separate project gates explicitly change them.
