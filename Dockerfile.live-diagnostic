@@ -1,0 +1,24 @@
+FROM python:3.12-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
+
+WORKDIR /app
+
+COPY pyproject.toml /app/pyproject.toml
+COPY src /app/src
+RUN python -m pip install --no-cache-dir .
+
+COPY scripts /app/scripts
+RUN mkdir -p /app/data/history /app/data/runtime \
+    && groupadd --system --gid 10001 cryptobot \
+    && useradd --system --uid 10001 --gid 10001 --home /app cryptobot \
+    && chown -R cryptobot:cryptobot /app/data/runtime
+
+USER 10001:10001
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=90s --retries=3 \
+  CMD ["python", "/app/scripts/check_live_diagnostic_health.py", "--health-file", "/app/data/runtime/okx/BTC-USDT-SWAP/health.json", "--max-age-seconds", "120"]
+
+CMD ["python", "/app/scripts/run_okx_live_diagnostic_service.py", "--symbol", "BTC-USDT-SWAP", "--data-root", "/app/data/history", "--state-root", "/app/data/runtime", "--poll-seconds", "30"]
