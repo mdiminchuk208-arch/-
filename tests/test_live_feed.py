@@ -91,7 +91,6 @@ class LiveFeedTests(unittest.TestCase):
             )
             first_feed.poll()
 
-            # Process sees 120k but crashes before commit.
             first_feed.client = FakeClient([[candle(60_000), candle(120_000)]])
             batch = first_feed.poll()
             self.assertEqual([c.open_time_ms for c in batch.candles], [120_000])
@@ -105,6 +104,73 @@ class LiveFeedTests(unittest.TestCase):
             )
             replayed = restarted.poll()
             self.assertEqual([c.open_time_ms for c in replayed.candles], [120_000])
+
+    def test_paginated_catchup_recovers_every_closed_bar_after_long_outage(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            cursor = DurableCandleCursor(Path(tmp) / "cursor.json")
+            key = FeedKey("OKX", "BTC-USDT-SWAP", "1")
+            cursor.commit(key, 60_000)
+            feed = ClosedCandlePollFeed(
+                client=FakeClient([
+                    [candle(240_000), candle(300_000)],
+                    [candle(120_000), candle(180_000)],
+                ]),
+                exchange="OKX",
+                symbol="BTC-USDT-SWAP",
+                interval="1",
+                cursor=cursor,
+                page_limit=2,
+                interval_ms=60_000,
+            )
+            batch = feed.poll()
+            self.assertEqual(
+                [row.open_time_ms for row in batch.candles],
+                [120_000, 180_000, 240_000, 300_000],
+            )
+            self.assertEqual(cursor.get(key), 60_000)
+
+    def test_paginated_catchup_fails_closed_when_a_bar_is_missing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            cursor = DurableCandleCursor(Path(tmp) / "cursor.json")
+            key = FeedKey("OKX", "BTC-USDT-SWAP", "1")
+            cursor.commit(key, 60_000)
+            feed = ClosedCandlePollFeed(
+                client=FakeClient([
+                    [candle(240_000), candle(300_000)],
+                    [candle(180_000)],
+                    [],
+                ]),
+                exchange="OKX",
+                symbol="BTC-USDT-SWAP",
+                interval="1",
+                cursor=cursor,
+                page_limit=2,
+                interval_ms=60_000,
+            )
+            with self.assertRaisesRegex(ValueError, "catch-up gap"):
+                feed.poll()
+            self.assertEqual(cursor.get(key), 60_000)
+
+    def test_paginated_catchup_has_explicit_page_ceiling(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            cursor = DurableCandleCursor(Path(tmp) / "cursor.json")
+            key = FeedKey("OKX", "BTC-USDT-SWAP", "1")
+            cursor.commit(key, 60_000)
+            feed = ClosedCandlePollFeed(
+                client=FakeClient([
+                    [candle(300_000)],
+                    [candle(240_000)],
+                ]),
+                exchange="OKX",
+                symbol="BTC-USDT-SWAP",
+                interval="1",
+                cursor=cursor,
+                page_limit=1,
+                interval_ms=60_000,
+                max_backfill_pages=1,
+            )
+            with self.assertRaisesRegex(ValueError, "max_backfill_pages"):
+                feed.poll()
 
     def test_committed_cursor_survives_restart_and_is_idempotent(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -146,7 +212,7 @@ class LiveFeedTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 feed.commit(wrong)
 
-    def test_poll_ignores_unfinished_or_mismatched_rows(self):
+    def test_poll_ignores_unfinished_or_mismatched_rows_in_legacy_mode(self):
         mismatched = MarketCandle(
             exchange="OKX",
             symbol="ETH-USDT-SWAP",
