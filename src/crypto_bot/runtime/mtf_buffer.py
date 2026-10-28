@@ -14,7 +14,6 @@ class MtfSeriesSpec:
     timeframe: str
     interval_ms: int
     min_bars: int = 1
-    max_bars: int = 20_000
 
     def __post_init__(self) -> None:
         if not self.timeframe:
@@ -23,8 +22,6 @@ class MtfSeriesSpec:
             raise ValueError("interval_ms must be positive")
         if self.min_bars <= 0:
             raise ValueError("min_bars must be positive")
-        if self.max_bars < self.min_bars:
-            raise ValueError("max_bars cannot be smaller than min_bars")
 
 
 @dataclass(frozen=True)
@@ -145,7 +142,6 @@ class SQLiteMtfCandleStore:
         )
         params: list[object] = [exchange.upper(), symbol.upper(), interval]
         if limit is not None:
-            # Keep the newest N while returning chronological order.
             sql = (
                 "SELECT * FROM ("
                 "SELECT exchange,symbol,interval,open_time_ms,open,high,low,close,"
@@ -182,9 +178,10 @@ class SQLiteMtfCandleStore:
 class LiveMtfBuffer:
     """Strict MTF closed-candle accumulator with replay-compatible snapshots.
 
-    The buffer is infrastructure only. It validates continuity and identity,
-    persists accepted candles, and emits ``ReplaySeries`` snapshots. It never
-    calls SOURCE detectors and never grants trade permission.
+    The canonical path intentionally does not truncate old history. An arbitrary
+    rolling lookback could alter SOURCE object discovery and would therefore be
+    an unclassified strategy parameter. A future bounded horizon must be added
+    only when its SOURCE/PROJECT classification is explicit.
     """
 
     def __init__(
@@ -239,7 +236,6 @@ class LiveMtfBuffer:
                 exchange=self.exchange,
                 symbol=self.symbol,
                 interval=timeframe,
-                limit=spec.max_bars,
             )
             counts.append((timeframe, len(rows)))
             if len(rows) < spec.min_bars:
@@ -264,12 +260,9 @@ class LiveMtfBuffer:
                 exchange=self.exchange,
                 symbol=self.symbol,
                 interval=timeframe,
-                limit=spec.max_bars,
             )
             if not rows:
                 continue
-            # Re-check strict continuity over the entire retained window. This
-            # catches database/manual corruption before a replay can consume it.
             previous = rows[0].open_time_ms
             for row in rows[1:]:
                 if row.open_time_ms != previous + spec.interval_ms:
