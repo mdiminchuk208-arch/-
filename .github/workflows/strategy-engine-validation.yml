@@ -4,6 +4,14 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
+
+# Rapid infrastructure work can create many superseded main validations. Keep
+# only the newest head active so a stale run never blocks feedback on current
+# code.
+concurrency:
+  group: strategy-engine-validation-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   validate:
