@@ -1,0 +1,48 @@
+services:
+  crypto-bot-live-diagnostic:
+    build:
+      context: .
+      dockerfile: Dockerfile.live-diagnostic
+    image: crypto-bot-live-diagnostic:local
+    restart: unless-stopped
+    init: true
+    read_only: true
+    environment:
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUNBUFFERED: "1"
+    command:
+      - python
+      - /app/scripts/run_okx_live_diagnostic_service.py
+      - --symbol
+      - BTC-USDT-SWAP
+      - --data-root
+      - /app/data/history
+      - --state-root
+      - /app/data/runtime
+      - --poll-seconds
+      - "30"
+    volumes:
+      - ./data/history:/app/data/history:ro
+      - crypto-bot-runtime:/app/data/runtime
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - /app/scripts/check_live_diagnostic_health.py
+        - --health-file
+        - /app/data/runtime/okx/BTC-USDT-SWAP/health.json
+        - --max-age-seconds
+        - "120"
+      interval: 30s
+      timeout: 10s
+      start_period: 90s
+      retries: 3
+
+volumes:
+  crypto-bot-runtime:
