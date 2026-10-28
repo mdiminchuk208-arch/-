@@ -15,6 +15,7 @@ from crypto_bot.data.okx import OKX_MAINNET, OKXAPIError, OKXPublicClient
 from crypto_bot.integration.outbox import SQLiteEngineOutbox
 from crypto_bot.runtime.bootstrap import bootstrap_live_mtf_from_verified_datasets
 from crypto_bot.runtime.health import RuntimeHealthPolicy
+from crypto_bot.runtime.health_store import write_runtime_health_file
 from crypto_bot.runtime.live_diagnostic import LivePureSourceDiagnosticRunner
 from crypto_bot.runtime.mtf_buffer import LiveMtfBuffer, MtfSeriesSpec, SQLiteMtfCandleStore
 from crypto_bot.runtime.service import LiveDiagnosticService
@@ -36,11 +37,20 @@ def _jsonable(value: Any) -> Any:
 
 
 def _print_event(kind: str, payload: Any) -> None:
-    body = {"kind": kind, "payload": _jsonable(asdict(payload) if hasattr(payload, "__dataclass_fields__") else payload)}
+    body = {
+        "kind": kind,
+        "payload": _jsonable(
+            asdict(payload) if hasattr(payload, "__dataclass_fields__") else payload
+        ),
+    }
     print(json.dumps(body, sort_keys=True, ensure_ascii=False), flush=True)
 
 
-def _dataset_paths(data_root: Path, symbol: str, intervals: list[str]) -> tuple[tuple[Path, Path], ...]:
+def _dataset_paths(
+    data_root: Path,
+    symbol: str,
+    intervals: list[str],
+) -> tuple[tuple[Path, Path], ...]:
     result: list[tuple[Path, Path]] = []
     for interval in intervals:
         csv_path = data_root / "okx" / symbol / f"{interval}.csv"
@@ -65,6 +75,7 @@ def main() -> int:
     parser.add_argument("--intervals", nargs="+", default=list(DEFAULT_INTERVALS))
     parser.add_argument("--data-root", default="data/history")
     parser.add_argument("--state-root", default="data/runtime")
+    parser.add_argument("--health-file", default=None)
     parser.add_argument("--base-url", default=OKX_MAINNET)
     parser.add_argument("--poll-seconds", type=float, default=30.0)
     parser.add_argument(
@@ -100,6 +111,8 @@ def main() -> int:
 
     symbol_state = Path(args.state_root) / "okx" / symbol
     symbol_state.mkdir(parents=True, exist_ok=True)
+    health_path = Path(args.health_file) if args.health_file else symbol_state / "health.json"
+
     buffer = LiveMtfBuffer(
         exchange="OKX",
         symbol=symbol,
@@ -149,14 +162,19 @@ def main() -> int:
 
     while True:
         try:
-            observed_at = datetime.fromtimestamp(client.get_server_time_ms() / 1000, tz=timezone.utc)
+            observed_at = datetime.fromtimestamp(
+                client.get_server_time_ms() / 1000,
+                tz=timezone.utc,
+            )
             cycle = service.run_cycle(observed_at=observed_at)
+            write_runtime_health_file(cycle.health, health_path)
         except (OKXAPIError, ValueError, OSError) as exc:
             print(
                 json.dumps(
                     {
                         "kind": "fatal_cycle_error",
                         "error": str(exc),
+                        "health_file": str(health_path),
                         "trade_entry_allowed": False,
                     },
                     sort_keys=True,
@@ -165,6 +183,8 @@ def main() -> int:
                 file=sys.stderr,
                 flush=True,
             )
+            # Do not overwrite the last successful health receipt. Its age will
+            # exceed the external health-check threshold and fail naturally.
             return 2
 
         _print_event("cycle", cycle)
