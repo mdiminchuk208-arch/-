@@ -1,0 +1,37 @@
+[Unit]
+Description=Crypto Bot Engine Outbox Delivery
+After=network-online.target crypto-bot-live-diagnostic.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=cryptobot
+Group=cryptobot
+WorkingDirectory=/opt/crypto-bot
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=/etc/crypto-bot/backend-delivery.env
+ExecStart=/opt/crypto-bot/.venv/bin/python /opt/crypto-bot/scripts/deliver_engine_outbox.py --outbox /var/lib/crypto-bot/okx/BTC-USDT-SWAP/engine_outbox.sqlite3 --poll-seconds 5
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=30
+KillSignal=SIGTERM
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+CapabilityBoundingSet=
+AmbientCapabilities=
+ReadOnlyPaths=/opt/crypto-bot
+ReadWritePaths=/var/lib/crypto-bot
+
+[Install]
+WantedBy=multi-user.target
