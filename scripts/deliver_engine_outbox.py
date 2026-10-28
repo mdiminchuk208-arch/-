@@ -19,7 +19,11 @@ def main() -> int:
         )
     )
     parser.add_argument("--outbox", required=True)
-    parser.add_argument("--endpoint", required=True)
+    parser.add_argument(
+        "--endpoint",
+        default=os.getenv("CRYPTO_BOT_BACKEND_ENDPOINT"),
+        help="HTTPS backend ingestion endpoint. Defaults to CRYPTO_BOT_BACKEND_ENDPOINT.",
+    )
     parser.add_argument("--bearer-token-env", default="CRYPTO_BOT_BACKEND_TOKEN")
     parser.add_argument("--timeout-seconds", type=float, default=10.0)
     parser.add_argument("--batch-size", type=int, default=100)
@@ -28,6 +32,10 @@ def main() -> int:
     parser.add_argument("--once", action="store_true")
     args = parser.parse_args()
 
+    if not args.endpoint:
+        parser.error(
+            "backend endpoint is required via --endpoint or CRYPTO_BOT_BACKEND_ENDPOINT"
+        )
     if args.timeout_seconds <= 0:
         parser.error("--timeout-seconds must be positive")
     if args.batch_size <= 0:
