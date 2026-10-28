@@ -5,7 +5,7 @@ import os
 import sys
 from datetime import datetime, timezone
 
-from crypto_bot.data.okx import OKXAPIError, OKXPublicClient
+from crypto_bot.data.okx import OKXAPIError, OKX_MAINNET, OKXPublicClient
 from crypto_bot.data.pipeline import persist_audited_dataset
 
 
@@ -32,7 +32,14 @@ def main() -> int:
         help="Canonical repo intervals. Default: 5 15 60 240 D (OKX D maps to 1Dutc).",
     )
     parser.add_argument("--days", type=int, default=30)
-    parser.add_argument("--base-url", default=os.getenv("OKX_BASE_URL", "https://www.okx.com"))
+    parser.add_argument(
+        "--base-url",
+        default=os.getenv("OKX_BASE_URL", OKX_MAINNET),
+        help=(
+            "OKX REST base URL. Defaults to OKX Global openapi.okx.com; set "
+            "OKX_BASE_URL or pass --base-url for a documented regional domain."
+        ),
+    )
     parser.add_argument("--output-root", default="data/history")
     args = parser.parse_args()
 
