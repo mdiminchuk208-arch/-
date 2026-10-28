@@ -1,0 +1,36 @@
+[Unit]
+Description=Crypto Bot OKX PURE SOURCE Live Diagnostic Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=cryptobot
+Group=cryptobot
+WorkingDirectory=/opt/crypto-bot
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/crypto-bot/.venv/bin/python /opt/crypto-bot/scripts/run_okx_live_diagnostic_service.py --symbol BTC-USDT-SWAP --data-root /opt/crypto-bot/data/history --state-root /var/lib/crypto-bot --poll-seconds 30
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=30
+KillSignal=SIGTERM
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+CapabilityBoundingSet=
+AmbientCapabilities=
+ReadOnlyPaths=/opt/crypto-bot
+ReadWritePaths=/var/lib/crypto-bot
+
+[Install]
+WantedBy=multi-user.target
