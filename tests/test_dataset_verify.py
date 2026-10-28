@@ -63,7 +63,8 @@ class DatasetVerifyTests(unittest.TestCase):
                 output_root=tmp,
                 source="OKX_V5_HISTORY_CANDLES",
             )
-            rows = list(csv.DictReader(persisted.csv_path.open("r", encoding="utf-8", newline="")))
+            with persisted.csv_path.open("r", encoding="utf-8", newline="") as handle:
+                rows = list(csv.DictReader(handle))
             rows[1]["close"] = "101.5"
             with persisted.csv_path.open("w", encoding="utf-8", newline="") as handle:
                 writer = csv.DictWriter(handle, fieldnames=rows[0].keys())
