@@ -29,8 +29,8 @@ class LiveMtfBufferTests(unittest.TestCase):
             exchange="OKX",
             symbol="BTC-USDT-SWAP",
             specs=(
-                MtfSeriesSpec("5", 300_000, min_bars=2, max_bars=3),
-                MtfSeriesSpec("15", 900_000, min_bars=1, max_bars=2),
+                MtfSeriesSpec("5", 300_000, min_bars=2),
+                MtfSeriesSpec("15", 900_000, min_bars=1),
             ),
             store=store,
         )
@@ -60,15 +60,15 @@ class LiveMtfBufferTests(unittest.TestCase):
     def test_gap_out_of_order_unfinished_and_wrong_identity_fail_closed(self):
         with tempfile.TemporaryDirectory() as tmp:
             _, buffer = self.make(tmp)
-            buffer.ingest(candle(0, interval="5"))
+            buffer.ingest(candle(300_000, interval="5"))
             with self.assertRaisesRegex(ValueError, "continuity gap"):
-                buffer.ingest(candle(600_000, interval="5"))
+                buffer.ingest(candle(900_000, interval="5"))
             with self.assertRaisesRegex(ValueError, "out-of-order"):
-                buffer.ingest(candle(-300_000, interval="5"))
+                buffer.ingest(candle(0, interval="5"))
             with self.assertRaisesRegex(ValueError, "closed candles only"):
-                buffer.ingest(candle(300_000, interval="5", closed=False))
+                buffer.ingest(candle(600_000, interval="5", closed=False))
             with self.assertRaisesRegex(ValueError, "identity"):
-                buffer.ingest(candle(300_000, interval="5", symbol="ETH-USDT-SWAP"))
+                buffer.ingest(candle(600_000, interval="5", symbol="ETH-USDT-SWAP"))
 
     def test_unconfigured_and_misaligned_interval_fail_closed(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -78,7 +78,7 @@ class LiveMtfBufferTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "not aligned"):
                 buffer.ingest(candle(1, interval="5"))
 
-    def test_replay_snapshot_is_sorted_bounded_and_restart_safe(self):
+    def test_replay_snapshot_keeps_full_history_and_is_restart_safe(self):
         with tempfile.TemporaryDirectory() as tmp:
             store, buffer = self.make(tmp)
             for ts in (0, 300_000, 600_000, 900_000):
@@ -86,21 +86,24 @@ class LiveMtfBufferTests(unittest.TestCase):
             buffer.ingest(candle(0, interval="15"))
             series = buffer.replay_series()
             self.assertEqual([item.timeframe for item in series], ["5", "15"])
-            self.assertEqual([row.open_time_ms for row in series[0].candles], [300_000, 600_000, 900_000])
+            self.assertEqual(
+                [row.open_time_ms for row in series[0].candles],
+                [0, 300_000, 600_000, 900_000],
+            )
 
             restarted = LiveMtfBuffer(
                 exchange="OKX",
                 symbol="BTC-USDT-SWAP",
                 specs=(
-                    MtfSeriesSpec("5", 300_000, min_bars=2, max_bars=3),
-                    MtfSeriesSpec("15", 900_000, min_bars=1, max_bars=2),
+                    MtfSeriesSpec("5", 300_000, min_bars=2),
+                    MtfSeriesSpec("15", 900_000, min_bars=1),
                 ),
                 store=SQLiteMtfCandleStore(store.path),
             )
             self.assertTrue(restarted.status().ready)
             self.assertEqual(
                 [row.open_time_ms for row in restarted.replay_series()[0].candles],
-                [300_000, 600_000, 900_000],
+                [0, 300_000, 600_000, 900_000],
             )
 
     def test_replay_snapshot_requires_readiness_by_default(self):
