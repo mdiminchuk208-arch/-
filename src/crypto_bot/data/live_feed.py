@@ -110,14 +110,10 @@ class DurableCandleCursor:
 class ClosedCandlePollFeed:
     """Fail-safe closed-candle polling feed with explicit commit semantics.
 
-    The first observation is a *baseline*, not a historical signal. When no
-    durable cursor exists, the feed records the newest closed candle and emits
-    nothing. This prevents process startup from reinterpreting old history as
-    fresh live information.
-
-    On subsequent polls, returned candles are not committed automatically.
-    Call ``commit`` only after downstream processing succeeds. That lets a
-    restart replay an uncommitted candle instead of losing it.
+    With ``interval_ms`` configured, a resumed feed paginates backwards from the
+    latest page until it reaches the durable cursor and verifies that every
+    expected closed bar is present. This avoids silently skipping candles after
+    a long process outage.
     """
 
     def __init__(
@@ -129,23 +125,31 @@ class ClosedCandlePollFeed:
         interval: str,
         cursor: DurableCandleCursor,
         page_limit: int = 50,
+        interval_ms: int | None = None,
+        max_backfill_pages: int = 10_000,
     ) -> None:
         if page_limit <= 0:
             raise ValueError("page_limit must be positive")
+        if interval_ms is not None and interval_ms <= 0:
+            raise ValueError("interval_ms must be positive when supplied")
+        if max_backfill_pages <= 0:
+            raise ValueError("max_backfill_pages must be positive")
         self.client = client
         self.key = FeedKey(exchange=exchange, symbol=symbol, interval=interval)
         self.cursor = cursor
         self.page_limit = page_limit
+        self.interval_ms = interval_ms
+        self.max_backfill_pages = max_backfill_pages
 
-    def poll(self) -> PollBatch:
-        current = self.cursor.get(self.key)
+    def _page(self, *, after_ms: int | None = None) -> tuple[MarketCandle, ...]:
         page = self.client.get_kline_page(
             symbol=self.key.symbol,
             interval=self.key.interval,
+            after_ms=after_ms,
             limit=self.page_limit,
             closed_only=True,
         )
-        candles = tuple(
+        return tuple(
             sorted(
                 (
                     candle
@@ -159,9 +163,24 @@ class ClosedCandlePollFeed:
             )
         )
 
+    @staticmethod
+    def _merge_candles(
+        target: dict[int, MarketCandle],
+        rows: tuple[MarketCandle, ...],
+    ) -> None:
+        for candle in rows:
+            previous = target.get(candle.open_time_ms)
+            if previous is not None and previous != candle:
+                raise ValueError("conflicting closed candle across polling pages")
+            target[candle.open_time_ms] = candle
+
+    def poll(self) -> PollBatch:
+        current = self.cursor.get(self.key)
+        latest = self._page()
+
         if current is None:
-            if candles:
-                self.cursor.commit(self.key, candles[-1].open_time_ms)
+            if latest:
+                self.cursor.commit(self.key, latest[-1].open_time_ms)
             return PollBatch(
                 key=self.key,
                 candles=(),
@@ -169,7 +188,41 @@ class ClosedCandlePollFeed:
                 cursor_before=None,
             )
 
-        pending = tuple(candle for candle in candles if candle.open_time_ms > current)
+        by_open: dict[int, MarketCandle] = {}
+        self._merge_candles(by_open, latest)
+
+        if self.interval_ms is not None and latest:
+            earliest = latest[0].open_time_ms
+            pages = 1
+            while earliest > current + self.interval_ms:
+                if pages >= self.max_backfill_pages:
+                    raise ValueError("max_backfill_pages reached before durable cursor")
+                older = self._page(after_ms=earliest)
+                pages += 1
+                if not older:
+                    break
+                older_earliest = older[0].open_time_ms
+                if older_earliest >= earliest:
+                    raise ValueError("poll pagination did not move backwards")
+                self._merge_candles(by_open, older)
+                earliest = older_earliest
+
+        pending = tuple(
+            by_open[key]
+            for key in sorted(by_open)
+            if key > current
+        )
+
+        if self.interval_ms is not None and pending:
+            expected = current + self.interval_ms
+            for candle in pending:
+                if candle.open_time_ms != expected:
+                    raise ValueError(
+                        "closed-candle catch-up gap detected: "
+                        f"expected {expected}, got {candle.open_time_ms}"
+                    )
+                expected += self.interval_ms
+
         return PollBatch(
             key=self.key,
             candles=pending,
