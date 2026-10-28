@@ -1,0 +1,85 @@
+{
+  "version": "PURE_SOURCE_STAGE24_RELATION_PROVENANCE_V1",
+  "classification": "TECHNICAL_NORMALIZATION",
+  "baseline_identifiability": "NOT_IDENTIFIABLE",
+  "trade_entry_allowed": false,
+  "financial_backtest_allowed": false,
+  "paper_allowed": false,
+  "live_allowed": false,
+  "private_api_allowed": false,
+  "project_policy_applied": [],
+  "automatic_relation_inference_allowed": false,
+  "annotation_methods": [
+    "HUMAN_SOURCE_ANNOTATION",
+    "CURATED_SOURCE_DATASET_ANNOTATION"
+  ],
+  "relations": [
+    {
+      "semantic_id": "OB_LAST_BEFORE_IMBALANCE",
+      "source_refs": ["Методичка P0103"],
+      "source_rule_ids": ["M_OB_ORIGIN"],
+      "subject_roles": ["ob_candidate", "imbalance"],
+      "event_roles": [],
+      "ordered_event_roles": [],
+      "description": "Bind the exact OB candidate to the exact later imbalance for which it is the last preceding candle. The transport does not infer either identity."
+    },
+    {
+      "semantic_id": "OB_SWEEPS_REFERENCE",
+      "source_refs": ["Методичка P0107"],
+      "source_rule_ids": ["M_OB_SWEEP"],
+      "subject_roles": ["ob_candidate", "swept_reference"],
+      "event_roles": ["sweep_event"],
+      "ordered_event_roles": [],
+      "description": "Bind the OB candidate to the exact low/high/wick reference that it swept and to the supplied sweep event."
+    },
+    {
+      "semantic_id": "OB_STRUCTURE_UPDATE_CHOCH",
+      "source_refs": ["Методичка P0105-P0106"],
+      "source_rule_ids": ["M_OB_STRUCTURE"],
+      "subject_roles": ["ob_candidate", "movement"],
+      "event_roles": ["choch_event"],
+      "ordered_event_roles": [],
+      "description": "One explicit Methodichka alternative: the movement from the OB updates structure by CHOCH. This relation is not preferred over the continuation alternative."
+    },
+    {
+      "semantic_id": "OB_STRUCTURE_UPDATE_DIRECTIONAL_CONTINUATION",
+      "source_refs": ["Методичка P0105-P0106"],
+      "source_rule_ids": ["M_OB_STRUCTURE"],
+      "subject_roles": ["ob_candidate", "movement"],
+      "event_roles": ["directional_high_or_low_event"],
+      "ordered_event_roles": [],
+      "description": "One explicit Methodichka alternative: the movement updates the directional high in a long trend or low in a short trend. It must not be collapsed into generic BOS or ranked against CHOCH."
+    },
+    {
+      "semantic_id": "BREAKER_PARENT_OB",
+      "source_refs": ["Методичка P0114"],
+      "source_rule_ids": ["M_BREAKER_PARENT"],
+      "subject_roles": ["breaker_candidate", "parent_ob"],
+      "event_roles": ["impulsive_pierce_event"],
+      "ordered_event_roles": [],
+      "description": "Bind a Breaker candidate to the exact source-valid parent OB that is pierced impulsively. The transport cannot manufacture parent validity."
+    },
+    {
+      "semantic_id": "BREAKER_SWEEP_PIERCE_CHOCH_SEQUENCE",
+      "source_refs": ["Методичка P0115-P0116"],
+      "source_rule_ids": ["M_BREAKER_SEQUENCE"],
+      "subject_roles": ["breaker_candidate", "parent_ob", "swept_reference", "imbalance"],
+      "event_roles": ["sweep_event", "pierce_event", "choch_event"],
+      "ordered_event_roles": ["sweep_event", "pierce_event", "choch_event"],
+      "description": "Bind the priority-1 Breaker sequence: high/low sweep, then pierce by imbalance, then CHOCH. Event occurrence order is explicit; no generic BOS substitute is accepted."
+    }
+  ],
+  "forbidden_fields": [
+    "rank",
+    "score",
+    "confidence",
+    "probability",
+    "weight",
+    "preferred",
+    "win_rate",
+    "profit_factor",
+    "expectancy",
+    "pnl",
+    "backtest_result"
+  ]
+}
