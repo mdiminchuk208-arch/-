@@ -13,6 +13,7 @@ from typing import Any
 from crypto_bot.data.live_feed import ClosedCandlePollFeed, DurableCandleCursor
 from crypto_bot.data.okx import OKX_MAINNET, OKXAPIError, OKXPublicClient
 from crypto_bot.integration.outbox import SQLiteEngineOutbox
+from crypto_bot.runtime.alerts import SQLiteOperationalAlertJournal
 from crypto_bot.runtime.bootstrap import bootstrap_live_mtf_from_verified_datasets
 from crypto_bot.runtime.health import RuntimeHealthPolicy
 from crypto_bot.runtime.health_store import write_runtime_health_file
@@ -76,6 +77,7 @@ def main() -> int:
     parser.add_argument("--data-root", default="data/history")
     parser.add_argument("--state-root", default="data/runtime")
     parser.add_argument("--health-file", default=None)
+    parser.add_argument("--alerts-db", default=None)
     parser.add_argument("--base-url", default=OKX_MAINNET)
     parser.add_argument("--poll-seconds", type=float, default=30.0)
     parser.add_argument(
@@ -112,6 +114,11 @@ def main() -> int:
     symbol_state = Path(args.state_root) / "okx" / symbol
     symbol_state.mkdir(parents=True, exist_ok=True)
     health_path = Path(args.health_file) if args.health_file else symbol_state / "health.json"
+    alerts_path = (
+        Path(args.alerts_db)
+        if args.alerts_db
+        else symbol_state / "operational_alerts.sqlite3"
+    )
 
     buffer = LiveMtfBuffer(
         exchange="OKX",
@@ -144,6 +151,7 @@ def main() -> int:
         for spec in specs
     }
     outbox = SQLiteEngineOutbox(symbol_state / "engine_outbox.sqlite3")
+    alerts = SQLiteOperationalAlertJournal(alerts_path)
     diagnostic = LivePureSourceDiagnosticRunner(buffer=buffer, outbox=outbox)
     stale_after = {
         spec.timeframe: max(120, int(spec.interval_ms / 1000 * args.stale_intervals))
@@ -168,6 +176,7 @@ def main() -> int:
             )
             cycle = service.run_cycle(observed_at=observed_at)
             write_runtime_health_file(cycle.health, health_path)
+            operational_events = alerts.reconcile(cycle.health)
         except (OKXAPIError, ValueError, OSError) as exc:
             print(
                 json.dumps(
@@ -175,6 +184,7 @@ def main() -> int:
                         "kind": "fatal_cycle_error",
                         "error": str(exc),
                         "health_file": str(health_path),
+                        "alerts_db": str(alerts_path),
                         "trade_entry_allowed": False,
                     },
                     sort_keys=True,
@@ -188,6 +198,8 @@ def main() -> int:
             return 2
 
         _print_event("cycle", cycle)
+        for event in operational_events:
+            _print_event("operational_alert", event)
         if args.once:
             return 0
         time.sleep(args.poll_seconds)
