@@ -20,7 +20,7 @@ NOW = datetime(2026, 10, 28, 10, 0, tzinfo=UTC)
 def object_snapshot():
     obj = CausalSourceObject(
         object_id="obj-1",
-        object_type=SourceObjectType.LIQUIDITY,
+        object_type=SourceObjectType.SETUP,
         symbol="BTC-USDT-SWAP",
         timeframe="15",
         direction="LONG",
