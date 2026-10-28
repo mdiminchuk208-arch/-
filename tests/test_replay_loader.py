@@ -73,7 +73,7 @@ class ReplayLoaderTests(unittest.TestCase):
             self.assertEqual([item.series.interval_ms for item in loaded], [60_000, 300_000])
 
             eth = persist(tmp, interval="15", interval_ms=900_000, symbol="ETH-USDT-SWAP")
-            with self.assertRaisesRegex(ValueError, "same exchange and symbol"):
+            with self.assertRaisesRegex(ValueError, "share exchange and symbol"):
                 load_verified_mtf_replay_series([
                     (one.csv_path, one.manifest_path),
                     (eth.csv_path, eth.manifest_path),
