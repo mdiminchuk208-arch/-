@@ -8,7 +8,7 @@ It does **not** contain private OKX credentials, does **not** place orders and d
 
 The runtime path is:
 
-`verified OKX history -> durable MTF state -> public closed-candle catch-up -> PURE SOURCE Stage 14/15 diagnostic replay -> durable outbox -> health receipt`
+`verified OKX history -> durable MTF state -> public closed-candle catch-up -> PURE SOURCE Stage 14/15 diagnostic replay -> durable outbox -> health receipt -> operational health transitions`
 
 ## 1. Prepare verified historical datasets
 
@@ -56,6 +56,7 @@ data/runtime/okx/BTC-USDT-SWAP/
   mtf.sqlite3
   cursors.json
   engine_outbox.sqlite3
+  operational_alerts.sqlite3
   health.json
 ```
 
@@ -70,6 +71,18 @@ python scripts/check_live_diagnostic_health.py \
 Exit code `0` means the runtime is responsive. Exit code `2` means the receipt is missing, invalid, stale, STARTING or SAFE_MODE.
 
 `DEGRADED` is responsive but requires investigation, for example when the durable backend outbox is accumulating undelivered events.
+
+Operational health transitions are also persisted in `operational_alerts.sqlite3` and emitted to stdout as structured JSON with `kind=operational_alert`.
+
+The alert journal is episode-based:
+
+- first appearance of an incident -> one `OPEN` event;
+- repeated cycles of the same incident -> no repeated alert spam;
+- recovery -> one `RESOLVED` event;
+- a later recurrence -> a new episode ID;
+- process restart preserves active episodes.
+
+These are infrastructure alerts only (`SAFE_MODE`, `DEGRADED`, stale market data, outbox backlog and diagnostic-pipeline availability). They are **not** trading signals and always preserve `trade_entry_allowed=false`.
 
 ## 3. Docker Compose deployment
 
@@ -94,7 +107,7 @@ Stop without deleting durable runtime state:
 docker compose -f compose.live-diagnostic.yml down
 ```
 
-Do **not** add `-v` unless the durable cursor/MTF/outbox state is intentionally being discarded and the restart procedure has been reviewed.
+Do **not** add `-v` unless the durable cursor/MTF/outbox/alert state is intentionally being discarded and the restart procedure has been reviewed.
 
 ### Optional backend delivery profile
 
@@ -159,6 +172,8 @@ Health check:
   --max-age-seconds 120
 ```
 
+Operational alert transitions appear in the same systemd journal as `kind=operational_alert`. The durable journal lives under the same writable runtime directory.
+
 ### Optional systemd backend delivery
 
 Only after the real backend exists, create a root-readable deployment secret file outside the repository:
@@ -200,7 +215,8 @@ The service is designed for at-least-once recovery:
 5. any missing closed candle fails closed instead of silently skipping it;
 6. cursor advances only after the candle is accepted by durable MTF state;
 7. diagnostic events are fingerprinted and outbox insertion is idempotent;
-8. backend delivery retries the same immutable event until a 2xx acknowledgement is received.
+8. operational alert episodes persist across restart without duplicate OPEN spam;
+9. backend delivery retries the same immutable event until a 2xx acknowledgement is received.
 
 A cursor that is ahead of durable MTF state is treated as corruption and fails closed.
 
@@ -208,11 +224,15 @@ A cursor that is ahead of durable MTF state is treated as corruption and fails c
 
 ### `MARKET_DATA_STALE_<TF>` / SAFE_MODE
 
-Do not repair this by manually moving cursors. Inspect OKX connectivity, host clock, logs and the last persisted candles. The runtime intentionally remains diagnostic-only and fail-closed.
+Do not repair this by manually moving cursors. Inspect OKX connectivity, host clock, logs and the last persisted candles. The runtime intentionally remains diagnostic-only and fail-closed. A durable `OPEN` alert is emitted once for the stale timeframe and once for the aggregate SAFE_MODE state; recovery emits `RESOLVED`.
 
 ### `ENGINE_OUTBOX_BACKLOG` / DEGRADED
 
-The Strategy Engine side is producing durable diagnostic events faster than the backend handoff is acknowledging them. Preserve the outbox database. Inspect the optional delivery worker and real backend availability. Do not delete pending events merely to clear the warning.
+The Strategy Engine side is producing durable diagnostic events faster than the backend handoff is acknowledging them. Preserve the outbox database. Inspect the optional delivery worker and real backend availability. Do not delete pending events merely to clear the warning. The alert journal suppresses repeated identical backlog notifications until resolution.
+
+### `DIAGNOSTIC_PIPELINE_UNAVAILABLE` / DEGRADED
+
+Treat this as an infrastructure incident, not a trading signal. Preserve all runtime state and inspect the diagnostic process/error before attempting any restart or repair.
 
 ### backend delivery returns non-2xx
 
@@ -235,6 +255,7 @@ This deployment does not yet provide:
 - automatic resolution of unresolved PURE SOURCE semantics;
 - PROJECT policy selection inside PURE SOURCE;
 - TradingView as a production dependency;
-- a fabricated backend URL when the actual Platform/Backend application has not defined one.
+- a fabricated backend URL when the actual Platform/Backend application has not defined one;
+- operational alerts that can alter strategy state or execution authority.
 
 Those boundaries must remain intact until separate project gates explicitly change them.
