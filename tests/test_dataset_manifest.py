@@ -42,7 +42,9 @@ class DatasetManifestTests(unittest.TestCase):
 
     def test_content_change_changes_dataset_identity(self):
         rows = [candle(60_000), candle(120_000, 102.0)]
-        changed = [rows[0], replace(rows[1], close=102.5)]
+        # Keep the mutation inside the original candle's valid OHLC envelope so
+        # this test isolates dataset identity rather than model validation.
+        changed = [rows[0], replace(rows[1], close=101.5)]
         left = build_dataset_manifest(rows, interval_ms=60_000, source="OKX_V5_HISTORY_CANDLES")
         right = build_dataset_manifest(changed, interval_ms=60_000, source="OKX_V5_HISTORY_CANDLES")
         self.assertNotEqual(left.content_sha256, right.content_sha256)
